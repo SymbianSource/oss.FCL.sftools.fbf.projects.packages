@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<project name="SF-JOB-PROPS">
+	<property name="sf.project.type" value="package"/>
+    <property name="sf.spec.job.name" value="kernelhwsrv"/>
+    <property name="sf.spec.job.codeline" value="FCL"/>
+    <property name="sf.spec.systemdefinition.location" value="\sf\os\kernelhwsrv\package_definition.xml"/>
+    <property name="sf.spec.smoketest.enable" value="false"/>
+</project>
