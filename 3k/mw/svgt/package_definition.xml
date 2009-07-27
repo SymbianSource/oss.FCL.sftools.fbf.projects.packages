@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="svgt" long-name="SVG Tiny" tech_domain="ui" level="generic" levels="util ui">
+    <collection name="svgtopt" long-name="SVGT Opt" level="util">
+     <component name="SVG" origin-model="Foundation">
+      <!-- <unit bldFile="mw/svgt/svgtopt/svg/svgrecog/group"/> -->
+     </component>
+     <component name="nvgdecoder" long-name="NVG Decoder" origin-model="Foundation"/>
+     <component name="SVGEngineJI" long-name="SVG Engine JI" origin-model="Foundation"/>
+     <component name="SVGTPlugin" long-name="SVGT Plugin" origin-model="Foundation">
+      <unit bldFile="/sf/mw/svgt/svgtopt/svgtplugin/group"/>
+     </component>
+     <component unofficial="yes" name="svgtopt_build" long-name="SVGT Opt Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/svgt/svgtopt/group"/>
+     </component>
+    </collection>
+    <collection name="svgt_info" long-name="SVG Tiny Info" level="ui">
+     <component unofficial="yes" name="svgt_build" long-name="SVG Tiny Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/svgt/group"/>
+     </component>
+    </collection>
+    <collection name="svgt_plat" long-name="SVG Tiny Platform Interfaces" level="ui">
+     <component unofficial="yes" name="nvg_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/svgt/svgt_plat/nvg_api/group"/>
+     </component>
+     <component unofficial="yes" name="svgt_api" long-name="SVG Tiny API" origin-model="Foundation">
+      <unit bldFile="/sf/mw/svgt/svgt_plat/svgt_api/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

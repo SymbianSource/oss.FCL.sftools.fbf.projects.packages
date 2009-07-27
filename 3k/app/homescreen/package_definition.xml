@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="homescreen" long-name="Home Screen Apps" tech_domain="ui" level="apps" levels="fw apps">
+    <collection name="idlehomescreen" long-name="Idle Homescreen" level="apps">
+     <component name="nativeuicontroller" long-name="Native UI Controller" origin-model="Foundation">
+      <unit bldFile="/sf/app/homescreen/idlehomescreen/nativeuicontroller/group"/>
+     </component>
+     <component name="exths" long-name="ExtHS" origin-model="Foundation">
+      <unit bldFile="/sf/app/homescreen/idlehomescreen/exths/group"/>
+     </component>
+     <component name="activeidle3" long-name="Active Idle 3" origin-model="Foundation">
+      <!-- <unit bldFile="app/homescreen/idlehomescreen/activeidle3/data/group"/> -->
+      <unit bldFile="/sf/app/homescreen/idlehomescreen/activeidle3/group"/>
+      <!-- <unit bldFile="app/homescreen/idlehomescreen/activeidle3/xmluirendering/uiengine/group"/> -->
+     </component>
+     <component name="hsplugins" long-name="HS Plugins" origin-model="Foundation">
+      <unit bldFile="/sf/app/homescreen/idlehomescreen/hsplugins/group"/>
+      <!-- <unit bldFile="app/homescreen/idlehomescreen/hsplugins/organizer/qhd_tch/organizer_2001f481/group"/> -->
+      <!-- <unit bldFile="app/homescreen/idlehomescreen/hsplugins/organizer/vga/organizer_2001f48d/group"/> -->
+      <!-- <unit bldFile="app/homescreen/idlehomescreen/hsplugins/organizer/vga/organizer_2001fdba/group"/> -->
+     </component>
+    </collection>
+    <collection name="menufw" long-name="Menu Framework" level="fw">
+     <component name="hierarchynavigator" long-name="Hierarchy Navigator" origin-model="Foundation">
+      <unit bldFile="/sf/app/homescreen/menufw/hierarchynavigator/group"/>
+     </component>
+     <component name="menufwui" long-name="Menu Framework UI" origin-model="Foundation">
+      <unit bldFile="/sf/app/homescreen/menufw/menufwui/group"/>
+     </component>
+     <component name="menusuites" long-name="Menu Suites" origin-model="Foundation">
+      <unit bldFile="/sf/app/homescreen/menufw/menusuites/group"/>
+     </component>
+     <component unofficial="yes" name="menufw_build" long-name="Menu Framework Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/homescreen/menufw/group"/>
+     </component>
+    </collection>
+    <collection name="homescreen_info" long-name="Home Screen Apps Info" level="apps">
+     <component unofficial="yes" name="homescreen_build" long-name="Home Screen Apps Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/homescreen/group"/>
+     </component>
+     <component unofficial="yes" name="homescreen_test" long-name="Home Screen Apps Test" origin-model="Foundation">
+      <!-- <unit bldFile="app/homescreen/tsrc/group"/> -->
+     </component>
+    </collection>
+    <collection name="homescreen_plat" long-name="Home Screen Apps Platform Interfaces" level="apps">
+     <component unofficial="yes" name="menu_settings_api" origin-model="Foundation">
+      <unit bldFile="/sf/app/homescreen/homescreen_plat/menu_settings_api/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="commonemail" long-name="Email Apps" tech_domain="pr" level="apps" levels="service support ui app">
+    <collection name="emailservices" long-name="Email Services" level="service">
+     <component name="emailframework" long-name="Email framework" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/emailservices/emailframework/group"/>
+     </component>
+     <component name="emailserver" long-name="Email Server" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/emailservices/emailserver/group"/>
+     </component>
+     <component name="psmruadapter" long-name="PSMRU Adapter" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/emailservices/psmruadapter/group"/>
+     </component>
+     <component name="emailstore" long-name="Email Store" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/emailservices/emailstore/group"/>
+     </component>
+     <component name="emaildebug" long-name="Email Debug" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/emailservices/emaildebug/group"/>
+     </component>
+     <component unofficial="yes" name="emailservices_build" long-name="Email Services Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/emailservices/group"/>
+     </component>
+    </collection>
+    <collection name="ipsservices" long-name="IPS Services" level="service">
+     <component name="ipssossettings" long-name="IPSSOS Settings" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/ipsservices/ipssossettings/group"/>
+     </component>
+     <component name="ipssosplugin" long-name="IPSSOS Plugin" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/ipsservices/ipssosplugin/group"/>
+     </component>
+     <component name="ipssosaoplugin" long-name="IPSSOS AO Plugin" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/ipsservices/ipssosaoplugin/group"/>
+     </component>
+     <component unofficial="yes" name="ipsservices_build" long-name="IPS Services Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/ipsservices/group"/>
+     </component>
+    </collection>
+    <collection name="emailcontacts" long-name="Email Contacts" level="support">
+     <component name="contactactionservice" long-name="Contact Action Service" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/emailcontacts/contactactionservice/group"/>
+     </component>
+     <component name="contactactionmenu" long-name="Contact Action Menu" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/emailcontacts/contactactionmenu/group"/>
+     </component>
+     <component name="remotecontactlookup" long-name="Remote Contact Lookup" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/emailcontacts/remotecontactlookup/group"/>
+     </component>
+     <component unofficial="yes" name="emailcontacts_build" long-name="Email Contacts Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/emailcontacts/group"/>
+     </component>
+    </collection>
+    <collection name="meetingrequest" long-name="Meeting Request" level="ui">
+     <component name="mrcommon" long-name="MR Common" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/meetingrequest/mrcommon/group"/>
+     </component>
+     <component name="mrdb" long-name="MR Database" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/meetingrequest/mrdb/group"/>
+     </component>
+     <component name="mrpolicy" long-name="MR Policy" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/meetingrequest/mrpolicy/group"/>
+     </component>
+     <component name="mrservices" long-name="MR Services" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/meetingrequest/mrservices/group"/>
+     </component>
+     <component name="mrgui" long-name="MR GUI" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/meetingrequest/mrgui/group"/>
+     </component>
+     <component name="mrentry" long-name="MR Entry" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/meetingrequest/mrentry/group"/>
+     </component>
+     <component name="mrtasks" long-name="MR Tasks" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/meetingrequest/mrtasks/group"/>
+     </component>
+     <component name="mrutils" long-name="MR Utils" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/meetingrequest/mrutils/group"/>
+     </component>
+     <component name="mrutilscalplugin" long-name="MR Utils Cal Plugin" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/meetingrequest/mrutilscalplugin/group"/>
+     </component>
+     <component name="mrviewer" long-name="MR Viewer" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/meetingrequest/mrviewer/group"/>
+     </component>
+     <component name="mrviewercalplugin" long-name="MR Viewer Cal Plugin" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/meetingrequest/mrviewercalplugin/group"/>
+     </component>
+     <component name="mricalviewer" long-name="MR iCal Viewer" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/meetingrequest/mricalviewer/group"/>
+     </component>
+     <component name="mrversit2" long-name="MR Versit2" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/meetingrequest/mrversit2/group"/>
+     </component>
+     <component name="mragnversit2" long-name="MR Agenda Versit2" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/meetingrequest/mragnversit2/group"/>
+     </component>
+     <component name="mrcasplugin" long-name="MR CAS Plugin" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/meetingrequest/mrcasplugin/group"/>
+     </component>
+     <component name="mrurlparserplugin" long-name="MR URLParser Plugin" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/meetingrequest/mrurlparserplugin/group"/>
+     </component>
+     <component unofficial="yes" name="meetingrequest_build" long-name="Meeting Request Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/meetingrequest/group"/>
+     </component>
+    </collection>
+    <collection name="emailuis" long-name="Email UIs" level="app">
+     <component name="emailui" long-name="Email UI" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/emailuis/emailui/group"/>
+     </component>
+     <component name="gsemailsettings" long-name="GSEmail Settings" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/emailuis/gsemailsettings/group"/>
+     </component>
+     <component name="uicomponents" long-name="UI Components" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/emailuis/uicomponents/group"/>
+     </component>
+     <component name="widget" long-name="Widget" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/emailuis/widget/group"/>
+     </component>
+     <component unofficial="yes" name="emailuis_build" long-name="Email UIs Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/emailuis/group"/>
+     </component>
+    </collection>
+    <collection name="emailhelp" long-name="Email Help" level="support">
+     <component name="emailhelp compo" origin-model="Foundation">
+      <!-- <unit bldFile="app/commonemail/emailhelp/group"/> -->
+     </component>
+    </collection>
+    <collection name="legacy" long-name="Legacy Email" level="support">
+     <component name="iad_rofs" long-name="IAD ROFS" origin-model="Foundation"/>
+     <component name="ls_pt_hack" long-name="ls pt hack" origin-model="Foundation"/>
+     <component name="settingwizard" long-name="Setting Wizard" origin-model="Foundation"/>
+     <component name="starter" long-name="Starter" origin-model="Foundation"/>
+    </collection>
+    <collection name="commonemail_help" long-name="Email Help" level="support">
+     <component name="help compo" origin-model="Foundation"/>
+    </collection>
+    <collection name="commonemail_info" long-name="Email Apps Info" level="app">
+     <component unofficial="yes" name="commonemail_build" long-name="Email Apps Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/group"/>
+     </component>
+     <component unofficial="yes" name="email_setup_plugin_api" origin-model="Foundation">
+      <unit bldFile="/sf/app/commonemail/email_plat/email_setup_plugin_api/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

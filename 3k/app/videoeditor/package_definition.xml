@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="videoeditor" long-name="Video Editor Apps" tech_domain="ma" level="apps" levels="engine ui">
+    <collection name="videditor" long-name="Video Editor" level="ui">
+     <component name="VideoEditorCommon" long-name="Video Editor Common" origin-model="Foundation">
+      <unit bldFile="/sf/app/videoeditor/videditor/videoeditorcommon/group"/>
+     </component>
+     <component name="VideoEditorUiComponents" long-name="Video Editor UI Components" origin-model="Foundation">
+      <unit bldFile="/sf/app/videoeditor/videditor/videoeditoruicomponents/group"/>
+     </component>
+     <component name="SimpleVideoEditor" long-name="Simple Video Editor" origin-model="Foundation">
+      <unit bldFile="/sf/app/videoeditor/videditor/simplevideoeditor/group"/>
+     </component>
+     <component name="SimpleCutVideo" long-name="Simple Cut Video" origin-model="Foundation">
+      <unit bldFile="/sf/app/videoeditor/videditor/simplecutvideo/group"/>
+     </component>
+     <component name="VideoProvider" long-name="Video Provider" origin-model="Foundation">
+      <unit bldFile="/sf/app/videoeditor/videditor/videoprovider/group"/>
+     </component>
+     <component name="ManualVideoEditor" long-name="Manual Video Editor" origin-model="Foundation">
+      <unit bldFile="/sf/app/videoeditor/videditor/manualvideoeditor/group"/>
+     </component>
+     <component name="TrimForMms" long-name="Trim For MMS" origin-model="Foundation">
+      <!-- <unit bldFile="app/videoeditor/videditor/trimformms/group"/> -->
+     </component>
+     <component unofficial="yes" name="videditor_build" long-name="Video Editor Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/videoeditor/videditor/group"/>
+     </component>
+    </collection>
+    <collection name="videoeditorengine" long-name="Video Editor Engine" level="engine">
+     <component name="audioeditorengine" long-name="Audio Editor Engine" origin-model="Foundation">
+      <unit bldFile="/sf/app/videoeditor/videoeditorengine/audioeditorengine/group"/>
+     </component>
+     <component name="avcedit" long-name="Avcedit" origin-model="Foundation">
+      <unit bldFile="/sf/app/videoeditor/videoeditorengine/avcedit/group"/>
+     </component>
+     <component name="h263decoder" long-name="H263 Decoder" origin-model="Foundation">
+      <unit bldFile="/sf/app/videoeditor/videoeditorengine/h263decoder/group"/>
+     </component>
+     <component name="mp3aacManipLib" long-name="Mp3aac Manip Lib" origin-model="Foundation">
+      <unit bldFile="/sf/app/videoeditor/videoeditorengine/mp3aacmaniplib/group"/>
+     </component>
+     <component name="vedtranscoder" long-name="Ved Transcoder" origin-model="Foundation">
+      <unit bldFile="/sf/app/videoeditor/videoeditorengine/vedtranscoder/group"/>
+     </component>
+     <component name="vedengine" long-name="Ved Engine" origin-model="Foundation">
+      <unit bldFile="/sf/app/videoeditor/videoeditorengine/vedengine/group"/>
+     </component>
+     <component unofficial="yes" name="videoeditorengine_build" long-name="Video Editor Engine Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/videoeditor/videoeditorengine/group"/>
+     </component>
+    </collection>
+    <collection name="videoeditor_info" long-name="Video Editor Apps Info" level="ui">
+     <component unofficial="yes" name="videoeditor_build" long-name="Video Editor Apps Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/videoeditor/group"/>
+     </component>
+    </collection>
+    <collection name="videoeditor_plat" long-name="Video Editor Apps Platform Interfaces" level="ui">
+     <component unofficial="yes" name="video_editor_engine_api" origin-model="Foundation">
+      <unit bldFile="/sf/app/videoeditor/videoeditor_plat/video_editor_engine_api/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

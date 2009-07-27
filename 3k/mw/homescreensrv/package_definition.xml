@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="homescreensrv" long-name="Home Screen Services" tech_domain="ui" level="specific" levels="plugin framework server generic specific">
+    <collection name="contentpublishingsrv" long-name="Content Publishing Service" level="server">
+     <component name="contentpublishingutils" long-name="Content Publishing Utils" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/contentpublishingutils/contentpublishingdebug/group"/>
+      <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/contentpublishingutils/group"/>
+     </component>
+     <component name="contentpublishingserver" long-name="Content Publishing Server" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/contentpublishingserver/group"/>
+     </component>
+     <component name="contentharvester" long-name="Content Harvester" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/contentharvester/group"/>
+     </component>
+     <component unofficial="yes" name="contentpublishingsrv_build" long-name="Content Publishing Service Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/group"/>
+     </component>
+    </collection>
+    <collection name="backsteppingsrv" long-name="Backstepping Service" level="server">
+     <component name="bsengine.exe=binary" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/backsteppingsrv/group"/>
+     </component>
+    </collection>
+    <collection name="xcfw" long-name="XCFW" level="framework">
+     <component name="XCFW.dll=binary" long-name="XCFW" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/xcfw/group"/>
+     </component>
+    </collection>
+    <collection name="homescreenpluginsrv" long-name="Homescreen Plugin Service" level="plugin">
+     <component name="hspsdefinitionengine" long-name="Homescreen Plugin Server Definition Engine" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreenpluginsrv/hspsdefinitionengine/group"/>
+     </component>
+     <component name="hspsdom" long-name="Homescreen Plugin Server DOM" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreenpluginsrv/hspsdom/group"/>
+     </component>
+     <component name="hspspluginregistry" long-name="Homescreen Plugin Registry" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreenpluginsrv/hspspluginregistry/group"/>
+     </component>
+     <component name="hspsmanager" long-name="Homescreen Plugin Server Manager" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreenpluginsrv/hspsmanager/group"/>
+     </component>
+     <component name="hspsodt" long-name="Homescreen Plugin Server ODT" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreenpluginsrv/hspsodt/group"/>
+     </component>
+     <component name="hspsresource" long-name="Homescreen Plugin Server Resource" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreenpluginsrv/hspsresource/group"/>
+     </component>
+     <component name="hspsresult" long-name="Homescreen Plugin Server Result" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreenpluginsrv/hspsresult/group"/>
+     </component>
+     <component name="hspstools" long-name="Homescreen Plugin Server Tools" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreenpluginsrv/hspstools/group"/>
+     </component>
+     <component unofficial="yes" name="homescreenpluginsrv_build" long-name="Homescreen Plugin Service Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreenpluginsrv/group"/>
+     </component>
+    </collection>
+    <collection name="idlefw" long-name="Idle Framework" level="framework">
+     <component name="idlefw_plugins" long-name="Plugins" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/idlefw/plugins/group"/>
+      <!-- <unit bldFile="mw/homescreensrv/idlefw/plugins/pslnactiveidleplugin/group"/> -->
+     </component>
+     <component unofficial="yes" name="idlefw_build" long-name="Idle Framework Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/idlefw/group"/>
+     </component>
+    </collection>
+    <collection name="menucontentsrv" long-name="Menu Content Service" level="generic">
+     <component name="menusatinterface" long-name="Menu SAT Interface" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/menucontentsrv/menusatinterface/group"/>
+     </component>
+     <component unofficial="yes" name="menucontentsrv_build" long-name="Menu Content Service Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/menucontentsrv/group"/>
+     </component>
+    </collection>
+    <collection name="homescreensrv_plat" long-name="Home Screen Services Platform Interfaces" level="specific">
+     <component unofficial="yes" name="sapi_backstepping" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/sapi_backstepping/group"/>
+     </component>
+     <component unofficial="yes" name="idlefw_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/idlefw_api/group"/>
+     </component>
+     <component unofficial="yes" name="ai_content_model_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/ai_content_model_api/group"/>
+     </component>
+     <component unofficial="yes" name="action_handler_plugin_api" origin-model="Foundation">
+      <!-- <unit bldFile="mw/homescreensrv/homescreensrv_plat/action_handler_plugin_api/tsrc/group"/> -->
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/action_handler_plugin_api/group"/>
+     </component>
+     <component unofficial="yes" name="sapi_menucontent" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/sapi_menucontent/group"/>
+     </component>
+     <component unofficial="yes" name="ai_plugin_management_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/ai_plugin_management_api/group"/>
+     </component>
+     <component unofficial="yes" name="menu_sat_interface_api" origin-model="Foundation">
+      <!-- <unit bldFile="mw/homescreensrv/homescreensrv_plat/menu_sat_interface_api/tsrc/group"/> -->
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/menu_sat_interface_api/group"/>
+     </component>
+     <component unofficial="yes" name="content_harvester_plugin_api" origin-model="Foundation">
+      <!-- <unit bldFile="mw/homescreensrv/homescreensrv_plat/content_harvester_plugin_api/tsrc/group"/> -->
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/content_harvester_plugin_api/group"/>
+     </component>
+     <component unofficial="yes" name="external_home_screen_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/external_home_screen_api/group"/>
+     </component>
+     <component unofficial="yes" name="sapi_actionhandler" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/sapi_actionhandler/group"/>
+     </component>
+     <component unofficial="yes" name="ai_utilities_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/ai_utilities_api/group"/>
+     </component>
+     <component unofficial="yes" name="xcfw_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/xcfw_api/group"/>
+     </component>
+     <component unofficial="yes" name="hs_widget_publisher_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/hs_widget_publisher_api/group"/>
+      <!-- <unit bldFile="mw/homescreensrv/homescreensrv_plat/hs_widget_publisher_api/tsrc/group"/> -->
+     </component>
+     <component unofficial="yes" name="menu_model_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/menu_model_api/group"/>
+     </component>
+     <component unofficial="yes" name="ai_plugin_information_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/ai_plugin_information_api/group"/>
+     </component>
+     <component unofficial="yes" name="menu_content_service_api" origin-model="Foundation">
+      <!-- <unit bldFile="mw/homescreensrv/homescreensrv_plat/menu_content_service_api/tsrc/group"/> -->
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/menu_content_service_api/group"/>
+     </component>
+     <component unofficial="yes" name="ai_variation_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/ai_variation_api/group"/>
+     </component>
+     <component unofficial="yes" name="sapi_homescreenplugin" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/sapi_homescreenplugin/group"/>
+     </component>
+     <component unofficial="yes" name="ai_shortcut_command_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/ai_shortcut_command_api/group"/>
+     </component>
+     <component unofficial="yes" name="shortcutplugin_extension_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/shortcutplugin_extension_api/group"/>
+     </component>
+     <component unofficial="yes" name="sapi_contentpublishing" origin-model="Foundation">
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/sapi_contentpublishing/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

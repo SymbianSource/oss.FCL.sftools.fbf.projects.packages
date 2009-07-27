@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="os" long-name="OS" levels="hw services">
+<block name="mm" long-name="Multimedia" tech_domain="mm" level="services" levels="adaptation hw-if device-fw devices middleware app-if">
+    <collection name="audio" long-name="Audio Codecs" level="middleware">
+     <component name="ARM_CMMF_codecs" long-name="ARM CMMF Codecs" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/audio/arm_cmmf_codecs/group"/>
+     </component>
+     <component unofficial="yes" name="audio_build" long-name="Audio Codecs Build" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/audio/group"/>
+     </component>
+    </collection>
+    <collection name="video" long-name="Video Codecs" level="middleware">
+     <component name="ARM_MDF_Decoders" long-name="ARM MDF Decoders" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/video/group"/>
+     </component>
+    </collection>
+    <collection name="devsoundextensions" long-name="Devsound Extensions" level="device-fw">
+     <component name="drmaudioplayer" long-name="DRM Audio Player" origin-model="Foundation">
+      <!-- <unit bldFile="os/mm/devsoundextensions/drmaudioplayer/drmplayserver/group"/> -->
+      <!-- <unit bldFile="os/mm/devsoundextensions/drmaudioplayer/drmplayutility/group"/> -->
+      <unit bldFile="/sf/os/mm/devsoundextensions/drmaudioplayer/group"/>
+     </component>
+     <component name="mmextfw" long-name="MM Ext Framework" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/devsoundextensions/mmextfw/group"/>
+     </component>
+     <component name="audiorouting" long-name="Audio Routing" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/devsoundextensions/audiorouting/group"/>
+     </component>
+     <component name="effects" long-name="Effects" origin-model="Foundation">
+      <!-- <unit bldFile="os/mm/devsoundextensions/effects/effecttest"/> -->
+      <unit bldFile="/sf/os/mm/devsoundextensions/effects/group"/>
+     </component>
+     <component name="effectspresets" long-name="Effects Presets" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/devsoundextensions/effectspresets/group"/>
+     </component>
+     <component name="telephonyaudiorouting" long-name="Telephony Audio Routing" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/devsoundextensions/telephonyaudiorouting/group"/>
+      <!-- <unit bldFile="os/mm/devsoundextensions/telephonyaudiorouting/server/group"/> -->
+      <!-- <unit bldFile="os/mm/devsoundextensions/telephonyaudiorouting/session/group"/> -->
+      <!-- <unit bldFile="os/mm/devsoundextensions/telephonyaudiorouting/telephonyaudioroutingbase/group"/> -->
+      <!-- <unit bldFile="os/mm/devsoundextensions/telephonyaudiorouting/telephonyaudioroutingmanager/group"/> -->
+     </component>
+     <component name="mmfcustominterfaces" long-name="MMF Custom Interfaces" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/devsoundextensions/mmfcustominterfaces/group"/>
+     </component>
+     <component name="addeddevsoundcontrol" long-name="Added DevSound Control" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/devsoundextensions/addeddevsoundcontrol/group"/>
+     </component>
+     <component name="globalaudiosettings" long-name="Global Audio Settings" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/devsoundextensions/globalaudiosettings/group"/>
+     </component>
+     <component name="restrictedaudiooutput" long-name="Restricted Audio Output" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/devsoundextensions/restrictedaudiooutput/group"/>
+     </component>
+     <component name="ciextnfactoryplugins" long-name="CI Extension Factory Plugins" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/devsoundextensions/ciextnfactoryplugins/group"/>
+     </component>
+     <component unofficial="yes" name="devsoundextensions_build" long-name="Devsound Extensions Build" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/devsoundextensions/group"/>
+     </component>
+    </collection>
+    <collection name="mdfdevvideoextensions" long-name="MDF devvideo Extensions" level="device-fw">
+     <component name="arm_mdf_postprocessor" long-name="ARM MDF Postprocessor" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mdfdevvideoextensions/arm_mdf_postprocessor/group"/>
+     </component>
+     <component unofficial="yes" name="mdfdevvideoextensions_build" long-name="MDF devvideo Extensions Build" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mdfdevvideoextensions/group"/>
+     </component>
+    </collection>
+    <collection name="videoadaptationextensions" long-name="Video Adaptation Extensions" level="adaptation">
+     <component name="postingsurface" long-name="Posting Surface" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/videoadaptationextensions/postingsurface/group"/>
+     </component>
+     <component unofficial="yes" name="videoadaptationextensions_build" long-name="Video Adaptation Extensions Build" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/videoadaptationextensions/group"/>
+     </component>
+    </collection>
+    <collection name="imagingandcamerafws" long-name="Imaging and Camera Frameworks" level="app-if">
+     <component name="imagingfws" long-name="Imaging Frameworks" introduced="7.0s" purpose="mandatory" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/mm/imagingandcamerafws/imagingfws/group" mrp="/sf/os/mm/imagingandcamerafws/imagingfws/group/multimedia_icl.mrp"/>
+     </component>
+     <component name="imagingunittest" long-name="Imaging Unit Tests" introduced="7.0s" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/mm/imagingandcamerafws/imagingunittest/group/multimedia_unittest_icl_source.mrp"/>
+     </component>
+     <component name="imaginginttest" long-name="Imaging Integration Tests" introduced="7.0s" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/mm/imagingandcamerafws/imaginginttest/group/multimedia_inttest_icl_source.mrp"/>
+     </component>
+     <component name="camerafw" long-name="Camera Framework" introduced="7.0s" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/mm/imagingandcamerafws/camerafw/group" mrp="/sf/os/mm/imagingandcamerafws/camerafw/group/multimedia_ecam_framework.mrp"/>
+     </component>
+     <component name="cameraunittest" long-name="Camera Unit Tests" introduced="9.2" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/mm/imagingandcamerafws/cameraunittest/group/multimedia_unittest_ecam_source.mrp"/>
+     </component>
+    </collection>
+    <collection name="mmlibs" long-name="Multimedia Libraries" level="middleware">
+     <component name="mmutilitylib" long-name="Multimedia Utility Library" introduced="8.1" purpose="mandatory" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/mm/mmlibs/mmutilitylib/group" mrp="/sf/os/mm/mmlibs/mmutilitylib/group/multimedia_common.mrp"/>
+     </component>
+    </collection>
+    <collection name="mmplugins" long-name="Multimedia Plugins" level="middleware">
+     <component name="imagingplugins" long-name="Imaging Plugins" introduced="7.0s" purpose="optional" plugin="Y" origin-model="Symbian">
+      <unit bldFile="/sf/os/mm/imagingandcamerafws/imagingfws/plugins/group" mrp="/sf/os/mm/imagingandcamerafws/imagingfws/plugins/group/multimedia_icl_plugin.mrp"/>
+      <!-- PLACEHOLDER="DEF137831" REMOVE -->
+      <!-- PLACEHOLDER="DEF137831"
+		<unit bldFile="mmplugins/imagingplugins/plugins/group" mrp="mmplugins/imagingplugins/plugins/group/multimedia_icl_plugin.mrp"/>
+		-->
+     </component>
+     <component name="cameraplugins" long-name="Camera Plugins" introduced="7.0s" purpose="optional" plugin="Y" origin-model="Symbian">
+      <unit bldFile="/sf/os/mm/mmplugins/cameraplugins/group" mrp="/sf/os/mm/mmplugins/cameraplugins/group/multimedia_ecam_plugins.mrp"/>
+     </component>
+     <component name="3gplib" long-name="3GP Library" introduced="Future" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/mm/mmplugins/3gplib/group" mrp="/sf/os/mm/mmplugins/3gplib/group/multimedia_3gplibrary.mrp"/>
+     </component>
+     <component name="3gpunittest" long-name="3GP Unit Tests" introduced="Future" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/mm/mmplugins/3gpunittest/group/multimedia_unittest_3gplibrary_source.mrp"/>
+     </component>
+    </collection>
+    <collection name="mm_info" long-name="Multimedia Info" level="app-if">
+     <component unofficial="yes" name="mm_build" long-name="Multimedia Build" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/group"/>
+     </component>
+     <component unofficial="yes" name="mm_test" long-name="Multimedia Test" origin-model="Foundation">
+      <!-- <unit bldFile="os/mm/tsrc/group"/> -->
+     </component>
+    <component name="mmdocs" long-name="Multimedia Documentation" purpose="development" class="doc" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/mm/mm_info/mmdocs/multimedia_documentation.mrp"/>
+     </component>
+     <component name="mm_metadata" long-name="Multimedia Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/mm/mm_info/mm_metadata/mm_metadata.mrp"/>
+     </component>
+    </collection>
+    <collection name="mm_plat" long-name="Multimedia Platform Interfaces" level="app-if">
+     <component unofficial="yes" name="custom_interface_message_handler_factory_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/custom_interface_message_handler_factory_api/group"/>
+     </component>
+     <component unofficial="yes" name="eaac_plus_decoder_interface_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/eaac_plus_decoder_interface_api/group"/>
+     </component>
+     <component unofficial="yes" name="g729_encoder_interface_proxy_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/g729_encoder_interface_proxy_api/group"/>
+     </component>
+     <component unofficial="yes" name="g729_encoder_interface_msg_hdlr_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/g729_encoder_interface_msg_hdlr_api/group"/>
+     </component>
+     <component unofficial="yes" name="audio_visualization_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/audio_visualization_api/group"/>
+     </component>
+     <component unofficial="yes" name="ra8_decoder_interface_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/ra8_decoder_interface_api/group"/>
+     </component>
+     <component unofficial="yes" name="aac_decoder_config_proxy_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/aac_decoder_config_proxy_api/group"/>
+     </component>
+     <component unofficial="yes" name="frametable_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/frametable_api/group"/>
+     </component>
+     <component unofficial="yes" name="error_concealment_interface_msg_hdlr_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/error_concealment_interface_msg_hdlr_api/group"/>
+     </component>
+     <component unofficial="yes" name="aac_decoder_config_msg_hdlr_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/aac_decoder_config_msg_hdlr_api/group"/>
+     </component>
+     <component unofficial="yes" name="video_decoder_scaling_mdf_custom_interface" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/video_decoder_scaling_mdf_custom_interface/group"/>
+     </component>
+     <component unofficial="yes" name="ilbc_decoder_interface_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/ilbc_decoder_interface_api/group"/>
+     </component>
+     <component unofficial="yes" name="g711_decoder_interface_proxy_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/g711_decoder_interface_proxy_api/group"/>
+     </component>
+     <component unofficial="yes" name="audio_effects_proxy_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/audio_effects_proxy_api/group"/>
+     </component>
+     <component unofficial="yes" name="g711_decoder_interface_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/g711_decoder_interface_api/group"/>
+     </component>
+     <component unofficial="yes" name="rds_adaptation_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/rds_adaptation_api/group"/>
+     </component>
+     <component unofficial="yes" name="eaac_plus_decoder_interface_msg_hdlr_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/eaac_plus_decoder_interface_msg_hdlr_api/group"/>
+     </component>
+     <component unofficial="yes" name="g711_encoder_interface_proxy_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/g711_encoder_interface_proxy_api/group"/>
+     </component>
+     <component unofficial="yes" name="speech_encoder_config_msg_hdlr_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/speech_encoder_config_msg_hdlr_api/group"/>
+     </component>
+     <component unofficial="yes" name="g711_decoder_interface_msg_hdlr_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/g711_decoder_interface_msg_hdlr_api/group"/>
+     </component>
+     <component unofficial="yes" name="error_concealment_interface_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/error_concealment_interface_api/group"/>
+     </component>
+     <component unofficial="yes" name="wma_decoder_interface_msg_hdlr_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/wma_decoder_interface_msg_hdlr_api/group"/>
+     </component>
+     <component unofficial="yes" name="ilbc_encoder_interface_msg_hdlr_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/ilbc_encoder_interface_msg_hdlr_api/group"/>
+     </component>
+     <component unofficial="yes" name="video_buffer_management_mdf_custom_interface" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/video_buffer_management_mdf_custom_interface/group"/>
+     </component>
+     <component unofficial="yes" name="added_devsound_control_msg_hdlr_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/added_devsound_control_msg_hdlr_api/group"/>
+     </component>
+     <component unofficial="yes" name="ilbc_decoder_interface_proxy_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/ilbc_decoder_interface_proxy_api/group"/>
+     </component>
+     <component unofficial="yes" name="ra8_decoder_interface_msg_hdlr_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/ra8_decoder_interface_msg_hdlr_api/group"/>
+     </component>
+     <component unofficial="yes" name="custom_interface_utility_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/custom_interface_utility_api/group"/>
+     </component>
+     <component unofficial="yes" name="g729_encoder_interface_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/g729_encoder_interface_api/group"/>
+     </component>
+     <component unofficial="yes" name="fm_radio_adaptation_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/fm_radio_adaptation_api/group"/>
+     </component>
+     <component unofficial="yes" name="ilbc_encoder_interface_proxy_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/ilbc_encoder_interface_proxy_api/group"/>
+     </component>
+     <component unofficial="yes" name="sbc_encoder_interface_msg_hdlr_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/sbc_encoder_interface_msg_hdlr_api/group"/>
+     </component>
+     <component unofficial="yes" name="telephony_audio_routing_manager_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/telephony_audio_routing_manager_api/group"/>
+     </component>
+     <component unofficial="yes" name="restricted_audio_output_msg_hdlr_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/restricted_audio_output_msg_hdlr_api/group"/>
+     </component>
+     <component unofficial="yes" name="audio_routing_proxy_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/audio_routing_proxy_api/group"/>
+     </component>
+     <component unofficial="yes" name="eaacplusutil_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/eaacplusutil_api/group"/>
+     </component>
+     <component unofficial="yes" name="speech_encoder_config_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/speech_encoder_config_api/group"/>
+     </component>
+     <component unofficial="yes" name="display_posting_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/display_posting_api/group"/>
+     </component>
+     <component unofficial="yes" name="audio_routing_msg_hdlr_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/audio_routing_msg_hdlr_api/group"/>
+     </component>
+     <component unofficial="yes" name="g729_decoder_interface_msg_hdlr_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/g729_decoder_interface_msg_hdlr_api/group"/>
+     </component>
+     <component unofficial="yes" name="sbc_encoder_interface_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/sbc_encoder_interface_api/group"/>
+     </component>
+     <component unofficial="yes" name="audio_policy_header_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/audio_policy_header_api/group"/>
+     </component>
+     <component unofficial="yes" name="nokia_audio_policy_header_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/nokia_audio_policy_header_api/group"/>
+     </component>
+     <component unofficial="yes" name="audio_routing_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/audio_routing_api/group"/>
+     </component>
+     <component unofficial="yes" name="speech_encoder_config_proxy_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/speech_encoder_config_proxy_api/group"/>
+     </component>
+     <component unofficial="yes" name="mdf_plugin_uids" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/mdf_plugin_uids/group"/>
+     </component>
+     <component unofficial="yes" name="custom_interface_builder_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/custom_interface_builder_api/group"/>
+     </component>
+     <component unofficial="yes" name="global_audio_settings_definition_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/global_audio_settings_definition_api/group"/>
+     </component>
+     <component unofficial="yes" name="sbc_encoder_interface_proxy_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/sbc_encoder_interface_proxy_api/group"/>
+     </component>
+     <component unofficial="yes" name="multimedia_fourcc_definitions_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/multimedia_fourcc_definitions_api/group"/>
+     </component>
+     <component unofficial="yes" name="devsound_adaptation_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/devsound_adaptation_api/group"/>
+     </component>
+     <component unofficial="yes" name="aac_decoder_config_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/aac_decoder_config_api/group"/>
+     </component>
+     <component unofficial="yes" name="video_reclaim_extbuffers_ci" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/video_reclaim_extbuffers_ci/group"/>
+     </component>
+     <component unofficial="yes" name="restricted_audio_output_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/restricted_audio_output_api/group"/>
+     </component>
+     <component unofficial="yes" name="nokia_multimedia_fourcc_definitions_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/nokia_multimedia_fourcc_definitions_api/group"/>
+     </component>
+     <component unofficial="yes" name="ilbc_encoder_interface_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/ilbc_encoder_interface_api/group"/>
+     </component>
+     <component unofficial="yes" name="custom_interface_proxy_factory_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/custom_interface_proxy_factory_api/group"/>
+     </component>
+     <component unofficial="yes" name="g711_encoder_interface_msg_hdlr_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/g711_encoder_interface_msg_hdlr_api/group"/>
+     </component>
+     <component unofficial="yes" name="audio_effects_msg_hdlr_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/audio_effects_msg_hdlr_api/group"/>
+     </component>
+     <component unofficial="yes" name="g711_encoder_interface_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/g711_encoder_interface_api/group"/>
+     </component>
+     <component unofficial="yes" name="ilbc_decoder_interface_msg_hdlr_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/ilbc_decoder_interface_msg_hdlr_api/group"/>
+     </component>
+     <component unofficial="yes" name="video_window_control_custom_interface" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/video_window_control_custom_interface/group"/>
+     </component>
+     <component unofficial="yes" name="added_devsound_control_proxy_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/added_devsound_control_proxy_api/group"/>
+     </component>
+     <component unofficial="yes" name="ra8_decoder_interface_proxy_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/ra8_decoder_interface_proxy_api/group"/>
+     </component>
+     <component unofficial="yes" name="g729_decoder_interface_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/g729_decoder_interface_api/group"/>
+     </component>
+     <component unofficial="yes" name="telephony_audio_routing_client_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/telephony_audio_routing_client_api/group"/>
+     </component>
+     <component unofficial="yes" name="eaac_plus_decoder_interface_proxy_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/eaac_plus_decoder_interface_proxy_api/group"/>
+     </component>
+     <component unofficial="yes" name="global_audio_settings_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/global_audio_settings_api/group"/>
+     </component>
+     <component unofficial="yes" name="added_devsound_control_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/added_devsound_control_api/group"/>
+     </component>
+     <component unofficial="yes" name="error_concealment_interface_proxy_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/error_concealment_interface_proxy_api/group"/>
+     </component>
+     <component unofficial="yes" name="wma_decoder_interface_proxy_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/wma_decoder_interface_proxy_api/group"/>
+     </component>
+     <component unofficial="yes" name="restricted_audio_output_proxy_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/restricted_audio_output_proxy_api/group"/>
+     </component>
+     <component unofficial="yes" name="secure_output_mdf_custom_interface" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/secure_output_mdf_custom_interface/group"/>
+     </component>
+     <component unofficial="yes" name="wma_decoder_interface_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/wma_decoder_interface_api/group"/>
+     </component>
+     <component unofficial="yes" name="video_decoder_rotation_mdf_custom_interface" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/video_decoder_rotation_mdf_custom_interface/group"/>
+     </component>
+     <component unofficial="yes" name="g729_decoder_interface_proxy_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_plat/g729_decoder_interface_proxy_api/group"/>
+     </component>
+    </collection>
+    <collection name="mm_pub" long-name="Multimedia Public Interfaces" level="app-if">
+     <component unofficial="yes" name="audio_effects_presets_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_pub/audio_effects_presets_api/group"/>
+     </component>
+     <component unofficial="yes" name="drm_audio_player_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_pub/drm_audio_player_api/group"/>
+     </component>
+     <component unofficial="yes" name="multimedia_extension_interfaces_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_pub/multimedia_extension_interfaces_api/group"/>
+     </component>
+     <component unofficial="yes" name="audio_effects_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/mm/mm_pub/audio_effects_api/group"/>
+     </component>
+    </collection>
+   <collection name="mmresourcemgmt" long-name="Multimedia Resource Management" level="middleware">
+     <component name="mmresctrl" long-name="Multimedia Resource Controller" introduced="tb92" purpose="development" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/mm/mmresourcemgmt/mmresctrl/group" mrp="/sf/os/mm/mmresourcemgmt/mmresctrl/group/multimedia_a3f_refmmrc.mrp"/>
+     </component>
+    </collection>
+    <collection name="mmdevicefw" long-name="Multimedia Device Framework" level="device-fw">
+     <component name="n:mdf" long-name="Media Device Framework" introduced="9.2" purpose="mandatory" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/mm/mmdevicefw/mdf/group" mrp="/sf/os/mm/mmdevicefw/mdf/group/multimedia_mdf.mrp"/>
+     </component>
+     <component name="mdfunittest" long-name="MDF Unit Tests" introduced="9.2" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/mm/mmdevicefw/mdfunittest/group/multimedia_unittest_mdf_source.mrp"/>
+     </component>
+     <component name="asrcontroller" long-name="Speech Recognition Controller" introduced="7.0s" purpose="mandatory" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/mw/mmmw/mmmiddlewarefws/mmfw/ASR/group" mrp="/sf/mw/mmmw/mmmiddlewarefws/mmfw/ASR/group/multimedia_mmf_ASR.mrp"/>
+     </component>
+    </collection>
+    <collection name="mmtestenv" long-name="Multimedia Test Environment" level="device-fw">
+     <component name="mmtestfw" long-name="Multimedia Test Framework" introduced="7.0s" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/mm/mmtestenv/mmtestfw/group/multimedia_testframework_source.mrp"/>
+     </component>
+     <component name="mmtestfwunittest" long-name="Multimedia Test Framework Unit Tests" introduced="7.0s" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/mm/mmtestenv/mmtestfwunittest/group/multimedia_unittest_testframework_source.mrp"/>
+     </component>
+     <component name="mmtestagent" long-name="Multimedia Test Agent" introduced="8.0" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/mm/mmtestenv/mmtestagent/group/multimediatestagent_source.mrp"/>
+     </component>
+     <component name="mmtesttools" long-name="Multimedia Test Tools" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/mm/mmtestenv/mmtesttools/Group/multimedia_testtools_source.mrp"/>
+     </component>
+    </collection>
+    <collection name="omxil" long-name="OpenMAX IL" level="hw-if">
+     <component name="openmax" long-name="OpenMAX" introduced="tb91" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/mm/omxil/openmax/group" mrp="/sf/os/mm/omxil/openmax/group/multimedia_openmax.mrp"/>
+     </component>
+    </collection>
+    <collection name="devsound" long-name="Sound Device" level="devices">
+     <component name="devsoundapi" long-name="DevSound API" introduced="7.0s" purpose="mandatory" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/mw/mmmw/mmmiddlewarefws/mmfw/SoundDev/group_api" mrp="/sf/mw/mmmw/mmmiddlewarefws/mmfw/SoundDev/group_api/multimedia_mdf_devsound_api.mrp"/>
+     </component>
+     <component name="a3fdevsound" long-name="A3F DevSound" introduced="tb92" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/mm/devsound/a3fdevsound/group" mrp="/sf/os/mm/devsound/a3fdevsound/group/multimedia_a3f_devsound.mrp"/>
+     </component>
+     <component name="a3facf" long-name="A3F Audio Component Framework" introduced="tb92" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/mm/devsound/a3facf/group" mrp="/sf/os/mm/devsound/a3facf/group/multimedia_a3f_acf.mrp"/>
+     </component>
+     <component name="devsoundpluginsupport" long-name="DevSound Plugin Support" introduced="7.0s" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/mw/mmmw/mmmiddlewarefws/mmfw/SoundDev/group_pluginsupport" mrp="/sf/mw/mmmw/mmmiddlewarefws/mmfw/SoundDev/group_pluginsupport/multimedia_mdf_devsound_pluginsupport.mrp"/>
+     </component>
+     <component name="refdevsound" long-name="Reference DevSound Plugins" introduced="7.0s" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/mw/mmmw/mmmiddlewarefws/mmfw/SoundDev/group_refplugin" mrp="/sf/mw/mmmw/mmmiddlewarefws/mmfw/SoundDev/group_refplugin/multimedia_mdf_devsound_refplugin.mrp"/>
+     </component>
+     <component name="btdevsound" long-name="Bluetooth DevSound Plugin" introduced="7.0s" purpose="development" plugin="Y" origin-model="Symbian">
+      <unit bldFile="/sf/mw/mmmw/mmmiddlewarefws/mmfw/sounddevbt/group" mrp="/sf/mw/mmmw/mmmiddlewarefws/mmfw/sounddevbt/group/multimedia_mdf_devsound_refbtplugin.mrp"/>
+     </component>
+     <component name="a3ftrace" long-name="A3F Trace Utility" introduced="tb92" purpose="development" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/mm/devsound/a3ftrace/group" mrp="/sf/os/mm/devsound/a3ftrace/group/multimedia_a3f_traces.mrp"/>
+     </component>
+     <component name="a3fintegrationtest" long-name="A3F Integration Tests" introduced="tb92" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/mm/devsound/a3fintegrationtest/group/multimedia_inttest_a3f_devsound_source.mrp"/>
+     </component>
+     <component name="a3fcharacterisationtest" long-name="A3F Characterisation Tests" introduced="tb91" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/mm/devsound/a3fcharacterisationtest/group/multimedia_a3f_devsound_char.mrp"/>
+     </component>
+     <component name="a3fsrvstart" long-name="A3F Server Start" introduced="tb92" purpose="optional" plugin="Y" origin-model="Symbian">
+      <unit bldFile="/sf/os/mm/devsound/a3fsrvstart/group" mrp="/sf/os/mm/devsound/a3fsrvstart/group/multimedia_a3f_serverstart.mrp"/>
+     </component>
+    </collection>
+    <collection name="mmhais" long-name="Multimedia Hardware Adaptation Interfaces" level="adaptation">
+     <component name="devsoundhwdeviceapi" long-name="DevSound Hardware Device API" introduced="7.0s" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/mw/mmmw/mmmiddlewarefws/mmfw/SoundDev/group_hwdev" mrp="/sf/mw/mmmw/mmmiddlewarefws/mmfw/SoundDev/group_hwdev/multimedia_mdf_devsound_hwdev.mrp"/>
+     </component>
+     <component name="a3facl" long-name="A3F Audio Component Library" introduced="tb92" purpose="development" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/mm/mmhais/a3facl/group" mrp="/sf/os/mm/mmhais/a3facl/group/multimedia_a3f_acl.mrp"/>
+     </component>
+     <component name="a3fdevsoundcustomisation" long-name="A3F DevSound Customisation" introduced="tb92" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/mm/mmhais/a3fdevsoundcustomisation/group" mrp="/sf/os/mm/mmhais/a3fdevsoundcustomisation/group/multimedia_a3f_devsoundadaptationinfo.mrp"/>
+     </component>
+     <component name="refacladapt" long-name="Reference ACL Adaptation" introduced="tb92" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/mm/mmhais/refacladapt/group" mrp="/sf/os/mm/mmhais/refacladapt/group/multimedia_a3f_refacladaptation.mrp"/>
+     </component>
+     <component name="videohai" long-name="Video HAI" introduced="7.0s" purpose="mandatory" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/mm/mmhais/videohai/group" mrp="/sf/os/mm/mmhais/videohai/group/multimedia_videohai.mrp"/>
+     </component>
+     <component name="dvbhreceiverhai" long-name="Mobile TV DVB-H Receiver HAI" introduced="tb92" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/mm/mmhais/dvbhreceiverhai/hai/dvbh/group" mrp="/sf/os/mm/mmhais/dvbhreceiverhai/hai/dvbh/group/multimedia_mobiletv_dvbh_hai.mrp"/>
+     </component>
+     <component name="dvbhunittest" long-name="Mobile TV DVB-H Unit Tests" introduced="tb92" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/mm/mmhais/dvbhunittest/hai/dvbh/group/multimedia_unittest_dvbhhai.mrp"/>
+     </component>
+    </collection>
+    <collection name="mmapitest" long-name="Multimedia API Tests" level="app-if">
+     <component name="mmsvs" long-name="Multimedia Verification Suite" introduced="tb91" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/mm/mmapitest/mmsvs/group/mmsvs.mrp"/>
+     </component>
+     <component name="devvideohaitest" long-name="DevVideo HAI Tests" introduced="tb91" purpose="development" class="placeholder" plugin="N" origin-model="Symbian">
+      <!-- PLACEHOLDER="DS.1645"
+      <unit mrp="mmapitest/devvideohaitest/group/devvideohai.mrp"/>
+	-->
+     </component>
+     <component name="devsoundhaitest" long-name="DevSound HAI Tests" introduced="tb91" purpose="development" class="placeholder" plugin="N" origin-model="Symbian">
+      <!-- PLACEHOLDER="DS.1645"
+      <unit mrp="mmapitest/devsoundhaitest/group/devsoundhai.mrp"/>
+	-->
+     </component>
+     <component name="devsoundexthaitest" long-name="DevSound Extensions HAI Tests" introduced="tb91" purpose="development" class="placeholder" plugin="N" origin-model="Symbian">
+      <!-- PLACEHOLDER="DS.1645"
+      <unit mrp="mmapitest/devsoundexthaitest/group/devsoundexthai.mrp"/>
+	-->
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

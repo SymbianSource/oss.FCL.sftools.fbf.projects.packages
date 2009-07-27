@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="os" long-name="OS" levels="hw services">
+<block name="wlan" long-name="WLAN" tech_domain="dc" level="services" levels="hw low mid high tools test">
+    <collection name="wlan_bearer" long-name="WLAN Bearer" level="hw">
+     <component name="wlanpsmplugin" long-name="WLAN PSM Plugin" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_bearer/wlanpsmplugin/group"/>
+     </component>
+     <component name="wlanagent" long-name="WLAN Agent" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_bearer/wlanagent/group"/>
+     </component>
+     <component name="wlandbif_cd" long-name="WLAN CommsDat interface" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_bearer/wlandbif_cd/group"/>
+     </component>
+     <component name="wlanengine" long-name="WLAN Engine" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_bearer/wlanengine/wlan_symbian/wlanengine_symbian_3.1/group"/>
+     </component>
+     <component name="wlanldd" long-name="WLAN LDD" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_bearer/wlanldd/wlan_symbian/wlanldd_symbian/group"/>
+     </component>
+     <component name="wlannwif" long-name="WLAN Network Interface" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_bearer/wlannwif/group"/>
+     </component>
+     <component unofficial="yes" name="wlan_bearer_build" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_bearer/group"/>
+     </component>
+    </collection>
+    <collection name="wlantools" long-name="WLAN Tools" level="tools">
+     <component name="dut" long-name="Dut" origin-model="Foundation"/>
+     <component name="ping" long-name="Ping" origin-model="Foundation"/>
+    </collection>
+    <collection name="wlan_pub" long-name="WLAN Public Interfaces" level="test">
+     <component unofficial="yes" name="wlan_sdk_info_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_pub/wlan_sdk_info_api/group"/>
+     </component>
+    </collection>
+    <collection name="wlanapitest" long-name="WLAN API Tests" level="test">
+     <component name="wlanhaitest" long-name="WLAN HAI Tests" introduced="tb91" purpose="development" class="placeholder" plugin="N" origin-model="Symbian">
+      <!-- PLACEHOLDER="DS.1645"
+	<unit mrp="wlanapitest/wlanhaitest/group/wlanhai.mrp"/>
+	-->
+     </component>
+    </collection>
+    <collection name="wlan_info" long-name="WLAN Info" level="test">
+     <component unofficial="yes" name="wlan_build" long-name="WLAN Build" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/group"/>
+     </component>
+    <component name="wlan_metadata" long-name="WLAN Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/wlan/wlan_info/wlan_metadata/wlan_metadata.mrp"/>
+     </component>
+    </collection>
+    <collection name="wlan_plat" long-name="WLAN Platform Interfaces" level="test">
+     <component unofficial="yes" name="wlan_agent_hotspot_plugin_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_plat/wlan_agent_hotspot_plugin_api/group"/>
+     </component>
+     <component unofficial="yes" name="wlan_hal_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_plat/wlan_hal_api/group"/>
+     </component>
+     <component unofficial="yes" name="wlan_management_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_plat/wlan_management_api/group"/>
+     </component>
+     <component unofficial="yes" name="wlan_control_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_plat/wlan_control_api/group"/>
+     </component>
+     <component unofficial="yes" name="wlan_info_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_plat/wlan_info_api/group"/>
+     </component>
+     <component unofficial="yes" name="wlan_hpa_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_plat/wlan_hpa_api/group"/>
+     </component>
+     <component unofficial="yes" name="wlan_eapol_plugin_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_plat/wlan_eapol_plugin_api/group"/>
+     </component>
+     <component unofficial="yes" name="wlan_osa_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_plat/wlan_osa_api/group"/>
+     </component>
+     <component unofficial="yes" name="wlan_device_settings_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_plat/wlan_device_settings_api/group"/>
+     </component>
+     <component unofficial="yes" name="wlan_hw_initialization_data_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_plat/wlan_hw_initialization_data_api/group"/>
+     </component>
+     <component unofficial="yes" name="wlan_dbif_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_plat/wlan_dbif_api/group"/>
+     </component>
+     <component unofficial="yes" name="wlan_power_save_plugin_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_plat/wlan_power_save_plugin_api/group"/>
+     </component>
+     <component unofficial="yes" name="wlan_spia_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_plat/wlan_spia_api/group"/>
+     </component>
+     <component unofficial="yes" name="wlan_generic_plugin_api" origin-model="Foundation">
+      <unit bldFile="/sf/os/wlan/wlan_plat/wlan_generic_plugin_api/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

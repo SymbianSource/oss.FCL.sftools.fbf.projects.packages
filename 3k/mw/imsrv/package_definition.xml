@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="imsrv" long-name="Instant Messaging and Presence Services" tech_domain="pr" level="specific" levels="plugin framework server generic specific">
+    <collection name="imservices" long-name="IM Services" level="generic">
+     <component name="imfeatureplugin" long-name="IM Feature Plugin" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imservices/imfeatureplugin/group"/>
+      <!-- <unit bldFile="mw/imsrv/imservices/imfeatureplugin/srcimdatamodel/group"/> -->
+      <!-- <unit bldFile="mw/imsrv/imservices/imfeatureplugin/srcimfrontend/group"/> -->
+      <!-- <unit bldFile="mw/imsrv/imservices/imfeatureplugin/srcimoperations/group"/> -->
+      <!-- <unit bldFile="mw/imsrv/imservices/imfeatureplugin/srcimprocessor/group"/> -->
+     </component>
+     <component name="searchfeatureplugin" long-name="Search Feature Plugin" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imservices/searchfeatureplugin/group"/>
+      <!-- <unit bldFile="mw/imsrv/imservices/searchfeatureplugin/srcsearchdatamodel/group"/> -->
+      <!-- <unit bldFile="mw/imsrv/imservices/searchfeatureplugin/srcsearchfrontend/group"/> -->
+      <!-- <unit bldFile="mw/imsrv/imservices/searchfeatureplugin/srcsearchoperations/group"/> -->
+      <!-- <unit bldFile="mw/imsrv/imservices/searchfeatureplugin/srcsearchprocessor/group"/> -->
+     </component>
+     <component name="xmppsettingsapi" long-name="XMPP Setting Sapi" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imservices/xmppsettingsapi/group"/>
+      <!-- <unit bldFile="mw/imsrv/imservices/xmppsettingsapi/tsrc/group"/> -->
+     </component>
+     <component name="xmppsettingsfetcher" long-name="XMPP Settingsfetcher" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imservices/xmppsettingsfetcher/group"/>
+      <!-- <unit bldFile="mw/imsrv/imservices/xmppsettingsfetcher/tsrc/xmppsettingsfetchermt/group"/> -->
+     </component>
+     <component name="ossprotocoladaptation" long-name="OSS Protocol Adaptation" origin-model="Foundation">
+      <!-- <unit bldFile="mw/imsrv/imservices/ossprotocoladaptation/dataconvlib/group"/> -->
+      <unit bldFile="/sf/mw/imsrv/imservices/ossprotocoladaptation/group"/>
+      <!-- <unit bldFile="mw/imsrv/imservices/ossprotocoladaptation/tsrc/ossadapmt/group"/> -->
+     </component>
+     <component name="instantmessagingcache" long-name="Instant Messaging Cache" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imservices/instantmessagingcache/group"/>
+      <!-- <unit bldFile="mw/imsrv/imservices/instantmessagingcache/tsrc/group"/> -->
+     </component>
+     <component unofficial="yes" name="imservices_build" long-name="IM Services Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imservices/group"/>
+     </component>
+    </collection>
+    <collection name="ximpfw" long-name="XIMP Framework" level="framework">
+     <component name="ximpfw_core" long-name="Core" origin-model="Foundation">
+      <!-- <unit bldFile="mw/imsrv/ximpfw/core/group"/> -->
+     </component>
+     <component name="presence" long-name="Presence" origin-model="Foundation">
+      <!-- <unit bldFile="mw/imsrv/ximpfw/presence/group"/> -->
+     </component>
+     <component unofficial="yes" name="ximpfw_test" long-name="XIMP Framework Test" origin-model="Foundation">
+      <!-- <unit bldFile="mw/imsrv/ximpfw/tsrc/group"/> -->
+      <!-- <unit bldFile="mw/imsrv/ximpfw/tsrc/src/t_presencewatching"/> -->
+      <!-- <unit bldFile="mw/imsrv/ximpfw/tsrc/tsrcutils"/> -->
+      <!-- <unit bldFile="mw/imsrv/ximpfw/tsrc/src/t_rootservices"/> -->
+      <!-- <unit bldFile="mw/imsrv/ximpfw/tsrc/src/t_presenceall"/> -->
+      <!-- <unit bldFile="mw/imsrv/ximpfw/tsrc/src/t_presencegrouplistmngt"/> -->
+      <!-- <unit bldFile="mw/imsrv/ximpfw/tsrc/src/t_presencecache"/> -->
+      <!-- <unit bldFile="mw/imsrv/ximpfw/tsrc/src/t_presencepublishing"/> -->
+      <!-- <unit bldFile="mw/imsrv/ximpfw/tsrc/src/t_presencewatcherlistmngt"/> -->
+      <!-- <unit bldFile="mw/imsrv/ximpfw/tsrc/tsrcprotocols/pr_prfwtestprotocol"/> -->
+      <!-- <unit bldFile="mw/imsrv/ximpfw/tsrc/src/t_presencegrantrequestmngt"/> -->
+      <!-- <unit bldFile="mw/imsrv/ximpfw/tsrc/src/t_presencegroupmembermngt"/> -->
+      <!-- <unit bldFile="mw/imsrv/ximpfw/tsrc/src/t_presenceblocking"/> -->
+      <!-- <unit bldFile="mw/imsrv/ximpfw/tsrc/tsrcprotocols"/> -->
+      <!-- <unit bldFile="mw/imsrv/ximpfw/tsrc/src/t_sessionmng"/> -->
+      <!-- <unit bldFile="mw/imsrv/ximpfw/tsrc/src/t_presenceauthorization"/> -->
+      <!-- <unit bldFile="mw/imsrv/ximpfw/tsrc/src/t_eunittemplate"/> -->
+      <!-- <unit bldFile="mw/imsrv/ximpfw/tsrc/src/t_utils"/> -->
+     </component>
+     <component unofficial="yes" name="ximpfw_build" long-name="XIMP Framework Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/ximpfw/group"/>
+     </component>
+    </collection>
+    <collection name="brandingserver" long-name="Branding Server" level="specific">
+     <component name="tools" long-name="Tools" origin-model="Foundation">
+      <!-- <unit bldFile="mw/imsrv/brandingserver/tools/bsimport/group"/> -->
+     </component>
+     <component unofficial="yes" name="brandingserver_build" long-name="Branding Server Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/brandingserver/group"/>
+     </component>
+    </collection>
+    <collection name="imsrv_plat" long-name="Instant Messaging and Presence Services Platform Interfaces" level="specific">
+     <component unofficial="yes" name="ximp_search_protocol_plugin_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_search_protocol_plugin_api/group"/>
+     </component>
+     <component unofficial="yes" name="presence_avabilitytext" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/presence_avabilitytext/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_search_protocol_plugin_host_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_search_protocol_plugin_host_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_core_management_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_core_management_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_im_management_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_im_management_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_search_data_model_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_search_data_model_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_core_base_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_core_base_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_presence_data_model_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_presence_data_model_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_presence_cache_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_presence_cache_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_core_protocol_plugin_host_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_core_protocol_plugin_host_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_core_protocol_plugin_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_core_protocol_plugin_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_im_protocol_plugin_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_im_protocol_plugin_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_im_protocol_plugin_host_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_im_protocol_plugin_host_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_search_base_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_search_base_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_im_data_model_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_im_data_model_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_core_data_model_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_core_data_model_api/group"/>
+     </component>
+     <component unofficial="yes" name="xmpp_settings_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/xmpp_settings_api/group"/>
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/xmpp_settings_api/tsrc/group"/> -->
+     </component>
+     <component unofficial="yes" name="im_cache_client_api" origin-model="Foundation">
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/im_cache_client_api/tsrc/group"/> -->
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/im_cache_client_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_presence_base_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_presence_base_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_core_feature_plugin_api" origin-model="Foundation">
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_sessionmng"/> -->
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presencewatcherlistmngt"/> -->
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presencewatching"/> -->
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presencecache"/> -->
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/tsrc/tsrcutils"/> -->
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_rootservices"/> -->
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/group"/>
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/tsrc/tsrcprotocols/pr_prfwtestprotocol"/> -->
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presencegroupmembermngt"/> -->
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presenceauthorization"/> -->
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presencepublishing"/> -->
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presencegrantrequestmngt"/> -->
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presenceblocking"/> -->
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presencegrouplistmngt"/> -->
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presenceall"/> -->
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_utils"/> -->
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/tsrc/group"/> -->
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/tsrc/tsrcprotocols"/> -->
+      <!-- <unit bldFile="mw/imsrv/imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_eunittemplate"/> -->
+     </component>
+     <component unofficial="yes" name="ximp_search_management_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_search_management_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_im_base_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_im_base_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_presence_protocol_plugin_host_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_presence_protocol_plugin_host_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_presence_management_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_presence_management_api/group"/>
+     </component>
+     <component unofficial="yes" name="ximp_presence_protocol_plugin_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_presence_protocol_plugin_api/group"/>
+     </component>
+    </collection>
+    <collection name="imsrv_info" long-name="Instant Messaging and Presence Services Info" level="specific">
+     <component unofficial="yes" name="imsrv_build" long-name="Instant Messaging and Presence Services Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/imsrv/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

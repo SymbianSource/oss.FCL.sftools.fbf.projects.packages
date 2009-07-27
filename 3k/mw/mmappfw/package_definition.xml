@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="mmappfw" long-name="Multimedia App Framework" tech_domain="mm" level="specific" levels="empty fw utils">
+    <collection name="mmappcomponents" long-name="MM App Components" level="utils">
+     <component name="collectionhelper" long-name="Collection Helper" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappcomponents/collectionhelper/group"/>
+     </component>
+     <component name="playlistengine" long-name="Playlist Engine" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappcomponents/playlistengine/group"/>
+     </component>
+     <component name="harvester" long-name="Harvester" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappcomponents/harvester/group"/>
+     </component>
+     <component name="mmappcommonui" long-name="MM App Common UI" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappcomponents/mmappcommonui/group"/>
+     </component>
+     <component name="mediaplayersettingsengine" long-name="Media Player Settings Engine" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappcomponents/mediaplayersettingsengine/group"/>
+     </component>
+     <component name="audiofetcher" long-name="UUDIO Fetcher" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappcomponents/audiofetcher/group"/>
+     </component>
+     <component name="asxparser" long-name="ASX Parser" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappcomponents/asxparser/group"/>
+      <!-- <unit bldFile="mw/mmappfw/mmappcomponents/asxparser/test"/> -->
+     </component>
+    </collection>
+    <collection name="mpx" long-name="MPX" level="fw">
+     <component name="commonframework" long-name="Common Framework" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mpx/commonframework/group"/>
+     </component>
+     <component name="playbackframework" long-name="Playback Framework" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mpx/playbackframework/group"/>
+     </component>
+     <component name="collectionframework" long-name="Collection Framework" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mpx/collectionframework/group"/>
+     </component>
+     <component name="viewframework" long-name="View Framework" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mpx/viewframework/group"/>
+     </component>
+     <component unofficial="yes" name="mpx_build" long-name="MPX Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mpx/group"/>
+     </component>
+    </collection>
+    <collection name="mmappfw_info" long-name="Multimedia App Framework Info" level="utils">
+     <component unofficial="yes" name="mmappfw_build" long-name="Multimedia App Framework Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/group"/>
+     </component>
+     <component unofficial="yes" name="mmappfw_test" long-name="Multimedia App Framework Test" origin-model="Foundation">
+      <!-- <unit bldFile="mw/mmappfw/tsrc/group"/> -->
+     </component>
+    </collection>
+    <collection name="mmappfw_plat" long-name="Multimedia App Framework Platform Interfaces" level="utils">
+     <component unofficial="yes" name="mpx_albumart_utility_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/mpx_albumart_utility_api/group"/>
+     </component>
+     <component unofficial="yes" name="asx_parser_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/asx_parser_api/group"/>
+     </component>
+     <component unofficial="yes" name="collection_helper_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/collection_helper_api/group"/>
+     </component>
+     <component unofficial="yes" name="mmappfw_plat_build" long-name="Multimedia App Framework Platform API Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/group"/>
+     </component>
+     <component unofficial="yes" name="mpx_playback_utility_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/mpx_playback_utility_api/group"/>
+     </component>
+     <component unofficial="yes" name="media_player_settings_engine_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/media_player_settings_engine_api/group"/>
+     </component>
+     <component unofficial="yes" name="harvester_metadata_extractor_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/harvester_metadata_extractor_api/group"/>
+     </component>
+     <component unofficial="yes" name="harvester_collection_mediator_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/harvester_collection_mediator_api/group"/>
+     </component>
+     <component unofficial="yes" name="mpx_common_definition_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/mpx_common_definition_api/group"/>
+     </component>
+     <component unofficial="yes" name="playlist_engine_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/playlist_engine_api/group"/>
+     </component>
+     <component unofficial="yes" name="harvester_utility_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/harvester_utility_api/group"/>
+     </component>
+     <component unofficial="yes" name="mpx_playback_common_definition_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/mpx_playback_common_definition_api/group"/>
+     </component>
+     <component unofficial="yes" name="mpx_backstepping_utility_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/mpx_backstepping_utility_api/group"/>
+     </component>
+     <component unofficial="yes" name="harvester_server_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/harvester_server_api/group"/>
+     </component>
+     <component unofficial="yes" name="mpx_base_view_plugins_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/mpx_base_view_plugins_api/group"/>
+     </component>
+     <component unofficial="yes" name="mpx_collection_common_definition_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/mpx_collection_common_definition_api/group"/>
+     </component>
+     <component unofficial="yes" name="mpx_view_utility_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/mpx_view_utility_api/group"/>
+     </component>
+     <component unofficial="yes" name="mpx_collection_utility_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/mpx_collection_utility_api/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

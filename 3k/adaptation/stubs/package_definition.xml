@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="adaptation" long-name="Adaptation">
+<block name="stubs" long-name="Stubs" tech_domain="hb" levels="adaptation plugin mid engine">
+    <collection name="audiostubs" long-name="Audio Stubs" level="adaptation">
+     <component name="devsoundextensions_stubs" long-name="Devsound Extensions Stubs" origin-model="Foundation">
+      <!-- <unit bldFile="adaptation/stubs/audiostubs/devsoundextensions_stubs/audiocodeccistubs/audiovibracontrolcistub/group"/> -->
+      <!-- <unit bldFile="adaptation/stubs/audiostubs/devsoundextensions_stubs/audioenhancementfactorystubs/custominterfaceproxyfactory_stub/group"/> -->
+      <!-- <unit bldFile="adaptation/stubs/audiostubs/devsoundextensions_stubs/audioenhancementfactorystubs/messagehandlerfactory_stub/group"/> -->
+      <unit bldFile="adaptation/stubs/audiostubs/devsoundextensions_stubs/group"/>
+     </component>
+     <component name="fmradiotunercontrolstub" long-name="FM Radio Tuner Control Stub" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/audiostubs/fmradiotunercontrolstub/group"/>
+     </component>
+    </collection>
+    <collection name="drm_stubs" long-name="DRM Stubs" level="plugin">
+     <component name="drm_stubs compo" long-name="DRM Stubs Component" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/drm_stubs/group"/>
+     </component>
+    </collection>
+    <collection name="ptit9core_stub" long-name="PTI T9 Core Stub" level="plugin">
+     <component name="ptit9core_stub compo" long-name="PTI T9 Core Stub Component" origin-model="Foundation"/>
+    </collection>
+    <collection name="btaudioadaptation_stub" long-name="BT Audio Adaptation Stub" level="adaptation">
+     <component name="btaudioadaptation_stub.dll=binary" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/btaudioadaptation_stub/group"/>
+     </component>
+    </collection>
+    <collection name="posmsgpluginreferenceimpl" long-name="Pos Msg Plugin Reference Implementation" level="plugin">
+     <component name="eposomasuplposrefapp.dll=binary" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/posmsgpluginreferenceimpl/group"/>
+     </component>
+    </collection>
+    <collection name="omasuplasnconverterstubimpl" long-name="OMA SUPL ASN Converter Stub Implementation" level="plugin">
+     <component name="AsnImplementation.dll=binary" long-name="ASN Imple­ment­ation" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/omasuplasnconverterstubimpl/group"/>
+     </component>
+    </collection>
+    <collection name="power_save_display_mode_stub" long-name="Power Save Display Mode Stub" level="plugin">
+     <component name="power_save_display_mode_stub.dll=binary" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/power_save_display_mode_stub/group"/>
+     </component>
+    </collection>
+    <collection name="srsfenginestub" long-name="SRSF Engine Stub" level="engine">
+     <component name="adaptationhwdevice" long-name="Adaptation Hardware Device" origin-model="Foundation">
+      <!-- <unit bldFile="adaptation/stubs/srsfenginestub/adaptationhwdevice/group"/> -->
+     </component>
+     <component name="grcompilerhwdevice" long-name="GR Compiler Hardware Device" origin-model="Foundation">
+      <!-- <unit bldFile="adaptation/stubs/srsfenginestub/grcompilerhwdevice/group"/> -->
+     </component>
+     <component name="ttphwdevice" long-name="TTP Hardware Device" origin-model="Foundation">
+      <!-- <unit bldFile="adaptation/stubs/srsfenginestub/ttphwdevice/group"/> -->
+     </component>
+     <component name="recognitionhwdevice" long-name="Recognition Hardware Device" origin-model="Foundation">
+      <!-- <unit bldFile="adaptation/stubs/srsfenginestub/recognitionhwdevice/group"/> -->
+     </component>
+     <component name="vocmanhwdevice" long-name="Voc Man Hardware Device" origin-model="Foundation">
+      <!-- <unit bldFile="adaptation/stubs/srsfenginestub/vocmanhwdevice/group"/> -->
+     </component>
+     <component name="ttshwdevice" long-name="TTS Hardware Device" origin-model="Foundation">
+      <!-- <unit bldFile="adaptation/stubs/srsfenginestub/ttshwdevice/group"/> -->
+     </component>
+     <component name="nlphwdevice" long-name="NLP Hardware Device" origin-model="Foundation">
+      <!-- <unit bldFile="adaptation/stubs/srsfenginestub/nlphwdevice/group"/> -->
+     </component>
+     <component unofficial="yes" name="srsfenginestub_build" long-name="SRSF Engine Stub Build" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/srsfenginestub/group"/>
+     </component>
+    </collection>
+    <collection name="systemswstubs" long-name="System SW Stubs" level="adaptation">
+     <component name="accessorypolicyreference" long-name="Accessory Policy Reference" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/systemswstubs/accessorypolicyreference/group"/>
+     </component>
+     <component name="asyreference" long-name="ASY Reference" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/systemswstubs/asyreference/group"/>
+     </component>
+     <component name="examplecommonisc" long-name="Example Common ISC" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/systemswstubs/examplecommonisc/group"/>
+     </component>
+     <component name="exampledsy" long-name="Example DSY" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/systemswstubs/exampledsy/group"/>
+     </component>
+     <component name="featuremanagerstub" long-name="Feature Manager Stub" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/systemswstubs/featuremanagerstub/group"/>
+     </component>
+     <component name="TVOutConfig" long-name="TVOut Config" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/systemswstubs/tvoutconfig/group"/>
+     </component>
+     <component name="hwrmstubplugins" long-name="HWRM Stub Plugins" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/systemswstubs/hwrmstubplugins/group"/>
+     </component>
+     <component name="hwrmhapticsstubplugin" long-name="HWRM Haptics Stub Plugin" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/systemswstubs/hwrmhapticsstubplugin/group"/>
+     </component>
+     <component name="sensorchannelsreference" long-name="Sensor Channels Reference" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/systemswstubs/sensorchannelsreference/group"/>
+     </component>
+     <component name="ssyreference" long-name="SSY Rreference" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/systemswstubs/ssyreference/group"/>
+     </component>
+     <component name="startupadaptationstub" long-name="Startup Adaptation Stub" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/systemswstubs/startupadaptationstub/group"/>
+     </component>
+     <component name="tiltcompensationstub" long-name="Tilt Compensation Stub" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/systemswstubs/tiltcompensationstub/group"/>
+     </component>
+     <component name="wiredbearerreference" long-name="Wired Bearer Teference" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/systemswstubs/wiredbearerreference/group"/>
+     </component>
+     <component unofficial="yes" name="systemswstubs_build" long-name="System SW Stubs Build" origin-model="Foundation">
+      <!-- <unit bldFile="adaptation/stubs/systemswstubs/group"/> -->
+     </component>
+    </collection>
+    <collection name="tactileclickplugin_stub" long-name="Tactile Click Plugin Stub" level="engine">
+     <component name="tactileclickplugin.dll=binary" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/tactileclickplugin_stub/group"/>
+     </component>
+    </collection>
+    <collection name="wlanhwinit_stub" long-name="WLAN Hardware Init Stub" level="mid">
+     <component name="wlanhwinit.dll=binary" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/wlanhwinit_stub/group"/>
+     </component>
+    </collection>
+    <collection name="ocrsrv_stub" long-name="OCR Services Stub" level="mid">
+     <component name="ocrsrv.dll=binary" origin-model="Foundation">
+      <unit bldFile="adaptation/stubs/ocrsrv_stub/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

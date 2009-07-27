@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="os" long-name="OS" levels="hw services">
+<block name="swconfigtools" long-name="Software Config Tools" tech_domain="to" level="services">
+    <collection name="gid_pc_tool" long-name="GID PC Tool">
+     <component name="DBImporter" long-name="DB Importer" origin-model="Foundation">
+      <unit bldFile="tools/swconfigtools/gid_pc_tool/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

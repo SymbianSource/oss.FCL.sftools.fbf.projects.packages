@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="networkingdm" long-name="Networking Device Management" tech_domain="dm" level="generic" levels="plugin framework server generic specific">
+    <collection name="clientprovisioning" long-name="Client Provisioning" level="specific">
+     <component name="accesspointadapter" long-name="Access Point Adapter" origin-model="Foundation">
+      <unit bldFile="/sf/mw/networkingdm/clientprovisioning/accesspointadapter/group"/>
+     </component>
+     <component name="cpdestinationnwadapter" long-name="CP Destination NW Adapter" origin-model="Foundation">
+      <unit bldFile="/sf/mw/networkingdm/clientprovisioning/cpdestinationnwadapter/group"/>
+     </component>
+     <component unofficial="yes" name="clientprovisioning_build" long-name="Client Provisioning Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/networkingdm/clientprovisioning/group"/>
+     </component>
+    </collection>
+    <collection name="devicemanagement" long-name="Device Management" level="specific">
+     <component name="globalwlansettings" long-name="Global WLAN Settings" origin-model="Foundation">
+      <unit bldFile="/sf/mw/networkingdm/devicemanagement/globalwlansettings/group"/>
+     </component>
+     <component name="nsmldinternet" long-name="NSMLD Internet" origin-model="Foundation">
+      <unit bldFile="/sf/mw/networkingdm/devicemanagement/nsmldinternet/group"/>
+     </component>
+     <component name="nsmldmalwaysonadapter" long-name="Nsmldm Always On Adapter" origin-model="Foundation">
+      <unit bldFile="/sf/mw/networkingdm/devicemanagement/nsmldmalwaysonadapter/group"/>
+     </component>
+     <component name="nsmldmbmadapter" long-name="NSMLDM BM Adapter" origin-model="Foundation">
+      <unit bldFile="/sf/mw/networkingdm/devicemanagement/nsmldmbmadapter/group"/>
+     </component>
+     <component unofficial="yes" name="devicemanagement_build" long-name="Device Management Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/networkingdm/devicemanagement/group"/>
+     </component>
+    </collection>
+    <collection name="networkingdm_info" long-name="Networking Device Management Info" level="specific">
+     <component unofficial="yes" name="networkingdm_build" long-name="Networking Device Management Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/networkingdm/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="poc" long-name="PoC" tech_domain="vc" level="apps" levels="engine ui">
+    <collection name="pocengine" long-name="PoC Engine" level="engine">
+     <component name="sipclientresolver" long-name="SIP Client Resolver" origin-model="Foundation">
+      <!-- <unit bldFile="app/poc/pocengine/sipclientresolver/group"/> -->
+     </component>
+     <component unofficial="yes" name="pocengine_build" long-name="PoC Engine Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/poc/pocengine/group"/>
+     </component>
+     <component unofficial="yes" name="pocengine_test" long-name="PoC Engine Test" origin-model="Foundation">
+      <!-- <unit bldFile="app/poc/pocengine/tsrc/public/basic/group"/> -->
+     </component>
+    </collection>
+    <collection name="pocui" long-name="PoC Ui" level="ui">
+     <component name="PoCUiIntgr" long-name="PoC UI Intgr" origin-model="Foundation">
+      <unit bldFile="/sf/app/poc/pocui/pocuiintgr/group"/>
+      <!-- <unit bldFile="app/poc/pocui/pocuiintgr/pocuiaiwplugin/group"/> -->
+      <!-- <unit bldFile="app/poc/pocui/pocuiintgr/pocuiecomplugin/group"/> -->
+      <!-- <unit bldFile="app/poc/pocui/pocuiintgr/pocuiintegrationservices/group"/> -->
+     </component>
+     <component name="pocui_app" long-name="Application" origin-model="Foundation">
+      <unit bldFile="/sf/app/poc/pocui/app/group"/>
+     </component>
+     <component unofficial="yes" name="pocui_build" long-name="PoC Ui Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/poc/pocui/group"/>
+     </component>
+    </collection>
+    <collection name="poc_info" long-name="PoC Info" level="ui">
+     <component unofficial="yes" name="poc_build" long-name="PoC Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/poc/group"/>
+     </component>
+     <component unofficial="yes" name="poc_help" long-name="PoC Help" origin-model="Foundation">
+      <unit bldFile="/sf/app/poc/help/group"/>
+     </component>
+    </collection>
+    <collection name="poc_plat" long-name="PoC Platform Interfaces" level="ui">
+     <component unofficial="yes" name="poc_sessions_api" origin-model="Foundation">
+      <unit bldFile="/sf/app/poc/poc_plat/poc_sessions_api/group"/>
+     </component>
+     <component unofficial="yes" name="poc_ui_integration_services_api" origin-model="Foundation">
+      <unit bldFile="/sf/app/poc/poc_plat/poc_ui_integration_services_api/group"/>
+     </component>
+     <component unofficial="yes" name="poc_api" long-name="PoC API" origin-model="Foundation">
+      <unit bldFile="/sf/app/poc/poc_plat/poc_api/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

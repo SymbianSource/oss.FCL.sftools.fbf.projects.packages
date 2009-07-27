@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="serviceapi" long-name="Service API" tech_domain="rt" level="specific" levels="os mw1 mw2 app">
+    <collection name="sapi_applicationmanager" long-name="SAPI Application Manager" level="mw1">
+     <component name="appmanagerservice" long-name="App Manager Service" origin-model="Foundation"/>
+     <component unofficial="yes" name="sapi_applicationmanager_build" long-name="SAPI Application Manager Build" origin-model="Foundation">
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_applicationmanager/tsrc/dev/cruntimetest/group"/> -->
+      <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_applicationmanager/group"/>
+     </component>
+    </collection>
+    <collection name="sapi_calendar" long-name="SAPI Calendar" level="app">
+     <component name="calendarservice" long-name="Calendar Service" origin-model="Foundation"/>
+     <component unofficial="yes" name="sapi_calendar_build" long-name="SAPI Calendar Build" origin-model="Foundation">
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_calendar/tsrc/testing/tcalprovider_combined/group"/> -->
+      <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_calendar/group"/>
+     </component>
+    </collection>
+    <collection name="sapi_contacts_vpbk" long-name="SAPI Contacts Vpbk" level="app">
+     <component name="contactservice" long-name="Contact Service" origin-model="Foundation"/>
+     <component unofficial="yes" name="sapi_contacts_vpbk_build" long-name="SAPI Contacts Vpbk Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_contacts_vpbk/group"/>
+     </component>
+    </collection>
+    <collection name="sapi_landmarks" long-name="SAPI Landmarks" level="mw2">
+     <component name="landmarksservice" long-name="Landmarks Service" origin-model="Foundation"/>
+     <component unofficial="yes" name="sapi_landmarks_build" long-name="SAPI Landmarks Build" origin-model="Foundation">
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_landmarks/tsrc/testing/tlandmarksprovidertest/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_landmarks/tsrc/dev/landmarks_inputparams/group"/> -->
+      <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_landmarks/group"/>
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_landmarks/tsrc/testing/tlandmarkstest/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_landmarks/tsrc/dev/group"/> -->
+     </component>
+    </collection>
+    <collection name="sapi_location" long-name="SAPI Location" level="mw2">
+     <component name="locationservice" long-name="Location Service" origin-model="Foundation"/>
+     <component unofficial="yes" name="sapi_location_build" long-name="SAPI Location Build" origin-model="Foundation">
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/performance/pgetloc/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/performance/pgetlocopts/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/performance/pgetlocasync/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/performance/pgetbearing/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/performance/pgetdistance/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/group"/> -->
+      <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_location/group"/>
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_location/tsrc/dev/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/performance/pmove/group"/> -->
+     </component>
+    </collection>
+    <collection name="sapi_logging" long-name="SAPI Logging" level="app">
+     <component name="loggingservice" long-name="Logging Service" origin-model="Foundation"/>
+     <component unofficial="yes" name="sapi_logging_build" long-name="SAPI Logging Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_logging/group"/>
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_logging/tsrc/dev/group"/> -->
+     </component>
+    </collection>
+    <collection name="sapi_mediamanagement" long-name="SAPI Media Management" level="mw2">
+     <component name="mediamanagementservice" long-name="Media Management Service" origin-model="Foundation"/>
+     <component unofficial="yes" name="sapi_mediamanagement_build" long-name="SAPI Media Management Build" origin-model="Foundation">
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_mediamanagement/tsrc/dev/taiwmediamgmttest/group"/> -->
+      <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_mediamanagement/group"/>
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_mediamanagement/tsrc/testing/performance/runtime_perf/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_mediamanagement/tsrc/testing/performance/s60_perf/group"/> -->
+     </component>
+    </collection>
+    <collection name="sapi_messaging" long-name="SAPI Messaging" level="mw2">
+     <component name="messagingservice" long-name="Messaging Service" origin-model="Foundation"/>
+     <component unofficial="yes" name="sapi_messaging_build" long-name="SAPI Messaging Build" origin-model="Foundation">
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/s60_asyncsend/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/send/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/tmessagingprovidertest/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/asyncsend/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/notify/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/status/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/delete/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/getlist/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/s60_getlist/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/s60_notify/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/s60_status/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/s60_delete/group"/> -->
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/s60_send/group"/> -->
+      <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_messaging/group"/>
+     </component>
+    </collection>
+    <collection name="sapi_sensor" long-name="SAPI Sensor" level="mw1">
+     <component name="sensorservice" long-name="Sensor Service" origin-model="Foundation"/>
+     <component unofficial="yes" name="sapi_sensor_build" long-name="SAPI Sensor Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_sensor/group"/>
+     </component>
+    </collection>
+    <collection name="sapi_sysinfo" long-name="SAPI Sysinfo" level="mw1">
+     <component name="sysinfoservice" long-name="Sysinfo Service" origin-model="Foundation"/>
+     <component unofficial="yes" name="sapi_sysinfo_build" long-name="SAPI Sysinfo Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_sysinfo/group"/>
+     </component>
+    </collection>
+    <collection name="sapi_serviceregistry" long-name="SAPI Service Registry" level="os">
+     <component name="serviceregistryprovider.dll=binary" origin-model="Foundation">
+      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_serviceregistry/tsrc/dev/group"/> -->
+      <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_serviceregistry/group"/>
+     </component>
+    </collection>
+    <collection name="serviceapi_info" long-name="Service API Info" level="app">
+     <component unofficial="yes" name="serviceproviders" origin-model="Foundation">
+      <unit bldFile="/sf/mw/serviceapi/serviceproviders/group"/>
+     </component>
+     <component unofficial="yes" name="serviceapi_test" long-name="Service API Test" origin-model="Foundation">
+      <!-- <unit bldFile="mw/serviceapi/tsrc/group"/> -->
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

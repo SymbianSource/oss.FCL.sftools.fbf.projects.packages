@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="videotelephony" long-name="Video Telephony Apps" tech_domain="vc" level="apps" levels="engine plugin prot ui">
+    <collection name="packetvideoengine" long-name="Packetvideo Engine" level="engine">
+     <component name="PacketVideoEngineBinaries" long-name="Packet Video Engine Binaries" origin-model="Foundation"/>
+    </collection>
+    <collection name="vtengines" long-name="Video Telephony Engines" level="engine">
+     <component name="videoteleng" long-name="Videotel Engine" origin-model="Foundation">
+      <!-- <unit bldFile="app/videotelephony/vtengines/videoteleng/callctrl/group"/> -->
+      <unit bldFile="/sf/app/videotelephony/vtengines/videoteleng/group"/>
+      <!-- <unit bldFile="app/videotelephony/vtengines/videoteleng/logger/group"/> -->
+     </component>
+     <component name="vtmediatorplugin" long-name="VT Mediator Plugin" origin-model="Foundation">
+      <unit bldFile="/sf/app/videotelephony/vtengines/vtmediatorplugin/group"/>
+     </component>
+     <component unofficial="yes" name="vtengines_build" long-name="Video Telephony Engines Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/videotelephony/vtengines/group"/>
+     </component>
+    </collection>
+    <collection name="vtuis" long-name="Video Telephony UIs" level="ui">
+     <component name="videotelui" long-name="Video Telephony UI" origin-model="Foundation">
+      <unit bldFile="/sf/app/videotelephony/vtuis/videotelui/group"/>
+     </component>
+     <component unofficial="yes" name="vtuis_build" long-name="Video Telephony UIs Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/videotelephony/vtuis/group"/>
+     </component>
+    </collection>
+    <collection name="vtprotocolplugins" long-name="Video Telephony Protocol Plugins" level="plugin">
+     <component name="DisplaySink" long-name="Display Sink" origin-model="Foundation">
+      <unit bldFile="/sf/app/videotelephony/vtprotocolplugins/displaysink/group"/>
+     </component>
+     <component name="VideoSource" long-name="Video Source" origin-model="Foundation">
+      <unit bldFile="/sf/app/videotelephony/vtprotocolplugins/videosource/group"/>
+     </component>
+     <component unofficial="yes" name="vtprotocolplugins_build" long-name="Video Telephony Protocol Plugins Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/videotelephony/vtprotocolplugins/group"/>
+     </component>
+    </collection>
+    <collection name="vtprotocols" long-name="Video Telephony Protocols" level="prot">
+     <component name="videotelproto.dll=binary" origin-model="Foundation"/>
+    </collection>
+    <collection name="vtprotocolsstub" long-name="Video Telephony Protocols Stub" level="prot">
+     <component name="videotelproto.dll=binary" origin-model="Foundation">
+      <unit bldFile="/sf/app/videotelephony/vtprotocolsstub/group"/>
+     </component>
+    </collection>
+    <collection name="videotelephony_plat" long-name="Video Telephony Apps Platform Interfaces" level="ui">
+     <component unofficial="yes" name="video_telephony_media_configuration_api" origin-model="Foundation">
+      <unit bldFile="/sf/app/videotelephony/videotelephony_plat/video_telephony_media_configuration_api/group"/>
+     </component>
+     <component unofficial="yes" name="video_telephony_control_mediator_api" origin-model="Foundation">
+      <unit bldFile="/sf/app/videotelephony/videotelephony_plat/video_telephony_control_mediator_api/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="gallery" long-name="Gallery Apps" tech_domain="ma" level="apps" levels="app">
+    <collection name="mediagallery" long-name="Media Gallery" level="app">
+     <component name="mediagallery2" long-name="Media Gallery 2" origin-model="Foundation">
+      <unit bldFile="/sf/app/gallery/mediagallery/mediagallery2/group"/>
+     </component>
+    </collection>
+    <collection name="gallery_info" long-name="Gallery Apps Info" level="app">
+     <component unofficial="yes" name="gallery_build" long-name="Gallery Apps Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/gallery/group"/>
+     </component>
+    </collection>
+    <collection name="gallery_plat" long-name="Gallery Apps Platform Interfaces" level="app">
+     <component unofficial="yes" name="album_manager_api" origin-model="Foundation">
+      <unit bldFile="/sf/app/gallery/gallery_plat/album_manager_api/group"/>
+     </component>
+     <component unofficial="yes" name="media_gallery_file_notification" origin-model="Foundation">
+      <unit bldFile="/sf/app/gallery/gallery_plat/media_gallery_file_notification/group"/>
+     </component>
+     <component unofficial="yes" name="media_gallery_main_view_extension_api" origin-model="Foundation">
+      <unit bldFile="/sf/app/gallery/gallery_plat/media_gallery_main_view_extension_api/group"/>
+     </component>
+     <component unofficial="yes" name="media_gallery_api" origin-model="Foundation">
+      <unit bldFile="/sf/app/gallery/gallery_plat/media_gallery_api/group"/>
+     </component>
+     <component unofficial="yes" name="media_file_api" origin-model="Foundation">
+      <unit bldFile="/sf/app/gallery/gallery_plat/media_file_api/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

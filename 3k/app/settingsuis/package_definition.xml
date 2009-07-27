@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="settingsuis" long-name="Settings UIs" tech_domain="dm" level="services" levels="empty rsc ui">
+    <collection name="defaultapplicationsettings" long-name="Default Application Settings" level="rsc">
+     <component name="services_db" long-name="Services Db" origin-model="Foundation">
+      <unit bldFile="/sf/app/settingsuis/defaultapplicationsettings/services_db/group"/>
+     </component>
+     <component name="defaultapplicationsettings_server" long-name="Server" origin-model="Foundation">
+      <unit bldFile="/sf/app/settingsuis/defaultapplicationsettings/server/group"/>
+     </component>
+     <component name="service" long-name="Service" origin-model="Foundation">
+      <unit bldFile="/sf/app/settingsuis/defaultapplicationsettings/service/group"/>
+     </component>
+     <component name="gsplugin" long-name="GS Plugin" origin-model="Foundation">
+      <unit bldFile="/sf/app/settingsuis/defaultapplicationsettings/gsplugin/group"/>
+     </component>
+     <component unofficial="yes" name="defaultapplicationsettings_build" long-name="Default Application Settings Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/settingsuis/defaultapplicationsettings/group"/>
+     </component>
+    </collection>
+    <collection name="systemswuis" long-name="System SW UIs" level="ui">
+     <component name="touchscreencalib" long-name="Touchscreen Calib" origin-model="Foundation">
+      <unit bldFile="/sf/app/settingsuis/systemswuis/touchscreencalib/group"/>
+     </component>
+    </collection>
+    <collection name="settingsuis_info" long-name="Settings UIs Info" level="ui">
+     <component unofficial="yes" name="settingsuis_build" long-name="Settings UIs Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/settingsuis/group"/>
+     </component>
+     <component unofficial="yes" name="default_app_client_api" origin-model="Foundation">
+      <!-- <unit bldFile="app/settingsuis/devmngt_plat/default_app_client_api/tsrc/dasclientapitest/group"/> -->
+      <unit bldFile="/sf/app/settingsuis/devmngt_plat/default_app_client_api/group"/>
+     </component>
+     <component unofficial="yes" name="settingsuis_test" long-name="Settings UIs Test" origin-model="Foundation">
+      <!-- <unit bldFile="app/settingsuis/tsrc/group"/> -->
+     </component>
+     <component unofficial="yes" name="services_db_api" origin-model="Foundation">
+      <unit bldFile="/sf/app/settingsuis/devmngt_plat/services_db_api/group"/>
+      <!-- <unit bldFile="app/settingsuis/devmngt_plat/services_db_api/tsrc/servicesdbapitest/group"/> -->
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="imgvieweruis" long-name="Image Viewer UIs" tech_domain="ma" level="services" levels="app">
+    <collection name="imageviewer" long-name="Image Viewer" level="app">
+     <component name="imageviewer_help" long-name="Help" origin-model="Foundation">
+      <unit bldFile="/sf/app/imgvieweruis/imageviewer/help/group"/>
+     </component>
+     <component unofficial="yes" name="imageviewer_build" long-name="Image Viewer Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/imgvieweruis/imageviewer/group"/>
+     </component>
+    </collection>
+    <collection name="imgvieweruis_info" long-name="Image Viewer UIs Info" level="app">
+     <component unofficial="yes" name="imgvieweruis_build" long-name="Image Viewer UIs Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/imgvieweruis/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

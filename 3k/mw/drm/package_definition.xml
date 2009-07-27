@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="drm" long-name="DRM" tech_domain="se" level="generic" levels="plugin framework server generic specific">
+    <collection name="commondrm" long-name="Common DRM" level="generic">
+     <component name="drmencryptor" long-name="DRM Encryptor" origin-model="Foundation"/>
+     <component name="drmsettingsplugin" long-name="DRM Settings Plugin" origin-model="Foundation"/>
+     <component name="drmrightsmanagerui" long-name="DRM Rights Manager UI" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/commondrm/drmrightsmanagerui/help/group"/>
+     </component>
+     <component name="drmutility" long-name="DRM Utility" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/commondrm/drmutility/group"/>
+     </component>
+     <component name="drmserviceapiwrapper" long-name="DRM Service API Wrapper" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/commondrm/drmserviceapiwrapper/group"/>
+     </component>
+     <component name="drmrightsstoringlocation" long-name="DRM Rights Storing Location" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/commondrm/drmrightsstoringlocation/group"/>
+     </component>
+     <component unofficial="yes" name="commondrm_build" long-name="Common DRM Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/commondrm/group"/>
+     </component>
+    </collection>
+    <collection name="omadrm" long-name="OMA DRM" level="server">
+     <component name="drmroapwbxmlparser" long-name="DRM ROAP WBXML Parser" origin-model="Foundation">
+      <!-- <unit bldFile="mw/drm/omadrm/drmroapwbxmlparser/group"/> -->
+     </component>
+     <component name="drmplugins" long-name="DRM Plugins" origin-model="Foundation">
+      <!-- <unit bldFile="mw/drm/omadrm/drmplugins/drmfilter/group"/> -->
+      <!-- <unit bldFile="mw/drm/omadrm/drmplugins/drmrecognizer/group"/> -->
+      <!-- <unit bldFile="mw/drm/omadrm/drmplugins/drmrohandler/group"/> -->
+      <!-- <unit bldFile="mw/drm/omadrm/drmplugins/drmromtm/group"/> -->
+     </component>
+     <component name="drmengine" long-name="DRM Engine" origin-model="Foundation"/>
+     <component name="drmhelper" long-name="DRM Helper" origin-model="Foundation">
+      <!-- <unit bldFile="mw/drm/omadrm/drmhelper/drmhelperserver/group"/> -->
+      <!-- <unit bldFile="mw/drm/omadrm/drmhelper/group"/> -->
+     </component>
+     <component name="drmlicensemanager" long-name="Drm License Manager" origin-model="Foundation">
+      <!-- <unit bldFile="mw/drm/omadrm/drmlicensemanager/group"/> -->
+     </component>
+     <component unofficial="yes" name="omadrm_build" long-name="OMA DRM Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/omadrm/group"/>
+     </component>
+    </collection>
+    <collection name="wmdrm" long-name="WM DRM" level="framework">
+     <component name="wmdrmengine" long-name="WM DRM Engine" origin-model="Foundation">
+      <!-- <unit bldFile="mw/drm/wmdrm/wmdrmengine/wmdrmagent/group"/> -->
+      <!-- <unit bldFile="mw/drm/wmdrm/wmdrmengine/wmdrmfileserver/client/group"/> -->
+      <!-- <unit bldFile="mw/drm/wmdrm/wmdrmengine/wmdrmfileserver/server/group"/> -->
+      <!-- <unit bldFile="mw/drm/wmdrm/wmdrmengine/wmdrmserver/client/group"/> -->
+      <!-- <unit bldFile="mw/drm/wmdrm/wmdrmengine/wmdrmserver/clientwrapper/group"/> -->
+      <!-- <unit bldFile="mw/drm/wmdrm/wmdrmengine/wmdrmserver/server/group"/> -->
+     </component>
+     <component name="camese" long-name="Camese" origin-model="Foundation">
+      <!-- <unit bldFile="mw/drm/wmdrm/camese/cameseutility/group"/> -->
+      <!-- <unit bldFile="mw/drm/wmdrm/camese/group"/> -->
+      <!-- <unit bldFile="mw/drm/wmdrm/camese/httpfiltercamese/group"/> -->
+      <!-- <unit bldFile="mw/drm/wmdrm/camese/wmdrmdla/group"/> -->
+      <!-- <unit bldFile="mw/drm/wmdrm/camese/wmdrmdlaapp/group"/> -->
+      <!-- <unit bldFile="mw/drm/wmdrm/camese/wmdrmdladefaulthttpplugin/group"/> -->
+      <!-- <unit bldFile="mw/drm/wmdrm/camese/wmdrmdladefaultuiplugin/group"/> -->
+      <!-- <unit bldFile="mw/drm/wmdrm/camese/wmdrmdlautils/group"/> -->
+      <!-- <unit bldFile="mw/drm/wmdrm/camese/wmdrmdlawrapper/group"/> -->
+     </component>
+     <component name="wmdrmplugins" long-name="WM DRM Plugins" origin-model="Foundation"/>
+     <component unofficial="yes" name="wmdrm_build" long-name="WM DRM Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/wmdrm/group"/>
+     </component>
+    </collection>
+    <collection name="drm_pub" long-name="DRM Public Interfaces" level="specific">
+     <component unofficial="yes" name="oma_drm_caf_agent_api" origin-model="Foundation">
+      <!-- <unit bldFile="mw/drm/drm_pub/oma_drm_caf_agent_api/tsrc/bc/group"/> -->
+      <unit bldFile="/sf/mw/drm/drm_pub/oma_drm_caf_agent_api/group"/>
+     </component>
+     <component unofficial="yes" name="drm_license_checker_api" origin-model="Foundation">
+      <!-- <unit bldFile="mw/drm/drm_pub/drm_license_checker_api/tsrc/group"/> -->
+      <unit bldFile="/sf/mw/drm/drm_pub/drm_license_checker_api/group"/>
+     </component>
+     <component unofficial="yes" name="drm_helper_api" origin-model="Foundation">
+      <!-- <unit bldFile="mw/drm/drm_pub/drm_helper_api/tsrc/group"/> -->
+      <unit bldFile="/sf/mw/drm/drm_pub/drm_helper_api/group"/>
+     </component>
+    </collection>
+    <collection name="drm_info" long-name="DRM Info" level="specific">
+     <component unofficial="yes" name="drm_build" long-name="DRM Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/group"/>
+     </component>
+    </collection>
+    <collection name="drm_plat" long-name="DRM Platform Interfaces" level="specific">
+     <component unofficial="yes" name="drm_plat_build" long-name="DRM Platform API Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/drm_plat/group"/>
+     </component>
+     <component unofficial="yes" name="camese_utility_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/drm_plat/camese_utility_api/group"/>
+     </component>
+     <component unofficial="yes" name="camese_framework_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/drm_plat/camese_framework_api/group"/>
+     </component>
+     <component unofficial="yes" name="drm_common_api" origin-model="Foundation">
+      <!-- <unit bldFile="mw/drm/drm_plat/drm_common_api/tsrc/group"/> -->
+      <unit bldFile="/sf/mw/drm/drm_plat/drm_common_api/group"/>
+     </component>
+     <component unofficial="yes" name="roap_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/drm_plat/roap_api/group"/>
+      <!-- <unit bldFile="mw/drm/drm_plat/roap_api/tsrc/group"/> -->
+     </component>
+     <component unofficial="yes" name="drm_license_manager_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/drm_plat/drm_license_manager_api/group"/>
+     </component>
+     <component unofficial="yes" name="drm_agents_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/drm_plat/drm_agents_api/group"/>
+     </component>
+     <component unofficial="yes" name="drm_legacy_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/drm_plat/drm_legacy_api/group"/>
+     </component>
+     <component unofficial="yes" name="dcf_repository_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/drm_plat/dcf_repository_api/group"/>
+     </component>
+     <component unofficial="yes" name="drm_utility_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/drm_plat/drm_utility_api/group"/>
+     </component>
+     <component unofficial="yes" name="drm_service_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/drm_plat/drm_service_api/group"/>
+     </component>
+     <component unofficial="yes" name="drm_rights_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/drm_plat/drm_rights_api/group"/>
+      <!-- <unit bldFile="mw/drm/drm_plat/drm_rights_api/tsrc/group"/> -->
+     </component>
+     <component unofficial="yes" name="wmdrm_core_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/drm_plat/wmdrm_core_api/group"/>
+     </component>
+     <component unofficial="yes" name="drm_secondary_display_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/drm/drm_plat/drm_secondary_display_api/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

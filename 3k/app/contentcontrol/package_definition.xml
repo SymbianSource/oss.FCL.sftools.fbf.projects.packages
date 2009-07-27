@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="contentcontrol" long-name="Content Control Daemons" tech_domain="dm" level="services" levels="1 2">
+    <collection name="applicationmanagement" long-name="Application Management" level="1">
+     <component name="options" long-name="Options" origin-model="Foundation">
+      <unit bldFile="/sf/app/devicecontrol/applicationmanagement/options/group"/>
+     </component>
+     <component name="applicationmanagement_client" long-name="Client" origin-model="Foundation">
+      <unit bldFile="/sf/app/devicecontrol/applicationmanagement/client/group"/>
+     </component>
+     <component name="applicationmanagement_server" long-name="Server" origin-model="Foundation">
+      <unit bldFile="/sf/app/devicecontrol/applicationmanagement/server/group"/>
+     </component>
+     <component name="RfsPlugin" origin-model="Foundation">
+      <unit bldFile="/sf/app/devicecontrol/applicationmanagement/rfsplugin/group"/>
+     </component>
+     <component name="amadapter2" long-name="AM Adapter2" origin-model="Foundation">
+      <unit bldFile="/sf/app/devicecontrol/applicationmanagement/amadapter2/group"/>
+     </component>
+    </collection>
+    <collection name="customization" long-name="Customization" level="2">
+     <component name="DMUtils" origin-model="Foundation">
+      <unit bldFile="/sf/app/devicecontrol/customization/dmutils/bld"/>
+     </component>
+     <component name="UISettingsSrv" origin-model="Foundation">
+      <unit bldFile="/sf/app/devicecontrol/customization/uisettingssrv/bld"/>
+     </component>
+     <component name="isadapter" long-name="IS Adapter" origin-model="Foundation">
+      <unit bldFile="/sf/app/devicecontrol/customization/isadapter/bld"/>
+     </component>
+     <component name="supadapter" long-name="SUPAdapter" origin-model="Foundation">
+      <unit bldFile="/sf/app/devicecontrol/customization/supadapter/bld"/>
+     </component>
+     <component name="WallpaperAdapter" origin-model="Foundation">
+      <unit bldFile="/sf/app/devicecontrol/customization/wallpaperadapter/bld"/>
+     </component>
+     <component name="OperatorLogoAdapter" origin-model="Foundation">
+      <unit bldFile="/sf/app/devicecontrol/customization/operatorlogoadapter/bld"/>
+     </component>
+     <component name="ScreenSaverAdapter" origin-model="Foundation">
+      <unit bldFile="/sf/app/devicecontrol/customization/screensaveradapter/bld"/>
+     </component>
+     <component name="ThemesAdapter" origin-model="Foundation">
+      <unit bldFile="/sf/app/devicecontrol/customization/themesadapter/bld"/>
+     </component>
+     <component name="EmbeddedLinkAdapter" origin-model="Foundation">
+      <unit bldFile="/sf/app/devicecontrol/customization/embeddedlinkadapter/bld"/>
+     </component>
+    </collection>
+    <collection name="omads" long-name="OMA DS" level="1">
+     <component name="omadsappui" long-name="OMA DS App UI" origin-model="Foundation">
+      <unit bldFile="/sf/app/contentcontrol/omads/omadsappui/group"/>
+     </component>
+     <component name="omadsextensions" long-name="OMA DS Extensions" origin-model="Foundation">
+      <!-- <unit bldFile="app/contentcontrol/omads/omadsextensions/dsutils/emailxmlutils/bld"/> -->
+      <unit bldFile="/sf/app/contentcontrol/omads/omadsextensions/group"/>
+     </component>
+    </collection>
+    <collection name="contentcontrol_info" long-name="Content Control Daemons Info" level="2">
+     <component unofficial="yes" name="contentcontrol_build" long-name="Content Control Daemons Build" origin-model="Foundation">
+      <unit bldFile="/sf/app/contentcontrol/group"/>
+     </component>
+     <component unofficial="yes" name="oma_ds_presync_plugin_api" origin-model="Foundation">
+      <unit bldFile="/sf/app/contentcontrol/contentctrl_plat/oma_ds_presync_plugin_api/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

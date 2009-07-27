@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="uiresources" long-name="UI Resources" tech_domain="ui" level="generic" levels="compile plugin framework server generic data">
+    <collection name="layouts" long-name="Layouts" level="plugin">
+     <component name="cdl" long-name="Cdl" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/layouts/cdl/cdlengine/group"/>
+      <unit bldFile="/sf/mw/uiresources/layouts/cdl/cdlserver/group"/>
+      <!-- <unit bldFile="mw/uiresources/layouts/cdl/cdlutils/cdlexplorer/group"/> -->
+     </component>
+     <component name="aknlayout2" long-name="AKN Layout 2" origin-model="Foundation">
+      <!-- <unit bldFile="mw/uiresources/layouts/aknlayout2/generated"/> -->
+      <!-- <unit bldFile="mw/uiresources/layouts/aknlayout2/generated/nhd_akn_app"/> -->
+      <!-- <unit bldFile="mw/uiresources/layouts/aknlayout2/generated/nhd_uiaccel"/> -->
+      <!-- <unit bldFile="mw/uiresources/layouts/aknlayout2/generated/qhd_touch_akn_app"/> -->
+      <!-- <unit bldFile="mw/uiresources/layouts/aknlayout2/generated/qhd_touch_uiaccel"/> -->
+      <!-- <unit bldFile="mw/uiresources/layouts/aknlayout2/generated/qvga2_akn_app"/> -->
+      <!-- <unit bldFile="mw/uiresources/layouts/aknlayout2/generated/qvga2_uiaccel"/> -->
+      <!-- <unit bldFile="mw/uiresources/layouts/aknlayout2/generated/qvga_akn_app"/> -->
+      <!-- <unit bldFile="mw/uiresources/layouts/aknlayout2/generated/qvga_uiaccel"/> -->
+      <!-- <unit bldFile="mw/uiresources/layouts/aknlayout2/generated/vga3_akn_app"/> -->
+      <!-- <unit bldFile="mw/uiresources/layouts/aknlayout2/generated/vga3_uiaccel"/> -->
+      <!-- <unit bldFile="mw/uiresources/layouts/aknlayout2/generated/vga_akn_app"/> -->
+      <!-- <unit bldFile="mw/uiresources/layouts/aknlayout2/generated/vga_touch_akn_app"/> -->
+      <!-- <unit bldFile="mw/uiresources/layouts/aknlayout2/generated/vga_uiaccel"/> -->
+      <unit bldFile="/sf/mw/uiresources/layouts/aknlayout2/group"/>
+     </component>
+    </collection>
+    <collection name="locales" long-name="Locales" level="framework">
+     <component unofficial="yes" name="loce32" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/locales/loce32"/>
+     </component>
+    </collection>
+    <collection name="pictographs" long-name="Pictographs" level="data">
+     <component name="AknPictograph" long-name="AKN Picto Graph" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/pictographs/aknpictograph/group"/>
+      <!-- <unit bldFile="mw/uiresources/pictographs/aknpictograph/tools/aknpictobitmapbuilder/group"/> -->
+     </component>
+    </collection>
+    <collection name="skins" long-name="Skins" level="data">
+     <component name="AknSkinContent" long-name="AKN Skin Content" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/skins/aknskincontent/group"/>
+      <!-- <unit bldFile="mw/uiresources/skins/aknskincontent/srcdata/scalableseries60skin/mifindexdll"/> -->
+     </component>
+     <component name="AknSkins" long-name="AKN Skins" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/skins/aknskins/group"/>
+     </component>
+    </collection>
+    <collection name="uiconfig" long-name="UI Config" level="server">
+     <component name="s60config" long-name="S60 Config" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiconfig/s60config/group"/>
+     </component>
+    </collection>
+    <collection name="fontsupport" long-name="Font Support" level="generic">
+     <component name="fontprovider" long-name="Font Provider" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/fontsupport/fontprovider/group"/>
+     </component>
+     <component name="fontutils" long-name="Font Utils" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/fontsupport/fontutils/fontutils/group"/>
+      <!-- <unit bldFile="mw/uiresources/fontsupport/fontutils/group"/> -->
+     </component>
+    </collection>
+    <collection name="uigraphics" long-name="UI Graphics" level="generic">
+     <component name="Bitmaps2" long-name="Bitmaps 2" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uigraphics/bitmaps2/group"/>
+     </component>
+     <component name="Icons" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uigraphics/icons/group"/>
+     </component>
+     <component name="VariatedBitmaps" long-name="Variated Bitmaps" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uigraphics/variatedbitmaps/group"/>
+     </component>
+     <component name="AknIcon" long-name="AKN Icon" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uigraphics/aknicon/group"/>
+     </component>
+     <component name="palette" long-name="Palette" origin-model="Foundation">
+      <!-- <unit bldFile="mw/uiresources/uigraphics/palette/group"/> -->
+     </component>
+    </collection>
+    <collection name="helpthemes" long-name="Help Themes" level="data">
+     <component name="helpthemes compo" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/helpthemes/group"/>
+     </component>
+    </collection>
+    <collection name="aknlayoutcompiler" long-name="Avkon Layout Compiler" level="compile">
+     <component name="aknlayoutcompiler compo" long-name="AKN Layout Compiler Component" origin-model="Foundation"/>
+    </collection>
+    <collection name="cdlcompiler" long-name="CDL Compiler" level="compile">
+     <component name="cdlcompiler compo" long-name="CDL Compiler Component" origin-model="Foundation"/>
+    </collection>
+    <collection name="cdlcompilertoolkit" long-name="CDL Compiler Toolkit" level="compile">
+     <component name="cdlcompilertoolkit compo" long-name="CDL Compiler Toolkit Component" origin-model="Foundation"/>
+    </collection>
+    <collection name="skincompiler" long-name="Skin Compiler" level="compile">
+     <component name="AknSkinDescCompiler" long-name="AKN Skin Desc Compiler" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uitools/skincompiler/aknskindesccompiler/group"/>
+     </component>
+    </collection>
+    <collection name="uiresources_info" long-name="UI Resources Info" level="data">
+     <component unofficial="yes" name="uiresources_test" long-name="UI Resources Test" origin-model="Foundation">
+      <!-- <unit bldFile="mw/uiresources/tsrc/group"/> -->
+     </component>
+     <component unofficial="yes" name="uiresources_build" long-name="UI Resources Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/group"/>
+     </component>
+    </collection>
+    <collection name="uiresources_plat" long-name="UI Resources Platform Interfaces" level="data">
+     <component unofficial="yes" name="skins_image_attributes_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_plat/skins_image_attributes_api/group"/>
+     </component>
+     <component unofficial="yes" name="mifconv_definitions_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_plat/mifconv_definitions_api/group"/>
+     </component>
+     <component unofficial="yes" name="wallpaper_configuration_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_plat/wallpaper_configuration_api/group"/>
+     </component>
+     <component unofficial="yes" name="cdl_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_plat/cdl_api/group"/>
+     </component>
+     <component unofficial="yes" name="graphic_configuration_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_plat/graphic_configuration_api/group"/>
+     </component>
+     <component unofficial="yes" name="extended_skins_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_plat/extended_skins_api/group"/>
+     </component>
+     <component unofficial="yes" name="mif_header_cdl_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_plat/mif_header_cdl_api/group"/>
+     </component>
+     <component unofficial="yes" name="tfx_server_plugin_ids_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_plat/tfx_server_plugin_ids_api/group"/>
+     </component>
+     <component unofficial="yes" name="layout_system_private_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_plat/layout_system_private_api/group"/>
+     </component>
+     <component unofficial="yes" name="personalisation_and_skins_settings_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_plat/personalisation_and_skins_settings_api/group"/>
+     </component>
+     <component unofficial="yes" name="language_code_definitions_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_plat/language_code_definitions_api/group"/>
+     </component>
+     <component unofficial="yes" name="private_user_area_code_definitions_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_plat/private_user_area_code_definitions_api/group"/>
+     </component>
+     <component unofficial="yes" name="tfx_effect_setup_plugin_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_plat/tfx_effect_setup_plugin_api/group"/>
+     </component>
+     <component unofficial="yes" name="extended_fonts_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_plat/extended_fonts_api/group"/>
+     </component>
+     <component unofficial="yes" name="layout_data_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_plat/layout_data_api/group"/>
+     </component>
+     <component unofficial="yes" name="tfx_server_controller_plugin_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_plat/tfx_server_controller_plugin_api/group"/>
+     </component>
+    </collection>
+    <collection name="uiresources_pub" long-name="UI Resources Public Interfaces" level="data">
+     <component unofficial="yes" name="scalable_icons_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_pub/scalable_icons_api/group"/>
+     </component>
+     <component unofficial="yes" name="graphics_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_pub/graphics_api/group"/>
+     </component>
+     <component unofficial="yes" name="skins_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_pub/skins_api/group"/>
+     </component>
+     <component unofficial="yes" name="layout_id_definitions_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_pub/layout_id_definitions_api/group"/>
+     </component>
+     <component unofficial="yes" name="font_definition_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_pub/font_definition_api/group"/>
+     </component>
+     <component unofficial="yes" name="pictograph_api" origin-model="Foundation">
+      <unit bldFile="/sf/mw/uiresources/uiresources_pub/pictograph_api/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

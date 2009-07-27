@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="vpnclient" long-name="VPN Client" tech_domain="dc" level="specific" levels="engine ui api">
+    <collection name="vpnclient_sis" long-name="VPN Client Sis" level="api">
+     <component name="ce_sis" long-name="CE SIS" origin-model="Foundation">
+      <!-- <unit bldFile="mw/vpnclient/vpnclient_sis/ce_sis/group"/> -->
+     </component>
+     <component name="stub_sis" long-name="Stub Sis" origin-model="Foundation">
+      <!-- <unit bldFile="mw/vpnclient/vpnclient_sis/stub_sis/group"/> -->
+     </component>
+     <component unofficial="yes" name="vpnclient_sis_build" origin-model="Foundation">
+      <!-- <unit bldFile="mw/vpnclient/vpnclient_sis/group"/> -->
+     </component>
+    </collection>
+    <collection name="vpnengine" long-name="VPN Engine" level="engine">
+     <component name="eventmediatorapi" long-name="Event Mediator API" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/eventmediatorapi/group"/>
+     </component>
+     <component name="eventviewer" long-name="Event Viewer" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/eventviewer/group"/>
+     </component>
+     <component name="vpnins" long-name="VPN Ins" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/vpnins/group"/>
+     </component>
+     <component name="acuagenttransport" long-name="ACU Agent Transport" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/acuagenttransport/group"/>
+     </component>
+     <component name="acupluginlib" long-name="ACU Plugin Lib" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/acupluginlib/group"/>
+     </component>
+     <component name="ikepolparser" long-name="IKE Policy Parser" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/ikepolparser/group"/>
+     </component>
+     <component name="utlbase64" long-name="UTL Base64" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/utlbase64/group"/>
+     </component>
+     <component name="utlcrypto" long-name="UTL Crypto" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/utlcrypto/group"/>
+     </component>
+     <component name="utlxml" long-name="UTL XML" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/utlxml/group"/>
+     </component>
+     <component name="utlpkcs10" long-name="UTL PKCS10" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/utlpkcs10/group"/>
+     </component>
+     <component name="pkiserviceapi" long-name="PKI Service API" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/pkiserviceapi/group"/>
+     </component>
+     <component name="acuagentcrypto" long-name="ACU Agent Crypto" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/acuagentcrypto/group"/>
+     </component>
+     <component name="vpnextapi" long-name="VPN Ext. API" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/vpnextapi/group"/>
+     </component>
+     <component name="ikecert" long-name="Ike Cert" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/ikecert/group"/>
+     </component>
+     <component name="kmdapi" long-name="KMD API" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/kmdapi/group"/>
+     </component>
+     <component name="kmdserver" long-name="Kmd Server" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/kmdserver/group"/>
+     </component>
+     <component name="ikeutils" long-name="IKE Utils" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/ikeutils/group"/>
+     </component>
+     <component name="ikev1lib" long-name="Ikev1 Library" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/ikev1lib/group"/>
+     </component>
+     <component name="ikev2lib" long-name="Ikev2 Library" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/ikev2lib/group"/>
+     </component>
+     <component name="acuagentmessage" long-name="ACU Agent Message" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/acuagentmessage/group"/>
+     </component>
+     <component name="acuagent" long-name="ACU Agent" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/acuagent/group"/>
+     </component>
+     <component name="vpnawapi" long-name="VPN AW API" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/vpnawapi/group"/>
+     </component>
+     <component name="vpnipsecpolparser" long-name="VPN Ipsecpolparser" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/vpnipsecpolparser/group"/>
+     </component>
+     <component name="sit" long-name="Sit" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/sit/group"/>
+     </component>
+     <component name="acuins" long-name="ACU INS" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/acuins/group"/>
+     </component>
+     <component name="vpntcwrapper" long-name="VP NTC Wrapper" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/vpntcwrapper/group"/>
+     </component>
+     <component name="eventmediator" long-name="Event Mediator" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/eventmediator/group"/>
+     </component>
+     <component name="ipsecacuplugin" long-name="IPseca Cu Plugin" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/ipsecacuplugin/group"/>
+     </component>
+     <component name="pkiservice" long-name="PKI Service" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/pkiservice/group"/>
+     </component>
+     <component name="vpnconnagt" long-name="VPN Connagt" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/vpnconnagt/group"/>
+     </component>
+     <component name="vpnmanager" long-name="VPN Manager" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/vpnmanager/group"/>
+     </component>
+     <component name="vpncleaner" long-name="VPN Cleaner" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/vpncleaner/group"/>
+     </component>
+     <component name="utlpkcs12" long-name="UTL PKCS12" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/utlpkcs12/group"/>
+     </component>
+     <component name="dmadengine" long-name="DM Adapter Engine" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/dmadengine/group"/>
+     </component>
+     <component name="dmadipsecvpn" long-name="DM Adapter IPsec VPN" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/dmadipsecvpn/group"/>
+     </component>
+     <component name="dmadpki" long-name="DM Adapter PKI" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/dmadpki/group"/>
+     </component>
+     <component name="ikesocketplugin" long-name="IKE Socket Plugin" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnengine/ikesocketplugin/group"/>
+     </component>
+     <component name="vpnnif" long-name="VPN NIF" origin-model="Foundation"/>
+    </collection>
+    <collection name="vpnui" long-name="VPN UI" level="ui">
+     <component name="vpnecomnotifier" long-name="VPN ECOM Notifier" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnui/vpnecomnotifier/group"/>
+     </component>
+     <component name="vpndialogmanager" long-name="VPN Dialog Manager" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnui/vpndialogmanager/group"/>
+     </component>
+     <component name="vpnmanagementui" long-name="VPN Management UI" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnui/vpnmanagementui/group"/>
+     </component>
+     <component name="vpnpolins" long-name="VPN Policy Ins" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnui/vpnpolins/group"/>
+     </component>
+     <component name="vpnpolicyrecognizer" long-name="VPN Policy Recognizer" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnui/vpnpolicyrecognizer/group"/>
+     </component>
+    </collection>
+    <collection name="vpnapiimpl" long-name="VPN API Implementation" level="api">
+     <component name="vpnapi.dll=binary" long-name="VPN API" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnapiimpl/group"/>
+     </component>
+    </collection>
+    <collection name="vpnclient_info" long-name="VPN Client Info" level="api">
+     <component unofficial="yes" name="vpnclient_help" long-name="VPN Client Help" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/help/group"/>
+     </component>
+     <component unofficial="yes" name="vpnclient_build" long-name="VPN Client Build" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/group"/>
+     </component>
+     <component unofficial="yes" name="vpnapi" origin-model="Foundation">
+      <unit bldFile="/sf/mw/vpnclient/vpnc_plat/vpnapi/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>
