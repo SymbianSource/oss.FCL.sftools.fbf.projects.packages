@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="helps" long-name="Help Apps" tech_domain="ui" level="apps" span="2" levels="eng tools unused  ui">
     <collection name="csxhelp" long-name="Context Sensitive Extended Help" level="ui">
-     <component name="AiwHelpProvider" long-name="Aiw Help Provider" origin-model="Foundation">
+     <component name="aiwhelpprovider" long-name="Aiw Help Provider" origin-model="foundation">
       <!-- <unit bldFile="app/helps/csxhelp/aiwhelpprovider/group"/> -->
      </component>
-     <component unofficial="yes" name="csxhelp_build" long-name="Context Sensitive Extended Help Build" origin-model="Foundation">
+     <component unofficial="yes" name="csxhelp_build" long-name="Context Sensitive Extended Help Build" origin-model="foundation">
       <unit bldFile="/sf/app/helps/csxhelp/group"/>
      </component>
     </collection>
    <collection name="n:symhelptools" long-name="Symbian Help Tools" level="tools">
      <component name="n:mbmcodec" long-name="MBM Codec" filter="gt" purpose="development" plugin="N" origin-model="Symbian">
-      <unit bldFile="/sf/app/helps/symhelp/mbmcodec/group" mrp="/sf/app/helps/symhelp/mbmcodec/group/tools_sdk_eng_mbmcodec.mrp"/>
+      <!-- The following unit is removed as non-contributed -->
+      <!-- <unit bldFile="app/helps/symhelp/mbmcodec/group" mrp="app/helps/symhelp/mbmcodec/group/tools_sdk_eng_mbmcodec.mrp"/> -->
      </component>
      <component name="n:cshlpcmpgui" long-name="CSHelp Compiler GUI" filter="gt" purpose="development" plugin="N" origin-model="Symbian">
-      <unit bldFile="/sf/app/helps/symhelp/cshlpcmpgui/group" mrp="/sf/app/helps/symhelp/cshlpcmpgui/group/tools_sdk_eng_cshlpcmp_gui.mrp" priority="1010"/>
+      <!-- The following unit is removed as non-contributed -->
+      <!-- <unit bldFile="app/helps/symhelp/cshlpcmpgui/group" mrp="app/helps/symhelp/cshlpcmpgui/group/tools_sdk_eng_cshlpcmp_gui.mrp" priority="1010"/> -->
      </component>
      <component name="n:cshlpcmpfrontend" long-name="CSHelp Compiler Frontend" purpose="development" plugin="N" origin-model="Symbian">
-      <unit bldFile="/sf/app/helps/symhelp/cshlpcmpfrontend/group" mrp="/sf/app/helps/symhelp/cshlpcmpfrontend/group/tools_sdk_eng_cshlpcmp_frontend.mrp"/>
+      <!-- The following unit is removed as non-contributed -->
+      <!-- <unit bldFile="app/helps/symhelp/cshlpcmpfrontend/group" mrp="app/helps/symhelp/cshlpcmpfrontend/group/tools_sdk_eng_cshlpcmp_frontend.mrp"/> -->
      </component>
      <component name="n:cshlpcmpbackend" long-name="CSHelp Compiler Backend" purpose="development" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/app/helps/symhelp/cshlpcmpbackend/group/tools_sdk_eng_cshlpcmp_backend_srconly.mrp"/>

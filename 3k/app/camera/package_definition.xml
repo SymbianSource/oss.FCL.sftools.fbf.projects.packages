@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="camera" long-name="Camera Apps" tech_domain="ma" level="apps" levels="empty 1">
     <collection name="camerauis" long-name="Camera UIs" level="1">
-     <component name="activepalette" long-name="Active Palette" origin-model="Foundation">
+     <component name="activepalette" long-name="Active Palette" origin-model="foundation">
       <unit bldFile="/sf/app/camera/camerauis/activepalette/group"/>
      </component>
-     <component name="cameraapp" long-name="Camera Application" origin-model="Foundation">
+     <component name="cameraapp" long-name="Camera Application" origin-model="foundation">
       <!-- <unit bldFile="app/camera/camerauis/cameraapp/generic/camerauiconfigmanager/group"/> -->
       <!-- <unit bldFile="app/camera/camerauis/cameraapp/generic/gscamcorderplugin/group"/> -->
       <unit bldFile="/sf/app/camera/camerauis/cameraapp/group"/>
@@ -15,18 +15,13 @@
      </component>
     </collection>
     <collection name="camera_info" long-name="Camera Apps Info" level="1">
-     <component unofficial="yes" name="camera_build" long-name="Camera Apps Build" origin-model="Foundation">
+     <component unofficial="yes" name="camera_build" long-name="Camera Apps Build" origin-model="foundation">
       <unit bldFile="/sf/app/camera/group"/>
      </component>
-    </collection>
-    <collection name="camera_plat" long-name="Camera Apps Platform Interfaces" level="1">
-     <component unofficial="yes" name="camcorder_ui_constants_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/camera/camera_plat/camcorder_ui_constants_api/group"/>
-      <!-- <unit bldFile="app/camera/camera_plat/camcorder_ui_constants_api/tsrc/group"/> -->
-     </component>
-     <component unofficial="yes" name="active_palette_2_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/camera/camera_plat/active_palette_2_api/group"/>
+     <component unofficial="yes" name="camera_plat" long-name="Camera Apps Platform Interfaces" class="api" origin-model="foundation">
       <!-- <unit bldFile="app/camera/camera_plat/active_palette_2_api/tsrc/group"/> -->
+      <!-- <unit bldFile="app/camera/camera_plat/camcorder_ui_constants_api/tsrc/group"/> -->
+      <unit bldFile="/sf/app/camera/camera_plat/group"/>
      </component>
     </collection>
    </block>

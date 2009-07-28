@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="mw" long-name="Middleware" levels="generic specific">
 <block name="remoteconn" long-name="Remote Connectivity" tech_domain="de" level="generic" levels="plugin framework server generic specific">
     <collection name="connectivitymodules" long-name="Connectivity Modules" level="framework">
-     <component name="SeCon" long-name="Se Con" origin-model="Foundation">
+     <component name="secon" long-name="Se Con" origin-model="foundation">
       <unit bldFile="/sf/mw/remoteconn/connectivitymodules/secon/group"/>
      </component>
     </collection>
     <collection name="remoteconn_info" long-name="Remote Connectivity Info" level="specific">
-     <component unofficial="yes" name="remoteconn_build" long-name="Remote Connectivity Build" origin-model="Foundation">
+     <component unofficial="yes" name="remoteconn_build" long-name="Remote Connectivity Build" origin-model="foundation">
       <unit bldFile="/sf/mw/remoteconn/group"/>
+     </component>
+     <component unofficial="yes" name="remoteconn_plat" long-name="Remote Connectivity Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/mw/remoteconn/remoteconn_plat/group"/>
      </component>
     <component name="remoteconn_metadata" long-name="Remote Connectivity Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/mw/remoteconn/remoteconn_info/remoteconn_metadata/remoteconn_metadata.mrp"/>
@@ -24,7 +27,8 @@
     </collection>
    <collection name="connectivitytransports" long-name="Connectivity Transports" level="plugin">
      <component name="n:mrouter" long-name="m-Router" filter="gt" purpose="optional" plugin="N" origin-model="Symbian">
-      <unit bldFile="/sf/mw/remoteconn/connectivitytransports/mrouter/group" mrp="/sf/mw/remoteconn/connectivitytransports/mrouter/group/connectivity_mRouterSecure.mrp"/>
+      <!-- The following unit is removed as non-contributed -->
+      <!-- <unit bldFile="mw/remoteconn/connectivitytransports/mrouter/group" mrp="mw/remoteconn/connectivitytransports/mrouter/group/connectivity_mRouterSecure.mrp"/> -->
      </component>
      <component name="plpremotelink" long-name="PLP Remote Link" deprecated="9.0" purpose="optional" plugin="N" origin-model="Symbian">
       <unit bldFile="/sf/mw/remoteconn/connectivitytransports/plpremotelink/group" mrp="/sf/mw/remoteconn/connectivitytransports/plpremotelink/group/connectivity_legacy_plp_plpremotelink.mrp"/>
@@ -43,7 +47,8 @@
     </collection>
     <collection name="mtpfws" long-name="MTP Frameworks" level="framework">
      <component name="n:mtpfw" long-name="MTP Framework" introduced="tb91" purpose="optional" plugin="N" origin-model="Symbian">
-      <unit bldFile="/sf/mw/remoteconn/mtpfws/mtpfw/group" mrp="/sf/mw/remoteconn/mtpfws/mtpfw/group/mtp_framework.mrp"/>
+      <!-- The following unit is removed as non-contributed -->
+      <!-- <unit bldFile="mw/remoteconn/mtpfws/mtpfw/group" mrp="mw/remoteconn/mtpfws/mtpfw/group/mtp_framework.mrp"/> -->
      </component>
      <component name="mtpintegrationtest" long-name="MTP Integration Test" introduced="tb91" purpose="development" plugin="N" origin-model="Symbian">
       <unit bldFile="/sf/mw/remoteconn/mtpfws/mtpintegrationtest/group" mrp="/sf/mw/remoteconn/mtpfws/mtpintegrationtest/group/mtp_test.mrp"/>
@@ -54,7 +59,8 @@
       <unit bldFile="/sf/mw/remoteconn/mtpdataproviders/mtpfileandfolderdp/group" mrp="/sf/mw/remoteconn/mtpdataproviders/mtpfileandfolderdp/group/mtp_filedp.mrp"/>
      </component>
      <component name="n:mtpwmpextndp" long-name="WMP Extension Data Provider" introduced="tb91" purpose="optional" plugin="Y" origin-model="Symbian">
-      <unit bldFile="/sf/mw/remoteconn/mtpdataproviders/mtpwmpextndp/group" mrp="/sf/mw/remoteconn/mtpdataproviders/mtpwmpextndp/group/mtp_wmpextndp.mrp"/>
+      <!-- The following unit is removed as non-contributed -->
+      <!-- <unit bldFile="mw/remoteconn/mtpdataproviders/mtpwmpextndp/group" mrp="mw/remoteconn/mtpdataproviders/mtpwmpextndp/group/mtp_wmpextndp.mrp"/> -->
      </component>
     </collection>
     <collection name="backupandrestore" long-name="Backup and Restore" level="specific">

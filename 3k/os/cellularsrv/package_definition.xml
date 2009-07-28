@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
 <block name="cellularsrv" long-name="Cellular Baseband Services" tech_domain="vc" level="services" levels="adaptation hw-if plugin framework server app-if">
@@ -18,7 +18,8 @@
       <unit bldFile="/sf/os/cellularsrv/smsprotocols/smsstack/group" mrp="/sf/os/cellularsrv/smsprotocols/smsstack/group/nbprotocols_smsstackv2.mrp"/>
      </component>
      <component name="n:cdmasmsstack" long-name="CDMA SMS Stack" introduced="8.0" purpose="optional" plugin="Y" origin-model="Symbian">
-      <unit bldFile="/sf/os/cellularsrv/smsprotocols/cdmasmsstack/group" mrp="/sf/os/cellularsrv/smsprotocols/cdmasmsstack/group/nbprotocols_cdmasmsstack.mrp"/>
+      <!-- The following unit is removed as non-contributed -->
+      <!-- <unit bldFile="os/cellularsrv/smsprotocols/cdmasmsstack/group" mrp="os/cellularsrv/smsprotocols/cdmasmsstack/group/nbprotocols_cdmasmsstack.mrp"/> -->
      </component>
     </collection>
     <collection name="telephonyprotocols" long-name="Telephony Protocols" level="framework">
@@ -67,7 +68,8 @@
       <unit bldFile="/sf/os/cellularsrv/telephonyserver/etelsimtoolkit/group" mrp="/sf/os/cellularsrv/telephonyserver/etelsimtoolkit/group/telephony_etelsat.mrp"/>
      </component>
      <component name="n:etelcdma" long-name="ETel CDMA" introduced="7.0s" purpose="optional" plugin="N" origin-model="Symbian">
-      <unit bldFile="/sf/os/cellularsrv/telephonyserver/etelcdma/group" mrp="/sf/os/cellularsrv/telephonyserver/etelcdma/group/telephony_etelcdma.mrp"/>
+      <!-- The following unit is removed as non-contributed -->
+      <!-- <unit bldFile="os/cellularsrv/telephonyserver/etelcdma/group" mrp="os/cellularsrv/telephonyserver/etelcdma/group/telephony_etelcdma.mrp"/> -->
      </component>
     </collection>
     <collection name="telephonyserverplugins" long-name="Telephony Server Plugins" level="plugin">
@@ -102,31 +104,19 @@
       <unit bldFile="/sf/os/cellularsrv/telephonyserverplugins/simtsy/group" mrp="/sf/os/cellularsrv/telephonyserverplugins/simtsy/group/telephony_simtsy.mrp"/>
      </component>
     </collection>
-	<!-- Collection manually added from OS after auto-merge -->
-	<collection name="telephonyutils" long-name="Telephony Utilities" level="app-if">
-	 <component name="dial" long-name="Dial" deprecated="9.1" purpose="optional">
-	  <unit bldFile="/sf/os/cellularsrv/telephonyutils/dial/group" mrp="/sf/os/cellularsrv/telephonyutils/dial/group/telephony_dial.mrp"/>
-	 </component>
-	 <component name="telephonywatchers" long-name="Telephony Watchers" introduced="6.0" purpose="optional" plugin="Y">
-	  <unit bldFile="/sf/os/cellularsrv/telephonyutils/telephonywatchers/group" mrp="/sf/os/cellularsrv/telephonyutils/telephonywatchers/group/telephony_watchers.mrp"/>
-	 </component>
-	 <component name="etel3rdpartyapi" long-name="ETel 3rd Party API" introduced="7.0" purpose="mandatory">
-	  <unit bldFile="/sf/os/cellularsrv/telephonyutils/etel3rdpartyapi/Group" mrp="/sf/os/cellularsrv/telephonyutils/etel3rdpartyapi/Group/telephony_etel3rdparty.mrp"/>
-	 </component>
-	</collection>
     <collection name="commonnetworkinterface" long-name="Common Network Interface" level="hw-if">
-     <component name="gennif" long-name="Generic NIF" origin-model="Foundation">
+     <component name="gennif" long-name="Generic NIF" origin-model="foundation">
       <unit bldFile="/sf/os/cellularsrv/commonnetworkinterface/gennif/group"/>
      </component>
-     <component name="gprsumtsagent" long-name="GPRS UMTS Agent" origin-model="Foundation">
+     <component name="gprsumtsagent" long-name="GPRS UMTS Agent" origin-model="foundation">
       <unit bldFile="/sf/os/cellularsrv/commonnetworkinterface/gprsumtsagent/group"/>
      </component>
-     <component unofficial="yes" name="commonnetworkinterface_build" long-name="Common Network Interface Build" origin-model="Foundation">
+     <component unofficial="yes" name="commonnetworkinterface_build" long-name="Common Network Interface Build" origin-model="foundation">
       <unit bldFile="/sf/os/cellularsrv/commonnetworkinterface/group"/>
      </component>
     </collection>
     <collection name="basebandabstraction" long-name="Baseband Abstraction" level="hw-if">
-     <component name="isc_if" long-name="ISC Interface" origin-model="Foundation">
+     <component name="isc_if" long-name="ISC Interface" origin-model="foundation">
       <unit bldFile="/sf/os/cellularsrv/basebandabstraction/isc_if/group"/>
      </component>
      <!--Component manually removed and merged to OS, unit originately commented out by Bob's script-->
@@ -142,9 +132,24 @@
       <unit bldFile="/sf/os/cellularsrv/basebandabstraction/intersystemcomm/group" mrp="/sf/os/cellularsrv/basebandabstraction/intersystemcomm/group/networking_isc.mrp"/>
      </component>
     </collection>
+	<!-- Collection manually added due to faulty merge XSLT -->
+	<collection name="telephonyutils" long-name="Telephony Utilities" level="app-if">
+	 <component name="dial" long-name="Dial" deprecated="9.1" purpose="optional">
+	  <unit bldFile="/sf/os/cellularsrv/telephonyutils/dial/group" mrp="/sf/os/cellularsrv/telephonyutils/dial/group/telephony_dial.mrp"/>
+	 </component>
+	 <component name="telephonywatchers" long-name="Telephony Watchers" introduced="6.0" purpose="optional" plugin="Y">
+	  <unit bldFile="/sf/os/cellularsrv/telephonyutils/telephonywatchers/group" mrp="/sf/os/cellularsrv/telephonyutils/telephonywatchers/group/telephony_watchers.mrp"/>
+	 </component>
+	 <component name="etel3rdpartyapi" long-name="ETel 3rd Party API" introduced="7.0" purpose="mandatory">
+	  <unit bldFile="/sf/os/cellularsrv/telephonyutils/etel3rdpartyapi/Group" mrp="/sf/os/cellularsrv/telephonyutils/etel3rdpartyapi/Group/telephony_etel3rdparty.mrp"/>
+	 </component>
+	</collection>
     <collection name="cellularsrv_info" long-name="Cellular Baseband Services Info" level="app-if">
-     <component unofficial="yes" name="cellularsrv_build" long-name="Cellular Baseband Services Build" origin-model="Foundation">
+     <component unofficial="yes" name="cellularsrv_build" long-name="Cellular Baseband Services Build" origin-model="foundation">
       <unit bldFile="/sf/os/cellularsrv/group"/>
+     </component>
+     <component unofficial="yes" name="cellularsrv_plat" long-name="Cellular Baseband Services Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/os/cellularsrv/cellularsrv_plat/group"/>
      </component>
     <component name="telephonyconfidentialdocs" long-name="Telephony Confidential Documentation" purpose="development" class="doc" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/os/cellularsrv/cellularsrv_info/telephonyconfidentialdocs/telephony_confidential.mrp"/>
@@ -154,11 +159,6 @@
      </component>
      <component name="cellularsrv_metadata" long-name="Cellular Baseband Services Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/os/cellularsrv/cellularsrv_info/cellularsrv_metadata/cellularsrv_metadata.mrp"/>
-     </component>
-    </collection>
-    <collection name="cellularsrv_plat" long-name="Cellular Baseband Services Platform Interfaces" level="app-if">
-     <component unofficial="yes" name="primary_pdp_context_qos_parameter_setting_api" origin-model="Foundation">
-      <unit bldFile="/sf/os/cellularsrv/cellularsrv_plat/primary_pdp_context_qos_parameter_setting_api/group"/>
      </component>
     </collection>
    <collection name="hwpluginsimulation" long-name="Hardware Plugin Simulation" level="adaptation">

@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="mw" long-name="Middleware" levels="generic specific">
 <block name="netprotocols" long-name="High-level Internet Protocols" tech_domain="dc" level="generic" levels="plugin framework server generic specific">
     <collection name="httpfilters" long-name="HTTP Filters" level="plugin">
-     <component name="httpfiltercommon" long-name="HTTP Filter Common" origin-model="Foundation">
+     <component name="httpfiltercommon" long-name="HTTP Filter Common" origin-model="foundation">
       <unit bldFile="/sf/mw/netprotocols/httpfilters/httpfiltercommon/group"/>
      </component>
-     <component name="cookie" long-name="Cookie" origin-model="Foundation">
+     <component name="cookie" long-name="Cookie" origin-model="foundation">
       <unit bldFile="/sf/mw/netprotocols/httpfilters/cookie/group"/>
      </component>
-     <component name="deflatefilter" long-name="Deflate Filter" origin-model="Foundation">
+     <component name="deflatefilter" long-name="Deflate Filter" origin-model="foundation">
       <unit bldFile="/sf/mw/netprotocols/httpfilters/deflatefilter/group"/>
      </component>
-     <component name="httpfilteracceptheader" long-name="HTTP Filter Accept Header" origin-model="Foundation">
+     <component name="httpfilteracceptheader" long-name="HTTP Filter Accept Header" origin-model="foundation">
       <unit bldFile="/sf/mw/netprotocols/httpfilters/httpfilteracceptheader/group"/>
      </component>
-     <component name="httpfilterauthentication" long-name="HTTP Filter Authentication" origin-model="Foundation">
+     <component name="httpfilterauthentication" long-name="HTTP Filter Authentication" origin-model="foundation">
       <unit bldFile="/sf/mw/netprotocols/httpfilters/httpfilterauthentication/group"/>
      </component>
-     <component name="httpfilterconnhandler" long-name="HTTP Filter Conn Handler" origin-model="Foundation">
+     <component name="httpfilterconnhandler" long-name="HTTP Filter Conn Handler" origin-model="foundation">
       <unit bldFile="/sf/mw/netprotocols/httpfilters/httpfilterconnhandler/group"/>
      </component>
-     <component name="httpfilteriop" long-name="HTTP Filter Iop" origin-model="Foundation">
+     <component name="httpfilteriop" long-name="HTTP Filter Iop" origin-model="foundation">
       <unit bldFile="/sf/mw/netprotocols/httpfilters/httpfilteriop/group"/>
      </component>
-     <component name="httpfilterproxy" long-name="HTTP Filter Proxy" origin-model="Foundation">
+     <component name="httpfilterproxy" long-name="HTTP Filter Proxy" origin-model="foundation">
       <unit bldFile="/sf/mw/netprotocols/httpfilters/httpfilterproxy/group"/>
      </component>
-     <component name="uaproffilter" long-name="UAProf Filter" origin-model="Foundation">
+     <component name="uaproffilter" long-name="UAProf Filter" origin-model="foundation">
       <unit bldFile="/sf/mw/netprotocols/httpfilters/uaproffilter/group"/>
      </component>
-     <component unofficial="yes" name="httpfilters_build" long-name="HTTP Filters Build" origin-model="Foundation">
+     <component unofficial="yes" name="httpfilters_build" long-name="HTTP Filters Build" origin-model="foundation">
       <unit bldFile="/sf/mw/netprotocols/httpfilters/group"/>
      </component>
     </collection>
@@ -71,29 +71,19 @@
     </collection>
     <collection name="n:wapstack" long-name="WAP Stack" level="plugin">
      <component name="n:wapmessageapi" long-name="WAP Message API" purpose="optional" plugin="N" origin-model="Symbian">
-      <unit bldFile="/sf/mw/netprotocols/wapstack/wapmessageapi/group" mrp="/sf/mw/netprotocols/wapstack/wapmessageapi/group/wap-stack_wapmessage.mrp"/>
+      <!-- The following unit is removed as non-contributed -->
+      <!-- <unit bldFile="mw/netprotocols/wapstack/wapmessageapi/group" mrp="mw/netprotocols/wapstack/wapmessageapi/group/wap-stack_wapmessage.mrp"/> -->
      </component>
     </collection>
     <collection name="netprotocols_info" long-name="High-level Internet Protocols Info" level="specific">
-     <component unofficial="yes" name="netprotocols_build" long-name="High-level Internet Protocols Build" origin-model="Foundation">
+     <component unofficial="yes" name="netprotocols_plat" long-name="High-level Internet Protocols Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/mw/netprotocols/netprotocols_plat/group"/>
+     </component>
+     <component unofficial="yes" name="netprotocols_build" long-name="High-level Internet Protocols Build" origin-model="foundation">
       <unit bldFile="/sf/mw/netprotocols/group"/>
      </component>
     <component name="netprotocols_metadata" long-name="High-level Internet Protocols Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/mw/netprotocols/netprotocols_info/netprotocols_metadata/netprotocols_metadata.mrp"/>
-     </component>
-    </collection>
-    <collection name="netprotocols_plat" long-name="High-level Internet Protocols Platform Interfaces" level="specific">
-     <component unofficial="yes" name="http_cache_mgr_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/netprotocols/netprotocols_plat/http_cache_mgr_api/group"/>
-     </component>
-     <component unofficial="yes" name="http_filters_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/netprotocols/netprotocols_plat/http_filters_api/group"/>
-     </component>
-     <component unofficial="yes" name="netprotocols_plat_build" long-name="High-level Internet Protocols Platform API Build" origin-model="Foundation">
-      <unit bldFile="/sf/mw/netprotocols/netprotocols_plat/group"/>
-     </component>
-     <component unofficial="yes" name="cookie_manager_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/netprotocols/netprotocols_plat/cookie_manager_api/group"/>
      </component>
     </collection>
    </block>

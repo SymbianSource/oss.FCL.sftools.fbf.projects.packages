@@ -1,79 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="mw" long-name="Middleware" levels="generic specific">
 <block name="camerasrv" long-name="Camera Services" tech_domain="mm" level="specific" levels="plugin fw api">
     <collection name="camappengine" long-name="Camera App Engine" level="fw">
-     <component name="StillConverter" long-name="Still Converter" origin-model="Foundation">
+     <component name="stillconverter" long-name="Still Converter" origin-model="foundation">
       <!-- <unit bldFile="mw/camerasrv/camappengine/stillconverter/group"/> -->
      </component>
-     <component name="Engine" origin-model="Foundation">
+     <component name="camappengine_engine" origin-model="foundation">
       <!-- <unit bldFile="mw/camerasrv/camappengine/engine/group"/> -->
      </component>
-     <component name="asynchfilesavequeue" long-name="Asynch File Save Queue" origin-model="Foundation">
+     <component name="asynchfilesavequeue" long-name="Asynch File Save Queue" origin-model="foundation">
       <unit bldFile="/sf/mw/camerasrv/camappengine/asynchfilesavequeue/group"/>
       <!-- <unit bldFile="mw/camerasrv/camappengine/asynchfilesavequeue/tsrc/public/basic/group"/> -->
      </component>
-     <component unofficial="yes" name="camappengine_build" origin-model="Foundation">
+     <component unofficial="yes" name="camappengine_build" origin-model="foundation">
       <unit bldFile="/sf/mw/camerasrv/camappengine/build"/>
      </component>
     </collection>
     <collection name="camcordermmfplugin" long-name="Camcorder MMF Plugin" level="plugin">
-     <component name="mediarecorder" long-name="Media Recorder" origin-model="Foundation">
+     <component name="mediarecorder" long-name="Media Recorder" origin-model="foundation">
       <!-- <unit bldFile="mw/camerasrv/camcordermmfplugin/mediarecorder/group"/> -->
      </component>
-     <component name="filecomposer" long-name="File Composer" origin-model="Foundation">
+     <component name="filecomposer" long-name="File Composer" origin-model="foundation">
       <!-- <unit bldFile="mw/camerasrv/camcordermmfplugin/filecomposer/group"/> -->
      </component>
-     <component name="camcordermmfplugin_controller" long-name="Controller" origin-model="Foundation">
+     <component name="camcordermmfplugin_controller" long-name="Controller" origin-model="foundation">
       <!-- <unit bldFile="mw/camerasrv/camcordermmfplugin/controller/group"/> -->
      </component>
-     <component unofficial="yes" name="camcordermmfplugin_test" long-name="Camcorder MMF Plugin Test" origin-model="Foundation">
+     <component unofficial="yes" name="camcordermmfplugin_test" long-name="Camcorder MMF Plugin Test" origin-model="foundation">
       <!-- <unit bldFile="mw/camerasrv/camcordermmfplugin/tsrc/public/basic/group"/> -->
      </component>
-     <component unofficial="yes" name="camcordermmfplugin_build" origin-model="Foundation">
+     <component unofficial="yes" name="camcordermmfplugin_build" origin-model="foundation">
       <unit bldFile="/sf/mw/camerasrv/camcordermmfplugin/build"/>
      </component>
     </collection>
     <collection name="configmanagers" long-name="Config Managers" level="api">
-     <component name="imagingconfigmanager" long-name="Imaging Config Manager" origin-model="Foundation">
+     <component name="imagingconfigmanager" long-name="Imaging Config Manager" origin-model="foundation">
       <unit bldFile="/sf/mw/camerasrv/configmanagers/imagingconfigmanager/group"/>
       <!-- <unit bldFile="mw/camerasrv/configmanagers/imagingconfigmanager/tsrc/public/basic/group"/> -->
      </component>
     </collection>
     <collection name="camerasrv_info" long-name="Camera Services Info" level="api">
-     <component unofficial="yes" name="camerasrv_build" long-name="Camera Services Build" origin-model="Foundation">
-      <unit bldFile="/sf/mw/camerasrv/group"/>
-     </component>
-    </collection>
-    <collection name="camerasrv_plat" long-name="Camera Services Platform Interfaces" level="api">
-     <component unofficial="yes" name="media_recorder_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/media_recorder_api/group"/>
+     <component unofficial="yes" name="camerasrv_plat" long-name="Camera Services Platform Interfaces" class="api" origin-model="foundation">
+      <!-- <unit bldFile="mw/camerasrv/camerasrv_plat/asynchronous_file_saving_queue_api/tsrc/group"/> -->
+      <!-- <unit bldFile="mw/camerasrv/camerasrv_plat/camera_application_engine_api/tsrc/group"/> -->
+      <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/group"/>
+      <!-- <unit bldFile="mw/camerasrv/camerasrv_plat/imaging_configuration_manager_api/tsrc/group"/> -->
       <!-- <unit bldFile="mw/camerasrv/camerasrv_plat/media_recorder_api/tsrc/group"/> -->
      </component>
-     <component unofficial="yes" name="custom_onboard_camera_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/custom_onboard_camera_api/group"/>
-     </component>
-     <component unofficial="yes" name="media_recorder_sink_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/media_recorder_sink_api/group"/>
-     </component>
-     <component unofficial="yes" name="asynchronous_file_saving_queue_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/asynchronous_file_saving_queue_api/group"/>
-      <!-- <unit bldFile="mw/camerasrv/camerasrv_plat/asynchronous_file_saving_queue_api/tsrc/group"/> -->
-     </component>
-     <component unofficial="yes" name="3gp_file_composer_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/3gp_file_composer_api/group"/>
-     </component>
-     <component unofficial="yes" name="camera_application_engine_api" origin-model="Foundation">
-      <!-- <unit bldFile="mw/camerasrv/camerasrv_plat/camera_application_engine_api/tsrc/group"/> -->
-      <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/camera_application_engine_api/group"/>
-     </component>
-     <component unofficial="yes" name="cae_extentension_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/cae_extentension_api/group"/>
-     </component>
-     <component unofficial="yes" name="imaging_configuration_manager_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/imaging_configuration_manager_api/group"/>
-      <!-- <unit bldFile="mw/camerasrv/camerasrv_plat/imaging_configuration_manager_api/tsrc/group"/> -->
+     <component unofficial="yes" name="camerasrv_build" long-name="Camera Services Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/camerasrv/group"/>
      </component>
     </collection>
    </block>

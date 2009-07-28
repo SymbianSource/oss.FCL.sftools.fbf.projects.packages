@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="mw" long-name="Middleware" levels="generic specific">
 <block name="appsupport" long-name="Generic Application Support" tech_domain="rt" level="generic" levels="system plugin framework server generic specific">
     <collection name="sysresmonitoring" long-name="System Resource Monitoring" level="system">
-     <component name="oodmonitor" long-name="OOD Monitor" origin-model="Foundation">
+     <component name="oodmonitor" long-name="OOD Monitor" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/sysresmonitoring/oodmonitor/group"/>
      </component>
-     <component name="oommonitor" long-name="OOM Monitor" origin-model="Foundation">
+     <component name="oommonitor" long-name="OOM Monitor" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/sysresmonitoring/oommonitor/group"/>
       <!-- <unit bldFile="mw/appsupport/sysresmonitoring/oommonitor/tsrc/public/basic/group"/> -->
      </component>
-     <component unofficial="yes" name="sysresmonitoring_build" long-name="System Resource Monitoring Build" origin-model="Foundation">
+     <component unofficial="yes" name="sysresmonitoring_build" long-name="System Resource Monitoring Build" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/sysresmonitoring/group"/>
      </component>
     </collection>
     <collection name="gssettingsuis" long-name="GS Settings UIs" level="specific">
-     <component name="Gs" long-name="GS" origin-model="Foundation">
+     <component name="gs" long-name="GS" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/gssettingsuis/gs/group"/>
       <!-- <unit bldFile="mw/appsupport/gssettingsuis/gs/gsdiagnosticsplugin"/> -->
       <!-- <unit bldFile="mw/appsupport/gssettingsuis/gs/gsprslnplugin"/> -->
@@ -24,276 +24,135 @@
      </component>
     </collection>
     <collection name="profilesservices" long-name="Profiles Services" level="server">
-     <component name="FileList" long-name="File List" origin-model="Foundation">
+     <component name="filelist" long-name="File List" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/profilesservices/filelist/group"/>
       <unit bldFile="/sf/mw/appsupport/profilesservices/filelist/tsrc/public/basic/group"/>
      </component>
-     <component name="MediaFileList" long-name="Media File List" origin-model="Foundation">
+     <component name="mediafilelist" long-name="Media File List" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/profilesservices/mediafilelist/group"/>
      </component>
-     <component name="ProfileEngine" long-name="Profile Engine" origin-model="Foundation">
+     <component name="profileengine" long-name="Profile Engine" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/profilesservices/profileengine/group"/>
       <unit bldFile="/sf/mw/appsupport/profilesservices/profileengine/tsrc/public/basic/group"/>
      </component>
-     <component name="RingingTone3DPlugin" long-name="Ringing Tone 3D Plugin" origin-model="Foundation">
+     <component name="ringingtone3dplugin" long-name="Ringing Tone 3D Plugin" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/profilesservices/ringingtone3dplugin/group"/>
      </component>
-     <component unofficial="yes" name="profilesservices_test" long-name="Profiles Services Test" origin-model="Foundation">
+     <component unofficial="yes" name="profilesservices_test" long-name="Profiles Services Test" origin-model="foundation">
       <!-- <unit bldFile="mw/appsupport/profilesservices/tsrc/public/basic/group"/> -->
      </component>
     </collection>
     <collection name="flashliteapi_3_1" long-name="Flashlite API 3.1" level="specific">
-     <component name="flashliteapi_3_1 compo" origin-model="Foundation"/>
+     <component name="flashliteapi_3_1_build" origin-model="foundation"/>
     </collection>
     <collection name="contextframework" long-name="Context Framework" level="framework">
-     <component name="cfw" long-name="Context Framework" origin-model="Foundation">
+     <component name="cfw" long-name="Context Framework" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/contextframework/cfw/group"/>
       <!-- <unit bldFile="mw/appsupport/contextframework/cfw/tsrc/cfwtest/group"/> -->
       <!-- <unit bldFile="mw/appsupport/contextframework/cfw/tsrc/public/basic/group"/> -->
      </component>
-     <component name="cfwplugins" long-name="Context Framework Plugins" origin-model="Foundation">
+     <component name="cfwplugins" long-name="Context Framework Plugins" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/contextframework/cfwplugins/group"/>
      </component>
-     <component unofficial="yes" name="contextframework_build" long-name="Context Framework Build" origin-model="Foundation">
+     <component unofficial="yes" name="contextframework_build" long-name="Context Framework Build" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/contextframework/group"/>
      </component>
     </collection>
     <collection name="mediakeys" long-name="Media Keys" level="plugin">
-     <component name="KeyPublisherPlugin" long-name="Key Publisher Plugin" origin-model="Foundation">
+     <component name="keypublisherplugin" long-name="Key Publisher Plugin" origin-model="foundation">
       <!-- <unit bldFile="mw/appsupport/mediakeys/keypublisherplugin/group"/> -->
      </component>
-     <component name="MMKeyBearer" long-name="MM Key Bearer" origin-model="Foundation">
+     <component name="mmkeybearer" long-name="MM Key Bearer" origin-model="foundation">
       <!-- <unit bldFile="mw/appsupport/mediakeys/mmkeybearer/group"/> -->
      </component>
-     <component unofficial="yes" name="mediakeys_build" long-name="Media Keys Build" origin-model="Foundation">
+     <component unofficial="yes" name="mediakeys_build" long-name="Media Keys Build" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/mediakeys/group"/>
      </component>
     </collection>
     <collection name="coreapplicationuis" long-name="Core Application UIs" level="server">
-     <component name="DbRecovery" long-name="Db Recovery" origin-model="Foundation">
+     <component name="dbrecovery" long-name="Db Recovery" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/dbrecovery/group"/>
      </component>
-     <component name="NspsWsPlugin" long-name="Nsps WS Plugin" origin-model="Foundation">
+     <component name="nspswsplugin" long-name="Nsps WS Plugin" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/nspswsplugin/group"/>
      </component>
-     <component name="Rfs" long-name="RFS" origin-model="Foundation">
+     <component name="rfs" long-name="RFS" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/rfs/group"/>
       <!-- <unit bldFile="mw/appsupport/coreapplicationuis/rfs/plugins/gsrfsplugin/group"/> -->
      </component>
-     <component name="rfsplugins" long-name="Rfs Plugins" origin-model="Foundation">
+     <component name="rfsplugins" long-name="Rfs Plugins" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/rfsplugins/group"/>
       <!-- <unit bldFile="mw/appsupport/coreapplicationuis/rfsplugins/tsrc/rfspluginstest/group"/> -->
       <!-- <unit bldFile="mw/appsupport/coreapplicationuis/rfsplugins/tsrc/rfspluginstest/rfstestapp/group"/> -->
      </component>
-     <component name="SysAp" long-name="Sys Ap" origin-model="Foundation">
+     <component name="sysap" long-name="Sys Ap" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/sysap/group"/>
      </component>
-     <component name="VariatedSettings" long-name="Variated Settings" origin-model="Foundation">
+     <component name="variatedsettings" long-name="Variated Settings" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/variatedsettings/group"/>
      </component>
-     <component name="accfwuinotifier" long-name="ACC Framework UI Notifier" origin-model="Foundation">
+     <component name="accfwuinotifier" long-name="ACC Framework UI Notifier" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/accfwuinotifier/group"/>
      </component>
-     <component name="kefmapper" long-name="Key Event Framework Mapper" origin-model="Foundation">
+     <component name="kefmapper" long-name="Key Event Framework Mapper" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/kefmapper/group"/>
      </component>
-     <component name="advancedtspcontroller" long-name="Advanced TSP Controller" origin-model="Foundation">
+     <component name="advancedtspcontroller" long-name="Advanced TSP Controller" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/advancedtspcontroller/group"/>
       <!-- <unit bldFile="mw/appsupport/coreapplicationuis/advancedtspcontroller/tsrc/mt_atspc/group"/> -->
       <!-- <unit bldFile="mw/appsupport/coreapplicationuis/advancedtspcontroller/tsrc/stub/group"/> -->
      </component>
-     <component name="powersaveutilities" long-name="Power Save Utilities" origin-model="Foundation">
+     <component name="powersaveutilities" long-name="Power Save Utilities" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/powersaveutilities/group"/>
       <!-- <unit bldFile="mw/appsupport/coreapplicationuis/powersaveutilities/tsrc/public/basic/group"/> -->
      </component>
-     <component name="gsserverenginestub" long-name="GS Server Engine Stub" origin-model="Foundation">
+     <component name="gsserverenginestub" long-name="GS Server Engine Stub" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/gsserverenginestub/group"/>
      </component>
-     <component name="GSServerEngine" long-name="GS Server Engine" origin-model="Foundation">
+     <component name="gsserverengine" long-name="GS Server Engine" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/gsserverengine/group"/>
      </component>
-     <component name="GSServer" long-name="GS Server" origin-model="Foundation">
+     <component name="gsserver" long-name="GS Server" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/gsserver/group"/>
      </component>
-     <component name="sensordatacompensatorplugin" long-name="Sensor Data Compensator Plugin" origin-model="Foundation">
+     <component name="sensordatacompensatorplugin" long-name="Sensor Data Compensator Plugin" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/sensordatacompensatorplugin/group"/>
       <!-- <unit bldFile="mw/appsupport/coreapplicationuis/sensordatacompensatorplugin/tsrc/sensordatacompensatorplgtest/data/group"/> -->
       <!-- <unit bldFile="mw/appsupport/coreapplicationuis/sensordatacompensatorplugin/tsrc/sensordatacompensatorplgtest/group"/> -->
      </component>
-     <component unofficial="yes" name="coreapplicationuis_test" long-name="Core Application UIs Test" origin-model="Foundation">
+     <component unofficial="yes" name="coreapplicationuis_test" long-name="Core Application UIs Test" origin-model="foundation">
       <!-- <unit bldFile="mw/appsupport/coreapplicationuis/tsrc/public/basic/group"/> -->
      </component>
-     <component unofficial="yes" name="coreapplicationuis_build" long-name="Core Application UIs Build" origin-model="Foundation">
+     <component unofficial="yes" name="coreapplicationuis_build" long-name="Core Application UIs Build" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/group"/>
      </component>
     </collection>
     <collection name="startupservices" long-name="Startup Services" level="system">
-     <component name="SplashScreen" long-name="Splash Screen" origin-model="Foundation">
+     <component name="splashscreen" long-name="Splash Screen" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/startupservices/splashscreen/group"/>
      </component>
-     <component name="Startup" origin-model="Foundation">
+     <component name="startup" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/startupservices/startup/group"/>
       <!-- <unit bldFile="mw/appsupport/startupservices/startup/mediatorplugin/group"/> -->
       <!-- <unit bldFile="mw/appsupport/startupservices/startup/startupsyncplugin/group"/> -->
       <!-- <unit bldFile="mw/appsupport/startupservices/startup/systemerrorplugin/group"/> -->
      </component>
-     <component name="startupanimation" long-name="Startup Animation" origin-model="Foundation">
+     <component name="startupanimation" long-name="Startup Animation" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/startupservices/startupanimation/group"/>
      </component>
-     <component unofficial="yes" name="startupservices_build" long-name="Startup Services Build" origin-model="Foundation">
+     <component unofficial="yes" name="startupservices_build" long-name="Startup Services Build" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/startupservices/group"/>
      </component>
     </collection>
     <collection name="systemsettings" long-name="System Settings" level="system">
-     <component name="gssensorplugin" long-name="GS Sensor Plugin" origin-model="Foundation">
+     <component name="gssensorplugin" long-name="GS Sensor Plugin" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/systemsettings/gssensorplugin/group"/>
      </component>
-     <component name="GSAccessoryPlugin" long-name="GS Accessory Plugin" origin-model="Foundation">
+     <component name="gsaccessoryplugin" long-name="GS Accessory Plugin" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/systemsettings/gsaccessoryplugin/group"/>
      </component>
-     <component unofficial="yes" name="systemsettings_build" long-name="System Settings Build" origin-model="Foundation">
+     <component unofficial="yes" name="systemsettings_build" long-name="System Settings Build" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/systemsettings/group"/>
-     </component>
-    </collection>
-    <collection name="appsupport_plat" long-name="Generic Application Support Platform Interfaces" level="specific">
-     <component unofficial="yes" name="settings_launch_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/settings_launch_api/group"/>
-      <!-- <unit bldFile="mw/appsupport/appsupport_plat/settings_launch_api/tsrc/group"/> -->
-     </component>
-     <component unofficial="yes" name="secondary_display_startup_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/secondary_display_startup_api/group"/>
-     </component>
-     <component unofficial="yes" name="secondary_display_accfw_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/secondary_display_accfw_api/group"/>
-     </component>
-     <component unofficial="yes" name="context_subscription_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/context_subscription_api/group"/>
-     </component>
-     <component unofficial="yes" name="sensor_user_setting_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/sensor_user_setting_api/group"/>
-     </component>
-     <component unofficial="yes" name="action_plugin_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/action_plugin_api/group"/>
-     </component>
-     <component unofficial="yes" name="application_orientation_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/application_orientation_api/group"/>
-     </component>
-     <component unofficial="yes" name="filelist_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/filelist_api/group"/>
-     </component>
-     <component unofficial="yes" name="restore_factory_settings_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/restore_factory_settings_api/group"/>
-     </component>
-     <component unofficial="yes" name="context_source_settings_manager_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/context_source_settings_manager_api/group"/>
-     </component>
-     <component unofficial="yes" name="oom_monitor_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/oom_monitor_api/group"/>
-     </component>
-     <component unofficial="yes" name="startup_configuration_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/startup_configuration_api/group"/>
-     </component>
-     <component unofficial="yes" name="context_framework_client_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/context_framework_client_api/group"/>
-     </component>
-     <component unofficial="yes" name="settings_listbox_api" origin-model="Foundation">
-      <!-- <unit bldFile="mw/appsupport/appsupport_plat/settings_listbox_api/tsrc/group"/> -->
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/settings_listbox_api/group"/>
-     </component>
-     <component unofficial="yes" name="settings_framework_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/settings_framework_api/group"/>
-      <!-- <unit bldFile="mw/appsupport/appsupport_plat/settings_framework_api/tsrc/group"/> -->
-     </component>
-     <component unofficial="yes" name="context_framework_listener_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/context_framework_listener_api/group"/>
-     </component>
-     <component unofficial="yes" name="context_framework_version_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/context_framework_version_api/group"/>
-     </component>
-     <component unofficial="yes" name="context_source_plugin_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/context_source_plugin_api/group"/>
-     </component>
-     <component unofficial="yes" name="oom_monitor_plugin_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/oom_monitor_plugin_api/group"/>
-     </component>
-     <component unofficial="yes" name="context_framework_services_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/context_framework_services_api/group"/>
-     </component>
-     <component unofficial="yes" name="system_application_plugin_callback_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/system_application_plugin_callback_api/group"/>
-     </component>
-     <component unofficial="yes" name="profiles_mediafilelist_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/profiles_mediafilelist_api/group"/>
-     </component>
-     <component unofficial="yes" name="settings_uis_cenrep_collection_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/settings_uis_cenrep_collection_api/group"/>
-     </component>
-     <component unofficial="yes" name="system_application_notification_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/system_application_notification_api/group"/>
-     </component>
-     <component unofficial="yes" name="secondary_display_sysap_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/secondary_display_sysap_api/group"/>
-     </component>
-     <component unofficial="yes" name="ood_threshold_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/ood_threshold_api/group"/>
-     </component>
-     <component unofficial="yes" name="settings_backgroundimage_api" origin-model="Foundation">
-      <!-- <unit bldFile="mw/appsupport/appsupport_plat/settings_backgroundimage_api/tsrc/group"/> -->
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/settings_backgroundimage_api/group"/>
-     </component>
-     <component unofficial="yes" name="restore_factory_settings_plugin_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/restore_factory_settings_plugin_api/group"/>
-     </component>
-     <component unofficial="yes" name="media_keys_definition_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/media_keys_definition_api/group"/>
-     </component>
-     <component unofficial="yes" name="secondary_display_system_state_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/secondary_display_system_state_api/group"/>
-     </component>
-     <component unofficial="yes" name="system_application_light_control_plugin_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/system_application_light_control_plugin_api/group"/>
-     </component>
-     <component unofficial="yes" name="operation_provider_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/operation_provider_api/group"/>
-     </component>
-     <component unofficial="yes" name="profiles_engine_api" origin-model="Foundation">
-      <!-- <unit bldFile="mw/appsupport/appsupport_plat/profiles_engine_api/tsrc/group"/> -->
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/profiles_engine_api/group"/>
-     </component>
-     <component unofficial="yes" name="system_application_key_handler_plugin_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/system_application_key_handler_plugin_api/group"/>
-     </component>
-     <component unofficial="yes" name="context_access_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/context_access_api/group"/>
-     </component>
-     <component unofficial="yes" name="key_event_framework_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/key_event_framework_api/group"/>
-     </component>
-     <component unofficial="yes" name="key_event_framework_mapper_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/key_event_framework_mapper_api/group"/>
-     </component>
-     <component unofficial="yes" name="settings_plugin_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/settings_plugin_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonecmdhandler_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_plat/phonecmdhandler_api/group"/>
-     </component>
-    </collection>
-    <collection name="appsupport_pub" long-name="Generic Application Support Public Interfaces" level="specific">
-     <component unofficial="yes" name="profiles_engine_active_profile_settings_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_pub/profiles_engine_active_profile_settings_api/group"/>
-     </component>
-     <component unofficial="yes" name="flash_viewer_framework_api" origin-model="Foundation">
-      <!-- <unit bldFile="mw/appsupport/appsupport_pub/flash_viewer_framework_api/tsrc/bc/flashviewerframework/group"/> -->
-      <unit bldFile="/sf/mw/appsupport/appsupport_pub/flash_viewer_framework_api/group"/>
-     </component>
-     <component unofficial="yes" name="network_status_api" origin-model="Foundation">
-      <!-- <unit bldFile="mw/appsupport/appsupport_pub/network_status_api/tsrc/bc/networkstatus/group"/> -->
-      <unit bldFile="/sf/mw/appsupport/appsupport_pub/network_status_api/group"/>
-     </component>
-     <component unofficial="yes" name="profiles_engine_wrapper_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/appsupport/appsupport_pub/profiles_engine_wrapper_api/group"/>
-      <!-- <unit bldFile="mw/appsupport/appsupport_pub/profiles_engine_wrapper_api/tsrc/bc/profilesenginewrapperapi/group"/> -->
      </component>
     </collection>
     <collection name="filehandling" long-name="File Handling" level="server">
@@ -391,7 +250,21 @@
      </component>
     </collection>
     <collection name="appsupport_info" long-name="Generic Application Support Info" level="specific">
-     <component unofficial="yes" name="appsupport_build" long-name="Generic Application Support Build" origin-model="Foundation">
+     <component unofficial="yes" name="appsupport_plat" long-name="Generic Application Support Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/mw/appsupport/appsupport_plat/group"/>
+      <!-- <unit bldFile="mw/appsupport/appsupport_plat/profiles_engine_api/tsrc/group"/> -->
+      <!-- <unit bldFile="mw/appsupport/appsupport_plat/settings_backgroundimage_api/tsrc/group"/> -->
+      <!-- <unit bldFile="mw/appsupport/appsupport_plat/settings_framework_api/tsrc/group"/> -->
+      <!-- <unit bldFile="mw/appsupport/appsupport_plat/settings_launch_api/tsrc/group"/> -->
+      <!-- <unit bldFile="mw/appsupport/appsupport_plat/settings_listbox_api/tsrc/group"/> -->
+     </component>
+     <component unofficial="yes" name="appsupport_pub" long-name="Generic Application Support Public Interfaces" class="api" origin-model="foundation">
+      <!-- <unit bldFile="mw/appsupport/appsupport_pub/flash_viewer_framework_api/tsrc/bc/flashviewerframework/group"/> -->
+      <unit bldFile="/sf/mw/appsupport/appsupport_pub/group"/>
+      <!-- <unit bldFile="mw/appsupport/appsupport_pub/network_status_api/tsrc/bc/networkstatus/group"/> -->
+      <!-- <unit bldFile="mw/appsupport/appsupport_pub/profiles_engine_wrapper_api/tsrc/bc/profilesenginewrapperapi/group"/> -->
+     </component>
+     <component unofficial="yes" name="appsupport_build" long-name="Generic Application Support Build" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/group"/>
      </component>
     <component name="appsupport_metadata" long-name="Generic Application Support Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">

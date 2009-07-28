@@ -1,34 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="files" long-name="File Manager Apps" tech_domain="pr" level="apps" levels="support apps">
     <collection name="filemanager" long-name="File Manager" level="apps">
-     <component name="filemanager_help" long-name="Help" origin-model="Foundation">
+     <component name="filemanager_help" long-name="Help" origin-model="foundation">
       <unit bldFile="/sf/app/files/filemanager/help/group"/>
      </component>
-     <component unofficial="yes" name="filemanager_build" long-name="File Manager Build" origin-model="Foundation">
+     <component name="filemanager_build" origin-model="foundation">
       <unit bldFile="/sf/app/files/filemanager/group"/>
      </component>
     </collection>
     <collection name="filesystemuis" long-name="File System UIs" level="support">
-     <component name="memscaneng" long-name="Mem Scan Eng" origin-model="Foundation">
+     <component name="memscaneng" long-name="Mem Scan Eng" origin-model="foundation">
       <unit bldFile="/sf/app/files/filesystemuis/memscaneng/group"/>
      </component>
-     <component name="memstatepopup" long-name="Mem State Popup" origin-model="Foundation">
+     <component name="memstatepopup" long-name="Mem State Popup" origin-model="foundation">
       <unit bldFile="/sf/app/files/filesystemuis/memstatepopup/group"/>
      </component>
-     <component unofficial="yes" name="filesystemuis_build" long-name="File System UIs Build" origin-model="Foundation">
+     <component unofficial="yes" name="filesystemuis_build" long-name="File System UIs Build" origin-model="foundation">
       <unit bldFile="/sf/app/files/filesystemuis/group"/>
      </component>
     </collection>
-    <collection name="files_plat" long-name="File Manager Apps Platform Interfaces" level="apps">
-     <component unofficial="yes" name="memory_scan_popup_ui_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/files/files_plat/memory_scan_popup_ui_api/group"/>
-     </component>
-    </collection>
     <collection name="files_info" long-name="File Manager Apps Info" level="apps">
-     <component unofficial="yes" name="files_build" long-name="File Manager Apps Build" origin-model="Foundation">
+     <component unofficial="yes" name="files_plat" long-name="File Manager Apps Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/app/files/files_plat/group"/>
+     </component>
+     <component unofficial="yes" name="files_build" long-name="File Manager Apps Build" origin-model="foundation">
       <unit bldFile="/sf/app/files/group"/>
      </component>
     </collection>

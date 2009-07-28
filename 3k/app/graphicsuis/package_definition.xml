@@ -1,30 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="graphicsuis" long-name="Graphics UIs" tech_domain="ui" level="services" levels="util ui">
     <collection name="svgtviewer" long-name="SVGT Viewer" level="ui">
-     <component name="SvgtViewerPlugin" long-name="SVGT Viewer Plugin" origin-model="Foundation">
+     <component name="svgtviewerplugin" long-name="SVGT Viewer Plugin" origin-model="foundation">
       <unit bldFile="/sf/app/graphicsuis/svgtviewer/svgtviewerplugin/group"/>
      </component>
-     <component unofficial="yes" name="svgtviewer_build" long-name="SVGT Viewer Build" origin-model="Foundation">
+     <component unofficial="yes" name="svgtviewer_build" long-name="SVGT Viewer Build" origin-model="foundation">
       <unit bldFile="/sf/app/graphicsuis/svgtviewer/group"/>
      </component>
     </collection>
     <collection name="graphicsuis_info" long-name="Graphics UIs Info" level="ui">
-     <component unofficial="yes" name="graphicsuis_build" long-name="Graphics UIs Build" origin-model="Foundation">
+     <component unofficial="yes" name="graphicsuis_build" long-name="Graphics UIs Build" origin-model="foundation">
       <unit bldFile="/sf/app/graphicsuis/group"/>
      </component>
-    </collection>
-    <collection name="graphicsuis_plat" long-name="Graphics UIs Platform Interfaces" level="ui">
-     <component unofficial="yes" name="svg_application_observer_utility_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/graphicsuis/graphicsuis_plat/svg_application_observer_utility_api/group"/>
-     </component>
-     <component unofficial="yes" name="svgt_file_view_details_dialog_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/graphicsuis/graphicsuis_plat/svgt_file_view_details_dialog_api/group"/>
-     </component>
-     <component unofficial="yes" name="svgt_viewer_ui_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/graphicsuis/graphicsuis_plat/svgt_viewer_ui_api/group"/>
+     <component unofficial="yes" name="graphicsuis_plat" long-name="Graphics UIs Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/app/graphicsuis/graphicsuis_plat/group"/>
      </component>
     </collection>
    </block>

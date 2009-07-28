@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
 <block name="shortlinksrv" level="services" long-name="Short Link Services" levels="adaptation hw-if plugin framework server app-if">
@@ -92,22 +92,14 @@
      </component>
     </collection>
     <collection name="shortlinksrv_info" long-name="Short Link Services Info" level="app-if">
-     <component unofficial="yes" name="shortlinksrv_build" origin-model="Foundation">
+     <component unofficial="yes" name="shortlinksrv_build" origin-model="foundation">
       <unit bldFile="/sf/os/shortlinksrv/group"/>
+     </component>
+     <component unofficial="yes" name="shortlinksrv_plat" class="api" origin-model="foundation">
+      <unit bldFile="/sf/os/shortlinksrv/shortlinksrv_plat/group"/>
      </component>
     <component name="shortlinksrv_metadata" long-name="Short Link Services Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/os/shortlinksrv/shortlinksrv_info/shortlinksrv_metadata/shortlinksrv_metadata.mrp"/>
-     </component>
-    </collection>
-    <collection name="shortlinksrv_plat">
-     <component unofficial="yes" name="bluetooth_power_management_api" origin-model="Foundation">
-      <unit bldFile="/sf/os/shortlinksrv/shortlinksrv_plat/bluetooth_power_management_api/group"/>
-     </component>
-     <component unofficial="yes" name="bluetooth_audio_adaptation_api" origin-model="Foundation">
-      <unit bldFile="/sf/os/shortlinksrv/shortlinksrv_plat/bluetooth_audio_adaptation_api/group"/>
-     </component>
-     <component unofficial="yes" name="shortlinksrv_plat_build" origin-model="Foundation">
-      <unit bldFile="/sf/os/shortlinksrv/shortlinksrv_plat/group"/>
      </component>
     </collection>
    </block>

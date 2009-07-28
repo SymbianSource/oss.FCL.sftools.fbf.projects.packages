@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="contacts" long-name="Contacts Apps" tech_domain="pr" level="apps" span="2" levels="engine support services ui">
     <collection name="contactextensions" long-name="Contact Extensions" level="services">
-     <component name="predefinedcontacts" long-name="Predefined Contacts" origin-model="Foundation">
+     <component name="predefinedcontacts" long-name="Predefined Contacts" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/contactextensions/predefinedcontacts/group"/>
      </component>
-     <component unofficial="yes" name="contactextensions_build" long-name="Contact Extensions Build" origin-model="Foundation">
+     <component unofficial="yes" name="contactextensions_build" long-name="Contact Extensions Build" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/contactextensions/group"/>
      </component>
     </collection>
     <collection name="logsui" long-name="Logs UI" level="ui">
-     <component name="logsui_help" long-name="Help" origin-model="Foundation">
+     <component name="logsui_help" long-name="Help" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/logsui/help/group"/>
      </component>
-     <component name="logsserviceextension" long-name="Logs Service Extension" origin-model="Foundation">
+     <component name="logsserviceextension" long-name="Logs Service Extension" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/logsui/logsserviceextension/group"/>
      </component>
-     <component unofficial="yes" name="logsui_build" long-name="Logs UI Build" origin-model="Foundation">
+     <component unofficial="yes" name="logsui_build" long-name="Logs UI Build" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/logsui/group"/>
      </component>
     </collection>
     <collection name="phonebookui" long-name="Phonebook UI" level="ui">
-     <component name="Phonebook" origin-model="Foundation">
+     <component name="phonebook" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/phonebookui/phonebook/group"/>
      </component>
-     <component name="Speeddial" long-name="Speed Dial" origin-model="Foundation">
+     <component name="speeddial" long-name="Speed Dial" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/phonebookui/speeddial/group"/>
      </component>
-     <component name="Phonebook2" long-name="Phone Book 2" origin-model="Foundation">
+     <component name="phonebook2" long-name="Phone Book 2" origin-model="foundation">
       <!-- <unit bldFile="app/contacts/phonebookui/phonebook2/ccapplication/ccacommlauncherplugin/tsrc/ut_commlaunchercontacthandler/group"/> -->
       <!-- <unit bldFile="app/contacts/phonebookui/phonebook2/ccapplication/ccapp/tsrc/ut_cmscontactfetcher/group"/> -->
       <unit bldFile="/sf/app/contacts/phonebookui/phonebook2/group"/>
       <!-- <unit bldFile="app/contacts/phonebookui/phonebook2/tsrc/utilities/changepbk2cenrepkeyvaluestool/group"/> -->
       <!-- <unit bldFile="app/contacts/phonebookui/phonebook2/tsrc/ut_addfavoritiesvisibility/group"/> -->
      </component>
-     <component unofficial="yes" name="phonebookui_build" long-name="Phonebook UI Build" origin-model="Foundation">
+     <component unofficial="yes" name="phonebookui_build" long-name="Phonebook UI Build" origin-model="foundation">
       <!-- <unit bldFile="app/contacts/phonebookui/group"/> -->
      </component>
     </collection>
     <collection name="phonebookengines" long-name="Phonebook Engines" level="engine">
-     <component name="CntFindPlugin" long-name="Cnt Find Plugin" origin-model="Foundation">
+     <component name="cntfindplugin" long-name="Cnt Find Plugin" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/phonebookengines/cntfindplugin/group"/>
      </component>
-     <component name="CntSortPlugin" long-name="Cnt Sort Plugin" origin-model="Foundation">
+     <component name="cntsortplugin" long-name="Cnt Sort Plugin" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/phonebookengines/cntsortplugin/group"/>
      </component>
-     <component name="VirtualPhonebook" long-name="Virtual Phonebook" origin-model="Foundation">
+     <component name="virtualphonebook" long-name="Virtual Phonebook" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/phonebookengines/virtualphonebook/group"/>
       <!-- <unit bldFile="app/contacts/phonebookengines/virtualphonebook/tsrc/mt_vpbkeng_selectorfactory/group"/> -->
       <!-- <unit bldFile="app/contacts/phonebookengines/virtualphonebook/tsrc/mt_vpbkeng_strcntanalyzer/group"/> -->
@@ -65,14 +65,14 @@
        <unit bldFile="app/contacts/phonebookengines/contactsmodel/tsrc/integration/testimpexvcard/groupsql"/>
        -  <unit bldFile="app/contacts/phonebookengines/contactsmodel/tsrc/integration/teststartup/group"/>  -
      </component>-->
-     <component unofficial="yes" name="phonebookengines_build" long-name="Phonebook Engines Build" origin-model="Foundation">
+     <component unofficial="yes" name="phonebookengines_build" long-name="Phonebook Engines Build" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/phonebookengines/group"/>
      </component>
-     <component name="contactsmodel" long-name="Contacts Model" introduced="ER5" purpose="optional" plugin="N" origin-model="Symbian">
+    <component name="contactsmodel" long-name="Contacts Model" introduced="ER5" purpose="optional" plugin="N" origin-model="Symbian">
       <unit bldFile="/sf/app/contacts/phonebookengines/contactsmodel/group" mrp="/sf/app/contacts/phonebookengines/contactsmodel/group/app-engines_cntmodel.mrp" version="1"/>
      </component>
     </collection>
-	<!-- Collection manually added from OS after auto-merge -->
+	<!-- Collection manually added due to faulty merge XSLT -->
 	<collection name="pimprotocols" long-name="PIM Protocols" level="services">
 	 <component name="phonebooksync" long-name="Phonebook Sync" purpose="optional" plugin="Y">
 	  <unit bldFile="/sf/app/contacts/pimprotocols/phonebooksync/group" mrp="/sf/app/contacts/pimprotocols/phonebooksync/group/telephony_phbksync.mrp"/>
@@ -82,7 +82,7 @@
 	 </component>
 	</collection>
     <collection name="ccservices" long-name="CC Services" level="services">
-     <component name="cmsservices" long-name="CMS Services" origin-model="Foundation">
+     <component name="cmsservices" long-name="CMS Services" origin-model="foundation">
       <!-- <unit bldFile="app/contacts/ccservices/cmsservices/cmsengine/client/group"/> -->
       <!-- <unit bldFile="app/contacts/ccservices/cmsservices/cmsengine/server/group"/> -->
       <!-- <unit bldFile="app/contacts/ccservices/cmsservices/cmsengine/tsrc/contactcreator/client/group"/> -->
@@ -93,225 +93,68 @@
      </component>
     </collection>
     <collection name="presencecache" long-name="Presence Cache" level="support">
-     <component name="presencecacheutils" long-name="Presence Cache Utils" origin-model="Foundation">
+     <component name="presencecacheutils" long-name="Presence Cache Utils" origin-model="foundation">
       <!-- <unit bldFile="app/contacts/presencecache/presencecacheutils/group"/> -->
      </component>
-     <component name="presencecacheserver2" long-name="Presence Cache Server2" origin-model="Foundation">
+     <component name="presencecacheserver2" long-name="Presence Cache Server2" origin-model="foundation">
       <!-- <unit bldFile="app/contacts/presencecache/presencecacheserver2/group"/> -->
      </component>
-     <component name="presencecacheclient2" long-name="Presence Cache Client2" origin-model="Foundation">
+     <component name="presencecacheclient2" long-name="Presence Cache Client2" origin-model="foundation">
       <!-- <unit bldFile="app/contacts/presencecache/presencecacheclient2/group"/> -->
      </component>
-     <component unofficial="yes" name="presencecache_build" long-name="Presence Cache Build" origin-model="Foundation">
+     <component unofficial="yes" name="presencecache_build" long-name="Presence Cache Build" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/presencecache/group"/>
      </component>
     </collection>
     <collection name="predictivesearch" long-name="Predictive Search" level="support">
-     <component name="PcsUtils" long-name="PCS Utils" origin-model="Foundation">
+     <component name="pcsutils" long-name="PCS Utils" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/predictivesearch/pcsutils/group"/>
      </component>
-     <component name="PcsServerClientAPI" long-name="PCS Server Client API" origin-model="Foundation">
+     <component name="pcsserverclientapi" long-name="PCS Server Client API" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/predictivesearch/pcsserverclientapi/group"/>
      </component>
-     <component name="PcsServer" long-name="PCS Server" origin-model="Foundation">
+     <component name="pcsserver" long-name="PCS Server" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/predictivesearch/pcsserver/group"/>
      </component>
-     <component name="adapters" long-name="Adapters" origin-model="Foundation">
+     <component name="adapters" long-name="Adapters" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/predictivesearch/adapters/contacts/group"/>
      </component>
-     <component name="PcsAlgorithm" long-name="PCS Algorithm" origin-model="Foundation">
+     <component name="pcsalgorithm" long-name="PCS Algorithm" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/predictivesearch/pcsalgorithm/group"/>
      </component>
-     <component unofficial="yes" name="predictivesearch_build" long-name="Predictive Search Build" origin-model="Foundation">
+     <component unofficial="yes" name="predictivesearch_build" long-name="Predictive Search Build" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/predictivesearch/group"/>
      </component>
     </collection>
     <collection name="contacts_info" long-name="Contacts Apps Info" level="ui">
-     <component unofficial="yes" name="contacts_build" long-name="Contacts Apps Build" origin-model="Foundation">
+     <component unofficial="yes" name="contacts_build" long-name="Contacts Apps Build" origin-model="foundation">
       <unit bldFile="/sf/app/contacts/group"/>
+     </component>
+     <component unofficial="yes" name="contacts_plat" long-name="Contacts Apps Platform Interfaces" class="api" origin-model="foundation">
+      <!-- <unit bldFile="app/contacts/contacts_plat/cca_launch_api/tsrc/group"/> -->
+      <!-- <unit bldFile="app/contacts/contacts_plat/cca_view_plugin_api/tsrc/group"/> -->
+      <!-- <unit bldFile="app/contacts/contacts_plat/contactpresence_api/tsrc/group"/> -->
+      <unit bldFile="/sf/app/contacts/contacts_plat/group"/>
+      <!-- <unit bldFile="app/contacts/contacts_plat/predictivesearch_utils_api/tsrc/group"/> -->
+      <!-- <unit bldFile="app/contacts/contacts_plat/presence_cache_api/tsrc/group"/> -->
+      <!-- <unit bldFile="app/contacts/contacts_plat/speed_dial_dialogs_api/tsrc/bc/group"/> -->
+      <!-- <unit bldFile="app/contacts/contacts_plat/virtual_phonebook_policy_api/tsrc/group"/> -->
+      <!-- <unit bldFile="app/contacts/contacts_plat/virtual_phonebook_sim_services_api/tsrc/group"/> -->
+      <!-- <unit bldFile="app/contacts/contacts_plat/virtual_phonebook_store_api/tsrc/group"/> -->
+      <!-- <unit bldFile="app/contacts/contacts_plat/virtual_phonebook_vcard_api/tsrc/group"/> -->
+      <!-- <unit bldFile="app/contacts/contacts_plat/virtual_phonebook_view_definition_api/tsrc/group"/> -->
+     </component>
+     <component unofficial="yes" name="contacts_pub" long-name="Contacts Apps Public Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/app/contacts/contacts_pub/group"/>
+      <!-- <unit bldFile="app/contacts/contacts_pub/phonebook_data_addedit_ui_api/tsrc/bc/group"/> -->
+      <!-- <unit bldFile="app/contacts/contacts_pub/phonebook_data_management_api/tsrc/bc/group"/> -->
+      <!-- <unit bldFile="app/contacts/contacts_pub/phonebook_fetch_ui_api/tsrc/bc/group"/> -->
+      <!-- <unit bldFile="app/contacts/contacts_pub/phonebook_ui_utilities_api/tsrc/bc/group"/> -->
+      <!-- <unit bldFile="app/contacts/contacts_pub/phonebook_vcard_importexport_api/tsrc/bc/group"/> -->
+      <!-- <unit bldFile="app/contacts/contacts_pub/speed_dial_utility_control_api/tsrc/bc/group"/> -->
      </component>
     <component name="contacts_metadata" long-name="Contacts Apps Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/app/contacts/contacts_info/contacts_metadata/contacts_metadata.mrp"/>
-     </component>
-    </collection>
-    <collection name="contacts_plat" long-name="Contacts Apps Platform Interfaces" level="ui">
-     <component unofficial="yes" name="speed_dial_dialogs_api" origin-model="Foundation">
-      <!-- <unit bldFile="app/contacts/contacts_plat/speed_dial_dialogs_api/tsrc/bc/group"/> -->
-      <unit bldFile="/sf/app/contacts/contacts_plat/speed_dial_dialogs_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_2_ui_controls_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_ui_controls_api/group"/>
-     </component>
-     <component unofficial="yes" name="logs_engine_api_extensions" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/logs_engine_api_extensions/group"/>
-     </component>
-     <component unofficial="yes" name="logs_timers_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/logs_timers_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_2_common_ui_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_common_ui_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_2_image_management_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_image_management_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_internal_data_management_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_internal_data_management_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_2_ui_extension_plugin_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_ui_extension_plugin_api/group"/>
-     </component>
-     <component unofficial="yes" name="cca_launch_api" origin-model="Foundation">
-      <!-- <unit bldFile="app/contacts/contacts_plat/cca_launch_api/tsrc/group"/> -->
-      <unit bldFile="/sf/app/contacts/contacts_plat/cca_launch_api/group"/>
-     </component>
-     <component unofficial="yes" name="virtual_phonebook_view_definition_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_view_definition_api/group"/>
-      <!-- <unit bldFile="app/contacts/contacts_plat/virtual_phonebook_view_definition_api/tsrc/group"/> -->
-     </component>
-     <component unofficial="yes" name="virtual_phonebook_configuration_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_configuration_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_2_ui_extension_definition_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_ui_extension_definition_api/group"/>
-     </component>
-     <component unofficial="yes" name="virtual_phonebook_engine_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_engine_api/group"/>
-     </component>
-     <component unofficial="yes" name="predictivesearch_client_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/predictivesearch_client_api/group"/>
-     </component>
-     <component unofficial="yes" name="presence_cache_api" origin-model="Foundation">
-      <!-- <unit bldFile="app/contacts/contacts_plat/presence_cache_api/tsrc/group"/> -->
-      <unit bldFile="/sf/app/contacts/contacts_plat/presence_cache_api/group"/>
-     </component>
-     <component unofficial="yes" name="virtual_phonebook_policy_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_policy_api/group"/>
-      <!-- <unit bldFile="app/contacts/contacts_plat/virtual_phonebook_policy_api/tsrc/group"/> -->
-     </component>
-     <component unofficial="yes" name="contactpresence_api" origin-model="Foundation">
-      <!-- <unit bldFile="app/contacts/contacts_plat/contactpresence_api/tsrc/group"/> -->
-      <unit bldFile="/sf/app/contacts/contacts_plat/contactpresence_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_internal_ui_utilities_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_internal_ui_utilities_api/group"/>
-     </component>
-     <component unofficial="yes" name="virtual_phonebook_vcard_api" origin-model="Foundation">
-      <!-- <unit bldFile="app/contacts/contacts_plat/virtual_phonebook_vcard_api/tsrc/group"/> -->
-      <unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_vcard_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_internal_common_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_internal_common_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_2_ui_utilities_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_ui_utilities_api/group"/>
-     </component>
-     <component unofficial="yes" name="virtual_phonebook_sim_services_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_sim_services_api/group"/>
-      <!-- <unit bldFile="app/contacts/contacts_plat/virtual_phonebook_sim_services_api/tsrc/group"/> -->
-     </component>
-     <component unofficial="yes" name="predictivesearch_algorithm_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/predictivesearch_algorithm_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_2_icon_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_icon_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_2_store_property_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_store_property_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_thumbnails_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_thumbnails_api/group"/>
-     </component>
-     <component unofficial="yes" name="virtual_phonebook_copy_policy_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_copy_policy_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_2_xsp_extension_manager_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_xsp_extension_manager_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_2_commands_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_commands_api/group"/>
-     </component>
-     <component unofficial="yes" name="logs_ui_command_line_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/logs_ui_command_line_api/group"/>
-     </component>
-     <component unofficial="yes" name="virtual_phonebook_store_api" origin-model="Foundation">
-      <!-- <unit bldFile="app/contacts/contacts_plat/virtual_phonebook_store_api/tsrc/group"/> -->
-      <unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_store_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_engine_extension_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_engine_extension_api/group"/>
-     </component>
-     <component unofficial="yes" name="cca_view_plugin_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/cca_view_plugin_api/group"/>
-      <!-- <unit bldFile="app/contacts/contacts_plat/cca_view_plugin_api/tsrc/group"/> -->
-     </component>
-     <component unofficial="yes" name="predictivesearch_adapters_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/predictivesearch_adapters_api/group"/>
-     </component>
-     <component unofficial="yes" name="cms_contactor_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/cms_contactor_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_2_ui_extension_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_ui_extension_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_extension_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_extension_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_ui_controls_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_ui_controls_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_2_store_configuration_management_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_store_configuration_management_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_2_presentation_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_presentation_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_internal_appfw_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_internal_appfw_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_public_constants_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_public_constants_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_2_thin_ui_extension_plugin_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_thin_ui_extension_plugin_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_2_xsp_view_activation_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_xsp_view_activation_api/group"/>
-     </component>
-     <component unofficial="yes" name="virtual_phonebook_migration_support_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_migration_support_api/group"/>
-     </component>
-     <component unofficial="yes" name="predictivesearch_utils_api" origin-model="Foundation">
-      <!-- <unit bldFile="app/contacts/contacts_plat/predictivesearch_utils_api/tsrc/group"/> -->
-      <unit bldFile="/sf/app/contacts/contacts_plat/predictivesearch_utils_api/group"/>
-     </component>
-    </collection>
-    <collection name="contacts_pub" long-name="Contacts Apps Public Interfaces" level="ui">
-     <component unofficial="yes" name="phonebook_ui_utilities_api" origin-model="Foundation">
-      <!-- <unit bldFile="app/contacts/contacts_pub/phonebook_ui_utilities_api/tsrc/bc/group"/> -->
-      <unit bldFile="/sf/app/contacts/contacts_pub/phonebook_ui_utilities_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_thumbnail_operation_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_pub/phonebook_thumbnail_operation_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_data_management_api" origin-model="Foundation">
-      <!-- <unit bldFile="app/contacts/contacts_pub/phonebook_data_management_api/tsrc/bc/group"/> -->
-      <unit bldFile="/sf/app/contacts/contacts_pub/phonebook_data_management_api/group"/>
-     </component>
-     <component unofficial="yes" name="phonebook_data_addedit_ui_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_pub/phonebook_data_addedit_ui_api/group"/>
-      <!-- <unit bldFile="app/contacts/contacts_pub/phonebook_data_addedit_ui_api/tsrc/bc/group"/> -->
-     </component>
-     <component unofficial="yes" name="phonebook_vcard_importexport_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_pub/phonebook_vcard_importexport_api/group"/>
-      <!-- <unit bldFile="app/contacts/contacts_pub/phonebook_vcard_importexport_api/tsrc/bc/group"/> -->
-     </component>
-     <component unofficial="yes" name="speed_dial_utility_control_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/contacts/contacts_pub/speed_dial_utility_control_api/group"/>
-      <!-- <unit bldFile="app/contacts/contacts_pub/speed_dial_utility_control_api/tsrc/bc/group"/> -->
-     </component>
-     <component unofficial="yes" name="phonebook_fetch_ui_api" origin-model="Foundation">
-      <!-- <unit bldFile="app/contacts/contacts_pub/phonebook_fetch_ui_api/tsrc/bc/group"/> -->
-      <unit bldFile="/sf/app/contacts/contacts_pub/phonebook_fetch_ui_api/group"/>
      </component>
     </collection>
    </block>

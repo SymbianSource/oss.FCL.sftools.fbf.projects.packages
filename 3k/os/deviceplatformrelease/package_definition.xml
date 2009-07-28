@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
 <block name="deviceplatformrelease" long-name="Device Platform Release" tech_domain="to" level="services" levels="bld mid top">
-    <collection name="S60Extras" long-name="S60 Extras" level="mid">
-     <component name="S60Extras compo" long-name="S60 Extras Component" origin-model="Foundation">
+    <collection name="s60extras" long-name="S60 Extras" level="mid">
+     <component name="s60extras_build" long-name="S60 Extras Component" origin-model="foundation">
       <unit bldFile="/sf/os/deviceplatformrelease/s60extras/group"/>
      </component>
     </collection>
-    <collection name="S60LocFiles" long-name="S60 Loc Files" level="mid">
-     <component name="S60LocFiles compo" long-name="S60 Loc Files Component" origin-model="Foundation">
+    <collection name="s60locfiles" long-name="S60 Loc Files" level="mid">
+     <component name="s60locfiles_build" long-name="S60 Loc Files Component" origin-model="foundation">
       <unit bldFile="/sf/os/deviceplatformrelease/s60locfiles/group"/>
      </component>
     </collection>
-    <collection name="Version" long-name="Version" level="top">
-     <component name="Version compo" long-name="Version Component" origin-model="Foundation">
+    <collection name="version" long-name="Version" level="top">
+     <component name="version_build" long-name="Version Component" origin-model="foundation">
       <unit bldFile="/sf/os/deviceplatformrelease/version/group"/>
      </component>
     </collection>
     <collection name="sf_config" long-name="SF Config" level="mid">
-     <component name="config" origin-model="Foundation">
+     <component name="config" origin-model="foundation">
       <!-- <unit bldFile="os/deviceplatformrelease/sf_config/config/apac/group"/> -->
       <!-- <unit bldFile="os/deviceplatformrelease/sf_config/config/group"/> -->
       <!-- <unit bldFile="os/deviceplatformrelease/sf_config/config/japan/group"/> -->
@@ -27,8 +27,8 @@
      </component>
     </collection>
     <collection name="s60bld">
-     <component unofficial="yes" name="buildplatforms" origin-model="Foundation">
-      <unit bldFile="tools/buildplatforms/group"/>
+     <component unofficial="yes" name="buildplatforms" origin-model="foundation">
+      <unit bldFile="/sf/tools/buildplatforms/group"/>
      </component>
     </collection>
    <collection name="symbianosbld" long-name="Symbian OS Build" level="bld">

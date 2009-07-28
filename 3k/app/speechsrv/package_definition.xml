@@ -1,187 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="speechsrv" long-name="Speech Recognition UIs" tech_domain="ui" level="services" levels="engine framework ui">
     <collection name="voiceui" long-name="Voice UI" level="ui">
-     <component name="vcommand" long-name="VCommand" origin-model="Foundation">
+     <component name="vcommand" long-name="VCommand" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/voiceui/vcommand/group"/>
      </component>
-     <component name="voiceuivoicerecognition" long-name="Voice UI Voice Recognition" origin-model="Foundation">
+     <component name="voiceuivoicerecognition" long-name="Voice UI Voice Recognition" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/voiceui/voiceuivoicerecognition/group"/>
      </component>
-     <component name="pbkinfoviewimpl" long-name="Phonebook Info View Implementation" origin-model="Foundation">
+     <component name="pbkinfoviewimpl" long-name="Phonebook Info View Implementation" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/voiceui/pbkinfoviewimpl/group"/>
      </component>
-     <component name="aiwpbkinfoviewprovider" long-name="AIW Phonebook Info View Provider" origin-model="Foundation">
+     <component name="aiwpbkinfoviewprovider" long-name="AIW Phonebook Info View Provider" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/voiceui/aiwpbkinfoviewprovider/group"/>
      </component>
-     <component name="vccontrolpanelplugin" long-name="VC Control Panel Plugin" origin-model="Foundation">
+     <component name="vccontrolpanelplugin" long-name="VC Control Panel Plugin" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/voiceui/vccontrolpanelplugin/group"/>
      </component>
-     <component unofficial="yes" name="voiceui_build" long-name="Voice UI Build" origin-model="Foundation">
+     <component unofficial="yes" name="voiceui_build" long-name="Voice UI Build" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/voiceui/group"/>
      </component>
     </collection>
     <collection name="srsf" long-name="Speech Recognition and Synthesis Framework" level="framework">
-     <component name="sispeechrecognitiondata" long-name="SI Speech Recognition Data" origin-model="Foundation">
+     <component name="sispeechrecognitiondata" long-name="SI Speech Recognition Data" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/sispeechrecognitiondata/group"/>
      </component>
-     <component name="ttscommon" long-name="TTS Common" origin-model="Foundation">
+     <component name="ttscommon" long-name="TTS Common" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/ttscommon/group"/>
      </component>
-     <component name="devtts" long-name="Text to Speech" origin-model="Foundation">
+     <component name="devtts" long-name="Text to Speech" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/devtts/group"/>
      </component>
-     <component name="ttscustomcommands" long-name="TTS Custom Commands" origin-model="Foundation">
+     <component name="ttscustomcommands" long-name="TTS Custom Commands" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/ttscustomcommands/group"/>
      </component>
-     <component name="ttscontrollerplugin" long-name="TTS Controller Plugin" origin-model="Foundation">
+     <component name="ttscontrollerplugin" long-name="TTS Controller Plugin" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/ttscontrollerplugin/group"/>
      </component>
-     <component name="ttsutility" long-name="TTS Utility" origin-model="Foundation">
+     <component name="ttsutility" long-name="TTS Utility" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/ttsutility/group"/>
      </component>
-     <component name="speechsynthesis" long-name="Speech Synthesis" origin-model="Foundation">
+     <component name="speechsynthesis" long-name="Speech Synthesis" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/speechsynthesis/client/group"/>
       <unit bldFile="/sf/app/speechsrv/srsf/speechsynthesis/server/group"/>
       <unit bldFile="/sf/app/speechsrv/srsf/speechsynthesis/tsrc/speechsynthesistest/group"/>
       <!-- <unit bldFile="app/speechsrv/srsf/speechsynthesis/tsrc/testapplication/group"/> -->
       <!-- <unit bldFile="app/speechsrv/srsf/speechsynthesis/tsrc/texttospeech/group"/> -->
      </component>
-     <component name="devasr" long-name="Audio Recording and Speech Recognition" origin-model="Foundation">
+     <component name="devasr" long-name="Audio Recording and Speech Recognition" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/devasr/group"/>
      </component>
-     <component name="sicc" long-name="Speaker Independent Custom Commands" origin-model="Foundation">
+     <component name="sicc" long-name="Speaker Independent Custom Commands" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/sicc/group"/>
      </component>
-     <component name="sisrscontrollerplugin" long-name="SI SRS Controller Plugin" origin-model="Foundation">
+     <component name="sisrscontrollerplugin" long-name="SI SRS Controller Plugin" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/sisrscontrollerplugin/group"/>
      </component>
-     <component name="siutility" long-name="Speaker Independent Utility" origin-model="Foundation">
+     <component name="siutility" long-name="Speaker Independent Utility" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/siutility/group"/>
      </component>
-     <component name="nssvasapi" long-name="NSS VAS API" origin-model="Foundation">
+     <component name="nssvasapi" long-name="NSS VAS API" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/nssvasapi/group"/>
       <!-- <unit bldFile="app/speechsrv/srsf/nssvasapi/nssvasdb/nssvasdbeventnotifier/group"/> -->
      </component>
-     <component name="nssvascontacthdlr" long-name="NSS VAS Contact Handler" origin-model="Foundation">
+     <component name="nssvascontacthdlr" long-name="NSS VAS Contact Handler" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/nssvascontacthdlr/group"/>
      </component>
-     <component name="vcommandhandler" long-name="Voice Command Handler" origin-model="Foundation">
+     <component name="vcommandhandler" long-name="Voice Command Handler" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/vcommandhandler/group"/>
      </component>
-     <component name="vuiphandler" long-name="Voice UI Plugin Handler" origin-model="Foundation">
+     <component name="vuiphandler" long-name="Voice UI Plugin Handler" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/vuiphandler/group"/>
      </component>
-     <component name="vcommandexecutor" long-name="Voice Command Executor" origin-model="Foundation">
+     <component name="vcommandexecutor" long-name="Voice Command Executor" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/vcommandexecutor/group"/>
      </component>
-     <component name="vcommandexecutorbearer" long-name="Voice Command Executor Bearer" origin-model="Foundation">
+     <component name="vcommandexecutorbearer" long-name="Voice Command Executor Bearer" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/vcommandexecutorbearer/group"/>
      </component>
-     <component name="vcommandmanager" long-name="Voice Command Manager" origin-model="Foundation">
+     <component name="vcommandmanager" long-name="Voice Command Manager" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/vcommandmanager/group"/>
      </component>
-     <component name="vcexecutorapp" long-name="Voice Command Executor Application" origin-model="Foundation">
+     <component name="vcexecutorapp" long-name="Voice Command Executor Application" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/vcexecutorapp/group"/>
      </component>
-     <component name="profileobserverplugin" long-name="Profile Observer Plugin" origin-model="Foundation">
+     <component name="profileobserverplugin" long-name="Profile Observer Plugin" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/profileobserverplugin/group"/>
      </component>
-     <component unofficial="yes" name="srsf_build" long-name="Speech Recognition and Synthesis Framework Build" origin-model="Foundation">
+     <component unofficial="yes" name="srsf_build" long-name="Speech Recognition and Synthesis Framework Build" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/group"/>
      </component>
     </collection>
-    <collection name="speechsrv_plat" long-name="Speech Recognition UIs Platform Interfaces" level="ui">
-     <component unofficial="yes" name="voice_commands_resource_header_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/voice_commands_resource_header_api/group"/>
-     </component>
-     <component unofficial="yes" name="ui_voice_recognition_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/ui_voice_recognition_api/group"/>
-     </component>
-     <component unofficial="yes" name="nss_tts_common_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/nss_tts_common_api/group"/>
-     </component>
-     <component unofficial="yes" name="nss_devasr_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/nss_devasr_api/group"/>
-     </component>
-     <component unofficial="yes" name="srsf_secondarydisplay_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/srsf_secondarydisplay_api/group"/>
-     </component>
-     <component unofficial="yes" name="tts_hw_device_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/tts_hw_device_api/group"/>
-     </component>
-     <component unofficial="yes" name="voice_ui_accessory_button_handling_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/voice_ui_accessory_button_handling_api/group"/>
-     </component>
-     <component unofficial="yes" name="vocman_hw_device_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/vocman_hw_device_api/group"/>
-     </component>
-     <component unofficial="yes" name="asrs_hw_device_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/asrs_hw_device_api/group"/>
-     </component>
-     <component unofficial="yes" name="vcommand_settings_cenrep_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/vcommand_settings_cenrep_api/group"/>
-     </component>
-     <component unofficial="yes" name="adaptation_hw_device_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/adaptation_hw_device_api/group"/>
-     </component>
-     <component unofficial="yes" name="nss_srs_custom_commands_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/nss_srs_custom_commands_api/group"/>
-     </component>
-     <component unofficial="yes" name="speech_synthesis_clientserver_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/speech_synthesis_clientserver_api/group"/>
-     </component>
-     <component unofficial="yes" name="grcompiler_hw_device_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/grcompiler_hw_device_api/group"/>
-     </component>
-     <component unofficial="yes" name="recognition_hw_device_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/recognition_hw_device_api/group"/>
-     </component>
-     <component unofficial="yes" name="voice_ui_plugin_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/voice_ui_plugin_api/group"/>
-     </component>
-     <component unofficial="yes" name="vas_contact_handler_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/vas_contact_handler_api/group"/>
-     </component>
-     <component unofficial="yes" name="vas_vcommand_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/vas_vcommand_api/group"/>
-     </component>
-     <component unofficial="yes" name="nss_devtts_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/nss_devtts_api/group"/>
-     </component>
-     <component unofficial="yes" name="srsf_cenrep_settings_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/srsf_cenrep_settings_api/group"/>
-     </component>
-     <component unofficial="yes" name="nss_srs_utility_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/nss_srs_utility_api/group"/>
-     </component>
-     <component unofficial="yes" name="ttp_hw_device_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/ttp_hw_device_api/group"/>
-     </component>
-     <component unofficial="yes" name="nss_mmf_tts_custom_commands_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/nss_mmf_tts_custom_commands_api/group"/>
-     </component>
-     <component unofficial="yes" name="nss_si_speech_recognition_data_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/nss_si_speech_recognition_data_api/group"/>
-     </component>
-     <component unofficial="yes" name="nlp_hw_device" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/nlp_hw_device/group"/>
-     </component>
-     <component unofficial="yes" name="vas_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/vas_api/group"/>
-     </component>
-     <component unofficial="yes" name="nss_tts_utility_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/nss_tts_utility_api/group"/>
-     </component>
-    </collection>
     <collection name="speechsrv_info" long-name="Speech Recognition UIs Info" level="ui">
-     <component unofficial="yes" name="speechsrv_test" long-name="Speech Recognition UIs Test" origin-model="Foundation">
+     <component unofficial="yes" name="speechsrv_test" long-name="Speech Recognition UIs Test" origin-model="foundation">
       <!-- <unit bldFile="app/speechsrv/tsrc/group"/> -->
      </component>
-     <component unofficial="yes" name="speechsrv_build" long-name="Speech Recognition UIs Build" origin-model="Foundation">
+     <component unofficial="yes" name="speechsrv_build" long-name="Speech Recognition UIs Build" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/group"/>
+     </component>
+     <component unofficial="yes" name="speechsrv_plat" long-name="Speech Recognition UIs Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/group"/>
+      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/ui_voice_recognition_api/tsrc/group"/>
      </component>
     </collection>
    </block>

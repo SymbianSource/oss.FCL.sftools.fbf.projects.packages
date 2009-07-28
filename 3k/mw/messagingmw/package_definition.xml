@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="mw" long-name="Middleware" levels="generic specific">
 <block name="messagingmw" long-name="Messaging Middleware" tech_domain="pr" level="specific" levels="stack fw api">
     <collection name="msgbranched" long-name="Messaging Branched" level="fw">
-     <component name="msgbranched.lib=binary" origin-model="Foundation">
+     <component name="msgbranched_build" origin-model="foundation">
       <unit bldFile="/sf/mw/messagingmw/msgbranched/group"/>
      </component>
     </collection>
     <collection name="messagingfw" long-name="Messaging FW" level="fw">
-     <component name="alwaysonline" long-name="Always Online" origin-model="Foundation">
+     <component name="alwaysonline" long-name="Always Online" origin-model="foundation">
       <!-- <unit bldFile="mw/messagingmw/messagingfw/alwaysonline/alwaysonlinemanager/group"/> -->
       <!-- <unit bldFile="mw/messagingmw/messagingfw/alwaysonline/alwaysonlinestarterapp/group"/> -->
       <unit bldFile="/sf/mw/messagingmw/messagingfw/alwaysonline/group"/>
      </component>
-     <component name="msgcommonutils" long-name="Messaging Common Utils" origin-model="Foundation">
+     <component name="msgcommonutils" long-name="Messaging Common Utils" origin-model="foundation">
       <unit bldFile="/sf/mw/messagingmw/messagingfw/msgcommonutils/group"/>
      </component>
-     <component name="senduiservices" long-name="Send UI Services" origin-model="Foundation">
+     <component name="senduiservices" long-name="Send UI Services" origin-model="foundation">
       <!-- <unit bldFile="mw/messagingmw/messagingfw/senduiservices/datautils/group"/> -->
       <unit bldFile="/sf/mw/messagingmw/messagingfw/senduiservices/group"/>
       <!-- <unit bldFile="mw/messagingmw/messagingfw/senduiservices/launcher/group"/> -->
@@ -109,8 +109,8 @@
        <unit bldFile="mw/messagingmw/messagingfw/wappushfw/tpush"/>
        <unit bldFile="mw/messagingmw/messagingfw/wappushfw/tpushscriptbased"/>
      </component>-->
-     <component name="suplsmshandler" origin-model="Foundation"/>
-     <component name="suplwappushhandler" origin-model="Foundation"/>
+     <component name="suplsmshandler" origin-model="foundation"/>
+     <component name="suplwappushhandler" origin-model="foundation"/>
     <component name="scheduledsendmtm" long-name="Scheduled Send MTM" introduced="6.0" purpose="optional" plugin="Y" origin-model="Symbian">
       <unit bldFile="/sf/mw/messagingmw/messagingfw/scheduledsendmtm/group" mrp="/sf/mw/messagingmw/messagingfw/scheduledsendmtm/group/messaging_schedulesend.mrp"/>
      </component>
@@ -151,34 +151,26 @@
       <unit bldFile="/sf/mw/messagingmw/messagingfw/wappushfw/group" mrp="/sf/mw/messagingmw/messagingfw/wappushfw/group/wap-browser_wappush.mrp"/>
      </component>
      <component name="n:suplsmshandler" long-name="SUPL SMS Handler" introduced="tb91" purpose="development" plugin="Y" origin-model="Symbian">
-      <unit bldFile="/sf/mw/messagingmw/messagingfw/suplsmshandler/group" mrp="/sf/mw/messagingmw/messagingfw/suplsmshandler/group/lbs_suplsmstrigger.mrp"/>
+      <!-- The following unit is removed as non-contributed -->
+      <!-- <unit bldFile="mw/messagingmw/messagingfw/suplsmshandler/group" mrp="mw/messagingmw/messagingfw/suplsmshandler/group/lbs_suplsmstrigger.mrp"/> -->
      </component>
      <component name="n:suplwappushhandler" long-name="SUPL WAP Push Handler" introduced="tb91" purpose="optional" plugin="Y" origin-model="Symbian">
-      <unit bldFile="/sf/mw/messagingmw/messagingfw/suplwappushhandler/group" mrp="/sf/mw/messagingmw/messagingfw/suplwappushhandler/group/lbs_suplwappush.mrp"/>
+      <!-- The following unit is removed as non-contributed -->
+      <!-- <unit bldFile="mw/messagingmw/messagingfw/suplwappushhandler/group" mrp="mw/messagingmw/messagingfw/suplwappushhandler/group/lbs_suplwappush.mrp"/> -->
      </component>
     </collection>
     <collection name="messagingmw_info" long-name="Messaging Middleware Info" level="api">
-     <component unofficial="yes" name="send_ui_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/messagingmw/msgfw_pub/send_ui_api/group"/>
+     <component unofficial="yes" name="msgfw_pub" class="api" origin-model="foundation">
+      <unit bldFile="/sf/mw/messagingmw/msgfw_pub/group"/>
       <!-- <unit bldFile="mw/messagingmw/msgfw_pub/send_ui_api/tsrc/bc/group"/> -->
+      <unit bldFile="/sf/mw/messagingmw/msgfw_pub/send_ui_api/tsrc/group"/>
      </component>
-     <component unofficial="yes" name="always_online_client_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/messagingmw/msgfw_plat/always_online_client_api/group"/>
-     </component>
-     <component unofficial="yes" name="send_ui_datautils_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/messagingmw/msgfw_plat/send_ui_datautils_api/group"/>
-     </component>
-     <component unofficial="yes" name="messagingmw_build" long-name="Messaging Middleware Build" origin-model="Foundation">
+     <component unofficial="yes" name="messagingmw_build" long-name="Messaging Middleware Build" origin-model="foundation">
       <unit bldFile="/sf/mw/messagingmw/group"/>
      </component>
-     <component unofficial="yes" name="always_online_plugin_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/messagingmw/msgfw_plat/always_online_plugin_api/group"/>
-     </component>
-     <component unofficial="yes" name="msg_common_utils_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/messagingmw/msgfw_plat/msg_common_utils_api/group"/>
-     </component>
-     <component unofficial="yes" name="send_ui_plugin_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/messagingmw/msgfw_plat/send_ui_plugin_api/group"/>
+     <component unofficial="yes" name="msgfw_plat" class="api" origin-model="foundation">
+      <unit bldFile="/sf/mw/messagingmw/msgfw_plat/group"/>
+      <unit bldFile="/sf/mw/messagingmw/msgfw_plat/send_ui_plugin_api/tsrc/group"/>
      </component>
     <component name="messagingmw_metadata" long-name="Messaging Middleware Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/mw/messagingmw/messagingmw_info/messagingmw_metadata/messagingmw_metadata.mrp"/>

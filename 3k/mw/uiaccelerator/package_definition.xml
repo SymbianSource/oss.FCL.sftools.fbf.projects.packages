@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="mw" long-name="Middleware" levels="generic specific">
 <block name="uiaccelerator" long-name="UI Accelerator" tech_domain="ui" level="generic" levels="plugin framework server generic specific">
     <collection name="uiacceltk" long-name="UI Accelerator TK" level="framework">
-     <component name="hitchcock" long-name="Hitchcock" origin-model="Foundation">
+     <component name="hitchcock" long-name="Hitchcock" origin-model="foundation">
       <!-- <unit bldFile="mw/uiaccelerator/uiacceltk/hitchcock/coretoolkit/group"/> -->
       <unit bldFile="/sf/mw/uiaccelerator/uiacceltk/hitchcock/group"/>
       <!-- <unit bldFile="mw/uiaccelerator/uiacceltk/hitchcock/plugins/alftranseffect/alftranseffectplugin/group"/> -->
@@ -12,53 +12,34 @@
       <!-- <unit bldFile="mw/uiaccelerator/uiacceltk/hitchcock/tracer/traceextclient/group"/> -->
       <!-- <unit bldFile="mw/uiaccelerator/uiacceltk/hitchcock/tracer/traceextplugin/group"/> -->
      </component>
-     <component name="widgeteditors" long-name="Widget Editors" origin-model="Foundation">
+     <component name="widgeteditors" long-name="Widget Editors" origin-model="foundation">
       <unit bldFile="/sf/mw/uiaccelerator/uiacceltk/widgeteditors/group"/>
      </component>
-     <component unofficial="yes" name="uiacceltk_build" long-name="UI Accelerator TK Build" origin-model="Foundation">
+     <component unofficial="yes" name="uiacceltk_build" long-name="UI Accelerator TK Build" origin-model="foundation">
       <unit bldFile="/sf/mw/uiaccelerator/uiacceltk/group"/>
      </component>
     </collection>
     <collection name="uiaccelexampleapps" long-name="UI Accelerator Example Apps" level="specific">
-     <component name="alfexanalogdialer" long-name="ALF Ex Analog Dialer" origin-model="Foundation">
+     <component name="alfexanalogdialer" long-name="ALF Ex Analog Dialer" origin-model="foundation">
       <!-- <unit bldFile="mw/uiaccelerator/uiaccelexampleapps/alfexanalogdialer/group"/> -->
      </component>
-     <component name="alfexstickers" long-name="ALF Ex Stickers" origin-model="Foundation">
+     <component name="alfexstickers" long-name="ALF Ex Stickers" origin-model="foundation">
       <!-- <unit bldFile="mw/uiaccelerator/uiaccelexampleapps/alfexstickers/group"/> -->
      </component>
     </collection>
     <collection name="uiaccelerator_info" long-name="UI Accelerator Info" level="specific">
-     <component unofficial="yes" name="inc" origin-model="Foundation">
+     <component unofficial="yes" name="inc" origin-model="foundation">
       <!-- <unit bldFile="mw/uiaccelerator/inc/group"/> -->
      </component>
-     <component unofficial="yes" name="uiaccelerator_test" long-name="UI Accelerator Test" origin-model="Foundation">
-      <!-- <unit bldFile="mw/uiaccelerator/tsrc/group"/> -->
-     </component>
-    </collection>
-    <collection name="uiaccelerator_plat" long-name="UI Accelerator Platform Interfaces" level="specific">
-     <component unofficial="yes" name="alf_tracing_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_tracing_api/group"/>
-     </component>
-     <component unofficial="yes" name="uiaccelerator_plat_build" long-name="UI Accelerator Platform API Build" origin-model="Foundation">
+     <component unofficial="yes" name="uiaccelerator_plat" long-name="UI Accelerator Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_client_server_api/tsrc/group"/>
+      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_core_toolkit_api/tsrc/group"/>
+      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_editors_api/tsrc/group"/>
+      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_extended_visual_api/tsrc/group"/>
+      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_extension_api/tsrc/group"/>
+      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_tracing_api/tsrc/group"/>
+      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_visual_api/tsrc/group"/>
       <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/group"/>
-     </component>
-     <component unofficial="yes" name="alf_extension_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_extension_api/group"/>
-     </component>
-     <component unofficial="yes" name="alf_extended_visual_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_extended_visual_api/group"/>
-     </component>
-     <component unofficial="yes" name="alf_client_server_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_client_server_api/group"/>
-     </component>
-     <component unofficial="yes" name="alf_editors_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_editors_api/group"/>
-     </component>
-     <component unofficial="yes" name="alf_core_toolkit_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_core_toolkit_api/group"/>
-     </component>
-     <component unofficial="yes" name="alf_visual_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_visual_api/group"/>
      </component>
     </collection>
    </block>

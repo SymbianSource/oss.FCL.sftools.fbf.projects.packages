@@ -1,162 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="phone" long-name="Phone Apps" tech_domain="vc" level="apps" span="2" levels="engine plugin ui apps">
     <collection name="phoneapp" long-name="Phone App" level="apps">
-     <component name="Blacklist" origin-model="Foundation">
+     <component name="blacklist" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneapp/blacklist/group"/>
      </component>
-     <component name="phoneui" long-name="Phone UI" origin-model="Foundation">
+     <component name="phoneui" long-name="Phone UI" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneapp/phoneui/group"/>
       <!-- <unit bldFile="app/phone/phoneapp/phoneui/tsrc/public/basic/3dringingtoneinterface_tests/group"/> -->
       <!-- <unit bldFile="app/phone/phoneapp/phoneui/tsrc/public/basic/group"/> -->
      </component>
-     <component name="phoneuicontrol" long-name="Phone UI Control" origin-model="Foundation">
+     <component name="phoneuicontrol" long-name="Phone UI Control" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneapp/phoneuicontrol/group"/>
      </component>
-     <component name="phoneuistates" long-name="Phone UI States" origin-model="Foundation">
+     <component name="phoneuistates" long-name="Phone UI States" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneapp/phoneuistates/group"/>
      </component>
-     <component name="phoneuiutils" long-name="Phone UI Utils" origin-model="Foundation">
+     <component name="phoneuiutils" long-name="Phone UI Utils" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneapp/phoneuiutils/group"/>
      </component>
-     <component name="phoneuiview" long-name="Phone UI View" origin-model="Foundation">
+     <component name="phoneuiview" long-name="Phone UI View" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneapp/phoneuiview/group"/>
      </component>
-     <component name="phoneuivoipextension" long-name="Phone UI VOIP Extension" origin-model="Foundation">
+     <component name="phoneuivoipextension" long-name="Phone UI VOIP Extension" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneapp/phoneuivoipextension/group"/>
      </component>
-     <component name="silenceactionplugin" long-name="Silence Action Plugin" origin-model="Foundation">
+     <component name="silenceactionplugin" long-name="Silence Action Plugin" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneapp/silenceactionplugin/group"/>
      </component>
-     <component name="phonemediatorcenter" long-name="Phone Mediator Center" origin-model="Foundation">
+     <component name="phonemediatorcenter" long-name="Phone Mediator Center" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneapp/phonemediatorcenter/group"/>
      </component>
     </collection>
     <collection name="phoneengine" long-name="Phone Engine" level="engine">
-     <component name="PhoneCntFinder" long-name="Phone Contact Finder" origin-model="Foundation">
+     <component name="phonecntfinder" long-name="Phone Contact Finder" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneengine/phonecntfinder/group"/>
      </component>
-     <component name="audiohandling" long-name="Audio Handling" origin-model="Foundation">
+     <component name="audiohandling" long-name="Audio Handling" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneengine/audiohandling/group"/>
      </component>
-     <component name="callhandling" long-name="Call Handling" origin-model="Foundation">
+     <component name="callhandling" long-name="Call Handling" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneengine/callhandling/group"/>
      </component>
-     <component name="contacthandling" long-name="Contact Handling" origin-model="Foundation">
+     <component name="contacthandling" long-name="Contact Handling" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneengine/contacthandling/group"/>
      </component>
-     <component name="loghandling" long-name="Log Handling" origin-model="Foundation">
+     <component name="loghandling" long-name="Log Handling" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneengine/loghandling/group"/>
      </component>
-     <component name="engineinfo" long-name="Engine Info" origin-model="Foundation">
+     <component name="engineinfo" long-name="Engine Info" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneengine/engineinfo/group"/>
      </component>
-     <component name="phonemodel" long-name="Phone Model" origin-model="Foundation">
+     <component name="phonemodel" long-name="Phone Model" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneengine/phonemodel/group"/>
      </component>
-     <component name="servicehandling" long-name="Service Handling" origin-model="Foundation">
+     <component name="servicehandling" long-name="Service Handling" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneengine/servicehandling/group"/>
      </component>
     </collection>
     <collection name="phonesettings" long-name="Phone Settings" level="ui">
-     <component name="aiwcallimageplugin" long-name="Aiw Call Image Plugin" origin-model="Foundation">
+     <component name="aiwcallimageplugin" long-name="Aiw Call Image Plugin" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phonesettings/aiwcallimageplugin/group"/>
      </component>
-     <component name="pslncallimageplugin" long-name="Personalization Call Image Plugin" origin-model="Foundation">
+     <component name="pslncallimageplugin" long-name="Personalization Call Image Plugin" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phonesettings/pslncallimageplugin/group"/>
      </component>
     </collection>
     <collection name="phoneuis" long-name="Phone UIs" level="ui">
-     <component name="dialer" long-name="Dialer" origin-model="Foundation">
+     <component name="dialer" long-name="Dialer" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneuis/dialer/group"/>
       <!-- <unit bldFile="app/phone/phoneuis/dialer/tsrc/public/basic/group"/> -->
      </component>
-     <component name="BubbleManager" long-name="Bubble Manager" origin-model="Foundation">
+     <component name="bubblemanager" long-name="Bubble Manager" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneuis/bubblemanager/group"/>
      </component>
-     <component name="ConnectUtil" long-name="Connect Util" origin-model="Foundation">
+     <component name="connectutil" long-name="Connect Util" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneuis/connectutil/group"/>
      </component>
-     <component name="SFIUtils" long-name="SFI Utils" origin-model="Foundation">
+     <component name="sfiutils" long-name="SFI Utils" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneuis/sfiutils/group"/>
       <!-- <unit bldFile="app/phone/phoneuis/sfiutils/tsrc/public/basic/group"/> -->
      </component>
-     <component name="Ussd" long-name="USSD" origin-model="Foundation">
+     <component name="ussd" long-name="USSD" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneuis/ussd/group"/>
      </component>
-     <component name="vmbx" long-name="Vmbx" origin-model="Foundation">
+     <component name="vmbx" long-name="Vmbx" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneuis/vmbx/group"/>
      </component>
-     <component name="TelephonyDeviceMode" long-name="Telephony Device Mode" origin-model="Foundation">
+     <component name="telephonydevicemode" long-name="Telephony Device Mode" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneuis/telephonydevicemode/group"/>
      </component>
     </collection>
     <collection name="phoneplugins" long-name="Phone Plugins" level="plugin">
-     <component name="telbranding" long-name="Tel Branding" origin-model="Foundation">
+     <component name="telbranding" long-name="Tel Branding" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneplugins/telbranding/group"/>
      </component>
     </collection>
     <collection name="phone_info" long-name="Phone Apps Info" level="apps">
-     <component unofficial="yes" name="phone_build" long-name="Phone Apps Build" origin-model="Foundation">
+     <component unofficial="yes" name="phone_build" long-name="Phone Apps Build" origin-model="foundation">
       <unit bldFile="/sf/app/phone/group"/>
      </component>
-    </collection>
-    <collection name="phone_plat" long-name="Phone Apps Platform Interfaces" level="apps">
-     <component unofficial="yes" name="telephony_microphone_mute_status_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/phone/phone_plat/telephony_microphone_mute_status_api/group"/>
-     </component>
-     <component unofficial="yes" name="3d_ringing_tone_enabler_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/phone/phone_plat/3d_ringing_tone_enabler_api/group"/>
-     </component>
-     <component unofficial="yes" name="telephony_device_mode_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/phone/phone_plat/telephony_device_mode_api/group"/>
-     </component>
-     <component unofficial="yes" name="telephony_video_mailbox_settings_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/phone/phone_plat/telephony_video_mailbox_settings_api/group"/>
-     </component>
-     <component unofficial="yes" name="telephony_comms_information_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/phone/phone_plat/telephony_comms_information_api/group"/>
-     </component>
-     <component unofficial="yes" name="dialer_keypad_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/phone/phone_plat/dialer_keypad_api/group"/>
-     </component>
-     <component unofficial="yes" name="phone_application_voip_commands_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/phone/phone_plat/phone_application_voip_commands_api/group"/>
-     </component>
-     <component unofficial="yes" name="telephony_matching_extension_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/phone/phone_plat/telephony_matching_extension_api/group"/>
-     </component>
-     <component unofficial="yes" name="sfi_utility_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/phone/phone_plat/sfi_utility_api/group"/>
-     </component>
-     <component unofficial="yes" name="telephony_information_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/phone/phone_plat/telephony_information_api/group"/>
-     </component>
-     <component unofficial="yes" name="telephony_menu_extension_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/phone/phone_plat/telephony_menu_extension_api/group"/>
-     </component>
-     <component unofficial="yes" name="telephony_bubble_extension_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/phone/phone_plat/telephony_bubble_extension_api/group"/>
-     </component>
-     <component unofficial="yes" name="telephony_logging_extension_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/phone/phone_plat/telephony_logging_extension_api/group"/>
-     </component>
-     <component unofficial="yes" name="telephony_mediator_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/phone/phone_plat/telephony_mediator_api/group"/>
-     </component>
-     <component unofficial="yes" name="video_telephony_mediator_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/phone/phone_plat/video_telephony_mediator_api/group"/>
-     </component>
-     <component unofficial="yes" name="telephony_configuration_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/phone/phone_plat/telephony_configuration_api/group"/>
-     </component>
-     <component unofficial="yes" name="phone_application_commands_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/phone/phone_plat/phone_application_commands_api/group"/>
-     </component>
-     <component unofficial="yes" name="telephony_remote_party_information_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/phone/phone_plat/telephony_remote_party_information_api/group"/>
+     <component unofficial="yes" name="phone_plat" long-name="Phone Apps Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/app/phone/phone_plat/group"/>
      </component>
     </collection>
    </block>

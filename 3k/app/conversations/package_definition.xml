@@ -1,90 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="conversations" long-name="Conversation Apps" tech_domain="pr" level="apps" levels="settings utils ui">
     <collection name="uiservicetabsettings" long-name="UI Service Tab Settings" level="settings">
-     <component name="vimpstsettings.dll=binary" origin-model="Foundation">
+     <component name="vimpstsettings" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/uiservicetabsettings/group"/>
      </component>
     </collection>
     <collection name="imstutils" long-name="IM Service Tab Utils" level="utils">
-     <component name="imstutils_help" long-name="Help" origin-model="Foundation">
+     <component name="imstutils_help" long-name="Help" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/imstutils/help/group"/>
      </component>
-     <component name="imconnectionprovider" long-name="IM Connection Provider" origin-model="Foundation">
+     <component name="imconnectionprovider" long-name="IM Connection Provider" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/imstutils/imconnectionprovider/group"/>
       <!-- <unit bldFile="app/conversations/imstutils/imconnectionprovider/tsrc/imconnectionprovider_test/group"/> -->
      </component>
-     <component name="xmppadapter" long-name="XMPP Adapter" origin-model="Foundation">
+     <component name="xmppadapter" long-name="XMPP Adapter" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/imstutils/xmppadapter/group"/>
       <!-- <unit bldFile="app/conversations/imstutils/xmppadapter/tsrc/xmppadapter_test/group"/> -->
      </component>
-     <component name="imconversationview" long-name="IM Conversation View" origin-model="Foundation">
+     <component name="imconversationview" long-name="IM Conversation View" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/imstutils/imconversationview/group"/>
       <!-- <unit bldFile="app/conversations/imstutils/imconversationview/tsrc/imcvuiengine_test/dummytestadaptation/group"/> -->
       <!-- <unit bldFile="app/conversations/imstutils/imconversationview/tsrc/imcvuiengine_test/group"/> -->
      </component>
-     <component unofficial="yes" name="imstutils_build" long-name="IM Service Tab Utils Build" origin-model="Foundation">
+     <component unofficial="yes" name="imstutils_build" long-name="IM Service Tab Utils Build" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/imstutils/group"/>
      </component>
     </collection>
     <collection name="uiservicetab" long-name="UI Service Tab" level="ui">
-     <component name="vimpstutils" long-name="VIMP ST Utilities" origin-model="Foundation">
+     <component name="vimpstutils" long-name="VIMP ST Utilities" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/uiservicetab/vimpstutils/group"/>
      </component>
-     <component name="vimpststorage" long-name="VIMP ST Storage" origin-model="Foundation">
+     <component name="vimpststorage" long-name="VIMP ST Storage" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/uiservicetab/vimpststorage/group"/>
       <!-- <unit bldFile="app/conversations/uiservicetab/vimpststorage/tsrc/vimpststorage_ut/cvimpststoragecontactlist_ut/group"/> -->
       <!-- <unit bldFile="app/conversations/uiservicetab/vimpststorage/tsrc/vimpststorage_ut/cvimpststoragecontactsorter_ut/group"/> -->
       <!-- <unit bldFile="app/conversations/uiservicetab/vimpststorage/tsrc/vimpststorage_ut/cvimpststoragecontact_ut/group"/> -->
      </component>
-     <component name="vimpstengine" long-name="VIMP ST Engine" origin-model="Foundation">
+     <component name="vimpstengine" long-name="VIMP ST Engine" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/uiservicetab/vimpstengine/group"/>
       <!-- <unit bldFile="app/conversations/uiservicetab/vimpstengine/tsrc/group"/> -->
      </component>
-     <component name="vimpstcmdprocess" long-name="VIMP ST Command Process" origin-model="Foundation">
+     <component name="vimpstcmdprocess" long-name="VIMP ST Command Process" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/uiservicetab/vimpstcmdprocess/group"/>
       <!-- <unit bldFile="app/conversations/uiservicetab/vimpstcmdprocess/tsrc/group"/> -->
      </component>
-     <component name="vimpstui" long-name="VIMP ST UI" origin-model="Foundation">
+     <component name="vimpstui" long-name="VIMP ST UI" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/uiservicetab/vimpstui/group"/>
      </component>
-     <component name="vimpstdetailsviewplugin" long-name="VIMP ST Details View Plugin" origin-model="Foundation">
+     <component name="vimpstdetailsviewplugin" long-name="VIMP ST Details View Plugin" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/uiservicetab/vimpstdetailsviewplugin/group"/>
      </component>
-     <component unofficial="yes" name="uiservicetab_build" long-name="UI Service Tab Build" origin-model="Foundation">
+     <component unofficial="yes" name="uiservicetab_build" long-name="UI Service Tab Build" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/uiservicetab/group"/>
      </component>
     </collection>
     <collection name="servicewidget" long-name="Service Widget" level="ui">
-     <component name="servicewidgetactionhandler" long-name="Service Widget Action Handler" origin-model="Foundation">
+     <component name="servicewidgetactionhandler" long-name="Service Widget Action Handler" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/servicewidget/servicewidgetactionhandler/group"/>
      </component>
-     <component name="servicewidgetdatapublisher" long-name="Service Widget Data Publisher" origin-model="Foundation">
+     <component name="servicewidgetdatapublisher" long-name="Service Widget Data Publisher" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/servicewidget/servicewidgetdatapublisher/group"/>
      </component>
-     <component name="themes" long-name="Themes" origin-model="Foundation">
+     <component name="themes" long-name="Themes" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/servicewidget/themes/install-themes/install/servicewidget/group"/>
      </component>
-     <component unofficial="yes" name="servicewidget_build" long-name="Service Widget Build" origin-model="Foundation">
+     <component unofficial="yes" name="servicewidget_build" long-name="Service Widget Build" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/servicewidget/group"/>
      </component>
     </collection>
     <collection name="conversations_info" long-name="Conversation Apps Info" level="ui">
-     <component unofficial="yes" name="conversations_build" long-name="Conversation Apps Build" origin-model="Foundation">
-      <unit bldFile="/sf/app/conversations/group"/>
-     </component>
-    </collection>
-    <collection name="conversations_plat" long-name="Conversation Apps Platform Interfaces" level="ui">
-     <component unofficial="yes" name="im_cv_launcher_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/conversations/conversations_plat/im_cv_launcher_api/group"/>
-     </component>
-     <component unofficial="yes" name="conversations_plat_build" long-name="Conversation Apps Platform API Build" origin-model="Foundation">
+     <component unofficial="yes" name="conversations_plat" long-name="Conversation Apps Platform Interfaces" class="api" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/conversations_plat/group"/>
      </component>
-     <component unofficial="yes" name="im_connection_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/conversations/conversations_plat/im_connection_api/group"/>
+     <component unofficial="yes" name="conversations_build" long-name="Conversation Apps Build" origin-model="foundation">
+      <unit bldFile="/sf/app/conversations/group"/>
      </component>
     </collection>
    </block>

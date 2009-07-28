@@ -1,107 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="musicplayer" long-name="Music Player Apps" tech_domain="ma" level="apps" levels="plugins support apps">
     <collection name="musicvisualization" long-name="Music Visualization" level="plugins">
-     <component name="musicvisualizationplugin" long-name="Music Visualization Plugin" origin-model="Foundation">
+     <component name="musicvisualizationplugin" long-name="Music Visualization Plugin" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/musicvisualization/musicvisualizationplugin/group"/>
      </component>
-     <component name="mpxvisualizationplugins" long-name="MPX Visualization Plugins" origin-model="Foundation">
+     <component name="mpxvisualizationplugins" long-name="MPX Visualization Plugins" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/musicvisualization/mpxvisualizationplugins/group"/>
      </component>
     </collection>
     <collection name="mpxmusicplayer" long-name="MPX Music Player" level="apps">
-     <component name="mpxmusicplayer_help" long-name="Help" origin-model="Foundation">
+     <component name="mpxmusicplayer_help" long-name="Help" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/mpxmusicplayer/help/group"/>
      </component>
-     <component name="mpxmusicplayer_commonui" long-name="Common UI" origin-model="Foundation">
+     <component name="mpxmusicplayer_commonui" long-name="Common UI" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/mpxmusicplayer/commonui/group"/>
      </component>
-     <component name="activeidle" long-name="Active Idle" origin-model="Foundation">
+     <component name="activeidle" long-name="Active Idle" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/mpxmusicplayer/activeidle/group"/>
      </component>
-     <component name="metadatahandler" long-name="Metadata Handler" origin-model="Foundation">
+     <component name="metadatahandler" long-name="Metadata Handler" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/mpxmusicplayer/metadatahandler/group"/>
      </component>
-     <component name="mediakeyhandler" long-name="Mediakey Handler" origin-model="Foundation">
+     <component name="mediakeyhandler" long-name="Mediakey Handler" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/mpxmusicplayer/mediakeyhandler/group"/>
      </component>
-     <component name="mpxmusicplayer_app" long-name="Application" origin-model="Foundation">
+     <component name="mpxmusicplayer_app" long-name="Application" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/mpxmusicplayer/app/group"/>
      </component>
-     <component unofficial="yes" name="mpxmusicplayer_build" long-name="MPX Music Player Build" origin-model="Foundation">
+     <component unofficial="yes" name="mpxmusicplayer_build" long-name="MPX Music Player Build" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/mpxmusicplayer/group"/>
      </component>
     </collection>
     <collection name="musichomescreen" long-name="Music Homescreen" level="apps">
-     <component name="mpxcollectionpublisher" long-name="MPX Collection Publisher" origin-model="Foundation">
+     <component name="mpxcollectionpublisher" long-name="MPX Collection Publisher" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/musichomescreen/mpxcollectionpublisher/group"/>
      </component>
-     <component name="musiccontentpublisher" long-name="Music Content Publisher" origin-model="Foundation">
+     <component name="musiccontentpublisher" long-name="Music Content Publisher" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/musichomescreen/musiccontentpublisher/group"/>
      </component>
-     <component name="mcpmusicplayer" long-name="MCP Music Player" origin-model="Foundation">
+     <component name="mcpmusicplayer" long-name="MCP Music Player" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/musichomescreen/mcpmusicplayer/group"/>
      </component>
-     <component name="musicplayeractionhandlerplugin" long-name="Music Player Action Handler Plugin" origin-model="Foundation">
+     <component name="musicplayeractionhandlerplugin" long-name="Music Player Action Handler Plugin" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/musichomescreen/musicplayeractionhandlerplugin/group"/>
      </component>
-     <component name="data" origin-model="Foundation">
+     <component name="data" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/musichomescreen/data/themes/default/group"/>
      </component>
-     <component unofficial="yes" name="musichomescreen_build" long-name="Music Homescreen Build" origin-model="Foundation">
+     <component unofficial="yes" name="musichomescreen_build" long-name="Music Homescreen Build" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/musichomescreen/group"/>
      </component>
     </collection>
     <collection name="mpxplugins" long-name="MPX Plugins" level="plugins">
-     <component name="serviceplugins" long-name="service Plugins" origin-model="Foundation">
+     <component name="serviceplugins" long-name="service Plugins" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/mpxplugins/serviceplugins/group"/>
      </component>
-     <component name="viewplugins" long-name="View Plugins" origin-model="Foundation">
+     <component name="viewplugins" long-name="View Plugins" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/mpxplugins/viewplugins/group"/>
      </component>
-     <component unofficial="yes" name="mpxplugins_build" long-name="MPX Plugins Build" origin-model="Foundation">
+     <component unofficial="yes" name="mpxplugins_build" long-name="MPX Plugins Build" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/mpxplugins/group"/>
      </component>
     </collection>
-    <collection name="musicplayer_plat" long-name="Music Player Apps Platform Interfaces" level="apps">
-     <component unofficial="yes" name="mpx_music_store_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/musicplayer/musicplayer_plat/mpx_music_store_api/group"/>
-     </component>
-     <component unofficial="yes" name="mpx_music_shop_ui_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/musicplayer/musicplayer_plat/mpx_music_shop_ui_api/group"/>
-     </component>
-     <component unofficial="yes" name="mpx_music_player_media_key_handler_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/musicplayer/musicplayer_plat/mpx_music_player_media_key_handler_api/group"/>
-     </component>
-     <component unofficial="yes" name="mpx_music_wap_adapter_cenrep_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/musicplayer/musicplayer_plat/mpx_music_wap_adapter_cenrep_api/group"/>
-     </component>
-     <component unofficial="yes" name="music_visualization_plugin_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/musicplayer/musicplayer_plat/music_visualization_plugin_api/group"/>
-     </component>
-     <component unofficial="yes" name="audio_application_features_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/musicplayer/musicplayer_plat/audio_application_features_api/group"/>
-     </component>
-     <component unofficial="yes" name="mpx_music_player_remote_control_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/musicplayer/musicplayer_plat/mpx_music_player_remote_control_api/group"/>
-     </component>
-     <component unofficial="yes" name="mpx_music_player_app_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/musicplayer/musicplayer_plat/mpx_music_player_app_api/group"/>
-     </component>
-     <component unofficial="yes" name="mpx_music_player_commonui_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/musicplayer/musicplayer_plat/mpx_music_player_commonui_api/group"/>
-     </component>
-     <component unofficial="yes" name="music_content_publisher_plugin_api" origin-model="Foundation">
-      <unit bldFile="/sf/app/musicplayer/musicplayer_plat/music_content_publisher_plugin_api/group"/>
-     </component>
-    </collection>
     <collection name="musicplayer_info" long-name="Music Player Apps Info" level="apps">
-     <component unofficial="yes" name="musicplayer_test" long-name="Music Player Apps Test" origin-model="Foundation">
+     <component unofficial="yes" name="musicplayer_plat" long-name="Music Player Apps Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/app/musicplayer/musicplayer_plat/group"/>
+      <unit bldFile="/sf/app/musicplayer/musicplayer_plat/mpx_music_player_app_api/tsrc/group"/>
+      <unit bldFile="/sf/app/musicplayer/musicplayer_plat/mpx_music_player_commonui_api/tsrc/group"/>
+      <unit bldFile="/sf/app/musicplayer/musicplayer_plat/mpx_music_player_media_key_handler_api/tsrc/group"/>
+      <unit bldFile="/sf/app/musicplayer/musicplayer_plat/mpx_music_store_api/tsrc/group"/>
+      <unit bldFile="/sf/app/musicplayer/musicplayer_plat/music_visualization_plugin_api/tsrc/group"/>
+     </component>
+     <component unofficial="yes" name="musicplayer_test" long-name="Music Player Apps Test" origin-model="foundation">
       <!-- <unit bldFile="app/musicplayer/tsrc/group"/> -->
      </component>
-     <component unofficial="yes" name="musicplayer_build" long-name="Music Player Apps Build" origin-model="Foundation">
+     <component unofficial="yes" name="musicplayer_build" long-name="Music Player Apps Build" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/group"/>
      </component>
     </collection>

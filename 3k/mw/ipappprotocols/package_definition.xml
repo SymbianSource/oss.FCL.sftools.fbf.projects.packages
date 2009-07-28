@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="mw" long-name="Middleware" levels="generic specific">
 <block name="ipappprotocols" long-name="IP App Protocols" tech_domain="dc" level="generic" levels="plugin framework conn server">
     <collection name="rtp" long-name="RTP" level="server">
-     <component name="srtpstack" long-name="SRTP Stack" origin-model="Foundation">
+     <component name="srtpstack" long-name="SRTP Stack" origin-model="foundation">
       <unit bldFile="/sf/mw/ipappprotocols/rtp/srtpstack/group"/>
       <!-- <unit bldFile="mw/ipappprotocols/rtp/srtpstack/tsrc/ut_srtpstack/group"/> -->
      </component>
-     <component name="rtpstack" long-name="RTP Stack" origin-model="Foundation">
+     <component name="rtpstack" long-name="RTP Stack" origin-model="foundation">
       <unit bldFile="/sf/mw/ipappprotocols/rtp/rtpstack/group"/>
       <!-- <unit bldFile="mw/ipappprotocols/rtp/rtpstack/tsrc/ut_rtpstack/group"/> -->
      </component>
     </collection>
     <collection name="sipplugins" long-name="SIP Plugins" level="plugin">
-     <component name="sippwlanplugin" long-name="SIP WLAN Plugin" origin-model="Foundation">
+     <component name="sippwlanplugin" long-name="SIP WLAN Plugin" origin-model="foundation">
       <unit bldFile="/sf/mw/ipappprotocols/sipplugins/sippwlanplugin/group"/>
      </component>
-     <component name="sippsipsettingsui" long-name="SIP Settings UI" origin-model="Foundation">
+     <component name="sippsipsettingsui" long-name="SIP Settings UI" origin-model="foundation">
       <unit bldFile="/sf/mw/ipappprotocols/sipplugins/sippsipsettingsui/group"/>
       <!-- <unit bldFile="mw/ipappprotocols/sipplugins/sippsipsettingsui/tsrc/ut_sipsettingsui/group"/> -->
      </component>
-     <component name="sippdevmgmtsipadapter" long-name="Device Management SIP Adapter" origin-model="Foundation">
+     <component name="sippdevmgmtsipadapter" long-name="Device Management SIP Adapter" origin-model="foundation">
       <unit bldFile="/sf/mw/ipappprotocols/sipplugins/sippdevmgmtsipadapter/group"/>
       <!-- <unit bldFile="mw/ipappprotocols/sipplugins/sippdevmgmtsipadapter/tsrc/ut_cnsmldmsipadapter/group"/> -->
      </component>
-     <component name="sippsystemstatemonitor" long-name="SIP System State Monitor" origin-model="Foundation">
+     <component name="sippsystemstatemonitor" long-name="SIP System State Monitor" origin-model="foundation">
       <unit bldFile="/sf/mw/ipappprotocols/sipplugins/sippsystemstatemonitor/group"/>
      </component>
-     <component name="sippsipadapter" long-name="SIP Adapter" origin-model="Foundation">
+     <component name="sippsipadapter" long-name="SIP Adapter" origin-model="foundation">
       <unit bldFile="/sf/mw/ipappprotocols/sipplugins/sippsipadapter/group"/>
       <!-- <unit bldFile="mw/ipappprotocols/sipplugins/sippsipadapter/tsrc/ut_cwpsipadapter/group"/> -->
      </component>
@@ -48,19 +48,14 @@
      </component>
     </collection>
     <collection name="ipappprotocols_info" long-name="IP App Protocols Info" level="server">
-     <component unofficial="yes" name="ipappprotocols_build" long-name="IP App Protocols Build" origin-model="Foundation">
+     <component unofficial="yes" name="ipappprotocols_plat" long-name="IP App Protocols Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/mw/ipappprotocols/ipappprotocols_plat/group"/>
+     </component>
+     <component unofficial="yes" name="ipappprotocols_build" long-name="IP App Protocols Build" origin-model="foundation">
       <unit bldFile="/sf/mw/ipappprotocols/group"/>
      </component>
     <component name="ipappprotocols_metadata" long-name="IP App Protocols Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/mw/ipappprotocols/ipappprotocols_info/ipappprotocols_metadata/ipappprotocols_metadata.mrp"/>
-     </component>
-    </collection>
-    <collection name="ipappprotocols_plat" long-name="IP App Protocols Platform Interfaces" level="server">
-     <component unofficial="yes" name="srtp_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/ipappprotocols/ipappprotocols_plat/srtp_api/group"/>
-     </component>
-     <component unofficial="yes" name="rtprtcp_api" origin-model="Foundation">
-      <unit bldFile="/sf/mw/ipappprotocols/ipappprotocols_plat/rtprtcp_api/group"/>
      </component>
     </collection>
    </block>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
 <block name="commsfw" level="services" long-name="Communications Framework" levels="server support framework process app-if">
@@ -16,7 +16,7 @@
       <unit mrp="/sf/os/commsfw/commsprocess/commsrootserverconfig/group/comms-infras_rootserver-config.mrp"/>
      </component>
     </collection>
-	<!-- Collection manually added from OS after auto-merge -->
+	<!-- Collection manually added due to faulty merge XSLT -->
 	<collection name="commsconfig" long-name="Comms Config" level="process">
 	 <component name="commsdatabase" long-name="Comms Database" purpose="mandatory">
 	  <unit bldFile="/sf/os/commsfw/commsfwtools/preparedefaultcommsdatabase/group" mrp="/sf/os/commsfw/commsfwtools/preparedefaultcommsdatabase/group/comms-infras_commsdat.mrp"/>
@@ -92,10 +92,12 @@
      </component>
     </collection>
     <collection name="commsfwtools" long-name="Comms Framework Tools" level="app-if">
-<!-- <component name="preparedefaultcommsdatabase" long-name="Prepare Default Comms Database" filter="gt" purpose="mandatory" class="config PC" plugin="N" origin-model="Symbian">
-      <unit bldFile="os/commsfw/commsfwtools/preparedefaultcommsdatabase/defaultcommdb/group" mrp="os/commsfw/commsfwtools/preparedefaultcommsdatabase/defaultcommdb/group/comms-infras_defaultcommdb.mrp"/>
-     </component>
-      <component name="installdefaultcommsdatabase" long-name="Install Default Comms Database" purpose="mandatory" class="PC">
+     <!-- Removing GT commdb
+<component name="preparedefaultcommsdatabase" long-name="Prepare Default Comms Database" filter="gt" purpose="mandatory" class="config PC">
+<unit bldFile="os/commsfw/commsfwtools/preparedefaultcommsdatabase/defaultcommdb/group" mrp="os/commsfw/commsfwtools/preparedefaultcommsdatabase/defaultcommdb/group/comms-infras_defaultcommdb.mrp"/>
+</component>
+-->
+     <!-- <component name="installdefaultcommsdatabase" long-name="Install Default Comms Database" purpose="mandatory" class="PC">
 <unit bldFile="os/commsfw/commsfwtools/preparedefaultcommsdatabase/installdefaultcommdb/group" mrp="os/commsfw/commsfwtools/preparedefaultcommsdatabase/installdefaultcommdb/group/comms-infras_installdefaultcommdb.mrp" priority="1010"/>
 </component> -->
      <component name="commstools" long-name="Comms Tools" introduced="tb91" purpose="development" class="PC" plugin="N" origin-model="Symbian">

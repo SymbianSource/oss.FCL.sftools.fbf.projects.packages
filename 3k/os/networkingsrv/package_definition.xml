@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
 <block name="networkingsrv" long-name="Networking Services" tech_domain="dc" level="services" levels="adaptation hw-if plugin framework server app-if">
     <collection name="commsdb" long-name="Comms DB" level="server">
-     <component name="s60_commsdb" long-name="S60 Commsdb" origin-model="Foundation">
+     <component name="s60_commsdb" long-name="S60 Commsdb" origin-model="foundation">
       <unit bldFile="/sf/os/networkingsrv/commsdb/s60_commsdb/group"/>
      </component>
-     <component unofficial="yes" name="commsdb_build" long-name="Comms DB Build" origin-model="Foundation">
+     <component unofficial="yes" name="commsdb_build" long-name="Comms DB Build" origin-model="foundation">
       <unit bldFile="/sf/os/networkingsrv/commsdb/group"/>
      </component>
     </collection>
@@ -140,7 +140,7 @@
      </component>
     </collection>
     <collection name="networkingsrv_info" long-name="Networking Services Info" level="app-if">
-     <component unofficial="yes" name="networkingsrv_build" long-name="Networking Services Build" origin-model="Foundation">
+     <component unofficial="yes" name="networkingsrv_build" long-name="Networking Services Build" origin-model="foundation">
       <unit bldFile="/sf/os/networkingsrv/group"/>
      </component>
     <component name="networkingrom" long-name="Networking ROM" purpose="mandatory" plugin="N" origin-model="Symbian">
