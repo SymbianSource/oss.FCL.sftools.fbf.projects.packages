@@ -33,7 +33,7 @@
      </component>
     </collection>
     <collection name="omasuplasnconverterstubimpl" long-name="OMA SUPL ASN Converter Stub Implementation" level="plugin">
-     <component name="asnimplementation" long-name="ASN Imple­ment­ation" origin-model="foundation">
+     <component name="asnimplementation" long-name="ASN Implementation" origin-model="foundation">
       <unit bldFile="/sf/adaptation/stubs/omasuplasnconverterstubimpl/group"/>
      </component>
     </collection>
