@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition name="foundation" schema="2.0.1">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="osrndtools" long-name="OS RD tools" tech_domain="to" level="services" levels="fw trace">
+ <systemModel>
+  <layer name="ostools" long-name="OS Tools">
+   <block name="osrndtools" long-name="OS RD tools" tech_domain="to" level="services" levels="fw trace">
     <collection name="stif" long-name="STIF" level="fw">
      <component name="testinterface" long-name="Test Interface" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/stif/testinterface/group"/>
+      <unit bldFile="ostools/osrndtools/stif/testinterface/group"/>
      </component>
      <component name="testserver" long-name="Test Server" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/stif/testserver/group"/>
+      <unit bldFile="ostools/osrndtools/stif/testserver/group"/>
      </component>
      <component name="testengine" long-name="Test Engine" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/stif/testengine/group"/>
+      <unit bldFile="ostools/osrndtools/stif/testengine/group"/>
      </component>
      <component name="testserverstarter" long-name="Test Server Starter" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/stif/testserverstarter/group"/>
+      <unit bldFile="ostools/osrndtools/stif/testserverstarter/group"/>
      </component>
      <component name="stiftfwif" long-name="STIF TFwIf" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/stif/stiftfwif/group"/>
+      <unit bldFile="ostools/osrndtools/stif/stiftfwif/group"/>
      </component>
      <component name="consoleui" long-name="Console UI" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/stif/consoleui/group"/>
+      <unit bldFile="ostools/osrndtools/stif/consoleui/group"/>
      </component>
      <component name="testcombiner" long-name="Test Combiner" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/stif/testcombiner/group"/>
+      <unit bldFile="ostools/osrndtools/stif/testcombiner/group"/>
      </component>
      <component name="demomodule" long-name="Demo Module" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/stif/demomodule/group"/>
+      <unit bldFile="ostools/osrndtools/stif/demomodule/group"/>
      </component>
      <component name="atslogger" long-name="ATS Logger" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/stif/atslogger/group"/>
+      <unit bldFile="ostools/osrndtools/stif/atslogger/group"/>
      </component>
      <component name="atsinterface" long-name="ATS Interface" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/stif/atsinterface/group"/>
+      <unit bldFile="ostools/osrndtools/stif/atsinterface/group"/>
      </component>
      <component name="testscripter" long-name="Test Scripter" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/stif/testscripter/group"/>
+      <unit bldFile="ostools/osrndtools/stif/testscripter/group"/>
      </component>
      <component name="suevent" long-name="SU Event" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/stif/suevent/group"/>
+      <unit bldFile="ostools/osrndtools/stif/suevent/group"/>
      </component>
      <component name="stifkerneltestclassbase" long-name="STIF Kernel Test Class Base" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/stif/stifkerneltestclassbase/group"/>
+      <unit bldFile="ostools/osrndtools/stif/stifkerneltestclassbase/group"/>
      </component>
      <component name="examples" long-name="Examples" origin-model="foundation">
       <!-- <unit bldFile="ostools/osrndtools/stif/examples/stiftestmeasurementstub/group"/> -->
@@ -56,46 +56,46 @@
       <!-- <unit bldFile="ostools/osrndtools/stif/testmoduletemplates/hardcodedtestmodulexxx/group"/> -->
      </component>
      <component unofficial="yes" name="stif_build" long-name="STIF Build" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/stif/group"/>
+      <unit bldFile="ostools/osrndtools/stif/group"/>
      </component>
     </collection>
     <collection name="memspy" long-name="Memspy" level="trace">
      <component name="driver" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/memspy/driver/group"/>
+      <unit bldFile="ostools/osrndtools/memspy/driver/group"/>
      </component>
      <component name="memspy_engine" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/memspy/engine/group"/>
+      <unit bldFile="ostools/osrndtools/memspy/engine/group"/>
      </component>
      <component name="commandline" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/memspy/commandline/group"/>
+      <unit bldFile="ostools/osrndtools/memspy/commandline/group"/>
      </component>
      <component name="console" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/memspy/console/group"/>
+      <unit bldFile="ostools/osrndtools/memspy/console/group"/>
      </component>
      <component unofficial="yes" name="memspy_build" long-name="Memspy Build" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/memspy/group"/>
+      <unit bldFile="ostools/osrndtools/memspy/group"/>
      </component>
     </collection>
     <collection name="hti" long-name="HTI" level="trace">
      <component name="hticfg" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/hti/hticfg/group"/>
+      <unit bldFile="ostools/osrndtools/hti/hticfg/group"/>
      </component>
      <component name="htiautostart" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/hti/htiautostart/group"/>
+      <unit bldFile="ostools/osrndtools/hti/htiautostart/group"/>
      </component>
      <component name="htiframework" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/hti/htiframework/group"/>
+      <unit bldFile="ostools/osrndtools/hti/htiframework/group"/>
      </component>
      <!-- Empty duplicate component HtiCommPlugins removed -->
      <!-- Empty duplicate component HtiServicePlugins removed -->
      <component name="htifilehlp" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/hti/htifilehlp/group"/>
+      <unit bldFile="ostools/osrndtools/hti/htifilehlp/group"/>
      </component>
      <component name="htiwatchdog" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/hti/htiwatchdog/group"/>
+      <unit bldFile="ostools/osrndtools/hti/htiwatchdog/group"/>
      </component>
      <component unofficial="yes" name="hti_build" long-name="HTI Build" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/hti/group"/>
+      <unit bldFile="ostools/osrndtools/hti/group"/>
      </component>
     </collection>
     <collection name="testexecfw1" long-name="Test Execution Framework v1" level="fw">
@@ -110,27 +110,27 @@
     </collection>
     <collection name="osrndtools_info" long-name="OS RD tools Info" level="trace">
      <component unofficial="yes" name="osrndtools_build" long-name="OS RD tools Build" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/group"/>
+      <unit bldFile="ostools/osrndtools/group"/>
      </component>
     <component name="osrndtools_metadata" long-name="OS RD tools Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
-      <unit mrp="/sf/os/osrndtools/osrndtools_info/osrndtools_metadata/osrndtools_metadata.mrp"/>
+      <unit mrp="os/osrndtools/osrndtools_info/osrndtools_metadata/osrndtools_metadata.mrp"/>
      </component>
     </collection>
 	<collection name="osrndtools_plat" long-name="OS RD tools Platform Interfaces" level="trace">
      <component unofficial="yes" name="memspy_api" origin-model="Foundation">
-      <unit bldFile="/sf/ostools/osrndtools/osrndtools_plat/memspy_api/group"/>
+      <unit bldFile="ostools/osrndtools/osrndtools_plat/memspy_api/group"/>
      </component>
      <component unofficial="yes" name="stif_api" origin-model="Foundation">
-      <unit bldFile="/sf/ostools/osrndtools/osrndtools_plat/stif_api/group"/>
+      <unit bldFile="ostools/osrndtools/osrndtools_plat/stif_api/group"/>
      </component>
      <component unofficial="yes" name="hti_api" origin-model="Foundation">
-      <unit bldFile="/sf/ostools/osrndtools/osrndtools_plat/hti_api/group"/>
+      <unit bldFile="ostools/osrndtools/osrndtools_plat/hti_api/group"/>
      </component>
      <component unofficial="yes" name="open_system_trace_api" origin-model="Foundation">
-      <unit bldFile="/sf/ostools/osrndtools/osrndtools_plat/open_system_trace_api/group"/>
+      <unit bldFile="ostools/osrndtools/osrndtools_plat/open_system_trace_api/group"/>
      </component>
     </collection>
    </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

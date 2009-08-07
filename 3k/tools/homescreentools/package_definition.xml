@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="Foundation" schema="2.0.1">
+ <systemModel>
+  <layer name="tools" long-name="Tools">
+   <block name="homescreentools" long-name="Home Screen Tools" tech_domain="ui" level="services" levels="tool install">
+    <collection name="dtdinstaller" long-name="DTD Installer" level="install">
+     <component name="dtdinstaller_build" origin-model="foundation">
+      <unit bldFile="tools/homescreentools/dtdinstaller/group"/>
+     </component>
+    </collection>
+    <collection name="themeinstaller" long-name="Theme Installer" level="install">
+     <component name="themeinstaller_build" origin-model="foundation">
+      <unit bldFile="tools/homescreentools/themeinstaller/group"/>
+     </component>
+    </collection>
+    <collection name="themetool" long-name="Theme Tool" level="tool">
+     <component name="themetool_build" origin-model="foundation">
+      <unit bldFile="tools/homescreentools/themetool/group"/>
+     </component>
+    </collection>
+    <collection name="homescreentools_info" long-name="Home Screen Tools Info" level="install">
+     <component unofficial="yes" name="homescreentools_build" long-name="Home Screen Tools Build" origin-model="foundation">
+      <unit bldFile="tools/homescreentools/group"/>
+     </component>
+    </collection>
+   </block>
+  </layer>
+ </systemModel>
+</SystemDefinition>
