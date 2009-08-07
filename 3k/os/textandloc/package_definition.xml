@@ -10,7 +10,7 @@
      <component name="charconvplugin" long-name="Charconv Plugin" origin-model="foundation">
       <unit bldFile="/sf/os/textandloc/charconvfw/charconvplugin/group"/>
      </component>
-     <component name="charconv_fw" origin-model="foundation" long-name="Character Encoding and Conversion Framework" purpose="optional" plugin="N">
+     <component name="charconv_fw" long-name="Character Encoding and Conversion Framework" purpose="optional" plugin="N" origin-model="foundation">
       <unit bldFile="/sf/os/textandloc/charconvfw/charconv_fw/group" mrp="/sf/os/textandloc/charconvfw/charconv_fw/group/syslibs_charconv.mrp"/>
      </component>
      <!--Component manually removed and merged to OS-->
@@ -58,7 +58,7 @@
       <unit mrp="/sf/os/textandloc/textrendering/word/group/app-framework_word.mrp"/>
      </component>
     </collection>
-    <collection name="textandlocutils" level="util" long-name="Text and Localisation Utils">
+    <collection name="textandlocutils" long-name="Text and Localisation Utils" level="util">
      <component name="localizer" long-name="Localizer" origin-model="foundation">
       <unit bldFile="/sf/os/textandloc/charconvfw/localizer/group"/>
      </component>

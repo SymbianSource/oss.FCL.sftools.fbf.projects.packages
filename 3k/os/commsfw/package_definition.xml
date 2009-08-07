@@ -2,7 +2,7 @@
 <SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
-<block name="commsfw" level="services" long-name="Communications Framework" levels="server support framework process app-if">
+<block name="commsfw" long-name="Communications Framework" level="services" levels="server support framework process app-if">
     <collection name="commsinfrastructureapitest" long-name="Comms-Infras API Tests" level="app-if">
      <component name="commsinfrastructuresvs" long-name="Comms Infrastructure Verification Suite" introduced="tb91" purpose="development" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/os/commsfw/commsinfrastructureapitest/commsinfrastructuresvs/group/commsinfrastructuresvs.mrp"/>
@@ -46,7 +46,7 @@
      </component>
     </collection>
     <collection name="serialserver" long-name="Serial Server" level="server">
-     <component name="serialportcsy" long-name="Serial Port CSY" introduced="ER5" purpose="optional" plugin="Y" class="placeholder" origin-model="Symbian">
+     <component name="serialportcsy" long-name="Serial Port CSY" introduced="ER5" purpose="optional" class="placeholder" plugin="Y" origin-model="Symbian">
       <!-- placeholder for ser-comms_serialportcsy, currently built by C32 -->
      </component>
      <component name="packetloopbackcsy" long-name="Packet Loopback CSY" introduced="8.1" purpose="development" plugin="N" origin-model="Symbian">

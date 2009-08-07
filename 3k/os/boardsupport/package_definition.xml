@@ -2,7 +2,7 @@
 <SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
-<block name="boardsupport" level="hw" long-name="Board Support" levels="bsp test 2 3 4">
+<block name="boardsupport" long-name="Board Support" level="hw" levels="bsp test 2 3 4">
     <collection name="emulator" long-name="Emulator" level="bsp">
      <component name="emulatorbsp" long-name="Emulator BSP" purpose="optional" plugin="N" origin-model="Symbian">
       <unit bldFile="/sf/os/boardsupport/emulator/emulatorbsp" mrp="/sf/os/boardsupport/emulator/emulatorbsp/base_wins.mrp"/>

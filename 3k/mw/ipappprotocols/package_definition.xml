@@ -38,12 +38,12 @@
       <!-- Real Time Data Protocol -->
       <unit bldFile="/sf/mw/ipappprotocols/realtimenetprots/rtp/group" mrp="/sf/mw/ipappprotocols/realtimenetprots/rtp/group/mm-protocols_rtp.mrp"/>
      </component>
-     <component name="sipfw" long-name="SIP Framework" introduced="9.2" filter="gt" purpose="optional" plugin="N" origin-model="Symbian">
+     <component name="sipfw" long-name="SIP Framework" filter="gt" introduced="9.2" purpose="optional" plugin="N" origin-model="Symbian">
       <unit bldFile="/sf/mw/ipappprotocols/realtimenetprots/sipfw/Group" mrp="/sf/mw/ipappprotocols/realtimenetprots/sipfw/Group/mm-protocols_SIP2_Com.mrp" version="2"/>
      </component>
     </collection>
     <collection name="sipproviderplugins" long-name="SIP Provider Plugins" level="conn">
-     <component name="sipprovider" long-name="SIP Provider" introduced="tb91" filter="gt" purpose="optional" plugin="Y" origin-model="Symbian">
+     <component name="sipprovider" long-name="SIP Provider" filter="gt" introduced="tb91" purpose="optional" plugin="Y" origin-model="Symbian">
       <unit bldFile="/sf/mw/ipappprotocols/sipproviderplugins/sipprovider/group" mrp="/sf/mw/ipappprotocols/sipproviderplugins/sipprovider/group/mm-protocols_SipProvider.mrp"/>
      </component>
     </collection>

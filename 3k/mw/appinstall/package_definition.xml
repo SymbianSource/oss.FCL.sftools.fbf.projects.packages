@@ -67,7 +67,7 @@
 	 <component name="swidevicetools" long-name="Secure Software Install Device Tools" introduced="8.1" purpose="development">
 	  <unit bldFile="/sf/mw/appinstall/installationservices/swidevicetools/group" mrp="/sf/mw/appinstall/installationservices/swidevicetools/group/security_switools_device.mrp"/>
 	 </component>
-	 <component name="switestfw" long-name="Software Install Test Framework" deprecated="tb92" introduced="7.0" purpose="development">
+	 <component name="switestfw" long-name="Software Install Test Framework" introduced="7.0" deprecated="tb92" purpose="development">
 	  <unit bldFile="/sf/mw/appinstall/installationservices/switestfw/group" mrp="/sf/mw/appinstall/installationservices/switestfw/group/install_testframework.mrp"/>
 	 </component>
 	 <component name="swiconfig" long-name="Software Install Config" introduced="9.1" purpose="optional" class="config">

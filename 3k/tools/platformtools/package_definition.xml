@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
  <systemModel>
-  <layer name="tools">
+<layer name="tools" long-name="Tools">
    <block name="platformtools" long-name="Platform Tools" tech_domain="to" level="generic">
     <collection name="gfxconversion" long-name="Graphics Conversion">
      <component name="bmconv_s60" long-name="Bm Conv S60" origin-model="foundation">

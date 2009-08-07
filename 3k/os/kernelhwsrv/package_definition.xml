@@ -2,7 +2,7 @@
 <SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
-<block name="kernelhwsrv" level="hw" long-name="Kernel and Hardware Services" levels="hw-if adaptation framework test">
+<block name="kernelhwsrv" long-name="Kernel and Hardware Services" level="hw" levels="hw-if adaptation framework test">
     <collection name="baseintegtests" long-name="Base Integration Testing" level="test">
      <component name="baseintegrationtest" long-name="Base Integration Test" introduced="9.3" purpose="development" plugin="N" origin-model="Symbian">
       <unit bldFile="/sf/os/kernelhwsrv/baseintegtests/baseintegrationtest/group" mrp="/sf/os/kernelhwsrv/baseintegtests/baseintegrationtest/group/base_integration_test.mrp"/>

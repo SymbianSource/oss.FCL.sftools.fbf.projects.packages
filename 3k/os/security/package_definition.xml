@@ -2,7 +2,7 @@
 <SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
-<block name="security" level="services" long-name="OS Security" levels="physical-abstraction plugins libraries management services utilities">
+<block name="security" long-name="OS Security" level="services" levels="physical-abstraction plugins libraries management services utilities">
     <collection name="contentmgmt" long-name="Content Management" level="utilities">
      <component name="contentaccessfwfordrm" long-name="Content Access Framework for DRM" introduced="9.1" purpose="mandatory" plugin="N" origin-model="Symbian">
       <unit bldFile="/sf/os/security/contentmgmt/contentaccessfwfordrm/group" mrp="/sf/os/security/contentmgmt/contentaccessfwfordrm/group/security_caf2.mrp"/>

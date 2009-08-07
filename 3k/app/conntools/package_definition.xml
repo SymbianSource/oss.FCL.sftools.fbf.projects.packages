@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition name="foundation" schema="2.0.1">
  <systemModel>
-  <layer name="app" long-name="Middleware" levels="generic specific">
+  <layer name="app" long-name="Applications" levels="services apps">
    <block name="conntools" long-name="Conn Tools" tech_domain="to" level="generic" levels="1 2">
     <collection name="nettools" long-name="Net Tools" level="2">
      <component name="conntest" long-name="Connection Test" origin-model="foundation">

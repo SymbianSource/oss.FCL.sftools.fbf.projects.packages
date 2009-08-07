@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="Foundation" schema="2.0.1">
+<SystemDefinition name="foundation" schema="2.0.1">
  <systemModel>
   <layer name="tools" long-name="Tools">
    <block name="homescreentools" long-name="Home Screen Tools" tech_domain="ui" level="services" levels="tool install">
