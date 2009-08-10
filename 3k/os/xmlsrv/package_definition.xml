@@ -54,19 +54,19 @@
     <collection name="xmlsrv_info" long-name="XML Services Info" level="specific">
      <component unofficial="yes" name="xmlsrv_plat" long-name="XML Services Platform Interfaces" class="api" origin-model="foundation">
       <unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/group"/>
-      <!-- <unit bldFile="os/xmlsrv/xmlsrv_plat/xml_encryption_api/tsrc/group"/> -->
-      <!-- <unit bldFile="os/xmlsrv/xmlsrv_plat/xml_engine_serializer_api/tsrc/group"/> -->
-      <!-- <unit bldFile="os/xmlsrv/xmlsrv_plat/xml_engine_utils_api/tsrc/group"/> -->
-      <!-- <unit bldFile="os/xmlsrv/xmlsrv_plat/xml_engine_xpath_api/tsrc/group"/> -->
-      <!-- <unit bldFile="os/xmlsrv/xmlsrv_plat/xml_security_engine_utils_api/tsrc/group"/> -->
-      <!-- <unit bldFile="os/xmlsrv/xmlsrv_plat/xml_signature_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/xml_encryption_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/xml_engine_serializer_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/xml_engine_utils_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/xml_engine_xpath_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/xml_security_engine_utils_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/xml_signature_api/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="xmlsrv_build" long-name="XML Services Build" origin-model="foundation">
       <unit bldFile="/sf/os/xmlsrv/group"/>
      </component>
      <component unofficial="yes" name="xmlsrv_pub" long-name="XML Services Public Interfaces" class="api" origin-model="foundation">
       <unit bldFile="/sf/os/xmlsrv/xmlsrv_pub/group"/>
-      <!-- <unit bldFile="os/xmlsrv/xmlsrv_pub/xml_engine_dom_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/xmlsrv/xmlsrv_pub/xml_engine_dom_api/tsrc/group"/> -->
      </component>
     <component name="xmlsrv_metadata" long-name="XML Services Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/os/xmlsrv/xmlsrv_info/xmlsrv_metadata/xmlsrv_metadata.mrp"/>

@@ -5,44 +5,44 @@
 <block name="im" long-name="Instant Messaging Apps" tech_domain="pr" level="apps" levels="support engine apps">
     <collection name="impsengine" long-name="IMPS Engine" level="engine">
      <component name="impsengine_utils" long-name="Utilities" origin-model="foundation">
-      <!-- <unit bldFile="app/im/impsengine/utils/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/impsengine/utils/group"/> -->
      </component>
      <component name="datautils" long-name="Data Utils" origin-model="foundation">
-      <!-- <unit bldFile="app/im/impsengine/datautils/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/impsengine/datautils/group"/> -->
      </component>
      <component name="impsengine_client" long-name="Client" origin-model="foundation">
-      <!-- <unit bldFile="app/im/impsengine/client/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/impsengine/client/group"/> -->
      </component>
      <component name="imapi" long-name="IM API" origin-model="foundation">
-      <!-- <unit bldFile="app/im/impsengine/imapi/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/impsengine/imapi/group"/> -->
      </component>
      <component name="imlauncher" long-name="IM Launcher" origin-model="foundation">
-      <!-- <unit bldFile="app/im/impsengine/imlauncher/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/impsengine/imlauncher/group"/> -->
      </component>
      <component name="impsdatachannel" long-name="Imps Data Channel" origin-model="foundation">
-      <!-- <unit bldFile="app/im/impsengine/impsdatachannel/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/impsengine/impsdatachannel/group"/> -->
      </component>
      <component name="impsipcirwatcher" long-name="Imps Ip Cir Watcher" origin-model="foundation">
-      <!-- <unit bldFile="app/im/impsengine/impsipcirwatcher/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/impsengine/impsipcirwatcher/group"/> -->
      </component>
      <component name="messageencoder" long-name="Message Encoder" origin-model="foundation">
-      <!-- <unit bldFile="app/im/impsengine/messageencoder/wbxml/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/impsengine/messageencoder/wbxml/group"/> -->
      </component>
      <component name="engsrv" long-name="Eng Srv" origin-model="foundation">
-      <!-- <unit bldFile="app/im/impsengine/engsrv/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/impsengine/engsrv/group"/> -->
      </component>
      <component name="impswatcher" long-name="Imps Watcher" origin-model="foundation">
-      <!-- <unit bldFile="app/im/impsengine/impswatcher/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/impsengine/impswatcher/group"/> -->
      </component>
      <component name="wvotaparser" long-name="WV OTA Parser" origin-model="foundation">
-      <!-- <unit bldFile="app/im/impsengine/wvotaparser/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/impsengine/wvotaparser/group"/> -->
      </component>
      <component unofficial="yes" name="impsengine_test" long-name="IMPS Engine Test" origin-model="foundation">
-      <!-- <unit bldFile="app/im/impsengine/tsrc/public/imlauncher_sdk_apis/basic/imlaunchertimerprocess/group"/> -->
-      <!-- <unit bldFile="app/im/impsengine/tsrc/public/advance/group"/> -->
-      <!-- <unit bldFile="app/im/impsengine/tsrc/public/imlauncher_sdk_apis/basic/imlaunchertest/group"/> -->
-      <!-- <unit bldFile="app/im/impsengine/tsrc/public/imlauncher_sdk_apis/basic/group"/> -->
-      <!-- <unit bldFile="app/im/impsengine/tsrc/public/imlauncher_sdk_apis/basic/imlaunchertestplugin/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/impsengine/tsrc/public/imlauncher_sdk_apis/basic/imlaunchertimerprocess/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/impsengine/tsrc/public/advance/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/impsengine/tsrc/public/imlauncher_sdk_apis/basic/imlaunchertest/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/impsengine/tsrc/public/imlauncher_sdk_apis/basic/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/impsengine/tsrc/public/imlauncher_sdk_apis/basic/imlaunchertestplugin/group"/> -->
      </component>
      <component unofficial="yes" name="impsengine_build" long-name="IMPS Engine Build" origin-model="foundation">
       <unit bldFile="/sf/app/im/impsengine/group"/>
@@ -50,34 +50,34 @@
     </collection>
     <collection name="pecengine" long-name="Presence Engine" level="engine">
      <component name="coreutilslib2" long-name="Core Utils Lib 2" origin-model="foundation">
-      <!-- <unit bldFile="app/im/pecengine/coreutilslib2/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/pecengine/coreutilslib2/group"/> -->
      </component>
      <component name="storagemanager2" long-name="Storage Manager 2" origin-model="foundation">
-      <!-- <unit bldFile="app/im/pecengine/storagemanager2/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/pecengine/storagemanager2/group"/> -->
      </component>
      <component name="pecparser2" origin-model="foundation">
-      <!-- <unit bldFile="app/im/pecengine/parser2/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/pecengine/parser2/group"/> -->
      </component>
      <component name="attributelibrary2" long-name="Attribute Library 2" origin-model="foundation">
-      <!-- <unit bldFile="app/im/pecengine/attributelibrary2/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/pecengine/attributelibrary2/group"/> -->
      </component>
      <component name="listlibrary2" long-name="List Library 2" origin-model="foundation">
-      <!-- <unit bldFile="app/im/pecengine/listlibrary2/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/pecengine/listlibrary2/group"/> -->
      </component>
      <component name="transferadapter2" long-name="Transfer Adapter 2" origin-model="foundation">
-      <!-- <unit bldFile="app/im/pecengine/transferadapter2/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/pecengine/transferadapter2/group"/> -->
      </component>
      <component name="presenceserver2" long-name="Presence Server 2" origin-model="foundation">
-      <!-- <unit bldFile="app/im/pecengine/presenceserver2/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/pecengine/presenceserver2/group"/> -->
      </component>
      <component name="presencemanager2" long-name="Presence Manager 2" origin-model="foundation">
-      <!-- <unit bldFile="app/im/pecengine/presencemanager2/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/pecengine/presencemanager2/group"/> -->
      </component>
      <component name="janitorplugin2" long-name="Janitor Plugin 2" origin-model="foundation">
-      <!-- <unit bldFile="app/im/pecengine/janitorplugin2/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/pecengine/janitorplugin2/group"/> -->
      </component>
      <component name="pluginserver2" long-name="Plugin Server 2" origin-model="foundation">
-      <!-- <unit bldFile="app/im/pecengine/pluginserver2/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/pecengine/pluginserver2/group"/> -->
      </component>
      <component unofficial="yes" name="pecengine_build" long-name="Presence Engine Build" origin-model="foundation">
       <unit bldFile="/sf/app/im/pecengine/group"/>
@@ -85,13 +85,13 @@
     </collection>
     <collection name="presadap12" long-name="Presence Adap 12" level="support">
      <component name="presparser2" origin-model="foundation">
-      <!-- <unit bldFile="app/im/presadap12/parser2/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/presadap12/parser2/group"/> -->
      </component>
      <component name="impsplugin" long-name="IMPS Plugin" origin-model="foundation">
-      <!-- <unit bldFile="app/im/presadap12/impsplugin/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/presadap12/impsplugin/group"/> -->
      </component>
      <component unofficial="yes" name="presadap12_build" long-name="Presence Adap 12 Build" origin-model="foundation">
-      <!-- <unit bldFile="app/im/presadap12/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/presadap12/group"/> -->
      </component>
     </collection>
     <collection name="wvsettings20" long-name="WV Settings 20" level="support">
@@ -101,52 +101,52 @@
     </collection>
     <collection name="wvuing" long-name="WV UI NG" level="apps">
      <component name="imindicatorplugin" long-name="IM Indicator Plugin" origin-model="foundation">
-      <!-- <unit bldFile="app/im/wvuing/imindicatorplugin/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/wvuing/imindicatorplugin/group"/> -->
      </component>
      <component name="impsconnectionui" long-name="IMPS Connection UI" origin-model="foundation">
-      <!-- <unit bldFile="app/im/wvuing/impsconnectionui/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/wvuing/impsconnectionui/group"/> -->
      </component>
      <component name="impsservicesettingsui" long-name="IMPS Service Settings UI" origin-model="foundation">
-      <!-- <unit bldFile="app/im/wvuing/impsservicesettingsui/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/wvuing/impsservicesettingsui/group"/> -->
      </component>
      <component name="impsalwaysonlineplugin" long-name="IMPS Always Online Plugin" origin-model="foundation">
-      <!-- <unit bldFile="app/im/wvuing/impsalwaysonlineplugin/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/wvuing/impsalwaysonlineplugin/group"/> -->
      </component>
      <component name="wvvariant" long-name="Wvvariant" origin-model="foundation">
-      <!-- <unit bldFile="app/im/wvuing/wvvariant/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/wvuing/wvvariant/group"/> -->
      </component>
      <component name="wvuiada" long-name="Wvuiada" origin-model="foundation">
-      <!-- <unit bldFile="app/im/wvuing/wvuiada/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/wvuing/wvuiada/group"/> -->
      </component>
      <component name="wvuistorage" long-name="WV UI Storage" origin-model="foundation">
-      <!-- <unit bldFile="app/im/wvuing/wvuistorage/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/wvuing/wvuistorage/group"/> -->
      </component>
      <component name="wvuipresence" long-name="WV UI Presence" origin-model="foundation">
-      <!-- <unit bldFile="app/im/wvuing/wvuipresence/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/wvuing/wvuipresence/group"/> -->
      </component>
      <component name="wvlogger" long-name="Wvlogger" origin-model="foundation">
-      <!-- <unit bldFile="app/im/wvuing/wvlogger/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/wvuing/wvlogger/group"/> -->
      </component>
      <component name="wvuieng" long-name="Wvuieng" origin-model="foundation">
-      <!-- <unit bldFile="app/im/wvuing/wvuieng/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/wvuing/wvuieng/group"/> -->
      </component>
      <component name="imutils" long-name="Im Utils" origin-model="foundation">
-      <!-- <unit bldFile="app/im/wvuing/imutils/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/wvuing/imutils/group"/> -->
      </component>
      <component name="wvuiprocess" long-name="WV UI Process" origin-model="foundation">
-      <!-- <unit bldFile="app/im/wvuing/wvuiprocess/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/wvuing/wvuiprocess/group"/> -->
      </component>
      <component name="wvcommandutils" long-name="Wv Command Utils" origin-model="foundation">
-      <!-- <unit bldFile="app/im/wvuing/wvcommandutils/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/wvuing/wvcommandutils/group"/> -->
      </component>
      <component name="wvaudiomanager" long-name="Wv Audio Manager" origin-model="foundation">
-      <!-- <unit bldFile="app/im/wvuing/wvaudiomanager/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/wvuing/wvaudiomanager/group"/> -->
      </component>
      <component name="wvuiave" long-name="Wvuiave" origin-model="foundation">
-      <!-- <unit bldFile="app/im/wvuing/wvuiave/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/wvuing/wvuiave/group"/> -->
      </component>
      <component name="wvimlauncher" long-name="IM Launcher" origin-model="foundation">
-      <!-- <unit bldFile="app/im/wvuing/imlauncher/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/wvuing/imlauncher/group"/> -->
      </component>
      <component unofficial="yes" name="wvuing_build" long-name="WV UI NG Build" origin-model="foundation">
       <unit bldFile="/sf/app/im/wvuing/group"/>
@@ -159,11 +159,11 @@
      </component>
      <component unofficial="yes" name="im_pub" long-name="Instant Messaging Apps Public Interfaces" class="api" origin-model="foundation">
       <unit bldFile="/sf/app/im/im_pub/group"/>
-      <!-- <unit bldFile="app/im/im_pub/im_api/tsrc/group"/> -->
-      <!-- <unit bldFile="app/im/im_pub/im_application_launch_api/tsrc/group"/> -->
-      <!-- <unit bldFile="app/im/im_pub/im_application_launch_api/tsrc/imlaunchertest/group"/> -->
-      <!-- <unit bldFile="app/im/im_pub/im_application_launch_api/tsrc/imlaunchertestplugin/group"/> -->
-      <!-- <unit bldFile="app/im/im_pub/im_application_launch_api/tsrc/imlaunchertimerprocess/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/im_pub/im_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/im_pub/im_application_launch_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/im_pub/im_application_launch_api/tsrc/imlaunchertest/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/im_pub/im_application_launch_api/tsrc/imlaunchertestplugin/group"/> -->
+      <!-- <unit bldFile="/sf/app/im/im_pub/im_application_launch_api/tsrc/imlaunchertimerprocess/group"/> -->
      </component>
      <component unofficial="yes" name="im_help" long-name="Instant Messaging Apps Help" origin-model="foundation">
       <unit bldFile="/sf/app/im/help/group"/>

@@ -23,7 +23,7 @@
       <unit bldFile="/sf/app/videoeditor/videditor/manualvideoeditor/group"/>
      </component>
      <component name="trimformms" long-name="Trim For MMS" origin-model="foundation">
-      <!-- <unit bldFile="app/videoeditor/videditor/trimformms/group"/> -->
+      <!-- <unit bldFile="/sf/app/videoeditor/videditor/trimformms/group"/> -->
      </component>
      <component unofficial="yes" name="videditor_build" long-name="Video Editor Build" origin-model="foundation">
       <unit bldFile="/sf/app/videoeditor/videditor/group"/>

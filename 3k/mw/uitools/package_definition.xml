@@ -20,7 +20,7 @@
      <component name="arabica" origin-model="foundation"/>
      <component name="xercesc" long-name="Xerces C" origin-model="foundation"/>
      <component unofficial="yes" name="toollibraries_build" long-name="Tool Libraries Build" origin-model="foundation">
-      <!-- <unit bldFile="mw/uitools/toollibraries/group"/> -->
+      <!-- <unit bldFile="/sf/mw/uitools/toollibraries/group"/> -->
      </component>
     </collection>
     <collection name="svgtencoder" long-name="SVGT Encoder" level="encode">

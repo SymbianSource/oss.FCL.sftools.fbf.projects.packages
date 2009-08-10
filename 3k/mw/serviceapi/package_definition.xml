@@ -7,13 +7,13 @@
      <component name="appmanagerservice" long-name="App Manager Service" origin-model="foundation"/>
      <component unofficial="yes" name="sapi_applicationmanager_build" long-name="SAPI Application Manager Build" origin-model="foundation">
       <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_applicationmanager/group"/>
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_applicationmanager/tsrc/dev/cruntimetest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_applicationmanager/tsrc/dev/cruntimetest/group"/> -->
      </component>
     </collection>
     <collection name="sapi_calendar" long-name="SAPI Calendar" level="app">
      <component name="calendarservice" long-name="Calendar Service" origin-model="foundation"/>
      <component unofficial="yes" name="sapi_calendar_build" long-name="SAPI Calendar Build" origin-model="foundation">
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_calendar/tsrc/testing/tcalprovider_combined/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_calendar/tsrc/testing/tcalprovider_combined/group"/> -->
       <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_calendar/group"/>
      </component>
     </collection>
@@ -26,59 +26,59 @@
     <collection name="sapi_landmarks" long-name="SAPI Landmarks" level="mw2">
      <component name="landmarksservice" long-name="Landmarks Service" origin-model="foundation"/>
      <component unofficial="yes" name="sapi_landmarks_build" long-name="SAPI Landmarks Build" origin-model="foundation">
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_landmarks/tsrc/testing/tlandmarkstest/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_landmarks/tsrc/dev/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_landmarks/tsrc/testing/tlandmarksprovidertest/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_landmarks/tsrc/dev/landmarks_inputparams/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_landmarks/tsrc/testing/tlandmarkstest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_landmarks/tsrc/dev/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_landmarks/tsrc/testing/tlandmarksprovidertest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_landmarks/tsrc/dev/landmarks_inputparams/group"/> -->
       <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_landmarks/group"/>
      </component>
     </collection>
     <collection name="sapi_location" long-name="SAPI Location" level="mw2">
      <component name="locationservice" long-name="Location Service" origin-model="foundation"/>
      <component unofficial="yes" name="sapi_location_build" long-name="SAPI Location Build" origin-model="foundation">
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/performance/pgetloc/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/performance/pgetlocopts/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/performance/pgetlocasync/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/performance/pgetbearing/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_location/tsrc/dev/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/performance/pgetdistance/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/performance/pgetloc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/performance/pgetlocopts/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/performance/pgetlocasync/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/performance/pgetbearing/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_location/tsrc/dev/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/performance/pgetdistance/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/group"/> -->
       <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_location/group"/>
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/performance/pmove/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_location/tsrc/testing/performance/pmove/group"/> -->
      </component>
     </collection>
     <collection name="sapi_logging" long-name="SAPI Logging" level="app">
      <component name="loggingservice" long-name="Logging Service" origin-model="foundation"/>
      <component unofficial="yes" name="sapi_logging_build" long-name="SAPI Logging Build" origin-model="foundation">
       <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_logging/group"/>
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_logging/tsrc/dev/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_logging/tsrc/dev/group"/> -->
      </component>
     </collection>
     <collection name="sapi_mediamanagement" long-name="SAPI Media Management" level="mw2">
      <component name="mediamanagementservice" long-name="Media Management Service" origin-model="foundation"/>
      <component unofficial="yes" name="sapi_mediamanagement_build" long-name="SAPI Media Management Build" origin-model="foundation">
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_mediamanagement/tsrc/dev/taiwmediamgmttest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_mediamanagement/tsrc/dev/taiwmediamgmttest/group"/> -->
       <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_mediamanagement/group"/>
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_mediamanagement/tsrc/testing/performance/runtime_perf/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_mediamanagement/tsrc/testing/performance/s60_perf/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_mediamanagement/tsrc/testing/performance/runtime_perf/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_mediamanagement/tsrc/testing/performance/s60_perf/group"/> -->
      </component>
     </collection>
     <collection name="sapi_messaging" long-name="SAPI Messaging" level="mw2">
      <component name="messagingservice" long-name="Messaging Service" origin-model="foundation"/>
      <component unofficial="yes" name="sapi_messaging_build" long-name="SAPI Messaging Build" origin-model="foundation">
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/notify/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/status/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/delete/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/getlist/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/s60_getlist/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/s60_asyncsend/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/s60_notify/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/send/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/s60_status/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/tmessagingprovidertest/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/s60_delete/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/s60_send/group"/> -->
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/asyncsend/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/notify/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/status/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/delete/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/getlist/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/s60_getlist/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/s60_asyncsend/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/s60_notify/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/send/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/s60_status/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/tmessagingprovidertest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/s60_delete/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/s60_send/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_messaging/tsrc/testing/performance/asyncsend/group"/> -->
       <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_messaging/group"/>
      </component>
     </collection>
@@ -96,7 +96,7 @@
     </collection>
     <collection name="sapi_serviceregistry" long-name="SAPI Service Registry" level="os">
      <component name="serviceregistryprovider" origin-model="foundation">
-      <!-- <unit bldFile="mw/serviceapi/serviceproviders/sapi_serviceregistry/tsrc/dev/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_serviceregistry/tsrc/dev/group"/> -->
       <unit bldFile="/sf/mw/serviceapi/serviceproviders/sapi_serviceregistry/group"/>
      </component>
     </collection>
@@ -105,7 +105,7 @@
       <unit bldFile="/sf/mw/serviceapi/serviceproviders/group"/>
      </component>
      <component unofficial="yes" name="serviceapi_test" long-name="Service API Test" origin-model="foundation">
-      <!-- <unit bldFile="mw/serviceapi/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapi/tsrc/group"/> -->
      </component>
     </collection>
    </block>

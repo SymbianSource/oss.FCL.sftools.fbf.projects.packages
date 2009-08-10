@@ -8,7 +8,7 @@
       <unit bldFile="/sf/mw/opensrv/loudmouth/group"/>
      </component>
      <component unofficial="yes" name="loudmouth_test" long-name="Loudmouth Test" origin-model="foundation">
-      <!-- <unit bldFile="mw/opensrv/loudmouth/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/opensrv/loudmouth/tsrc/group"/> -->
      </component>
     </collection>
     <collection name="libtelepathy" long-name="Telepathy Library" level="lib">
@@ -16,7 +16,7 @@
       <unit bldFile="/sf/mw/opensrv/libtelepathy/group"/>
      </component>
      <component unofficial="yes" name="libtelepathy_test" long-name="Telepathy Library Test" origin-model="foundation">
-      <!-- <unit bldFile="mw/opensrv/libtelepathy/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/opensrv/libtelepathy/tsrc/group"/> -->
      </component>
     </collection>
     <collection name="telepathygabble" long-name="Telepathy Gabble" level="eng">
@@ -32,7 +32,7 @@
       <unit bldFile="/sf/mw/opensrv/isolationserver/isoserver/group"/>
      </component>
      <component unofficial="yes" name="isolationserver_test" long-name="Isloation Server Test" origin-model="foundation">
-      <!-- <unit bldFile="mw/opensrv/isolationserver/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/opensrv/isolationserver/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="isolationserver_build" long-name="Isloation Server Build" origin-model="foundation">
       <unit bldFile="/sf/mw/opensrv/isolationserver/group"/>
@@ -41,7 +41,7 @@
     <collection name="opensrv_info" long-name="Open Services Info" level="eng">
      <component unofficial="yes" name="opensrv_plat" long-name="Open Services Platform Interfaces" class="api" origin-model="foundation">
       <unit bldFile="/sf/mw/opensrv/opensrv_plat/group"/>
-      <!-- <unit bldFile="mw/opensrv/opensrv_plat/messagequeue_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/opensrv/opensrv_plat/messagequeue_api/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="opensrv_build" long-name="Open Services Build" origin-model="foundation">
       <unit bldFile="/sf/mw/opensrv/group"/>

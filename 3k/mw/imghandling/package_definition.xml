@@ -6,7 +6,7 @@
     <collection name="3gplibrary" long-name="3GP Library" level="server">
      <component name="3gpmp4lib" long-name="3GP MP4 Library" origin-model="foundation">
       <unit bldFile="/sf/mw/imghandling/3gplibrary/3gpmp4lib/group"/>
-      <!-- <unit bldFile="mw/imghandling/3gplibrary/3gpmp4lib/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/mw/imghandling/3gplibrary/3gpmp4lib/tsrc/public/basic/group"/> -->
      </component>
      <component unofficial="yes" name="3gplibrary_build" long-name="3GP Library Build" origin-model="foundation">
       <unit bldFile="/sf/mw/imghandling/3gplibrary/group"/>
@@ -33,9 +33,9 @@
     </collection>
     <collection name="imghandling_info" long-name="Image Handling Info" level="specific">
      <component unofficial="yes" name="imagehandling_plat" class="api" origin-model="foundation">
-      <!-- <unit bldFile="mw/imghandling/imagehandling_plat/3gp_library_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/imghandling/imagehandling_plat/3gp_library_api/tsrc/group"/> -->
       <unit bldFile="/sf/mw/imghandling/imagehandling_plat/group"/>
-      <!-- <unit bldFile="mw/imghandling/imagehandling_plat/thumbnailmanager_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/imghandling/imagehandling_plat/thumbnailmanager_api/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="imghandling_build" long-name="Image Handling Build" origin-model="foundation">
       <unit bldFile="/sf/mw/imghandling/group"/>

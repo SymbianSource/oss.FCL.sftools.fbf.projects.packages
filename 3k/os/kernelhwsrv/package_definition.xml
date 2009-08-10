@@ -16,18 +16,18 @@
     <collection name="n:unistore2" long-name="UniStore2 Flash Translation Layer" level="hw-if">
      <component name="n:uiidrivers" long-name="UniStore2 Drivers" filter="gt" introduced="9.1" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="os/kernelhwsrv/kernel/eka/drivers/unistore2" mrp="os/kernelhwsrv/kernel/eka/drivers/unistore2/base_drivers_unistore2.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/kernelhwsrv/kernel/eka/drivers/unistore2" mrp="os/kernelhwsrv/kernel/eka/drivers/unistore2/base_drivers_unistore2.mrp"/> -->
      </component>
      <component name="n:uiicore" long-name="UniStore2 Core" filter="gt" introduced="9.1" purpose="optional" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/os/kernelhwsrv/kernel/eka/drivers/unistore2/base_drivers_unistore2_undeliverable.mrp"/>
      </component>
      <component name="n:uiicrashlogger" long-name="UniStore2 Crash Logger" filter="gt" introduced="9.1" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="os/kernelhwsrv/kernel/eka/drivers/crashflash/unistore2" mrp="os/kernelhwsrv/kernel/eka/drivers/crashflash/unistore2/base_crashflash_unistore2.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/kernelhwsrv/kernel/eka/drivers/crashflash/unistore2" mrp="os/kernelhwsrv/kernel/eka/drivers/crashflash/unistore2/base_crashflash_unistore2.mrp"/> -->
      </component>
      <component name="n:uiibootsupport" long-name="UniStore2 Boot Support" filter="gt" introduced="9.1" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="os/kernelhwsrv/unistore2/uiibootsupport/nandloader/unistore2" mrp="os/kernelhwsrv/unistore2/uiibootsupport/base_nandboot_unistore2.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/kernelhwsrv/unistore2/uiibootsupport/nandloader/unistore2" mrp="os/kernelhwsrv/unistore2/uiibootsupport/base_nandboot_unistore2.mrp"/> -->
      </component>
     </collection>
     <collection name="bsptemplate" long-name="BSP Template" level="hw-if">
@@ -46,15 +46,15 @@
      </component>
      <component name="n:sdiotest" long-name="SDIO Tests" filter="gt" introduced="9.2" purpose="development" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="os/kernelhwsrv/kerneltest/sdiotest" mrp="os/kernelhwsrv/kerneltest/sdiotest/base_sdiotests.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/kernelhwsrv/kerneltest/sdiotest" mrp="os/kernelhwsrv/kerneltest/sdiotest/base_sdiotests.mrp"/> -->
      </component>
      <component name="n:e32utils" long-name="E32 Utilities" purpose="development" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="os/kernelhwsrv/kerneltest/e32utils/group" mrp="os/kernelhwsrv/kerneltest/e32utils/group/base_e32utils.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/kernelhwsrv/kerneltest/e32utils/group" mrp="os/kernelhwsrv/kerneltest/e32utils/group/base_e32utils.mrp"/> -->
      </component>
      <component name="n:f32test" long-name="File Server Tests" purpose="development" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="os/kernelhwsrv/kerneltest/f32test/group" mrp="os/kernelhwsrv/kerneltest/f32test/group/base_f32test.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/kernelhwsrv/kerneltest/f32test/group" mrp="os/kernelhwsrv/kerneltest/f32test/group/base_f32test.mrp"/> -->
      </component>
     </collection>
     <collection name="ldds" long-name="Logical Device Drivers" level="adaptation">
@@ -84,11 +84,11 @@
     <collection name="driversupport" long-name="Generic Driver Support" level="hw-if">
      <component name="n:sdcard3c" long-name="SD Card 3C Driver" filter="gt" introduced="9.1" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="os/kernelhwsrv/kernel/eka/drivers/pbus/mmc/sdcard/sdcard3c" mrp="os/kernelhwsrv/kernel/eka/drivers/pbus/mmc/sdcard/sdcard3c/base_e32_sd3c.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/kernelhwsrv/kernel/eka/drivers/pbus/mmc/sdcard/sdcard3c" mrp="os/kernelhwsrv/kernel/eka/drivers/pbus/mmc/sdcard/sdcard3c/base_e32_sd3c.mrp"/> -->
      </component>
      <component name="n:sdcard4c" long-name="SD Card 4C Driver" filter="gt" introduced="9.1" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="os/kernelhwsrv/kernel/eka/drivers/pbus/mmc/sdcard/sdcard4c" mrp="os/kernelhwsrv/kernel/eka/drivers/pbus/mmc/sdcard/sdcard4c/base_e32_sd4c.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/kernelhwsrv/kernel/eka/drivers/pbus/mmc/sdcard/sdcard4c" mrp="os/kernelhwsrv/kernel/eka/drivers/pbus/mmc/sdcard/sdcard4c/base_e32_sd4c.mrp"/> -->
      </component>
      <component name="mediadrivers" long-name="Media Drivers" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- these are for storage media-->
@@ -110,7 +110,7 @@
      </component>
      <component name="n:nandftl" long-name="SSR Flash Translation Layer" filter="gt" introduced="7.0s" deprecated="9.1" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="os/kernelhwsrv/userlibandfileserver/fileserver/sftl" mrp="os/kernelhwsrv/userlibandfileserver/fileserver/sftl/base_f32_sftl.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/sftl" mrp="os/kernelhwsrv/userlibandfileserver/fileserver/sftl/base_f32_sftl.mrp"/> -->
      </component>
      <component name="estart" long-name="Base Starter" filter="gt" purpose="optional" plugin="N" origin-model="Symbian">
       <unit bldFile="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/estart" mrp="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/estart/base_f32_estart.mrp"/>
@@ -143,11 +143,11 @@
      </component>
      <component name="n:ntfs" long-name="NTFS" filter="gt" purpose="optional" plugin="Y" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="os/kernelhwsrv/userlibandfileserver/fileserver/ntfs" mrp="os/kernelhwsrv/userlibandfileserver/fileserver/ntfs/base_f32_sntfs.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/ntfs" mrp="os/kernelhwsrv/userlibandfileserver/fileserver/ntfs/base_f32_sntfs.mrp"/> -->
      </component>
      <component name="n:iso9660fs" long-name="ISO9660 File System" filter="gt" introduced="8.1b" purpose="optional" plugin="Y" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="os/kernelhwsrv/userlibandfileserver/fileserver/iso9660" mrp="os/kernelhwsrv/userlibandfileserver/fileserver/iso9660/base_f32_siso9660.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/iso9660" mrp="os/kernelhwsrv/userlibandfileserver/fileserver/iso9660/base_f32_siso9660.mrp"/> -->
      </component>
     </collection>
     <collection name="halservices" long-name="HAL Services" level="framework">
@@ -170,7 +170,7 @@
     </collection>
     <collection name="kernelhwsrv_info" long-name="Kernel and Hardware Services Info" level="test">
      <component unofficial="yes" name="localesupport" origin-model="foundation">
-      <!-- <unit bldFile="os/kernelhwsrv/localisation/localesupport/mmpfiles"/> -->
+      <!-- <unit bldFile="/sf/os/kernelhwsrv/localisation/localesupport/mmpfiles"/> -->
      </component>
     <component name="kernelhwsrv_metadata" long-name="Kernel and Hardware Services Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/os/kernelhwsrv/kernelhwsrv_info/kernelhwsrv_metadata/kernelhwsrv_metadata.mrp"/>

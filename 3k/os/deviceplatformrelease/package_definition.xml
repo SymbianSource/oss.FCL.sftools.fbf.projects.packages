@@ -20,10 +20,10 @@
     </collection>
     <collection name="sf_config" long-name="SF Config" level="mid">
      <component name="config" origin-model="foundation">
-      <!-- <unit bldFile="os/deviceplatformrelease/sf_config/config/apac/group"/> -->
-      <!-- <unit bldFile="os/deviceplatformrelease/sf_config/config/group"/> -->
-      <!-- <unit bldFile="os/deviceplatformrelease/sf_config/config/japan/group"/> -->
-      <!-- <unit bldFile="os/deviceplatformrelease/sf_config/config/western/group"/> -->
+      <!-- <unit bldFile="/sf/os/deviceplatformrelease/sf_config/config/apac/group"/> -->
+      <!-- <unit bldFile="/sf/os/deviceplatformrelease/sf_config/config/group"/> -->
+      <!-- <unit bldFile="/sf/os/deviceplatformrelease/sf_config/config/japan/group"/> -->
+      <!-- <unit bldFile="/sf/os/deviceplatformrelease/sf_config/config/western/group"/> -->
      </component>
     </collection>
     <collection name="s60bld">

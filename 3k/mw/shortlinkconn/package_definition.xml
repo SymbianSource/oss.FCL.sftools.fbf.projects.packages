@@ -9,7 +9,7 @@
      </component>
      <component name="btnotif" long-name="Bluetooth Notifier" origin-model="foundation">
       <unit bldFile="/sf/mw/shortlinkconn/bluetoothengine/btnotif/group"/>
-      <!-- <unit bldFile="mw/shortlinkconn/bluetoothengine/btnotif/tsrc/btnotifapitest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/shortlinkconn/bluetoothengine/btnotif/tsrc/btnotifapitest/group"/> -->
      </component>
      <component name="btaudioman" long-name="Bluetooth Audio Man" origin-model="foundation">
       <unit bldFile="/sf/mw/shortlinkconn/bluetoothengine/btaudioman/group"/>
@@ -22,13 +22,13 @@
      </component>
      <component name="btaudiostreamer" long-name="Bluetooth Audio Streamer" origin-model="foundation">
       <unit bldFile="/sf/mw/shortlinkconn/bluetoothengine/btaudiostreamer/group"/>
-      <!-- <unit bldFile="mw/shortlinkconn/bluetoothengine/btaudiostreamer/tsrc/btaudiostreamerapitest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/shortlinkconn/bluetoothengine/btaudiostreamer/tsrc/btaudiostreamerapitest/group"/> -->
      </component>
      <component name="btsap" long-name="Bluetooth SAP" origin-model="foundation">
       <unit bldFile="/sf/mw/shortlinkconn/bluetoothengine/btsap/group"/>
      </component>
      <component name="btui" long-name="Bluetooth UI" origin-model="foundation">
-      <!-- <unit bldFile="mw/shortlinkconn/bluetoothengine/btui/ecom/group"/> -->
+      <!-- <unit bldFile="/sf/mw/shortlinkconn/bluetoothengine/btui/ecom/group"/> -->
       <unit bldFile="/sf/mw/shortlinkconn/bluetoothengine/btui/group"/>
      </component>
      <component name="btpbap" long-name="Bluetooth PBAP" origin-model="foundation">
@@ -73,7 +73,7 @@
     <collection name="usbclasses" long-name="USB classes" level="framework">
      <component name="usbobexclasscontroller" long-name="USB Obex Class Controller" origin-model="foundation">
       <unit bldFile="/sf/mw/shortlinkconn/usbclasses/usbobexclasscontroller/group"/>
-      <!-- <unit bldFile="mw/shortlinkconn/usbclasses/usbobexclasscontroller/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/shortlinkconn/usbclasses/usbobexclasscontroller/tsrc/group"/> -->
      </component>
      <component name="usbbasicpersonality" long-name="USB Basic Personality" origin-model="foundation">
       <unit bldFile="/sf/mw/shortlinkconn/usbclasses/usbbasicpersonality/group"/>
@@ -89,7 +89,7 @@
      </component>
      <component name="ptpserver" long-name="Ptp Server" origin-model="foundation">
       <unit bldFile="/sf/mw/shortlinkconn/usbclasses/ptpserver/group"/>
-      <!-- <unit bldFile="mw/shortlinkconn/usbclasses/ptpserver/ptpclasscontroller/group"/> -->
+      <!-- <unit bldFile="/sf/mw/shortlinkconn/usbclasses/ptpserver/ptpclasscontroller/group"/> -->
      </component>
      <component name="pictbridgeengine" long-name="Pictbridge Engine" origin-model="foundation">
       <unit bldFile="/sf/mw/shortlinkconn/usbclasses/pictbridgeengine/group"/>
@@ -102,7 +102,7 @@
      </component>
      <component name="usblocodplugin" long-name="USB Locod Plugin" origin-model="foundation">
       <unit bldFile="/sf/mw/shortlinkconn/usbengines/usblocodplugin/group"/>
-      <!-- <unit bldFile="mw/shortlinkconn/usbengines/usblocodplugin/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/shortlinkconn/usbengines/usblocodplugin/tsrc/group"/> -->
      </component>
      <component name="usbdevcon" long-name="USB Devcon" origin-model="foundation">
       <unit bldFile="/sf/mw/shortlinkconn/usbengines/usbdevcon/group"/>
@@ -114,11 +114,11 @@
     <collection name="usbuis" long-name="USB UIs" level="specific">
      <component name="usbui" long-name="USB UI" origin-model="foundation">
       <unit bldFile="/sf/mw/shortlinkconn/usbuis/usbui/group"/>
-      <!-- <unit bldFile="mw/shortlinkconn/usbuis/usbui/tsrc/usbuiapitest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/shortlinkconn/usbuis/usbui/tsrc/usbuiapitest/group"/> -->
      </component>
      <component name="usbuinotif" long-name="USB UI Notif" origin-model="foundation">
       <unit bldFile="/sf/mw/shortlinkconn/usbuis/usbuinotif/group"/>
-      <!-- <unit bldFile="mw/shortlinkconn/usbuis/usbuinotif/tsrc/usbuinotifapitest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/shortlinkconn/usbuis/usbuinotif/tsrc/usbuinotifapitest/group"/> -->
      </component>
      <component name="imageprintuiprovider" long-name="ImagePrint UI Provider" origin-model="foundation">
       <unit bldFile="/sf/mw/shortlinkconn/usbuis/imageprintuiprovider/group"/>
@@ -145,10 +145,10 @@
       <unit bldFile="/sf/mw/shortlinkconn/shortlinkconn_pub/group"/>
      </component>
      <component unofficial="yes" name="public" origin-model="foundation">
-      <!-- <unit bldFile="mw/shortlinkconn/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/mw/shortlinkconn/tsrc/public/basic/group"/> -->
      </component>
      <component unofficial="yes" name="shortlinkconn_plat" long-name="Shortlink Connectivity Platform Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="mw/shortlinkconn/shortlinkconn_plat/bluetooth_engine_settings_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/shortlinkconn/shortlinkconn_plat/bluetooth_engine_settings_api/tsrc/group"/> -->
       <unit bldFile="/sf/mw/shortlinkconn/shortlinkconn_plat/group"/>
      </component>
      <component unofficial="yes" name="shortlinkconn_build" long-name="Shortlink Connectivity Build" origin-model="foundation">

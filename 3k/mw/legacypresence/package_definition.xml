@@ -5,13 +5,13 @@
 <block name="legacypresence" long-name="Legacy Presence Services" tech_domain="pr" level="specific" levels="engine fw ui">
     <collection name="xdmengine" long-name="XDM Engine" level="engine">
      <component name="xdmsettingsapi" long-name="XDM Settings Api" origin-model="foundation">
-      <!-- <unit bldFile="mw/legacypresence/xdmengine/xdmsettingsapi/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/xdmengine/xdmsettingsapi/group"/> -->
      </component>
      <component name="xdmprovisioning" long-name="XDM Provisioning" origin-model="foundation">
-      <!-- <unit bldFile="mw/legacypresence/xdmengine/xdmprovisioning/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/xdmengine/xdmprovisioning/group"/> -->
      </component>
      <component name="xdmdevicemanagement" long-name="XDM Device Management" origin-model="foundation">
-      <!-- <unit bldFile="mw/legacypresence/xdmengine/xdmdevicemanagement/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/xdmengine/xdmdevicemanagement/group"/> -->
      </component>
      <component name="xdmengine_build" long-name="XDM Engine" origin-model="foundation">
       <unit bldFile="/sf/mw/legacypresence/xdmengine/group"/>
@@ -45,25 +45,25 @@
     </collection>
     <collection name="simpleengine" long-name="SIMPLE Engine" level="engine">
      <component name="presencesettingsapi" long-name="Presence Settings API" origin-model="foundation">
-      <!-- <unit bldFile="mw/legacypresence/simpleengine/presencesettingsapi/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/simpleengine/presencesettingsapi/group"/> -->
      </component>
      <component name="siputils" long-name="SIP Utils" origin-model="foundation">
-      <!-- <unit bldFile="mw/legacypresence/simpleengine/siputils/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/simpleengine/siputils/group"/> -->
      </component>
      <component name="xmlutils" long-name="XML Utils" origin-model="foundation">
-      <!-- <unit bldFile="mw/legacypresence/simpleengine/xmlutils/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/simpleengine/xmlutils/group"/> -->
      </component>
      <component name="simpleengine_engine" long-name="Engine" origin-model="foundation">
-      <!-- <unit bldFile="mw/legacypresence/simpleengine/engine/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/simpleengine/engine/group"/> -->
      </component>
      <component name="xdmrlspres" long-name="XDM Rlspres" origin-model="foundation">
-      <!-- <unit bldFile="mw/legacypresence/simpleengine/xdmrlspres/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/simpleengine/xdmrlspres/group"/> -->
      </component>
      <component name="presencedm" long-name="Presence DM" origin-model="foundation">
-      <!-- <unit bldFile="mw/legacypresence/simpleengine/presencedm/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/simpleengine/presencedm/group"/> -->
      </component>
      <component name="presenceprovisioning" long-name="Presence Provisioning" origin-model="foundation">
-      <!-- <unit bldFile="mw/legacypresence/simpleengine/presenceprovisioning/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/simpleengine/presenceprovisioning/group"/> -->
      </component>
      <component unofficial="yes" name="simpleengine_build" long-name="SIMPLE Engine Build" origin-model="foundation">
       <unit bldFile="/sf/mw/legacypresence/simpleengine/group"/>
@@ -71,20 +71,20 @@
     </collection>
     <collection name="xdmprotocols" long-name="XDM Protocols" level="fw">
      <component name="xdmxmlparser" long-name="XDM XML Parser" origin-model="foundation">
-      <!-- <unit bldFile="mw/legacypresence/xdmprotocols/xdmxmlparser/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/xdmprotocols/xdmxmlparser/group"/> -->
      </component>
      <component name="xcapprotocol" long-name="Xcap Protocol" origin-model="foundation">
-      <!-- <unit bldFile="mw/legacypresence/xdmprotocols/xcapprotocol/group"/> -->
-      <!-- <unit bldFile="mw/legacypresence/xdmprotocols/xcapprotocol/xcapappusage/group"/> -->
-      <!-- <unit bldFile="mw/legacypresence/xdmprotocols/xcapprotocol/xcapcache/client/group"/> -->
-      <!-- <unit bldFile="mw/legacypresence/xdmprotocols/xcapprotocol/xcapcache/server/group"/> -->
-      <!-- <unit bldFile="mw/legacypresence/xdmprotocols/xcapprotocol/xcaphttptransport/group"/> -->
-      <!-- <unit bldFile="mw/legacypresence/xdmprotocols/xcapprotocol/xcapoperations/group"/> -->
-      <!-- <unit bldFile="mw/legacypresence/xdmprotocols/xcapprotocol/xcaputils/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/xdmprotocols/xcapprotocol/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/xdmprotocols/xcapprotocol/xcapappusage/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/xdmprotocols/xcapprotocol/xcapcache/client/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/xdmprotocols/xcapprotocol/xcapcache/server/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/xdmprotocols/xcapprotocol/xcaphttptransport/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/xdmprotocols/xcapprotocol/xcapoperations/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/xdmprotocols/xcapprotocol/xcaputils/group"/> -->
      </component>
      <component name="localprotocol" long-name="Local Protocol" origin-model="foundation">
-      <!-- <unit bldFile="mw/legacypresence/xdmprotocols/localprotocol/group"/> -->
-      <!-- <unit bldFile="mw/legacypresence/xdmprotocols/localprotocol/localoperations/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/xdmprotocols/localprotocol/group"/> -->
+      <!-- <unit bldFile="/sf/mw/legacypresence/xdmprotocols/localprotocol/localoperations/group"/> -->
      </component>
      <component unofficial="yes" name="xdmprotocols_build" long-name="XDM Protocols Build" origin-model="foundation">
       <unit bldFile="/sf/mw/legacypresence/xdmprotocols/group"/>

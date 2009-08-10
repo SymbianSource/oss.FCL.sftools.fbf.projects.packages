@@ -29,7 +29,7 @@
       <unit bldFile="/sf/os/imagingext/group"/>
      </component>
      <component unofficial="yes" name="imagingext_pub" long-name="Imaging Extensions Public Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="os/imagingext/imagingext_pub/exif_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/imagingext/imagingext_pub/exif_api/tsrc/group"/> -->
       <unit bldFile="/sf/os/imagingext/imagingext_pub/group"/>
      </component>
     </collection>

@@ -33,12 +33,12 @@
       <unit bldFile="/sf/app/settingsuis/group"/>
      </component>
      <component unofficial="yes" name="settingsuis_test" long-name="Settings UIs Test" origin-model="foundation">
-      <!-- <unit bldFile="app/settingsuis/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/settingsuis/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="devmngt_plat" class="api" origin-model="foundation">
-      <!-- <unit bldFile="app/settingsuis/devmngt_plat/default_app_client_api/tsrc/dasclientapitest/group"/> -->
+      <!-- <unit bldFile="/sf/app/settingsuis/devmngt_plat/default_app_client_api/tsrc/dasclientapitest/group"/> -->
       <unit bldFile="/sf/app/settingsuis/devmngt_plat/group"/>
-      <!-- <unit bldFile="app/settingsuis/devmngt_plat/services_db_api/tsrc/servicesdbapitest/group"/> -->
+      <!-- <unit bldFile="/sf/app/settingsuis/devmngt_plat/services_db_api/tsrc/servicesdbapitest/group"/> -->
      </component>
     </collection>
    </block>

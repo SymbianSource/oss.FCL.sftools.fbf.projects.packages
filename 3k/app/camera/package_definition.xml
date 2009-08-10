@@ -8,10 +8,10 @@
       <unit bldFile="/sf/app/camera/camerauis/activepalette/group"/>
      </component>
      <component name="cameraapp" long-name="Camera Application" origin-model="foundation">
-      <!-- <unit bldFile="app/camera/camerauis/cameraapp/generic/camerauiconfigmanager/group"/> -->
-      <!-- <unit bldFile="app/camera/camerauis/cameraapp/generic/gscamcorderplugin/group"/> -->
+      <!-- <unit bldFile="/sf/app/camera/camerauis/cameraapp/generic/camerauiconfigmanager/group"/> -->
+      <!-- <unit bldFile="/sf/app/camera/camerauis/cameraapp/generic/gscamcorderplugin/group"/> -->
       <unit bldFile="/sf/app/camera/camerauis/cameraapp/group"/>
-      <!-- <unit bldFile="app/camera/camerauis/cameraapp/help/group"/> -->
+      <!-- <unit bldFile="/sf/app/camera/camerauis/cameraapp/help/group"/> -->
      </component>
     </collection>
     <collection name="camera_info" long-name="Camera Apps Info" level="1">
@@ -19,8 +19,8 @@
       <unit bldFile="/sf/app/camera/group"/>
      </component>
      <component unofficial="yes" name="camera_plat" long-name="Camera Apps Platform Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="app/camera/camera_plat/active_palette_2_api/tsrc/group"/> -->
-      <!-- <unit bldFile="app/camera/camera_plat/camcorder_ui_constants_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/camera/camera_plat/active_palette_2_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/camera/camera_plat/camcorder_ui_constants_api/tsrc/group"/> -->
       <unit bldFile="/sf/app/camera/camera_plat/group"/>
      </component>
     </collection>

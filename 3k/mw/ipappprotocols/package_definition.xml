@@ -6,11 +6,11 @@
     <collection name="rtp" long-name="RTP" level="server">
      <component name="srtpstack" long-name="SRTP Stack" origin-model="foundation">
       <unit bldFile="/sf/mw/ipappprotocols/rtp/srtpstack/group"/>
-      <!-- <unit bldFile="mw/ipappprotocols/rtp/srtpstack/tsrc/ut_srtpstack/group"/> -->
+      <!-- <unit bldFile="/sf/mw/ipappprotocols/rtp/srtpstack/tsrc/ut_srtpstack/group"/> -->
      </component>
      <component name="rtpstack" long-name="RTP Stack" origin-model="foundation">
       <unit bldFile="/sf/mw/ipappprotocols/rtp/rtpstack/group"/>
-      <!-- <unit bldFile="mw/ipappprotocols/rtp/rtpstack/tsrc/ut_rtpstack/group"/> -->
+      <!-- <unit bldFile="/sf/mw/ipappprotocols/rtp/rtpstack/tsrc/ut_rtpstack/group"/> -->
      </component>
     </collection>
     <collection name="sipplugins" long-name="SIP Plugins" level="plugin">
@@ -19,18 +19,18 @@
      </component>
      <component name="sippsipsettingsui" long-name="SIP Settings UI" origin-model="foundation">
       <unit bldFile="/sf/mw/ipappprotocols/sipplugins/sippsipsettingsui/group"/>
-      <!-- <unit bldFile="mw/ipappprotocols/sipplugins/sippsipsettingsui/tsrc/ut_sipsettingsui/group"/> -->
+      <!-- <unit bldFile="/sf/mw/ipappprotocols/sipplugins/sippsipsettingsui/tsrc/ut_sipsettingsui/group"/> -->
      </component>
      <component name="sippdevmgmtsipadapter" long-name="Device Management SIP Adapter" origin-model="foundation">
       <unit bldFile="/sf/mw/ipappprotocols/sipplugins/sippdevmgmtsipadapter/group"/>
-      <!-- <unit bldFile="mw/ipappprotocols/sipplugins/sippdevmgmtsipadapter/tsrc/ut_cnsmldmsipadapter/group"/> -->
+      <!-- <unit bldFile="/sf/mw/ipappprotocols/sipplugins/sippdevmgmtsipadapter/tsrc/ut_cnsmldmsipadapter/group"/> -->
      </component>
      <component name="sippsystemstatemonitor" long-name="SIP System State Monitor" origin-model="foundation">
       <unit bldFile="/sf/mw/ipappprotocols/sipplugins/sippsystemstatemonitor/group"/>
      </component>
      <component name="sippsipadapter" long-name="SIP Adapter" origin-model="foundation">
       <unit bldFile="/sf/mw/ipappprotocols/sipplugins/sippsipadapter/group"/>
-      <!-- <unit bldFile="mw/ipappprotocols/sipplugins/sippsipadapter/tsrc/ut_cwpsipadapter/group"/> -->
+      <!-- <unit bldFile="/sf/mw/ipappprotocols/sipplugins/sippsipadapter/tsrc/ut_cwpsipadapter/group"/> -->
      </component>
     </collection>
     <collection name="realtimenetprots" long-name="Real-time Internet Protocols" level="server">

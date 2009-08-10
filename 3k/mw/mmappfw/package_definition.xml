@@ -24,7 +24,7 @@
      </component>
      <component name="asxparser" long-name="ASX Parser" origin-model="foundation">
       <unit bldFile="/sf/mw/mmappfw/mmappcomponents/asxparser/group"/>
-      <!-- <unit bldFile="mw/mmappfw/mmappcomponents/asxparser/test"/> -->
+      <!-- <unit bldFile="/sf/mw/mmappfw/mmappcomponents/asxparser/test"/> -->
      </component>
     </collection>
     <collection name="mpx" long-name="MPX" level="fw">
@@ -49,7 +49,7 @@
       <unit bldFile="/sf/mw/mmappfw/group"/>
      </component>
      <component unofficial="yes" name="mmappfw_test" long-name="Multimedia App Framework Test" origin-model="foundation">
-      <!-- <unit bldFile="mw/mmappfw/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmappfw/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="mmappfw_plat" long-name="Multimedia App Framework Platform Interfaces" class="api" origin-model="foundation">
       <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/asx_parser_api/tsrc/group"/>

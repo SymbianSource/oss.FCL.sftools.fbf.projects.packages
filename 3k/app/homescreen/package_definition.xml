@@ -11,15 +11,15 @@
       <unit bldFile="/sf/app/homescreen/idlehomescreen/exths/group"/>
      </component>
      <component name="activeidle3" long-name="Active Idle 3" origin-model="foundation">
-      <!-- <unit bldFile="app/homescreen/idlehomescreen/activeidle3/data/group"/> -->
+      <!-- <unit bldFile="/sf/app/homescreen/idlehomescreen/activeidle3/data/group"/> -->
       <unit bldFile="/sf/app/homescreen/idlehomescreen/activeidle3/group"/>
-      <!-- <unit bldFile="app/homescreen/idlehomescreen/activeidle3/xmluirendering/uiengine/group"/> -->
+      <!-- <unit bldFile="/sf/app/homescreen/idlehomescreen/activeidle3/xmluirendering/uiengine/group"/> -->
      </component>
      <component name="hsplugins" long-name="HS Plugins" origin-model="foundation">
       <unit bldFile="/sf/app/homescreen/idlehomescreen/hsplugins/group"/>
-      <!-- <unit bldFile="app/homescreen/idlehomescreen/hsplugins/organizer/qhd_tch/organizer_2001f481/group"/> -->
-      <!-- <unit bldFile="app/homescreen/idlehomescreen/hsplugins/organizer/vga/organizer_2001f48d/group"/> -->
-      <!-- <unit bldFile="app/homescreen/idlehomescreen/hsplugins/organizer/vga/organizer_2001fdba/group"/> -->
+      <!-- <unit bldFile="/sf/app/homescreen/idlehomescreen/hsplugins/organizer/qhd_tch/organizer_2001f481/group"/> -->
+      <!-- <unit bldFile="/sf/app/homescreen/idlehomescreen/hsplugins/organizer/vga/organizer_2001f48d/group"/> -->
+      <!-- <unit bldFile="/sf/app/homescreen/idlehomescreen/hsplugins/organizer/vga/organizer_2001fdba/group"/> -->
      </component>
     </collection>
     <collection name="menufw" long-name="Menu Framework" level="fw">
@@ -41,7 +41,7 @@
       <unit bldFile="/sf/app/homescreen/group"/>
      </component>
      <component unofficial="yes" name="homescreen_test" long-name="Home Screen Apps Test" origin-model="foundation">
-      <!-- <unit bldFile="app/homescreen/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/homescreen/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="homescreen_plat" long-name="Home Screen Apps Platform Interfaces" class="api" origin-model="foundation">
       <unit bldFile="/sf/app/homescreen/homescreen_plat/group"/>

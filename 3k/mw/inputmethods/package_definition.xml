@@ -12,8 +12,8 @@
      </component>
      <component name="peninputarc" long-name="Pen Input Arc" origin-model="foundation">
       <unit bldFile="/sf/mw/inputmethods/textinput/peninputarc/group"/>
-      <!-- <unit bldFile="mw/inputmethods/textinput/peninputarc/src/peninputserverapp"/> -->
-      <!-- <unit bldFile="mw/inputmethods/textinput/peninputarc/utils/group"/> -->
+      <!-- <unit bldFile="/sf/mw/inputmethods/textinput/peninputarc/src/peninputserverapp"/> -->
+      <!-- <unit bldFile="/sf/mw/inputmethods/textinput/peninputarc/utils/group"/> -->
      </component>
      <component name="peninputcommonctrls" long-name="Pen Input Common Ctrls" origin-model="foundation">
       <unit bldFile="/sf/mw/inputmethods/textinput/peninputcommonctrls/group"/>
@@ -62,16 +62,16 @@
     <collection name="fep" long-name="FEP" level="engine">
      <component name="aknfep" long-name="AKN FEP" origin-model="foundation">
       <unit bldFile="/sf/mw/inputmethods/fep/aknfep/group"/>
-      <!-- <unit bldFile="mw/inputmethods/fep/aknfep/peninputplugins/peninputimeplugincn/group"/> -->
-      <!-- <unit bldFile="mw/inputmethods/fep/aknfep/peninputplugins/peninputimeplugingeneric/group"/> -->
-      <!-- <unit bldFile="mw/inputmethods/fep/aknfep/peninputplugins/peninputimepluginitut/group"/> -->
-      <!-- <unit bldFile="mw/inputmethods/fep/aknfep/peninputplugins/peninputimepluginjp/group"/> -->
-      <!-- <unit bldFile="mw/inputmethods/fep/aknfep/uiplugins/aknfepuiinterface/avkonimpl/group"/> -->
-      <!-- <unit bldFile="mw/inputmethods/fep/aknfep/uiplugins/aknfepuiinterface/group"/> -->
+      <!-- <unit bldFile="/sf/mw/inputmethods/fep/aknfep/peninputplugins/peninputimeplugincn/group"/> -->
+      <!-- <unit bldFile="/sf/mw/inputmethods/fep/aknfep/peninputplugins/peninputimeplugingeneric/group"/> -->
+      <!-- <unit bldFile="/sf/mw/inputmethods/fep/aknfep/peninputplugins/peninputimepluginitut/group"/> -->
+      <!-- <unit bldFile="/sf/mw/inputmethods/fep/aknfep/peninputplugins/peninputimepluginjp/group"/> -->
+      <!-- <unit bldFile="/sf/mw/inputmethods/fep/aknfep/uiplugins/aknfepuiinterface/avkonimpl/group"/> -->
+      <!-- <unit bldFile="/sf/mw/inputmethods/fep/aknfep/uiplugins/aknfepuiinterface/group"/> -->
      </component>
      <!--Component manually removed and merged to OS-->
      <!--<component name="frontendprocessor">
-       <unit bldFile="mw/inputmethods/fep/frontendprocessor/test/group"/>
+       <unit bldFile="/sf/mw/inputmethods/fep/frontendprocessor/test/group"/>
      </component>-->
     <component name="frontendprocessor" long-name="Front End Processor" purpose="mandatory" plugin="N" origin-model="Symbian">
       <unit bldFile="/sf/mw/inputmethods/fep/frontendprocessor/group" mrp="/sf/mw/inputmethods/fep/frontendprocessor/group/app-framework_fepbase.mrp"/>
@@ -79,20 +79,20 @@
     </collection>
     <collection name="inputmethods_info" long-name="Input Methods Info" level="framework">
      <component unofficial="yes" name="inputmethods_plat" long-name="Input Methods Platform Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="mw/inputmethods/inputmethods_plat/aknfep_uiinterface_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/inputmethods/inputmethods_plat/aknfep_uiinterface_api/tsrc/group"/> -->
       <unit bldFile="/sf/mw/inputmethods/inputmethods_plat/group"/>
-      <!-- <unit bldFile="mw/inputmethods/inputmethods_plat/pen_input_server_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/inputmethods/inputmethods_plat/ptiengine_hwr_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/inputmethods/inputmethods_plat/ptiengine_key_definations_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/inputmethods/inputmethods_plat/pen_input_server_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/inputmethods/inputmethods_plat/ptiengine_hwr_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/inputmethods/inputmethods_plat/ptiengine_key_definations_api/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="inputmethods_build" long-name="Input Methods Build" origin-model="foundation">
       <unit bldFile="/sf/mw/inputmethods/group"/>
      </component>
      <component unofficial="yes" name="inputmethods_pub" long-name="Input Methods Public Interfaces" class="api" origin-model="foundation">
       <unit bldFile="/sf/mw/inputmethods/inputmethods_pub/group"/>
-      <!-- <unit bldFile="mw/inputmethods/inputmethods_pub/input_language_info_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/inputmethods/inputmethods_pub/optical_character_recognition_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/inputmethods/inputmethods_pub/ptiengine_iti_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/inputmethods/inputmethods_pub/input_language_info_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/inputmethods/inputmethods_pub/optical_character_recognition_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/inputmethods/inputmethods_pub/ptiengine_iti_api/tsrc/group"/> -->
      </component>
     <component name="inputmethods_metadata" long-name="Input Methods Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/mw/inputmethods/inputmethods_info/inputmethods_metadata/inputmethods_metadata.mrp"/>

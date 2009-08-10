@@ -6,58 +6,58 @@
     <collection name="accessoryservices" long-name="Accessory Services" level="framework">
      <component name="accessorymonitor" long-name="Accessory Monitor" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/accessoryservices/accessorymonitor/group"/>
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessorymonitor/tsrc/public/basic/accmonconnectionemulator/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessorymonitor/tsrc/public/basic/accmonitoringtestmodule/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessorymonitor/tsrc/public/basic/accmonitoringtestmodule/tests/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessorymonitor/tsrc/public/basic/accmontesttimer/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessorymonitor/tsrc/public/basic/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessorymonitor/tsrc/public/basic/stubs/accfwuinotifierstub/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessorymonitor/tsrc/public/basic/stubs/asystub/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessorymonitor/tsrc/public/basic/stubs/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessorymonitor/tsrc/public/basic/accmonconnectionemulator/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessorymonitor/tsrc/public/basic/accmonitoringtestmodule/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessorymonitor/tsrc/public/basic/accmonitoringtestmodule/tests/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessorymonitor/tsrc/public/basic/accmontesttimer/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessorymonitor/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessorymonitor/tsrc/public/basic/stubs/accfwuinotifierstub/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessorymonitor/tsrc/public/basic/stubs/asystub/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessorymonitor/tsrc/public/basic/stubs/group"/> -->
      </component>
      <component name="accessoryremotecontrol" long-name="Accessory Remote Control" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryremotecontrol/group"/>
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryremotecontrol/tsrc/dsytesttool/dosservercontrol/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryremotecontrol/tsrc/dsytesttool/dsytfcore/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryremotecontrol/tsrc/dsytesttool/dsytfstifadapter/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryremotecontrol/tsrc/dsytesttool/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryremotecontrol/tsrc/remcontestcontrol/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryremotecontrol/tsrc/stub/audio/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryremotecontrol/tsrc/stub/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryremotecontrol/tsrc/stub/phone/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryremotecontrol/tsrc/stub/remcon/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryremotecontrol/tsrc/dsytesttool/dosservercontrol/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryremotecontrol/tsrc/dsytesttool/dsytfcore/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryremotecontrol/tsrc/dsytesttool/dsytfstifadapter/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryremotecontrol/tsrc/dsytesttool/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryremotecontrol/tsrc/remcontestcontrol/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryremotecontrol/tsrc/stub/audio/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryremotecontrol/tsrc/stub/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryremotecontrol/tsrc/stub/phone/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryremotecontrol/tsrc/stub/remcon/group"/> -->
      </component>
      <component name="accessoryserver" long-name="Accessory Server" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryserver/group"/>
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryserver/tsrc/dsytesttool/dosservercontrol/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryserver/tsrc/dsytesttool/dsytfcore/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryserver/tsrc/dsytesttool/dsytfstifadapter/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryserver/tsrc/dsytesttool/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryserver/tsrc/public/basic/accessorytestcontrol/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryserver/tsrc/public/basic/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryserver/tsrc/public/basic/stubs/accfwuinotifierstub/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryserver/tsrc/public/basic/stubs/asystub/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryserver/tsrc/public/basic/stubs/btasystub/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/accessoryserver/tsrc/public/basic/stubs/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryserver/tsrc/dsytesttool/dosservercontrol/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryserver/tsrc/dsytesttool/dsytfcore/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryserver/tsrc/dsytesttool/dsytfstifadapter/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryserver/tsrc/dsytesttool/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryserver/tsrc/public/basic/accessorytestcontrol/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryserver/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryserver/tsrc/public/basic/stubs/accfwuinotifierstub/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryserver/tsrc/public/basic/stubs/asystub/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryserver/tsrc/public/basic/stubs/btasystub/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/accessoryserver/tsrc/public/basic/stubs/group"/> -->
      </component>
      <component name="headsetstatusapi" long-name="Headset Status Api" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/accessoryservices/headsetstatusapi/group"/>
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/headsetstatusapi/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/headsetstatusapi/tsrc/public/basic/group"/> -->
      </component>
      <component name="tspclientmapper" long-name="TSP Client Mapper" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/accessoryservices/tspclientmapper/group"/>
-      <!-- <unit bldFile="os/devicesrv/accessoryservices/tspclientmapper/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/accessoryservices/tspclientmapper/tsrc/public/basic/group"/> -->
      </component>
      <!--Component manually removed and merged to OS-->
      <!--<component name="remotecontrolfw">
-       <unit bldFile="os/devicesrv/accessoryservices/remotecontrolfw/bearerplugin/group"/>
-       <unit bldFile="os/devicesrv/accessoryservices/remotecontrolfw/client"/>
-       <unit bldFile="os/devicesrv/accessoryservices/remotecontrolfw/converterplugin/group"/>
-       <unit bldFile="os/devicesrv/accessoryservices/remotecontrolfw/reference"/>
-       <unit bldFile="os/devicesrv/accessoryservices/remotecontrolfw/server/group"/>
-       <unit bldFile="os/devicesrv/accessoryservices/remotecontrolfw/targetselectorplugin/group"/>
-       <unit bldFile="os/devicesrv/accessoryservices/remotecontrolfw/test"/>
-       <unit bldFile="os/devicesrv/accessoryservices/remotecontrolfw/types/group"/>
+       <unit bldFile="/sf/os/devicesrv/accessoryservices/remotecontrolfw/bearerplugin/group"/>
+       <unit bldFile="/sf/os/devicesrv/accessoryservices/remotecontrolfw/client"/>
+       <unit bldFile="/sf/os/devicesrv/accessoryservices/remotecontrolfw/converterplugin/group"/>
+       <unit bldFile="/sf/os/devicesrv/accessoryservices/remotecontrolfw/reference"/>
+       <unit bldFile="/sf/os/devicesrv/accessoryservices/remotecontrolfw/server/group"/>
+       <unit bldFile="/sf/os/devicesrv/accessoryservices/remotecontrolfw/targetselectorplugin/group"/>
+       <unit bldFile="/sf/os/devicesrv/accessoryservices/remotecontrolfw/test"/>
+       <unit bldFile="/sf/os/devicesrv/accessoryservices/remotecontrolfw/types/group"/>
      </component>-->
      <component name="reftsp" origin-model="foundation"/>
      <component unofficial="yes" name="accessoryservices_build" long-name="Accessory Services Build" origin-model="foundation">
@@ -70,22 +70,22 @@
     <collection name="commonservices" long-name="Common Services" level="app-if">
      <component name="commonengine" long-name="Common Engine" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/commonservices/commonengine/group"/>
-      <!-- <unit bldFile="os/devicesrv/commonservices/commonengine/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/commonservices/commonengine/tsrc/public/basic/group"/> -->
      </component>
      <component name="commonengineresources" long-name="Common Engine Resources" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/commonservices/commonengineresources/group"/>
      </component>
      <component name="platformenv" long-name="Platform Env" origin-model="foundation">
-      <!-- <unit bldFile="os/devicesrv/commonservices/platformenv/disknotifyhandler/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/commonservices/platformenv/disknotifyhandler/group"/> -->
       <unit bldFile="/sf/os/devicesrv/commonservices/platformenv/group"/>
-      <!-- <unit bldFile="os/devicesrv/commonservices/platformenv/platformver/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/commonservices/platformenv/sysversioninfo/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/commonservices/platformenv/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/commonservices/platformenv/platformver/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/commonservices/platformenv/sysversioninfo/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/commonservices/platformenv/tsrc/public/basic/group"/> -->
      </component>
      <component name="sysutil" long-name="Sysutil" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/commonservices/sysutil/group"/>
-      <!-- <unit bldFile="os/devicesrv/commonservices/sysutil/tsrc/public/basic/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/commonservices/sysutil/tsrc/public/basic/sysutiltests/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/commonservices/sysutil/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/commonservices/sysutil/tsrc/public/basic/sysutiltests/group"/> -->
      </component>
      <component name="activitymanager" long-name="Activity Manager" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/commonservices/activitymanager/group"/>
@@ -103,13 +103,13 @@
       <unit bldFile="/sf/os/devicesrv/dosservices/dosserver/group"/>
      </component>
      <component unofficial="yes" name="dosservices_test" long-name="Dos Services Test" origin-model="foundation">
-      <!-- <unit bldFile="os/devicesrv/dosservices/tsrc/dsytesttool/dosservercontrol/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/dosservices/tsrc/public/basic/stubs/dsystub/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/dosservices/tsrc/public/basic/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/dosservices/tsrc/dsytesttool/dsytfcore/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/dosservices/tsrc/public/basic/dosservertestplugin/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/dosservices/tsrc/dsytesttool/dsytfstifadapter/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/dosservices/tsrc/dsytesttool/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/dosservices/tsrc/dsytesttool/dosservercontrol/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/dosservices/tsrc/public/basic/stubs/dsystub/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/dosservices/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/dosservices/tsrc/dsytesttool/dsytfcore/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/dosservices/tsrc/public/basic/dosservertestplugin/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/dosservices/tsrc/dsytesttool/dsytfstifadapter/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/dosservices/tsrc/dsytesttool/group"/> -->
      </component>
      <component unofficial="yes" name="dosservices_build" long-name="Dos Services Build" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/dosservices/group"/>
@@ -117,32 +117,32 @@
     </collection>
     <collection name="resourcemgmt" long-name="Resource Management" level="hw-if">
      <component name="serverexe" long-name="Server Exe" origin-model="foundation">
-      <!-- <unit bldFile="os/devicesrv/resourcemgmt/serverexe/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/resourcemgmt/serverexe/group"/> -->
      </component>
      <component name="hwrmfmtxwatcherplugin" long-name="HWRM FM Transmitter Watcher Plugin" origin-model="foundation">
-      <!-- <unit bldFile="os/devicesrv/resourcemgmt/hwrmfmtxwatcherplugin/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/resourcemgmt/hwrmfmtxwatcherplugin/group"/> -->
      </component>
      <component name="clientdll" long-name="Client DLL" origin-model="foundation">
-      <!-- <unit bldFile="os/devicesrv/resourcemgmt/clientdll/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/resourcemgmt/clientdll/group"/> -->
      </component>
      <component name="commondll" long-name="Common DLL" origin-model="foundation">
-      <!-- <unit bldFile="os/devicesrv/resourcemgmt/commondll/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/resourcemgmt/commondll/group"/> -->
      </component>
      <component name="vibraclientdll" long-name="Vibra Client DLL" origin-model="foundation">
-      <!-- <unit bldFile="os/devicesrv/resourcemgmt/vibraclientdll/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/resourcemgmt/vibraclientdll/group"/> -->
      </component>
      <component name="extendedlightclientdll" long-name="Extended Light Client DLL" origin-model="foundation">
-      <!-- <unit bldFile="os/devicesrv/resourcemgmt/extendedlightclientdll/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/resourcemgmt/extendedlightclientdll/group"/> -->
      </component>
      <component name="lightclientdll" long-name="Light Client DLL" origin-model="foundation">
-      <!-- <unit bldFile="os/devicesrv/resourcemgmt/lightclientdll/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/resourcemgmt/lightclientdll/group"/> -->
      </component>
      <component name="fmtxclientdll" long-name="FM TX Client DLL" origin-model="foundation">
-      <!-- <unit bldFile="os/devicesrv/resourcemgmt/fmtxclientdll/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/resourcemgmt/fmtxclientdll/group"/> -->
      </component>
      <component name="hwrmtargetmodifierplugin" long-name="HWRM Target Modifier Plugin" origin-model="foundation">
-      <!-- <unit bldFile="os/devicesrv/resourcemgmt/hwrmtargetmodifierplugin/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/resourcemgmt/hwrmtargetmodifierplugin/tsrc/hwrmtargetmodifierplugintest/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/resourcemgmt/hwrmtargetmodifierplugin/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/resourcemgmt/hwrmtargetmodifierplugin/tsrc/hwrmtargetmodifierplugintest/group"/> -->
      </component>
      <component name="vibractrl" long-name="Vibra Control" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/resourcemgmt/vibractrl/group"/>
@@ -157,7 +157,7 @@
       <unit bldFile="/sf/os/devicesrv/resourcemgmt/group"/>
      </component>
      <component unofficial="yes" name="resourcemgmt_test" long-name="Resource Management Test" origin-model="foundation">
-      <!-- <unit bldFile="os/devicesrv/resourcemgmt/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/resourcemgmt/tsrc/public/basic/group"/> -->
      </component>
     <component name="powerandmemorynotificationservice" long-name="Power and Memory Notification Service" introduced="6.0" purpose="mandatory" plugin="N" origin-model="Symbian">
       <unit bldFile="/sf/os/devicesrv/resourcemgmt/powerandmemorynotificationservice/group" mrp="/sf/os/devicesrv/resourcemgmt/powerandmemorynotificationservice/group/syslibs_pwrcli.mrp"/>
@@ -188,8 +188,8 @@
     </collection>
     <collection name="mediator" long-name="Mediator" level="app-if">
      <component unofficial="yes" name="mediator_test" long-name="Mediator Test" origin-model="foundation">
-      <!-- <unit bldFile="os/devicesrv/mediator/tsrc/public/basic/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/mediator/tsrc/public/basic/stub/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/mediator/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/mediator/tsrc/public/basic/stub/group"/> -->
      </component>
      <component unofficial="yes" name="mediator_build" long-name="Mediator Build" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/mediator/group"/>
@@ -198,7 +198,7 @@
     <collection name="psmservices" long-name="PSM Services" level="app-if">
      <component name="psmserver" long-name="PSM Server" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/psmservices/psmserver/group"/>
-      <!-- <unit bldFile="os/devicesrv/psmservices/psmserver/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/psmservices/psmserver/tsrc/public/basic/group"/> -->
      </component>
      <component unofficial="yes" name="psmservices_build" long-name="PSM Services Build" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/psmservices/group"/>
@@ -207,12 +207,12 @@
     <collection name="sensorservices" long-name="Sensor Services" level="framework">
      <component name="sensorserver" long-name="Sensor Server" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/sensorservices/sensorserver/group"/>
-      <!-- <unit bldFile="os/devicesrv/sensorservices/sensorserver/tsrc/public/basic/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/sensorservices/sensorserver/tsrc/public/basic/sensortestmodule/condevalstub/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/sensorservices/sensorserver/tsrc/public/basic/sensortestmodule/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/sensorservices/sensorserver/tsrc/public/basic/sensortestmodule/sensrvcondevalplugin/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/sensorservices/sensorserver/tsrc/public/basic/sensortestmodule/ssystub/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/sensorservices/sensorserver/tsrc/public/basic/sensortestmodule/stubprocess/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/sensorservices/sensorserver/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/sensorservices/sensorserver/tsrc/public/basic/sensortestmodule/condevalstub/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/sensorservices/sensorserver/tsrc/public/basic/sensortestmodule/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/sensorservices/sensorserver/tsrc/public/basic/sensortestmodule/sensrvcondevalplugin/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/sensorservices/sensorserver/tsrc/public/basic/sensortestmodule/ssystub/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/sensorservices/sensorserver/tsrc/public/basic/sensortestmodule/stubprocess/group"/> -->
      </component>
      <component name="orientationssy" long-name="Orientation SSY" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/sensorservices/orientationssy/group"/>
@@ -222,8 +222,8 @@
      </component>
      <component name="sensordatacompensator" long-name="Sensor Data Compensator" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/sensorservices/sensordatacompensator/group"/>
-      <!-- <unit bldFile="os/devicesrv/sensorservices/sensordatacompensator/tsrc/sensordatacompensatorpluginstub/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/sensorservices/sensordatacompensator/tsrc/sensordatacompensatortest/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/sensorservices/sensordatacompensator/tsrc/sensordatacompensatorpluginstub/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/sensorservices/sensordatacompensator/tsrc/sensordatacompensatortest/group"/> -->
      </component>
      <component unofficial="yes" name="sensorservices_build" long-name="Sensor Services Build" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/sensorservices/group"/>
@@ -232,33 +232,33 @@
     <collection name="sysstatemgmt" long-name="System State Management" level="server">
      <component name="starter" long-name="Starter" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/sysstatemgmt/starter/group"/>
-      <!-- <unit bldFile="os/devicesrv/sysstatemgmt/starter/strtsecnote/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/sysstatemgmt/starter/strtsecobs/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/sysstatemgmt/starter/strtsecnote/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/sysstatemgmt/starter/strtsecobs/group"/> -->
      </component>
      <!--Component manually removed and merged to OS-->
      <!--<component name="systemstarter">
-       -  <unit bldFile="os/devicesrv/sysstatemgmt/systemstarter/test/sysmondemo/group"/>  -
-       <unit bldFile="os/devicesrv/sysstatemgmt/systemstarter/test/tamastarter/group"/>
-       <unit bldFile="os/devicesrv/sysstatemgmt/systemstarter/test/tapstart/group"/>
-       <unit bldFile="os/devicesrv/sysstatemgmt/systemstarter/test/tdscstore/group"/>
-       <unit bldFile="os/devicesrv/sysstatemgmt/systemstarter/test/testappgood"/>
-       <unit bldFile="os/devicesrv/sysstatemgmt/systemstarter/test/testappnorv"/>
-       <unit bldFile="os/devicesrv/sysstatemgmt/systemstarter/test/testapprvafterretry"/>
-       <unit bldFile="os/devicesrv/sysstatemgmt/systemstarter/test/testapprverror"/>
-       <unit bldFile="os/devicesrv/sysstatemgmt/systemstarter/test/testappslow"/>
-       <unit bldFile="os/devicesrv/sysstatemgmt/systemstarter/test/testprocgood"/>
-       <unit bldFile="os/devicesrv/sysstatemgmt/systemstarter/test/trestartsys/group"/>
-       <unit bldFile="os/devicesrv/sysstatemgmt/systemstarter/test/tstartsafe/group"/>
-       <unit bldFile="os/devicesrv/sysstatemgmt/systemstarter/test/tstartupproperties/group"/>
-       <unit bldFile="os/devicesrv/sysstatemgmt/systemstarter/test/tsysmon/group"/>
-       <unit bldFile="os/devicesrv/sysstatemgmt/systemstarter/test/tsysstart/group"/>
-       <unit bldFile="os/devicesrv/sysstatemgmt/systemstarter/test/tsysstart2/group"/>
+       -  <unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstarter/test/sysmondemo/group"/>  -
+       <unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstarter/test/tamastarter/group"/>
+       <unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstarter/test/tapstart/group"/>
+       <unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstarter/test/tdscstore/group"/>
+       <unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstarter/test/testappgood"/>
+       <unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstarter/test/testappnorv"/>
+       <unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstarter/test/testapprvafterretry"/>
+       <unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstarter/test/testapprverror"/>
+       <unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstarter/test/testappslow"/>
+       <unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstarter/test/testprocgood"/>
+       <unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstarter/test/trestartsys/group"/>
+       <unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstarter/test/tstartsafe/group"/>
+       <unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstarter/test/tstartupproperties/group"/>
+       <unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstarter/test/tsysmon/group"/>
+       <unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstarter/test/tsysstart/group"/>
+       <unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstarter/test/tsysstart2/group"/>
      </component>-->
      <component unofficial="yes" name="sysstatemgmt_build" long-name="System State Management Build" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/sysstatemgmt/group"/>
      </component>
      <component unofficial="yes" name="sysstatemgmt_test" long-name="System State Management Test" origin-model="foundation">
-      <!-- <unit bldFile="os/devicesrv/sysstatemgmt/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/sysstatemgmt/tsrc/public/basic/group"/> -->
      </component>
     <component name="systemstarter" long-name="System Starter" introduced="9.1" deprecated="tb92" purpose="mandatory" plugin="N" origin-model="Symbian">
       <unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstarter/group" mrp="/sf/os/devicesrv/sysstatemgmt/systemstarter/group/app-framework_sysstart.mrp"/>
@@ -278,26 +278,26 @@
     </collection>
     <collection name="devicesrv_info" long-name="Device Services Info" level="app-if">
      <component unofficial="yes" name="devicesrv_pub" long-name="Device Services Public Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="os/devicesrv/devicesrv_pub/accessory_monitoring_api/tsrc/bc/accmonapibctests/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/devicesrv_pub/feature_discovery_api/tsrc/bc/featurediscovery/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/devicesrv_pub/find_item_api/tsrc/bc/finditem/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/devicesrv_pub/accessory_monitoring_api/tsrc/bc/accmonapibctests/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/devicesrv_pub/feature_discovery_api/tsrc/bc/featurediscovery/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/devicesrv_pub/find_item_api/tsrc/bc/finditem/group"/> -->
       <unit bldFile="/sf/os/devicesrv/devicesrv_pub/group"/>
-      <!-- <unit bldFile="os/devicesrv/devicesrv_pub/hwrm_power_state_api/tsrc/bc/powerstate/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/devicesrv_pub/light_api/tsrc/bc/light/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/devicesrv_pub/phone_parser_api/tsrc/bc/phoneparser/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/devicesrv_pub/platform_environment_api/tsrc/bc/platformenv/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/devicesrv_pub/sensor_channel_api/tsrc/bc/sensor/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/devicesrv_pub/sensor_data_compensator_api/tsrc/bc/sensordatacompensatortest/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/devicesrv_pub/sysutil_api/tsrc/bc/sysutil/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/devicesrv_pub/text_resolver_api/tsrc/bc/textresolver/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/devicesrv_pub/version_info_api/tsrc/bc/platformvertest/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/devicesrv_pub/vibra_api/tsrc/bc/vibra/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/devicesrv_pub/hwrm_power_state_api/tsrc/bc/powerstate/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/devicesrv_pub/light_api/tsrc/bc/light/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/devicesrv_pub/phone_parser_api/tsrc/bc/phoneparser/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/devicesrv_pub/platform_environment_api/tsrc/bc/platformenv/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/devicesrv_pub/sensor_channel_api/tsrc/bc/sensor/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/devicesrv_pub/sensor_data_compensator_api/tsrc/bc/sensordatacompensatortest/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/devicesrv_pub/sysutil_api/tsrc/bc/sysutil/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/devicesrv_pub/text_resolver_api/tsrc/bc/textresolver/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/devicesrv_pub/version_info_api/tsrc/bc/platformvertest/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/devicesrv_pub/vibra_api/tsrc/bc/vibra/group"/> -->
      </component>
      <component unofficial="yes" name="devicesrv_build" long-name="Device Services Build" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/group"/>
      </component>
      <component unofficial="yes" name="devicesrv_plat" long-name="Device Services Platform Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="os/devicesrv/devicesrv_plat/activity_manager_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/devicesrv_plat/activity_manager_api/tsrc/group"/> -->
       <unit bldFile="/sf/os/devicesrv/devicesrv_plat/group"/>
      </component>
     <component name="devicesrv_metadata" long-name="Device Services Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">

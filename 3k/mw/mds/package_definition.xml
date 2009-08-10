@@ -30,7 +30,7 @@
       <unit bldFile="/sf/mw/mds/harvester/composerplugins/group"/>
      </component>
      <component name="harvesterplugins" long-name="Harvester Plugins" origin-model="foundation">
-      <!-- <unit bldFile="mw/mds/harvester/harvesterplugins/audioplaylistplugin/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mds/harvester/harvesterplugins/audioplaylistplugin/group"/> -->
       <unit bldFile="/sf/mw/mds/harvester/harvesterplugins/group"/>
      </component>
      <component name="monitorplugins" long-name="Monitor Plugins" origin-model="foundation">
@@ -81,7 +81,7 @@
     </collection>
     <collection name="iadstoprestart" long-name="IAD Stop Restart" level="server">
      <component unofficial="yes" name="iadstoprestart_build" long-name="IAD Stop Restart Build" origin-model="foundation">
-      <!-- <unit bldFile="mw/mds/iadstoprestart/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mds/iadstoprestart/group"/> -->
      </component>
     </collection>
     <collection name="mds_info" long-name="Metadata Services Info" level="int">
@@ -89,17 +89,17 @@
       <unit bldFile="/sf/mw/mds/mds_pub/group"/>
      </component>
      <component unofficial="yes" name="mds_plat" long-name="Metadata Services Platform Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="mw/mds/mds_plat/content_listing_framework_collection_manager_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/mds/mds_plat/context_engine_plugin_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mds/mds_plat/content_listing_framework_collection_manager_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mds/mds_plat/context_engine_plugin_api/tsrc/group"/> -->
       <unit bldFile="/sf/mw/mds/mds_plat/group"/>
-      <!-- <unit bldFile="mw/mds/mds_plat/harvester_framework_api/tsrc/composerplugintest/group"/> -->
-      <!-- <unit bldFile="mw/mds/mds_plat/harvester_framework_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/mds/mds_plat/harvester_framework_api/tsrc/harvesterclienttest/group"/> -->
-      <!-- <unit bldFile="mw/mds/mds_plat/harvester_framework_api/tsrc/harvesterdatatest/group"/> -->
-      <!-- <unit bldFile="mw/mds/mds_plat/harvester_framework_api/tsrc/harvesterplugintest/group"/> -->
-      <!-- <unit bldFile="mw/mds/mds_plat/harvester_framework_api/tsrc/monitorplugintest/group"/> -->
-      <!-- <unit bldFile="mw/mds/mds_plat/location_manager_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/mds/mds_plat/metadata_engine_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mds/mds_plat/harvester_framework_api/tsrc/composerplugintest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mds/mds_plat/harvester_framework_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mds/mds_plat/harvester_framework_api/tsrc/harvesterclienttest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mds/mds_plat/harvester_framework_api/tsrc/harvesterdatatest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mds/mds_plat/harvester_framework_api/tsrc/harvesterplugintest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mds/mds_plat/harvester_framework_api/tsrc/monitorplugintest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mds/mds_plat/location_manager_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mds/mds_plat/metadata_engine_api/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="mds_build" long-name="Metadata Services Build" origin-model="foundation">
       <unit bldFile="/sf/mw/mds/group"/>

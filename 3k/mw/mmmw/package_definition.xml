@@ -6,8 +6,8 @@
     <collection name="radioutility" long-name="Radio Utility" level="generic">
      <component name="radioserver" long-name="Radio Server" origin-model="foundation">
       <unit bldFile="/sf/mw/mmmw/radioutility/radioserver/group"/>
-      <!-- <unit bldFile="mw/mmmw/radioutility/radioserver/server/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/radioutility/radioserver/session/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/radioutility/radioserver/server/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/radioutility/radioserver/session/group"/> -->
      </component>
      <component name="radio_utility" long-name="Radio Utility" origin-model="foundation">
       <unit bldFile="/sf/mw/mmmw/radioutility/radio_utility/group"/>
@@ -34,17 +34,17 @@
     </collection>
     <collection name="audioenhancements" long-name="Audio Enhancements" level="generic">
      <component name="enhancedaudioplayerutility" long-name="Enhanced Media Client" origin-model="foundation">
-      <!-- <unit bldFile="mw/mmmw/audioenhancements/enhancedaudioplayerutility/audioplayer/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/audioenhancements/enhancedaudioplayerutility/audiostreaming/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/audioenhancements/enhancedaudioplayerutility/audioplayer/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/audioenhancements/enhancedaudioplayerutility/audiostreaming/group"/> -->
       <unit bldFile="/sf/mw/mmmw/audioenhancements/enhancedaudioplayerutility/group"/>
-      <!-- <unit bldFile="mw/mmmw/audioenhancements/enhancedaudioplayerutility/s60audiosource/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/audioenhancements/enhancedaudioplayerutility/s60audiosourcefactory/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/audioenhancements/enhancedaudioplayerutility/s60audioutility/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/audioenhancements/enhancedaudioplayerutility/s60audiosource/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/audioenhancements/enhancedaudioplayerutility/s60audiosourcefactory/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/audioenhancements/enhancedaudioplayerutility/s60audioutility/group"/> -->
      </component>
      <component name="progressivedownload" long-name="Progressive Download" origin-model="foundation">
       <unit bldFile="/sf/mw/mmmw/audioenhancements/progressivedownload/group"/>
-      <!-- <unit bldFile="mw/mmmw/audioenhancements/progressivedownload/progressivedownloadsource/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/audioenhancements/progressivedownload/progressivedownloadutility/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/audioenhancements/progressivedownload/progressivedownloadsource/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/audioenhancements/progressivedownload/progressivedownloadutility/group"/> -->
      </component>
      <component name="enhancedmediaclient" long-name="Enhanced Media Client" origin-model="foundation">
       <unit bldFile="/sf/mw/mmmw/audioenhancements/enhancedmediaclient/group"/>
@@ -79,29 +79,29 @@
     </collection>
     <collection name="advancedaudiocontroller" long-name="Advanced Audio Controller" level="plugin">
      <component name="audiocontrollerpluginsvariant" long-name="Audio Controller Plugins Variant" origin-model="foundation">
-      <!-- <unit bldFile="mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/3gpaudioplaycontroller/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/3gpaudiorecordcontroller/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/3gpdatasourceadapter/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/aacaudioplaycontroller/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/advancedaudiocontroller/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/advancedaudiocontrollerutility/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/amraudioplaycontroller/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/amraudiorecordcontroller/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/awbaudioplaycontroller/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/datasourceadapter/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/devsoundaudioinput/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/devsoundaudiooutput/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/fileaudiooutput/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/3gpaudioplaycontroller/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/3gpaudiorecordcontroller/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/3gpdatasourceadapter/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/aacaudioplaycontroller/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/advancedaudiocontroller/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/advancedaudiocontrollerutility/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/amraudioplaycontroller/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/amraudiorecordcontroller/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/awbaudioplaycontroller/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/datasourceadapter/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/devsoundaudioinput/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/devsoundaudiooutput/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/fileaudiooutput/group"/> -->
       <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/group"/>
-      <!-- <unit bldFile="mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/hxaudiorecognizer/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/metadatawrite/group"/> -->
-      <!-- <unit bldFile="mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/mp3audioplaycontroller/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/hxaudiorecognizer/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/metadatawrite/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/mp3audioplaycontroller/group"/> -->
      </component>
      <component name="wavplaycontrollerplugin" long-name="WAV Play Controller Plugin" origin-model="foundation">
       <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/wavplaycontrollerplugin/group"/>
      </component>
      <component unofficial="yes" name="advancedaudiocontroller_test" long-name="Advanced Audio Controller Test" origin-model="foundation">
-      <!-- <unit bldFile="mw/mmmw/advancedaudiocontroller/tsrc/advancedaudiocontrollertestmodule/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/tsrc/advancedaudiocontrollertestmodule/group"/> -->
      </component>
      <component unofficial="yes" name="advancedaudiocontroller_build" long-name="Advanced Audio Controller Build" origin-model="foundation">
       <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/group"/>
@@ -158,7 +158,7 @@
       <unit bldFile="/sf/mw/mmmw/group"/>
      </component>
      <component unofficial="yes" name="mmmw_test" long-name="Multimedia Middleware Test" origin-model="foundation">
-      <!-- <unit bldFile="mw/mmmw/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="mmmw_plat" long-name="Multimedia Middleware Platform Interfaces" class="api" origin-model="foundation">
       <unit bldFile="/sf/mw/mmmw/mmmw_plat/audio_metadata_reader_api/tsrc/group"/>

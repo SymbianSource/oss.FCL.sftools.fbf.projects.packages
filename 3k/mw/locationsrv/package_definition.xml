@@ -76,26 +76,26 @@
       <unit bldFile="/sf/mw/locationsrv/locationtriggering/lbtmgmtui/group"/>
      </component>
      <component unofficial="yes" name="locationtriggering_test" long-name="Location Triggering Test" origin-model="foundation">
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancelcreatetest/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/additionaltests/createtest/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/additionaltests/handlingprocesstest/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity2_exe/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancellisttriggerstest/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancelcreateiteratortest/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity3_exe/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/firingofstartuptriggerandlisttrigger/createtest/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/t_mgmtsettings/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity4_exe/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancelgettriggerstest/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/additionaltests/modifytest/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/t_mgmtsettings/createtest/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity5_exe/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/additionaltests/notificationtest/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancelsettriggerstest/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/canceldeletetest/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/additionaltests/deletetest/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity1_exe/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancelcreatetest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/additionaltests/createtest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/additionaltests/handlingprocesstest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity2_exe/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancellisttriggerstest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancelcreateiteratortest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity3_exe/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/firingofstartuptriggerandlisttrigger/createtest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/t_mgmtsettings/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity4_exe/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancelgettriggerstest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/additionaltests/modifytest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/t_mgmtsettings/createtest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity5_exe/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/additionaltests/notificationtest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancelsettriggerstest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/canceldeletetest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/additionaltests/deletetest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity1_exe/group"/> -->
      </component>
      <component unofficial="yes" name="locationtriggering_build" long-name="Location Triggering Build" origin-model="foundation">
       <unit bldFile="/sf/mw/locationsrv/locationtriggering/group"/>
@@ -103,45 +103,45 @@
     </collection>
     <collection name="locationsrv_info" long-name="Location Services Info" level="interface">
      <component unofficial="yes" name="locsrv_plat" class="api" origin-model="foundation">
-      <!-- <unit bldFile="mw/locationsrv/locsrv_plat/geocoding_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_plat/geocoding_api/tsrc/mapnavproviderrefapp/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/geocoding_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/geocoding_api/tsrc/mapnavproviderrefapp/group"/> -->
       <unit bldFile="/sf/mw/locationsrv/locsrv_plat/group"/>
-      <!-- <unit bldFile="mw/locationsrv/locsrv_plat/location_centre_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_plat/location_settings_launch_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_plat/map_and_navigation_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_plat/map_and_navigation_api/tsrc/mapnavproviderrefapp/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_plat/map_and_navigation_provider_discovery_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_plat/map_and_navigation_provider_discovery_api/tsrc/mapnavproviderrefapp/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_plat/map_image_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_plat/map_image_api/tsrc/testprovider/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_plat/map_image_conversion_plugin_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_plat/map_image_conversion_plugin_api/tsrc/mapnavproviderrefapp/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_plat/oma_supl_asn_codec_plugin_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_plat/supl_network_initiation_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_plat/supl_pos_message_plugin_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_plat/supl_pos_message_plugin_api/tsrc/posmsgpluginreferenceimpl/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_plat/supl_settings_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_plat/supl_terminal_initiation_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/location_centre_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/location_settings_launch_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/map_and_navigation_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/map_and_navigation_api/tsrc/mapnavproviderrefapp/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/map_and_navigation_provider_discovery_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/map_and_navigation_provider_discovery_api/tsrc/mapnavproviderrefapp/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/map_image_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/map_image_api/tsrc/testprovider/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/map_image_conversion_plugin_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/map_image_conversion_plugin_api/tsrc/mapnavproviderrefapp/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/oma_supl_asn_codec_plugin_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/supl_network_initiation_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/supl_pos_message_plugin_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/supl_pos_message_plugin_api/tsrc/posmsgpluginreferenceimpl/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/supl_settings_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/supl_terminal_initiation_api/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="genericpositioningplugins" origin-model="foundation">
       <unit bldFile="/sf/mw/locationsrv/genericpositioningplugins/group"/>
      </component>
      <component unofficial="yes" name="locationsrv_test" long-name="Location Services Test" origin-model="foundation">
-      <!-- <unit bldFile="mw/locationsrv/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="locationsrv_build" long-name="Location Services Build" origin-model="foundation">
       <unit bldFile="/sf/mw/locationsrv/group"/>
      </component>
      <component unofficial="yes" name="locsrv_pub" class="api" origin-model="foundation">
-      <!-- <unit bldFile="mw/locationsrv/locsrv_pub/blid_application_satellite_info_api/tsrc/bc_blid_application_satellite_info_api/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_pub/blid_application_satellite_info_api/tsrc/ut_csatelliteuitest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_pub/blid_application_satellite_info_api/tsrc/bc_blid_application_satellite_info_api/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_pub/blid_application_satellite_info_api/tsrc/ut_csatelliteuitest/group"/> -->
       <unit bldFile="/sf/mw/locationsrv/locsrv_pub/group"/>
-      <!-- <unit bldFile="mw/locationsrv/locsrv_pub/landmarks_api/tsrc/bc_landmarks_api/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_pub/landmarks_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_pub/landmarks_database_management_api/tsrc/bc_landmarks_database_management_api/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_pub/landmarks_database_management_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_pub/landmarks_search_api/tsrc/bc_landmarks_search_api/group"/> -->
-      <!-- <unit bldFile="mw/locationsrv/locsrv_pub/landmarks_search_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_pub/landmarks_api/tsrc/bc_landmarks_api/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_pub/landmarks_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_pub/landmarks_database_management_api/tsrc/bc_landmarks_database_management_api/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_pub/landmarks_database_management_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_pub/landmarks_search_api/tsrc/bc_landmarks_search_api/group"/> -->
+      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_pub/landmarks_search_api/tsrc/group"/> -->
      </component>
     </collection>
    </block>

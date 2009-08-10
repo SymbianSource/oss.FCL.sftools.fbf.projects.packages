@@ -78,10 +78,10 @@
       <unit bldFile="/sf/app/imgeditor/imageeditorengine/enginewrapper/group"/>
      </component>
      <component name="jpegrotator" long-name="Jpeg Rotator" origin-model="foundation">
-      <!-- <unit bldFile="app/imgeditor/imageeditorengine/jpegrotator/group"/> -->
+      <!-- <unit bldFile="/sf/app/imgeditor/imageeditorengine/jpegrotator/group"/> -->
      </component>
      <component name="jpegscaler" long-name="Jpeg Scaler" origin-model="foundation">
-      <!-- <unit bldFile="app/imgeditor/imageeditorengine/jpegscaler/group"/> -->
+      <!-- <unit bldFile="/sf/app/imgeditor/imageeditorengine/jpegscaler/group"/> -->
      </component>
      <component unofficial="yes" name="imageeditorengine_build" long-name="Image Editor Engine Build" origin-model="foundation">
       <unit bldFile="/sf/app/imgeditor/imageeditorengine/group"/>

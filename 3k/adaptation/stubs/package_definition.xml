@@ -5,9 +5,9 @@
 <block name="stubs" long-name="Stubs" tech_domain="hb" levels="adaptation plugin mid engine">
     <collection name="audiostubs" long-name="Audio Stubs" level="adaptation">
      <component name="devsoundextensions_stubs" long-name="Devsound Extensions Stubs" origin-model="foundation">
-      <!-- <unit bldFile="adaptation/stubs/audiostubs/devsoundextensions_stubs/audiocodeccistubs/audiovibracontrolcistub/group"/> -->
-      <!-- <unit bldFile="adaptation/stubs/audiostubs/devsoundextensions_stubs/audioenhancementfactorystubs/custominterfaceproxyfactory_stub/group"/> -->
-      <!-- <unit bldFile="adaptation/stubs/audiostubs/devsoundextensions_stubs/audioenhancementfactorystubs/messagehandlerfactory_stub/group"/> -->
+      <!-- <unit bldFile="/sf/adaptation/stubs/audiostubs/devsoundextensions_stubs/audiocodeccistubs/audiovibracontrolcistub/group"/> -->
+      <!-- <unit bldFile="/sf/adaptation/stubs/audiostubs/devsoundextensions_stubs/audioenhancementfactorystubs/custominterfaceproxyfactory_stub/group"/> -->
+      <!-- <unit bldFile="/sf/adaptation/stubs/audiostubs/devsoundextensions_stubs/audioenhancementfactorystubs/messagehandlerfactory_stub/group"/> -->
       <unit bldFile="/sf/adaptation/stubs/audiostubs/devsoundextensions_stubs/group"/>
      </component>
      <component name="fmradiotunercontrolstub" long-name="FM Radio Tuner Control Stub" origin-model="foundation">
@@ -44,25 +44,25 @@
     </collection>
     <collection name="srsfenginestub" long-name="SRSF Engine Stub" level="engine">
      <component name="adaptationhwdevice" long-name="Adaptation Hardware Device" origin-model="foundation">
-      <!-- <unit bldFile="adaptation/stubs/srsfenginestub/adaptationhwdevice/group"/> -->
+      <!-- <unit bldFile="/sf/adaptation/stubs/srsfenginestub/adaptationhwdevice/group"/> -->
      </component>
      <component name="grcompilerhwdevice" long-name="GR Compiler Hardware Device" origin-model="foundation">
-      <!-- <unit bldFile="adaptation/stubs/srsfenginestub/grcompilerhwdevice/group"/> -->
+      <!-- <unit bldFile="/sf/adaptation/stubs/srsfenginestub/grcompilerhwdevice/group"/> -->
      </component>
      <component name="ttphwdevice" long-name="TTP Hardware Device" origin-model="foundation">
-      <!-- <unit bldFile="adaptation/stubs/srsfenginestub/ttphwdevice/group"/> -->
+      <!-- <unit bldFile="/sf/adaptation/stubs/srsfenginestub/ttphwdevice/group"/> -->
      </component>
      <component name="recognitionhwdevice" long-name="Recognition Hardware Device" origin-model="foundation">
-      <!-- <unit bldFile="adaptation/stubs/srsfenginestub/recognitionhwdevice/group"/> -->
+      <!-- <unit bldFile="/sf/adaptation/stubs/srsfenginestub/recognitionhwdevice/group"/> -->
      </component>
      <component name="vocmanhwdevice" long-name="Voc Man Hardware Device" origin-model="foundation">
-      <!-- <unit bldFile="adaptation/stubs/srsfenginestub/vocmanhwdevice/group"/> -->
+      <!-- <unit bldFile="/sf/adaptation/stubs/srsfenginestub/vocmanhwdevice/group"/> -->
      </component>
      <component name="ttshwdevice" long-name="TTS Hardware Device" origin-model="foundation">
-      <!-- <unit bldFile="adaptation/stubs/srsfenginestub/ttshwdevice/group"/> -->
+      <!-- <unit bldFile="/sf/adaptation/stubs/srsfenginestub/ttshwdevice/group"/> -->
      </component>
      <component name="nlphwdevice" long-name="NLP Hardware Device" origin-model="foundation">
-      <!-- <unit bldFile="adaptation/stubs/srsfenginestub/nlphwdevice/group"/> -->
+      <!-- <unit bldFile="/sf/adaptation/stubs/srsfenginestub/nlphwdevice/group"/> -->
      </component>
      <component unofficial="yes" name="srsfenginestub_build" long-name="SRSF Engine Stub Build" origin-model="foundation">
       <unit bldFile="/sf/adaptation/stubs/srsfenginestub/group"/>
@@ -109,7 +109,7 @@
       <unit bldFile="/sf/adaptation/stubs/systemswstubs/wiredbearerreference/group"/>
      </component>
      <component unofficial="yes" name="systemswstubs_build" long-name="System SW Stubs Build" origin-model="foundation">
-      <!-- <unit bldFile="adaptation/stubs/systemswstubs/group"/> -->
+      <!-- <unit bldFile="/sf/adaptation/stubs/systemswstubs/group"/> -->
      </component>
     </collection>
     <collection name="tactileclickplugin_stub" long-name="Tactile Click Plugin Stub" level="engine">

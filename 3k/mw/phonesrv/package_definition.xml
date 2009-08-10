@@ -25,8 +25,8 @@
      </component>
      <component name="spsettings" long-name="SP Settings" origin-model="foundation">
       <unit bldFile="/sf/mw/phonesrv/convergedcallengine/spsettings/group"/>
-      <!-- <unit bldFile="mw/phonesrv/convergedcallengine/spsettings/tsrc/public/basic/group"/> -->
-      <!-- <unit bldFile="mw/phonesrv/convergedcallengine/spsettings/tsrc/public/basic/spsettingsut/group"/> -->
+      <!-- <unit bldFile="/sf/mw/phonesrv/convergedcallengine/spsettings/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/mw/phonesrv/convergedcallengine/spsettings/tsrc/public/basic/spsettingsut/group"/> -->
      </component>
      <component name="cenrepdatabase" long-name="Cenrep Database" origin-model="foundation">
       <unit bldFile="/sf/mw/phonesrv/convergedcallengine/cenrepdatabase/group"/>
@@ -114,12 +114,12 @@
     </collection>
     <collection name="phonesrv_info" long-name="Telephony and SIM Services Info" level="specific">
      <component unofficial="yes" name="phonesrv_plat" long-name="Telephony and SIM Services Platform Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="mw/phonesrv/phonesrv_plat/call_information_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/phonesrv/phonesrv_plat/call_information_mediator_api/tsrc/ut_callinfos/group"/> -->
+      <!-- <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/call_information_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/call_information_mediator_api/tsrc/ut_callinfos/group"/> -->
       <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/group"/>
-      <!-- <unit bldFile="mw/phonesrv/phonesrv_plat/phone_client_emergency_call_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/phonesrv/phonesrv_plat/sat_client_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/phonesrv/phonesrv_plat/sat_refresh_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/phone_client_emergency_call_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/sat_client_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/sat_refresh_api/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="phonesrv_pub" long-name="Telephony and SIM Services Public Interfaces" class="api" origin-model="foundation">
       <unit bldFile="/sf/mw/phonesrv/phonesrv_pub/group"/>

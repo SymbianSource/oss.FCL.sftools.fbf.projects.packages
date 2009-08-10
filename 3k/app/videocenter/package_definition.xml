@@ -11,7 +11,7 @@
       <unit bldFile="/sf/app/videocenter/mpxmyvideoscollection/group"/>
      </component>
      <component unofficial="yes" name="mpxmyvideoscollection_test" long-name="MPX My Videos Collection Test" origin-model="foundation">
-      <!-- <unit bldFile="app/videocenter/mpxmyvideoscollection/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/videocenter/mpxmyvideoscollection/tsrc/group"/> -->
      </component>
     </collection>
     <collection name="nsmyvideosview" long-name="NS My Videos View" level="app">
@@ -22,10 +22,10 @@
       <unit bldFile="/sf/app/videocenter/nsmyvideosview/hgmyvideosplugin/group"/>
      </component>
      <component name="nsmyvideos" long-name="NS Myvideos" origin-model="foundation">
-      <!-- <unit bldFile="app/videocenter/nsmyvideosview/nsmyvideos/group"/> -->
+      <!-- <unit bldFile="/sf/app/videocenter/nsmyvideosview/nsmyvideos/group"/> -->
      </component>
      <component name="nsmyvideosplugin" long-name="NS Myvideos Plugin" origin-model="foundation">
-      <!-- <unit bldFile="app/videocenter/nsmyvideosview/nsmyvideosplugin/group"/> -->
+      <!-- <unit bldFile="/sf/app/videocenter/nsmyvideosview/nsmyvideosplugin/group"/> -->
      </component>
     </collection>
     <collection name="vccommon" long-name="Video Center Common" level="eng">
@@ -43,7 +43,7 @@
       <unit bldFile="/sf/app/videocenter/vccommon/help/group"/>
      </component>
      <component unofficial="yes" name="sis" origin-model="foundation">
-      <!-- <unit bldFile="app/videocenter/vccommon/sis"/> -->
+      <!-- <unit bldFile="/sf/app/videocenter/vccommon/sis"/> -->
      </component>
      <component unofficial="yes" name="vccommon_build" long-name="Video Center Common Build" origin-model="foundation">
       <unit bldFile="/sf/app/videocenter/vccommon/group"/>
@@ -111,9 +111,9 @@
      </component>
      <component name="vcnsvodui" long-name="VCNS VOD UI" origin-model="foundation">
       <unit bldFile="/sf/app/videocenter/vcnsuis/vcnsvodui/plugins/hgvodplugin/group"/>
-      <!-- <unit bldFile="app/videocenter/vcnsuis/vcnsvodui/plugins/vcnsvodplugin/group"/> -->
+      <!-- <unit bldFile="/sf/app/videocenter/vcnsuis/vcnsvodui/plugins/vcnsvodplugin/group"/> -->
       <unit bldFile="/sf/app/videocenter/vcnsuis/vcnsvodui/views/hgvodui/group"/>
-      <!-- <unit bldFile="app/videocenter/vcnsuis/vcnsvodui/views/vcnsvodui/group"/> -->
+      <!-- <unit bldFile="/sf/app/videocenter/vcnsuis/vcnsvodui/views/vcnsvodui/group"/> -->
      </component>
      <component name="vcnslivetv" long-name="VCNS Live TV" origin-model="foundation">
       <unit bldFile="/sf/app/videocenter/vcnsuis/vcnslivetv/remindernotifier/group"/>
@@ -139,7 +139,7 @@
       <unit bldFile="/sf/app/videocenter/vcplayer/vcnsplayerview/group"/>
      </component>
      <component name="defaultview" long-name="Default View" origin-model="foundation">
-      <!-- <unit bldFile="app/videocenter/vcplayer/defaultview/group"/> -->
+      <!-- <unit bldFile="/sf/app/videocenter/vcplayer/defaultview/group"/> -->
      </component>
      <component unofficial="yes" name="vcplayer_build" long-name="Video Center Player Build" origin-model="foundation">
       <unit bldFile="/sf/app/videocenter/vcplayer/group"/>

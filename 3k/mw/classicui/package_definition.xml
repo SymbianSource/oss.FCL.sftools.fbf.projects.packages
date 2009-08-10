@@ -5,14 +5,14 @@
 <block name="classicui" long-name="Classic UI" tech_domain="ui" level="generic" levels="base support server generic specific">
     <collection name="psln" long-name="Personalization" level="specific">
      <component name="pslnengine" long-name="Personalization Engine" origin-model="foundation">
-      <!-- <unit bldFile="mw/classicui/psln/pslnengine/group"/> -->
+      <!-- <unit bldFile="/sf/mw/classicui/psln/pslnengine/group"/> -->
      </component>
      <component name="pslnframework" long-name="Personalization Framework" origin-model="foundation">
-      <!-- <unit bldFile="mw/classicui/psln/pslnframework"/> -->
+      <!-- <unit bldFile="/sf/mw/classicui/psln/pslnframework"/> -->
      </component>
      <component name="pslnlibraryloaders" long-name="Personalization Library Loaders" origin-model="foundation"/>
      <component name="pslnslidesetdialog" long-name="Personalization Slideset Dialog" origin-model="foundation">
-      <!-- <unit bldFile="mw/classicui/psln/pslnslidesetdialog/group"/> -->
+      <!-- <unit bldFile="/sf/mw/classicui/psln/pslnslidesetdialog/group"/> -->
      </component>
      <component name="pslngsplugin" long-name="Personalizaion GS Plugin" origin-model="foundation">
       <unit bldFile="/sf/mw/classicui/psln/pslngsplugin/group"/>
@@ -35,7 +35,7 @@
      </component>
      <component name="commondialogs" long-name="Common Dialogs" origin-model="foundation">
       <unit bldFile="/sf/mw/classicui/commonuis/commondialogs/group"/>
-      <!-- <unit bldFile="mw/classicui/commonuis/commondialogs/group_test"/> -->
+      <!-- <unit bldFile="/sf/mw/classicui/commonuis/commondialogs/group_test"/> -->
      </component>
     </collection>
     <collection name="uifw" long-name="UI Framework" level="server">
@@ -46,13 +46,13 @@
       <unit bldFile="/sf/mw/classicui/uifw/eikctl/group"/>
      </component>
      <component name="avkon" long-name="AvKon" origin-model="foundation">
-      <!-- <unit bldFile="mw/classicui/uifw/avkon/aknhlist/group"/> -->
-      <!-- <unit bldFile="mw/classicui/uifw/avkon/aknkeyrotator/group"/> -->
+      <!-- <unit bldFile="/sf/mw/classicui/uifw/avkon/aknhlist/group"/> -->
+      <!-- <unit bldFile="/sf/mw/classicui/uifw/avkon/aknkeyrotator/group"/> -->
       <unit bldFile="/sf/mw/classicui/uifw/avkon/aknphysics/group"/>
       <unit bldFile="/sf/mw/classicui/uifw/avkon/group"/>
       <unit bldFile="/sf/mw/classicui/uifw/avkon/odeconf/group"/>
-      <!-- <unit bldFile="mw/classicui/uifw/avkon/prebuilder"/> -->
-      <!-- <unit bldFile="mw/classicui/uifw/avkon/tsrc/bc/s60_sdkmcl/bctestmixmcl/group"/> -->
+      <!-- <unit bldFile="/sf/mw/classicui/uifw/avkon/prebuilder"/> -->
+      <!-- <unit bldFile="/sf/mw/classicui/uifw/avkon/tsrc/bc/s60_sdkmcl/bctestmixmcl/group"/> -->
      </component>
      <component name="eikstd" long-name="EikStd" origin-model="foundation">
       <unit bldFile="/sf/mw/classicui/uifw/eikstd/group"/>
@@ -64,7 +64,7 @@
       <unit bldFile="/sf/mw/classicui/uifw/ganes/group"/>
      </component>
      <component unofficial="yes" name="uifw_test" long-name="UI Framework Test" origin-model="foundation">
-      <!-- <unit bldFile="mw/classicui/uifw/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/classicui/uifw/tsrc/group"/> -->
      </component>
     </collection>
     <collection name="commonadapter" long-name="Common Adapter" level="support">
@@ -173,13 +173,13 @@
       <unit bldFile="/sf/mw/classicui/classicui_pub/title_pane_api/tsrc/group"/>
       <unit bldFile="/sf/mw/classicui/classicui_pub/toolbar_api/tsrc/group"/>
       <unit bldFile="/sf/mw/classicui/classicui_pub/touch_ui_utilities_api/tsrc/group"/>
-      <!-- <unit bldFile="mw/classicui/classicui_pub/tsrc/bc/apps/bctesttemplate/group"/> -->
-      <!-- <unit bldFile="mw/classicui/classicui_pub/tsrc/bc/apps/s60_sdk3.0/group"/> -->
-      <!-- <unit bldFile="mw/classicui/classicui_pub/tsrc/bc/apps/s60_sdk3.1/group"/> -->
-      <!-- <unit bldFile="mw/classicui/classicui_pub/tsrc/bc/apps/s60_sdk3.2/group"/> -->
-      <!-- <unit bldFile="mw/classicui/classicui_pub/tsrc/bc/apps/s60_sdk5.0/bctestpane/group"/> -->
-      <!-- <unit bldFile="mw/classicui/classicui_pub/tsrc/bc/apps/s60_sdk5.0/group"/> -->
-      <!-- <unit bldFile="mw/classicui/classicui_pub/tsrc/bc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/classicui/classicui_pub/tsrc/bc/apps/bctesttemplate/group"/> -->
+      <!-- <unit bldFile="/sf/mw/classicui/classicui_pub/tsrc/bc/apps/s60_sdk3.0/group"/> -->
+      <!-- <unit bldFile="/sf/mw/classicui/classicui_pub/tsrc/bc/apps/s60_sdk3.1/group"/> -->
+      <!-- <unit bldFile="/sf/mw/classicui/classicui_pub/tsrc/bc/apps/s60_sdk3.2/group"/> -->
+      <!-- <unit bldFile="/sf/mw/classicui/classicui_pub/tsrc/bc/apps/s60_sdk5.0/bctestpane/group"/> -->
+      <!-- <unit bldFile="/sf/mw/classicui/classicui_pub/tsrc/bc/apps/s60_sdk5.0/group"/> -->
+      <!-- <unit bldFile="/sf/mw/classicui/classicui_pub/tsrc/bc/group"/> -->
       <unit bldFile="/sf/mw/classicui/classicui_pub/uikon_core_controls/tsrc/group"/>
       <unit bldFile="/sf/mw/classicui/classicui_pub/ui_framework_definitions_api/tsrc/group"/>
       <unit bldFile="/sf/mw/classicui/classicui_pub/ui_framework_utilities_api/tsrc/group"/>
@@ -194,7 +194,7 @@
       <unit bldFile="/sf/mw/classicui/classicui_plat/application_switching_api/tsrc/group"/>
       <unit bldFile="/sf/mw/classicui/classicui_plat/avkon_fonts_api/tsrc/group"/>
       <unit bldFile="/sf/mw/classicui/classicui_plat/avkon_secondary_display_support_api/tsrc/group"/>
-      <!-- <unit bldFile="mw/classicui/classicui_plat/avkon_testability_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/classicui/classicui_plat/avkon_testability_api/tsrc/group"/> -->
       <unit bldFile="/sf/mw/classicui/classicui_plat/avkon_ui_server_api/tsrc/group"/>
       <unit bldFile="/sf/mw/classicui/classicui_plat/battery_pane_api/tsrc/group"/>
       <unit bldFile="/sf/mw/classicui/classicui_plat/common_file_dialogs_filter_factory_api/tsrc/group"/>
@@ -213,7 +213,7 @@
       <unit bldFile="/sf/mw/classicui/classicui_plat/extended_notes_api/tsrc/group"/>
       <unit bldFile="/sf/mw/classicui/classicui_plat/extended_notifiers_api/tsrc/group"/>
       <unit bldFile="/sf/mw/classicui/classicui_plat/extended_setting_pages_api/tsrc/group"/>
-      <!-- <unit bldFile="mw/classicui/classicui_plat/extended_sounds_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/classicui/classicui_plat/extended_sounds_api/tsrc/group"/> -->
       <unit bldFile="/sf/mw/classicui/classicui_plat/extended_status_pane_api/tsrc/group"/>
       <unit bldFile="/sf/mw/classicui/classicui_plat/extended_utilities_api/tsrc/group"/>
       <unit bldFile="/sf/mw/classicui/classicui_plat/find_item_ui_api/tsrc/group"/>

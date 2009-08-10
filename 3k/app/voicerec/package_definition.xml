@@ -5,7 +5,7 @@
 <block name="voicerec" long-name="Voice Recorder Apps" tech_domain="ma" level="apps" levels="empty 1">
     <collection name="voicerecorder" long-name="Voice Recorder" level="1">
      <component name="voicerecordergsplugin" long-name="GS Plugin" origin-model="foundation">
-      <!-- <unit bldFile="app/voicerec/voicerecorder/gsplugin/group"/> -->
+      <!-- <unit bldFile="/sf/app/voicerec/voicerecorder/gsplugin/group"/> -->
      </component>
      <component name="voicerecorder_help" long-name="Help" origin-model="foundation">
       <unit bldFile="/sf/app/voicerec/voicerecorder/help/group"/>
@@ -19,7 +19,7 @@
       <unit bldFile="/sf/app/voicerec/group"/>
      </component>
      <component unofficial="yes" name="voicerec_test" long-name="Voice Recorder Apps Test" origin-model="foundation">
-      <!-- <unit bldFile="app/voicerec/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/voicerec/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="voicerec_plat" long-name="Voice Recorder Apps Platform Interfaces" class="api" origin-model="foundation">
       <unit bldFile="/sf/app/voicerec/voicerec_plat/group"/>

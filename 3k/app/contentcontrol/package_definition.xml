@@ -54,7 +54,7 @@
       <unit bldFile="/sf/app/contentcontrol/omads/omadsappui/group"/>
      </component>
      <component name="omadsextensions" long-name="OMA DS Extensions" origin-model="foundation">
-      <!-- <unit bldFile="app/contentcontrol/omads/omadsextensions/dsutils/emailxmlutils/bld"/> -->
+      <!-- <unit bldFile="/sf/app/contentcontrol/omads/omadsextensions/dsutils/emailxmlutils/bld"/> -->
       <unit bldFile="/sf/app/contentcontrol/omads/omadsextensions/group"/>
      </component>
     </collection>

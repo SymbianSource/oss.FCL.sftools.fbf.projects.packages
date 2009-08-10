@@ -5,13 +5,13 @@
 <block name="vpnclient" long-name="VPN Client" tech_domain="dc" level="specific" levels="engine ui api">
     <collection name="vpnclient_sis" long-name="VPN Client Sis" level="api">
      <component name="ce_sis" long-name="CE SIS" origin-model="foundation">
-      <!-- <unit bldFile="mw/vpnclient/vpnclient_sis/ce_sis/group"/> -->
+      <!-- <unit bldFile="/sf/mw/vpnclient/vpnclient_sis/ce_sis/group"/> -->
      </component>
      <component name="stub_sis" long-name="Stub Sis" origin-model="foundation">
-      <!-- <unit bldFile="mw/vpnclient/vpnclient_sis/stub_sis/group"/> -->
+      <!-- <unit bldFile="/sf/mw/vpnclient/vpnclient_sis/stub_sis/group"/> -->
      </component>
      <component unofficial="yes" name="vpnclient_sis_build" origin-model="foundation">
-      <!-- <unit bldFile="mw/vpnclient/vpnclient_sis/group"/> -->
+      <!-- <unit bldFile="/sf/mw/vpnclient/vpnclient_sis/group"/> -->
      </component>
     </collection>
     <collection name="vpnengine" long-name="VPN Engine" level="engine">

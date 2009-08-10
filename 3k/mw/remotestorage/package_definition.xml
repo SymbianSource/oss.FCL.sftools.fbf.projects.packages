@@ -15,7 +15,7 @@
      </component>
      <component name="mountmanager" long-name="Mount Manager" origin-model="foundation">
       <unit bldFile="/sf/mw/remotestorage/remotestoragefw/mountmanager/group"/>
-      <!-- <unit bldFile="mw/remotestorage/remotestoragefw/mountmanager/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/mw/remotestorage/remotestoragefw/mountmanager/tsrc/public/basic/group"/> -->
      </component>
      <component name="webdavaccessplugin" long-name="WebDAV Access Plugin" origin-model="foundation">
       <unit bldFile="/sf/mw/remotestorage/remotestoragefw/webdavaccessplugin/group"/>

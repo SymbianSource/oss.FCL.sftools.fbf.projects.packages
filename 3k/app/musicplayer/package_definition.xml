@@ -75,7 +75,7 @@
       <unit bldFile="/sf/app/musicplayer/musicplayer_plat/music_visualization_plugin_api/tsrc/group"/>
      </component>
      <component unofficial="yes" name="musicplayer_test" long-name="Music Player Apps Test" origin-model="foundation">
-      <!-- <unit bldFile="app/musicplayer/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/musicplayer/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="musicplayer_build" long-name="Music Player Apps Build" origin-model="foundation">
       <unit bldFile="/sf/app/musicplayer/group"/>

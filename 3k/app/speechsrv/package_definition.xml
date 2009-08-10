@@ -46,8 +46,8 @@
       <unit bldFile="/sf/app/speechsrv/srsf/speechsynthesis/client/group"/>
       <unit bldFile="/sf/app/speechsrv/srsf/speechsynthesis/server/group"/>
       <unit bldFile="/sf/app/speechsrv/srsf/speechsynthesis/tsrc/speechsynthesistest/group"/>
-      <!-- <unit bldFile="app/speechsrv/srsf/speechsynthesis/tsrc/testapplication/group"/> -->
-      <!-- <unit bldFile="app/speechsrv/srsf/speechsynthesis/tsrc/texttospeech/group"/> -->
+      <!-- <unit bldFile="/sf/app/speechsrv/srsf/speechsynthesis/tsrc/testapplication/group"/> -->
+      <!-- <unit bldFile="/sf/app/speechsrv/srsf/speechsynthesis/tsrc/texttospeech/group"/> -->
      </component>
      <component name="devasr" long-name="Audio Recording and Speech Recognition" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/devasr/group"/>
@@ -63,7 +63,7 @@
      </component>
      <component name="nssvasapi" long-name="NSS VAS API" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/nssvasapi/group"/>
-      <!-- <unit bldFile="app/speechsrv/srsf/nssvasapi/nssvasdb/nssvasdbeventnotifier/group"/> -->
+      <!-- <unit bldFile="/sf/app/speechsrv/srsf/nssvasapi/nssvasdb/nssvasdbeventnotifier/group"/> -->
      </component>
      <component name="nssvascontacthdlr" long-name="NSS VAS Contact Handler" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/srsf/nssvascontacthdlr/group"/>
@@ -95,7 +95,7 @@
     </collection>
     <collection name="speechsrv_info" long-name="Speech Recognition UIs Info" level="ui">
      <component unofficial="yes" name="speechsrv_test" long-name="Speech Recognition UIs Test" origin-model="foundation">
-      <!-- <unit bldFile="app/speechsrv/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/speechsrv/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="speechsrv_build" long-name="Speech Recognition UIs Build" origin-model="foundation">
       <unit bldFile="/sf/app/speechsrv/group"/>

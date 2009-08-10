@@ -14,16 +14,16 @@
      </component>
      <component name="imconnectionprovider" long-name="IM Connection Provider" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/imstutils/imconnectionprovider/group"/>
-      <!-- <unit bldFile="app/conversations/imstutils/imconnectionprovider/tsrc/imconnectionprovider_test/group"/> -->
+      <!-- <unit bldFile="/sf/app/conversations/imstutils/imconnectionprovider/tsrc/imconnectionprovider_test/group"/> -->
      </component>
      <component name="xmppadapter" long-name="XMPP Adapter" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/imstutils/xmppadapter/group"/>
-      <!-- <unit bldFile="app/conversations/imstutils/xmppadapter/tsrc/xmppadapter_test/group"/> -->
+      <!-- <unit bldFile="/sf/app/conversations/imstutils/xmppadapter/tsrc/xmppadapter_test/group"/> -->
      </component>
      <component name="imconversationview" long-name="IM Conversation View" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/imstutils/imconversationview/group"/>
-      <!-- <unit bldFile="app/conversations/imstutils/imconversationview/tsrc/imcvuiengine_test/dummytestadaptation/group"/> -->
-      <!-- <unit bldFile="app/conversations/imstutils/imconversationview/tsrc/imcvuiengine_test/group"/> -->
+      <!-- <unit bldFile="/sf/app/conversations/imstutils/imconversationview/tsrc/imcvuiengine_test/dummytestadaptation/group"/> -->
+      <!-- <unit bldFile="/sf/app/conversations/imstutils/imconversationview/tsrc/imcvuiengine_test/group"/> -->
      </component>
      <component unofficial="yes" name="imstutils_build" long-name="IM Service Tab Utils Build" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/imstutils/group"/>
@@ -35,17 +35,17 @@
      </component>
      <component name="vimpststorage" long-name="VIMP ST Storage" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/uiservicetab/vimpststorage/group"/>
-      <!-- <unit bldFile="app/conversations/uiservicetab/vimpststorage/tsrc/vimpststorage_ut/cvimpststoragecontactlist_ut/group"/> -->
-      <!-- <unit bldFile="app/conversations/uiservicetab/vimpststorage/tsrc/vimpststorage_ut/cvimpststoragecontactsorter_ut/group"/> -->
-      <!-- <unit bldFile="app/conversations/uiservicetab/vimpststorage/tsrc/vimpststorage_ut/cvimpststoragecontact_ut/group"/> -->
+      <!-- <unit bldFile="/sf/app/conversations/uiservicetab/vimpststorage/tsrc/vimpststorage_ut/cvimpststoragecontactlist_ut/group"/> -->
+      <!-- <unit bldFile="/sf/app/conversations/uiservicetab/vimpststorage/tsrc/vimpststorage_ut/cvimpststoragecontactsorter_ut/group"/> -->
+      <!-- <unit bldFile="/sf/app/conversations/uiservicetab/vimpststorage/tsrc/vimpststorage_ut/cvimpststoragecontact_ut/group"/> -->
      </component>
      <component name="vimpstengine" long-name="VIMP ST Engine" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/uiservicetab/vimpstengine/group"/>
-      <!-- <unit bldFile="app/conversations/uiservicetab/vimpstengine/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/conversations/uiservicetab/vimpstengine/tsrc/group"/> -->
      </component>
      <component name="vimpstcmdprocess" long-name="VIMP ST Command Process" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/uiservicetab/vimpstcmdprocess/group"/>
-      <!-- <unit bldFile="app/conversations/uiservicetab/vimpstcmdprocess/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/conversations/uiservicetab/vimpstcmdprocess/tsrc/group"/> -->
      </component>
      <component name="vimpstui" long-name="VIMP ST UI" origin-model="foundation">
       <unit bldFile="/sf/app/conversations/uiservicetab/vimpstui/group"/>

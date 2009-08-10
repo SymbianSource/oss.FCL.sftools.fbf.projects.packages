@@ -35,21 +35,21 @@
     <collection name="omadm" long-name="OMA Device Management" level="oma">
      <component name="omadmappui" long-name="OMA DM App UI" origin-model="foundation">
       <unit bldFile="/sf/app/devicecontrol/omadm/omadmappui/group"/>
-      <!-- <unit bldFile="app/devicecontrol/omadm/omadmappui/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/devicecontrol/omadm/omadmappui/tsrc/group"/> -->
      </component>
      <component name="omadmextensions" long-name="OMA DM Extensions" origin-model="foundation">
-      <!-- <unit bldFile="app/devicecontrol/omadm/omadmextensions/adapters/email/tsrc/group"/> -->
-      <!-- <unit bldFile="app/devicecontrol/omadm/omadmextensions/adapters/mms/tsrc/group"/> -->
-      <!-- <unit bldFile="app/devicecontrol/omadm/omadmextensions/adapters/syncmldm/tsrc/group"/> -->
-      <!-- <unit bldFile="app/devicecontrol/omadm/omadmextensions/adapters/syncmldm12/tsrc/group"/> -->
-      <!-- <unit bldFile="app/devicecontrol/omadm/omadmextensions/adapters/syncmlds/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/devicecontrol/omadm/omadmextensions/adapters/email/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/devicecontrol/omadm/omadmextensions/adapters/mms/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/devicecontrol/omadm/omadmextensions/adapters/syncmldm/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/devicecontrol/omadm/omadmextensions/adapters/syncmldm12/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/devicecontrol/omadm/omadmextensions/adapters/syncmlds/tsrc/group"/> -->
       <unit bldFile="/sf/app/devicecontrol/omadm/omadmextensions/group"/>
      </component>
     </collection>
     <collection name="pnpmobileservices" long-name="PnP Mobile Services" level="mid">
      <component name="pnpms" long-name="PnP MS" origin-model="foundation">
       <unit bldFile="/sf/app/devicecontrol/pnpmobileservices/pnpms/group"/>
-      <!-- <unit bldFile="app/devicecontrol/pnpmobileservices/pnpms/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/devicecontrol/pnpmobileservices/pnpms/tsrc/group"/> -->
      </component>
     </collection>
     <collection name="omacp" long-name="OMA Content Provisioning" level="oma">
@@ -62,7 +62,7 @@
       <unit bldFile="/sf/app/devicecontrol/group"/>
      </component>
      <component unofficial="yes" name="customization_test" origin-model="foundation">
-      <!-- <unit bldFile="app/devicecontrol/customization/tsrc/tarmcustomization/group"/> -->
+      <!-- <unit bldFile="/sf/app/devicecontrol/customization/tsrc/tarmcustomization/group"/> -->
      </component>
      <component unofficial="yes" name="applicationmanagement_build" origin-model="foundation">
       <unit bldFile="/sf/app/devicecontrol/applicationmanagement/group"/>
@@ -71,7 +71,7 @@
       <unit bldFile="/sf/app/devicecontrol/customization/group"/>
      </component>
      <component unofficial="yes" name="applicationmanagement_test" origin-model="foundation">
-      <!-- <unit bldFile="app/devicecontrol/applicationmanagement/tsrc/tarmappmng/group"/> -->
+      <!-- <unit bldFile="/sf/app/devicecontrol/applicationmanagement/tsrc/tarmappmng/group"/> -->
      </component>
     </collection>
    </block>

@@ -24,21 +24,21 @@
     </collection>
     <collection name="omadrm" long-name="OMA DRM" level="server">
      <component name="drmroapwbxmlparser" long-name="DRM ROAP WBXML Parser" origin-model="foundation">
-      <!-- <unit bldFile="mw/drm/omadrm/drmroapwbxmlparser/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/omadrm/drmroapwbxmlparser/group"/> -->
      </component>
      <component name="drmplugins" long-name="DRM Plugins" origin-model="foundation">
-      <!-- <unit bldFile="mw/drm/omadrm/drmplugins/drmfilter/group"/> -->
-      <!-- <unit bldFile="mw/drm/omadrm/drmplugins/drmrecognizer/group"/> -->
-      <!-- <unit bldFile="mw/drm/omadrm/drmplugins/drmrohandler/group"/> -->
-      <!-- <unit bldFile="mw/drm/omadrm/drmplugins/drmromtm/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/omadrm/drmplugins/drmfilter/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/omadrm/drmplugins/drmrecognizer/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/omadrm/drmplugins/drmrohandler/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/omadrm/drmplugins/drmromtm/group"/> -->
      </component>
      <component name="drmengine" long-name="DRM Engine" origin-model="foundation"/>
      <component name="drmhelper" long-name="DRM Helper" origin-model="foundation">
-      <!-- <unit bldFile="mw/drm/omadrm/drmhelper/drmhelperserver/group"/> -->
-      <!-- <unit bldFile="mw/drm/omadrm/drmhelper/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/omadrm/drmhelper/drmhelperserver/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/omadrm/drmhelper/group"/> -->
      </component>
      <component name="drmlicensemanager" long-name="Drm License Manager" origin-model="foundation">
-      <!-- <unit bldFile="mw/drm/omadrm/drmlicensemanager/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/omadrm/drmlicensemanager/group"/> -->
      </component>
      <component unofficial="yes" name="omadrm_build" long-name="OMA DRM Build" origin-model="foundation">
       <unit bldFile="/sf/mw/drm/omadrm/group"/>
@@ -46,23 +46,23 @@
     </collection>
     <collection name="wmdrm" long-name="WM DRM" level="framework">
      <component name="wmdrmengine" long-name="WM DRM Engine" origin-model="foundation">
-      <!-- <unit bldFile="mw/drm/wmdrm/wmdrmengine/wmdrmagent/group"/> -->
-      <!-- <unit bldFile="mw/drm/wmdrm/wmdrmengine/wmdrmfileserver/client/group"/> -->
-      <!-- <unit bldFile="mw/drm/wmdrm/wmdrmengine/wmdrmfileserver/server/group"/> -->
-      <!-- <unit bldFile="mw/drm/wmdrm/wmdrmengine/wmdrmserver/client/group"/> -->
-      <!-- <unit bldFile="mw/drm/wmdrm/wmdrmengine/wmdrmserver/clientwrapper/group"/> -->
-      <!-- <unit bldFile="mw/drm/wmdrm/wmdrmengine/wmdrmserver/server/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/wmdrm/wmdrmengine/wmdrmagent/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/wmdrm/wmdrmengine/wmdrmfileserver/client/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/wmdrm/wmdrmengine/wmdrmfileserver/server/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/wmdrm/wmdrmengine/wmdrmserver/client/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/wmdrm/wmdrmengine/wmdrmserver/clientwrapper/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/wmdrm/wmdrmengine/wmdrmserver/server/group"/> -->
      </component>
      <component name="camese" long-name="Camese" origin-model="foundation">
-      <!-- <unit bldFile="mw/drm/wmdrm/camese/cameseutility/group"/> -->
-      <!-- <unit bldFile="mw/drm/wmdrm/camese/group"/> -->
-      <!-- <unit bldFile="mw/drm/wmdrm/camese/httpfiltercamese/group"/> -->
-      <!-- <unit bldFile="mw/drm/wmdrm/camese/wmdrmdla/group"/> -->
-      <!-- <unit bldFile="mw/drm/wmdrm/camese/wmdrmdlaapp/group"/> -->
-      <!-- <unit bldFile="mw/drm/wmdrm/camese/wmdrmdladefaulthttpplugin/group"/> -->
-      <!-- <unit bldFile="mw/drm/wmdrm/camese/wmdrmdladefaultuiplugin/group"/> -->
-      <!-- <unit bldFile="mw/drm/wmdrm/camese/wmdrmdlautils/group"/> -->
-      <!-- <unit bldFile="mw/drm/wmdrm/camese/wmdrmdlawrapper/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/wmdrm/camese/cameseutility/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/wmdrm/camese/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/wmdrm/camese/httpfiltercamese/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/wmdrm/camese/wmdrmdla/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/wmdrm/camese/wmdrmdlaapp/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/wmdrm/camese/wmdrmdladefaulthttpplugin/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/wmdrm/camese/wmdrmdladefaultuiplugin/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/wmdrm/camese/wmdrmdlautils/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/wmdrm/camese/wmdrmdlawrapper/group"/> -->
      </component>
      <component name="wmdrmplugins" long-name="WM DRM Plugins" origin-model="foundation"/>
      <component unofficial="yes" name="wmdrm_build" long-name="WM DRM Build" origin-model="foundation">
@@ -71,16 +71,16 @@
     </collection>
     <collection name="drm_info" long-name="DRM Info" level="specific">
      <component unofficial="yes" name="drm_pub" long-name="DRM Public Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="mw/drm/drm_pub/drm_helper_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/drm/drm_pub/drm_license_checker_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/drm_pub/drm_helper_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/drm_pub/drm_license_checker_api/tsrc/group"/> -->
       <unit bldFile="/sf/mw/drm/drm_pub/group"/>
-      <!-- <unit bldFile="mw/drm/drm_pub/oma_drm_caf_agent_api/tsrc/bc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/drm_pub/oma_drm_caf_agent_api/tsrc/bc/group"/> -->
      </component>
      <component unofficial="yes" name="drm_plat" long-name="DRM Platform Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="mw/drm/drm_plat/drm_common_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/drm/drm_plat/drm_rights_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/drm_plat/drm_common_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/drm_plat/drm_rights_api/tsrc/group"/> -->
       <unit bldFile="/sf/mw/drm/drm_plat/group"/>
-      <!-- <unit bldFile="mw/drm/drm_plat/roap_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/drm/drm_plat/roap_api/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="drm_build" long-name="DRM Build" origin-model="foundation">
       <unit bldFile="/sf/mw/drm/group"/>

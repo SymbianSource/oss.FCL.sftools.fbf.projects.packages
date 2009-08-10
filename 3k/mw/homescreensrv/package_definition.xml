@@ -60,7 +60,7 @@
     <collection name="idlefw" long-name="Idle Framework" level="framework">
      <component name="idlefw_plugins" long-name="Plugins" origin-model="foundation">
       <unit bldFile="/sf/mw/homescreensrv/idlefw/plugins/group"/>
-      <!-- <unit bldFile="mw/homescreensrv/idlefw/plugins/pslnactiveidleplugin/group"/> -->
+      <!-- <unit bldFile="/sf/mw/homescreensrv/idlefw/plugins/pslnactiveidleplugin/group"/> -->
      </component>
      <component unofficial="yes" name="idlefw_build" long-name="Idle Framework Build" origin-model="foundation">
       <unit bldFile="/sf/mw/homescreensrv/idlefw/group"/>
@@ -76,12 +76,12 @@
     </collection>
     <collection name="homescreensrv_info" long-name="Home Screen Services Info" level="specific">
      <component unofficial="yes" name="homescreensrv_plat" long-name="Home Screen Services Platform Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="mw/homescreensrv/homescreensrv_plat/action_handler_plugin_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/homescreensrv/homescreensrv_plat/content_harvester_plugin_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/action_handler_plugin_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/content_harvester_plugin_api/tsrc/group"/> -->
       <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/group"/>
-      <!-- <unit bldFile="mw/homescreensrv/homescreensrv_plat/hs_widget_publisher_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/homescreensrv/homescreensrv_plat/menu_content_service_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/homescreensrv/homescreensrv_plat/menu_sat_interface_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/hs_widget_publisher_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/menu_content_service_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/menu_sat_interface_api/tsrc/group"/> -->
      </component>
     </collection>
    </block>

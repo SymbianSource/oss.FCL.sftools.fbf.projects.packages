@@ -123,7 +123,7 @@
     </collection>
     <collection name="emailhelp" long-name="Email Help" level="support">
      <component name="emailhelp_build" origin-model="foundation">
-      <!-- <unit bldFile="app/commonemail/emailhelp/group"/> -->
+      <!-- <unit bldFile="/sf/app/commonemail/emailhelp/group"/> -->
      </component>
     </collection>
     <collection name="legacy" long-name="Legacy Email" level="support">

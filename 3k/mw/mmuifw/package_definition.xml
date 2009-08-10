@@ -53,10 +53,10 @@
     </collection>
     <collection name="widgetmodel" long-name="Widget Model" level="mdl">
      <component name="alfwidgetmodel" long-name="ALF Widget Model" origin-model="foundation">
-      <!-- <unit bldFile="mw/mmuifw/widgetmodel/alfwidgetmodel/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmuifw/widgetmodel/alfwidgetmodel/group"/> -->
      </component>
      <component name="alfwidgetfactory" long-name="ALF Widget Factory" origin-model="foundation">
-      <!-- <unit bldFile="mw/mmuifw/widgetmodel/alfwidgetfactory/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmuifw/widgetmodel/alfwidgetfactory/group"/> -->
      </component>
      <component unofficial="yes" name="widgetmodel_build" long-name="Widget Model Build" origin-model="foundation">
       <unit bldFile="/sf/mw/mmuifw/widgetmodel/group"/>

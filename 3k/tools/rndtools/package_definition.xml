@@ -5,70 +5,70 @@
    <block name="rndtools" long-name="RD tools" tech_domain="to" level="services" levels="app generic specific">
     <collection name="creator" long-name="Creator" level="app">
      <component name="creator_build" origin-model="foundation">
-      <unit bldFile="tools/rndtools/creator/group"/>
+      <unit bldFile="/sf/tools/rndtools/creator/group"/>
      </component>
     </collection>
     <collection name="filebrowser" long-name="File Browser" level="specific">
      <component name="fileopserver" long-name="File Op Server" origin-model="foundation">
-      <unit bldFile="tools/rndtools/filebrowser/fileopserver/group"/>
+      <unit bldFile="/sf/tools/rndtools/filebrowser/fileopserver/group"/>
      </component>
      <component name="fileopclient" long-name="File Op Client" origin-model="foundation">
-      <unit bldFile="tools/rndtools/filebrowser/fileopclient/group"/>
+      <unit bldFile="/sf/tools/rndtools/filebrowser/fileopclient/group"/>
      </component>
      <component name="filebrowser_build" origin-model="foundation">
-      <unit bldFile="tools/rndtools/filebrowser/group"/>
+      <unit bldFile="/sf/tools/rndtools/filebrowser/group"/>
      </component>
     </collection>
     <collection name="launcher" long-name="Launcher" level="specific">
      <component name="launcher_build" origin-model="foundation">
-      <unit bldFile="tools/rndtools/launcher/group"/>
+      <unit bldFile="/sf/tools/rndtools/launcher/group"/>
      </component>
     </collection>
     <collection name="screengrabber" long-name="Screen Grabber" level="specific">
      <component name="screengrabber_build" origin-model="foundation">
-      <unit bldFile="tools/rndtools/screengrabber/group"/>
+      <unit bldFile="/sf/tools/rndtools/screengrabber/group"/>
      </component>
     </collection>
     <collection name="stifui" long-name="STIF UI" level="generic">
      <component name="stifui_stifui" long-name="STIF UI" origin-model="foundation">
-      <unit bldFile="tools/rndtools/stifui/stifui/group"/>
+      <unit bldFile="/sf/tools/rndtools/stifui/stifui/group"/>
      </component>
      <component name="uitestserverstarter" long-name="UI Test Server Starter" origin-model="foundation">
-      <unit bldFile="tools/rndtools/stifui/uitestserverstarter/group"/>
+      <unit bldFile="/sf/tools/rndtools/stifui/uitestserverstarter/group"/>
      </component>
      <component unofficial="yes" name="stifui_build" long-name="STIF UI Build" origin-model="foundation">
-      <unit bldFile="tools/rndtools/stifui/group"/>
+      <unit bldFile="/sf/tools/rndtools/stifui/group"/>
      </component>
     </collection>
     <collection name="loadgen" long-name="Load Generator" level="app">
      <component name="loadgen_build" origin-model="foundation">
-      <unit bldFile="tools/rndtools/loadgen/group"/>
+      <unit bldFile="/sf/tools/rndtools/loadgen/group"/>
      </component>
     </collection>
     <collection name="perfmon" long-name="Performance Monitor" level="app">
      <component name="perfmon_build" origin-model="foundation">
-      <unit bldFile="tools/rndtools/perfmon/group"/>
+      <unit bldFile="/sf/tools/rndtools/perfmon/group"/>
      </component>
     </collection>
     <collection name="htiui" long-name="HTI UI" level="generic">
      <!-- Empty duplicate component HtiCommPlugins removed -->
      <!-- Empty duplicate component HtiServicePlugins removed -->
      <component name="htidevicereboot" long-name="HTI DeviceR eboot" origin-model="foundation">
-      <unit bldFile="tools/rndtools/htiui/htidevicereboot/group"/>
+      <unit bldFile="/sf/tools/rndtools/htiui/htidevicereboot/group"/>
      </component>
      <component name="htistartupwait" long-name="HTI Startup Wait" origin-model="foundation">
-      <unit bldFile="tools/rndtools/htiui/htistartupwait/group"/>
+      <unit bldFile="/sf/tools/rndtools/htiui/htistartupwait/group"/>
      </component>
      <component name="htiadmin" long-name="HTI Admin" origin-model="foundation">
-      <unit bldFile="tools/rndtools/htiui/htiadmin/group"/>
+      <unit bldFile="/sf/tools/rndtools/htiui/htiadmin/group"/>
      </component>
      <component unofficial="yes" name="htiui_build" long-name="HTI UI Build" origin-model="foundation">
-      <unit bldFile="tools/rndtools/htiui/group"/>
+      <unit bldFile="/sf/tools/rndtools/htiui/group"/>
      </component>
     </collection>
     <collection name="memspyui" long-name="Memspy UI" level="generic">
      <component name="memspyui_build" origin-model="foundation">
-      <unit bldFile="tools/rndtools/memspyui/group"/>
+      <unit bldFile="/sf/tools/rndtools/memspyui/group"/>
      </component>
     </collection>
    </block>

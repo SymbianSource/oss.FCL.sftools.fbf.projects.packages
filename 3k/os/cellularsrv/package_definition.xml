@@ -19,7 +19,7 @@
      </component>
      <component name="n:cdmasmsstack" long-name="CDMA SMS Stack" introduced="8.0" purpose="optional" plugin="Y" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="os/cellularsrv/smsprotocols/cdmasmsstack/group" mrp="os/cellularsrv/smsprotocols/cdmasmsstack/group/nbprotocols_cdmasmsstack.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/cellularsrv/smsprotocols/cdmasmsstack/group" mrp="os/cellularsrv/smsprotocols/cdmasmsstack/group/nbprotocols_cdmasmsstack.mrp"/> -->
      </component>
     </collection>
     <collection name="telephonyprotocols" long-name="Telephony Protocols" level="framework">
@@ -69,18 +69,18 @@
      </component>
      <component name="n:etelcdma" long-name="ETel CDMA" introduced="7.0s" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="os/cellularsrv/telephonyserver/etelcdma/group" mrp="os/cellularsrv/telephonyserver/etelcdma/group/telephony_etelcdma.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/cellularsrv/telephonyserver/etelcdma/group" mrp="os/cellularsrv/telephonyserver/etelcdma/group/telephony_etelcdma.mrp"/> -->
      </component>
     </collection>
     <collection name="telephonyserverplugins" long-name="Telephony Server Plugins" level="plugin">
      <!--Component manually removed, already declared in OS-->
      <!--<component name="common_tsy">
-       -  <unit bldFile="os/cellularsrv/telephonyserverplugins/common_tsy/test/component/group"/>  -
-       -  <unit bldFile="os/cellularsrv/telephonyserverplugins/common_tsy/test/component/mockltsy/group"/>  -
-       -  <unit bldFile="os/cellularsrv/telephonyserverplugins/common_tsy/test/component/mockltsy/mockltsy/group"/>  -
-       -  <unit bldFile="os/cellularsrv/telephonyserverplugins/common_tsy/test/component/mockltsy/mockltsydll/group"/>  -
-       -  <unit bldFile="os/cellularsrv/telephonyserverplugins/common_tsy/test/integration/group"/>  -
-       -  <unit bldFile="os/cellularsrv/telephonyserverplugins/common_tsy/test/integration/testsuites/group"/>  -
+       -  <unit bldFile="/sf/os/cellularsrv/telephonyserverplugins/common_tsy/test/component/group"/>  -
+       -  <unit bldFile="/sf/os/cellularsrv/telephonyserverplugins/common_tsy/test/component/mockltsy/group"/>  -
+       -  <unit bldFile="/sf/os/cellularsrv/telephonyserverplugins/common_tsy/test/component/mockltsy/mockltsy/group"/>  -
+       -  <unit bldFile="/sf/os/cellularsrv/telephonyserverplugins/common_tsy/test/component/mockltsy/mockltsydll/group"/>  -
+       -  <unit bldFile="/sf/os/cellularsrv/telephonyserverplugins/common_tsy/test/integration/group"/>  -
+       -  <unit bldFile="/sf/os/cellularsrv/telephonyserverplugins/common_tsy/test/integration/testsuites/group"/>  -
      </component>-->
      <!--Component manually removed as empty and name conflicts with an OS component-->
      <!--<component name="multimodetsy"/>-->
@@ -121,7 +121,7 @@
      </component>
      <!--Component manually removed and merged to OS, unit originately commented out by Bob's script-->
      <!--<component name="basebandchanneladaptor">
-       -  <unit bldFile="os/cellularsrv/basebandabstraction/basebandchanneladaptor/test/te_bca/group"/>  -
+       -  <unit bldFile="/sf/os/cellularsrv/basebandabstraction/basebandchanneladaptor/test/te_bca/group"/>  -
      </component>-->
      <!--Component manually removed as empty and name conflicts with an OS component-->
      <!--<component name="intersystemcomm"/>-->

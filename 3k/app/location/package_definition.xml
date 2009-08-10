@@ -87,14 +87,14 @@
       <unit bldFile="/sf/app/location/group"/>
      </component>
      <component unofficial="yes" name="location_test" long-name="Location Apps Test" origin-model="foundation">
-      <!-- <unit bldFile="app/location/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/location/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="loc_pub" class="api" origin-model="foundation">
       <unit bldFile="/sf/app/location/loc_pub/group"/>
-      <!-- <unit bldFile="app/location/loc_pub/landmarks_ui_addedit_api/tsrc/bc/group"/> -->
-      <!-- <unit bldFile="app/location/loc_pub/landmarks_ui_addedit_api/tsrc/group"/> -->
-      <!-- <unit bldFile="app/location/loc_pub/landmarks_ui_selector_api/tsrc/bc/group"/> -->
-      <!-- <unit bldFile="app/location/loc_pub/landmarks_ui_selector_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/location/loc_pub/landmarks_ui_addedit_api/tsrc/bc/group"/> -->
+      <!-- <unit bldFile="/sf/app/location/loc_pub/landmarks_ui_addedit_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/location/loc_pub/landmarks_ui_selector_api/tsrc/bc/group"/> -->
+      <!-- <unit bldFile="/sf/app/location/loc_pub/landmarks_ui_selector_api/tsrc/group"/> -->
      </component>
     </collection>
    </block>

@@ -5,10 +5,10 @@
 <block name="persistentdata" long-name="Persistent Data Services" tech_domain="hb" level="services" levels="adaptation hw-if plugin framework server app-if">
     <collection name="featuremgmt" long-name="Feature Management" level="framework">
      <component name="featuremanager" long-name="Feature Manager" origin-model="foundation">
-      <!-- <unit bldFile="os/devicesrv/featuremgmt/featuremanager/clientdll/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/featuremgmt/featuremanager/clientdll/group"/> -->
       <unit bldFile="/sf/os/devicesrv/featuremgmt/featuremanager/group"/>
-      <!-- <unit bldFile="os/devicesrv/featuremgmt/featuremanager/serverexe/group"/> -->
-      <!-- <unit bldFile="os/devicesrv/featuremgmt/featuremanager/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/featuremgmt/featuremanager/serverexe/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/featuremgmt/featuremanager/tsrc/public/basic/group"/> -->
      </component>
      <component unofficial="yes" name="featuremgmt_build" long-name="Feature Management Build" origin-model="foundation">
       <unit bldFile="/sf/os/devicesrv/featuremgmt/group"/>

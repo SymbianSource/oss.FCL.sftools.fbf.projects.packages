@@ -5,7 +5,7 @@
 <block name="screensaver" long-name="Screen Saver Apps" tech_domain="ui" level="apps" levels="eng plugin">
     <collection name="scrsaver" long-name="Screen Saver Plugins" level="eng">
      <component name="scrsaverplugins" long-name="Screen Saver Plugins" origin-model="foundation">
-      <!-- <unit bldFile="app/screensaver/scrsaver/scrsaverplugins/group"/> -->
+      <!-- <unit bldFile="/sf/app/screensaver/scrsaver/scrsaverplugins/group"/> -->
      </component>
      <component name="screensaveraiwplugin" long-name="Screen Saver AIW Plugin" origin-model="foundation">
       <unit bldFile="/sf/app/screensaver/scrsaver/screensaveraiwplugin/group"/>

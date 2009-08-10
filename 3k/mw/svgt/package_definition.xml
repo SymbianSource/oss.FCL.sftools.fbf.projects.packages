@@ -5,7 +5,7 @@
 <block name="svgt" long-name="SVG Tiny" tech_domain="ui" level="generic" levels="util ui">
     <collection name="svgtopt" long-name="SVGT Opt" level="util">
      <component name="svg" origin-model="foundation">
-      <!-- <unit bldFile="mw/svgt/svgtopt/svg/svgrecog/group"/> -->
+      <!-- <unit bldFile="/sf/mw/svgt/svgtopt/svg/svgrecog/group"/> -->
      </component>
      <component name="nvgdecoder" long-name="NVG Decoder" origin-model="foundation"/>
      <component name="svgengineji" long-name="SVG Engine JI" origin-model="foundation"/>

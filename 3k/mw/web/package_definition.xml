@@ -29,7 +29,7 @@
       <unit bldFile="/sf/mw/web/browserutilities/favouritesengine/group"/>
      </component>
      <component name="feedsengine" long-name="Feeds Engine" origin-model="foundation">
-      <!-- <unit bldFile="mw/web/browserutilities/feedsengine/feedsserver/reconizer/group"/> -->
+      <!-- <unit bldFile="/sf/mw/web/browserutilities/feedsengine/feedsserver/reconizer/group"/> -->
       <unit bldFile="/sf/mw/web/browserutilities/feedsengine/group"/>
      </component>
      <component name="multipartparser" long-name="Multipart Parser" origin-model="foundation">
@@ -40,7 +40,7 @@
      </component>
      <component name="webutils" long-name="Web Utils" origin-model="foundation">
       <unit bldFile="/sf/mw/web/browserutilities/webutils/group"/>
-      <!-- <unit bldFile="mw/web/browserutilities/webutils/tsrc/public/adv/group"/> -->
+      <!-- <unit bldFile="/sf/mw/web/browserutilities/webutils/tsrc/public/adv/group"/> -->
      </component>
      <component name="aiwbrowserprovider" long-name="AIW Browser Provider" origin-model="foundation">
       <unit bldFile="/sf/mw/web/browserutilities/aiwbrowserprovider/group"/>
@@ -56,8 +56,8 @@
       <unit bldFile="/sf/mw/web/webengine/osswebengine/npscript/group"/>
       <unit bldFile="/sf/mw/web/webengine/osswebengine/webkit/s60/group"/>
       <unit bldFile="/sf/mw/web/webengine/osswebengine/webkit/s60/group/javascriptcore"/>
-      <!-- <unit bldFile="mw/web/webengine/osswebengine/webkit/s60/webview/webview_api_test/group"/> -->
-      <!-- <unit bldFile="mw/web/webengine/osswebengine/webkit/s60/webview/webview_api_test/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/web/webengine/osswebengine/webkit/s60/webview/webview_api_test/group"/> -->
+      <!-- <unit bldFile="/sf/mw/web/webengine/osswebengine/webkit/s60/webview/webview_api_test/tsrc/group"/> -->
      </component>
      <component name="webkitutils" long-name="WebKit Utils" origin-model="foundation">
       <unit bldFile="/sf/mw/web/webengine/webkitutils/group"/>
@@ -70,7 +70,7 @@
      </component>
      <component name="widgetregistry" long-name="Widget Registry" origin-model="foundation">
       <unit bldFile="/sf/mw/web/webengine/widgetregistry/group"/>
-      <!-- <unit bldFile="mw/web/webengine/widgetregistry/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/mw/web/webengine/widgetregistry/tsrc/public/basic/group"/> -->
      </component>
      <component name="wmlengine" long-name="WML Engine" origin-model="foundation">
       <unit bldFile="/sf/mw/web/webengine/wmlengine/group"/>
@@ -83,7 +83,7 @@
      </component>
      <!--Component manually removed as empty and name conflicts with another component-->
      <!--<component name="memoryplugin" long-name="Memory Plugin">
-       <unit bldFile="mw/web/webengine/memoryplugin/group"/>
+       <unit bldFile="/sf/mw/web/webengine/memoryplugin/group"/>
      </component>-->
      <component name="widgetmemoryplugin" long-name="Widget Memory Plugin" origin-model="foundation">
       <unit bldFile="/sf/mw/web/webengine/widgetmemoryplugin/group"/>
@@ -155,9 +155,9 @@
     </collection>
     <collection name="web_info" long-name="Web Info" level="specific">
      <component unofficial="yes" name="web_pub" long-name="Web Public Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="mw/web/web_pub/browser_control_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/web/web_pub/download_mgr_client_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/web/web_pub/favourites_engine_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/web/web_pub/browser_control_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/web/web_pub/download_mgr_client_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/web/web_pub/favourites_engine_api/tsrc/group"/> -->
       <unit bldFile="/sf/mw/web/web_pub/group"/>
      </component>
      <component unofficial="yes" name="web_build" long-name="Web Build" origin-model="foundation">

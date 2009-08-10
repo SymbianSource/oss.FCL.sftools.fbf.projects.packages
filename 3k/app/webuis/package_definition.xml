@@ -6,7 +6,7 @@
     <collection name="browserui" long-name="Browser UI" level="app">
      <component name="browser" long-name="Browser" origin-model="foundation">
       <unit bldFile="/sf/app/webuis/browserui/browser/group"/>
-      <!-- <unit bldFile="app/webuis/browserui/browser/launcher2/group"/> -->
+      <!-- <unit bldFile="/sf/app/webuis/browserui/browser/launcher2/group"/> -->
      </component>
      <component name="operatormenu" long-name="Operator Menu" origin-model="foundation">
       <unit bldFile="/sf/app/webuis/browserui/operatormenu/group"/>

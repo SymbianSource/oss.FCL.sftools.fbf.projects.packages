@@ -18,8 +18,8 @@
     </collection>
     <collection name="devsoundextensions" long-name="Devsound Extensions" level="device-fw">
      <component name="drmaudioplayer" long-name="DRM Audio Player" origin-model="foundation">
-      <!-- <unit bldFile="os/mm/devsoundextensions/drmaudioplayer/drmplayserver/group"/> -->
-      <!-- <unit bldFile="os/mm/devsoundextensions/drmaudioplayer/drmplayutility/group"/> -->
+      <!-- <unit bldFile="/sf/os/mm/devsoundextensions/drmaudioplayer/drmplayserver/group"/> -->
+      <!-- <unit bldFile="/sf/os/mm/devsoundextensions/drmaudioplayer/drmplayutility/group"/> -->
       <unit bldFile="/sf/os/mm/devsoundextensions/drmaudioplayer/group"/>
      </component>
      <component name="mmextfw" long-name="MM Ext Framework" origin-model="foundation">
@@ -29,7 +29,7 @@
       <unit bldFile="/sf/os/mm/devsoundextensions/audiorouting/group"/>
      </component>
      <component name="effects" long-name="Effects" origin-model="foundation">
-      <!-- <unit bldFile="os/mm/devsoundextensions/effects/effecttest"/> -->
+      <!-- <unit bldFile="/sf/os/mm/devsoundextensions/effects/effecttest"/> -->
       <unit bldFile="/sf/os/mm/devsoundextensions/effects/group"/>
      </component>
      <component name="effectspresets" long-name="Effects Presets" origin-model="foundation">
@@ -37,10 +37,10 @@
      </component>
      <component name="telephonyaudiorouting" long-name="Telephony Audio Routing" origin-model="foundation">
       <unit bldFile="/sf/os/mm/devsoundextensions/telephonyaudiorouting/group"/>
-      <!-- <unit bldFile="os/mm/devsoundextensions/telephonyaudiorouting/server/group"/> -->
-      <!-- <unit bldFile="os/mm/devsoundextensions/telephonyaudiorouting/session/group"/> -->
-      <!-- <unit bldFile="os/mm/devsoundextensions/telephonyaudiorouting/telephonyaudioroutingbase/group"/> -->
-      <!-- <unit bldFile="os/mm/devsoundextensions/telephonyaudiorouting/telephonyaudioroutingmanager/group"/> -->
+      <!-- <unit bldFile="/sf/os/mm/devsoundextensions/telephonyaudiorouting/server/group"/> -->
+      <!-- <unit bldFile="/sf/os/mm/devsoundextensions/telephonyaudiorouting/session/group"/> -->
+      <!-- <unit bldFile="/sf/os/mm/devsoundextensions/telephonyaudiorouting/telephonyaudioroutingbase/group"/> -->
+      <!-- <unit bldFile="/sf/os/mm/devsoundextensions/telephonyaudiorouting/telephonyaudioroutingmanager/group"/> -->
      </component>
      <component name="mmfcustominterfaces" long-name="MMF Custom Interfaces" origin-model="foundation">
       <unit bldFile="/sf/os/mm/devsoundextensions/mmfcustominterfaces/group"/>
@@ -128,7 +128,7 @@
       <unit bldFile="/sf/os/mm/group"/>
      </component>
      <component unofficial="yes" name="mm_test" long-name="Multimedia Test" origin-model="foundation">
-      <!-- <unit bldFile="os/mm/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/mm/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="mm_plat" long-name="Multimedia Platform Interfaces" class="api" origin-model="foundation">
       <unit bldFile="/sf/os/mm/mm_plat/aac_decoder_config_api/tsrc/group"/>

@@ -50,11 +50,11 @@
     <collection name="java_stubs" long-name="Java Stubs" level="util">
      <!--component manually moved to javautils collection-->
      <!--<component name="javadrmutils" long-name="Java DRM Utils">
-       <unit bldFile="app/java/java_stubs/javadrmutils/group"/>
+       <unit bldFile="/sf/app/java/java_stubs/javadrmutils/group"/>
      </component>-->
      <!--component manually moved to javautils collection-->
      <!--<component name="javaenvinfo" long-name="Java Environment Info">
-       <unit bldFile="app/java/java_stubs/javaenvinfo/group"/>
+       <unit bldFile="/sf/app/java/java_stubs/javaenvinfo/group"/>
      </component>-->
      <component name="javaregistry" long-name="Java Registry" origin-model="foundation">
       <unit bldFile="/sf/app/java/java_stubs/javaregistry/clientserver/client/group"/>

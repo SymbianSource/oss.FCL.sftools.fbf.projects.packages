@@ -7,7 +7,7 @@
      <component name="libutils" long-name="Utility Library" origin-model="foundation">
       <unit bldFile="/sf/os/ossrv/utilitylibraries/libutils/group"/>
       <unit bldFile="/sf/os/ossrv/utilitylibraries/libutils/tsrc/group"/>
-      <!-- <unit bldFile="os/ossrv/utilitylibraries/libutils/tsrc/nft/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/utilitylibraries/libutils/tsrc/nft/group"/> -->
      </component>
     </collection>
     <collection name="ofdbus" long-name="OF Dbus" level="utilities">
@@ -23,14 +23,14 @@
       <unit bldFile="/sf/os/ossrv/ofdbus/group"/>
      </component>
      <component unofficial="yes" name="ofdbus_test" long-name="OF Dbus Test" origin-model="foundation">
-      <!-- <unit bldFile="os/ossrv/ofdbus/tsrc/nft/idle_daemon_run/group"/> -->
-      <!-- <unit bldFile="os/ossrv/ofdbus/tsrc/nft/g_n_messages/group"/> -->
-      <!-- <unit bldFile="os/ossrv/ofdbus/tsrc/nft/g_file_send/group"/> -->
-      <!-- <unit bldFile="os/ossrv/ofdbus/tsrc/nft/send_messages1/group"/> -->
-      <!-- <unit bldFile="os/ossrv/ofdbus/tsrc/nft/stif_glib_1_simple_message/group"/> -->
-      <!-- <unit bldFile="os/ossrv/ofdbus/tsrc/nft/file_transfer_time/group"/> -->
-      <!-- <unit bldFile="os/ossrv/ofdbus/tsrc/nft/g_n_messages1/group"/> -->
-      <!-- <unit bldFile="os/ossrv/ofdbus/tsrc/nft/send_messages/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/ofdbus/tsrc/nft/idle_daemon_run/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/ofdbus/tsrc/nft/g_n_messages/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/ofdbus/tsrc/nft/g_file_send/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/ofdbus/tsrc/nft/send_messages1/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/ofdbus/tsrc/nft/stif_glib_1_simple_message/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/ofdbus/tsrc/nft/file_transfer_time/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/ofdbus/tsrc/nft/g_n_messages1/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/ofdbus/tsrc/nft/send_messages/group"/> -->
      </component>
     </collection>
     <collection name="glib" long-name="Glib" level="utilities">
@@ -50,7 +50,7 @@
       <unit bldFile="/sf/os/ossrv/glib/libgobject/group"/>
      </component>
      <component unofficial="yes" name="glib_test" long-name="Glib Test" origin-model="foundation">
-      <!-- <unit bldFile="os/ossrv/glib/tsrc/bc/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/glib/tsrc/bc/group"/> -->
       <unit bldFile="/sf/os/ossrv/glib/tsrc/group"/>
      </component>
     </collection>
@@ -63,7 +63,7 @@
      </component>
      <component unofficial="yes" name="ssl_test" long-name="SSL Test" origin-model="foundation">
       <unit bldFile="/sf/os/ossrv/ssl/tsrc/group"/>
-      <!-- <unit bldFile="os/ossrv/ssl/tsrc/bc/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/ssl/tsrc/bc/group"/> -->
      </component>
     </collection>
     <collection name="stdcpp" long-name="Stdcpp" level="translation">
@@ -71,14 +71,14 @@
       <unit bldFile="/sf/os/ossrv/stdcpp/group"/>
      </component>
      <component unofficial="yes" name="stdcpp_test" long-name="Stdcpp Test" origin-model="foundation">
-      <!-- <unit bldFile="os/ossrv/stdcpp/tsrc/stdcpp_test/tstdcpp/twsd_manual/group"/> -->
-      <!-- <unit bldFile="os/ossrv/stdcpp/tsrc/stdcpp_test/tstdcpp/ood_manual/group"/> -->
-      <!-- <unit bldFile="os/ossrv/stdcpp/tsrc/stdcpp_test/stlport/manual/group"/> -->
-      <!-- <unit bldFile="os/ossrv/stdcpp/tsrc/boost_test/multi_array/manual/group"/> -->
-      <!-- <unit bldFile="os/ossrv/stdcpp/tsrc/stdcpp_test/tstdcpp/io_manual/group"/> -->
-      <!-- <unit bldFile="os/ossrv/stdcpp/tsrc/bc/group"/> -->
-      <!-- <unit bldFile="os/ossrv/stdcpp/tsrc/boost_test/graph/manual/group"/> -->
-      <!-- <unit bldFile="os/ossrv/stdcpp/tsrc/stdcpp_test/tstdcpp/multithread/manual/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/stdcpp/tsrc/stdcpp_test/tstdcpp/twsd_manual/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/stdcpp/tsrc/stdcpp_test/tstdcpp/ood_manual/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/stdcpp/tsrc/stdcpp_test/stlport/manual/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/stdcpp/tsrc/boost_test/multi_array/manual/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/stdcpp/tsrc/stdcpp_test/tstdcpp/io_manual/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/stdcpp/tsrc/bc/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/stdcpp/tsrc/boost_test/graph/manual/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/stdcpp/tsrc/stdcpp_test/tstdcpp/multithread/manual/group"/> -->
       <unit bldFile="/sf/os/ossrv/stdcpp/tsrc/group"/>
      </component>
     </collection>
@@ -141,7 +141,7 @@
     </collection>
     <collection name="ossrv_info" long-name="Generic OS Services Info" level="utilities">
      <component unofficial="yes" name="ossrv_test" long-name="Generic OS Services Test" origin-model="foundation">
-      <!-- <unit bldFile="os/ossrv/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="ossrv_plat" long-name="Generic OS Services Platform Interfaces" class="api" origin-model="foundation">
       <unit bldFile="/sf/os/ossrv/ossrv_plat/libutils/group"/>
@@ -150,11 +150,11 @@
       <unit bldFile="/sf/os/ossrv/group"/>
      </component>
      <component unofficial="yes" name="ossrv_pub" long-name="Generic OS Services Public Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="os/ossrv/ossrv_pub/boost_apis/tsrc/group"/> -->
-      <!-- <unit bldFile="os/ossrv/ossrv_pub/glib_arrays/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/ossrv_pub/boost_apis/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_arrays/tsrc/group"/> -->
       <unit bldFile="/sf/os/ossrv/ossrv_pub/group"/>
-      <!-- <unit bldFile="os/ossrv/ossrv_pub/ssl_general_api/tsrc/group"/> -->
-      <!-- <unit bldFile="os/ossrv/ossrv_pub/stl/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/ossrv_pub/ssl_general_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/ossrv/ossrv_pub/stl/tsrc/group"/> -->
      </component>
     <component name="ossrv_metadata" long-name="Generic OS Services Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/os/ossrv/ossrv_info/ossrv_metadata/ossrv_metadata.mrp"/>

@@ -8,13 +8,13 @@
       <unit bldFile="/sf/app/printing/imageprint/clog/group"/>
      </component>
      <component name="imageprintengine" origin-model="foundation">
-      <!-- <unit bldFile="app/printing/imageprint/imageprintengine/deviceprotocols/btprotocol/group"/> -->
-      <!-- <unit bldFile="app/printing/imageprint/imageprintengine/deviceprotocols/dpof/group"/> -->
-      <!-- <unit bldFile="app/printing/imageprint/imageprintengine/deviceprotocols/pictbridge2/group"/> -->
-      <!-- <unit bldFile="app/printing/imageprint/imageprintengine/deviceprotocols/upnpprotocolfw2/group"/> -->
-      <!-- <unit bldFile="app/printing/imageprint/imageprintengine/deviceprotocols/xhtmlfilecomposer/group"/> -->
+      <!-- <unit bldFile="/sf/app/printing/imageprint/imageprintengine/deviceprotocols/btprotocol/group"/> -->
+      <!-- <unit bldFile="/sf/app/printing/imageprint/imageprintengine/deviceprotocols/dpof/group"/> -->
+      <!-- <unit bldFile="/sf/app/printing/imageprint/imageprintengine/deviceprotocols/pictbridge2/group"/> -->
+      <!-- <unit bldFile="/sf/app/printing/imageprint/imageprintengine/deviceprotocols/upnpprotocolfw2/group"/> -->
+      <!-- <unit bldFile="/sf/app/printing/imageprint/imageprintengine/deviceprotocols/xhtmlfilecomposer/group"/> -->
       <unit bldFile="/sf/app/printing/imageprint/imageprintengine/group"/>
-      <!-- <unit bldFile="app/printing/imageprint/imageprintengine/imageprintserver/group"/> -->
+      <!-- <unit bldFile="/sf/app/printing/imageprint/imageprintengine/imageprintserver/group"/> -->
      </component>
      <component name="imageprintui" origin-model="foundation">
       <unit bldFile="/sf/app/printing/imageprint/imageprintui/group"/>

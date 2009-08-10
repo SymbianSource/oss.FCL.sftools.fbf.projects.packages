@@ -7,16 +7,16 @@
      <component name="hsserver" long-name="HotSpot Server" origin-model="foundation"/>
      <component name="hsclient" long-name="HS Client" origin-model="foundation"/>
      <component name="internetconnectivitytestservice" long-name="Internet Connectivity Test Service" origin-model="foundation">
-      <!-- <unit bldFile="mw/wirelessacc/hotspotfw/internetconnectivitytestservice/group"/> -->
+      <!-- <unit bldFile="/sf/mw/wirelessacc/hotspotfw/internetconnectivitytestservice/group"/> -->
      </component>
      <component name="ictsdialogs" long-name="ICTS Dialogs" origin-model="foundation">
-      <!-- <unit bldFile="mw/wirelessacc/hotspotfw/ictsdialogs/group"/> -->
+      <!-- <unit bldFile="/sf/mw/wirelessacc/hotspotfw/ictsdialogs/group"/> -->
      </component>
      <component name="hspluginforagent" long-name="HotSpot Plugin For Agent" origin-model="foundation">
-      <!-- <unit bldFile="mw/wirelessacc/hotspotfw/hspluginforagent/group"/> -->
+      <!-- <unit bldFile="/sf/mw/wirelessacc/hotspotfw/hspluginforagent/group"/> -->
      </component>
      <component name="hsbrowser" long-name="HotSpot Browser" origin-model="foundation">
-      <!-- <unit bldFile="mw/wirelessacc/hotspotfw/hsbrowser/group"/> -->
+      <!-- <unit bldFile="/sf/mw/wirelessacc/hotspotfw/hsbrowser/group"/> -->
      </component>
      <component unofficial="yes" name="hotspotfw_build" long-name="Hotspot Framework Build" origin-model="foundation">
       <unit bldFile="/sf/mw/wirelessacc/hotspotfw/group"/>

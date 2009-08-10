@@ -39,11 +39,11 @@
     <collection name="videoutils_info" long-name="Video Utils Info" level="util">
      <component unofficial="yes" name="videoutils_plat" long-name="Video Utils Platform Interfaces" class="api" origin-model="foundation">
       <unit bldFile="/sf/mw/videoutils/videoutils_plat/group"/>
-      <!-- <unit bldFile="mw/videoutils/videoutils_plat/videoconnutility_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/videoutils/videoutils_plat/videoconnutility_api/tsrc/vcxconnutiltestexe/group"/> -->
-      <!-- <unit bldFile="mw/videoutils/videoutils_plat/videoconnutility_api/tsrc/vcxtestcommon/group"/> -->
-      <!-- <unit bldFile="mw/videoutils/videoutils_plat/videoconnutility_api/tsrc/vcxtestutilmodule/group"/> -->
-      <!-- <unit bldFile="mw/videoutils/videoutils_plat/videoscheduler_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/videoutils/videoutils_plat/videoconnutility_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/videoutils/videoutils_plat/videoconnutility_api/tsrc/vcxconnutiltestexe/group"/> -->
+      <!-- <unit bldFile="/sf/mw/videoutils/videoutils_plat/videoconnutility_api/tsrc/vcxtestcommon/group"/> -->
+      <!-- <unit bldFile="/sf/mw/videoutils/videoutils_plat/videoconnutility_api/tsrc/vcxtestutilmodule/group"/> -->
+      <!-- <unit bldFile="/sf/mw/videoutils/videoutils_plat/videoscheduler_api/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="videoutils_build" long-name="Video Utils Build" origin-model="foundation">
       <unit bldFile="/sf/mw/videoutils/group"/>

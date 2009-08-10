@@ -6,14 +6,14 @@
     <collection name="profilesapplication" long-name="Profiles Application" level="app">
      <component name="profiles" long-name="Profiles" origin-model="foundation">
       <unit bldFile="/sf/app/profile/profilesapplication/profiles/group"/>
-      <!-- <unit bldFile="app/profile/profilesapplication/profiles/gsprofilesplugin/group"/> -->
-      <!-- <unit bldFile="app/profile/profilesapplication/profiles/profileaiwprovider/group"/> -->
-      <!-- <unit bldFile="app/profile/profilesapplication/profiles/profileapp/group"/> -->
+      <!-- <unit bldFile="/sf/app/profile/profilesapplication/profiles/gsprofilesplugin/group"/> -->
+      <!-- <unit bldFile="/sf/app/profile/profilesapplication/profiles/profileaiwprovider/group"/> -->
+      <!-- <unit bldFile="/sf/app/profile/profilesapplication/profiles/profileapp/group"/> -->
       <unit bldFile="/sf/app/profile/profilesapplication/profiles/profileapp/tsrc/public/basic/group"/>
-      <!-- <unit bldFile="app/profile/profilesapplication/profiles/profilesgstonesplugin/group"/> -->
+      <!-- <unit bldFile="/sf/app/profile/profilesapplication/profiles/profilesgstonesplugin/group"/> -->
      </component>
      <component unofficial="yes" name="profilesapplication_test" long-name="Profiles Application Test" origin-model="foundation">
-      <!-- <unit bldFile="app/profile/profilesapplication/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/app/profile/profilesapplication/tsrc/public/basic/group"/> -->
      </component>
     </collection>
     <collection name="profile_info" long-name="Profile Info" level="app">

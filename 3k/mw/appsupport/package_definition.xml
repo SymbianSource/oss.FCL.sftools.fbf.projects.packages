@@ -9,7 +9,7 @@
      </component>
      <component name="oommonitor" long-name="OOM Monitor" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/sysresmonitoring/oommonitor/group"/>
-      <!-- <unit bldFile="mw/appsupport/sysresmonitoring/oommonitor/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/sysresmonitoring/oommonitor/tsrc/public/basic/group"/> -->
      </component>
      <component unofficial="yes" name="sysresmonitoring_build" long-name="System Resource Monitoring Build" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/sysresmonitoring/group"/>
@@ -18,9 +18,9 @@
     <collection name="gssettingsuis" long-name="GS Settings UIs" level="specific">
      <component name="gs" long-name="GS" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/gssettingsuis/gs/group"/>
-      <!-- <unit bldFile="mw/appsupport/gssettingsuis/gs/gsdiagnosticsplugin"/> -->
-      <!-- <unit bldFile="mw/appsupport/gssettingsuis/gs/gsprslnplugin"/> -->
-      <!-- <unit bldFile="mw/appsupport/gssettingsuis/gs/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/gssettingsuis/gs/gsdiagnosticsplugin"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/gssettingsuis/gs/gsprslnplugin"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/gssettingsuis/gs/tsrc/public/basic/group"/> -->
      </component>
     </collection>
     <collection name="profilesservices" long-name="Profiles Services" level="server">
@@ -39,7 +39,7 @@
       <unit bldFile="/sf/mw/appsupport/profilesservices/ringingtone3dplugin/group"/>
      </component>
      <component unofficial="yes" name="profilesservices_test" long-name="Profiles Services Test" origin-model="foundation">
-      <!-- <unit bldFile="mw/appsupport/profilesservices/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/profilesservices/tsrc/public/basic/group"/> -->
      </component>
     </collection>
     <collection name="flashliteapi_3_1" long-name="Flashlite API 3.1" level="specific">
@@ -48,8 +48,8 @@
     <collection name="contextframework" long-name="Context Framework" level="framework">
      <component name="cfw" long-name="Context Framework" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/contextframework/cfw/group"/>
-      <!-- <unit bldFile="mw/appsupport/contextframework/cfw/tsrc/cfwtest/group"/> -->
-      <!-- <unit bldFile="mw/appsupport/contextframework/cfw/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/contextframework/cfw/tsrc/cfwtest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/contextframework/cfw/tsrc/public/basic/group"/> -->
      </component>
      <component name="cfwplugins" long-name="Context Framework Plugins" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/contextframework/cfwplugins/group"/>
@@ -60,10 +60,10 @@
     </collection>
     <collection name="mediakeys" long-name="Media Keys" level="plugin">
      <component name="keypublisherplugin" long-name="Key Publisher Plugin" origin-model="foundation">
-      <!-- <unit bldFile="mw/appsupport/mediakeys/keypublisherplugin/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/mediakeys/keypublisherplugin/group"/> -->
      </component>
      <component name="mmkeybearer" long-name="MM Key Bearer" origin-model="foundation">
-      <!-- <unit bldFile="mw/appsupport/mediakeys/mmkeybearer/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/mediakeys/mmkeybearer/group"/> -->
      </component>
      <component unofficial="yes" name="mediakeys_build" long-name="Media Keys Build" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/mediakeys/group"/>
@@ -78,12 +78,12 @@
      </component>
      <component name="rfs" long-name="RFS" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/rfs/group"/>
-      <!-- <unit bldFile="mw/appsupport/coreapplicationuis/rfs/plugins/gsrfsplugin/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/coreapplicationuis/rfs/plugins/gsrfsplugin/group"/> -->
      </component>
      <component name="rfsplugins" long-name="Rfs Plugins" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/rfsplugins/group"/>
-      <!-- <unit bldFile="mw/appsupport/coreapplicationuis/rfsplugins/tsrc/rfspluginstest/group"/> -->
-      <!-- <unit bldFile="mw/appsupport/coreapplicationuis/rfsplugins/tsrc/rfspluginstest/rfstestapp/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/coreapplicationuis/rfsplugins/tsrc/rfspluginstest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/coreapplicationuis/rfsplugins/tsrc/rfspluginstest/rfstestapp/group"/> -->
      </component>
      <component name="sysap" long-name="Sys Ap" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/sysap/group"/>
@@ -99,12 +99,12 @@
      </component>
      <component name="advancedtspcontroller" long-name="Advanced TSP Controller" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/advancedtspcontroller/group"/>
-      <!-- <unit bldFile="mw/appsupport/coreapplicationuis/advancedtspcontroller/tsrc/mt_atspc/group"/> -->
-      <!-- <unit bldFile="mw/appsupport/coreapplicationuis/advancedtspcontroller/tsrc/stub/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/coreapplicationuis/advancedtspcontroller/tsrc/mt_atspc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/coreapplicationuis/advancedtspcontroller/tsrc/stub/group"/> -->
      </component>
      <component name="powersaveutilities" long-name="Power Save Utilities" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/powersaveutilities/group"/>
-      <!-- <unit bldFile="mw/appsupport/coreapplicationuis/powersaveutilities/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/coreapplicationuis/powersaveutilities/tsrc/public/basic/group"/> -->
      </component>
      <component name="gsserverenginestub" long-name="GS Server Engine Stub" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/gsserverenginestub/group"/>
@@ -117,11 +117,11 @@
      </component>
      <component name="sensordatacompensatorplugin" long-name="Sensor Data Compensator Plugin" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/sensordatacompensatorplugin/group"/>
-      <!-- <unit bldFile="mw/appsupport/coreapplicationuis/sensordatacompensatorplugin/tsrc/sensordatacompensatorplgtest/data/group"/> -->
-      <!-- <unit bldFile="mw/appsupport/coreapplicationuis/sensordatacompensatorplugin/tsrc/sensordatacompensatorplgtest/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/coreapplicationuis/sensordatacompensatorplugin/tsrc/sensordatacompensatorplgtest/data/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/coreapplicationuis/sensordatacompensatorplugin/tsrc/sensordatacompensatorplgtest/group"/> -->
      </component>
      <component unofficial="yes" name="coreapplicationuis_test" long-name="Core Application UIs Test" origin-model="foundation">
-      <!-- <unit bldFile="mw/appsupport/coreapplicationuis/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/coreapplicationuis/tsrc/public/basic/group"/> -->
      </component>
      <component unofficial="yes" name="coreapplicationuis_build" long-name="Core Application UIs Build" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/coreapplicationuis/group"/>
@@ -133,9 +133,9 @@
      </component>
      <component name="startup" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/startupservices/startup/group"/>
-      <!-- <unit bldFile="mw/appsupport/startupservices/startup/mediatorplugin/group"/> -->
-      <!-- <unit bldFile="mw/appsupport/startupservices/startup/startupsyncplugin/group"/> -->
-      <!-- <unit bldFile="mw/appsupport/startupservices/startup/systemerrorplugin/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/startupservices/startup/mediatorplugin/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/startupservices/startup/startupsyncplugin/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/startupservices/startup/systemerrorplugin/group"/> -->
      </component>
      <component name="startupanimation" long-name="Startup Animation" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/startupservices/startupanimation/group"/>
@@ -252,17 +252,17 @@
     <collection name="appsupport_info" long-name="Generic Application Support Info" level="specific">
      <component unofficial="yes" name="appsupport_plat" long-name="Generic Application Support Platform Interfaces" class="api" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/appsupport_plat/group"/>
-      <!-- <unit bldFile="mw/appsupport/appsupport_plat/profiles_engine_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/appsupport/appsupport_plat/settings_backgroundimage_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/appsupport/appsupport_plat/settings_framework_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/appsupport/appsupport_plat/settings_launch_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/appsupport/appsupport_plat/settings_listbox_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/appsupport_plat/profiles_engine_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/appsupport_plat/settings_backgroundimage_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/appsupport_plat/settings_framework_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/appsupport_plat/settings_launch_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/appsupport_plat/settings_listbox_api/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="appsupport_pub" long-name="Generic Application Support Public Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="mw/appsupport/appsupport_pub/flash_viewer_framework_api/tsrc/bc/flashviewerframework/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/appsupport_pub/flash_viewer_framework_api/tsrc/bc/flashviewerframework/group"/> -->
       <unit bldFile="/sf/mw/appsupport/appsupport_pub/group"/>
-      <!-- <unit bldFile="mw/appsupport/appsupport_pub/network_status_api/tsrc/bc/networkstatus/group"/> -->
-      <!-- <unit bldFile="mw/appsupport/appsupport_pub/profiles_engine_wrapper_api/tsrc/bc/profilesenginewrapperapi/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/appsupport_pub/network_status_api/tsrc/bc/networkstatus/group"/> -->
+      <!-- <unit bldFile="/sf/mw/appsupport/appsupport_pub/profiles_engine_wrapper_api/tsrc/bc/profilesenginewrapperapi/group"/> -->
      </component>
      <component unofficial="yes" name="appsupport_build" long-name="Generic Application Support Build" origin-model="foundation">
       <unit bldFile="/sf/mw/appsupport/group"/>

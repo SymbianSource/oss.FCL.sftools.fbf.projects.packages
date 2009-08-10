@@ -9,8 +9,8 @@
      </component>
      <component name="phoneui" long-name="Phone UI" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneapp/phoneui/group"/>
-      <!-- <unit bldFile="app/phone/phoneapp/phoneui/tsrc/public/basic/3dringingtoneinterface_tests/group"/> -->
-      <!-- <unit bldFile="app/phone/phoneapp/phoneui/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/app/phone/phoneapp/phoneui/tsrc/public/basic/3dringingtoneinterface_tests/group"/> -->
+      <!-- <unit bldFile="/sf/app/phone/phoneapp/phoneui/tsrc/public/basic/group"/> -->
      </component>
      <component name="phoneuicontrol" long-name="Phone UI Control" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneapp/phoneuicontrol/group"/>
@@ -71,7 +71,7 @@
     <collection name="phoneuis" long-name="Phone UIs" level="ui">
      <component name="dialer" long-name="Dialer" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneuis/dialer/group"/>
-      <!-- <unit bldFile="app/phone/phoneuis/dialer/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/app/phone/phoneuis/dialer/tsrc/public/basic/group"/> -->
      </component>
      <component name="bubblemanager" long-name="Bubble Manager" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneuis/bubblemanager/group"/>
@@ -81,7 +81,7 @@
      </component>
      <component name="sfiutils" long-name="SFI Utils" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneuis/sfiutils/group"/>
-      <!-- <unit bldFile="app/phone/phoneuis/sfiutils/tsrc/public/basic/group"/> -->
+      <!-- <unit bldFile="/sf/app/phone/phoneuis/sfiutils/tsrc/public/basic/group"/> -->
      </component>
      <component name="ussd" long-name="USSD" origin-model="foundation">
       <unit bldFile="/sf/app/phone/phoneuis/ussd/group"/>

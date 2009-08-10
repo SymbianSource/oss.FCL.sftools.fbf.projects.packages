@@ -8,9 +8,9 @@
     </collection>
     <collection name="vtengines" long-name="Video Telephony Engines" level="engine">
      <component name="videoteleng" long-name="Videotel Engine" origin-model="foundation">
-      <!-- <unit bldFile="app/videotelephony/vtengines/videoteleng/callctrl/group"/> -->
+      <!-- <unit bldFile="/sf/app/videotelephony/vtengines/videoteleng/callctrl/group"/> -->
       <unit bldFile="/sf/app/videotelephony/vtengines/videoteleng/group"/>
-      <!-- <unit bldFile="app/videotelephony/vtengines/videoteleng/logger/group"/> -->
+      <!-- <unit bldFile="/sf/app/videotelephony/vtengines/videoteleng/logger/group"/> -->
      </component>
      <component name="vtmediatorplugin" long-name="VT Mediator Plugin" origin-model="foundation">
       <unit bldFile="/sf/app/videotelephony/vtengines/vtmediatorplugin/group"/>

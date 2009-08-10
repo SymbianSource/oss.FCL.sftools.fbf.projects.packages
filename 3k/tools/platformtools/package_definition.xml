@@ -5,15 +5,15 @@
    <block name="platformtools" long-name="Platform Tools" tech_domain="to" level="generic">
     <collection name="gfxconversion" long-name="Graphics Conversion">
      <component name="bmconv_s60" long-name="Bm Conv S60" origin-model="foundation">
-      <unit bldFile="tools/platformtools/gfxconversion/bmconv_s60/group"/>
+      <unit bldFile="/sf/tools/platformtools/gfxconversion/bmconv_s60/group"/>
      </component>
      <component name="mifconv" long-name="Mifconv" origin-model="foundation">
-      <unit bldFile="tools/platformtools/gfxconversion/mifconv/group"/>
+      <unit bldFile="/sf/tools/platformtools/gfxconversion/mifconv/group"/>
      </component>
     </collection>
     <collection name="platformtools_info" long-name="Platform Tools Info">
      <component unofficial="yes" name="platformtools_build" long-name="Platform Tools Build" origin-model="foundation">
-      <unit bldFile="tools/platformtools/group"/>
+      <unit bldFile="/sf/tools/platformtools/group"/>
      </component>
     </collection>
    </block>

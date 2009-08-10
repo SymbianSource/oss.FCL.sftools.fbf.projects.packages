@@ -101,7 +101,7 @@
       <unit bldFile="/sf/app/iptelephony/callcontinuity/vcc/group"/>
      </component>
      <component name="settingsreader" long-name="Settings Reader" origin-model="foundation">
-      <!-- <unit bldFile="app/iptelephony/callcontinuity/settingsreader/group"/> -->
+      <!-- <unit bldFile="/sf/app/iptelephony/callcontinuity/settingsreader/group"/> -->
      </component>
      <component unofficial="yes" name="callcontinuity_build" long-name="Call Continuity Build" origin-model="foundation">
       <unit bldFile="/sf/app/iptelephony/callcontinuity/group"/>

@@ -81,7 +81,7 @@
     </collection>
     <collection name="boottimeintegritycheck" long-name="Boot Time Integrity Check" level="plugin">
      <component name="trkdummy" long-name="Trk Dummy" origin-model="foundation">
-      <!-- <unit bldFile="mw/securitysrv/boottimeintegritycheck/trkdummy/group"/> -->
+      <!-- <unit bldFile="/sf/mw/securitysrv/boottimeintegritycheck/trkdummy/group"/> -->
      </component>
      <component unofficial="yes" name="boottimeintegritycheck_build" long-name="Boot Time Integrity Check Build" origin-model="foundation">
       <unit bldFile="/sf/mw/securitysrv/boottimeintegritycheck/group"/>
@@ -112,13 +112,13 @@
       <unit bldFile="/sf/mw/securitysrv/group"/>
      </component>
      <component unofficial="yes" name="secsrv_plat" class="api" origin-model="foundation">
-      <!-- <unit bldFile="mw/securitysrv/secsrv_plat/devicelock_access_api/group"/> -->
+      <!-- <unit bldFile="/sf/mw/securitysrv/secsrv_plat/devicelock_access_api/group"/> -->
       <unit bldFile="/sf/mw/securitysrv/secsrv_plat/group"/>
-      <!-- <unit bldFile="mw/securitysrv/secsrv_plat/keyguard_access_api/group"/> -->
-      <!-- <unit bldFile="mw/securitysrv/secsrv_plat/lockapp_server_api/group"/> -->
+      <!-- <unit bldFile="/sf/mw/securitysrv/secsrv_plat/keyguard_access_api/group"/> -->
+      <!-- <unit bldFile="/sf/mw/securitysrv/secsrv_plat/lockapp_server_api/group"/> -->
      </component>
      <component unofficial="yes" name="securitysrv_test" long-name="Security Services Test" origin-model="foundation">
-      <!-- <unit bldFile="mw/securitysrv/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/securitysrv/tsrc/group"/> -->
      </component>
     <component name="securitysrv_metadata" long-name="Security Services Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/mw/securitysrv/securitysrv_info/securitysrv_metadata/securitysrv_metadata.mrp"/>

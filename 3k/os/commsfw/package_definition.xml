@@ -94,11 +94,11 @@
     <collection name="commsfwtools" long-name="Comms Framework Tools" level="app-if">
      <!-- Removing GT commdb
 <component name="preparedefaultcommsdatabase" long-name="Prepare Default Comms Database" filter="gt" purpose="mandatory" class="config PC">
-<unit bldFile="os/commsfw/commsfwtools/preparedefaultcommsdatabase/defaultcommdb/group" mrp="os/commsfw/commsfwtools/preparedefaultcommsdatabase/defaultcommdb/group/comms-infras_defaultcommdb.mrp"/>
+<unit bldFile="/sf/os/commsfw/commsfwtools/preparedefaultcommsdatabase/defaultcommdb/group" mrp="os/commsfw/commsfwtools/preparedefaultcommsdatabase/defaultcommdb/group/comms-infras_defaultcommdb.mrp"/>
 </component>
 -->
      <!-- <component name="installdefaultcommsdatabase" long-name="Install Default Comms Database" purpose="mandatory" class="PC">
-<unit bldFile="os/commsfw/commsfwtools/preparedefaultcommsdatabase/installdefaultcommdb/group" mrp="os/commsfw/commsfwtools/preparedefaultcommsdatabase/installdefaultcommdb/group/comms-infras_installdefaultcommdb.mrp" priority="1010"/>
+<unit bldFile="/sf/os/commsfw/commsfwtools/preparedefaultcommsdatabase/installdefaultcommdb/group" mrp="os/commsfw/commsfwtools/preparedefaultcommsdatabase/installdefaultcommdb/group/comms-infras_installdefaultcommdb.mrp" priority="1010"/>
 </component> -->
      <component name="commstools" long-name="Comms Tools" introduced="tb91" purpose="development" class="PC" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/os/commsfw/commsfwtools/commstools/group/comms-infras_tools.mrp"/>

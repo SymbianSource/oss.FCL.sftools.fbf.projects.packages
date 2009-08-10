@@ -64,7 +64,7 @@
      </component>
      <component name="clockui" long-name="Clock UI" origin-model="foundation">
       <unit bldFile="/sf/app/organizer/clock2/clockui/group"/>
-      <!-- <unit bldFile="app/organizer/clock2/clockui/plugins/datetimeviewplugin/group"/> -->
+      <!-- <unit bldFile="/sf/app/organizer/clock2/clockui/plugins/datetimeviewplugin/group"/> -->
      </component>
      <component name="clock2_help" long-name="Help" origin-model="foundation">
       <unit bldFile="/sf/app/organizer/clock2/help/group"/>
@@ -96,7 +96,7 @@
      </component>
      <component name="notepad1" long-name="Notepad1" origin-model="foundation">
       <unit bldFile="/sf/app/organizer/notepad/notepad1/group"/>
-      <!-- <unit bldFile="app/organizer/notepad/notepad1/syncmladapter/group"/> -->
+      <!-- <unit bldFile="/sf/app/organizer/notepad/notepad1/syncmladapter/group"/> -->
      </component>
      <component name="txtrecog" long-name="Txt Recog" origin-model="foundation">
       <unit bldFile="/sf/app/organizer/notepad/txtrecog/group"/>
@@ -111,8 +111,8 @@
      </component>
      <component name="searchapp" long-name="Search App" origin-model="foundation">
       <unit bldFile="/sf/app/organizer/searchui/searchapp/group"/>
-      <!-- <unit bldFile="app/organizer/searchui/searchapp/plugins/searchsettingsplugin/group"/> -->
-      <!-- <unit bldFile="app/organizer/searchui/searchapp/plugins/srchuisettingsplugin/group"/> -->
+      <!-- <unit bldFile="/sf/app/organizer/searchui/searchapp/plugins/searchsettingsplugin/group"/> -->
+      <!-- <unit bldFile="/sf/app/organizer/searchui/searchapp/plugins/srchuisettingsplugin/group"/> -->
      </component>
      <component unofficial="yes" name="searchui_build" long-name="Search UI Build" origin-model="foundation">
       <unit bldFile="/sf/app/organizer/searchui/group"/>
@@ -202,25 +202,25 @@
      </component>
      <component name="n:chinesecalendaralg" long-name="Chinese Calendar Algorithm" introduced="tb91" purpose="optional" plugin="Y" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="app/organizer/pimappsupport/chinesecalendaralg/group" mrp="app/organizer/pimappsupport/chinesecalendaralg/group/app-services_chinesecalendaralgorithm.mrp"/> -->
+      <!-- <unit bldFile="/sf/app/organizer/pimappsupport/chinesecalendaralg/group" mrp="app/organizer/pimappsupport/chinesecalendaralg/group/app-services_chinesecalendaralgorithm.mrp"/> -->
      </component>
     </collection>
     <collection name="organizer_info" long-name="Organizer Application Suite Info" level="ui">
      <component unofficial="yes" name="organizer_pub" long-name="Organizer Application Suite Public Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="app/organizer/organizer_pub/calendar_interim_utils2_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/organizer/organizer_pub/calendar_interim_utils2_api/tsrc/group"/> -->
       <unit bldFile="/sf/app/organizer/organizer_pub/group"/>
-      <!-- <unit bldFile="app/organizer/organizer_pub/notepad_library_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/organizer/organizer_pub/notepad_library_api/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="organizer_build" long-name="Organizer Application Suite Build" origin-model="foundation">
       <unit bldFile="/sf/app/organizer/group"/>
      </component>
      <component unofficial="yes" name="organizer_plat" long-name="Organizer Application Suite Platform Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="app/organizer/organizer_plat/agenda_versit_2_api/tsrc/group"/> -->
-      <!-- <unit bldFile="app/organizer/organizer_plat/calendar_exporter_api/tsrc/group"/> -->
-      <!-- <unit bldFile="app/organizer/organizer_plat/calendar_importer_api/tsrc/group"/> -->
-      <!-- <unit bldFile="app/organizer/organizer_plat/common_alarm_editor_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/organizer/organizer_plat/agenda_versit_2_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/organizer/organizer_plat/calendar_exporter_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/organizer/organizer_plat/calendar_importer_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/organizer/organizer_plat/common_alarm_editor_api/tsrc/group"/> -->
       <unit bldFile="/sf/app/organizer/organizer_plat/group"/>
-      <!-- <unit bldFile="app/organizer/organizer_plat/meeting_request_mailbox_utilities_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/organizer/organizer_plat/meeting_request_mailbox_utilities_api/tsrc/group"/> -->
      </component>
     <component name="organizer_metadata" long-name="Organizer Application Suite Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/app/organizer/organizer_info/organizer_metadata/organizer_metadata.mrp"/>

@@ -30,8 +30,8 @@
       <unit bldFile="/sf/mw/serviceapifw/serviceapifw_plat/group"/>
       <unit bldFile="/sf/mw/serviceapifw/serviceapifw_plat/liw_criteria_api/tsrc/group"/>
       <unit bldFile="/sf/mw/serviceapifw/serviceapifw_plat/rtsecuritymanager_client_api/tsrc/group"/>
-      <!-- <unit bldFile="mw/serviceapifw/serviceapifw_plat/rtsecuritymanager_common_api/tsrc/group"/> -->
-      <!-- <unit bldFile="mw/serviceapifw/serviceapifw_plat/rtsecuritymanager_utility_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapifw/serviceapifw_plat/rtsecuritymanager_common_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/serviceapifw/serviceapifw_plat/rtsecuritymanager_utility_api/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="serviceapifw_build" long-name="Service API Framework Build" origin-model="foundation">
       <unit bldFile="/sf/mw/serviceapifw/group"/>

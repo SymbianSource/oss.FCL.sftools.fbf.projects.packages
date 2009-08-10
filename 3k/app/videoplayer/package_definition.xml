@@ -28,7 +28,7 @@
       <unit bldFile="/sf/app/videoplayer/videoplayer_plat/media_player_file_details_dialog_api/tsrc/group"/>
      </component>
      <component unofficial="yes" name="videoplayer_test" long-name="Video Player Apps Test" origin-model="foundation">
-      <!-- <unit bldFile="app/videoplayer/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/app/videoplayer/tsrc/group"/> -->
      </component>
      <component unofficial="yes" name="videoplayer_build" long-name="Video Player Apps Build" origin-model="foundation">
       <unit bldFile="/sf/app/videoplayer/group"/>
