@@ -2,7 +2,7 @@
 <SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="accesssec" long-name="Access Security" tech_domain="se" level="generic" levels="plugin framework server generic specific">
+<block name="accesssec" long-name="Access Security" tech_domain="dc" level="generic" levels="plugin framework server generic specific">
     <collection name="wlansecuritysettings" long-name="WLAN Security Settings" level="specific">
      <component name="wapisecuritysettingsui" long-name="WAPI Security Settings UI" origin-model="foundation">
       <unit bldFile="/sf/mw/accesssec/wlansecuritysettings/wapisecuritysettingsui/stub/group"/>
