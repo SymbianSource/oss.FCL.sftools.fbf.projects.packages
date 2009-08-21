@@ -2,7 +2,7 @@
 <SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="opensrv" long-name="Open Services" tech_domain="rt" level="specific" levels="prt lib server eng">
+<block name="opensrv" long-name="Open Services" tech_domain="pr" level="specific" levels="prt lib server eng">
     <collection name="loudmouth" long-name="Loudmouth" level="prt">
      <component name="loudmouth_build" origin-model="foundation">
       <unit bldFile="/sf/mw/opensrv/loudmouth/group"/>

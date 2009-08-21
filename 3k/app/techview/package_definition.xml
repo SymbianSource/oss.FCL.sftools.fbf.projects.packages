@@ -2,7 +2,7 @@
 <SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="techview" long-name="Techview" level="apps" span="2" levels="services ui utils apps1 apps2 apps3">
+<block name="techview" long-name="Techview" tech_domain="ui" level="apps" span="2" levels="services ui utils apps1 apps2 apps3">
     <collection name="buildverification" long-name="Build Verification" level="services">
      <component name="autosmoketest" long-name="Auto Smoke Test" filter="gt" introduced="9.1" purpose="development" plugin="N" origin-model="Symbian">
       <unit bldFile="/sf/app/techview/buildverification/autosmoketest/Group" mrp="/sf/app/techview/buildverification/autosmoketest/Group/testtools_autosmoketest.mrp"/>

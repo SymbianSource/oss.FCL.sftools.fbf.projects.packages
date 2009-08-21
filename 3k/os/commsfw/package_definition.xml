@@ -2,7 +2,7 @@
 <SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
-<block name="commsfw" long-name="Communications Framework" level="services" levels="server support framework process app-if">
+<block name="commsfw" long-name="Communications Framework" tech_domain="dc" level="services" levels="server support framework process app-if">
     <collection name="commsinfrastructureapitest" long-name="Comms-Infras API Tests" level="app-if">
      <component name="commsinfrastructuresvs" long-name="Comms Infrastructure Verification Suite" introduced="tb91" purpose="development" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/os/commsfw/commsinfrastructureapitest/commsinfrastructuresvs/group/commsinfrastructuresvs.mrp"/>

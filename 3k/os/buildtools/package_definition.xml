@@ -2,7 +2,7 @@
 <SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
-<block name="buildtools" long-name="Build Tools" level="hw" levels="bld mw fw ui">
+<block name="buildtools" long-name="Build Tools" tech_domain="to" level="hw" levels="bld mw fw ui">
     <collection name="bldsystemtools" long-name="Build System Tools" level="bld">
      <component name="buildsystemtools" long-name="Build System Tools" purpose="development" plugin="N" origin-model="Symbian">
       <unit bldFile="/sf/os/buildtools/bldsystemtools/buildsystemtools/group" mrp="/sf/os/buildtools/bldsystemtools/buildsystemtools/group/tools_build.mrp"/>

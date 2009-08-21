@@ -2,7 +2,7 @@
 <SystemDefinition name="foundation" schema="2.0.1">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
-<block name="shortlinksrv" long-name="Short Link Services" level="services" levels="adaptation hw-if plugin framework server app-if">
+<block name="shortlinksrv" long-name="Short Link Services" tech_domain="de" level="services" levels="adaptation hw-if plugin framework server app-if">
     <collection name="bluetoothapitest" long-name="Bluetooth API Tests" level="app-if">
      <component name="bluetoothsvs" long-name="Bluetooth Verification Suite" introduced="tb91" purpose="development" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/os/shortlinksrv/bluetoothapitest/bluetoothsvs/group/bluetoothsvs.mrp"/>
