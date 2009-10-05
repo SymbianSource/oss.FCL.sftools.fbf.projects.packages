@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="voicerec" long-name="Voice Recorder Apps" tech_domain="ma" level="apps" levels="empty 1">
+    <collection name="voicerecorder" long-name="Voice Recorder" level="1">
+     <component name="voicerecordergsplugin" long-name="GS Plugin" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/voicerec/voicerecorder/gsplugin/group"/> -->
+     </component>
+     <component name="voicerecorder_help" long-name="Help" origin-model="foundation">
+      <unit bldFile="/sf/app/voicerec/voicerecorder/help/group"/>
+     </component>
+     <component name="voicerecorder_build" origin-model="foundation">
+      <unit bldFile="/sf/app/voicerec/voicerecorder/group"/>
+     </component>
+    </collection>
+    <collection name="voicerec_info" long-name="Voice Recorder Apps Info" level="1">
+     <component unofficial="yes" name="voicerec_build" long-name="Voice Recorder Apps Build" origin-model="foundation">
+      <unit bldFile="/sf/app/voicerec/group"/>
+     </component>
+     <component unofficial="yes" name="voicerec_test" long-name="Voice Recorder Apps Test" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/voicerec/tsrc/group"/> -->
+     </component>
+     <component unofficial="yes" name="voicerec_plat" long-name="Voice Recorder Apps Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/app/voicerec/voicerec_plat/group"/>
+      <unit bldFile="/sf/app/voicerec/voicerec_plat/new_file_service_api/tsrc/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

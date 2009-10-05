@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="opensrv" long-name="Open Services" tech_domain="pr" level="specific" levels="prt lib server eng">
+    <collection name="loudmouth" long-name="Loudmouth" level="prt">
+     <component name="loudmouth_build" origin-model="foundation">
+      <unit bldFile="/sf/mw/opensrv/loudmouth/group"/>
+     </component>
+     <component unofficial="yes" name="loudmouth_test" long-name="Loudmouth Test" origin-model="foundation">
+      <!-- <unit bldFile="/sf/mw/opensrv/loudmouth/tsrc/group"/> -->
+     </component>
+    </collection>
+    <collection name="libtelepathy" long-name="Telepathy Library" level="lib">
+     <component name="libtelepathy_build" origin-model="foundation">
+      <unit bldFile="/sf/mw/opensrv/libtelepathy/group"/>
+     </component>
+     <component unofficial="yes" name="libtelepathy_test" long-name="Telepathy Library Test" origin-model="foundation">
+      <!-- <unit bldFile="/sf/mw/opensrv/libtelepathy/tsrc/group"/> -->
+     </component>
+    </collection>
+    <collection name="telepathygabble" long-name="Telepathy Gabble" level="eng">
+     <component unofficial="yes" name="telepathygabble_build" long-name="Telepathy Gabble Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/opensrv/telepathygabble/group"/>
+     </component>
+    </collection>
+    <collection name="isolationserver" long-name="Isloation Server" level="server">
+     <component name="messagequeue" long-name="Message Queue" origin-model="foundation">
+      <unit bldFile="/sf/mw/opensrv/isolationserver/messagequeue/group"/>
+     </component>
+     <component name="isoserver" long-name="ISO Server" origin-model="foundation">
+      <unit bldFile="/sf/mw/opensrv/isolationserver/isoserver/group"/>
+     </component>
+     <component unofficial="yes" name="isolationserver_test" long-name="Isloation Server Test" origin-model="foundation">
+      <!-- <unit bldFile="/sf/mw/opensrv/isolationserver/tsrc/group"/> -->
+     </component>
+     <component unofficial="yes" name="isolationserver_build" long-name="Isloation Server Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/opensrv/isolationserver/group"/>
+     </component>
+    </collection>
+    <collection name="opensrv_info" long-name="Open Services Info" level="eng">
+     <component unofficial="yes" name="opensrv_plat" long-name="Open Services Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/mw/opensrv/opensrv_plat/group"/>
+      <!-- <unit bldFile="/sf/mw/opensrv/opensrv_plat/messagequeue_api/tsrc/group"/> -->
+     </component>
+     <component unofficial="yes" name="opensrv_build" long-name="Open Services Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/opensrv/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

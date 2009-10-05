@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="accesssec" long-name="Access Security" tech_domain="dc" level="generic" levels="plugin framework server generic specific">
+    <collection name="wlansecuritysettings" long-name="WLAN Security Settings" level="specific">
+     <component name="wapisecuritysettingsui" long-name="WAPI Security Settings UI" origin-model="foundation">
+      <unit bldFile="/sf/mw/accesssec/wlansecuritysettings/wapisecuritysettingsui/stub/group"/>
+     </component>
+     <component name="wepsecuritysettingsui" long-name="WEP Security Eettings UI" origin-model="foundation">
+      <unit bldFile="/sf/mw/accesssec/wlansecuritysettings/wepsecuritysettingsui/group"/>
+     </component>
+     <component name="wifiprotectedsetup" long-name="WIFI Protected Setup" origin-model="foundation">
+      <unit bldFile="/sf/mw/accesssec/wlansecuritysettings/wifiprotectedsetup/group"/>
+     </component>
+     <component name="wlaneapsettingsui" long-name="WLAN EAP Settings UI" origin-model="foundation">
+      <unit bldFile="/sf/mw/accesssec/wlansecuritysettings/wlaneapsettingsui/group"/>
+     </component>
+     <component name="wpasecuritysettingsui" long-name="WPA Security Settings UI" origin-model="foundation">
+      <unit bldFile="/sf/mw/accesssec/wlansecuritysettings/wpasecuritysettingsui/group"/>
+     </component>
+     <component unofficial="yes" name="wlansecuritysettings_build" long-name="WLAN Security Settings Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/accesssec/wlansecuritysettings/group"/>
+     </component>
+    </collection>
+    <collection name="eapol" long-name="EAPOL" level="framework">
+     <component name="eapol_framework" long-name="EAPOL Framework" origin-model="foundation">
+      <unit bldFile="/sf/mw/accesssec/eapol/eapol_framework/eapol_symbian/group"/>
+     </component>
+     <component unofficial="yes" name="eapol_build" long-name="EAPOL Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/accesssec/eapol/group"/>
+     </component>
+    </collection>
+    <collection name="accesssec_info" long-name="Access Security Info" level="specific">
+     <component unofficial="yes" name="accesssec_plat" long-name="Access Security Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/mw/accesssec/accesssec_plat/group"/>
+     </component>
+     <component unofficial="yes" name="accesssec_build" long-name="Access Security Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/accesssec/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

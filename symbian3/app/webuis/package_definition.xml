@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="webuis" long-name="Web UIs" tech_domain="rt" level="services" levels="plugin app">
+    <collection name="browserui" long-name="Browser UI" level="app">
+     <component name="browser" long-name="Browser" origin-model="foundation">
+      <unit bldFile="/sf/app/webuis/browserui/browser/group"/>
+      <!-- <unit bldFile="/sf/app/webuis/browserui/browser/launcher2/group"/> -->
+     </component>
+     <component name="operatormenu" long-name="Operator Menu" origin-model="foundation">
+      <unit bldFile="/sf/app/webuis/browserui/operatormenu/group"/>
+     </component>
+     <component name="videoservices" long-name="Video Services" origin-model="foundation">
+      <unit bldFile="/sf/app/webuis/browserui/videoservices/group"/>
+     </component>
+     <component unofficial="yes" name="browserui_build" long-name="Browser UI Build" origin-model="foundation">
+      <unit bldFile="/sf/app/webuis/browserui/group"/>
+     </component>
+    </collection>
+    <collection name="browserplugins" long-name="Browser Plugins" level="plugin">
+     <component name="browsersysteminfoplugin" long-name="Browser System Info Plugin" origin-model="foundation">
+      <unit bldFile="/sf/app/webuis/browserplugins/browsersysteminfoplugin/group"/>
+     </component>
+     <component name="browsergpsplugin" long-name="Browser GPS Plugin" origin-model="foundation">
+      <unit bldFile="/sf/app/webuis/browserplugins/browsergpsplugin/group"/>
+     </component>
+     <component name="browseraudiovideoplugin" long-name="Browser Audio Video Plugin" origin-model="foundation">
+      <unit bldFile="/sf/app/webuis/browserplugins/browseraudiovideoplugin/group"/>
+     </component>
+     <component unofficial="yes" name="browserplugins_build" long-name="Browser Plugins Build" origin-model="foundation">
+      <unit bldFile="/sf/app/webuis/browserplugins/group"/>
+     </component>
+    </collection>
+    <collection name="pushmtm" long-name="Push MTM" level="plugin">
+     <component name="pushmtm_help" long-name="Help" origin-model="foundation">
+      <unit bldFile="/sf/app/webuis/pushmtm/help/group"/>
+     </component>
+     <component name="plugins" origin-model="foundation">
+      <unit bldFile="/sf/app/webuis/pushmtm/plugins/group"/>
+     </component>
+     <component unofficial="yes" name="pushmtm_build" long-name="Push MTM Build" origin-model="foundation">
+      <unit bldFile="/sf/app/webuis/pushmtm/group"/>
+     </component>
+    </collection>
+    <collection name="webuis_info" long-name="Web UIs Info" level="app">
+     <component unofficial="yes" name="webuis_build" long-name="Web UIs Build" origin-model="foundation">
+      <unit bldFile="/sf/app/webuis/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

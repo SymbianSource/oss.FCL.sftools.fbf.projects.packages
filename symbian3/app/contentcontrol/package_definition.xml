@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="contentcontrol" long-name="Content Control Daemons" tech_domain="dm" level="services" levels="1 2">
+    <collection name="applicationmanagement" long-name="Application Management" level="1">
+     <component name="options" long-name="Options" origin-model="foundation">
+      <unit bldFile="/sf/app/devicecontrol/applicationmanagement/options/group"/>
+     </component>
+     <component name="applicationmanagement_client" long-name="Client" origin-model="foundation">
+      <unit bldFile="/sf/app/devicecontrol/applicationmanagement/client/group"/>
+     </component>
+     <component name="applicationmanagement_server" long-name="Server" origin-model="foundation">
+      <unit bldFile="/sf/app/devicecontrol/applicationmanagement/server/group"/>
+     </component>
+     <component name="rfsplugin" origin-model="foundation">
+      <unit bldFile="/sf/app/devicecontrol/applicationmanagement/rfsplugin/group"/>
+     </component>
+     <component name="amadapter2" long-name="AM Adapter2" origin-model="foundation">
+      <unit bldFile="/sf/app/devicecontrol/applicationmanagement/amadapter2/group"/>
+     </component>
+    </collection>
+    <collection name="customization" long-name="Customization" level="2">
+     <component name="dmutils" origin-model="foundation">
+      <unit bldFile="/sf/app/devicecontrol/customization/dmutils/bld"/>
+     </component>
+     <component name="uisettingssrv" origin-model="foundation">
+      <unit bldFile="/sf/app/devicecontrol/customization/uisettingssrv/bld"/>
+     </component>
+     <component name="isadapter" long-name="IS Adapter" origin-model="foundation">
+      <unit bldFile="/sf/app/devicecontrol/customization/isadapter/bld"/>
+     </component>
+     <component name="supadapter" long-name="SUPAdapter" origin-model="foundation">
+      <unit bldFile="/sf/app/devicecontrol/customization/supadapter/bld"/>
+     </component>
+     <component name="wallpaperadapter" origin-model="foundation">
+      <unit bldFile="/sf/app/devicecontrol/customization/wallpaperadapter/bld"/>
+     </component>
+     <component name="operatorlogoadapter" origin-model="foundation">
+      <unit bldFile="/sf/app/devicecontrol/customization/operatorlogoadapter/bld"/>
+     </component>
+     <component name="screensaveradapter" origin-model="foundation">
+      <unit bldFile="/sf/app/devicecontrol/customization/screensaveradapter/bld"/>
+     </component>
+     <component name="themesadapter" origin-model="foundation">
+      <unit bldFile="/sf/app/devicecontrol/customization/themesadapter/bld"/>
+     </component>
+     <component name="embeddedlinkadapter" origin-model="foundation">
+      <unit bldFile="/sf/app/devicecontrol/customization/embeddedlinkadapter/bld"/>
+     </component>
+    </collection>
+    <collection name="omads" long-name="OMA DS" level="1">
+     <component name="omadsappui" long-name="OMA DS App UI" origin-model="foundation">
+      <unit bldFile="/sf/app/contentcontrol/omads/omadsappui/group"/>
+     </component>
+     <component name="omadsextensions" long-name="OMA DS Extensions" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/contentcontrol/omads/omadsextensions/dsutils/emailxmlutils/bld"/> -->
+      <unit bldFile="/sf/app/contentcontrol/omads/omadsextensions/group"/>
+     </component>
+    </collection>
+    <collection name="contentcontrol_info" long-name="Content Control Daemons Info" level="2">
+     <component unofficial="yes" name="contentcontrol_build" long-name="Content Control Daemons Build" origin-model="foundation">
+      <unit bldFile="/sf/app/contentcontrol/group"/>
+     </component>
+     <component unofficial="yes" name="contentctrl_plat" class="api" origin-model="foundation">
+      <unit bldFile="/sf/app/contentcontrol/contentctrl_plat/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

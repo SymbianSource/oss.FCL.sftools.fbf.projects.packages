@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="radio" long-name="Radio Apps" tech_domain="ma" level="apps" levels="engine ui">
+    <collection name="fmradio" long-name="FM Radio" level="ui">
+     <component name="activeidleengine" long-name="Active Idle Engine" origin-model="foundation">
+      <unit bldFile="/sf/app/radio/fmradio/activeidleengine/group"/>
+     </component>
+     <component name="fmradioengine" long-name="FM Radio Engine" origin-model="foundation">
+      <unit bldFile="/sf/app/radio/fmradio/fmradioengine/group"/>
+     </component>
+     <component name="fmradioactionhandler" long-name="FMRadio Action Handler" origin-model="foundation">
+      <unit bldFile="/sf/app/radio/fmradio/fmradioactionhandler/group"/>
+     </component>
+     <component name="fmradiomcpplugin" long-name="FM Radio MCP Plugin" origin-model="foundation">
+      <unit bldFile="/sf/app/radio/fmradio/fmradiomcpplugin/group"/>
+     </component>
+     
+     <component name="fmradio_help" long-name="Help" origin-model="foundation">
+      <unit bldFile="/sf/app/radio/fmradio/help/group"/>
+     </component>
+     <component unofficial="yes" name="fmradio_build" long-name="FM Radio Build" origin-model="foundation">
+      <unit bldFile="/sf/app/radio/fmradio/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

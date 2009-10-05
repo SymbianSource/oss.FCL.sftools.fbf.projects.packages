@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="messaging" long-name="Messaging Apps" tech_domain="pr" level="apps" span="2" levels="mail eng base ui">
+    <collection name="mobilemessaging" long-name="Mobile Messaging" level="ui">
+     <component name="audiomsg" long-name="Audio Message" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/mobilemessaging/audiomsg/group"/>
+     </component>
+     <component name="msgmedia" long-name="Message Media" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/mobilemessaging/msgmedia/group"/>
+     </component>
+     <component name="unieditor" long-name="Uni Editor" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/mobilemessaging/unieditor/group"/>
+     </component>
+     <component name="mmsui" long-name="MMS UI" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/mobilemessaging/mmsui/group"/>
+     </component>
+     <component name="postcard" long-name="Postcard" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/mobilemessaging/postcard/group"/>
+     </component>
+     <component name="smilui" long-name="SMIL UI" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/mobilemessaging/smilui/group"/>
+     </component>
+     <component name="smum" long-name="Smum" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/mobilemessaging/smum/group"/>
+     </component>
+     <component name="smsui" long-name="SMS UI" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/mobilemessaging/smsui/group"/>
+      <!-- <unit bldFile="/sf/app/messaging/mobilemessaging/smsui/viewer"/> -->
+     </component>
+     <!--Component manually removed as already declared in OS-->
+     <!--<component name="smsmtm">
+       <unit bldFile="/sf/app/messaging/mobilemessaging/smsmtm/multimode/group"/>
+       -  <unit bldFile="/sf/app/messaging/mobilemessaging/smsmtm/test/testrom"/>  -
+     </component>-->
+    <component name="smsmtm" long-name="SMS MTM" purpose="optional" plugin="Y" origin-model="Symbian">
+      <unit bldFile="/sf/app/messaging/mobilemessaging/smsmtm/multimode/Group" mrp="/sf/app/messaging/mobilemessaging/smsmtm/multimode/Group/messaging_sms_multimode.mrp"/>
+     </component>
+    </collection>
+    <collection name="mmsengine" long-name="MMS Engine" level="eng">
+     <component name="mmsconninit" long-name="MMS Connection Init" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/messaging/mmsengine/mmsconninit/bld"/> -->
+     </component>
+     <component name="genutils" long-name="General Utils" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/messaging/mmsengine/genutils/bld"/> -->
+     </component>
+     <component name="mmsserversettings" long-name="MMS Server Aettings" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/messaging/mmsengine/mmsserversettings/bld"/> -->
+     </component>
+     <component name="mmsmessage" long-name="MMS Message" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/messaging/mmsengine/mmsmessage/bld"/> -->
+     </component>
+     <component name="mmshttptransport" long-name="MMS HTTP Transport" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/messaging/mmsengine/mmshttptransport/bld"/> -->
+     </component>
+     <component name="mmscodec" long-name="MMS Codec" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/messaging/mmsengine/mmscodec/bld"/> -->
+     </component>
+     <component name="mmsserver" long-name="MMS Server" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/messaging/mmsengine/mmsserver/bld"/> -->
+     </component>
+     <component name="clientmtm" long-name="Client MTM" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/messaging/mmsengine/clientmtm/bld"/> -->
+     </component>
+     <component name="mmswatcher" long-name="MMS Watcher" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/messaging/mmsengine/mmswatcher/bld"/> -->
+     </component>
+     <component name="mmspushhandler" long-name="MMS Push Handler" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/messaging/mmsengine/mmspushhandler/bld"/> -->
+     </component>
+     <component name="applicationadapter" long-name="Application Adapter" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/messaging/mmsengine/applicationadapter/bld"/> -->
+     </component>
+     <component name="mmscodecclient" long-name="MMS Codec Client" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/messaging/mmsengine/mmscodecclient/bld"/> -->
+     </component>
+     <!--Component manually removed and merged to OS-->
+     <!--<component name="mmssettings">
+       <unit bldFile="/sf/app/messaging/mmsengine/mmssettings/test/group"/>
+     </component>-->
+     <component unofficial="yes" name="mmsengine_build" long-name="MMS Engine Build" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/mmsengine/group"/>
+     </component>
+    <component name="mmssettings" long-name="MMS Settings" introduced="9.2" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/app/messaging/mmsengine/mmssettings/group" mrp="/sf/app/messaging/mmsengine/mmssettings/group/messaging_mmssettings.mrp"/>
+     </component>
+     <component name="mmsconf" long-name="MMS Configuration" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/app/messaging/mmsengine/mmsconf" mrp="/sf/app/messaging/mmsengine/mmsconf/messaging_mmssettings-config.mrp"/>
+     </component>
+    </collection>
+    <collection name="messagingappbase" long-name="Messaging App Base" level="base">
+     <component name="msgavkon" long-name="Messaging Avkon" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/messagingappbase/msgavkon/group"/>
+     </component>
+     <component name="mce" long-name="MCE" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/messagingappbase/mce/group"/>
+     </component>
+     <component name="mceextraitems" long-name="Mce Extra Items" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/messagingappbase/mceextraitems/group"/>
+     </component>
+     <component name="mcesettings" long-name="MCE Settings" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/messagingappbase/mcesettings/group"/>
+     </component>
+     <component name="msgerrorwatcher" long-name="Msg Error Watcher" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/messagingappbase/msgerrorwatcher/group"/>
+     </component>
+     <component name="ncnlist" long-name="NCN List" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/messagingappbase/ncnlist/group"/>
+     </component>
+     <component name="schemeplugin" long-name="Scheme Plugin" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/messagingappbase/schemeplugin/group"/>
+     </component>
+     <component name="sendui" long-name="Send UI" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/messaging/messagingappbase/sendui/drmlinksender/group"/> -->
+      <!-- <unit bldFile="/sf/app/messaging/messagingappbase/sendui/genericmtmplugin/group"/> -->
+      <unit bldFile="/sf/app/messaging/messagingappbase/sendui/group"/>
+      <!-- <unit bldFile="/sf/app/messaging/messagingappbase/sendui/meetingrequestsender/group"/> -->
+     </component>
+     <component name="smilengine" long-name="SMIL Engine" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/messagingappbase/smilengine/group"/>
+     </component>
+     <component name="bium" long-name="Bium" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/messagingappbase/bium/group"/>
+     </component>
+     <component name="smartmessaging" long-name="Smart Messaging" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/messagingappbase/smartmessaging/group"/>
+     </component>
+     <component name="msgeditor" long-name="Messaging Editor" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/messagingappbase/msgeditor/group"/>
+     </component>
+     <!--Component manually removed and merged to OS-->
+     <!--<component name="smilparser">
+       <unit bldFile="/sf/app/messaging/messagingappbase/smilparser/rom"/>
+       <unit bldFile="/sf/app/messaging/messagingappbase/smilparser/smildtd/group"/>
+       <unit bldFile="/sf/app/messaging/messagingappbase/smilparser/xmldom/group"/>
+       <unit bldFile="/sf/app/messaging/messagingappbase/smilparser/xmlparser/group"/>
+     </component>-->
+     <!--Component manually removed and merged to OS-->
+     <!--<component name="obexmtms">
+       <unit bldFile="/sf/app/messaging/messagingappbase/obexmtms/btmtm/btclient/group"/>
+       <unit bldFile="/sf/app/messaging/messagingappbase/obexmtms/btmtm/btserver/group"/>
+       <unit bldFile="/sf/app/messaging/messagingappbase/obexmtms/irmtm/irclient/group"/>
+       <unit bldFile="/sf/app/messaging/messagingappbase/obexmtms/irmtm/irserver/group"/>
+       <unit bldFile="/sf/app/messaging/messagingappbase/obexmtms/obexmtm/obexclient/group"/>
+       <unit bldFile="/sf/app/messaging/messagingappbase/obexmtms/obexmtm/obexserver/group"/>
+       <unit bldFile="/sf/app/messaging/messagingappbase/obexmtms/obexmtm/obexutil/group"/>
+       <unit bldFile="/sf/app/messaging/messagingappbase/obexmtms/rom"/>
+       <unit bldFile="/sf/app/messaging/messagingappbase/obexmtms/tobexmtm/group"/>
+       -  <unit bldFile="/sf/app/messaging/messagingappbase/obexmtms/tobexmtm/obexstub/bluetoothsdpstub/sdp"/>  -
+       -  <unit bldFile="/sf/app/messaging/messagingappbase/obexmtms/tobexmtm/obexstub/irobexstub/group"/>  -
+       -  <unit bldFile="/sf/app/messaging/messagingappbase/obexmtms/tobexmtm/testutils/msgth/group"/>  -
+     </component>-->
+    <component name="smilparser" long-name="SMIL Parser" introduced="7.0s" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/app/messaging/messagingappbase/smilparser/GROUP" mrp="/sf/app/messaging/messagingappbase/smilparser/GROUP/messaging_gmxml.mrp"/>
+     </component>
+     <component name="obexmtms" long-name="OBEX MTMs" introduced="7.0s" purpose="optional" plugin="Y" origin-model="Symbian">
+      <unit bldFile="/sf/app/messaging/messagingappbase/obexmtms/Group" mrp="/sf/app/messaging/messagingappbase/obexmtms/Group/messaging_obex.mrp"/>
+     </component>
+    </collection>
+    <collection name="email" long-name="Email" level="mail">
+     <component name="alwaysonlineemailplugin" long-name="Always Online Mail Plugin" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/email/alwaysonlineemailplugin/group"/>
+     </component>
+     <component name="emailnotificationhandler" long-name="Email Notification Handler" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/email/emailnotificationhandler/group"/>
+     </component>
+     <component name="imum" long-name="IMUM" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/messaging/email/imum/domainapi/group"/> -->
+      <unit bldFile="/sf/app/messaging/email/imum/group"/>
+      <!-- <unit bldFile="/sf/app/messaging/email/imum/mtms/group"/> -->
+      <!-- <unit bldFile="/sf/app/messaging/email/imum/utils/group"/> -->
+     </component>
+     <component name="mail" long-name="Mail" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/email/mail/group"/>
+     </component>
+     <!--Component manually removed and merged to OS-->
+     <!--<component name="pop3andsmtpmtm">
+       <unit bldFile="/sf/app/messaging/email/pop3andsmtpmtm/autosend/group"/>
+       <unit bldFile="/sf/app/messaging/email/pop3andsmtpmtm/clientmtms/group"/>
+       -  <unit bldFile="/sf/app/messaging/email/pop3andsmtpmtm/clientmtms/test/testrom"/>  -
+       <unit bldFile="/sf/app/messaging/email/pop3andsmtpmtm/popservermtm/group"/>
+       -  <unit bldFile="/sf/app/messaging/email/pop3andsmtpmtm/popservermtm/test/testrom"/>  -
+       <unit bldFile="/sf/app/messaging/email/pop3andsmtpmtm/servermtmutils/group"/>
+       -  <unit bldFile="/sf/app/messaging/email/pop3andsmtpmtm/servermtmutils/test/testrom"/>  -
+       <unit bldFile="/sf/app/messaging/email/pop3andsmtpmtm/smtpservermtm/group"/>
+       -  <unit bldFile="/sf/app/messaging/email/pop3andsmtpmtm/smtpservermtm/test/testrom"/>  -
+     </component>-->
+     <!--Component manually removed and merged to OS-->
+     <!--<component name="imap4mtm">
+       <unit bldFile="/sf/app/messaging/email/imap4mtm/imapmailstore/group"/>
+       <unit bldFile="/sf/app/messaging/email/imap4mtm/imapofflinecontrol/group"/>
+       <unit bldFile="/sf/app/messaging/email/imap4mtm/imapprotocolcontroller/group"/>
+       <unit bldFile="/sf/app/messaging/email/imap4mtm/imapservermtm/group"/>
+       <unit bldFile="/sf/app/messaging/email/imap4mtm/imapsession/group"/>
+       <unit bldFile="/sf/app/messaging/email/imap4mtm/imapsettings/group"/>
+       <unit bldFile="/sf/app/messaging/email/imap4mtm/imapsyncmanager/group"/>
+       <unit bldFile="/sf/app/messaging/email/imap4mtm/imaptransporthandler/group"/>
+       <unit bldFile="/sf/app/messaging/email/imap4mtm/imaputils/group"/>
+     </component>-->
+    <component name="pop3andsmtpmtm" long-name="POP3 and SMTP MTM" purpose="optional" plugin="Y" origin-model="Symbian">
+      <unit bldFile="/sf/app/messaging/email/pop3andsmtpmtm/group" mrp="/sf/app/messaging/email/pop3andsmtpmtm/group/messaging_email.mrp"/>
+     </component>
+     <component name="imap4mtm" long-name="IMAP4 MTM" introduced="9.2" purpose="optional" plugin="Y" origin-model="Symbian">
+      <unit bldFile="/sf/app/messaging/email/imap4mtm/group" mrp="/sf/app/messaging/email/imap4mtm/group/messaging_email_imap.mrp"/>
+     </component>
+    </collection>
+    <collection name="messaging_info" long-name="Messaging Apps Info" level="ui">
+     <component unofficial="yes" name="messaging_test" long-name="Messaging Apps Test" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/messaging/tsrc/group"/> -->
+     </component>
+     <component unofficial="yes" name="msg_plat" class="api" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/messaging/msg_plat/email_domain_utilities_api/tsrc/group"/> -->
+      <unit bldFile="/sf/app/messaging/msg_plat/group"/>
+      <unit bldFile="/sf/app/messaging/msg_plat/messaging_center_ui_utilities_api/tsrc/group"/>
+      <unit bldFile="/sf/app/messaging/msg_plat/messaging_editor_api/tsrc/group"/>
+      <unit bldFile="/sf/app/messaging/msg_plat/messaging_media_resolver_api/tsrc/group"/>
+      <unit bldFile="/sf/app/messaging/msg_plat/mms_application_api/tsrc/group"/>
+      <unit bldFile="/sf/app/messaging/msg_plat/mms_codec_client_api/tsrc/group"/>
+      <unit bldFile="/sf/app/messaging/msg_plat/mms_conformance_api/tsrc/group"/>
+      <unit bldFile="/sf/app/messaging/msg_plat/mms_server_settings_api/tsrc/group"/>
+      <!-- <unit bldFile="/sf/app/messaging/msg_plat/send_ui_meeting_request_api/tsrc/group"/> -->
+      <unit bldFile="/sf/app/messaging/msg_plat/smil_engine_api/tsrc/group"/>
+      <unit bldFile="/sf/app/messaging/msg_plat/unified_editor_video_conversion_api/tsrc/group"/>
+     </component>
+     <component unofficial="yes" name="msg_pub" class="api" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/msg_pub/group"/>
+      <!-- <unit bldFile="/sf/app/messaging/msg_pub/mms_client_mtm_api/tsrc/bc/group"/> -->
+      <unit bldFile="/sf/app/messaging/msg_pub/mms_client_mtm_api/tsrc/group"/>
+      <!-- <unit bldFile="/sf/app/messaging/msg_pub/plugin_bio_control_api/tsrc/bc/group"/> -->
+      <unit bldFile="/sf/app/messaging/msg_pub/plugin_bio_control_api/tsrc/group"/>
+     </component>
+     <component unofficial="yes" name="messaging_build" long-name="Messaging Apps Build" origin-model="foundation">
+      <unit bldFile="/sf/app/messaging/group"/>
+     </component>
+    <component name="messaging_metadata" long-name="Messaging Apps Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/app/messaging/messaging_info/messaging_metadata/messaging_metadata.mrp"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

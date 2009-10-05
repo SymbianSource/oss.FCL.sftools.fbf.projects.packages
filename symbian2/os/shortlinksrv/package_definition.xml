@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="os" long-name="OS" levels="hw services">
+<block name="shortlinksrv" long-name="Short Link Services" tech_domain="de" level="services" levels="adaptation hw-if plugin framework server app-if">
+    <collection name="bluetoothapitest" long-name="Bluetooth API Tests" level="app-if">
+     <component name="bluetoothsvs" long-name="Bluetooth Verification Suite" introduced="tb91" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/shortlinksrv/bluetoothapitest/bluetoothsvs/group/bluetoothsvs.mrp"/>
+     </component>
+    </collection>
+    <collection name="usbldd" long-name="Shortlink Logical Device Drivers" level="hw-if">
+     <component name="usbclientdrivers" long-name="USB Client Drivers" introduced="8.1b" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/kernelhwsrv/kernel/eka/drivers/usbc" mrp="/sf/os/kernelhwsrv/kernel/eka/drivers/usbc/base_e32_drivers_usbcli.mrp"/>
+     </component>
+    </collection>
+    <collection name="bluetooth" long-name="Bluetooth" level="framework">
+     <component name="btstack" long-name="Bluetooth Stack" introduced="6.0" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/shortlinksrv/bluetooth/btstack" mrp="/sf/os/shortlinksrv/bluetooth/btstack/bluetooth_stack.mrp"/>
+     </component>
+     <component name="btcomm" long-name="Bluetooth CSY" introduced="6.0" purpose="optional" plugin="Y" origin-model="Symbian">
+      <unit bldFile="/sf/os/shortlinksrv/bluetooth/btcomm" mrp="/sf/os/shortlinksrv/bluetooth/btcomm/bluetooth_btcomm.mrp"/>
+     </component>
+     <component name="btsdp" long-name="Bluetooth SDP" introduced="6.1" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/shortlinksrv/bluetooth/btsdp" mrp="/sf/os/shortlinksrv/bluetooth/btsdp/bluetooth_sdp.mrp"/>
+     </component>
+     <component name="btextnotifiers" long-name="Bluetooth Notifiers Support" introduced="6.1" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/shortlinksrv/bluetooth/btextnotifiers" mrp="/sf/os/shortlinksrv/bluetooth/btextnotifiers/bluetooth_btextnotifiers.mrp"/>
+     </component>
+     <component name="gavdp" long-name="Bluetooth GAVDP" introduced="8.1" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/shortlinksrv/bluetooth/gavdp/group" mrp="/sf/os/shortlinksrv/bluetooth/gavdp/group/bluetooth_gavdp.mrp"/>
+     </component>
+     <component name="btexample" long-name="Bluetooth Examples and Tests" introduced="6.1" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/shortlinksrv/bluetooth/btexample/test/bluetooth_tests_examples.mrp"/>
+     </component>
+     <component name="btlogger" long-name="Bluetooth Logging Engine" introduced="9.2" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/shortlinksrv/bluetooth/btlogger/group" mrp="/sf/os/shortlinksrv/bluetooth/btlogger/group/bluetooth_logger.mrp"/>
+     </component>
+     <component name="btdocs" long-name="Bluetooth Documentation" purpose="development" class="doc" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/shortlinksrv/bluetooth/btdocs/bluetooth_documentation.mrp"/>
+     </component>
+    </collection>
+    <collection name="bluetoothmgmt" long-name="Bluetooth Management" level="plugin">
+     <component name="btmgr" long-name="Bluetooth Manager" introduced="6.0" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/shortlinksrv/bluetoothmgmt/btmgr" mrp="/sf/os/shortlinksrv/bluetoothmgmt/btmgr/bluetooth_manager.mrp"/>
+     </component>
+     <component name="btconfig" long-name="Bluetooth Config" purpose="optional" class="config" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/shortlinksrv/bluetoothmgmt/btconfig" mrp="/sf/os/shortlinksrv/bluetoothmgmt/btconfig/bluetooth_config.mrp"/>
+     </component>
+     <component name="btrom" long-name="Bluetooth ROM" introduced="9.1" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/shortlinksrv/bluetoothmgmt/btrom" mrp="/sf/os/shortlinksrv/bluetoothmgmt/btrom/bluetooth_rom.mrp"/>
+     </component>
+     <component name="bluetoothclientlib" long-name="Bluetooth Client Library" introduced="6.0" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/shortlinksrv/bluetoothmgmt/bluetoothclientlib" mrp="/sf/os/shortlinksrv/bluetoothmgmt/bluetoothclientlib/bluetooth_user.mrp"/>
+     </component>
+     <component name="btcommon" long-name="Bluetooth Build Utilities" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/shortlinksrv/bluetoothmgmt/btcommon/bluetooth_common.mrp"/>
+     </component>
+    </collection>
+    <collection name="bluetoothcommsprofiles" long-name="Bluetooth Comms Profiles" level="app-if">
+     <component name="btpan" long-name="Bluetooth PAN Profile" introduced="8.1" purpose="optional" plugin="Y" origin-model="Symbian">
+      <unit bldFile="/sf/os/shortlinksrv/bluetoothcommsprofiles/btpan/group" mrp="/sf/os/shortlinksrv/bluetoothcommsprofiles/btpan/group/bluetooth_pan.mrp"/>
+     </component>
+    </collection>
+    <collection name="bthci" long-name="Host Controller Interface" level="server">
+     <component name="bthci1" long-name="Bluetooth HCI Framework 1" introduced="6.0" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/shortlinksrv/bthci/bthci1" mrp="/sf/os/shortlinksrv/bthci/bthci1/bluetooth_hci.mrp"/>
+     </component>
+     <component name="bthci2" long-name="Bluetooth HCI Framework 2" introduced="9.2" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/shortlinksrv/bthci/bthci2/group" mrp="/sf/os/shortlinksrv/bthci/bthci2/group/bluetooth_hci_v2_framework.mrp"/>
+     </component>
+     <component name="hciextensioninterface" long-name="Bluetooth HCI Extension Interface" introduced="6.1" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/shortlinksrv/bthci/hciextensioninterface" mrp="/sf/os/shortlinksrv/bthci/hciextensioninterface/bluetooth_hciproxy.mrp"/>
+     </component>
+     <component name="hci2implementations" long-name="Bluetooth HCI 2 Reference Implementations" introduced="9.2" purpose="optional" plugin="Y" origin-model="Symbian">
+      <unit bldFile="/sf/os/shortlinksrv/bthci/hci2implementations/group" mrp="/sf/os/shortlinksrv/bthci/hci2implementations/group/bluetooth_hci_v2_implementations.mrp"/>
+     </component>
+    </collection>
+    <collection name="usbmgmt" long-name="USB Management" level="server">
+     <component name="usbmgr" long-name="USB Manager" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/shortlinksrv/usbmgmt/usbmgr/group" mrp="/sf/os/shortlinksrv/usbmgmt/usbmgr/group/usb_manager.mrp" version="2"/>
+     </component>
+     <component name="usbmgrtest" long-name="USB Manager Tests" introduced="7.0" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/shortlinksrv/usbmgmt/usbmgrtest/group/usb_test.mrp" version="2"/>
+     </component>
+     <component name="usbclassandmgrdocs" long-name="USB Class and Manager Documentation" purpose="development" class="doc" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/shortlinksrv/usbmgmt/usbclassandmgrdocs/usb_documentation.mrp"/>
+     </component>
+    </collection>
+    <collection name="irda" long-name="IrDA" level="plugin">
+     <component name="irdastack" long-name="IrDA Stack" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/shortlinksrv/irda/irdastack/group" mrp="/sf/os/shortlinksrv/irda/irdastack/group/infra-red_irda.mrp"/>
+     </component>
+    </collection>
+    <collection name="shortlinksrv_info" long-name="Short Link Services Info" level="app-if">
+     <component unofficial="yes" name="shortlinksrv_build" origin-model="foundation">
+      <unit bldFile="/sf/os/shortlinksrv/group"/>
+     </component>
+     <component unofficial="yes" name="shortlinksrv_plat" class="api" origin-model="foundation">
+      <unit bldFile="/sf/os/shortlinksrv/shortlinksrv_plat/group"/>
+     </component>
+    <component name="shortlinksrv_metadata" long-name="Short Link Services Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/shortlinksrv/shortlinksrv_info/shortlinksrv_metadata/shortlinksrv_metadata.mrp"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

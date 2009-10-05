@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="os" long-name="OS" levels="hw services">
+<block name="persistentdata" long-name="Persistent Data Services" tech_domain="hb" level="services" levels="adaptation hw-if plugin framework server app-if">
+    <collection name="featuremgmt" long-name="Feature Management" level="framework">
+     <component name="featuremanager" long-name="Feature Manager" origin-model="foundation">
+      <!-- <unit bldFile="/sf/os/devicesrv/featuremgmt/featuremanager/clientdll/group"/> -->
+      <unit bldFile="/sf/os/devicesrv/featuremgmt/featuremanager/group"/>
+      <!-- <unit bldFile="/sf/os/devicesrv/featuremgmt/featuremanager/serverexe/group"/> -->
+      <!-- <unit bldFile="/sf/os/devicesrv/featuremgmt/featuremanager/tsrc/public/basic/group"/> -->
+     </component>
+     <component unofficial="yes" name="featuremgmt_build" long-name="Feature Management Build" origin-model="foundation">
+      <unit bldFile="/sf/os/devicesrv/featuremgmt/group"/>
+     </component>
+    <component name="featureregistry" long-name="Feature Registry" introduced="9.2" deprecated="tb92" purpose="mandatory" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/persistentdata/featuremgmt/featureregistry/group" mrp="/sf/os/persistentdata/featuremgmt/featureregistry/group/syslibs_featreg.mrp"/>
+     </component>
+    </collection>
+   <collection name="loggingservices" long-name="Logging Services" level="server">
+     <component name="eventlogger" long-name="Event Logger" introduced="6.0" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/persistentdata/loggingservices/eventlogger/group" mrp="/sf/os/persistentdata/loggingservices/eventlogger/group/syslibs_logeng.mrp"/>
+     </component>
+     <component name="filelogger" long-name="File Logger" introduced="ER5" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/persistentdata/loggingservices/filelogger/group" mrp="/sf/os/persistentdata/loggingservices/filelogger/group/comms-infras_flogger.mrp"/>
+     </component>
+     <component name="rfilelogger" long-name="RFile Logger" introduced="9.1" deprecated="tb92" purpose="development" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/persistentdata/loggingservices/rfilelogger/group" mrp="/sf/os/persistentdata/loggingservices/rfilelogger/group/testtools_utilities.mrp"/>
+     </component>
+    </collection>
+    <collection name="traceservices" long-name="Trace Services" level="server">
+     <component name="commsdebugutility" long-name="Comms Debug Utility" introduced="7.0s" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/persistentdata/traceservices/commsdebugutility/group" mrp="/sf/os/persistentdata/traceservices/commsdebugutility/group/comms-infras_commsdebugutility.mrp"/>
+     </component>
+     <component name="tracefw" long-name="Trace Framework" introduced="9.2" purpose="development" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/persistentdata/traceservices/tracefw/ulogger/group" mrp="/sf/os/persistentdata/traceservices/tracefw/ulogger/group/tools_debug_trace.mrp"/>
+     </component>
+     <component name="utrace" long-name="UTrace" introduced="9.3" deprecated="tb91" purpose="development" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/persistentdata/traceservices/utrace/group" mrp="/sf/os/persistentdata/traceservices/utrace/group/testtools_utrace_api.mrp"/>
+     </component>
+    </collection>
+    <collection name="persistentstorage" long-name="Persistent Storage" level="framework">
+     <component name="store" long-name="Store" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/persistentdata/persistentstorage/store/group" mrp="/sf/os/persistentdata/persistentstorage/store/group/syslibs_store.mrp"/>
+     </component>
+     <component name="dbms" long-name="DBMS" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/persistentdata/persistentstorage/dbms/group" mrp="/sf/os/persistentdata/persistentstorage/dbms/group/syslibs_dbms.mrp"/>
+     </component>
+     <component name="centralrepository" long-name="Central Repository" introduced="7.0s" purpose="mandatory" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/persistentdata/persistentstorage/centralrepository/group" mrp="/sf/os/persistentdata/persistentstorage/centralrepository/group/syslibs_centralrepository.mrp"/>
+     </component>
+     <component name="sql" long-name="SQL" introduced="9.3" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/persistentdata/persistentstorage/sql/GROUP" mrp="/sf/os/persistentdata/persistentstorage/sql/GROUP/syslibs_sql.mrp"/>
+     </component>
+    </collection>
+    <collection name="persistentdata_info" long-name="Persistent Data Services Info" level="app-if">
+     <component name="persistentdata_metadata" long-name="Persistent Data Services Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/persistentdata/persistentdata_info/persistentdata_metadata/persistentdata_metadata.mrp"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="dictionary" long-name="Dictionary" tech_domain="pr" level="services" levels="appl">
+    <collection name="userdict" long-name="User Dictionary" level="appl">
+     <component name="userdict_build" long-name="UserDict Client" origin-model="foundation">
+      <unit bldFile="/sf/app/dictionary/userdict/group"/>
+     </component>
+    </collection>
+    <collection name="dictionary_info" long-name="Dictionary Info" level="appl">
+     <component unofficial="yes" name="dictionary_plat" long-name="Dictionary Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/app/dictionary/dictionary_plat/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="mmmw" long-name="Multimedia Middleware" tech_domain="mm" level="generic" levels="plugin framework server generic specific">
+    <collection name="radioutility" long-name="Radio Utility" level="generic">
+     <component name="radioserver" long-name="Radio Server" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/radioutility/radioserver/group"/>
+      <!-- <unit bldFile="/sf/mw/mmmw/radioutility/radioserver/server/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/radioutility/radioserver/session/group"/> -->
+     </component>
+     <component name="radio_utility" long-name="Radio Utility" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/radioutility/radio_utility/group"/>
+     </component>
+     <component name="fmpresetutility" long-name="FM Preset Utility" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/radioutility/fmpresetutility/group"/>
+     </component>
+     <component unofficial="yes" name="radioutility_build" long-name="Radio Utility Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/radioutility/group"/>
+     </component>
+    </collection>
+    <collection name="mtp" long-name="MTP" level="framework">
+     <component name="mtpserver" long-name="Mtp Server" origin-model="foundation"/>
+     <component name="mtpusbclass" long-name="MTP USB Class" origin-model="foundation"/>
+     <component name="install" long-name="Install" origin-model="foundation"/>
+    </collection>
+    <collection name="audioeffectsui" long-name="Audio Effects UI" level="specific">
+     <component name="equalizer" long-name="Equalizer" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/audioeffectsui/equalizer/group"/>
+     </component>
+     <component unofficial="yes" name="audioeffectsui_build" long-name="Audio Effects UI Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/audioeffectsui/group"/>
+     </component>
+    </collection>
+    <collection name="audioenhancements" long-name="Audio Enhancements" level="generic">
+     <component name="enhancedaudioplayerutility" long-name="Enhanced Media Client" origin-model="foundation">
+      <!-- <unit bldFile="/sf/mw/mmmw/audioenhancements/enhancedaudioplayerutility/audioplayer/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/audioenhancements/enhancedaudioplayerutility/audiostreaming/group"/> -->
+      <unit bldFile="/sf/mw/mmmw/audioenhancements/enhancedaudioplayerutility/group"/>
+      <!-- <unit bldFile="/sf/mw/mmmw/audioenhancements/enhancedaudioplayerutility/s60audiosource/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/audioenhancements/enhancedaudioplayerutility/s60audiosourcefactory/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/audioenhancements/enhancedaudioplayerutility/s60audioutility/group"/> -->
+     </component>
+     <component name="progressivedownload" long-name="Progressive Download" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/audioenhancements/progressivedownload/group"/>
+      <!-- <unit bldFile="/sf/mw/mmmw/audioenhancements/progressivedownload/progressivedownloadsource/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/audioenhancements/progressivedownload/progressivedownloadutility/group"/> -->
+     </component>
+     <component name="enhancedmediaclient" long-name="Enhanced Media Client" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/audioenhancements/enhancedmediaclient/group"/>
+     </component>
+     <component name="profilesettingsmonitor" long-name="Profile Settings Monitor" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/audioenhancements/profilesettingsmonitor/group"/>
+     </component>
+     <component name="voipaudioservices" long-name="VoIP Audio Services" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/audioenhancements/voipaudioservices/group"/>
+     </component>
+     <component name="configurationcomponentsfactory" long-name="Configuration Components Factory" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/audioenhancements/configurationcomponentsfactory/group"/>
+     </component>
+     <component name="audiooutputcontrolutility" long-name="Audio Output Control Utility" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/audioenhancements/audiooutputcontrolutility/group"/>
+     </component>
+     <component name="callaudiocontrol" long-name="Call Audio Control" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/audioenhancements/callaudiocontrol/group"/>
+     </component>
+     <component unofficial="yes" name="audioenhancements_build" long-name="Audio Enhancements Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/audioenhancements/group"/>
+     </component>
+    </collection>
+    <collection name="metadatautility" long-name="Metadata Utility" level="generic">
+     <component name="3gpextparserlib" origin-model="foundation"/>
+     <component name="3gpextparserlib_stub" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/metadatautility/3gpextparserlib_stub/group"/>
+     </component>
+     <component name="metadatautility_build" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/metadatautility/group"/>
+     </component>
+    </collection>
+    <collection name="advancedaudiocontroller" long-name="Advanced Audio Controller" level="plugin">
+     <component name="audiocontrollerpluginsvariant" long-name="Audio Controller Plugins Variant" origin-model="foundation">
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/3gpaudioplaycontroller/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/3gpaudiorecordcontroller/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/3gpdatasourceadapter/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/aacaudioplaycontroller/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/advancedaudiocontroller/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/advancedaudiocontrollerutility/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/amraudioplaycontroller/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/amraudiorecordcontroller/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/awbaudioplaycontroller/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/datasourceadapter/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/devsoundaudioinput/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/devsoundaudiooutput/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/fileaudiooutput/group"/> -->
+      <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/group"/>
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/hxaudiorecognizer/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/metadatawrite/group"/> -->
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/audiocontrollerpluginsvariant/mp3audioplaycontroller/group"/> -->
+     </component>
+     <component name="wavplaycontrollerplugin" long-name="WAV Play Controller Plugin" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/wavplaycontrollerplugin/group"/>
+     </component>
+     <component unofficial="yes" name="advancedaudiocontroller_test" long-name="Advanced Audio Controller Test" origin-model="foundation">
+      <!-- <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/tsrc/advancedaudiocontrollertestmodule/group"/> -->
+     </component>
+     <component unofficial="yes" name="advancedaudiocontroller_build" long-name="Advanced Audio Controller Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/advancedaudiocontroller/group"/>
+     </component>
+    </collection>
+    <collection name="thumbnailengine" long-name="Thumbnail Engine" level="server">
+     <component name="tneengine" long-name="TNE Engine" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/thumbnailengine/group"/>
+     </component>
+    </collection>
+    <collection name="mmfw" long-name="Multimedia Framework" level="framework">
+     <component name="gstreamer" long-name="GStreamer" origin-model="foundation"/>
+     <component name="helix_stub" long-name="Helix Stub" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/mmfw/helix_stub/group"/>
+     </component>
+     <component unofficial="yes" name="mmfw_build" long-name="Multimedia Framework Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/mmfw/group"/>
+     </component>
+    </collection>
+    <collection name="mmmiddlewarefws" long-name="Multimedia Middleware Frameworks" level="server">
+     <component name="mmfw" long-name="Multimedia Framework" introduced="7.0s" purpose="mandatory" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/mw/mmmw/mmmiddlewarefws/mmfw/group" mrp="/sf/mw/mmmw/mmmiddlewarefws/mmfw/group/multimedia_mmf.mrp"/>
+     </component>
+    </collection>
+    <collection name="mmmiddlewareplugins" long-name="Multimedia Middleware Plugins" level="framework">
+     <component name="mmfwplugins" long-name="Multimedia Framework Plugins" introduced="7.0s" purpose="optional" plugin="Y" origin-model="Symbian">
+      <unit bldFile="/sf/mw/mmmw/mmmiddlewarefws/mmfw/group_plugin" mrp="/sf/mw/mmmw/mmmiddlewarefws/mmfw/group_plugin/multimedia_mmf_plugin.mrp"/>
+     </component>
+    </collection>
+    <collection name="mmfwtest" long-name="Multimedia Framework Test" level="server">
+     <component name="mmfunittest" long-name="MMF Unit Tests" introduced="7.0s" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/mw/mmmw/mmfwtest/mmfunittest/group/multimedia_unittest_mmf_source.mrp"/>
+     </component>
+     <component name="mmfintegrationtest" long-name="MMF Integration Tests" introduced="7.0s" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/mw/mmmw/mmfwtest/mmfintegrationtest/group/multimedia_inttest_mmf_source.mrp"/>
+     </component>
+     <component name="mmfcharacterisationvalidation" long-name="MMF Characterisation Validation" introduced="9.3" purpose="development" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/mw/mmmw/mmfwtest/mmfcharacterisationvalidation/group" mrp="/sf/mw/mmmw/mmfwtest/mmfcharacterisationvalidation/group/multimedia_mmf_char.mrp"/>
+     </component>
+    </collection>
+    <collection name="mmvalidationsuite" long-name="Multimedia Validation Suite" level="specific">
+     <component name="mmvalidationsuiteapp" long-name="Multimedia Validation Suite Application" introduced="tb91" purpose="development" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/mw/mmmw/mmvalidationsuite/mmvalidationsuiteapp/group" mrp="/sf/mw/mmmw/mmvalidationsuite/mmvalidationsuiteapp/group/multimedia_mvs_app.mrp"/>
+     </component>
+     <component name="mmvalidationsuiteagents" long-name="Multimedia Validation Suite Agents" introduced="tb91" purpose="development" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/mw/mmmw/mmvalidationsuite/mmvalidationsuiteagents/group" mrp="/sf/mw/mmmw/mmvalidationsuite/mmvalidationsuiteagents/group/multimedia_mvs_agents.mrp"/>
+     </component>
+     <component name="mvsintegrationtest" long-name="MVS Integration Tests" introduced="tb91" purpose="development" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/mw/mmmw/mmvalidationsuite/mvsintegrationtest/group/multimedia_inttest_mvs_source.mrp"/>
+     </component>
+    </collection>
+    <collection name="mmmw_info" long-name="Multimedia Middleware Info" level="specific">
+     <component unofficial="yes" name="mmmw_build" long-name="Multimedia Middleware Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/group"/>
+     </component>
+     <component unofficial="yes" name="mmmw_test" long-name="Multimedia Middleware Test" origin-model="foundation">
+      <!-- <unit bldFile="/sf/mw/mmmw/tsrc/group"/> -->
+     </component>
+     <component unofficial="yes" name="mmmw_plat" long-name="Multimedia Middleware Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/mw/mmmw/mmmw_plat/audio_metadata_reader_api/tsrc/group"/>
+      <unit bldFile="/sf/mw/mmmw/mmmw_plat/audio_output_control_utility_api/tsrc/group"/>
+      <unit bldFile="/sf/mw/mmmw/mmmw_plat/call_audio_control_api/tsrc/group"/>
+      <unit bldFile="/sf/mw/mmmw/mmmw_plat/enhanced_media_client_api/tsrc/group"/>
+      <unit bldFile="/sf/mw/mmmw/mmmw_plat/group"/>
+      <unit bldFile="/sf/mw/mmmw/mmmw_plat/radio_utilities_api/tsrc/group"/>
+      <unit bldFile="/sf/mw/mmmw/mmmw_plat/voip_audio_services_api/tsrc/group"/>
+     </component>
+    <component name="mmmw_metadata" long-name="Multimedia Middleware Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/mw/mmmw/mmmw_info/mmmw_metadata/mmmw_metadata.mrp"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

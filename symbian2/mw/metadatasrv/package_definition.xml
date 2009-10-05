@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="metadatasrv" long-name="Legacy Metadata Services" tech_domain="mm" level="specific" levels="plugin framework server generic specific">
+    <collection name="contentlistingframework" long-name="Content Listing Framework" level="framework">
+     <component unofficial="yes" name="contentlistingframework_build" long-name="Content Listing Framework Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/metadatasrv/contentlistingframework/group"/>
+     </component>
+    </collection>
+    <collection name="mediamanagementuis" long-name="Media Management UIs" level="server">
+     <component name="mediastylegrid" long-name="Media Style Grid" origin-model="foundation">
+      <unit bldFile="/sf/mw/metadatasrv/mediamanagementuis/mediastylegrid/group"/>
+     </component>
+    </collection>
+    <collection name="mediamanagementutilities" long-name="Media Management utilities" level="generic">
+     <component name="mediafetch" long-name="Media Fetch" origin-model="foundation">
+      <unit bldFile="/sf/mw/metadatasrv/mediamanagementutilities/mediafetch/group"/>
+     </component>
+    </collection>
+    <collection name="metadatasrv_info" long-name="Legacy Metadata Services Info" level="specific">
+     <component unofficial="yes" name="metadatasrv_plat" long-name="Legacy Metadata Services Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/mw/metadatasrv/metadatasrv_plat/group"/>
+     </component>
+     <component unofficial="yes" name="metadatasrv_build" long-name="Legacy Metadata Services Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/metadatasrv/group"/>
+     </component>
+     <component unofficial="yes" name="metadatasrv_pub" long-name="Legacy Metadata Services Public Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/mw/metadatasrv/metadatasrv_pub/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

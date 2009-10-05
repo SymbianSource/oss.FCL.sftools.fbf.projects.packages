@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="websrv" long-name="Web Services" tech_domain="rt" level="generic" levels="plugin framework server generic specific">
+    <collection name="webservices" long-name="Web Services" level="generic">
+     <component name="wsnotifierplugins" long-name="WS Notifier Plugins" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wsnotifierplugins/group"/>
+     </component>
+     <component name="wslogger" long-name="WS Logger" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wslogger/group"/>
+     </component>
+     <component name="wsxml" long-name="WS XML" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wsxml/group"/>
+     </component>
+     <component name="wsutils" long-name="WS Utils" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wsutils/group"/>
+     </component>
+     <component name="wsfragment" long-name="WS Fragment" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wsfragment/group"/>
+     </component>
+     <component name="wsdescription" long-name="WS Description" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wsdescription/group"/>
+     </component>
+     <component name="wshttpchanneltransportplugin" long-name="WS HTTP Channel Transport Plugin" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wshttpchanneltransportplugin/group"/>
+     </component>
+     <component name="wsconnection" long-name="WS Connection" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wsconnection/group"/>
+     </component>
+     <component name="wshostletconnection" long-name="WS Hostlet Connection" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wshostletconnection/group"/>
+     </component>
+     <component name="wscredentialmanager" long-name="WS Credential Manager" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wscredentialmanager/group"/>
+     </component>
+     <component name="wsmanager" long-name="WS Manager" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wsmanager/group"/>
+     </component>
+     <component name="wsidentitymanager" long-name="WS Identity Manager" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wsidentitymanager/group"/>
+     </component>
+     <component name="wsframework" long-name="WS Framework" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wsframework/group"/>
+     </component>
+     <component name="wsmessages" long-name="WS Messages" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wsmessages/group"/>
+     </component>
+     <component name="wsconnectionagent" long-name="WS Connection Agent" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wsconnectionagent/group"/>
+     </component>
+     <component name="idwsfplugin" long-name="IDWSF Plugin" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/idwsfplugin/group"/>
+     </component>
+     <component name="wsibasicplugin" long-name="WSI Basic Plugin" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wsibasicplugin/group"/>
+     </component>
+     <component name="wsrestplugin" long-name="WS Rest Plugin" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wsrestplugin/group"/>
+     </component>
+     <component name="idwsfsecuritymechanism" long-name="IDWSF Security Mechanism" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/idwsfsecuritymechanism/group"/>
+     </component>
+     <component name="wspasswordtransforms" long-name="WS Password Transforms" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wspasswordtransforms/group"/>
+     </component>
+     <component name="wscore" long-name="WS Core" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wscore/group"/>
+     </component>
+     <component name="wsprovider" long-name="WS Provider" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wsprovider/group"/>
+     </component>
+     <component name="wslocaltransportplugin" long-name="WS Local Transport Plugin" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wslocaltransportplugin/group"/>
+     </component>
+     <component name="wshostlettransportplugin" long-name="WS Hostlet Transport Plugin" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wshostlettransportplugin/group"/>
+     </component>
+     <component name="wsstar" long-name="WS Star" origin-model="foundation">
+      <!-- <unit bldFile="/sf/mw/websrv/webservices/wsstar/group"/> -->
+     </component>
+     <component name="wsoviplugin" long-name="WS Ovi Plugin" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/wsoviplugin/group"/>
+     </component>
+     <component unofficial="yes" name="webservices_build" long-name="Web Services Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/webservices/group"/>
+     </component>
+    </collection>
+    <collection name="websrv_info" long-name="Web Services Info" level="specific">
+     <component unofficial="yes" name="websrv_build" long-name="Web Services Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/group"/>
+     </component>
+     <component unofficial="yes" name="websrv_pub" long-name="Web Services Public Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/mw/websrv/websrv_pub/group"/>
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/hostlet_connection_api/tsrc/bc/hostconn/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/hostlet_connection_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/hostlet_connection_api/tsrc/hostconn/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/hostlet_connection_api/tsrc/hostconntester/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_connection_api/tsrc/bc/connection/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_connection_api/tsrc/bc/senutils/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_connection_api/tsrc/connection/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_connection_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_connection_api/tsrc/senconnectiontester/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_connection_api/tsrc/senconnectiontimeoutstester/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_connection_api/tsrc/senlayeredpropertiestester/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_connection_api/tsrc/senutils/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_connection_api/tsrc/senutilstestcases/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_connection_api/tsrc/wspolicytester/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_connection_api/tsrc/wsstarmessagehandlertester/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_description_api/tsrc/bc/senservdesc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_description_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_description_api/tsrc/senservdesc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_description_api/tsrc/senservdesctester/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_manager_api/tsrc/bc/senservicemanager/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_manager_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_manager_api/tsrc/senservicemanager/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_manager_api/tsrc/senservicemanagertester/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_messaging_api/tsrc/bc/newsoapclasses/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_messaging_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_messaging_api/tsrc/newsoapclasses/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_messaging_api/tsrc/newsoapclassestester/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/xml_extensions_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/xml_extensions_api/tsrc/senxml/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/xml_extensions_api/tsrc/senxmltester/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/xml_fragment_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/mw/websrv/websrv_pub/xml_fragment_api/tsrc/senfragmenttester/group"/> -->
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

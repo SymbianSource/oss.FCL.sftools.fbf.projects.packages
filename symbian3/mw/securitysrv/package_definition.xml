@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="securitysrv" long-name="Security Services" tech_domain="se" level="generic" levels="plugin framework server generic specific">
+    <collection name="gba" long-name="Generic Boot Architecture" level="specific">
+     <component name="uicc" long-name="Uicc" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/gba/uicc/group"/>
+     </component>
+     <component name="bootstrap" long-name="Bootstrap" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/gba/bootstrap/group"/>
+     </component>
+     <component name="gbaserver" long-name="GBA Server" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/gba/gbaserver/group"/>
+     </component>
+     <component name="gbaapi" long-name="GBA API" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/gba/gbaapi/group"/>
+     </component>
+     <component name="gbafilter" long-name="GBA Filter" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/gba/gbafilter/group"/>
+     </component>
+     <component unofficial="yes" name="gba_build" long-name="Generic Boot Architecture Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/gba/group"/>
+     </component>
+    </collection>
+    <collection name="wim" long-name="WIM" level="framework">
+     <component name="swimreader" long-name="Swim Reader" origin-model="foundation"/>
+     <component name="scard" long-name="S Card" origin-model="foundation"/>
+     <component name="wimutil" long-name="WIM Util" origin-model="foundation"/>
+     <component name="wimserver" long-name="WIM Server" origin-model="foundation"/>
+     <component name="wimclient" long-name="WIM Client" origin-model="foundation"/>
+     <component name="wimplugin" long-name="WIM Plugin" origin-model="foundation"/>
+     <component unofficial="yes" name="wim_build" long-name="WIM Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/wim/group"/>
+     </component>
+    </collection>
+    <collection name="cms" long-name="Certificate Management Services" level="generic">
+     <component name="cms_build" long-name="CMS" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/cms/group"/>
+     </component>
+    </collection>
+    <collection name="pkiutilities" long-name="PKI Utilities" level="plugin">
+     <component name="x509certnameparser" long-name="X509cert Name Parser" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/pkiutilities/x509certnameparser/group"/>
+     </component>
+     <component name="pkcs12" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/pkiutilities/pkcs12/group"/>
+     </component>
+     <component name="certmanui" long-name="Certman UI" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/pkiutilities/certmanui/group"/>
+     </component>
+     <component name="ctsecuritydialogs" long-name="CT Security Dialogs" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/pkiutilities/ctsecuritydialogs/group"/>
+     </component>
+     <component name="certsaver" long-name="Cert Saver" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/pkiutilities/certsaver/group"/>
+     </component>
+     <component name="secmodui" long-name="Sec Mod UI" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/pkiutilities/secmodui/group"/>
+     </component>
+     <component name="devicetoken" long-name="Device Token" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/pkiutilities/devicetoken/group"/>
+     </component>
+     <component name="certificates" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/pkiutilities/certificates/group"/>
+     </component>
+     <component name="certificates_oem" origin-model="foundation"/>
+     <component unofficial="yes" name="pkiutilities_build" long-name="PKI Utilities Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/pkiutilities/group"/>
+     </component>
+    <component name="ocsp" long-name="Online Certificate Status Protocol" introduced="tb91" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/mw/securitysrv/pkiutilities/ocsp/group" mrp="/sf/mw/securitysrv/pkiutilities/ocsp/group/securitysrv_ocsp.mrp"/>
+     </component>
+    </collection>
+    <collection name="remotelock" long-name="Remote Lock" level="server">
+     <component name="remotelocksettings" long-name="Remote Lock Settings" origin-model="foundation"/>
+     <component name="remotelockengine" long-name="Remote Lock Engine" origin-model="foundation"/>
+     <component unofficial="yes" name="remotelock_build" long-name="Remote Lock Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/remotelock/group"/>
+     </component>
+    </collection>
+    <collection name="boottimeintegritycheck" long-name="Boot Time Integrity Check" level="plugin">
+     <component name="trkdummy" long-name="Trk Dummy" origin-model="foundation">
+      <!-- <unit bldFile="/sf/mw/securitysrv/boottimeintegritycheck/trkdummy/group"/> -->
+     </component>
+     <component unofficial="yes" name="boottimeintegritycheck_build" long-name="Boot Time Integrity Check Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/boottimeintegritycheck/group"/>
+     </component>
+    </collection>
+    <collection name="securitydialogs" long-name="Security Dialogs" level="specific">
+     <component name="keylockpolicyapi" long-name="Keylock Policy Api" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/securitydialogs/keylockpolicyapi/group"/>
+     </component>
+     <component name="autolock" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/securitydialogs/autolock/group"/>
+     </component>
+     <component name="secui" long-name="Sec UI" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/securitydialogs/secui/group"/>
+     </component>
+     <component name="securitynotifier" long-name="Security Notifier" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/securitydialogs/securitynotifier/group"/>
+     </component>
+     <component name="securityobserver" long-name="Security Observer" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/securitydialogs/securityobserver/group"/>
+     </component>
+     <component unofficial="yes" name="securitydialogs_build" long-name="Security Dialogs Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/securitydialogs/group"/>
+     </component>
+    </collection>
+    <collection name="securitysrv_info" long-name="Security Services Info" level="specific">
+     <component unofficial="yes" name="securitysrv_build" long-name="Security Services Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/securitysrv/group"/>
+     </component>
+     <component unofficial="yes" name="secsrv_plat" class="api" origin-model="foundation">
+      <!-- <unit bldFile="/sf/mw/securitysrv/secsrv_plat/devicelock_access_api/group"/> -->
+      <unit bldFile="/sf/mw/securitysrv/secsrv_plat/group"/>
+      <!-- <unit bldFile="/sf/mw/securitysrv/secsrv_plat/keyguard_access_api/group"/> -->
+      <!-- <unit bldFile="/sf/mw/securitysrv/secsrv_plat/lockapp_server_api/group"/> -->
+     </component>
+     <component unofficial="yes" name="securitysrv_test" long-name="Security Services Test" origin-model="foundation">
+      <!-- <unit bldFile="/sf/mw/securitysrv/tsrc/group"/> -->
+     </component>
+    <component name="securitysrv_metadata" long-name="Security Services Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/mw/securitysrv/securitysrv_info/securitysrv_metadata/securitysrv_metadata.mrp"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

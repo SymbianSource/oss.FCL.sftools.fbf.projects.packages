@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="profile" long-name="Profile" tech_domain="ui" level="apps" levels="app">
+    <collection name="profilesapplication" long-name="Profiles Application" level="app">
+     <component name="profiles" long-name="Profiles" origin-model="foundation">
+      <unit bldFile="/sf/app/profile/profilesapplication/profiles/group"/>
+      <!-- <unit bldFile="/sf/app/profile/profilesapplication/profiles/gsprofilesplugin/group"/> -->
+      <!-- <unit bldFile="/sf/app/profile/profilesapplication/profiles/profileaiwprovider/group"/> -->
+      <!-- <unit bldFile="/sf/app/profile/profilesapplication/profiles/profileapp/group"/> -->
+      <unit bldFile="/sf/app/profile/profilesapplication/profiles/profileapp/tsrc/public/basic/group"/>
+      <!-- <unit bldFile="/sf/app/profile/profilesapplication/profiles/profilesgstonesplugin/group"/> -->
+     </component>
+     <component unofficial="yes" name="profilesapplication_test" long-name="Profiles Application Test" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/profile/profilesapplication/tsrc/public/basic/group"/> -->
+     </component>
+    </collection>
+    <collection name="profile_info" long-name="Profile Info" level="app">
+     <component unofficial="yes" name="profile_plat" long-name="Profile Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/app/profile/profile_plat/group"/>
+     </component>
+     <component unofficial="yes" name="profile_help" long-name="Profile Help" origin-model="foundation">
+      <unit bldFile="/sf/app/profile/help/group"/>
+     </component>
+     <component unofficial="yes" name="profile_build" long-name="Profile Build" origin-model="foundation">
+      <unit bldFile="/sf/app/profile/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

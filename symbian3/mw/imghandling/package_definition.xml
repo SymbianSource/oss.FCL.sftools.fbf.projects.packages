@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="imghandling" long-name="Image Handling" tech_domain="mm" level="specific" levels="plugin framework server generic specific">
+    <collection name="3gplibrary" long-name="3GP Library" level="server">
+     <component name="3gpmp4lib" long-name="3GP MP4 Library" origin-model="foundation">
+      <unit bldFile="/sf/mw/imghandling/3gplibrary/3gpmp4lib/group"/>
+      <!-- <unit bldFile="/sf/mw/imghandling/3gplibrary/3gpmp4lib/tsrc/public/basic/group"/> -->
+     </component>
+     <component unofficial="yes" name="3gplibrary_build" long-name="3GP Library Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/imghandling/3gplibrary/group"/>
+     </component>
+    </collection>
+    <collection name="imagehandlinglib" long-name="Image Handling Library" level="generic">
+     <component name="ihl" long-name="IHL" origin-model="foundation">
+      <unit bldFile="/sf/mw/imghandling/imagehandlinglib/group"/>
+     </component>
+    </collection>
+    <collection name="imagehandlingutilities" long-name="Image Handling Utilities" level="specific">
+     <component name="imageinfopopup" long-name="Image Info Popup" origin-model="foundation">
+      <unit bldFile="/sf/mw/imghandling/imagehandlingutilities/imageinfopopup/group"/>
+     </component>
+     <component name="imagepreview" long-name="Image Preview" origin-model="foundation">
+      <unit bldFile="/sf/mw/imghandling/imagehandlingutilities/imagepreview/group"/>
+     </component>
+     <component name="thumbnailmanager" long-name="Thumbnail Manager" origin-model="foundation">
+      <unit bldFile="/sf/mw/imghandling/imagehandlingutilities/thumbnailmanager/group"/>
+     </component>
+     <component name="tvoutengine" long-name="TV Out Engine" origin-model="foundation">
+      <unit bldFile="/sf/mw/imghandling/imagehandlingutilities/tvoutengine/group"/>
+     </component>
+    </collection>
+    <collection name="imghandling_info" long-name="Image Handling Info" level="specific">
+     <component unofficial="yes" name="imagehandling_plat" class="api" origin-model="foundation">
+      <!-- <unit bldFile="/sf/mw/imghandling/imagehandling_plat/3gp_library_api/tsrc/group"/> -->
+      <unit bldFile="/sf/mw/imghandling/imagehandling_plat/group"/>
+      <!-- <unit bldFile="/sf/mw/imghandling/imagehandling_plat/thumbnailmanager_api/tsrc/group"/> -->
+     </component>
+     <component unofficial="yes" name="imghandling_build" long-name="Image Handling Build" origin-model="foundation">
+      <unit bldFile="/sf/mw/imghandling/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

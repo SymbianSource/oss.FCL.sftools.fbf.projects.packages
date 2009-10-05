@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="printing" long-name="Printing" tech_domain="de" level="services" levels="app">
+    <collection name="imageprint" long-name="ImagePrint" level="app">
+     <component name="clog" origin-model="foundation">
+      <unit bldFile="/sf/app/printing/imageprint/clog/group"/>
+     </component>
+     <component name="imageprintengine" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/printing/imageprint/imageprintengine/deviceprotocols/btprotocol/group"/> -->
+      <!-- <unit bldFile="/sf/app/printing/imageprint/imageprintengine/deviceprotocols/dpof/group"/> -->
+      <!-- <unit bldFile="/sf/app/printing/imageprint/imageprintengine/deviceprotocols/pictbridge2/group"/> -->
+      <!-- <unit bldFile="/sf/app/printing/imageprint/imageprintengine/deviceprotocols/upnpprotocolfw2/group"/> -->
+      <!-- <unit bldFile="/sf/app/printing/imageprint/imageprintengine/deviceprotocols/xhtmlfilecomposer/group"/> -->
+      <unit bldFile="/sf/app/printing/imageprint/imageprintengine/group"/>
+      <!-- <unit bldFile="/sf/app/printing/imageprint/imageprintengine/imageprintserver/group"/> -->
+     </component>
+     <component name="imageprintui" origin-model="foundation">
+      <unit bldFile="/sf/app/printing/imageprint/imageprintui/group"/>
+     </component>
+     <component unofficial="yes" name="imageprint_build" origin-model="foundation">
+      <unit bldFile="/sf/app/printing/imageprint/group"/>
+     </component>
+    </collection>
+    <collection name="printing_info" long-name="Printing Info" level="app">
+     <component unofficial="yes" name="printing_build" long-name="Printing Build" origin-model="foundation">
+      <unit bldFile="/sf/app/printing/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

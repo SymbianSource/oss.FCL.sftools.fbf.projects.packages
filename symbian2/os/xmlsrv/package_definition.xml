@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="os" long-name="OS" levels="hw services">
+<block name="xmlsrv" long-name="XML Services" tech_domain="rt" level="services" levels="plugin server framework generic specific">
+    <collection name="xmlengine" long-name="XML Engine" level="server">
+     <component name="libxml2" long-name="Libxml2" origin-model="foundation">
+      <unit bldFile="/sf/os/xmlsrv/xmlengine/libxml2/group"/>
+     </component>
+     <component name="xmlengineutils" long-name="XML Engine Utils" origin-model="foundation">
+      <unit bldFile="/sf/os/xmlsrv/xmlengine/xmlengineutils/group"/>
+     </component>
+     <component name="domxpathwrapper" long-name="DOM XPath Wrapper" origin-model="foundation">
+      <unit bldFile="/sf/os/xmlsrv/xmlengine/domxpathwrapper/group"/>
+     </component>
+     <component name="xmlengineserializer" long-name="XML Engines Erializer" origin-model="foundation">
+      <unit bldFile="/sf/os/xmlsrv/xmlengine/xmlengineserializer/group"/>
+     </component>
+     <component name="xmlenginesaxplugin" long-name="XML Engine SAX Plugin" origin-model="foundation">
+      <unit bldFile="/sf/os/xmlsrv/xmlengine/xmlenginesaxplugin/group"/>
+     </component>
+     <component unofficial="yes" name="xmlengine_build" long-name="XML Engine Build" origin-model="foundation">
+      <unit bldFile="/sf/os/xmlsrv/xmlengine/group"/>
+     </component>
+    </collection>
+    <collection name="xmlsecurityengine" long-name="XML Security Engine" level="framework">
+     <component name="xmlseccertman" long-name="XML Security Certman" origin-model="foundation">
+      <unit bldFile="/sf/os/xmlsrv/xmlsecurityengine/xmlseccertman/group"/>
+     </component>
+     <component name="xmlsec" long-name="XML Security" origin-model="foundation">
+      <unit bldFile="/sf/os/xmlsrv/xmlsecurityengine/xmlsec/group"/>
+     </component>
+     <component name="xmlseccrypto" long-name="XML Security Crypto" origin-model="foundation">
+      <unit bldFile="/sf/os/xmlsrv/xmlsecurityengine/xmlseccrypto/group"/>
+     </component>
+     <component name="xmlsecwrapper" long-name="XML Security Wrapper" origin-model="foundation">
+      <unit bldFile="/sf/os/xmlsrv/xmlsecurityengine/xmlsecwrapper/group"/>
+     </component>
+     <component unofficial="yes" name="xmlsecurityengine_build" long-name="XML Security Engine Build" origin-model="foundation">
+      <unit bldFile="/sf/os/xmlsrv/xmlsecurityengine/group"/>
+     </component>
+    </collection>
+    <collection name="xml" long-name="XML" level="generic">
+     <component name="xmlfw" long-name="XML Framework" introduced="7.0s" purpose="optional" plugin="N" origin-model="Symbian">
+      <unit bldFile="/sf/os/xmlsrv/xml/xmlfw/group" mrp="/sf/os/xmlsrv/xml/xmlfw/group/syslibs_xml.mrp"/>
+     </component>
+     <component name="xmlexpatparser" long-name="XML Expat Parser" introduced="7.0s" purpose="optional" plugin="Y" origin-model="Symbian">
+      <unit bldFile="/sf/os/xmlsrv/xml/xmlexpatparser/group" mrp="/sf/os/xmlsrv/xml/xmlexpatparser/group/syslibs_xmlparser.mrp"/>
+     </component>
+     <component name="wbxmlparser" long-name="WBXML Parser" introduced="7.0s" purpose="optional" plugin="Y" origin-model="Symbian">
+      <unit bldFile="/sf/os/xmlsrv/xml/wbxmlparser/group" mrp="/sf/os/xmlsrv/xml/wbxmlparser/group/syslibs_wbxmlparser.mrp"/>
+     </component>
+    </collection>
+    <collection name="xmlsrv_info" long-name="XML Services Info" level="specific">
+     <component unofficial="yes" name="xmlsrv_plat" long-name="XML Services Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/group"/>
+      <!-- <unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/xml_encryption_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/xml_engine_serializer_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/xml_engine_utils_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/xml_engine_xpath_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/xml_security_engine_utils_api/tsrc/group"/> -->
+      <!-- <unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/xml_signature_api/tsrc/group"/> -->
+     </component>
+     <component unofficial="yes" name="xmlsrv_build" long-name="XML Services Build" origin-model="foundation">
+      <unit bldFile="/sf/os/xmlsrv/group"/>
+     </component>
+     <component unofficial="yes" name="xmlsrv_pub" long-name="XML Services Public Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/os/xmlsrv/xmlsrv_pub/group"/>
+      <!-- <unit bldFile="/sf/os/xmlsrv/xmlsrv_pub/xml_engine_dom_api/tsrc/group"/> -->
+     </component>
+    <component name="xmlsrv_metadata" long-name="XML Services Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
+      <unit mrp="/sf/os/xmlsrv/xmlsrv_info/xmlsrv_metadata/xmlsrv_metadata.mrp"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

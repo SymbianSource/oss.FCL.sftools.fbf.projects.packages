@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="java" long-name="Java" tech_domain="rt" level="services" levels="framework util generic rt">
+    <collection name="javaextensions" long-name="Java Extensions" level="generic">
+     <component name="eswt" long-name="Eswt" origin-model="foundation"/>
+     <component name="jsr" long-name="JSR" origin-model="foundation"/>
+     <component name="supplements" long-name="Supplements" origin-model="foundation"/>
+    </collection>
+    <collection name="javainstaller" long-name="Java Installer" level="generic">
+     <component name="javarightslistener" long-name="Java Rights Listener" origin-model="foundation"/>
+     <component name="installplugins" long-name="Install Plugins" origin-model="foundation"/>
+     <component name="midp2otadownloadplugin" long-name="MIDP2 OTA Download Plugin" origin-model="foundation"/>
+     <component name="installationfrontend" long-name="Installation Frontend" origin-model="foundation"/>
+     <component name="midp2iferecognizer" long-name="MIDP2 Interface Rrecognizer" origin-model="foundation"/>
+     <component name="iferecognizers" long-name="Ife Recognizers" origin-model="foundation"/>
+    </collection>
+    <collection name="javalegacy" long-name="Java Legacy" level="util">
+     <component name="jcfcommon" long-name="Jcf Common" origin-model="foundation"/>
+     <component name="j2me" long-name="J2ME" origin-model="foundation"/>
+    </collection>
+    <collection name="javamanager" long-name="Java Manager" level="framework">
+     <component name="javabackup" long-name="Java Backup" origin-model="foundation"/>
+     <!-- Empty duplicate component javaregistry removed -->
+     <component name="javadrmmanager" long-name="Java DRM Manager" origin-model="foundation"/>
+     <component name="javasettings" long-name="Java Settings" origin-model="foundation"/>
+    </collection>
+    <collection name="javaruntime" long-name="Java Runtime" level="rt">
+     <!-- Empty duplicate component common removed -->
+     <component name="temp_j2me_root" long-name="Temp J2me Root" origin-model="foundation"/>
+     <component name="jvm" long-name="JVM" origin-model="foundation"/>
+     <component name="eventserver" long-name="Event Server" origin-model="foundation"/>
+     <!-- Empty duplicate component utils removed -->
+     <component name="midp2ams" long-name="Midp2ams" origin-model="foundation"/>
+     <component name="redirserver" long-name="Redirect Server" origin-model="foundation"/>
+    </collection>
+    <collection name="javautils" long-name="Java Utils" level="util">
+     <component name="jarfiledecoder" long-name="JAR File Decoder" origin-model="foundation"/>
+     <component name="javareader" long-name="Java Reader" origin-model="foundation"/>
+     <component name="javapackagelookup" long-name="Java Package Lookup" origin-model="foundation"/>
+     <!-- Empty duplicate component common removed -->
+     <component name="integrityserver" long-name="Integrity Server" origin-model="foundation"/>
+     <!-- Empty duplicate component javadrmutils removed -->
+     <component name="javarecognizer" long-name="Java Recognizer" origin-model="foundation"/>
+     <component name="iconconverter" long-name="Icon Converter" origin-model="foundation"/>
+     <component name="adt" long-name="ADT" origin-model="foundation"/>
+     <!-- Empty duplicate component javaenvinfo removed -->
+    </collection>
+    <collection name="java_stubs" long-name="Java Stubs" level="util">
+     <!--component manually moved to javautils collection-->
+     <!--<component name="javadrmutils" long-name="Java DRM Utils">
+       <unit bldFile="/sf/app/java/java_stubs/javadrmutils/group"/>
+     </component>-->
+     <!--component manually moved to javautils collection-->
+     <!--<component name="javaenvinfo" long-name="Java Environment Info">
+       <unit bldFile="/sf/app/java/java_stubs/javaenvinfo/group"/>
+     </component>-->
+     <component name="javaregistry" long-name="Java Registry" origin-model="foundation">
+      <unit bldFile="/sf/app/java/java_stubs/javaregistry/clientserver/client/group"/>
+     </component>
+     <component unofficial="yes" name="java_stubs_build" origin-model="foundation">
+      <unit bldFile="/sf/app/java/java_stubs/group"/>
+     </component>
+    </collection>
+    <collection name="javatools" long-name="Java Tools" level="generic">
+     <component name="envupdater" long-name="Environment Updater" origin-model="foundation"/>
+    </collection>
+    <collection name="java_info" long-name="Java Info" level="rt">
+     <component unofficial="yes" name="java_build" long-name="Java Build" origin-model="foundation">
+      <unit bldFile="/sf/app/java/group"/>
+     </component>
+     <component unofficial="yes" name="java_plat" long-name="Java Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/app/java/java_plat/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>

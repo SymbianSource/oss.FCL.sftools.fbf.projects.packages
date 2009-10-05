@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="imgeditor" long-name="Image Editor Apps" tech_domain="ma" level="apps" levels="engine ui">
+    <collection name="imageeditor" long-name="Image Editor" level="ui">
+     <component name="pb" origin-model="foundation">
+      <unit bldFile="/sf/app/imgeditor/imageeditor/pb/group"/>
+     </component>
+     <component name="iepb" origin-model="foundation">
+      <unit bldFile="/sf/app/imgeditor/imageeditor/iepb/group"/>
+     </component>
+     <component name="imageeditorui" long-name="Image Editor UI" origin-model="foundation">
+      <unit bldFile="/sf/app/imgeditor/imageeditor/imageeditorui/group"/>
+     </component>
+     <component name="imageeditormanager" long-name="Image Editor Manager" origin-model="foundation">
+      <unit bldFile="/sf/app/imgeditor/imageeditor/imageeditormanager/group"/>
+     </component>
+     <component name="imageeditorapp" long-name="Image Editor App" origin-model="foundation">
+      <unit bldFile="/sf/app/imgeditor/imageeditor/imageeditorapp/group"/>
+     </component>
+     <component name="imageeditor_plugins" long-name="Plugins" origin-model="foundation">
+      <unit bldFile="/sf/app/imgeditor/imageeditor/plugins/blackwhiteplugin/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditor/plugins/brightnessplugin/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditor/plugins/bubbleplugin/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditor/plugins/cartoonizeplugin/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditor/plugins/clipartplugin/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditor/plugins/contrastplugin/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditor/plugins/cropplugin/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditor/plugins/drawplugin/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditor/plugins/frameplugin/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditor/plugins/negativeplugin/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditor/plugins/redeyeplugin/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditor/plugins/resizeplugin/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditor/plugins/rotatelplugin/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditor/plugins/rotaterplugin/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditor/plugins/sepiaplugin/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditor/plugins/sharpnessplugin/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditor/plugins/textplugin/group"/>
+     </component>
+     <component name="editorprovider" long-name="Editor Provider" origin-model="foundation">
+      <unit bldFile="/sf/app/imgeditor/imageeditor/editorprovider/group"/>
+     </component>
+     <component unofficial="yes" name="imageeditor_build" long-name="Image Editor Build" origin-model="foundation">
+      <unit bldFile="/sf/app/imgeditor/imageeditor/group"/>
+     </component>
+    </collection>
+    <collection name="imageeditorengine" long-name="Image Editor Engine" level="engine">
+     <component name="filters" long-name="Filters" origin-model="foundation">
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filterbrightness/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filterbubble/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filterbuffer/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filtercartoon/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filterclipart/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filtercontrast/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filtercrop/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filterdraw/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filterframe/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filtergrayscale/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filtericlsource/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filterjpegsource/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filterjpegtarget/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filternegate/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filterredeye/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filterrotate/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filterscale/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filtersepia/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filtersharpness/group"/>
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/filters/filtertext/group"/>
+     </component>
+     <component name="imageeditorutils" long-name="Image Editor Utils" origin-model="foundation">
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/imageeditorutils/group"/>
+     </component>
+     <component name="systemparameters" long-name="System Parameters" origin-model="foundation">
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/systemparameters/group"/>
+     </component>
+     <component name="enginewrapper" long-name="Engine Wrapper" origin-model="foundation">
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/enginewrapper/group"/>
+     </component>
+     <component name="jpegrotator" long-name="Jpeg Rotator" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/imgeditor/imageeditorengine/jpegrotator/group"/> -->
+     </component>
+     <component name="jpegscaler" long-name="Jpeg Scaler" origin-model="foundation">
+      <!-- <unit bldFile="/sf/app/imgeditor/imageeditorengine/jpegscaler/group"/> -->
+     </component>
+     <component unofficial="yes" name="imageeditorengine_build" long-name="Image Editor Engine Build" origin-model="foundation">
+      <unit bldFile="/sf/app/imgeditor/imageeditorengine/group"/>
+     </component>
+    </collection>
+    <collection name="imgeditor_info" long-name="Image Editor Apps Info" level="ui">
+     <component unofficial="yes" name="imgeditor_plat" long-name="Image Editor Apps Platform Interfaces" class="api" origin-model="foundation">
+      <unit bldFile="/sf/app/imgeditor/imgeditor_plat/group"/>
+     </component>
+     <component unofficial="yes" name="imgeditor_build" long-name="Image Editor Apps Build" origin-model="foundation">
+      <unit bldFile="/sf/app/imgeditor/group"/>
+     </component>
+    </collection>
+   </block>
+</layer>
+</systemModel>
+</SystemDefinition>
