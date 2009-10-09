@@ -1,0 +1,3 @@
+source,dst,type,pattern,sysdef
+http://v800050/master_prod/oss/FCL/interim/QEMU/,/sf/adaptation/qemu,branch,default,x
+http://v800050/master_prod/sfl/FCL/sf/os/kernelhwsrv/,/sf/os/kernelhwsrv,branch,default,x
