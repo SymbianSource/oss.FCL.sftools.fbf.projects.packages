@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-
-<project name="SF-JOB-PROPS">
-	<property name="sf.project.type" value="package"/>
-    <property name="sf.spec.job.name" value="serviceapifw"/>
-    <property name="sf.spec.job.codeline" value="FCL"/>
-    <property name="sf.spec.systemdefinition.location" value="\sf\mw\serviceapifw\package_definition.xml"/>
-</project>
