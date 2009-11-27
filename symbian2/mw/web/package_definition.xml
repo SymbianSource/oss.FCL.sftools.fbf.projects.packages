@@ -81,10 +81,10 @@
      <component name="widgetengine" long-name="Widget Engine" origin-model="foundation">
       <unit bldFile="/sf/mw/web/webengine/widgetengine/group"/>
      </component>
-     <!--Component manually removed as empty and name conflicts with another component-->
-     <!--<component name="memoryplugin" long-name="Memory Plugin">
+     <!--MattD 20091019: Put back into model (originally taken out due to conflict with photosgallery memoryplugin - Bug 157?) -->
+     <component name="webmemoryplugin" long-name="Web Memory Plugin">
        <unit bldFile="/sf/mw/web/webengine/memoryplugin/group"/>
-     </component>-->
+     </component>
      <component name="widgetmemoryplugin" long-name="Widget Memory Plugin" origin-model="foundation">
       <unit bldFile="/sf/mw/web/webengine/widgetmemoryplugin/group"/>
      </component>

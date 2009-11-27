@@ -84,7 +84,7 @@
      </component>
      <component name="n:swianalysistoolkit" long-name="SWI Analysis Toolkit" purpose="development" class="PC" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/mw/appinstall/secureswitools/swianalysistoolkit/group" mrp="mw/appinstall/secureswitools/swianalysistoolkit/group/security_switools.mrp"/> -->
+      <!-- <unit bldFile="/sf/mw/appinstall/secureswitools/swianalysistoolkit/group" mrp="/sf/mw/appinstall/secureswitools/swianalysistoolkit/group/security_switools.mrp"/> -->
      </component>
      <component name="openssllib" long-name="OpenSSL Library" purpose="optional" class="PC" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/mw/appinstall/secureswitools/openssllib/security_openssl.mrp"/>

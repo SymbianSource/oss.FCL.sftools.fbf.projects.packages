@@ -9,43 +9,43 @@
      </component>
      <component name="n:unistore2emulatorsupport" long-name="UniStore2 Emulator Support" filter="gt" introduced="tb91" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/os/boardsupport/emulator/unistore2emulatorsupport" mrp="os/boardsupport/emulator/unistore2emulatorsupport/base_wins_unistore2.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/boardsupport/emulator/unistore2emulatorsupport" mrp="/sf/os/boardsupport/emulator/unistore2emulatorsupport/base_wins_unistore2.mrp"/> -->
      </component>
     </collection>
     <collection name="n:omaph2" long-name="OMAP H2" level="bsp">
      <component name="n:omaph2bsp" long-name="OMAP H2 BSP" introduced="9.0" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/os/boardsupport/omaph2/omaph2bsp/h2" mrp="os/boardsupport/omaph2/omaph2bsp/h2/base_omaph2.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/boardsupport/omaph2/omaph2bsp/h2" mrp="/sf/os/boardsupport/omaph2/omaph2bsp/h2/base_omaph2.mrp"/> -->
      </component>
      <component name="n:omaph2unistore2" long-name="OMAP H2 UniStore2" filter="gt" introduced="9.1" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/os/boardsupport/omaph2/omaph2unistore2" mrp="os/boardsupport/omaph2/omaph2unistore2/base_h2_unistore2.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/boardsupport/omaph2/omaph2unistore2" mrp="/sf/os/boardsupport/omaph2/omaph2unistore2/base_h2_unistore2.mrp"/> -->
      </component>
      <component name="n:omaph2sdio" long-name="OMAP H2 SDIO" filter="gt" introduced="9.2" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/os/boardsupport/omaph2/omaph2sdio" mrp="os/boardsupport/omaph2/omaph2sdio/base_h2_sdio.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/boardsupport/omaph2/omaph2sdio" mrp="/sf/os/boardsupport/omaph2/omaph2sdio/base_h2_sdio.mrp"/> -->
      </component>
     </collection>
     <collection name="n:omaph4" long-name="OMAP H4" level="bsp">
      <component name="n:omaph4bsp" long-name="OMAP H4 BSP" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/os/boardsupport/omaph4/omaph4bsp/h4" mrp="os/boardsupport/omaph4/omaph4bsp/h4/base_omaph4hrp.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/boardsupport/omaph4/omaph4bsp/h4" mrp="/sf/os/boardsupport/omaph4/omaph4bsp/h4/base_omaph4hrp.mrp"/> -->
      </component>
      <component name="n:h4bootloader" long-name="H4 Boot Loader" introduced="9.1" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit mrp="os/boardsupport/omaph4/h4bootloader/base_omaph4hrp_bootldr.mrp" bldFile="/sf/os/boardsupport/omaph4/h4bootloader"/> -->
+      <!-- <unit mrp="/sf/os/boardsupport/omaph4/h4bootloader/base_omaph4hrp_bootldr.mrp" bldFile="/sf/os/boardsupport/omaph4/h4bootloader"/> -->
      </component>
      <component name="n:omaph4minienvbootloader" long-name="OMAP H4 Mini Environment Boot Loader" introduced="9.2" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit mrp="os/boardsupport/omaph4/omaph4minienvbootloader/base_omaph4hrp_mebootldr.mrp" bldFile="/sf/os/boardsupport/omaph4/omaph4minienvbootloader"/> -->
+      <!-- <unit mrp="/sf/os/boardsupport/omaph4/omaph4minienvbootloader/base_omaph4hrp_mebootldr.mrp" bldFile="/sf/os/boardsupport/omaph4/omaph4minienvbootloader"/> -->
      </component>
      <component name="n:omaph4unistore2" long-name="OMAP H4 Unistore2" filter="gt" introduced="9.2" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/os/boardsupport/omaph4/omaph4unistore2" mrp="os/boardsupport/omaph4/omaph4unistore2/base_omaph4hrp_unistore2.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/boardsupport/omaph4/omaph4unistore2" mrp="/sf/os/boardsupport/omaph4/omaph4unistore2/base_omaph4hrp_unistore2.mrp"/> -->
      </component>
      <component name="n:omaph4sdio" long-name="OMAP H4 SDIO" filter="gt" introduced="9.2" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/os/boardsupport/omaph4/omaph4sdio" mrp="os/boardsupport/omaph4/omaph4sdio/base_omaph4hrp_sdio.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/boardsupport/omaph4/omaph4sdio" mrp="/sf/os/boardsupport/omaph4/omaph4sdio/base_omaph4hrp_sdio.mrp"/> -->
      </component>
     </collection>
     <collection name="haitest" long-name="HAI Test Suites" level="test">

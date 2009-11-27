@@ -194,7 +194,6 @@
      <component name="homemedia_build" long-name="Home Media" origin-model="foundation">
       <unit bldFile="/sf/mw/dlnasrv/homemedia/group"/>
      </component>
-     
     </collection>
     <collection name="dlnasrv_info" long-name="DLNA Services Info" level="plugin">
      <component unofficial="yes" name="dlnasrv_plat" long-name="DLNA Services Platform Interfaces" class="api" origin-model="foundation">

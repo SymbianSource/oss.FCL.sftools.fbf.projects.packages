@@ -72,7 +72,7 @@
     <collection name="n:wapstack" long-name="WAP Stack" level="plugin">
      <component name="n:wapmessageapi" long-name="WAP Message API" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/mw/netprotocols/wapstack/wapmessageapi/group" mrp="mw/netprotocols/wapstack/wapmessageapi/group/wap-stack_wapmessage.mrp"/> -->
+      <!-- <unit bldFile="/sf/mw/netprotocols/wapstack/wapmessageapi/group" mrp="/sf/mw/netprotocols/wapstack/wapmessageapi/group/wap-stack_wapmessage.mrp"/> -->
      </component>
     </collection>
     <collection name="netprotocols_info" long-name="High-level Internet Protocols Info" level="specific">

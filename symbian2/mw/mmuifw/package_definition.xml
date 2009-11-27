@@ -44,7 +44,6 @@
      <component name="osncore_build" long-name="OSN Core" origin-model="foundation">
       <unit bldFile="/sf/mw/mmuifw/osncore/group"/>
      </component>
-     
     </collection>
     <collection name="resourcepool" long-name="Resource Pool" level="util">
      <component name="alfresourcepool" long-name="ALF Resource Pool" origin-model="foundation">

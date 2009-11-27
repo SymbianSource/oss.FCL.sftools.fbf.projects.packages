@@ -152,11 +152,11 @@
      </component>
      <component name="n:suplsmshandler" long-name="SUPL SMS Handler" introduced="tb91" purpose="development" plugin="Y" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/mw/messagingmw/messagingfw/suplsmshandler/group" mrp="mw/messagingmw/messagingfw/suplsmshandler/group/lbs_suplsmstrigger.mrp"/> -->
+      <!-- <unit bldFile="/sf/mw/messagingmw/messagingfw/suplsmshandler/group" mrp="/sf/mw/messagingmw/messagingfw/suplsmshandler/group/lbs_suplsmstrigger.mrp"/> -->
      </component>
      <component name="n:suplwappushhandler" long-name="SUPL WAP Push Handler" introduced="tb91" purpose="optional" plugin="Y" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/mw/messagingmw/messagingfw/suplwappushhandler/group" mrp="mw/messagingmw/messagingfw/suplwappushhandler/group/lbs_suplwappush.mrp"/> -->
+      <!-- <unit bldFile="/sf/mw/messagingmw/messagingfw/suplwappushhandler/group" mrp="/sf/mw/messagingmw/messagingfw/suplwappushhandler/group/lbs_suplwappush.mrp"/> -->
      </component>
     </collection>
     <collection name="messagingmw_info" long-name="Messaging Middleware Info" level="api">

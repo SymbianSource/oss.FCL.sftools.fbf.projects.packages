@@ -69,11 +69,11 @@
      </component>
      <component name="n:openglesimplementation" long-name="OpenGL ES Implementation" filter="gt" introduced="8.0" purpose="development" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/os/graphics/opengles/openglesimplementation/group/" mrp="os/graphics/opengles/openglesimplementation/group/graphics_opengles.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/graphics/opengles/openglesimplementation/group/" mrp="/sf/os/graphics/opengles/openglesimplementation/group/graphics_opengles.mrp"/> -->
      </component>
      <component name="n:openglesdisplayproperties" long-name="OpenGL ES Display Properties" introduced="8.0" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/os/graphics/opengles/openglesdisplayproperties/group" mrp="os/graphics/opengles/openglesdisplayproperties/group/graphics_openglesdisplayproperty.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/graphics/opengles/openglesdisplayproperties/group" mrp="/sf/os/graphics/opengles/openglesdisplayproperties/group/graphics_openglesdisplayproperty.mrp"/> -->
      </component>
     </collection>
     <collection name="openvg" long-name="OpenVG" level="internal-adaptations">
@@ -90,7 +90,7 @@
      </component>
      <component name="n:eglimplementation" long-name="EGL Implementation" introduced="tb91" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/os/graphics/egl/eglimplementation/group/" mrp="os/graphics/egl/eglimplementation/group/graphics_egl.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/graphics/egl/eglimplementation/group/" mrp="/sf/os/graphics/egl/eglimplementation/group/graphics_egl.mrp"/> -->
      </component>
     </collection>
     <collection name="graphicsdeviceinterface" long-name="Graphics Device Interface" level="device-interface">
@@ -110,7 +110,7 @@
     <collection name="graphicstools" long-name="Graphics Tools" level="internal-utils">
 	 <!-- Following component removed to avoid bmconv.exe collision with S60 version, collaterals: fontcomp.exe not built by OS anymore -->
 <!--     <component name="gdi_tools" long-name="GDI Tools" purpose="development" class="PC" plugin="N" origin-model="Symbian">
-      <unit bldFile="/sf/os/graphics/graphicstools/gdi_tools/group" mrp="os/graphics/graphicstools/gdi_tools/group/graphics_gditools.mrp"/>
+      <unit bldFile="/sf/os/graphics/graphicstools/gdi_tools/group" mrp="/sf/os/graphics/graphicstools/gdi_tools/group/graphics_gditools.mrp"/>
      </component>
 -->
     </collection>

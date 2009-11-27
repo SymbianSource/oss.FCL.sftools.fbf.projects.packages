@@ -139,51 +139,51 @@
     <collection name="n:remotemgmttest" long-name="Remote Management Test" level="specific">
      <component name="n:omasyncmlintegrationtest" long-name="OMA SyncML Integration Test" introduced="7.0s" purpose="development" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/mw/remotemgmt/remotemgmttest/omasyncmlintegrationtest/group" mrp="mw/remotemgmt/remotemgmttest/omasyncmlintegrationtest/group/oma_syncml_integtest.mrp"/> -->
+      <!-- <unit bldFile="/sf/mw/remotemgmt/remotemgmttest/omasyncmlintegrationtest/group" mrp="/sf/mw/remotemgmt/remotemgmttest/omasyncmlintegrationtest/group/oma_syncml_integtest.mrp"/> -->
      </component>
      <component name="n:omadevicemgmtintegrationtest" long-name="OMA Device Management Integration Test" introduced="9.1" purpose="development" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/mw/remotemgmt/remotemgmttest/omadevicemgmtintegrationtest/group" mrp="mw/remotemgmt/remotemgmttest/omadevicemgmtintegrationtest/group/devprov_integtest.mrp"/> -->
+      <!-- <unit bldFile="/sf/mw/remotemgmt/remotemgmttest/omadevicemgmtintegrationtest/group" mrp="/sf/mw/remotemgmt/remotemgmttest/omadevicemgmtintegrationtest/group/devprov_integtest.mrp"/> -->
      </component>
     </collection>
     <collection name="n:syncandremotemgmtfw" long-name="Sync and Remote Management Framework" level="framework">
      <component name="n:omasyncmldatasync" long-name="OMA SyncML Data Sync" introduced="7.0s" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/mw/remotemgmt/syncandremotemgmtfw/omasyncmldatasync/Group" mrp="mw/remotemgmt/syncandremotemgmtfw/omasyncmldatasync/Group/oma_syncml_datasync.mrp"/> -->
+      <!-- <unit bldFile="/sf/mw/remotemgmt/syncandremotemgmtfw/omasyncmldatasync/Group" mrp="/sf/mw/remotemgmt/syncandremotemgmtfw/omasyncmldatasync/Group/oma_syncml_datasync.mrp"/> -->
      </component>
      <component name="n:omasyncmlcommonfw" long-name="OMA SyncML Common Framework" introduced="7.0s" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/mw/remotemgmt/syncandremotemgmtfw/omasyncmlcommonfw/Group" mrp="mw/remotemgmt/syncandremotemgmtfw/omasyncmlcommonfw/Group/oma_syncml_common_framework.mrp"/> -->
+      <!-- <unit bldFile="/sf/mw/remotemgmt/syncandremotemgmtfw/omasyncmlcommonfw/Group" mrp="/sf/mw/remotemgmt/syncandremotemgmtfw/omasyncmlcommonfw/Group/oma_syncml_common_framework.mrp"/> -->
      </component>
      <component name="n:omasyncmldminterface" long-name="OMA SyncML DM Interface" introduced="7.0s" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/mw/remotemgmt/syncandremotemgmtfw/omasyncmldminterface/group" mrp="mw/remotemgmt/syncandremotemgmtfw/omasyncmldminterface/group/oma_syncml_dm_interface.mrp"/> -->
+      <!-- <unit bldFile="/sf/mw/remotemgmt/syncandremotemgmtfw/omasyncmldminterface/group" mrp="/sf/mw/remotemgmt/syncandremotemgmtfw/omasyncmldminterface/group/oma_syncml_dm_interface.mrp"/> -->
      </component>
      <component name="n:omasyncmlconfig" long-name="OMA SyncML Config" introduced="tb91" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/mw/remotemgmt/syncandremotemgmtfw/omasyncmlconfig/group" mrp="mw/remotemgmt/syncandremotemgmtfw/omasyncmlconfig/group/oma_syncml_config.mrp"/> -->
+      <!-- <unit bldFile="/sf/mw/remotemgmt/syncandremotemgmtfw/omasyncmlconfig/group" mrp="/sf/mw/remotemgmt/syncandremotemgmtfw/omasyncmlconfig/group/oma_syncml_config.mrp"/> -->
      </component>
      <component name="n:devicemgmtfw" long-name="Device Management Framework" introduced="8.0" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/mw/remotemgmt/syncandremotemgmtfw/devicemgmtfw/group" mrp="mw/remotemgmt/syncandremotemgmtfw/devicemgmtfw/group/devprov_devman_framework.mrp"/> -->
+      <!-- <unit bldFile="/sf/mw/remotemgmt/syncandremotemgmtfw/devicemgmtfw/group" mrp="/sf/mw/remotemgmt/syncandremotemgmtfw/devicemgmtfw/group/devprov_devman_framework.mrp"/> -->
      </component>
      <component name="n:clientprovisioningfw" long-name="Client Provisioning Framework" introduced="9.1" purpose="optional" plugin="N" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/mw/remotemgmt/syncandremotemgmtfw/clientprovisioningfw/Group" mrp="mw/remotemgmt/syncandremotemgmtfw/clientprovisioningfw/Group/devprov_clientprov_framework.mrp"/> -->
+      <!-- <unit bldFile="/sf/mw/remotemgmt/syncandremotemgmtfw/clientprovisioningfw/Group" mrp="/sf/mw/remotemgmt/syncandremotemgmtfw/clientprovisioningfw/Group/devprov_clientprov_framework.mrp"/> -->
      </component>
     </collection>
     <collection name="n:syncandremotemgmtservices" long-name="Sync and Remote Management Services" level="plugin">
      <component name="n:datasyncadaptors" long-name="Data Sync Adaptors" introduced="7.0s" purpose="optional" plugin="Y" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/mw/remotemgmt/syncandremotemgmtservices/datasyncadaptors/group" mrp="mw/remotemgmt/syncandremotemgmtservices/datasyncadaptors/group/data_sync_adaptors.mrp"/> -->
+      <!-- <unit bldFile="/sf/mw/remotemgmt/syncandremotemgmtservices/datasyncadaptors/group" mrp="/sf/mw/remotemgmt/syncandremotemgmtservices/datasyncadaptors/group/data_sync_adaptors.mrp"/> -->
      </component>
      <component name="n:devicemgmtadaptors" long-name="Device Management Adaptors" introduced="9.1" purpose="optional" plugin="Y" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/mw/remotemgmt/syncandremotemgmtservices/devicemgmtadaptors/devman/Group" mrp="mw/remotemgmt/syncandremotemgmtservices/devicemgmtadaptors/devman/Group/devprov_devman_adapters.mrp"/> -->
+      <!-- <unit bldFile="/sf/mw/remotemgmt/syncandremotemgmtservices/devicemgmtadaptors/devman/Group" mrp="/sf/mw/remotemgmt/syncandremotemgmtservices/devicemgmtadaptors/devman/Group/devprov_devman_adapters.mrp"/> -->
      </component>
      <component name="n:clientprovisioningadaptors" long-name="Client Provisioning Adaptors" introduced="9.1" purpose="optional" plugin="Y" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/mw/remotemgmt/syncandremotemgmtservices/clientprovisioningadaptors/group" mrp="mw/remotemgmt/syncandremotemgmtservices/clientprovisioningadaptors/group/devprov_clientprov_adapters.mrp"/> -->
+      <!-- <unit bldFile="/sf/mw/remotemgmt/syncandremotemgmtservices/clientprovisioningadaptors/group" mrp="/sf/mw/remotemgmt/syncandremotemgmtservices/clientprovisioningadaptors/group/devprov_clientprov_adapters.mrp"/> -->
      </component>
     </collection>
     <collection name="remotemgmt_info" long-name="Remote Management Info" level="specific">

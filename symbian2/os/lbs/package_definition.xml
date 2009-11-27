@@ -21,7 +21,7 @@
      </component>
      <component name="n:agpsintegrationmodule" long-name="A-GPS Integration Module" introduced="9.2" purpose="optional" plugin="Y" origin-model="Symbian">
       <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/os/lbs/datasourcemodules/agpsintegrationmodule/group" mrp="os/lbs/datasourcemodules/agpsintegrationmodule/group/lbs_datasourceplugins.mrp"/> -->
+      <!-- <unit bldFile="/sf/os/lbs/datasourcemodules/agpsintegrationmodule/group" mrp="/sf/os/lbs/datasourcemodules/agpsintegrationmodule/group/lbs_datasourceplugins.mrp"/> -->
      </component>
     </collection>
     <collection name="datasourceadaptation" long-name="Data Source Adaptation" level="adaptation">
@@ -63,9 +63,8 @@
      <component name="privacyprotocolmodule" long-name="Privacy Protocol Module" introduced="tb91" purpose="optional" plugin="Y" origin-model="Symbian">
       <unit bldFile="/sf/os/lbs/networkprotocolmodules/privacyprotocolmodule/group" mrp="/sf/os/lbs/networkprotocolmodules/privacyprotocolmodule/group/lbs_privacyprotocolmodule.mrp"/>
      </component>
-     <component name="n:suplprotocolmodule" long-name="SUPL Protocol Module" introduced="tb91" deprecated="tb91" purpose="optional" plugin="Y" origin-model="Symbian">
-      <!-- The following unit is removed as non-contributed -->
-      <!-- <unit bldFile="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/group" mrp="os/lbs/networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/> -->
+     <component name="suplprotocolmodule" long-name="SUPL Protocol Module" introduced="tb91" deprecated="tb91" purpose="optional" plugin="Y" origin-model="Symbian">
+      <unit bldFile="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/group" mrp="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
      </component>
     </collection>
     <collection name="lbsapitest" long-name="Location API Tests" level="application-interface">

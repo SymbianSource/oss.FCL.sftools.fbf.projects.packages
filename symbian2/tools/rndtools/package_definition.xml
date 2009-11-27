@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition name="foundation" schema="2.0.1">
- <systemModel>
+<systemModel>
 <layer name="tools" long-name="Tools">
-   <block name="rndtools" long-name="RD tools" tech_domain="to" level="services" levels="app generic specific">
+<block name="rndtools" long-name="RD tools" tech_domain="to" level="services" levels="app generic specific">
     <collection name="creator" long-name="Creator" level="app">
      <component name="creator_build" origin-model="foundation">
       <unit bldFile="/sf/tools/rndtools/creator/group"/>
@@ -51,8 +51,20 @@
      </component>
     </collection>
     <collection name="htiui" long-name="HTI UI" level="generic">
-     <!-- Empty duplicate component HtiCommPlugins removed -->
-     <!-- Empty duplicate component HtiServicePlugins removed -->
+     <component name="HtiCommPlugins" filter="s60" long-name="HTI Comm Plugins" purpose="development" plugin="Y">
+      <unit bldFile="/sf/tools/rndtools/htiui/HtiCommPlugins/HtiBtCommPlugin/group"/>
+     </component>
+     <component name="HtiServicePlugins" filter="s60" long-name="HTI Service Plugins" purpose="development" plugin="Y">
+      <!-- can only have a single unit. Should #include from a common bld.inf file -->
+      <unit bldFile="/sf/tools/rndtools/htiui/HtiServicePlugins/HtiAppServicePlugin/group"/>
+      <unit bldFile="/sf/tools/rndtools/htiui/HtiServicePlugins/HtiAudioServicePlugin/group"/>
+      <unit bldFile="/sf/tools/rndtools/htiui/HtiServicePlugins/HtiKeyEventServicePlugin/group"/>
+      <unit bldFile="/sf/tools/rndtools/htiui/HtiServicePlugins/HtiMessagesServicePlugin/group"/>
+      <unit bldFile="/sf/tools/rndtools/htiui/HtiServicePlugins/HtiPIMServicePlugin/group"/>
+      <unit bldFile="/sf/tools/rndtools/htiui/HtiServicePlugins/HtiScreenshotServicePlugin/group"/>
+      <unit bldFile="/sf/tools/rndtools/htiui/HtiServicePlugins/HtiSysInfoServicePlugin/group"/>
+      <unit bldFile="/sf/tools/rndtools/htiui/HtiServicePlugins/HtiFtpBackupFake/group"/>
+     </component>
      <component name="htidevicereboot" long-name="HTI DeviceR eboot" origin-model="foundation">
       <unit bldFile="/sf/tools/rndtools/htiui/htidevicereboot/group"/>
      </component>
@@ -70,9 +82,8 @@
      <component name="memspyui_build" origin-model="foundation">
       <unit bldFile="/sf/tools/rndtools/memspyui/group"/>
      </component>
-    </collection>
+    </collection>    
    </block>
-  </layer>
- </systemModel>
+</layer>
+</systemModel>
 </SystemDefinition>
-

@@ -16,7 +16,6 @@
      <component name="fmradiomcpplugin" long-name="FM Radio MCP Plugin" origin-model="foundation">
       <unit bldFile="/sf/app/radio/fmradio/fmradiomcpplugin/group"/>
      </component>
-     
      <component name="fmradio_help" long-name="Help" origin-model="foundation">
       <unit bldFile="/sf/app/radio/fmradio/help/group"/>
      </component>

@@ -22,9 +22,9 @@
     </collection>
     <collection name="fotaapplication" long-name="FOTA Application" level="app">
      <component name="fotaserver" long-name="FOTA Server" origin-model="foundation">
-      <!-- <unit bldFile="mw/remotemgmt/fotaapplication/fotaserver/fmsclient/group"/> -->
-      <!-- <unit bldFile="mw/remotemgmt/fotaapplication/fotaserver/fmserver/group"/> -->
-      <!-- <unit bldFile="mw/remotemgmt/fotaapplication/fotaserver/fotarfsplugin/group"/> -->
+      <!-- <unit bldFile="/sf/mw/remotemgmt/fotaapplication/fotaserver/fmsclient/group"/> -->
+      <!-- <unit bldFile="/sf/mw/remotemgmt/fotaapplication/fotaserver/fmserver/group"/> -->
+      <!-- <unit bldFile="/sf/mw/remotemgmt/fotaapplication/fotaserver/fotarfsplugin/group"/> -->
       <unit bldFile="/sf/mw/remotemgmt/fotaapplication/fotaserver/fotastartupextplg/group"/>
       <unit bldFile="/sf/mw/remotemgmt/fotaapplication/fotaserver/group"/>
      </component>

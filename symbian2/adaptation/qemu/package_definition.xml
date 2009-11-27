@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition name="foundation" schema="2.0.1">
+<systemModel>
+<layer name="adaptation" long-name="Adaptation">
+<block name="qemu" level="hw-if" long-name="Syborg Adaptation" levels="hw-if">
+      <collection id="baseport" name="Baseport" level="hw-if"> 
+        <component id="syborg" name="Syborg" introduced="symbian^2" purpose="optional">
+          <unit bldFile="/sf/adaptation/qemu/baseport/syborg" mrp="/sf/adaptation/qemu/baseport/syborg/syborg.mrp"/>
+        </component>
+      </collection>
+    </block>
+</layer>
+</systemModel>
+</SystemDefinition>
