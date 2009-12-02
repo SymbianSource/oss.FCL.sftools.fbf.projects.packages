@@ -109,10 +109,7 @@
      </component>
     </collection>
     <collection name="osrndtools_info" long-name="OS RD tools Info" level="trace">
-     <component unofficial="yes" name="osrndtools_build" long-name="OS RD tools Build" origin-model="foundation">
-      <unit bldFile="/sf/ostools/osrndtools/group"/>
-     </component>
-    <component name="osrndtools_metadata" long-name="OS RD tools Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
+     <component name="osrndtools_metadata" long-name="OS RD tools Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
       <unit mrp="/sf/os/osrndtools/osrndtools_info/osrndtools_metadata/osrndtools_metadata.mrp"/>
      </component>
     </collection>
