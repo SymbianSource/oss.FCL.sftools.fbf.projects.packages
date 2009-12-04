@@ -1,96 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="foundation" schema="2.0.1">
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="mmsharinguis" long-name="Multimedia Sharing UIs" tech_domain="vc" level="services" levels="base plugin">
-    <collection name="mmsharing" long-name="MM Sharing" level="base">
-     <component name="mmshavailability" long-name="Multimedia Sharing Availability" origin-model="foundation">
-      <unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshavailability/group"/>
-      <!-- <unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshavailability/tsrc/ut_availability/group"/> -->
-     </component>
-     <component name="mmshindicator" long-name="Multimedia Sharing Indicator" origin-model="foundation">
-      <unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshindicator/group"/>
-      <!-- <unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshindicator/tsrc/indicatortestapp/group"/> -->
-      <!-- <unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshindicator/tsrc/ut_indicator/group"/> -->
-     </component>
-     <component name="mmshmanagercli" long-name="Multimedia Sharing Manager Client" origin-model="foundation">
-      <unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshmanagercli/group"/>
-      <!-- <unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshmanagercli/tsrc/ut_managercli/group"/> -->
-     </component>
-     <component name="mmshmanagersrv" long-name="Multimedia Sharing Manager Server" origin-model="foundation">
-      <unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshmanagersrv/group"/>
-      <!-- <unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshmanagersrv/tsrc/ut_managersrv/group"/> -->
-     </component>
-     <component name="mmshengine" long-name="Multimedia Sharing Engine" origin-model="foundation">
-      <unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshengine/group"/>
-      <!-- <unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshengine/tsrc/ut_engine/group"/> -->
-     </component>
-     <component name="mmshui" long-name="Multimedia Sharing UI" origin-model="foundation">
-      <unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshui/group"/>
-      <unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshui/help/group"/>
-      <!-- <unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshui/tsrc/ut_ui/group"/> -->
-     </component>
-     <component unofficial="yes" name="mmsharing_build" long-name="MM Sharing Build" origin-model="foundation">
-      <unit bldFile="/sf/app/mmsharinguis/mmsharing/group"/>
-     </component>
-    </collection>
-    <collection name="mmshplugins" long-name="MM Sharing Plugins" level="plugin">
-     <component name="mmshaoplugin" long-name="Multimedia Sharing Always Online Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/mmsharinguis/mmshplugins/mmshaoplugin/group"/>
-      <!-- <unit bldFile="/sf/app/mmsharinguis/mmshplugins/mmshaoplugin/tsrc/ut_aoplugin/group"/> -->
-     </component>
-     <component name="mmshaiwplugin" long-name="Multimedia Sharing AIW Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/mmsharinguis/mmshplugins/mmshaiwplugin/group"/>
-      <!-- <unit bldFile="/sf/app/mmsharinguis/mmshplugins/mmshaiwplugin/tsrc/ut_aiwplugin/group"/> -->
-     </component>
-     <component name="mmshsipcrplugin" long-name="Multimedia Sharing SIP Client Resolver Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/mmsharinguis/mmshplugins/mmshsipcrplugin/group"/>
-      <!-- <unit bldFile="/sf/app/mmsharinguis/mmshplugins/mmshsipcrplugin/tsrc/ut_sipcrplugin/group"/> -->
-     </component>
-     <component name="mmshsettingsuiplugin" long-name="Multimedia Sharing Settings UI Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/mmsharinguis/mmshplugins/mmshsettingsuiplugin/group"/>
-     </component>
-     <component name="mmshwpadapterplugin" long-name="Multimedia Sharing WP Adapter Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/mmsharinguis/mmshplugins/mmshwpadapterplugin/group"/>
-      <!-- <unit bldFile="/sf/app/mmsharinguis/mmshplugins/mmshwpadapterplugin/tsrc/ut_wpadapterplugin/group"/> -->
-     </component>
-     <component name="mmcctranscoder" long-name="MMCC Transcoder" origin-model="foundation">
-      <unit bldFile="/sf/app/mmsharinguis/mmshplugins/mmcctranscoder/group"/>
-      <!-- <unit bldFile="/sf/app/mmsharinguis/mmshplugins/mmcctranscoder/tsrc/stubs/group"/> -->
-      <!-- <unit bldFile="/sf/app/mmsharinguis/mmshplugins/mmcctranscoder/tsrc/ut_transcoder/group"/> -->
-     </component>
-     <component unofficial="yes" name="mmshplugins_build" long-name="MM Sharing Plugins Build" origin-model="foundation">
-      <unit bldFile="/sf/app/mmsharinguis/mmshplugins/group"/>
-     </component>
-    </collection>
-    <collection name="mmsharinguis_info" long-name="Multimedia Sharing UIs Info" level="plugin">
-     <component unofficial="yes" name="scripts" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/mmsharinguis/tsrc/scripts"/> -->
-     </component>
-     <component unofficial="yes" name="mceclientstub" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/mmsharinguis/tsrc/mceclientstub/group"/> -->
-     </component>
-     <component unofficial="yes" name="mmsharinguis_build" long-name="Multimedia Sharing UIs Build" origin-model="foundation">
-      <unit bldFile="/sf/app/mmsharinguis/group"/>
-     </component>
-     <component unofficial="yes" name="musenginestub" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/mmsharinguis/tsrc/musenginestub/group"/> -->
-     </component>
-     <component unofficial="yes" name="ututils" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/mmsharinguis/tsrc/ututils/group"/> -->
-     </component>
-     <component unofficial="yes" name="cenrepeditor" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/mmsharinguis/tsrc/cenrepeditor/group"/> -->
-     </component>
-     <component unofficial="yes" name="mmsharinguis_plat" long-name="Multimedia Sharing UIs Platform Interfaces" class="api" origin-model="foundation">
-      <unit bldFile="/sf/app/mmsharinguis/mmsharinguis_plat/group"/>
-      <!-- <unit bldFile="/sf/app/mmsharinguis/mmsharinguis_plat/multimedia_sharing_manager_api/tsrc/group"/> -->
-     </component>
-     <component unofficial="yes" name="mustestapp" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/mmsharinguis/tsrc/mustestapp/group"/> -->
-     </component>
-    </collection>
-   </block>
+<block name="mmsharinguis" level="services" long-name="Multimedia Sharing UIs"/>
 </layer>
 </systemModel>
 </SystemDefinition>

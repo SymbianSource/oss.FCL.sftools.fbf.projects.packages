@@ -1,103 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="foundation" schema="2.0.1">
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="ipconnmgmt" long-name="IP Connectivity Management" tech_domain="dc" level="generic" levels="plugin framework server generic utils">
-    <collection name="alwayson_net_plugin" long-name="Always On Net Plugin" level="server">
-     <component name="pdpcontextmanager2" long-name="PDP Context Manager 2" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/alwayson_net_plugin/pdpcontextmanager2/group"/>
-     </component>
-     <component unofficial="yes" name="alwayson_net_plugin_build" long-name="Always On Net Plugin Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/alwayson_net_plugin/group"/>
-     </component>
-    </collection>
-    <collection name="bearermanagement" long-name="Bearer Management" level="framework">
-     <component name="mpm" long-name="MPM" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/bearermanagement/mpm/group"/>
-     </component>
-     <component name="bearermanager" long-name="Bearer Manager" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/bearermanagement/bearermanager/group"/>
-     </component>
-     <component unofficial="yes" name="bearermanagement_build" long-name="Bearer Management Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/bearermanagement/group"/>
-     </component>
-    </collection>
-    <collection name="connectionmonitoring" long-name="Connection Monitoring" level="server">
-     <component name="connectionmonitorplugin" long-name="Connection Monitor Plugin" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/connectionmonitoring/connectionmonitorplugin/group"/>
-     </component>
-     <component name="connectionmonitorui" long-name="Connection Monitor UI" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/connectionmonitoring/connectionmonitorui/group"/>
-     </component>
-     <component name="connmon" long-name="Connection Monitor" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/connectionmonitoring/connmon/connectionmonitor/group"/>
-      <unit bldFile="/sf/mw/ipconnmgmt/connectionmonitoring/connmon/dataconnectionlogger/group"/>
-     </component>
-     <component name="connmonext" long-name="Connection Monitor Ext" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/connectionmonitoring/connmonext/group"/>
-     </component>
-     <component unofficial="yes" name="connectionmonitoring_build" long-name="Connection Monitoring Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/connectionmonitoring/group"/>
-     </component>
-    </collection>
-    <collection name="accesspointcontrol" long-name="Access Point Control" level="plugin">
-     <component name="apcontrollistplugin" long-name="Access Point Control List Plugin" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/accesspointcontrol/apcontrollistplugin/group"/>
-     </component>
-    </collection>
-    <collection name="apengine" long-name="Application Engine" level="framework">
-     <component name="apeng" long-name="Access Point Engine" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/apengine/apeng/group"/>
-     </component>
-     <component name="apsettingshandlerui" long-name="Access Point Settings Handler UI" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/apengine/apsettingshandlerui/group"/>
-     </component>
-     <component name="apsettingsplugin" long-name="Access Point Settings Plugin" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/apengine/apsettingsplugin/group"/>
-     </component>
-     <component unofficial="yes" name="apengine_build" long-name="Application Engine Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/apengine/group"/>
-     </component>
-    </collection>
-    <collection name="cmmanager" long-name="CM Manager" level="framework">
-     <component name="cmmgr" long-name="CM Manager" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/cmmanager/cmmgr/group"/>
-     </component>
-    </collection>
-    <collection name="dbcreator" long-name="DB Creator" level="utils">
-     <component name="commsdatcreator" long-name="Comms Database Creator" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/dbcreator/commsdatcreator/group"/>
-     </component>
-     <component name="commsdatcreatorrfsplugin" long-name="Comms Database Creator RFS Pluginr" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/dbcreator/commsdatcreatorrfsplugin/group"/>
-     </component>
-     <component name="commsdatstartup" long-name="Comms Database Startup" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/dbcreator/commsdatstartup/group"/>
-     </component>
-     <component name="dbcreatorexe" long-name="DB Creator" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/dbcreator/dbcreatorexe/group"/>
-     </component>
-     <component unofficial="yes" name="dbcreator_build" long-name="DB Creator Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/dbcreator/group"/>
-     </component>
-    </collection>
-    <collection name="connectionutilities" long-name="Connection Utilities" level="utils">
-     <component name="connectiondialogs" long-name="ConnectionDialogs" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/connectionutilities/connectiondialogs/group"/>
-     </component>
-    </collection>
-    <collection name="ipconnmgmt_info" long-name="IP Connectivity Management Info" level="utils">
-     <component unofficial="yes" name="ipconnmgmt_build" long-name="IP Connectivity Management Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/group"/>
-     </component>
-     <component unofficial="yes" name="ipcm_pub" class="api" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/ipcm_pub/group"/>
-     </component>
-     <component unofficial="yes" name="ipcm_plat" class="api" origin-model="foundation">
-      <unit bldFile="/sf/mw/ipconnmgmt/ipcm_plat/group"/>
-     </component>
-    </collection>
-   </block>
+<layer name="mw">
+<block name="ipconnmgmt">
+<collection name="s60">
+<component name="ipconnmgmt">
+<unit bldFile="/sf/mw/ipconnmgmt/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

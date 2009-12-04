@@ -1,48 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="foundation" schema="2.0.1">
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="uitools" long-name="UI Tools" tech_domain="to" level="specific" levels="compile encode tool">
-    <collection name="gfxtools" long-name="Graphics Tools" level="tool">
-     <component name="gditools" long-name="GDI Tools" origin-model="foundation">
-      <unit bldFile="/sf/mw/uitools/gfxtools/gditools/group"/>
-     </component>
-     <component name="color" origin-model="foundation">
-      <unit bldFile="/sf/mw/uitools/gfxtools/color/group"/>
-     </component>
-    </collection>
-    <collection name="reszip" long-name="Reszip" level="encode">
-     <component name="reszip_build" origin-model="foundation">
-      <unit bldFile="/sf/mw/uitools/reszip/group"/>
-     </component>
-    </collection>
-    <collection name="toollibraries" long-name="Tool Libraries" level="tool">
-     <component name="arabica" origin-model="foundation"/>
-     <component name="xercesc" long-name="Xerces C" origin-model="foundation"/>
-     <component unofficial="yes" name="toollibraries_build" long-name="Tool Libraries Build" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/uitools/toollibraries/group"/> -->
-     </component>
-    </collection>
-    <collection name="svgtencoder" long-name="SVGT Encoder" level="encode">
-     <component name="svgtenc" long-name="SVGT Enc" origin-model="foundation">
-      <unit bldFile="/sf/mw/uitools/svgtencoder/svgtenc/standalone/group"/>
-     </component>
-     <component unofficial="yes" name="svgtencoder_build" long-name="SVGT Encoder Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/uitools/svgtencoder/group"/>
-     </component>
-    </collection>
-    <collection name="uitools_info" long-name="UI Tools Info" level="tool">
-     <component unofficial="yes" name="uitools_plat" long-name="UI Tools Platform Interfaces" class="api" origin-model="foundation">
-      <unit bldFile="/sf/mw/uitools/uitools_plat/group"/>
-     </component>
-     <component unofficial="yes" name="uitools_pub" long-name="UI Tools Public Interfaces" class="api" origin-model="foundation">
-      <unit bldFile="/sf/mw/uitools/uitools_pub/group"/>
-     </component>
-     <component unofficial="yes" name="uitools_build" long-name="UI Tools Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/uitools/group"/>
-     </component>
-    </collection>
-   </block>
+<layer name="mw">
+<block name="uitools">
+<collection name="s60">
+<component name="uitools">
+<unit bldFile="/sf/mw/uitools/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

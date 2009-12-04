@@ -1,48 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="foundation" schema="2.0.1">
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="uiaccelerator" long-name="UI Accelerator" tech_domain="ui" level="generic" levels="plugin framework server generic specific">
-    <collection name="uiacceltk" long-name="UI Accelerator TK" level="framework">
-     <component name="hitchcock" long-name="Hitchcock" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/uiaccelerator/uiacceltk/hitchcock/coretoolkit/group"/> -->
-      <unit bldFile="/sf/mw/uiaccelerator/uiacceltk/hitchcock/group"/>
-      <!-- <unit bldFile="/sf/mw/uiaccelerator/uiacceltk/hitchcock/plugins/alftranseffect/alftranseffectplugin/group"/> -->
-      <!-- <unit bldFile="/sf/mw/uiaccelerator/uiacceltk/hitchcock/tracer/group"/> -->
-      <!-- <unit bldFile="/sf/mw/uiaccelerator/uiacceltk/hitchcock/tracer/traceextclient/group"/> -->
-      <!-- <unit bldFile="/sf/mw/uiaccelerator/uiacceltk/hitchcock/tracer/traceextplugin/group"/> -->
-     </component>
-     <component name="widgeteditors" long-name="Widget Editors" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiaccelerator/uiacceltk/widgeteditors/group"/>
-     </component>
-     <component unofficial="yes" name="uiacceltk_build" long-name="UI Accelerator TK Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiaccelerator/uiacceltk/group"/>
-     </component>
-    </collection>
-    <collection name="uiaccelexampleapps" long-name="UI Accelerator Example Apps" level="specific">
-     <component name="alfexanalogdialer" long-name="ALF Ex Analog Dialer" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/uiaccelerator/uiaccelexampleapps/alfexanalogdialer/group"/> -->
-     </component>
-     <component name="alfexstickers" long-name="ALF Ex Stickers" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/uiaccelerator/uiaccelexampleapps/alfexstickers/group"/> -->
-     </component>
-    </collection>
-    <collection name="uiaccelerator_info" long-name="UI Accelerator Info" level="specific">
-     <component unofficial="yes" name="inc" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/uiaccelerator/inc/group"/> -->
-     </component>
-     <component unofficial="yes" name="uiaccelerator_plat" long-name="UI Accelerator Platform Interfaces" class="api" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_client_server_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_core_toolkit_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_editors_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_extended_visual_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_extension_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_tracing_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/alf_visual_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/uiaccelerator/uiaccelerator_plat/group"/>
-     </component>
-    </collection>
-   </block>
+<layer name="mw">
+<block name="uiaccelerator">
+<collection name="s60">
+<component name="uiaccelerator">
+<unit bldFile="/sf/mw/uiaccelerator/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

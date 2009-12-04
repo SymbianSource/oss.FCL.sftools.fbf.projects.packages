@@ -1,111 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="foundation" schema="2.0.1">
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="mds" long-name="Metadata Services" tech_domain="mm" level="specific" levels="mgr eng server int">
-    <collection name="clfwrapper" long-name="CLF Wrapper" level="int">
-     <component unofficial="yes" name="clfwrapper_build" long-name="CLF Wrapper Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/clfwrapper/group"/>
-     </component>
-    </collection>
-    <collection name="contextengine" long-name="Context Engine" level="eng">
-     <component name="contextengine_plugins" long-name="Plugins" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/contextengine/plugins/group"/>
-     </component>
-     <component unofficial="yes" name="contextengine_build" long-name="Context Engine Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/contextengine/group"/>
-     </component>
-    </collection>
-    <collection name="harvester" long-name="Harvester" level="eng">
-     <component name="blacklistclient" long-name="Blacklist Client" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/harvester/blacklistclient/group"/>
-     </component>
-     <component name="blacklistserver" long-name="Blacklist Server" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/harvester/blacklistserver/group"/>
-     </component>
-     <component name="harvester_common" long-name="Common" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/harvester/common/group"/>
-     </component>
-     <component name="composerplugins" long-name="Composer Plugins" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/harvester/composerplugins/group"/>
-     </component>
-     <component name="harvesterplugins" long-name="Harvester Plugins" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/mds/harvester/harvesterplugins/audioplaylistplugin/group"/> -->
-      <unit bldFile="/sf/mw/mds/harvester/harvesterplugins/group"/>
-     </component>
-     <component name="monitorplugins" long-name="Monitor Plugins" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/harvester/monitorplugins/group"/>
-     </component>
-     <component name="harvester_server" long-name="Server" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/harvester/server/group"/>
-     </component>
-     <component name="harvester_client" long-name="Client" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/harvester/client/group"/>
-     </component>
-     <component unofficial="yes" name="harvester_build" long-name="Harvester Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/harvester/group"/>
-     </component>
-    </collection>
-    <collection name="locationmanager" long-name="Location Manager" level="mgr">
-     <component name="locationtrail" long-name="Location Trail" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/locationmanager/locationtrail/group"/>
-     </component>
-     <component name="locationmanager_server" long-name="Server" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/locationmanager/server/group"/>
-     </component>
-     <component name="locationmanager_client" long-name="Client" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/locationmanager/client/group"/>
-     </component>
-     <component unofficial="yes" name="locationmanager_build" long-name="Location Manager Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/locationmanager/group"/>
-     </component>
-    </collection>
-    <collection name="metadataengine" long-name="Metadata Engine" level="eng">
-     <component name="metadataengine_common" long-name="Common" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/metadataengine/common/group"/>
-     </component>
-     <component name="metadataengine_server" long-name="Server" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/metadataengine/server/group"/>
-     </component>
-     <component name="metadataengine_client" long-name="Client" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/metadataengine/client/group"/>
-     </component>
-     <component unofficial="yes" name="metadataengine_build" long-name="Metadata Engine Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/metadataengine/group"/>
-     </component>
-    </collection>
-    <collection name="watchdog" long-name="Watchdog" level="server">
-     <component name="mdswatchdog" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/watchdog/group"/>
-     </component>
-    </collection>
-    <collection name="iadstoprestart" long-name="IAD Stop Restart" level="server">
-     <component unofficial="yes" name="iadstoprestart_build" long-name="IAD Stop Restart Build" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/mds/iadstoprestart/group"/> -->
-     </component>
-    </collection>
-    <collection name="mds_info" long-name="Metadata Services Info" level="int">
-     <component unofficial="yes" name="mds_pub" long-name="Metadata Services Public Interfaces" class="api" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/mds_pub/group"/>
-     </component>
-     <component unofficial="yes" name="mds_plat" long-name="Metadata Services Platform Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/mds/mds_plat/content_listing_framework_collection_manager_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/mw/mds/mds_plat/context_engine_plugin_api/tsrc/group"/> -->
-      <unit bldFile="/sf/mw/mds/mds_plat/group"/>
-      <!-- <unit bldFile="/sf/mw/mds/mds_plat/harvester_framework_api/tsrc/composerplugintest/group"/> -->
-      <!-- <unit bldFile="/sf/mw/mds/mds_plat/harvester_framework_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/mw/mds/mds_plat/harvester_framework_api/tsrc/harvesterclienttest/group"/> -->
-      <!-- <unit bldFile="/sf/mw/mds/mds_plat/harvester_framework_api/tsrc/harvesterdatatest/group"/> -->
-      <!-- <unit bldFile="/sf/mw/mds/mds_plat/harvester_framework_api/tsrc/harvesterplugintest/group"/> -->
-      <!-- <unit bldFile="/sf/mw/mds/mds_plat/harvester_framework_api/tsrc/monitorplugintest/group"/> -->
-      <!-- <unit bldFile="/sf/mw/mds/mds_plat/location_manager_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/mw/mds/mds_plat/metadata_engine_api/tsrc/group"/> -->
-     </component>
-     <component unofficial="yes" name="mds_build" long-name="Metadata Services Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/mds/group"/>
-     </component>
-    </collection>
-   </block>
+<layer name="mw">
+<block name="mds">
+<collection name="s60">
+<component name="mds">
+<unit bldFile="/sf/mw/mds/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

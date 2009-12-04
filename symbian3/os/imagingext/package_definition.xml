@@ -1,39 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="foundation" schema="2.0.1">
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="imagingext" long-name="Imaging Extensions" tech_domain="mm" level="services" levels="adaptation hw-if plugin framework server app-if">
-    <collection name="imageadaptationextensions" long-name="Image Adaptation Extensions" level="app-if">
-     <component name="iclextjpegapi" long-name="ICL Ext JPEG API" origin-model="foundation">
-      <unit bldFile="/sf/os/imagingext/imageadaptationextensions/iclextjpegapi/group"/>
-     </component>
-     <component unofficial="yes" name="imageadaptationextensions_build" long-name="Image Adaptation Extensions Build" origin-model="foundation">
-      <unit bldFile="/sf/os/imagingext/imageadaptationextensions/group"/>
-     </component>
-    </collection>
-    <collection name="imagingmodules" long-name="Imaging Modules" level="hw-if">
-     <component name="exiflib" long-name="Exif Lib" origin-model="foundation">
-      <unit bldFile="/sf/os/imagingext/imagingmodules/exiflib/group"/>
-     </component>
-     <component name="jp2kcodec" long-name="JP2K Codec" origin-model="foundation">
-      <unit bldFile="/sf/os/imagingext/imagingmodules/jp2kcodec/group"/>
-     </component>
-     <component name="h264avcvideoencarm" long-name="H264AVC VideoEnc ARM" origin-model="foundation"/>
-     <component name="videoencpluginarm" long-name="VideoEnc Plugin ARM" origin-model="foundation"/>
-    </collection>
-    <collection name="imagingext_info" long-name="Imaging Extensions Info" level="app-if">
-     <component unofficial="yes" name="imagingext_plat" long-name="Imaging Extensions Platform Interfaces" class="api" origin-model="foundation">
-      <unit bldFile="/sf/os/imagingext/imagingext_plat/group"/>
-     </component>
-     <component unofficial="yes" name="imagingext_build" long-name="Imaging Extensions Build" origin-model="foundation">
-      <unit bldFile="/sf/os/imagingext/group"/>
-     </component>
-     <component unofficial="yes" name="imagingext_pub" long-name="Imaging Extensions Public Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="/sf/os/imagingext/imagingext_pub/exif_api/tsrc/group"/> -->
-      <unit bldFile="/sf/os/imagingext/imagingext_pub/group"/>
-     </component>
-    </collection>
-   </block>
+<layer name="os">
+<block name="imagingext">
+<collection name="s60">
+<component name="imagingext">
+<unit bldFile="/sf/os/imagingext/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

@@ -1,92 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="foundation" schema="2.0.1">
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="drm" long-name="DRM" tech_domain="se" level="generic" levels="plugin framework server generic specific">
-    <collection name="commondrm" long-name="Common DRM" level="generic">
-     <component name="drmencryptor" long-name="DRM Encryptor" origin-model="foundation"/>
-     <component name="drmsettingsplugin" long-name="DRM Settings Plugin" origin-model="foundation"/>
-     <component name="drmrightsmanagerui" long-name="DRM Rights Manager UI" origin-model="foundation">
-      <unit bldFile="/sf/mw/drm/commondrm/drmrightsmanagerui/help/group"/>
-     </component>
-     <component name="drmutility" long-name="DRM Utility" origin-model="foundation">
-      <unit bldFile="/sf/mw/drm/commondrm/drmutility/group"/>
-     </component>
-     <component name="drmserviceapiwrapper" long-name="DRM Service API Wrapper" origin-model="foundation">
-      <unit bldFile="/sf/mw/drm/commondrm/drmserviceapiwrapper/group"/>
-     </component>
-     <component name="drmrightsstoringlocation" long-name="DRM Rights Storing Location" origin-model="foundation">
-      <unit bldFile="/sf/mw/drm/commondrm/drmrightsstoringlocation/group"/>
-     </component>
-     <component unofficial="yes" name="commondrm_build" long-name="Common DRM Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/drm/commondrm/group"/>
-     </component>
-    </collection>
-    <collection name="omadrm" long-name="OMA DRM" level="server">
-     <component name="drmroapwbxmlparser" long-name="DRM ROAP WBXML Parser" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/drm/omadrm/drmroapwbxmlparser/group"/> -->
-     </component>
-     <component name="drmplugins" long-name="DRM Plugins" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/drm/omadrm/drmplugins/drmfilter/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/omadrm/drmplugins/drmrecognizer/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/omadrm/drmplugins/drmrohandler/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/omadrm/drmplugins/drmromtm/group"/> -->
-     </component>
-     <component name="drmengine" long-name="DRM Engine" origin-model="foundation"/>
-     <component name="drmhelper" long-name="DRM Helper" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/drm/omadrm/drmhelper/drmhelperserver/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/omadrm/drmhelper/group"/> -->
-     </component>
-     <component name="drmlicensemanager" long-name="Drm License Manager" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/drm/omadrm/drmlicensemanager/group"/> -->
-     </component>
-     <component unofficial="yes" name="omadrm_build" long-name="OMA DRM Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/drm/omadrm/group"/>
-     </component>
-    </collection>
-    <collection name="wmdrm" long-name="WM DRM" level="framework">
-     <component name="wmdrmengine" long-name="WM DRM Engine" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/drm/wmdrm/wmdrmengine/wmdrmagent/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/wmdrm/wmdrmengine/wmdrmfileserver/client/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/wmdrm/wmdrmengine/wmdrmfileserver/server/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/wmdrm/wmdrmengine/wmdrmserver/client/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/wmdrm/wmdrmengine/wmdrmserver/clientwrapper/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/wmdrm/wmdrmengine/wmdrmserver/server/group"/> -->
-     </component>
-     <component name="camese" long-name="Camese" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/drm/wmdrm/camese/cameseutility/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/wmdrm/camese/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/wmdrm/camese/httpfiltercamese/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/wmdrm/camese/wmdrmdla/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/wmdrm/camese/wmdrmdlaapp/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/wmdrm/camese/wmdrmdladefaulthttpplugin/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/wmdrm/camese/wmdrmdladefaultuiplugin/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/wmdrm/camese/wmdrmdlautils/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/wmdrm/camese/wmdrmdlawrapper/group"/> -->
-     </component>
-     <component name="wmdrmplugins" long-name="WM DRM Plugins" origin-model="foundation"/>
-     <component unofficial="yes" name="wmdrm_build" long-name="WM DRM Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/drm/wmdrm/group"/>
-     </component>
-    </collection>
-    <collection name="drm_info" long-name="DRM Info" level="specific">
-     <component unofficial="yes" name="drm_pub" long-name="DRM Public Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/drm/drm_pub/drm_helper_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/drm_pub/drm_license_checker_api/tsrc/group"/> -->
-      <unit bldFile="/sf/mw/drm/drm_pub/group"/>
-      <!-- <unit bldFile="/sf/mw/drm/drm_pub/oma_drm_caf_agent_api/tsrc/bc/group"/> -->
-     </component>
-     <component unofficial="yes" name="drm_plat" long-name="DRM Platform Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/drm/drm_plat/drm_common_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/mw/drm/drm_plat/drm_rights_api/tsrc/group"/> -->
-      <unit bldFile="/sf/mw/drm/drm_plat/group"/>
-      <!-- <unit bldFile="/sf/mw/drm/drm_plat/roap_api/tsrc/group"/> -->
-     </component>
-     <component unofficial="yes" name="drm_build" long-name="DRM Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/drm/group"/>
-     </component>
-    </collection>
-   </block>
+<layer name="mw">
+<block name="drm">
+<collection name="s60">
+<component name="drm">
+<unit bldFile="/sf/mw/drm/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

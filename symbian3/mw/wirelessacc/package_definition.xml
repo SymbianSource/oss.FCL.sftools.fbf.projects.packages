@@ -1,53 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="foundation" schema="2.0.1">
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="wirelessacc" long-name="Wireless Access" tech_domain="dc" level="specific" levels="framework generic ui">
-    <collection name="hotspotfw" long-name="Hotspot Framework" level="framework">
-     <component name="hsserver" long-name="HotSpot Server" origin-model="foundation"/>
-     <component name="hsclient" long-name="HS Client" origin-model="foundation"/>
-     <component name="internetconnectivitytestservice" long-name="Internet Connectivity Test Service" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/wirelessacc/hotspotfw/internetconnectivitytestservice/group"/> -->
-     </component>
-     <component name="ictsdialogs" long-name="ICTS Dialogs" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/wirelessacc/hotspotfw/ictsdialogs/group"/> -->
-     </component>
-     <component name="hspluginforagent" long-name="HotSpot Plugin For Agent" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/wirelessacc/hotspotfw/hspluginforagent/group"/> -->
-     </component>
-     <component name="hsbrowser" long-name="HotSpot Browser" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/wirelessacc/hotspotfw/hsbrowser/group"/> -->
-     </component>
-     <component unofficial="yes" name="hotspotfw_build" long-name="Hotspot Framework Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/wirelessacc/hotspotfw/group"/>
-     </component>
-    </collection>
-    <collection name="wlanutilities" long-name="WLAN Utilities" level="generic">
-     <component name="wlanplugin" long-name="WLAN Plugin" origin-model="foundation">
-      <unit bldFile="/sf/mw/wirelessacc/wlanutilities/wlanplugin/group"/>
-     </component>
-     <component name="wlansettingsui" long-name="WLAN Settings UI" origin-model="foundation">
-      <unit bldFile="/sf/mw/wirelessacc/wlanutilities/wlansettingsui/group"/>
-     </component>
-     <component name="wlansniffer" long-name="WLAN Sniffer" origin-model="foundation">
-      <unit bldFile="/sf/mw/wirelessacc/wlanutilities/wlansniffer/group"/>
-     </component>
-     <component name="wlanindicatorplugin" long-name="WLAN Indicator Plugin" origin-model="foundation">
-      <unit bldFile="/sf/mw/wirelessacc/wlanutilities/wlanindicatorplugin/group"/>
-     </component>
-     <component unofficial="yes" name="wlanutilities_build" long-name="WLAN Utilities Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/wirelessacc/wlanutilities/group"/>
-     </component>
-    </collection>
-    <collection name="wirelessacc_info" long-name="Wireless Access Info" level="ui">
-     <component unofficial="yes" name="hsfw_plat" class="api" origin-model="foundation">
-      <unit bldFile="/sf/mw/wirelessacc/hsfw_plat/group"/>
-     </component>
-     <component unofficial="yes" name="wirelessacc_build" long-name="Wireless Access Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/wirelessacc/group"/>
-     </component>
-    </collection>
-   </block>
+<layer name="mw">
+<block name="wirelessacc">
+<collection name="s60">
+<component name="wirelessacc">
+<unit bldFile="/sf/mw/wirelessacc/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

@@ -1,132 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="foundation" schema="2.0.1">
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="uiresources" long-name="UI Resources" tech_domain="ui" level="generic" levels="compile plugin framework server generic data">
-    <collection name="layouts" long-name="Layouts" level="plugin">
-     <component name="cdl" long-name="Cdl" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiresources/layouts/cdl/cdlengine/group"/>
-      <unit bldFile="/sf/mw/uiresources/layouts/cdl/cdlserver/group"/>
-      <!-- <unit bldFile="/sf/mw/uiresources/layouts/cdl/cdlutils/cdlexplorer/group"/> -->
-     </component>
-     <component name="aknlayout2" long-name="AKN Layout 2" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/uiresources/layouts/aknlayout2/generated"/> -->
-      <!-- <unit bldFile="/sf/mw/uiresources/layouts/aknlayout2/generated/nhd_akn_app"/> -->
-      <!-- <unit bldFile="/sf/mw/uiresources/layouts/aknlayout2/generated/nhd_uiaccel"/> -->
-      <!-- <unit bldFile="/sf/mw/uiresources/layouts/aknlayout2/generated/qhd_touch_akn_app"/> -->
-      <!-- <unit bldFile="/sf/mw/uiresources/layouts/aknlayout2/generated/qhd_touch_uiaccel"/> -->
-      <!-- <unit bldFile="/sf/mw/uiresources/layouts/aknlayout2/generated/qvga2_akn_app"/> -->
-      <!-- <unit bldFile="/sf/mw/uiresources/layouts/aknlayout2/generated/qvga2_uiaccel"/> -->
-      <!-- <unit bldFile="/sf/mw/uiresources/layouts/aknlayout2/generated/qvga_akn_app"/> -->
-      <!-- <unit bldFile="/sf/mw/uiresources/layouts/aknlayout2/generated/qvga_uiaccel"/> -->
-      <!-- <unit bldFile="/sf/mw/uiresources/layouts/aknlayout2/generated/vga3_akn_app"/> -->
-      <!-- <unit bldFile="/sf/mw/uiresources/layouts/aknlayout2/generated/vga3_uiaccel"/> -->
-      <!-- <unit bldFile="/sf/mw/uiresources/layouts/aknlayout2/generated/vga_akn_app"/> -->
-      <!-- <unit bldFile="/sf/mw/uiresources/layouts/aknlayout2/generated/vga_touch_akn_app"/> -->
-      <!-- <unit bldFile="/sf/mw/uiresources/layouts/aknlayout2/generated/vga_uiaccel"/> -->
-      <unit bldFile="/sf/mw/uiresources/layouts/aknlayout2/group"/>
-     </component>
-    </collection>
-    <collection name="locales" long-name="Locales" level="framework">
-     <component name="locales_build" long-name="Locales Component" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiresources/locales/loce32"/>
-     </component>
-    </collection>
-    <collection name="pictographs" long-name="Pictographs" level="data">
-     <component name="aknpictograph" long-name="AKN Picto Graph" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiresources/pictographs/aknpictograph/group"/>
-      <!-- <unit bldFile="/sf/mw/uiresources/pictographs/aknpictograph/tools/aknpictobitmapbuilder/group"/> -->
-     </component>
-    </collection>
-    <collection name="skins" long-name="Skins" level="data">
-     <component name="aknskincontent" long-name="AKN Skin Content" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiresources/skins/aknskincontent/group"/>
-      <!-- <unit bldFile="/sf/mw/uiresources/skins/aknskincontent/srcdata/scalableseries60skin/mifindexdll"/> -->
-     </component>
-     <component name="aknskins" long-name="AKN Skins" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiresources/skins/aknskins/group"/>
-     </component>
-    </collection>
-    <collection name="uiconfig" long-name="UI Config" level="server">
-     <component name="s60config" long-name="S60 Config" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiresources/uiconfig/s60config/group"/>
-     </component>
-    </collection>
-    <collection name="fontsupport" long-name="Font Support" level="generic">
-     <component name="fontprovider" long-name="Font Provider" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiresources/fontsupport/fontprovider/group"/>
-     </component>
-     <component name="fontutils" long-name="Font Utils" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiresources/fontsupport/fontutils/fontutils/group"/>
-      <!-- <unit bldFile="/sf/mw/uiresources/fontsupport/fontutils/group"/> -->
-     </component>
-    </collection>
-    <collection name="uigraphics" long-name="UI Graphics" level="generic">
-     <component name="bitmaps2" long-name="Bitmaps 2" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiresources/uigraphics/bitmaps2/group"/>
-     </component>
-     <component name="icons" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiresources/uigraphics/icons/group"/>
-     </component>
-     <component name="variatedbitmaps" long-name="Variated Bitmaps" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiresources/uigraphics/variatedbitmaps/group"/>
-     </component>
-     <component name="aknicon" long-name="AKN Icon" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiresources/uigraphics/aknicon/group"/>
-     </component>
-     <component name="palette" long-name="Palette" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/uiresources/uigraphics/palette/group"/> -->
-     </component>
-    </collection>
-    <collection name="helpthemes" long-name="Help Themes" level="data">
-     <component name="helpthemes_build" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiresources/helpthemes/group"/>
-     </component>
-    </collection>
-    <collection name="aknlayoutcompiler" long-name="Avkon Layout Compiler" level="compile">
-     <component name="aknlayoutcompiler_build" long-name="AKN Layout Compiler Component" origin-model="foundation">
-      <unit bldFile="/sf/mw/uitools/aknlayoutcompiler/group"/>
-     </component>
-    </collection>
-    <collection name="cdlcompiler" long-name="CDL Compiler" level="compile">
-     <component name="cdlcompiler_build" long-name="CDL Compiler Component" origin-model="foundation">
-      <unit bldFile="/sf/mw/uitools/cdlcompiler/group"/>
-     </component>
-    </collection>
-    <collection name="cdlcompilertoolkit" long-name="CDL Compiler Toolkit" level="compile">
-     <component name="cdlcompilertoolkit_build" long-name="CDL Compiler Toolkit Component" origin-model="foundation">
-      <unit bldFile="/sf/mw/uitools/cdlcompilertoolkit/group"/>
-     </component>
-    </collection>
-    <collection name="skincompiler" long-name="Skin Compiler" level="compile">
-     <component name="aknskindesccompiler" long-name="AKN Skin Desc Compiler" origin-model="foundation">
-      <unit bldFile="/sf/mw/uitools/skincompiler/aknskindesccompiler/group"/>
-     </component>
-    </collection>
-    <collection name="uiresources_info" long-name="UI Resources Info" level="data">
-     <component unofficial="yes" name="uiresources_plat" long-name="UI Resources Platform Interfaces" class="api" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiresources/uiresources_plat/cdl_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/uiresources/uiresources_plat/extended_fonts_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/uiresources/uiresources_plat/extended_skins_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/uiresources/uiresources_plat/graphic_configuration_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/uiresources/uiresources_plat/group"/>
-      <unit bldFile="/sf/mw/uiresources/uiresources_plat/layout_data_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/uiresources/uiresources_plat/layout_system_private_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/uiresources/uiresources_plat/skins_image_attributes_api/tsrc/group"/>
-     </component>
-     <component unofficial="yes" name="uiresources_build" long-name="UI Resources Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiresources/group"/>
-     </component>
-     <component unofficial="yes" name="uiresources_pub" long-name="UI Resources Public Interfaces" class="api" origin-model="foundation">
-      <unit bldFile="/sf/mw/uiresources/uiresources_pub/font_definition_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/uiresources/uiresources_pub/graphics_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/uiresources/uiresources_pub/group"/>
-      <unit bldFile="/sf/mw/uiresources/uiresources_pub/pictograph_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/uiresources/uiresources_pub/scalable_icons_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/uiresources/uiresources_pub/skins_api/tsrc/group"/>
-     </component>
-    </collection>
-   </block>
+<layer name="mw">
+<block name="uiresources">
+<collection name="s60">
+<component name="uiresources">
+<unit bldFile="/sf/mw/uiresources/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

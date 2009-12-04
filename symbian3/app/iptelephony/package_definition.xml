@@ -1,121 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="foundation" schema="2.0.1">
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="iptelephony" long-name="IP Telephony" tech_domain="vc" level="apps" levels="plugin eng ui">
-    <!-- Collection renamed to avoid duplicates -->
-    <collection name="iptelcommsconfig" long-name="IP Telephony Comms Config" level="ui">
-     <component name="cscgsplugin" long-name="CSCGS Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/commsconfig/cscgsplugin/group"/>
-     </component>
-     <component name="cscsipvoipcleanupplugin" long-name="CSC SIP VOIP Cleanup Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/commsconfig/cscsipvoipcleanupplugin/group"/>
-     </component>
-     <component name="cscengine" long-name="CSC Engine" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/commsconfig/cscengine/group"/>
-     </component>
-     <component name="cscsettingsui" long-name="CSC Settings UI" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/commsconfig/cscsettingsui/group"/>
-     </component>
-     <component name="cscapplicationui" long-name="CSC Application UI" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/commsconfig/cscapplicationui/group"/>
-     </component>
-     <component unofficial="yes" name="commsconfig_build" long-name="Comms Config Build" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/commsconfig/group"/>
-     </component>
-    </collection>
-    <collection name="convergedconnectionhandler" long-name="Converged Connection Handler" level="ui">
-     <component name="cchserver" long-name="CCH Server" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/convergedconnectionhandler/cchserver/group"/>
-     </component>
-     <component name="cchclient" long-name="CCH Client" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/convergedconnectionhandler/cchclient/group"/>
-     </component>
-     <component name="cchclientapi" long-name="CCH Clientapi" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/convergedconnectionhandler/cchclientapi/group"/>
-     </component>
-     <component unofficial="yes" name="convergedconnectionhandler_build" long-name="Converged Connection Handler Build" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/convergedconnectionhandler/group"/>
-     </component>
-    </collection>
-    <collection name="richcallsettingsengine" long-name="Rich Call Settings Engine" level="eng">
-     <component name="rcse2" long-name="Rcse2" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/richcallsettingsengine/rcse2/group"/>
-     </component>
-    </collection>
-    <collection name="sipvoipprovider" long-name="SIP VoIP Provider" level="eng">
-     <component name="svp" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/sipvoipprovider/group"/>
-     </component>
-    </collection>
-    <collection name="voipplugins" long-name="VoIP Plugins" level="plugin">
-     <component name="sipmxresolver" long-name="SIP MX Resolver" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/voipplugins/sipmxresolver/group"/>
-     </component>
-     <component name="sipconnectionprovider" long-name="SIP Connection Provider" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/voipplugins/sipconnectionprovider/group"/>
-      <unit bldFile="/sf/app/iptelephony/voipplugins/sipconnectionprovider/ipvoicemailengine/group"/>
-     </component>
-     <component name="ipapputils" long-name="IP App Utils" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/voipplugins/ipapputils/group"/>
-     </component>
-     <component name="voipadapters" long-name="VOIP Adapters" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/voipplugins/voipadapters/group"/>
-     </component>
-     <component name="accountcreationplugin" long-name="Account Creation Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/voipplugins/accountcreationplugin/group"/>
-     </component>
-     <component name="dhcppositionprovider" long-name="DHCP Position Provider" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/voipplugins/dhcppositionprovider/group"/>
-     </component>
-     <component name="svtmatching" long-name="SVT Matching" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/voipplugins/svtmatching/group"/>
-     </component>
-     <component name="svtlogging" long-name="SVT Logging" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/voipplugins/svtlogging/group"/>
-     </component>
-     <component name="svtcallmenu" long-name="SVT Call Menu" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/voipplugins/svtcallmenu/group"/>
-     </component>
-     <component unofficial="yes" name="voipplugins_build" long-name="VoIP Plugins Build" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/voipplugins/group"/>
-     </component>
-    </collection>
-    <collection name="callcontinuity" long-name="Call Continuity" level="eng">
-     <component name="vccutils" long-name="VCC Utils" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/callcontinuity/vccutils/group"/>
-     </component>
-     <component name="nsmldmvccadapter" long-name="NSML DM VCC Adapter" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/callcontinuity/nsmldmvccadapter/group"/>
-     </component>
-     <component name="vccclientprovisioningadapter" long-name="VCC Client Provisioning Adapter" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/callcontinuity/vccclientprovisioningadapter/group"/>
-     </component>
-     <component name="vccpropertyhandler" long-name="VCC Property Handler" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/callcontinuity/vccpropertyhandler/group"/>
-     </component>
-     <component name="vcchotrigger" long-name="VCC Hotrigger" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/callcontinuity/vcchotrigger/group"/>
-     </component>
-     <component name="vcc" long-name="VCC" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/callcontinuity/vcc/group"/>
-     </component>
-     <component name="settingsreader" long-name="Settings Reader" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/iptelephony/callcontinuity/settingsreader/group"/> -->
-     </component>
-     <component unofficial="yes" name="callcontinuity_build" long-name="Call Continuity Build" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/callcontinuity/group"/>
-     </component>
-    </collection>
-    <collection name="iptelephony_info" long-name="IP Telephony Info" level="ui">
-     <component unofficial="yes" name="iptelephony_build" long-name="IP Telephony Build" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/group"/>
-     </component>
-     <component unofficial="yes" name="iptel_plat" class="api" origin-model="foundation">
-      <unit bldFile="/sf/app/iptelephony/iptel_plat/group"/>
-     </component>
-    </collection>
-   </block>
+<block name="iptelephony" level="apps" long-name="IP Telephony"/>
 </layer>
 </systemModel>
 </SystemDefinition>

@@ -1,111 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="foundation" schema="2.0.1">
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="speechsrv" long-name="Speech Recognition UIs" tech_domain="ui" level="services" levels="engine framework ui">
-    <collection name="voiceui" long-name="Voice UI" level="ui">
-     <component name="vcommand" long-name="VCommand" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/voiceui/vcommand/group"/>
-     </component>
-     <component name="voiceuivoicerecognition" long-name="Voice UI Voice Recognition" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/voiceui/voiceuivoicerecognition/group"/>
-     </component>
-     <component name="pbkinfoviewimpl" long-name="Phonebook Info View Implementation" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/voiceui/pbkinfoviewimpl/group"/>
-     </component>
-     <component name="aiwpbkinfoviewprovider" long-name="AIW Phonebook Info View Provider" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/voiceui/aiwpbkinfoviewprovider/group"/>
-     </component>
-     <component name="vccontrolpanelplugin" long-name="VC Control Panel Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/voiceui/vccontrolpanelplugin/group"/>
-     </component>
-     <component unofficial="yes" name="voiceui_build" long-name="Voice UI Build" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/voiceui/group"/>
-     </component>
-    </collection>
-    <collection name="srsf" long-name="Speech Recognition and Synthesis Framework" level="framework">
-     <component name="sispeechrecognitiondata" long-name="SI Speech Recognition Data" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/sispeechrecognitiondata/group"/>
-     </component>
-     <component name="ttscommon" long-name="TTS Common" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/ttscommon/group"/>
-     </component>
-     <component name="devtts" long-name="Text to Speech" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/devtts/group"/>
-     </component>
-     <component name="ttscustomcommands" long-name="TTS Custom Commands" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/ttscustomcommands/group"/>
-     </component>
-     <component name="ttscontrollerplugin" long-name="TTS Controller Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/ttscontrollerplugin/group"/>
-     </component>
-     <component name="ttsutility" long-name="TTS Utility" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/ttsutility/group"/>
-     </component>
-     <component name="speechsynthesis" long-name="Speech Synthesis" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/speechsynthesis/client/group"/>
-      <unit bldFile="/sf/app/speechsrv/srsf/speechsynthesis/server/group"/>
-      <unit bldFile="/sf/app/speechsrv/srsf/speechsynthesis/tsrc/speechsynthesistest/group"/>
-      <!-- <unit bldFile="/sf/app/speechsrv/srsf/speechsynthesis/tsrc/testapplication/group"/> -->
-      <!-- <unit bldFile="/sf/app/speechsrv/srsf/speechsynthesis/tsrc/texttospeech/group"/> -->
-     </component>
-     <component name="devasr" long-name="Audio Recording and Speech Recognition" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/devasr/group"/>
-     </component>
-     <component name="sicc" long-name="Speaker Independent Custom Commands" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/sicc/group"/>
-     </component>
-     <component name="sisrscontrollerplugin" long-name="SI SRS Controller Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/sisrscontrollerplugin/group"/>
-     </component>
-     <component name="siutility" long-name="Speaker Independent Utility" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/siutility/group"/>
-     </component>
-     <component name="nssvasapi" long-name="NSS VAS API" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/nssvasapi/group"/>
-      <!-- <unit bldFile="/sf/app/speechsrv/srsf/nssvasapi/nssvasdb/nssvasdbeventnotifier/group"/> -->
-     </component>
-     <component name="nssvascontacthdlr" long-name="NSS VAS Contact Handler" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/nssvascontacthdlr/group"/>
-     </component>
-     <component name="vcommandhandler" long-name="Voice Command Handler" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/vcommandhandler/group"/>
-     </component>
-     <component name="vuiphandler" long-name="Voice UI Plugin Handler" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/vuiphandler/group"/>
-     </component>
-     <component name="vcommandexecutor" long-name="Voice Command Executor" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/vcommandexecutor/group"/>
-     </component>
-     <component name="vcommandexecutorbearer" long-name="Voice Command Executor Bearer" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/vcommandexecutorbearer/group"/>
-     </component>
-     <component name="vcommandmanager" long-name="Voice Command Manager" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/vcommandmanager/group"/>
-     </component>
-     <component name="vcexecutorapp" long-name="Voice Command Executor Application" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/vcexecutorapp/group"/>
-     </component>
-     <component name="profileobserverplugin" long-name="Profile Observer Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/profileobserverplugin/group"/>
-     </component>
-     <component unofficial="yes" name="srsf_build" long-name="Speech Recognition and Synthesis Framework Build" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/srsf/group"/>
-     </component>
-    </collection>
-    <collection name="speechsrv_info" long-name="Speech Recognition UIs Info" level="ui">
-     <component unofficial="yes" name="speechsrv_test" long-name="Speech Recognition UIs Test" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/speechsrv/tsrc/group"/> -->
-     </component>
-     <component unofficial="yes" name="speechsrv_build" long-name="Speech Recognition UIs Build" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/group"/>
-     </component>
-     <component unofficial="yes" name="speechsrv_plat" long-name="Speech Recognition UIs Platform Interfaces" class="api" origin-model="foundation">
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/group"/>
-      <unit bldFile="/sf/app/speechsrv/speechsrv_plat/ui_voice_recognition_api/tsrc/group"/>
-     </component>
-    </collection>
-   </block>
+<block name="speechsrv" level="services" long-name="Speech Recognition UIs"/>
 </layer>
 </systemModel>
 </SystemDefinition>

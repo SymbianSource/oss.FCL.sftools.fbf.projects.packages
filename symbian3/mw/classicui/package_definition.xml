@@ -1,259 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="foundation" schema="2.0.1">
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="classicui" long-name="Classic UI" tech_domain="ui" level="generic" levels="base support server generic specific">
-    <collection name="psln" long-name="Personalization" level="specific">
-     <component name="pslnengine" long-name="Personalization Engine" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/classicui/psln/pslnengine/group"/> -->
-     </component>
-     <component name="pslnframework" long-name="Personalization Framework" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/classicui/psln/pslnframework"/> -->
-     </component>
-     <component name="pslnlibraryloaders" long-name="Personalization Library Loaders" origin-model="foundation"/>
-     <component name="pslnslidesetdialog" long-name="Personalization Slideset Dialog" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/classicui/psln/pslnslidesetdialog/group"/> -->
-     </component>
-     <component name="pslngsplugin" long-name="Personalizaion GS Plugin" origin-model="foundation">
-      <unit bldFile="/sf/mw/classicui/psln/pslngsplugin/group"/>
-     </component>
-     <component name="psln_help" long-name="Help" origin-model="foundation">
-      <unit bldFile="/sf/mw/classicui/psln/help/group"/>
-     </component>
-     <component name="psln_build" long-name="Psln" origin-model="foundation">
-      <unit bldFile="/sf/mw/classicui/psln/group"/>
-     </component>
-    </collection>
-    <collection name="applicationinterworkingfw" long-name="Application Interworking Framework" level="generic">
-     <component name="aifwservicehandler" long-name="Service Handler" origin-model="foundation">
-      <unit bldFile="/sf/mw/classicui/applicationinterworkingfw/servicehandler/group"/>
-     </component>
-    </collection>
-    <collection name="commonuis" long-name="Common UIs" level="specific">
-     <component name="commonui" long-name="Common UI" origin-model="foundation">
-      <unit bldFile="/sf/mw/classicui/commonuis/commonui/group"/>
-     </component>
-     <component name="commondialogs" long-name="Common Dialogs" origin-model="foundation">
-      <unit bldFile="/sf/mw/classicui/commonuis/commondialogs/group"/>
-      <!-- <unit bldFile="/sf/mw/classicui/commonuis/commondialogs/group_test"/> -->
-     </component>
-    </collection>
-    <collection name="uifw" long-name="UI Framework" level="server">
-     <component name="uiklaf" long-name="UIKLAF" origin-model="foundation">
-      <unit bldFile="/sf/mw/classicui/uifw/uiklaf/group"/>
-     </component>
-     <component name="eikctl" long-name="Eikctl" origin-model="foundation">
-      <unit bldFile="/sf/mw/classicui/uifw/eikctl/group"/>
-     </component>
-     <component name="avkon" long-name="AvKon" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/classicui/uifw/avkon/aknhlist/group"/> -->
-      <!-- <unit bldFile="/sf/mw/classicui/uifw/avkon/aknkeyrotator/group"/> -->
-      <unit bldFile="/sf/mw/classicui/uifw/avkon/aknphysics/group"/>
-      <unit bldFile="/sf/mw/classicui/uifw/avkon/group"/>
-      <unit bldFile="/sf/mw/classicui/uifw/avkon/odeconf/group"/>
-      <!-- <unit bldFile="/sf/mw/classicui/uifw/avkon/prebuilder"/> -->
-      <!-- <unit bldFile="/sf/mw/classicui/uifw/avkon/tsrc/bc/s60_sdkmcl/bctestmixmcl/group"/> -->
-     </component>
-     <component name="eikstd" long-name="EikStd" origin-model="foundation">
-      <unit bldFile="/sf/mw/classicui/uifw/eikstd/group"/>
-     </component>
-     <component name="aknglobalui" long-name="Avkon Global UI" origin-model="foundation">
-      <unit bldFile="/sf/mw/classicui/uifw/aknglobalui/group"/>
-     </component>
-     <component name="ganes" long-name="Ganes" origin-model="foundation">
-      <unit bldFile="/sf/mw/classicui/uifw/ganes/group"/>
-     </component>
-     <component unofficial="yes" name="uifw_test" long-name="UI Framework Test" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/classicui/uifw/tsrc/group"/> -->
-     </component>
-    </collection>
-    <collection name="commonadapter" long-name="Common Adapter" level="support">
-     <component name="commonadapter_build" origin-model="foundation">
-      <unit bldFile="/sf/mw/classicui/commonadapter/group"/>
-     </component>
-    </collection>
-    <collection name="ode" long-name="Open Dynamics Engine" level="support">
-     <component name="ode_build" origin-model="foundation">
-      <unit bldFile="/sf/mw/classicui/ode/group"/>
-     </component>
-    </collection>
-    <collection name="commonuisupport" long-name="Common UI Support" level="support">
-     <component name="uikon" long-name="Uikon" introduced="6.0" purpose="mandatory" plugin="N" origin-model="Symbian">
-      <unit bldFile="/sf/mw/classicui/commonuisupport/uikon/group" mrp="/sf/mw/classicui/commonuisupport/uikon/group/app-framework_uikon.mrp"/>
-     </component>
-     <component name="errorresolverdata" long-name="Error Resolver Data" purpose="mandatory" plugin="N" origin-model="Symbian">
-      <unit bldFile="/sf/mw/classicui/commonuisupport/errorresolverdata/group" mrp="/sf/mw/classicui/commonuisupport/errorresolverdata/group/app-framework_errorresgt.mrp"/>
-     </component>
-     <component name="uilaf" long-name="UI Look and Feel" introduced="6.0" purpose="mandatory" plugin="N" origin-model="Symbian">
-      <unit bldFile="/sf/mw/classicui/commonuisupport/uilaf/GROUP" mrp="/sf/mw/classicui/commonuisupport/uilaf/GROUP/app-framework_uiklafgt.mrp"/>
-     </component>
-     <component name="grid" long-name="Grid" purpose="optional" plugin="N" origin-model="Symbian">
-      <unit bldFile="/sf/mw/classicui/commonuisupport/grid/group" mrp="/sf/mw/classicui/commonuisupport/grid/group/app-framework_grid.mrp"/>
-     </component>
-     <component name="uifwsdocs" long-name="UI Frameworks Documentation" purpose="development" class="doc" plugin="N" origin-model="Symbian">
-      <unit mrp="/sf/mw/classicui/commonuisupport/uifwsdocs/app-framework_documentation.mrp"/>
-     </component>
-    </collection>
-    <collection name="lafagnosticuifoundation" long-name="Look-and-Feel Agnostic UI Foundation" level="base">
-     <component name="cone" long-name="Control Environment" purpose="mandatory" plugin="N" origin-model="Symbian">
-      <unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/cone/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/cone/group/app-framework_cone.mrp"/>
-     </component>
-     <component name="graphicseffects" long-name="Graphics Effects" introduced="9.2" purpose="optional" plugin="N" origin-model="Symbian">
-      <unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/graphicseffects/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/graphicseffects/group/app-framework_gfxtranseffect.mrp"/>
-     </component>
-     <component name="uigraphicsutils" long-name="UI Graphics Utilities" purpose="mandatory" plugin="N" origin-model="Symbian">
-      <unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/uigraphicsutils/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/uigraphicsutils/group/app-framework_egul.mrp"/>
-     </component>
-     <component name="clockanim" long-name="Clock" purpose="optional" plugin="Y" origin-model="Symbian">
-      <unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/clockanim/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/clockanim/group/app-framework_clock.mrp"/>
-     </component>
-     <component name="bmpanimation" long-name="BMP Animation" introduced="6.0" purpose="optional" plugin="N" origin-model="Symbian">
-      <unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/bmpanimation/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/bmpanimation/group/app-framework_bmpanim.mrp"/>
-     </component>
-     <component name="animation" long-name="Animation" introduced="9.1" purpose="optional" plugin="N" origin-model="Symbian">
-      <unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/animation/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/animation/group/app-framework_animation.mrp"/>
-     </component>
-    </collection>
-    <collection name="classicui_info" long-name="Classic UI Info" level="specific">
-     <component unofficial="yes" name="classicui_build" long-name="Classic UI Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/classicui/group"/>
-     </component>
-     <component unofficial="yes" name="classicui_pub" long-name="Classic UI Public Interfaces" class="api" origin-model="foundation">
-      <unit bldFile="/sf/mw/classicui/classicui_pub/aiw_criteria_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/aiw_generic_parameter_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/aiw_service_handler_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/animation_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/application_framework_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/base_controls_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/buttons_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/choice_list_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/common_file_dialogs_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/context_pane_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/dialogs_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/dialog_shutter_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/document_handler_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/editors_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/error_ui_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/fonts_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/form_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/generic_button_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/grids_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/hierarchical_lists_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/hotkeys_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/images_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/indicators_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/information_preview_popup_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/info_popup_note_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/initialization_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/input_frame_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/keylock_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/labels_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/lists_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/misc_controls_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/navigation_pane_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/notes_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/notifiers_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/options_menu_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/popups_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/private_ui_framework_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/queries_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/screen_clearer_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/screen_mode_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/screen_saver_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/scroller_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/searchfield_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/server_application_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/setting_pages_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/slider_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/sounds_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/status_pane_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/stylus_popup_menu_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/tabs_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/title_pane_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/toolbar_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/touch_ui_utilities_api/tsrc/group"/>
-      <!-- <unit bldFile="/sf/mw/classicui/classicui_pub/tsrc/bc/apps/bctesttemplate/group"/> -->
-      <!-- <unit bldFile="/sf/mw/classicui/classicui_pub/tsrc/bc/apps/s60_sdk3.0/group"/> -->
-      <!-- <unit bldFile="/sf/mw/classicui/classicui_pub/tsrc/bc/apps/s60_sdk3.1/group"/> -->
-      <!-- <unit bldFile="/sf/mw/classicui/classicui_pub/tsrc/bc/apps/s60_sdk3.2/group"/> -->
-      <!-- <unit bldFile="/sf/mw/classicui/classicui_pub/tsrc/bc/apps/s60_sdk5.0/bctestpane/group"/> -->
-      <!-- <unit bldFile="/sf/mw/classicui/classicui_pub/tsrc/bc/apps/s60_sdk5.0/group"/> -->
-      <!-- <unit bldFile="/sf/mw/classicui/classicui_pub/tsrc/bc/group"/> -->
-      <unit bldFile="/sf/mw/classicui/classicui_pub/uikon_core_controls/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/ui_framework_definitions_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/ui_framework_utilities_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/volume_control_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_pub/window_server_event_observer_api/tsrc/group"/>
-     </component>
-     <component unofficial="yes" name="classicui_plat" long-name="Classic UI Platform Interfaces" class="api" origin-model="foundation">
-      <unit bldFile="/sf/mw/classicui/classicui_plat/aiw_provider_utility_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/aiw_service_interface_base_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/aiw_service_interface_menu_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/alarm_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/application_switching_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/avkon_fonts_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/avkon_secondary_display_support_api/tsrc/group"/>
-      <!-- <unit bldFile="/sf/mw/classicui/classicui_plat/avkon_testability_api/tsrc/group"/> -->
-      <unit bldFile="/sf/mw/classicui/classicui_plat/avkon_ui_server_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/battery_pane_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/common_file_dialogs_filter_factory_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/custom_cursors_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/eikon_server_extension_client_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/emergency_call_support_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/extended_aiw_criteria_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/extended_animation_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/extended_buttons_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/extended_editors_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/extended_grids_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/extended_indicators_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/extended_initialization_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/extended_input_capabilities_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/extended_lists_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/extended_notes_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/extended_notifiers_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/extended_setting_pages_api/tsrc/group"/>
-      <!-- <unit bldFile="/sf/mw/classicui/classicui_plat/extended_sounds_api/tsrc/group"/> -->
-      <unit bldFile="/sf/mw/classicui/classicui_plat/extended_status_pane_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/extended_utilities_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/find_item_ui_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/ganes_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/generic_parameter_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/global_popup_priority_controller_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/indicator_plugin_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/input_block_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/item_finder_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/japanese_reading_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/key_rotator_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/layout_configuration_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/list_effects_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/long_tap_animation_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/media_shared_document_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/memory_card_ui_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/number_grouping_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/personalisation_framework_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/phone_number_text_utilities_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/physics_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/pointer_event_modifier_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/popup_form_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/server_application_services_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/signal_pane_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/skinnable_clock_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/special_character_table_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/stylus_activated_popup_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/task_list_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/text_scroller_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/touch_pane_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/transition_effect_parameters_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/transition_effect_utilities_api/tsrc/group"/>
-      <unit bldFile="/sf/mw/classicui/classicui_plat/volume_popup_api/tsrc/group"/>
-     </component>
-    <component name="classicui_metadata" long-name="Classic UI Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
-      <unit mrp="/sf/mw/classicui/classicui_info/classicui_metadata/classicui_metadata.mrp"/>
-     </component>
-    </collection>
-   </block>
+<block name="classicui" level="generic" long-name="Classic UI" levels="base support server generic specific">
+<collection name="commonuisupport" long-name="Common UI Support" level="support">
+<component name="uikon" long-name="Uikon" introduced="6.0" purpose="mandatory">
+<unit bldFile="/sf/mw/classicui/commonuisupport/uikon/group" mrp="/sf/mw/classicui/commonuisupport/uikon/group/app-framework_uikon.mrp"/>
+</component>
+<component name="errorresolverdata" long-name="Error Resolver Data" purpose="mandatory">
+<unit bldFile="/sf/mw/classicui/commonuisupport/errorresolverdata/group" mrp="/sf/mw/classicui/commonuisupport/errorresolverdata/group/app-framework_errorresgt.mrp"/>
+</component>
+<component name="uilaf" long-name="UI Look and Feel" introduced="6.0" purpose="mandatory">
+<unit bldFile="/sf/mw/classicui/commonuisupport/uilaf/GROUP" mrp="/sf/mw/classicui/commonuisupport/uilaf/GROUP/app-framework_uiklafgt.mrp"/>
+</component>
+<component name="grid" long-name="Grid" purpose="optional">
+<unit bldFile="/sf/mw/classicui/commonuisupport/grid/group" mrp="/sf/mw/classicui/commonuisupport/grid/group/app-framework_grid.mrp"/>
+</component>
+<component name="uifwsdocs" long-name="UI Frameworks Documentation" purpose="development" class="doc">
+<unit mrp="/sf/mw/classicui/commonuisupport/uifwsdocs/app-framework_documentation.mrp"/>
+</component>
+</collection>
+<collection name="lafagnosticuifoundation" long-name="Look-and-Feel Agnostic UI Foundation" level="base">
+<component name="cone" long-name="Control Environment" purpose="mandatory">
+<unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/cone/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/cone/group/app-framework_cone.mrp"/>
+</component>
+<component name="graphicseffects" long-name="Graphics Effects" introduced="9.2" purpose="optional">
+<unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/graphicseffects/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/graphicseffects/group/app-framework_gfxtranseffect.mrp"/>
+</component>
+<component name="uigraphicsutils" long-name="UI Graphics Utilities" purpose="mandatory">
+<unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/uigraphicsutils/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/uigraphicsutils/group/app-framework_egul.mrp"/>
+</component>
+<component name="clockanim" long-name="Clock" purpose="optional" plugin="Y">
+<unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/clockanim/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/clockanim/group/app-framework_clock.mrp"/>
+</component>
+<component name="bmpanimation" long-name="BMP Animation" introduced="6.0" purpose="optional">
+<unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/bmpanimation/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/bmpanimation/group/app-framework_bmpanim.mrp"/>
+</component>
+<component name="animation" long-name="Animation" introduced="9.1" purpose="optional">
+<unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/animation/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/animation/group/app-framework_animation.mrp"/>
+</component>
+</collection>
+<collection name="classicui_info" long-name="Classic UI Info" level="specific">
+<!-- the multiple units in the API components need to be resolved -->
+<component name="classicui_metadata" long-name="Classic UI Metadata" introduced="tb91" purpose="development" class="config PC">
+<unit mrp="/sf/mw/classicui/classicui_info/classicui_metadata/classicui_metadata.mrp"/>
+</component>
+</collection>
+<collection name="s60">
+<component name="classicui">
+<unit bldFile="/sf/mw/classicui/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

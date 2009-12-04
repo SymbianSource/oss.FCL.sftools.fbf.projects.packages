@@ -1,150 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="foundation" schema="2.0.1">
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="locationsrv" long-name="Location Services" tech_domain="lo" level="specific" levels="plugins fw interface">
-    <collection name="landmarks" long-name="Landmarks" level="fw">
-     <component name="locationlandmarks" long-name="Location Landmarks" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/landmarks/locationlandmarks/group"/>
-     </component>
-     <component unofficial="yes" name="landmarks_build" long-name="Landmarks Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/landmarks/group"/>
-     </component>
-    </collection>
-    <collection name="locationmapnavfw" long-name="Location Map Nav Framework" level="fw">
-     <component name="library" long-name="Library" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/locationmapnavfw/library/group"/>
-     </component>
-     <component name="aiwprovider" long-name="Application Inter-Working Provider" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/locationmapnavfw/aiwprovider/group"/>
-     </component>
-     <component unofficial="yes" name="locationmapnavfw_build" long-name="Location Map Nav Framework Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/locationmapnavfw/group"/>
-     </component>
-    </collection>
-    <collection name="locationsystemui" long-name="Location System UI" level="interface">
-     <component name="locationsysui" long-name="Location Sys UI" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/locationsystemui/locationsysui/group"/>
-     </component>
-     <component unofficial="yes" name="locationsystemui_build" long-name="Location System UI Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/locationsystemui/group"/>
-     </component>
-    </collection>
-    <collection name="supl" long-name="SUPL" level="plugins">
-     <component name="locationsuplfw" long-name="Location SUPL Framework" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/supl/locationsuplfw/group"/>
-     </component>
-     <component name="locationomasuplprotocolhandler" long-name="Location OMA SUPL Protocol Handler" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/supl/locationomasuplprotocolhandler/group"/>
-     </component>
-     <component name="locationomasuplpostester" long-name="Location OMA SUPL Pos Tester" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/supl/locationomasuplpostester/group"/>
-     </component>
-     <component unofficial="yes" name="supl_build" long-name="SUPL Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/supl/group"/>
-     </component>
-    </collection>
-    <collection name="locationtriggering" long-name="Location Triggering" level="interface">
-     <component name="ltlogger" long-name="LT Logger" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltlogger/group"/>
-     </component>
-     <component name="ltclientlib" long-name="LT Client Lib" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltclientlib/group"/>
-     </component>
-     <component name="ltmanagementlib" long-name="LT Management Library" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltmanagementlib/group"/>
-     </component>
-     <component name="ltcontainer" long-name="LT Container" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltcontainer/group"/>
-     </component>
-     <component name="ltserver" long-name="LT Server" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltserver/group"/>
-     </component>
-     <component name="ltstrategypluginapi" long-name="LT Strategy Plugin API" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltstrategypluginapi/group"/>
-     </component>
-     <component name="ltstrategyengine" long-name="LT Strategy Engine" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltstrategyengine/group"/>
-     </component>
-     <component name="ltmovementdetectionpluginapi" long-name="Movement Detection Plugin API" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltmovementdetectionpluginapi/group"/>
-     </component>
-     <component name="ltcellidmovementdetector" long-name="Cell ID Movement Detector" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltcellidmovementdetector/group"/>
-     </component>
-     <component name="lbtmgmtui" long-name="LBT Management UI" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/locationtriggering/lbtmgmtui/group"/>
-     </component>
-     <component unofficial="yes" name="locationtriggering_test" long-name="Location Triggering Test" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancelcreatetest/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/additionaltests/createtest/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/additionaltests/handlingprocesstest/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity2_exe/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancellisttriggerstest/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancelcreateiteratortest/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity3_exe/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/firingofstartuptriggerandlisttrigger/createtest/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/t_mgmtsettings/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity4_exe/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancelgettriggerstest/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/additionaltests/modifytest/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/t_mgmtsettings/createtest/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity5_exe/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/additionaltests/notificationtest/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancelsettriggerstest/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/canceldeletetest/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/additionaltests/deletetest/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity1_exe/group"/> -->
-     </component>
-     <component unofficial="yes" name="locationtriggering_build" long-name="Location Triggering Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/locationtriggering/group"/>
-     </component>
-    </collection>
-    <collection name="locationsrv_info" long-name="Location Services Info" level="interface">
-     <component unofficial="yes" name="locsrv_plat" class="api" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/geocoding_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/geocoding_api/tsrc/mapnavproviderrefapp/group"/> -->
-      <unit bldFile="/sf/mw/locationsrv/locsrv_plat/group"/>
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/location_centre_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/location_settings_launch_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/map_and_navigation_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/map_and_navigation_api/tsrc/mapnavproviderrefapp/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/map_and_navigation_provider_discovery_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/map_and_navigation_provider_discovery_api/tsrc/mapnavproviderrefapp/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/map_image_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/map_image_api/tsrc/testprovider/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/map_image_conversion_plugin_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/map_image_conversion_plugin_api/tsrc/mapnavproviderrefapp/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/oma_supl_asn_codec_plugin_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/supl_network_initiation_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/supl_pos_message_plugin_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/supl_pos_message_plugin_api/tsrc/posmsgpluginreferenceimpl/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/supl_settings_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_plat/supl_terminal_initiation_api/tsrc/group"/> -->
-     </component>
-     <component unofficial="yes" name="genericpositioningplugins" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/genericpositioningplugins/group"/>
-     </component>
-     <component unofficial="yes" name="locationsrv_test" long-name="Location Services Test" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/locationsrv/tsrc/group"/> -->
-     </component>
-     <component unofficial="yes" name="locationsrv_build" long-name="Location Services Build" origin-model="foundation">
-      <unit bldFile="/sf/mw/locationsrv/group"/>
-     </component>
-     <component unofficial="yes" name="locsrv_pub" class="api" origin-model="foundation">
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_pub/blid_application_satellite_info_api/tsrc/bc_blid_application_satellite_info_api/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_pub/blid_application_satellite_info_api/tsrc/ut_csatelliteuitest/group"/> -->
-      <unit bldFile="/sf/mw/locationsrv/locsrv_pub/group"/>
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_pub/landmarks_api/tsrc/bc_landmarks_api/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_pub/landmarks_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_pub/landmarks_database_management_api/tsrc/bc_landmarks_database_management_api/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_pub/landmarks_database_management_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_pub/landmarks_search_api/tsrc/bc_landmarks_search_api/group"/> -->
-      <!-- <unit bldFile="/sf/mw/locationsrv/locsrv_pub/landmarks_search_api/tsrc/group"/> -->
-     </component>
-    </collection>
-   </block>
+<layer name="mw">
+<block name="locationsrv">
+<collection name="s60">
+<component name="locationsrv">
+<unit bldFile="/sf/mw/locationsrv/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

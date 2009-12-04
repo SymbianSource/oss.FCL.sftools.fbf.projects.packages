@@ -1,82 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="foundation" schema="2.0.1">
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="photos" long-name="Photos" tech_domain="ma" level="apps" levels="support fw ui app">
-    <collection name="photosgallery" long-name="Photos Gallery" level="app">
-     <component name="photosgallery_help" long-name="Help" origin-model="foundation">
-      <unit bldFile="/sf/app/photos/photosgallery/help/group"/>
-     </component>
-     <component name="logging" long-name="Logging" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/photos/photosgallery/logging/app/group"/> -->
-      <unit bldFile="/sf/app/photos/photosgallery/logging/group"/>
-     </component>
-     <component name="photosgallery_common" long-name="Common" origin-model="foundation">
-      <unit bldFile="/sf/app/photos/photosgallery/common/group"/>
-     </component>
-     <component name="photosgallery_commonui" long-name="Common UI" origin-model="foundation">
-      <unit bldFile="/sf/app/photos/photosgallery/commonui/group"/>
-     </component>
-     <component name="photoscollectionfw" long-name="Collection Framework" origin-model="foundation">
-      <unit bldFile="/sf/app/photos/photosgallery/collectionframework/group"/>
-      <!-- <unit bldFile="/sf/app/photos/photosgallery/collectionframework/plugins/glxcollectionpluginalbums/group"/> -->
-     </component>
-     <component name="photosviewfw" long-name="View Framework" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/photos/photosgallery/viewframework/commandhandlers/commandhandlerbase/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/app/photos/photosgallery/viewframework/commandhandlers/commandhandlerupnp/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/app/photos/photosgallery/viewframework/commandhandlers/commandhandlerupnp/tsrc/t_glxupnprenderer/group"/> -->
-      <!-- <unit bldFile="/sf/app/photos/photosgallery/viewframework/commandhandlers/commoncommandhandlers/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/app/photos/photosgallery/viewframework/commandhandlers/commoncommandhandlers/tsrc/t_cglxaiwservicehandler/group"/> -->
-      <!-- <unit bldFile="/sf/app/photos/photosgallery/viewframework/commandhandlers/commoncommandhandlers/tsrc/t_glxcommandhandlerback/group"/> -->
-      <!-- <unit bldFile="/sf/app/photos/photosgallery/viewframework/commandhandlers/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/app/photos/photosgallery/viewframework/commandhandlers/tsrc/ut_commandhandlerdrm/group"/> -->
-      <!-- <unit bldFile="/sf/app/photos/photosgallery/viewframework/commandhandlers/tsrc/ut_commandhandlermoreinfo/group"/> -->
-      <!-- <unit bldFile="/sf/app/photos/photosgallery/viewframework/commandhandlers/tsrc/ut__commandhandlermarking/group"/> -->
-      <unit bldFile="/sf/app/photos/photosgallery/viewframework/group"/>
-      <!-- <unit bldFile="/sf/app/photos/photosgallery/viewframework/plugins/metadataviewplugin/group"/> -->
-      <!-- <unit bldFile="/sf/app/photos/photosgallery/viewframework/views/listview/group"/> -->
-      <!-- <unit bldFile="/sf/app/photos/photosgallery/viewframework/views/metadataview/group"/> -->
-      <!-- <unit bldFile="/sf/app/photos/photosgallery/viewframework/views/viewbase/group"/> -->
-     </component>
-     <component name="controllers" long-name="Controllers" origin-model="foundation">
-      <unit bldFile="/sf/app/photos/photosgallery/controllers/group"/>
-     </component>
-     <component name="photogallery" long-name="Gallery" origin-model="foundation">
-      <unit bldFile="/sf/app/photos/photosgallery/gallery/group"/>
-     </component>
-     <component name="slideshow" long-name="Slideshow" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/photos/photosgallery/slideshow/engine/tsrc/group"/> -->
-      <unit bldFile="/sf/app/photos/photosgallery/slideshow/group"/>
-     </component>
-     <component name="contentharvesterplugin" long-name="Content Harvester Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/photos/photosgallery/contentharvesterplugin/group"/>
-     </component>
-     <component name="photossuite" long-name="Photos Suite" origin-model="foundation">
-      <unit bldFile="/sf/app/photos/photosgallery/photossuite/group"/>
-     </component>
-     <!--Component manually removed as empty and name conflicts with another component-->
-     <!--<component name="memoryplugin" long-name="Memory Plugin">
-       <unit bldFile="/sf/app/photos/photosgallery/memoryplugin/group"/>
-     </component>-->
-     <component unofficial="yes" name="photosicons" origin-model="foundation">
-      <unit bldFile="/sf/app/photos/photosgallery/icons"/>
-     </component>
-     <component unofficial="yes" name="photosgallery_build" long-name="Photos Gallery Build" origin-model="foundation">
-      <unit bldFile="/sf/app/photos/photosgallery/group"/>
-     </component>
-    </collection>
-    <collection name="photos_info" long-name="Photos Info" level="app">
-     <component unofficial="yes" name="photos_plat" long-name="Photos Platform Interfaces" class="api" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/photos/photos_plat/controllers_collection_api/tsrc/ui_metadatadialog/group"/> -->
-      <!-- <unit bldFile="/sf/app/photos/photos_plat/controllers_collection_api/tsrc/ut_collectioninfo/group"/> -->
-      <!-- <unit bldFile="/sf/app/photos/photos_plat/controllers_collection_api/tsrc/ut_collectionmanager/group"/> -->
-      <unit bldFile="/sf/app/photos/photos_plat/group"/>
-     </component>
-     <component unofficial="yes" name="photos_build" long-name="Photos Build" origin-model="foundation">
-      <unit bldFile="/sf/app/photos/group"/>
-     </component>
-    </collection>
-   </block>
+<block name="photos" level="apps" long-name="Photos"/>
 </layer>
 </systemModel>
 </SystemDefinition>

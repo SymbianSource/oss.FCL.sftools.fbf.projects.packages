@@ -1,40 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="foundation" schema="2.0.1">
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="videoplayer" long-name="Video Player Apps" tech_domain="ma" level="apps" levels="support apps">
-    <collection name="lwplayer" long-name="LW Player" level="apps">
-     <component name="lwplayer_build" long-name="LW Player" origin-model="foundation">
-      <unit bldFile="/sf/app/videoplayer/lwplayer/group"/>
-     </component>
-    </collection>
-    <collection name="mediaplayer" long-name="Media Player" level="apps">
-     <component name="mediaplayer_build" origin-model="foundation">
-      <unit bldFile="/sf/app/videoplayer/mediaplayer/group"/>
-     </component>
-    </collection>
-    <collection name="mediasettings" long-name="Media Settings" level="support">
-     <component name="mediasettings_build" origin-model="foundation">
-      <unit bldFile="/sf/app/videoplayer/mediasettings/group"/>
-     </component>
-    </collection>
-    <collection name="videoplayer_info" long-name="Video Player Apps Info" level="apps">
-     <component unofficial="yes" name="videoplayer_help" long-name="Video Player Apps Help" origin-model="foundation">
-      <unit bldFile="/sf/app/videoplayer/help/group"/>
-     </component>
-     <component unofficial="yes" name="videoplayer_plat" long-name="Video Player Apps Platform Interfaces" class="api" origin-model="foundation">
-      <unit bldFile="/sf/app/videoplayer/videoplayer_plat/group"/>
-      <unit bldFile="/sf/app/videoplayer/videoplayer_plat/media_player_engine_api/tsrc/group"/>
-      <unit bldFile="/sf/app/videoplayer/videoplayer_plat/media_player_file_details_dialog_api/tsrc/group"/>
-     </component>
-     <component unofficial="yes" name="videoplayer_test" long-name="Video Player Apps Test" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/videoplayer/tsrc/group"/> -->
-     </component>
-     <component unofficial="yes" name="videoplayer_build" long-name="Video Player Apps Build" origin-model="foundation">
-      <unit bldFile="/sf/app/videoplayer/group"/>
-     </component>
-    </collection>
-   </block>
+<block name="videoplayer" level="apps" long-name="Video Player Apps"/>
 </layer>
 </systemModel>
 </SystemDefinition>

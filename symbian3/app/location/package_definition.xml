@@ -1,103 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="foundation" schema="2.0.1">
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="location" long-name="Location Apps" tech_domain="lo" level="apps" levels="engine ui apps">
-    <collection name="landmarksui" long-name="Landmarks UI" level="ui">
-     <component name="landmarksui_help" long-name="Help" origin-model="foundation">
-      <unit bldFile="/sf/app/location/landmarksui/help/group"/>
-     </component>
-     <component name="landmarksui_engine" long-name="Engine" origin-model="foundation">
-      <unit bldFile="/sf/app/location/landmarksui/engine/group"/>
-     </component>
-     <component name="uicontrols" long-name="UI Controls" origin-model="foundation">
-      <unit bldFile="/sf/app/location/landmarksui/uicontrols/group"/>
-     </component>
-     <component name="landmarksui_commonui" long-name="Common UI" origin-model="foundation">
-      <unit bldFile="/sf/app/location/landmarksui/commonui/group"/>
-     </component>
-     <component name="landmarksui_app" long-name="Application" origin-model="foundation">
-      <unit bldFile="/sf/app/location/landmarksui/app/group"/>
-     </component>
-     <component name="msgviewer" long-name="Message Viewer" origin-model="foundation">
-      <unit bldFile="/sf/app/location/landmarksui/msgviewer/group"/>
-     </component>
-     <component unofficial="yes" name="landmarksui_build" long-name="Landmarks UI Build" origin-model="foundation">
-      <unit bldFile="/sf/app/location/landmarksui/group"/>
-     </component>
-    </collection>
-    <collection name="basiclocationinfodisplay" long-name="Basic Location Info Display" level="ui">
-     <component name="blid" long-name="Blid" origin-model="foundation">
-      <unit bldFile="/sf/app/location/basiclocationinfodisplay/blid/group"/>
-     </component>
-     <component unofficial="yes" name="basiclocationinfodisplay_build" long-name="Basic Location Info Display Build" origin-model="foundation">
-      <unit bldFile="/sf/app/location/basiclocationinfodisplay/group"/>
-     </component>
-    </collection>
-    <collection name="eventsui" long-name="Events UI" level="ui">
-     <component name="eventsui_help" long-name="Help" origin-model="foundation">
-      <unit bldFile="/sf/app/location/eventsui/help/group"/>
-     </component>
-     <component name="eventsutils" long-name="Events Utils" origin-model="foundation">
-      <unit bldFile="/sf/app/location/eventsui/eventsutils/group"/>
-     </component>
-     <component name="eventsengine" long-name="Events Engine" origin-model="foundation">
-      <unit bldFile="/sf/app/location/eventsui/eventsengine/group"/>
-     </component>
-     <component name="eventshandlerui" long-name="Events Handler UI" origin-model="foundation">
-      <unit bldFile="/sf/app/location/eventsui/eventshandlerui/group"/>
-     </component>
-     <component name="eventseditor" long-name="Events Editor" origin-model="foundation">
-      <unit bldFile="/sf/app/location/eventsui/eventseditor/group"/>
-     </component>
-     <component name="eventsmgmtui" long-name="Events Mgmt UI" origin-model="foundation">
-      <unit bldFile="/sf/app/location/eventsui/eventsmgmtui/group"/>
-     </component>
-     <component unofficial="yes" name="eventsui_build" long-name="Events UI Build" origin-model="foundation">
-      <unit bldFile="/sf/app/location/eventsui/group"/>
-     </component>
-    </collection>
-    <collection name="locationlandmarksrefappfors60" long-name="Location Landmarks Reference App for S60" level="apps">
-     <component name="lmrefapp" origin-model="foundation">
-      <unit bldFile="/sf/app/location/locationlandmarksrefappfors60/group"/>
-     </component>
-    </collection>
-    <collection name="locationlandmarksuirefapp" long-name="Location Landmarks UI Reference App" level="apps">
-     <component name="lmuirefapp" origin-model="foundation">
-      <unit bldFile="/sf/app/location/locationlandmarksuirefapp/group"/>
-     </component>
-    </collection>
-    <collection name="locationsatviewrefapp" long-name="Location Sat View Reference App" level="apps">
-     <component name="satellitereference" origin-model="foundation">
-      <unit bldFile="/sf/app/location/locationsatviewrefapp/group"/>
-     </component>
-    </collection>
-    <collection name="simpsyconfigurator" long-name="SIM PSY Configurator" level="engine">
-     <component name="simpsyui" origin-model="foundation">
-      <unit bldFile="/sf/app/location/simpsyconfigurator/group"/>
-     </component>
-    </collection>
-    <collection name="mapnavproviderrefapp" long-name="Map Nav Provider Reference App" level="apps">
-     <component unofficial="yes" name="mapnavproviderrefapp_build" long-name="Map Nav Provider Reference App Build" origin-model="foundation">
-      <unit bldFile="/sf/app/location/mapnavproviderrefapp/group"/>
-     </component>
-    </collection>
-    <collection name="location_info" long-name="Location Apps Info" level="apps">
-     <component unofficial="yes" name="location_build" long-name="Location Apps Build" origin-model="foundation">
-      <unit bldFile="/sf/app/location/group"/>
-     </component>
-     <component unofficial="yes" name="location_test" long-name="Location Apps Test" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/location/tsrc/group"/> -->
-     </component>
-     <component unofficial="yes" name="loc_pub" class="api" origin-model="foundation">
-      <unit bldFile="/sf/app/location/loc_pub/group"/>
-      <!-- <unit bldFile="/sf/app/location/loc_pub/landmarks_ui_addedit_api/tsrc/bc/group"/> -->
-      <!-- <unit bldFile="/sf/app/location/loc_pub/landmarks_ui_addedit_api/tsrc/group"/> -->
-      <!-- <unit bldFile="/sf/app/location/loc_pub/landmarks_ui_selector_api/tsrc/bc/group"/> -->
-      <!-- <unit bldFile="/sf/app/location/loc_pub/landmarks_ui_selector_api/tsrc/group"/> -->
-     </component>
-    </collection>
-   </block>
+<block name="location" level="apps" long-name="Location Apps"/>
 </layer>
 </systemModel>
 </SystemDefinition>

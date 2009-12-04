@@ -1,159 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="foundation" schema="2.0.1">
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="videocenter" long-name="Video Center" tech_domain="ma" level="apps" levels="eng ui app">
-    <collection name="mpxmyvideoscollection" long-name="MPX My Videos Collection" level="app">
-     <component name="mpx_common_api" long-name="MPX Common_Api" class="api" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/mpxmyvideoscollection/mpx_common_api/group"/>
-     </component>
-     <component unofficial="yes" name="mpxmyvideoscollection_build" long-name="MPX My Videos Collection Build" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/mpxmyvideoscollection/group"/>
-     </component>
-     <component unofficial="yes" name="mpxmyvideoscollection_test" long-name="MPX My Videos Collection Test" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/videocenter/mpxmyvideoscollection/tsrc/group"/> -->
-     </component>
-    </collection>
-    <collection name="nsmyvideosview" long-name="NS My Videos View" level="app">
-     <component name="hgmyvideos" long-name="HG My Videos" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/nsmyvideosview/hgmyvideos/group"/>
-     </component>
-     <component name="hgmyvideosplugin" long-name="HG My Videos Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/nsmyvideosview/hgmyvideosplugin/group"/>
-     </component>
-     <component name="nsmyvideos" long-name="NS Myvideos" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/videocenter/nsmyvideosview/nsmyvideos/group"/> -->
-     </component>
-     <component name="nsmyvideosplugin" long-name="NS Myvideos Plugin" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/videocenter/nsmyvideosview/nsmyvideosplugin/group"/> -->
-     </component>
-    </collection>
-    <collection name="vccommon" long-name="Video Center Common" level="eng">
-     <component name="vccommon_utils" long-name="Utilities" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vccommon/utils/group"/>
-     </component>
-     <component name="viewmessageutility" long-name="View Message Utility" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vccommon/viewmessageutility/group"/>
-     </component>
-     <component name="notifierplugins" long-name="Notifier Plugins" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vccommon/notifierplugins/notifierplugin/group"/>
-      <unit bldFile="/sf/app/videocenter/vccommon/notifierplugins/vcxnotifier/group"/>
-     </component>
-     <component name="vccommon_help" long-name="Help" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vccommon/help/group"/>
-     </component>
-     <component unofficial="yes" name="sis" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/videocenter/vccommon/sis"/> -->
-     </component>
-     <component unofficial="yes" name="vccommon_build" long-name="Video Center Common Build" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vccommon/group"/>
-     </component>
-    </collection>
-    <collection name="vcengines" long-name="Video Center Engines" level="eng">
-     <component name="vcengines_server" long-name="Server" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcengines/server/clientapi/group"/>
-      <unit bldFile="/sf/app/videocenter/vcengines/server/group"/>
-      <unit bldFile="/sf/app/videocenter/vcengines/server/iptvepgmanager/group"/>
-     </component>
-     <component name="serviceprovisioning" long-name="Service Provisioning" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcengines/serviceprovisioning/omaprovisioning/group"/>
-      <unit bldFile="/sf/app/videocenter/vcengines/serviceprovisioning/provisioningappui/group"/>
-      <unit bldFile="/sf/app/videocenter/vcengines/serviceprovisioning/provisioningprocessor/group"/>
-      <unit bldFile="/sf/app/videocenter/vcengines/serviceprovisioning/provisioningrecognizer/group"/>
-     </component>
-     <component name="mrssplugin" long-name="Mrss Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcengines/mrssplugin/group"/>
-     </component>
-     <component name="livetvutils" long-name="Live TV Utils" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcengines/livetvutils/group"/>
-     </component>
-     <component name="networkengine" long-name="Network Engine" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcengines/networkengine/group"/>
-     </component>
-     <component name="livetvepgengine" long-name="Live TV EPG Engine" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcengines/livetvepgengine/group"/>
-     </component>
-     <component name="tunerengine" long-name="Tuner Engine" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcengines/tunerengine/group"/>
-     </component>
-     <component name="livetvschedulerplugin" long-name="Live TV Scheduler Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcengines/livetvschedulerplugin/group"/>
-     </component>
-     <component name="xmltvplugin" long-name="XML TV Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcengines/xmltvplugin/group"/>
-     </component>
-     <component name="scheduleddlplugin" long-name="Scheduled Download Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcengines/scheduleddlplugin/group"/>
-     </component>
-     <component name="voddownloadplugin" long-name="VOD Download Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcengines/voddownloadplugin/group"/>
-     </component>
-     <component unofficial="yes" name="vcengines_build" long-name="Video Center Engines Build" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcengines/group"/>
-     </component>
-    </collection>
-    <collection name="vcnsuis" long-name="Video Center NS UIs" level="ui">
-     <component name="vcnsapp" long-name="VCNS App" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcnsuis/vcnsapp/vcnsappui/group"/>
-      <unit bldFile="/sf/app/videocenter/vcnsuis/vcnsapp/vcnsbsutility/group"/>
-      <unit bldFile="/sf/app/videocenter/vcnsuis/vcnsapp/vcnsuiengine/group"/>
-     </component>
-     <component name="vcnssettings" long-name="VCNS Settings" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcnsuis/vcnssettings/vcnsgsplugin/group"/>
-      <unit bldFile="/sf/app/videocenter/vcnsuis/vcnssettings/vcnsscheduleplugin/group"/>
-      <unit bldFile="/sf/app/videocenter/vcnsuis/vcnssettings/vcnsscheduleview/group"/>
-      <unit bldFile="/sf/app/videocenter/vcnsuis/vcnssettings/vcnssettingsengine/group"/>
-      <unit bldFile="/sf/app/videocenter/vcnsuis/vcnssettings/vcnssettingsplugin/group"/>
-      <unit bldFile="/sf/app/videocenter/vcnsuis/vcnssettings/vcnssettingsviews/group"/>
-     </component>
-     <component name="vcnsahplugin" long-name="VCNS Action Handler Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcnsuis/vcnsahplugin/group"/>
-     </component>
-     <component name="vcnsvodui" long-name="VCNS VOD UI" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcnsuis/vcnsvodui/plugins/hgvodplugin/group"/>
-      <!-- <unit bldFile="/sf/app/videocenter/vcnsuis/vcnsvodui/plugins/vcnsvodplugin/group"/> -->
-      <unit bldFile="/sf/app/videocenter/vcnsuis/vcnsvodui/views/hgvodui/group"/>
-      <!-- <unit bldFile="/sf/app/videocenter/vcnsuis/vcnsvodui/views/vcnsvodui/group"/> -->
-     </component>
-     <component name="vcnslivetv" long-name="VCNS Live TV" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcnsuis/vcnslivetv/remindernotifier/group"/>
-     </component>
-     <component name="vcnschplugin" long-name="VCNS Content Harvester Plugin" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcnsuis/vcnschplugin/group"/>
-     </component>
-    </collection>
-    <collection name="vcplayer" long-name="Video Center Player" level="app">
-     <component name="vcplayer_core" long-name="Core" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcplayer/core/controllerbase/group"/>
-      <unit bldFile="/sf/app/videocenter/vcplayer/core/playercore/group"/>
-     </component>
-     <component name="vcplayer_utils" long-name="Utilities" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcplayer/utils/group"/>
-     </component>
-     <component name="vcplayer_plugins" long-name="Plugins" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcplayer/plugins/dlprogresscontroller/group"/>
-      <unit bldFile="/sf/app/videocenter/vcplayer/plugins/rtpfileplaycontroller/group"/>
-      <unit bldFile="/sf/app/videocenter/vcplayer/plugins/unicaststreamplayercontroller/group"/>
-     </component>
-     <component name="vcnsplayerview" long-name="VCNS Player View" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcplayer/vcnsplayerview/group"/>
-     </component>
-     <component name="defaultview" long-name="Default View" origin-model="foundation">
-      <!-- <unit bldFile="/sf/app/videocenter/vcplayer/defaultview/group"/> -->
-     </component>
-     <component unofficial="yes" name="vcplayer_build" long-name="Video Center Player Build" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/vcplayer/group"/>
-     </component>
-    </collection>
-    <collection name="videocenter_info" long-name="Video Center Info" level="app">
-     <component unofficial="yes" name="videocenter_build" long-name="Video Center Build" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/group"/>
-     </component>
-     <component unofficial="yes" name="videocenter_plat" long-name="Video Center Platform Interfaces" class="api" origin-model="foundation">
-      <unit bldFile="/sf/app/videocenter/videocenter_plat/group"/>
-     </component>
-    </collection>
-   </block>
+<block name="videocenter" level="apps" long-name="Video Center"/>
 </layer>
 </systemModel>
 </SystemDefinition>

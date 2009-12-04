@@ -1,58 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition name="foundation" schema="2.0.1">
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
-<block name="deviceplatformrelease" long-name="Device Platform Release" tech_domain="to" level="services" levels="bld mid top">
-    <collection name="s60extras" long-name="S60 Extras" level="mid">
-     <component name="s60extras_build" long-name="S60 Extras Component" origin-model="foundation">
-      <unit bldFile="/sf/os/deviceplatformrelease/s60extras/group"/>
-     </component>
-    </collection>
-    <collection name="s60locfiles" long-name="S60 Loc Files" level="mid">
-     <component name="s60locfiles_build" long-name="S60 Loc Files Component" origin-model="foundation">
-      <unit bldFile="/sf/os/deviceplatformrelease/s60locfiles/group"/>
-     </component>
-    </collection>
-    <collection name="version" long-name="Version" level="top">
-     <component name="version_build" long-name="Version Component" origin-model="foundation">
-      <unit bldFile="/sf/os/deviceplatformrelease/version/group"/>
-     </component>
-    </collection>
-    <collection name="sf_config" long-name="SF Config" level="mid">
-     <component name="config" origin-model="foundation">
-      <!-- <unit bldFile="/sf/os/deviceplatformrelease/sf_config/config/apac/group"/> -->
-      <!-- <unit bldFile="/sf/os/deviceplatformrelease/sf_config/config/group"/> -->
-      <!-- <unit bldFile="/sf/os/deviceplatformrelease/sf_config/config/japan/group"/> -->
-      <!-- <unit bldFile="/sf/os/deviceplatformrelease/sf_config/config/western/group"/> -->
-     </component>
-    </collection>
-    <collection name="s60bld">
-     <component unofficial="yes" name="buildplatforms" origin-model="foundation">
-      <unit bldFile="/sf/tools/buildplatforms/group"/>
-     </component>
-    </collection>
-   <collection name="symbianosbld" long-name="Symbian OS Build" level="bld">
-     <component name="cedarutils" long-name="Cedar Utils" purpose="development" plugin="N" origin-model="Symbian">
-      <unit mrp="/sf/os/deviceplatformrelease/symbianosbld/cedarutils/tools_utils_cedar.mrp"/>
-     </component>
-     <component name="productionbldcbrconfig" long-name="Production Build CBR Config" filter="gt" purpose="development" class="config" plugin="N" origin-model="Symbian">
-      <unit mrp="/sf/os/deviceplatformrelease/symbianosbld/productionbldcbrconfig/product_cbr_config.mrp"/>
-     </component>
-    </collection>
-    <collection name="foundation_system" long-name="Foundation System" level="top">
-     <component name="systemdocs" long-name="System Documentation" purpose="development" class="doc" plugin="N" origin-model="Symbian">
-      <unit mrp="/sf/os/deviceplatformrelease/foundation_system/systemdocs/group/system.mrp"/>
-     </component>
-     <component name="system_model" long-name="System Model" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
-      <unit mrp="/sf/os/deviceplatformrelease/foundation_system/system_model/system_model.mrp"/>
-     </component>
-    </collection>
-    <collection name="deviceplatformrelease_info" long-name="Device Platform Release Info" level="top">
-     <component name="deviceplatformrelease_metadata" long-name="Device Platform Release Metadata" introduced="tb91" purpose="development" class="config PC" plugin="N" origin-model="Symbian">
-      <unit mrp="/sf/os/deviceplatformrelease/deviceplatformrelease_info/deviceplatformrelease_metadata/deviceplatformrelease_metadata.mrp"/>
-     </component>
-    </collection>
-   </block>
+<block name="deviceplatformrelease" level="services" long-name="Device Platform Release" levels="bld mid top">
+<collection name="symbianosbld" long-name="Symbian OS Build" level="bld">
+<component name="cedarutils" long-name="Cedar Utils" purpose="development">
+<unit mrp="/sf/os/deviceplatformrelease/symbianosbld/cedarutils/tools_utils_cedar.mrp"/>
+</component>
+<component name="productionbldcbrconfig" long-name="Production Build CBR Config" filter="gt" purpose="development" class="config">
+<unit mrp="/sf/os/deviceplatformrelease/symbianosbld/productionbldcbrconfig/product_cbr_config.mrp"/>
+</component>
+</collection>
+<collection name="foundation_system" long-name="Foundation System" level="top">
+<component name="systemdocs" long-name="System Documentation" purpose="development" class="doc">
+<unit mrp="/sf/os/deviceplatformrelease/foundation_system/systemdocs/group/system.mrp"/>
+</component>
+<component name="system_model" long-name="System Model" introduced="tb91" purpose="development" class="config PC">
+<unit mrp="/sf/os/deviceplatformrelease/foundation_system/system_model/system_model.mrp"/>
+</component>
+</collection>
+<collection name="deviceplatformrelease_info" long-name="Device Platform Release Info" level="top">
+<component name="deviceplatformrelease_metadata" long-name="Device Platform Release Metadata" introduced="tb91" purpose="development" class="config PC">
+<unit mrp="/sf/os/deviceplatformrelease/deviceplatformrelease_info/deviceplatformrelease_metadata/deviceplatformrelease_metadata.mrp"/>
+</component>
+</collection>
+<collection name="s60">
+<component name="S60Extras">
+<unit bldFile="/sf/os/deviceplatformrelease/S60Extras/group" mrp=""/>
+</component>
+<component name="S60LocFiles">
+<unit bldFile="/sf/os/deviceplatformrelease/S60LocFiles/group" mrp=""/>
+</component>
+<component name="version">
+<unit bldFile="/sf/os/deviceplatformrelease/Version/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>
