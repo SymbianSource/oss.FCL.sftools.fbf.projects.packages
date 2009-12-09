@@ -97,7 +97,13 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="contentcontrol" level="services" long-name="Content Control Daemons"/>
+<block name="contentcontrol" level="services" long-name="Content Control Daemons">
+<collection name="s60">
+<component name="contentcontrol">
+<unit bldFile="/sf/app/contentcontrol/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

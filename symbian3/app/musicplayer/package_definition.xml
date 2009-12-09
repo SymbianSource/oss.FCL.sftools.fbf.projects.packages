@@ -97,7 +97,13 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="musicplayer" level="apps" long-name="Music Player Apps"/>
+<block name="musicplayer" level="apps" long-name="Music Player Apps">
+<collection name="s60">
+<component name="musicplayer">
+<unit bldFile="/sf/app/musicplayer/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

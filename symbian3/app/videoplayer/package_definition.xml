@@ -97,7 +97,13 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="videoplayer" level="apps" long-name="Video Player Apps"/>
+<block name="videoplayer" level="apps" long-name="Video Player Apps">
+<collection name="s60">
+<component name="videoplayer">
+<unit bldFile="/sf/app/videoplayer/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

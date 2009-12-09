@@ -97,7 +97,13 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="webuis" level="services" long-name="Web UIs"/>
+<block name="webuis" level="services" long-name="Web UIs">
+<collection name="s60">
+<component name="webuis">
+<unit bldFile="/sf/app/webuis/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

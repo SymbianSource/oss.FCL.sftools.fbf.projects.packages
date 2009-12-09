@@ -97,7 +97,13 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="settingsuis" level="services" long-name="Settings UIs"/>
+<block name="settingsuis" level="services" long-name="Settings UIs">
+<collection name="s60">
+<component name="settingsuis">
+<unit bldFile="/sf/app/settingsuis/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

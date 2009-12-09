@@ -97,7 +97,16 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="rndtools" level="services" long-name="RD tools"/>
+<block name="rndtools" level="services" long-name="RD tools">
+<collection name="s60">
+<component name="tools_rndtools_htiui">
+<unit bldFile="/sf/app/rndtools/htiui/group" mrp=""/>
+</component>
+<component name="rndtools">
+<unit bldFile="/sf/app/rndtools/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

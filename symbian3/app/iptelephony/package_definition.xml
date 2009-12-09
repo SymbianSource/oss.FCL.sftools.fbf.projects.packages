@@ -97,7 +97,13 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="iptelephony" level="apps" long-name="IP Telephony"/>
+<block name="iptelephony" level="apps" long-name="IP Telephony">
+<collection name="s60">
+<component name="iptelephony">
+<unit bldFile="/sf/app/iptelephony/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

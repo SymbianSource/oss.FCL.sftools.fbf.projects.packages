@@ -97,7 +97,13 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="voicerec" level="apps" long-name="Voice Recorder Apps"/>
+<block name="voicerec" level="apps" long-name="Voice Recorder Apps">
+<collection name="s60">
+<component name="voicerec">
+<unit bldFile="/sf/app/voicerec/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

@@ -97,7 +97,13 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="printing" level="services" long-name="Printing"/>
+<block name="printing" level="services" long-name="Printing">
+<collection name="s60">
+<component name="printing">
+<unit bldFile="/sf/app/printing/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

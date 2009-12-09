@@ -97,7 +97,13 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="utils" level="apps" long-name="Utility Apps"/>
+<block name="utils" level="apps" long-name="Utility Apps">
+<collection name="s60">
+<component name="utils">
+<unit bldFile="/sf/app/utils/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

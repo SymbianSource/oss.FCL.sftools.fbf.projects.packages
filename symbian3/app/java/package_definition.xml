@@ -97,7 +97,16 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="java" level="services" long-name="Java"/>
+<block name="java" level="services" long-name="Java">
+<collection name="s60">
+<component name="java_java_plat">
+<unit bldFile="/sf/app/java/java_plat/group" mrp=""/>
+</component>
+<component name="java_java_stubs">
+<unit bldFile="/sf/app/java/java_stubs/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

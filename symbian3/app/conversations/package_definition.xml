@@ -97,7 +97,13 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="conversations" level="apps" long-name="Conversation Apps"/>
+<block name="conversations" level="apps" long-name="Conversation Apps">
+<collection name="s60">
+<component name="conversations">
+<unit bldFile="/sf/app/conversations/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

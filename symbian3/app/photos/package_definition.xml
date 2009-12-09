@@ -97,7 +97,13 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="photos" level="apps" long-name="Photos"/>
+<block name="photos" level="apps" long-name="Photos">
+<collection name="s60">
+<component name="photos">
+<unit bldFile="/sf/app/photos/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

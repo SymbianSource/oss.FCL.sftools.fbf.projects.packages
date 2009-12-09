@@ -97,7 +97,16 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="camera" level="apps" long-name="Camera Apps"/>
+<block name="camera" level="apps" long-name="Camera Apps">
+<collection name="s60">
+<component name="camera">
+<unit bldFile="/sf/app/camera/group" mrp=""/>
+</component>
+<component name="camera_help">
+<unit bldFile="/sf/app/camera/camerauis/cameraapp/help/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

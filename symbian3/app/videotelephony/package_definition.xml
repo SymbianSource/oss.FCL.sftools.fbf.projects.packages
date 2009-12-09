@@ -97,7 +97,31 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="videotelephony" level="apps" long-name="Video Telephony Apps"/>
+<block name="videotelephony" level="apps" long-name="Video Telephony Apps">
+<collection name="s60">
+<component name="videotelephony_plat">
+<unit bldFile="/sf/app/videotelephony/videotelephony_plat/group" mrp=""/>
+</component>
+<component name="vtprotocolsstub">
+<unit bldFile="/sf/app/videotelephony/vtprotocolsstub/group" mrp=""/>
+</component>
+<component name="DisplaySink">
+<unit bldFile="/sf/app/videotelephony/vtprotocolplugins/DisplaySink/group" mrp=""/>
+</component>
+<component name="VideoSource">
+<unit bldFile="/sf/app/videotelephony/vtprotocolplugins/VideoSource/group" mrp=""/>
+</component>
+<component name="videoteleng">
+<unit bldFile="/sf/app/videotelephony/vtengines/videoteleng/Group" mrp=""/>
+</component>
+<component name="videotelui">
+<unit bldFile="/sf/app/videotelephony/vtuis/videotelui/group" mrp=""/>
+</component>
+<component name="vtmediatorplugin">
+<unit bldFile="/sf/app/videotelephony/vtengines/vtmediatorplugin/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

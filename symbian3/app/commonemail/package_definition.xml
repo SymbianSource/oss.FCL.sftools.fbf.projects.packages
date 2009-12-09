@@ -97,7 +97,13 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="commonemail" level="apps" long-name="Email Apps"/>
+<block name="commonemail" level="apps" long-name="Email Apps">
+<collection name="s60">
+<component name="commonemail">
+<unit bldFile="/sf/app/commonemail/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

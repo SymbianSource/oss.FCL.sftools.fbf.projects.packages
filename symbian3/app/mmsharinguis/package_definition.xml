@@ -97,7 +97,13 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="mmsharinguis" level="services" long-name="Multimedia Sharing UIs"/>
+<block name="mmsharinguis" level="services" long-name="Multimedia Sharing UIs">
+<collection name="s60">
+<component name="mmsharinguis">
+<unit bldFile="/sf/app/mmsharinguis/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

@@ -97,7 +97,13 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="homescreen" level="apps" long-name="Home Screen Apps"/>
+<block name="homescreen" level="apps" long-name="Home Screen Apps">
+<collection name="s60">
+<component name="homescreen">
+<unit bldFile="/sf/app/homescreen/group" mrp=""/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>
