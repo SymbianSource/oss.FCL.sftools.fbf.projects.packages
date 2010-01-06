@@ -97,10 +97,76 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="mw">
-<block name="web">
+<block name="phonesrv">
 <collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
+<component name="phonesrv_plat">
+<unit bldFile="/sf/mw/phonesrv/phonesrv_plat/group" mrp=""/>
+</component>
+<component name="phonesrv_pub">
+<unit bldFile="/sf/mw/phonesrv/phonesrv_pub/group" mrp=""/>
+</component>
+<component name="CbsServer">
+<unit bldFile="/sf/mw/phonesrv/cbs/CbsServer/group" mrp=""/>
+</component>
+<component name="cbsui">
+<unit bldFile="/sf/mw/phonesrv/cbs/cbsui/group" mrp=""/>
+</component>
+<component name="convergedcallengine">
+<unit bldFile="/sf/mw/phonesrv/convergedcallengine/group" mrp=""/>
+</component>
+<component name="networkhandlingengine">
+<unit bldFile="/sf/mw/phonesrv/networkhandling/networkhandlingengine/group" mrp=""/>
+</component>
+<component name="aiwdialdata">
+<unit bldFile="/sf/mw/phonesrv/phoneclientserver/aiwdialdata/group" mrp=""/>
+</component>
+<component name="CallUI">
+<unit bldFile="/sf/mw/phonesrv/phoneclientserver/CallUI/group" mrp=""/>
+</component>
+<component name="dialutils">
+<unit bldFile="/sf/mw/phonesrv/phoneclientserver/dialutils/group" mrp=""/>
+</component>
+<component name="EnPolicy">
+<unit bldFile="/sf/mw/phonesrv/phoneclientserver/EnPolicy/group" mrp=""/>
+</component>
+<component name="phoneclient">
+<unit bldFile="/sf/mw/phonesrv/phoneclientserver/phoneclient/group" mrp=""/>
+</component>
+<component name="phoneserver">
+<unit bldFile="/sf/mw/phonesrv/phoneclientserver/phoneserver/group" mrp=""/>
+</component>
+<component name="SatServer">
+<unit bldFile="/sf/mw/phonesrv/satengine/SatServer/group" mrp=""/>
+</component>
+<component name="satapp">
+<unit bldFile="/sf/mw/phonesrv/satui/satapp/group" mrp=""/>
+</component>
+<component name="satplugin">
+<unit bldFile="/sf/mw/phonesrv/satui/satplugin/group" mrp=""/>
+</component>
+<component name="phoneparser">
+<unit bldFile="/sf/mw/phonesrv/telutils/phoneparser/group" mrp=""/>
+</component>
+<component name="telephonyservice">
+<unit bldFile="/sf/mw/phonesrv/telutils/telephonyservice/group" mrp=""/>
+</component>
+<component name="telephonysettings">
+<unit bldFile="/sf/mw/phonesrv/cellular/telephonysettings/group" mrp=""/>
+</component>
+<component name="sssettings">
+<unit bldFile="/sf/mw/phonesrv/cellular/sssettings/group" mrp=""/>
+</component>
+<component name="psetnotesui">
+<unit bldFile="/sf/mw/phonesrv/cellular/psetnotesui/group" mrp=""/>
+</component>
+<component name="servicerequest">
+<unit bldFile="/sf/mw/phonesrv/cellular/servicerequest/group" mrp=""/>
+</component>
+<component name="phonecmdhnlr">
+<unit bldFile="/sf/mw/phonesrv/phonecmdhandler/phonecmdhnlr/group" mrp=""/>
+</component>
+<component name="vmbxengine">
+<unit bldFile="/sf/mw/phonesrv/engines/vmbxengine/group" mrp=""/>
 </component>
 </collection>
 </block>

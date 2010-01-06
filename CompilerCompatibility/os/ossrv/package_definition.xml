@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
+<systemModel>
+<layer name="os" long-name="OS" levels="hw services">
+<block name="ossrv" level="services" long-name="Generic OS Services" levels="physical-abstraction app-libs encoding translation data-services utilities">
+<collection name="genericservices" long-name="Generic Services" level="utilities">
+<component name="s60compatibilityheaders" long-name="S60 Compatibility Headers" filter="gt" purpose="optional">
+<unit bldFile="/sf/os/ossrv/genericservices/s60compatibilityheaders/groupsymtb101sf" mrp="/sf/os/ossrv/genericservices/s60compatibilityheaders/groupsymtb101sf/tools_s60_header_compatsymtb101sf.mrp" version="tb101sf"/>
+</component>
+<component name="mimerecognitionfw" long-name="MIME Recognition Framework" purpose="mandatory">
+<unit bldFile="/sf/os/ossrv/genericservices/mimerecognitionfw/group" mrp="/sf/os/ossrv/genericservices/mimerecognitionfw/group/app-framework_emime.mrp"/>
+</component>
+<component name="systemagent" long-name="System Agent" introduced="9.0" purpose="mandatory">
+<unit bldFile="/sf/os/ossrv/genericservices/systemagent/group" mrp="/sf/os/ossrv/genericservices/systemagent/group/syslibs_sysagent2.mrp"/>
+</component>
+<component name="taskscheduler" long-name="Task Scheduler" introduced="6.0" purpose="optional">
+<unit bldFile="/sf/os/ossrv/genericservices/taskscheduler/group" mrp="/sf/os/ossrv/genericservices/taskscheduler/group/syslibs_schsvr.mrp"/>
+</component>
+<component name="activebackupclient" long-name="Active Backup Client" purpose="optional">
+<unit bldFile="/sf/os/ossrv/genericservices/activebackupclient/group" mrp="/sf/os/ossrv/genericservices/activebackupclient/group/connectivity_abclient.mrp"/>
+</component>
+<component name="syslibsdocs" long-name="Syslibs Documentation" purpose="development" class="doc">
+<unit mrp="/sf/os/ossrv/genericservices/syslibsdocs/syslibs_documentation.mrp"/>
+</component>
+<component name="httputils" long-name="HTTP Utilities Library" introduced="6.2" purpose="optional">
+<unit bldFile="/sf/os/ossrv/genericservices/httputils/group" mrp="/sf/os/ossrv/genericservices/httputils/group/application-protocols_inetprotutil.mrp"/>
+</component>
+</collection>
+<collection name="syslibsapitest" long-name="SysLibs API Tests" level="utilities">
+<component name="syslibssvs" long-name="Syslibs Verfication Suite" introduced="tb91" purpose="development">
+<unit mrp="/sf/os/ossrv/syslibsapitest/syslibssvs/group/syslibssvs.mrp"/>
+</component>
+</collection>
+<collection name="compressionlibs" long-name="Compression Libraries" level="data-services">
+<component name="ziplib" long-name="Zip Compression Library" introduced="6.0" purpose="mandatory">
+<unit bldFile="/sf/os/ossrv/compressionlibs/ziplib/group" mrp="/sf/os/ossrv/compressionlibs/ziplib/group/syslibs_ezlib2.mrp"/>
+</component>
+</collection>
+<collection name="genericopenlibs" long-name="Generic Open Libraries" level="translation">
+<component name="cstdlib" long-name="C Standard Library" introduced="ER5" purpose="optional">
+<unit bldFile="/sf/os/ossrv/genericopenlibs/cstdlib/group" mrp="/sf/os/ossrv/genericopenlibs/cstdlib/group/syslibs_stdlib.mrp"/>
+</component>
+<component name="cppstdlib" long-name="C++ Standard Library" introduced="tb92" purpose="mandatory">
+<unit bldFile="/sf/os/ossrv/genericopenlibs/cppstdlib/group" mrp="/sf/os/ossrv/genericopenlibs/cppstdlib/group/openenv_libstdcpp.mrp"/>
+</component>
+<component name="openenvcore" long-name="Open Environment Core" introduced="tb91" purpose="mandatory">
+<unit bldFile="/sf/os/ossrv/genericopenlibs/openenvcore/group" mrp="/sf/os/ossrv/genericopenlibs/openenvcore/group/openenv.mrp"/>
+</component>
+<component name="posixrealtimeextensions" long-name="POSIX Realtime Extensions" introduced="tb92" purpose="optional">
+<unit bldFile="/sf/os/ossrv/genericopenlibs/posixrealtimeextensions/group" mrp="/sf/os/ossrv/genericopenlibs/posixrealtimeextensions/group/oeaddons_librt.mrp"/>
+</component>
+</collection>
+<collection name="lowlevellibsandfws" long-name="Low Level Libraries and Frameworks" level="app-libs">
+<component name="pluginfw" long-name="Plugin Framework" introduced="6.2" purpose="mandatory">
+<unit bldFile="/sf/os/ossrv/lowlevellibsandfws/pluginfw/Group" mrp="/sf/os/ossrv/lowlevellibsandfws/pluginfw/Group/syslibs_ecom3.mrp" version="3"/>
+</component>
+<component name="apputils" long-name="Application Utilities" introduced="ER5" purpose="mandatory">
+<unit bldFile="/sf/os/ossrv/lowlevellibsandfws/apputils/group" mrp="/sf/os/ossrv/lowlevellibsandfws/apputils/group/syslibs_bafl.mrp"/>
+</component>
+<component name="genericusabilitylib" long-name="Generic Usability Library" introduced="tb92" purpose="mandatory">
+<unit bldFile="/sf/os/ossrv/lowlevellibsandfws/genericusabilitylib/group" mrp="/sf/os/ossrv/lowlevellibsandfws/genericusabilitylib/group/syslibs_euserhl.mrp"/>
+</component>
+</collection>
+<collection name="ossrv_info" long-name="Generic OS Services Info" level="utilities">
+<component name="ossrv_metadata" long-name="Generic OS Services Metadata" introduced="tb91" purpose="development" class="config PC">
+<unit mrp="/sf/os/ossrv/ossrv_info/ossrv_metadata/ossrv_metadata.mrp"/>
+</component>
+</collection>
+<collection name="s60">
+<component name="ossrv">
+<unit bldFile="/sf/os/ossrv/group" mrp=""/>
+</component>
+</collection>
+</block>
+</layer>
+</systemModel>
+</SystemDefinition>

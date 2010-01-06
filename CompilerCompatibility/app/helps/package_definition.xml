@@ -96,11 +96,22 @@
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw">
-<block name="web">
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="helps" level="apps" span="2" long-name="Help Apps" levels="eng tools if ui">
+<collection name="helps_info" long-name="Help Apps Info" level="ui">
+<component name="helps_metadata" long-name="Help Apps Metadata" introduced="tb91" purpose="development" class="config PC">
+<unit mrp="/sf/app/helps/helps_info/helps_metadata/helps_metadata.mrp"/>
+</component>
+</collection>
+<!-- MattD 20091102 - Adding to fix build failures -->
+    <collection name="symhelp" long-name="Symbian Help" level="eng">
+      <component name="helpmodel" long-name="Help" introduced="6.0" purpose="optional">
+        <unit bldFile="/sf/app/helps/symhelp/helpmodel/group" mrp="/sf/app/helps/symhelp/helpmodel/group/app-services_hlpmodel.mrp"/>
+      </component>
+    </collection>
 <collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
+<component name="helps">
+<unit bldFile="/sf/app/helps/group" mrp=""/>
 </component>
 </collection>
 </block>

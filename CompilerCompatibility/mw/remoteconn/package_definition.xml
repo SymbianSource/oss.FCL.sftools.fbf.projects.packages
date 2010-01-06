@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="remoteconn" level="generic" long-name="Remote Connectivity" levels="plugin framework server generic specific">
+<collection name="remoteconn_info" long-name="Remote Connectivity Info" level="specific">
+<component name="remoteconn_metadata" long-name="Remote Connectivity Metadata" introduced="tb91" purpose="development" class="config PC">
+<unit mrp="/sf/mw/remoteconn/remoteconn_info/remoteconn_metadata/remoteconn_metadata.mrp"/>
+</component>
+</collection>
+<collection name="usbfunctiondrivers" long-name="USB Function Drivers" level="server">
+<component name="massstoragemgr" long-name="Mass Storage Manager" introduced="tb92" purpose="optional">
+<unit bldFile="/sf/mw/remoteconn/usbfunctiondrivers/massstoragemgr/group" mrp="/sf/mw/remoteconn/usbfunctiondrivers/massstoragemgr/group/connectivity_usbms.mrp"/>
+</component>
+</collection>
+<collection name="connectivitytransports" long-name="Connectivity Transports" level="plugin">
+<component name="plpremotelink" long-name="PLP Remote Link" deprecated="9.0" purpose="optional">
+<unit bldFile="/sf/mw/remoteconn/connectivitytransports/plpremotelink/group" mrp="/sf/mw/remoteconn/connectivitytransports/plpremotelink/group/connectivity_legacy_plp_plpremotelink.mrp"/>
+</component>
+<component name="plpvariant" long-name="PLP Variant" deprecated="9.0" purpose="optional">
+<unit bldFile="/sf/mw/remoteconn/connectivitytransports/plpvariant/group" mrp="/sf/mw/remoteconn/connectivitytransports/plpvariant/group/connectivity_legacy_plp_plpvariant.mrp"/>
+</component>
+</collection>
+<collection name="mtptransports" long-name="MTP Transports" level="plugin">
+<component name="mtpusbtransport" long-name="MTP USB Transport" introduced="tb91" purpose="optional" plugin="Y">
+<unit bldFile="/sf/mw/remoteconn/mtptransports/mtpusbtransport/group" mrp="/sf/mw/remoteconn/mtptransports/mtpusbtransport/group/mtp_usbsic.mrp"/>
+</component>
+<component name="mtpptpiptransport" long-name="MTP PTP-IP Transport" introduced="tb92" purpose="optional" plugin="Y">
+<unit bldFile="/sf/mw/remoteconn/mtptransports/mtpptpiptransport/group" mrp="/sf/mw/remoteconn/mtptransports/mtpptpiptransport/group/mtp_ptpip.mrp"/>
+</component>
+</collection>
+<collection name="mtpfws" long-name="MTP Frameworks" level="framework">
+<component name="mtpfw" long-name="MTP Framework" introduced="tb91" purpose="optional">
+<unit bldFile="/sf/mw/remoteconn/mtpfws/mtpfw/group" mrp="/sf/mw/remoteconn/mtpfws/mtpfw/group/mtp_framework.mrp"/>
+</component>
+<component name="mtpintegrationtest" long-name="MTP Integration Test" introduced="tb91" purpose="development">
+<unit bldFile="/sf/mw/remoteconn/mtpfws/mtpintegrationtest/group" mrp="/sf/mw/remoteconn/mtpfws/mtpintegrationtest/group/mtp_test.mrp"/>
+</component>
+</collection>
+<collection name="mtpdataproviders" long-name="MTP Data Providers" level="generic">
+<component name="mtpfileandfolderdp" long-name="MTP File and Folder Provider" introduced="tb91" purpose="optional" plugin="Y">
+<unit bldFile="/sf/mw/remoteconn/mtpdataproviders/mtpfileandfolderdp/group" mrp="/sf/mw/remoteconn/mtpdataproviders/mtpfileandfolderdp/group/mtp_filedp.mrp"/>
+</component>
+<component name="mtpbackupandrestoredp" long-name="Backup and Restore Provider" introduced="tb92" purpose="optional" plugin="Y">
+<unit bldFile="/sf/mw/remoteconn/mtpdataproviders/mtpbackupandrestoredp/group" mrp="/sf/mw/remoteconn/mtpdataproviders/mtpbackupandrestoredp/group/mtp_backupnrestoredp.mrp"/>
+</component>
+</collection>
+<collection name="backupandrestore" long-name="Backup and Restore" level="specific">
+<component name="backupengine" long-name="Backup Engine" introduced="9.0" purpose="optional">
+<unit bldFile="/sf/mw/remoteconn/backupandrestore/backupengine/group" mrp="/sf/mw/remoteconn/backupandrestore/backupengine/group/connectivity_backupengine.mrp"/>
+</component>
+<component name="backuptest" long-name="Backup Test" introduced="tb91" purpose="development">
+<unit bldFile="/sf/mw/remoteconn/backupandrestore/backuptest/group" mrp="/sf/mw/remoteconn/backupandrestore/backuptest/group/connectivity_backuptest.mrp"/>
+</component>
+</collection>
+<collection name="connectivitypcside" long-name="Connectivity PC Side" level="generic">
+<component name="chatscripts" long-name="Chat Scripts" purpose="development">
+<unit bldFile="/sf/mw/remoteconn/connectivitypcside/chatscripts/group" mrp="/sf/mw/remoteconn/connectivitypcside/chatscripts/group/testtools_chatscripts.mrp"/>
+</component>
+</collection>
+<collection name="connectivitydevicefws" long-name="Connectivity Device Frameworks" level="framework">
+<component name="connectivityfw" long-name="Connectivity Framework" introduced="7.0s" deprecated="tb91" purpose="optional">
+<unit bldFile="/sf/mw/remoteconn/connectivitydevicefws/connectivityfw/group" mrp="/sf/mw/remoteconn/connectivitydevicefws/connectivityfw/group/connectivity_framework.mrp"/>
+</component>
+<component name="connectivityservices" long-name="Connectivity Services" introduced="7.0s" deprecated="tb91" purpose="optional">
+<unit bldFile="/sf/mw/remoteconn/connectivitydevicefws/connectivityservices/group" mrp="/sf/mw/remoteconn/connectivitydevicefws/connectivityservices/group/connectivity_services.mrp"/>
+</component>
+</collection>
+<collection name="obex" long-name="OBEX" level="generic">
+<component name="obexprotocol" long-name="OBEX Protocol" introduced="9.1" purpose="optional">
+<unit bldFile="/sf/mw/remoteconn/obex/obexprotocol/group" mrp="/sf/mw/remoteconn/obex/obexprotocol/group/obex.mrp"/>
+</component>
+<component name="obexextensionapi" long-name="OBEX Extension API" introduced="9.2" purpose="optional">
+<unit bldFile="/sf/mw/remoteconn/obex/obexextensionapi/group" mrp="/sf/mw/remoteconn/obex/obexextensionapi/group/obex_extensionapis.mrp"/>
+</component>
+</collection>
+<collection name="s60">
+<component name="remoteconn">
+<unit bldFile="/sf/mw/remoteconn/group" mrp=""/>
+</component>
+</collection>
+</block>
+</layer>
+</systemModel>
+</SystemDefinition>

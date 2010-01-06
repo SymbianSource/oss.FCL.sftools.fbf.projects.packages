@@ -96,11 +96,35 @@
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw">
-<block name="web">
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="organizer" level="apps" span="2" long-name="Organizer Application Suite" levels="support services engine ui app">
+<collection name="pimappservices" long-name="PIM App Services" level="services">
+<component name="calendar" long-name="Calendar" introduced="9.2" purpose="optional">
+<unit bldFile="/sf/app/organizer/pimappservices/calendar/group" mrp="/sf/app/organizer/pimappservices/calendar/group/app-engines_calendar.mrp" version="2"/>
+</component>
+<component name="calendarvcalplugin" long-name="Calendar vCal Plugin" introduced="8.1" purpose="optional" plugin="Y">
+<unit bldFile="/sf/app/organizer/pimappservices/calendarvcalplugin/group" mrp="/sf/app/organizer/pimappservices/calendarvcalplugin/group/app-engines_agnversit2.mrp" version="2"/>
+</component>
+<component name="appenginesdocs" long-name="Application Engines Documentation" purpose="development" class="doc">
+<unit mrp="/sf/app/organizer/pimappservices/appenginesdocs/app-engines_documentation.mrp"/>
+</component>
+</collection>
+<collection name="pimappsupport" long-name="PIM Application Support" level="support">
+<component name="vcardandvcal" long-name="vCard and vCal" introduced="ER5" purpose="optional">
+<unit bldFile="/sf/app/organizer/pimappsupport/vcardandvcal/group" mrp="/sf/app/organizer/pimappsupport/vcardandvcal/group/app-services_versit.mrp"/>
+</component>
+<component name="chinesecalendarconverter" long-name="Chinese Calendar Converter" introduced="6.1" purpose="optional">
+<unit bldFile="/sf/app/organizer/pimappsupport/chinesecalendarconverter/group" mrp="/sf/app/organizer/pimappsupport/chinesecalendarconverter/group/app-services_calcon.mrp"/>
+</component>
+</collection>
+<collection name="organizer_info" long-name="Organizer Application Suite Info" level="app">
+<component name="organizer_metadata" long-name="Organizer Application Suite Metadata" introduced="tb91" purpose="development" class="config PC">
+<unit mrp="/sf/app/organizer/organizer_info/organizer_metadata/organizer_metadata.mrp"/>
+</component>
+</collection>
 <collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
+<component name="organizer">
+<unit bldFile="/sf/app/organizer/group" mrp=""/>
 </component>
 </collection>
 </block>

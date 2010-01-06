@@ -96,11 +96,35 @@
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw">
-<block name="web">
+<layer name="adaptation">
+<block name="stubs">
 <collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
+<component name="audiostubs">
+<unit bldFile="/sf/adaptation/stubs/audiostubs/group" mrp=""/>
+</component>
+<component name="drm_stubs">
+<unit bldFile="/sf/adaptation/stubs/drm_stubs/group" mrp=""/>
+</component>
+<component name="ocrsrv_stub">
+<unit bldFile="/sf/adaptation/stubs/ocrsrv_stub/group" mrp=""/>
+</component>
+<component name="omasuplasnconverterstubimpl">
+<unit bldFile="/sf/adaptation/stubs/omasuplasnconverterstubimpl/group" mrp=""/>
+</component>
+<component name="posmsgpluginreferenceimpl">
+<unit bldFile="/sf/adaptation/stubs/posmsgpluginreferenceimpl/group" mrp=""/>
+</component>
+<component name="power_save_display_mode_stub">
+<unit bldFile="/sf/adaptation/stubs/power_save_display_mode_stub/group" mrp=""/>
+</component>
+<component name="systemswstubs">
+<unit bldFile="/sf/adaptation/stubs/systemswstubs/group" mrp=""/>
+</component>
+<component name="tactileclickplugin_stub">
+<unit bldFile="/sf/adaptation/stubs/tactileclickplugin_stub/group" mrp=""/>
+</component>
+<component name="wlanhwinit_stub">
+<unit bldFile="/sf/adaptation/stubs/wlanhwinit_stub/group" mrp=""/>
 </component>
 </collection>
 </block>

@@ -96,11 +96,27 @@
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw">
-<block name="web">
-<collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
+<layer name="os" long-name="OS" levels="hw services">
+<block name="usb" level="services" long-name="USB" levels="adaptation hw-if plugin framework server app-if">
+<collection name="usbldd" long-name="USB Logical Device Drivers" level="hw-if">
+<component name="usbclientdrivers" long-name="USB Client Drivers" introduced="8.1b" purpose="optional">
+<unit bldFile="/sf/os/kernelhwsrv/kernel/eka/drivers/usbc" mrp="/sf/os/kernelhwsrv/kernel/eka/drivers/usbc/base_e32_drivers_usbcli.mrp"/>
+</component>
+</collection>
+<collection name="usbmgmt" long-name="USB Management" level="server">
+<component name="usbmgr" long-name="USB Manager" purpose="optional">
+<unit bldFile="/sf/os/usb/usbmgmt/usbmgr/group" mrp="/sf/os/usb/usbmgmt/usbmgr/group/usb_manager.mrp" version="2"/>
+</component>
+<component name="usbmgrtest" long-name="USB Manager Tests" introduced="7.0" purpose="development">
+<unit mrp="/sf/os/usb/usbmgmt/usbmgrtest/group/usb_test.mrp" version="2"/>
+</component>
+<component name="usbclassandmgrdocs" long-name="USB Class and Manager Documentation" purpose="development" class="doc">
+<unit mrp="/sf/os/usb/usbmgmt/usbclassandmgrdocs/usb_documentation.mrp"/>
+</component>
+</collection>
+<collection name="usb_info" long-name="USB Info" level="app-if">
+<component name="usb_metadata" long-name="USB Metadata" introduced="tb92" purpose="development" class="config PC">
+<unit mrp="/sf/os/usb/usb_info/usb_metadata/usb_metadata.mrp"/>
 </component>
 </collection>
 </block>

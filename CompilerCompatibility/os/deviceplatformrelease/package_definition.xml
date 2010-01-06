@@ -96,11 +96,38 @@
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw">
-<block name="web">
+<layer name="os" long-name="OS" levels="hw services">
+<block name="deviceplatformrelease" level="services" long-name="Device Platform Release" levels="bld mid top">
+<collection name="symbianosbld" long-name="Symbian OS Build" level="bld">
+<component name="cedarutils" long-name="Cedar Utils" purpose="development">
+<unit mrp="/sf/os/deviceplatformrelease/symbianosbld/cedarutils/tools_utils_cedar.mrp"/>
+</component>
+<component name="productionbldcbrconfig" long-name="Production Build CBR Config" filter="gt" purpose="development" class="config">
+<unit mrp="/sf/os/deviceplatformrelease/symbianosbld/productionbldcbrconfig/product_cbr_config.mrp"/>
+</component>
+</collection>
+<collection name="foundation_system" long-name="Foundation System" level="top">
+<component name="systemdocs" long-name="System Documentation" purpose="development" class="doc">
+<unit mrp="/sf/os/deviceplatformrelease/foundation_system/systemdocs/group/system.mrp"/>
+</component>
+<component name="system_model" long-name="System Model" introduced="tb91" purpose="development" class="config PC">
+<unit mrp="/sf/os/deviceplatformrelease/foundation_system/system_model/system_model.mrp"/>
+</component>
+</collection>
+<collection name="deviceplatformrelease_info" long-name="Device Platform Release Info" level="top">
+<component name="deviceplatformrelease_metadata" long-name="Device Platform Release Metadata" introduced="tb91" purpose="development" class="config PC">
+<unit mrp="/sf/os/deviceplatformrelease/deviceplatformrelease_info/deviceplatformrelease_metadata/deviceplatformrelease_metadata.mrp"/>
+</component>
+</collection>
 <collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
+<component name="S60Extras">
+<unit bldFile="/sf/os/deviceplatformrelease/S60Extras/group" mrp=""/>
+</component>
+<component name="S60LocFiles">
+<unit bldFile="/sf/os/deviceplatformrelease/S60LocFiles/group" mrp=""/>
+</component>
+<component name="version">
+<unit bldFile="/sf/os/deviceplatformrelease/Version/group" mrp=""/>
 </component>
 </collection>
 </block>

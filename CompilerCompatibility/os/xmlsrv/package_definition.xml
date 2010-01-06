@@ -96,11 +96,36 @@
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw">
-<block name="web">
+<layer name="os" long-name="OS" levels="hw services">
+<block name="xmlsrv" level="services" long-name="XML Services" levels="plugin server framework generic specific">
+<collection name="xml" long-name="XML" level="generic">
+<component name="xmlfw" long-name="XML Framework" introduced="7.0s" purpose="optional">
+<unit bldFile="/sf/os/xmlsrv/xml/xmlfw/group" mrp="/sf/os/xmlsrv/xml/xmlfw/group/syslibs_xml.mrp"/>
+</component>
+<component name="libxml2libs" long-name="Libxml2 Libraries" introduced="tb92" purpose="optional">
+<unit bldFile="/sf/os/xmlsrv/xml/libxml2libs/group" mrp="/sf/os/xmlsrv/xml/libxml2libs/group/syslibs_libxml2.mrp"/>
+</component>
+<component name="xmldomandxpath" long-name="XML DOM and XPath" introduced="tb92" purpose="optional">
+<unit bldFile="/sf/os/xmlsrv/xml/xmldomandxpath/group" mrp="/sf/os/xmlsrv/xml/xmldomandxpath/group/syslibs_xmldom.mrp"/>
+</component>
+<component name="xmlexpatparser" long-name="XML Expat Parser" introduced="7.0s" purpose="optional" plugin="Y">
+<unit bldFile="/sf/os/xmlsrv/xml/xmlexpatparser/group" mrp="/sf/os/xmlsrv/xml/xmlexpatparser/group/syslibs_xmlparser.mrp"/>
+</component>
+<component name="xmllibxml2parser" long-name="XML Libxml2 Parser" introduced="tb92" purpose="optional" plugin="Y">
+<unit bldFile="/sf/os/xmlsrv/xml/xmllibxml2parser/group" mrp="/sf/os/xmlsrv/xml/xmllibxml2parser/group/syslibs_xmlparser2.mrp"/>
+</component>
+<component name="wbxmlparser" long-name="WBXML Parser" introduced="7.0s" purpose="optional" plugin="Y">
+<unit bldFile="/sf/os/xmlsrv/xml/wbxmlparser/group" mrp="/sf/os/xmlsrv/xml/wbxmlparser/group/syslibs_wbxmlparser.mrp"/>
+</component>
+</collection>
+<collection name="xmlsrv_info" long-name="XML Services Info" level="specific">
+<component name="xmlsrv_metadata" long-name="XML Services Metadata" introduced="tb91" purpose="development" class="config PC">
+<unit mrp="/sf/os/xmlsrv/xmlsrv_info/xmlsrv_metadata/xmlsrv_metadata.mrp"/>
+</component>
+</collection>
 <collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
+<component name="xmlsrv">
+<unit bldFile="/sf/os/xmlsrv/group" mrp=""/>
 </component>
 </collection>
 </block>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="mmmw" level="generic" long-name="Multimedia Middleware" levels="plugin framework server generic specific">
+<collection name="mmmiddlewarefws" long-name="Multimedia Middleware Frameworks" level="server">
+<component name="mmfw" long-name="Multimedia Framework" introduced="7.0s" purpose="mandatory">
+<unit bldFile="/sf/mw/mmmw/mmmiddlewarefws/mmfw/group" mrp="/sf/mw/mmmw/mmmiddlewarefws/mmfw/group/multimedia_mmf.mrp"/>
+</component>
+</collection>
+<collection name="mmmiddlewareplugins" long-name="Multimedia Middleware Plugins" level="framework">
+<component name="mmfwplugins" long-name="Multimedia Framework Plugins" introduced="7.0s" purpose="optional" plugin="Y">
+<unit bldFile="/sf/mw/mmmw/mmmiddlewarefws/mmfw/group_plugin" mrp="/sf/mw/mmmw/mmmiddlewarefws/mmfw/group_plugin/multimedia_mmf_plugin.mrp"/>
+</component>
+</collection>
+<collection name="mmfwtest" long-name="Multimedia Framework Test" level="server">
+<component name="mmfunittest" long-name="MMF Unit Tests" introduced="7.0s" purpose="development">
+<unit mrp="/sf/mw/mmmw/mmfwtest/mmfunittest/group/multimedia_unittest_mmf_source.mrp"/>
+</component>
+<component name="mmfintegrationtest" long-name="MMF Integration Tests" introduced="7.0s" purpose="development">
+<unit mrp="/sf/mw/mmmw/mmfwtest/mmfintegrationtest/group/multimedia_inttest_mmf_source.mrp"/>
+</component>
+<component name="mmfcharacterisationvalidation" long-name="MMF Characterisation Validation" introduced="9.3" purpose="development">
+<unit bldFile="/sf/mw/mmmw/mmfwtest/mmfcharacterisationvalidation/group" mrp="/sf/mw/mmmw/mmfwtest/mmfcharacterisationvalidation/group/multimedia_mmf_char.mrp"/>
+</component>
+</collection>
+<collection name="mmvalidationsuite" long-name="Multimedia Validation Suite" level="specific">
+<component name="mmvalidationsuiteapp" long-name="Multimedia Validation Suite Application" introduced="tb91" purpose="development">
+<unit bldFile="/sf/mw/mmmw/mmvalidationsuite/mmvalidationsuiteapp/group" mrp="/sf/mw/mmmw/mmvalidationsuite/mmvalidationsuiteapp/group/multimedia_mvs_app.mrp"/>
+</component>
+<component name="mmvalidationsuiteagents" long-name="Multimedia Validation Suite Agents" introduced="tb91" purpose="development">
+<unit bldFile="/sf/mw/mmmw/mmvalidationsuite/mmvalidationsuiteagents/group" mrp="/sf/mw/mmmw/mmvalidationsuite/mmvalidationsuiteagents/group/multimedia_mvs_agents.mrp"/>
+</component>
+<component name="mvsintegrationtest" long-name="MVS Integration Tests" introduced="tb91" purpose="development">
+<unit mrp="/sf/mw/mmmw/mmvalidationsuite/mvsintegrationtest/group/multimedia_inttest_mvs_source.mrp"/>
+</component>
+</collection>
+<collection name="mmmw_info" long-name="Multimedia Middleware Info" level="specific">
+<component name="mmmw_metadata" long-name="Multimedia Middleware Metadata" introduced="tb91" purpose="development" class="config PC">
+<unit mrp="/sf/mw/mmmw/mmmw_info/mmmw_metadata/mmmw_metadata.mrp"/>
+</component>
+</collection>
+<collection name="s60">
+<component name="mmmw">
+<unit bldFile="/sf/mw/mmmw/group" mrp=""/>
+</component>
+</collection>
+</block>
+</layer>
+</systemModel>
+</SystemDefinition>

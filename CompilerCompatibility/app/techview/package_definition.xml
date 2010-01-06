@@ -96,11 +96,32 @@
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw">
-<block name="web">
-<collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="techview" level="apps" span="2" long-name="Techview" levels="services ui utils apps1 apps2 apps3">
+<collection name="buildverification" long-name="Build Verification" level="services">
+<component name="autosmoketest" long-name="Auto Smoke Test" filter="gt" purpose="development" introduced="9.1">
+<unit bldFile="/sf/app/techview/buildverification/autosmoketest/Group" mrp="/sf/app/techview/buildverification/autosmoketest/Group/testtools_autosmoketest.mrp"/>
+</component>
+<component name="smoketest" long-name="Smoke Test" filter="gt" purpose="development">
+<unit bldFile="/sf/app/techview/buildverification/smoketest/Group" mrp="/sf/app/techview/buildverification/smoketest/Group/testtools_smoketest.mrp"/>
+</component>
+</collection>
+<collection name="networkingutils" long-name="Networking Utils" level="utils">
+<component name="ipadministrationtool" long-name="IP Administration Tool" introduced="7.0" purpose="development">
+<unit mrp="/sf/app/techview/networkingutils/ipadministrationtool/group/networking_ipadm.mrp"/>
+</component>
+<component name="nameresolverutility" long-name="Name Resolver Utility" introduced="7.0s" purpose="development">
+<unit mrp="/sf/app/techview/networkingutils/nameresolverutility/group/networking_nslookup.mrp"/>
+</component>
+</collection>
+<collection name="testapps" long-name="Test Apps" level="utils">
+<component name="rschandler" long-name="Resource Handler" deprecated="tb92" purpose="development">
+<unit mrp="/sf/app/techview/testapps/rschandler/TVResourceHandler/group/Testtools_ResourceHandler_gt.mrp"/>
+</component>
+</collection>
+<collection name="techview_info" long-name="Techview Info" level="apps3">
+<component name="techview_metadata" long-name="Techview Metadata" introduced="tb91" purpose="development" class="config PC">
+<unit mrp="/sf/app/techview/techview_info/techview_metadata/techview_metadata.mrp"/>
 </component>
 </collection>
 </block>

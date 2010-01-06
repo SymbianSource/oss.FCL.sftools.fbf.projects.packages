@@ -96,11 +96,11 @@
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw">
-<block name="web">
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="screensaver" level="apps" long-name="Screen Saver Apps">
 <collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
+<component name="screensaver">
+<unit bldFile="/sf/app/screensaver/group" mrp=""/>
 </component>
 </collection>
 </block>

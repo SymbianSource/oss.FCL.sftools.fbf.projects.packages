@@ -97,10 +97,40 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="mw">
-<block name="web">
+<block name="dlnasrv">
 <collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
+<component name="homemedia">
+<unit bldFile="/sf/mw/dlnasrv/homemedia/group" mrp=""/>
+</component>
+<component name="homesync">
+<unit bldFile="/sf/mw/dlnasrv/homesync/group" mrp=""/>
+</component>
+<component name="upnpavcontrolpoint">
+<unit bldFile="/sf/mw/dlnasrv/upnpavcontrolpoint/group" mrp=""/>
+</component>
+<component name="upnpframework">
+<unit bldFile="/sf/mw/dlnasrv/upnpframework/group" mrp=""/>
+</component>
+<component name="upnpharvester">
+<unit bldFile="/sf/mw/dlnasrv/upnpharvester/group" mrp=""/>
+</component>
+<component name="upnpmediaserver">
+<unit bldFile="/sf/mw/dlnasrv/upnpmediaserver/group" mrp=""/>
+</component>
+<component name="upnpavcontroller">
+<unit bldFile="/sf/mw/dlnasrv/upnpavcontroller/group" mrp=""/>
+</component>
+<component name="upnpsharing">
+<unit bldFile="/sf/mw/dlnasrv/upnpsharing/group" mrp=""/>
+</component>
+<component name="upnpsettings">
+<unit bldFile="/sf/mw/dlnasrv/upnpsettings/group" mrp=""/>
+</component>
+<component name="upnpmpxplugins">
+<unit bldFile="/sf/mw/dlnasrv/upnpmpxplugins/group" mrp=""/>
+</component>
+<component name="dlnasrv_plat">
+<unit bldFile="/sf/mw/dlnasrv/dlnasrv_plat/group" mrp=""/>
 </component>
 </collection>
 </block>

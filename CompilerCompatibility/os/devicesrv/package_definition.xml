@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+ <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
+ <!ATTLIST SystemBuild schema CDATA #REQUIRED>
+ <!ELEMENT list (ref+)>
+ <!ATTLIST list
+  name ID #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT ref EMPTY>
+ <!ATTLIST ref item CDATA #REQUIRED>
+ <!ELEMENT targetList EMPTY>
+ <!ATTLIST targetList
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  target IDREFS #REQUIRED>
+ <!ELEMENT target EMPTY>
+ <!ATTLIST target
+  name ID #REQUIRED
+  abldTarget CDATA #REQUIRED
+  description CDATA #REQUIRED>
+ <!ELEMENT option EMPTY>
+ <!ATTLIST option
+  name ID #REQUIRED
+  abldOption CDATA #REQUIRED
+  description CDATA #REQUIRED
+  enable (Y|N) #REQUIRED>
+ <!ELEMENT configuration (listRef+|ref+|task+)*>
+ <!ATTLIST configuration
+  name ID #REQUIRED
+  description CDATA #REQUIRED
+  filter CDATA #REQUIRED>
+ <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
+ <!ELEMENT listRef EMPTY>
+ <!ATTLIST listRef list CDATA #REQUIRED>
+ <!ELEMENT buildLayer EMPTY>
+ <!ATTLIST buildLayer
+  command CDATA #REQUIRED
+  targetList IDREFS #IMPLIED
+  unitParallel (Y|N) #REQUIRED
+  targetParallel (Y|N) 'N'>
+ <!ELEMENT specialInstructions EMPTY>
+ <!ATTLIST specialInstructions
+  name CDATA #REQUIRED
+  cwd CDATA #REQUIRED
+  root CDATA #IMPLIED
+  command CDATA #REQUIRED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
+<systemModel>
+<layer name="os" long-name="OS" levels="hw services">
+<block name="devicesrv" level="services" long-name="Device Services" levels="adaptation hw-if plugin framework server app-if">
+<collection name="accessoryservices" long-name="Accessory Services" level="framework">
+<component name="remotecontrolfw" long-name="Remote Control Framework" introduced="9.1" purpose="optional">
+<unit bldFile="/sf/os/devicesrv/accessoryservices/remotecontrolfw/group" mrp="/sf/os/devicesrv/accessoryservices/remotecontrolfw/group/bluetooth_remotecontrol.mrp"/>
+</component>
+</collection>
+<!-- MattD 20091030 - hacked in from package definition. Presume these should be in the GT model... -->
+    <collection name="commonservices" long-name="Common Services" level="app-if">
+      <component name="sysutil" long-name="System Utilities" purpose="mandatory" introduced="ER5">
+        <unit bldFile="/sf/os/devicesrv/commonservices/sysutil/group" mrp="/sf/os/devicesrv/commonservices/sysutil/group/sysutil.mrp"/>
+      </component>
+          <component name="activitymanager" long-name="Activity Manager" purpose="mandatory" introduced="ER5">
+        <unit bldFile="/sf/os/devicesrv/commonservices/activitymanager/group" mrp="/sf/os/devicesrv/commonservices\activitymanager\group\activitymanager.mrp"/>
+      </component>  
+    </collection>
+<collection name="resourcemgmt" long-name="Resource Management" level="hw-if">
+<component name="hwresourcesmgr" long-name="Hardware Resources Manager" introduced="tb91" purpose="optional">
+<unit bldFile="/sf/os/devicesrv/resourcemgmt/hwresourcesmgr/group" mrp="/sf/os/devicesrv/resourcemgmt/hwresourcesmgr/group/telephony_hwrm.mrp"/>
+</component>
+<component name="hwresourcesmgrconfig" long-name="Hardware Resources Manager Config" introduced="tb92" purpose="optional" class="config">
+<unit bldFile="/sf/os/devicesrv/resourcemgmt/hwresourcesmgrconfig" mrp="/sf/os/devicesrv/resourcemgmt/hwresourcesmgrconfig/telephony_hwrm-config.mrp"/>
+</component>
+<component name="powerandmemorynotificationservice" long-name="Power and Memory Notification Service" introduced="6.0" purpose="mandatory">
+<unit bldFile="/sf/os/devicesrv/resourcemgmt/powerandmemorynotificationservice/group" mrp="/sf/os/devicesrv/resourcemgmt/powerandmemorynotificationservice/group/syslibs_pwrcli.mrp"/>
+</component>
+</collection>
+<collection name="sysstatemgmt" long-name="System State Management" level="server">
+<component name="systemstarter" long-name="System Starter" introduced="9.1" deprecated="tb92" purpose="mandatory">
+<unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstarter/group" mrp="/sf/os/devicesrv/sysstatemgmt/systemstarter/group/app-framework_sysstart.mrp"/>
+</component>
+<component name="systemstatemgr" long-name="System State Manager" introduced="tb92" purpose="mandatory">
+<unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstatemgr/group" mrp="/sf/os/devicesrv/sysstatemgmt/systemstatemgr/group/app-framework_ssma.mrp"/>
+</component>
+<component name="systemstateplugins" long-name="System State Plugins" introduced="tb92" purpose="optional" plugin="Y">
+<unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstateplugins/group" mrp="/sf/os/devicesrv/sysstatemgmt/systemstateplugins/group/app-framework_ssplugins.mrp"/>
+</component>
+<component name="systemstatereferenceplugins" long-name="System State Reference Plugins" introduced="tb92" purpose="optional" plugin="Y">
+<unit bldFile="/sf/os/devicesrv/sysstatemgmt/systemstatereferenceplugins/group" mrp="/sf/os/devicesrv/sysstatemgmt/systemstatereferenceplugins/group/app-framework_ssrefplugins.mrp"/>
+</component>
+</collection>
+<collection name="resourceinterfaces" long-name="Resource Interfaces" level="hw-if">
+<component name="fmtransmittercontrol" long-name="FM Transmitter Control" introduced="tb92" purpose="optional">
+<unit bldFile="/sf/os/devicesrv/resourceinterfaces/fmtransmittercontrol/group" mrp="/sf/os/devicesrv/resourceinterfaces/fmtransmittercontrol/group/telephony_hwrmfmtx.mrp"/>
+</component>
+</collection>
+<collection name="systemhealthmanagement" long-name="System Health Management" level="server">
+<component name="systemhealthmgr" long-name="System Health Manager" introduced="tb92" purpose="optional">
+<unit bldFile="/sf/os/devicesrv/systemhealthmanagement/systemhealthmgr/group" mrp="/sf/os/devicesrv/systemhealthmanagement/systemhealthmgr/group/app-framework_shma.mrp"/>
+</component>
+</collection>
+<collection name="devicesrvapitest" long-name="Devices Services API Tests" level="app-if">
+<component name="accessorieshaitest" long-name="Accessories HAI Tests" introduced="tb91" purpose="development">
+<unit mrp="/sf/os/devicesrv/devicesrvapitest/accessorieshaitest/group/accessorieshaitest.mrp"/>
+</component>
+<component name="hwrmhaitest" long-name="HWRM HAI Tests" introduced="tb91" purpose="development">
+<unit mrp="/sf/os/devicesrv/devicesrvapitest/hwrmhaitest/group/hwrmhaitest.mrp"/>
+</component>
+</collection>
+<collection name="devicesrv_info" long-name="Device Services Info" level="app-if">
+<component name="devicesrv_metadata" long-name="Device Services Metadata" introduced="tb91" purpose="development" class="config PC">
+<unit mrp="/sf/os/devicesrv/devicesrv_info/devicesrv_metadata/devicesrv_metadata.mrp"/>
+</component>
+</collection>
+<collection name="s60">
+<component name="devicesrv">
+<unit bldFile="/sf/os/devicesrv/group" mrp=""/>
+</component>
+</collection>
+</block>
+</layer>
+</systemModel>
+</SystemDefinition>

@@ -97,10 +97,10 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="mw">
-<block name="web">
+<block name="uiaccelerator">
 <collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
+<component name="uiaccelerator">
+<unit bldFile="/sf/mw/uiaccelerator/group" mrp=""/>
 </component>
 </collection>
 </block>

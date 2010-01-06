@@ -96,11 +96,21 @@
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw">
-<block name="web">
+<layer name="os" long-name="OS" levels="hw services">
+<block name="wlan" level="services" long-name="WLAN" levels="hw low mid high tools test">
+<collection name="wlanapitest" long-name="WLAN API Tests" level="test">
+<component name="wlanhaitest" long-name="WLAN HAI Tests" introduced="tb91" purpose="development">
+<unit mrp="/sf/os/wlan/wlanapitest/wlanhaitest/group/wlanhaitest.mrp"/>
+</component>
+</collection>
+<collection name="wlan_info" long-name="WLAN Info" level="test">
+<component name="wlan_metadata" long-name="WLAN Metadata" introduced="tb91" purpose="development" class="config PC">
+<unit mrp="/sf/os/wlan/wlan_info/wlan_metadata/wlan_metadata.mrp"/>
+</component>
+</collection>
 <collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
+<component name="wlan">
+<unit bldFile="/sf/os/wlan/group" mrp=""/>
 </component>
 </collection>
 </block>

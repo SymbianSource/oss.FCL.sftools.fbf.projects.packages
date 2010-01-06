@@ -96,11 +96,45 @@
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw">
-<block name="web">
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="messaging" level="apps" span="2" long-name="Messaging Apps" levels="mail eng base ui">
+<collection name="mobilemessaging" long-name="Mobile Messaging" level="ui">
+<component name="smsmtm" long-name="SMS MTM" purpose="optional" plugin="Y">
+<unit bldFile="/sf/app/messaging/mobilemessaging/smsmtm/group" mrp="/sf/app/messaging/mobilemessaging/smsmtm/group/messaging_sms.mrp"/>
+</component>
+</collection>
+<collection name="mmsengine" long-name="MMS Engine" level="eng">
+<component name="mmssettings" long-name="MMS Settings" introduced="9.2" purpose="optional">
+<unit bldFile="/sf/app/messaging/mmsengine/mmssettings/group" mrp="/sf/app/messaging/mmsengine/mmssettings/group/messaging_mmssettings.mrp"/>
+</component>
+<component name="mmsconf" long-name="MMS Configuration" purpose="optional">
+<unit bldFile="/sf/app/messaging/mmsengine/mmsconf" mrp="/sf/app/messaging/mmsengine/mmsconf/messaging_mmssettings-config.mrp"/>
+</component>
+</collection>
+<collection name="messagingappbase" long-name="Messaging App Base" level="base">
+<component name="smilparser" long-name="SMIL Parser" introduced="7.0s" purpose="optional">
+<unit bldFile="/sf/app/messaging/messagingappbase/smilparser/GROUP" mrp="/sf/app/messaging/messagingappbase/smilparser/GROUP/messaging_gmxml.mrp"/>
+</component>
+<component name="obexmtms" long-name="OBEX MTMs" introduced="7.0s" purpose="optional" plugin="Y">
+<unit bldFile="/sf/app/messaging/messagingappbase/obexmtms/Group" mrp="/sf/app/messaging/messagingappbase/obexmtms/Group/messaging_obex.mrp"/>
+</component>
+</collection>
+<collection name="email" long-name="Email" level="mail">
+<component name="pop3andsmtpmtm" long-name="POP3 and SMTP MTM" purpose="optional" plugin="Y">
+<unit bldFile="/sf/app/messaging/email/pop3andsmtpmtm/group" mrp="/sf/app/messaging/email/pop3andsmtpmtm/group/messaging_email.mrp"/>
+</component>
+<component name="imap4mtm" long-name="IMAP4 MTM" introduced="9.2" purpose="optional" plugin="Y">
+<unit bldFile="/sf/app/messaging/email/imap4mtm/group" mrp="/sf/app/messaging/email/imap4mtm/group/messaging_email_imap.mrp"/>
+</component>
+</collection>
+<collection name="messaging_info" long-name="Messaging Apps Info" level="ui">
+<component name="messaging_metadata" long-name="Messaging Apps Metadata" introduced="tb91" purpose="development" class="config PC">
+<unit mrp="/sf/app/messaging/messaging_info/messaging_metadata/messaging_metadata.mrp"/>
+</component>
+</collection>
 <collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
+<component name="messaging">
+<unit bldFile="/sf/app/messaging/group" mrp=""/>
 </component>
 </collection>
 </block>

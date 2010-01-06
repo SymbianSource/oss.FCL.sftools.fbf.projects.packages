@@ -96,11 +96,11 @@
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw">
-<block name="web">
+<layer name="tools">
+<block name="swconfigtools">
 <collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
+<component name="swconfigtools">
+<unit bldFile="/sf/tools/swconfigtools/group" mrp=""/>
 </component>
 </collection>
 </block>

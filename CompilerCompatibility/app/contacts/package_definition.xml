@@ -96,11 +96,29 @@
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw">
-<block name="web">
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="contacts" level="apps" span="2" long-name="Contacts Apps" levels="engine support services ui">
+<collection name="phonebookengines" long-name="Phonebook Engines" level="engine">
+<component name="contactsmodel" long-name="Contacts Model" introduced="ER5" purpose="optional">
+<unit bldFile="/sf/app/contacts/phonebookengines/contactsmodel/groupsql" mrp="/sf/app/contacts/phonebookengines/contactsmodel/groupsql/app-engines_cntmodel.mrp" version="2"/>
+</component>
+</collection>
+<collection name="pimprotocols" long-name="PIM Protocols" level="services">
+<component name="phonebooksync" long-name="Phonebook Sync" purpose="optional" plugin="Y">
+<unit bldFile="/sf/app/contacts/pimprotocols/phonebooksync/group" mrp="/sf/app/contacts/pimprotocols/phonebooksync/group/telephony_phbksync.mrp"/>
+</component>
+<component name="pbap" long-name="Bluetooth PBAP" introduced="9.2" purpose="optional">
+<unit bldFile="/sf/app/contacts/pimprotocols/pbap/group" mrp="/sf/app/contacts/pimprotocols/pbap/group/bluetooth_accesshost.mrp"/>
+</component>
+</collection>
+<collection name="contacts_info" long-name="Contacts Apps Info" level="ui">
+<component name="contacts_metadata" long-name="Contacts Apps Metadata" introduced="tb91" purpose="development" class="config PC">
+<unit mrp="/sf/app/contacts/contacts_info/contacts_metadata/contacts_metadata.mrp"/>
+</component>
+</collection>
 <collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
+<component name="contacts">
+<unit bldFile="/sf/app/contacts/group" mrp=""/>
 </component>
 </collection>
 </block>

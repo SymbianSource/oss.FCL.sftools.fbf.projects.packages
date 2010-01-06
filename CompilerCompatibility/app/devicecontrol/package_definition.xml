@@ -96,11 +96,11 @@
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw">
-<block name="web">
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="devicecontrol" level="services" long-name="Device Control Daemons">
 <collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
+<component name="devicecontrol">
+<unit bldFile="/sf/app/devicecontrol/group" mrp=""/>
 </component>
 </collection>
 </block>

@@ -96,11 +96,30 @@
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw">
-<block name="web">
+<layer name="os" long-name="OS" levels="hw services">
+<block name="osrndtools" level="services" long-name="OS R&amp;D tools" levels="fw trace">
+<collection name="testexecfw1" long-name="Test Execution Framework v1" level="fw">
+<component name="cinidata" long-name="CINI Data" purpose="development">
+<unit bldFile="/sf/os/osrndtools/testexecfw1/cinidata" mrp="/sf/os/osrndtools/testexecfw1/cinidata/tools_cinidata.mrp"/>
+</component>
+<component name="testexecute" long-name="Test Execute" deprecated="tb91" purpose="development">
+<unit bldFile="/sf/os/osrndtools/testexecfw1/testexecute/Group" mrp="/sf/os/osrndtools/testexecfw1/testexecute/Group/tools_testexecute.mrp"/>
+</component>
+</collection>
+<collection name="osrndtools_info" long-name="OS R&amp;D tools Info" level="trace">
+<component name="osrndtools_metadata" long-name="OS R&amp;D tools Metadata" introduced="tb91" purpose="development" class="config PC">
+<unit mrp="/sf/os/osrndtools/osrndtools_info/osrndtools_metadata/osrndtools_metadata.mrp"/>
+</component>
+</collection>
 <collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
+<component name="tools_osrndtools_osrndtools_plat_hti_api">
+<unit bldFile="/sf/os/osrndtools/osrndtools_plat/hti_api/group" mrp=""/>
+</component>
+<component name="tools_osrndtools_hti">
+<unit bldFile="/sf/os/osrndtools/hti/group" mrp=""/>
+</component>
+<component name="osrndtools">
+<unit bldFile="/sf/os/osrndtools/group" mrp=""/>
 </component>
 </collection>
 </block>

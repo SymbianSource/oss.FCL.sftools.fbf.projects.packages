@@ -96,14 +96,8 @@
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw">
-<block name="web">
-<collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
-</component>
-</collection>
-</block>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="imgeditor" level="apps" long-name="Image Editor Apps"/>
 </layer>
 </systemModel>
 </SystemDefinition>

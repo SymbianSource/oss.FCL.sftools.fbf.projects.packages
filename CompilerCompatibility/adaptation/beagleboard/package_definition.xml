@@ -96,11 +96,17 @@
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="mw">
-<block name="web">
-<collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
+<layer name="adaptation" long-name="Adaptation" levels="hw-if">
+<block name="beagleboard" long-name="Beagle Board" levels="hw-if">
+<collection name="omap3530" long-name="OMAP 3530" level="hw-if">
+<component name="omap3530" long-name="Beagle Board common" introduced="symbian^3" purpose="optional">
+<unit bldFile="/sf/adaptation/beagleboard/omap3530" mrp="/sf/adaptation/beagleboard/omap3530/base_beagle.mrp"/>
+</component>
+<component name="kernel" long-name="Beagle Board kernel" introduced="symbian^3" purpose="optional">
+<unit bldFile="/sf/adaptation/beagleboard/omap3530/kernel"/>
+</component>
+<component name="beagleboard" long-name="Beagle Board baseport" introduced="symbian^3" purpose="optional">
+<unit bldFile="/sf/adaptation/beagleboard/omap3530/beagleboard"/>
 </component>
 </collection>
 </block>
