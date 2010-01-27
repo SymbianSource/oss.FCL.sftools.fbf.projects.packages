@@ -1,46 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
- <!ATTLIST SystemDefinition
+<!ELEMENT SystemDefinition ( systemModel )>
+<!ATTLIST SystemDefinition
   name CDATA #REQUIRED
-  schema CDATA #REQUIRED>
- <!ELEMENT systemModel (layer+)>
- <!ELEMENT layer (block*|collection*)*>
- <!ATTLIST layer
+  schema CDATA #REQUIRED
+>
+<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
+
+<!-- System Model Section of DTD -->
+<!ELEMENT systemModel (layer+)>
+
+<!ELEMENT layer (block* | collection*)*>
+<!-- Kernel Services, Base Services, OS Services, Etc -->
+<!ATTLIST layer
   name CDATA #REQUIRED
   long-name CDATA #IMPLIED
   levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED>
- <!ELEMENT block (subblock*|collection*)*>
- <!ATTLIST block
+  span CDATA #IMPLIED
+>
+
+<!ELEMENT block (subblock* | collection*)*>
+ <!-- Generic OS services, Comms Services, etc -->
+<!ATTLIST block
   levels NMTOKENS #IMPLIED
   span CDATA #IMPLIED
   level NMTOKEN #IMPLIED
   name CDATA #REQUIRED
-  long-name CDATA #IMPLIED>
- <!ELEMENT subblock (collection)*>
- <!ATTLIST subblock
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED>
- <!ELEMENT collection (component)*>
- <!ATTLIST collection
+  long-name CDATA #IMPLIED
+>
+
+<!ELEMENT subblock (collection)*>
+<!-- Cellular Baseband Services, Networking Services, etc -->
+<!ATTLIST subblock
   name CDATA #REQUIRED
   long-name CDATA #IMPLIED
-  level NMTOKEN #IMPLIED>
- <!ELEMENT component (unit)*>
- <!ATTLIST component
+>
+
+<!ELEMENT collection (component)*>
+<!-- Screen Driver, Content Handling, etc -->
+<!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+>
+
+<!ELEMENT component (unit)*>
+<!-- contains units or is a  package or prebuilt -->
+<!ATTLIST component
   name CDATA #REQUIRED
   long-name CDATA #IMPLIED
   deprecated CDATA #IMPLIED
   introduced CDATA #IMPLIED
   contract CDATA #IMPLIED
-  plugin (Y|N) 'N'
+  plugin (Y|N) "N"
   filter CDATA #IMPLIED
   class NMTOKENS #IMPLIED
   supports CDATA #IMPLIED
-  purpose (optional|mandatory|development) 'optional'>
- <!ELEMENT unit EMPTY>
- <!ATTLIST unit
+  purpose ( optional | mandatory | development ) "optional"
+>
+
+<!ELEMENT unit EMPTY >
+<!-- must be buildable (bld.inf) -->
+<!-- bldFile  may someday be removed in favour of mrp -->
+<!ATTLIST unit
   mrp CDATA #IMPLIED
   filter CDATA #IMPLIED
   bldFile CDATA #IMPLIED
@@ -48,80 +70,169 @@
   version NMTOKEN #IMPLIED
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
-  priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
+  priority CDATA #IMPLIED
+>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="contacts" level="apps" span="2" long-name="Contacts Apps" levels="engine support services ui">
-<collection name="phonebookengines" long-name="Phonebook Engines" level="engine">
-<component name="contactsmodel" long-name="Contacts Model" introduced="ER5" purpose="optional">
-<unit bldFile="/sf/app/contacts/phonebookengines/contactsmodel/groupsql" mrp="/sf/app/contacts/phonebookengines/contactsmodel/groupsql/app-engines_cntmodel.mrp" version="2"/>
-</component>
-</collection>
-<collection name="pimprotocols" long-name="PIM Protocols" level="services">
-<component name="phonebooksync" long-name="Phonebook Sync" purpose="optional" plugin="Y">
-<unit bldFile="/sf/app/contacts/pimprotocols/phonebooksync/group" mrp="/sf/app/contacts/pimprotocols/phonebooksync/group/telephony_phbksync.mrp"/>
-</component>
-<component name="pbap" long-name="Bluetooth PBAP" introduced="9.2" purpose="optional">
-<unit bldFile="/sf/app/contacts/pimprotocols/pbap/group" mrp="/sf/app/contacts/pimprotocols/pbap/group/bluetooth_accesshost.mrp"/>
-</component>
-</collection>
-<collection name="contacts_info" long-name="Contacts Apps Info" level="ui">
-<component name="contacts_metadata" long-name="Contacts Apps Metadata" introduced="tb91" purpose="development" class="config PC">
-<unit mrp="/sf/app/contacts/contacts_info/contacts_metadata/contacts_metadata.mrp"/>
-</component>
-</collection>
-<collection name="s60">
-<component name="contacts">
-<unit bldFile="/sf/app/contacts/group" mrp=""/>
-</component>
-</collection>
-</block>
-</layer>
-</systemModel>
+<SystemDefinition name="Symbian^3" schema="2.0.1">
+  <systemModel>
+    <layer name="app" long-name="Applications" levels="services apps">
+      <block name="contacts" level="apps" span="2" long-name="Contacts Apps" levels="engine support services ui">
+        <collection name="contactextensions" long-name="Contacts Extensions" level="services">
+          <component name="predefinedcontacts" filter="s60" long-name="Predefined Contacts">
+            <unit bldFile="/sf/app/contacts/contactextensions/predefinedcontacts/group"/>
+          </component>
+        </collection>
+        <collection name="logsui" long-name="Logs UI" level="ui">
+          <component name="logsui_build" filter="s60" long-name="Logs UI Build">
+            <!-- component at too high a rank, should move down one directory -->
+            <unit bldFile="/sf/app/contacts/logsui/group"/>
+          </component>
+        </collection>
+        <collection name="phonebookui" long-name="Phonebook UI" level="ui">
+          <component name="phonebook" filter="s60" long-name="Phonebook">
+            <unit bldFile="/sf/app/contacts/phonebookui/phonebook/group"/>
+          </component>
+          <component name="speeddial" filter="s60" long-name="Speed Dial">
+            <unit bldFile="/sf/app/contacts/phonebookui/speeddial/group"/>
+          </component>
+          <component name="phonebook2" filter="s60" long-name="Phone Book 2">
+            <unit bldFile="/sf/app/contacts/phonebookui/phonebook2/group"/>
+          </component>
+          <component name="phonebook2_test" filter="s60,test" long-name="Phonebook 2 Tests">
+            <!-- can only have one unit, consider #including from phonebook2 or a common bld.inf  -->
+            <unit bldFile="/sf/app/contacts/phonebookui/Phonebook2/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/phonebookui/Phonebook2/remotecontactlookup/contactactionservice/saveascontactplugin/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/phonebookui/Phonebook2/spbcontentprovider/tsrc/ut_contentprovider/group"/>
+            <unit bldFile="/sf/app/contacts/phonebookui/Phonebook2/NamesListExtension/tsrc/group"/>
+          </component>
+          <component name="phonebook2_other_test" filter="s60,test" long-name="Phonebook 2 Other Tests">
+            <!-- can only have one unit. Why is this separate from the other tests? -->
+            <unit bldFile="/sf/app/contacts/phonebookui/Phonebook2/UIControls/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/phonebookui/Phonebook2/Presentation/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/phonebookui/Phonebook2/USIMExtension/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/phonebookui/Phonebook2/xSPExtensionManager/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/phonebookui/Phonebook2/ccapplication/ccacommlauncherplugin/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/phonebookui/Phonebook2/ccapplication/ccacontactorservice/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/phonebookui/Phonebook2/ccapplication/ccapp/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/phonebookui/Phonebook2/ccapplication/ccamycardplugin/tsrc/group"/>
+          </component>
+        </collection>
+        <collection name="phonebookengines" long-name="Phonebook Engines" level="engine">
+          <component name="cntfindplugin" filter="s60" long-name="Contacts Find Plugin" introduced="^2" plugin="Y">
+            <unit bldFile="/sf/app/contacts/phonebookengines/cntfindplugin/group"/>
+          </component>
+          <component name="cntsortplugin" filter="s60" long-name="Contacts Sort Plugin" introduced="^2" plugin="Y">
+            <unit bldFile="/sf/app/contacts/phonebookengines/cntsortplugin/group"/>
+          </component>
+          <component name="virtualphonebook" filter="s60" long-name="Virtual Phonebook" introduced="^2">
+            <unit bldFile="/sf/app/contacts/phonebookengines/virtualphonebook/group"/>
+          </component>
+          <component name="contactsmodel" long-name="Contacts Model" introduced="ER5" purpose="optional">
+            <unit bldFile="/sf/app/contacts/phonebookengines/contactsmodel/groupsql" mrp="/sf/app/contacts/phonebookengines/contactsmodel/groupsql/app-engines_cntmodel.mrp" version="2"/>
+          </component>
+          <component name="virtualphonebook_test" long-name="Virtual Phonebook Tests" filter="s60,test">
+            <!-- can only have one bld.inf, #include the latter from the former, or #include both from virtualphonebook-->
+            <unit bldFile="/sf/app/contacts/phonebookengines/VirtualPhonebook/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/phonebookengines/VirtualPhonebook/VPbkCntModel/tsrc/group"/>
+          </component>
+          <component name="vpbk_test" filter="s60,test" long-name="Virtual Phonebook Other Tests">
+            <!-- can only have one bld.inf, #include from the first, or #include both from virtualphonebook
+      		Why is this separate from virtualphonebook_test?-->
+            <unit bldFile="/sf/app/contacts/phonebookengines/VirtualPhonebook/VPbkEng/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/phonebookengines/VirtualPhonebook/VPbkEngUtils/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/phonebookengines/VirtualPhonebook/VPbkSimStoreImpl/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/phonebookengines/VirtualPhonebook/VPbkSimStoreService/tsrc/group"/>
+          </component>
+        </collection>
+        <collection name="pimprotocols" long-name="PIM Protocols" level="services">
+          <component name="phonebooksync" long-name="Phonebook Sync" purpose="optional" plugin="Y">
+            <unit bldFile="/sf/app/contacts/pimprotocols/phonebooksync/group" mrp="/sf/app/contacts/pimprotocols/phonebooksync/group/telephony_phbksync.mrp"/>
+          </component>
+          <component name="pbap" long-name="Bluetooth PBAP" introduced="9.2" purpose="optional">
+            <unit bldFile="/sf/app/contacts/pimprotocols/pbap/group" mrp="/sf/app/contacts/pimprotocols/pbap/group/bluetooth_accesshost.mrp"/>
+          </component>
+        </collection>
+        <collection name="ccservices" long-name="Contacts Centric Services" level="services">
+          <component name="cmsservices" filter="s60" long-name="Contact Method Selector Services" introduced="^2">
+            <unit bldFile="/sf/app/contacts/ccservices/cmsservices/group"/>
+          </component>
+          <component name="cms_test" filter="s60,test" long-name="Contact Method Selector Tests">
+            <!-- can only have one unit, #include from the first, or #include from cmsservices  -->
+            <unit bldFile="/sf/app/contacts/ccservices/cmsservices/bpas/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/ccservices/cmsservices/cmsengine/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/ccservices/cmsservices/contactpresence/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/ccservices/cmsservices/presencetrafficlights/tsrc/group"/>
+          </component>
+        </collection>
+        <collection name="presencecache" long-name="Presence Cache" level="support">
+          <component name="presencecacheutils" filter="s60" long-name="Presence Cache Utils" introduced="^2" class="placeholder">
+            <!-- <unit bldFile="presencecache/presencecacheutils/group"/> -->
+          </component>
+          <component name="presencecacheserver2" filter="s60" long-name="Presence Cache Server" introduced="^2" class="placeholder">
+            <!-- <unit bldFile="presencecache/presencecacheserver2/group"/> -->
+          </component>
+          <component name="presencecacheclient2" filter="s60" long-name="Presence Cache Client" introduced="^2" class="placeholder">
+            <!-- <unit bldFile="presencecache/presencecacheclient2/group"/> -->
+          </component>
+          <component name="presencecache_build" filter="s60" long-name="Presence Cache Build" introduced="^2">
+            <!-- should divide this bld.inf into the other components, or collapse them into a single component -->
+            <unit bldFile="/sf/app/contacts/presencecache/group"/>
+          </component>
+          <component name="presencecache_test" filter="s60,test" long-name="Presence Cache Tests">
+            <!-- can this be #included from presencecacheutils?  -->
+            <unit bldFile="/sf/app/contacts/presencecache/presencecacheutils/tsrc/group"/>
+          </component>
+        </collection>
+        <collection name="predictivesearch" long-name="Predictive Search" level="support">
+          <component name="pcsutils" filter="s60" long-name="PCS Utils" introduced="^2">
+            <unit bldFile="/sf/app/contacts/predictivesearch/pcsutils/group"/>
+          </component>
+          <component name="pcsserverclientapi" filter="s60" long-name="PCS Server Client API" introduced="^2">
+            <unit bldFile="/sf/app/contacts/predictivesearch/pcsserverclientapi/group"/>
+          </component>
+          <component name="pcsserver" filter="s60" long-name="PCS Server" introduced="^2">
+            <unit bldFile="/sf/app/contacts/predictivesearch/pcsserver/group"/>
+          </component>
+          <component name="pcsadapters" filter="s60" long-name="PCS Adapters" introduced="^2" plugin="Y">
+            <unit bldFile="/sf/app/contacts/predictivesearch/adapters/contacts/group"/>
+          </component>
+          <component name="pcsalgorithm" filter="s60" long-name="PCS Algorithm" introduced="^2" plugin="Y">
+            <unit bldFile="/sf/app/contacts/predictivesearch/pcsalgorithm/group"/>
+          </component>
+          <component name="predictivesearch_build" filter="s60" long-name="Predictive Search Build" introduced="^2">
+            <!-- need to remove #includes from bld.inf and rename as Predictive Search ROM -->
+            <unit bldFile="/sf/app/contacts/predictivesearch/group"/>
+          </component>
+        </collection>
+        <collection name="contacts_info" long-name="Contacts Apps Info" level="ui">
+          <component name="contacts_plat" filter="s60" long-name="Contacts Apps Platform Interfaces" class="api">
+            <unit bldFile="/sf/app/contacts/contacts_plat/group"/>
+          </component>
+          <component name="contacts_plat_test" filter="s60,api_test" long-name="Contacts Apps Platform API Test">
+            <unit bldFile="/sf/app/contacts/contacts_plat/cms_contactor_api/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/contacts_plat/cca_launch_api/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/contacts_plat/cca_view_plugin_api/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/contacts_plat/contactpresence_api/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/contacts_plat/presence_cache_api/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_policy_api/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_sim_services_api/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_store_api/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_vcard_api/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_view_definition_api/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_engine_api/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/contacts_plat/predictivesearch_client_api/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/contacts_plat/predictivesearch_utils_api/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_rcl_api/tsrc/group"/>
+            <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_icon_api/tsrc/ut_CPbk2IconArray/group"/>
+          </component>
+          <component name="contacts_pub" filter="s60" long-name="Contacts Apps Public Interfaces" class="api">
+            <unit bldFile="/sf/app/contacts/contacts_pub/group"/>
+          </component>
+          <component name="contacts_metadata" long-name="Contacts Apps Metadata" introduced="^2" purpose="development" class="config PC">
+            <unit mrp="/sf/app/contacts/contacts_info/contacts_metadata/contacts_metadata.mrp"/>
+          </component>
+        </collection>
+      </block>
+    </layer>
+  </systemModel>
 </SystemDefinition>

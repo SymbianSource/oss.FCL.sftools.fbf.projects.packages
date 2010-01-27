@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="location" name="Location Apps" levels="ui events loc apps">
+    <collection id="basiclocationinfodisplay" name="Basic Location Info Display" level="ui">
+      <component id="blid" filter="s60" name="Basic Location Info Display Build">
+        <unit bldFile="basiclocationinfodisplay/blid/group"/>
+      </component>
+    </collection>
+    <collection id="landmarksui" name="Landmarks UI" level="loc">
+      <component id="landmarksui_help" filter="s60" name="Landmarks UI Help">
+        <unit bldFile="landmarksui/help/group"/>
+      </component>
+      <component id="landmarksui_engine" filter="s60" name="Landmarks UI Engine">
+        <unit bldFile="landmarksui/engine/group"/>
+      </component>
+      <component id="uicontrols" filter="s60" name="Landmarks UI Controls">
+        <unit bldFile="landmarksui/uicontrols/group"/>
+      </component>
+      <component id="landmarksui_commonui" filter="s60" name="Landmarks Common UI">
+        <unit bldFile="landmarksui/commonui/group"/>
+      </component>
+      <component id="landmarksui_app" filter="s60" name="Landmarks Application">
+        <unit bldFile="landmarksui/app/group"/>
+      </component>
+      <component id="msgviewer" filter="s60" name="Landmarks Message Viewer">
+        <unit bldFile="landmarksui/msgviewer/group"/>
+      </component>
+      <component id="landmarksui_build" filter="s60" name="Landmarks UI Build">
+      	<!-- consider distributing this into the other components or collapsing into a single component -->
+        <unit bldFile="landmarksui/group"/>
+      </component>
+    </collection>
+    <collection id="eventsui" name="Location Events UI" level="events">
+      <component id="eventsui_help" filter="s60" name="Events Help">
+        <unit bldFile="eventsui/help/group"/>
+      </component>
+      <component id="eventsutils" filter="s60" name="Events Utils">
+        <unit bldFile="eventsui/eventsutils/group"/>
+      </component>
+      <component id="eventsengine" filter="s60" name="Events Engine">
+        <unit bldFile="eventsui/eventsengine/group"/>
+      </component>
+      <component id="eventshandlerui" filter="s60" name="Events Handler UI">
+        <unit bldFile="eventsui/eventshandlerui/group"/>
+      </component>
+      <component id="eventseditor" filter="s60" name="Events Editor">
+        <unit bldFile="eventsui/eventseditor/group"/>
+      </component>
+      <component id="eventsmgmtui" filter="s60" name="Events Management UI">
+        <unit bldFile="eventsui/eventsmgmtui/group"/>
+      </component>
+      <component id="eventsui_build" filter="s60" name="Events UI Build">
+      	<!-- consider distributing this into the other components or collapsing into a single component -->
+        <unit bldFile="eventsui/group"/>
+      </component>
+    </collection>
+    <collection id="locationlandmarksrefappfors60" name="Location Landmarks Reference App for S60" level="apps">
+      <component id="lmrefapp" filter="s60" name="Landmarks Reference Application">
+        <unit bldFile="locationlandmarksrefappfors60/group"/>
+      </component>
+    </collection>
+    <collection id="locationlandmarksuirefapp" name="Location Landmarks UI Reference App" level="apps">
+      <component id="lmuirefapp" filter="s60" name="Landmarks UI Reference Application">
+        <unit bldFile="locationlandmarksuirefapp/group"/>
+      </component>
+    </collection>
+    <collection id="locationsatviewrefapp" name="Location Satellite View Reference App" level="apps">
+      <component id="satellitereference" filter="s60" name="Satellite Info UI Reference Application">
+        <unit bldFile="locationsatviewrefapp/group"/>
+      </component>
+    </collection>
+    <collection id="simpsyconfigurator" name="Simulation PSY Configurator" level="ui">
+      <component id="simpsyui" filter="s60" name="Simulation PSY UI">
+        <unit bldFile="simpsyconfigurator/group"/>
+      </component>
+    </collection>
+    <collection id="mapnavproviderrefapp" name="Map and Navigation Provider Reference App" level="apps">
+      <component id="mapnavproviderrefapp_build" filter="s60" name="Map and Navigation Provider Reference Application">
+        <unit bldFile="mapnavproviderrefapp/group"/>
+      </component>
+    </collection>
+    <collection id="location_info" name="Location Apps Info" level="loc">
+      <component id="location_test" filter="s60" purpose="development" name="Location Apps Test">
+       	<!-- should this be uncommented? -->
+        <!-- <unit bldFile="tsrc/group"/> -->
+      </component>
+      <component id="loc_pub" filter="s60" class="api" name="Location Apps Public Interfaces">
+        <unit bldFile="loc_pub/group"/>
+       	<!-- what to do with these test units? -->
+        <!-- <unit bldFile="loc_pub/landmarks_ui_addedit_api/tsrc/bc/group"/> -->
+        <!-- <unit bldFile="loc_pub/landmarks_ui_addedit_api/tsrc/group"/> -->
+        <!-- <unit bldFile="loc_pub/landmarks_ui_selector_api/tsrc/bc/group"/> -->
+        <!-- <unit bldFile="loc_pub/landmarks_ui_selector_api/tsrc/group"/> -->
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

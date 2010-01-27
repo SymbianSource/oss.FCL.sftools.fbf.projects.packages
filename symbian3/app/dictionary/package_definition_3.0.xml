@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="dictionary" name="Dictionary" levels="utils ui">
+    <collection id="userdict" name="User Dictionary" level="ui">
+    	<!-- collection is really a component, move down a dir -->
+      <component id="userdict_build" filter="s60" name="Japanese User Dictionary">
+        <unit bldFile="userdict/group"/>
+      </component>
+    </collection>
+    <collection id="dictionary_info" name="Dictionary Info" level="ui">
+      <component id="dictionary_plat" filter="s60" name="Dictionary Platform Interfaces" class="api">
+        <unit bldFile="dictionary_plat/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="contentcontrol" name="Content Control Daemons" levels="plugin app">
+    <collection id="dsdcmoadapter" name="Data Sync DCMO Adapter" level="plugin">
+	   	<!-- Component at wrong rank, should move down a directory --> 
+      <component id="dsdcmoadapter_build" filter="s60" name="Data Sync Control DCMO Adapter">
+        <unit bldFile="dsdcmoadapter/group"/>
+      </component>
+    </collection>
+    <collection id="omads" name="OMA Data Sync" level="app">
+      <component id="omadsappui" filter="s60" name="OMA DS Application UI">
+        <unit bldFile="omads/omadsappui/group"/>
+      </component>
+      <component id="omadsextensions" filter="s60" name="OMA DS Extensions" class="plugin">
+        <unit bldFile="omads/omadsextensions/group"/>
+      </component>
+    </collection>
+    <collection id="contentcontrol_info" name="Content Control Daemons Info" level="app">
+      <component id="contentctrl_plat" filter="s60" class="api" name="Content Control Daemons Platforn Interfaces">
+        <unit bldFile="contentctrl_plat/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

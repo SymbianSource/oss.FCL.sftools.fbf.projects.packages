@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="speechsrv" name="Speech Recognition UIs" levels="engine framework ui">
+    <collection id="voiceui" name="Voice UI" level="ui">
+      <component id="vcommand" filter="s60" name="Voice Commands UI" introduced="^1">
+        <unit bldFile="voiceui/vcommand/group"/>
+      </component>
+      <component id="voiceuivoicerecognition" filter="s60" name="Voice UI Recognition" introduced="^1">
+        <unit bldFile="voiceui/voiceuivoicerecognition/group"/>
+      </component>
+      <component id="pbkinfoviewimpl" filter="s60" name="Phonebook Info View Implementation" introduced="^1">
+        <unit bldFile="voiceui/pbkinfoviewimpl/group"/>
+      </component>
+      <component id="aiwpbkinfoviewprovider" filter="s60" name="AIW Phonebook Info View Provider" class="plugin" introduced="^1">
+        <unit bldFile="voiceui/aiwpbkinfoviewprovider/group"/>
+      </component>
+      <component id="vccontrolpanelplugin" filter="s60" name="Voice Commands Control Panel Plugin" class="plugin" introduced="^1">
+      	<meta rel="config">
+      		<defined condition="__VCOMMAND_CONTROL_PANEL"/>
+      	</meta>
+        <unit bldFile="voiceui/vccontrolpanelplugin/group"/>
+      </component>
+      <component id="voiceui_build" filter="s60" name="Voice UI Build" introduced="^1">
+      	<!--  can this be put into the other components? -->
+        <unit bldFile="voiceui/group"/>
+      </component>
+    </collection>
+    <collection id="srsf" name="Speech Recognition and Synthesis Framework" level="framework">
+      <component id="sispeechrecognitiondata" filter="s60" name="SI Speech Recognition Data">
+        <unit bldFile="srsf/sispeechrecognitiondata/group"/>
+      </component>
+      <component id="ttscommon" filter="s60" name="TTS Common">
+        <unit bldFile="srsf/ttscommon/group"/>
+      </component>
+      <component id="devtts" filter="s60" name="Text to Speech">
+        <unit bldFile="srsf/devtts/group"/>
+      </component>
+      <component id="ttscustomcommands" filter="s60" name="TTS Custom Commands">
+        <unit bldFile="srsf/ttscustomcommands/group"/>
+      </component>
+      <component id="ttscontrollerplugin" filter="s60" name="TTS Controller Plugin" class="plugin">
+        <unit bldFile="srsf/ttscontrollerplugin/group"/>
+      </component>
+      <component id="ttsutility" filter="s60" name="TTS Utility">
+        <unit bldFile="srsf/ttsutility/group"/>
+      </component>
+      <component id="speechsynthesis" filter="s60" name="Speech Synthesis">
+     	<!-- can only have one unit. #include these from a common bld.inf -->
+        <unit bldFile="srsf/speechsynthesis/client/group"/>
+        <unit bldFile="srsf/speechsynthesis/server/group"/>
+      </component>
+      <component id="devasr" filter="s60" name="Audio Recording and Speech Recognition">
+        <unit bldFile="srsf/devasr/group"/>
+      </component>
+      <component id="sicc" filter="s60" name="Speaker Independent Custom Commands">
+        <unit bldFile="srsf/sicc/group"/>
+      </component>
+      <component id="sisrscontrollerplugin" filter="s60" name="SI SRS Controller Plugin" class="plugin">
+        <unit bldFile="srsf/sisrscontrollerplugin/group"/>
+      </component>
+      <component id="siutility" filter="s60" name="Speaker Independent Utility">
+        <unit bldFile="srsf/siutility/group"/>
+      </component>
+      <component id="nssvasapi" filter="s60" name="NSS VAS API">
+        <unit bldFile="srsf/nssvasapi/group"/>
+      </component>
+      <component id="nssvascontacthdlr" filter="s60" name="NSS VAS Contact Handler">
+        <unit bldFile="srsf/nssvascontacthdlr/group"/>
+      </component>
+      <component id="vcommandhandler" filter="s60" name="Voice Command Handler">
+        <unit bldFile="srsf/vcommandhandler/group"/>
+      </component>
+      <component id="vuiphandler" filter="s60" name="Voice UI Plugin Handler">
+        <unit bldFile="srsf/vuiphandler/group"/>
+      </component>
+      <component id="vcommandexecutor" filter="s60" name="Voice Command Executor">
+        <unit bldFile="srsf/vcommandexecutor/group"/>
+      </component>
+      <component id="vcommandexecutorbearer" filter="s60" name="Voice Command Executor Bearer">
+        <unit bldFile="srsf/vcommandexecutorbearer/group"/>
+      </component>
+      <component id="vcommandmanager" filter="s60" name="Voice Command Manager">
+        <unit bldFile="srsf/vcommandmanager/group"/>
+      </component>
+      <component id="vcexecutorapp" filter="s60" name="Voice Command Executor Application">
+        <unit bldFile="srsf/vcexecutorapp/group"/>
+      </component>
+      <component id="profileobserverplugin" filter="s60" name="Profile Observer Plugin" class="plugin">
+        <unit bldFile="srsf/profileobserverplugin/group"/>
+      </component>
+      <component id="srsf_build" filter="s60" name="Speech Recognition and Synthesis Framework Build">
+      	<!-- should distribute this into the above components -->
+        <unit bldFile="srsf/group"/>
+      </component>
+    </collection>
+    <collection id="speechsrv_info" name="Speech Recognition UIs Info" level="ui">
+      <component id="speechsrv_test" filter="s60,test" purpose="development" name="Speech Recognition UIs Test">
+        <unit bldFile="tsrc/group"/>
+      </component>
+      <component id="speechsrv_plat" filter="s60" name="Speech Recognition UIs Platform Interfaces" class="api">
+        <unit bldFile="speechsrv_plat/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>
+

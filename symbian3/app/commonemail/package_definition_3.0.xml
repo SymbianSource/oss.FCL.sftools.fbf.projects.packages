@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="commonemail" name="Email Apps" levels="service support ui app">
+    <collection id="emailservices" name="Email Services" level="service">
+      <component id="emailframework" filter="s60" name="Email Framework" introduced="^2">
+        <unit bldFile="emailservices/emailframework/group"/>
+      </component>
+      <component id="emailclientapi" filter="s60" name="Email Client API" introduced="^2">
+        <unit bldFile="emailservices/emailclientapi/group"/>
+      </component>
+      <component id="emailserver" filter="s60" name="Email Server" introduced="^2">
+        <unit bldFile="emailservices/emailserver/group"/>
+      </component>
+      <component id="emailservermonitor" filter="s60" name="Email Server Monitor" introduced="^2">
+        <unit bldFile="emailservices/emailservermonitor/group"/>
+      </component>
+      <component id="psmruadapter" filter="s60" name="Predictive Search Most Recent Used Adapter" class="plugin" introduced="^2">
+        <unit bldFile="emailservices/psmruadapter/group"/>
+      </component>
+      <component id="emailstore" filter="s60" name="Email Store" introduced="^2">
+        <unit bldFile="emailservices/emailstore/group"/>
+      </component>
+      <component id="emaildebug" filter="s60" name="Email Debug" class="api" introduced="^2">
+        <unit bldFile="emailservices/emaildebug/group"/>
+      </component>
+      <component id="emailinstallationinitiator" filter="s60" name="Email Installation Initiator" introduced="^2">
+        <unit bldFile="emailservices/emailinstallationinitiator/group"/>
+      </component>
+      <component id="emailservices_test" filter="s60,test" name="Email Services Tests">
+      	<!--  can these be #included in their relevant components or a single test bld.inf? 
+      		Can only have one unit -->
+		<unit bldFile="emailservices/emailframework/tsrc/group" />
+		<unit bldFile="emailservices/emailserver/tsrc/group"  />
+		<unit bldFile="emailservices/emailserver/cmailhandlerplugin/tsrc/group"/>
+		<unit bldFile="emailservices/emailserver/mailserverautostart/tsrc/group"/>
+		<unit bldFile="emailcontacts/contactactionservice/saveascontactplugin/tsrc/group"/>
+      </component>
+    </collection>
+    <collection id="ipsservices" name="IMAP/POP/SMTP Services" level="service">
+      <component id="ipssossettings" filter="s60" name="IPS SOS Settings" introduced="^2">
+    		<!-- SOS? Consider spelling it out since the abbreviation is ambiguous -->
+        <unit bldFile="ipsservices/ipssossettings/group"/>
+      </component>
+      <component id="ipssosplugin" filter="s60" name="IPS SOS Plugin" class="plugin" introduced="^2">
+        <unit bldFile="ipsservices/ipssosplugin/group"/>
+      </component>
+      <component id="ipssosaoplugin" filter="s60" name="IPS SOS Always Online Plugin" class="plugin" introduced="^2">
+        <unit bldFile="ipsservices/ipssosaoplugin/group"/>
+      </component>
+      <component id="ipsservices_build" filter="s60" name="IPS Services Build" introduced="^2">
+        <unit bldFile="ipsservices/group"/>
+		<!-- can the exports be broken up into the other components or made a config component?-->
+      </component>
+    </collection>
+    <collection id="emailcontacts" name="Email Contacts" level="support">
+      <component id="contactactionservice" filter="s60" name="Contact Action Service"  class="plugin" introduced="^2">
+        <unit bldFile="emailcontacts/contactactionservice/group"/>
+      </component>
+      <component id="contactactionmenu" filter="s60" name="Contact Action Menu" class="plugin" introduced="^2">
+        <unit bldFile="emailcontacts/contactactionmenu/group"/>
+      </component>
+      <component id="remotecontactlookup" filter="s60" name="Remote Contact Lookup" class="plugin" introduced="^2">
+        <unit bldFile="emailcontacts/remotecontactlookup/group"/>
+      </component>
+    </collection>
+    <collection id="meetingrequest" name="Meeting Request" level="ui">
+      <component id="mrcommon" filter="s60" name="MR Common" introduced="^2">
+        <unit bldFile="meetingrequest/mrcommon/group"/>
+      </component>
+      <component id="mrdb" filter="s60" name="MR Database" introduced="^2">
+        <unit bldFile="meetingrequest/mrdb/group"/>
+      </component>
+      <component id="mrpolicy" filter="s60" name="MR Policy" introduced="^2">
+        <unit bldFile="meetingrequest/mrpolicy/group"/>
+      </component>
+      <component id="mrservices" filter="s60" name="MR Services" introduced="^2">
+        <unit bldFile="meetingrequest/mrservices/group"/>
+      </component>
+      <component id="mrgui" filter="s60" name="MR GUI" introduced="^2">
+        <unit bldFile="meetingrequest/mrgui/group"/>
+      </component>
+      <component id="mrentry" filter="s60" name="MR Entry" introduced="^2">
+        <unit bldFile="meetingrequest/mrentry/group"/>
+      </component>
+      <component id="mrtasks" filter="s60" name="MR Tasks" introduced="^2">
+        <unit bldFile="meetingrequest/mrtasks/group"/>
+      </component>
+      <component id="mrutils" filter="s60" name="MR Utils" introduced="^2">
+        <unit bldFile="meetingrequest/mrutils/group"/>
+      </component>
+      <component id="mrutilscalplugin" filter="s60" name="MR Utils Calendar Plugin" class="plugin" introduced="^2">
+        <unit bldFile="meetingrequest/mrutilscalplugin/group"/>
+      </component>
+      <component id="mrviewer" filter="s60" name="MR Viewer" introduced="^2">
+        <unit bldFile="meetingrequest/mrviewer/group"/>
+      </component>
+      <component id="mrviewercalplugin" filter="s60" name="MR Viewer Calendar Plugin" introduced="^2">
+        <unit bldFile="meetingrequest/mrviewercalplugin/group"/>
+      </component>
+      <component id="mricalviewer" filter="s60" name="MR iCal Viewer" class="plugin" introduced="^2">
+        <unit bldFile="meetingrequest/mricalviewer/group"/>
+      </component>
+      <component id="mrversit2" filter="s60" name="MR Versit2" introduced="^2">
+        <unit bldFile="meetingrequest/mrversit2/group"/>
+      </component>
+      <component id="mragnversit2" filter="s60" name="MR Agenda Versit2" introduced="^2">
+        <unit bldFile="meetingrequest/mragnversit2/group"/>
+      </component>
+      <component id="mrcasplugin" filter="s60" name="MR Contact Action Service Plugin" class="plugin" introduced="^2">
+        <unit bldFile="meetingrequest/mrcasplugin/group"/>
+      </component>
+      <component id="mrurlparserplugin" filter="s60" name="MR URL Parser Plugin" class="plugin" introduced="^2">
+        <unit bldFile="meetingrequest/mrurlparserplugin/group"/>
+      </component>
+      <component id="meetingrequest_build" filter="s60" name="MR Build" introduced="^2">
+		<!-- can the exports be broken up into the other components ?
+			alternatively, move the exports into a RM Config component-->
+        <unit bldFile="meetingrequest/group"/>
+      </component>
+    </collection>
+    <collection id="emailuis" name="Email UIs" level="app">
+      <component id="emailui" filter="s60" name="Email UI" introduced="^2">
+        <unit bldFile="emailuis/emailui/group"/>
+      </component>
+      <component id="gsemailsettings" filter="s60" name="Email GS Settings" class="plugin" introduced="^2">
+        <unit bldFile="emailuis/gsemailsettings/group"/>
+      </component>
+      <component id="uicomponents" filter="s60" name="Email UI Components" introduced="^2">
+        <unit bldFile="emailuis/uicomponents/group"/>
+      </component>
+      <component id="widget" filter="s60" name="Email Widget" introduced="^2">
+        <meta rel="config">
+        	<condition not-defined="FF_CMAIL_INTEGRATION"/>
+        </meta>      
+        <unit bldFile="emailuis/widget/group"/>
+      </component>
+      	<!-- until config is supported, may need to just use emailuis/group/bld.inf -->
+    </collection>
+    <collection id="commonemail_info" name="Email Apps Info" level="app">
+      <component id="emailhelp" filter="s60" name="Email Help">
+      	<!-- should this be commented out or not? -->
+        <!-- <unit bldFile="emailhelp/group"/> -->
+      </component>
+      <component id="commonemail_help" filter="s60" name="Email Help" introduced="^2">
+      	<!-- should this be commented out or not? -->
+        <!-- <unit bldFile="help/group"/> -->
+      </component>
+      <component id="email_plat" filter="s60" class="api" name="Email Apps Platform Interfaces">
+        <unit bldFile="email_plat/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

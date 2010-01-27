@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="contacts" name="Contacts Apps" levels="engine support services ui">
+    <collection id="contactextensions" name="Contacts Extensions" level="services">
+      <component id="predefinedcontacts" filter="s60" name="Predefined Contacts">
+        <unit bldFile="contactextensions/predefinedcontacts/group"/>
+      </component>
+    </collection>
+    <collection id="logsui" name="Logs UI" level="ui">
+      <component id="logsui_build" filter="s60" name="Logs UI Build">
+          <!-- component at too high a rank, should move down one directory -->
+        <unit bldFile="logsui/group"/>
+      </component>
+    </collection>
+    <collection id="phonebookui" name="Phonebook UI" level="ui">
+      <component id="phonebook" filter="s60" name="Phonebook">
+        <unit bldFile="phonebookui/phonebook/group"/>
+      </component>
+      <component id="speeddial" filter="s60" name="Speed Dial">
+        <unit bldFile="phonebookui/speeddial/group"/>
+      </component>
+      <component id="phonebook2" filter="s60" name="Phone Book 2">
+        <unit bldFile="phonebookui/phonebook2/group"/>
+      </component>
+      <component id="phonebook2_test" filter="s60,test" name="Phonebook 2 Tests">
+       	<!-- can only have one unit, consider #including from phonebook2 or a common bld.inf  -->
+          <unit bldFile="phonebookui/Phonebook2/tsrc/group" />
+          <unit bldFile="phonebookui/Phonebook2/remotecontactlookup/contactactionservice/saveascontactplugin/tsrc/group" />
+          <unit bldFile="phonebookui/Phonebook2/spbcontentprovider/tsrc/ut_contentprovider/group" />      
+          <unit bldFile="phonebookui/Phonebook2/NamesListExtension/tsrc/group" />      
+      </component>
+      <component id="phonebook2_other_test" filter="s60,test" name="Phonebook 2 Other Tests">
+      	<!-- can only have one unit. Why is this separate from the other tests? -->
+         <unit bldFile="phonebookui/Phonebook2/UIControls/tsrc/group" />
+         <unit bldFile="phonebookui/Phonebook2/Presentation/tsrc/group" />
+         <unit bldFile="phonebookui/Phonebook2/USIMExtension/tsrc/group" />
+         <unit bldFile="phonebookui/Phonebook2/xSPExtensionManager/tsrc/group" />
+         <unit bldFile="phonebookui/Phonebook2/ccapplication/ccacommlauncherplugin/tsrc/group" />
+         <unit bldFile="phonebookui/Phonebook2/ccapplication/ccacontactorservice/tsrc/group" />
+         <unit bldFile="phonebookui/Phonebook2/ccapplication/ccapp/tsrc/group" />
+         <unit bldFile="phonebookui/Phonebook2/ccapplication/ccamycardplugin/tsrc/group" />
+       </component>
+    </collection>
+    <collection id="phonebookengines" name="Phonebook Engines" level="engine">
+      <component id="cntfindplugin" filter="s60" name="Contacts Find Plugin" class="plugin" introduced="^2">
+        <unit bldFile="phonebookengines/cntfindplugin/group"/>
+      </component>
+      <component id="cntsortplugin" filter="s60" name="Contacts Sort Plugin" class="plugin" introduced="^2">
+        <unit bldFile="phonebookengines/cntsortplugin/group"/>
+      </component>
+      <component id="virtualphonebook" filter="s60" name="Virtual Phonebook" introduced="^2">
+        <unit bldFile="phonebookengines/virtualphonebook/group"/>
+      </component>
+      <component id="contactsmodel" name="Contacts Model" introduced="ER5" purpose="optional">
+        <unit version="2" bldFile="phonebookengines/contactsmodel/groupsql" mrp="phonebookengines/contactsmodel/groupsql/app-engines_cntmodel.mrp"/>
+      </component>
+      <component id="virtualphonebook_test" name="Virtual Phonebook Tests" filter="s60,test">
+      	<!-- can only have one bld.inf, #include the latter from the former, or #include both from virtualphonebook-->
+          <unit bldFile="phonebookengines/VirtualPhonebook/tsrc/group" />
+          <unit bldFile="phonebookengines/VirtualPhonebook/VPbkCntModel/tsrc/group" />
+      </component>
+      <component id="vpbk_test" filter="s60,test" name="Virtual Phonebook Other Tests">
+      	<!-- can only have one bld.inf, #include from the first, or #include both from virtualphonebook
+      		Why is this separate from virtualphonebook_test?-->
+        <unit bldFile="phonebookengines/VirtualPhonebook/VPbkEng/tsrc/group" />
+        <unit bldFile="phonebookengines/VirtualPhonebook/VPbkEngUtils/tsrc/group" />
+        <unit bldFile="phonebookengines/VirtualPhonebook/VPbkSimStoreImpl/tsrc/group" />
+        <unit bldFile="phonebookengines/VirtualPhonebook/VPbkSimStoreService/tsrc/group" />
+      </component>      
+    </collection>
+    <collection id="pimprotocols" name="PIM Protocols" level="services">
+      <component id="phonebooksync" name="Phonebook Sync" purpose="optional" class="plugin">
+        <unit bldFile="pimprotocols/phonebooksync/group" mrp="pimprotocols/phonebooksync/group/telephony_phbksync.mrp"/>
+      </component>
+      <component id="pbap" name="Bluetooth PBAP" introduced="9.2" purpose="optional">
+        <unit bldFile="pimprotocols/pbap/group" mrp="pimprotocols/pbap/group/bluetooth_accesshost.mrp"/>
+      </component>
+    </collection>
+    <collection id="ccservices" name="Contacts Centric Services" level="services">
+      <component id="cmsservices" filter="s60" name="Contact Method Selector Services" introduced="^2">
+        <unit bldFile="ccservices/cmsservices/group"/>
+      </component>
+      <component id="cms_test" filter="s60,test" name="Contact Method Selector Tests">
+     	<!-- can only have one unit, #include from the first, or #include from cmsservices  -->
+        <unit bldFile="ccservices/cmsservices/bpas/tsrc/group" />
+        <unit bldFile="ccservices/cmsservices/cmsengine/tsrc/group" />
+        <unit bldFile="ccservices/cmsservices/contactpresence/tsrc/group" />
+        <unit bldFile="ccservices/cmsservices/presencetrafficlights/tsrc/group" />
+      </component>           
+    </collection>
+    <collection id="presencecache" name="Presence Cache" level="support">
+      <component id="presencecacheutils" filter="s60" name="Presence Cache Utils" introduced="^2">
+        <!-- <unit bldFile="presencecache/presencecacheutils/group"/> -->
+      </component>
+      <component id="presencecacheserver2" filter="s60" name="Presence Cache Server" introduced="^2">
+        <!-- <unit bldFile="presencecache/presencecacheserver2/group"/> -->
+      </component>
+      <component id="presencecacheclient2" filter="s60" name="Presence Cache Client" introduced="^2">
+        <!-- <unit bldFile="presencecache/presencecacheclient2/group"/> -->
+      </component>
+      <component id="presencecache_build" filter="s60" name="Presence Cache Build" introduced="^2">
+		<!-- should divide this bld.inf into the other components, or collapse them into a single component -->
+        <unit bldFile="presencecache/group"/>
+      </component>
+      <component id="presencecache_test"  filter="s60,test" name="Presence Cache Tests">
+      	<!-- can this be #included from presencecacheutils?  -->
+        <unit bldFile="presencecache/presencecacheutils/tsrc/group" />
+      </component>
+    </collection>
+    <collection id="predictivesearch" name="Predictive Search" level="support">
+      <component id="pcsutils" filter="s60" name="PCS Utils" introduced="^2">
+        <unit bldFile="predictivesearch/pcsutils/group"/>
+      </component>
+      <component id="pcsserverclientapi" filter="s60" name="PCS Server Client API" introduced="^2">
+        <unit bldFile="predictivesearch/pcsserverclientapi/group"/>
+      </component>
+      <component id="pcsserver" filter="s60" name="PCS Server" introduced="^2">
+        <unit bldFile="predictivesearch/pcsserver/group"/>
+      </component>
+      <component id="pcsadapters" filter="s60" name="PCS Adapters" class="plugin" introduced="^2">
+        <unit bldFile="predictivesearch/adapters/contacts/group"/>
+      </component>
+      <component id="pcsalgorithm" filter="s60" name="PCS Algorithm" class="plugin" introduced="^2">
+        <unit bldFile="predictivesearch/pcsalgorithm/group"/>
+      </component>
+      <component id="predictivesearch_build" filter="s60" name="Predictive Search Build" introduced="^2">
+      	<!-- need to remove #includes from bld.inf and rename as Predictive Search ROM -->
+        <unit bldFile="predictivesearch/group"/>
+      </component>
+    </collection>
+    <collection id="contacts_info" name="Contacts Apps Info" level="ui">
+      <component id="contacts_plat" filter="s60" name="Contacts Apps Platform Interfaces" class="api">
+        <unit bldFile="contacts_plat/group"/>
+      </component>
+     <component id="contacts_plat_test" filter="s60,api_test" name="Contacts Apps Platform API Test">
+       <unit bldFile="contacts_plat/cms_contactor_api/tsrc/group" />
+       <unit bldFile="contacts_plat/cca_launch_api/tsrc/group" />
+       <unit bldFile="contacts_plat/cca_view_plugin_api/tsrc/group" />
+       <unit bldFile="contacts_plat/contactpresence_api/tsrc/group" />
+       <unit bldFile="contacts_plat/presence_cache_api/tsrc/group" />
+       <unit bldFile="contacts_plat/virtual_phonebook_policy_api/tsrc/group" />
+       <unit bldFile="contacts_plat/virtual_phonebook_sim_services_api/tsrc/group" />        
+       <unit bldFile="contacts_plat/virtual_phonebook_store_api/tsrc/group" />        
+       <unit bldFile="contacts_plat/virtual_phonebook_vcard_api/tsrc/group" />        
+       <unit bldFile="contacts_plat/virtual_phonebook_view_definition_api/tsrc/group" />     
+       <unit bldFile="contacts_plat/virtual_phonebook_engine_api/tsrc/group" />     
+       <unit bldFile="contacts_plat/predictivesearch_client_api/tsrc/group" />        
+       <unit bldFile="contacts_plat/predictivesearch_utils_api/tsrc/group" />     
+       <unit bldFile="contacts_plat/phonebook_2_rcl_api/tsrc/group" />     
+       <unit bldFile="contacts_plat/phonebook_2_icon_api/tsrc/ut_CPbk2IconArray/group" />  
+     </component>
+      <component id="contacts_pub" filter="s60" name="Contacts Apps Public Interfaces" class="api">
+        <unit bldFile="contacts_pub/group"/>
+      </component>
+      <component id="contacts_metadata" name="Contacts Apps Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+        <unit mrp="contacts_info/contacts_metadata/contacts_metadata.mrp"/>
+      </component>
+    </collection>
+  </package>  
+</SystemDefinition>

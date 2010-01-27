@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="phone" name="Phone Apps" levels="engine plugin ui app">
+    <collection id="phoneapp" name="Phone Application" level="app">
+      <component id="blacklist" filter="s60" name="Phone Blacklist Clearing" class="plugin">
+        <unit bldFile="phoneapp/blacklist/group"/>
+      </component>
+      <component id="phoneui" filter="s60" name="Phone UI">
+        <unit bldFile="phoneapp/phoneui/group"/>
+        	<!-- should these be separate components? #included? -->
+        <!-- <unit bldFile="phoneapp/phoneui/tsrc/public/basic/3dringingtoneinterface_tests/group"/> -->
+        <!-- <unit bldFile="phoneapp/phoneui/tsrc/public/basic/group"/> -->
+      </component>
+      <component id="phoneuicontrol" filter="s60" name="Phone UI Control">
+        <unit bldFile="phoneapp/phoneuicontrol/group"/>
+      </component>
+      <component id="phoneuistates" filter="s60" name="Phone UI States">
+        <unit bldFile="phoneapp/phoneuistates/group"/>
+      </component>
+      <component id="phoneuiutils" filter="s60" name="Phone UI Utils">
+        <unit bldFile="phoneapp/phoneuiutils/group"/>
+      </component>
+      <component id="phoneuiview" filter="s60" name="Phone UI View">
+        <unit bldFile="phoneapp/phoneuiview/group"/>
+      </component>
+      <component id="phoneuivoipextension" filter="s60" name="Phone UI VOIP Extension">
+        <unit bldFile="phoneapp/phoneuivoipextension/group"/>
+      </component>
+      <component id="silenceactionplugin" filter="s60" name="Silence Action Plugin" class="plugin">
+        <unit bldFile="phoneapp/silenceactionplugin/group"/>
+      </component>
+      <component id="phonemediatorcenter" filter="s60" name="Phone Mediator Center">
+        <unit bldFile="phoneapp/phonemediatorcenter/group"/>
+      </component>
+    </collection>
+    <collection id="phoneengine" name="Phone Engine" level="engine">
+      <component id="phonecntfinder" filter="s60" name="Phone Contact Finder">
+        <unit bldFile="phoneengine/phonecntfinder/group"/>
+      </component>
+      <component id="audiohandling" filter="s60" name="Phone Audio Handling">
+        <unit bldFile="phoneengine/audiohandling/group"/>
+      </component>
+      <component id="callhandling" filter="s60" name="Call Handling">
+        <unit bldFile="phoneengine/callhandling/group"/>
+      </component>
+      <component id="contacthandling" filter="s60" name="Phone Contact Handling">
+        <unit bldFile="phoneengine/contacthandling/group"/>
+      </component>
+      <component id="loghandling" filter="s60" name="Phone Log Handling">
+        <unit bldFile="phoneengine/loghandling/group"/>
+      </component>
+      <component id="engineinfo" filter="s60" name="Phone Engine Info">
+        <unit bldFile="phoneengine/engineinfo/group"/>
+      </component>
+      <component id="phonemodel" filter="s60" name="Phone Model">
+        <unit bldFile="phoneengine/phonemodel/group"/>
+      </component>
+      <component id="servicehandling" filter="s60" name="Phone Service Handling">
+        <unit bldFile="phoneengine/servicehandling/group"/>
+      </component>
+    </collection>
+    <collection id="phonesettings" name="Phone Settings" level="plugin">
+      <component id="aiwcallimageplugin" filter="s60" name="Call Image AIW Plugin" class="plugin">
+        <unit bldFile="phonesettings/aiwcallimageplugin/group"/>
+      </component>
+      <component id="pslncallimageplugin" filter="s60" name="Call Image Personalization Plugin"  class="plugin">
+        <unit bldFile="phonesettings/pslncallimageplugin/group"/>
+      </component>
+    </collection>
+    <collection id="phoneuis" name="Phone UIs" level="ui">
+      <component id="dialer" filter="s60" name="Dialer">
+        <unit bldFile="phoneuis/dialer/group"/>
+        	<!-- what to do about this test unit? -->
+        <!-- <unit bldFile="phoneuis/dialer/tsrc/public/basic/group"/> -->
+      </component>
+      <component id="bubblemanager" filter="s60" name="Phone Bubble Manager">
+        <unit bldFile="phoneuis/bubblemanager/group"/>
+      </component>
+      <component id="connectutil" filter="s60" name="Connection Utility" class="plugin">
+        <unit bldFile="phoneuis/connectutil/group"/>
+      </component>
+      <component id="sfiutils" filter="s60" name="Send File In Call Utilities" class="plugin">
+        <unit bldFile="phoneuis/sfiutils/group"/>
+        	<!-- what to do about this test unit? -->
+        <!-- <unit bldFile="phoneuis/sfiutils/tsrc/public/basic/group"/> -->
+      </component>
+      <component id="ussd" filter="s60" name="Unstructured Supplementary Services Data">
+        <unit bldFile="phoneuis/ussd/group"/>
+      </component>
+      <component id="vmbx" filter="s60" name="Voice Mailbox">
+        <unit bldFile="phoneuis/vmbx/group"/>
+      </component>
+      <component id="telephonydevicemode" filter="s60" name="Telephony Device Mode">
+        <unit bldFile="phoneuis/telephonydevicemode/group"/>
+      </component>
+    </collection>
+    <collection id="phone_info" name="Phone Apps Info" level="app">
+      <component id="phone_plat" filter="s60" name="Phone Apps Platform Interfaces" class="api">
+        <unit bldFile="phone_plat/group"/>
+      </component>
+    </collection>
+    <collection id="phoneplugins" name="Phone Plugins" level="plugin">
+      <component id="telbranding" filter="s60" name="Tel Branding" class="plugin" introduced="^2">
+        <unit bldFile="phoneplugins/telbranding/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

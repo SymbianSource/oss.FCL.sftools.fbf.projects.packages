@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="printing" name="Printing" levels="app">
+    <collection id="imageprint" name="ImagePrint" level="app">
+      <component id="clog" filter="s60" name="ImagePrint Logging" introduced="^2">
+        <unit bldFile="imageprint/clog/group"/>
+      </component>
+      <component id="imageprintengine" filter="s60" name="ImagePrint Engine" introduced="^2">
+        <unit bldFile="imageprint/imageprintengine/group"/>
+       		<!--  do these other bld.infs need to be #included? -->
+        <!-- <unit bldFile="imageprint/imageprintengine/deviceprotocols/btprotocol/group"/> -->
+        <!-- <unit bldFile="imageprint/imageprintengine/deviceprotocols/dpof/group"/> -->
+        <!-- <unit bldFile="imageprint/imageprintengine/deviceprotocols/pictbridge2/group"/> -->
+        <!-- <unit bldFile="imageprint/imageprintengine/deviceprotocols/upnpprotocolfw2/group"/> -->
+        <!-- <unit bldFile="imageprint/imageprintengine/deviceprotocols/xhtmlfilecomposer/group"/> -->
+        <!-- <unit bldFile="imageprint/imageprintengine/imageprintserver/group"/> -->
+      </component>
+      <component id="imageprintui" filter="s60" name="ImagePrint UI" introduced="^2">
+        <unit bldFile="imageprint/imageprintui/group"/>
+      </component>
+      <component id="imageprint_build" filter="s60" name="ImagePrint Build" introduced="^2">	
+      	<!--  Need to break the IBY includes into the other components -->
+        <unit bldFile="imageprint/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

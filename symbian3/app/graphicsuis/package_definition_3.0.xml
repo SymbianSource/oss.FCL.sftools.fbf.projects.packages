@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="graphicsuis" name="Graphics UIs" levels="util ui">
+    <collection id="graphicsuis_info" name="Graphics UIs Info" level="ui">
+      <component id="graphicsuis_plat" filter="s60" name="Graphics UIs Platform Interfaces" class="api">
+        <unit bldFile="graphicsuis_plat/group"/>
+      </component>
+    </collection>
+    <collection id="svgtviewer" name="SVG-T Viewer" level="ui">
+      <component id="svgtviewerplugin" filter="s60" name="SVG-T Viewer Plugin">
+        <unit bldFile="svgtviewer/svgtviewerplugin/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

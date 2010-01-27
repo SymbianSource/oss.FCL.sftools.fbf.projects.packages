@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="camera" name="Camera Apps">
+    <collection id="camerauis" name="Camera UIs">
+      <component id="activepalette" filter="s60" name="Active Palette">
+        <unit bldFile="camerauis/activepalette/group"/>
+      </component>
+      <component id="cameraapp" filter="s60" name="Camera Application">
+        <unit bldFile="camerauis/cameraapp/group"/>
+      </component>
+    </collection>
+    <collection id="camera_info" name="Camera Apps Info">
+      <component id="camera_plat" filter="s60,api_test" name="Camera Apps Platform Interfaces" class="api">
+        <unit bldFile="camera_plat/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

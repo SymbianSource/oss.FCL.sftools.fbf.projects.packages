@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="videotelephony" name="Video Telephony Apps" levels="engine plugin prot ui">
+    <collection id="vtengines" name="Video Telephony Engines" level="engine">
+      <component id="videoteleng" filter="s60" name="Video Telephony Engine">
+        <unit bldFile="vtengines/videoteleng/group"/>
+      </component>
+      <component id="vtmediatorplugin" filter="s60" name="VT Mediator Plugin" class="plugin">
+        <unit bldFile="vtengines/vtmediatorplugin/group"/>
+      </component>
+    </collection>
+    <collection id="vtuis" name="Video Telephony UIs" level="ui">
+      <component id="videotelui" filter="s60" name="Video Telephony UI">
+        <unit bldFile="vtuis/videotelui/group"/>
+      </component>
+    </collection>
+    <collection id="vtprotocolplugins" name="VT Protocol Plugins" level="plugin">
+      <component id="displaysink" filter="s60" name="Display Sink" introduced="^2">
+        <unit bldFile="vtprotocolplugins/displaysink/group"/>
+      </component>
+      <component id="videosource" filter="s60" name="Video Source" introduced="^2">
+        <unit bldFile="vtprotocolplugins/videosource/group"/>
+      </component>
+    </collection>
+    <collection id="vtprotocolsstub" name="VT Protocols Stub" level="prot">
+    	<!--  this collection is really a component, move down a directory -->
+      <component id="videotelproto" filter="s60" name="Video Telephony Protocol">
+        <unit bldFile="vtprotocolsstub/group" filter="sf"/>
+      </component>
+    </collection>
+    <collection id="videotelephony_info" name="VT Apps Info" level="ui">
+      <component id="videotelephony_plat" filter="s60" name="VT Apps Platform Interfaces" class="api">
+        <unit bldFile="videotelephony_plat/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

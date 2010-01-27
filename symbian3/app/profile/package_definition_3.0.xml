@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="profile" name="Profiles" levels="app">
+    <collection id="profilesapplication" name="Profiles Application" level="app">
+      <component id="profiles" filter="s60" name="Profiles">
+        <unit bldFile="profilesapplication/profiles/group"/>
+        	<!-- this can only have one unit. can the test be #included? -->
+        <unit bldFile="profilesapplication/profiles/profileapp/tsrc/public/basic/group"/>
+        	<!-- should these be #included? -->
+        <!-- <unit bldFile="profilesapplication/profiles/gsprofilesplugin/group"/> -->
+        <!-- <unit bldFile="profilesapplication/profiles/profileaiwprovider/group"/> -->
+        <!-- <unit bldFile="profilesapplication/profiles/profileapp/group"/> -->
+        <!-- <unit bldFile="profilesapplication/profiles/profilesgstonesplugin/group"/> -->
+      </component>
+      <component id="profilesapplication_test" filter="s60" purpose="development" name="Profiles Application Test">
+      <!-- does this need to be built? -->
+        <!-- <unit bldFile="profilesapplication/tsrc/public/basic/group"/> -->
+      </component>
+      <component id="profile_help" filter="s60" name="Profiles Help">
+        <unit bldFile="help/group"/>
+      </component>
+    </collection>
+    <collection id="profile_info" name="Profiles Info" level="app">
+      <component id="profile_plat" filter="s60" name="Profiles Platform Interfaces" class="api">
+        <unit bldFile="profile_plat/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

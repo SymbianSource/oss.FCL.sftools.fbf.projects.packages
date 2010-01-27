@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="settingsuis" name="Settings UIs" levels="rsc ui">
+    <collection id="defaultapplicationsettings" name="Default Application Settings" level="rsc">
+      <component id="services_db" filter="s60" name="Services Database" introduced="^1">
+        <unit bldFile="defaultapplicationsettings/services_db/group"/>
+      </component>
+      <component id="defaultapplicationsettings_server" filter="s60" name="Default Application Server" introduced="^1">
+        <unit bldFile="defaultapplicationsettings/server/group"/>
+      </component>
+      <component id="service" filter="s60" name="Default Application Service" introduced="^1">
+        <unit bldFile="defaultapplicationsettings/service/group"/>
+      </component>
+      <component id="dasgsplugin" filter="s60" name="Default Application Settings GS Plugin" class="plugin" introduced="^1">
+        <unit bldFile="defaultapplicationsettings/gsplugin/group"/>
+      </component>
+      <component id="defaultapplicationsettings_build" filter="s60" name="Default Application Settings Build" introduced="^1">
+      	<!-- split the IBYs up into the appropriate components? Make this a ROM component? -->
+        <unit bldFile="defaultapplicationsettings/group"/>
+      </component>
+    </collection>
+    <collection id="systemswuis" name="System SW UIs" level="ui">
+      <component id="touchscreencalib" filter="s60" name="Touchscreen Calibration" introduced="^1">
+        <unit bldFile="systemswuis/touchscreencalib/group"/>
+      </component>
+    </collection>
+    <collection id="settingsuis_info" name="Settings UIs Info" level="ui">
+      <component id="devmngt_plat" filter="s60" class="api" name="Settings UIs Platform Interfaces" introduced="^1">
+        <unit bldFile="devmngt_plat/group"/>
+      </component>
+      <component id="devmngt_pub" filter="s60" class="api" name="Settings UIs Public Interfaces" introduced="^1">
+        <unit bldFile="devmngt_pub/group"/>
+      </component>
+      <component id="settingsuis_test" filter="s60,test" purpose="development" name="Settings UIs Test" introduced="^1">
+          <unit bldFile="devmngt_plat/services_db_api/tsrc/ServicesDbApiTest/group" introduced="^1"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

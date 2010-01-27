@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="mmsharinguis" name="Multimedia Sharing UIs" levels="base plugin if">
+    <collection id="mmsharing" name="Multimedia Sharing" level="base">
+      <component id="mmshavailability" filter="s60" name="Multimedia Sharing Availability">
+        <unit bldFile="mmsharing/mmshavailability/group"/>
+    	   <!-- is this test unit needed? -->
+        <!-- <unit bldFile="mmsharing/mmshavailability/tsrc/ut_availability/group"/> -->
+      </component>
+      <component id="mmshindicator" filter="s60" name="Multimedia Sharing Indicator">
+        <unit bldFile="mmsharing/mmshindicator/group"/>
+      	 <!-- are these test units needed? -->
+        <!-- <unit bldFile="mmsharing/mmshindicator/tsrc/indicatortestapp/group"/> -->
+        <!-- <unit bldFile="mmsharing/mmshindicator/tsrc/ut_indicator/group"/> -->
+      </component>
+      <!-- consider putting client and server in the same component -->
+      <component id="mmshmanagercli" filter="s60" name="Multimedia Sharing Manager Client">
+        <unit bldFile="mmsharing/mmshmanagercli/group"/>
+	       <!-- is this test unit needed? -->
+        <!-- <unit bldFile="mmsharing/mmshmanagercli/tsrc/ut_managercli/group"/> -->
+      </component>
+      <component id="mmshmanagersrv" filter="s60" name="Multimedia Sharing Manager Server">
+        <unit bldFile="mmsharing/mmshmanagersrv/group"/>
+	       <!-- is this test unit needed? -->
+        <!-- <unit bldFile="mmsharing/mmshmanagersrv/tsrc/ut_managersrv/group"/> -->
+      </component>
+      <component id="mmshengine" filter="s60" name="Multimedia Sharing Engine">
+        <unit bldFile="mmsharing/mmshengine/group"/>
+	       <!-- is this test unit needed? -->
+        <!-- <unit bldFile="mmsharing/mmshengine/tsrc/ut_engine/group"/> -->
+      </component>
+      <component id="mmshui" filter="s60" name="Multimedia Sharing UI">
+      	<!-- can only have one unti: need to #include one from the other if it's needed -->
+        <unit bldFile="mmsharing/mmshui/group"/>
+        <unit bldFile="mmsharing/mmshui/help/group"/>
+               <!-- is this test unit needed? -->
+        <!-- <unit bldFile="mmsharing/mmshui/tsrc/ut_ui/group"/> -->
+      </component>
+      <component id="mmsharing_build" filter="s60" name="MM Sharing Build">
+        <unit bldFile="mmsharing/group"/>
+      </component>
+    </collection>
+    <collection id="mmshplugins" name="Multimedia Sharing Plugins" level="plugin">
+      <component id="mmshaoplugin" filter="s60" name="Multimedia Sharing Always Online Plugin" class="plugin">
+        <unit bldFile="mmshplugins/mmshaoplugin/group"/>
+        <!-- <unit bldFile="mmshplugins/mmshaoplugin/tsrc/ut_aoplugin/group"/> -->
+      </component>
+      <component id="mmshaiwplugin" filter="s60" name="Multimedia Sharing AIW Plugin" class="plugin">
+        <unit bldFile="mmshplugins/mmshaiwplugin/group"/>
+        <!-- <unit bldFile="mmshplugins/mmshaiwplugin/tsrc/ut_aiwplugin/group"/> -->
+      </component>
+      <component id="mmshsipcrplugin" filter="s60" name="Multimedia Sharing SIP Client Resolver Plugin" class="plugin">
+        <unit bldFile="mmshplugins/mmshsipcrplugin/group"/>
+        <!-- <unit bldFile="mmshplugins/mmshsipcrplugin/tsrc/ut_sipcrplugin/group"/> -->
+      </component>
+      <component id="mmshsettingsuiplugin" filter="s60" name="Multimedia Sharing Settings UI Plugin" class="plugin">
+        <unit bldFile="mmshplugins/mmshsettingsuiplugin/group"/>
+      </component>
+      <component id="mmshwpadapterplugin" filter="s60" name="Multimedia Sharing WAP Provisioning Adapter" class="plugin">
+        <unit bldFile="mmshplugins/mmshwpadapterplugin/group"/>
+        <!-- <unit bldFile="mmshplugins/mmshwpadapterplugin/tsrc/ut_wpadapterplugin/group"/> -->
+      </component>
+      <component id="mmcctranscoder" filter="s60" name="MMCC Transcoder" class="plugin">
+     		<!-- MMCC? What's that stand for? -->
+        <unit bldFile="mmshplugins/mmcctranscoder/group"/>
+        <!-- <unit bldFile="mmshplugins/mmcctranscoder/tsrc/stubs/group"/> -->
+        <!-- <unit bldFile="mmshplugins/mmcctranscoder/tsrc/ut_transcoder/group"/> -->
+      </component>
+      <component id="mmshplugins_build" filter="s60" name="MM Sharing Plugins Build">
+        <unit bldFile="mmshplugins/group"/>
+      </component>
+    </collection>
+    <collection id="mmsharinguis_info" name="Multimedia Sharing UIs Info" level="if">
+      <component id="mmsharinguis_build" filter="s60" name="Multimedia Sharing UIs Build">
+      	<!--  consider distributing to other components -->
+        <unit bldFile="group"/>
+      </component>
+      <component id="mmsharinguis_plat" filter="s60" name="Multimedia Sharing UIs Platform Interfaces" class="api">
+        <unit bldFile="mmsharinguis_plat/group"/>
+        <!-- <unit bldFile="mmsharinguis_plat/multimedia_sharing_manager_api/tsrc/group"/> -->
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

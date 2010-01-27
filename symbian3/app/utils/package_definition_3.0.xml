@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="utils" name="Utility Apps" levels="app">
+    <collection id="extras" name="Extras" level="app">
+      <component id="about" filter="s60" name="About Application">
+        <unit bldFile="extras/about/group"/>
+      </component>
+      <component id="calcsoft" filter="s60" name="Calculator Application">
+        <unit bldFile="extras/calcsoft/group"/>
+      </component>
+      <component id="converter" filter="s60" name="Unit Converter">
+        <unit bldFile="extras/converter/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>
