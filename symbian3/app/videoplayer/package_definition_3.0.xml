@@ -160,7 +160,7 @@
       <component id="videoplayer_plat" filter="s60" name="Video Player Apps Platform Interfaces" class="api">
         <unit bldFile="videoplayer_plat/group"/>
       </component>
-      <component id="videoplayer_api_test" filter="s60,test" purpose="development" name="Video Player API Test">
+      <component id="videoplayer_api_test" filter="s60,apit_test" purpose="development" name="Video Player API Test">
      		<!--  can only have one unit, #include from a common bld.inf? -->
 	      <unit bldFile="videoplayer_plat/video_player_file_details_dialog_api/tsrc/group"/>
 	      <unit bldFile="videoplayer_plat/videoplayer_startup_api/tsrc/group"/>

@@ -130,7 +130,7 @@
       </component>
       <component id="widget" filter="s60" name="Email Widget" introduced="^2">
         <meta rel="config">
-        	<condition not-defined="FF_CMAIL_INTEGRATION"/>
+        	<not-defined condition="FF_CMAIL_INTEGRATION"/>
         </meta>      
         <unit bldFile="emailuis/widget/group"/>
       </component>

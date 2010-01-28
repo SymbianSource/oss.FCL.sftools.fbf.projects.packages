@@ -31,7 +31,7 @@
       </component>
       <component id="idlehomescreen_data" filter="s60" name="Idle Home Screen Data">
         <meta rel="config">
-        	<condition not-defined="FF_HOMESCREEN_COMMON_IDLEFW"/>
+        	<defined condition="FF_HOMESCREEN_COMMON_IDLEFW"/>
         		<!-- currently always on, so safe to define here for now -->
         </meta>
         <unit bldFile="idlehomescreen/data/group"/>
@@ -41,7 +41,6 @@
         <unit bldFile="idlehomescreen/group"/>
       </component>
       <component id="homescreen_test" filter="s60,test" purpose="development" name="Home Screen Apps Test">
-      	<!--  why isn't this #included from widgetmanager? -->
         <unit bldFile="idlehomescreen/widgetmanager/tsrc/wmunittest/group"/>
       </component>      
     </collection>

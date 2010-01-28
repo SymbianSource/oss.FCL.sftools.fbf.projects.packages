@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="voicerec" name="Voice Recorder Apps">
+  <!-- custom filter pref_test-->
     <collection id="voicerecorder" name="Voice Recorder">
     	<!--this is really a component, move down a directory -->
       <component id="voicerecorder_build" filter="s60" name="Voice Recorder Build">
@@ -8,8 +9,7 @@
       </component>
     </collection>
     <collection id="voicerec_info" name="Voice Recorder Apps Info">
-      <component id="voicerec_api_test" filter="s60,test" purpose="development" name="Voice Recorder Apps Test">
-      	<!-- can this just be #included in voicerec_plat?-->
+      <component id="voicerec_api_test" filter="s60,api_test,pref_test" purpose="development" name="Voice Recorder Apps Test">
         <unit bldFile="tsrc/group"/>
       </component>
       <component id="voicerec_plat" filter="s60" name="Voice Recorder Apps Platform Interfaces" class="api">

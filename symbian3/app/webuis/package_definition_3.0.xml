@@ -22,7 +22,6 @@
       <component id="browsergpsplugin" filter="s60" name="Browser GPS Plugin" class="plugin">
       	<meta rel="config">
       		<defined condition="__WEB_WIDGETS"/>
-      		<not-defined condition="__WEB_WIDGETS"/>
       	</meta>
         <unit bldFile="browserplugins/browsergpsplugin/group"/>
       </component>

@@ -1,46 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
- <!ATTLIST SystemDefinition
+<!ELEMENT SystemDefinition ( systemModel )>
+<!ATTLIST SystemDefinition
   name CDATA #REQUIRED
-  schema CDATA #REQUIRED>
- <!ELEMENT systemModel (layer+)>
- <!ELEMENT layer (block*|collection*)*>
- <!ATTLIST layer
+  schema CDATA #REQUIRED
+>
+<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
+
+<!-- System Model Section of DTD -->
+<!ELEMENT systemModel (layer+)>
+
+<!ELEMENT layer (block* | collection*)*>
+<!-- Kernel Services, Base Services, OS Services, Etc -->
+<!ATTLIST layer
   name CDATA #REQUIRED
   long-name CDATA #IMPLIED
   levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED>
- <!ELEMENT block (subblock*|collection*)*>
- <!ATTLIST block
+  span CDATA #IMPLIED
+>
+
+<!ELEMENT block (subblock* | collection*)*>
+ <!-- Generic OS services, Comms Services, etc -->
+<!ATTLIST block
   levels NMTOKENS #IMPLIED
   span CDATA #IMPLIED
   level NMTOKEN #IMPLIED
   name CDATA #REQUIRED
-  long-name CDATA #IMPLIED>
- <!ELEMENT subblock (collection)*>
- <!ATTLIST subblock
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED>
- <!ELEMENT collection (component)*>
- <!ATTLIST collection
+  long-name CDATA #IMPLIED
+>
+
+<!ELEMENT subblock (collection)*>
+<!-- Cellular Baseband Services, Networking Services, etc -->
+<!ATTLIST subblock
   name CDATA #REQUIRED
   long-name CDATA #IMPLIED
-  level NMTOKEN #IMPLIED>
- <!ELEMENT component (unit)*>
- <!ATTLIST component
+>
+
+<!ELEMENT collection (component)*>
+<!-- Screen Driver, Content Handling, etc -->
+<!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+>
+
+<!ELEMENT component (unit)*>
+<!-- contains units or is a  package or prebuilt -->
+<!ATTLIST component
   name CDATA #REQUIRED
   long-name CDATA #IMPLIED
   deprecated CDATA #IMPLIED
   introduced CDATA #IMPLIED
   contract CDATA #IMPLIED
-  plugin (Y|N) 'N'
+  plugin (Y|N) "N"
   filter CDATA #IMPLIED
   class NMTOKENS #IMPLIED
   supports CDATA #IMPLIED
-  purpose (optional|mandatory|development) 'optional'>
- <!ELEMENT unit EMPTY>
- <!ATTLIST unit
+  purpose ( optional | mandatory | development ) "optional"
+>
+
+<!ELEMENT unit EMPTY >
+<!-- must be buildable (bld.inf) -->
+<!-- bldFile  may someday be removed in favour of mrp -->
+<!ATTLIST unit
   mrp CDATA #IMPLIED
   filter CDATA #IMPLIED
   bldFile CDATA #IMPLIED
@@ -48,62 +70,111 @@
   version NMTOKEN #IMPLIED
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
-  priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
+  priority CDATA #IMPLIED
+>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="speechsrv" level="services" long-name="Speech Recognition UIs">
-<collection name="s60">
-<component name="speechsrv">
-<unit bldFile="/sf/app/speechsrv/group" mrp=""/>
-</component>
-</collection>
-</block>
-</layer>
-</systemModel>
+<SystemDefinition name="Symbian^3" schema="2.0.1">
+  <systemModel>
+    <layer name="app" long-name="Applications" levels="services apps">
+      <block name="speechsrv" level="services" long-name="Speech Recognition UIs" levels="engine framework ui">
+        <collection name="voiceui" long-name="Voice UI" level="ui">
+          <component name="vcommand" filter="s60" long-name="Voice Commands UI" introduced="^1">
+            <unit bldFile="/sf/app/speechsrv/voiceui/vcommand/group"/>
+          </component>
+          <component name="voiceuivoicerecognition" filter="s60" long-name="Voice UI Recognition" introduced="^1">
+            <unit bldFile="/sf/app/speechsrv/voiceui/voiceuivoicerecognition/group"/>
+          </component>
+          <component name="pbkinfoviewimpl" filter="s60" long-name="Phonebook Info View Implementation" introduced="^1">
+            <unit bldFile="/sf/app/speechsrv/voiceui/pbkinfoviewimpl/group"/>
+          </component>
+          <component name="aiwpbkinfoviewprovider" filter="s60" long-name="AIW Phonebook Info View Provider" introduced="^1" plugin="Y">
+            <unit bldFile="/sf/app/speechsrv/voiceui/aiwpbkinfoviewprovider/group"/>
+          </component>
+          <component name="vccontrolpanelplugin" filter="s60" long-name="Voice Commands Control Panel Plugin" introduced="^1" plugin="Y">
+            <unit bldFile="/sf/app/speechsrv/voiceui/vccontrolpanelplugin/group"/>
+          </component>
+          <component name="voiceui_build" filter="s60" long-name="Voice UI Build" introduced="^1">
+            <!--  can this be put into the other components? -->
+            <unit bldFile="/sf/app/speechsrv/voiceui/group"/>
+          </component>
+        </collection>
+        <collection name="srsf" long-name="Speech Recognition and Synthesis Framework" level="framework">
+          <component name="sispeechrecognitiondata" filter="s60" long-name="SI Speech Recognition Data">
+            <unit bldFile="/sf/app/speechsrv/srsf/sispeechrecognitiondata/group"/>
+          </component>
+          <component name="ttscommon" filter="s60" long-name="TTS Common">
+            <unit bldFile="/sf/app/speechsrv/srsf/ttscommon/group"/>
+          </component>
+          <component name="devtts" filter="s60" long-name="Text to Speech">
+            <unit bldFile="/sf/app/speechsrv/srsf/devtts/group"/>
+          </component>
+          <component name="ttscustomcommands" filter="s60" long-name="TTS Custom Commands">
+            <unit bldFile="/sf/app/speechsrv/srsf/ttscustomcommands/group"/>
+          </component>
+          <component name="ttscontrollerplugin" filter="s60" long-name="TTS Controller Plugin" plugin="Y">
+            <unit bldFile="/sf/app/speechsrv/srsf/ttscontrollerplugin/group"/>
+          </component>
+          <component name="ttsutility" filter="s60" long-name="TTS Utility">
+            <unit bldFile="/sf/app/speechsrv/srsf/ttsutility/group"/>
+          </component>
+          <component name="speechsynthesis" filter="s60" long-name="Speech Synthesis">
+            <!-- can only have one unit. #include these from a common bld.inf -->
+            <unit bldFile="/sf/app/speechsrv/srsf/speechsynthesis/client/group"/>
+            <unit bldFile="/sf/app/speechsrv/srsf/speechsynthesis/server/group"/>
+          </component>
+          <component name="devasr" filter="s60" long-name="Audio Recording and Speech Recognition">
+            <unit bldFile="/sf/app/speechsrv/srsf/devasr/group"/>
+          </component>
+          <component name="sicc" filter="s60" long-name="Speaker Independent Custom Commands">
+            <unit bldFile="/sf/app/speechsrv/srsf/sicc/group"/>
+          </component>
+          <component name="sisrscontrollerplugin" filter="s60" long-name="SI SRS Controller Plugin" plugin="Y">
+            <unit bldFile="/sf/app/speechsrv/srsf/sisrscontrollerplugin/group"/>
+          </component>
+          <component name="siutility" filter="s60" long-name="Speaker Independent Utility">
+            <unit bldFile="/sf/app/speechsrv/srsf/siutility/group"/>
+          </component>
+          <component name="nssvasapi" filter="s60" long-name="NSS VAS API">
+            <unit bldFile="/sf/app/speechsrv/srsf/nssvasapi/group"/>
+          </component>
+          <component name="nssvascontacthdlr" filter="s60" long-name="NSS VAS Contact Handler">
+            <unit bldFile="/sf/app/speechsrv/srsf/nssvascontacthdlr/group"/>
+          </component>
+          <component name="vcommandhandler" filter="s60" long-name="Voice Command Handler">
+            <unit bldFile="/sf/app/speechsrv/srsf/vcommandhandler/group"/>
+          </component>
+          <component name="vuiphandler" filter="s60" long-name="Voice UI Plugin Handler">
+            <unit bldFile="/sf/app/speechsrv/srsf/vuiphandler/group"/>
+          </component>
+          <component name="vcommandexecutor" filter="s60" long-name="Voice Command Executor">
+            <unit bldFile="/sf/app/speechsrv/srsf/vcommandexecutor/group"/>
+          </component>
+          <component name="vcommandexecutorbearer" filter="s60" long-name="Voice Command Executor Bearer">
+            <unit bldFile="/sf/app/speechsrv/srsf/vcommandexecutorbearer/group"/>
+          </component>
+          <component name="vcommandmanager" filter="s60" long-name="Voice Command Manager">
+            <unit bldFile="/sf/app/speechsrv/srsf/vcommandmanager/group"/>
+          </component>
+          <component name="vcexecutorapp" filter="s60" long-name="Voice Command Executor Application">
+            <unit bldFile="/sf/app/speechsrv/srsf/vcexecutorapp/group"/>
+          </component>
+          <component name="profileobserverplugin" filter="s60" long-name="Profile Observer Plugin" plugin="Y">
+            <unit bldFile="/sf/app/speechsrv/srsf/profileobserverplugin/group"/>
+          </component>
+          <component name="srsf_build" filter="s60" long-name="Speech Recognition and Synthesis Framework Build">
+            <!-- should distribute this into the above components -->
+            <unit bldFile="/sf/app/speechsrv/srsf/group"/>
+          </component>
+        </collection>
+        <collection name="speechsrv_info" long-name="Speech Recognition UIs Info" level="ui">
+          <component name="speechsrv_test" filter="s60,test" purpose="development" long-name="Speech Recognition UIs Test">
+            <unit bldFile="/sf/app/speechsrv/tsrc/group"/>
+          </component>
+          <component name="speechsrv_plat" filter="s60" long-name="Speech Recognition UIs Platform Interfaces" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/group"/>
+          </component>
+        </collection>
+      </block>
+    </layer>
+  </systemModel>
 </SystemDefinition>
