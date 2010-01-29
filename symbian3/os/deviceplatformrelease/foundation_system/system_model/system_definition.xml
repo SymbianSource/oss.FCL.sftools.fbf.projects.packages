@@ -193,8 +193,8 @@
       <package id="utils" level="apps" tech-domain="pr" href="../../../../app/utils/package_definition_3.0.xml"/>
       <package id="dictionary" level="services" tech-domain="pr" href="../../../../app/dictionary/package_definition_3.0.xml"/>
       <package id="camera" level="apps" tech-domain="ma" href="../../../../app/camera/package_definition_3.0.xml"/>
-      <package id="imgeditor" level="apps" tech-domain="ma" name="Image Editor Apps"/>
-      <package id="videoeditor" level="apps" tech-domain="ma" name="Video Editor Apps"/>
+      <package id="imgeditor" level="apps" tech-domain="ma" href="../../../../app/imgeditor/package_definition_3.0.xml"/>
+      <package id="videoeditor" level="apps" tech-domain="ma" href="../../../../app/videoeditor/package_definition_3.0.xml"/>
       <package id="videoplayer" level="apps" tech-domain="ma" href="../../../../app/videoplayer/package_definition_3.0.xml"/>
       <package id="photos" level="apps" tech-domain="ma" href="../../../../app/photos/package_definition_3.0.xml"/>
       <package id="musicplayer" level="apps" tech-domain="ma" href="../../../../app/musicplayer/package_definition_3.0.xml"/>

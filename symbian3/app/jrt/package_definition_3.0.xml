@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="jrt" name="Java Runtime" levels="util generic rt ui">
+    <collection id="java_stubs" name="Java Stubs" level="util">
+   	<meta rel="config">
+   		<defined condition="__JAVA_STUBS"/>
+   	</meta>  
+      <component id="javadrmutils" name="Java DRM Utils" filter="s60">
+       <unit bldFile="java_stubs/jrtdrmutils/group"/>
+     </component>
+      <component id="javaenvinfo" name="Java Environment Info" filter="s60">
+       <unit bldFile="java_stubs/jrtenvinfo/group"/>
+     </component>
+      <component id="javaregistry" filter="s60" name="Java Registry">
+        <unit bldFile="java_stubs/jrtregistry/clientserver/client/group"/>
+      </component>
+      <component id="java_stubs_build" filter="s60" name="Java Stubs ROM">
+		<!-- Remove the #includes and rename JRT ROM-->
+        <unit bldFile="java_stubs/group"/>
+      </component>
+    </collection>
+    <collection id="jrt_info" name="JRT Info" level="rt">
+      <component id="jrt_plat" filter="s60" name="JRT Platform Interfaces" class="api">
+        <unit bldFile="jrt_plat/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>
