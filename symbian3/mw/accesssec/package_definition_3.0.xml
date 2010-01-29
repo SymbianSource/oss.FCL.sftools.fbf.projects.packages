@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="accesssec" name="Access Security" levels="plugin framework server generic specific">
+    <collection id="wlansecuritysettings" name="WLAN Security Settings" level="specific">
+      <component id="wapisecuritysettingsui" filter="s60" name="WAPI Security Settings UI" introduced="9.1">
+        <unit bldFile="wlansecuritysettings/wapisecuritysettingsui/stub/group"/>
+      </component>
+      <component id="wepsecuritysettingsui" filter="s60" name="WEP Security Settings UI" introduced="9.1">
+        <unit bldFile="wlansecuritysettings/wepsecuritysettingsui/group"/>
+      </component>
+      <component id="wifiprotectedsetup" filter="s60" name="WIFI Protected Setup" introduced="^1">
+        <unit bldFile="wlansecuritysettings/wifiprotectedsetup/group"/>
+      </component>
+      <component id="wlaneapsettingsui" filter="s60" name="WLAN EAP Settings UI" introduced="9.3">
+        <unit bldFile="wlansecuritysettings/wlaneapsettingsui/group"/>
+      </component>
+      <component id="wpasecuritysettingsui" filter="s60" name="WPA Security Settings UI" introduced="9.1">
+        <unit bldFile="wlansecuritysettings/wpasecuritysettingsui/group"/>
+      </component>
+    </collection>
+    <collection id="eapol" name="EAPOL" level="framework">
+      <component id="eapol_framework" filter="s60" name="EAPOL Framework" introduced="9.2">
+        <unit bldFile="eapol/eapol_framework/eapol_symbian/group"/>
+      </component>
+    </collection>
+    <collection id="accesssec_info" name="Access Security Info" level="specific">
+      <component id="accesssec_plat" filter="s60" name="Access Security Platform Interfaces" class="api">
+        <unit bldFile="accesssec_plat/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

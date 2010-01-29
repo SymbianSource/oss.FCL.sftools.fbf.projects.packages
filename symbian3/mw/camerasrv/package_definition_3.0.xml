@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="camerasrv" name="Camera Services" levels="plugin fw api">
+    <collection id="camappengine" name="Camera App Engine" level="fw">
+      <component id="stillconverter" filter="s60" name="Still Image Converter">
+        <!-- <unit bldFile="camappengine/stillconverter/group"/> -->
+      </component>
+      <component id="camappengine_engine" filter="s60" name="Camera App Engine">
+		<!-- should separate this from parent engine's bld.inf  -->
+        <!-- <unit bldFile="camappengine/engine/group"/> -->
+      </component>
+      <component id="asynchfilesavequeue" filter="s60" name="Asynch File Save Queue">
+        <unit bldFile="camappengine/asynchfilesavequeue/group"/>
+		<!-- should next bld.inf be #included in previous? -->
+        <!-- <unit bldFile="camappengine/asynchfilesavequeue/tsrc/public/basic/group"/> -->
+      </component>
+      <component id="camappengine_build" filter="s60" name="Camera App Engine Build">
+        <unit bldFile="camappengine/build"/>
+      </component>
+    </collection>
+    <collection id="camcordermmfplugin" name="Camcorder MMF Plugin" level="plugin">
+      <component id="mediarecorder" filter="s60" name="Camcorder Media Recorder">
+        <!-- <unit bldFile="camcordermmfplugin/mediarecorder/group"/> -->
+      </component>
+      <component id="filecomposer" filter="s60" name="File Composer">
+        <!-- <unit bldFile="camcordermmfplugin/filecomposer/group"/> -->
+      </component>
+      <component id="camcordermmfplugin_controller" filter="s60" name="Camcorder Controller MMF Plugin" class="plugin">
+        <!-- <unit bldFile="camcordermmfplugin/controller/group"/> -->
+      </component>
+      <component id="camcordermmfplugin_test" filter="s60" name="Camcorder MMF Plugin Test" purpose="development">
+        <!-- <unit bldFile="camcordermmfplugin/tsrc/public/basic/group"/> -->
+      </component>
+      <component id="camcordermmfplugin_build" filter="s60" name="Camcorder MMF Plugin Build">
+		<!-- should split this into individual bld.inf files for the above components, or collapse all into a single component? -->
+        <unit bldFile="camcordermmfplugin/build"/>
+      </component>
+    </collection>
+    <collection id="configmanagers" name="Config Managers" level="api">
+      <component id="imagingconfigmanager" filter="s60" name="Imaging Config Manager">
+        <unit bldFile="configmanagers/imagingconfigmanager/group"/>
+		<!-- should this test be #included in the above? -->
+        <!-- <unit bldFile="configmanagers/imagingconfigmanager/tsrc/public/basic/group"/> -->
+      </component>
+    </collection>
+    <collection id="camerasrv_info" name="Camera Services Info" level="api">
+      <component id="camerasrv_plat" filter="s60" name="Camera Services Platform Interfaces" class="api">
+        <unit bldFile="camerasrv_plat/group"/>
+		<!-- should below tests be #included? -->
+        <!-- <unit bldFile="camerasrv_plat/asynchronous_file_saving_queue_api/tsrc/group"/> -->
+        <!-- <unit bldFile="camerasrv_plat/camera_application_engine_api/tsrc/group"/> -->
+        <!-- <unit bldFile="camerasrv_plat/imaging_configuration_manager_api/tsrc/group"/> -->
+        <!-- <unit bldFile="camerasrv_plat/media_recorder_api/tsrc/group"/> -->
+      </component>
+      <component id="camerasrv_build" filter="s60" name="Camera Services Build">
+		<!-- should split into individual bld.infs -->
+        <unit bldFile="group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

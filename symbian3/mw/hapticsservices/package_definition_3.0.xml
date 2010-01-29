@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="hapticsservices" name="Haptics Services" levels="fw api">
+    <collection id="tactilefeedback" name="Tactile Feedback" level="fw">
+      <component id="tactilearearegistry" filter="s60" name="Tactile Area Registry" introduced="^1">
+        <unit bldFile="tactilefeedback/tactilearearegistry/group"/>
+      </component>
+      <component id="tactilefeedbackclient" filter="s60" name="Tactile Feedback Client" introduced="^1">
+        <unit bldFile="tactilefeedback/tactilefeedbackclient/group"/>
+      </component>
+      <component id="tactilefeedback_build" filter="s60" name="Tactile Feedback Build" introduced="^1">
+		<!-- consider moving IBY to one fo the above components -->
+        <unit bldFile="tactilefeedback/group"/>
+      </component>
+    </collection>
+    <collection id="hapticsservices_info" name="Haptics Services Info" level="api">
+      <component id="hapticsservices_pub" filter="s60" name="Haptics Services Public Interfaces" class="api" introduced="^1">
+        <unit bldFile="hapticsservices_pub/group"/>
+      </component>
+      <component id="hapticsservices_plat" filter="s60" name="Haptics Services Platform Interfaces" class="api" introduced="^1">
+        <unit bldFile="hapticsservices_plat/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

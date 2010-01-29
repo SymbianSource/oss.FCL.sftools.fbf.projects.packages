@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="appsupport" name="Generic Application Support" levels="system plugin framework server generic specific">
+    <collection id="sysresmonitoring" name="System Resource Monitoring" level="system">
+      <component id="oodmonitor" filter="s60" name="OOD Monitor" introduced="7.0s">
+        <unit bldFile="sysresmonitoring/oodmonitor/group"/>
+      </component>
+      <component id="oommonitor" filter="s60" name="OOM Monitor" introduced="7.0s">
+        <unit bldFile="sysresmonitoring/oommonitor/group"/>
+        <!-- <unit bldFile="sysresmonitoring/oommonitor/tsrc/public/basic/group"/> -->
+      </component>
+    </collection>
+    <collection id="flashliteapi_3_1" name="Flash Lite API 3.1" level="specific">
+      <component id="viewerfw" name="Flash Viewer Framework" filter="s60" class="api" introduced="^2">
+        <!--no real bld.inf --> 
+        <unit base="flashliteapi_3_1/viewerfw"/>
+      </component>
+    </collection>
+    <collection id="contextframework" name="Context Framework" level="framework">
+      <component id="cfw" filter="s60" name="Context Framework">
+        <unit bldFile="contextframework/cfw/group"/>
+        <!-- <unit bldFile="contextframework/cfw/tsrc/cfwtest/group"/> -->
+        <!-- <unit bldFile="contextframework/cfw/tsrc/public/basic/group"/> -->
+      </component>
+      <component id="cfwplugins" filter="s60" name="Context Framework Plugins" class="plugin">
+        <unit bldFile="contextframework/cfwplugins/group"/>
+      </component>
+      <component id="contextframework_build" filter="s60" name="Context Framework Build">
+        <unit bldFile="contextframework/group"/>
+      </component>
+    </collection>
+    <collection id="mediakeys" name="Media Keys" level="plugin">
+      <component id="keypublisherplugin" filter="s60" name="Key Publisher Plugin" class="plugin">
+        <!-- <unit bldFile="mediakeys/keypublisherplugin/group"/> -->
+      </component>
+      <component id="mmkeybearer" filter="s60" name="MM Key Bearer" class="plugin">
+        <!-- <unit bldFile="mediakeys/mmkeybearer/group"/> -->
+      </component>
+      <component id="mediakeys_build" filter="s60" name="Media Keys Build">
+        <unit bldFile="mediakeys/group"/>
+      </component>
+    </collection>
+    <collection id="coreapplicationuis" name="Core Application UIs" level="server">
+      <component id="dbrecovery" filter="s60" name="Database Recovery">
+        <unit bldFile="coreapplicationuis/dbrecovery/group"/>
+      </component>
+      <component id="nspswsplugin" filter="s60" name="NSPS WS Plugin" class="plugin">
+          <!-- No Service Power Save? Window Server?-->
+        <unit bldFile="coreapplicationuis/nspswsplugin/group"/>
+      </component>
+      <component id="rfs" filter="s60" name="Restore Factory Settings">
+        <unit bldFile="coreapplicationuis/rfs/group"/>
+        <!-- <unit bldFile="coreapplicationuis/rfs/plugins/gsrfsplugin/group"/> -->
+      </component>
+      <component id="rfsplugins" filter="s60" name="Restore Factory Settings Plugins" class="plugin">
+        <unit bldFile="coreapplicationuis/rfsplugins/group"/>
+        <!-- <unit bldFile="coreapplicationuis/rfsplugins/tsrc/rfspluginstest/group"/> -->
+        <!-- <unit bldFile="coreapplicationuis/rfsplugins/tsrc/rfspluginstest/rfstestapp/group"/> -->
+      </component>
+      <component id="sysap" filter="s60" name="System Application">
+        <unit bldFile="coreapplicationuis/sysap/group"/>
+      </component>
+      <component id="variatedsettings" filter="s60" name="Variated Settings" class="config">
+        <unit bldFile="coreapplicationuis/variatedsettings/group"/>
+      </component>
+      <component id="accfwuinotifier" filter="s60" name="Accessory Framework UI Notifier" class="plugin">
+        <unit bldFile="coreapplicationuis/accfwuinotifier/group"/>
+      </component>
+      <component id="kefmapper" filter="s60" name="Key Event Framework">
+        <unit bldFile="coreapplicationuis/kefmapper/group"/>
+      </component>
+      <component id="advancedtspcontroller" filter="s60" name="Advanced TSP Controller">
+        <unit bldFile="coreapplicationuis/advancedtspcontroller/group"/>
+        <!-- <unit bldFile="coreapplicationuis/advancedtspcontroller/tsrc/mt_atspc/group"/> -->
+        <!-- <unit bldFile="coreapplicationuis/advancedtspcontroller/tsrc/stub/group"/> -->
+      </component>
+      <component id="powersaveutilities" filter="s60" name="Power Save Utilities">
+        <unit bldFile="coreapplicationuis/powersaveutilities/group"/>
+        <!-- <unit bldFile="coreapplicationuis/powersaveutilities/tsrc/public/basic/group"/> -->
+      </component>
+      <component id="gsserver" filter="s60" name="General Settings Server">
+        <unit bldFile="coreapplicationuis/gsserver/group"/>
+      </component>
+      <component id="gsserverengine" filter="s60" name="GS Server Engine">
+        <unit bldFile="coreapplicationuis/gsserverengine/group"/>
+      </component>
+      <component id="gsserverenginestub" filter="s60" name="GS Server Engine Stub">
+        <unit bldFile="coreapplicationuis/gsserverenginestub/group"/>
+      </component>
+      <component id="sensordatacompensatorplugin" filter="s60" name="Sensor Data Compensator Plugin" class="plugin">
+        <unit bldFile="coreapplicationuis/sensordatacompensatorplugin/group"/>
+        <!-- <unit bldFile="coreapplicationuis/sensordatacompensatorplugin/tsrc/sensordatacompensatorplgtest/data/group"/> -->
+        <!-- <unit bldFile="coreapplicationuis/sensordatacompensatorplugin/tsrc/sensordatacompensatorplgtest/group"/> -->
+      </component>
+      <component id="coreapplicationuis_test" filter="s60" name="Core Application UIs Test" purpose="development">
+        <!-- <unit bldFile="coreapplicationuis/tsrc/public/basic/group"/> -->
+      </component>
+    </collection>
+    <collection id="startupservices" name="Startup Services" level="system">
+      <component id="startup" name="Startup Application" filter="s60">
+        <unit bldFile="startupservices/startup/group"/>
+        <!-- <unit bldFile="startupservices/startup/mediatorplugin/group"/> -->
+        <!-- <unit bldFile="startupservices/startup/startupsyncplugin/group"/> -->
+        <!-- <unit bldFile="startupservices/startup/systemerrorplugin/group"/> -->
+      </component>
+      <component id="splashscreen" filter="s60" name="Splash Screen">
+        <unit bldFile="startupservices/splashscreen/group"/>
+      </component>
+      <component id="startupanimation" filter="s60" name="Startup Animation">
+        <unit bldFile="startupservices/startupanimation/group"/>
+      </component>
+    </collection>
+    <collection id="systemsettings" name="System Settings" level="system">
+      <component id="gssensorplugin" filter="s60" name="GS Sensor Plugin" class="plugin">
+        <unit bldFile="systemsettings/gssensorplugin/group"/>
+      </component>
+      <component id="gsaccessoryplugin" filter="s60" name="GS Accessory Plugin" class="plugin">
+        <unit bldFile="systemsettings/gsaccessoryplugin/group"/>
+      </component>
+    </collection>
+    <collection id="filehandling" name="File Handling" level="server">
+      <component id="fileconverterfw" name="File Converter Framework" purpose="optional">
+        <unit bldFile="filehandling/fileconverterfw/group" mrp="filehandling/fileconverterfw/group/app-framework_conarc.mrp"/>
+      </component>
+      <component id="htmltorichtextconverter" name="HTML to RichText Converter" introduced="7.0" purpose="optional" class="plugin">
+        <unit bldFile="filehandling/htmltorichtextconverter/group" mrp="filehandling/htmltorichtextconverter/group/app-services_chtmltocrtconv.mrp"/>
+      </component>
+      <component id="richtexttohtmlconverter" name="RichText to HTML Converter" introduced="7.0s" purpose="optional" class="plugin">
+        <unit bldFile="filehandling/richtexttohtmlconverter/Group" mrp="filehandling/richtexttohtmlconverter/Group/app-services_richtexttohtmlconv.mrp"/>
+      </component>
+    </collection>
+	<collection id="hwresourceadaptation" name="Hardware Resource Adaptation" level="generic">
+      <component id="hwresourcemgruiplugin" name="Hardware Resource Manager UI Plugin" introduced="^2" purpose="optional" class="plugin">
+        <unit bldFile="hwresourceadaptation/hwresourcemgruiplugin/group" mrp="hwresourceadaptation/hwresourcemgruiplugin/group/telephony_hwrmuiplugin.mrp"/>
+      </component>
+    </collection>
+    <collection id="commonappservices" name="Common Application Services" level="framework">
+      <component id="alarmserver" name="Alarm Server" introduced="7.0" purpose="optional">
+        <unit bldFile="commonappservices/alarmserver/Group" mrp="commonappservices/alarmserver/Group/app-services_alarmserver.mrp"/>
+      </component>
+      <component id="alarmservertest" name="Alarm Server Test" deprecated="^3" introduced="8.1" purpose="development">
+        <unit bldFile="commonappservices/alarmservertest/TestAlarmSrv" mrp="commonappservices/alarmservertest/TestAlarmSrv/app-services_testalarmsrv.mrp"/>
+      </component>
+      <component id="coreappstest" name="Core Apps Test" introduced="8.1" purpose="development" filter="test">
+        <unit mrp="commonappservices/coreappstest/Group/app-services_CoreAppsTest.mrp" bldFile="commonappservices/coreappstest/Group"/>
+      </component>
+      <component id="appservicesdocs" name="Application Services Documentation" purpose="development" class="doc">
+        <unit mrp="commonappservices/appservicesdocs/app-services_documentation.mrp"/>
+      </component>
+      <component id="backuprestorenotification" name="Backup Restore Notification" introduced="8.1" purpose="optional">
+        <unit bldFile="commonappservices/backuprestorenotification/group" mrp="commonappservices/backuprestorenotification/group/app-services_BackupRestoreNotification.mrp"/>
+      </component>
+    </collection>
+    <collection id="tzservices" name="Time Zone Services" level="plugin">
+      <component id="tzserver" name="Time Zone Server" introduced="9.1" purpose="optional">
+        <unit bldFile="tzservices/tzserver/group" mrp="tzservices/tzserver/group/app-services_tz.mrp"/>
+      </component>
+      <component id="tzloc" name="Time Zone Localization" introduced="9.1" purpose="optional">
+        <unit bldFile="tzservices/tzloc/group" mrp="tzservices/tzloc/group/app-services_timezonelocalization.mrp"/>
+      </component>
+      <component id="tzlocrscfactory" name="Time Zone Localization Resource Factory" introduced="9.1" purpose="optional" class="config">
+        <unit bldFile="tzservices/tzlocrscfactory/group" mrp="tzservices/tzlocrscfactory/group/app-services_tzlocalizationrscfactory.mrp"/>
+      </component>
+      <component id="tzdatabase" name="Time Zone Database" introduced="9.1" purpose="optional" class="config">
+        <unit bldFile="tzservices/tzdatabase/group" mrp="tzservices/tzdatabase/group/app-services_tzdb.mrp"/>
+      </component>
+    </collection>
+    <collection id="contenthandling" name="Content Handling" level="plugin">
+      <component id="webrecognisers" name="Web Recognisers" purpose="optional" class="plugin">
+        <unit bldFile="contenthandling/webrecognisers/group" mrp="contenthandling/webrecognisers/group/application-protocols_recognisers.mrp"/>
+      </component>
+    </collection>
+    <collection id="openenvutils" name="Open Environment Utilities" level="specific">
+      <component id="commandshell" name="Command Shell" introduced="^3" purpose="development">
+        <unit bldFile="openenvutils/commandshell/group" mrp="openenvutils/commandshell/group/oetools_zsh.mrp"/>
+      </component>
+      <component id="telnetserver" name="Telnet Server" introduced="^3" purpose="development">
+        <unit bldFile="openenvutils/telnetserver/group" mrp="openenvutils/telnetserver/group/oetools_telnetd.mrp"/>
+      </component>
+    </collection>
+    <collection id="printingsupport" name="Printing Support" level="generic">
+      <component id="printinguisupport" name="Printing UI Support" purpose="optional" introduced="^2" deprecated="^3">
+        <unit bldFile="printingsupport/printinguisupport/group" mrp="printingsupport/printinguisupport/group/app-framework_print.mrp"/>
+      </component>
+    </collection>
+    <collection id="appfw" name="Application Framework" level="framework">
+      <component id="apparchitecture" name="Application Architecture" purpose="mandatory">
+        <unit bldFile="appfw/apparchitecture/group" mrp="appfw/apparchitecture/group/app-framework_apparc.mrp"/>
+      </component>
+      <component id="viewserver" name="View Server" introduced="6.0" purpose="mandatory">
+        <unit bldFile="appfw/viewserver/group" mrp="appfw/viewserver/group/app-framework_viewsrv.mrp"/>
+      </component>
+      <component id="uiftestfw" name="UIF Test Framework" introduced="9.2" purpose="development" filter="test">
+        <unit mrp="appfw/uiftestfw/group/app-framework_testframework.mrp" bldFile="appfw/uiftestfw/group"/>
+      </component>
+    </collection>
+    <collection id="applaunchservices" name="Application Launch Services" level="generic">
+      <component id="aftermarketappstarter" name="After Market Application Starter" introduced="^3" purpose="optional">
+        <unit bldFile="applaunchservices/aftermarketappstarter/group" mrp="applaunchservices/aftermarketappstarter/group/app-framework_amastart.mrp"/>
+      </component>
+      <component id="applaunchplugins" name="Application Launch Plugins" introduced="^3" purpose="optional">
+        <unit bldFile="applaunchservices/applaunchplugins/group" mrp="applaunchservices/applaunchplugins/group/app-framework_aplp.mrp"/>
+      </component>
+    </collection>
+    <collection id="tzpcside" name="Time Zone PC Side" level="plugin">
+      <component id="tzcompiler" name="Time Zone Compiler" introduced="9.1" purpose="optional" class="config" target="desktop">
+        <unit bldFile="tzpcside/tzcompiler/group" mrp="tzpcside/tzcompiler/group/app-services_tzcompiler.mrp"/>
+      </component>
+    </collection>
+    <collection id="appsupport_info" name="Generic Application Support Info" level="specific">
+      <component id="appsupport_plat" filter="s60" name="Generic Application Support Platform Interfaces" class="api">
+        <unit bldFile="appsupport_plat/group"/>
+      </component>
+      <component id="appsupport_pub" filter="s60" name="Generic Application Support Public Interfaces" class="api">
+        <unit bldFile="appsupport_pub/group"/>
+        <!-- <unit bldFile="appsupport_pub/flash_viewer_framework_api/tsrc/bc/flashviewerframework/group"/> -->
+        <!-- <unit bldFile="appsupport_pub/network_status_api/tsrc/bc/networkstatus/group"/> -->
+      </component>
+      <component id="appsupport_metadata" name="Generic Application Support Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+        <unit mrp="appsupport_info/appsupport_metadata/appsupport_metadata.mrp"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

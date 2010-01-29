@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="gsprofilesrv" name="General Settings and Profiles Services" levels="system plugin framework server generic specific">
+    <collection id="gssettingsuis" name="General Settings UIs" level="framework">
+      <component id="gs" filter="s60" name="General Settings" introduced="9.2">
+        <unit bldFile="gssettingsuis/gs/group"/>
+      </component>
+    </collection>
+    <collection id="profilesservices" name="Profiles Services" level="server">
+      <component id="profileengine" filter="s60" name="Profile Engine" introduced="9.1">
+        <unit bldFile="profilesservices/profileengine/group"/>
+      </component>
+      <component id="filelist" filter="s60" name="File List" introduced="9.1">
+        <unit bldFile="profilesservices/filelist/group"/>
+      </component>
+      <component id="mediafilelist" filter="s60" name="Media File List" introduced="^2">
+        <unit bldFile="profilesservices/mediafilelist/group"/>
+      </component>
+      <component id="ringingtone3dplugin" filter="s60" name="Ringing Tone 3D Plugin" class="plugin" introduced="^2">
+        <unit bldFile="profilesservices/ringingtone3dplugin/group"/>
+      </component>
+    </collection>
+    <collection id="gsprofilesrv_info" name="GS and Profiles Services Info" level="specific">
+      <component id="gsprofilesrv_plat" filter="s60" name="GS and Profiles Services Platform Interfaces" class="api">
+        <unit bldFile="gsprofilesrv_plat/group"/>
+      </component>
+      <component id="gsprofilesrv_pub" filter="s60" name="GS and Profiles Services Public Interfaces" class="api">
+        <unit bldFile="gsprofilesrv_pub/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>
