@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="inputmethods" name="Input Methods" levels="plugin engine framework">
+    <collection id="textinput" name="Text Input" level="framework">
+      <component id="ptienginev2" filter="s60" name="Predictive Text Input Engine">
+        <unit bldFile="textinput/ptienginev2/group"/>
+      </component>
+      <component id="akninputlanguage" filter="s60" name="Avkon Input Language">
+        <unit bldFile="textinput/akninputlanguage/group"/>
+      </component>
+      <component id="peninputarc" filter="s60" name="Pen Input Arc">
+        <unit bldFile="textinput/peninputarc/group"/>
+        <!-- <unit bldFile="textinput/peninputarc/src/peninputserverapp"/> -->
+        <!-- <unit bldFile="textinput/peninputarc/utils/group"/> -->
+      </component>
+      <component id="peninputcommonctrls" filter="s60" name="Pen Input Common Controls">
+        <unit bldFile="textinput/peninputcommonctrls/group"/>
+      </component>
+      <component id="peninputcommonlayout" filter="s60" name="Pen Input Common Layout">
+        <unit bldFile="textinput/peninputcommonlayout/group"/>
+      </component>
+      <component id="peninputgenerichwr" filter="s60" name="Pen Input Generic Handwriting Recognition" class="plugin">
+        <unit bldFile="textinput/peninputgenerichwr/group"/>
+      </component>
+      <component id="peninputgenericvkb" filter="s60" name="Pen Input Generic Virtual Keyboard" class="plugin">
+        <unit bldFile="textinput/peninputgenericvkb/group"/>
+      </component>
+      <component id="peninputhwrboxcn" filter="s60" name="Chinese Handwriting Recognition Box" class="plugin">
+        <unit bldFile="textinput/peninputhwrboxcn/group"/>
+      </component>
+      <component id="peninputvkbcn" filter="s60" name="Chinese Virtual Keyboard" class="plugin">
+        <unit bldFile="textinput/peninputvkbcn/group"/>
+      </component>
+      <component id="peninputcommonctrlsjp" filter="s60" name="Pen Input Common Controls Japanese">
+        <unit bldFile="textinput/peninputcommonctrlsjp/group"/>
+      </component>
+      <component id="peninputhwrboxjp" filter="s60" name="Japanese Handwriting Recognition Box" class="plugin">
+        <unit bldFile="textinput/peninputhwrboxjp/group"/>
+      </component>
+      <component id="peninputvkbjp" filter="s60" name="Japanese Virtual Keyboard" class="plugin">
+        <unit bldFile="textinput/peninputvkbjp/group"/>
+      </component>
+      <component id="textinput_build" filter="s60" name="Text Input Build">
+       <!--needs #ifdef moved to confguration or individual bld.inf files -->
+        <unit bldFile="textinput/group"/>
+      </component>
+      <component id="gslangplugin" filter="s60" name="GS Language Plugin" class="plugin">
+        <unit bldFile="textinput/gslangplugin"/>
+      </component>
+    </collection>
+    <collection id="fep" name="FEP" level="engine">
+      <component id="aknfep" filter="s60" name="Avkon FEP" class="plugin">
+        <unit bldFile="fep/aknfep/group"/>
+        <!-- <unit bldFile="fep/aknfep/peninputplugins/peninputimeplugincn/group"/> -->
+        <!-- <unit bldFile="fep/aknfep/peninputplugins/peninputimeplugingeneric/group"/> -->
+        <!-- <unit bldFile="fep/aknfep/peninputplugins/peninputimepluginitut/group"/> -->
+        <!-- <unit bldFile="fep/aknfep/peninputplugins/peninputimepluginjp/group"/> -->
+        <!-- <unit bldFile="fep/aknfep/uiplugins/aknfepuiinterface/avkonimpl/group"/> -->
+        <!-- <unit bldFile="fep/aknfep/uiplugins/aknfepuiinterface/group"/> -->
+      </component>
+      <component id="frontendprocessor" name="Front End Processor" purpose="mandatory">
+        <unit bldFile="fep/frontendprocessor/group" mrp="fep/frontendprocessor/group/app-framework_fepbase.mrp"/>
+      </component>
+    </collection>
+    <collection id="inputmethods_info" name="Input Methods Info" level="framework">
+      <component id="inputmethods_plat" filter="s60" name="Input Methods Platform Interfaces" class="api">
+        <unit bldFile="inputmethods_plat/group"/>
+        <!-- <unit bldFile="inputmethods_plat/aknfep_uiinterface_api/tsrc/group"/> -->
+        <!-- <unit bldFile="inputmethods_plat/pen_input_server_api/tsrc/group"/> -->
+        <!-- <unit bldFile="inputmethods_plat/ptiengine_hwr_api/tsrc/group"/> -->
+        <!-- <unit bldFile="inputmethods_plat/ptiengine_key_definations_api/tsrc/group"/> -->
+      </component>
+      <component id="inputmethods_pub" filter="s60" name="Input Methods Public Interfaces" class="api">
+        <unit bldFile="inputmethods_pub/group"/>
+        <!-- <unit bldFile="inputmethods_pub/input_language_info_api/tsrc/group"/> -->
+        <!-- <unit bldFile="inputmethods_pub/optical_character_recognition_api/tsrc/group"/> -->
+        <!-- <unit bldFile="inputmethods_pub/ptiengine_iti_api/tsrc/group"/> -->
+      </component>
+      <component id="inputmethods_metadata" name="Input Methods Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+        <unit mrp="inputmethods_info/inputmethods_metadata/inputmethods_metadata.mrp"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

@@ -154,7 +154,7 @@
       <package id="mmuifw" level="specific" tech-domain="mm" href="../../../../mw/mmuifw/package_definition_3.0.xml"/>
       <package id="videoutils" level="specific" tech-domain="mm" href="../../../../mw/videoutils/package_definition_3.0.xml"/>
       <package id="mmmw" level="generic" tech-domain="mm" href="../../../../mw/mmmw/package_definition_3.0.xml"/>
-      <package id="helix" level="generic" tech-domain="mm" name="Helix"/>
+      <package id="helix" level="generic" tech-domain="mm" href="../../../../mw/helix/package_definition_3.0.xml"/>
       <package id="camerasrv" level="specific" tech-domain="mm" href="../../../../mw/camerasrv/package_definition_3.0.xml"/>
       <package id="mmappfw" level="specific" tech-domain="mm"  href="../../../../mw/mmappfw/package_definition_3.0.xml"/>
       <package id="inputmethods" level="generic" tech-domain="ui" href="../../../../mw/inputmethods/package_definition_3.0.xml"/>

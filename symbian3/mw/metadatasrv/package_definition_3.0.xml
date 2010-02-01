@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="metadatasrv" name="Legacy Metadata Services" levels="plugin framework server generic specific">
+    <collection id="contentlistingframework" name="Content Listing Framework" level="framework">
+      <component id="contentlistingframework_build" filter="s60" name="Content Listing Framework Build">
+        <unit bldFile="contentlistingframework/group"/>
+      </component>
+    </collection>
+    <collection id="mediamanagementuis" name="Media Management UIs" level="server">
+      <component id="mediastylegrid" filter="s60" name="Media Style Grid">
+        <unit bldFile="mediamanagementuis/mediastylegrid/group"/>
+      </component>
+    </collection>
+    <collection id="mediamanagementutilities" name="Media Management Utilities" level="generic">
+      <component id="mediafetch" filter="s60" name="Media Fetch">
+        <unit bldFile="mediamanagementutilities/mediafetch/group"/>
+      </component>
+    </collection>
+    <collection id="metadatasrv_info" name="Legacy Metadata Services Info" level="specific">
+      <component id="metadatasrv_plat" filter="s60" name="Legacy Metadata Services Platform Interfaces" class="api">
+        <unit bldFile="metadatasrv_plat/group"/>
+      </component>
+      <component id="metadatasrv_build" filter="s60" name="Legacy Metadata Services Build">
+		<!-- this is likely not still needed -->
+        <unit bldFile="group"/>
+      </component>
+      <component id="metadatasrv_pub" filter="s60" name="Legacy Metadata Services Public Interfaces" class="api">
+        <unit bldFile="metadatasrv_pub/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

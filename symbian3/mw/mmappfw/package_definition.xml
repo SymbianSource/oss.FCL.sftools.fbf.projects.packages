@@ -1,46 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
- <!ATTLIST SystemDefinition
+<!ELEMENT SystemDefinition ( systemModel )>
+<!ATTLIST SystemDefinition
   name CDATA #REQUIRED
-  schema CDATA #REQUIRED>
- <!ELEMENT systemModel (layer+)>
- <!ELEMENT layer (block*|collection*)*>
- <!ATTLIST layer
+  schema CDATA #REQUIRED
+>
+<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
+
+<!-- System Model Section of DTD -->
+<!ELEMENT systemModel (layer+)>
+
+<!ELEMENT layer (block* | collection*)*>
+<!-- Kernel Services, Base Services, OS Services, Etc -->
+<!ATTLIST layer
   name CDATA #REQUIRED
   long-name CDATA #IMPLIED
   levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED>
- <!ELEMENT block (subblock*|collection*)*>
- <!ATTLIST block
+  span CDATA #IMPLIED
+>
+
+<!ELEMENT block (subblock* | collection*)*>
+ <!-- Generic OS services, Comms Services, etc -->
+<!ATTLIST block
   levels NMTOKENS #IMPLIED
   span CDATA #IMPLIED
   level NMTOKEN #IMPLIED
   name CDATA #REQUIRED
-  long-name CDATA #IMPLIED>
- <!ELEMENT subblock (collection)*>
- <!ATTLIST subblock
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED>
- <!ELEMENT collection (component)*>
- <!ATTLIST collection
+  long-name CDATA #IMPLIED
+>
+
+<!ELEMENT subblock (collection)*>
+<!-- Cellular Baseband Services, Networking Services, etc -->
+<!ATTLIST subblock
   name CDATA #REQUIRED
   long-name CDATA #IMPLIED
-  level NMTOKEN #IMPLIED>
- <!ELEMENT component (unit)*>
- <!ATTLIST component
+>
+
+<!ELEMENT collection (component)*>
+<!-- Screen Driver, Content Handling, etc -->
+<!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+>
+
+<!ELEMENT component (unit)*>
+<!-- contains units or is a  package or prebuilt -->
+<!ATTLIST component
   name CDATA #REQUIRED
   long-name CDATA #IMPLIED
   deprecated CDATA #IMPLIED
   introduced CDATA #IMPLIED
   contract CDATA #IMPLIED
-  plugin (Y|N) 'N'
+  plugin (Y|N) "N"
   filter CDATA #IMPLIED
   class NMTOKENS #IMPLIED
   supports CDATA #IMPLIED
-  purpose (optional|mandatory|development) 'optional'>
- <!ELEMENT unit EMPTY>
- <!ATTLIST unit
+  purpose ( optional | mandatory | development ) "optional"
+>
+
+<!ELEMENT unit EMPTY >
+<!-- must be buildable (bld.inf) -->
+<!-- bldFile  may someday be removed in favour of mrp -->
+<!ATTLIST unit
   mrp CDATA #IMPLIED
   filter CDATA #IMPLIED
   bldFile CDATA #IMPLIED
@@ -48,62 +70,83 @@
   version NMTOKEN #IMPLIED
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
-  priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
+  priority CDATA #IMPLIED
+>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="mw">
-<block name="mmappfw">
-<collection name="s60">
-<component name="mmappfw">
-<unit bldFile="/sf/mw/mmappfw/group" mrp=""/>
-</component>
-</collection>
-</block>
-</layer>
-</systemModel>
+<SystemDefinition name="Symbian^3" schema="2.0.1">
+  <systemModel>
+    <layer name="mw" long-name="Middleware" levels="generic specific">
+      <block name="mmappfw" level="specific" long-name="Multimedia App Framework" levels="fw utils if">
+        <collection name="mpx" long-name="Multimedia Player" level="fw">
+          <component name="commonframework" filter="s60" long-name="MPX Common Framework" introduced="^1">
+            <unit bldFile="/sf/mw/mmappfw/mpx/commonframework/group"/>
+          </component>
+          <component name="playbackframework" filter="s60" long-name="MPX Playback Framework" introduced="^1">
+            <unit bldFile="/sf/mw/mmappfw/mpx/playbackframework/group"/>
+          </component>
+          <component name="mpxcollectionfw" filter="s60" long-name="MPX Collection Framework" introduced="^1">
+            <unit bldFile="/sf/mw/mmappfw/mpx/collectionframework/group"/>
+          </component>
+          <component name="mpxviewfw" filter="s60" long-name="MPX View Framework" introduced="^1">
+            <unit bldFile="/sf/mw/mmappfw/mpx/viewframework/group"/>
+          </component>
+          <component name="mpx_build" filter="s60" long-name="MPX Build" introduced="^1">
+            <!--  Move the export to another component or remove the #includes from this one -->
+            <unit bldFile="/sf/mw/mmappfw/mpx/group"/>
+          </component>
+        </collection>
+        <collection name="mmappcomponents" long-name="Multimedia App Components" level="utils">
+          <component name="mmappcomponents_build" filter="s60" long-name="Multimedia App Components Build" introduced="^1">
+            <!-- needed for  #ifdefs and hrh include. Need to #include the .hrh file in each bld.inf
+      		Can remove this once configuration is in place-->
+            <unit bldFile="/sf/mw/mmappfw/mmappcomponents/group"/>
+          </component>
+          <component name="collectionhelper" filter="s60" long-name="Media Player Collection Helper" introduced="^1">
+            <unit bldFile="/sf/mw/mmappfw/mmappcomponents/collectionhelper/group"/>
+          </component>
+          <component name="playlistengine" filter="s60" long-name="Playlist Engine" introduced="^1">
+            <unit bldFile="/sf/mw/mmappfw/mmappcomponents/playlistengine/group"/>
+          </component>
+          <component name="mpxharvester" filter="s60" long-name="Media Player Harvester" introduced="^1">
+            <unit bldFile="/sf/mw/mmappfw/mmappcomponents/harvester/group"/>
+          </component>
+          <component name="mmappcommonui" filter="s60" long-name="Multimedia App Common UI" introduced="^1">
+            <unit bldFile="/sf/mw/mmappfw/mmappcomponents/mmappcommonui/group"/>
+          </component>
+          <component name="mediaplayersettingsengine" filter="s60" long-name="Media Player Settings Engine" introduced="^1">
+            <unit bldFile="/sf/mw/mmappfw/mmappcomponents/mediaplayersettingsengine/group"/>
+          </component>
+          <component name="audiofetcher" filter="s60" long-name="Audio Fetcher" introduced="^1" plugin="Y">
+            <!-- uncomment when config is in place, currently #included in mmappcomponents_build -->
+            <!-- <unit bldFile="mmappcomponents/audiofetcher/group"/>-->
+          </component>
+          <component name="asxparser" filter="s60" long-name="ASX Parser" introduced="^1">
+            <!-- uncomment when config is in place, currently #included in mmappcomponents_build -->
+            <!-- <unit bldFile="mmappcomponents/asxparser/group"/>-->
+          </component>
+          <component name="playbackhelper" filter="s60" long-name="Playback Helper" introduced="^3">
+            <unit bldFile="/sf/mw/mmappfw/mmappcomponents/playbackhelper/group"/>
+          </component>
+          <component name="videoplaylistutility" filter="s60" long-name="Video Playlist Utility" introduced="^3">
+            <unit bldFile="/sf/mw/mmappfw/mmappcomponents/videoplaylistutility/group"/>
+          </component>
+          <component name="mmmtpdataprovider" filter="s60" long-name="Multimedia MTP Data Provider" introduced="^3">
+            <unit bldFile="/sf/mw/mmappfw/mmappcomponents/mmmtpdataprovider/group"/>
+          </component>
+        </collection>
+        <collection name="mmappfw_info" long-name="Multimedia App Framework Info" level="if">
+          <component name="mmappfw_build" filter="s60" long-name="Multimedia App Framework Build" introduced="^1">
+            <!--  Move the export to another component or remove the #includes from this one -->
+            <unit bldFile="/sf/mw/mmappfw/group"/>
+          </component>
+          <component name="mmappfw_test" filter="s60,api_test,pref_test" long-name="Multimedia App Framework Test" purpose="development" introduced="^1">
+            <unit bldFile="/sf/mw/mmappfw/tsrc/group" filter="TA_MMAPPFW"/>
+          </component>
+          <component name="mmappfw_plat" filter="s60" long-name="Multimedia App Framework Platform Interfaces" introduced="^1" class="api">
+            <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/group"/>
+          </component>
+        </collection>
+      </block>
+    </layer>
+  </systemModel>
 </SystemDefinition>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="ipconnmgmt" name="IP Connectivity Management" levels="plugin framework server generic utils">
+    <collection id="alwayson_net_plugin" name="Always Online Net Plugin" level="server">
+      <component id="pdpcontextmanager2" filter="s60" name="PDP Context Manager 2">
+        <unit bldFile="alwayson_net_plugin/pdpcontextmanager2/group"/>
+      </component>
+    </collection>
+    <collection id="bearermanagement" name="Bearer Management" level="framework">
+      <component id="mpm" filter="s60" name="Mobility Policy Manager">
+        <unit bldFile="bearermanagement/mpm/group"/>
+      </component>
+      <component id="bearermanager" filter="s60" name="Bearer Manager">
+        <unit bldFile="bearermanagement/bearermanager/group"/>
+      </component>
+      <component id="bearermanagement_build" filter="s60" name="Bearer Management Build">
+		<!-- move exports into one of the other components and remove this one -->
+        <unit bldFile="bearermanagement/group"/>
+      </component>
+    </collection>
+    <collection id="connectionmonitoring" name="Connection Monitoring" level="server">
+      <component id="connectionmonitorplugin" filter="s60" name="Connection Monitor Plugin" class="plugin">
+        <unit bldFile="connectionmonitoring/connectionmonitorplugin/group"/>
+      </component>
+      <component id="connectionmonitorui" filter="s60" name="Connection Monitor UI">
+        <unit bldFile="connectionmonitoring/connectionmonitorui/group"/>
+      </component>
+      <component id="connmon" filter="s60" name="Connection Monitor">
+		<!-- either split into two components, or #include from a common bld.inf -->
+        <unit bldFile="connectionmonitoring/connmon/connectionmonitor/group"/>
+        <unit bldFile="connectionmonitoring/connmon/dataconnectionlogger/group"/>
+      </component>
+      <component id="connmonext" filter="s60" name="Connection Monitor Extension API">
+        <unit bldFile="connectionmonitoring/connmonext/group"/>
+      </component>
+    </collection>
+    <collection id="accesspointcontrol" name="Access Point Control" level="plugin">
+      <component id="apcontrollistplugin" filter="s60" name="Access Point Control List Plugin" class="plugin" introduced="^2">
+        <unit bldFile="accesspointcontrol/apcontrollistplugin/group"/>
+      </component>
+    </collection>
+    <collection id="apengine" name="Access Point Engine" level="framework">
+      <component id="apeng" filter="s60" name="Access Point Engine">
+        <unit bldFile="apengine/apeng/group"/>
+      </component>
+      <component id="apsettingshandlerui" filter="s60" name="Access Point Settings Handler UI">
+        <unit bldFile="apengine/apsettingshandlerui/group"/>
+      </component>
+      <component id="apsettingsplugin" filter="s60" name="Access Point Settings Plugin" class="plugin">
+        <unit bldFile="apengine/apsettingsplugin/group"/>
+      </component>
+    </collection>
+    <collection id="cmmanager" name="Connection Method Manager" level="framework">
+      <component id="cmmgr" filter="s60" name="CM Manager">
+        <unit bldFile="cmmanager/cmmgr/group"/>
+      </component>
+    </collection>
+    <collection id="dbcreator" name="DB Creator" level="utils">
+      <component id="commsdatcreator" filter="s60" name="Comms Database Creator" introduced="9.3">
+        <unit bldFile="dbcreator/commsdatcreator/group"/>
+      </component>
+      <component id="commsdatcreatorrfsplugin" filter="s60" name="Comms Database Creator RFS Plugin" class="plugin" introduced="9.3">
+        <unit bldFile="dbcreator/commsdatcreatorrfsplugin/group"/>
+      </component>
+      <component id="commsdatstartup" filter="s60" name="Comms Database Startup" introduced="9.3">
+        <unit bldFile="dbcreator/commsdatstartup/group"/>
+      </component>
+      <component id="dbcreatorexe" filter="s60" name="DB Creator" introduced="9.3">
+        <unit bldFile="dbcreator/dbcreatorexe/group"/>
+      </component>
+      <component id="dbcreator_build" filter="s60" name="DB Creator Build" introduced="9.3">
+		<!-- consider moving exports to another component and getting rid of this one -->
+        <unit bldFile="dbcreator/group"/>
+      </component>
+    </collection>
+    <collection id="connectionutilities" name="Connection Utilities" level="utils">
+      <component id="connectiondialogs" filter="s60" name="Connection Dialogs">
+        <unit bldFile="connectionutilities/connectiondialogs/group"/>
+      </component>
+    </collection>
+    <collection id="ipconnmgmt_info" name="IP Connectivity Management Info" level="utils">
+      <component id="ipcm_pub" filter="s60" class="api" name="IP Connectivity Management Public Interfaces">
+        <unit bldFile="ipcm_pub/group"/>
+      </component>
+      <component id="ipcm_plat" filter="s60" class="api" name="IP Connectivity Management Platform Interfaces">
+        <unit bldFile="ipcm_plat/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

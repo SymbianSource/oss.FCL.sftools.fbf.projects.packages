@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="helix" name="Helix" levels="plugin framework server generic specific">
+    <collection id="helix_ren" name="Helix Engine" level="framework">
+    	<!-- what does "ren" stand for? -->
+      <component id="helix_stub" filter="s60" name="Helix Stub" class="api" introduced="^2">
+        <unit bldFile="helix_ren/helix_stub/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>
