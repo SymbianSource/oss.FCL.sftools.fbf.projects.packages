@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="srvdiscovery" name="Service Discovery and Usage" levels="plugin framework server generic specific">
+    <collection id="servicediscoveryandcontrol" name="Service Discovery and Control" level="framework">
+      <component id="servicediscoveryfw" name="Service Discovery Framework" introduced="^3" purpose="optional">
+        <unit bldFile="servicediscoveryandcontrol/pnp/group" mrp="servicediscoveryandcontrol/pnp/group/servicediscoveryframework.mrp"/>
+      </component>
+    </collection>
+    <collection id="srvdiscovery_info" name="Service Discovery and Usage Info" level="specific">
+      <component id="srvdiscovery_metadata" name="Service Discovery and Usage Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+        <unit mrp="srvdiscovery_info/srvdiscovery_metadata/srvdiscovery_metadata.mrp"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

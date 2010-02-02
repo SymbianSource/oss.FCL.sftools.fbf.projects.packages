@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="svgt" name="SVG Tiny" levels="util ui">
+    <collection id="svgt_info" name="SVG Tiny Info" level="ui">
+      <component id="svgt_plat" filter="s60" name="SVG Tiny Platform Interfaces" class="api" introduced="9.2">
+        <unit bldFile="svgt_plat/group"/>
+      </component>
+    </collection>
+    <collection id="svgtopt" name="SVG-T Engine" level="util">
+      <component id="svgtopt_build" filter="s60" name="SVG Engine" introduced="9.2">
+        <unit bldFile="svgtopt/group"/>
+      </component>
+      <component id="nvgdecoder" filter="s60" name="NVG Decoder" introduced="9.2">
+		<!-- extract relevant parts of above bld.inf or remove this component -->
+      </component>
+      <component id="svgengineji" filter="s60" name="SVG Engine Java Interface" introduced="9.2">
+		<!-- extract relevant parts of above bld.inf or remove this component -->
+      </component>
+      <component id="svgtplugin" filter="s60" name="SVG Plugin" class="plugin" introduced="9.2">
+        <unit bldFile="svgtopt/svgtplugin/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="uitools" name="UI Tools" levels="compile encode tool if">
+    <collection id="gfxtools" name="Graphics Tools" level="tool">
+      <component id="gditools" filter="s60" name="GDI Tools" target="desktop">
+        <unit bldFile="gfxtools/gditools/group"/>
+      </component>
+      <component id="color" filter="s60" name="Bitmap Colour Palette" target="desktop">
+        <unit bldFile="gfxtools/color/group"/>
+      </component>
+    </collection>
+    <collection id="reszip" name="Resource Zip" level="encode">
+      <component id="reszip_build" filter="s60" name="Resource Zip Build">
+        <unit bldFile="reszip/group"/>
+      </component>
+    </collection>
+    <collection id="toollibraries" name="Tool Libraries" level="tool"/>
+    <collection id="svgtencoder" name="SVGT Encoder" level="encode">
+      <component id="svgtenc" filter="s60" name="SVGT Encoder" target="desktop">
+        <unit bldFile="svgtencoder/svgtenc/standalone/group"/>
+      </component>
+    </collection>
+    <collection id="uitools_info" name="UI Tools Info" level="if">
+      <component id="uitools_plat" filter="s60" name="UI Tools Platform Interfaces" class="api">
+        <unit bldFile="uitools_plat/group"/>
+      </component>
+      <component id="uitools_pub" filter="s60" name="UI Tools Public Interfaces" class="api">
+        <unit bldFile="uitools_pub/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

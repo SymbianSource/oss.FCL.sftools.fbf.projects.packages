@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="remotemgmt" name="Remote Management" levels="plugin framework server generic specific">
+    <collection id="omaprovisioning" name="OMA Provisioning" level="specific">
+      <component id="pnputil" filter="s60" name="PnP Util">
+        <unit bldFile="omaprovisioning/pnputil/group"/>
+        <!-- should the test bld.inf be #included? -->
+        <!-- <unit bldFile="omaprovisioning/pnputil/tsrc/moduletest/group"/> -->
+      </component>
+      <component id="provisioning" filter="s60" name="Provisioning">
+        <unit bldFile="omaprovisioning/provisioning/group"/>
+        <!-- should the test bld.inf be #included? -->
+        <!-- <unit bldFile="omaprovisioning/provisioning/tsrc/moduletest/group"/> -->
+      </component>
+    </collection>
+    <collection id="policymanagement" name="Policy Management" level="generic">
+      <component id="pmdmadapter" filter="s60" name="PM DM Adapter" class="plugin">
+        <unit bldFile="policymanagement/pmdmadapter/group"/>
+      </component>
+      <component id="dmutilserver" filter="s60" name="DM Util Server">
+        <unit bldFile="policymanagement/dmutilserver/group"/>
+      </component>
+      <component id="policyengine" filter="s60" name="Policy Engine">
+        <unit bldFile="policymanagement/policyengine/group"/>
+      </component>
+      <component id="policymanagement_build" filter="s60" name="Policy Management Build">
+      	<!--  should un#include above units-->
+        <unit bldFile="policymanagement/group"/>
+      </component>
+    </collection>
+    <collection id="syncmlfw" name="SyncML Framework" level="server">
+      <component id="syncmlfw_common" filter="s60" name="SyncML Framework Common">
+      	<!-- can only have one unit, need to have these #included from a single bld.inf -->
+        <unit bldFile="syncmlfw/common/alerthandler/bld"/>
+        <unit bldFile="syncmlfw/common/alertqueue/bld"/>
+        <unit bldFile="syncmlfw/common/debug/bld"/>
+        <unit bldFile="syncmlfw/common/historylog/bld"/>
+        <unit bldFile="syncmlfw/common/http/bld"/>
+        <unit bldFile="syncmlfw/common/inc"/>
+        <unit bldFile="syncmlfw/common/inc/modifiedheaders"/>
+        <unit bldFile="syncmlfw/common/inc/policy"/>
+        <unit bldFile="syncmlfw/common/inc/symbianheaders"/>
+        <unit bldFile="syncmlfw/common/notifiers/inc"/>
+        <unit bldFile="syncmlfw/common/obex/obexclient/bld"/>
+        <unit bldFile="syncmlfw/common/obex/obexcommserver/bld"/>
+        <unit bldFile="syncmlfw/common/obex/obexdmplugin/bld"/>
+        <unit bldFile="syncmlfw/common/obex/obexdsplugin/bld"/>
+        <unit bldFile="syncmlfw/common/obex/obexserverbinding/bld"/>
+        <unit bldFile="syncmlfw/common/sosserver/bld"/>
+        <unit bldFile="syncmlfw/common/sosserver_clientapi/bld"/>
+        <unit bldFile="syncmlfw/common/sosserver_privateapi/bld"/>
+        <unit bldFile="syncmlfw/common/sosserver_transporthandler/bld"/>
+        <unit bldFile="syncmlfw/common/syncagent/bld"/>
+        <unit bldFile="syncmlfw/common/transport/bld"/>
+        <unit bldFile="syncmlfw/common/wbxml/bld"/>
+        <unit bldFile="syncmlfw/common/xml/bld"/>
+      </component>
+      <component id="ds" filter="s60" name="Data Sync">
+      	<!-- can only have one unit, need to have these #included from a single bld.inf -->
+        <unit bldFile="syncmlfw/ds/adapterlog/bld"/>
+        <unit bldFile="syncmlfw/ds/adapters/dataproviderbase/bld"/>
+        <unit bldFile="syncmlfw/ds/agentlog/bld"/>
+        <unit bldFile="syncmlfw/ds/alerthandler/bld"/>
+        <unit bldFile="syncmlfw/ds/dsutils/changefinder/bld"/>
+        <unit bldFile="syncmlfw/ds/dsutils/dbcaps/bld"/>
+        <unit bldFile="syncmlfw/ds/dsutils/filter/bld"/>
+        <unit bldFile="syncmlfw/ds/dsutils/filterutils/bld"/>
+        <unit bldFile="syncmlfw/ds/dsutils/profileutil/bld"/>
+        <unit bldFile="syncmlfw/ds/dsutils/storeformat/bld"/>
+        <unit bldFile="syncmlfw/ds/hostserver/dshostclient/bld"/>
+        <unit bldFile="syncmlfw/ds/hostserver/dshostserverbase/bld"/>
+        <unit bldFile="syncmlfw/ds/hostserver/dshostservers/bld"/>
+        <unit bldFile="syncmlfw/ds/inc"/>
+        <unit bldFile="syncmlfw/ds/netmon/bld"/>
+        <!-- <unit bldFile="syncmlfw/ds/ota/bld"/> -->
+        <unit bldFile="syncmlfw/ds/provisioningadapter/bld"/>
+        <unit bldFile="syncmlfw/ds/settings/bld"/>
+        <unit bldFile="syncmlfw/ds/syncagent/bld"/>
+        <unit bldFile="syncmlfw/ds/wappushalert/bld"/>
+      </component>
+      <component id="dm" filter="s60" name="Device Management">
+      	<!-- can only have one unit, need to have these #included from a single bld.inf -->
+        <unit bldFile="syncmlfw/dm/bld"/>
+        <unit bldFile="syncmlfw/dm/callbackserver/bld"/>
+        <unit bldFile="syncmlfw/dm/dmutils/bld"/>
+        <unit bldFile="syncmlfw/dm/hostserver/dmhostserverbase/bld"/>
+        <unit bldFile="syncmlfw/dm/hostserver/dmhostservers/bld"/>
+        <unit bldFile="syncmlfw/dm/provisioningadapter/bld"/>
+        <unit bldFile="syncmlfw/dm/settings/bld"/>
+        <unit bldFile="syncmlfw/dm/syncagent/bld"/>
+        <unit bldFile="syncmlfw/dm/treedbclient/bld"/>
+        <unit bldFile="syncmlfw/dm/treedbhandler/bld"/>
+        <unit bldFile="syncmlfw/dm/treemodule/bld"/>
+        <!-- <unit bldFile="syncmlfw/dm/tsrc/group"/> -->
+        <unit bldFile="syncmlfw/dm/wappushalert/bld"/>
+      </component>
+      <component id="syncmlnotifier" filter="s60" name="SyncML Notifier">
+        <unit bldFile="syncmlfw/syncmlnotifier/group"/>
+      </component>
+      <component id="syncservice" filter="s60" name="Sync Service">
+        <unit bldFile="syncmlfw/syncservice/group"/>
+      </component>
+      <component id="syncmlfw_build" filter="s60" name="SyncML Framework Build">
+      	<!-- should un#include the above as necessary -->
+        <unit bldFile="syncmlfw/group"/>
+      </component>
+    </collection>
+    <collection id="terminalsecurity" name="Terminal Security" level="specific">
+      <component id="scp" filter="s60" name="Security Code Proxy">
+      	<!-- can only have one unit, need to have these #included from a single bld.inf -->
+        <unit bldFile="terminalsecurity/scp/scpclient/group"/>
+        <unit bldFile="terminalsecurity/scp/scphistoryplugin/group"/>
+        <unit bldFile="terminalsecurity/scp/scppatternplugin/group"/>
+        <unit bldFile="terminalsecurity/scp/scpserver/group"/>
+        <unit bldFile="terminalsecurity/scp/scptimestampplugin/group"/>
+      </component>
+      <component id="terminalsecurity_client" filter="s60" name="Terminal Control Client">
+        <unit bldFile="terminalsecurity/client/group"/>
+      </component>
+      <component id="terminalsecurity_server" filter="s60" name="Terminal Control Server">
+        <unit bldFile="terminalsecurity/server/group"/>
+      </component>
+      <component id="tcadapter" filter="s60" name="Terminal Control Adapter">
+        <unit bldFile="terminalsecurity/tcadapter/bld"/>
+      </component>
+      <component id="terminalsecurity_build" filter="s60" name="Terminal Security Build">
+        <unit bldFile="terminalsecurity/group"/>
+      </component>
+    </collection>
+    <collection id="devicediagnosticsfw" name="Device Diagnostics Framework" level="framework">
+      <component id="diagframework" filter="s60" name="Diagnostics Framework">
+        <unit bldFile="devicediagnosticsfw/diagframework/group"/>
+      </component>
+      <component id="diagpluginbase" filter="s60" name="Diagnostics Plugin Base">
+        <unit bldFile="devicediagnosticsfw/diagpluginbase/group"/>
+      </component>
+      <component id="diagresultsdb" filter="s60" name="Diagnostics Results Database">
+     	<!--  can only have one unit, merge or split into two components -->
+        <unit bldFile="devicediagnosticsfw/diagresultsdb/client/group"/>
+        <unit bldFile="devicediagnosticsfw/diagresultsdb/server/group"/>
+      </component>
+      <component id="devicediagnosticsfw_build" filter="s60" name="Device Diagnostics Framework Build">
+        <unit bldFile="devicediagnosticsfw/group"/>
+      </component>
+    </collection>
+    <collection id="fotaapplication" name="FOTA Application" level="generic">
+      <component id="fotaserver" filter="s60" name="FOTA Server">
+		<!-- can only have one unit, need to put the configuration in the appropriate bld.inf -->
+        <unit bldFile="fotaapplication/fotaserver/fotastartupextplg/group"/>
+        <unit bldFile="fotaapplication/fotaserver/group"/>
+        <!-- <unit bldFile="fotaapplication/fotaserver/fmsclient/group"/> -->
+        <!-- <unit bldFile="fotaapplication/fotaserver/fmserver/group"/> -->
+        <!-- <unit bldFile="fotaapplication/fotaserver/fotarfsplugin/group"/> -->
+      </component>
+      <component id="fotaapp" filter="s60" name="FOTA Application">
+		<!-- should be able to get rid of this by configuring the above component -->
+        <unit bldFile="fotaapplication/group"/>
+      </component>
+    </collection>
+    <collection id="remotemgmt_info" name="Remote Management Info" level="specific">
+      <component id="remotemgmt_pub" filter="s60" name="Remote Management Public Interfaces" class="api">
+        <unit bldFile="remotemgmt_pub/group"/>
+      </component>
+      <component id="remotemgmt_plat" filter="s60" name="Remote Management Platform Interfaces" class="api">
+        <unit bldFile="remotemgmt_plat/group"/>
+        	<!--  can these be #included in the above one? -->
+        <!-- <unit bldFile="remotemgmt_plat/common_agent_util_and_definitions_api/tsrc/group"/> -->
+        <!-- <unit bldFile="remotemgmt_plat/data_synchronization_plugin_api/tsrc/group"/> -->
+        <!-- <unit bldFile="remotemgmt_plat/dm_tree_apis/tsrc/group"/> -->
+        <!-- <unit bldFile="remotemgmt_plat/dm_utils_api/tsrc/group"/> -->
+        <!-- <unit bldFile="remotemgmt_plat/fota_engine_api/tsrc/group"/> -->
+        <!-- <unit bldFile="remotemgmt_plat/oma_ds_extensions_api/tsrc/group"/> -->
+        <!-- <unit bldFile="remotemgmt_plat/oma_provisioning_engine_api/tsrc/group"/> -->
+        <!-- <unit bldFile="remotemgmt_plat/pnpms_utils_api/tsrc/group"/> -->
+        <!-- <unit bldFile="remotemgmt_plat/policy_management_certificate_api/tsrc/group"/> -->
+        <!-- <unit bldFile="remotemgmt_plat/policy_management_request_api/tsrc/group"/> -->
+        <!-- <unit bldFile="remotemgmt_plat/scp_server_api/tsrc/group"/> -->
+        <!-- <unit bldFile="remotemgmt_plat/setting_enforcement_info_api/tsrc/group"/> -->
+        <!-- <unit bldFile="remotemgmt_plat/syncml_alert_api/tsrc/group"/> -->
+        <!-- <unit bldFile="remotemgmt_plat/syncml_client_api/tsrc/group"/> -->
+        <!-- <unit bldFile="remotemgmt_plat/terminal_security_device_lock_api/tsrc/group"/> -->
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

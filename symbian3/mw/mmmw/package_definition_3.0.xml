@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="mmmw" name="Multimedia Middleware" levels="plugin framework server generic specific">
+    <collection id="radioutility" name="Radio Utility" level="generic">
+      <component id="radioserver" filter="s60" name="Radio Server">
+        <unit bldFile="radioutility/radioserver/group"/>
+        <!-- <unit bldFile="radioutility/radioserver/server/group"/> -->
+        <!-- <unit bldFile="radioutility/radioserver/session/group"/> -->
+      </component>
+      <component id="radio_utility" filter="s60" name="Radio Utility">
+        <unit bldFile="radioutility/radio_utility/group"/>
+      </component>
+      <component id="fmpresetutility" filter="s60" name="FM Preset Utility">
+        <unit bldFile="radioutility/fmpresetutility/group"/>
+      </component>
+      <component id="radioutility_build" filter="s60" name="Radio Utility Build">
+          <!-- should remove included bld.infs from here -->
+        <unit bldFile="radioutility/group"/>
+      </component>
+    </collection>
+    <collection id="audioeffectsui" name="Audio Effects UI" level="specific">
+      <component id="equalizer" filter="s60" name="Equalizer">
+        <unit bldFile="audioeffectsui/equalizer/group"/>
+      </component>
+    </collection>
+    <collection id="audioenhancements" name="Audio Enhancements" level="generic">
+      <component id="enhancedaudioplayerutility" filter="s60" name="Enhanced Audio Player Utility">
+        <unit bldFile="audioenhancements/enhancedaudioplayerutility/group"/>
+        <!-- should the rest of the bld.infs be #included? -->
+        <!-- <unit bldFile="audioenhancements/enhancedaudioplayerutility/audioplayer/group"/> -->
+        <!-- <unit bldFile="audioenhancements/enhancedaudioplayerutility/audiostreaming/group"/> -->
+        <!-- <unit bldFile="audioenhancements/enhancedaudioplayerutility/s60audiosource/group"/> -->
+        <!-- <unit bldFile="audioenhancements/enhancedaudioplayerutility/s60audiosourcefactory/group"/> -->
+        <!-- <unit bldFile="audioenhancements/enhancedaudioplayerutility/s60audioutility/group"/> -->
+      </component>
+      <component id="progressivedownload" filter="s60" name="Progressive Download">
+        <unit bldFile="audioenhancements/progressivedownload/group"/>
+        <!-- <unit bldFile="audioenhancements/progressivedownload/progressivedownloadsource/group"/> -->
+        <!-- <unit bldFile="audioenhancements/progressivedownload/progressivedownloadutility/group"/> -->
+      </component>
+      <component id="enhancedmediaclient" filter="s60" name="Enhanced Media Client">
+        <unit bldFile="audioenhancements/enhancedmediaclient/group"/>
+      </component>
+      <component id="profilesettingsmonitor" filter="s60" name="Profile Settings Monitor">
+        <unit bldFile="audioenhancements/profilesettingsmonitor/group"/>
+      </component>
+      <component id="voipaudioservices" filter="s60" name="VoIP Audio Services">
+        <unit bldFile="audioenhancements/voipaudioservices/group"/>
+      </component>
+      <component id="configurationcomponentsfactory" filter="s60" name="Configuration Components Factory">
+        <unit bldFile="audioenhancements/configurationcomponentsfactory/group"/>
+      </component>
+      <component id="audiooutputcontrolutility" filter="s60" name="Audio Output Control Utility">
+        <unit bldFile="audioenhancements/audiooutputcontrolutility/group"/>
+      </component>
+      <component id="callaudiocontrol" filter="s60" name="Call Audio Control">
+        <unit bldFile="audioenhancements/callaudiocontrol/group"/>
+      </component>
+    </collection>
+    <collection id="metadatautility" name="Metadata Utility" level="generic">
+      <component id="extparserlib3gp_stub" filter="s60" name="3GP Extension Parser Library">
+        <unit bldFile="metadatautility/3gpextparserlib_stub/group"/>
+      </component>
+      <component id="metadatautility_build" filter="s60" name="Metadata Utility Build">
+        <unit bldFile="metadatautility/group"/>
+      </component>
+    </collection>
+    <collection id="advancedaudiocontroller" name="Advanced Audio Controller" level="plugin">
+      <component id="audiocontrollerpluginsvariant" filter="s60" name="Audio Controller Plugins Variant" class="plugin">
+        <unit bldFile="advancedaudiocontroller/audiocontrollerpluginsvariant/group"/>
+                <!-- do the rest of these need to be #included? -->
+        <!-- <unit bldFile="advancedaudiocontroller/audiocontrollerpluginsvariant/3gpaudioplaycontroller/group"/> -->
+        <!-- <unit bldFile="advancedaudiocontroller/audiocontrollerpluginsvariant/3gpaudiorecordcontroller/group"/> -->
+        <!-- <unit bldFile="advancedaudiocontroller/audiocontrollerpluginsvariant/3gpdatasourceadapter/group"/> -->
+        <!-- <unit bldFile="advancedaudiocontroller/audiocontrollerpluginsvariant/aacaudioplaycontroller/group"/> -->
+        <!-- <unit bldFile="advancedaudiocontroller/audiocontrollerpluginsvariant/advancedaudiocontroller/group"/> -->
+        <!-- <unit bldFile="advancedaudiocontroller/audiocontrollerpluginsvariant/advancedaudiocontrollerutility/group"/> -->
+        <!-- <unit bldFile="advancedaudiocontroller/audiocontrollerpluginsvariant/amraudioplaycontroller/group"/> -->
+        <!-- <unit bldFile="advancedaudiocontroller/audiocontrollerpluginsvariant/amraudiorecordcontroller/group"/> -->
+        <!-- <unit bldFile="advancedaudiocontroller/audiocontrollerpluginsvariant/awbaudioplaycontroller/group"/> -->
+        <!-- <unit bldFile="advancedaudiocontroller/audiocontrollerpluginsvariant/datasourceadapter/group"/> -->
+        <!-- <unit bldFile="advancedaudiocontroller/audiocontrollerpluginsvariant/devsoundaudioinput/group"/> -->
+        <!-- <unit bldFile="advancedaudiocontroller/audiocontrollerpluginsvariant/devsoundaudiooutput/group"/> -->
+        <!-- <unit bldFile="advancedaudiocontroller/audiocontrollerpluginsvariant/fileaudiooutput/group"/> -->
+        <!-- <unit bldFile="advancedaudiocontroller/audiocontrollerpluginsvariant/hxaudiorecognizer/group"/> -->
+        <!-- <unit bldFile="advancedaudiocontroller/audiocontrollerpluginsvariant/metadatawrite/group"/> -->
+        <!-- <unit bldFile="advancedaudiocontroller/audiocontrollerpluginsvariant/mp3audioplaycontroller/group"/> -->
+      </component>
+      <component id="wavplaycontrollerplugin" filter="s60" name="WAV Play Controller Plugin" class="plugin">
+        <unit bldFile="advancedaudiocontroller/wavplaycontrollerplugin/group"/>
+      </component>
+      <component id="advancedaudiocontroller_test" filter="s60" name="Advanced Audio Controller Test" purpose="development">
+        <!-- <unit bldFile="advancedaudiocontroller/tsrc/advancedaudiocontrollertestmodule/group"/> -->
+      </component>
+    </collection>
+    <collection id="thumbnailengine" name="Thumbnail Engine" level="server">
+      <component id="tneengine" filter="s60" name="Thumbnail Engine Build" introduced="^2">
+        <unit bldFile="thumbnailengine/group"/>
+      </component>
+    </collection>
+    <collection id="mm_fw" name="Multimedia Framework" level="framework">
+      <component id="helix_stub" filter="s60" name="Helix Stub" introduced="^2">
+        <unit bldFile="mmfw/helix_stub/group"/>
+      </component>
+    </collection>
+    <collection id="mmmw_info" name="Multimedia Middleware Info" level="specific">
+      <component id="mmmw_test" filter="s60" name="Multimedia Middleware Test" purpose="development">
+        <!-- <unit bldFile="tsrc/group"/> -->
+      </component>
+      <component id="mmmw_plat" filter="s60" name="Multimedia Middleware Platform Interfaces" class="api">
+        <unit bldFile="mmmw_plat/audio_metadata_reader_api/tsrc/group"/>
+        <unit bldFile="mmmw_plat/audio_output_control_utility_api/tsrc/group"/>
+        <unit bldFile="mmmw_plat/call_audio_control_api/tsrc/group"/>
+        <unit bldFile="mmmw_plat/enhanced_media_client_api/tsrc/group"/>
+        <unit bldFile="mmmw_plat/group"/>
+        <unit bldFile="mmmw_plat/radio_utilities_api/tsrc/group"/>
+        <unit bldFile="mmmw_plat/voip_audio_services_api/tsrc/group"/>
+      </component>
+      <component id="mmmw_metadata" name="Multimedia Middleware Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+        <unit mrp="mmmw_info/mmmw_metadata/mmmw_metadata.mrp"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

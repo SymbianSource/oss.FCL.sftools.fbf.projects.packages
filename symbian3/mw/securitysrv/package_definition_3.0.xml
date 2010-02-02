@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="securitysrv" name="Security Services" levels="plugin framework server generic specific">
+    <collection id="gba" name="Generic Bootstrapping Architecture" level="server">
+      <component id="uicc" filter="s60" name="UICC" class="plugin" introduced="^2">
+        <unit bldFile="gba/uicc/group"/>
+      </component>
+      <component id="bootstrap" filter="s60" name="Bootstrap" introduced="^2">
+        <unit bldFile="gba/bootstrap/group"/>
+      </component>
+      <component id="gbaserver" filter="s60" name="GBA Server" introduced="^2">
+        <unit bldFile="gba/gbaserver/group"/>
+      </component>
+      <component id="gbaapi" filter="s60" name="GBA API" introduced="^2">
+        <unit bldFile="gba/gbaapi/group"/>
+      </component>
+      <component id="gbafilter" filter="s60" name="GBA HTTP Filter" class="plugin" introduced="^2">
+        <unit bldFile="gba/gbafilter/group"/>
+      </component>
+      <component id="gba_build" filter="s60" name="Generic Boot Architecture Build" introduced="^2">
+        <unit bldFile="gba/group"/>
+      </component>
+    </collection>
+    <collection id="wim" name="Wireless Identity Module " level="framework">
+      <component id="swimreader" filter="s60" name="SWIM Reader"/>
+      <component id="scard" filter="s60" name="Smart Card"/>
+      <component id="wimutil" filter="s60" name="WIM Utils"/>
+      <component id="wimserver" filter="s60" name="WIM Server"/>
+      <component id="wimclient" filter="s60" name="WIM Client"/>
+      <component id="wimplugin" filter="s60" name="WIM Plugin" class="plugin"/>
+      <component id="wim_build" filter="s60" name="WIM Build">
+           <!-- need to distribute bld.inf to empty components or collapse into a single component -->
+        <unit bldFile="wim/group"/>
+      </component>
+    </collection>
+    <collection id="pkiutilities" name="PKI Utilities" level="plugin">
+      <component id="x509certnameparser" filter="s60" name="X.509 Certificate Name Parser">
+        <unit bldFile="pkiutilities/x509certnameparser/group"/>
+      </component>
+      <component id="pkcs12" filter="s60" name="PKCS #12">
+        <unit bldFile="pkiutilities/pkcs12/group"/>
+      </component>
+      <component id="certmanui" filter="s60" name="Certificate Management UI">
+        <unit bldFile="pkiutilities/certmanui/group"/>
+      </component>
+      <component id="ctsecuritydialogs" filter="s60" name="Crypto Token Security Dialogs">
+        <unit bldFile="pkiutilities/ctsecuritydialogs/group"/>
+      </component>
+      <component id="certsaver" filter="s60" name="Certificate Saver">
+        <unit bldFile="pkiutilities/certsaver/group"/>
+      </component>
+      <component id="secmodui" filter="s60" name="Security Module UI">
+        <unit bldFile="pkiutilities/secmodui/group"/>
+      </component>
+      <component id="devicetoken" filter="s60" name="Device Token">
+        <unit bldFile="pkiutilities/devicetoken/group"/>
+      </component>
+      <component id="certificates" filter="s60" name="Certificates">
+        <unit bldFile="pkiutilities/certificates/group"/>
+      </component>
+      <component id="pkiutilities_build" filter="s60" name="PKI Utilities Build">
+        <unit bldFile="pkiutilities/group"/>
+      </component>
+     <component id="ocsp" name="Online Certificate Status Protocol" introduced="^2" purpose="optional">
+       <unit bldFile="pkiutilities/ocsp/group" mrp="pkiutilities/ocsp/group/securitysrv_ocsp.mrp"/>
+      </component>
+    </collection>
+    <collection id="remotelock" name="Remote Lock" level="generic">
+      <component id="remotelocksettings" filter="s60" name="Remote Lock Settings"/>
+      <component id="remotelockengine" filter="s60" name="Remote Lock Engine"/>
+      <component id="remotelock_build" filter="s60" name="Remote Lock Build">
+           <!-- need to distribute bld.inf to empty components or collapse into a single component -->
+        <unit bldFile="remotelock/group"/>
+      </component>
+    </collection>
+    <collection id="boottimeintegritycheck" name="Boot Time Integrity Check" level="plugin">
+      <component id="trkdummy" filter="s60" name="Trk Dummy">
+        <!-- <unit bldFile="boottimeintegritycheck/trkdummy/group"/> -->
+      </component>
+      <component id="boottimeintegritycheck_build" filter="s60" name="Boot Time Integrity Check Build">
+        <unit bldFile="boottimeintegritycheck/group"/>
+      </component>
+    </collection>
+    <collection id="securitydialogs" name="Security Dialogs" level="specific">
+      <component id="keylockpolicyapi" filter="s60" name="Keylock Policy API">
+        <unit bldFile="securitydialogs/keylockpolicyapi/group"/>
+      </component>
+      <component id="autolock" name="Autolock" filter="s60">
+        <unit bldFile="securitydialogs/autolock/group"/>
+      </component>
+      <component id="secui" filter="s60" name="Security UI">
+        <unit bldFile="securitydialogs/secui/group"/>
+      </component>
+      <component id="securitynotifier" filter="s60" name="Security Notifier">
+        <unit bldFile="securitydialogs/securitynotifier/group"/>
+      </component>
+      <component id="securityobserver" filter="s60" name="Security Observer">
+        <unit bldFile="securitydialogs/securityobserver/group"/>
+      </component>
+    </collection>
+    <collection id="securitysrv_info" name="Security Services Info" level="specific">
+      <component id="secsrv_plat" name="Security Services Platform Interfaces" filter="s60" class="api">
+        <unit bldFile="secsrv_plat/group"/>
+        <!-- <unit bldFile="secsrv_plat/devicelock_access_api/group"/> -->
+        <!-- <unit bldFile="secsrv_plat/keyguard_access_api/group"/> -->
+        <!-- <unit bldFile="secsrv_plat/lockapp_server_api/group"/> -->
+      </component>
+      <component id="securitysrv_test" filter="s60" purpose="development" name="Security Services Test">
+        <!-- <unit bldFile="tsrc/group"/> -->
+      </component>
+      <component id="securitysrv_metadata" name="Security Services Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+        <unit mrp="securitysrv_info/securitysrv_metadata/securitysrv_metadata.mrp"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

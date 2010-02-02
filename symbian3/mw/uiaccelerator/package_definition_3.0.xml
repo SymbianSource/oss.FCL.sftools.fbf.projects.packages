@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="uiaccelerator" name="UI Accelerator" levels="plugin framework server ex if">
+    <collection id="uiacceltk" name="UI Accelerator Toolkit" level="framework">
+      <component id="hitchcock" filter="s60" name="Hitchcock">
+        <unit bldFile="uiacceltk/hitchcock/group"/>
+		<!-- are the following needed? if so, 'include from above -->
+        <!-- <unit bldFile="uiacceltk/hitchcock/coretoolkit/group"/> -->
+        <!-- <unit bldFile="uiacceltk/hitchcock/plugins/alftranseffect/alftranseffectplugin/group"/> -->
+        <!-- <unit bldFile="uiacceltk/hitchcock/tracer/group"/> -->
+        <!-- <unit bldFile="uiacceltk/hitchcock/tracer/traceextclient/group"/> -->
+        <!-- <unit bldFile="uiacceltk/hitchcock/tracer/traceextplugin/group"/> -->
+      </component>
+      <component id="widgeteditors" filter="s60" name="Widget Editors">
+        <unit bldFile="uiacceltk/widgeteditors/group"/>
+      </component>
+      <component id="uiacceltk_build" filter="s60" name="UI Accelerator Toolkit Build">
+		<!-- consider distributing into other components -->
+        <unit bldFile="uiacceltk/group"/>
+      </component>
+    </collection>
+    <collection id="uiaccelexampleapps" name="UI Accelerator Example Apps" level="ex">
+		<!-- are these unbuilt components? -->
+      <component id="alfexanalogdialer" filter="s60" name="Accelerated LAF Example Analog Dialer" purpose="development">
+        <!-- <unit bldFile="uiaccelexampleapps/alfexanalogdialer/group"/> -->
+      </component>
+      <component id="alfexstickers" filter="s60" name="Accelerated LAF Example Stickers" purpose="development">
+        <!-- <unit bldFile="uiaccelexampleapps/alfexstickers/group"/> -->
+      </component>
+    </collection>
+    <collection id="uiaccelerator_info" name="UI Accelerator Info" level="if">
+      <component id="uiaccelerator_inc" filter="s60">
+		<!-- is this needed? -->
+        <!-- <unit bldFile="inc/group"/> -->
+      </component>
+      <component id="uiaccelerator_plat" filter="s60" name="UI Accelerator Platform Interfaces" class="api">
+        <unit bldFile="uiaccelerator_plat/group"/>
+		<!-- Can only have one bld.inf: include the test bld.infs from the above one if needed -->
+        <unit bldFile="uiaccelerator_plat/alf_client_server_api/tsrc/group"/>
+        <unit bldFile="uiaccelerator_plat/alf_core_toolkit_api/tsrc/group"/>
+        <unit bldFile="uiaccelerator_plat/alf_editors_api/tsrc/group"/>
+        <unit bldFile="uiaccelerator_plat/alf_extended_visual_api/tsrc/group"/>
+        <unit bldFile="uiaccelerator_plat/alf_extension_api/tsrc/group"/>
+        <unit bldFile="uiaccelerator_plat/alf_tracing_api/tsrc/group"/>
+        <unit bldFile="uiaccelerator_plat/alf_visual_api/tsrc/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

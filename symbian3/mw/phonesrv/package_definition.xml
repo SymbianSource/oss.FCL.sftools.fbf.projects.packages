@@ -1,46 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
- <!ATTLIST SystemDefinition
+<!ELEMENT SystemDefinition ( systemModel )>
+<!ATTLIST SystemDefinition
   name CDATA #REQUIRED
-  schema CDATA #REQUIRED>
- <!ELEMENT systemModel (layer+)>
- <!ELEMENT layer (block*|collection*)*>
- <!ATTLIST layer
+  schema CDATA #REQUIRED
+>
+<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
+
+<!-- System Model Section of DTD -->
+<!ELEMENT systemModel (layer+)>
+
+<!ELEMENT layer (block* | collection*)*>
+<!-- Kernel Services, Base Services, OS Services, Etc -->
+<!ATTLIST layer
   name CDATA #REQUIRED
   long-name CDATA #IMPLIED
   levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED>
- <!ELEMENT block (subblock*|collection*)*>
- <!ATTLIST block
+  span CDATA #IMPLIED
+>
+
+<!ELEMENT block (subblock* | collection*)*>
+ <!-- Generic OS services, Comms Services, etc -->
+<!ATTLIST block
   levels NMTOKENS #IMPLIED
   span CDATA #IMPLIED
   level NMTOKEN #IMPLIED
   name CDATA #REQUIRED
-  long-name CDATA #IMPLIED>
- <!ELEMENT subblock (collection)*>
- <!ATTLIST subblock
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED>
- <!ELEMENT collection (component)*>
- <!ATTLIST collection
+  long-name CDATA #IMPLIED
+>
+
+<!ELEMENT subblock (collection)*>
+<!-- Cellular Baseband Services, Networking Services, etc -->
+<!ATTLIST subblock
   name CDATA #REQUIRED
   long-name CDATA #IMPLIED
-  level NMTOKEN #IMPLIED>
- <!ELEMENT component (unit)*>
- <!ATTLIST component
+>
+
+<!ELEMENT collection (component)*>
+<!-- Screen Driver, Content Handling, etc -->
+<!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+>
+
+<!ELEMENT component (unit)*>
+<!-- contains units or is a  package or prebuilt -->
+<!ATTLIST component
   name CDATA #REQUIRED
   long-name CDATA #IMPLIED
   deprecated CDATA #IMPLIED
   introduced CDATA #IMPLIED
   contract CDATA #IMPLIED
-  plugin (Y|N) 'N'
+  plugin (Y|N) "N"
   filter CDATA #IMPLIED
   class NMTOKENS #IMPLIED
   supports CDATA #IMPLIED
-  purpose (optional|mandatory|development) 'optional'>
- <!ELEMENT unit EMPTY>
- <!ATTLIST unit
+  purpose ( optional | mandatory | development ) "optional"
+>
+
+<!ELEMENT unit EMPTY >
+<!-- must be buildable (bld.inf) -->
+<!-- bldFile  may someday be removed in favour of mrp -->
+<!ATTLIST unit
   mrp CDATA #IMPLIED
   filter CDATA #IMPLIED
   bldFile CDATA #IMPLIED
@@ -48,128 +70,130 @@
   version NMTOKEN #IMPLIED
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
-  priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
+  priority CDATA #IMPLIED
+>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="mw">
-<block name="phonesrv">
-<collection name="s60">
-<component name="phonesrv_plat">
-<unit bldFile="/sf/mw/phonesrv/phonesrv_plat/group" mrp=""/>
-</component>
-<component name="phonesrv_pub">
-<unit bldFile="/sf/mw/phonesrv/phonesrv_pub/group" mrp=""/>
-</component>
-<component name="CbsServer">
-<unit bldFile="/sf/mw/phonesrv/cbs/CbsServer/group" mrp=""/>
-</component>
-<component name="cbsui">
-<unit bldFile="/sf/mw/phonesrv/cbs/cbsui/group" mrp=""/>
-</component>
-<component name="convergedcallengine">
-<unit bldFile="/sf/mw/phonesrv/convergedcallengine/group" mrp=""/>
-</component>
-<component name="networkhandlingengine">
-<unit bldFile="/sf/mw/phonesrv/networkhandling/networkhandlingengine/group" mrp=""/>
-</component>
-<component name="aiwdialdata">
-<unit bldFile="/sf/mw/phonesrv/phoneclientserver/aiwdialdata/group" mrp=""/>
-</component>
-<component name="CallUI">
-<unit bldFile="/sf/mw/phonesrv/phoneclientserver/CallUI/group" mrp=""/>
-</component>
-<component name="dialutils">
-<unit bldFile="/sf/mw/phonesrv/phoneclientserver/dialutils/group" mrp=""/>
-</component>
-<component name="EnPolicy">
-<unit bldFile="/sf/mw/phonesrv/phoneclientserver/EnPolicy/group" mrp=""/>
-</component>
-<component name="phoneclient">
-<unit bldFile="/sf/mw/phonesrv/phoneclientserver/phoneclient/group" mrp=""/>
-</component>
-<component name="phoneserver">
-<unit bldFile="/sf/mw/phonesrv/phoneclientserver/phoneserver/group" mrp=""/>
-</component>
-<component name="SatServer">
-<unit bldFile="/sf/mw/phonesrv/satengine/SatServer/group" mrp=""/>
-</component>
-<component name="satapp">
-<unit bldFile="/sf/mw/phonesrv/satui/satapp/group" mrp=""/>
-</component>
-<component name="satplugin">
-<unit bldFile="/sf/mw/phonesrv/satui/satplugin/group" mrp=""/>
-</component>
-<component name="phoneparser">
-<unit bldFile="/sf/mw/phonesrv/telutils/phoneparser/group" mrp=""/>
-</component>
-<component name="telephonyservice">
-<unit bldFile="/sf/mw/phonesrv/telutils/telephonyservice/group" mrp=""/>
-</component>
-<component name="telephonysettings">
-<unit bldFile="/sf/mw/phonesrv/cellular/telephonysettings/group" mrp=""/>
-</component>
-<component name="sssettings">
-<unit bldFile="/sf/mw/phonesrv/cellular/sssettings/group" mrp=""/>
-</component>
-<component name="psetnotesui">
-<unit bldFile="/sf/mw/phonesrv/cellular/psetnotesui/group" mrp=""/>
-</component>
-<component name="servicerequest">
-<unit bldFile="/sf/mw/phonesrv/cellular/servicerequest/group" mrp=""/>
-</component>
-<component name="phonecmdhnlr">
-<unit bldFile="/sf/mw/phonesrv/phonecmdhandler/phonecmdhnlr/group" mrp=""/>
-</component>
-<component name="vmbxengine">
-<unit bldFile="/sf/mw/phonesrv/engines/vmbxengine/group" mrp=""/>
-</component>
-</collection>
-</block>
-</layer>
-</systemModel>
+<SystemDefinition name="Symbian^3" schema="2.0.1">
+  <systemModel>
+    <layer name="mw" long-name="Middleware" levels="generic specific">
+      <block name="phonesrv" level="specific" long-name="Telephony and SIM Services" levels="plugin framework server generic specific">
+        <collection name="phonecmdhandler" long-name="Phone Command Handler" level="generic">
+          <component name="phonecmdhnlr" filter="s60" long-name="Phone Command Handler">
+            <unit bldFile="/sf/mw/phonesrv/phonecmdhandler/phonecmdhnlr/group"/>
+          </component>
+        </collection>
+        <collection name="cbs" long-name="Cellular Baseband Services" level="plugin">
+          <component name="cbsserver" filter="s60" long-name="CBS Server">
+            <unit bldFile="/sf/mw/phonesrv/cbs/cbsserver/group"/>
+          </component>
+          <component name="cbsui" filter="s60" long-name="CBS UI">
+            <unit bldFile="/sf/mw/phonesrv/cbs/cbsui/group"/>
+          </component>
+        </collection>
+        <collection name="convergedcallengine" long-name="Converged Call Engine" level="framework">
+          <component name="callprovider" filter="s60" long-name="Call Provider">
+            <unit bldFile="/sf/mw/phonesrv/convergedcallengine/callprovider/group"/>
+          </component>
+          <component name="cce" filter="s60" long-name="CCE">
+            <unit bldFile="/sf/mw/phonesrv/convergedcallengine/cce/group"/>
+          </component>
+          <component name="spsettings" filter="s60" long-name="Service Provider Settings">
+            <unit bldFile="/sf/mw/phonesrv/convergedcallengine/spsettings/group"/>
+            <!-- include the rest in the above? -->
+            <!-- <unit bldFile="convergedcallengine/spsettings/tsrc/public/basic/group"/> -->
+            <!-- <unit bldFile="convergedcallengine/spsettings/tsrc/public/basic/spsettingsut/group"/> -->
+          </component>
+          <component name="cenrepdatabase" filter="s60" long-name="CCE Cenrep Database">
+            <unit bldFile="/sf/mw/phonesrv/convergedcallengine/cenrepdatabase/group"/>
+          </component>
+          <component name="serviceselector" filter="s60" long-name="Service Selector">
+            <unit bldFile="/sf/mw/phonesrv/convergedcallengine/serviceselector/group"/>
+          </component>
+          <component name="csplugin" filter="s60" long-name="CS Plugin" plugin="Y">
+            <!--  should spell out CS in name -->
+            <unit bldFile="/sf/mw/phonesrv/convergedcallengine/csplugin/group"/>
+          </component>
+        </collection>
+        <collection name="networkhandling" long-name="Network Handling" level="plugin">
+          <component name="networkhandlingengine" filter="s60" long-name="Network Handling Engine">
+            <unit bldFile="/sf/mw/phonesrv/networkhandling/networkhandlingengine/group"/>
+          </component>
+        </collection>
+        <collection name="phoneclientserver" long-name="Phone Client/Server" level="server">
+          <component name="enpolicy" filter="s60" long-name="Emergency Number Policy">
+            <unit bldFile="/sf/mw/phonesrv/phoneclientserver/enpolicy/group"/>
+          </component>
+          <component name="aiwdialdata" filter="s60" long-name="AIW Dial Data">
+            <unit bldFile="/sf/mw/phonesrv/phoneclientserver/aiwdialdata/group"/>
+          </component>
+          <component name="dialutils" filter="s60" long-name="Dial Utils">
+            <unit bldFile="/sf/mw/phonesrv/phoneclientserver/dialutils/group"/>
+          </component>
+          <component name="phoneclient" filter="s60" long-name="Phone Client">
+            <unit bldFile="/sf/mw/phonesrv/phoneclientserver/phoneclient/group"/>
+          </component>
+          <component name="phoneserver" filter="s60" long-name="Phone Server">
+            <unit bldFile="/sf/mw/phonesrv/phoneclientserver/phoneserver/group"/>
+          </component>
+          <component name="callui" filter="s60" long-name="Call UI">
+            <unit bldFile="/sf/mw/phonesrv/phoneclientserver/callui/group"/>
+          </component>
+        </collection>
+        <collection name="satengine" long-name="SAT Engine" level="generic">
+          <component name="satserver" filter="s60" long-name="SAT Server">
+            <unit bldFile="/sf/mw/phonesrv/satengine/satserver/group"/>
+          </component>
+        </collection>
+        <collection name="satui" long-name="SIM Application Toolkit UI" level="specific">
+          <component name="satapp" filter="s60" long-name="SAT Application">
+            <unit bldFile="/sf/mw/phonesrv/satui/satapp/group"/>
+          </component>
+          <component name="satplugin" filter="s60" long-name="SAT Plugin" plugin="Y">
+            <unit bldFile="/sf/mw/phonesrv/satui/satplugin/group"/>
+          </component>
+        </collection>
+        <collection name="telutils" long-name="Telephony Utils" level="generic">
+          <component name="phoneparser" filter="s60" long-name="Phone Parser">
+            <unit bldFile="/sf/mw/phonesrv/telutils/phoneparser/group"/>
+          </component>
+          <component name="telephonyservice" filter="s60" long-name="Telephony Service">
+            <unit bldFile="/sf/mw/phonesrv/telutils/telephonyservice/group"/>
+          </component>
+        </collection>
+        <collection name="cellular" long-name="Cellular" level="server">
+          <component name="telephonysettings" filter="s60" long-name="Telephony Settings">
+            <unit bldFile="/sf/mw/phonesrv/cellular/telephonysettings/group"/>
+          </component>
+          <component name="sssettings" filter="s60" long-name="Supplementary Service Settings">
+            <unit bldFile="/sf/mw/phonesrv/cellular/sssettings/group"/>
+          </component>
+          <component name="psetnotesui" filter="s60" long-name="Phone Settings Notes UI">
+            <unit bldFile="/sf/mw/phonesrv/cellular/psetnotesui/group"/>
+          </component>
+          <component name="servicerequest" filter="s60" long-name="Service Request">
+            <unit bldFile="/sf/mw/phonesrv/cellular/servicerequest/group"/>
+          </component>
+        </collection>
+        <collection name="engines" long-name="Telephony Engines" level="specific">
+          <component name="vmbxengine" filter="s60" long-name="Voice Mailbox Engine">
+            <unit bldFile="/sf/mw/phonesrv/engines/vmbxengine/group"/>
+          </component>
+        </collection>
+        <collection name="phonesrv_info" long-name="Telephony and SIM Services Info" level="specific">
+          <component name="phonesrv_plat" filter="s60" long-name="Telephony and SIM Services Platform Interfaces" class="api">
+            <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/group"/>
+            <!-- include the rest in the above? -->
+            <!-- <unit bldFile="phonesrv_plat/call_information_api/tsrc/group"/> -->
+            <!-- <unit bldFile="phonesrv_plat/call_information_mediator_api/tsrc/ut_callinfos/group"/> -->
+            <!-- <unit bldFile="phonesrv_plat/phone_client_emergency_call_api/tsrc/group"/> -->
+            <!-- <unit bldFile="phonesrv_plat/sat_client_api/tsrc/group"/> -->
+            <!-- <unit bldFile="phonesrv_plat/sat_refresh_api/tsrc/group"/> -->
+          </component>
+          <component name="phonesrv_pub" filter="s60" long-name="Telephony and SIM Services Public Interfaces" class="api">
+            <unit bldFile="/sf/mw/phonesrv/phonesrv_pub/group"/>
+          </component>
+        </collection>
+      </block>
+    </layer>
+  </systemModel>
 </SystemDefinition>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="serviceapi" name="Service API" levels="os mw1 mw2 app">
+  	<!-- should break up this collection into something meaningful -->
+    <collection id="serviceproviders" name="Service Providers" level="mw1">
+      <component id="sapi_applicationmanager" name="Application Manager SAPI" filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_applicationmanager/group"/>
+			<!-- should test bld.inf be #included? -->
+        <!-- <unit bldFile="serviceproviders/sapi_applicationmanager/tsrc/dev/cruntimetest/group"/> -->
+      </component>
+      <component id="sapi_calendar" name="Calendar SAPI" filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_calendar/group"/>
+			<!-- should test bld.inf be #included? -->
+        <!-- <unit bldFile="serviceproviders/sapi_calendar/tsrc/testing/tcalprovider_combined/group"/> -->
+      </component>
+      <component id="sapi_contacts_vpbk" name="Contacts Phonebook SAPI"  filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_contacts_vpbk/group"/>
+      </component>
+      <component id="sapi_landmarks" name="Landmarks SAPI" filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_landmarks/group"/>
+			<!-- should test bld.infs be #included? -->
+        <!-- <unit bldFile="serviceproviders/sapi_landmarks/tsrc/testing/tlandmarkstest/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_landmarks/tsrc/dev/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_landmarks/tsrc/testing/tlandmarksprovidertest/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_landmarks/tsrc/dev/landmarks_inputparams/group"/> -->
+      </component>
+      <component id="sapi_location" name="Location SAPI"  filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_location/group"/>
+			<!-- should test bld.infs be #included? -->
+        <!-- <unit bldFile="serviceproviders/sapi_location/tsrc/testing/performance/pgetloc/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_location/tsrc/testing/performance/pgetlocopts/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_location/tsrc/testing/performance/pgetlocasync/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_location/tsrc/testing/performance/pgetbearing/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_location/tsrc/dev/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_location/tsrc/testing/performance/pgetdistance/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_location/tsrc/testing/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_location/tsrc/testing/performance/pmove/group"/> -->
+      </component>
+      <component id="sapi_logging" name="Logging SAPI"  filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_logging/group"/>
+        <!-- <unit bldFile="serviceproviders/sapi_logging/tsrc/dev/group"/> -->
+      </component>
+      <component id="sapi_mediamanagement" name="Media Management SAPI" filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_mediamanagement/group"/>
+			<!-- should test bld.infs be #included? -->
+        <!-- <unit bldFile="serviceproviders/sapi_mediamanagement/tsrc/dev/taiwmediamgmttest/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_mediamanagement/tsrc/testing/performance/runtime_perf/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_mediamanagement/tsrc/testing/performance/s60_perf/group"/> -->
+      </component>
+      <component id="sapi_messaging" name="Messaging SAPI" filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_messaging/group"/>
+			<!-- should test bld.infs be #included? -->
+        <!-- <unit bldFile="serviceproviders/sapi_messaging/tsrc/testing/performance/notify/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_messaging/tsrc/testing/performance/status/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_messaging/tsrc/testing/performance/delete/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_messaging/tsrc/testing/performance/getlist/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_messaging/tsrc/testing/performance/s60_getlist/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_messaging/tsrc/testing/performance/s60_asyncsend/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_messaging/tsrc/testing/performance/s60_notify/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_messaging/tsrc/testing/performance/send/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_messaging/tsrc/testing/performance/s60_status/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_messaging/tsrc/testing/tmessagingprovidertest/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_messaging/tsrc/testing/performance/s60_delete/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_messaging/tsrc/testing/performance/s60_send/group"/> -->
+        <!-- <unit bldFile="serviceproviders/sapi_messaging/tsrc/testing/performance/asyncsend/group"/> -->
+      </component>
+      <component id="sapi_sensor" name="Sensor SAPI" filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_sensor/group"/>
+      </component>
+      <component id="sapi_sysinfo" name="Sysinfo SAPI" filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_sysinfo/group"/>
+      </component>
+      <component id="sapi_serviceregistry" name="Service Registry SAPI" filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_serviceregistry/group"/>
+			<!-- should test bld.infs be #included? -->
+        <!-- <unit bldFile="serviceproviders/sapi_serviceregistry/tsrc/dev/group"/> -->
+      </component>
+    </collection>
+    <collection id="serviceapi_info" name="Service API Info" level="app">
+      <component id="serviceproviders_build" filter="s60" name="Service API Build">
+      	<!--  can the exports be distributed? -->
+        <unit bldFile="serviceproviders/group"/>
+      </component>
+      <component id="serviceapi_test" filter="s60" name="Service API Test" purpose="development">
+		<!-- Does this need to exist? -->
+        <!-- <unit bldFile="tsrc/group"/> -->
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>
