@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="devicesrv" name="Device Services" levels="adaptation hw-if plugin framework server app-if">
+    <collection id="accessoryservices" name="Accessory Services" level="framework">
+      <component id="accessorymonitor" filter="s60" name="Accessory Monitor">
+        <unit bldFile="accessoryservices/accessorymonitor/group"/>
+         <!-- are these test bld.infs needed for the build? -->
+        <!-- <unit bldFile="accessoryservices/accessorymonitor/tsrc/public/basic/accmonconnectionemulator/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessorymonitor/tsrc/public/basic/accmonitoringtestmodule/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessorymonitor/tsrc/public/basic/accmonitoringtestmodule/tests/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessorymonitor/tsrc/public/basic/accmontesttimer/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessorymonitor/tsrc/public/basic/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessorymonitor/tsrc/public/basic/stubs/accfwuinotifierstub/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessorymonitor/tsrc/public/basic/stubs/asystub/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessorymonitor/tsrc/public/basic/stubs/group"/> -->
+      </component>
+      <component id="accessoryremotecontrol" filter="s60" name="Accessory Remote Control">
+        <unit bldFile="accessoryservices/accessoryremotecontrol/group"/>
+         <!-- are these test bld.infs needed for the build? -->
+        <!-- <unit bldFile="accessoryservices/accessoryremotecontrol/tsrc/dsytesttool/dosservercontrol/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessoryremotecontrol/tsrc/dsytesttool/dsytfcore/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessoryremotecontrol/tsrc/dsytesttool/dsytfstifadapter/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessoryremotecontrol/tsrc/dsytesttool/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessoryremotecontrol/tsrc/remcontestcontrol/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessoryremotecontrol/tsrc/stub/audio/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessoryremotecontrol/tsrc/stub/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessoryremotecontrol/tsrc/stub/phone/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessoryremotecontrol/tsrc/stub/remcon/group"/> -->
+      </component>
+      <component id="accessoryserver" filter="s60" name="Accessory Server">
+        <unit bldFile="accessoryservices/accessoryserver/group"/>
+         <!-- are these test bld.infs needed for the build? -->
+        <!-- <unit bldFile="accessoryservices/accessoryserver/tsrc/dsytesttool/dosservercontrol/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessoryserver/tsrc/dsytesttool/dsytfcore/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessoryserver/tsrc/dsytesttool/dsytfstifadapter/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessoryserver/tsrc/dsytesttool/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessoryserver/tsrc/public/basic/accessorytestcontrol/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessoryserver/tsrc/public/basic/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessoryserver/tsrc/public/basic/stubs/accfwuinotifierstub/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessoryserver/tsrc/public/basic/stubs/asystub/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessoryserver/tsrc/public/basic/stubs/btasystub/group"/> -->
+        <!-- <unit bldFile="accessoryservices/accessoryserver/tsrc/public/basic/stubs/group"/> -->
+      </component>
+      <component id="headsetstatusapi" filter="s60" name="Headset Status API">
+        <unit bldFile="accessoryservices/headsetstatusapi/group"/>
+         <!-- is this test bld.inf needed for the build? -->
+        <!-- <unit bldFile="accessoryservices/headsetstatusapi/tsrc/public/basic/group"/> -->
+      </component>
+      <component id="tspclientmapper" filter="s60" name="TSP Client Mapper">
+        <unit bldFile="accessoryservices/tspclientmapper/group"/>
+         <!-- is this test bld.inf needed for the build? -->
+        <!-- <unit bldFile="accessoryservices/tspclientmapper/tsrc/public/basic/group"/> -->
+      </component>
+      <component id="remotecontrolfw" name="Remote Control Framework" introduced="9.1" purpose="optional">
+        <unit bldFile="accessoryservices/remotecontrolfw/group" mrp="accessoryservices/remotecontrolfw/group/bluetooth_remotecontrol.mrp"/>
+      </component>
+      <component id="gid_pc_tool" filter="s60" name="Generic ID PC Tool" target="desktop" class="tool">
+	<unit bldFile="accessoryservices/gid_pc_tool/group"/>
+      </component>
+    </collection>
+    <collection id="commonservices" name="Common Services" level="app-if">
+      <component id="commonengine" filter="s60" name="Common Engine">
+        <unit bldFile="commonservices/commonengine/group"/>
+         <!-- is this test bld.inf needed for the build? -->
+        <!-- <unit bldFile="commonservices/commonengine/tsrc/public/basic/group"/> -->
+      </component>
+      <component id="commonengineresources" filter="s60" name="Common Engine Resources" class="config">
+        <unit bldFile="commonservices/commonengineresources/group"/>
+      </component>
+      <component id="platformenv" filter="s60" name="Platform Environment">
+        <unit bldFile="commonservices/platformenv/group"/>
+        <!-- <unit bldFile="commonservices/platformenv/disknotifyhandler/group"/> -->
+         <!-- are these bld.infs needed? Can they be included from bld.inf?-->
+        <!-- <unit bldFile="commonservices/platformenv/platformver/group"/> -->
+        <!-- <unit bldFile="commonservices/platformenv/sysversioninfo/group"/> -->
+         <!-- is this test bld.inf needed for the build? -->
+        <!-- <unit bldFile="commonservices/platformenv/tsrc/public/basic/group"/> -->
+      </component>
+      <component id="sysutil" name="System Utilities" purpose="mandatory" introduced="ER5">
+        <unit bldFile="commonservices/sysutil/group" mrp="commonservices/sysutil/group/sysutil.mrp"/>
+      </component>
+      <component id="activitymanager" name="Activity Manager" purpose="mandatory" introduced="ER5">
+        <unit bldFile="commonservices/activitymanager/group" mrp="commonservices/activitymanager/group/activitymanager.mrp"/>
+      </component>
+    </collection>
+    <collection id="dosservices" name="Domestic Operating System Services" level="hw-if">
+      <component id="dosserver" filter="s60" name="Domestic OS Server">
+        <unit bldFile="dosservices/dosserver/group"/>
+      </component>
+      <component id="commondsy" filter="s60" name="Common DSY" class="plugin">
+        <unit bldFile="dosservices/commondsy/group"/>
+      </component>
+      <component id="dosservices_test" filter="s60" purpose="development" name="DOS Services Test">
+        <!-- is this component needed? If so, can these be #included from a single master test bld.inf?-->
+        <!-- <unit bldFile="dosservices/tsrc/dsytesttool/dosservercontrol/group"/> -->
+        <!-- <unit bldFile="dosservices/tsrc/public/basic/stubs/dsystub/group"/> -->
+        <!-- <unit bldFile="dosservices/tsrc/public/basic/group"/> -->
+        <!-- <unit bldFile="dosservices/tsrc/dsytesttool/dsytfcore/group"/> -->
+        <!-- <unit bldFile="dosservices/tsrc/public/basic/dosservertestplugin/group"/> -->
+        <!-- <unit bldFile="dosservices/tsrc/dsytesttool/dsytfstifadapter/group"/> -->
+        <!-- <unit bldFile="dosservices/tsrc/dsytesttool/group"/> -->
+      </component>
+    </collection>
+    <collection id="resourcemgmt" name="Resource Management" level="hw-if">
+      <component id="serverexe" filter="s60" name="Hardware Resource Manager Server">
+       <!-- this needs to be resolved with the equivalent in the hwresourcesmgr component -->
+        <!-- <unit bldFile="resourcemgmt/serverexe/group"/> -->
+      </component>
+      <component id="hwrmfmtxwatcherplugin" filter="s60" name="HWRM FM Transmitter Watcher Plugin" class="plugin">
+       <!-- this needs to be resolved with the equivalent in the hwresourcesmgr component. Should this be purpose="development" -->
+        <!-- <unit bldFile="resourcemgmt/hwrmfmtxwatcherplugin/group"/> -->
+      </component>
+      <component id="clientdll" filter="s60" name="HWRM Client">
+       <!-- this needs to be resolved with the equivalent in the hwresourcesmgr component -->
+        <!-- <unit bldFile="resourcemgmt/clientdll/group"/> -->
+      </component>
+      <component id="commondll" filter="s60" name="HWRM Common">
+       <!-- this needs to be resolved with the equivalent in the hwresourcesmgr component -->
+        <!-- <unit bldFile="resourcemgmt/commondll/group"/> -->
+      </component>
+      <component id="vibraclientdll" filter="s60" name="Vibra Client">
+       <!-- this needs to be resolved with the equivalent in the hwresourcesmgr component -->
+        <!-- <unit bldFile="resourcemgmt/vibraclientdll/group"/> -->
+      </component>
+      <component id="extendedlightclientdll" filter="s60" name="Extended Light Client">
+       <!-- this needs to be resolved with the equivalent in the hwresourcesmgr component -->
+        <!-- <unit bldFile="resourcemgmt/extendedlightclientdll/group"/> -->
+      </component>
+      <component id="lightclientdll" filter="s60" name="Light Client">
+       <!-- this needs to be resolved with the equivalent in the hwresourcesmgr component -->
+        <!-- <unit bldFile="resourcemgmt/lightclientdll/group"/> -->
+      </component>
+      <component id="fmtxclientdll" filter="s60" name="FM Transmitter Client">
+       <!-- this needs to be resolved with the equivalent in the fmtransmittercontrol component -->
+        <!-- <unit bldFile="resourcemgmt/fmtxclientdll/group"/> -->
+      </component>
+      <component id="hwrmtargetmodifierplugin" filter="s60" name="HWRM Target Modifier Plugin" class="plugin">
+       <!-- this needs to be resolved with the equivalent in the hwresourcesmgr component. Should this be purpose="development" -->
+        <!-- <unit bldFile="resourcemgmt/hwrmtargetmodifierplugin/group"/> -->
+        <!-- <unit bldFile="resourcemgmt/hwrmtargetmodifierplugin/tsrc/hwrmtargetmodifierplugintest/group"/> -->
+      </component>
+      <component id="vibractrl" filter="s60" name="Vibra Control" deprecated="9.1">
+        <unit bldFile="resourcemgmt/vibractrl/group"/>
+      </component>
+      <component id="hwresourcesmgr" name="Hardware Resources Manager" introduced="^2" purpose="optional">
+        <unit bldFile="resourcemgmt/hwresourcesmgr/group" mrp="resourcemgmt/hwresourcesmgr/group/telephony_hwrm.mrp"/>
+      </component>
+      <component id="hwresourcesmgrconfig" name="Hardware Resources Manager Config" introduced="^3" purpose="optional" class="config">
+        <unit bldFile="resourcemgmt/hwresourcesmgrconfig" mrp="resourcemgmt/hwresourcesmgrconfig/telephony_hwrm-config.mrp"/>
+      </component>
+      <component id="resourcemgmt_build" filter="s60" name="Resource Management Build">
+         <!-- need to reconcile this with the above components -->
+        <unit bldFile="resourcemgmt/group"/>
+      </component>
+      <component id="resourcemgmt_test" filter="s60" purpose="development" name="Resource Management Test">
+        <!-- is this component needed?-->
+        <!-- <unit bldFile="resourcemgmt/tsrc/public/basic/group"/> -->
+      </component>
+      <component id="powerandmemorynotificationservice" name="Power and Memory Notification Service" introduced="6.0" purpose="mandatory">
+        <unit bldFile="resourcemgmt/powerandmemorynotificationservice/group" mrp="resourcemgmt/powerandmemorynotificationservice/group/syslibs_pwrcli.mrp"/>
+      </component>
+    </collection>
+    <collection id="hwrmhaptics" name="HWRM Haptics" level="plugin">
+      <component id="hapticseffectdatagetterfw" filter="s60" name="Haptics Effect Data Getter Framework">
+        <unit bldFile="hwrmhaptics/hapticseffectdatagetterfw/group"/>
+      </component>
+      <component id="hapticspluginservice" filter="s60" name="Haptics Plugin Service">
+        <unit bldFile="hwrmhaptics/hapticspluginservice/group"/>
+      </component>
+      <component id="hapticspacketizer" filter="s60" name="Haptics Packetizer">
+        <unit bldFile="hwrmhaptics/hapticspacketizer/group"/>
+      </component>
+      <component id="hapticspluginmanager" filter="s60" name="Haptics Plugin Manager">
+        <unit bldFile="hwrmhaptics/hapticspluginmanager/group"/>
+      </component>
+      <component id="hapticsserver" filter="s60" name="Haptics Server">
+        <unit bldFile="hwrmhaptics/hapticsserver/group"/>
+      </component>
+      <component id="hapticsclient" filter="s60" name="Haptics Client">
+        <unit bldFile="hwrmhaptics/hapticsclient/group"/>
+      </component>
+      <component id="hwrmhaptics_build" filter="s60" name="HWRM Haptics Build">
+        <!-- can these exports be put in the appropriate above components? -->
+        <unit bldFile="hwrmhaptics/group"/>
+      </component>
+    </collection>
+    <collection id="mediator" name="Mediator" level="app-if">
+      <component id="mediator_build" filter="s60" name="Mediator Build">
+        <unit bldFile="mediator/group"/>
+      </component>
+      <component id="mediator_test" filter="s60" purpose="development" name="Mediator Test">
+          <!-- need to have a single unit in this component. Either #include one bld.inf from the other or remove the component -->
+        <!-- <unit bldFile="mediator/tsrc/public/basic/group"/> -->
+        <!-- <unit bldFile="mediator/tsrc/public/basic/stub/group"/> -->
+      </component>
+    </collection>
+    <collection id="psmservices" name="Power Save Mode Services" level="app-if">
+      <component id="psmserver" filter="s60" name="PSM Server">
+        <unit bldFile="psmservices/psmserver/group"/>
+         <!-- is this test bld.inf needed for the build? -->
+        <!-- <unit bldFile="psmservices/psmserver/tsrc/public/basic/group"/> -->
+      </component>
+    </collection>
+    <collection id="sensorservices" name="Sensor Services" level="framework">
+      <component id="sensorserver" filter="s60" name="Sensor Server">
+        <unit bldFile="sensorservices/sensorserver/group"/>
+         <!-- are these test bld.infs needed for the build? -->
+        <!-- <unit bldFile="sensorservices/sensorserver/tsrc/public/basic/group"/> -->
+        <!-- <unit bldFile="sensorservices/sensorserver/tsrc/public/basic/sensortestmodule/condevalstub/group"/> -->
+        <!-- <unit bldFile="sensorservices/sensorserver/tsrc/public/basic/sensortestmodule/group"/> -->
+        <!-- <unit bldFile="sensorservices/sensorserver/tsrc/public/basic/sensortestmodule/sensrvcondevalplugin/group"/> -->
+        <!-- <unit bldFile="sensorservices/sensorserver/tsrc/public/basic/sensortestmodule/ssystub/group"/> -->
+        <!-- <unit bldFile="sensorservices/sensorserver/tsrc/public/basic/sensortestmodule/stubprocess/group"/> -->
+      </component>
+      <component id="orientationssy" filter="s60" name="Orientation SSY" class="plugin">
+        <unit bldFile="sensorservices/orientationssy/group"/>
+      </component>
+      <component id="tiltcompensationssy" filter="s60" name="Tilt Compensation SSY" class="plugin">
+        <unit bldFile="sensorservices/tiltcompensationssy/group"/>
+      </component>
+      <component id="sensordatacompensator" filter="s60" name="Sensor Data Compensator">
+        <unit bldFile="sensorservices/sensordatacompensator/group"/>
+         <!-- are these test bld.infs needed for the build? -->
+        <!-- <unit bldFile="sensorservices/sensordatacompensator/tsrc/sensordatacompensatorpluginstub/group"/> -->
+        <!-- <unit bldFile="sensorservices/sensordatacompensator/tsrc/sensordatacompensatortest/group"/> -->
+      </component>
+    </collection>
+	<collection id="sysstatemgmt" name="System State Management" level="server">
+      <component id="starter" filter="s60" name="Starter">
+        <unit bldFile="sysstatemgmt/starter/group"/>
+         <!-- are these test bld.infs needed for the build? -->
+        <!-- <unit bldFile="sysstatemgmt/starter/strtsecnote/group"/> -->
+        <!-- <unit bldFile="sysstatemgmt/starter/strtsecobs/group"/> -->
+      </component>
+      <component id="systemstarter" name="System Starter" introduced="9.1" deprecated="^3" purpose="mandatory">
+        <unit bldFile="sysstatemgmt/systemstarter/group" mrp="sysstatemgmt/systemstarter/group/app-framework_sysstart.mrp"/>
+      </component>
+      <component id="systemstatemgr" name="System State Manager" introduced="^3" purpose="mandatory">
+        <unit bldFile="sysstatemgmt/systemstatemgr/group" mrp="sysstatemgmt/systemstatemgr/group/app-framework_ssma.mrp"/>
+      </component>
+      <component id="systemstateplugins" name="System State Plugins" introduced="^3" purpose="optional" class="plugin">
+        <unit bldFile="sysstatemgmt/systemstateplugins/group" mrp="sysstatemgmt/systemstateplugins/group/app-framework_ssplugins.mrp"/>
+      </component>
+      <component id="systemstatereferenceplugins" name="System State Reference Plugins" introduced="^3" purpose="optional" class="plugin">
+        <unit bldFile="sysstatemgmt/systemstatereferenceplugins/group" mrp="sysstatemgmt/systemstatereferenceplugins/group/app-framework_ssrefplugins.mrp"/>
+      </component>
+      <component id="sysstatemgmt_test" filter="s60" purpose="development" name="System State Management Test">
+        <!-- <unit bldFile="sysstatemgmt/tsrc/public/basic/group"/> -->
+      </component>
+    </collection>
+    <collection id="resourceinterfaces" name="Resource Interfaces" level="hw-if">
+      <component id="fmtransmittercontrol" name="FM Transmitter Control" introduced="^3" purpose="optional">
+        <unit bldFile="resourceinterfaces/fmtransmittercontrol/group" mrp="resourceinterfaces/fmtransmittercontrol/group/telephony_hwrmfmtx.mrp"/>
+      </component>
+    </collection>
+    <collection id="systemhealthmanagement" name="System Health Management" level="server">
+      <component id="systemhealthmgr" name="System Health Manager" introduced="^3" purpose="optional">
+        <unit bldFile="systemhealthmanagement/systemhealthmgr/group" mrp="systemhealthmanagement/systemhealthmgr/group/app-framework_shma.mrp"/>
+      </component>
+    </collection>
+    <collection id="devicesrvapitest" name="Devices Services API Tests" level="app-if">
+      <component id="accessorieshaitest" name="Accessories HAI Tests" introduced="^2" purpose="development" filter="test">
+        <unit mrp="devicesrvapitest/accessorieshaitest/group/accessorieshaitest.mrp" bldFile="devicesrvapitest/accessorieshaitest/group"/>
+      </component>
+      <component id="hwrmhaitest" name="HWRM HAI Tests" introduced="^2" purpose="development" filter="test">
+        <unit mrp="devicesrvapitest/hwrmhaitest/group/hwrmhaitest.mrp" bldFile="devicesrvapitest/hwrmhaitest/group"/>
+      </component>
+    </collection>
+    <collection id="devicesrv_info" name="Device Services Info" level="app-if">
+      <component id="devicesrv_pub" filter="s60" name="Device Services Public Interfaces" class="api">
+        <unit bldFile="devicesrv_pub/group"/>
+        <!-- <unit bldFile="devicesrv_pub/accessory_monitoring_api/tsrc/bc/accmonapibctests/group"/> -->
+        <!-- <unit bldFile="devicesrv_pub/feature_discovery_api/tsrc/bc/featurediscovery/group"/> -->
+        <!-- <unit bldFile="devicesrv_pub/find_item_api/tsrc/bc/finditem/group"/> -->
+        <!-- <unit bldFile="devicesrv_pub/hwrm_power_state_api/tsrc/bc/powerstate/group"/> -->
+        <!-- <unit bldFile="devicesrv_pub/light_api/tsrc/bc/light/group"/> -->
+        <!-- <unit bldFile="devicesrv_pub/phone_parser_api/tsrc/bc/phoneparser/group"/> -->
+        <!-- <unit bldFile="devicesrv_pub/platform_environment_api/tsrc/bc/platformenv/group"/> -->
+        <!-- <unit bldFile="devicesrv_pub/sensor_channel_api/tsrc/bc/sensor/group"/> -->
+        <!-- <unit bldFile="devicesrv_pub/sensor_data_compensator_api/tsrc/bc/sensordatacompensatortest/group"/> -->
+        <!-- <unit bldFile="devicesrv_pub/sysutil_api/tsrc/bc/sysutil/group"/> -->
+        <!-- <unit bldFile="devicesrv_pub/text_resolver_api/tsrc/bc/textresolver/group"/> -->
+        <!-- <unit bldFile="devicesrv_pub/version_info_api/tsrc/bc/platformvertest/group"/> -->
+        <!-- <unit bldFile="devicesrv_pub/vibra_api/tsrc/bc/vibra/group"/> -->
+      </component>
+      <component id="devicesrv_plat" filter="s60" name="Device Services Platform Interfaces" class="api">
+        <unit bldFile="devicesrv_plat/group"/>
+        <!-- <unit bldFile="devicesrv_plat/activity_manager_api/tsrc/group"/> -->
+      </component>
+      <component id="devicesrv_metadata" name="Device Services Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+        <unit mrp="devicesrv_info/devicesrv_metadata/devicesrv_metadata.mrp"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

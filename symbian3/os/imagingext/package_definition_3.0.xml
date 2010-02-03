@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="imagingext" name="Imaging Extensions" levels="adaptation hw-if plugin framework server app-if">
+    <collection id="imageadaptationextensions" name="Image Adaptation Extensions" level="app-if">
+      <component id="iclextjpegapi" filter="s60" name="ICL Extension JPEG API">
+        <unit bldFile="imageadaptationextensions/iclextjpegapi/group"/>
+      </component>
+      <component id="imageadaptationextensions_build" filter="s60" name="Image Adaptation Extensions Build">
+      	<!--  consider moving the export from this bld.inf into the above one and remove this component -->
+        <unit bldFile="imageadaptationextensions/group"/>
+      </component>
+    </collection>
+    <collection id="imagingmodules" name="Imaging Modules" level="hw-if">
+      <component id="exiflib" filter="s60" name="Exif Library">
+        <unit bldFile="imagingmodules/exiflib/group"/>
+      </component>
+      <component id="jp2kcodec" filter="s60" name="JPEG2000 Decoder Plugin" class="plugin">
+        <unit bldFile="imagingmodules/jp2kcodec/group"/>
+      </component>
+    </collection>
+    <collection id="imagingext_info" name="Imaging Extensions Info" level="app-if">
+      <component id="imagingext_plat" filter="s60" name="Imaging Extensions Platform Interfaces" class="api">
+        <unit bldFile="imagingext_plat/group"/>
+      </component>
+      <component id="imagingext_build" filter="s60" name="Imaging Extensions Build">
+        <unit bldFile="group"/>
+      </component>
+      <component id="imagingext_pub" filter="s60" name="Imaging Extensions Public Interfaces" class="api">
+        <unit bldFile="imagingext_pub/group"/>
+        <!-- does this tes unit need to be #included in the above one? -->
+        <!-- <unit bldFile="imagingext_pub/exif_api/tsrc/group"/> -->
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

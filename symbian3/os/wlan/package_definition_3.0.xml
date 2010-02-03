@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="wlan" name="WLAN" levels="hw low mid high tools test">
+    <collection id="wlan_bearer" name="WLAN Bearer" level="hw">
+      <component id="wlanpsmplugin" filter="s60" name="WLAN PSM Plugin" class="plugin">
+        <unit bldFile="wlan_bearer/wlanpsmplugin/group"/>
+      </component>
+      <component id="wlanagent" filter="s60" name="WLAN Agent">
+        <unit bldFile="wlan_bearer/wlanagent/group"/>
+      </component>
+      <component id="wlandbif_cd" filter="s60" name="WLAN CommsDat interface">
+        <unit bldFile="wlan_bearer/wlandbif_cd/group"/>
+      </component>
+      <component id="wlanengine" filter="s60" name="WLAN Engine">
+        <unit bldFile="wlan_bearer/wlanengine/wlan_symbian/wlanengine_symbian_3.1/group"/>
+      </component>
+      <component id="wlanldd" filter="s60" name="WLAN LDD">
+        <unit bldFile="wlan_bearer/wlanldd/wlan_symbian/wlanldd_symbian/group"/>
+      </component>
+      <component id="wlannwif" filter="s60" name="WLAN Network Interface">
+        <unit bldFile="wlan_bearer/wlannwif/group"/>
+      </component>
+    </collection>
+    <collection id="wlanapitest" name="WLAN API Tests" level="test">
+      <component id="wlanhaitest" name="WLAN HAI Tests" introduced="^2" purpose="development" filter="test">
+        <unit mrp="wlanapitest/wlanhaitest/group/wlanhaitest.mrp" bldFile="wlanapitest/wlanhaitest/group"/>
+      </component>
+    </collection>
+    <collection id="wlan_info" name="WLAN Info" level="test">
+      <component id="wlan_pub" filter="s60" name="WLAN Public Interfaces" class="api">
+        <unit bldFile="wlan_pub/group"/>
+      </component>
+      <component id="wlan_plat" filter="s60" name="WLAN Platform Interfaces" class="api">
+        <unit bldFile="wlan_plat/group"/>
+      </component>
+      <component id="wlan_metadata" name="WLAN Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+        <unit mrp="wlan_info/wlan_metadata/wlan_metadata.mrp"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

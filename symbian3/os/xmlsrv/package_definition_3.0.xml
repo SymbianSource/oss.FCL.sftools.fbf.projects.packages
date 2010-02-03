@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="xmlsrv" name="XML Services" levels="plugin server framework generic specific">
+    <collection id="xmlengine" name="XML Engine" level="server">
+      <component id="libxml2" filter="s60" name="Libxml2" deprecated="^3">
+		<!-- deprecated due to duplication -->
+        <unit bldFile="xmlengine/libxml2/group"/>
+      </component>
+      <component id="xmlengineutils" filter="s60" name="XML Engine Utils" deprecated="^3">
+		<!-- deprecated due to duplication -->
+        <unit bldFile="xmlengine/xmlengineutils/group"/>
+      </component>
+      <component id="domxpathwrapper" filter="s60" name="DOM XPath Wrapper" deprecated="^3">
+		<!-- deprecated due to duplication -->
+        <unit bldFile="xmlengine/domxpathwrapper/group"/>
+      </component>
+      <component id="xmlengineserializer" filter="s60" name="XML Engines Serializer" deprecated="^3">
+		<!-- deprecated due to duplication -->
+        <unit bldFile="xmlengine/xmlengineserializer/group"/>
+      </component>
+      <component id="xmlenginesaxplugin" filter="s60" name="XML Engine SAX Plugin" class="plugin" deprecated="^3">
+		<!-- deprecated due to duplication -->
+        <unit bldFile="xmlengine/xmlenginesaxplugin/group"/>
+      </component>
+      <component id="xmlengine_build" filter="s60" name="XML Engine Build" deprecated="^3">
+		<!-- deprecated due to duplication -->
+        <!-- can the hrh #include be moved to the appropriate other bld.infs? -->
+        <unit bldFile="xmlengine/group"/>
+      </component>
+    </collection>
+    <collection id="xmlsecurityengine" name="XML Security Engine" level="framework">
+      <component id="xmlseccertman" filter="s60" name="XML Security Certificate Manager">
+        <unit bldFile="xmlsecurityengine/xmlseccertman/group"/>
+      </component>
+      <component id="xmlsec" filter="s60" name="XML Security">
+        <unit bldFile="xmlsecurityengine/xmlsec/group"/>
+      </component>
+      <component id="xmlseccrypto" filter="s60" name="XML Security Crypto">
+        <unit bldFile="xmlsecurityengine/xmlseccrypto/group"/>
+      </component>
+      <component id="xmlsecwrapper" filter="s60" name="XML Security Wrapper">
+        <unit bldFile="xmlsecurityengine/xmlsecwrapper/group"/>
+      </component>
+      <component id="xmlsecurityengine_build" filter="s60" name="XML Security Engine Build">
+        <!-- can the hrh #include be moved to the appropriate other bld.infs? -->
+        <unit bldFile="xmlsecurityengine/group"/>
+      </component>
+    </collection>
+    <collection id="xml" name="XML" level="generic">
+      <component id="xmlfw" name="XML Framework" introduced="7.0s" purpose="optional">
+        <unit bldFile="xml/xmlfw/group" mrp="xml/xmlfw/group/syslibs_xml.mrp"/>
+      </component>
+      <component id="libxml2libs" name="Libxml2 Libraries" introduced="^3" purpose="optional">
+        <unit bldFile="xml/libxml2libs/group" mrp="xml/libxml2libs/group/syslibs_libxml2.mrp"/>
+      </component>
+       <component id="legacyminidomparser" name="legacyminidomparser" introduced="7.0s" purpose="optional">
+     <unit bldFile="xml/legacyminidomparser/GROUP" mrp="xml/legacyminidomparser/GROUP/syslibs_legacyminidomparser.mrp" /> 
+      </component>
+      <component id="xmldomandxpath" name="XML DOM and XPath" introduced="^3" purpose="optional">
+        <unit bldFile="xml/xmldomandxpath/group" mrp="xml/xmldomandxpath/group/syslibs_xmldom.mrp"/>
+      </component>
+      <component id="xmlexpatparser" name="XML Expat Parser" introduced="7.0s" purpose="optional" class="plugin">
+        <unit bldFile="xml/xmlexpatparser/group" mrp="xml/xmlexpatparser/group/syslibs_xmlparser.mrp"/>
+      </component>
+      <component id="xmllibxml2parser" name="XML Libxml2 Parser" introduced="^3" purpose="optional" class="plugin">
+        <unit bldFile="xml/xmllibxml2parser/group" mrp="xml/xmllibxml2parser/group/syslibs_xmlparser2.mrp"/>
+      </component>
+      <component id="wbxmlparser" name="WBXML Parser" introduced="7.0s" purpose="optional" class="plugin">
+        <unit bldFile="xml/wbxmlparser/group" mrp="xml/wbxmlparser/group/syslibs_wbxmlparser.mrp"/>
+      </component>
+    </collection>
+    <collection id="xmlsrv_info" name="XML Services Info" level="specific">
+      <component id="xmlsrv_plat" filter="s60" name="XML Services Platform Interfaces" class="api">
+        <unit bldFile="xmlsrv_plat/group"/>
+        <!-- <unit bldFile="xmlsrv_plat/xml_encryption_api/tsrc/group"/> -->
+        <!-- <unit bldFile="xmlsrv_plat/xml_engine_serializer_api/tsrc/group"/> -->
+        <!-- <unit bldFile="xmlsrv_plat/xml_engine_utils_api/tsrc/group"/> -->
+        <!-- <unit bldFile="xmlsrv_plat/xml_engine_xpath_api/tsrc/group"/> -->
+        <!-- <unit bldFile="xmlsrv_plat/xml_security_engine_utils_api/tsrc/group"/> -->
+        <!-- <unit bldFile="xmlsrv_plat/xml_signature_api/tsrc/group"/> -->
+      </component>
+      <component id="xmlsrv_build" filter="s60" name="XML Services Build">
+        <!-- move ifdef into appropriate bld.inf -->
+        <unit bldFile="group"/>
+      </component>
+      <component id="xmlsrv_pub" filter="s60" name="XML Services Public Interfaces" class="api">
+        <unit bldFile="xmlsrv_pub/group"/>
+        <!-- <unit bldFile="xmlsrv_pub/xml_engine_dom_api/tsrc/group"/> -->
+      </component>
+      <component id="xmlsrv_metadata" name="XML Services Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+        <unit mrp="xmlsrv_info/xmlsrv_metadata/xmlsrv_metadata.mrp"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

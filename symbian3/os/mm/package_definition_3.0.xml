@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="mm" name="Multimedia" levels="adaptation hw-if device-fw devices middleware app-if">
+    <collection id="audio" name="Audio Codecs" level="middleware">
+      <component id="arm_cmmf_codecs" filter="s60" name="ARM CMMF Codecs" class="plugin">
+        <unit bldFile="audio/arm_cmmf_codecs/group"/>
+      </component>
+    </collection>
+    <collection id="video" name="Video Codecs" level="middleware">
+    </collection>
+    <collection id="devsoundextensions" name="Devsound Extensions" level="device-fw">
+      <component id="drmaudioplayer" filter="s60" name="DRM Audio Player">
+        <unit bldFile="devsoundextensions/drmaudioplayer/group"/>
+           <!-- following two units should be #included in above bld.inf -->
+        <!-- <unit bldFile="devsoundextensions/drmaudioplayer/drmplayserver/group"/> -->
+        <!-- <unit bldFile="devsoundextensions/drmaudioplayer/drmplayutility/group"/> -->
+      </component>
+      <component id="mmextfw" filter="s60" name="Multimedia Extension Framework">
+        <unit bldFile="devsoundextensions/mmextfw/group"/>
+      </component>
+      <component id="audiorouting" filter="s60" name="Audio Routing">
+        <unit bldFile="devsoundextensions/audiorouting/group"/>
+      </component>
+      <component id="effects" filter="s60" name="Effects">
+        <unit bldFile="devsoundextensions/effects/group"/>
+              <!-- should test be #included in group file?-->
+        <!-- <unit bldFile="devsoundextensions/effects/effecttest"/> -->
+      </component>
+      <component id="effectspresets" filter="s60" name="Effects Presets">
+        <unit bldFile="devsoundextensions/effectspresets/group"/>
+      </component>
+      <component id="telephonyaudiorouting" filter="s60" name="Telephony Audio Routing">
+        <unit bldFile="devsoundextensions/telephonyaudiorouting/group"/>
+          <!-- should the following should be #included in the above bld.inf? -->
+        <!-- <unit bldFile="devsoundextensions/telephonyaudiorouting/server/group"/> -->
+        <!-- <unit bldFile="devsoundextensions/telephonyaudiorouting/session/group"/> -->
+        <!-- <unit bldFile="devsoundextensions/telephonyaudiorouting/telephonyaudioroutingbase/group"/> -->
+        <!-- <unit bldFile="devsoundextensions/telephonyaudiorouting/telephonyaudioroutingmanager/group"/> -->
+      </component>
+      <component id="mmfcustominterfaces" filter="s60" name="MMF Custom Interfaces">
+        <unit bldFile="devsoundextensions/mmfcustominterfaces/group"/>
+      </component>
+      <component id="addeddevsoundcontrol" filter="s60" name="Added DevSound Control">
+        <unit bldFile="devsoundextensions/addeddevsoundcontrol/group"/>
+      </component>
+      <component id="globalaudiosettings" filter="s60" name="Global Audio Settings">
+        <unit bldFile="devsoundextensions/globalaudiosettings/group"/>
+      </component>
+      <component id="restrictedaudiooutput" filter="s60" name="Restricted Audio Output">
+        <unit bldFile="devsoundextensions/restrictedaudiooutput/group"/>
+      </component>
+      <component id="ciextnfactoryplugins" filter="s60" name="Custom Interface Extension Factory Plugins" class="plugin">
+        <unit bldFile="devsoundextensions/ciextnfactoryplugins/group"/>
+      </component>
+    </collection>
+    <collection id="mdfdevvideoextensions" name="MDF Dev Video Extensions" level="device-fw">
+      <component id="arm_mdf_postprocessor" filter="s60" name="ARM MDF Postprocessor">
+        <unit bldFile="mdfdevvideoextensions/arm_mdf_postprocessor/group"/>
+      </component>
+    </collection>
+    <collection id="videoadaptationextensions" name="Video Adaptation Extensions" level="adaptation">
+      <component id="postingsurface" filter="s60" name="Posting Surface">
+        <unit bldFile="videoadaptationextensions/postingsurface/group"/>
+      </component>
+    </collection>
+    <collection id="imagingandcamerafws" name="Imaging and Camera Frameworks" level="app-if">
+      <component id="imagingfws" name="Imaging Frameworks" introduced="7.0s" purpose="mandatory">
+        <unit bldFile="imagingandcamerafws/imagingfws/group" mrp="imagingandcamerafws/imagingfws/group/multimedia_icl.mrp"/>
+      </component>
+      <component id="imagingunittest" name="Imaging Unit Tests" introduced="7.0s" purpose="development" filter="test">
+        <unit mrp="imagingandcamerafws/imagingunittest/group/multimedia_unittest_icl_source.mrp" bldFile="imagingandcamerafws/imagingunittest/group"/>
+      </component>
+      <component id="imaginginttest" name="Imaging Integration Tests" introduced="7.0s" purpose="development" filter="test">
+        <unit mrp="imagingandcamerafws/imaginginttest/group/multimedia_inttest_icl_source.mrp" bldFile="imagingandcamerafws/imaginginttest/group"/>
+      </component>
+      <component id="camerafw" name="Camera Framework" introduced="7.0s" purpose="optional">
+		<unit bldFile="imagingandcamerafws/camerafw/group" mrp="imagingandcamerafws/camerafw/group/multimedia_ecam_framework.mrp"/>
+      </component>
+      <component id="cameraunittest" name="Camera Unit Tests" introduced="9.2" purpose="development" filter="test">
+        <unit mrp="imagingandcamerafws/cameraunittest/group/multimedia_unittest_ecam_source.mrp" bldFile="imagingandcamerafws/cameraunittest/group"/>
+      </component>
+    </collection>
+	<collection id="mmlibs" name="Multimedia Libraries" level="middleware">
+	  <component id="mmutilitylib" name="Multimedia Utility Library" introduced="8.1" purpose="mandatory">
+		<unit bldFile="mmlibs/mmutilitylib/group" mrp="mmlibs/mmutilitylib/group/multimedia_common.mrp"/>
+	  </component>
+	 <component id="mmfw" name="Multimedia Framework" introduced="7.0s" purpose="mandatory">
+		<unit bldFile="mmlibs/mmfw/group" mrp="mmlibs/mmfw/group/multimedia_mmf.mrp"/>
+	 </component>
+    </collection>
+    <collection id="mmplugins" name="Multimedia Plugins" level="middleware">
+      <component id="imagingplugins" name="Imaging Plugins" introduced="7.0s" purpose="optional" class="plugin">
+        <unit bldFile="mmplugins/imagingplugins/group" mrp="mmplugins/imagingplugins/group/multimedia_icl_plugin.mrp"/>
+      </component>
+      <component id="cameraplugins" name="Camera Plugins" introduced="7.0s" purpose="optional" class="plugin">
+		<unit bldFile="mmplugins/cameraplugins/group" mrp="mmplugins/cameraplugins/group/multimedia_ecam_plugins.mrp"/>
+      </component>
+      <component id="lib3gp" name="3GP Library" introduced="^2" purpose="optional">
+        <unit bldFile="mmplugins/lib3gp/group" mrp="mmplugins/lib3gp/group/multimedia_3gplibrary.mrp"/>
+      </component>
+      <component id="lib3gpunittest" name="3GP Unit Tests" introduced="^2" purpose="development" filter="test">
+        <unit mrp="mmplugins/lib3gpunittest/group/multimedia_unittest_3gplibrary_source.mrp" bldFile="mmplugins/lib3gpunittest/group"/>
+      </component>
+      <component id="mmfwplugins" name="Multimedia Framework Plugins" introduced="7.0s" purpose="optional" class="plugin">
+        <unit bldFile="mmplugins/mmfwplugins/group" mrp="mmplugins/mmfwplugins/group/multimedia_mmf_plugin.mrp"/>
+      </component>
+    </collection>
+    <collection id="mm_info" name="Multimedia Info" level="app-if">
+      <component id="mm_pub" filter="s60" name="Multimedia Public Interfaces" class="api">
+        <unit bldFile="mm_pub/group"/>
+          <!-- should #include the following from the main bld.inf -->
+        <unit bldFile="mm_pub/audio_effects_api/tsrc/group"/>
+        <unit bldFile="mm_pub/audio_effects_presets_api/tsrc/group"/>
+        <unit bldFile="mm_pub/drm_audio_player_api/tsrc/group"/>
+      </component>
+      <component id="mm_plat" filter="s60" name="Multimedia Platform Interfaces" class="api">
+        <unit bldFile="mm_plat/group"/>
+          <!-- should #include the following from the main bld.inf -->
+        <unit bldFile="mm_plat/aac_decoder_config_api/tsrc/group"/>
+        <unit bldFile="mm_plat/audio_routing_api/tsrc/group"/>
+        <unit bldFile="mm_plat/audio_visualization_api/tsrc/group"/>
+        <unit bldFile="mm_plat/eaac_plus_decoder_interface_api/tsrc/group"/>
+        <unit bldFile="mm_plat/error_concealment_interface_api/tsrc/group"/>
+        <unit bldFile="mm_plat/g711_decoder_interface_api/tsrc/group"/>
+        <unit bldFile="mm_plat/g711_encoder_interface_api/tsrc/group"/>
+        <unit bldFile="mm_plat/g729_decoder_interface_api/tsrc/group"/>
+        <unit bldFile="mm_plat/g729_encoder_interface_api/tsrc/group"/>
+        <unit bldFile="mm_plat/global_audio_settings_api/tsrc/group"/>
+        <unit bldFile="mm_plat/ilbc_decoder_interface_api/tsrc/group"/>
+        <unit bldFile="mm_plat/ilbc_encoder_interface_api/tsrc/group"/>
+        <unit bldFile="mm_plat/ra8_decoder_interface_api/tsrc/group"/>
+        <unit bldFile="mm_plat/restricted_audio_output_api/tsrc/group"/>
+        <unit bldFile="mm_plat/sbc_encoder_interface_api/tsrc/group"/>
+        <unit bldFile="mm_plat/speech_encoder_config_api/tsrc/group"/>
+        <unit bldFile="mm_plat/wma_decoder_interface_api/tsrc/group"/>
+      </component>
+      <component id="mm_build" filter="s60" name="Multimedia Build">
+          <!-- add system include to each bld.inf mentioned and remove this -->
+        <unit bldFile="group"/>
+      </component>
+      <component id="mmdocs" name="Multimedia Documentation" purpose="development" class="doc">
+        <unit mrp="mm_info/mmdocs/multimedia_documentation.mrp"/>
+      </component>
+      <component id="mm_metadata" name="Multimedia Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+        <unit mrp="mm_info/mm_metadata/mm_metadata.mrp"/>
+      </component>
+    </collection>
+    <collection id="mmresourcemgmt" name="Multimedia Resource Management" level="middleware">
+      <component id="mmresctrl" name="Multimedia Resource Controller" introduced="^2" purpose="development">
+        <unit bldFile="mmresourcemgmt/mmresctrl/group" mrp="mmresourcemgmt/mmresctrl/group/multimedia_a3f_refmmrc.mrp"/>
+      </component>
+    </collection>
+    <collection id="mmdevicefw" name="Multimedia Device Framework" level="device-fw">
+      <component id="mdf" name="Media Device Framework" introduced="9.2" purpose="mandatory">
+        <unit bldFile="mmdevicefw/mdf/group" mrp="mmdevicefw/mdf/group/multimedia_mdf.mrp"/>
+      </component>
+      <component id="mdfunittest" name="MDF Unit Tests" introduced="9.2" purpose="development" filter="test">
+        <unit mrp="mmdevicefw/mdfunittest/group/multimedia_unittest_mdf_source.mrp" bldFile="mmdevicefw/mdfunittest/group"/>
+      </component>
+      <component id="speechrecogsupport" name="Speech Recognition Support" introduced="7.0s" purpose="mandatory">
+        <unit bldFile="mmdevicefw/speechrecogsupport/group" mrp="mmdevicefw/speechrecogsupport/group/multimedia_mmf_ASR.mrp"/>
+      </component>
+    </collection>
+    <collection id="mmswadaptation" name="Multimedia Software Adaptation" level="adaptation">
+      <component id="videorenderer" name="Video Renderer" introduced="^3" purpose="optional">
+				<unit bldFile="mmswadaptation/videorenderer/group" mrp="mmswadaptation/videorenderer/group/multimedia_videorenderer.mrp"/> 
+      </component>
+    </collection>
+    <collection id="mmtestenv" name="Multimedia Test Environment" level="device-fw">
+      <component id="mmtestfw" name="Multimedia Test Framework" introduced="7.0s" purpose="development" filter="test">
+        <unit mrp="mmtestenv/mmtestfw/group/multimedia_testframework_source.mrp" bldFile="mmtestenv/mmtestfw/group"/>
+      </component>
+      <component id="mmtestfwunittest" name="Multimedia Test Framework Unit Tests" introduced="7.0s" purpose="development" filter="test">
+        <unit mrp="mmtestenv/mmtestfwunittest/group/multimedia_unittest_testframework_source.mrp" bldFile="mmtestenv/mmtestfwunittest/group"/>
+      </component>
+      <component id="mmtestagent" name="Multimedia Test Agent" introduced="8.0" purpose="development" filter="test">
+        <unit mrp="mmtestenv/mmtestagent/group/multimediatestagent_source.mrp" bldFile="mmtestenv/mmtestagent/group"/>
+      </component>
+      <component id="mmtesttools" name="Multimedia Test Tools" purpose="development" filter="test">
+        <unit mrp="mmtestenv/mmtesttools/Group/multimedia_testtools_source.mrp" bldFile="mmtestenv/mmtesttools/Group"/>
+      </component>
+    </collection>
+    <collection id="omxil" name="OpenMAX IL" level="hw-if">
+      <component id="omxilapi" name="OpenMAX IL API" introduced="^3" purpose="optional">
+        <unit version="1" bldFile="omxil/omxilapi/group" mrp="omxil/omxilapi/group/multimedia_omx_il_api.mrp"/>
+	  </component>
+      <component id="omxilcore" name="OpenMAX IL Core" introduced="^3" purpose="optional">
+        <unit version="1" bldFile="omxil/omxilcore/group" mrp="omxil/omxilcore/group/multimedia_omx_il_core.mrp"/>
+      </component>
+      <component id="omxilcomponentcommon" name="OpenMAX IL Component Framework" introduced="^3" purpose="optional">
+        <unit version="1" bldFile="omxil/omxilcomponentcommon/group" mrp="omxil/omxilcomponentcommon/group/multimedia_omx_il_comp.mrp"/>
+      </component>
+      <component id="omxilrefcomps" name="OpenMAX IL Reference Components" introduced="^3" purpose="optional">
+        <unit version="1" bldFile="omxil/omxilrefcomps/ref_components/group" mrp="omxil/omxilrefcomps/ref_components/group/multimedia_omx_il_comp_ref.mrp"/>
+      </component>
+      <component id="omxilunittest" name="OpenMAX IL Unit Tests" introduced="^3" purpose="development" filter="test">
+        <unit mrp="omxil/omxilunittest/group/multimedia_unittest_omx_il.mrp" bldFile="omxil/omxilunittest/group"/>
+      </component>
+      <component id="omxilcoreconftest" name="OpenMAX IL Core Conformance Suite" introduced="^3" purpose="development" filter="test">
+        <unit mrp="omxil/omxilcoreconftest/group/multimedia_omx_il_core_loader_conf_suite.mrp" bldFile="omxil/omxilcoreconftest/group"/>
+      </component>
+      <component id="mmilapi" name="Multimedia Integration Layer API" introduced="^3" purpose="development">
+        <unit bldFile="omxil/mmilapi/group" mrp="omxil/mmilapi/group/multimedia_il_api.mrp"/>
+      </component>
+    </collection>
+    <collection id="devsound" name="Sound Device" level="devices">
+      <component id="devsoundapi" name="DevSound API" introduced="7.0s" purpose="mandatory">
+        <unit bldFile="devsound/devsoundapi/group" mrp="devsound/devsoundapi/group/multimedia_mdf_devsound_api.mrp"/>
+      </component>
+      <component id="a3fdevsound" name="A3F DevSound" introduced="^2" purpose="optional">
+        <unit bldFile="devsound/a3fdevsound/group" mrp="devsound/a3fdevsound/group/multimedia_a3f_devsound.mrp"/>
+      </component>
+      <component id="a3facf" name="A3F Audio Component Framework" introduced="^2" purpose="optional">
+        <unit bldFile="devsound/a3facf/group" mrp="devsound/a3facf/group/multimedia_a3f_acf.mrp"/>
+      </component>
+      <component id="devsoundpluginsupport" name="DevSound Plugin Support" introduced="7.0s" purpose="optional">
+        <unit bldFile="devsound/devsoundpluginsupport/group" mrp="devsound/devsoundpluginsupport/group/multimedia_mdf_devsound_pluginsupport.mrp"/>
+      </component>
+      <component id="refdevsound" name="Reference DevSound Plugins" introduced="7.0s" purpose="optional">
+        <unit bldFile="devsound/devsoundrefplugin/group" mrp="devsound/devsoundrefplugin/group/multimedia_mdf_devsound_refplugin.mrp"/>
+      </component>
+      <component id="btdevsound" name="Bluetooth DevSound Plugin" introduced="7.0s" purpose="development" class="plugin">
+        <unit bldFile="devsound/sounddevbt/group" mrp="devsound/sounddevbt/group/multimedia_mdf_devsound_refbtplugin.mrp"/>
+      </component>
+      <component id="a3ftrace" name="A3F Trace Utility" introduced="^2" purpose="development">
+        <unit bldFile="devsound/a3ftrace/group" mrp="devsound/a3ftrace/group/multimedia_a3f_traces.mrp"/>
+      </component>
+      <component id="a3fintegrationtest" name="A3F Integration Tests" introduced="^2" purpose="development" filter="test">
+        <unit mrp="devsound/a3fintegrationtest/group/multimedia_inttest_a3f_devsound_source.mrp" bldFile="devsound/a3fintegrationtest/group"/>
+      </component>
+      <component id="a3fsrvstart" name="A3F Server Start" introduced="^2" purpose="optional" class="plugin">
+        <unit bldFile="devsound/a3fsrvstart/group" mrp="devsound/a3fsrvstart/group/multimedia_a3f_serverstart.mrp"/>
+      </component>
+    </collection>
+    <collection id="mmhais" name="Multimedia Hardware Adaptation Interfaces" level="adaptation">
+      <component id="devsoundhwdeviceapi" name="DevSound Hardware Device API" introduced="7.0s" purpose="optional">
+        <unit bldFile="devsound/hwdevapi/group" mrp="devsound/hwdevapi/group/multimedia_mdf_devsound_hwdev.mrp"/>
+      </component>
+      <component id="a3facl" name="A3F Audio Component Library" introduced="^2" purpose="development">
+        <unit bldFile="mmhais/a3facl/group" mrp="mmhais/a3facl/group/multimedia_a3f_acl.mrp"/>
+      </component>
+      <component id="a3fdevsoundcustomisation" name="A3F DevSound Customisation" introduced="^2" purpose="optional">
+        <unit bldFile="mmhais/a3fdevsoundcustomisation/group" mrp="mmhais/a3fdevsoundcustomisation/group/multimedia_a3f_devsoundadaptationinfo.mrp"/>
+      </component>
+      <component id="refacladapt" name="Reference ACL Adaptation" introduced="^2" purpose="optional">
+        <unit bldFile="mmhais/refacladapt/group" mrp="mmhais/refacladapt/group/multimedia_a3f_refacladaptation.mrp"/>
+      </component>
+      <component id="videohai" name="Video HAI" introduced="7.0s" purpose="mandatory">
+				<unit bldFile="mmhais/videohai/group" mrp="mmhais/videohai/group/multimedia_videohai.mrp"/>				                      
+	  </component>
+      <component id="dvbhreceiverhai" name="Mobile TV DVB-H Receiver HAI" introduced="^2" purpose="optional">
+        <unit bldFile="mmhais/dvbhreceiverhai/hai/dvbh/group" mrp="mmhais/dvbhreceiverhai/hai/dvbh/group/multimedia_mobiletv_dvbh_hai.mrp"/>
+      </component>
+      <component id="dvbhunittest" name="Mobile TV DVB-H Unit Tests" introduced="^2" purpose="development" filter="test">
+        <unit mrp="mmhais/dvbhunittest/hai/dvbh/group/multimedia_unittest_dvbhhai.mrp" bldFile="mmhais/dvbhunittest/hai/dvbh/group"/>
+      </component>
+    </collection>
+    <collection id="mmapitest" name="Multimedia API Tests" level="app-if">
+      <component id="mmsvs" name="Multimedia Verification Suite" introduced="^2" purpose="development">
+        <unit mrp="mmapitest/mmsvs/group/mmsvs.mrp"/>
+      </component>
+      <component id="devvideohaitest" name="DevVideo HAI Tests" introduced="^2" purpose="development" filter="test">
+        <unit mrp="mmapitest/devvideohaitest/group/devvideohaitest.mrp" bldFile="mmapitest/devvideohaitest/group"/>
+      </component>
+      <component id="devsoundhaitest" name="DevSound HAI Tests" introduced="^2" purpose="development" filter="test">
+        <unit mrp="mmapitest/devsoundhaitest/group/devsoundhaitest.mrp" bldFile="mmapitest/devsoundhaitest/group"/>
+      </component>
+      <component id="devsoundexthaitest" name="DevSound Extensions HAI Tests" introduced="^2" purpose="development" filter="test">
+        <unit mrp="mmapitest/devsoundexthaitest/group/devsoundexthaitest.mrp" bldFile="mmapitest/devsoundexthaitest/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

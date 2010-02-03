@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="deviceplatformrelease" name="Device Platform Release" levels="bld mid top">
+    <collection id="s60extras" name="S60 Extras" level="mid">
+      <component id="s60extras_build" filter="s60" name="S60 Extras Build" class="config" purpose="development">
+        <unit bldFile="s60extras/group"/>
+      </component>
+    </collection>
+    <collection id="s60locfiles" name="S60 Locale Files" level="mid">
+      <component id="s60locfiles_build" filter="s60" name="S60 Locale Files Build" class="config" purpose="development">
+        <unit bldFile="s60locfiles/group"/>
+      </component>
+    </collection>
+    <collection id="version" name="Version" level="top">
+      <component id="version_build" filter="s60" name="Version Build" class="config" purpose="development">
+        <unit bldFile="version/group"/>
+      </component>
+    </collection>
+    <collection id="sf_config" name="SF Config" level="mid">
+      <component id="config" filter="s60" name="Config" class="config" purpose="development">
+         <!-- there should only be one unit. Can any of these be uncommented? -->
+        <!-- <unit bldFile="sf_config/config/apac/group"/> -->
+        <!-- <unit bldFile="sf_config/config/group"/> -->
+        <!-- <unit bldFile="sf_config/config/japan/group"/> -->
+        <!-- <unit bldFile="sf_config/config/western/group"/> -->
+      </component>
+    </collection>
+    <collection id="s60bld" name="S60 Build">
+      <component id="buildplatforms" filter="s60" name="Build Platforms">
+        <!-- should be located locally in buildplatforms/group -->
+        <unit bldFile="/tools/buildplatforms/group"/>
+      </component>
+    </collection>
+    <collection id="symbianosbld" name="Symbian OS Build" level="bld">
+      <component id="cedarutils" name="Cedar Utils" purpose="development">
+        <unit mrp="symbianosbld/cedarutils/tools_utils_cedar.mrp"/>
+      </component>
+      <component id="productionbldcbrconfig" name="Production Build CBR Config" filter="gt" purpose="development" class="config">
+        <unit mrp="symbianosbld/productionbldcbrconfig/product_cbr_config.mrp"/>
+      </component>
+      <component id="foundation_s60_packages" name="Foundation S60 Packages" class="config" introduced="^3" purpose="development" target="desktop">
+        <unit mrp="symbianosbld/foundation_s60_packages/foundation_s60_packages.mrp"/>
+      </component>
+    </collection>
+    <collection id="foundation_system" name="Foundation System" level="top">
+      <component id="system_model" name="System Model" class="config" introduced="^2" purpose="development" target="desktop">
+        <unit mrp="foundation_system/system_model/system_model.mrp"/>
+      </component>
+    </collection>
+    <collection id="deviceplatformrelease_info" name="Device Platform Release Info" level="top">
+      <component id="deviceplatformrelease_metadata" name="Device Platform Release Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+        <unit mrp="deviceplatformrelease_info/deviceplatformrelease_metadata/deviceplatformrelease_metadata.mrp"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>
