@@ -17,21 +17,23 @@
       	<meta rel="config">
       		<defined condition="__WEB_WIDGETS"/>
       	</meta>
-        <unit bldFile="browserplugins/browsersysteminfoplugin/group"/>
+      	<!-- uncomment the unit when configuration is in place, it's currently #included from browserplugins_build -->
+        <!-- <unit bldFile="browserplugins/browsersysteminfoplugin/group"/>-->
       </component>
       <component id="browsergpsplugin" filter="s60" name="Browser GPS Plugin" class="plugin">
       	<meta rel="config">
       		<defined condition="__WEB_WIDGETS"/>
       	</meta>
-        <unit bldFile="browserplugins/browsergpsplugin/group"/>
+      	<!-- uncomment the unit when configuration is in place, it's currently #included from browserplugins_build -->
+        <!-- <unit bldFile="browserplugins/browsergpsplugin/group"/>-->
       </component>
       <component id="browseraudiovideoplugin" filter="s60" name="Browser Audio Video Plugin" class="plugin">
         <unit bldFile="browserplugins/browseraudiovideoplugin/group"/>
       </component>
-    <!--   <component id="browserplugins_build" filter="s60" name="Browser Plugins Build">-->
-		<!-- can the #ifdef in this be handled elsewhere? -->
-        <!-- <unit bldFile="browserplugins/group"/>
-      </component>-->
+      <component id="browserplugins_build" filter="s60" name="Browser Plugins Build">
+		<!-- when configuration is in place, the #ifdef is no longer needed and this component can be removed -->
+        <unit bldFile="browserplugins/group"/>
+      </component>
     </collection>
     <collection id="pushmtm" name="Push MTM" level="plugin">
       <component id="pushmtm_help" filter="s60" name="Push MTM Help">

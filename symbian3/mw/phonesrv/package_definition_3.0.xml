@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="phonesrv" name="Telephony and SIM Services" levels="plugin framework server generic specific">
+    <collection id="phonecmdhandler" name="Phone Command Handler" level="generic">
+      <component id="phonecmdhnlr" filter="s60" name="Phone Command Handler">
+        <unit bldFile="phonecmdhandler/phonecmdhnlr/group"/>
+      </component>
+    </collection>
+    <collection id="cbs" name="Cellular Baseband Services" level="plugin">
+      <component id="cbsserver" filter="s60" name="CBS Server">
+        <unit bldFile="cbs/cbsserver/group"/>
+      </component>
+      <component id="cbsui" filter="s60" name="CBS UI">
+        <unit bldFile="cbs/cbsui/group"/>
+      </component>
+    </collection>
+    <collection id="convergedcallengine" name="Converged Call Engine" level="framework">
+      <component id="callprovider" filter="s60" name="Call Provider">
+        <unit bldFile="convergedcallengine/callprovider/group"/>
+      </component>
+      <component id="cce" filter="s60" name="CCE">
+        <unit bldFile="convergedcallengine/cce/group"/>
+      </component>
+      <component id="spsettings" filter="s60" name="Service Provider Settings">
+        <unit bldFile="convergedcallengine/spsettings/group"/>
+        	<!-- include the rest in the above? -->
+        <!-- <unit bldFile="convergedcallengine/spsettings/tsrc/public/basic/group"/> -->
+        <!-- <unit bldFile="convergedcallengine/spsettings/tsrc/public/basic/spsettingsut/group"/> -->
+      </component>
+      <component id="cenrepdatabase" filter="s60" name="CCE Cenrep Database">
+        <unit bldFile="convergedcallengine/cenrepdatabase/group"/>
+      </component>
+      <component id="serviceselector" filter="s60" name="Service Selector">
+        <unit bldFile="convergedcallengine/serviceselector/group"/>
+      </component>
+      <component id="csplugin" filter="s60" name="CS Plugin" class="plugin">
+      	<!--  should spell out CS in name -->
+        <unit bldFile="convergedcallengine/csplugin/group"/>
+      </component>
+    </collection>
+    <collection id="networkhandling" name="Network Handling" level="plugin">
+      <component id="networkhandlingengine" filter="s60" name="Network Handling Engine">
+        <unit bldFile="networkhandling/networkhandlingengine/group"/>
+      </component>
+    </collection>
+    <collection id="phoneclientserver" name="Phone Client/Server" level="server">
+      <component id="enpolicy" filter="s60" name="Emergency Number Policy">
+        <unit bldFile="phoneclientserver/enpolicy/group"/>
+      </component>
+      <component id="aiwdialdata" filter="s60" name="AIW Dial Data">
+        <unit bldFile="phoneclientserver/aiwdialdata/group"/>
+      </component>
+      <component id="dialutils" filter="s60" name="Dial Utils">
+        <unit bldFile="phoneclientserver/dialutils/group"/>
+      </component>
+      <component id="phoneclient" filter="s60" name="Phone Client">
+        <unit bldFile="phoneclientserver/phoneclient/group"/>
+      </component>
+      <component id="phoneserver" filter="s60" name="Phone Server">
+        <unit bldFile="phoneclientserver/phoneserver/group"/>
+      </component>
+      <component id="callui" filter="s60" name="Call UI">
+        <unit bldFile="phoneclientserver/callui/group"/>
+      </component>
+    </collection>
+    <collection id="satengine" name="SAT Engine" level="generic">
+      <component id="satserver" filter="s60" name="SAT Server">
+        <unit bldFile="satengine/satserver/group"/>
+      </component>
+    </collection>
+    <collection id="satui" name="SIM Application Toolkit UI" level="specific">
+      <component id="satapp" filter="s60" name="SAT Application">
+        <unit bldFile="satui/satapp/group"/>
+      </component>
+      <component id="satplugin" filter="s60" name="SAT Plugin" class="plugin">
+        <unit bldFile="satui/satplugin/group"/>
+      </component>
+    </collection>
+    <collection id="telutils" name="Telephony Utils" level="generic">
+      <component id="phoneparser" filter="s60" name="Phone Parser">
+        <unit bldFile="telutils/phoneparser/group"/>
+      </component>
+      <component id="telephonyservice" filter="s60" name="Telephony Service">
+        <unit bldFile="telutils/telephonyservice/group"/>
+      </component>
+    </collection>
+    <collection id="cellular" name="Cellular" level="server">
+      <component id="telephonysettings" filter="s60" name="Telephony Settings">
+        <unit bldFile="cellular/telephonysettings/group"/>
+      </component>
+      <component id="sssettings" filter="s60" name="Supplementary Service Settings">
+        <unit bldFile="cellular/sssettings/group"/>
+      </component>
+      <component id="psetnotesui" filter="s60" name="Phone Settings Notes UI">
+        <unit bldFile="cellular/psetnotesui/group"/>
+      </component>
+      <component id="servicerequest" filter="s60" name="Service Request">
+        <unit bldFile="cellular/servicerequest/group"/>
+      </component>
+    </collection>
+    <collection id="engines" name="Telephony Engines" level="specific">
+      <component id="vmbxengine" filter="s60" name="Voice Mailbox Engine">
+        <unit bldFile="engines/vmbxengine/group"/>
+      </component>
+    </collection>
+    <collection id="phonesrv_info" name="Telephony and SIM Services Info" level="specific">
+      <component id="phonesrv_plat" filter="s60" name="Telephony and SIM Services Platform Interfaces" class="api">
+        <unit bldFile="phonesrv_plat/group"/>
+        	<!-- include the rest in the above? -->
+        <!-- <unit bldFile="phonesrv_plat/call_information_api/tsrc/group"/> -->
+        <!-- <unit bldFile="phonesrv_plat/call_information_mediator_api/tsrc/ut_callinfos/group"/> -->
+        <!-- <unit bldFile="phonesrv_plat/phone_client_emergency_call_api/tsrc/group"/> -->
+        <!-- <unit bldFile="phonesrv_plat/sat_client_api/tsrc/group"/> -->
+        <!-- <unit bldFile="phonesrv_plat/sat_refresh_api/tsrc/group"/> -->
+      </component>
+      <component id="phonesrv_pub" filter="s60" name="Telephony and SIM Services Public Interfaces" class="api">
+        <unit bldFile="phonesrv_pub/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

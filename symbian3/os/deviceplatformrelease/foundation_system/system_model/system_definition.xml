@@ -141,13 +141,13 @@
       <package id="legacypresence" level="specific" tech-domain="pr" href="../../../../mw/legacypresence/package_definition_3.0.xml"/>
       <package id="opensrv" level="specific" tech-domain="pr" href="../../../../mw/opensrv/package_definition_3.0.xml"/>
       <package id="remotemgmt" level="specific" tech-domain="dm" href="../../../../mw/remotemgmt/package_definition_3.0.xml"/>
-      <package id="networkingdm" level="generic" tech-domain="dm" href="../../../../mw/networkingdm/package_definition_3.0.xml"/>
       <package id="remotestorage" level="generic" tech-domain="de" href="../../../../mw/remotestorage/package_definition_3.0.xml"/>
       <package id="remoteconn" level="generic" tech-domain="de" href="../../../../mw/remoteconn/package_definition_3.0.xml"/>
       <package id="srvdiscovery" level="generic" tech-domain="de" href="../../../../mw/srvdiscovery/package_definition_3.0.xml"/>
       <package id="dlnasrv" level="specific" tech-domain="de" href="../../../../mw/dlnasrv/package_definition_3.0.xml"/>
       <package id="btservices" level="generic" tech-domain="de" href="../../../../mw/btservices/package_definition_3.0.xml"/>
       <package id="usbservices" level="generic" tech-domain="de" href="../../../../mw/usbservices/package_definition_3.0.xml"/>
+      <package id="shortlinkconn" level="generic" tech-domain="de" href="../../../../mw/shortlinkconn/package_definition_3.0.xml"/>
       <package id="imghandling" level="specific" tech-domain="mm" href="../../../../mw/imghandling/package_definition_3.0.xml"/>
       <package id="metadatasrv" level="specific" tech-domain="mm" href="../../../../mw/metadatasrv/package_definition_3.0.xml"/>
       <package id="mds" level="specific" tech-domain="mm" href="../../../../mw/mds/package_definition_3.0.xml"/>

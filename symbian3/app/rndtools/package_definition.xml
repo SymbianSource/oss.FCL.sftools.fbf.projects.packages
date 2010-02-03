@@ -86,12 +86,15 @@
         <collection name="filebrowser" long-name="File Browser" level="util">
           <!-- consider collapsing into a single component -->
           <component name="fileopserver" filter="s60" long-name="File Operations Server" purpose="development" class="tool">
-            <unit bldFile="/sf/app/rndtools/filebrowser/fileopserver/group"/>
+            <!-- uncomment the unit when configuration is in place, it's currently #included from filebrowser_build -->
+            <!-- <unit bldFile="filebrowser/fileopserver/group"/>-->
           </component>
           <component name="fileopclient" filter="s60" long-name="File Operations Client" purpose="development" class="tool">
-            <unit bldFile="/sf/app/rndtools/filebrowser/fileopclient/group"/>
+            <!-- uncomment the unit when configuration is in place, it's currently #included from filebrowser_build -->
+            <!--<unit bldFile="filebrowser/fileopclient/group"/>-->
           </component>
           <component name="filebrowser_build" filter="s60" long-name="File Browser Application" purpose="development" class="tool">
+            <!-- Need to make this a self-contained component by removing #includes. Can only do when configuration is in place-->
             <unit bldFile="/sf/app/rndtools/filebrowser/group"/>
           </component>
         </collection>

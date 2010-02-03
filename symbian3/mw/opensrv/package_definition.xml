@@ -78,22 +78,19 @@
     <layer name="mw" long-name="Middleware" levels="generic specific">
       <block name="opensrv" level="specific" long-name="Open Services" levels="prt lib server eng">
         <collection name="loudmouth" long-name="Loudmouth" level="prt">
+          <!-- collection is really a component so it needs to be moved down a directory -->
           <component name="loudmouth_build" filter="s60" long-name="Loudmouth Build" introduced="^2">
             <unit bldFile="/sf/mw/opensrv/loudmouth/group"/>
           </component>
-          <component name="loudmouth_test" filter="s60" long-name="Loudmouth Test" purpose="development" introduced="^2" class="placeholder">
-            <!-- <unit bldFile="loudmouth/tsrc/group"/> -->
-          </component>
         </collection>
         <collection name="libtelepathy" long-name="Telepathy Library" level="lib">
+          <!-- collection is really a component so it needs to be moved down a directory -->
           <component name="libtelepathy_build" filter="s60" long-name="Telepathy Library Build" introduced="^2">
             <unit bldFile="/sf/mw/opensrv/libtelepathy/group"/>
           </component>
-          <component name="libtelepathy_test" filter="s60" long-name="Telepathy Library Test" purpose="development" introduced="^2" class="placeholder">
-            <!-- <unit bldFile="libtelepathy/tsrc/group"/> -->
-          </component>
         </collection>
         <collection name="telepathygabble" long-name="Telepathy Gabble" level="eng">
+          <!-- collection is really a component so it needs to be moved down a directory -->
           <component name="telepathygabble_build" filter="s60" long-name="Telepathy Gabble Build" introduced="^2">
             <unit bldFile="/sf/mw/opensrv/telepathygabble/group"/>
           </component>
@@ -105,17 +102,14 @@
           <component name="isoserver" filter="s60" long-name="ISO Server" introduced="^2">
             <unit bldFile="/sf/mw/opensrv/isolationserver/isoserver/group"/>
           </component>
-          <component name="isolationserver_test" filter="s60" long-name="Isloation Server Test" purpose="development" introduced="^2" class="placeholder">
-            <!-- <unit bldFile="isolationserver/tsrc/group"/> -->
-          </component>
           <component name="isolationserver_build" filter="s60" long-name="Isloation Server Build" introduced="^2">
+            <!-- needs #includes removed. either move the exports to another component or make this a ROM component -->
             <unit bldFile="/sf/mw/opensrv/isolationserver/group"/>
           </component>
         </collection>
         <collection name="opensrv_info" long-name="Open Services Info" level="eng">
           <component name="opensrv_plat" filter="s60" long-name="Open Services Platform Interfaces" introduced="^2" class="api">
             <unit bldFile="/sf/mw/opensrv/opensrv_plat/group"/>
-            <!-- <unit bldFile="opensrv_plat/messagequeue_api/tsrc/group"/> -->
           </component>
         </collection>
       </block>

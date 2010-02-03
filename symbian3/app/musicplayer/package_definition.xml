@@ -137,7 +137,7 @@
         </collection>
         <collection name="musicplayer_info" long-name="Music Player Apps Info" level="app">
           <component name="musicplayer_build" filter="s60" long-name="Music Player Build">
-            <!-- should explicityly #inlcude musicplayerbldvariant.hrh in each component  -->
+            <!-- should explicitly #inlcude musicplayerbldvariant.hrh in each component  -->
             <unit bldFile="/sf/app/musicplayer/group"/>
           </component>
           <component name="musicplayer_plat" filter="s60" long-name="Music Player Apps Platform Interfaces" class="api">

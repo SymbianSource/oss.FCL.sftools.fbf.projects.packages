@@ -77,9 +77,12 @@
   <systemModel>
     <layer name="mw" long-name="Middleware" levels="generic specific">
       <block name="phonesrv" level="specific" long-name="Telephony and SIM Services" levels="plugin framework server generic specific">
-        <collection name="phonecmdhandler" long-name="Phone Command Handler" level="generic">
-          <component name="phonecmdhnlr" filter="s60" long-name="Phone Command Handler">
-            <unit bldFile="/sf/mw/phonesrv/phonecmdhandler/phonecmdhnlr/group"/>
+        <collection name="telutils" long-name="Telephony Utils" level="generic">
+          <component name="phoneparser" filter="s60" long-name="Phone Parser">
+            <unit bldFile="/sf/mw/phonesrv/telutils/phoneparser/group"/>
+          </component>
+          <component name="telephonyservice" filter="s60" long-name="Telephony Service">
+            <unit bldFile="/sf/mw/phonesrv/telutils/telephonyservice/group"/>
           </component>
         </collection>
         <collection name="cbs" long-name="Cellular Baseband Services" level="plugin">
@@ -88,6 +91,26 @@
           </component>
           <component name="cbsui" filter="s60" long-name="CBS UI">
             <unit bldFile="/sf/mw/phonesrv/cbs/cbsui/group"/>
+          </component>
+        </collection>
+        <collection name="cellular" long-name="Cellular" level="server">
+          <component name="telephonysettings" filter="s60" long-name="Telephony Settings">
+            <unit bldFile="/sf/mw/phonesrv/cellular/telephonysettings/group"/>
+          </component>
+          <component name="sssettings" filter="s60" long-name="Supplementary Service Settings">
+            <unit bldFile="/sf/mw/phonesrv/cellular/sssettings/group"/>
+          </component>
+          <component name="psetnotesui" filter="s60" long-name="Phone Settings Notes UI">
+            <unit bldFile="/sf/mw/phonesrv/cellular/psetnotesui/group"/>
+          </component>
+          <component name="servicerequest" filter="s60" long-name="Service Request">
+            <unit bldFile="/sf/mw/phonesrv/cellular/servicerequest/group"/>
+          </component>
+          <component name="cellular_test" filter="s60,api_test" long-name="Cellular Tests" purpose="development">
+            <!-- can only have one unit. Need to #include from a single bld.inf  (cellular/tsrc/bld.inf?) -->
+            <unit bldFile="/sf/mw/phonesrv/cellular/PsetNotesUi/tsrc/public/basic/group"/>
+            <unit bldFile="/sf/mw/phonesrv/cellular/SSSettings/tsrc/public/basic/group"/>
+            <unit bldFile="/sf/mw/phonesrv/cellular/telephonysettings/tsrc/public/basic/group"/>
           </component>
         </collection>
         <collection name="convergedcallengine" long-name="Converged Call Engine" level="framework">
@@ -99,9 +122,6 @@
           </component>
           <component name="spsettings" filter="s60" long-name="Service Provider Settings">
             <unit bldFile="/sf/mw/phonesrv/convergedcallengine/spsettings/group"/>
-            <!-- include the rest in the above? -->
-            <!-- <unit bldFile="convergedcallengine/spsettings/tsrc/public/basic/group"/> -->
-            <!-- <unit bldFile="convergedcallengine/spsettings/tsrc/public/basic/spsettingsut/group"/> -->
           </component>
           <component name="cenrepdatabase" filter="s60" long-name="CCE Cenrep Database">
             <unit bldFile="/sf/mw/phonesrv/convergedcallengine/cenrepdatabase/group"/>
@@ -112,6 +132,16 @@
           <component name="csplugin" filter="s60" long-name="CS Plugin" plugin="Y">
             <!--  should spell out CS in name -->
             <unit bldFile="/sf/mw/phonesrv/convergedcallengine/csplugin/group"/>
+          </component>
+          <component name="convergedcallengine_test" filter="s60,api_test" long-name="CCE Tests" purpose="development">
+            <!-- can only have one unit. Need to #include from a single bld.inf  (convergedcallengine/tsrc/bld.inf?) -->
+            <unit bldFile="/sf/mw/phonesrv/convergedcallengine/cce/tsrc/public/basic/group"/>
+            <unit bldFile="/sf/mw/phonesrv/convergedcallengine/spsettings/tsrc/public/basic/group"/>
+          </component>
+        </collection>
+        <collection name="engines" long-name="Telephony Engines" level="specific">
+          <component name="vmbxengine" filter="s60" long-name="Voice Mailbox Engine">
+            <unit bldFile="/sf/mw/phonesrv/engines/vmbxengine/group"/>
           </component>
         </collection>
         <collection name="networkhandling" long-name="Network Handling" level="plugin">
@@ -138,8 +168,14 @@
           <component name="callui" filter="s60" long-name="Call UI">
             <unit bldFile="/sf/mw/phonesrv/phoneclientserver/callui/group"/>
           </component>
+          <component name="phoneclientserver_test" filter="s60,api_test" long-name="Phone Client/Server Tests" purpose="development">
+            <!-- can only have one unit. Need to #include from a single bld.inf  (phoneclientserver/tsrc/bld.inf?) -->
+            <unit bldFile="/sf/mw/phonesrv/phoneclientserver/aiwdialdata/tsrc/public/basic/group"/>
+            <unit bldFile="/sf/mw/phonesrv/phoneclientserver/dialutils/tsrc/public/basic/group"/>
+            <unit bldFile="/sf/mw/phonesrv/phoneclientserver/phoneclient/tsrc/public/basic/group"/>
+          </component>
         </collection>
-        <collection name="satengine" long-name="SAT Engine" level="generic">
+        <collection name="satengine" long-name="SIM Application Toolkit Engine" level="generic">
           <component name="satserver" filter="s60" long-name="SAT Server">
             <unit bldFile="/sf/mw/phonesrv/satengine/satserver/group"/>
           </component>
@@ -152,45 +188,26 @@
             <unit bldFile="/sf/mw/phonesrv/satui/satplugin/group"/>
           </component>
         </collection>
-        <collection name="telutils" long-name="Telephony Utils" level="generic">
-          <component name="phoneparser" filter="s60" long-name="Phone Parser">
-            <unit bldFile="/sf/mw/phonesrv/telutils/phoneparser/group"/>
-          </component>
-          <component name="telephonyservice" filter="s60" long-name="Telephony Service">
-            <unit bldFile="/sf/mw/phonesrv/telutils/telephonyservice/group"/>
-          </component>
-        </collection>
-        <collection name="cellular" long-name="Cellular" level="server">
-          <component name="telephonysettings" filter="s60" long-name="Telephony Settings">
-            <unit bldFile="/sf/mw/phonesrv/cellular/telephonysettings/group"/>
-          </component>
-          <component name="sssettings" filter="s60" long-name="Supplementary Service Settings">
-            <unit bldFile="/sf/mw/phonesrv/cellular/sssettings/group"/>
-          </component>
-          <component name="psetnotesui" filter="s60" long-name="Phone Settings Notes UI">
-            <unit bldFile="/sf/mw/phonesrv/cellular/psetnotesui/group"/>
-          </component>
-          <component name="servicerequest" filter="s60" long-name="Service Request">
-            <unit bldFile="/sf/mw/phonesrv/cellular/servicerequest/group"/>
-          </component>
-        </collection>
-        <collection name="engines" long-name="Telephony Engines" level="specific">
-          <component name="vmbxengine" filter="s60" long-name="Voice Mailbox Engine">
-            <unit bldFile="/sf/mw/phonesrv/engines/vmbxengine/group"/>
+        <collection name="phonecmdhandler" long-name="Phone Command Handler" level="generic">
+          <component name="phonecmdhnlr" filter="s60" long-name="Phone Command Handler">
+            <unit bldFile="/sf/mw/phonesrv/phonecmdhandler/phonecmdhnlr/group"/>
           </component>
         </collection>
         <collection name="phonesrv_info" long-name="Telephony and SIM Services Info" level="specific">
           <component name="phonesrv_plat" filter="s60" long-name="Telephony and SIM Services Platform Interfaces" class="api">
             <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/group"/>
-            <!-- include the rest in the above? -->
-            <!-- <unit bldFile="phonesrv_plat/call_information_api/tsrc/group"/> -->
-            <!-- <unit bldFile="phonesrv_plat/call_information_mediator_api/tsrc/ut_callinfos/group"/> -->
-            <!-- <unit bldFile="phonesrv_plat/phone_client_emergency_call_api/tsrc/group"/> -->
-            <!-- <unit bldFile="phonesrv_plat/sat_client_api/tsrc/group"/> -->
-            <!-- <unit bldFile="phonesrv_plat/sat_refresh_api/tsrc/group"/> -->
           </component>
           <component name="phonesrv_pub" filter="s60" long-name="Telephony and SIM Services Public Interfaces" class="api">
             <unit bldFile="/sf/mw/phonesrv/phonesrv_pub/group"/>
+          </component>
+          <component name="phonesrv_test" filter="s60,api_test" long-name="Telephony and SIM Services Tests" purpose="development">
+            <!-- can only have one unit. Need to #include from a single bld.inf  (phonesrv_plat/tsrc/bld.inf?) -->
+            <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/call_information_api/tsrc/group"/>
+            <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/sat_client_api/tsrc/group"/>
+            <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/sat_refresh_api/tsrc/group"/>
+            <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/sat_service_api/tsrc/group"/>
+            <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/telephony_mediator_api/tsrc/ut_telephony_mediator_api/group"/>
+            <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/call_remote_party_information_api/tsrc/group"/>
           </component>
         </collection>
       </block>
