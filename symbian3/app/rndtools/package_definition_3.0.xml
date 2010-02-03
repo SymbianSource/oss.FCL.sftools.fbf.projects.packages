@@ -2,6 +2,7 @@
 <SystemDefinition schema="3.0.0">
   <package id="rndtools" name="R&amp;D tools" levels="support generic test util">
     <collection id="creator" name="Creator" level="support">
+	   	<!-- collection is really a component. Should move down a directory -->
       <component id="creator_build" filter="s60" name="Creator Tool" purpose="development" target="device" class="tool">
         <unit bldFile="creator/group"/>
       </component>
@@ -9,21 +10,44 @@
     <collection id="filebrowser" name="File Browser" level="util">
 		<!-- consider collapsing into a single component -->
       <component id="fileopserver" filter="s60" name="File Operations Server" purpose="development" target="device" class="tool">
-        <unit bldFile="filebrowser/fileopserver/group"/>
+      	<meta rel="config">
+      		<not-defined condition="FILEBROWSER_LITE"/>
+      	</meta>
+      	<!-- uncomment the unit when configuration is in place, it's currently #included from filebrowser_build -->
+        <!-- <unit bldFile="filebrowser/fileopserver/group"/>-->
       </component>
       <component id="fileopclient" filter="s60" name="File Operations Client" purpose="development" target="device" class="tool">
-        <unit bldFile="filebrowser/fileopclient/group"/>
+      	<meta rel="config">
+      		<not-defined condition="FILEBROWSER_LITE"/>
+      	</meta>
+      	<!-- uncomment the unit when configuration is in place, it's currently #included from filebrowser_build -->
+        <!--<unit bldFile="filebrowser/fileopclient/group"/>-->
       </component>
       <component id="filebrowser_build" filter="s60" name="File Browser Application" purpose="development" target="device" class="tool">
+		<!-- Need to make this a self-contained component by removing #includes. Can only do when configuration is in place-->
         <unit bldFile="filebrowser/group"/>
       </component>
     </collection>
     <collection id="launcher" name="Launcher" level="util">
+	   	<!-- collection is really a component. Should move down a directory -->
       <component id="launcher_build" filter="s60" name="Launcher Utility" purpose="development" target="device" class="tool">
         <unit bldFile="launcher/group"/>
       </component>
     </collection>
+    <collection id="loadgen" name="Load Generator" level="test">
+	   	<!-- collection is really a component. Should move down a directory -->
+      <component id="loadgen_build" filter="s60" name="Load Generator Application" purpose="development" target="device" class="tool">
+        <unit bldFile="loadgen/group"/>
+      </component>
+    </collection>
+    <collection id="perfmon" name="Performance Monitor" level="test">
+	   	<!-- collection is really a component. Should move down a directory -->
+      <component id="perfmon_build" filter="s60" name="Performance Monitor Tool" purpose="development" target="device" class="tool">
+        <unit bldFile="perfmon/group"/>
+      </component>
+    </collection>
     <collection id="screengrabber" name="Screen Grabber" level="util">
+	   	<!-- collection is really a component. Should move down a directory -->
       <component id="screengrabber_build" filter="s60"  name="ScreenGrabber" purpose="development" target="device" class="tool">
         <unit bldFile="screengrabber/group"/>
       </component>
@@ -36,18 +60,14 @@
         <unit bldFile="stifui/uitestserverstarter/group"/>
       </component>
       <component id="stifui_build" filter="s60" name="STIF UI Build" purpose="development">
-		<!-- can this be split up into the other components? -->
+		<!-- can this be split up into the other components or made a ROM component? -->
         <unit bldFile="stifui/group"/>
       </component>
     </collection>
-    <collection id="loadgen" name="Load Generator" level="test">
-      <component id="loadgen_build" filter="s60" name="Load Generator Application" purpose="development" target="device" class="tool">
-        <unit bldFile="loadgen/group"/>
-      </component>
-    </collection>
-    <collection id="perfmon" name="Performance Monitor" level="test">
-      <component id="perfmon_build" filter="s60" name="Performance Monitor Tool" purpose="development" target="device" class="tool">
-        <unit bldFile="perfmon/group"/>
+    <collection id="memspyui" name="Memspy UI" level="generic">
+	   	<!-- collection is really a component. Should move down a directory -->
+      <component id="memspyui_build" filter="s60" name="Memspy UI Application" purpose="development" target="device" class="tool">
+        <unit bldFile="memspyui/group"/>
       </component>
     </collection>
     <collection id="htiui" name="Harmonized Test Interface UI" level="generic">
@@ -75,13 +95,8 @@
         <unit bldFile="htiui/htiadmin/group"/>
       </component>
       <component id="htiui_build" filter="s60" name="HTI UI Build" purpose="development">
-		<!-- can this be split up into the other components? -->
+		<!-- can this be split up into the other components or made a ROM component? -->
         <unit bldFile="htiui/group"/>
-      </component>
-    </collection>
-    <collection id="memspyui" name="Memspy UI" level="generic">
-      <component id="memspyui_build" filter="s60" name="Memspy UI Application" purpose="development" target="device" class="tool">
-        <unit bldFile="memspyui/group"/>
       </component>
     </collection>
   </package>

@@ -2,14 +2,14 @@
 <SystemDefinition schema="3.0.0">
   <package id="messagingmw" name="Messaging Middleware" levels="stack fw api">
     <collection id="msgbranched" name="Messaging Branched" level="fw">
+    	<!-- collection is really a component. Need to move down a directory -->
       <component id="msgbranched_build" filter="s60" name="Messaging Branched Build">
         <unit bldFile="msgbranched/group"/>
       </component>
     </collection>
     <collection id="messagingfw" name="Messaging Framework" level="fw">
+    	<!-- should break this collection up into smaller related collections -->
       <component id="alwaysonline" filter="s60" name="Always Online Server" introduced="^2">
-        <!-- <unit bldFile="messagingfw/alwaysonline/alwaysonlinemanager/group"/> -->
-        <!-- <unit bldFile="messagingfw/alwaysonline/alwaysonlinestarterapp/group"/> -->
         <unit bldFile="messagingfw/alwaysonline/group"/>
       </component>
       <component id="msgcommonutils" filter="s60" name="Messaging Common Utils" introduced="^2">
@@ -17,10 +17,6 @@
       </component>
       <component id="senduiservices" filter="s60" name="Send UI Services" introduced="^2">
         <unit bldFile="messagingfw/senduiservices/group"/>
-        <!-- <unit bldFile="messagingfw/senduiservices/datautils/group"/> -->
-        <!-- <unit bldFile="messagingfw/senduiservices/launcher/group"/> -->
-        <!-- <unit bldFile="messagingfw/senduiservices/serviceresolver/group"/> -->
-        <!-- <unit bldFile="messagingfw/senduiservices/watcher/group"/> -->
       </component>
       <component id="scheduledsendmtm" name="Scheduled Send MTM" introduced="6.0" purpose="optional" class="plugin">
         <unit bldFile="messagingfw/scheduledsendmtm/group" mrp="messagingfw/scheduledsendmtm/group/messaging_schedulesend.mrp"/>
@@ -66,14 +62,11 @@
       </component>
     </collection>
     <collection id="messagingmw_info" name="Messaging Middleware Info" level="api">
-      <component id="msgfw_pub" filter="s60" name="Messaging Middleware Public Interfaces" class="api">
-        <unit bldFile="msgfw_pub/group"/>
-        <!-- <unit bldFile="msgfw_pub/send_ui_api/tsrc/bc/group"/> -->
-        <unit bldFile="msgfw_pub/send_ui_api/tsrc/group"/>
-      </component>
       <component id="msgfw_plat" filter="s60" name="Messaging Middleware Platform Interfaces" class="api">
         <unit bldFile="msgfw_plat/group"/>
-        <unit bldFile="msgfw_plat/send_ui_plugin_api/tsrc/group"/>
+      </component>
+      <component id="msgfw_pub" filter="s60" name="Messaging Middleware Public Interfaces" class="api">
+        <unit bldFile="msgfw_pub/group"/>
       </component>
       <component id="messagingmw_metadata" name="Messaging Middleware Metadata" class="config" introduced="^2" purpose="development" target="desktop">
         <unit mrp="messagingmw_info/messagingmw_metadata/messagingmw_metadata.mrp"/>

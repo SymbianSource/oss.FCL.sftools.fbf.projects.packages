@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="locationsrv" name="Location Services" levels="plugin fw server if">
+    <collection id="genericpositioningplugins" name="Generic Positioning Plugins" level="plugin">
+      <component id="locationnpppsy" filter="s60" name="Location Positioning Proxy PSY" class="plugin"> 
+        <unit bldFile="genericpositioningplugins/locationnpppsy/group"/>
+      </component>
+      <component id="locationsuplpsy" filter="s60" name="Location SUPL PSY" class="plugin" introduced="^3"> 
+        <unit bldFile="genericpositioningplugins/locationsuplpsy/group"/>
+      </component>
+      <component id="genericpositioningplugins_build" filter="s60" name="Generic Positioning Plugins Build">
+      	<!-- need to break this up into the other components -->
+        <unit bldFile="genericpositioningplugins/group"/>
+      </component>    
+    </collection>
     <collection id="landmarks" name="Landmarks" level="server">
       <component id="locationlandmarks" filter="s60" name="Location Landmarks">
         <unit bldFile="landmarks/locationlandmarks/group"/>
       </component>
     </collection>
     <collection id="locationmapnavfw" name="Location Map and Navigation Framework" level="fw">
-      <component id="library" filter="s60" name="Map and Navigation Library">
-      	<!-- should change ID to something more meaningful (mplibrary?) -->
+      <component id="mnlibrary" filter="s60" name="Map and Navigation Library">
         <unit bldFile="locationmapnavfw/library/group"/>
       </component>
-      <component id="aiwprovider" filter="s60" name="Map and Navigation AIW Provider">
-      	<!-- should change ID to something more meaningful (mpaiwprovider?) -->
+      <component id="mnaiwprovider" filter="s60" name="Map and Navigation AIW Provider" class="plugin">
         <unit bldFile="locationmapnavfw/aiwprovider/group"/>
       </component>
       <component id="locationmapnavfw_build" filter="s60" name="Location Map and Navigation Framework Build">
+      	<!-- need to break this up into the other components -->
         <unit bldFile="locationmapnavfw/group"/>
       </component>
     </collection>
@@ -31,8 +42,8 @@
       <component id="locationomasuplprotocolhandler" filter="s60" name="OMA SUPL Protocol Handler">
         <unit bldFile="supl/locationomasuplprotocolhandler/group"/>
       </component>
-      <component id="locationomasuplpostester" filter="s60" name="OMA SUPL POS Tester">
-        <unit bldFile="supl/locationomasuplpostester/group"/>
+      <component id="supltiapiimplementation" filter="s60" name="SUPL TI API Implementation" introduced="^3">
+        <unit bldFile="supl/supltiapiimplementation/group"/>
       </component>
     </collection>
     <collection id="locationtriggering" name="Location Triggering" level="server">
@@ -66,79 +77,20 @@
       <component id="lbtmgmtui" filter="s60" name="LBT Management UI" class="plugin">
         <unit bldFile="locationtriggering/lbtmgmtui/group"/>
       </component>
-      <component id="locationtriggering_test" filter="s60" name="Location Triggering Test" purpose="development">
-      	<!--  should have only one unit  -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancelcreatetest/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/additionaltests/createtest/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/additionaltests/handlingprocesstest/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity2_exe/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancellisttriggerstest/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancelcreateiteratortest/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity3_exe/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/firingofstartuptriggerandlisttrigger/createtest/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/t_mgmtsettings/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity4_exe/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancelgettriggerstest/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/additionaltests/modifytest/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/t_mgmtsettings/createtest/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity5_exe/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/additionaltests/notificationtest/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/cancelsettriggerstest/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/lbtcancellationtest/canceldeletetest/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/additionaltests/deletetest/group"/> -->
-        <!-- <unit bldFile="locationtriggering/tsrc/lbtengine_test/lbtplatsectest/testlbtplatsecurity1_exe/group"/> -->
+      <component id="ltcontextsourceplugin" filter="s60" name="LT Context Source Plugin" class="plugin" introduced="^3">
+        <unit bldFile="locationtriggering/ltcontextsourceplugin/group"/>
       </component>
       <component id="locationtriggering_build" filter="s60" name="Location Triggering Build">
       	<!--  should remove #include from this and maybe put exports in the above components -->
         <unit bldFile="locationtriggering/group"/>
       </component>
     </collection>
-    <collection id="genericpositioningplugins" name="Generic Positioning Plugins" level="plugin">
-      <component id="genericpositioningplugins_build" filter="s60" name="Generic Positioning Plugins Build">
-        <unit bldFile="genericpositioningplugins/group"/>
-      </component>    
-      <component id="locationnpppsy" filter="s60" name="Location Positioning Proxy PSY" class="plugin"> 
-        <unit bldFile="genericpositioningplugins/locationnpppsy/group"/>
-      </component>
-    </collection>
     <collection id="locationsrv_info" name="Location Services Info" level="if">
       <component id="locsrv_plat" filter="s60" class="api"  name="Location Services Platform Interfaces">
         <unit bldFile="locsrv_plat/group"/>
-        <!--  can only have one unit, should below be #included in the above? -->
-        <!-- <unit bldFile="locsrv_plat/geocoding_api/tsrc/group"/> -->
-        <!-- <unit bldFile="locsrv_plat/geocoding_api/tsrc/mapnavproviderrefapp/group"/> -->
-        <!-- <unit bldFile="locsrv_plat/location_centre_api/tsrc/group"/> -->
-        <!-- <unit bldFile="locsrv_plat/location_settings_launch_api/tsrc/group"/> -->
-        <!-- <unit bldFile="locsrv_plat/map_and_navigation_api/tsrc/group"/> -->
-        <!-- <unit bldFile="locsrv_plat/map_and_navigation_api/tsrc/mapnavproviderrefapp/group"/> -->
-        <!-- <unit bldFile="locsrv_plat/map_and_navigation_provider_discovery_api/tsrc/group"/> -->
-        <!-- <unit bldFile="locsrv_plat/map_and_navigation_provider_discovery_api/tsrc/mapnavproviderrefapp/group"/> -->
-        <!-- <unit bldFile="locsrv_plat/map_image_api/tsrc/group"/> -->
-        <!-- <unit bldFile="locsrv_plat/map_image_api/tsrc/testprovider/group"/> -->
-        <!-- <unit bldFile="locsrv_plat/map_image_conversion_plugin_api/tsrc/group"/> -->
-        <!-- <unit bldFile="locsrv_plat/map_image_conversion_plugin_api/tsrc/mapnavproviderrefapp/group"/> -->
-        <!-- <unit bldFile="locsrv_plat/oma_supl_asn_codec_plugin_api/tsrc/group"/> -->
-        <!-- <unit bldFile="locsrv_plat/supl_network_initiation_api/tsrc/group"/> -->
-        <!-- <unit bldFile="locsrv_plat/supl_pos_message_plugin_api/tsrc/group"/> -->
-        <!-- <unit bldFile="locsrv_plat/supl_pos_message_plugin_api/tsrc/posmsgpluginreferenceimpl/group"/> -->
-        <!-- <unit bldFile="locsrv_plat/supl_settings_api/tsrc/group"/> -->
-        <!-- <unit bldFile="locsrv_plat/supl_terminal_initiation_api/tsrc/group"/> -->
-      </component>
-      <component id="locationsrv_test" filter="s60" name="Location Services Test" purpose="development">
-        <!-- <unit bldFile="tsrc/group"/> -->
       </component>
       <component id="locsrv_pub" filter="s60" class="api" name="Location Services Public Interfaces">
         <unit bldFile="locsrv_pub/group"/>
-        <!--  can only have one unit, should below be #included in the above? -->
-        <!-- <unit bldFile="locsrv_pub/blid_application_satellite_info_api/tsrc/bc_blid_application_satellite_info_api/group"/> -->
-        <!-- <unit bldFile="locsrv_pub/blid_application_satellite_info_api/tsrc/ut_csatelliteuitest/group"/> -->
-        <!-- <unit bldFile="locsrv_pub/landmarks_api/tsrc/bc_landmarks_api/group"/> -->
-        <!-- <unit bldFile="locsrv_pub/landmarks_api/tsrc/group"/> -->
-        <!-- <unit bldFile="locsrv_pub/landmarks_database_management_api/tsrc/bc_landmarks_database_management_api/group"/> -->
-        <!-- <unit bldFile="locsrv_pub/landmarks_database_management_api/tsrc/group"/> -->
-        <!-- <unit bldFile="locsrv_pub/landmarks_search_api/tsrc/bc_landmarks_search_api/group"/> -->
-        <!-- <unit bldFile="locsrv_pub/landmarks_search_api/tsrc/group"/> -->
       </component>
     </collection>
   </package>

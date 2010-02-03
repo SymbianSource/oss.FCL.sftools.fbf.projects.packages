@@ -1,7 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="homescreensrv" name="Home Screen Services" levels="plugin framework server generic specific">
+    <collection id="xcfw" name="XML Content Framework" level="framework">
+   		<!-- collection is really a component, needs to be moved down a directory -->
+      <component id="xcfw_build" filter="s60" name="XML Content Framework Build">
+        <unit bldFile="xcfw/group"/>
+      </component>
+    </collection>
+    <collection id="homescreenpluginsrv" name="Home Screen Plugin Service" level="plugin">
+      <component id="hspsdefinitionengine" filter="s60" name="HS Plugin Service Definition Engine">
+        <!-- <unit bldFile="homescreenpluginsrv/hspsdefinitionengine/group"/> -->
+      </component>
+      <component id="hspsdom" filter="s60" name="HS Plugin Service DOM">
+        <!-- <unit bldFile="homescreenpluginsrv/hspsdom/group"/> -->
+      </component>
+      <component id="hspstools" filter="s60" name="HS Server Tools">
+      	<meta rel="config">
+      		<defined condition="____HSPS_CFG_LOG_ON____"/>
+      	</meta>
+        <!-- <unit bldFile="homescreenpluginsrv/hspstools/group"/> -->
+      </component>
+      <component id="hspspluginregistry" filter="s60" name="HS Plugin Registry">
+        <!-- <unit bldFile="homescreenpluginsrv/hspspluginregistry/group"/>-->
+      </component>
+      <component id="hspsmanager" filter="s60" name="HSPS Manager">
+        <!-- <unit bldFile="homescreenpluginsrv/hspsmanager/group"/>-->
+      </component>
+      <component id="hspsodt" filter="s60" name="HSPS Object Description Tree">
+        <!-- <unit bldFile="homescreenpluginsrv/hspsodt/group"/>-->
+      </component>
+      <component id="hspsresource" filter="s60" name="HS Plugin Server Resource">
+        <!-- <unit bldFile="homescreenpluginsrv/hspsresource/group"/>-->
+      </component>
+      <component id="hspsresult" filter="s60" name="HS Plugin Server Result">
+        <!-- <unit bldFile="homescreenpluginsrv/hspsresult/group"/>-->
+      </component>
+      <component id="homescreen_settings_api" filter="s60" name="HS Settings API" class="api">
+        <!-- <unit bldFile="homescreenpluginsrv/hspsresult/group"/>-->
+      </component>
+      <component id="homescreenpluginsrv_build" filter="s60" name="HSPS Build">
+      	<!-- need to break this up into the self-contained components above and uncomment them -->
+        <unit bldFile="homescreenpluginsrv/group"/>
+      </component>
+    </collection>
+    <collection id="idlefw" name="Idle Framework" level="framework">
+      	<meta rel="config">
+      		<defined condition="RD_CUSTOMIZABLE_AI"/>
+      	</meta>
+      <component id="idlefw_plugins" filter="s60" name="Idle Framework Plugins" class="plugin">
+        <!--<unit bldFile="idlefw/plugins/group"/>-->
+      </component>
+      <component id="hslaunch" filter="s60" name="Home Screen Launch">
+        <!--<unit bldFile="idlefw/plugins/group"/>-->
+      </component>
+      <component id="idlefw_build" filter="s60" name="Idle Framework Build">
+      	<!--split this into components, or separate from the above components and move this down a directory -->
+        <unit bldFile="idlefw/group"/>
+      </component>
+    </collection>
+    <collection id="menucontentsrv" name="Menu Content Service" level="generic">
+      <component id="menusatinterface" filter="s60" name="Menu SAT Interface">
+        <unit bldFile="menucontentsrv/menusatinterface/group"/>
+      </component>
+      <component id="menucontentsrv_build" filter="s60" name="Menu Content Service Build">
+      	<!--split this into components, or separate from the above component and move this down a directory -->
+        <unit bldFile="menucontentsrv/group"/>
+      </component>
+    </collection>
+    <collection id="backsteppingsrv" name="Back Stepping Service" level="server">
+   		<!-- collection is really a component, needs to be moved down a directory -->
+      <component id="bsengine" name="Back Stepping Engine" filter="s60">
+        <unit bldFile="backsteppingsrv/group"/>
+      </component>
+    </collection>
     <collection id="contentpublishingsrv" name="Content Publishing Service" level="server">
+      <component id="contentpublishingdebug" filter="s60" name="Content Publishing Debug">
+      	<meta rel="config">
+      		<defined condition="CONTENT_PUBLISHER_DEBUG"/>
+      	</meta>
+        <!-- <unit bldFile="contentpublishingsrv/contentpublishingutils/contentpublishingdebug/group"/> -->
+      </component>
       <component id="contentpublishingutils" filter="s60" name="Content Publishing Utils">
         <unit bldFile="contentpublishingsrv/contentpublishingutils/group"/>
 		<!-- should only have one bld.inf, does the below need to be #included in the above ? -->
@@ -14,76 +92,52 @@
         <unit bldFile="contentpublishingsrv/contentharvester/group"/>
       </component>
       <component id="contentpublishingsrv_build" filter="s60" name="Content Publishing Service Build">
+      	<!-- need to remove links to the above components and just contain the IBY (or move the IBY into another component). 
+      		If keeping, it need to move down a directory.-->
         <unit bldFile="contentpublishingsrv/group"/>
       </component>
     </collection>
-    <collection id="backsteppingsrv" name="Back Stepping Service" level="server">
-      <component id="bsengine" name="Back Stepping Engine" filter="s60">
-        <unit bldFile="backsteppingsrv/group"/>
+    <collection id="contextutility" name="Context Utility" level="generic">
+   		<!-- collection is really a component, needs to be moved down a directory -->
+      <component id="contextutility_build" name="Context Utility Build" filter="s60" introduced="^3">
+        <unit bldFile="contextutility/group"/>
       </component>
     </collection>
-    <collection id="xcfw" name="XML Content Framework" level="framework">
-      <component id="xcfw_build" filter="s60" name="XML Content Framework Build">
-        <unit bldFile="xcfw/group"/>
+    <collection id="contentcontrolsrv" name="Content Control Service" level="server">
+      <component id="ccsrv" name="Content Control Service" filter="s60"  introduced="^3">
+        <unit bldFile="contentcontrolsrv/ccsrv/group"/>
       </component>
-    </collection>
-    <collection id="homescreenpluginsrv" name="Home Screen Plugin Service" level="plugin">
-      <component id="hspsdefinitionengine" filter="s60" name="HS Plugin Service Definition Engine">
-        <unit bldFile="homescreenpluginsrv/hspsdefinitionengine/group"/>
+      <component id="ccsrvapi" name="Content Control Service API" filter="s60"  introduced="^3" class="api">
+        <unit bldFile="contentcontrolsrv/ccsrvapi/group"/>
       </component>
-      <component id="hspsdom" filter="s60" name="HS Plugin Service DOM">
-        <unit bldFile="homescreenpluginsrv/hspsdom/group"/>
+      <component id="ccclientsession" name="Content Control Client Session" filter="s60"  introduced="^3">
+        <unit bldFile="contentcontrolsrv/ccclientsession/group"/>
       </component>
-      <component id="hspspluginregistry" filter="s60" name="HS Plugin Registry">
-        <unit bldFile="homescreenpluginsrv/hspspluginregistry/group"/>
+      <component id="hsccclient" name="HS Content Control Client" filter="s60"  introduced="^3">
+        <unit bldFile="contentcontrolsrv/hsccclient/group"/>
       </component>
-      <component id="hspsmanager" filter="s60" name="HS Plugin Service Manager">
-        <unit bldFile="homescreenpluginsrv/hspsmanager/group"/>
+      <component id="hscontentinfo" name="Home Screen Content Info" filter="s60"  introduced="^3">
+        <unit bldFile="contentcontrolsrv/hscontentinfo/group"/>
       </component>
-      <component id="hspsodt" filter="s60" name="HS Plugin Service Object Description Tree">
-        <unit bldFile="homescreenpluginsrv/hspsodt/group"/>
-      </component>
-      <component id="hspsresource" filter="s60" name="HS Plugin Server Resource">
-        <unit bldFile="homescreenpluginsrv/hspsresource/group"/>
-      </component>
-      <component id="hspsresult" filter="s60" name="HS Plugin Server Result">
-        <unit bldFile="homescreenpluginsrv/hspsresult/group"/>
-      </component>
-      <component id="hspstools" filter="s60" name="HS Server Tools">
-        <unit bldFile="homescreenpluginsrv/hspstools/group"/>
-      </component>
-      <component id="homescreenpluginsrv_build" filter="s60" name="HS Plugin Service Build">
-        <unit bldFile="homescreenpluginsrv/group"/>
-      </component>
-    </collection>
-    <collection id="idlefw" name="Idle Framework" level="framework">
-      <component id="idlefw_plugins" filter="s60" name="Idle Framework Plugins" class="plugin">
-        <unit bldFile="idlefw/plugins/group"/>
-		<!-- does the next need to be #included? -->
-        <!-- <unit bldFile="idlefw/plugins/pslnactiveidleplugin/group"/> -->
-      </component>
-      <component id="idlefw_build" filter="s60" name="Idle Framework Build">
-        <unit bldFile="idlefw/group"/>
-      </component>
-    </collection>
-    <collection id="menucontentsrv" name="Menu Content Service" level="generic">
-      <component id="menusatinterface" filter="s60" name="Menu SAT Interface">
-        <unit bldFile="menucontentsrv/menusatinterface/group"/>
-      </component>
-      <component id="menucontentsrv_build" filter="s60" name="Menu Content Service Build">
-        <unit bldFile="menucontentsrv/group"/>
+      <component id="contentcontrolsrv_build" name="Content Control Service Build" filter="s60"  introduced="^3">
+      	<!-- need to remove links to the above components and just contain the IBY (or move the IBY into another component). 
+      		If keeping, it need to move down a directory.-->
+        <unit bldFile="contentcontrolsrv/group"/>
       </component>
     </collection>
     <collection id="homescreensrv_info" name="Home Screen Services Info" level="specific">
       <component id="homescreensrv_plat" filter="s60" name="Home Screen Services Platform Interfaces" class="api">
         <unit bldFile="homescreensrv_plat/group"/>
-			<!-- should the following be #included in the above? -->
-        <!-- <unit bldFile="homescreensrv_plat/action_handler_plugin_api/tsrc/group"/> -->
-        <!-- <unit bldFile="homescreensrv_plat/content_harvester_plugin_api/tsrc/group"/> -->
-        <!-- <unit bldFile="homescreensrv_plat/hs_widget_publisher_api/tsrc/group"/> -->
-        <!-- <unit bldFile="homescreensrv_plat/menu_content_service_api/tsrc/group"/> -->
-        <!-- <unit bldFile="homescreensrv_plat/menu_sat_interface_api/tsrc/group"/> -->
-      </component>
+	 </component>
+	<component id="homescreensrv_api_tests" filter="s60,api_test" name="Home Screen Services Platform API Tests" purpose="developement">
+		<!--  split into components or #include from common bld.inf -->
+		<unit bldFile="homescreensrv_plat/content_harvester_plugin_api/tsrc/group" />
+		<unit bldFile="homescreensrv_plat/menu_content_service_api/tsrc/group" />
+		<unit bldFile="homescreensrv_plat/ai_utilities_api/internal/tsrc/group" />
+		<unit bldFile="homescreensrv_plat/action_handler_plugin_api/tsrc/group" />
+		<unit bldFile="homescreensrv_plat/menu_sat_interface_api/tsrc/group" />
+		<unit bldFile="homescreensrv_plat/sapi_homescreenplugin/tsrc/group" />
+	</component>
     </collection>
   </package>
 </SystemDefinition>

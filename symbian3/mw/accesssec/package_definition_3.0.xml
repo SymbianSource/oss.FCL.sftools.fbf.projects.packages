@@ -3,6 +3,7 @@
   <package id="accesssec" name="Access Security" levels="plugin framework server generic specific">
     <collection id="wlansecuritysettings" name="WLAN Security Settings" level="specific">
       <component id="wapisecuritysettingsui" filter="s60" name="WAPI Security Settings UI" introduced="9.1">
+		<!-- the directory for this needs to be moved up to the right level -->
         <unit bldFile="wlansecuritysettings/wapisecuritysettingsui/stub/group"/>
       </component>
       <component id="wepsecuritysettingsui" filter="s60" name="WEP Security Settings UI" introduced="9.1">

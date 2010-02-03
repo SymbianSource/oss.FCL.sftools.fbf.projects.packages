@@ -2,19 +2,15 @@
 <SystemDefinition schema="3.0.0">
   <package id="web" name="Web" levels="plugin utils server generic specific">
     <collection id="web_info" name="Web Info" level="specific">
-      <component id="web_pub" filter="s60" name="Web Public Interfaces" class="api">
-        <unit bldFile="web_pub/group"/>
-        <!-- can these be #included in the above bld.inf?  --> 
-        <!-- <unit bldFile="web_pub/browser_control_api/tsrc/group"/> -->
-        <!-- <unit bldFile="web_pub/download_mgr_client_api/tsrc/group"/> -->
-        <!-- <unit bldFile="web_pub/favourites_engine_api/tsrc/group"/> -->
-      </component>
-      <component id="web_build" filter="s60" name="Web Build">
-      	<!-- if the #ifdef can be moved out of here, this can be removed -->
-        <unit bldFile="group"/>
-      </component>
       <component id="web_plat" filter="s60" name="Web Platform Interfaces" class="api">
         <unit bldFile="web_plat/group"/>
+      </component>
+      <component id="web_pub" filter="s60" name="Web Public Interfaces" class="api">
+        <unit bldFile="web_pub/group"/>
+      </component>
+      <component id="web_build" filter="s60" name="Web Build">
+      	<!-- when configuration is in place, the #ifdef is no longer needed and this component can be removed -->
+        <unit bldFile="group"/>
       </component>
     </collection>
     <collection id="browserutilities" name="Browser Utilities" level="utils">
@@ -44,25 +40,25 @@
       </component>
       <component id="feedsengine" filter="s60" name="Feeds Engine">
         <unit bldFile="browserutilities/feedsengine/group"/>
-        	<!--  should this test be #included in the above bld.inf? -->
-        <!-- <unit bldFile="browserutilities/feedsengine/feedsserver/reconizer/group"/> -->
       </component>
       <component id="multipartparser" filter="s60" name="Multipart Parser">
-        <unit bldFile="browserutilities/multipartparser/group"/>
+      	<meta rel="config">
+      		<defined condition="BRDO_MULTIPART_PARSER_FF"/>
+      	</meta>
+      		<!-- uncomment the unit when configuration is in place, it's currently #included from browserutilities_build -->
+      	<!-- <unit bldFile="browserutilities/multipartparser/group"/> -->
       </component>
       <component id="schemehandler" filter="s60" name="Scheme Handler">
         <unit bldFile="browserutilities/schemehandler/group"/>
       </component>
       <component id="webutils" filter="s60" name="Web Utils">
         <unit bldFile="browserutilities/webutils/group"/>
-        	<!--  should this test be #included in the above bld.inf? -->
-        <!-- <unit bldFile="browserutilities/webutils/tsrc/public/adv/group"/> -->
       </component>
       <component id="aiwbrowserprovider" filter="s60" name="AIW Browser Provider" class="plugin">
         <unit bldFile="browserutilities/aiwbrowserprovider/group"/>
       </component>
       <component id="browserutilities_build" filter="s60" name="Browser Utilities Build">
-      	<!-- this can be removed if the #ifdef is moved into the multipart bld.inf -->
+      	<!-- when configuration is in place, the #ifdef is no longer needed and this component can be removed -->
         <unit bldFile="browserutilities/group"/>
       </component>
     </collection>
@@ -74,8 +70,6 @@
         <unit bldFile="webengine/osswebengine/npscript/group"/>
         <unit bldFile="webengine/osswebengine/webkit/s60/group"/>
         <unit bldFile="webengine/osswebengine/webkit/s60/group/javascriptcore"/>
-        <!-- <unit bldFile="webengine/osswebengine/webkit/s60/webview/webview_api_test/group"/> -->
-        <!-- <unit bldFile="webengine/osswebengine/webkit/s60/webview/webview_api_test/tsrc/group"/> -->
       </component>
       <component id="webkitutils" filter="s60" name="WebKit Utils">
         <unit bldFile="webengine/webkitutils/group"/>
@@ -88,8 +82,6 @@
       </component>
       <component id="widgetregistry" filter="s60" name="Widget Registry">
         <unit bldFile="webengine/widgetregistry/group"/>
-        	<!--  should this test be #included in the above bld.inf? -->
-        <!-- <unit bldFile="webengine/widgetregistry/tsrc/public/basic/group"/> -->
       </component>
       <component id="wmlengine" filter="s60" name="WML Engine">
         <unit bldFile="webengine/wmlengine/group"/>
@@ -101,7 +93,6 @@
       <component id="widgetengine" filter="s60" name="Widget Engine">
         <unit bldFile="webengine/widgetengine/group"/>
       </component>
-      <!--Component manually removed as empty and name conflicts with another component-->
       <component id="web_memoryplugin" name="Memory Plugin" filter="s60" class="plugin">
        <unit bldFile="webengine/memoryplugin/group"/>
      </component>
@@ -116,10 +107,6 @@
       </component>
       <component id="wrtharvester" filter="s60" name="Web Runtime Harvester" class="plugin">
         <unit bldFile="webengine/wrtharvester/group"/>
-      </component>
-      <component id="webengine_build" filter="s60" name="Web Engine Build">
-      	<!--  should be able to break this up into the above bld.infs  -->
-        <unit bldFile="webengine/group"/>
       </component>
     </collection>
     <collection id="codhandler" name="Content Object Descriptor Handler" level="specific">
@@ -148,31 +135,61 @@
         <unit bldFile="codhandler/roapapp/group"/>
       </component>
       <component id="codhandler_build" filter="s60" name="COD Handler Build">
-      	<!-- is there another component these exports can go into? -->
+      	<!-- Exports need to go into another component or make this self-contained.
+      		#included .hrh file needs to be #included in each of the other components -->
         <unit bldFile="codhandler/group"/>
       </component>
     </collection>
     <collection id="widgets" name="Web Widget Framework" level="generic">
+      	<meta rel="config">
+      		<defined condition="RD_BROWSER_WIDGETS"/>
+      	</meta>
+      	<!-- the following units can be uncommented when configuration is put in place -->
       <component id="widgetrecognizer" filter="s60" name="Widget Recognizer" class="plugin">
-        <unit bldFile="widgets/widgetrecognizer/group"/>
+      	<meta rel="config">
+      		<defined condition="__WEB_WIDGETS"/>
+      	</meta>
+        <!--<unit bldFile="widgets/widgetrecognizer/group"/>-->
       </component>
       <component id="widgetinstaller" filter="s60" name="Widget Installer UI" class="plugin">
-        <unit bldFile="widgets/widgetinstaller/group"/>
+      	<meta rel="config">
+      		<defined condition="__WEB_WIDGETS"/>
+      	</meta>
+        <!--<unit bldFile="widgets/widgetinstaller/group"/>-->
       </component>
       <component id="widgetlauncher" filter="s60" name="Widget Launcher">
+      	<meta rel="config">
+      		<!-- <defined condition="__WEB_WIDGETS"/>-->
+      	</meta>
         <unit bldFile="widgets/widgetlauncher/group"/>
       </component>
       <component id="widgetapp" filter="s60" name="Widget UI">
-        <unit bldFile="widgets/widgetapp/group"/>
+      	<meta rel="config">
+      		<defined condition="__WEB_WIDGETS"/>
+      	</meta>
+        <!--<unit bldFile="widgets/widgetapp/group"/>-->
+      </component>
+      <component id="widgetsidchecker" filter="s60" name="Widget SID Checker" introduced="^3">
+      	<meta rel="config">
+      		<defined condition="APP_SID_CHECK_SUPPORT_FF"/>
+      	</meta>
+        <!--<unit bldFile="widgets/widgetsidchecker/group"/>-->
       </component>
       <component id="widgetpreinstaller" filter="s60" name="Widget Pre-Installer">
-        <unit bldFile="widgets/widgetpreinstaller/group"/>
+      	<meta rel="config">
+      		<defined condition="RD_WIDGET_PREINSTALLER"/>
+      	</meta>
+        <!--<unit bldFile="widgets/widgetpreinstaller/group"/>-->
       </component>
       <component id="widgetstartup" filter="s60" name="Widget Startup">
-        <unit bldFile="widgets/widgetstartup/group"/>
+      	<meta rel="config">
+      		<defined condition="RD_WIDGET_PREINSTALLER"/>
+      	</meta>
+        <!--<unit bldFile="widgets/widgetstartup/group"/>-->
       </component>
       <component id="widgets_build" filter="s60" name="Widgets Build">
-      	<!--  can this be broken up into the above components? -->
+      	<!-- when configuration is in place, the #ifdef is no longer needed and this component can be removed 
+      		#included .hrh file needs to be #included in each of the other components -->
         <unit bldFile="widgets/group"/>
       </component>
     </collection>

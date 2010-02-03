@@ -1,42 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="classicui" name="Classic UI" levels="base support server generic specific">
-    <collection id="psln" name="Personalization" level="specific">
-      <component id="pslnengine" filter="s60" name="Personalization Engine">
-        <!-- <unit bldFile="psln/pslnengine/group"/> -->
-      </component>
-      <component id="pslnframework" filter="s60" name="Personalization Framework">
-        <!-- <unit bldFile="psln/pslnframework"/> -->
-      </component>
-      <component id="pslnlibraryloaders" filter="s60" name="Personalization Library Loaders">
-          <!-- no bld.inf, need to create one or remove component -->
-      </component>
-      <component id="pslnslidesetdialog" filter="s60" name="Personalization Slideset Dialog" class="plugin">
-        <!-- <unit bldFile="psln/pslnslidesetdialog/group"/> -->
-      </component>
-      <component id="pslngsplugin" filter="s60" name="Personalization GS Plugin" class="plugin">
-        <unit bldFile="psln/pslngsplugin/group"/>
-      </component>
-      <component id="psln_help" filter="s60" name="Personalization Help">
-        <unit bldFile="psln/help/group"/>
-      </component>
-      <component id="psln_build" filter="s60" name="Personalization Build">
-             <!-- the Psln group bld.inf should be distributed into the individual components, or they should be collapsed in a single component -->
-        <unit bldFile="psln/group"/>
-      </component>
-    </collection>
-    <collection id="applicationinterworkingfw" name="Application Interworking Framework" level="generic">
-      <component id="aifwservicehandler" filter="s60" name="Application Interworking Service Handle">
-        <unit bldFile="applicationinterworkingfw/servicehandler/group"/>
-      </component>
-    </collection>
-    <collection id="commonuis" name="Common UIs" level="specific">
-      <component id="commonui" filter="s60" name="Common UI">
-        <unit bldFile="commonuis/commonui/group"/>
-      </component>
-      <component id="commondialogs" filter="s60" name="Common Dialogs">
-        <unit bldFile="commonuis/commondialogs/group"/>
-        <!-- <unit bldFile="commonuis/commondialogs/group_test"/> -->
+    <collection id="ode" name="Open Dynamics Engine" level="support">
+    	<!-- the collection is really a component. Move down a directory.-->
+      <component id="ode_build" filter="s60" name="ODE">
+        <unit bldFile="ode/group"/>
       </component>
     </collection>
     <collection id="uifw" name="UI Framework" level="server">
@@ -47,13 +15,10 @@
         <unit bldFile="uifw/eikctl/group"/>
       </component>
       <component id="avkon" filter="s60" name="Avkon">
+      	<!-- can only have one unit. Split into 3 components, or #include all from same bld.inf -->
         <unit bldFile="uifw/avkon/aknphysics/group"/>
         <unit bldFile="uifw/avkon/group"/>
-        <unit bldFile="uifw/avkon/odeconf/group"/>
-        <!-- <unit bldFile="uifw/avkon/aknhlist/group"/> -->
-        <!-- <unit bldFile="uifw/avkon/aknkeyrotator/group"/> -->
-        <!-- <unit bldFile="uifw/avkon/prebuilder"/> -->
-        <!-- <unit bldFile="uifw/avkon/tsrc/bc/s60_sdkmcl/bctestmixmcl/group"/> -->
+        <unit bldFile="uifw/avkon/aknconf/group"/>
       </component>
       <component id="eikstd" filter="s60" name="Eikon Standard">
         <unit bldFile="uifw/eikstd/group"/>
@@ -64,18 +29,50 @@
       <component id="ganes" filter="s60" name="Ganes">
         <unit bldFile="uifw/ganes/group"/>
       </component>
-      <component id="uifw_test" filter="s60" name="UI Framework Test" purpose="development">
-        <!-- <unit bldFile="uifw/tsrc/group"/> -->
+    </collection>
+    <collection id="commonuis" name="Common UIs" level="specific">
+      <component id="commonui" filter="s60" name="Common UI">
+        <unit bldFile="commonuis/commonui/group"/>
+      </component>
+      <component id="commondialogs" filter="s60" name="Common Dialogs">
+        <unit bldFile="commonuis/commondialogs/group"/>
+      </component>
+    </collection>
+    <collection id="applicationinterworkingfw" name="Application Interworking Framework" level="generic">
+      <component id="aifwservicehandler" filter="s60" name="Application Interworking Service Handler">
+        <unit bldFile="applicationinterworkingfw/servicehandler/group"/>
+      </component>
+    </collection>
+    <collection id="psln" name="Personalization" level="specific">
+    	<!-- the collection is really a component. Move down a directory. Or it could be split into multiple components-->
+      <component id="psln_build" filter="s60" name="Personalization Build">
+        <unit bldFile="psln/group"/>
       </component>
     </collection>
     <collection id="commonadapter" name="Common Adapter" level="support">
+    	<!-- the collection is really a component. Move down a directory.-->
       <component id="commonadapter_build" filter="s60" name="Common Adapter Build">
         <unit bldFile="commonadapter/group"/>
       </component>
     </collection>
-    <collection id="ode" name="Open Dynamics Engine" level="support">
-      <component id="ode_build" filter="s60" name="ODE">
-        <unit bldFile="ode/group"/>
+    <collection id="akntouchgesturefw" name="Avkon Touch Gesture Framework" level="generic">
+    	<!-- the collection is really a component. Move down a directory.-->
+      <component id="akntouchgesturefw_build" filter="s60" name="Avkon Touch Gesture Framework Build" introduced="^3">
+        <unit bldFile="akntouchgesturefw/group"/>
+      </component>
+    </collection>
+    <collection id="uiutils" name="UI Utils" level="specific">
+      <component id="localizer" filter="s60" name="Directory Localizer">
+        <unit bldFile="uiutils/localizer/group"/>
+      </component>
+      <component id="findutil" filter="s60" name="Find Utility">
+        <unit bldFile="uiutils/findutil/group"/>
+      </component>
+      <component id="gamerecognizer" filter="s60" name="Game Recognizer" class="plugin">
+        <unit bldFile="uiutils/gamerecognizer/group"/>
+      </component>
+      <component id="aknjapanesereading" filter="s60" name="Avkon Japanese Reading">
+        <unit bldFile="uiutils/aknjapanesereading/group"/>
       </component>
     </collection>
     <collection id="commonuisupport" name="Common UI Support" level="support">
@@ -116,29 +113,133 @@
       </component>
     </collection>
     <collection id="classicui_info" name="Classic UI Info" level="specific">
-       <!-- the multiple units in the API components need to be resolved -->
       <component id="classicui_pub" filter="s60" name="Classic UI Public Interfaces" class="api">
         <unit bldFile="classicui_pub/group"/>
       </component>
       <component id="classicui_plat" filter="s60" name="Classic UI Platform Interfaces" class="api">
         <unit bldFile="classicui_plat/group"/>
       </component>
-      <component id="classicui_test" filter="s60" name="Classic UI Tests" purpose="development">
-        <unit bldFile="classicui_plat/tsrc/group"/>
-        <unit bldFile="classicui_pub/document_handler_api/tsrc/group"/>
-        <unit bldFile="classicui_pub/server_application_api/tsrc/group"/>
-        <!-- <unit bldFile="classicui_pub/tsrc/bc/apps/bctesttemplate/group"/> -->
-        <!-- <unit bldFile="classicui_pub/tsrc/bc/apps/s60_sdk3.0/group"/> -->
-        <!-- <unit bldFile="classicui_pub/tsrc/bc/apps/s60_sdk3.1/group"/> -->
-        <!-- <unit bldFile="classicui_pub/tsrc/bc/apps/s60_sdk3.2/group"/> -->
-        <!-- <unit bldFile="classicui_pub/tsrc/bc/apps/s60_sdk5.0/bctestpane/group"/> -->
-        <!-- <unit bldFile="classicui_pub/tsrc/bc/apps/s60_sdk5.0/group"/> -->
-        <!-- <unit bldFile="classicui_pub/tsrc/bc/group"/> -->
-        <!-- <unit bldFile="classicui_plat/avkon_testability_api/tsrc/group"/> -->
-        <!-- <unit bldFile="classicui_plat/extended_sounds_api/tsrc/group"/> -->
-        <unit bldFile="classicui_plat/ganes_api/tsrc/group"/>
-        <unit bldFile="classicui_plat/physics_api/tsrc/group"/>
-      </component>
+       <!-- the multiple units in the API test components need to be resolved -->
+	<component id="classicui_plat_api_test" filter="s60,api_test" name="Classic UI Platform API Tests" purpose="development">
+		<!-- can only have one unit. Need to #include from a single bld.inf -->
+		<unit bldFile="tsrc/group" name="classicui_tsrc_all"/>
+		<unit bldFile="classicui_plat/aiw_provider_utility_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/aiw_service_interface_base_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/aiw_service_interface_menu_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/alarm_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/application_switching_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/avkon_fonts_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/avkon_secondary_display_support_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/avkon_ui_server_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/battery_pane_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/common_file_dialogs_filter_factory_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/custom_cursors_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/eikon_server_extension_client_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/emergency_call_support_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/extended_aiw_criteria_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/extended_animation_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/extended_buttons_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/extended_editors_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/extended_grids_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/extended_indicators_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/extended_initialization_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/extended_input_capabilities_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/extended_lists_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/extended_notes_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/extended_notifiers_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/extended_options_menu_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/extended_setting_pages_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/extended_status_pane_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/extended_utilities_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/find_item_ui_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/generic_parameter_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/global_popup_priority_controller_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/indicator_plugin_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/input_block_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/item_finder_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/japanese_reading_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/key_rotator_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/layout_configuration_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/list_effects_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/long_tap_animation_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/media_shared_document_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/memory_card_ui_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/number_grouping_api/tsrc/group"/>
+		<!--unit bldFile="classicui_plat/personalisation_framework_api/tsrc/group" /-->
+		<unit bldFile="classicui_plat/phone_number_text_utilities_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/pointer_event_modifier_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/popup_form_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/server_application_services_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/signal_pane_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/skinnable_clock_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/special_character_table_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/stylus_activated_popup_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/task_list_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/text_scroller_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/touch_gesture_framework_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/touch_pane_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/transition_effect_parameters_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/transition_effect_utilities_api/tsrc/group"/>
+		<unit bldFile="classicui_plat/volume_popup_api/tsrc/group"/>
+	</component>
+	<component id="classicui_pub_api_test" filter="s60,api_test" name="Classic UI Public API Tests" purpose="development">
+		<!-- can only have one unit. Need to #include from a single bld.inf -->
+		<unit bldFile="classicui_pub/aiw_criteria_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/aiw_generic_parameter_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/aiw_service_handler_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/animation_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/application_framework_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/base_controls_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/buttons_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/choice_list_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/common_file_dialogs_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/context_pane_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/dialog_shutter_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/dialogs_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/editors_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/error_ui_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/fonts_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/form_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/generic_button_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/grids_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/hierarchical_lists_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/hotkeys_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/images_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/indicators_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/info_popup_note_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/information_preview_popup_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/initialization_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/input_frame_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/keylock_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/labels_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/lists_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/misc_controls_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/navigation_pane_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/notes_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/notifiers_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/options_menu_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/popups_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/private_ui_framework_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/queries_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/screen_clearer_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/screen_mode_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/screen_saver_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/scroller_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/searchfield_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/setting_pages_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/slider_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/sounds_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/status_pane_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/stylus_popup_menu_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/tabs_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/title_pane_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/toolbar_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/touch_ui_utilities_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/ui_framework_definitions_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/ui_framework_utilities_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/volume_control_api/tsrc/group"/>
+		<unit bldFile="classicui_pub/window_server_event_observer_api/tsrc/group"/>
+	</component>
       <component id="classicui_metadata" name="Classic UI Metadata" class="config" introduced="^2" purpose="development" target="desktop">
         <unit mrp="classicui_info/classicui_metadata/classicui_metadata.mrp"/>
       </component>

@@ -2,6 +2,7 @@
 <SystemDefinition schema="3.0.0">
   <package id="drm" name="DRM" levels="plugin framework server generic specific">
     <collection id="commondrm" name="Common DRM" level="generic">
+    	<!-- it looks like this collection would be better as a component. If so, move down a directory. Otherwise, split up the bld.inf -->
       <component id="drmencryptor" filter="s60" name="DRM Encryptor">
 		<!-- this should have its own bld.inf or be removed as a component -->
       </component>
@@ -12,6 +13,9 @@
         <unit bldFile="commondrm/drmrightsmanagerui/help/group"/>
       </component>
       <component id="drmutility" filter="s60" name="DRM Utility">
+      	<meta rel="config">
+      		<defined condition="RD_DRM_COMMON_INTERFACE_FOR_OMA_AND_WMDRM"/>
+      	</meta>      
         <unit bldFile="commondrm/drmutility/group"/>
       </component>
       <component id="drmserviceapiwrapper" filter="s60" name="DRM Service API Wrapper">
@@ -26,77 +30,26 @@
       </component>
     </collection>
     <collection id="omadrm" name="OMA DRM" level="server">
-      <component id="drmroapwbxmlparser" filter="s60" name="DRM ROAP WBXML Parser">
-        <!-- <unit bldFile="omadrm/drmroapwbxmlparser/group"/> -->
-      </component>
-      <component id="drmplugins" filter="s60" name="DRM Plugins" class="plugin">
-		<!-- should have a single bld.inf -->
-        <!-- <unit bldFile="omadrm/drmplugins/drmfilter/group"/> -->
-        <!-- <unit bldFile="omadrm/drmplugins/drmrecognizer/group"/> -->
-        <!-- <unit bldFile="omadrm/drmplugins/drmrohandler/group"/> -->
-        <!-- <unit bldFile="omadrm/drmplugins/drmromtm/group"/> -->
-      </component>
-      <component id="drmengine" filter="s60" name="DRM Engine">
-		<!-- this should have its own bld.inf or be removed as a component -->
-      </component>
-      <component id="drmhelper" filter="s60" name="DRM Helper">
-        <!-- <unit bldFile="omadrm/drmhelper/group"/> -->
-		<!-- should drmhelperserver be #included in the above? -->
-        <!-- <unit bldFile="omadrm/drmhelper/drmhelperserver/group"/> -->
-      </component>
-      <component id="drmlicensemanager" filter="s60" name="DRM License Manager">
-        <!-- <unit bldFile="omadrm/drmlicensemanager/group"/> -->
-      </component>
+    	<!-- collection is really a component. Move down a directory -->
       <component id="omadrm_build" filter="s60" name="OMA DRM Build">
-		<!-- should be split into the above files, or them collapsed into a single component -->
         <unit bldFile="omadrm/group"/>
       </component>
     </collection>
     <collection id="wmdrm" name="Windows Media DRM" level="framework">
-      <component id="wmdrmengine" filter="s60" name="WM DRM Engine">
-		<!-- should have a single bld.inf -->
-        <!-- <unit bldFile="wmdrm/wmdrmengine/wmdrmagent/group"/> -->
-        <!-- <unit bldFile="wmdrm/wmdrmengine/wmdrmfileserver/client/group"/> -->
-        <!-- <unit bldFile="wmdrm/wmdrmengine/wmdrmfileserver/server/group"/> -->
-        <!-- <unit bldFile="wmdrm/wmdrmengine/wmdrmserver/client/group"/> -->
-        <!-- <unit bldFile="wmdrm/wmdrmengine/wmdrmserver/clientwrapper/group"/> -->
-        <!-- <unit bldFile="wmdrm/wmdrmengine/wmdrmserver/server/group"/> -->
-      </component>
-      <component id="camese" filter="s60" name="Camese">
-		<!-- should have a single bld.inf -->
-        <!-- <unit bldFile="wmdrm/camese/group"/> -->
-        <!-- <unit bldFile="wmdrm/camese/cameseutility/group"/> -->
-        <!-- <unit bldFile="wmdrm/camese/httpfiltercamese/group"/> -->
-        <!-- <unit bldFile="wmdrm/camese/wmdrmdla/group"/> -->
-        <!-- <unit bldFile="wmdrm/camese/wmdrmdlaapp/group"/> -->
-        <!-- <unit bldFile="wmdrm/camese/wmdrmdladefaulthttpplugin/group"/> -->
-        <!-- <unit bldFile="wmdrm/camese/wmdrmdladefaultuiplugin/group"/> -->
-        <!-- <unit bldFile="wmdrm/camese/wmdrmdlautils/group"/> -->
-        <!-- <unit bldFile="wmdrm/camese/wmdrmdlawrapper/group"/> -->
-      </component>
+    	<!-- collection is really a component. Move down a directory -->
       <component id="wmdrm_build" filter="s60" name="WM DRM Build">
-		<!-- should be split into the above files, or them collapsed into a single component -->
         <unit bldFile="wmdrm/group"/>
       </component>
     </collection>
     <collection id="drm_info" name="DRM Info" level="specific">
       <component id="drm_pub" filter="s60" name="DRM Public Interfaces" class="api">
         <unit bldFile="drm_pub/group"/>
-		<!-- do the following need to be #included ? -->
-        <!-- <unit bldFile="drm_pub/drm_helper_api/tsrc/group"/> -->
-        <!-- <unit bldFile="drm_pub/drm_license_checker_api/tsrc/group"/> -->
-        <!-- <unit bldFile="drm_pub/oma_drm_caf_agent_api/tsrc/bc/group"/> -->
       </component>
       <component id="drm_plat" filter="s60" name="DRM Platform Interfaces" class="api">
         <unit bldFile="drm_plat/group"/>
-		<!-- do the following need to be #included ? -->
-        <!-- <unit bldFile="drm_plat/drm_common_api/tsrc/group"/> -->
-        <!-- <unit bldFile="drm_plat/drm_rights_api/tsrc/group"/> -->
-        <!-- <unit bldFile="drm_plat/roap_api/tsrc/group"/> -->
       </component>
-      <component id="drm_build" filter="s60" name="DRM Build">
-		<!-- is this needed ? -->
-        <unit bldFile="group"/>
+      <component id="drm_api_test" filter="s60,api_test" name="DRM Build" purpose="development">
+        <unit bldFile="tsrc/group"/>
       </component>
     </collection>
   </package>

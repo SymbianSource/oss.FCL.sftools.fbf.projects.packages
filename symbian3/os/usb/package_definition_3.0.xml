@@ -4,6 +4,11 @@
     <collection id="usbldd" name="USB Logical Device Drivers" level="hw-if">
       <!-- usbclientdrivers  to be moved here from kernelhwsrv-->
     </collection>
+    <collection id="usbextension" name="USB Extension" level="framework">
+      <component id="usbaudioclassdriver" name="USB Audi Class Driver" purpose="optional" filter="s60">
+        <unit  bldFile="usbextension/usbaudioclassdriver/group"/>
+      </component>
+    </collection>
     <collection id="usbmgmt" name="USB Management" level="server">
       <component id="usbmgr" name="USB Manager" purpose="optional">
         <unit version="2" bldFile="usbmgmt/usbmgr/group" mrp="usbmgmt/usbmgr/group/usb_manager.mrp"/>
@@ -16,6 +21,9 @@
       </component>
     </collection>
     <collection id="usb_info" name="USB Info" level="app-if">
+      <component id="usb_plat" filter="s60" name="USB Platform Interfaces" class="api">
+        <unit bldFile="usb_plat/group"/>
+      </component>
       <component id="usb_metadata" name="USB Metadata" class="config" introduced="^3" purpose="development" target="desktop">
         <unit mrp="usb_info/usb_metadata/usb_metadata.mrp"/>
       </component>

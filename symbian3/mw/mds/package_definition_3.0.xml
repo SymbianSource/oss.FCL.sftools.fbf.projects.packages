@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="mds" name="Metadata Services" levels="mgr eng server int">
-    <collection id="clfwrapper" name="Content Listing Framework Wrapper" level="int">
-      <component id="clfwrapper_build" filter="s60" name="CLF Wrapper Build" introduced="^2">
-        <unit bldFile="clfwrapper/group"/>
+    <collection id="metadataengine" name="Metadata Engine" level="eng">
+      <component id="metadataengine_common" filter="s60" name="Metadata Engine Common" introduced="^2">
+        <unit bldFile="metadataengine/common/group"/>
+      </component>
+      <component id="metadataengine_server" filter="s60" name="Metadata Engine Server" introduced="^2">
+        <unit bldFile="metadataengine/server/group"/>
+      </component>
+      <component id="metadataengine_client" filter="s60" name="Metadata Engine Client" introduced="^2">
+        <unit bldFile="metadataengine/client/group"/>
+      </component>
+      <component id="metadataengine_build" filter="s60" name="Metadata Engine Build" introduced="^2">
+      	<!--make this collection a single component, or split this bld.inf into the other units  -->
+        <unit bldFile="metadataengine/group"/>
+      </component>
+    </collection>
+    <collection id="locationmanager" name="Location Manager" level="mgr">
+      <component id="locationtrail" filter="s60" name="Location Trail" introduced="^2">
+        <unit bldFile="locationmanager/locationtrail/group"/>
+      </component>
+      <component id="locationmanager_server" filter="s60" name="Location Manager Server" introduced="^2">
+        <unit bldFile="locationmanager/server/group"/>
+      </component>
+      <component id="locationmanager_client" filter="s60" name="Location Manager Client" introduced="^2">
+        <unit bldFile="locationmanager/client/group"/>
+      </component>
+      <component id="locationmanager_build" filter="s60" name="Location Manager Build" introduced="^2">
+      	<!--make this collection a single component, or split this bld.inf into the other units  -->
+        <unit bldFile="locationmanager/group"/>
       </component>
     </collection>
     <collection id="contextengine" name="Context Engine" level="eng">
@@ -11,6 +36,7 @@
         <unit bldFile="contextengine/plugins/group"/>
       </component>
       <component id="contextengine_build" filter="s60" name="Context Engine Build" introduced="^2">
+      	<!--make this collection a single component, or make this unit self-contained  -->
         <unit bldFile="contextengine/group"/>
       </component>
     </collection>
@@ -28,7 +54,6 @@
         <unit bldFile="harvester/composerplugins/group"/>
       </component>
       <component id="harvesterplugins" filter="s60" name="Harvester Plugins" class="plugin" introduced="^2">
-        <!-- <unit bldFile="harvester/harvesterplugins/audioplaylistplugin/group"/> -->
         <unit bldFile="harvester/harvesterplugins/group"/>
       </component>
       <component id="monitorplugins" filter="s60" name="Monitor Plugins" class="plugin" introduced="^2">
@@ -41,47 +66,23 @@
         <unit bldFile="harvester/client/group"/>
       </component>
       <component id="harvester_build" filter="s60" name="Harvester Build" introduced="^2">
+      	<!-- split these exports into the other components -->
         <unit bldFile="harvester/group"/>
       </component>
     </collection>
-    <collection id="locationmanager" name="Location Manager" level="mgr">
-      <component id="locationtrail" filter="s60" name="Location Trail" introduced="^2">
-        <unit bldFile="locationmanager/locationtrail/group"/>
-      </component>
-      <component id="locationmanager_server" filter="s60" name="Location Manager Server" introduced="^2">
-        <unit bldFile="locationmanager/server/group"/>
-      </component>
-      <component id="locationmanager_client" filter="s60" name="Location Manager Client" introduced="^2">
-        <unit bldFile="locationmanager/client/group"/>
-      </component>
-      <component id="locationmanager_build" filter="s60" name="Location Manager Build" introduced="^2">
-      	<!--consider making this collection a single component  -->
-        <unit bldFile="locationmanager/group"/>
-      </component>
-    </collection>
-    <collection id="metadataengine" name="Metadata Engine" level="eng">
-      <component id="metadataengine_common" filter="s60" name="Metadata Engine Common" introduced="^2">
-        <unit bldFile="metadataengine/common/group"/>
-      </component>
-      <component id="metadataengine_server" filter="s60" name="Metadata Engine Server" introduced="^2">
-        <unit bldFile="metadataengine/server/group"/>
-      </component>
-      <component id="metadataengine_client" filter="s60" name="Metadata Engine Client" introduced="^2">
-        <unit bldFile="metadataengine/client/group"/>
-      </component>
-      <component id="metadataengine_build" filter="s60" name="Metadata Engine Build" introduced="^2">
-      	<!--consider making this collection a single component  -->
-        <unit bldFile="metadataengine/group"/>
-      </component>
-    </collection>
     <collection id="watchdog" name="Watchdog" level="server">
+    	<!-- collection is really a component. Move down a directory -->
       <component id="mdswatchdog" filter="s60" name="Metadata Watchdog" introduced="^2">
         <unit bldFile="watchdog/group"/>
       </component>
     </collection>
-    <collection id="iadstoprestart" name="IAD Stop/Restart" level="server">
-      <component id="iadstoprestart_build" filter="s60" name="IAD Stop Restart Build" introduced="^2">
-        <!-- <unit bldFile="iadstoprestart/group"/> -->
+    <collection id="clfwrapper" name="Content Listing Framework Wrapper" level="int">
+     	<meta rel="config">
+     		<defined condition="RD_MDS_2_5"/>
+     	</meta>
+    	<!-- collection is really a component. Move down a directory -->
+      <component id="clfwrapper_build" filter="s60" name="CLF Wrapper Build" introduced="^2">
+        <unit bldFile="clfwrapper/group"/>
       </component>
     </collection>
     <collection id="mds_info" name="Metadata Services Info" level="int">
@@ -90,17 +91,19 @@
       </component>
       <component id="mds_plat" filter="s60" name="Metadata Services Platform Interfaces" class="api" introduced="^2">
         <unit bldFile="mds_plat/group"/>
-        <!--  should #include the rets if they're needed -->
-        <!-- <unit bldFile="mds_plat/content_listing_framework_collection_manager_api/tsrc/group"/> -->
-        <!-- <unit bldFile="mds_plat/context_engine_plugin_api/tsrc/group"/> -->
-        <!-- <unit bldFile="mds_plat/harvester_framework_api/tsrc/composerplugintest/group"/> -->
-        <!-- <unit bldFile="mds_plat/harvester_framework_api/tsrc/group"/> -->
-        <!-- <unit bldFile="mds_plat/harvester_framework_api/tsrc/harvesterclienttest/group"/> -->
-        <!-- <unit bldFile="mds_plat/harvester_framework_api/tsrc/harvesterdatatest/group"/> -->
-        <!-- <unit bldFile="mds_plat/harvester_framework_api/tsrc/harvesterplugintest/group"/> -->
-        <!-- <unit bldFile="mds_plat/harvester_framework_api/tsrc/monitorplugintest/group"/> -->
-        <!-- <unit bldFile="mds_plat/location_manager_api/tsrc/group"/> -->
-        <!-- <unit bldFile="mds_plat/metadata_engine_api/tsrc/group"/> -->
+      </component>
+      <component id="mds_api_tests" filter="s60,api_test" name="Metadata Services API Tests" purpose="development" introduced="^2">
+        <unit bldFile="mds_plat/content_listing_framework_collection_manager_api/tsrc/group"/>
+        <unit bldFile="mds_plat/context_engine_plugin_api/tsrc/group"/>
+        <unit bldFile="mds_plat/harvester_framework_api/tsrc/composerplugintest/group"/>
+        <unit bldFile="mds_plat/harvester_framework_api/tsrc/group"/>
+        <unit bldFile="mds_plat/harvester_framework_api/tsrc/harvesterclienttest/group"/>
+        <unit bldFile="mds_plat/harvester_framework_api/tsrc/harvesterdatatest/group"/>
+        <unit bldFile="mds_plat/harvester_framework_api/tsrc/harvesterplugintest/group"/>
+        <unit bldFile="mds_plat/harvester_framework_api/tsrc/monitorplugintest/group"/>
+        <unit bldFile="mds_plat/location_manager_api/tsrc/group"/>
+        <unit bldFile="mds_plat/metadata_engine_api/tsrc/group"/>
+        <unit bldFile="mds_pub/content_listing_framework_api/tsrc/group"/>
       </component>
       <component id="mds_build" filter="s60" name="Metadata Services Build" introduced="^2">
       	<!-- consider distributiing this into the rest of the components in the package -->

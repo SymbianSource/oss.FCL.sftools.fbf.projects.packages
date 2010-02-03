@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="serviceapifw" name="Service API Framework" levels="plugin framework server generic specific">
-    <collection id="languageinterworkingfw" name="Language Interworking Framework" level="framework">
-      <component id="lifwservicehandler" filter="s60" name="Service Handler">
-        <unit bldFile="languageinterworkingfw/servicehandler/group"/>
-      </component>
-    </collection>
     <collection id="rtsecuritymanager" name="Runtime Security Manager" level="server">
       <component id="rtsecuritymanagerutil" filter="s60" name="Runtime Security Manager Util">
         <unit bldFile="rtsecuritymanager/rtsecuritymanagerutil/group"/>
@@ -17,21 +12,21 @@
         <unit bldFile="rtsecuritymanager/rtsecuritymanagerclient/group"/>
       </component>
       <component id="rtsecuritymanager_build" filter="s60" name="Runtime Security Manager Build">
-		<!-- consider moving the exports to the appropriate components -->
+		<!-- Move the export to the appropriate components, or make this a ROM component by removing the #includes -->
         <unit bldFile="rtsecuritymanager/group"/>
       </component>
     </collection>
-    <collection id="serviceapifw_info" name="Service API Framework Info" level="specific">
-      <component id="serviceapifw_pub" filter="s60" name="Service API Framework Public Interfaces" class="api">
-        <unit bldFile="serviceapifw_pub/group"/>
+    <collection id="languageinterworkingfw" name="Language Interworking Framework" level="framework">
+      <component id="lifwservicehandler" filter="s60" name="Service Handler">
+        <unit bldFile="languageinterworkingfw/servicehandler/group"/>
       </component>
+    </collection>
+    <collection id="serviceapifw_info" name="Service API Framework Info" level="specific">
       <component id="serviceapifw_plat" filter="s60" name="Service API Framework Platform Interfaces" class="api">
         <unit bldFile="serviceapifw_plat/group"/>
-		<!-- these should be #included from the above bld.inf -->
-        <unit bldFile="serviceapifw_plat/liw_criteria_api/tsrc/group"/>
-        <unit bldFile="serviceapifw_plat/rtsecuritymanager_client_api/tsrc/group"/>
-        <!-- <unit bldFile="serviceapifw_plat/rtsecuritymanager_common_api/tsrc/group"/> -->
-        <!-- <unit bldFile="serviceapifw_plat/rtsecuritymanager_utility_api/tsrc/group"/> -->
+      </component>
+      <component id="serviceapifw_pub" filter="s60" name="Service API Framework Public Interfaces" class="api">
+        <unit bldFile="serviceapifw_pub/group"/>
       </component>
     </collection>
   </package>

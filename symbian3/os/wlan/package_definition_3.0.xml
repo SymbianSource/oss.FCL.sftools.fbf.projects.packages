@@ -11,6 +11,7 @@
       <component id="wlandbif_cd" filter="s60" name="WLAN CommsDat interface">
         <unit bldFile="wlan_bearer/wlandbif_cd/group"/>
       </component>
+      <!-- should follow component directory rules for stuff in wlan_symbian/ and put in a single component or split up properly -->
       <component id="wlanengine" filter="s60" name="WLAN Engine">
         <unit bldFile="wlan_bearer/wlanengine/wlan_symbian/wlanengine_symbian_3.1/group"/>
       </component>

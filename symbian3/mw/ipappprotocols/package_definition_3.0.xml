@@ -2,29 +2,11 @@
 <SystemDefinition schema="3.0.0">
   <package id="ipappprotocols" name="IP App Protocols" levels="plugin conn server if">
     <collection id="rtp" name="RTP" level="server">
-      <component id="rtpstack" filter="s60" name="RTP Stack">
-        <unit bldFile="rtp/rtpstack/group"/>
-        <!-- <unit bldFile="rtp/rtpstack/tsrc/ut_rtpstack/group"/> -->
-      </component>
-    </collection>
-    <collection id="sipplugins" name="SIP Plugins" level="plugin">
-      <component id="sippwlanplugin" filter="s60" name="SIP WLAN Plugin" class="plugin">
-        <unit bldFile="sipplugins/sippwlanplugin/group"/>
-      </component>
-      <component id="sippsipsettingsui" filter="s60" name="SIP Settings UI" class="plugin">
-        <unit bldFile="sipplugins/sippsipsettingsui/group"/>
-        <!-- <unit bldFile="sipplugins/sippsipsettingsui/tsrc/ut_sipsettingsui/group"/> -->
-      </component>
-      <component id="sippdevmgmtsipadapter" filter="s60" name="Device Management SIP Settings Adapter" class="plugin">
-        <unit bldFile="sipplugins/sippdevmgmtsipadapter/group"/>
-        <!-- <unit bldFile="sipplugins/sippdevmgmtsipadapter/tsrc/ut_cnsmldmsipadapter/group"/> -->
-      </component>
-      <component id="sippsystemstatemonitor" filter="s60" name="SIP System State Monitor" class="plugin">
-        <unit bldFile="sipplugins/sippsystemstatemonitor/group"/>
-      </component>
       <component id="srtpstack" filter="s60" name="SRTP Stack">
         <unit bldFile="rtp/srtpstack/group"/>
-        <!-- <unit bldFile="rtp/srtpstack/tsrc/ut_srtpstack/group"/> -->
+      </component>
+      <component id="rtpstack" filter="s60" name="RTP Stack">
+        <unit bldFile="rtp/rtpstack/group"/>
       </component>
     </collection>
     <collection id="realtimenetprots" name="Real Time Net Protocols" level="server">
@@ -34,6 +16,23 @@
       </component>
       <component id="sipfw" name="SIP Framework" introduced="9.2" purpose="optional">
         <unit version="2" bldFile="realtimenetprots/sipfw/Group" mrp="realtimenetprots/sipfw/Group/mm-protocols_SIP2_Com.mrp"/>
+      </component>
+    </collection>
+    <collection id="sipplugins" name="SIP Plugins" level="plugin">
+      <component id="sippwlanplugin" filter="s60" name="SIP WLAN Plugin" class="plugin">
+        <unit bldFile="sipplugins/sippwlanplugin/group"/>
+      </component>
+      <component id="sippsipsettingsui" filter="s60" name="SIP Settings UI" class="plugin">
+        <unit bldFile="sipplugins/sippsipsettingsui/group"/>
+      </component>
+      <component id="sippdevmgmtsipadapter" filter="s60" name="Device Management SIP Settings Adapter" class="plugin">
+        <unit bldFile="sipplugins/sippdevmgmtsipadapter/group"/>
+      </component>
+      <component id="sippsystemstatemonitor" filter="s60" name="SIP System State Monitor" class="plugin">
+        <unit bldFile="sipplugins/sippsystemstatemonitor/group"/>
+      </component>
+      <component id="sippsipadapter" filter="s60" name="SIP Adapter" class="plugin" introduced="^3">
+        <unit bldFile="sipplugins/sippsipadapter/group"/>
       </component>
     </collection>
     <collection id="sipproviderplugins" name="SIP Provider Plugins" level="conn">

@@ -1,39 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="ossrv" name="Generic OS Services" levels="physical-abstraction app-libs encoding translation data-services utilities">
-    <collection id="utilitylibraries" name="Utility Libraries" level="encoding">
-      <component id="libutils" filter="s60" name="Utility Library">
-      <!-- this can only have one unit. Should include secondary from the main bld.inf -->
-        <unit bldFile="utilitylibraries/libutils/group"/>
-        <unit bldFile="utilitylibraries/libutils/tsrc/group"/>
-        <!-- <unit bldFile="utilitylibraries/libutils/tsrc/nft/group"/> -->
+    <collection id="stdlibs" name="Standard Libraries" level="translation">
+      <component id="libz" filter="s60" name="Z Compression Library">
+        <unit bldFile="stdlibs/libz/group"/>
+      </component>
+      <component id="libcrypt" filter="s60" name="Crypt Library">
+        <unit bldFile="stdlibs/libcrypt/group"/>
       </component>
     </collection>
-    <collection id="ofdbus" name="Open Foundation D-Bus" level="utilities">
-      <component id="dbus" filter="s60" name="D-Bus">
-        <unit bldFile="ofdbus/dbus/group"/>
-            <!-- this can only have one unit. Should include test from the main bld.inf -->
-        <unit bldFile="ofdbus/dbus/tsrc/group"/>
+    <collection id="ssl" name="SSL" level="data-services">
+      <component id="libcrypto" filter="s60" name="Crypto Library">
+        <unit bldFile="ssl/libcrypto/group"/>
       </component>
-      <component id="dbus-glib" filter="s60" name="D-Bus GLib">
-        <unit bldFile="ofdbus/dbus-glib/group"/>
-            <!-- this can only have one unit. Should include test from the main bld.inf -->
-        <unit bldFile="ofdbus/dbus-glib/tsrc/group"/>
-      </component>
-      <component id="ofdbus_rom" filter="s60" name="D-Bus ROM">
-            <!-- Contains IBY for for dbus. should remove #includes to above components. Consider moving IBY file to one of the above as well and removing this component entirely -->
-        <unit bldFile="ofdbus/group"/>
-      </component>
-      <component id="ofdbus_test" filter="s60" purpose="development" name="OF Dbus Test">
-           <!-- can these be put into ofdbus component? -->
-        <!-- <unit bldFile="ofdbus/tsrc/nft/idle_daemon_run/group"/> -->
-        <!-- <unit bldFile="ofdbus/tsrc/nft/g_n_messages/group"/> -->
-        <!-- <unit bldFile="ofdbus/tsrc/nft/g_file_send/group"/> -->
-        <!-- <unit bldFile="ofdbus/tsrc/nft/send_messages1/group"/> -->
-        <!-- <unit bldFile="ofdbus/tsrc/nft/stif_glib_1_simple_message/group"/> -->
-        <!-- <unit bldFile="ofdbus/tsrc/nft/file_transfer_time/group"/> -->
-        <!-- <unit bldFile="ofdbus/tsrc/nft/g_n_messages1/group"/> -->
-        <!-- <unit bldFile="ofdbus/tsrc/nft/send_messages/group"/> -->
+      <component id="libssl" filter="s60" purpose="development" name="SSL Library">
+        <unit bldFile="ssl/libssl/group"/>
       </component>
     </collection>
     <collection id="glib" name="GLib" level="utilities">
@@ -52,45 +33,29 @@
       <component id="libgobject" filter="s60" name="Libg Object">
         <unit bldFile="glib/libgobject/group"/>
       </component>
-      <component id="glib_test" filter="s60" purpose="development" name="GLib Test">
-        <unit bldFile="glib/tsrc/group"/>
-         <!-- should #include the next unit in the above bld.inf if it's needed -->
-        <!-- <unit bldFile="glib/tsrc/bc/group"/> -->
-      </component>
-    </collection>
-    <collection id="ssl" name="SSL" level="data-services">
-      <component id="libcrypto" filter="s60" name="Crypto Library">
-        <unit bldFile="ssl/libcrypto/group"/>
-      </component>
-      <component id="ssl_test" filter="s60" purpose="development" name="SSL Test">
-        <unit bldFile="ssl/tsrc/group"/>
-         <!-- should #include the next unit in the above bld.inf if it's needed -->
-        <!-- <unit bldFile="ssl/tsrc/bc/group"/> -->
-      </component>
     </collection>
     <collection id="stdcpp" name="C++ Standard Library" level="translation">
+    	<!-- collection is really a component. Needs to be moved down a directory -->
       <component id="stdcpp_build" filter="s60" name="Stdcpp">
         <unit bldFile="stdcpp/group"/>
       </component>
-      <component id="stdcpp_test" filter="s60" purpose="development" name="Stdcpp Test">
-        <unit bldFile="stdcpp/tsrc/group"/>
-           <!-- these should be #included in the above bld.inf if they're needed -->
-        <!-- <unit bldFile="stdcpp/tsrc/stdcpp_test/tstdcpp/twsd_manual/group"/> -->
-        <!-- <unit bldFile="stdcpp/tsrc/stdcpp_test/tstdcpp/ood_manual/group"/> -->
-        <!-- <unit bldFile="stdcpp/tsrc/stdcpp_test/stlport/manual/group"/> -->
-        <!-- <unit bldFile="stdcpp/tsrc/boost_test/multi_array/manual/group"/> -->
-        <!-- <unit bldFile="stdcpp/tsrc/stdcpp_test/tstdcpp/io_manual/group"/> -->
-        <!-- <unit bldFile="stdcpp/tsrc/bc/group"/> -->
-        <!-- <unit bldFile="stdcpp/tsrc/boost_test/graph/manual/group"/> -->
-        <!-- <unit bldFile="stdcpp/tsrc/stdcpp_test/tstdcpp/multithread/manual/group"/> -->
+    </collection>
+    <collection id="ofdbus" name="Open Foundation D-Bus" level="utilities">
+      <component id="dbus" filter="s60" name="D-Bus">
+        <unit bldFile="ofdbus/dbus/group"/>
+      </component>
+      <component id="dbus-glib" filter="s60" name="D-Bus GLib">
+        <unit bldFile="ofdbus/dbus-glib/group"/>
+      </component>
+      <component id="ofdbus_rom" filter="s60" name="D-Bus ROM">
+            <!-- Contains IBY for for dbus. Should remove #includes to above components and move this down a directory 
+            Consider moving IBY file to one of the above as well and removing this component entirely -->
+        <unit bldFile="ofdbus/group"/>
       </component>
     </collection>
-    <collection id="stdlibs" name="Standard Libraries" level="translation">
-      <component id="libz" filter="s60" name="Z Compression Library">
-        <unit bldFile="stdlibs/libz/group"/>
-      </component>
-      <component id="libcrypt" filter="s60" name="Crypt Library">
-        <unit bldFile="stdlibs/libcrypt/group"/>
+    <collection id="utilitylibraries" name="Utility Libraries" level="encoding">
+      <component id="libutils" filter="s60" name="Utility Library">
+        <unit bldFile="utilitylibraries/libutils/group"/>
       </component>
     </collection>
     <collection id="genericservices" name="Generic Services" level="utilities">
@@ -152,10 +117,6 @@
       </component>
     </collection>
     <collection id="ossrv_info" name="Generic OS Services Info" level="utilities">
-      <component id="ossrv_test" filter="s60" purpose="development" name="Generic OS Services Test">
-       <!-- is this needed? Can it be split up into tests for the individual packages? -->
-        <!-- <unit bldFile="tsrc/group"/> -->
-      </component>
       <component id="ossrv_build" filter="s60" name="Generic OS Services Build">
       <!-- exports should be moved to individual components -->
         <unit bldFile="group"/>
@@ -165,10 +126,6 @@
       </component>
       <component id="ossrv_pub" filter="s60" name="Generic OS Services Public Interfaces" class="api">
         <unit bldFile="ossrv_pub/group"/>
-        <!-- <unit bldFile="ossrv_pub/boost_apis/tsrc/group"/> -->
-        <!-- <unit bldFile="ossrv_pub/glib_arrays/tsrc/group"/> -->
-        <!-- <unit bldFile="ossrv_pub/ssl_general_api/tsrc/group"/> -->
-        <!-- <unit bldFile="ossrv_pub/stl/tsrc/group"/> -->
       </component>
       <component id="ossrv_metadata" name="Generic OS Services Metadata" class="config" introduced="^2" purpose="development" target="desktop">
         <unit mrp="ossrv_info/ossrv_metadata/ossrv_metadata.mrp"/>

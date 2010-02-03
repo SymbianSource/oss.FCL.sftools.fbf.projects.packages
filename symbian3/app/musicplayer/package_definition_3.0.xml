@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="musicplayer" name="Music Player Apps" levels="plugins support hs app">
-    <collection id="musicvisualization" name="Music Visualization" level="plugins">
-      <component id="musicvisualizationplugin" filter="s60" name="Music Visualization Plugin" class="plugin">
-        <unit bldFile="musicvisualization/musicvisualizationplugin/group"/>
-      </component>
-      <component id="mpxvisualizationplugins" filter="s60" name="MPX Visualization Plugins" class="plugin">
-        <unit bldFile="musicvisualization/mpxvisualizationplugins/group"/>
-      </component>
-    </collection>
+  <!-- custom filter pref_test-->
     <collection id="mpxmusicplayer" name="MPX Music Player" level="app">
       <component id="mpxmusicplayer_help" filter="s60" name="Help">
         <unit bldFile="mpxmusicplayer/help/group"/>
@@ -16,10 +9,10 @@
       <component id="mpxmusicplayer_commonui" filter="s60" name="MPX Common UI">
         <unit bldFile="mpxmusicplayer/commonui/group"/>
       </component>
-      <component id="activeidle" filter="s60" name="MPX Active Idle">
+      <component id="mpx_activeidle" filter="s60" name="MPX Active Idle">
         <unit bldFile="mpxmusicplayer/activeidle/group"/>
       </component>
-      <component id="metadatahandler" filter="s60" name="MPX Metadata Handler">
+      <component id="mpx_metadatahandler" filter="s60" name="MPX Metadata Handler">
         <unit bldFile="mpxmusicplayer/metadatahandler/group"/>
       </component>
       <component id="mediakeyhandler" filter="s60" name="MPX Media Key Handler">
@@ -33,25 +26,28 @@
         <unit bldFile="mpxmusicplayer/group"/>
       </component>
     </collection>
-    <collection id="musichomescreen" name="Music Home Screen" level="hs">
+    <collection id="musichomescreen_multiview" name="Music Home Screen Multiview" level="hs">
+     <meta rel="config">
+   		<defined condition="IAD_INCLUDE_ENHANCED_HOMESCREEN"/>
+   	  </meta>    
       <component id="mpxcollectionpublisher" filter="s60" name="MPX Collection Publisher" introduced="^2">
-        <unit bldFile="musichomescreen/mpxcollectionpublisher/group"/>
+        <unit bldFile="musichomescreen_multiview/mpxcollectionpublisher/group"/>
       </component>
       <component id="musiccontentpublisher" filter="s60" name="Music Content Publisher" introduced="^2">
-        <unit bldFile="musichomescreen/musiccontentpublisher/group"/>
+        <unit bldFile="musichomescreen_multiview/musiccontentpublisher/group"/>
       </component>
       <component id="mcpmusicplayer" filter="s60" name="Music Player MCP Plugin" class="plugin" introduced="^2">
-        <unit bldFile="musichomescreen/mcpmusicplayer/group"/>
+        <unit bldFile="musichomescreen_multiview/mcpmusicplayer/group"/>
       </component>
       <component id="musicplayeractionhandlerplugin" filter="s60" name="Music Player Action Handler Plugin" class="plugin" introduced="^2">
-        <unit bldFile="musichomescreen/musicplayeractionhandlerplugin/group"/>
+        <unit bldFile="musichomescreen_multiview/musicplayeractionhandlerplugin/group"/>
       </component>
-      <component id="data" filter="s60" name="MPX Data" introduced="^2">
-      	<!-- does this make sense to be a component? should it just be #include from musichomescreen/group? -->
-        <unit bldFile="musichomescreen/data/themes/default/group"/>
+      <component id="mpx_data" filter="s60" name="MPX Data" introduced="^2">
+      	<!-- does this make sense to be a component? should it just be #include from musichomescreen_multiview/group? -->
+        <unit bldFile="musichomescreen_multiview/data/themes/default/group"/>
       </component>
-      <component id="musichomescreen_build" filter="s60" name="Music Homescreen Build" introduced="^2">
-        <unit bldFile="musichomescreen/group"/>
+      <component id="musichomescreen_build" filter="s60" name="Music Homescreen Multiview Build" introduced="^2">
+        <unit bldFile="musichomescreen_multiview/group"/>
       </component>
     </collection>
     <collection id="mpxplugins" name="MPX Plugins" level="plugins">
@@ -67,18 +63,15 @@
       </component>
     </collection>
     <collection id="musicplayer_info" name="Music Player Apps Info" level="app">
+      <component id="musicplayer_build" filter="s60" name="Music Player Build">
+      	<!-- should explicitly #inlcude musicplayerbldvariant.hrh in each component  -->
+        <unit bldFile="group"/>
+      </component>
       <component id="musicplayer_plat" filter="s60" name="Music Player Apps Platform Interfaces" class="api">
         <unit bldFile="musicplayer_plat/group"/>
-        	<!-- can only have one unit. Need to #include the rest from the above -->
-        <unit bldFile="musicplayer_plat/mpx_music_player_app_api/tsrc/group"/>
-        <unit bldFile="musicplayer_plat/mpx_music_player_commonui_api/tsrc/group"/>
-        <unit bldFile="musicplayer_plat/mpx_music_player_media_key_handler_api/tsrc/group"/>
-        <unit bldFile="musicplayer_plat/mpx_music_store_api/tsrc/group"/>
-        <unit bldFile="musicplayer_plat/music_visualization_plugin_api/tsrc/group"/>
       </component>
-      <component id="musicplayer_test" filter="s60" purpose="development" name="Music Player Apps Test">
-      	<!-- should this be uncommented? -->
-        <!-- <unit bldFile="tsrc/group"/> -->
+      <component id="musicplayer_test" filter="s60,pref_test,api_test" purpose="development" name="Music Player Apps Test">
+		<unit bldFile="tsrc/group"/>
       </component>
     </collection>
   </package>

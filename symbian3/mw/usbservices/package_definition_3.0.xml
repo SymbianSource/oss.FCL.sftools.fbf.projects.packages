@@ -1,38 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="usbservices" name="USB Services" levels="framework server generic specific plugin">
-    <collection id="usbclasses" name="USB Classes" level="framework">
-      <component id="usbobexclasscontroller" filter="s60" name="USB OBEX Class Controller" class="plugin">
-        <unit bldFile="usbclasses/usbobexclasscontroller/group"/>
-        <!-- <unit bldFile="usbclasses/usbobexclasscontroller/tsrc/group"/> -->
+    <collection id="usbservices_info" name="USB Services Info" level="plugin">
+      <component id="usbservices_plat" filter="s60" name="USB Services Platform Interfaces" class="api">
+        <unit bldFile="usbservices_plat/group"/>
       </component>
-      <component id="usbbasicpersonality" filter="s60" name="USB Basic Personality"  class="plugin">
-        <unit bldFile="usbclasses/usbbasicpersonality/group"/>
-      </component>
-      <component id="usbmscpersonality" filter="s60" name="USB MSC Personality" class="plugin">
-        <unit bldFile="usbclasses/usbmscpersonality/group"/>
-      </component>
-      <component id="ptpstack" filter="s60" name="Picture Transfer Protocol Stack">
-        <unit bldFile="usbclasses/ptpstack/group"/>
-      </component>
-      <component id="sicdusbplugin" filter="s60" name="SICD USB Plugin" class="plugin">
-        <unit bldFile="usbclasses/sicdusbplugin/group"/>
-      </component>
-      <component id="ptpserver" filter="s60" name="Picture Transfer Protocol Server">
-        <unit bldFile="usbclasses/ptpserver/group"/>
-        <!-- <unit bldFile="usbclasses/ptpserver/ptpclasscontroller/group"/> -->
-      </component>
-      <component id="pictbridgeengine" filter="s60" name="PictBridge Engine">
-        <unit bldFile="usbclasses/pictbridgeengine/group"/>
+      <component id="usbservices_test" filter="s60,api_test" name="USB Services Tests">
+        <unit bldFile="tsrc/group"/>
       </component>
     </collection>
     <collection id="usbengines" name="USB Engines" level="generic">
+      <component id="usbotgwatcher" filter="s60" name="USB OTG Watcher">
+        <unit bldFile="usbengines/usbotgwatcher/group"/>
+      </component>
       <component id="usbwatcher" filter="s60" name="USB Watcher">
         <unit bldFile="usbengines/usbwatcher/group"/>
       </component>
       <component id="usblocodplugin" filter="s60" name="USB Local Connectivity Domain Plugin" class="plugin">
         <unit bldFile="usbengines/usblocodplugin/group"/>
-        <!-- <unit bldFile="usbengines/usblocodplugin/tsrc/group"/> -->
       </component>
       <component id="usbdevcon" filter="s60" name="USB Device Control">
         <unit bldFile="usbengines/usbdevcon/group"/>
@@ -41,20 +26,48 @@
         <unit bldFile="usbengines/usbremotepersonality/group"/>
       </component>
     </collection>
+    <collection id="usbclasses" name="USB Classes" level="framework">
+      <component id="usbobexclasscontroller" filter="s60" name="USB OBEX Class Controller" class="plugin">
+        <unit bldFile="usbclasses/usbobexclasscontroller/group"/>
+      </component>
+      <component id="usbbasicpersonality" filter="s60" name="USB Basic Personality"  class="plugin">
+        <unit bldFile="usbclasses/usbbasicpersonality/group"/>
+      </component>
+      <component id="usbmscpersonality" filter="s60" name="USB MSC Personality" class="plugin">
+        <unit bldFile="usbclasses/usbmscpersonality/group"/>
+      </component>
+<!--	commented out in bld.inf. Should this be deleted?     
+  <component id="ptpstack" filter="s60" name="Picture Transfer Protocol Stack">
+        <unit bldFile="usbclasses/ptpstack/group"/>
+      </component>
+      <component id="sicdusbplugin" filter="s60" name="SICD USB Plugin" class="plugin">
+        <unit bldFile="usbclasses/sicdusbplugin/group"/>
+      </component>
+      <component id="ptpserver" filter="s60" name="Picture Transfer Protocol Server">
+        <unit bldFile="usbclasses/ptpserver/group"/>
+      </component>-->
+      <component id="pictbridgeengine" filter="s60" name="PictBridge Engine">
+        <unit bldFile="usbclasses/pictbridgeengine/group"/>
+      </component>
+      <component id="usbphoneasmodem" filter="s60" name="USB Phone as Modem" introduced="^3">
+        <unit bldFile="usbclasses/usbphoneasmodem/group"/>
+      </component>
+    </collection>
     <collection id="usbuis" name="USB UIs" level="specific">
       <component id="usbui" filter="s60" name="USB UI">
         <unit bldFile="usbuis/usbui/group"/>
-        <!-- <unit bldFile="usbuis/usbui/tsrc/usbuiapitest/group"/> -->
       </component>
       <component id="usbuinotif" filter="s60" name="USB UI Notifiers">
         <unit bldFile="usbuis/usbuinotif/group"/>
-        <!-- <unit bldFile="usbuis/usbuinotif/tsrc/usbuinotifapitest/group"/> -->
       </component>
       <component id="imageprintuiprovider" filter="s60" name="ImagePrint UI Provider" class="plugin">
         <unit bldFile="usbuis/imageprintuiprovider/group"/>
       </component>
       <component id="usbimageprintui" filter="s60" name="ImagePrint UI">
         <unit bldFile="usbuis/imageprintui/group"/>
+      </component>
+      <component id="rndisui" filter="s60" name="Remote NDIS UI" introduced="^3">
+        <unit bldFile="usbuis/rndisui/group"/>
       </component>
     </collection>
   </package>

@@ -1,82 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="imsrv" name="Instant Messaging and Presence Services" levels="plugin framework server generic specific">
+    <collection id="ximpfw" name="XIMP Framework" level="framework">
+    	<!-- collection is really a component. Needs to be moved down a directory -->
+      <component id="ximpfw_build" filter="s60" name="XIMP Framework Build">
+        <unit bldFile="ximpfw/group"/>
+      </component>
+    </collection>
     <collection id="imservices" name="IM Services" level="generic">
       <component id="imfeatureplugin" filter="s60" name="IM Feature Plugin" class="plugin" introduced="^2">
         <unit bldFile="imservices/imfeatureplugin/group"/>
-        <!--  should #include the test bld.inf if needed -->
-        <!-- <unit bldFile="imservices/imfeatureplugin/srcimdatamodel/group"/> -->
-        <!-- <unit bldFile="imservices/imfeatureplugin/srcimfrontend/group"/> -->
-        <!-- <unit bldFile="imservices/imfeatureplugin/srcimoperations/group"/> -->
-        <!-- <unit bldFile="imservices/imfeatureplugin/srcimprocessor/group"/> -->
       </component>
       <component id="searchfeatureplugin" filter="s60" name="Search Feature Plugin" class="plugin" introduced="^2">
         <unit bldFile="imservices/searchfeatureplugin/group"/>
-        <!--  should #include the test bld.inf if needed -->
-        <!-- <unit bldFile="imservices/searchfeatureplugin/srcsearchdatamodel/group"/> -->
-        <!-- <unit bldFile="imservices/searchfeatureplugin/srcsearchfrontend/group"/> -->
-        <!-- <unit bldFile="imservices/searchfeatureplugin/srcsearchoperations/group"/> -->
-        <!-- <unit bldFile="imservices/searchfeatureplugin/srcsearchprocessor/group"/> -->
       </component>
       <component id="xmppsettingsapi" filter="s60" name="XMPP Settings API" introduced="^2">
         <unit bldFile="imservices/xmppsettingsapi/group"/>
-        <!--  should #include the test bld.inf if needed -->
-        <!-- <unit bldFile="imservices/xmppsettingsapi/tsrc/group"/> -->
       </component>
       <component id="xmppsettingsfetcher" filter="s60" name="XMPP Settings Fetcher" introduced="^2">
         <unit bldFile="imservices/xmppsettingsfetcher/group"/>
-        <!--  should #include the test bld.inf if needed -->
-        <!-- <unit bldFile="imservices/xmppsettingsfetcher/tsrc/xmppsettingsfetchermt/group"/> -->
       </component>
       <component id="ossprotocoladaptation" filter="s60" name="OSS Protocol Adaptation" class="plugin" introduced="^2">
         <unit bldFile="imservices/ossprotocoladaptation/group"/>
-        <!-- <unit bldFile="imservices/ossprotocoladaptation/dataconvlib/group"/> -->
-        <!--  should #include the test bld.infs if needed -->
-        <!-- <unit bldFile="imservices/ossprotocoladaptation/tsrc/ossadapmt/group"/> -->
       </component>
       <component id="instantmessagingcache" filter="s60" name="Instant Messaging Cache" introduced="^2">
         <unit bldFile="imservices/instantmessagingcache/group"/>
-        <!--  should #include the test bld.inf if needed -->
-        <!-- <unit bldFile="imservices/instantmessagingcache/tsrc/group"/> -->
-      </component>
-      <component id="imservices_build" filter="s60" name="IM Services Build" introduced="^2">
-        <unit bldFile="imservices/group"/>
-      </component>
-    </collection>
-    <collection id="ximpfw" name="XIMP Framework" level="framework">
-      <component id="ximpfw_core" filter="s60" name="XIMP Core">
-        <!-- <unit bldFile="ximpfw/core/group"/> -->
-      </component>
-      <component id="presence" filter="s60" name="XIMP Presence">
-        <!-- <unit bldFile="ximpfw/presence/group"/> -->
-      </component>
-      <component id="ximpfw_test" filter="s60" name="XIMP Framework Test" purpose="development">
-		<!-- should these all be included in a single test bld.inf? -->
-        <!-- <unit bldFile="ximpfw/tsrc/group"/> -->
-        <!-- <unit bldFile="ximpfw/tsrc/src/t_presencewatching"/> -->
-        <!-- <unit bldFile="ximpfw/tsrc/src/t_presencegroupmembermngt"/> -->
-        <!-- <unit bldFile="ximpfw/tsrc/src/t_presenceblocking"/> -->
-        <!-- <unit bldFile="ximpfw/tsrc/tsrcutils"/> -->
-        <!-- <unit bldFile="ximpfw/tsrc/src/t_rootservices"/> -->
-        <!-- <unit bldFile="ximpfw/tsrc/src/t_presenceall"/> -->
-        <!-- <unit bldFile="ximpfw/tsrc/src/t_presencegrouplistmngt"/> -->
-        <!-- <unit bldFile="ximpfw/tsrc/src/t_presencecache"/> -->
-        <!-- <unit bldFile="ximpfw/tsrc/src/t_presencepublishing"/> -->
-        <!-- <unit bldFile="ximpfw/tsrc/src/t_presencewatcherlistmngt"/> -->
-        <!-- <unit bldFile="ximpfw/tsrc/tsrcprotocols"/> -->
-        <!-- <unit bldFile="ximpfw/tsrc/tsrcprotocols/pr_prfwtestprotocol"/> -->
-        <!-- <unit bldFile="ximpfw/tsrc/src/t_presencegrantrequestmngt"/> -->
-        <!-- <unit bldFile="ximpfw/tsrc/src/t_sessionmng"/> -->
-        <!-- <unit bldFile="ximpfw/tsrc/src/t_presenceauthorization"/> -->
-        <!-- <unit bldFile="ximpfw/tsrc/src/t_eunittemplate"/> -->
-        <!-- <unit bldFile="ximpfw/tsrc/src/t_utils"/> -->
       </component>
     </collection>
     <collection id="brandingserver" name="Branding Server" level="specific">
-      <component id="tools" filter="s60" name="Branding Server Tools">
-      	<!--  is this component needed? Can it be #included by the below bld.inf if it is? -->
-        <!-- <unit bldFile="brandingserver/tools/bsimport/group"/> -->
-      </component>
+    	<!-- collection is really a component. Needs to be moved down a directory -->
       <component id="brandingserver_build" filter="s60" name="Branding Server Build">
         <unit bldFile="brandingserver/group"/>
       </component>
@@ -84,27 +36,6 @@
     <collection id="imsrv_info" name="Instant Messaging and Presence Services Info" level="specific">
       <component id="imsrv_plat" filter="s60" name="Instant Messaging and Presence Services Platform Interfaces" class="api">
         <unit bldFile="imsrv_plat/group"/>
-        	<!--  should #include these tests in the above bld.inf -->
-        <!-- <unit bldFile="imsrv_plat/im_cache_client_api/tsrc/group"/> -->
-        <!-- <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/tsrc/group"/> -->
-        <!-- <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_eunittemplate"/> -->
-        <!-- <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presenceall"/> -->
-        <!-- <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presenceauthorization"/> -->
-        <!-- <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presenceblocking"/> -->
-        <!-- <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presencecache"/> -->
-        <!-- <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presencegrantrequestmngt"/> -->
-        <!-- <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presencegrouplistmngt"/> -->
-        <!-- <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presencegroupmembermngt"/> -->
-        <!-- <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presencepublishing"/> -->
-        <!-- <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presencewatcherlistmngt"/> -->
-        <!-- <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_presencewatching"/> -->
-        <!-- <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_rootservices"/> -->
-        <!-- <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_sessionmng"/> -->
-        <!-- <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/tsrc/src/t_utils"/> -->
-        <!-- <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/tsrc/tsrcprotocols"/> -->
-        <!-- <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/tsrc/tsrcprotocols/pr_prfwtestprotocol"/> -->
-        <!-- <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/tsrc/tsrcutils"/> -->
-        <!-- <unit bldFile="imsrv_plat/xmpp_settings_api/tsrc/group"/> -->
       </component>
     </collection>
   </package>

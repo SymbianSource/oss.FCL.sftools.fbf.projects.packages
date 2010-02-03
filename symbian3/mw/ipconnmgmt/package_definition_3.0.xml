@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="ipconnmgmt" name="IP Connectivity Management" levels="plugin framework server generic utils">
+    <collection id="accesspointcontrol" name="Access Point Control" level="plugin">
+      <component id="apcontrollistplugin" filter="s60" name="Access Point Control List Plugin" class="plugin" introduced="^2">
+        <unit bldFile="accesspointcontrol/apcontrollistplugin/group"/>
+      </component>
+    </collection>
     <collection id="alwayson_net_plugin" name="Always Online Net Plugin" level="server">
       <component id="pdpcontextmanager2" filter="s60" name="PDP Context Manager 2">
         <unit bldFile="alwayson_net_plugin/pdpcontextmanager2/group"/>
+      </component>
+    </collection>
+    <collection id="apengine" name="Access Point Engine" level="framework">
+      <component id="apeng" filter="s60" name="Access Point Engine">
+        <unit bldFile="apengine/apeng/group"/>
+      </component>
+      <component id="apsettingshandlerui" filter="s60" name="Access Point Settings Handler UI">
+        <unit bldFile="apengine/apsettingshandlerui/group"/>
+      </component>
+      <component id="apsettingsplugin" filter="s60" name="Access Point Settings Plugin" class="plugin">
+        <unit bldFile="apengine/apsettingsplugin/group"/>
       </component>
     </collection>
     <collection id="bearermanagement" name="Bearer Management" level="framework">
@@ -16,6 +32,14 @@
       <component id="bearermanagement_build" filter="s60" name="Bearer Management Build">
 		<!-- move exports into one of the other components and remove this one -->
         <unit bldFile="bearermanagement/group"/>
+      </component>
+    </collection>
+    <collection id="cmmanager" name="Connection Method Manager" level="framework">
+      <component id="cmmgr" filter="s60" name="CM Manager">
+        <unit bldFile="cmmanager/cmmgr/group"/>
+      </component>
+      <component id="gsconnsettingsplugin" filter="s60" name="GS Connection Settings Plugin" introduced="^3" class="plugin">
+        <unit bldFile="cmmanager/gsconnsettingsplugin/group"/>
       </component>
     </collection>
     <collection id="connectionmonitoring" name="Connection Monitoring" level="server">
@@ -34,25 +58,9 @@
         <unit bldFile="connectionmonitoring/connmonext/group"/>
       </component>
     </collection>
-    <collection id="accesspointcontrol" name="Access Point Control" level="plugin">
-      <component id="apcontrollistplugin" filter="s60" name="Access Point Control List Plugin" class="plugin" introduced="^2">
-        <unit bldFile="accesspointcontrol/apcontrollistplugin/group"/>
-      </component>
-    </collection>
-    <collection id="apengine" name="Access Point Engine" level="framework">
-      <component id="apeng" filter="s60" name="Access Point Engine">
-        <unit bldFile="apengine/apeng/group"/>
-      </component>
-      <component id="apsettingshandlerui" filter="s60" name="Access Point Settings Handler UI">
-        <unit bldFile="apengine/apsettingshandlerui/group"/>
-      </component>
-      <component id="apsettingsplugin" filter="s60" name="Access Point Settings Plugin" class="plugin">
-        <unit bldFile="apengine/apsettingsplugin/group"/>
-      </component>
-    </collection>
-    <collection id="cmmanager" name="Connection Method Manager" level="framework">
-      <component id="cmmgr" filter="s60" name="CM Manager">
-        <unit bldFile="cmmanager/cmmgr/group"/>
+    <collection id="connectionutilities" name="Connection Utilities" level="utils">
+      <component id="connectiondialogs" filter="s60" name="Connection Dialogs">
+        <unit bldFile="connectionutilities/connectiondialogs/group"/>
       </component>
     </collection>
     <collection id="dbcreator" name="DB Creator" level="utils">
@@ -60,7 +68,11 @@
         <unit bldFile="dbcreator/commsdatcreator/group"/>
       </component>
       <component id="commsdatcreatorrfsplugin" filter="s60" name="Comms Database Creator RFS Plugin" class="plugin" introduced="9.3">
-        <unit bldFile="dbcreator/commsdatcreatorrfsplugin/group"/>
+      	<meta rel="config">
+      		<not-defined condition="WINSCW"/>
+      	</meta>
+      		<!-- uncomment when config is turned on -->
+        <!-- <unit bldFile="dbcreator/commsdatcreatorrfsplugin/group"/>-->
       </component>
       <component id="commsdatstartup" filter="s60" name="Comms Database Startup" introduced="9.3">
         <unit bldFile="dbcreator/commsdatstartup/group"/>
@@ -69,13 +81,8 @@
         <unit bldFile="dbcreator/dbcreatorexe/group"/>
       </component>
       <component id="dbcreator_build" filter="s60" name="DB Creator Build" introduced="9.3">
-		<!-- consider moving exports to another component and getting rid of this one -->
+		<!-- move exports to another component, this is needed for the #ifndef for commsdatcreatorrfsplugin until configuration is in place-->
         <unit bldFile="dbcreator/group"/>
-      </component>
-    </collection>
-    <collection id="connectionutilities" name="Connection Utilities" level="utils">
-      <component id="connectiondialogs" filter="s60" name="Connection Dialogs">
-        <unit bldFile="connectionutilities/connectiondialogs/group"/>
       </component>
     </collection>
     <collection id="ipconnmgmt_info" name="IP Connectivity Management Info" level="utils">
@@ -84,6 +91,10 @@
       </component>
       <component id="ipcm_plat" filter="s60" class="api" name="IP Connectivity Management Platform Interfaces">
         <unit bldFile="ipcm_plat/group"/>
+      </component>
+      <component id="ipcm_build" filter="s60" name="IP Connectivity Management Build">
+      	<!-- need to move exports to another component, or maek this a config component and revmove the #includes -->
+        <unit bldFile="group"/>
       </component>
     </collection>
   </package>

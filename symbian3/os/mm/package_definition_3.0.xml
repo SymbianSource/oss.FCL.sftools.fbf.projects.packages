@@ -1,62 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="mm" name="Multimedia" levels="adaptation hw-if device-fw devices middleware app-if">
-    <collection id="audio" name="Audio Codecs" level="middleware">
-      <component id="arm_cmmf_codecs" filter="s60" name="ARM CMMF Codecs" class="plugin">
-        <unit bldFile="audio/arm_cmmf_codecs/group"/>
-      </component>
-    </collection>
-    <collection id="video" name="Video Codecs" level="middleware">
-    </collection>
     <collection id="devsoundextensions" name="Devsound Extensions" level="device-fw">
       <component id="drmaudioplayer" filter="s60" name="DRM Audio Player">
-        <unit bldFile="devsoundextensions/drmaudioplayer/group"/>
-           <!-- following two units should be #included in above bld.inf -->
-        <!-- <unit bldFile="devsoundextensions/drmaudioplayer/drmplayserver/group"/> -->
-        <!-- <unit bldFile="devsoundextensions/drmaudioplayer/drmplayutility/group"/> -->
+        <unit bldFile="devsoundextensions/drmaudioplayer/group" />
       </component>
       <component id="mmextfw" filter="s60" name="Multimedia Extension Framework">
-        <unit bldFile="devsoundextensions/mmextfw/group"/>
+        <unit bldFile="devsoundextensions/mmextfw/group" />
       </component>
       <component id="audiorouting" filter="s60" name="Audio Routing">
-        <unit bldFile="devsoundextensions/audiorouting/group"/>
+        <unit bldFile="devsoundextensions/audiorouting/group" />
       </component>
       <component id="effects" filter="s60" name="Effects">
-        <unit bldFile="devsoundextensions/effects/group"/>
-              <!-- should test be #included in group file?-->
-        <!-- <unit bldFile="devsoundextensions/effects/effecttest"/> -->
+        <unit bldFile="devsoundextensions/effects/group" />
       </component>
       <component id="effectspresets" filter="s60" name="Effects Presets">
-        <unit bldFile="devsoundextensions/effectspresets/group"/>
+        <unit bldFile="devsoundextensions/effectspresets/group" />
+      </component>
+      <component id="effectspresets_utils" filter="s60" name="Effects Presets Utils">
+      	<!-- need to #include the lot from a single bld.inf
+      		Also move to a stanard component location, not under effectspresets -->
+	    <unit bldFile="devsoundextensions/effectspresets/AudioEqualizerUtility/group" filter="!dfs_build"/>
+		<unit bldFile="devsoundextensions/effectspresets/EnvironmentalReverbUtility/group" filter="!dfs_build"/>
+		<unit bldFile="devsoundextensions/effectspresets/StereoWideningUtility/group" filter="!dfs_build"/>
       </component>
       <component id="telephonyaudiorouting" filter="s60" name="Telephony Audio Routing">
-        <unit bldFile="devsoundextensions/telephonyaudiorouting/group"/>
-          <!-- should the following should be #included in the above bld.inf? -->
-        <!-- <unit bldFile="devsoundextensions/telephonyaudiorouting/server/group"/> -->
-        <!-- <unit bldFile="devsoundextensions/telephonyaudiorouting/session/group"/> -->
-        <!-- <unit bldFile="devsoundextensions/telephonyaudiorouting/telephonyaudioroutingbase/group"/> -->
-        <!-- <unit bldFile="devsoundextensions/telephonyaudiorouting/telephonyaudioroutingmanager/group"/> -->
+        <unit bldFile="devsoundextensions/telephonyaudiorouting/group" />
       </component>
       <component id="mmfcustominterfaces" filter="s60" name="MMF Custom Interfaces">
-        <unit bldFile="devsoundextensions/mmfcustominterfaces/group"/>
+        <unit bldFile="devsoundextensions/mmfcustominterfaces/group" />
       </component>
       <component id="addeddevsoundcontrol" filter="s60" name="Added DevSound Control">
-        <unit bldFile="devsoundextensions/addeddevsoundcontrol/group"/>
+        <unit bldFile="devsoundextensions/addeddevsoundcontrol/group" />
       </component>
       <component id="globalaudiosettings" filter="s60" name="Global Audio Settings">
-        <unit bldFile="devsoundextensions/globalaudiosettings/group"/>
+        <unit bldFile="devsoundextensions/globalaudiosettings/group" />
       </component>
       <component id="restrictedaudiooutput" filter="s60" name="Restricted Audio Output">
-        <unit bldFile="devsoundextensions/restrictedaudiooutput/group"/>
+        <unit bldFile="devsoundextensions/restrictedaudiooutput/group" />
       </component>
       <component id="ciextnfactoryplugins" filter="s60" name="Custom Interface Extension Factory Plugins" class="plugin">
-        <unit bldFile="devsoundextensions/ciextnfactoryplugins/group"/>
+        <unit bldFile="devsoundextensions/ciextnfactoryplugins/group" />
       </component>
     </collection>
     <collection id="mdfdevvideoextensions" name="MDF Dev Video Extensions" level="device-fw">
       <component id="arm_mdf_postprocessor" filter="s60" name="ARM MDF Postprocessor">
         <unit bldFile="mdfdevvideoextensions/arm_mdf_postprocessor/group"/>
       </component>
+      <component id="nga_mdf_tsrc" name="NGA MDF Tests" purpose="development" filter="s60,pref_test,module_test">
+        <unit bldFile="mdfdevvideoextensions/nga_mdf_postprocessor/tsrc/StifNgaMdfPoPTest/group"/>
+      </component>
+    </collection>
+    <collection id="audio" name="Audio Codecs" level="middleware">
+      <component id="arm_cmmf_codecs" filter="s60" name="ARM CMMF Codecs" class="plugin">
+        <unit bldFile="audio/arm_cmmf_codecs/group"/>
+      </component>
+    </collection>
+    <collection id="video" name="Video Codecs" level="middleware">
+    	<!-- empty -->
     </collection>
     <collection id="videoadaptationextensions" name="Video Adaptation Extensions" level="adaptation">
       <component id="postingsurface" filter="s60" name="Posting Surface">
@@ -106,40 +107,17 @@
       </component>
     </collection>
     <collection id="mm_info" name="Multimedia Info" level="app-if">
-      <component id="mm_pub" filter="s60" name="Multimedia Public Interfaces" class="api">
-        <unit bldFile="mm_pub/group"/>
-          <!-- should #include the following from the main bld.inf -->
-        <unit bldFile="mm_pub/audio_effects_api/tsrc/group"/>
-        <unit bldFile="mm_pub/audio_effects_presets_api/tsrc/group"/>
-        <unit bldFile="mm_pub/drm_audio_player_api/tsrc/group"/>
-      </component>
       <component id="mm_plat" filter="s60" name="Multimedia Platform Interfaces" class="api">
         <unit bldFile="mm_plat/group"/>
-          <!-- should #include the following from the main bld.inf -->
-        <unit bldFile="mm_plat/aac_decoder_config_api/tsrc/group"/>
-        <unit bldFile="mm_plat/audio_routing_api/tsrc/group"/>
-        <unit bldFile="mm_plat/audio_visualization_api/tsrc/group"/>
-        <unit bldFile="mm_plat/eaac_plus_decoder_interface_api/tsrc/group"/>
-        <unit bldFile="mm_plat/error_concealment_interface_api/tsrc/group"/>
-        <unit bldFile="mm_plat/g711_decoder_interface_api/tsrc/group"/>
-        <unit bldFile="mm_plat/g711_encoder_interface_api/tsrc/group"/>
-        <unit bldFile="mm_plat/g729_decoder_interface_api/tsrc/group"/>
-        <unit bldFile="mm_plat/g729_encoder_interface_api/tsrc/group"/>
-        <unit bldFile="mm_plat/global_audio_settings_api/tsrc/group"/>
-        <unit bldFile="mm_plat/ilbc_decoder_interface_api/tsrc/group"/>
-        <unit bldFile="mm_plat/ilbc_encoder_interface_api/tsrc/group"/>
-        <unit bldFile="mm_plat/ra8_decoder_interface_api/tsrc/group"/>
-        <unit bldFile="mm_plat/restricted_audio_output_api/tsrc/group"/>
-        <unit bldFile="mm_plat/sbc_encoder_interface_api/tsrc/group"/>
-        <unit bldFile="mm_plat/speech_encoder_config_api/tsrc/group"/>
-        <unit bldFile="mm_plat/wma_decoder_interface_api/tsrc/group"/>
       </component>
-      <component id="mm_build" filter="s60" name="Multimedia Build">
-          <!-- add system include to each bld.inf mentioned and remove this -->
-        <unit bldFile="group"/>
+      <component id="mm_pub" filter="s60" name="Multimedia Public Interfaces" class="api">
+        <unit bldFile="mm_pub/group"/>
       </component>
       <component id="mmdocs" name="Multimedia Documentation" purpose="development" class="doc">
         <unit mrp="mm_info/mmdocs/multimedia_documentation.mrp"/>
+      </component>
+      <component id="mm_tsrc" name="Multimedia Tests" purpose="development" filter="s60,api_test,pref_test">
+        <unit bldFile="tsrc/group"/>
       </component>
       <component id="mm_metadata" name="Multimedia Metadata" class="config" introduced="^2" purpose="development" target="desktop">
         <unit mrp="mm_info/mm_metadata/mm_metadata.mrp"/>

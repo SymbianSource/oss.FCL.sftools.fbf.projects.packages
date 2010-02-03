@@ -7,9 +7,6 @@
       </component>
       <component id="phoneui" filter="s60" name="Phone UI">
         <unit bldFile="phoneapp/phoneui/group"/>
-        	<!-- should these be separate components? #included? -->
-        <!-- <unit bldFile="phoneapp/phoneui/tsrc/public/basic/3dringingtoneinterface_tests/group"/> -->
-        <!-- <unit bldFile="phoneapp/phoneui/tsrc/public/basic/group"/> -->
       </component>
       <component id="phoneuicontrol" filter="s60" name="Phone UI Control">
         <unit bldFile="phoneapp/phoneuicontrol/group"/>
@@ -32,6 +29,9 @@
       <component id="phonemediatorcenter" filter="s60" name="Phone Mediator Center">
         <unit bldFile="phoneapp/phonemediatorcenter/group"/>
       </component>
+      <component id="phoneapp_api_test" filter="s60,api_test" name="Phone App API Tests">
+		<unit bldFile="phoneapp/phoneui/tsrc/public/basic/group"/>
+      </component>      
     </collection>
     <collection id="phoneengine" name="Phone Engine" level="engine">
       <component id="phonecntfinder" filter="s60" name="Phone Contact Finder">
@@ -70,19 +70,12 @@
     <collection id="phoneuis" name="Phone UIs" level="ui">
       <component id="dialer" filter="s60" name="Dialer">
         <unit bldFile="phoneuis/dialer/group"/>
-        	<!-- what to do about this test unit? -->
-        <!-- <unit bldFile="phoneuis/dialer/tsrc/public/basic/group"/> -->
       </component>
       <component id="bubblemanager" filter="s60" name="Phone Bubble Manager">
         <unit bldFile="phoneuis/bubblemanager/group"/>
       </component>
       <component id="connectutil" filter="s60" name="Connection Utility" class="plugin">
         <unit bldFile="phoneuis/connectutil/group"/>
-      </component>
-      <component id="sfiutils" filter="s60" name="Send File In Call Utilities" class="plugin">
-        <unit bldFile="phoneuis/sfiutils/group"/>
-        	<!-- what to do about this test unit? -->
-        <!-- <unit bldFile="phoneuis/sfiutils/tsrc/public/basic/group"/> -->
       </component>
       <component id="ussd" filter="s60" name="Unstructured Supplementary Services Data">
         <unit bldFile="phoneuis/ussd/group"/>
@@ -92,6 +85,9 @@
       </component>
       <component id="telephonydevicemode" filter="s60" name="Telephony Device Mode">
         <unit bldFile="phoneuis/telephonydevicemode/group"/>
+      </component>
+      <component id="phoneuis_api_test" filter="s60,api_test" name="Phone UIs API Tests">
+        <unit bldFile="phoneuis/dialer/tsrc/public/basic/group"/>
       </component>
     </collection>
     <collection id="phone_info" name="Phone Apps Info" level="app">
@@ -106,3 +102,4 @@
     </collection>
   </package>
 </SystemDefinition>
+

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="phonesrv" name="Telephony and SIM Services" levels="plugin framework server generic specific">
-    <collection id="phonecmdhandler" name="Phone Command Handler" level="generic">
-      <component id="phonecmdhnlr" filter="s60" name="Phone Command Handler">
-        <unit bldFile="phonecmdhandler/phonecmdhnlr/group"/>
+    <collection id="telutils" name="Telephony Utils" level="generic">
+      <component id="phoneparser" filter="s60" name="Phone Parser">
+        <unit bldFile="telutils/phoneparser/group"/>
+      </component>
+      <component id="telephonyservice" filter="s60" name="Telephony Service">
+        <unit bldFile="telutils/telephonyservice/group"/>
       </component>
     </collection>
     <collection id="cbs" name="Cellular Baseband Services" level="plugin">
@@ -12,6 +15,26 @@
       </component>
       <component id="cbsui" filter="s60" name="CBS UI">
         <unit bldFile="cbs/cbsui/group"/>
+      </component>
+    </collection>
+    <collection id="cellular" name="Cellular" level="server">
+      <component id="telephonysettings" filter="s60" name="Telephony Settings">
+        <unit bldFile="cellular/telephonysettings/group"/>
+      </component>
+      <component id="sssettings" filter="s60" name="Supplementary Service Settings">
+        <unit bldFile="cellular/sssettings/group"/>
+      </component>
+      <component id="psetnotesui" filter="s60" name="Phone Settings Notes UI">
+        <unit bldFile="cellular/psetnotesui/group"/>
+      </component>
+      <component id="servicerequest" filter="s60" name="Service Request">
+        <unit bldFile="cellular/servicerequest/group"/>
+      </component>
+      <component id="cellular_test" filter="s60,api_test" name="Cellular Tests" purpose="development">
+      	<!-- can only have one unit. Need to #include from a single bld.inf  (cellular/tsrc/bld.inf?) -->
+        <unit unitID="tedo.PsetNotesUi.test" bldFile="cellular/PsetNotesUi/tsrc/public/basic/group"/>
+        <unit unitID="tedo.SSSettings.test" bldFile="cellular/SSSettings/tsrc/public/basic/group"/>
+        <unit unitID="tedo.telephonysettings.test" bldFile="cellular/telephonysettings/tsrc/public/basic/group"/>
       </component>
     </collection>
     <collection id="convergedcallengine" name="Converged Call Engine" level="framework">
@@ -23,9 +46,6 @@
       </component>
       <component id="spsettings" filter="s60" name="Service Provider Settings">
         <unit bldFile="convergedcallengine/spsettings/group"/>
-        	<!-- include the rest in the above? -->
-        <!-- <unit bldFile="convergedcallengine/spsettings/tsrc/public/basic/group"/> -->
-        <!-- <unit bldFile="convergedcallengine/spsettings/tsrc/public/basic/spsettingsut/group"/> -->
       </component>
       <component id="cenrepdatabase" filter="s60" name="CCE Cenrep Database">
         <unit bldFile="convergedcallengine/cenrepdatabase/group"/>
@@ -36,6 +56,16 @@
       <component id="csplugin" filter="s60" name="CS Plugin" class="plugin">
       	<!--  should spell out CS in name -->
         <unit bldFile="convergedcallengine/csplugin/group"/>
+      </component>
+      <component id="convergedcallengine_test" filter="s60,api_test" name="CCE Tests" purpose="development">
+      	<!-- can only have one unit. Need to #include from a single bld.inf  (convergedcallengine/tsrc/bld.inf?) -->
+        <unit unitID="tedo.cce.test" bldFile="convergedcallengine/cce/tsrc/public/basic/group"/>
+        <unit unitID="tedo.spsettings.test" bldFile="convergedcallengine/spsettings/tsrc/public/basic/group"/>
+      </component>
+    </collection>
+    <collection id="engines" name="Telephony Engines" level="specific">
+      <component id="vmbxengine" filter="s60" name="Voice Mailbox Engine">
+        <unit bldFile="engines/vmbxengine/group"/>
       </component>
     </collection>
     <collection id="networkhandling" name="Network Handling" level="plugin">
@@ -62,8 +92,14 @@
       <component id="callui" filter="s60" name="Call UI">
         <unit bldFile="phoneclientserver/callui/group"/>
       </component>
+      <component id="phoneclientserver_test" filter="s60,api_test" name="Phone Client/Server Tests" purpose="development">
+      	<!-- can only have one unit. Need to #include from a single bld.inf  (phoneclientserver/tsrc/bld.inf?) -->
+        <unit unitID="tedo.aiwdialdata.test" bldFile="phoneclientserver/aiwdialdata/tsrc/public/basic/group"/>
+        <unit unitID="tedo.dialutils.test" bldFile="phoneclientserver/dialutils/tsrc/public/basic/group"/>
+        <unit unitID="tedo.phoneclient.test" bldFile="phoneclientserver/phoneclient/tsrc/public/basic/group"/>
+      </component>
     </collection>
-    <collection id="satengine" name="SAT Engine" level="generic">
+    <collection id="satengine" name="SIM Application Toolkit Engine" level="generic">
       <component id="satserver" filter="s60" name="SAT Server">
         <unit bldFile="satengine/satserver/group"/>
       </component>
@@ -76,45 +112,26 @@
         <unit bldFile="satui/satplugin/group"/>
       </component>
     </collection>
-    <collection id="telutils" name="Telephony Utils" level="generic">
-      <component id="phoneparser" filter="s60" name="Phone Parser">
-        <unit bldFile="telutils/phoneparser/group"/>
-      </component>
-      <component id="telephonyservice" filter="s60" name="Telephony Service">
-        <unit bldFile="telutils/telephonyservice/group"/>
-      </component>
-    </collection>
-    <collection id="cellular" name="Cellular" level="server">
-      <component id="telephonysettings" filter="s60" name="Telephony Settings">
-        <unit bldFile="cellular/telephonysettings/group"/>
-      </component>
-      <component id="sssettings" filter="s60" name="Supplementary Service Settings">
-        <unit bldFile="cellular/sssettings/group"/>
-      </component>
-      <component id="psetnotesui" filter="s60" name="Phone Settings Notes UI">
-        <unit bldFile="cellular/psetnotesui/group"/>
-      </component>
-      <component id="servicerequest" filter="s60" name="Service Request">
-        <unit bldFile="cellular/servicerequest/group"/>
-      </component>
-    </collection>
-    <collection id="engines" name="Telephony Engines" level="specific">
-      <component id="vmbxengine" filter="s60" name="Voice Mailbox Engine">
-        <unit bldFile="engines/vmbxengine/group"/>
+    <collection id="phonecmdhandler" name="Phone Command Handler" level="generic">
+      <component id="phonecmdhnlr" filter="s60" name="Phone Command Handler">
+        <unit bldFile="phonecmdhandler/phonecmdhnlr/group"/>
       </component>
     </collection>
     <collection id="phonesrv_info" name="Telephony and SIM Services Info" level="specific">
       <component id="phonesrv_plat" filter="s60" name="Telephony and SIM Services Platform Interfaces" class="api">
         <unit bldFile="phonesrv_plat/group"/>
-        	<!-- include the rest in the above? -->
-        <!-- <unit bldFile="phonesrv_plat/call_information_api/tsrc/group"/> -->
-        <!-- <unit bldFile="phonesrv_plat/call_information_mediator_api/tsrc/ut_callinfos/group"/> -->
-        <!-- <unit bldFile="phonesrv_plat/phone_client_emergency_call_api/tsrc/group"/> -->
-        <!-- <unit bldFile="phonesrv_plat/sat_client_api/tsrc/group"/> -->
-        <!-- <unit bldFile="phonesrv_plat/sat_refresh_api/tsrc/group"/> -->
       </component>
       <component id="phonesrv_pub" filter="s60" name="Telephony and SIM Services Public Interfaces" class="api">
         <unit bldFile="phonesrv_pub/group"/>
+      </component>
+      <component id="phonesrv_test" filter="s60,api_test" name="Telephony and SIM Services Tests" purpose="development">
+      	<!-- can only have one unit. Need to #include from a single bld.inf  (phonesrv_plat/tsrc/bld.inf?) -->
+        <unit unitID="tedo.call_information_api.test" bldFile="phonesrv_plat/call_information_api/tsrc/group"/>
+		<unit unitID="tedo.sat_client_api.test" bldFile="phonesrv_plat/sat_client_api/tsrc/group"/>
+        <unit unitID="tedo.sat_refresh_api.test" bldFile="phonesrv_plat/sat_refresh_api/tsrc/group"/>
+        <unit unitID="tedo.sat_service_api.test" bldFile="phonesrv_plat/sat_service_api/tsrc/group"/>
+        <unit unitID="tedo.telephony_mediator_api.test" bldFile="phonesrv_plat/telephony_mediator_api/tsrc/ut_telephony_mediator_api/group"/> 		
+		<unit unitID="tedo.call_remote_party_information_api.test" bldFile="phonesrv_plat/call_remote_party_information_api/tsrc/group"/>
       </component>
     </collection>
   </package>

@@ -1,42 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="imghandling" name="Image Handling" levels="lib util if">
-    <collection id="library3gp" name="3GP Library" level="lib">
-      <component id="lib3gpmp4" filter="s60" name="3GP MP4 Library" deprecated="^3">
-		<!-- deprecated due to duplication -->
-        <unit bldFile="3gplibrary/3gpmp4lib/group"/>
-		<!-- does the test need to be #included in the above? -->
-        <!-- <unit bldFile="3gplibrary/3gpmp4lib/tsrc/public/basic/group"/> -->
-      </component>
-    </collection>
     <collection id="imagehandlinglib" name="Image Handling Library" level="lib">
+    	<!-- collection is really a component, need to move down a directory -->
       <component id="ihl" filter="s60" name="IHL">
         <unit bldFile="imagehandlinglib/group"/>
       </component>
+	    <component id="imagehandlinglib_api" filter="s60,api_test" name="Image Handling Library API Test" purpose="development">
+	     	<unit bldFile="imagehandlinglib/tsrc/public/basic/group"/>
+		</component>
     </collection>
     <collection id="imagehandlingutilities" name="Image Handling Utilities" level="util">
-      <component id="imageinfopopup" filter="s60" name="Image Info Popup">
-        <unit bldFile="imagehandlingutilities/imageinfopopup/group"/>
-      </component>
-      <component id="imagepreview" filter="s60" name="Image Preview">
-        <unit bldFile="imagehandlingutilities/imagepreview/group"/>
-      </component>
       <component id="thumbnailmanager" filter="s60" name="Thumbnail Manager">
         <unit bldFile="imagehandlingutilities/thumbnailmanager/group"/>
-      </component>
-      <component id="tvoutengine" filter="s60" name="TV Out Engine">
-        <unit bldFile="imagehandlingutilities/tvoutengine/group"/>
       </component>
     </collection>
     <collection id="imghandling_info" name="Image Handling Info" level="if">
       <component id="imagehandling_plat" filter="s60" name="Image Handling Platform Interfaces" class="api">
         <unit bldFile="imagehandling_plat/group"/>
-        <!-- <unit bldFile="imagehandling_plat/3gp_library_api/tsrc/group"/> -->
-        <!-- <unit bldFile="imagehandling_plat/thumbnailmanager_api/tsrc/group"/> -->
       </component>
-      <component id="imghandling_build" filter="s60" name="Image Handling Build">
-		<!-- system include from this needs to be moved to each #included bld.inf -->
-        <unit bldFile="group"/>
+      <component id="imagehandling_api_test" filter="s60,api_test" name="Image Handling Platform API Test" purpose="development">
+        <unit bldFile="imagehandling_plat/thumbnailmanager_api/tsrc/group"/>
       </component>
     </collection>
   </package>

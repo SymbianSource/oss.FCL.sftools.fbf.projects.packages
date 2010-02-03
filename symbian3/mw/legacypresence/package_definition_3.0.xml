@@ -2,93 +2,45 @@
 <SystemDefinition schema="3.0.0">
   <package id="legacypresence" name="Legacy Presence Services" levels="engine fw ui">
     <collection id="xdmengine" name="XDM Engine" level="engine">
-      <component id="xdmsettingsapi" filter="s60" name="XDM Settings Api">
-        <!-- <unit bldFile="xdmengine/xdmsettingsapi/group"/> -->
-      </component>
-      <component id="xdmprovisioning" filter="s60" name="XDM Provisioning">
-        <!-- <unit bldFile="xdmengine/xdmprovisioning/group"/> -->
-      </component>
-      <component id="xdmdevicemanagement" filter="s60" name="XDM Device Management">
-        <!-- <unit bldFile="xdmengine/xdmdevicemanagement/group"/> -->
-      </component>
+    	<!-- collection is really a component. Need to move down a directory (eg xdm/xdmengine)-->
       <component id="xdmengine_build" filter="s60" name="XDM Engine Build">
-      	<!--  should move the necesary parts into the above components, or collapse them all into one -->
         <unit bldFile="xdmengine/group"/>
       </component>
     </collection>
     <collection id="xdmsettingsui" name="XDM Settings UI" level="ui">
-      <component id="xdmsettingsui_help" filter="s60" name="XDM Settings UI Help">
-        <unit bldFile="xdmsettingsui/help/group"/>
-      </component>
+    	<!-- collection is really a component. Need to move down a directory (eg xdm/xdmsettingsui)-->
       <component id="xdmsettingsui_build" filter="s60" name="XDM Settings UI Build">
         <unit bldFile="xdmsettingsui/group"/>
       </component>
     </collection>
+    <collection id="xdmprotocols" name="XDM Protocols" level="fw">
+    	<!-- collection is really a component. Need to move down a directory (eg xdm/xdmprotocols)-->
+      <component id="xdmprotocols_build" filter="s60" name="XDM Protocols Build">
+        <unit bldFile="xdmprotocols/group"/>
+      </component>
+    </collection>
     <collection id="msgconnmanager" name="Messaging Connection Manager" level="fw">
+    	<!-- collection is really a component. Need to move down a directory-->
       <component id="msgconnmanager_build" filter="s60" name="Messaging Connection Manager Build">
         <unit bldFile="msgconnmanager/group"/>
       </component>
     </collection>
-    <collection id="presencefwsimpleadpt" name="Presence Framework SIMPLE Adaptation" level="fw">
-      <component id="simpleplugin" filter="s60" class="plugin" name="SIMPLE Plugin">
-        <unit bldFile="presencefwsimpleadpt/group"/>
-      </component>
-    </collection>
     <collection id="presencesettingsui" name="Presence Settings UI" level="ui">
-      <component id="presencesettingsui_help" filter="s60" name="Presence Settings UI Help">
-        <unit bldFile="presencesettingsui/help/group"/>
-      </component>
+    	<!-- collection is really a component. Need to move down a directory-->
       <component id="presencesettingsui_build" filter="s60" name="Presence Settings UI Build">
         <unit bldFile="presencesettingsui/group"/>
       </component>
     </collection>
     <collection id="simpleengine" name="SIMPLE Engine" level="engine">
-      <component id="presencesettingsapi" filter="s60" name="Presence Settings API">
-        <!-- <unit bldFile="simpleengine/presencesettingsapi/group"/> -->
-      </component>
-      <component id="siputils" filter="s60" name="SIP Utils">
-        <!-- <unit bldFile="simpleengine/siputils/group"/> -->
-      </component>
-      <component id="xmlutils" filter="s60" name="XML Utils">
-        <!-- <unit bldFile="simpleengine/xmlutils/group"/> -->
-      </component>
-      <component id="simpleengine_engine" filter="s60" name="Engine">
-        <!-- <unit bldFile="simpleengine/engine/group"/> -->
-      </component>
-      <component id="xdmrlspres" filter="s60" name="RLS and Presence XDM">
-        <!-- <unit bldFile="simpleengine/xdmrlspres/group"/> -->
-      </component>
-      <component id="presencedm" filter="s60" name="Presence DM Adapter" class="plugin">
-        <!-- <unit bldFile="simpleengine/presencedm/group"/> -->
-      </component>
-      <component id="presenceprovisioning" filter="s60" name="Presence Provisioning" class="plugin">
-        <!-- <unit bldFile="simpleengine/presenceprovisioning/group"/> -->
-      </component>
+    	<!-- collection is really a component. Need to move down a directory-->
       <component id="simpleengine_build" filter="s60" name="SIMPLE Engine Build">
-      	<!--  should move the necesary parts into the above components, or collapse them all into one -->
         <unit bldFile="simpleengine/group"/>
       </component>
     </collection>
-    <collection id="xdmprotocols" name="XDM Protocols" level="fw">
-      <component id="xdmxmlparser" filter="s60" name="XDM XML Parser">
-        <!-- <unit bldFile="xdmprotocols/xdmxmlparser/group"/> -->
-      </component>
-      <component id="xcapprotocol" filter="s60" name="Xcap Protocol">
-        <!-- <unit bldFile="xdmprotocols/xcapprotocol/group"/> -->
-        <!-- <unit bldFile="xdmprotocols/xcapprotocol/xcapappusage/group"/> -->
-        <!-- <unit bldFile="xdmprotocols/xcapprotocol/xcapcache/client/group"/> -->
-        <!-- <unit bldFile="xdmprotocols/xcapprotocol/xcapcache/server/group"/> -->
-        <!-- <unit bldFile="xdmprotocols/xcapprotocol/xcaphttptransport/group"/> -->
-        <!-- <unit bldFile="xdmprotocols/xcapprotocol/xcapoperations/group"/> -->
-        <!-- <unit bldFile="xdmprotocols/xcapprotocol/xcaputils/group"/> -->
-      </component>
-      <component id="localprotocol" filter="s60" name="Local Protocol">
-        <!-- <unit bldFile="xdmprotocols/localprotocol/group"/> -->
-        <!-- <unit bldFile="xdmprotocols/localprotocol/localoperations/group"/> -->
-      </component>
-      <component id="xdmprotocols_build" filter="s60" name="XDM Protocols Build">
-      	<!--  should move the necesary parts into the above components, or collapse them all into one -->
-        <unit bldFile="xdmprotocols/group"/>
+    <collection id="presencefwsimpleadpt" name="Presence Framework SIMPLE Adaptation" level="fw">
+    	<!-- collection is really a component. Need to move down a directory-->
+      <component id="simpleplugin" filter="s60" class="plugin" name="SIMPLE Plugin">
+        <unit bldFile="presencefwsimpleadpt/group"/>
       </component>
     </collection>
     <collection id="simpledatamodeladapter" name="SIMPLE Data Model Adapter" level="fw">

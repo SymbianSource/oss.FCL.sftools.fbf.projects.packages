@@ -7,14 +7,14 @@
       </component>
     </collection>
     <collection id="profilesservices" name="Profiles Services" level="server">
-      <component id="profileengine" filter="s60" name="Profile Engine" introduced="9.1">
-        <unit bldFile="profilesservices/profileengine/group"/>
-      </component>
       <component id="filelist" filter="s60" name="File List" introduced="9.1">
         <unit bldFile="profilesservices/filelist/group"/>
       </component>
       <component id="mediafilelist" filter="s60" name="Media File List" introduced="^2">
         <unit bldFile="profilesservices/mediafilelist/group"/>
+      </component>
+      <component id="profileengine" filter="s60" name="Profile Engine" introduced="9.1">
+        <unit bldFile="profilesservices/profileengine/group"/>
       </component>
       <component id="ringingtone3dplugin" filter="s60" name="Ringing Tone 3D Plugin" class="plugin" introduced="^2">
         <unit bldFile="profilesservices/ringingtone3dplugin/group"/>

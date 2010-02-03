@@ -7,8 +7,6 @@
       </component>
       <component id="btnotif" filter="s60" name="Bluetooth Notifier">
         <unit bldFile="bluetoothengine/btnotif/group"/>
-          <!-- is this test needed as unit? -->
-        <!-- <unit bldFile="bluetoothengine/btnotif/tsrc/btnotifapitest/group"/> -->
       </component>
       <component id="btaudioman" filter="s60" name="Bluetooth Audio Manager">
         <unit bldFile="bluetoothengine/btaudioman/group"/>
@@ -21,19 +19,20 @@
       </component>
       <component id="btaudiostreamer" filter="s60" name="Bluetooth Audio Streamer">
         <unit bldFile="bluetoothengine/btaudiostreamer/group"/>
-        <!-- <unit bldFile="bluetoothengine/btaudiostreamer/tsrc/btaudiostreamerapitest/group"/> -->
       </component>
       <component id="btsap" filter="s60" name="Bluetooth SIM Access Profile" class="plugin">
         <unit bldFile="bluetoothengine/btsap/group"/>
       </component>
       <component id="btui" filter="s60" name="Bluetooth UI">
-        <!-- <unit bldFile="bluetoothengine/btui/ecom/group"/> -->
         <unit bldFile="bluetoothengine/btui/group"/>
       </component>
       <component id="btpbap" filter="s60" name="Bluetooth Phonebook Access Profile" class="plugin">
         <unit bldFile="bluetoothengine/btpbap/group"/>
       </component>
       <component id="bthid" filter="s60" name="Bluetooth HID">
+        <unit bldFile="bluetoothengine/bthid/group"/>
+      </component>
+      <component id="btctrldcmoadapter" filter="s60" name="Bluetooth Control DCMO Adapter" class="plugin" introduced="^3">
         <unit bldFile="bluetoothengine/bthid/group"/>
       </component>
     </collection>
@@ -43,8 +42,17 @@
       </component>
     </collection>
     <collection id="btservices_info" name="BT Services Info" level="plugin">
+      <component id="btservices_plat" filter="s60" name="BT Services Platform Interfaces" class="api">
+        <unit bldFile="btservices_plat/group"/>
+      </component>
+      <component id="btservices_pub" filter="s60" name="BT Services Public Interfaces" class="api">
+        <unit bldFile="btservices_pub/group"/>
+      </component>
       <component id="btservices_metadata" name="BT Services Metadata" class="config" introduced="^3" purpose="development" target="desktop">
         <unit mrp="btservices_info/btservices_metadata/btservices_metadata.mrp"/>
+      </component>
+      <component id="btservices_api_test" name="BT Services API Tests" purpose="development" filter="s60,api_test">
+        <unit bldFiile="tsrc/group"/>
       </component>
     </collection>
   </package>

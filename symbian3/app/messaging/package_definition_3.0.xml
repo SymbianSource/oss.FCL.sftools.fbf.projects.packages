@@ -25,8 +25,6 @@
       </component>
       <component id="smsui" filter="s60" name="SMS UI">
         <unit bldFile="mobilemessaging/smsui/group"/>
-		<!-- does this bld.inf need to be included in the group one? -->
-        <!-- <unit bldFile="mobilemessaging/smsui/viewer"/> -->
       </component>
       <component id="smsmtm" name="SMS MTM" purpose="optional" class="plugin">
         <unit bldFile="mobilemessaging/smsmtm/group" mrp="mobilemessaging/smsmtm/group/messaging_sms.mrp"/>
@@ -104,10 +102,6 @@
       </component>
       <component id="sendui" filter="s60" name="Send UI" class="plugin">
         <unit bldFile="messagingappbase/sendui/group"/>
-		<!-- do these bld.infs need to be included in the group one? -->
-        <!-- <unit bldFile="messagingappbase/sendui/drmlinksender/group"/> -->
-        <!-- <unit bldFile="messagingappbase/sendui/genericmtmplugin/group"/> -->
-        <!-- <unit bldFile="messagingappbase/sendui/meetingrequestsender/group"/> -->
       </component>
       <component id="smilengine" filter="s60" name="SMIL Engine">
         <unit bldFile="messagingappbase/smilengine/group"/>
@@ -138,10 +132,6 @@
       </component>
       <component id="imum" filter="s60" name="Internet Mail UI MTM" class="plugin" deprecated="^3">
         <unit bldFile="email/imum/group"/>
-		<!-- do these bld.infs need to be included in the group one? -->
-        <!-- <unit bldFile="email/imum/domainapi/group"/> -->
-        <!-- <unit bldFile="email/imum/mtms/group"/> -->
-        <!-- <unit bldFile="email/imum/utils/group"/> -->
       </component>
       <component id="mail" filter="s60" name="Mail Application" deprecated="^3">
         <unit bldFile="email/mail/group"/>
@@ -154,29 +144,11 @@
       </component>
     </collection>
     <collection id="messaging_info" name="Messaging Apps Info" level="ui">
-      <component id="messaging_test" filter="s60" name="Messaging Apps Test" purpose="development">
-        <!-- <unit bldFile="tsrc/group"/> -->
-      </component>
       <component id="msg_plat" name="Messaging Apps Platform APIs"  filter="s60" class="api">
         <unit bldFile="msg_plat/group"/>
-        <unit bldFile="msg_plat/messaging_center_ui_utilities_api/tsrc/group"/>
-        <unit bldFile="msg_plat/messaging_editor_api/tsrc/group"/>
-        <unit bldFile="msg_plat/messaging_media_resolver_api/tsrc/group"/>
-        <unit bldFile="msg_plat/mms_application_api/tsrc/group"/>
-        <unit bldFile="msg_plat/mms_codec_client_api/tsrc/group"/>
-        <unit bldFile="msg_plat/mms_conformance_api/tsrc/group"/>
-        <unit bldFile="msg_plat/mms_server_settings_api/tsrc/group"/>
-        <!-- <unit bldFile="msg_plat/email_domain_utilities_api/tsrc/group"/> -->
-        <!-- <unit bldFile="msg_plat/send_ui_meeting_request_api/tsrc/group"/> -->
-        <unit bldFile="msg_plat/smil_engine_api/tsrc/group"/>
-        <unit bldFile="msg_plat/unified_editor_video_conversion_api/tsrc/group"/>
       </component>
       <component id="msg_pub" name="Messaging Apps Public APIs" filter="s60" class="api">
         <unit bldFile="msg_pub/group"/>
-        <unit bldFile="msg_pub/mms_client_mtm_api/tsrc/group"/>
-        <unit bldFile="msg_pub/plugin_bio_control_api/tsrc/group"/>
-        <!-- <unit bldFile="msg_pub/mms_client_mtm_api/tsrc/bc/group"/> -->
-        <!-- <unit bldFile="msg_pub/plugin_bio_control_api/tsrc/bc/group"/> -->
       </component>
       <component id="messaging_metadata" name="Messaging Apps Metadata" class="config" introduced="^2" purpose="development" target="desktop">
         <unit mrp="messaging_info/messaging_metadata/messaging_metadata.mrp"/>

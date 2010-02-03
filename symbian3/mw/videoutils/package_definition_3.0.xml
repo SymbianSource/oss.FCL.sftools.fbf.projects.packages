@@ -1,30 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="videoutils" name="Video Utils" levels="eng util if">
-    <collection id="dvrengine" name="DVR Engine" level="eng">
-      <component id="commonrecordingengine" filter="s60" name="Common Recording Engine">
-     		<!--  can only have one unit, #include the others from the main nit -->
-        <unit bldFile="dvrengine/commonrecordingengine/group"/>
-        <unit bldFile="dvrengine/commonrecordingengine/dvrrtpcliphandler/group"/>
-        <unit bldFile="dvrengine/commonrecordingengine/dvrrtpcliprecognizer/group"/>
-        <unit bldFile="dvrengine/commonrecordingengine/dvrrtputils/group"/>
-      </component>
-      <component id="commonrecordingengineclient" filter="s60" name="Common Recording Engine Client">
-        <unit bldFile="dvrengine/commonrecordingengineclient/group"/>
-      </component>
-      <component id="dvrengine_build" filter="s60" name="DVR Engine Build">
-      	<!-- should split this into the bld.infs above -->
-        <unit bldFile="dvrengine/group"/>
-      </component>
-    </collection>
-    <collection id="videoconnutility" name="Video Connection Utility" level="util">
-      <component id="connutilpsworker" filter="s60" name="Connection Utility Publish and Subscribe Worker">
-        <unit bldFile="videoconnutility/connutilpsworker/group"/>
-      </component>
-      <component id="videoconnutility_build" filter="s60" name="Video Connection Utility Build">
-        <unit bldFile="videoconnutility/group"/>
-      </component>
-    </collection>
     <collection id="videoscheduler" name="Video Scheduler" level="util">
       <component id="schedulerclient" filter="s60" name="Video Scheduler Client">
         <unit bldFile="videoscheduler/schedulerclient/group"/>
@@ -32,24 +8,21 @@
       <component id="schedulerserver" filter="s60" name="Video Scheduler Server">
         <unit bldFile="videoscheduler/schedulerserver/group"/>
       </component>
-      <component id="videoscheduler_build" filter="s60" name="Video Scheduler Build">
-      	<!-- is this needed at all? Can the system include just be put in the above bld.infs? -->
-        <unit bldFile="videoscheduler/group"/>
+    </collection>
+    <collection id="videoconnutility" name="Video Connection Utility" level="util">
+      <component id="connutilpsworker" filter="s60" name="Connection Utility Publish and Subscribe Worker">
+        <unit bldFile="videoconnutility/connutilpsworker/group"/>
+      </component>
+      <component id="video_connutility" filter="s60" name="Video Connection Utility">
+        <unit bldFile="videoconnutility/connutility/group"/>
       </component>
     </collection>
     <collection id="videoutils_info" name="Video Utils Info" level="if">
       <component id="videoutils_plat" filter="s60" name="Video Utils Platform Interfaces" class="api">
         <unit bldFile="videoutils_plat/group"/>
-        	<!-- do these test units  need to be #included in the above bld.inf? -->
-        <!-- <unit bldFile="videoutils_plat/videoconnutility_api/tsrc/group"/> -->
-        <!-- <unit bldFile="videoutils_plat/videoconnutility_api/tsrc/vcxconnutiltestexe/group"/> -->
-        <!-- <unit bldFile="videoutils_plat/videoconnutility_api/tsrc/vcxtestcommon/group"/> -->
-        <!-- <unit bldFile="videoutils_plat/videoconnutility_api/tsrc/vcxtestutilmodule/group"/> -->
-        <!-- <unit bldFile="videoutils_plat/videoscheduler_api/tsrc/group"/> -->
       </component>
-      <component id="videoutils_build" filter="s60" name="Video Utils Build">
-      	<!--  can this be split up into the above components?? -->
-        <unit bldFile="group"/>
+      <component id="videoutils_test" filter="s60,api_test" name="Video Utils Tests">
+        <unit bldFile="tsrc/group"/>
       </component>
     </collection>
   </package>

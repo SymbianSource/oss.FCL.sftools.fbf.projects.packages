@@ -8,13 +8,8 @@
     </collection>
     <collection id="svgtopt" name="SVG-T Engine" level="util">
       <component id="svgtopt_build" filter="s60" name="SVG Engine" introduced="9.2">
+      	<!-- component is at collection level. Needs to be moved down a directory -->
         <unit bldFile="svgtopt/group"/>
-      </component>
-      <component id="nvgdecoder" filter="s60" name="NVG Decoder" introduced="9.2">
-		<!-- extract relevant parts of above bld.inf or remove this component -->
-      </component>
-      <component id="svgengineji" filter="s60" name="SVG Engine Java Interface" introduced="9.2">
-		<!-- extract relevant parts of above bld.inf or remove this component -->
       </component>
       <component id="svgtplugin" filter="s60" name="SVG Plugin" class="plugin" introduced="9.2">
         <unit bldFile="svgtopt/svgtplugin/group"/>

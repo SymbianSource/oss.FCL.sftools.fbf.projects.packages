@@ -13,8 +13,6 @@
       </component>
       <component id="mountmanager" filter="s60" name="RSFW Mount Manager">
         <unit bldFile="remotestoragefw/mountmanager/group"/>
-			<!-- does the test bld.inf need to be included in the above one? -->
-        <!-- <unit bldFile="remotestoragefw/mountmanager/tsrc/public/basic/group"/> -->
       </component>
       <component id="webdavaccessplugin" filter="s60" name="WebDAV Access Plugin" class="plugin">
         <unit bldFile="remotestoragefw/webdavaccessplugin/group"/>
@@ -23,13 +21,22 @@
         <unit bldFile="remotestoragefw/remotefilesystemplugin/group"/>
       </component>
       <component id="remotestoragegsplugin" filter="s60" name="RS GS Plugin" class="plugin">
-        <unit bldFile="remotestoragefw/gsplugin/group"/>
+      	<meta rel="config">
+      		<defined condition="__REMOTE_STORAGE_FW"/>
+      	</meta>
+      	<!-- uncomment the unit when configuration is in place, it's currently #included from remotestoragefw_build -->      
+        <!-- <unit bldFile="remotestoragefw/gsplugin/group"/>-->
       </component>
       <component id="remotedriveconfigurationbiocontrol" filter="s60" name="Remote Drive Configuration BIO Control">
-        <unit bldFile="remotestoragefw/remotedriveconfigurationbiocontrol/group"/>
+      	<meta rel="config">
+      		<defined condition="__REMOTE_STORAGE_FW"/>
+      	</meta>
+      	<!-- uncomment the unit when configuration is in place, it's currently #included from remotestoragefw_build -->      
+      <!--   <unit bldFile="remotestoragefw/remotedriveconfigurationbiocontrol/group"/>-->
       </component>
       <component id="remotestoragefw_build" filter="s60" name="Remote Storage Framework Build">
-			<!-- consider distributing exports to other components and removing this one -->
+			<!-- move exports to other components.
+				This is needed for #includes of configured component until congigiration is in place -->
         <unit bldFile="remotestoragefw/group"/>
       </component>
     </collection>

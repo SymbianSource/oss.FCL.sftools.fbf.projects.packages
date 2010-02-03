@@ -41,30 +41,16 @@
       </component>
     </collection>
     <collection id="textandlocutils" name="Text and Localisation Utils" level="util">
-      <component id="localizer" filter="s60" name="Directory Localizer">
-        <!-- pending move to classicui/uiutils -->
-        <unit bldFile="charconvfw/localizer/group"/>
-      </component>
-      <component id="findutil" filter="s60" name="Find Utility">
-        <!-- pending move to classicui/uiutils -->
-        <unit bldFile="charconvfw/findutil/group"/>
-      </component>
+    	<!-- components in this collection need to be moved to the right collection.
+    		Either move into the units' directories, or create a new textandlocutils directory -->
       <component id="numbergrouping" filter="s60" name="Number Grouping">
         <unit bldFile="charconvfw/numbergrouping/group"/>
-      </component>
-      <component id="gamerecognizer" filter="s60" name="Game Recognizer" class="plugin">
-        <!-- pending move to appsupport -->
-        <unit bldFile="charconvfw/gamerecognizer/group"/>
       </component>
       <component id="jplangutil" filter="s60" name="Japanese Language Utilities">
         <unit bldFile="charconvfw/jplangutil/group"/>
       </component>
       <component id="sortutil" filter="s60" name="Sorting Utility">
         <unit bldFile="charconvfw/sortutil/group"/>
-      </component>
-      <component id="aknjapanesereading" filter="s60" name="Avkon Japanese Reading">
-        <!-- pending move to classicui/uiutils -->
-        <unit bldFile="charconvfw/aknjapanesereading/group"/>
       </component>
       <component id="inlinetext" filter="s60" name="Inline Text">
         <unit bldFile="charconvfw/inlinetext/group"/>
@@ -95,12 +81,9 @@
     <collection id="textandloc_info" name="Text and Localisation Info" level="text">
       <component id="textandloc_pub" filter="s60" name="Text and Localisation Public Interfaces" class="api">
         <unit bldFile="textandloc_pub/group"/>
-        <!-- <unit bldFile="textandloc_pub/character_conversion_plugin_provider_api/tsrc/group"/> -->
       </component>
       <component id="textandloc_plat" filter="s60" name="Text and Localisation Platform Interfaces" class="api">
         <unit bldFile="textandloc_plat/group"/>
-        <!-- <unit bldFile="textandloc_plat/findutil_api/tsrc/group"/> -->
-        <!-- <unit bldFile="textandloc_plat/sortutil_api/tsrc/group"/> -->
       </component>
       <component id="textandloc_metadata" name="Text and Localisation Metadata" class="config" introduced="^2" purpose="development" target="desktop">
         <unit mrp="textandloc_info/textandloc_metadata/textandloc_metadata.mrp"/>

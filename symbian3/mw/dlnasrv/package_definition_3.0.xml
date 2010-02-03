@@ -6,6 +6,7 @@
         <unit bldFile="upnpavcontrolpoint/avcontrolframework/group"/>
       </component>
       <component id="upnpavcontrolpoint_build" filter="s60" name="UPnP A/V Control Point Build" introduced="9.1" deprecated="^3">
+      	<!-- put exports in other component instead -->
         <unit bldFile="upnpavcontrolpoint/group"/>
       </component>
     </collection>
@@ -26,138 +27,8 @@
         <unit bldFile="upnpmediaserver/mediaserverengine/group"/>
       </component>
       <component id="upnpmediaserver_build" filter="s60" name="UPnP Media Server Build">
-		<!-- consider moving content into above components -->
+		<!-- move exports into one of above components -->
         <unit bldFile="upnpmediaserver/group"/>
-      </component>
-    </collection>
-    <collection id="upnpstack" name="UPnP Stack" level="stack">
-      <component id="upnputils" filter="s60" name="UPnP Utils">
-        <unit bldFile="upnpstack/upnputils/group"/>
-      </component>
-      <component id="upnpconnectionmanagersession" filter="s60" name="UPnP Connection Manager Session">
-        <unit bldFile="upnpstack/upnpconnectionmanagersession/group"/>
-      </component>
-      <component id="upnpconnmanager" filter="s60" name="UPnP Connection Manager">
-        <unit bldFile="upnpstack/upnpconnmanager/group"/>
-      </component>
-      <component id="dlnawebserver" filter="s60" name="DLNA Web Server">
-        <unit bldFile="upnpstack/dlnawebserver/group"/>
-      </component>
-      <component id="serviceframework" filter="s60" name="Service Framework">
-        <unit bldFile="upnpstack/serviceframework/group"/>
-      </component>
-      <component id="ssdpserver" filter="s60" name="SSDP Server">
-        <unit bldFile="upnpstack/ssdpserver/group"/>
-      </component>
-      <component id="messagehandler" filter="s60" name="Message Handler">
-        <unit bldFile="upnpstack/messagehandler/group"/>
-      </component>
-      <component id="controlpointbase" filter="s60" name="Control Point Base">
-        <unit bldFile="upnpstack/controlpointbase/group"/>
-      </component>
-      <component id="upnphttptransfer" filter="s60" name="UPnP HTTP Transfer">
-        <unit bldFile="upnpstack/upnphttptransfer/group"/>
-      </component>
-      <component id="upnpstack_build" filter="s60" name="UPnP Stack Build">
-		<!-- consider moving content into above components -->
-        <unit bldFile="upnpstack/group"/>
-      </component>
-    </collection>
-    <collection id="upnpsharing" name="UPnP Sharing" level="server">
-      <component id="upnpdlnaprofiler" filter="s60" name="UPnP DLNA Profiler" introduced="^2">
-        <unit bldFile="upnpsharing/upnpdlnaprofiler/group"/>
-      </component>
-      <component id="upnpsecurity" filter="s60" name="UPnP Security" introduced="^2">
-        <unit bldFile="upnpsharing/upnpsecurity/group"/>
-      </component>
-      <component id="upnpcontentserver" filter="s60" name="UPnP Content Server" introduced="^2">
-        <unit bldFile="upnpsharing/upnpcontentserver/group"/>
-      </component>
-      <component id="applicationengine" filter="s60" name="UPnP Application Engine" introduced="^2">
-        <unit bldFile="upnpsharing/applicationengine/group"/>
-      </component>
-      <component id="upnpsharing_build" filter="s60" name="UPnP Sharing Build" introduced="^2">
-		<!-- consider moving content into above components -->
-        <unit bldFile="upnpsharing/group"/>
-      </component>
-    </collection>
-    <collection id="upnpsettings" name="UPnP Settings" level="framework">
-      <component id="upnpsettingsengine" filter="s60" name="UPnP Settings Engine" introduced="^2">
-        <unit bldFile="upnpsettings/upnpsettingsengine/group"/>
-      </component>
-      <component id="multiselectionui" filter="s60" name="Multi-Selection UI" introduced="^2" deprecated="^3">
-        <unit bldFile="upnpsettings/multiselectionui/group"/>
-      </component>
-      <component id="appwizard" filter="s60" name="UPnP Settings Wizard App" introduced="^2" deprecated="^3">
-        <unit bldFile="upnpsettings/appwizard/group"/>
-      </component>
-      <component id="upnpsharingui" filter="s60" name="UPnP Sharing UI" introduced="^2" deprecated="^3">
-        <unit bldFile="upnpsettings/upnpsharingui/group"/>
-      </component>
-      <component id="upnpgsplugin" filter="s60" name="UPnP GS Plugin" class="plugin" introduced="^2">
-        <unit bldFile="upnpsettings/upnpgsplugin/group"/>
-      </component>
-      <component id="upnpsettings_build" filter="s60" name="UPnP Settings Build" introduced="^2">
-		<!-- consider moving content into above components -->
-        <unit bldFile="upnpsettings/group"/>
-      </component>
-    </collection>
-    <collection id="upnpmpxplugins" name="UPnP MPX Plugins" level="plugin">
-      <component id="upnpplaybackplugins" filter="s60" name="UPnP Playback Plugins" class="plugin" introduced="^2">
-        <unit bldFile="upnpmpxplugins/upnpplaybackplugins/group"/>
-      </component>
-      <component id="upnpmpxplugins_build" filter="s60" name="UPnP MPX Plugins Build" introduced="^2">
-		<!-- consider moving content into above components -->
-        <unit bldFile="upnpmpxplugins/group"/>
-      </component>
-    </collection>
-    <collection id="upnpharvester" name="UPnP Harvester" level="ctrl">
-      <component id="upnpharvester_common" filter="s60" name="UPnP Harvester Common" introduced="^2" deprecated="^3">
-		<!-- need to merge or #include these to a single bld.inf -->
-        <unit bldFile="upnpharvester/common/cmlibrary/group"/>
-        <unit bldFile="upnpharvester/common/cmsettings/group"/>
-        <unit bldFile="upnpharvester/common/cmsqlwrapper/group"/>
-        <unit bldFile="upnpharvester/common/dbmanager/group"/>
-      </component>
-      <component id="cdssync" filter="s60" name="CDS Sync" introduced="^2" deprecated="^3">
-        <unit bldFile="upnpharvester/cdssync/common"/>
-      </component>
-      <component id="mdhserver" filter="s60" name="Metadata Harvester Server" introduced="^2" deprecated="^3">
-        <unit bldFile="upnpharvester/mdhserver/group"/>
-      </component>
-      <component id="upnpharvester_build" filter="s60" name="UPnP Harvester Build" introduced="^2" deprecated="^3">
-		<!-- consider moving content into above components -->
-        <unit bldFile="upnpharvester/group"/>
-      </component>
-    </collection>
-    <collection id="upnpframework" name="UPnP Framework" level="framework">
-      <component id="upnputilities" filter="s60" name="UPnP Utilities" introduced="^2">
-        <unit bldFile="upnpframework/upnputilities/group"/>
-      </component>
-      <component id="upnpextensionpluginif" filter="s60" name="UPnP Extension Plugin Interface" introduced="^2" deprecated="^3">
-        <unit bldFile="upnpframework/upnpextensionpluginif/group"/>
-      </component>
-      <component id="upnpfiletransferengine" filter="s60" name="UPnP File Transfer Engine" introduced="^2" deprecated="^3">
-        <unit bldFile="upnpframework/upnpfiletransferengine/group"/>
-      </component>
-      <component id="upnpmusicadapter" filter="s60" name="UPnP Music Adapter" introduced="^2">
-        <unit bldFile="upnpframework/upnpmusicadapter/group"/>
-      </component>
-      <component id="upnpcommonui" filter="s60" name="UPnP Common UI" introduced="^2" deprecated="^3">
-        <unit bldFile="upnpframework/upnpcommonui/group"/>
-      </component>
-      <component id="upnpcommand" filter="s60" name="UPnP Command" introduced="^2">
-        <unit bldFile="upnpframework/upnpcommand/group"/>
-      </component>
-      <component id="upnpaiwengine" filter="s60" name="UPnP AIW Engine" introduced="^2" deprecated="^3">
-        <unit bldFile="upnpframework/upnpaiwengine/group"/>
-      </component>
-      <component id="upnpaiwprovider" filter="s60" name="UPnP AIW Provider" class="plugin" introduced="^2" deprecated="^3">
-        <unit bldFile="upnpframework/upnpaiwprovider/group"/>
-      </component>
-      <component id="upnpframework_build" filter="s60" name="UPnP Framework Build" introduced="^2">
-		<!-- consider moving content into above components -->
-        <unit bldFile="upnpframework/group"/>
       </component>
     </collection>
     <collection id="upnpavcontroller" name="UPnP A/V Controller" level="ctrl">
@@ -174,29 +45,147 @@
         <unit bldFile="upnpavcontroller/upnpavcontrollerhelper/group"/>
       </component>
       <component id="upnpavcontroller_build" filter="s60" name="UPnP A/V Controller Build" introduced="^2">
-		<!-- consider moving content into above components -->
+		<!-- move exports content into one of above components -->
         <unit bldFile="upnpavcontroller/group"/>
       </component>
     </collection>
-    <collection id="homesync" name="Home Sync" level="plugin">
-      <component id="contentmanager" filter="s60" name="Content Manager" introduced="^2" deprecated="^3">
-		<!-- need to merge or #include these to a single bld.inf or split into individual componens -->
-        <unit bldFile="homesync/contentmanager/cmserver/cmfillmanager/group"/>
-        <unit bldFile="homesync/contentmanager/cmserver/cmmemorymanager/group"/>
-        <unit bldFile="homesync/contentmanager/cmserver/cmscheduler/group"/>
-        <unit bldFile="homesync/contentmanager/cmserver/cmserver/group"/>
-        <unit bldFile="homesync/contentmanager/cmserver/cmstoremanager/group"/>
-        <unit bldFile="homesync/contentmanager/homesyncgsplugin/group"/>
-        <unit bldFile="homesync/contentmanager/homesyncwizard/group"/>
-        <unit bldFile="homesync/contentmanager/mediaservant/applicationengine/group"/>
-        <unit bldFile="homesync/contentmanager/mediaservant/group"/>
+    <collection id="upnpframework" name="UPnP Framework" level="framework">
+      <component id="upnputilities" filter="s60" name="UPnP Utilities" introduced="^2">
+        <unit bldFile="upnpframework/upnputilities/group"/>
       </component>
-      <component id="homesync_build" filter="s60" name="Home Sync Build" introduced="^2" deprecated="^3">
-		<!-- consider moving content into above components -->
-        <unit bldFile="homesync/group"/>
+      <component id="upnpextensionpluginif" filter="s60" name="UPnP Home Media Extension Plugin Interface" introduced="^2" deprecated="^3">
+      	<meta rel="config">
+      		<defined condition="FF_UPNP_FRAMEWORK_2_0"/>
+      	</meta>      
+        <unit bldFile="upnpframework/upnpextensionpluginif/group"/>
+      </component>
+      <component id="upnpfiletransferengine" filter="s60" name="UPnP File Transfer Engine" introduced="^2" deprecated="^3">
+      	<meta rel="config">
+      		<defined condition="FF_UPNP_FRAMEWORK_2_0"/>
+      	</meta>      
+        <unit bldFile="upnpframework/upnpfiletransferengine/group"/>
+      </component>
+      <component id="upnpcommonui" filter="s60" name="UPnP Common UI" introduced="^2" deprecated="^3">
+      	<meta rel="config">
+      		<defined condition="FF_UPNP_FRAMEWORK_2_0"/>
+      	</meta>      
+        <unit bldFile="upnpframework/upnpcommonui/group"/>
+      </component>
+      <component id="upnpaiwengine" filter="s60" name="UPnP AIW Engine" introduced="^2" deprecated="^3">
+      	<meta rel="config">
+      		<defined condition="FF_UPNP_FRAMEWORK_2_0"/>
+      	</meta>      
+        <unit bldFile="upnpframework/upnpaiwengine/group"/>
+      </component>
+      <component id="upnpaiwprovider" filter="s60" name="UPnP AIW Provider" class="plugin" introduced="^2" deprecated="^3">
+      	<meta rel="config">
+      		<defined condition="FF_UPNP_FRAMEWORK_2_0"/>
+      	</meta>      
+        <unit bldFile="upnpframework/upnpaiwprovider/group"/>
+      </component>
+      <component id="upnpmusicadapter" filter="s60" name="UPnP Music Adapter" introduced="^2">
+        <unit bldFile="upnpframework/upnpmusicadapter/group"/>
+      </component>
+      <component id="upnpcommand" filter="s60" name="UPnP Command" introduced="^2">
+        <unit bldFile="upnpframework/upnpcommand/group"/>
+      </component>
+      <component id="upnpframework_build" filter="s60" name="UPnP Framework Build" introduced="^2">
+		<!-- move exports content into one of above components -->
+        <unit bldFile="upnpframework/group"/>
+      </component>
+    </collection>
+    <collection id="upnpsettings" name="UPnP Settings" level="framework">
+      <component id="upnpsettingsengine" filter="s60" name="UPnP Settings Engine" introduced="^2">
+        <unit bldFile="upnpsettings/upnpsettingsengine/group"/>
+      </component>
+      <component id="multiselectionui" filter="s60" name="Multi-Selection UI" introduced="^2" deprecated="^3">
+      	<meta rel="config">
+      		<defined condition="FF_UPNP_FRAMEWORK_2_0"/>
+      	</meta>      
+        <unit bldFile="upnpsettings/multiselectionui/group"/>
+      </component>
+      <component id="appwizard" filter="s60" name="UPnP Settings Wizard App" introduced="^2" deprecated="^3">
+      	<meta rel="config">
+      		<defined condition="FF_UPNP_FRAMEWORK_2_0"/>
+      	</meta>      
+        <unit bldFile="upnpsettings/appwizard/group"/>
+      </component>
+      <component id="upnpsharingui" filter="s60" name="UPnP Sharing UI" introduced="^2" deprecated="^3">
+      	<meta rel="config">
+      		<defined condition="FF_UPNP_FRAMEWORK_2_0"/>
+      	</meta>      
+        <unit bldFile="upnpsettings/upnpsharingui/group"/>
+      </component>
+      <component id="upnpgsplugin" filter="s60" name="UPnP GS Plugin" class="plugin" introduced="^2">
+        <unit bldFile="upnpsettings/upnpgsplugin/group"/>
+      </component>
+      <component id="upnpsettings_build" filter="s60" name="UPnP Settings Build" introduced="^2">
+		<!-- move exports content into one of above components -->
+        <unit bldFile="upnpsettings/group"/>
+      </component>
+    </collection>
+    <collection id="upnpsharing" name="UPnP Sharing" level="server">
+      <component id="upnpdlnaprofiler" filter="s60" name="UPnP DLNA Profiler" introduced="^2">
+        <unit bldFile="upnpsharing/upnpdlnaprofiler/group"/>
+      </component>
+      <component id="upnpsecurity" filter="s60" name="UPnP Security" introduced="^2">
+        <unit bldFile="upnpsharing/upnpsecurity/group"/>
+      </component>
+      <component id="upnpcontentserver" filter="s60" name="UPnP Content Server" introduced="^2">
+        <unit bldFile="upnpsharing/upnpcontentserver/group"/>
+      </component>
+      <component id="applicationengine" filter="s60" name="UPnP Application Engine" introduced="^2">
+        <unit bldFile="upnpsharing/applicationengine/group"/>
+      </component>
+      <component id="upnpsharing_build" filter="s60" name="UPnP Sharing Build" introduced="^2">
+		<!-- move exports content into one of above components -->
+        <unit bldFile="upnpsharing/group"/>
+      </component>
+    </collection>
+    <collection id="upnpmpxplugins" name="UPnP MPX Plugins" level="plugin">
+      <component id="upnpplaybackplugins" filter="s60" name="UPnP Playback Plugins" class="plugin" introduced="^2">
+        <unit bldFile="upnpmpxplugins/upnpplaybackplugins/group"/>
+      </component>
+      <component id="upnpmpxplugins_build" filter="s60" name="UPnP MPX Plugins Build" introduced="^2">
+		<!-- move exports content into other component? -->
+        <unit bldFile="upnpmpxplugins/group"/>
+      </component>
+    </collection>
+    <collection id="upnpharvester" name="UPnP Harvester" level="ctrl">
+      	<meta rel="config">
+      		<defined condition="FF_UPNP_FRAMEWORK_2_0"/>
+      	</meta>          
+      <component id="upnpharvester_common" filter="s60" name="UPnP Harvester Common" introduced="^2" deprecated="^3">
+		<!-- need to merge or #include these to a single bld.inf -->
+        <unit bldFile="upnpharvester/common/cmlibrary/group"/>
+        <unit bldFile="upnpharvester/common/cmsettings/group"/>
+        <unit bldFile="upnpharvester/common/cmsqlwrapper/group"/>
+        <unit bldFile="upnpharvester/common/dbmanager/group"/>
+      </component>
+      <component id="cdssync" filter="s60" name="CDS Sync" introduced="^2" deprecated="^3">
+        <unit bldFile="upnpharvester/cdssync/common"/>
+      </component>
+      <component id="mdhserver" filter="s60" name="Metadata Harvester Server" introduced="^2" deprecated="^3">
+        <unit bldFile="upnpharvester/mdhserver/group"/>
+      </component>
+      <component id="upnpharvester_build" filter="s60" name="UPnP Harvester Build" introduced="^2" deprecated="^3">
+		<!-- could just make the whole collection one component and move down a dir. Or move the exports here into the other component -->
+        <unit bldFile="upnpharvester/group"/>
+      </component>
+    </collection>
+    <collection id="homesync" name="Home Sync" level="plugin">
+      	<meta rel="config">
+      		<defined condition="FF_UPNP_FRAMEWORK_2_0"/>
+      	</meta>              
+      <component id="contentmanager" filter="s60" name="Content Manager" introduced="^2" deprecated="^3">
+        <unit bldFile="homesync/group"/> <!-- move bld.inf into contentmanager dir -->
       </component>
     </collection>
     <collection id="homemedia" name="Home Media" level="framework">
+      	<meta rel="config">
+      		<defined condition="FF_UPNP_FRAMEWORK_2_0"/>
+      	</meta>          
+      	<!-- collection is really just a component. Move down a directory -->
       <component id="homemedia_build" filter="s60" name="Home Media" introduced="^2" deprecated="^3">
         <unit bldFile="homemedia/group"/>
       </component>
@@ -206,7 +195,11 @@
         <unit bldFile="dlnasrv_plat/group"/>
       </component>
       <component id="dlnasrv_build" filter="s60" name="DLNA Services Build">
+      	<!-- need to #include upnpplatformvar.hrh from each #included bld.inf, then this can be removed  -->
         <unit bldFile="group"/>
+      </component>
+	  <component id="dlnasrv_api_test" filter="s60,api_test" name="DLNA Services API Tests" purpose="development">
+        <unit bldFile="tsrc/group"/>
       </component>
     </collection>
   </package>

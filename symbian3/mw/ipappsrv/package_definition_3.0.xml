@@ -1,211 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="ipappsrv" name="IP App Services" levels="framework generic server conn plugin">
+    <collection id="natfw" name="NAT Framework" level="framework">
+    	<!-- collection is really a component. Need to move down a directory -->
+      <component id="natfw_build" filter="s60" name="NAT Framework Build" introduced="^2">
+        <unit bldFile="natfw/group"/>
+      </component>
+    </collection>
     <collection id="multimediacommscontroller" name="Multimedia Comms Controller" level="conn">
-      <component id="mmccinterface" filter="s60" name="MMCC Interface">
-        <!-- <unit bldFile="multimediacommscontroller/mmccinterface/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmccinterface/tsrc/ut_interface/group"/> -->
-      </component>
-      <component id="mmccjitterbuffer" filter="s60" name="Jitter Buffer">
-        <!-- <unit bldFile="multimediacommscontroller/mmccjitterbuffer/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmccjitterbuffer/tsrc/ut_jitterbuffer/group"/> -->
-      </component>
-      <component id="mmccqoscontroller" filter="s60" name="QoS Controller">
-        <!-- <unit bldFile="multimediacommscontroller/mmccqoscontroller/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmccqoscontroller/tsrc/ut_qoscontroller/group"/> -->
-      </component>
-      <component id="mmccmultiplexer" filter="s60" name="MMCC Multiplexer">
-        <!-- <unit bldFile="multimediacommscontroller/mmccmultiplexer/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmccmultiplexer/tsrc/ut_multiplexer/group"/> -->
-      </component>
-      <component id="mmccsubcontroller" filter="s60" name="MMCC Subcontroller">
-        <!-- <unit bldFile="multimediacommscontroller/mmccsubcontroller/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmccsubcontroller/tsrc/ut_rtpmediaclock/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmccsubcontroller/tsrc/ut_subcontroller/group"/> -->
-      </component>
-      <component id="mmcccontroller" filter="s60" name="MMCC Controller" class="plugin">
-        <!-- <unit bldFile="multimediacommscontroller/mmcccontroller/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmcccontroller/tsrc/ut_controller/group"/> -->
-      </component>
-      <component id="mmccredpayloadformat" filter="s60" name="Redundancy Payload Format" class="plugin">
-        <!-- <unit bldFile="multimediacommscontroller/mmccredpayloadformat/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmccredpayloadformat/tsrc/ut_redpayloadformat/group"/> -->
-      </component>
-      <component id="mmccamrpayloadformat" filter="s60" name="AMR Payload Format" class="plugin">
-        <!-- <unit bldFile="multimediacommscontroller/mmccamrpayloadformat/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmccamrpayloadformat/tsrc/ut_amrpayloadformat/group"/> -->
-      </component>
-      <component id="mmccg711payloadformat" filter="s60" name="G711 Payload Format" class="plugin">
-        <!-- <unit bldFile="multimediacommscontroller/mmccg711payloadformat/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmccg711payloadformat/tsrc/ut_g711payloadformat/group"/> -->
-      </component>
-      <component id="mmccg729payloadformat" filter="s60" name="G729 Payload Format" class="plugin">
-        <!-- <unit bldFile="multimediacommscontroller/mmccg729payloadformat/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmccg729payloadformat/tsrc/ut_g729payloadformat/group"/> -->
-      </component>
-      <component id="mmccilbcpayloadformat" filter="s60" name="ILBC Payload Format" class="plugin">
-        <!-- <unit bldFile="multimediacommscontroller/mmccilbcpayloadformat/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmccilbcpayloadformat/tsrc/ut_ilbcpayloadformat/group"/> -->
-      </component>
-      <component id="mmccdtmfpayloadformat" filter="s60" name="DTMF Payload Format" class="plugin">
-        <!-- <unit bldFile="multimediacommscontroller/mmccdtmfpayloadformat/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmccdtmfpayloadformat/tsrc/ut_dtmfpayloadformat/group"/> -->
-      </component>
-      <component id="mmccrtpsourcesink" filter="s60" name="RTP Source Sink" class="plugin">
-        <!-- <unit bldFile="multimediacommscontroller/mmccrtpsourcesink/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmccrtpsourcesink/tsrc/ut_rtpsourcesink/group"/> -->
-      </component>
-      <component id="mmccvideosourcesink" filter="s60" name="Video Source Sink" class="plugin">
-        <!-- <unit bldFile="multimediacommscontroller/mmccvideosourcesink/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmccvideosourcesink/tsrc/ut_videosourcesink/group"/> -->
-      </component>
-      <component id="mmcch263payloadformat" filter="s60" name="H263 Payload Format" class="plugin">
-        <!-- <unit bldFile="multimediacommscontroller/mmcch263payloadformat/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmcch263payloadformat/tsrc/ut_h263payloadformat/group"/> -->
-      </component>
-      <component id="mmccanypayloadformat" filter="s60" name="Any Payload Format" class="plugin">
-        <!-- <unit bldFile="multimediacommscontroller/mmccanypayloadformat/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmccanypayloadformat/tsrc/ut_anypayloadformat/group"/> -->
-      </component>
-      <component id="mmccfilesourcesink" filter="s60" name="MMCC File Source Sink" class="plugin">
-        <!-- <unit bldFile="multimediacommscontroller/mmccfilesourcesink/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmccfilesourcesink/tsrc/ut_filesourcesink/group"/> -->
-      </component>
-      <component id="mmccanysourcesink" filter="s60" name="Any Source Sink" class="plugin">
-        <!-- <unit bldFile="multimediacommscontroller/mmccanysourcesink/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmccanysourcesink/tsrc/ut_anysourcesink/group"/> -->
-      </component>
-      <component id="mmccavcpayloadformat" filter="s60" name="AVC Payload Format" class="plugin">
-        <!-- <unit bldFile="multimediacommscontroller/mmccavcpayloadformat/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/mmccavcpayloadformat/tsrc/ut_avcpayloadformat/group"/> -->
-      </component>
+    	<!-- collection is really a component. Need to move down a directory -->
       <component id="multimediacommscontroller_build" filter="s60" name="Multimedia Comms Controller Build">
-              <!-- contents of this component need to be distributed out to the other commented-out bld.infs or the other components need to be collapsed into one -->
         <unit bldFile="multimediacommscontroller/group"/>
-      </component>
-      <component id="multimediacommscontroller_test" filter="s60" name="Multimedia Comms Controller Test" purpose="development">
-        <!-- <unit bldFile="multimediacommscontroller/tsrc/testconsoles/mcpsubthreads/dptests/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/tsrc/testconsoles/mcpsubthreads/clienttests/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/tsrc/componenttests/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/tsrc/subcontrollerstub/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/tsrc/testconsoles/jitterbuffertestconsole/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/tsrc/testconsoles/rtpsourcesink/group"/> -->
-        <!-- <unit bldFile="multimediacommscontroller/tsrc/testconsoles/mcpconsole/group"/> -->
       </component>
     </collection>
     <collection id="multimediacommsengine" name="Multimedia Comms Engine" level="generic">
-      <component id="mmcesrv" filter="s60" name="Multimedia Comms Engine Server">
-        <!-- <unit bldFile="multimediacommsengine/mmcesrv/group"/> -->
-        <!-- <unit bldFile="multimediacommsengine/mmcesrv/mmceevent/tsrc/ut_event/group"/> -->
-        <!-- <unit bldFile="multimediacommsengine/mmcesrv/mmceevent/tsrc/ut_event/sip_stub/group"/> -->
-        <!-- <unit bldFile="multimediacommsengine/mmcesrv/mmcemediamanager/tsrc/ut_mediamanager/group"/> -->
-        <!-- <unit bldFile="multimediacommsengine/mmcesrv/mmceserver/tsrc/ut_server/group"/> -->
-      </component>
-      <component id="mmcecli" filter="s60" name="Multimedia Comms Engine Client">
-        <!-- <unit bldFile="multimediacommsengine/mmcecli/group"/> -->
-      </component>
-      <component id="mmcefloorctrlengine" filter="s60" name="MCE Floor Control Engine">
-        <!-- <unit bldFile="multimediacommsengine/mmcefloorctrlengine/group"/> -->
-        <!-- <unit bldFile="multimediacommsengine/mmcefloorctrlengine/tsrc/ut_floorctrlengine/fctestpplugin/group"/> -->
-        <!-- <unit bldFile="multimediacommsengine/mmcefloorctrlengine/tsrc/ut_floorctrlengine/fctestpplugin2/group"/> -->
-        <!-- <unit bldFile="multimediacommsengine/mmcefloorctrlengine/tsrc/ut_floorctrlengine/group"/> -->
-      </component>
-      <component id="mmcefloorctrlplugin" filter="s60" name="MCE Floor Control Plugin" class="plugin">
-        <!-- <unit bldFile="multimediacommsengine/mmcefloorctrlplugin/group"/> -->
-        <!-- <unit bldFile="multimediacommsengine/mmcefloorctrlplugin/tsrc/ut_floorctrlplugin/group"/> -->
-      </component>
+    	<!-- collection is really a component. Need to move down a directory -->
       <component id="multimediacommsengine_build" filter="s60" name="Multimedia Comms Engine Build">
-              <!-- contents of this component need to be distributed out to the other commented-out bld.infs or the other components need to be collapsed into one -->
         <unit bldFile="multimediacommsengine/group"/>
-      </component>
-      <component id="multimediacommsengine_test" filter="s60" name="Multimedia Comms Engine Test" purpose="development">
-        <!-- <unit bldFile="multimediacommsengine/tsrc/mcetestui/mcetestuiplugin/group"/> -->
-        <!-- <unit bldFile="multimediacommsengine/tsrc/mcetestui/group"/> -->
-        <!-- <unit bldFile="multimediacommsengine/tsrc/testdriver/siptester/ttcnresolverplugin/group"/> -->
-        <!-- <unit bldFile="multimediacommsengine/tsrc/mmctestdriver/group"/> -->
-        <!-- <unit bldFile="multimediacommsengine/tsrc/mmctestdriver/mcetester/iceplugin_stub/group"/> -->
-        <!-- <unit bldFile="multimediacommsengine/tsrc/mmctestdriver/mcetester/ttcnresolverplugin/group"/> -->
-        <!-- <unit bldFile="multimediacommsengine/tsrc/testdriver/siptester/ttcnresolverplugin2/group"/> -->
-        <!-- <unit bldFile="multimediacommsengine/tsrc/mcetestui/mcetestuiengine/group"/> -->
-        <!-- <unit bldFile="multimediacommsengine/tsrc/testdriver/group/s60_public_sdk"/> -->
-        <!-- <unit bldFile="multimediacommsengine/tsrc/mmctestdriver/mcetester/iceplugin_stub/tsrc/test/group"/> -->
-        <!-- <unit bldFile="multimediacommsengine/tsrc/testdriver/group"/> -->
-        <!-- <unit bldFile="multimediacommsengine/tsrc/mmctestdriver/mcetester/voipplugin/group"/> -->
-      </component>
-    </collection>
-    <collection id="natfw" name="NAT Framework" level="framework">
-      <component id="natfwsettings" filter="s60" name="NAT Framework Settings" introduced="^2">
-        <!-- <unit bldFile="natfw/natfwsettings/group"/> -->
-        <!-- <unit bldFile="natfw/natfwsettings/tsrc/ut_cnatfwnatsettings/group"/> -->
-      </component>
-      <component id="natfwconnectionmultiplexer" filter="s60" name="NAT Framework Connection Multiplexer" introduced="^2">
-        <!-- <unit bldFile="natfw/natfwconnectionmultiplexer/group"/> -->
-        <!-- <unit bldFile="natfw/natfwconnectionmultiplexer/tsrc/muxtestconsole/group"/> -->
-        <!-- <unit bldFile="natfw/natfwconnectionmultiplexer/tsrc/ut_connectionmultiplexer/group"/> -->
-      </component>
-      <component id="natfwclient" filter="s60" name="NAT Framework Client" introduced="^2">
-        <!-- <unit bldFile="natfw/natfwclient/group"/> -->
-        <!-- <unit bldFile="natfw/natfwclient/tsrc/ut_natfwclient/group"/> -->
-      </component>
-      <component id="natfwsocketmediaconnwrapper" filter="s60" name="Socket Media Connection Wrapper" introduced="^2">
-        <!-- <unit bldFile="natfw/natfwsocketmediaconnwrapper/group"/> -->
-        <!-- <unit bldFile="natfw/natfwsocketmediaconnwrapper/tsrc/ut_socketmediaconnwrapper/group"/> -->
-      </component>
-      <component id="natfwunsaf_protocols" filter="s60" name="UNSAF Protocols" introduced="^2">
-          <!-- consider expanding name to UNilateral Self- Address Fixing Protocols -->
-        <!-- <unit bldFile="natfw/natfwunsaf_protocols/group"/> -->
-        <!-- <unit bldFile="natfw/natfwunsaf_protocols/tsrc/ut_unsaf_codec/group"/> -->
-        <!-- <unit bldFile="natfw/natfwunsaf_protocols/tsrc/ut_unsaf_transport/group"/> -->
-      </component>
-      <component id="natfwstunturnclient" filter="s60" name="STUN TURN Client" introduced="^2">
-        <!-- <unit bldFile="natfw/natfwstunturnclient/group"/> -->
-        <!-- <unit bldFile="natfw/natfwstunturnclient/tsrc/ut_stunturnclient/group"/> -->
-      </component>
-      <component id="natfwstunserver" filter="s60" name="STUN Server" introduced="^2">
-        <!-- <unit bldFile="natfw/natfwstunserver/group"/> -->
-        <!-- <unit bldFile="natfw/natfwstunserver/tsrc/ut_cnatfwstunsrv/group"/> -->
-      </component>
-      <component id="natfwicecandidatehandler" filter="s60" name="ICE Candidate Handler" class="plugin" introduced="^2">
-        <!-- <unit bldFile="natfw/natfwicecandidatehandler/group"/> -->
-        <!-- <unit bldFile="natfw/natfwicecandidatehandler/tsrc/ut_icecandidatehandler/group"/> -->
-      </component>
-      <component id="natfwstunplugin" filter="s60" name="STUN Plugin" class="plugin" introduced="^2">
-        <!-- <unit bldFile="natfw/natfwstunplugin/group"/> -->
-        <!-- <unit bldFile="natfw/natfwstunplugin/tsrc/ut_cnatfwstunplugin/group"/> -->
-      </component>
-      <component id="natfwturnplugin" filter="s60" name="TURN Plugin" class="plugin" introduced="^2">
-        <!-- <unit bldFile="natfw/natfwturnplugin/group"/> -->
-        <!-- <unit bldFile="natfw/natfwturnplugin/tsrc/ut_cnatfwturnplugin/group"/> -->
-      </component>
-      <component id="natfw_build" filter="s60" name="NAT Framework Build" introduced="^2">
-              <!-- contents of this component need to be distributed out to the other commented-out bld.infs or the other components need to be collapsed into one -->
-        <unit bldFile="natfw/group"/>
-      </component>
-      <component id="natfw_test" filter="s60" name="NAT Framework Test" purpose="development" introduced="^2">
-        <!-- <unit bldFile="natfw/tsrc/natfwtestconsoles/natfwtestconsole/group"/> -->
       </component>
     </collection>
     <collection id="natplugins" name="NAT Plugins" level="plugin">
-         <!-- are the extra test units in here needed at all? Either incorperate into main unit as test projects or remove-->
       <component id="natpcliprovisioningnatfwadapter" filter="s60" name="Client Provisioning NAT Framework Traversal Adapter" class="plugin" introduced="^2">
         <unit bldFile="natplugins/natpcliprovisioningnatfwadapter/group"/>
-        <!-- <unit bldFile="natplugins/natpcliprovisioningnatfwadapter/tsrc/t_natfwtraversaladapter/group"/> -->
       </component>
       <component id="natpdevmgmtnatfwadapter" filter="s60" name="Device Management NAT Framework Traversal Adapter" class="plugin">
         <unit bldFile="natplugins/natpdevmgmtnatfwadapter/group"/>
-        <!-- <unit bldFile="natplugins/natpdevmgmtnatfwadapter/tsrc/ut_cnsmldmnatfwtraversaladapter/group"/> -->
       </component>
       <component id="natptraversalcontroller" filter="s60" name="NAT Traversal Controller" class="plugin">
         <unit bldFile="natplugins/natptraversalcontroller/group"/>
-        <!-- <unit bldFile="natplugins/natptraversalcontroller/tsrc/ut_nattraversalcontroller/group"/> -->
       </component>
       <component id="natpnatfwsdpprovider" filter="s60" name="NAT Framework SDP Provider" class="plugin">
         <unit bldFile="natplugins/natpnatfwsdpprovider/group"/>
-        <!-- <unit bldFile="natplugins/natpnatfwsdpprovider/tsrc/testconsole/group"/> -->
-        <!-- <unit bldFile="natplugins/natpnatfwsdpprovider/tsrc/ut_natfwsdpprovider/group"/> -->
       </component>
     </collection>
     <collection id="ipappsrv_info" name="IP App Services Info" level="plugin">
+      <component id="ipappsrv_plat" filter="s60" name="IP App Services Platform Interfaces" class="api">
+        <unit bldFile="ipappsrv_plat/group"/>
+      </component>
+      <component id="ipappsrv_build" name="IP App Services Build" filter="s60">
+      	<!-- remove the #includes from here and rename as xxx ROM or move iby/sis files into another component-->
+        <unit mrp="group"/>
+      </component>
       <component id="ipappsrv_metadata" name="IP App Services Metadata" class="config" introduced="^2" purpose="development" target="desktop">
         <unit mrp="ipappsrv_info/ipappsrv_metadata/ipappsrv_metadata.mrp"/>
       </component>

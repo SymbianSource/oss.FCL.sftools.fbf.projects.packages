@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="mmappfw" name="Multimedia App Framework" levels="fw utils if">
+    <collection id="mpx" name="Multimedia Player" level="fw">
+      <component id="commonframework" filter="s60" name="MPX Common Framework" introduced="^1">
+        <unit bldFile="mpx/commonframework/group"/>
+      </component>
+      <component id="playbackframework" filter="s60" name="MPX Playback Framework" introduced="^1">
+        <unit bldFile="mpx/playbackframework/group"/>
+      </component>
+      <component id="mpxcollectionfw" filter="s60" name="MPX Collection Framework" introduced="^1">
+        <unit bldFile="mpx/collectionframework/group"/>
+      </component>
+      <component id="mpxviewfw" filter="s60" name="MPX View Framework" introduced="^1">
+        <unit bldFile="mpx/viewframework/group"/>
+      </component>
+      <component id="mpx_build" filter="s60" name="MPX Build" introduced="^1">
+      <!--  Move the export to another component or remove the #includes from this one -->
+        <unit bldFile="mpx/group"/>
+      </component>
+    </collection>
     <collection id="mmappcomponents" name="Multimedia App Components" level="utils">
+      <component id="mmappcomponents_build" filter="s60" name="Multimedia App Components Build" introduced="^1">
+      	<!-- needed for  #ifdefs and hrh include. Need to #include the .hrh file in each bld.inf
+      		Can remove this once configuration is in place-->
+        <unit bldFile="mmappcomponents/group"/>
+      </component>
       <component id="collectionhelper" filter="s60" name="Media Player Collection Helper" introduced="^1">
         <unit bldFile="mmappcomponents/collectionhelper/group"/>
       </component>
@@ -18,57 +41,39 @@
         <unit bldFile="mmappcomponents/mediaplayersettingsengine/group"/>
       </component>
       <component id="audiofetcher" filter="s60" name="Audio Fetcher" class="plugin" introduced="^1">
-        <unit bldFile="mmappcomponents/audiofetcher/group"/>
+      	<meta rel="config">
+      		<defined condition="IAD_INCLUDE_AUDIOFETCHER"/>
+      	</meta>
+      	<!-- uncomment when config is in place, currently #included in mmappcomponents_build -->
+        <!-- <unit bldFile="mmappcomponents/audiofetcher/group"/>-->
       </component>
       <component id="asxparser" filter="s60" name="ASX Parser" introduced="^1">
-        <unit bldFile="mmappcomponents/asxparser/group"/>
-        <!-- does the test bld.inf need to be #included? -->
-        <!-- <unit bldFile="mmappcomponents/asxparser/test"/> -->
+      	<meta rel="config">
+      		<defined condition="__WINDOWS_MEDIA"/>
+      	</meta>
+      	<!-- uncomment when config is in place, currently #included in mmappcomponents_build -->
+        <!-- <unit bldFile="mmappcomponents/asxparser/group"/>-->
       </component>
-    </collection>
-    <collection id="mpx" name="Multimedia Player" level="fw">
-      <component id="commonframework" filter="s60" name="MPX Common Framework" introduced="^1">
-        <unit bldFile="mpx/commonframework/group"/>
+      <component id="playbackhelper" filter="s60" name="Playback Helper" introduced="^3">
+        <unit bldFile="mmappcomponents/playbackhelper/group"/>
       </component>
-      <component id="playbackframework" filter="s60" name="MPX Playback Framework" introduced="^1">
-        <unit bldFile="mpx/playbackframework/group"/>
+      <component id="videoplaylistutility" filter="s60" name="Video Playlist Utility" introduced="^3">
+        <unit bldFile="mmappcomponents/videoplaylistutility/group"/>
       </component>
-      <component id="mpxcollectionfw" filter="s60" name="MPX Collection Framework" introduced="^1">
-        <unit bldFile="mpx/collectionframework/group"/>
-      </component>
-      <component id="mpxviewfw" filter="s60" name="MPX View Framework" introduced="^1">
-        <unit bldFile="mpx/viewframework/group"/>
-      </component>
-      <component id="mpx_build" filter="s60" name="MPX Build" introduced="^1">
-      	<!--  can the exports from here be distribtued to the above bld.infs? -->
-        <unit bldFile="mpx/group"/>
+      <component id="mmmtpdataprovider" filter="s60" name="Multimedia MTP Data Provider" introduced="^3">
+        <unit bldFile="mmappcomponents/mmmtpdataprovider/group"/>
       </component>
     </collection>
     <collection id="mmappfw_info" name="Multimedia App Framework Info" level="if">
       <component id="mmappfw_build" filter="s60" name="Multimedia App Framework Build" introduced="^1">
-      <!--  does the export from ehre really belong in one of the other components? -->
+      <!--  Move the export to another component or remove the #includes from this one -->
         <unit bldFile="group"/>
       </component>
-      <component id="mmappfw_test" filter="s60" name="Multimedia App Framework Test" purpose="development" introduced="^1">
-      	<!--  should this component exist? -->
-        <!-- <unit bldFile="tsrc/group"/> -->
+      <component id="mmappfw_test" filter="s60,api_test,pref_test" name="Multimedia App Framework Test" purpose="development" introduced="^1">
+        <unit bldFile="tsrc/group" filter="TA_MMAPPFW"/>
       </component>
       <component id="mmappfw_plat" filter="s60" name="Multimedia App Framework Platform Interfaces" class="api" introduced="^1">
-      	<!-- there can only be a single unit, these should be #included from a main bld.inf -->
         <unit bldFile="mmappfw_plat/group"/>
-        <unit bldFile="mmappfw_plat/asx_parser_api/tsrc/group"/>
-        <unit bldFile="mmappfw_plat/collection_helper_api/tsrc/group"/>
-        <unit bldFile="mmappfw_plat/harvester_collection_mediator_api/tsrc/group"/>
-        <unit bldFile="mmappfw_plat/harvester_metadata_extractor_api/tsrc/group"/>
-        <unit bldFile="mmappfw_plat/harvester_utility_api/tsrc/group"/>
-        <unit bldFile="mmappfw_plat/media_player_settings_engine_api/tsrc/group"/>
-        <unit bldFile="mmappfw_plat/mpx_albumart_utility_api/tsrc/group"/>
-        <unit bldFile="mmappfw_plat/mpx_base_view_plugins_api/tsrc/group"/>
-        <unit bldFile="mmappfw_plat/mpx_collection_utility_api/tsrc/group"/>
-        <unit bldFile="mmappfw_plat/mpx_common_api/tsrc/group"/>
-        <unit bldFile="mmappfw_plat/mpx_playback_utility_api/tsrc/group"/>
-        <unit bldFile="mmappfw_plat/mpx_view_utility_api/tsrc/group"/>
-        <unit bldFile="mmappfw_plat/playlist_engine_api/tsrc/group"/>
       </component>
     </collection>
   </package>

@@ -14,10 +14,13 @@
       <component id="fmradiomcpplugin" filter="s60" name="FM Radio Content Publisher Plugin" class="plugin">
         <unit bldFile="fmradio/fmradiomcpplugin/group"/>
       </component>
+      <component id="fmradio_build" filter="s60" name="FM Radio Build">
+        <unit bldFile="fmradio/fmradio/group"/>
+      </component>
       <component id="fmradio_help" filter="s60" name="FM Radio Help">
         <unit bldFile="fmradio/help/group"/>
       </component>
-      <component id="fmradio_build" filter="s60" name="FM Radio Build">
+      <component id="fmradio_build" filter="s60" name="FM Radio ROM">
       	<!--  remove above #included bld.infs -->
         <unit bldFile="fmradio/group"/>
       </component>
