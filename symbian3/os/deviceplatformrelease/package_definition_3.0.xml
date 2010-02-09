@@ -13,53 +13,53 @@
         <unit bldFile="s60locfiles/group"/>
       </component>
 	<component id="locfiles_set1" name="Locale Files Set 1" class="config" filter="s60">
-		<unit unitID="platform.locfiles.set1" bldFile="locfiles/group/set1" />
+		<unit bldFile="locfiles/group/set1"/>
 	</component>
 	<component id="locfiles_set2" name="Locale Files Set 2" class="config" filter="s60">
-		<unit unitID="platform.locfiles.set2" bldFile="locfiles/group/set2" />
+		<unit bldFile="locfiles/group/set2"/>
 	</component>
 	<component id="locfiles_set3" name="Locale Files Set 3" class="config" filter="s60">
-		<unit unitID="platform.locfiles.set3" bldFile="locfiles/group/set3" />
+		<unit bldFile="locfiles/group/set3"/>
 	</component>
 	<component id="locfiles_set4" name="Locale Files Set 4" class="config" filter="s60">
-		<unit unitID="platform.locfiles.set4" bldFile="locfiles/group/set4" />
+		<unit bldFile="locfiles/group/set4"/>
 	</component>
 	<component id="locfiles_set5" name="Locale Files Set 5" class="config" filter="s60">
-		<unit unitID="platform.locfiles.set5" bldFile="locfiles/group/set5" />
+		<unit bldFile="locfiles/group/set5"/>
 	</component>
 	<component id="locfiles_set6" name="Locale Files Set 6" class="config" filter="s60">
-		<unit unitID="platform.locfiles.set6" bldFile="locfiles/group/set6" />
+		<unit bldFile="locfiles/group/set6"/>
 	</component>
 	<!-- is the a problem with SF builds with the following? -->
 	<component id="locfiles_set7" name="Locale Files Set 7" class="config" filter="s60">
-		<unit unitID="platform.locfiles.set7" bldFile="locfiles/group/set7" />
+		<unit bldFile="locfiles/group/set7"/>
 	</component>
 	<component id="locfiles_set8" name="Locale Files Set 8" class="config" filter="s60">
-		<unit unitID="platform.locfiles.set8" bldFile="locfiles/group/set8" />
+		<unit bldFile="locfiles/group/set8"/>
 	</component>
 	<component id="locfiles_set9" name="Locale Files Set 9" class="config" filter="s60">
-		<unit unitID="platform.locfiles.set9" bldFile="locfiles/group/set9" />
+		<unit bldFile="locfiles/group/set9"/>
 	</component>
 	<component id="locfiles_set10" name="Locale Files Set 10" class="config" filter="s60">
-		<unit unitID="platform.locfiles.set10" bldFile="locfiles/group/set10" />
+		<unit bldFile="locfiles/group/set10"/>
 	</component>
 	<component id="locfiles_set11" name="Locale Files Set 11" class="config" filter="s60">
-		<unit unitID="platform.locfiles.set11" bldFile="locfiles/group/set11" />
+		<unit bldFile="locfiles/group/set11"/>
 	</component>
 	<component id="locfiles_set12" name="Locale Files Set 12" class="config" filter="s60">
-		<unit unitID="platform.locfiles.set12" bldFile="locfiles/group/set12" />
+		<unit bldFile="locfiles/group/set12"/>
 	</component>
 	<component id="locfiles_set13" name="Locale Files Set 13" class="config" filter="s60">
-		<unit unitID="platform.locfiles.set13" bldFile="locfiles/group/set13" />
+		<unit bldFile="locfiles/group/set13"/>
 	</component>
 	<component id="locfiles_set14" name="Locale Files Set 14" class="config" filter="s60">
-		<unit unitID="platform.locfiles.set14" bldFile="locfiles/group/set14" />
+		<unit bldFile="locfiles/group/set14"/>
 	</component>
 	<component id="locfiles_set15" name="Locale Files Set 15" class="config" filter="s60">
-		<unit unitID="platform.locfiles.set15" bldFile="locfiles/group/set15" />
+		<unit bldFile="locfiles/group/set15"/>
 	</component>
 	<component id="locfiles_set16" name="Locale Files Set 16" class="config" filter="s60">
-		<unit unitID="platform.locfiles.set16" bldFile="locfiles/group/set16" />
+		<unit bldFile="locfiles/group/set16"/>
 	</component>      
     </collection>
     <collection id="version" name="Version" level="top">
@@ -93,9 +93,6 @@
       </component>
       <component id="productionbldcbrconfig" name="Production Build CBR Config" filter="gt" purpose="development" class="config">
         <unit mrp="symbianosbld/productionbldcbrconfig/product_cbr_config.mrp"/>
-      </component>
-      <component id="foundation_s60_packages" name="Foundation S60 Packages" class="config" introduced="^3" deprecated="^3" purpose="development" target="desktop">
-        <unit mrp="symbianosbld/foundation_s60_packages/foundation_s60_packages.mrp"/>
       </component>
     </collection>
     <collection id="foundation_system" name="Foundation System" level="top">
