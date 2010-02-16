@@ -77,6 +77,7 @@
   <systemModel>
     <layer name="mw" long-name="Middleware" levels="generic specific">
       <block name="dlnasrv" level="specific" long-name="DLNA Services" levels="stack server ctrl framework plugin">
+        <!-- uncomment all the units when configuration is in place, they're currently #included from other xxx_build components -->
         <collection name="upnpavcontrolpoint" long-name="UPnP A/V Control Point" level="plugin">
           <component name="avcontrolframework" filter="s60" long-name="A/V Control Famework" introduced="9.1" deprecated="^3">
             <unit bldFile="/sf/mw/dlnasrv/upnpavcontrolpoint/avcontrolframework/group"/>
@@ -130,19 +131,19 @@
             <unit bldFile="/sf/mw/dlnasrv/upnpframework/upnputilities/group"/>
           </component>
           <component name="upnpextensionpluginif" filter="s60" long-name="UPnP Home Media Extension Plugin Interface" introduced="^2" deprecated="^3">
-            <unit bldFile="/sf/mw/dlnasrv/upnpframework/upnpextensionpluginif/group"/>
+            <!-- <unit bldFile="upnpframework/upnpextensionpluginif/group"/> -->
           </component>
           <component name="upnpfiletransferengine" filter="s60" long-name="UPnP File Transfer Engine" introduced="^2" deprecated="^3">
-            <unit bldFile="/sf/mw/dlnasrv/upnpframework/upnpfiletransferengine/group"/>
+            <!-- <unit bldFile="upnpframework/upnpfiletransferengine/group"/>-->
           </component>
           <component name="upnpcommonui" filter="s60" long-name="UPnP Common UI" introduced="^2" deprecated="^3">
-            <unit bldFile="/sf/mw/dlnasrv/upnpframework/upnpcommonui/group"/>
+            <!--<unit bldFile="upnpframework/upnpcommonui/group"/>-->
           </component>
           <component name="upnpaiwengine" filter="s60" long-name="UPnP AIW Engine" introduced="^2" deprecated="^3">
-            <unit bldFile="/sf/mw/dlnasrv/upnpframework/upnpaiwengine/group"/>
+            <!--<unit bldFile="upnpframework/upnpaiwengine/group"/> -->
           </component>
           <component name="upnpaiwprovider" filter="s60" long-name="UPnP AIW Provider" introduced="^2" deprecated="^3" plugin="Y">
-            <unit bldFile="/sf/mw/dlnasrv/upnpframework/upnpaiwprovider/group"/>
+            <!--<unit bldFile="upnpframework/upnpaiwprovider/group"/>-->
           </component>
           <component name="upnpmusicadapter" filter="s60" long-name="UPnP Music Adapter" introduced="^2">
             <unit bldFile="/sf/mw/dlnasrv/upnpframework/upnpmusicadapter/group"/>
@@ -160,13 +161,13 @@
             <unit bldFile="/sf/mw/dlnasrv/upnpsettings/upnpsettingsengine/group"/>
           </component>
           <component name="multiselectionui" filter="s60" long-name="Multi-Selection UI" introduced="^2" deprecated="^3">
-            <unit bldFile="/sf/mw/dlnasrv/upnpsettings/multiselectionui/group"/>
+            <!--<unit bldFile="upnpsettings/multiselectionui/group"/>-->
           </component>
           <component name="appwizard" filter="s60" long-name="UPnP Settings Wizard App" introduced="^2" deprecated="^3">
-            <unit bldFile="/sf/mw/dlnasrv/upnpsettings/appwizard/group"/>
+            <!--<unit bldFile="upnpsettings/appwizard/group"/>-->
           </component>
           <component name="upnpsharingui" filter="s60" long-name="UPnP Sharing UI" introduced="^2" deprecated="^3">
-            <unit bldFile="/sf/mw/dlnasrv/upnpsettings/upnpsharingui/group"/>
+            <!--<unit bldFile="upnpsettings/upnpsharingui/group"/>-->
           </component>
           <component name="upnpgsplugin" filter="s60" long-name="UPnP GS Plugin" introduced="^2" plugin="Y">
             <unit bldFile="/sf/mw/dlnasrv/upnpsettings/upnpgsplugin/group"/>
@@ -204,34 +205,34 @@
           </component>
         </collection>
         <collection name="upnpharvester" long-name="UPnP Harvester" level="ctrl">
-          <component name="upnpharvester_common" filter="s60" long-name="UPnP Harvester Common" introduced="^2" deprecated="^3">
+          <component name="upnpharvester_common" filter="s60" long-name="UPnP Harvester Common" introduced="^2" deprecated="^3" class="placeholder">
             <!-- need to merge or #include these to a single bld.inf -->
-            <unit bldFile="/sf/mw/dlnasrv/upnpharvester/common/cmlibrary/group"/>
-            <unit bldFile="/sf/mw/dlnasrv/upnpharvester/common/cmsettings/group"/>
-            <unit bldFile="/sf/mw/dlnasrv/upnpharvester/common/cmsqlwrapper/group"/>
-            <unit bldFile="/sf/mw/dlnasrv/upnpharvester/common/dbmanager/group"/>
+            <!--<unit bldFile="upnpharvester/common/cmlibrary/group"/>
+        <unit bldFile="upnpharvester/common/cmsettings/group"/>
+        <unit bldFile="upnpharvester/common/cmsqlwrapper/group"/>
+        <unit bldFile="upnpharvester/common/dbmanager/group"/>-->
           </component>
-          <component name="cdssync" filter="s60" long-name="CDS Sync" introduced="^2" deprecated="^3">
-            <unit bldFile="/sf/mw/dlnasrv/upnpharvester/cdssync/common"/>
+          <component name="cdssync" filter="s60" long-name="CDS Sync" introduced="^2" deprecated="^3" class="placeholder">
+            <!-- <unit bldFile="upnpharvester/cdssync/common"/>-->
           </component>
-          <component name="mdhserver" filter="s60" long-name="Metadata Harvester Server" introduced="^2" deprecated="^3">
-            <unit bldFile="/sf/mw/dlnasrv/upnpharvester/mdhserver/group"/>
+          <component name="mdhserver" filter="s60" long-name="Metadata Harvester Server" introduced="^2" deprecated="^3" class="placeholder">
+            <!--<unit bldFile="upnpharvester/mdhserver/group"/>-->
           </component>
-          <component name="upnpharvester_build" filter="s60" long-name="UPnP Harvester Build" introduced="^2" deprecated="^3">
+          <component name="upnpharvester_build" filter="s60" long-name="UPnP Harvester Build" introduced="^2" deprecated="^3" class="placeholder">
             <!-- could just make the whole collection one component and move down a dir. Or move the exports here into the other component -->
-            <unit bldFile="/sf/mw/dlnasrv/upnpharvester/group"/>
+            <!--<unit bldFile="upnpharvester/group"/>-->
           </component>
         </collection>
         <collection name="homesync" long-name="Home Sync" level="plugin">
-          <component name="contentmanager" filter="s60" long-name="Content Manager" introduced="^2" deprecated="^3">
-            <unit bldFile="/sf/mw/dlnasrv/homesync/group"/>
+          <component name="contentmanager" filter="s60" long-name="Content Manager" introduced="^2" deprecated="^3" class="placeholder">
+            <!-- <unit bldFile="homesync/group"/>-->
             <!-- move bld.inf into contentmanager dir -->
           </component>
         </collection>
         <collection name="homemedia" long-name="Home Media" level="framework">
           <!-- collection is really just a component. Move down a directory -->
-          <component name="homemedia_build" filter="s60" long-name="Home Media" introduced="^2" deprecated="^3">
-            <unit bldFile="/sf/mw/dlnasrv/homemedia/group"/>
+          <component name="homemedia_build" filter="s60" long-name="Home Media" introduced="^2" deprecated="^3" class="placeholder">
+            <!-- <unit bldFile="homemedia/group"/> -->
           </component>
         </collection>
         <collection name="dlnasrv_info" long-name="DLNA Services Info" level="plugin">
