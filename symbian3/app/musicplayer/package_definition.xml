@@ -77,7 +77,6 @@
   <systemModel>
     <layer name="app" long-name="Applications" levels="services apps">
       <block name="musicplayer" level="apps" long-name="Music Player Apps" levels="plugins support hs app">
-        <!-- custom filter pref_test-->
         <collection name="mpxmusicplayer" long-name="MPX Music Player" level="app">
           <component name="mpxmusicplayer_help" filter="s60" long-name="Help">
             <unit bldFile="/sf/app/musicplayer/mpxmusicplayer/help/group"/>
@@ -103,21 +102,22 @@
           </component>
         </collection>
         <collection name="musichomescreen_multiview" long-name="Music Home Screen Multiview" level="hs">
-          <component name="mpxcollectionpublisher" filter="s60" long-name="MPX Collection Publisher" introduced="^2">
-            <unit bldFile="/sf/app/musicplayer/musichomescreen_multiview/mpxcollectionpublisher/group"/>
+          <!-- Uncomment all units when configuration is in place. All currently #included from musichomescreen_build -->
+          <component name="mpxcollectionpublisher" filter="s60" long-name="MPX Collection Publisher" introduced="^2" class="placeholder">
+            <!--<unit bldFile="musichomescreen_multiview/mpxcollectionpublisher/group"/>-->
           </component>
-          <component name="musiccontentpublisher" filter="s60" long-name="Music Content Publisher" introduced="^2">
-            <unit bldFile="/sf/app/musicplayer/musichomescreen_multiview/musiccontentpublisher/group"/>
+          <component name="musiccontentpublisher" filter="s60" long-name="Music Content Publisher" introduced="^2" class="placeholder">
+            <!--<unit bldFile="musichomescreen_multiview/musiccontentpublisher/group"/>-->
           </component>
-          <component name="mcpmusicplayer" filter="s60" long-name="Music Player MCP Plugin" introduced="^2" plugin="Y">
-            <unit bldFile="/sf/app/musicplayer/musichomescreen_multiview/mcpmusicplayer/group"/>
+          <component name="mcpmusicplayer" filter="s60" long-name="Music Player MCP Plugin" introduced="^2" plugin="Y" class="placeholder">
+            <!--<unit bldFile="musichomescreen_multiview/mcpmusicplayer/group"/>-->
           </component>
-          <component name="musicplayeractionhandlerplugin" filter="s60" long-name="Music Player Action Handler Plugin" introduced="^2" plugin="Y">
-            <unit bldFile="/sf/app/musicplayer/musichomescreen_multiview/musicplayeractionhandlerplugin/group"/>
+          <component name="musicplayeractionhandlerplugin" filter="s60" long-name="Music Player Action Handler Plugin" introduced="^2" plugin="Y" class="placeholder">
+            <!--<unit bldFile="musichomescreen_multiview/musicplayeractionhandlerplugin/group"/>-->
           </component>
-          <component name="mpx_data" filter="s60" long-name="MPX Data" introduced="^2">
+          <component name="mpx_data" filter="s60" long-name="MPX Data" introduced="^2" class="placeholder">
             <!-- does this make sense to be a component? should it just be #include from musichomescreen_multiview/group? -->
-            <unit bldFile="/sf/app/musicplayer/musichomescreen_multiview/data/themes/default/group"/>
+            <!--<unit bldFile="musichomescreen_multiview/data/themes/default/group"/>-->
           </component>
           <component name="musichomescreen_build" filter="s60" long-name="Music Homescreen Multiview Build" introduced="^2">
             <unit bldFile="/sf/app/musicplayer/musichomescreen_multiview/group"/>

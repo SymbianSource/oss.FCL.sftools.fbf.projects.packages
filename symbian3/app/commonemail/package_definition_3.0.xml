@@ -132,9 +132,12 @@
         <meta rel="config">
         	<not-defined condition="FF_CMAIL_INTEGRATION"/>
         </meta>      
-        <unit bldFile="emailuis/widget/group"/>
+		<!-- Uncomment unit when configuration is in place. Currently #included from emailuis_build, which should be removed at the same time. -->
+        <!--<unit bldFile="emailuis/widget/group"/>-->
       </component>
-      	<!-- until config is supported, may need to just use emailuis/group/bld.inf -->
+      <component id="emailuis_build" filter="s60" name="Email UIs Build" introduced="^2">
+        <unit bldFile="emailuis/group"/>
+      </component>
     </collection>
     <collection id="commonemail_info" name="Email Apps Info" level="app">
       <component id="emailhelp" filter="s60" name="Email Help">

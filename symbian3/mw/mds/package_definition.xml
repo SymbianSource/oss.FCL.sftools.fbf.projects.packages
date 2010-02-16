@@ -154,8 +154,9 @@
         </collection>
         <collection name="clfwrapper" long-name="Content Listing Framework Wrapper" level="int">
           <!-- collection is really a component. Move down a directory -->
-          <component name="clfwrapper_build" filter="s60" long-name="CLF Wrapper Build" introduced="^2">
-            <unit bldFile="/sf/mw/mds/clfwrapper/group"/>
+          <component name="clfwrapper_build" filter="s60" long-name="CLF Wrapper Build" introduced="^2" class="placeholder">
+            <!-- Uncomment unit when configuration is in place. Currently #included from mds_build -->
+            <!--<unit bldFile="clfwrapper/group"/>-->
           </component>
         </collection>
         <collection name="mds_info" long-name="Metadata Services Info" level="int">

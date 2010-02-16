@@ -222,7 +222,7 @@
             <!--<unit bldFile="widgets/widgetinstaller/group"/>-->
           </component>
           <component name="widgetlauncher" filter="s60" long-name="Widget Launcher">
-            <unit bldFile="/sf/mw/web/widgets/widgetlauncher/group"/>
+            <!-- <unit bldFile="widgets/widgetlauncher/group"/>-->
           </component>
           <component name="widgetapp" filter="s60" long-name="Widget UI">
             <!--<unit bldFile="widgets/widgetapp/group"/>-->

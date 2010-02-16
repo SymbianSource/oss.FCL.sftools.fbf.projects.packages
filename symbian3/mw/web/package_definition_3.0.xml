@@ -159,9 +159,9 @@
       </component>
       <component id="widgetlauncher" filter="s60" name="Widget Launcher">
       	<meta rel="config">
-      		<!-- <defined condition="__WEB_WIDGETS"/>-->
+      		<defined condition="__WEB_WIDGETS"/>
       	</meta>
-        <unit bldFile="widgets/widgetlauncher/group"/>
+        <!-- <unit bldFile="widgets/widgetlauncher/group"/>-->
       </component>
       <component id="widgetapp" filter="s60" name="Widget UI">
       	<meta rel="config">

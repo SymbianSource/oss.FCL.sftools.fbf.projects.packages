@@ -16,7 +16,8 @@
       	<meta rel="config">
       		<defined condition="RD_DRM_COMMON_INTERFACE_FOR_OMA_AND_WMDRM"/>
       	</meta>      
-        <unit bldFile="commondrm/drmutility/group"/>
+		<!-- Uncomment unit when configuration is in place. Currently #included from commondrm_build -->
+        <!--<unit bldFile="commondrm/drmutility/group"/>-->
       </component>
       <component id="drmserviceapiwrapper" filter="s60" name="DRM Service API Wrapper">
         <unit bldFile="commondrm/drmserviceapiwrapper/group"/>

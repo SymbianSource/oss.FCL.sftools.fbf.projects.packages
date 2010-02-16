@@ -2,17 +2,22 @@
 <SystemDefinition schema="3.0.0">
   <package id="appsupport" name="Generic Application Support" levels="system plugin framework server generic specific">
     <collection id="contextframework" name="Context Framework" level="framework">
+	  <!-- the units that are commented out need to be put back when configuration is in place.
+		They're currently #included by contextframework_build, which should be removed when the other units are uncommented -->
       <component id="cfw" filter="s60" name="Context Framework">
-      	<meta rel="config">
-      		<defined condition="RD_CONTEXT_FRAMEWORK"/>
-      	</meta>
-        <unit bldFile="contextframework/cfw/group"/>
+         <meta rel="config">
+      	  <defined condition="RD_CONTEXT_FRAMEWORK"/>
+        </meta>
+        <!--<unit bldFile="contextframework/cfw/group"/> -->
       </component>
       <component id="cfwplugins" filter="s60" name="Context Framework Plugins" class="plugin">
-      	<meta rel="config">
-      		<defined condition="RD_CONTEXT_FRAMEWORK"/>
-      	</meta>
-        <unit bldFile="contextframework/cfwplugins/group"/>
+         <meta rel="config">
+      	  <defined condition="RD_CONTEXT_FRAMEWORK"/>
+        </meta>
+        <!--<unit bldFile="contextframework/cfwplugins/group"/>-->
+      </component>
+      <component id="contextframework_build" filter="s60" name="Context Framework Build">
+        <unit bldFile="contextframework/group"/>
       </component>
     </collection>
     <collection id="coreapplicationuis" name="Core Application UIs" level="server">

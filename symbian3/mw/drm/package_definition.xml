@@ -89,7 +89,8 @@
             <unit bldFile="/sf/mw/drm/commondrm/drmrightsmanagerui/help/group"/>
           </component>
           <component name="drmutility" filter="s60" long-name="DRM Utility">
-            <unit bldFile="/sf/mw/drm/commondrm/drmutility/group"/>
+            <!-- Uncomment unit when configuration is in place. Currently #included from commondrm_build -->
+            <!--<unit bldFile="commondrm/drmutility/group"/>-->
           </component>
           <component name="drmserviceapiwrapper" filter="s60" long-name="DRM Service API Wrapper">
             <unit bldFile="/sf/mw/drm/commondrm/drmserviceapiwrapper/group"/>

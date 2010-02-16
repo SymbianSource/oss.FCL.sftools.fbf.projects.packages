@@ -77,12 +77,13 @@
       </component>
     </collection>
     <collection id="clfwrapper" name="Content Listing Framework Wrapper" level="int">
+    	<!-- collection is really a component. Move down a directory -->
      	<meta rel="config">
      		<defined condition="RD_MDS_2_5"/>
      	</meta>
-    	<!-- collection is really a component. Move down a directory -->
       <component id="clfwrapper_build" filter="s60" name="CLF Wrapper Build" introduced="^2">
-        <unit bldFile="clfwrapper/group"/>
+		  <!-- Uncomment unit when configuration is in place. Currently #included from mds_build -->
+        <!--<unit bldFile="clfwrapper/group"/>-->
       </component>
     </collection>
     <collection id="mds_info" name="Metadata Services Info" level="int">

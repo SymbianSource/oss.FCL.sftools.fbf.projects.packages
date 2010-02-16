@@ -205,9 +205,12 @@
             <unit bldFile="/sf/app/commonemail/emailuis/uicomponents/group"/>
           </component>
           <component name="widget" filter="s60" long-name="Email Widget" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/emailuis/widget/group"/>
+            <!-- Uncomment unit when configuration is in place. Currently #included from emailuis_build, which should be removed at the same time. -->
+            <!--<unit bldFile="emailuis/widget/group"/>-->
           </component>
-          <!-- until config is supported, may need to just use emailuis/group/bld.inf -->
+          <component name="emailuis_build" filter="s60" long-name="Email UIs Build" introduced="^2">
+            <unit bldFile="/sf/app/commonemail/emailuis/group"/>
+          </component>
         </collection>
         <collection name="commonemail_info" long-name="Email Apps Info" level="app">
           <component name="emailhelp" filter="s60" long-name="Email Help" class="placeholder">

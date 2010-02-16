@@ -108,11 +108,15 @@
           </component>
         </collection>
         <collection name="searchfw" long-name="Search Framework" level="services">
-          <component name="coresearchfw" filter="s60" long-name="Core Search Framework" introduced="^1">
-            <unit bldFile="/sf/app/organizer/searchfw/coresearchfw/group"/>
+          <!-- Uncomment all units when configuration is in place. All currently #included from searchfw_build, which should be removed at the same time. -->
+          <component name="coresearchfw" filter="s60" long-name="Core Search Framework" introduced="^1" class="placeholder">
+            <!--<unit bldFile="searchfw/coresearchfw/group"/>-->
           </component>
-          <component name="searchfw_plugins" filter="s60" long-name="Search Plugins" introduced="^1" plugin="Y">
-            <unit bldFile="/sf/app/organizer/searchfw/plugins/group"/>
+          <component name="searchfw_plugins" filter="s60" long-name="Search Plugins" introduced="^1" plugin="Y" class="placeholder">
+            <!--<unit bldFile="searchfw/plugins/group"/>-->
+          </component>
+          <component name="searchfw_build" filter="s60" long-name="Search Framework Build" introduced="^1">
+            <unit bldFile="/sf/app/organizer/searchfw/group"/>
           </component>
         </collection>
         <collection name="alarmui" long-name="Alarm UI" level="app">
@@ -226,11 +230,15 @@
         </collection>
         <collection name="searchui" long-name="Search UI" level="app">
           <!-- consider making this a single component -->
-          <component name="searchui_help" filter="s60" long-name="Search UI Help">
-            <unit bldFile="/sf/app/organizer/searchui/help/group"/>
+          <!-- Uncomment all units when configuration is in place. All currently #included from searchui_build, which should be removed at the same time. -->
+          <component name="searchui_help" filter="s60" long-name="Search UI Help" class="placeholder">
+            <!--<unit bldFile="searchui/help/group"/>-->
           </component>
-          <component name="searchapp" filter="s60" long-name="Search Application">
-            <unit bldFile="/sf/app/organizer/searchui/searchapp/group"/>
+          <component name="searchapp" filter="s60" long-name="Search Application" class="placeholder">
+            <!--<unit bldFile="searchui/searchapp/group"/>-->
+          </component>
+          <component name="searchui_build" filter="s60" long-name="Search UI Build">
+            <unit bldFile="/sf/app/organizer/searchui/group"/>
           </component>
         </collection>
         <collection name="pimappservices" long-name="PIM Application Services" level="services">

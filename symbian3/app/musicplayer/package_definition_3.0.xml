@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="musicplayer" name="Music Player Apps" levels="plugins support hs app">
-  <!-- custom filter pref_test-->
     <collection id="mpxmusicplayer" name="MPX Music Player" level="app">
       <component id="mpxmusicplayer_help" filter="s60" name="Help">
         <unit bldFile="mpxmusicplayer/help/group"/>
@@ -30,21 +29,22 @@
      <meta rel="config">
    		<defined condition="IAD_INCLUDE_ENHANCED_HOMESCREEN"/>
    	  </meta>    
+	  <!-- Uncomment all units when configuration is in place. All currently #included from musichomescreen_build -->
       <component id="mpxcollectionpublisher" filter="s60" name="MPX Collection Publisher" introduced="^2">
-        <unit bldFile="musichomescreen_multiview/mpxcollectionpublisher/group"/>
+        <!--<unit bldFile="musichomescreen_multiview/mpxcollectionpublisher/group"/>-->
       </component>
       <component id="musiccontentpublisher" filter="s60" name="Music Content Publisher" introduced="^2">
-        <unit bldFile="musichomescreen_multiview/musiccontentpublisher/group"/>
+        <!--<unit bldFile="musichomescreen_multiview/musiccontentpublisher/group"/>-->
       </component>
       <component id="mcpmusicplayer" filter="s60" name="Music Player MCP Plugin" class="plugin" introduced="^2">
-        <unit bldFile="musichomescreen_multiview/mcpmusicplayer/group"/>
+        <!--<unit bldFile="musichomescreen_multiview/mcpmusicplayer/group"/>-->
       </component>
       <component id="musicplayeractionhandlerplugin" filter="s60" name="Music Player Action Handler Plugin" class="plugin" introduced="^2">
-        <unit bldFile="musichomescreen_multiview/musicplayeractionhandlerplugin/group"/>
+        <!--<unit bldFile="musichomescreen_multiview/musicplayeractionhandlerplugin/group"/>-->
       </component>
       <component id="mpx_data" filter="s60" name="MPX Data" introduced="^2">
       	<!-- does this make sense to be a component? should it just be #include from musichomescreen_multiview/group? -->
-        <unit bldFile="musichomescreen_multiview/data/themes/default/group"/>
+        <!--<unit bldFile="musichomescreen_multiview/data/themes/default/group"/>-->
       </component>
       <component id="musichomescreen_build" filter="s60" name="Music Homescreen Multiview Build" introduced="^2">
         <unit bldFile="musichomescreen_multiview/group"/>

@@ -35,11 +35,15 @@
       	<meta rel="config">
       		<defined condition="RD_GENERAL_SEARCH"/>
       	</meta>
+		<!-- Uncomment all units when configuration is in place. All currently #included from searchfw_build, which should be removed at the same time. -->
       <component id="coresearchfw" filter="s60" name="Core Search Framework" introduced="^1">
-        <unit bldFile="searchfw/coresearchfw/group"/>
+        <!--<unit bldFile="searchfw/coresearchfw/group"/>-->
       </component>
       <component id="searchfw_plugins" filter="s60" name="Search Plugins" class="plugin" introduced="^1">
-        <unit bldFile="searchfw/plugins/group"/>
+        <!--<unit bldFile="searchfw/plugins/group"/>-->
+      </component>
+      <component id="searchfw_build" filter="s60" name="Search Framework Build" introduced="^1">
+        <unit bldFile="searchfw/group"/>
       </component>
     </collection>
     <collection id="alarmui" name="Alarm UI" level="app">
@@ -155,11 +159,15 @@
       	<meta rel="config">
       		<defined condition="RD_GENERAL_SEARCH"/>
       	</meta>
+		<!-- Uncomment all units when configuration is in place. All currently #included from searchui_build, which should be removed at the same time. -->
       <component id="searchui_help" filter="s60" name="Search UI Help">
-        <unit bldFile="searchui/help/group"/>
+        <!--<unit bldFile="searchui/help/group"/>-->
       </component>
       <component id="searchapp" filter="s60" name="Search Application">
-        <unit bldFile="searchui/searchapp/group"/>
+        <!--<unit bldFile="searchui/searchapp/group"/>-->
+      </component>
+      <component id="searchui_build" filter="s60" name="Search UI Build">
+        <unit bldFile="searchui/group"/>
       </component>
     </collection>
     <collection id="pimappservices" name="PIM Application Services" level="services">
