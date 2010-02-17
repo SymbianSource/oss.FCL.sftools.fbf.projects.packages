@@ -53,6 +53,9 @@
       <component id="voipaudioservices" filter="s60" name="VoIP Audio Services">
         <unit bldFile="mmserv/voipaudioservices/group"/>
       </component>
+      <component id="lib3gpextparser" filter="s60"  name="3GP Extension Metadata Parser Library">
+        <unit bldFile="mmserv/metadatautility/3GPExtParserLib_stub/group" filter="sf_build"/>
+      </component>
     </collection>    
     <collection id="mmmw_info" name="Multimedia Middleware Info" level="specific">
       <component id="mmmw_test" filter="s60,api_test,pref_test" name="Multimedia Middleware Tests" purpose="development">
