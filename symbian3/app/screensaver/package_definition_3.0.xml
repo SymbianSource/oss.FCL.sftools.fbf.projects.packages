@@ -2,6 +2,8 @@
 <SystemDefinition schema="3.0.0">
   <package id="screensaver" name="Screen Saver Apps" levels="plugin ui">
   	<!-- is this a user-facing application or a daemon? -->
+
+	<!-- units need to be commented out until configuration is in place. They are currently #included from screensaver_build-->
     <collection id="scrsaver" name="Screen Saver" level="plugin">
       <meta rel="config">
       	<not-defined condition="TOOLS"/>
@@ -12,20 +14,21 @@
       		<defined condition="__SERIES60_NATIVE_BROWSER"/>
       	</meta>
       		<!-- must have only one component. #include from a common bld.inf, or move up a directory and make scrsaverplugins a collection -->
-        <unit bldFile="scrsaver/scrsaverplugins/ScreenSaverAnimPlugin/group/"/>
-        <unit bldFile="scrsaver/scrsaverplugins/ScreenSaverGifAnimPlugin/group/"/>
+        
+		<!--<unit bldFile="scrsaver/scrsaverplugins/ScreenSaverAnimPlugin/group/"/>
+        <unit bldFile="scrsaver/scrsaverplugins/ScreenSaverGifAnimPlugin/group/"/>-->
       </component>
       <component id="scrsaver_slideshowplugin" filter="s60" name="Screen Saver Slideshow Plugin" class="plugin">
       	<meta rel="config">
       		<defined condition="__SLIDESHOW_SCREENSAVER "/>
       	</meta>
-        <unit bldFile="scrsaver/scrsaverplugins/SlideshowPlugin/group"/>        
+        <!--<unit bldFile="scrsaver/scrsaverplugins/SlideshowPlugin/group"/>       -->
       </component>
       <component id="screensaveraiwplugin" filter="s60" name="Screen Saver AIW Plugin" class="plugin">
       	<meta rel="config">
       		<defined condition="RD_SCREENSAVERAIWPLUGIN  "/>
       	</meta>
-        <unit bldFile="scrsaver/screensaveraiwplugin/group"/>
+        <!-- <unit bldFile="scrsaver/screensaveraiwplugin/group"/>-->
       </component>
     </collection>
     <collection id="screensaver_info" name="Screen Saver Apps Info" level="ui">

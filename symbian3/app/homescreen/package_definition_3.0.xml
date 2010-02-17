@@ -37,7 +37,7 @@
         <unit bldFile="idlehomescreen/data/group"/>
       </component>
       <component id="idlehomescreen_build" filter="s60" name="Idle Home Screen Build">
-      	<!-- can the loc file be moved to another comopnent and this one removed?f -->
+      	<!-- can the loc file be moved to another comopnent and this one removed? -->
         <unit bldFile="idlehomescreen/group"/>
       </component>
       <component id="homescreen_test" filter="s60,test" purpose="development" name="Home Screen Apps Test">

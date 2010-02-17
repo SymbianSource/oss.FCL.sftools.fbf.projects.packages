@@ -18,7 +18,8 @@
       	<meta rel="config">
       		<defined condition="__VCOMMAND_CONTROL_PANEL"/>
       	</meta>
-        <unit bldFile="voiceui/vccontrolpanelplugin/group"/>
+		<!-- component is commented out until configuration is in place. Currently #included from voiceui_build -->
+        <!--<unit bldFile="voiceui/vccontrolpanelplugin/group"/>-->
       </component>
       <component id="voiceui_build" filter="s60" name="Voice UI Build" introduced="^1">
       	<!--  can this be put into the other components? -->

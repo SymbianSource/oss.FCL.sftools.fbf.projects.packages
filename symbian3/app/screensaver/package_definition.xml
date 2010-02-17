@@ -78,17 +78,18 @@
     <layer name="app" long-name="Applications" levels="services apps">
       <block name="screensaver" level="apps" long-name="Screen Saver Apps" levels="plugin ui">
         <!-- is this a user-facing application or a daemon? -->
+        <!-- units need to be commented out until configuration is in place. They are currently #included from screensaver_build-->
         <collection name="scrsaver" long-name="Screen Saver" level="plugin">
           <component name="scrsaverplugins" filter="s60" long-name="Screen Saver Plugins" plugin="Y">
             <!-- must have only one component. #include from a common bld.inf, or move up a directory and make scrsaverplugins a collection -->
-            <unit bldFile="/sf/app/screensaver/scrsaver/scrsaverplugins/ScreenSaverAnimPlugin/group/"/>
-            <unit bldFile="/sf/app/screensaver/scrsaver/scrsaverplugins/ScreenSaverGifAnimPlugin/group/"/>
+            <!--<unit bldFile="scrsaver/scrsaverplugins/ScreenSaverAnimPlugin/group/"/>
+        <unit bldFile="scrsaver/scrsaverplugins/ScreenSaverGifAnimPlugin/group/"/>-->
           </component>
           <component name="scrsaver_slideshowplugin" filter="s60" long-name="Screen Saver Slideshow Plugin" plugin="Y">
-            <unit bldFile="/sf/app/screensaver/scrsaver/scrsaverplugins/SlideshowPlugin/group"/>
+            <!--<unit bldFile="scrsaver/scrsaverplugins/SlideshowPlugin/group"/>       -->
           </component>
           <component name="screensaveraiwplugin" filter="s60" long-name="Screen Saver AIW Plugin" plugin="Y">
-            <unit bldFile="/sf/app/screensaver/scrsaver/screensaveraiwplugin/group"/>
+            <!-- <unit bldFile="scrsaver/screensaveraiwplugin/group"/>-->
           </component>
         </collection>
         <collection name="screensaver_info" long-name="Screen Saver Apps Info" level="ui">
