@@ -49,7 +49,7 @@
       <component id="drm_plat" filter="s60" name="DRM Platform Interfaces" class="api">
         <unit bldFile="drm_plat/group"/>
       </component>
-      <component id="drm_api_test" filter="s60,api_test" name="DRM Build" purpose="development">
+      <component id="drm_api_test" filter="s60,test,api_test" name="DRM Build" purpose="development">
         <unit bldFile="tsrc/group"/>
       </component>
     </collection>

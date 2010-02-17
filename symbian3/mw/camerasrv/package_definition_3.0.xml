@@ -33,7 +33,7 @@
       <component id="camerasrv_plat" filter="s60" name="Camera Services Platform Interfaces" class="api">
         <unit bldFile="camerasrv_plat/group"/>
       </component>
-      <component id="camerasrv_test" filter="s60,api_test" name="Camera Services API Test" purpose="development">
+      <component id="camerasrv_test" filter="s60,test,api_test" name="Camera Services API Test" purpose="development">
         <!-- #include from a single bld.inf or split into mutliple componens -->
 		<unit bldFile="camerasrv_plat/asynchronous_file_saving_queue_api/tsrc/group"/>
       	<unit  bldFile="camerasrv_plat/camera_application_engine_api/tsrc/group"/>

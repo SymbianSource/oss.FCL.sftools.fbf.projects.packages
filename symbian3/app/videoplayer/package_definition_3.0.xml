@@ -26,6 +26,13 @@
 		<component id="videofeeds_server" name="Server" filter="s60" introduced="^3">
 			<unit bldFile="videofeeds/server/group"/>
 		</component>
+		<component id="videofeeds_server_tsrc" name="Video Feeds Server Tests" introduced="^3" filter="s60,test,unit_test">
+      	<!--  can only have one unit. Can these be #included from videofeeds_server or a common bld.inf?-->
+         <unit bldFile="videofeeds/server/tsrc/IptvTestUtility/group"/>
+         <unit bldFile="videofeeds/server/tsrc/VCXProvisioningTest/group"/>
+         <unit bldFile="videofeeds/server/tsrc/VCXServiceManagementApiTest/group"/>
+         <unit bldFile="videofeeds/server/tsrc/VCXVodContentApiTest/group"/>
+       </component>
 		<component id="livetvutils" name="LiveTV Utils" filter="s60" introduced="^3">
 			<unit bldFile="videofeeds/livetvutils/group"/>
 		</component>
@@ -56,20 +63,19 @@
 	<component id="scheduleddlplugin" name="Scheduled download plugin" filter="s60" introduced="^3">
 		<unit bldFile="videofeeds/scheduleddlplugin/group"/>
 	</component>
-    <component id="videofeeds_tsrc" name="Video Feeds Tests" introduced="^3" filter="test">
+    <component id="videofeeds_tsrc" name="Video Feeds Tests" introduced="^3" filter="s60,test,unit_test">
       	<!--  can only have one unit. Can thes be #included from any of the above or a common bld.inf?-->
          <unit bldFile="tsrc/VCXTestCommon/group"/>
          <unit bldFile="tsrc/VCXTestUtilModule/group"/>
-         <unit bldFile="videofeeds/server/tsrc/IptvTestUtility/group"/>
          <unit bldFile="tsrc/VCXTestMyVideosCollectionClient/group"/>
-         <unit bldFile="videofeeds/server/tsrc/VCXProvisioningTest/group"/>
-         <unit bldFile="videofeeds/server/tsrc/VCXServiceManagementApiTest/group"/>
-         <unit bldFile="videofeeds/server/tsrc/VCXVodContentApiTest/group"/>
        </component>
     </collection>
     <collection id="videocollection" name="Video Collection" level="apps">
       <component id="mpxmyvideoscollection" filter="s60" name="MPX My Videos Collection" introduced="^3">
         <unit bldFile="videocollection/mpxmyvideoscollection/group"/>
+      </component>
+      <component id="mpxmyvideoscollection_test" filter="s60,test,unit_test" name="MPX My Videos Collection Tests" introduced="^3" purpose="development">
+            <unit bldFile="videocollection/mpxmyvideoscollection/tsrc/mpxmvcolltest/group"/>
       </component>
       <component id="myvideosindicatorplugin" filter="s60" name="My Videos Indicator Plugin" introduced="^3" class="plugin">
         <unit bldFile="videocollection/myvideosindicatorplugin/group"/>
@@ -80,12 +86,11 @@
       <component id="hgmyvideosplugin" filter="s60" name="Huriganes My VideosPlugin" introduced="^3" class="plugin">
         <unit bldFile="videocollection/hgmyvideosplugin/group"/>
       </component>
-      <component id="mpxmyvideoscollection_tsrc" name="MPX My Videos Collection Tests" filter="s60,test" introduced="^3">
+      <component id="mpxmyvideoscollection_tsrc" name="MPX My Videos Collection Tests" filter="s60,test,unit_test" introduced="^3" purpose="development">
       	<!--  can only have one unit. Can thes be #included from any of the above or a common bld.inf?-->
             <unit bldFile="tsrc/VCXTestCommon/group"/>
             <unit bldFile="tsrc/VCXTestUtilModule/group"/>
             <unit bldFile="tsrc/VCXTestMyVideosCollectionClient/group"/>
-            <unit bldFile="videocollection/mpxmyvideoscollection/tsrc/mpxmvcolltest/group"/>
     </component>
     </collection>
     <collection id="videoplayer_homescreenplugins" name="Videoplayer Homescreen Plugins" level="support">
@@ -148,8 +153,8 @@
       <component id="videoplaybackviews" filter="s60" name="Video Playback Views" class="plugin" introduced="^3">
         <unit bldFile="videoplayback/videoplaybackviews/group"/>
       </component>
-      <component id="videoplayer_tsrc" name="Video Player Tests" filter="s60,test" introduced="^3">
-      	<!--  can only have one unit. Can thes be #included from any of the above. Why is a videoplayerapp test in here?-->
+      <component id="videoplayer_tsrc" name="Video Player Tests" filter="s60,test,unit_test" introduced="^3" purpose="development">
+      	<!--  can only have one unit. Can these be #included from any of the above. Why is a videoplayerapp test in here?-->
           <unit bldFile="videoplayback/videohelix/tsrc/ut_videohelixtest/group"/>
           <unit bldFile="videoplayback/videoplaybackcontrols/tsrc/videoplaybackcontrols_test/group"/>
           <unit bldFile="videoplayback/videoplaybackviews/tsrc/ut_userinputhandlertest/group"/>
@@ -160,7 +165,7 @@
       <component id="videoplayer_plat" filter="s60" name="Video Player Apps Platform Interfaces" class="api">
         <unit bldFile="videoplayer_plat/group"/>
       </component>
-      <component id="videoplayer_api_test" filter="s60,apit_test" purpose="development" name="Video Player API Test">
+      <component id="videoplayer_api_test" filter="s60,test,api_test" purpose="development" name="Video Player API Test">
      		<!--  can only have one unit, #include from a common bld.inf? -->
 	      <unit bldFile="videoplayer_plat/video_player_file_details_dialog_api/tsrc/group"/>
 	      <unit bldFile="videoplayer_plat/videoplayer_startup_api/tsrc/group"/>

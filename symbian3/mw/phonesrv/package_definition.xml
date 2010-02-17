@@ -106,7 +106,7 @@
           <component name="servicerequest" filter="s60" long-name="Service Request">
             <unit bldFile="/sf/mw/phonesrv/cellular/servicerequest/group"/>
           </component>
-          <component name="cellular_test" filter="s60,api_test" long-name="Cellular Tests" purpose="development">
+          <component name="cellular_test" filter="s60,test,api_test" long-name="Cellular Tests" purpose="development">
             <!-- can only have one unit. Need to #include from a single bld.inf  (cellular/tsrc/bld.inf?) -->
             <unit bldFile="/sf/mw/phonesrv/cellular/PsetNotesUi/tsrc/public/basic/group"/>
             <unit bldFile="/sf/mw/phonesrv/cellular/SSSettings/tsrc/public/basic/group"/>
@@ -133,7 +133,7 @@
             <!--  should spell out CS in name -->
             <unit bldFile="/sf/mw/phonesrv/convergedcallengine/csplugin/group"/>
           </component>
-          <component name="convergedcallengine_test" filter="s60,api_test" long-name="CCE Tests" purpose="development">
+          <component name="convergedcallengine_test" filter="s60,test,api_test" long-name="CCE Tests" purpose="development">
             <!-- can only have one unit. Need to #include from a single bld.inf  (convergedcallengine/tsrc/bld.inf?) -->
             <unit bldFile="/sf/mw/phonesrv/convergedcallengine/cce/tsrc/public/basic/group"/>
             <unit bldFile="/sf/mw/phonesrv/convergedcallengine/spsettings/tsrc/public/basic/group"/>
@@ -168,7 +168,7 @@
           <component name="callui" filter="s60" long-name="Call UI">
             <unit bldFile="/sf/mw/phonesrv/phoneclientserver/callui/group"/>
           </component>
-          <component name="phoneclientserver_test" filter="s60,api_test" long-name="Phone Client/Server Tests" purpose="development">
+          <component name="phoneclientserver_test" filter="s60,test,api_test" long-name="Phone Client/Server Tests" purpose="development">
             <!-- can only have one unit. Need to #include from a single bld.inf  (phoneclientserver/tsrc/bld.inf?) -->
             <unit bldFile="/sf/mw/phonesrv/phoneclientserver/aiwdialdata/tsrc/public/basic/group"/>
             <unit bldFile="/sf/mw/phonesrv/phoneclientserver/dialutils/tsrc/public/basic/group"/>
@@ -200,7 +200,7 @@
           <component name="phonesrv_pub" filter="s60" long-name="Telephony and SIM Services Public Interfaces" class="api">
             <unit bldFile="/sf/mw/phonesrv/phonesrv_pub/group"/>
           </component>
-          <component name="phonesrv_test" filter="s60,api_test" long-name="Telephony and SIM Services Tests" purpose="development">
+          <component name="phonesrv_test" filter="s60,test,api_test" long-name="Telephony and SIM Services Tests" purpose="development">
             <!-- can only have one unit. Need to #include from a single bld.inf  (phonesrv_plat/tsrc/bld.inf?) -->
             <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/call_information_api/tsrc/group"/>
             <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/sat_client_api/tsrc/group"/>

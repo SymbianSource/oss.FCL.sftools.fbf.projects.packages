@@ -168,7 +168,7 @@
           </component>
         </collection>
         <collection name="speechsrv_info" long-name="Speech Recognition UIs Info" level="ui">
-          <component name="speechsrv_test" filter="s60,test" purpose="development" long-name="Speech Recognition UIs Test">
+          <component name="speechsrv_test" filter="s60,test,unit_test" purpose="development" long-name="Speech Recognition UIs Test">
             <unit bldFile="/sf/app/speechsrv/tsrc/group"/>
           </component>
           <component name="speechsrv_plat" filter="s60" long-name="Speech Recognition UIs Platform Interfaces" class="api">

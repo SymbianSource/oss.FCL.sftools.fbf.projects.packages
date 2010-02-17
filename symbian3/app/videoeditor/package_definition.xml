@@ -128,7 +128,7 @@
             <!-- can the exports be distributed to the other components? Or should this be collapsed into one component?-->
             <unit bldFile="/sf/app/videoeditor/videoeditorengine/group"/>
           </component>
-          <component name="videoeditorengine_api" filter="s60,api_test" long-name="Video Editor Engine API Tests" purpose="development">
+          <component name="videoeditorengine_api" filter="s60,test,api_test" long-name="Video Editor Engine API Tests" purpose="development">
             <unit bldFile="/sf/app/videoeditor/videoeditorengine/tsrc/public/basic/group"/>
           </component>
         </collection>

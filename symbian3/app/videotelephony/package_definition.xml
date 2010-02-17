@@ -101,7 +101,7 @@
         <collection name="vtprotocolsstub" long-name="VT Protocols Stub" level="prot">
           <!--  this collection is really a component, move down a directory -->
           <component name="videotelproto" filter="s60" long-name="Video Telephony Protocol">
-            <unit bldFile="/sf/app/videotelephony/vtprotocolsstub/group" filter="sf"/>
+            <unit bldFile="/sf/app/videotelephony/vtprotocolsstub/group" filter="sf_build"/>
           </component>
         </collection>
         <collection name="videotelephony_info" long-name="VT Apps Info" level="ui">

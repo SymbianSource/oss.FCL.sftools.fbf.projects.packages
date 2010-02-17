@@ -65,13 +65,13 @@
       <component id="inputmethods_pub" filter="s60" name="Input Methods Public Interfaces" class="api">
         <unit bldFile="inputmethods_pub/group"/>
       </component>
-      <component id="inputmethods_test" filter="s60,api_test" name="Input Methods Tests" introduced="^2" purpose="development">
+      <component id="inputmethods_test" filter="s60,test,api_test" name="Input Methods Tests" introduced="^2" purpose="development">
       	<!-- can only have one unit, #include from a single bld.inf -->
 	    <unit bldFile="inputmethods_plat/pen_input_server_api/tsrc/group"/>
 	    <unit bldFile="inputmethods_plat/ptiengine_hwr_api/tsrc/group"/>
 	    <unit bldFile="inputmethods_plat/aknfep_uiinterface_api/tsrc/group"/>
       </component>
-      <component id="inputmethods_api_tests" filter="s60,api_test" name="Input Methods API Tests" introduced="^2" purpose="development">
+      <component id="inputmethods_api_tests" filter="s60,test,api_test" name="Input Methods API Tests" introduced="^2" purpose="development">
         <unit bldFile="tsrc/group"/>
       </component>
       <component id="inputmethods_metadata" name="Input Methods Metadata" class="config" introduced="^2" purpose="development" target="desktop">

@@ -95,7 +95,7 @@
       </component>
     </collection>
     <collection id="speechsrv_info" name="Speech Recognition UIs Info" level="ui">
-      <component id="speechsrv_test" filter="s60,test" purpose="development" name="Speech Recognition UIs Test">
+      <component id="speechsrv_test" filter="s60,test,unit_test" purpose="development" name="Speech Recognition UIs Test">
         <unit bldFile="tsrc/group"/>
       </component>
       <component id="speechsrv_plat" filter="s60" name="Speech Recognition UIs Platform Interfaces" class="api">

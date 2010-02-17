@@ -107,7 +107,7 @@
           <component name="devmngt_pub" filter="s60" long-name="Settings UIs Public Interfaces" introduced="^1" class="api">
             <unit bldFile="/sf/app/settingsuis/devmngt_pub/group"/>
           </component>
-          <component name="settingsuis_test" filter="s60,test" purpose="development" long-name="Settings UIs Test" introduced="^1">
+          <component name="settingsuis_test" filter="s60,test,unit_test" purpose="development" long-name="Settings UIs Test" introduced="^1">
             <unit bldFile="/sf/app/settingsuis/devmngt_plat/services_db_api/tsrc/ServicesDbApiTest/group"/>
           </component>
         </collection>

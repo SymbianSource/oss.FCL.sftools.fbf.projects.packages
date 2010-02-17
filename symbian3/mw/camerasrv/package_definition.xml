@@ -109,7 +109,7 @@
           <component name="camerasrv_plat" filter="s60" long-name="Camera Services Platform Interfaces" class="api">
             <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/group"/>
           </component>
-          <component name="camerasrv_test" filter="s60,api_test" long-name="Camera Services API Test" purpose="development">
+          <component name="camerasrv_test" filter="s60,test,api_test" long-name="Camera Services API Test" purpose="development">
             <!-- #include from a single bld.inf or split into mutliple componens -->
             <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/asynchronous_file_saving_queue_api/tsrc/group"/>
             <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/camera_application_engine_api/tsrc/group"/>

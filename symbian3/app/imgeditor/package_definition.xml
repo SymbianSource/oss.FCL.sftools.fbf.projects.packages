@@ -164,7 +164,7 @@
             <!-- should distribute this to the other components -->
             <unit bldFile="/sf/app/imgeditor/imageeditorengine/group"/>
           </component>
-          <component name="imgeditor_api_tests" filter="s60,api_test" long-name="Image Editor Engine API Tests" purpose="development">
+          <component name="imgeditor_api_tests" filter="s60,test,api_test" long-name="Image Editor Engine API Tests" purpose="development">
             <unit bldFile="/sf/app/imgeditor/imageeditorengine/tsrc/public/basic/group"/>
           </component>
         </collection>

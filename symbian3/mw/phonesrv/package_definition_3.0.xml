@@ -30,7 +30,7 @@
       <component id="servicerequest" filter="s60" name="Service Request">
         <unit bldFile="cellular/servicerequest/group"/>
       </component>
-      <component id="cellular_test" filter="s60,api_test" name="Cellular Tests" purpose="development">
+      <component id="cellular_test" filter="s60,test,api_test" name="Cellular Tests" purpose="development">
       	<!-- can only have one unit. Need to #include from a single bld.inf  (cellular/tsrc/bld.inf?) -->
         <unit unitID="tedo.PsetNotesUi.test" bldFile="cellular/PsetNotesUi/tsrc/public/basic/group"/>
         <unit unitID="tedo.SSSettings.test" bldFile="cellular/SSSettings/tsrc/public/basic/group"/>
@@ -57,7 +57,7 @@
       	<!--  should spell out CS in name -->
         <unit bldFile="convergedcallengine/csplugin/group"/>
       </component>
-      <component id="convergedcallengine_test" filter="s60,api_test" name="CCE Tests" purpose="development">
+      <component id="convergedcallengine_test" filter="s60,test,api_test" name="CCE Tests" purpose="development">
       	<!-- can only have one unit. Need to #include from a single bld.inf  (convergedcallengine/tsrc/bld.inf?) -->
         <unit unitID="tedo.cce.test" bldFile="convergedcallengine/cce/tsrc/public/basic/group"/>
         <unit unitID="tedo.spsettings.test" bldFile="convergedcallengine/spsettings/tsrc/public/basic/group"/>
@@ -92,7 +92,7 @@
       <component id="callui" filter="s60" name="Call UI">
         <unit bldFile="phoneclientserver/callui/group"/>
       </component>
-      <component id="phoneclientserver_test" filter="s60,api_test" name="Phone Client/Server Tests" purpose="development">
+      <component id="phoneclientserver_test" filter="s60,test,api_test" name="Phone Client/Server Tests" purpose="development">
       	<!-- can only have one unit. Need to #include from a single bld.inf  (phoneclientserver/tsrc/bld.inf?) -->
         <unit unitID="tedo.aiwdialdata.test" bldFile="phoneclientserver/aiwdialdata/tsrc/public/basic/group"/>
         <unit unitID="tedo.dialutils.test" bldFile="phoneclientserver/dialutils/tsrc/public/basic/group"/>
@@ -124,7 +124,7 @@
       <component id="phonesrv_pub" filter="s60" name="Telephony and SIM Services Public Interfaces" class="api">
         <unit bldFile="phonesrv_pub/group"/>
       </component>
-      <component id="phonesrv_test" filter="s60,api_test" name="Telephony and SIM Services Tests" purpose="development">
+      <component id="phonesrv_test" filter="s60,test,api_test" name="Telephony and SIM Services Tests" purpose="development">
       	<!-- can only have one unit. Need to #include from a single bld.inf  (phonesrv_plat/tsrc/bld.inf?) -->
         <unit unitID="tedo.call_information_api.test" bldFile="phonesrv_plat/call_information_api/tsrc/group"/>
 		<unit unitID="tedo.sat_client_api.test" bldFile="phonesrv_plat/sat_client_api/tsrc/group"/>

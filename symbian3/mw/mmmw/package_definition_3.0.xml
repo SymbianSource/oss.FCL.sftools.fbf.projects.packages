@@ -23,7 +23,7 @@
       <component id="progressivedownload" filter="s60" name="Progressive Download">
         <unit bldFile="mmfenh/progressivedownload/group"/>
       </component>
-      <component id="mmfenh_test" filter="s60,module_test,pref_test" name="MMF Enhancements Tests" purpose="development">
+      <component id="mmfenh_test" filter="s60,test,module_test,pref_test" name="MMF Enhancements Tests" purpose="development">
         <unit bldFile="mmfenh/advancedaudiocontroller/tsrc/advancedaudiocontrollertestmodule/group"/>
       </component>      
     </collection>
@@ -58,10 +58,10 @@
       </component>
     </collection>    
     <collection id="mmmw_info" name="Multimedia Middleware Info" level="specific">
-      <component id="mmmw_test" filter="s60,api_test,pref_test" name="Multimedia Middleware Tests" purpose="development">
+      <component id="mmmw_test" filter="s60,test,api_test,pref_test" name="Multimedia Middleware Tests" purpose="development">
         <unit bldFile="tsrc/group"/>
       </component>
-      <component id="mmmw_api_test" filter="s60,api_test" name="Multimedia Middleware API Tests" purpose="development">
+      <component id="mmmw_api_test" filter="s60,test,api_test" name="Multimedia Middleware API Tests" purpose="development">
         <unit bldFile="mmmw_plat/telephony_multimedia_service_api/tsrc/group"/>
       </component>
       <component id="mmmw_plat" filter="s60" name="Multimedia Middleware Platform Interfaces" class="api">

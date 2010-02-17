@@ -199,7 +199,7 @@
       	<!-- need to #include upnpplatformvar.hrh from each #included bld.inf, then this can be removed  -->
         <unit bldFile="group"/>
       </component>
-	  <component id="dlnasrv_api_test" filter="s60,api_test" name="DLNA Services API Tests" purpose="development">
+	  <component id="dlnasrv_api_test" filter="s60,test,api_test" name="DLNA Services API Tests" purpose="development">
         <unit bldFile="tsrc/group"/>
       </component>
     </collection>

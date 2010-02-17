@@ -8,11 +8,11 @@
       <component id="uiresources_pub" filter="s60" name="UI Resources Public Interfaces" class="api">
         <unit bldFile="uiresources_pub/group"/>
       </component>
-	  <component id="uiresources_test" filter="s60,api_test" name="UI Resources Tests" purpose="development">
+	  <component id="uiresources_test" filter="s60,test,api_test" name="UI Resources Tests" purpose="development">
 	  	<unit bldFile="tsrc/group" filter="uiresources_api_all" />
 	  </component>
 	  <!-- are these custom filters needed? -->
-	  <component id="uiresources_test_pat" filter="s60,api_test" name="UI Resources Platform API Tests" purpose="development">
+	  <component id="uiresources_test_pat" filter="s60,test,api_test" name="UI Resources Platform API Tests" purpose="development">
 		<!-- can only have one unit. Need to #include from a common one -->
 		<unit bldFile="uiresources_plat/cdl_api/tsrc/group" filter="cdl_api" />
 		<unit bldFile="uiresources_plat/extended_fonts_api/tsrc/group" filter="extended_fonts_api" />
@@ -21,7 +21,7 @@
 		<unit bldFile="uiresources_plat/layout_data_api/tsrc/group" filter="layout_data_api" />
 		<unit bldFile="uiresources_plat/layout_system_private_api/tsrc/group" filter="layout_system_private_api" />
 	  </component>
-	  <component id="uiresources_test_pat" filter="s60,api_test" name="UI Resources Public API Tests" purpose="development">
+	  <component id="uiresources_test_pat" filter="s60,test,api_test" name="UI Resources Public API Tests" purpose="development">
 		<!-- can only have one unit. Need to #include from a common one -->
 		<unit bldFile="uiresources_plat/skins_image_attributes_api/tsrc/group" filter="skins_image_attributes_api" />
 		<unit bldFile="uiresources_pub/font_definition_api/tsrc/group" filter="font_definition_api" />

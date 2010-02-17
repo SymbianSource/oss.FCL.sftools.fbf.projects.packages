@@ -81,7 +81,7 @@
           <component name="usbservices_plat" filter="s60" long-name="USB Services Platform Interfaces" class="api">
             <unit bldFile="/sf/mw/usbservices/usbservices_plat/group"/>
           </component>
-          <component name="usbservices_test" filter="s60,api_test" long-name="USB Services Tests">
+          <component name="usbservices_test" filter="s60,test,api_test" long-name="USB Services Tests">
             <unit bldFile="/sf/mw/usbservices/tsrc/group"/>
           </component>
         </collection>

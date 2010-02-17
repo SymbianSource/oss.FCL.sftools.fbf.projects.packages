@@ -197,7 +197,7 @@
           <component name="secsrv_plat" long-name="Security Services Platform Interfaces" filter="s60" class="api">
             <unit bldFile="/sf/mw/securitysrv/secsrv_plat/group"/>
           </component>
-          <component name="securitysrv_test" filter="s60,api_test" purpose="development" long-name="Security Services Test">
+          <component name="securitysrv_test" filter="s60,test,api_test" purpose="development" long-name="Security Services Test">
             <unit bldFile="/sf/mw/securitysrv/tsrc/group"/>
           </component>
           <component name="securitysrv_metadata" long-name="Security Services Metadata" introduced="^2" purpose="development" class="config PC">

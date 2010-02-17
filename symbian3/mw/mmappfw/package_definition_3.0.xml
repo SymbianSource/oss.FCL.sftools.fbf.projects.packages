@@ -69,7 +69,7 @@
       <!--  Move the export to another component or remove the #includes from this one -->
         <unit bldFile="group"/>
       </component>
-      <component id="mmappfw_test" filter="s60,api_test,pref_test" name="Multimedia App Framework Test" purpose="development" introduced="^1">
+      <component id="mmappfw_test" filter="s60,test,api_test,pref_test" name="Multimedia App Framework Test" purpose="development" introduced="^1">
         <unit bldFile="tsrc/group" filter="TA_MMAPPFW"/>
       </component>
       <component id="mmappfw_plat" filter="s60" name="Multimedia App Framework Platform Interfaces" class="api" introduced="^1">

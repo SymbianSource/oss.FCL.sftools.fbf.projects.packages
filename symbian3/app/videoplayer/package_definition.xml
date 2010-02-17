@@ -102,6 +102,13 @@
           <component name="videofeeds_server" long-name="Server" filter="s60" introduced="^3">
             <unit bldFile="/sf/app/videoplayer/videofeeds/server/group"/>
           </component>
+          <component name="videofeeds_server_tsrc" long-name="Video Feeds Server Tests" introduced="^3" filter="s60,test,unit_test">
+            <!--  can only have one unit. Can these be #included from videofeeds_server or a common bld.inf?-->
+            <unit bldFile="/sf/app/videoplayer/videofeeds/server/tsrc/IptvTestUtility/group"/>
+            <unit bldFile="/sf/app/videoplayer/videofeeds/server/tsrc/VCXProvisioningTest/group"/>
+            <unit bldFile="/sf/app/videoplayer/videofeeds/server/tsrc/VCXServiceManagementApiTest/group"/>
+            <unit bldFile="/sf/app/videoplayer/videofeeds/server/tsrc/VCXVodContentApiTest/group"/>
+          </component>
           <component name="livetvutils" long-name="LiveTV Utils" filter="s60" introduced="^3">
             <unit bldFile="/sf/app/videoplayer/videofeeds/livetvutils/group"/>
           </component>
@@ -132,20 +139,19 @@
           <component name="scheduleddlplugin" long-name="Scheduled download plugin" filter="s60" introduced="^3">
             <unit bldFile="/sf/app/videoplayer/videofeeds/scheduleddlplugin/group"/>
           </component>
-          <component name="videofeeds_tsrc" long-name="Video Feeds Tests" introduced="^3" filter="test">
+          <component name="videofeeds_tsrc" long-name="Video Feeds Tests" introduced="^3" filter="s60,test,unit_test">
             <!--  can only have one unit. Can thes be #included from any of the above or a common bld.inf?-->
             <unit bldFile="/sf/app/videoplayer/tsrc/VCXTestCommon/group"/>
             <unit bldFile="/sf/app/videoplayer/tsrc/VCXTestUtilModule/group"/>
-            <unit bldFile="/sf/app/videoplayer/videofeeds/server/tsrc/IptvTestUtility/group"/>
             <unit bldFile="/sf/app/videoplayer/tsrc/VCXTestMyVideosCollectionClient/group"/>
-            <unit bldFile="/sf/app/videoplayer/videofeeds/server/tsrc/VCXProvisioningTest/group"/>
-            <unit bldFile="/sf/app/videoplayer/videofeeds/server/tsrc/VCXServiceManagementApiTest/group"/>
-            <unit bldFile="/sf/app/videoplayer/videofeeds/server/tsrc/VCXVodContentApiTest/group"/>
           </component>
         </collection>
         <collection name="videocollection" long-name="Video Collection" level="apps">
           <component name="mpxmyvideoscollection" filter="s60" long-name="MPX My Videos Collection" introduced="^3">
             <unit bldFile="/sf/app/videoplayer/videocollection/mpxmyvideoscollection/group"/>
+          </component>
+          <component name="mpxmyvideoscollection_test" filter="s60,test,unit_test" long-name="MPX My Videos Collection Tests" introduced="^3" purpose="development">
+            <unit bldFile="/sf/app/videoplayer/videocollection/mpxmyvideoscollection/tsrc/mpxmvcolltest/group"/>
           </component>
           <component name="myvideosindicatorplugin" filter="s60" long-name="My Videos Indicator Plugin" introduced="^3" plugin="Y">
             <unit bldFile="/sf/app/videoplayer/videocollection/myvideosindicatorplugin/group"/>
@@ -156,12 +162,11 @@
           <component name="hgmyvideosplugin" filter="s60" long-name="Huriganes My VideosPlugin" introduced="^3" plugin="Y">
             <unit bldFile="/sf/app/videoplayer/videocollection/hgmyvideosplugin/group"/>
           </component>
-          <component name="mpxmyvideoscollection_tsrc" long-name="MPX My Videos Collection Tests" filter="s60,test" introduced="^3">
+          <component name="mpxmyvideoscollection_tsrc" long-name="MPX My Videos Collection Tests" filter="s60,test,unit_test" introduced="^3" purpose="development">
             <!--  can only have one unit. Can thes be #included from any of the above or a common bld.inf?-->
             <unit bldFile="/sf/app/videoplayer/tsrc/VCXTestCommon/group"/>
             <unit bldFile="/sf/app/videoplayer/tsrc/VCXTestUtilModule/group"/>
             <unit bldFile="/sf/app/videoplayer/tsrc/VCXTestMyVideosCollectionClient/group"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/mpxmyvideoscollection/tsrc/mpxmvcolltest/group"/>
           </component>
         </collection>
         <collection name="videoplayer_homescreenplugins" long-name="Videoplayer Homescreen Plugins" level="support">
@@ -224,8 +229,8 @@
           <component name="videoplaybackviews" filter="s60" long-name="Video Playback Views" introduced="^3" plugin="Y">
             <unit bldFile="/sf/app/videoplayer/videoplayback/videoplaybackviews/group"/>
           </component>
-          <component name="videoplayer_tsrc" long-name="Video Player Tests" filter="s60,test" introduced="^3">
-            <!--  can only have one unit. Can thes be #included from any of the above. Why is a videoplayerapp test in here?-->
+          <component name="videoplayer_tsrc" long-name="Video Player Tests" filter="s60,test,unit_test" introduced="^3" purpose="development">
+            <!--  can only have one unit. Can these be #included from any of the above. Why is a videoplayerapp test in here?-->
             <unit bldFile="/sf/app/videoplayer/videoplayback/videohelix/tsrc/ut_videohelixtest/group"/>
             <unit bldFile="/sf/app/videoplayer/videoplayback/videoplaybackcontrols/tsrc/videoplaybackcontrols_test/group"/>
             <unit bldFile="/sf/app/videoplayer/videoplayback/videoplaybackviews/tsrc/ut_userinputhandlertest/group"/>
@@ -236,7 +241,7 @@
           <component name="videoplayer_plat" filter="s60" long-name="Video Player Apps Platform Interfaces" class="api">
             <unit bldFile="/sf/app/videoplayer/videoplayer_plat/group"/>
           </component>
-          <component name="videoplayer_api_test" filter="s60,apit_test" purpose="development" long-name="Video Player API Test">
+          <component name="videoplayer_api_test" filter="s60,test,api_test" purpose="development" long-name="Video Player API Test">
             <!--  can only have one unit, #include from a common bld.inf? -->
             <unit bldFile="/sf/app/videoplayer/videoplayer_plat/video_player_file_details_dialog_api/tsrc/group"/>
             <unit bldFile="/sf/app/videoplayer/videoplayer_plat/videoplayer_startup_api/tsrc/group"/>

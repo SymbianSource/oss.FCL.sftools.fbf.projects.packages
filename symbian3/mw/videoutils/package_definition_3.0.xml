@@ -21,7 +21,7 @@
       <component id="videoutils_plat" filter="s60" name="Video Utils Platform Interfaces" class="api">
         <unit bldFile="videoutils_plat/group"/>
       </component>
-      <component id="videoutils_test" filter="s60,api_test" name="Video Utils Tests">
+      <component id="videoutils_test" filter="s60,test,api_test" name="Video Utils Tests">
         <unit bldFile="tsrc/group"/>
       </component>
     </collection>

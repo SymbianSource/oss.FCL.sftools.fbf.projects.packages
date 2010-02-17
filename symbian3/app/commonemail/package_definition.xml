@@ -102,7 +102,7 @@
           <component name="emailinstallationinitiator" filter="s60" long-name="Email Installation Initiator" introduced="^2">
             <unit bldFile="/sf/app/commonemail/emailservices/emailinstallationinitiator/group"/>
           </component>
-          <component name="emailservices_test" filter="s60,test" long-name="Email Services Tests">
+          <component name="emailservices_test" filter="s60,test,unit_test" long-name="Email Services Tests">
             <!--  can these be #included in their relevant components or a single test bld.inf? 
       		Can only have one unit -->
             <unit bldFile="/sf/app/commonemail/emailservices/emailframework/tsrc/group"/>

@@ -120,7 +120,7 @@
         <unit bldFile="classicui_plat/group"/>
       </component>
        <!-- the multiple units in the API test components need to be resolved -->
-	<component id="classicui_plat_api_test" filter="s60,api_test" name="Classic UI Platform API Tests" purpose="development">
+	<component id="classicui_plat_api_test" filter="s60,test,api_test" name="Classic UI Platform API Tests" purpose="development">
 		<!-- can only have one unit. Need to #include from a single bld.inf -->
 		<unit bldFile="tsrc/group" name="classicui_tsrc_all"/>
 		<unit bldFile="classicui_plat/aiw_provider_utility_api/tsrc/group"/>
@@ -182,7 +182,7 @@
 		<unit bldFile="classicui_plat/transition_effect_utilities_api/tsrc/group"/>
 		<unit bldFile="classicui_plat/volume_popup_api/tsrc/group"/>
 	</component>
-	<component id="classicui_pub_api_test" filter="s60,api_test" name="Classic UI Public API Tests" purpose="development">
+	<component id="classicui_pub_api_test" filter="s60,test,api_test" name="Classic UI Public API Tests" purpose="development">
 		<!-- can only have one unit. Need to #include from a single bld.inf -->
 		<unit bldFile="classicui_pub/aiw_criteria_api/tsrc/group"/>
 		<unit bldFile="classicui_pub/aiw_generic_parameter_api/tsrc/group"/>

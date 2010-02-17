@@ -85,7 +85,7 @@
           </component>
         </collection>
         <collection name="voicerec_info" long-name="Voice Recorder Apps Info">
-          <component name="voicerec_api_test" filter="s60,api_test,pref_test" purpose="development" long-name="Voice Recorder Apps Test">
+          <component name="voicerec_api_test" filter="s60,test,api_test,pref_test" purpose="development" long-name="Voice Recorder Apps Test">
             <unit bldFile="/sf/app/voicerec/tsrc/group"/>
           </component>
           <component name="voicerec_plat" filter="s60" long-name="Voice Recorder Apps Platform Interfaces" class="api">

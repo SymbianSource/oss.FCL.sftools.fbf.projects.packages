@@ -70,7 +70,7 @@
       <component id="musicplayer_plat" filter="s60" name="Music Player Apps Platform Interfaces" class="api">
         <unit bldFile="musicplayer_plat/group"/>
       </component>
-      <component id="musicplayer_test" filter="s60,pref_test,api_test" purpose="development" name="Music Player Apps Test">
+      <component id="musicplayer_test" filter="s60,test,pref_test,api_test" purpose="development" name="Music Player Apps Test">
 		<unit bldFile="tsrc/group"/>
       </component>
     </collection>

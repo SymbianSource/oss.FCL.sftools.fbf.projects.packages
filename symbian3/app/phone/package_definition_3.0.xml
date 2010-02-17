@@ -29,7 +29,7 @@
       <component id="phonemediatorcenter" filter="s60" name="Phone Mediator Center">
         <unit bldFile="phoneapp/phonemediatorcenter/group"/>
       </component>
-      <component id="phoneapp_api_test" filter="s60,api_test" name="Phone App API Tests">
+      <component id="phoneapp_api_test" filter="s60,test,api_test" name="Phone App API Tests">
 		<unit bldFile="phoneapp/phoneui/tsrc/public/basic/group"/>
       </component>      
     </collection>
@@ -86,7 +86,7 @@
       <component id="telephonydevicemode" filter="s60" name="Telephony Device Mode">
         <unit bldFile="phoneuis/telephonydevicemode/group"/>
       </component>
-      <component id="phoneuis_api_test" filter="s60,api_test" name="Phone UIs API Tests">
+      <component id="phoneuis_api_test" filter="s60,test,api_test" name="Phone UIs API Tests">
         <unit bldFile="phoneuis/dialer/tsrc/public/basic/group"/>
       </component>
     </collection>

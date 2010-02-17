@@ -9,7 +9,7 @@
       </component>
     </collection>
     <collection id="voicerec_info" name="Voice Recorder Apps Info">
-      <component id="voicerec_api_test" filter="s60,api_test,pref_test" purpose="development" name="Voice Recorder Apps Test">
+      <component id="voicerec_api_test" filter="s60,test,api_test,pref_test" purpose="development" name="Voice Recorder Apps Test">
         <unit bldFile="tsrc/group"/>
       </component>
       <component id="voicerec_plat" filter="s60" name="Voice Recorder Apps Platform Interfaces" class="api">

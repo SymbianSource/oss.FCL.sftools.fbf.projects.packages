@@ -25,10 +25,10 @@
       <component id="imagingext_pub" filter="s60" name="Imaging Extensions Public Interfaces" class="api">
         <unit bldFile="imagingext_pub/group"/>
       </component>
-      <component id="imagingext_test" filter="s60,api_test" name="Imaging Extensions Platform API Tests" purpose="development">
+      <component id="imagingext_test" filter="s60,test,api_test" name="Imaging Extensions Platform API Tests" purpose="development">
         <unit bldFile="imagingext_plat/extended_icl_jpeg_api/tsrc/group"/>
       </component>
-      <component id="imagingext_test" filter="s60,api_test" name="Imaging Extensions Public API Tests" purpose="development">
+      <component id="imagingext_test" filter="s60,test,api_test" name="Imaging Extensions Public API Tests" purpose="development">
         <unit bldFile="imagingext_pub/exif_api/tsrc/group"/>
       </component>
     </collection>

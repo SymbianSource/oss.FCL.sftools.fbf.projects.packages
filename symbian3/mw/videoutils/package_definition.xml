@@ -97,7 +97,7 @@
           <component name="videoutils_plat" filter="s60" long-name="Video Utils Platform Interfaces" class="api">
             <unit bldFile="/sf/mw/videoutils/videoutils_plat/group"/>
           </component>
-          <component name="videoutils_test" filter="s60,api_test" long-name="Video Utils Tests">
+          <component name="videoutils_test" filter="s60,test,api_test" long-name="Video Utils Tests">
             <unit bldFile="/sf/mw/videoutils/tsrc/group"/>
           </component>
         </collection>

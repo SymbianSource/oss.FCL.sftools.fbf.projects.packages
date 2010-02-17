@@ -51,7 +51,7 @@
       <component id="btservices_metadata" name="BT Services Metadata" class="config" introduced="^3" purpose="development" target="desktop">
         <unit mrp="btservices_info/btservices_metadata/btservices_metadata.mrp"/>
       </component>
-      <component id="btservices_api_test" name="BT Services API Tests" purpose="development" filter="s60,api_test">
+      <component id="btservices_api_test" name="BT Services API Tests" purpose="development" filter="s60,test,api_test">
         <unit bldFiile="tsrc/group"/>
       </component>
     </collection>

@@ -128,7 +128,7 @@
           <component name="mmsharinguis_plat" filter="s60" long-name="Multimedia Sharing UIs Platform Interfaces" class="api">
             <unit bldFile="/sf/app/mmsharinguis/mmsharinguis_plat/group"/>
           </component>
-          <component name="mmsharinguis_plat" filter="s60,api_test" long-name="Multimedia Sharing UIs API Tests" class="api">
+          <component name="mmsharinguis_plat" filter="s60,test,api_test" long-name="Multimedia Sharing UIs API Tests" class="api">
             <unit bldFile="/sf/app/mmsharinguis/mmsharinguis_plat/multimedia_sharing_manager_api/tsrc/group"/>
           </component>
         </collection>

@@ -40,7 +40,7 @@
       	<!-- can the loc file be moved to another comopnent and this one removed? -->
         <unit bldFile="idlehomescreen/group"/>
       </component>
-      <component id="homescreen_test" filter="s60,test" purpose="development" name="Home Screen Apps Test">
+      <component id="homescreen_test" filter="s60,test,unit_test" purpose="development" name="Home Screen Apps Test">
         <unit bldFile="idlehomescreen/widgetmanager/tsrc/wmunittest/group"/>
       </component>      
     </collection>

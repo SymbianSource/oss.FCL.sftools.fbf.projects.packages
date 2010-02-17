@@ -74,7 +74,7 @@
       <component id="appinstall_plat" filter="s60" name="Application Installation Platform Interfaces" class="api">
         <unit bldFile="appinstall_plat/group"/>
       </component>
-      <component id="appinstall_test" filter="s60,api_test" name="Application Installation Test" purpose="development">
+      <component id="appinstall_test" filter="s60,test,api_test" name="Application Installation Test" purpose="development">
         <unit bldFile="tsrc/group"/>
       </component>
       <component id="appinstall_metadata" name="Application Installation Metadata" class="config" introduced="^2" purpose="development" target="desktop">

@@ -143,7 +143,7 @@
           <component name="musicplayer_plat" filter="s60" long-name="Music Player Apps Platform Interfaces" class="api">
             <unit bldFile="/sf/app/musicplayer/musicplayer_plat/group"/>
           </component>
-          <component name="musicplayer_test" filter="s60,pref_test,api_test" purpose="development" long-name="Music Player Apps Test">
+          <component name="musicplayer_test" filter="s60,test,pref_test,api_test" purpose="development" long-name="Music Player Apps Test">
             <unit bldFile="/sf/app/musicplayer/tsrc/group"/>
           </component>
         </collection>

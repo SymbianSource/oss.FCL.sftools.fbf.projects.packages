@@ -86,7 +86,7 @@
           </component>
         </collection>
         <collection name="camera_info" long-name="Camera Apps Info">
-          <component name="camera_plat" filter="s60,api_test" long-name="Camera Apps Platform Interfaces" class="api">
+          <component name="camera_plat" filter="s60,test,api_test" long-name="Camera Apps Platform Interfaces" class="api">
             <unit bldFile="/sf/app/camera/camera_plat/group"/>
           </component>
         </collection>

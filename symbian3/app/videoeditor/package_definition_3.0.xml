@@ -52,7 +52,7 @@
 		<!-- can the exports be distributed to the other components? Or should this be collapsed into one component?-->
         <unit bldFile="videoeditorengine/group"/>
       </component>
-		<component id="videoeditorengine_api" filter="s60,api_test" name="Video Editor Engine API Tests" purpose="development">
+		<component id="videoeditorengine_api" filter="s60,test,api_test" name="Video Editor Engine API Tests" purpose="development">
 			<unit bldFile="videoeditorengine/tsrc/public/basic/group"/>
 		</component>                    
     </collection>

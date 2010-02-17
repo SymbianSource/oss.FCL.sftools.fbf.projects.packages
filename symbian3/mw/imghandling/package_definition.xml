@@ -82,7 +82,7 @@
           <component name="ihl" filter="s60" long-name="IHL">
             <unit bldFile="/sf/mw/imghandling/imagehandlinglib/group"/>
           </component>
-          <component name="imagehandlinglib_api" filter="s60,api_test" long-name="Image Handling Library API Test" purpose="development">
+          <component name="imagehandlinglib_api" filter="s60,test,api_test" long-name="Image Handling Library API Test" purpose="development">
             <unit bldFile="/sf/mw/imghandling/imagehandlinglib/tsrc/public/basic/group"/>
           </component>
         </collection>
@@ -95,7 +95,7 @@
           <component name="imagehandling_plat" filter="s60" long-name="Image Handling Platform Interfaces" class="api">
             <unit bldFile="/sf/mw/imghandling/imagehandling_plat/group"/>
           </component>
-          <component name="imagehandling_api_test" filter="s60,api_test" long-name="Image Handling Platform API Test" purpose="development">
+          <component name="imagehandling_api_test" filter="s60,test,api_test" long-name="Image Handling Platform API Test" purpose="development">
             <unit bldFile="/sf/mw/imghandling/imagehandling_plat/thumbnailmanager_api/tsrc/group"/>
           </component>
         </collection>

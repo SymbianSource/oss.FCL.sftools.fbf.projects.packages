@@ -122,7 +122,7 @@
           <component name="drm_plat" filter="s60" long-name="DRM Platform Interfaces" class="api">
             <unit bldFile="/sf/mw/drm/drm_plat/group"/>
           </component>
-          <component name="drm_api_test" filter="s60,api_test" long-name="DRM Build" purpose="development">
+          <component name="drm_api_test" filter="s60,test,api_test" long-name="DRM Build" purpose="development">
             <unit bldFile="/sf/mw/drm/tsrc/group"/>
           </component>
         </collection>

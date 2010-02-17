@@ -80,11 +80,6 @@
         <collection name="usbldd" long-name="USB Logical Device Drivers" level="hw-if">
           <!-- usbclientdrivers  to be moved here from kernelhwsrv-->
         </collection>
-        <collection name="usbextension" long-name="USB Extension" level="framework">
-          <component name="usbaudioclassdriver" long-name="USB Audi Class Driver" purpose="optional" filter="s60">
-            <unit bldFile="/sf/os/usb/usbextension/usbaudioclassdriver/group"/>
-          </component>
-        </collection>
         <collection name="usbmgmt" long-name="USB Management" level="server">
           <component name="usbmgr" long-name="USB Manager" purpose="optional">
             <unit bldFile="/sf/os/usb/usbmgmt/usbmgr/group" mrp="/sf/os/usb/usbmgmt/usbmgr/group/usb_manager.mrp" version="2"/>

@@ -31,7 +31,7 @@
       <component id="devmngt_pub" filter="s60" class="api" name="Settings UIs Public Interfaces" introduced="^1">
         <unit bldFile="devmngt_pub/group"/>
       </component>
-      <component id="settingsuis_test" filter="s60,test" purpose="development" name="Settings UIs Test" introduced="^1">
+      <component id="settingsuis_test" filter="s60,test,unit_test" purpose="development" name="Settings UIs Test" introduced="^1">
           <unit bldFile="devmngt_plat/services_db_api/tsrc/ServicesDbApiTest/group" introduced="^1"/>
       </component>
     </collection>

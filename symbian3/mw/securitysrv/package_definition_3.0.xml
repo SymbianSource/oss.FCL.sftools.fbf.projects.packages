@@ -121,7 +121,7 @@
       <component id="secsrv_plat" name="Security Services Platform Interfaces" filter="s60" class="api">
         <unit bldFile="secsrv_plat/group"/>
       </component>
-      <component id="securitysrv_test" filter="s60,api_test" purpose="development" name="Security Services Test">
+      <component id="securitysrv_test" filter="s60,test,api_test" purpose="development" name="Security Services Test">
         <unit bldFile="tsrc/group"/>
       </component>
       <component id="securitysrv_metadata" name="Security Services Metadata" class="config" introduced="^2" purpose="development" target="desktop">

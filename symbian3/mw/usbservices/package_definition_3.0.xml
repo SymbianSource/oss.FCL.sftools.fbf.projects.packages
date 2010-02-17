@@ -5,7 +5,7 @@
       <component id="usbservices_plat" filter="s60" name="USB Services Platform Interfaces" class="api">
         <unit bldFile="usbservices_plat/group"/>
       </component>
-      <component id="usbservices_test" filter="s60,api_test" name="USB Services Tests">
+      <component id="usbservices_test" filter="s60,test,api_test" name="USB Services Tests">
         <unit bldFile="tsrc/group"/>
       </component>
     </collection>

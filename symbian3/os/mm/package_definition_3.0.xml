@@ -47,7 +47,7 @@
       <component id="arm_mdf_postprocessor" filter="s60" name="ARM MDF Postprocessor">
         <unit bldFile="mdfdevvideoextensions/arm_mdf_postprocessor/group"/>
       </component>
-      <component id="nga_mdf_tsrc" name="NGA MDF Tests" purpose="development" filter="s60,pref_test,module_test">
+      <component id="nga_mdf_tsrc" name="NGA MDF Tests" purpose="development" filter="s60,test,pref_test,module_test">
         <unit bldFile="mdfdevvideoextensions/nga_mdf_postprocessor/tsrc/StifNgaMdfPoPTest/group"/>
       </component>
     </collection>
@@ -116,7 +116,7 @@
       <component id="mmdocs" name="Multimedia Documentation" purpose="development" class="doc">
         <unit mrp="mm_info/mmdocs/multimedia_documentation.mrp"/>
       </component>
-      <component id="mm_tsrc" name="Multimedia Tests" purpose="development" filter="s60,api_test,pref_test">
+      <component id="mm_tsrc" name="Multimedia Tests" purpose="development" filter="s60,test,api_test,pref_test">
         <unit bldFile="tsrc/group"/>
       </component>
       <component id="mm_metadata" name="Multimedia Metadata" class="config" introduced="^2" purpose="development" target="desktop">

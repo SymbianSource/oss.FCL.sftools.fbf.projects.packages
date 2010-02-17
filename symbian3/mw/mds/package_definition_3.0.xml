@@ -93,7 +93,7 @@
       <component id="mds_plat" filter="s60" name="Metadata Services Platform Interfaces" class="api" introduced="^2">
         <unit bldFile="mds_plat/group"/>
       </component>
-      <component id="mds_api_tests" filter="s60,api_test" name="Metadata Services API Tests" purpose="development" introduced="^2">
+      <component id="mds_api_tests" filter="s60,test,api_test" name="Metadata Services API Tests" purpose="development" introduced="^2">
         <unit bldFile="mds_plat/content_listing_framework_collection_manager_api/tsrc/group"/>
         <unit bldFile="mds_plat/context_engine_plugin_api/tsrc/group"/>
         <unit bldFile="mds_plat/harvester_framework_api/tsrc/composerplugintest/group"/>

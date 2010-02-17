@@ -127,7 +127,7 @@
           <component name="btservices_metadata" long-name="BT Services Metadata" introduced="^3" purpose="development" class="config PC">
             <unit mrp="/sf/mw/btservices/btservices_info/btservices_metadata/btservices_metadata.mrp"/>
           </component>
-          <component name="btservices_api_test" long-name="BT Services API Tests" purpose="development" filter="s60,api_test">
+          <component name="btservices_api_test" long-name="BT Services API Tests" purpose="development" filter="s60,test,api_test">
             <unit/>
           </component>
         </collection>

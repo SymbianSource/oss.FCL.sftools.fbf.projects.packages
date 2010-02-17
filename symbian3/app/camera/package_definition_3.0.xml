@@ -10,7 +10,7 @@
       </component>
     </collection>
     <collection id="camera_info" name="Camera Apps Info">
-      <component id="camera_plat" filter="s60,api_test" name="Camera Apps Platform Interfaces" class="api">
+      <component id="camera_plat" filter="s60,test,api_test" name="Camera Apps Platform Interfaces" class="api">
         <unit bldFile="camera_plat/group"/>
       </component>
     </collection>

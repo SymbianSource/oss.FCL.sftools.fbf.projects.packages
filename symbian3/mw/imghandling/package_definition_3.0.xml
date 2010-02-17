@@ -6,7 +6,7 @@
       <component id="ihl" filter="s60" name="IHL">
         <unit bldFile="imagehandlinglib/group"/>
       </component>
-	    <component id="imagehandlinglib_api" filter="s60,api_test" name="Image Handling Library API Test" purpose="development">
+	    <component id="imagehandlinglib_api" filter="s60,test,api_test" name="Image Handling Library API Test" purpose="development">
 	     	<unit bldFile="imagehandlinglib/tsrc/public/basic/group"/>
 		</component>
     </collection>
@@ -19,7 +19,7 @@
       <component id="imagehandling_plat" filter="s60" name="Image Handling Platform Interfaces" class="api">
         <unit bldFile="imagehandling_plat/group"/>
       </component>
-      <component id="imagehandling_api_test" filter="s60,api_test" name="Image Handling Platform API Test" purpose="development">
+      <component id="imagehandling_api_test" filter="s60,test,api_test" name="Image Handling Platform API Test" purpose="development">
         <unit bldFile="imagehandling_plat/thumbnailmanager_api/tsrc/group"/>
       </component>
     </collection>

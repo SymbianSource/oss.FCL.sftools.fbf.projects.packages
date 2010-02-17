@@ -25,7 +25,7 @@
     <collection id="vtprotocolsstub" name="VT Protocols Stub" level="prot">
     	<!--  this collection is really a component, move down a directory -->
       <component id="videotelproto" filter="s60" name="Video Telephony Protocol">
-        <unit bldFile="vtprotocolsstub/group" filter="sf"/>
+        <unit bldFile="vtprotocolsstub/group" filter="sf_build"/>
       </component>
     </collection>
     <collection id="videotelephony_info" name="VT Apps Info" level="ui">

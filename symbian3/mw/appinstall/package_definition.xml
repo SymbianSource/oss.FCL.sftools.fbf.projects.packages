@@ -150,7 +150,7 @@
           <component name="appinstall_plat" filter="s60" long-name="Application Installation Platform Interfaces" class="api">
             <unit bldFile="/sf/mw/appinstall/appinstall_plat/group"/>
           </component>
-          <component name="appinstall_test" filter="s60,api_test" long-name="Application Installation Test" purpose="development">
+          <component name="appinstall_test" filter="s60,test,api_test" long-name="Application Installation Test" purpose="development">
             <unit bldFile="/sf/mw/appinstall/tsrc/group"/>
           </component>
           <component name="appinstall_metadata" long-name="Application Installation Metadata" introduced="^2" purpose="development" class="config PC">

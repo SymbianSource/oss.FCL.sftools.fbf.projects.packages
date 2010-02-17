@@ -81,7 +81,7 @@
           <component name="profiles" filter="s60" long-name="Profiles">
             <unit bldFile="/sf/app/profile/profilesapplication/profiles/group"/>
           </component>
-          <component name="profilesapplication_test" filter="s60,api_test" purpose="development" long-name="Profiles Application Test">
+          <component name="profilesapplication_test" filter="s60,test,api_test" purpose="development" long-name="Profiles Application Test">
             <unit bldFile="/sf/app/profile/profilesapplication/tsrc/public/basic/group"/>
           </component>
         </collection>

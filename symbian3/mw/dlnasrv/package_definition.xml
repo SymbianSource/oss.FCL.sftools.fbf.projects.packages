@@ -243,7 +243,7 @@
             <!-- need to #include upnpplatformvar.hrh from each #included bld.inf, then this can be removed  -->
             <unit bldFile="/sf/mw/dlnasrv/group"/>
           </component>
-          <component name="dlnasrv_api_test" filter="s60,api_test" long-name="DLNA Services API Tests" purpose="development">
+          <component name="dlnasrv_api_test" filter="s60,test,api_test" long-name="DLNA Services API Tests" purpose="development">
             <unit bldFile="/sf/mw/dlnasrv/tsrc/group"/>
           </component>
         </collection>

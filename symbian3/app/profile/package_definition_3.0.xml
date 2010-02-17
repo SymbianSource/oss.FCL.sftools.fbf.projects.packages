@@ -5,7 +5,7 @@
       <component id="profiles" filter="s60" name="Profiles">
         <unit bldFile="profilesapplication/profiles/group"/>
       </component>
-      <component id="profilesapplication_test" filter="s60,api_test" purpose="development" name="Profiles Application Test">
+      <component id="profilesapplication_test" filter="s60,test,api_test" purpose="development" name="Profiles Application Test">
         <unit bldFile="profilesapplication/tsrc/public/basic/group"/>
       </component>
     </collection>
