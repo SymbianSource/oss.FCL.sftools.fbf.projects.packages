@@ -100,14 +100,19 @@
 ]>
 <SystemDefinition schema="3.0.0">
   <systemModel name="Symbian^3">
+    <layer id="adaptation" name="Adaptation" levels="low mw high">
+      <package id="stubs" tech-domain="hb" name="Stubs" level="high"/>
+      <package id="beagleboard" tech-domain="hb" name="Beagle Board" level="low"/>
+      <package id="qemu" tech-domain="hb" name="QEMU and Baseport" level="low"/>
+	</layer>
     <layer id="os" name="OS" levels="hw services">
       <package id="kernelhwsrv" level="hw" tech-domain="hb" href="../../../../os/kernelhwsrv/package_definition_3.0.xml"/>
       <package id="boardsupport" level="hw" tech-domain="hb" href="../../../../os/boardsupport/package_definition_3.0.xml"/>
       <package id="buildtools" level="hw" tech-domain="to" href="../../../../os/buildtools/package_definition_3.0.xml"/>
       <package id="ossrv" level="services" tech-domain="hb" href="../../../../os/ossrv/package_definition_3.0.xml"/>
-      <package id="security" level="services" tech-domain="se" href="../../../../os/security/package_definition_3.0.xml"/>
       <package id="persistentdata" level="services" tech-domain="hb" href="../../../../os/persistentdata/package_definition_3.0.xml"/>
       <package id="devicesrv" level="services" tech-domain="hb" href="../../../../os/devicesrv/package_definition_3.0.xml"/>
+      <package id="security" level="services" tech-domain="se" href="../../../../os/security/package_definition_3.0.xml"/>
       <package id="lbs" level="services" tech-domain="lo" href="../../../../os/lbs/package_definition_3.0.xml"/>
       <package id="commsfw" level="services" tech-domain="dc" href="../../../../os/commsfw/package_definition_3.0.xml"/>
       <package id="networkingsrv" level="services" tech-domain="dc" href="../../../../os/networkingsrv/package_definition_3.0.xml"/>
@@ -158,6 +163,7 @@
       <package id="camerasrv" level="specific" tech-domain="mm" href="../../../../mw/camerasrv/package_definition_3.0.xml"/>
       <package id="mmappfw" level="specific" tech-domain="mm"  href="../../../../mw/mmappfw/package_definition_3.0.xml"/>
       <package id="inputmethods" level="generic" tech-domain="ui" href="../../../../mw/inputmethods/package_definition_3.0.xml"/>
+      <package id="qt" level="generic" tech-domain="ui" name="Qt"/>
       <package id="classicui" level="generic" tech-domain="ui" href="../../../../mw/classicui/package_definition_3.0.xml"/>
       <package id="svgt" level="generic" tech-domain="ui" href="../../../../mw/svgt/package_definition_3.0.xml"/>
       <package id="uiaccelerator" level="generic" tech-domain="ui" href="../../../../mw/uiaccelerator/package_definition_3.0.xml"/>
@@ -184,13 +190,13 @@
       <package id="devicecontrol" level="services" tech-domain="dm" href="../../../../app/devicecontrol/package_definition_3.0.xml"/>
       <package id="printing" level="services" tech-domain="de" href="../../../../app/printing/package_definition_3.0.xml"/>
       <package id="files" level="apps" tech-domain="pr" href="../../../../app/files/package_definition_3.0.xml"/>
+      <package id="utils" level="apps" tech-domain="pr" href="../../../../app/utils/package_definition_3.0.xml"/>
       <package id="contacts" level="apps" span="2" tech-domain="pr" href="../../../../app/contacts/package_definition_3.0.xml"/>
       <package id="organizer" level="apps" span="2" tech-domain="pr" href="../../../../app/organizer/package_definition_3.0.xml"/>
       <package id="messaging" level="apps" span="2" tech-domain="pr" href="../../../../app/messaging/package_definition_3.0.xml"/>
       <package id="commonemail" level="apps" tech-domain="pr" href="../../../../app/commonemail/package_definition_3.0.xml"/>
       <package id="conversations" level="apps" tech-domain="pr" href="../../../../app/conversations/package_definition_3.0.xml"/>
       <package id="im" level="apps" tech-domain="pr" href="../../../../app/im/package_definition_3.0.xml"/>
-      <package id="utils" level="apps" tech-domain="pr" href="../../../../app/utils/package_definition_3.0.xml"/>
       <package id="dictionary" level="services" tech-domain="pr" href="../../../../app/dictionary/package_definition_3.0.xml"/>
       <package id="camera" level="apps" tech-domain="ma" href="../../../../app/camera/package_definition_3.0.xml"/>
       <package id="imgeditor" level="apps" tech-domain="ma" href="../../../../app/imgeditor/package_definition_3.0.xml"/>
