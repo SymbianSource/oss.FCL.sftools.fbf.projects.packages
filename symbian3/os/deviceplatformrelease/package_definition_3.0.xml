@@ -4,7 +4,7 @@
     <collection id="s60extras" name="S60 Extras" level="mid">
     	<!-- collection is really a component. Need to move down a directory -->
       <component id="s60extras_build" filter="s60" name="S60 Extras Build" class="config" purpose="development">
-        <unit bldFile="s60extras/group"/>
+        <unit bldFile="S60Extras/group"/>
       </component>
     </collection>
     <collection id="locfiles" name="Locale Files" level="mid">
@@ -65,7 +65,7 @@
     <collection id="version" name="Version" level="top">
     	<!-- collection is really a component. Need to move down a directory -->    
       <component id="version_build" filter="s60" name="Version Build" class="config" purpose="development">
-        <unit bldFile="version/group"/>
+        <unit bldFile="Version/group"/>
       </component>
     </collection>
     
@@ -79,6 +79,9 @@
     <collection id="sf_config" name="SF Config" level="mid">
       <component id="config" filter="s60" name="Config" class="config" purpose="development">
         <unit base="sf_config/config"/>
+      </component>
+      <component id="sf_cenrep" filter="sf_build" name="ConE cenrep config" class="config" purpose="development">
+        <unit bldFile="sf_config/cenrep/group"/>
       </component>
     </collection>
         <!-- should be located locally in buildplatforms/group 

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="graphics" name="Graphics" levels="adaptation engines internal-adaptations device-interface internal-utils app-if">
     <collection id="graphicsaccelaration" name="Graphics Acceleration" level="adaptation">
@@ -62,8 +62,11 @@
       <component id="graphics_plat" filter="s60" name="Graphics Platform Interfaces" class="api">
         <unit bldFile="graphics_plat/group"/>
       </component>
-      <component id="graphics_pub" filter="s60" name="Graphics Public Interfaces" class="api">
-        <unit bldFile="graphics_pub/group"/>
+      <component id="graphics_plat" filter="s60" name="Graphics Platform Interfaces" class="api">
+        <unit bldFile="graphics_plat/group"/>
+      </component>
+      <component id="m3g_core_api" filter="sf_build" name="M3G Core API" class="api">
+        <unit bldFile="graphics_plat/m3g_core_api/group"/> <!-- cope with missing graphics_plat/group -->
       </component>
       <component id="graphicsdocs" name="Graphics Documentation" purpose="development" class="doc">
         <unit mrp="graphics_info/graphicsdocs/graphics_documentation.mrp"/>
@@ -97,6 +100,9 @@
       <component id="openglesinterface" name="OpenGL ES Interface" introduced="8.0" purpose="optional">
         <unit bldFile="opengles/openglesinterface/group" mrp="opengles/openglesinterface/group/graphics_openglesheaders.mrp"/>
       </component>
+      <component id="opengles_stub" filter="sf_build" name="OpenGL ES stub" purpose="optional">
+        <unit bldFile="opengles/openglesinterface/group/opengles_stub"/>
+      </component>
     </collection>
     <collection id="openvg" name="OpenVG" level="internal-adaptations">
       <component id="openvginterface" name="OpenVG Interface" introduced="^2" purpose="optional">
@@ -105,6 +111,9 @@
       <component id="openvg11" filter="s60" name="OpenVG 1.1">
      	<!-- this needs to be moved to it's own component directory, ie openvg/openvg11 -->
         <unit bldFile="openvg/openvginterface/group/openvg11"/>
+      </component>
+      <component id="khropenvgri" filter="sf_build" name="Khronos OpenVG Reference Implementation" introduced="^2" purpose="optional">
+        <unit bldFile="openvg/openvgrefimplementation/sfopenvg/group"/>
       </component>
     </collection>
     <collection id="egl" name="EGL" level="internal-adaptations">

@@ -7,6 +7,7 @@
       </component>
       <component id="cameraapp" filter="s60" name="Camera Application">
         <unit bldFile="camerauis/cameraapp/group"/>
+        <unit bldFile="camerauis/cameraapp/help/group"/>
       </component>
     </collection>
     <collection id="camera_info" name="Camera Apps Info">

@@ -30,7 +30,7 @@
         <unit bldFile="pkiutilities/devicetoken/group"/>
       </component>
       <component id="certificates" filter="s60" name="Certificates">
-        <unit bldFile="pkiutilities/certificates/group" filter="sf_build"/>
+        <unit bldFile="pkiutilities/Certificates/group" filter="sf_build"/>
       </component>
       <component id="pkiutilities_build" filter="s60" name="PKI Utilities Build">
       	<!-- need to split this into the above components -->

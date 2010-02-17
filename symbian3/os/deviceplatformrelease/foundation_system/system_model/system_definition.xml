@@ -100,11 +100,11 @@
 ]>
 <SystemDefinition schema="3.0.0">
   <systemModel name="Symbian^3">
-    <layer id="adaptation" name="Adaptation" levels="low mw high">
-      <package id="stubs" tech-domain="hb" name="Stubs" level="high"/>
-      <package id="beagleboard" tech-domain="hb" name="Beagle Board" level="low"/>
-      <package id="qemu" tech-domain="hb" name="QEMU and Baseport" level="low"/>
-	</layer>
+    <layer id="adaptation" name="Adaptation" levels="hw-if">
+      <package id="qemu" level="hw-if" href="../../../../adaptation/qemu/package_definition_3.0.xml"/>
+      <package id="beagleboard" level="hw-if" href="../../../../adaptation/beagleboard/package_definition_3.0.xml"/>
+      <package id="stubs" level="hw-if" href="../../../../adaptation/stubs/package_definition_3.0.xml"/>
+    </layer>
     <layer id="os" name="OS" levels="hw services">
       <package id="kernelhwsrv" level="hw" tech-domain="hb" href="../../../../os/kernelhwsrv/package_definition_3.0.xml"/>
       <package id="boardsupport" level="hw" tech-domain="hb" href="../../../../os/boardsupport/package_definition_3.0.xml"/>
@@ -213,7 +213,7 @@
       <package id="graphicsuis" level="services" tech-domain="ui" href="../../../../app/graphicsuis/package_definition_3.0.xml"/>
       <package id="profile" level="apps" tech-domain="ui" href="../../../../app/profile/package_definition_3.0.xml"/>
       <package id="speechsrv" level="services" tech-domain="ui" href="../../../../app/speechsrv/package_definition_3.0.xml"/>
-      <package id="homescreentools" level="services" tech-domain="ui"  href="../../../../app/homescreentools/package_definition_3.0.xml"/>
+      <package id="homescreentools" level="services" tech-domain="ui"  href="../../../../tools/homescreentools/package_definition_3.0.xml"/>
       <package id="webuis" level="services" tech-domain="rt" href="../../../../app/webuis/package_definition_3.0.xml"/>
       <package id="jrt" level="services" tech-domain="rt" href="../../../../app/jrt/package_definition_3.0.xml"/>
       <package id="conntools" level="services" tech-domain="dc" href="../../../../app/conntools/package_definition_3.0.xml"/>

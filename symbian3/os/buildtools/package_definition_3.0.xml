@@ -44,7 +44,7 @@
       </component>
     </collection>
     <collection id="sbsv1_os" name="Symbian Build System v1" level="fw">
-      <component id="e32toolp" name="E32 Perl Tools" purpose="development" target="desktop" filter="test">
+      <component id="e32toolp" name="E32 Perl Tools" purpose="development" target="desktop" filter="sf_build">
         <unit mrp="sbsv1_os/e32toolp/group/tools_e32toolp.mrp" bldFile="sbsv1_os/e32toolp/group"/>
       </component>
 	  </collection>

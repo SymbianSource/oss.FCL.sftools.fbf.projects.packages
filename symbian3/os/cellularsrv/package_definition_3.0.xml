@@ -74,7 +74,7 @@
       <component id="common_tsy" name="Common TSY" introduced="^2" purpose="optional" class="plugin">
         <unit bldFile="telephonyserverplugins/common_tsy/group" mrp="telephonyserverplugins/common_tsy/group/telephony_commontsy.mrp"/>
       </component>
-      <component id="licenseetsystub" name="Licensee TSY Stub" introduced="^2" purpose="development" class="plugin" filter="test">
+      <component id="licenseetsystub" name="Licensee TSY Stub" introduced="^2" purpose="development" class="plugin" filter="sf_build">
         <unit mrp="telephonyserverplugins/licenseetsystub/group/licenseetsystub.mrp" bldFile="telephonyserverplugins/licenseetsystub/group"/>
       </component>
       <component id="multimodetsy" name="Multimode TSY" purpose="development" class="plugin">
