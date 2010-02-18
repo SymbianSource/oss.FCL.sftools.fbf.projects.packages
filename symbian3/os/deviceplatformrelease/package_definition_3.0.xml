@@ -80,7 +80,7 @@
       <component id="config" filter="s60" name="Config" class="config" purpose="development">
         <unit base="sf_config/config"/>
       </component>
-      <component id="sf_cenrep" filter="sf_build" name="ConE cenrep config" class="config" purpose="development">
+      <component id="cenrep" filter="sf_build" name="ConE Central Repository Config" class="config" purpose="development">
         <unit bldFile="sf_config/cenrep/group"/>
       </component>
     </collection>
