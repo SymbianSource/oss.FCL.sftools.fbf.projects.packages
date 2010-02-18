@@ -41,6 +41,9 @@
       <component id="metadatautility" filter="s60" name="Metadata Utility">
         <unit bldFile="mmserv/metadatautility/group"/>
       </component>
+      <component id="3gpextparserstub" filter="sf_build" name="3GPExt Parser Stub">
+        <unit bldFile="mmserv/metadatautility/3GPExtParserLib_stub/group"/>
+      </component>
       <component id="radioutility" filter="s60" name="Radio Utility">
         <unit bldFile="mmserv/radioutility/group"/>
       </component>

@@ -3,7 +3,7 @@
   <package id="videotelephony" name="Video Telephony Apps" levels="engine plugin prot ui">
     <collection id="vtengines" name="Video Telephony Engines" level="engine">
       <component id="videoteleng" filter="s60" name="Video Telephony Engine">
-        <unit bldFile="vtengines/videoteleng/group"/>
+        <unit bldFile="vtengines/videoteleng/Group"/>
       </component>
       <component id="vtmediatorplugin" filter="s60" name="VT Mediator Plugin" class="plugin">
         <unit bldFile="vtengines/vtmediatorplugin/group"/>
@@ -16,10 +16,10 @@
     </collection>
     <collection id="vtprotocolplugins" name="VT Protocol Plugins" level="plugin">
       <component id="displaysink" filter="s60" name="Display Sink" introduced="^2">
-        <unit bldFile="vtprotocolplugins/displaysink/group"/>
+        <unit bldFile="vtprotocolplugins/DisplaySink/group"/>
       </component>
       <component id="videosource" filter="s60" name="Video Source" introduced="^2">
-        <unit bldFile="vtprotocolplugins/videosource/group"/>
+        <unit bldFile="vtprotocolplugins/VideoSource/group"/>
       </component>
     </collection>
     <collection id="vtprotocolsstub" name="VT Protocols Stub" level="prot">
