@@ -120,7 +120,7 @@
           </component>
         </collection>
         <collection name="sbsv1_os" long-name="Symbian Build System v1" level="fw">
-          <component name="e32toolp" long-name="E32 Perl Tools" purpose="development" filter="test" class="PC">
+          <component name="e32toolp" long-name="E32 Perl Tools" purpose="development" filter="sf_build" class="PC">
             <unit mrp="/sf/os/buildtools/sbsv1_os/e32toolp/group/tools_e32toolp.mrp" bldFile="/sf/os/buildtools/sbsv1_os/e32toolp/group"/>
           </component>
         </collection>

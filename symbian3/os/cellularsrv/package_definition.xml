@@ -150,7 +150,7 @@
           <component name="common_tsy" long-name="Common TSY" introduced="^2" purpose="optional" plugin="Y">
             <unit bldFile="/sf/os/cellularsrv/telephonyserverplugins/common_tsy/group" mrp="/sf/os/cellularsrv/telephonyserverplugins/common_tsy/group/telephony_commontsy.mrp"/>
           </component>
-          <component name="licenseetsystub" long-name="Licensee TSY Stub" introduced="^2" purpose="development" filter="test" plugin="Y">
+          <component name="licenseetsystub" long-name="Licensee TSY Stub" introduced="^2" purpose="development" filter="sf_build" plugin="Y">
             <unit mrp="/sf/os/cellularsrv/telephonyserverplugins/licenseetsystub/group/licenseetsystub.mrp" bldFile="/sf/os/cellularsrv/telephonyserverplugins/licenseetsystub/group"/>
           </component>
           <component name="multimodetsy" long-name="Multimode TSY" purpose="development" plugin="Y">

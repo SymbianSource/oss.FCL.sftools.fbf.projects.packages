@@ -81,6 +81,7 @@
         <unit base="sf_config/config"/>
       </component>
       <component id="cenrep" filter="sf_build" name="ConE Central Repository Config" class="config" purpose="development">
+		<!-- will shoudl give the id/path something more unique than cenrep -->
         <unit bldFile="sf_config/cenrep/group"/>
       </component>
     </collection>
