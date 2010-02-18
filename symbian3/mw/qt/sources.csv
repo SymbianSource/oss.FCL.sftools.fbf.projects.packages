@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/MCL/sf/mw/qt/,/sf/mw/qt,branch,default,layers.sysdef.xml

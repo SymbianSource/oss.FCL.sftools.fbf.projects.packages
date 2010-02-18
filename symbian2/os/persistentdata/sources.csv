@@ -1,4 +1,0 @@
-source,dst,type,pattern,sysdef
-//v800008/Builds01/mercurial_master_prod/sfl/MCL/sf/os/persistentdata/,/sf/os/persistentdata,branch,RCL_1,layers.sysdef.xml
-//v800008/Builds01/mercurial_master_prod/oss/MCL/sf/os/security/,/sf/os/security,branch,RCL_1,
-//v800008/Builds01/mercurial_master_prod/sfl/FCL/sf/os/devicesrv/,/sf/os/devicesrv,changeset,RCL_1,
