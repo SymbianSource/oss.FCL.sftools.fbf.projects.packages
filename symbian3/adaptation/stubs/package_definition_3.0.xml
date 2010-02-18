@@ -2,32 +2,38 @@
 <SystemDefinition schema="3.0.0">
   <package id="stubs" name="Stubs" levels="stub">
     <collection id="s60_stubs" level="stub">
-     <component id="audiostubs">
-      <unit bldFile="/adaptation/stubs/audiostubs/group"/>
+     <component id="audiostubs" name="Audio Stubs">
+      <unit bldFile="audiostubs/group"/>
      </component>
-     <component id="drm_stubs">
-      <unit bldFile="/adaptation/stubs/drm_stubs/group"/>
+     <component id="btaudioadaptation_stub" name="Bluetooth Audio Adaptation Stub">
+      <unit bldFile="btaudioadaptation_stub/group"/>
      </component>
-     <component id="ocrsrv_stub">
-      <unit bldFile="/adaptation/stubs/ocrsrv_stub/group"/>
+     <component id="drm_stubs" name="DRM Stubs">
+      <unit bldFile="drm_stubs/group"/>
      </component>
-     <component id="omasuplasnconverterstubimpl">
-      <unit bldFile="/adaptation/stubs/omasuplasnconverterstubimpl/group"/>
+     <component id="ocrsrv_stub" name="OCR Services Stub">
+      <unit bldFile="ocrsrv_stub/group"/>
      </component>
-     <component id="posmsgpluginreferenceimpl">
-      <unit bldFile="/adaptation/stubs/posmsgpluginreferenceimpl/group"/>
+     <component id="omasuplasnconverterstubimpl" name="OMA SUPL ASN Converter Stub Implementation">
+      <unit bldFile="omasuplasnconverterstubimpl/group"/>
      </component>
-     <component id="power_save_display_mode_stub">
-      <unit bldFile="/adaptation/stubs/power_save_display_mode_stub/group"/>
+     <component id="posmsgpluginreferenceimpl" name="POS Message Plugin Reference Implementation" class="plugin">
+      <unit bldFile="posmsgpluginreferenceimpl/group"/>
      </component>
-     <component id="systemswstubs">
-      <unit bldFile="/adaptation/stubs/systemswstubs/group"/>
+     <component id="srsfenginestub" name="SRSF Engine Stub">
+      <unit bldFile="power_save_display_mode_stub/group"/>
      </component>
-     <component id="tactileclickplugin_stub">
-      <unit bldFile="/adaptation/stubs/tactileclickplugin_stub/group"/>
+     <component id="power_save_display_mode_stub" name="Power Save Display Mode Stub">
+      <unit bldFile="power_save_display_mode_stub/group"/>
      </component>
-     <component id="wlanhwinit_stub">
-      <unit bldFile="/adaptation/stubs/wlanhwinit_stub/group"/>
+     <component id="systemswstubs" name="System Software Stubs">
+      <unit bldFile="systemswstubs/group"/>
+     </component>
+     <component id="tactileclickplugin_stub" name="Tactile Click Plugin Stub" class="plugin">
+      <unit bldFile="tactileclickplugin_stub/group"/>
+     </component>
+     <component id="wlanhwinit_stub" name="WLAN Hardware Init Stub">
+      <unit bldFile="wlanhwinit_stub/group"/>
      </component>
     </collection>
   </package>
