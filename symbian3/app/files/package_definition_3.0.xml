@@ -4,19 +4,19 @@
     <collection id="deviceencryption" name="Device Encryption" level="support">
 		<!-- this is either needs to be broken up into idependent bld.infs, or it's really a component and should move down a directory -->		
       <component id="devencnotifplugin" filter="s60" name="Device Encryption Notifier Plugin" class="plugin" introduced="^3">
-        <unit bldFile="devencnotifplugin/group"/>
+        <unit bldFile="deviceencryption/devencnotifplugin/group"/>
       </component>
       <component id="devencui" filter="s60" name="Device Encryption UI" introduced="^3">
-        <unit bldFile="devencui/group"/>
+        <unit bldFile="deviceencryption/devencui/group"/>
       </component>
       <component id="devencdmadapter" filter="s60" name="Device Encryption DM Adapter" class="plugin" introduced="^3">
-        <unit bldFile="devencdmadapter/group"/>
+        <unit bldFile="deviceencryption/devencdmadapter/group"/>
       </component>
       <component id="devencgsplugin" filter="s60" name="Device Encryption GS Plugin" class="plugin" introduced="^3">
-        <unit bldFile="devencgsplugin/group"/>
+        <unit bldFile="deviceencryption/devencgsplugin/group"/>
       </component>
       <component id="deviceencryption_help" filter="s60" name="Device Encryption Help" introduced="^3">
-        <unit bldFile="help/group"/>
+        <unit bldFile="deviceencryption/help/group"/>
       </component>
       <component id="deviceencryption_build" filter="s60" name="Device Encryption Build" introduced="^3">
         <unit bldFile="deviceencryption/group"/>

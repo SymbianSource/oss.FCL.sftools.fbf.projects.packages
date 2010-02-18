@@ -80,19 +80,19 @@
         <collection name="deviceencryption" long-name="Device Encryption" level="support">
           <!-- this is either needs to be broken up into idependent bld.infs, or it's really a component and should move down a directory -->
           <component name="devencnotifplugin" filter="s60" long-name="Device Encryption Notifier Plugin" introduced="^3" plugin="Y">
-            <unit bldFile="/sf/app/files/devencnotifplugin/group"/>
+            <unit bldFile="/sf/app/files/deviceencryption/devencnotifplugin/group"/>
           </component>
           <component name="devencui" filter="s60" long-name="Device Encryption UI" introduced="^3">
-            <unit bldFile="/sf/app/files/devencui/group"/>
+            <unit bldFile="/sf/app/files/deviceencryption/devencui/group"/>
           </component>
           <component name="devencdmadapter" filter="s60" long-name="Device Encryption DM Adapter" introduced="^3" plugin="Y">
-            <unit bldFile="/sf/app/files/devencdmadapter/group"/>
+            <unit bldFile="/sf/app/files/deviceencryption/devencdmadapter/group"/>
           </component>
           <component name="devencgsplugin" filter="s60" long-name="Device Encryption GS Plugin" introduced="^3" plugin="Y">
-            <unit bldFile="/sf/app/files/devencgsplugin/group"/>
+            <unit bldFile="/sf/app/files/deviceencryption/devencgsplugin/group"/>
           </component>
           <component name="deviceencryption_help" filter="s60" long-name="Device Encryption Help" introduced="^3">
-            <unit bldFile="/sf/app/files/help/group"/>
+            <unit bldFile="/sf/app/files/deviceencryption/help/group"/>
           </component>
           <component name="deviceencryption_build" filter="s60" long-name="Device Encryption Build" introduced="^3">
             <unit bldFile="/sf/app/files/deviceencryption/group"/>

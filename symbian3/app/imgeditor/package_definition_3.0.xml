@@ -88,9 +88,6 @@
       	<!-- should distribute this to the other components -->
         <unit bldFile="imageeditorengine/group"/>
       </component>
-		<component id="imgeditor_api_tests" filter="s60,test,api_test" name="Image Editor Engine API Tests" purpose="development">
-			<unit bldFile="imageeditorengine/tsrc/public/basic/group"/>
-		</component>            
     </collection>
     <collection id="imgeditor_info" name="Image Editor Apps Info" level="ui">
       <component id="imgeditor_plat" filter="s60" name="Image Editor Apps Platform Interfaces" class="api">

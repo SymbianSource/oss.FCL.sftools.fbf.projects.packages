@@ -128,9 +128,6 @@
             <!-- can the exports be distributed to the other components? Or should this be collapsed into one component?-->
             <unit bldFile="/sf/app/videoeditor/videoeditorengine/group"/>
           </component>
-          <component name="videoeditorengine_api" filter="s60,test,api_test" long-name="Video Editor Engine API Tests" purpose="development">
-            <unit bldFile="/sf/app/videoeditor/videoeditorengine/tsrc/public/basic/group"/>
-          </component>
         </collection>
         <collection name="videoeditor_info" long-name="Video Editor Apps Info" level="ui">
           <component name="videoeditor_plat" filter="s60" long-name="Video Editor Apps Platform Interfaces" introduced="^2" class="api">

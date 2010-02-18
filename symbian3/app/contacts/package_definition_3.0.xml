@@ -22,24 +22,6 @@
       <component id="phonebook2" filter="s60" name="Phone Book 2">
         <unit bldFile="phonebookui/phonebook2/group"/>
       </component>
-      <component id="phonebook2_test" filter="s60,test,unit_test" name="Phonebook 2 Tests">
-       	<!-- can only have one unit, consider #including from phonebook2 or a common bld.inf  -->
-          <unit bldFile="phonebookui/Phonebook2/tsrc/group" />
-          <unit bldFile="phonebookui/Phonebook2/remotecontactlookup/contactactionservice/saveascontactplugin/tsrc/group" />
-          <unit bldFile="phonebookui/Phonebook2/spbcontentprovider/tsrc/ut_contentprovider/group" />      
-          <unit bldFile="phonebookui/Phonebook2/NamesListExtension/tsrc/group" />      
-      </component>
-      <component id="phonebook2_other_test" filter="s60,test,unit_test" name="Phonebook 2 Other Tests">
-      	<!-- can only have one unit. Why is this separate from the other tests? -->
-         <unit bldFile="phonebookui/Phonebook2/UIControls/tsrc/group" />
-         <unit bldFile="phonebookui/Phonebook2/Presentation/tsrc/group" />
-         <unit bldFile="phonebookui/Phonebook2/USIMExtension/tsrc/group" />
-         <unit bldFile="phonebookui/Phonebook2/xSPExtensionManager/tsrc/group" />
-         <unit bldFile="phonebookui/Phonebook2/ccapplication/ccacommlauncherplugin/tsrc/group" />
-         <unit bldFile="phonebookui/Phonebook2/ccapplication/ccacontactorservice/tsrc/group" />
-         <unit bldFile="phonebookui/Phonebook2/ccapplication/ccapp/tsrc/group" />
-         <unit bldFile="phonebookui/Phonebook2/ccapplication/ccamycardplugin/tsrc/group" />
-       </component>
     </collection>
     <collection id="phonebookengines" name="Phonebook Engines" level="engine">
       <component id="cntfindplugin" filter="s60" name="Contacts Find Plugin" class="plugin" introduced="^2">
@@ -54,19 +36,6 @@
       <component id="contactsmodel" name="Contacts Model" introduced="ER5" purpose="optional">
         <unit version="2" bldFile="phonebookengines/contactsmodel/groupsql" mrp="phonebookengines/contactsmodel/groupsql/app-engines_cntmodel.mrp"/>
       </component>
-      <component id="virtualphonebook_test" name="Virtual Phonebook Tests" filter="s60,test,unit_test">
-      	<!-- can only have one bld.inf, #include the latter from the former, or #include both from virtualphonebook-->
-          <unit bldFile="phonebookengines/VirtualPhonebook/tsrc/group" />
-          <unit bldFile="phonebookengines/VirtualPhonebook/VPbkCntModel/tsrc/group" />
-      </component>
-      <component id="vpbk_test" filter="s60,test,unit_test" name="Virtual Phonebook Other Tests">
-      	<!-- can only have one bld.inf, #include from the first, or #include both from virtualphonebook
-      		Why is this separate from virtualphonebook_test?-->
-        <unit bldFile="phonebookengines/VirtualPhonebook/VPbkEng/tsrc/group" />
-        <unit bldFile="phonebookengines/VirtualPhonebook/VPbkEngUtils/tsrc/group" />
-        <unit bldFile="phonebookengines/VirtualPhonebook/VPbkSimStoreImpl/tsrc/group" />
-        <unit bldFile="phonebookengines/VirtualPhonebook/VPbkSimStoreService/tsrc/group" />
-      </component>      
     </collection>
     <collection id="pimprotocols" name="PIM Protocols" level="services">
       <component id="phonebooksync" name="Phonebook Sync" purpose="optional" class="plugin">
@@ -80,13 +49,6 @@
       <component id="cmsservices" filter="s60" name="Contact Method Selector Services" introduced="^2">
         <unit bldFile="ccservices/cmsservices/group"/>
       </component>
-      <component id="cms_test" filter="s60,test,unit_test" name="Contact Method Selector Tests">
-     	<!-- can only have one unit, #include from the first, or #include from cmsservices  -->
-        <unit bldFile="ccservices/cmsservices/bpas/tsrc/group" />
-        <unit bldFile="ccservices/cmsservices/cmsengine/tsrc/group" />
-        <unit bldFile="ccservices/cmsservices/contactpresence/tsrc/group" />
-        <unit bldFile="ccservices/cmsservices/presencetrafficlights/tsrc/group" />
-      </component>           
     </collection>
     <collection id="presencecache" name="Presence Cache" level="support">
       <component id="presencecacheutils" filter="s60" name="Presence Cache Utils" introduced="^2">
@@ -101,10 +63,6 @@
       <component id="presencecache_build" filter="s60" name="Presence Cache Build" introduced="^2">
 		<!-- should divide this bld.inf into the other components, or collapse them into a single component -->
         <unit bldFile="presencecache/group"/>
-      </component>
-      <component id="presencecache_test" filter="s60,test,unit_test" name="Presence Cache Tests">
-      	<!-- can this be #included from presencecacheutils?  -->
-        <unit bldFile="presencecache/presencecacheutils/tsrc/group" />
       </component>
     </collection>
     <collection id="predictivesearch" name="Predictive Search" level="support">
@@ -133,7 +91,7 @@
         <unit bldFile="contacts_plat/group"/>
       </component>
      <component id="contacts_plat_test" filter="s60,test,api_test" name="Contacts Apps Platform API Test">
-       <unit bldFile="contacts_plat/cms_contactor_api/tsrc/group" />
+		<!-- can only have one unit. Use common bld.inf? -->
        <unit bldFile="contacts_plat/cca_launch_api/tsrc/group" />
        <unit bldFile="contacts_plat/cca_view_plugin_api/tsrc/group" />
        <unit bldFile="contacts_plat/contactpresence_api/tsrc/group" />
@@ -147,7 +105,6 @@
        <unit bldFile="contacts_plat/predictivesearch_client_api/tsrc/group" />        
        <unit bldFile="contacts_plat/predictivesearch_utils_api/tsrc/group" />     
        <unit bldFile="contacts_plat/phonebook_2_rcl_api/tsrc/group" />     
-       <unit bldFile="contacts_plat/phonebook_2_icon_api/tsrc/ut_CPbk2IconArray/group" />  
      </component>
       <component id="contacts_pub" filter="s60" name="Contacts Apps Public Interfaces" class="api">
         <unit bldFile="contacts_pub/group"/>
