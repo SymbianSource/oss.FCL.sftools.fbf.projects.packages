@@ -10,7 +10,7 @@
     <collection id="locfiles" name="Locale Files" level="mid">
       <component id="locfiles_build" filter="s60" name="S60 Locale Files Build" class="config" purpose="development">
       	<!-- need to move component down a directory -->
-        <unit bldFile="s60locfiles/group"/>
+        <unit bldFile="locfiles/group"/>
       </component>
 	<component id="locfiles_set1" name="Locale Files Set 1" class="config" filter="s60">
 		<unit bldFile="locfiles/group/set1"/>
