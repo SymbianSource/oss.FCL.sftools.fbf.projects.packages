@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="stubs" name="Stubs" levels="stub">
+    <collection id="s60_stubs" level="stub">
+     <component id="audiostubs">
+      <unit bldFile="/adaptation/stubs/audiostubs/group"/>
+     </component>
+     <component id="drm_stubs">
+      <unit bldFile="/adaptation/stubs/drm_stubs/group"/>
+     </component>
+     <component id="ocrsrv_stub">
+      <unit bldFile="/adaptation/stubs/ocrsrv_stub/group"/>
+     </component>
+     <component id="omasuplasnconverterstubimpl">
+      <unit bldFile="/adaptation/stubs/omasuplasnconverterstubimpl/group"/>
+     </component>
+     <component id="posmsgpluginreferenceimpl">
+      <unit bldFile="/adaptation/stubs/posmsgpluginreferenceimpl/group"/>
+     </component>
+     <component id="power_save_display_mode_stub">
+      <unit bldFile="/adaptation/stubs/power_save_display_mode_stub/group"/>
+     </component>
+     <component id="systemswstubs">
+      <unit bldFile="/adaptation/stubs/systemswstubs/group"/>
+     </component>
+     <component id="tactileclickplugin_stub">
+      <unit bldFile="/adaptation/stubs/tactileclickplugin_stub/group"/>
+     </component>
+     <component id="wlanhwinit_stub">
+      <unit bldFile="/adaptation/stubs/wlanhwinit_stub/group"/>
+     </component>
+    </collection>
+  </package>
+</SystemDefinition>
