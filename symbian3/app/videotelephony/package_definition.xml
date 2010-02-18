@@ -79,7 +79,7 @@
       <block name="videotelephony" level="apps" long-name="Video Telephony Apps" levels="engine plugin prot ui">
         <collection name="vtengines" long-name="Video Telephony Engines" level="engine">
           <component name="videoteleng" filter="s60" long-name="Video Telephony Engine">
-            <unit bldFile="/sf/app/videotelephony/vtengines/videoteleng/group"/>
+            <unit bldFile="/sf/app/videotelephony/vtengines/videoteleng/Group"/>
           </component>
           <component name="vtmediatorplugin" filter="s60" long-name="VT Mediator Plugin" plugin="Y">
             <unit bldFile="/sf/app/videotelephony/vtengines/vtmediatorplugin/group"/>
@@ -92,10 +92,10 @@
         </collection>
         <collection name="vtprotocolplugins" long-name="VT Protocol Plugins" level="plugin">
           <component name="displaysink" filter="s60" long-name="Display Sink" introduced="^2">
-            <unit bldFile="/sf/app/videotelephony/vtprotocolplugins/displaysink/group"/>
+            <unit bldFile="/sf/app/videotelephony/vtprotocolplugins/DisplaySink/group"/>
           </component>
           <component name="videosource" filter="s60" long-name="Video Source" introduced="^2">
-            <unit bldFile="/sf/app/videotelephony/vtprotocolplugins/videosource/group"/>
+            <unit bldFile="/sf/app/videotelephony/vtprotocolplugins/VideoSource/group"/>
           </component>
         </collection>
         <collection name="vtprotocolsstub" long-name="VT Protocols Stub" level="prot">

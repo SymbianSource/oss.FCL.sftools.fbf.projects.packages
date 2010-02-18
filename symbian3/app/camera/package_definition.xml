@@ -83,6 +83,7 @@
           </component>
           <component name="cameraapp" filter="s60" long-name="Camera Application">
             <unit bldFile="/sf/app/camera/camerauis/cameraapp/group"/>
+            <unit bldFile="/sf/app/camera/camerauis/cameraapp/help/group"/>
           </component>
         </collection>
         <collection name="camera_info" long-name="Camera Apps Info">

@@ -119,6 +119,9 @@
           <component name="aknicon" filter="s60" long-name="Avkon Icon Framework">
             <unit bldFile="/sf/mw/uiresources/uigraphics/aknicon/group"/>
           </component>
+          <component name="nvgrenderstage" filter="sf_build" long-name="NVG Render Stage">
+            <unit bldFile="/sf/mw/uiresources/uigraphics/nvgrenderstage/group"/>
+          </component>
         </collection>
         <collection name="layouts" long-name="Layouts" level="plugin">
           <component name="cdl" filter="s60" long-name="Customization Definition Language">

@@ -106,7 +106,7 @@
             <unit bldFile="/sf/mw/securitysrv/pkiutilities/devicetoken/group"/>
           </component>
           <component name="certificates" filter="s60" long-name="Certificates">
-            <unit bldFile="/sf/mw/securitysrv/pkiutilities/certificates/group" filter="sf_build"/>
+            <unit bldFile="/sf/mw/securitysrv/pkiutilities/Certificates/group" filter="sf_build"/>
           </component>
           <component name="pkiutilities_build" filter="s60" long-name="PKI Utilities Build">
             <!-- need to split this into the above components -->
