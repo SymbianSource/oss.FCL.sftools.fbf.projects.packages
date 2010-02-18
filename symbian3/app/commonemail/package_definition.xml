@@ -102,15 +102,6 @@
           <component name="emailinstallationinitiator" filter="s60" long-name="Email Installation Initiator" introduced="^2">
             <unit bldFile="/sf/app/commonemail/emailservices/emailinstallationinitiator/group"/>
           </component>
-          <component name="emailservices_test" filter="s60,test,unit_test" long-name="Email Services Tests">
-            <!--  can these be #included in their relevant components or a single test bld.inf? 
-      		Can only have one unit -->
-            <unit bldFile="/sf/app/commonemail/emailservices/emailframework/tsrc/group"/>
-            <unit bldFile="/sf/app/commonemail/emailservices/emailserver/tsrc/group"/>
-            <unit bldFile="/sf/app/commonemail/emailservices/emailserver/cmailhandlerplugin/tsrc/group"/>
-            <unit bldFile="/sf/app/commonemail/emailservices/emailserver/mailserverautostart/tsrc/group"/>
-            <unit bldFile="/sf/app/commonemail/emailcontacts/contactactionservice/saveascontactplugin/tsrc/group"/>
-          </component>
         </collection>
         <collection name="ipsservices" long-name="IMAP/POP/SMTP Services" level="service">
           <component name="ipssossettings" filter="s60" long-name="IPS SOS Settings" introduced="^2">

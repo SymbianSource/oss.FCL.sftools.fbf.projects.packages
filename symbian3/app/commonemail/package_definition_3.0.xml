@@ -26,15 +26,6 @@
       <component id="emailinstallationinitiator" filter="s60" name="Email Installation Initiator" introduced="^2">
         <unit bldFile="emailservices/emailinstallationinitiator/group"/>
       </component>
-      <component id="emailservices_test" filter="s60,test,unit_test" name="Email Services Tests">
-      	<!--  can these be #included in their relevant components or a single test bld.inf? 
-      		Can only have one unit -->
-		<unit bldFile="emailservices/emailframework/tsrc/group" />
-		<unit bldFile="emailservices/emailserver/tsrc/group"  />
-		<unit bldFile="emailservices/emailserver/cmailhandlerplugin/tsrc/group"/>
-		<unit bldFile="emailservices/emailserver/mailserverautostart/tsrc/group"/>
-		<unit bldFile="emailcontacts/contactactionservice/saveascontactplugin/tsrc/group"/>
-      </component>
     </collection>
     <collection id="ipsservices" name="IMAP/POP/SMTP Services" level="service">
       <component id="ipssossettings" filter="s60" name="IPS SOS Settings" introduced="^2">
