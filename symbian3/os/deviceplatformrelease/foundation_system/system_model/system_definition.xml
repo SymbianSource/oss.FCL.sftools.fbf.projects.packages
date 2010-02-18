@@ -101,9 +101,9 @@
 <SystemDefinition schema="3.0.0">
   <systemModel name="Symbian^3">
     <layer id="adaptation" name="Adaptation" levels="hw-if">
-      <package id="qemu" level="hw-if" href="../../../../adaptation/qemu/package_definition_3.0.xml"/>
-      <package id="beagleboard" level="hw-if" href="../../../../adaptation/beagleboard/package_definition_3.0.xml"/>
-      <package id="stubs" level="hw-if" href="../../../../adaptation/stubs/package_definition_3.0.xml"/>
+      <package id="stubs" tech-domain="hb" level="high" href="../../../../adaptation/stubs/package_definition_3.0.xml"/>
+      <package id="beagleboard" tech-domain="hb" level="low" href="../../../../adaptation/beagleboard/package_definition_3.0.xml"/>
+      <package id="qemu" tech-domain="hb" level="low" href="../../../../adaptation/qemu/package_definition_3.0.xml"/>
     </layer>
     <layer id="os" name="OS" levels="hw services">
       <package id="kernelhwsrv" level="hw" tech-domain="hb" href="../../../../os/kernelhwsrv/package_definition_3.0.xml"/>
