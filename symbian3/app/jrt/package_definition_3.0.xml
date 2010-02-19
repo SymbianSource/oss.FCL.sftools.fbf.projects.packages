@@ -26,7 +26,7 @@
       </component>
 		<component id="jrt_build" filter="s60" name="JRT Build">
 			<!--  needed for __JAVA_STUBS condition -->
-			<unit bldFile="group"/>
+			<unit bldFile="java_stubs/group"/>
 		</component>
     </collection>
   </package>

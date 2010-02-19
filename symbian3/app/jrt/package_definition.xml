@@ -99,7 +99,7 @@
           </component>
           <component name="jrt_build" filter="s60" long-name="JRT Build">
             <!--  needed for __JAVA_STUBS condition -->
-            <unit bldFile="/sf/app/jrt/group"/>
+            <unit bldFile="/sf/app/jrt/java_stubs/group"/>
           </component>
         </collection>
       </block>
