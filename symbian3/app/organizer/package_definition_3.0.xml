@@ -106,6 +106,9 @@
       <component id="calenaiwprovider" filter="s60" name="Calendar AIW Proivder" class="plugin" introduced="^3">
         <unit bldFile="calendarui/calenaiwprovider/group"/>
       </component>
+      <component id="caldav" filter="sf_build" name="CalDAV" class="plugin" introduced="^3">
+        <unit bldFile="calendarui/caldav/group"/>
+      </component>
       <component id="calendarui_build" filter="s60" name="Calendar UI Build">
       	<!-- split contents into separate components -->
         <unit bldFile="calendarui/group"/>
