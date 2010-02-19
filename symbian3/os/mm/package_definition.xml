@@ -123,6 +123,9 @@
           <component name="arm_mdf_postprocessor" filter="s60" long-name="ARM MDF Postprocessor">
             <unit bldFile="/sf/os/mm/mdfdevvideoextensions/arm_mdf_postprocessor/group"/>
           </component>
+          <component name="nga_mdf_postprocessor" long-name="NGA MDF Postprocessor">
+            <unit bldFile="/sf/os/mm/mdfdevvideoextensions/nga_mdf_postprocessor/group"/>
+          </component>
           <component name="nga_mdf_tsrc" long-name="NGA MDF Tests" purpose="development" filter="s60,test,pref_test,module_test">
             <unit bldFile="/sf/os/mm/mdfdevvideoextensions/nga_mdf_postprocessor/tsrc/StifNgaMdfPoPTest/group"/>
           </component>

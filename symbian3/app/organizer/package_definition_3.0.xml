@@ -22,6 +22,9 @@
       <component id="calenlauncher" filter="s60" name="Calendar Launcher">
         <unit bldFile="calendarengines/calenlauncher/group"/>
       </component>
+      <component id="caldav" filter="s60" name="CalDav Server" introduced="^3">
+        <unit bldFile="calendarengines/caldav/group"/>
+      </component>
     </collection>
     <collection id="meetingrequestengines" name="Meeting Request Engines" level="engine">
       <component id="mrmailbox" filter="s60" name="Meeting Request Mailbox">

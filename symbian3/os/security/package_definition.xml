@@ -150,6 +150,9 @@
             <!-- not really s60 -->
             <unit mrp="/sf/os/security/cryptoservices/browserrootcertificates/browserrootcerts.mrp"/>
           </component>
+          <component id="rootcertificates" filter="sf_build" name="Root Certificates" introduced="7.0s" purpose="optional">
+            <unit bldFile="cryptoservices/rootcertificates/group" mrp="cryptoservices/rootcertificates/group/rootcerts.mrp"/>
+          </component>
           <component name="asnpkcs" long-name="ASN PKCS" introduced="8.0" purpose="optional">
             <unit bldFile="/sf/os/security/cryptoservices/asnpkcs/group" mrp="/sf/os/security/cryptoservices/asnpkcs/group/security_asnpkcs.mrp"/>
           </component>

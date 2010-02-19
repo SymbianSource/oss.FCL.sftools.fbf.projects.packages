@@ -169,6 +169,12 @@
           <component name="fotaapplication_build" filter="s60" long-name="FOTA Application Build">
             <unit bldFile="/sf/mw/remotemgmt/fotaapplication/fotaserver/fotastartupextplg/group"/>
           </component>
+          <component name="fotaserver" filter="s60" long-name="FOTA Server">
+            <unit bldFile="/sf/mw/remotemgmt/fotaapplication/fotaserver/group"/>
+          </component>
+          <component name="fotacustcmds" filter="s60" long-name="FOTA Custom Commands">
+            <unit bldFile="/sf/mw/remotemgmt/fotaapplication/fotaserver/fotacustcmds/group"/>
+          </component>
         </collection>
         <collection name="remotemgmt_info" long-name="Remote Management Info" level="specific">
           <component name="remotemgmt_plat" filter="s60" long-name="Remote Management Platform Interfaces" class="api">

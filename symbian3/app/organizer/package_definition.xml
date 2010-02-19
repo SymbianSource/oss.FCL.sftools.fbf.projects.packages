@@ -98,6 +98,9 @@
           <component name="calenlauncher" filter="s60" long-name="Calendar Launcher">
             <unit bldFile="/sf/app/organizer/calendarengines/calenlauncher/group"/>
           </component>
+          <component name="caldav" filter="s60" long-name="CalDav Server" introduced="^3">
+            <unit bldFile="/sf/app/organizer/calendarengines/caldav/group"/>
+          </component>
         </collection>
         <collection name="meetingrequestengines" long-name="Meeting Request Engines" level="engine">
           <component name="mrmailbox" filter="s60" long-name="Meeting Request Mailbox">
