@@ -109,7 +109,7 @@
             <unit bldFile="/sf/mw/btservices/bluetoothengine/bthid/group"/>
           </component>
           <component name="btctrldcmoadapter" filter="s60" long-name="Bluetooth Control DCMO Adapter" introduced="^3" plugin="Y">
-            <unit bldFile="/sf/mw/btservices/bluetoothengine/bthid/group"/>
+            <unit bldFile="/sf/mw/btservices/bluetoothengine/btctrldcmoadapter/group"/>
           </component>
         </collection>
         <collection name="bluetoothappprofiles" long-name="Bluetooth Application Profiles" level="plugin">

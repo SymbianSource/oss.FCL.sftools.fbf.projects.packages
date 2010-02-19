@@ -33,7 +33,7 @@
         <unit bldFile="bluetoothengine/bthid/group"/>
       </component>
       <component id="btctrldcmoadapter" filter="s60" name="Bluetooth Control DCMO Adapter" class="plugin" introduced="^3">
-        <unit bldFile="bluetoothengine/bthid/group"/>
+        <unit bldFile="bluetoothengine/btctrldcmoadapter/group"/>
       </component>
     </collection>
     <collection id="bluetoothappprofiles" name="Bluetooth Application Profiles" level="plugin">
