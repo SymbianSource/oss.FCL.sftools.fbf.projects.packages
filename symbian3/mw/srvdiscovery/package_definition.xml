@@ -84,10 +84,10 @@
         </collection>
         <collection name="upnp" long-name="UPnP" level="server">
           <component name="upnpstack_plat" long-name="UPnP Stack Platform Interfaces" introduced="^3" purpose="optional" class="api">
-            <unit bldFile="/sf/mw/srvdiscovery/servicediscoveryandcontrol/upnpstack_plat/group"/>
+            <unit bldFile="/sf/mw/srvdiscovery/upnp/upnpstack_plat/group"/>
           </component>
           <component name="upnpstack" long-name="UPnP Stack" introduced="^3" purpose="optional">
-            <unit bldFile="/sf/mw/srvdiscovery/servicediscoveryandcontrol/upnpstack/group"/>
+            <unit bldFile="/sf/mw/srvdiscovery/upnp/upnpstack/group"/>
           </component>
         </collection>
         <collection name="srvdiscovery_info" long-name="Service Discovery and Usage Info" level="specific">

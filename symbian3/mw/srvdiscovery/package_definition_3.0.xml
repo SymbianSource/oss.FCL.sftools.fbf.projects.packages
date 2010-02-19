@@ -8,10 +8,10 @@
     </collection>
     <collection id="upnp" name="UPnP" level="server">
       <component id="upnpstack_plat" name="UPnP Stack Platform Interfaces" introduced="^3" purpose="optional" class="api">
-        <unit bldFile="servicediscoveryandcontrol/upnpstack_plat/group"/>
+        <unit bldFile="upnp/upnpstack_plat/group"/>
       </component>
       <component id="upnpstack" name="UPnP Stack" introduced="^3" purpose="optional">
-        <unit bldFile="servicediscoveryandcontrol/upnpstack/group"/>
+        <unit bldFile="upnp/upnpstack/group"/>
       </component>
     </collection>
     <collection id="srvdiscovery_info" name="Service Discovery and Usage Info" level="specific">
