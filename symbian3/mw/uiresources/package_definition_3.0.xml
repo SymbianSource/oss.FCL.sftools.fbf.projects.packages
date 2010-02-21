@@ -84,9 +84,11 @@
       <component id="fontprovider" filter="s60" name="Font Provider">
         <unit bldFile="fontsupport/fontprovider/group"/>
       </component>
+<!-- R&D materials, should be Nokia only
       <component id="fontutils" filter="s60" name="Font Utils">
         <unit bldFile="fontsupport/fontutils/group"/>
       </component>
+-->
     </collection>
     <collection id="helpthemes" name="Help Themes" level="data">
     	<!-- collection is really a component. Need to move down a directory -->
