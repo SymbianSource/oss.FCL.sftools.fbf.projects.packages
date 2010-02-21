@@ -144,7 +144,7 @@
       <component id="tzlocrscfactory" name="Time Zone Localization Resource Factory" introduced="9.1" purpose="optional" class="config">
         <unit bldFile="tzservices/tzlocrscfactory/group" mrp="tzservices/tzlocrscfactory/group/app-services_tzlocalizationrscfactory.mrp"/>
       </component>
-      <component id="tzdatabase" name="Time Zone Database" introduced="9.1" purpose="optional" class="config">
+      <component id="tzdatabase" name="Time Zone Database" filter="test" introduced="9.1" purpose="optional" class="config">
         <unit bldFile="tzservices/tzdatabase/group" mrp="tzservices/tzdatabase/group/app-services_tzdb.mrp"/>
       </component>
     </collection>

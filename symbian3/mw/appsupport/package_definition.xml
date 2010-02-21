@@ -212,7 +212,7 @@
           <component name="tzlocrscfactory" long-name="Time Zone Localization Resource Factory" introduced="9.1" purpose="optional" class="config">
             <unit bldFile="/sf/mw/appsupport/tzservices/tzlocrscfactory/group" mrp="/sf/mw/appsupport/tzservices/tzlocrscfactory/group/app-services_tzlocalizationrscfactory.mrp"/>
           </component>
-          <component name="tzdatabase" long-name="Time Zone Database" introduced="9.1" purpose="optional" class="config">
+          <component name="tzdatabase" long-name="Time Zone Database" filter="test" introduced="9.1" purpose="optional" class="config">
             <unit bldFile="/sf/mw/appsupport/tzservices/tzdatabase/group" mrp="/sf/mw/appsupport/tzservices/tzdatabase/group/app-services_tzdb.mrp"/>
           </component>
         </collection>
