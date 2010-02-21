@@ -207,7 +207,7 @@
             <unit bldFile="/sf/app/videoplayer/videoplayerapp/lwplayer/group"/>
           </component>
           <component name="mpxvideoplayer" filter="s60" long-name="MPX Video Player" plugin="Y">
-            <unit bldFile="/sf/app/videoplayer/videoplayerapp/lmpxvideoplayer/group"/>
+            <unit bldFile="/sf/app/videoplayer/videoplayerapp/mpxvideoplayer/group"/>
           </component>
           <component name="videoplayerlauncher" filter="s60" long-name="Video Player Launcher">
             <unit bldFile="/sf/app/videoplayer/videoplayerapp/videoplayerlauncher/group"/>

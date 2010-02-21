@@ -131,7 +131,7 @@
         <unit bldFile="videoplayerapp/lwplayer/group"/>
       </component>
       <component id="mpxvideoplayer" filter="s60" name="MPX Video Player" class="plugin">
-        <unit bldFile="videoplayerapp/lmpxvideoplayer/group"/>
+        <unit bldFile="videoplayerapp/mpxvideoplayer/group"/>
       </component>
       <component id="videoplayerlauncher" filter="s60" name="Video Player Launcher">
         <unit bldFile="videoplayerapp/videoplayerlauncher/group"/>
