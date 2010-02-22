@@ -81,26 +81,26 @@
           <!-- collection is really a component. Needs to be moved down a directory -->
           <!-- this needs to be built first, does build order need to be forced with filters? -->
           <component name="dtdinstaller_build" filter="s60" long-name="DTD Installer Build" class="tool PC">
-            <unit bldFile="/sf/tools/homescreentools/dtdinstaller/group"/>
+            <unit bldFile="/sf/app/homescreentools/dtdinstaller/group"/>
           </component>
         </collection>
         <collection name="themeinstaller" long-name="Theme Installer" level="install">
           <!-- collection is really a component. Needs to be moved down a directory -->
           <component name="themeinstaller_build" filter="s60" long-name="Theme Installer Build" class="tool PC">
-            <unit bldFile="/sf/tools/homescreentools/themeinstaller/group"/>
+            <unit bldFile="/sf/app/homescreentools/themeinstaller/group"/>
           </component>
         </collection>
         <collection name="widgettools" long-name="Widget Tools" level="install">
           <component name="hspluginpreinstaller" filter="s60" long-name="HS Plugin Preinstaller" introduced="^3" class="tool PC">
-            <unit bldFile="/sf/tools/homescreentools/widgettools/hspluginpreinstaller/group"/>
+            <unit bldFile="/sf/app/homescreentools/widgettools/hspluginpreinstaller/group"/>
           </component>
           <component name="wrtwidgetpreinstaller" filter="s60" long-name="WRT Widget Preinstaller" introduced="^3" class="tool PC">
-            <unit bldFile="/sf/tools/homescreentools/widgettools/wrtwidgetpreinstaller/group"/>
+            <unit bldFile="/sf/app/homescreentools/widgettools/wrtwidgetpreinstaller/group"/>
           </component>
         </collection>
         <collection name="themetool" long-name="Theme Tool" level="tool">
           <component name="themetool_build" filter="s60" long-name="Theme Tool Build" class="tool PC">
-            <unit bldFile="/sf/tools/homescreentools/themetool/group"/>
+            <unit bldFile="/sf/app/homescreentools/themetool/group"/>
           </component>
         </collection>
       </block>

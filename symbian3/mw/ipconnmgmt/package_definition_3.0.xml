@@ -26,12 +26,11 @@
       <component id="mpm" filter="s60" name="Mobility Policy Manager">
         <unit bldFile="bearermanagement/mpm/group"/>
       </component>
-      <component id="bearermanager" filter="s60" name="Bearer Manager">
-        <unit bldFile="bearermanagement/bearermanager/group"/>
+      <component id="extendedconnpref" filter="s60" name="Extended Connection Preferences">
+        <unit bldFile="bearermanagement/extendedconnpref/group"/>
       </component>
-      <component id="bearermanagement_build" filter="s60" name="Bearer Management Build">
-		<!-- move exports into one of the other components and remove this one -->
-        <unit bldFile="bearermanagement/group"/>
+      <component id="s60mcpr" filter="s60" name="S60 Meta-Connection Provider" class="plugin">
+        <unit bldFile="bearermanagement/S60MCPR/group"/>
       </component>
     </collection>
     <collection id="cmmanager" name="Connection Method Manager" level="framework">

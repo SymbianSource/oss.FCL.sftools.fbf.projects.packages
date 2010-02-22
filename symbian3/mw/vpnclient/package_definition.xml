@@ -169,7 +169,7 @@
             <unit bldFile="/sf/mw/vpnclient/vpnengine/dmadpki/group" filter="!oem_build"/>
           </component>
           <component name="ikesocket" filter="s60" long-name="IKE Socket" introduced="^3">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/ikesocketplugin/group" filter="!oem_build"/>
+            <unit bldFile="/sf/mw/vpnclient/vpnengine/ikesocket/group" filter="!oem_build"/>
           </component>
         </collection>
         <collection name="vpnui" long-name="VPN UI" level="ui">

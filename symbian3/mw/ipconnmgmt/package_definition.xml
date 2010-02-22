@@ -102,12 +102,11 @@
           <component name="mpm" filter="s60" long-name="Mobility Policy Manager">
             <unit bldFile="/sf/mw/ipconnmgmt/bearermanagement/mpm/group"/>
           </component>
-          <component name="bearermanager" filter="s60" long-name="Bearer Manager">
-            <unit bldFile="/sf/mw/ipconnmgmt/bearermanagement/bearermanager/group"/>
+          <component name="extendedconnpref" filter="s60" long-name="Extended Connection Preferences">
+            <unit bldFile="/sf/mw/ipconnmgmt/bearermanagement/extendedconnpref/group"/>
           </component>
-          <component name="bearermanagement_build" filter="s60" long-name="Bearer Management Build">
-            <!-- move exports into one of the other components and remove this one -->
-            <unit bldFile="/sf/mw/ipconnmgmt/bearermanagement/group"/>
+          <component name="s60mcpr" filter="s60" long-name="S60 Meta-Connection Provider" plugin="Y">
+            <unit bldFile="/sf/mw/ipconnmgmt/bearermanagement/S60MCPR/group"/>
           </component>
         </collection>
         <collection name="cmmanager" long-name="Connection Method Manager" level="framework">

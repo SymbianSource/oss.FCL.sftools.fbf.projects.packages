@@ -61,7 +61,8 @@
         <unit bldFile="servicewidget/servicewidgetdatapublisher/group"/>
       </component>
       <component id="themes" filter="s60" name="Service Widget Themes" class="config">
-        <unit bldFile="servicewidget/themes/install-themes/install/servicewidget/group"/>
+		<!-- does this really need to have that number in the directory name? -->
+        <unit bldFile="servicewidget/themes/install-themes/install/servicewidget_20021383/group"/>
       </component>
       <component id="servicewidget_build" filter="s60" name="Service Widget Build">
       	<!-- Either move the whole collection down one directory into a single component, or move the ROM and SIS parts into a Service Widget ROM component -->

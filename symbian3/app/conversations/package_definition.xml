@@ -137,7 +137,8 @@
             <unit bldFile="/sf/app/conversations/servicewidget/servicewidgetdatapublisher/group"/>
           </component>
           <component name="themes" filter="s60" long-name="Service Widget Themes" class="config">
-            <unit bldFile="/sf/app/conversations/servicewidget/themes/install-themes/install/servicewidget/group"/>
+            <!-- does this really need to have that number in the directory name? -->
+            <unit bldFile="/sf/app/conversations/servicewidget/themes/install-themes/install/servicewidget_20021383/group"/>
           </component>
           <component name="servicewidget_build" filter="s60" long-name="Service Widget Build">
             <!-- Either move the whole collection down one directory into a single component, or move the ROM and SIS parts into a Service Widget ROM component -->
