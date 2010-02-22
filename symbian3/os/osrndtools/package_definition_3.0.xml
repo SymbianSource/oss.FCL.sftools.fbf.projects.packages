@@ -116,14 +116,6 @@
     <unit bldFile="hti/group"/>
    </component>
   </collection>
-    <collection id="testexecfw1" name="Test Execution Framework v1" level="fw">
-      <component id="cinidata" name="CINI Data" purpose="development">
-        <unit bldFile="testexecfw1/cinidata" mrp="testexecfw1/cinidata/tools_cinidata.mrp"/>
-      </component>
-      <component id="testexecute" name="Test Execute" deprecated="^2" purpose="development">
-        <unit bldFile="testexecfw1/testexecute/Group" mrp="testexecfw1/testexecute/Group/tools_testexecute.mrp"/>
-      </component>
-    </collection>
     <collection id="osrndtools_info" name="OS R&amp;D tools Info" level="trace">
       <component id="osrndtools_plat" filter="s60" name="OS R&amp;D tools Platform Interfaces" class="api" purpose="development">
         <unit bldFile="osrndtools_plat/group"/>	<!-- currently empty. Remove? -->

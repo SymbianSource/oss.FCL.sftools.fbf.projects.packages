@@ -186,14 +186,6 @@
             <unit bldFile="/sf/os/osrndtools/hti/group"/>
           </component>
         </collection>
-        <collection name="testexecfw1" long-name="Test Execution Framework v1" level="fw">
-          <component name="cinidata" long-name="CINI Data" purpose="development">
-            <unit bldFile="/sf/os/osrndtools/testexecfw1/cinidata" mrp="/sf/os/osrndtools/testexecfw1/cinidata/tools_cinidata.mrp"/>
-          </component>
-          <component name="testexecute" long-name="Test Execute" deprecated="^2" purpose="development">
-            <unit bldFile="/sf/os/osrndtools/testexecfw1/testexecute/Group" mrp="/sf/os/osrndtools/testexecfw1/testexecute/Group/tools_testexecute.mrp"/>
-          </component>
-        </collection>
         <collection name="osrndtools_info" long-name="OS R&amp;D tools Info" level="trace">
           <component name="osrndtools_plat" filter="s60" long-name="OS R&amp;D tools Platform Interfaces" purpose="development" class="api">
             <unit bldFile="/sf/os/osrndtools/osrndtools_plat/group"/>
