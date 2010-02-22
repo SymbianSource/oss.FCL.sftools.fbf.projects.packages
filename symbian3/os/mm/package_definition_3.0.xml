@@ -19,7 +19,7 @@
       </component>
       <component id="effectspresets_utils" filter="s60" name="Effects Presets Utils">
       	<!-- need to #include the lot from a single bld.inf
-      		Also move to a stanard component location, not under effectspresets -->
+      		Also move to a standard component location, not under effectspresets -->
 	    <unit bldFile="devsoundextensions/effectspresets/AudioEqualizerUtility/group" filter="!dfs_build"/>
 		<unit bldFile="devsoundextensions/effectspresets/EnvironmentalReverbUtility/group" filter="!dfs_build"/>
 		<unit bldFile="devsoundextensions/effectspresets/StereoWideningUtility/group" filter="!dfs_build"/>
@@ -44,14 +44,8 @@
       </component>
     </collection>
     <collection id="mdfdevvideoextensions" name="MDF Dev Video Extensions" level="device-fw">
-      <component id="arm_mdf_postprocessor" filter="s60" name="ARM MDF Postprocessor">
-        <unit bldFile="mdfdevvideoextensions/arm_mdf_postprocessor/group"/>
-      </component>
       <component id="nga_mdf_postprocessor" name="NGA MDF Postprocessor" filter="s60">
         <unit bldFile="mdfdevvideoextensions/nga_mdf_postprocessor/group"/>
-      </component>
-      <component id="nga_mdf_tsrc" name="NGA MDF Tests" purpose="development" filter="s60,test,pref_test,module_test">
-        <unit bldFile="mdfdevvideoextensions/nga_mdf_postprocessor/tsrc/StifNgaMdfPoPTest/group"/>
       </component>
     </collection>
     <collection id="audio" name="Audio Codecs" level="middleware">
@@ -61,11 +55,6 @@
     </collection>
     <collection id="video" name="Video Codecs" level="middleware">
     	<!-- empty -->
-    </collection>
-    <collection id="videoadaptationextensions" name="Video Adaptation Extensions" level="adaptation">
-      <component id="postingsurface" filter="s60" name="Posting Surface">
-        <unit bldFile="videoadaptationextensions/postingsurface/group"/>
-      </component>
     </collection>
     <collection id="imagingandcamerafws" name="Imaging and Camera Frameworks" level="app-if">
       <component id="imagingfws" name="Imaging Frameworks" introduced="7.0s" purpose="mandatory">

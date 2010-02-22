@@ -20,13 +20,6 @@
       <component id="locationapesuplpsy" name="APE SUPL PSY" introduced="^3" purpose="optional" class="plugin" filter="s60">
         <unit bldFile="datasourcemodules/locationapesuplpsy/group"/>
       </component>
-      <component id="npeintegmodule" name="NPE Integration Module" introduced="^3" purpose="optional" class="plugin">
-        <unit bldFile="datasourcemodules/npeintegmodule/group" mrp="datasourcemodules/npeintegmodule/group/lbs_npeintegrationmodule.mrp"/>
-      </component>
-      <component id="datasourcemodules_build" name="Data Source Modules Build" introduced="^3" purpose="optional" filter="s60">
-      	<!-- need to move the exports to another component, or make this a real component by removing the #include and moving down a directory -->
-        <unit bldFile="datasourcemodules/group"/>
-      </component>
     </collection>
     <collection id="datasourceadaptation" name="Data Source Adaptation" level="adaptation">
       <component id="gpsdatasourceadaptation" name="GPS Data Source Adaptation" introduced="^2" purpose="optional" class="plugin">

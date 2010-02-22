@@ -81,19 +81,8 @@
           <component name="sysdeftools" long-name="System Definition Tools" purpose="development" introduced="^2">
             <unit mrp="/sf/os/buildtools/bldsystemtools/sysdeftools/group/sysdeftools.mrp"/>
           </component>
-          <component name="gttechviewbaseline" long-name="GT Techview Baseline" purpose="development">
-            <unit mrp="/sf/os/buildtools/packaging/additionalutils/gt_techview_baseline.mrp"/>
-          </component>
           <component name="commonbldutils" long-name="Common Utils" purpose="development">
             <unit mrp="/sf/os/buildtools/bldsystemtools/commonbldutils/tools_utils_common.mrp"/>
-          </component>
-        </collection>
-        <collection name="packaging" long-name="Packaging" level="ui">
-          <component name="additionalutils" long-name="Additional Utils" purpose="development">
-            <unit mrp="/sf/os/buildtools/packaging/additionalutils/additional_unknown_cedar.mrp"/>
-          </component>
-          <component name="dummy" long-name="Dummy" purpose="development">
-            <unit bldFile="/sf/os/buildtools/packaging/dummy" mrp="/sf/os/buildtools/packaging/dummy/additional_dummy.mrp"/>
           </component>
         </collection>
         <collection name="toolsandutils" long-name="Tools and Utils" level="mw">
@@ -102,15 +91,6 @@
           </component>
           <component name="e32tools" long-name="E32 Tools" deprecated="^2" purpose="development" class="PC">
             <unit bldFile="/sf/os/buildtools/toolsandutils/e32tools/group" mrp="/sf/os/buildtools/toolsandutils/e32tools/group/tools_e32tools.mrp"/>
-          </component>
-          <component name="wincredistribution" long-name="WinC Redistribution" purpose="development" filter="test">
-            <unit mrp="/sf/os/buildtools/dist_os/redistributionwinceka2/tools_redistribution_winc.mrp" bldFile="/sf/os/buildtools/dist_os/redistributionwinceka2"/>
-          </component>
-          <component name="additionalredistribution" long-name="Additional Redistribution" purpose="development" filter="test">
-            <unit mrp="/sf/os/buildtools/perltoolsplat_os/redistribution/additional_tools.mrp" bldFile="/sf/os/buildtools/perltoolsplat_os/redistribution"/>
-          </component>
-          <component name="statapi" long-name="STAT API" filter="gt" purpose="development">
-            <unit bldFile="/sf/os/buildtools/toolsandutils/statapi/source/statapi/console" mrp="/sf/os/buildtools/toolsandutils/statapi/group/testtools_stat_device_gt.mrp"/>
           </component>
           <component name="wintunnel" long-name="Wintunnel" purpose="development" filter="test">
             <unit mrp="/sf/os/buildtools/toolsandutils/wintunnel/group/testtools_WinTunnel_srconly.mrp" bldFile="/sf/os/buildtools/toolsandutils/wintunnel/group"/>

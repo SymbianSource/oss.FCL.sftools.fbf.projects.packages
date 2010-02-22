@@ -96,13 +96,6 @@
           <component name="locationapesuplpsy" long-name="APE SUPL PSY" introduced="^3" purpose="optional" filter="s60" plugin="Y">
             <unit bldFile="/sf/os/lbs/datasourcemodules/locationapesuplpsy/group"/>
           </component>
-          <component name="npeintegmodule" long-name="NPE Integration Module" introduced="^3" purpose="optional" plugin="Y">
-            <unit bldFile="/sf/os/lbs/datasourcemodules/npeintegmodule/group" mrp="/sf/os/lbs/datasourcemodules/npeintegmodule/group/lbs_npeintegrationmodule.mrp"/>
-          </component>
-          <component name="datasourcemodules_build" long-name="Data Source Modules Build" introduced="^3" purpose="optional" filter="s60">
-            <!-- need to move the exports to another component, or make this a real component by removing the #include and moving down a directory -->
-            <unit bldFile="/sf/os/lbs/datasourcemodules/group"/>
-          </component>
         </collection>
         <collection name="datasourceadaptation" long-name="Data Source Adaptation" level="adaptation">
           <component name="gpsdatasourceadaptation" long-name="GPS Data Source Adaptation" introduced="^2" purpose="optional" plugin="Y">

@@ -5,9 +5,6 @@
       <component id="basebandchanneladaptor" name="Baseband Channel Adaptor" introduced="8.1" purpose="optional">
         <unit bldFile="basebandabstraction/basebandchanneladaptor/group" mrp="basebandabstraction/basebandchanneladaptor/group/networking_bca.mrp"/>
       </component>
-      <component id="isc_if" filter="s60" name="Inter-System Communication Interface">
-        <unit bldFile="basebandabstraction/isc_if/group"/>
-      </component>
     </collection>
     <collection id="basebandadaptationplugins" name="Baseband Adaptation Plugins" level="adaptation">
       <component id="basebandchanneladaptorforc32" name="Baseband Channel Adaptor for C32" introduced="8.1" purpose="optional" class="plugin">
@@ -90,14 +87,6 @@
         <unit bldFile="telephonyserverplugins/simatktsy/group" mrp="telephonyserverplugins/simatktsy/group/commonsimatktsy.mrp"/>
       </component>
     </collection>
-    <collection id="commonnetworkinterface" name="Common Network Interface" level="hw-if">
-      <component id="gennif" filter="s60" name="Generic NIF">
-        <unit bldFile="commonnetworkinterface/gennif/group"/>
-      </component>
-      <component id="gprsumtsagent" filter="s60" name="GPRS UMTS Agent">
-        <unit bldFile="commonnetworkinterface/gprsumtsagent/group"/>
-      </component>
-    </collection>
     <collection id="telephonyutils" name="Telephony Utilities" level="app-if">
       <component id="dial" name="Dial" deprecated="9.1" purpose="optional">
         <unit bldFile="telephonyutils/dial/group" mrp="telephonyutils/dial/group/telephony_dial.mrp"/>
@@ -110,9 +99,6 @@
       </component>
     </collection>
     <collection id="cellularsrv_info" name="Cellular Baseband Services Info" level="app-if">
-      <component id="cellularsrv_plat" filter="s60" name="Cellular Baseband Services Platform Interfaces" class="api">
-        <unit bldFile="cellularsrv_plat/group"/>
-      </component>
       <component id="telephonyconfidentialdocs" name="Telephony Confidential Documentation" purpose="development" class="doc">
         <unit mrp="cellularsrv_info/telephonyconfidentialdocs/telephony_confidential.mrp"/>
       </component>

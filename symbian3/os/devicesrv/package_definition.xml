@@ -205,12 +205,6 @@
           </component>
         </collection>
         <collection name="sysstatemgmt" long-name="System State Management" level="server">
-          <component name="starter" filter="s60" long-name="Starter">
-            <unit bldFile="/sf/os/devicesrv/sysstatemgmt/starter/group"/>
-            <!-- are these test bld.infs needed for the build? -->
-            <!-- <unit bldFile="sysstatemgmt/starter/strtsecnote/group"/> -->
-            <!-- <unit bldFile="sysstatemgmt/starter/strtsecobs/group"/> -->
-          </component>
           <component name="ssmmapperutility" filter="s60" long-name="SSM Mapper Utility" introduced="^3">
             <unit bldFile="/sf/os/devicesrv/sysstatemgmt/ssmmapperutility/group"/>
           </component>

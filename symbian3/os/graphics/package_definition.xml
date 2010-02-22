@@ -78,12 +78,6 @@
     <layer name="os" long-name="OS" levels="hw services">
       <block name="graphics" level="services" long-name="Graphics" levels="adaptation engines internal-adaptations device-interface internal-utils app-if">
         <collection name="graphicsaccelaration" long-name="Graphics Acceleration" level="adaptation">
-          <component name="3d_opengl_es_1_1" filter="s60" long-name="3D OpenGL ES 1.1" introduced="^3">
-            <unit bldFile="/sf/os/graphics/graphicsaccelaration/3d_opengl_es_1_1/group"/>
-          </component>
-          <component name="2d_openvg_1_1" filter="s60" long-name="2D OpenVG 1.1" introduced="^3">
-            <unit bldFile="/sf/os/graphics/graphicsaccelaration/2D_OpenVG_1_1/group"/>
-          </component>
           <component name="vgi" filter="s60" long-name="VGI">
             <unit bldFile="/sf/os/graphics/graphicsaccelaration/vgi/group"/>
           </component>

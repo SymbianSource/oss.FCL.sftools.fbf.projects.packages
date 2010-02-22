@@ -95,7 +95,7 @@
           </component>
           <component name="effectspresets_utils" filter="s60" long-name="Effects Presets Utils">
             <!-- need to #include the lot from a single bld.inf
-      		Also move to a stanard component location, not under effectspresets -->
+      		Also move to a standard component location, not under effectspresets -->
             <unit bldFile="/sf/os/mm/devsoundextensions/effectspresets/AudioEqualizerUtility/group" filter="!dfs_build"/>
             <unit bldFile="/sf/os/mm/devsoundextensions/effectspresets/EnvironmentalReverbUtility/group" filter="!dfs_build"/>
             <unit bldFile="/sf/os/mm/devsoundextensions/effectspresets/StereoWideningUtility/group" filter="!dfs_build"/>
@@ -120,14 +120,8 @@
           </component>
         </collection>
         <collection name="mdfdevvideoextensions" long-name="MDF Dev Video Extensions" level="device-fw">
-          <component name="arm_mdf_postprocessor" filter="s60" long-name="ARM MDF Postprocessor">
-            <unit bldFile="/sf/os/mm/mdfdevvideoextensions/arm_mdf_postprocessor/group"/>
-          </component>
           <component name="nga_mdf_postprocessor" long-name="NGA MDF Postprocessor" filter="s60">
             <unit bldFile="/sf/os/mm/mdfdevvideoextensions/nga_mdf_postprocessor/group"/>
-          </component>
-          <component name="nga_mdf_tsrc" long-name="NGA MDF Tests" purpose="development" filter="s60,test,pref_test,module_test">
-            <unit bldFile="/sf/os/mm/mdfdevvideoextensions/nga_mdf_postprocessor/tsrc/StifNgaMdfPoPTest/group"/>
           </component>
         </collection>
         <collection name="audio" long-name="Audio Codecs" level="middleware">
@@ -137,11 +131,6 @@
         </collection>
         <collection name="video" long-name="Video Codecs" level="middleware">
           <!-- empty -->
-        </collection>
-        <collection name="videoadaptationextensions" long-name="Video Adaptation Extensions" level="adaptation">
-          <component name="postingsurface" filter="s60" long-name="Posting Surface">
-            <unit bldFile="/sf/os/mm/videoadaptationextensions/postingsurface/group"/>
-          </component>
         </collection>
         <collection name="imagingandcamerafws" long-name="Imaging and Camera Frameworks" level="app-if">
           <component name="imagingfws" long-name="Imaging Frameworks" introduced="7.0s" purpose="mandatory">

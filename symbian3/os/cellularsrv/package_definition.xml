@@ -81,9 +81,6 @@
           <component name="basebandchanneladaptor" long-name="Baseband Channel Adaptor" introduced="8.1" purpose="optional">
             <unit bldFile="/sf/os/cellularsrv/basebandabstraction/basebandchanneladaptor/group" mrp="/sf/os/cellularsrv/basebandabstraction/basebandchanneladaptor/group/networking_bca.mrp"/>
           </component>
-          <component name="isc_if" filter="s60" long-name="Inter-System Communication Interface">
-            <unit bldFile="/sf/os/cellularsrv/basebandabstraction/isc_if/group"/>
-          </component>
         </collection>
         <collection name="basebandadaptationplugins" long-name="Baseband Adaptation Plugins" level="adaptation">
           <component name="basebandchanneladaptorforc32" long-name="Baseband Channel Adaptor for C32" introduced="8.1" purpose="optional" plugin="Y">
@@ -166,14 +163,6 @@
             <unit bldFile="/sf/os/cellularsrv/telephonyserverplugins/simatktsy/group" mrp="/sf/os/cellularsrv/telephonyserverplugins/simatktsy/group/commonsimatktsy.mrp"/>
           </component>
         </collection>
-        <collection name="commonnetworkinterface" long-name="Common Network Interface" level="hw-if">
-          <component name="gennif" filter="s60" long-name="Generic NIF">
-            <unit bldFile="/sf/os/cellularsrv/commonnetworkinterface/gennif/group"/>
-          </component>
-          <component name="gprsumtsagent" filter="s60" long-name="GPRS UMTS Agent">
-            <unit bldFile="/sf/os/cellularsrv/commonnetworkinterface/gprsumtsagent/group"/>
-          </component>
-        </collection>
         <collection name="telephonyutils" long-name="Telephony Utilities" level="app-if">
           <component name="dial" long-name="Dial" deprecated="9.1" purpose="optional">
             <unit bldFile="/sf/os/cellularsrv/telephonyutils/dial/group" mrp="/sf/os/cellularsrv/telephonyutils/dial/group/telephony_dial.mrp"/>
@@ -186,9 +175,6 @@
           </component>
         </collection>
         <collection name="cellularsrv_info" long-name="Cellular Baseband Services Info" level="app-if">
-          <component name="cellularsrv_plat" filter="s60" long-name="Cellular Baseband Services Platform Interfaces" class="api">
-            <unit bldFile="/sf/os/cellularsrv/cellularsrv_plat/group"/>
-          </component>
           <component name="telephonyconfidentialdocs" long-name="Telephony Confidential Documentation" purpose="development" class="doc">
             <unit mrp="/sf/os/cellularsrv/cellularsrv_info/telephonyconfidentialdocs/telephony_confidential.mrp"/>
           </component>
