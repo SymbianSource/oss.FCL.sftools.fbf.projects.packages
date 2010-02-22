@@ -14,6 +14,11 @@
       <component id="camera_plat" filter="s60" name="Camera Apps Platform Interfaces" class="api">
         <unit bldFile="camera_plat/group"/>
       </component>
+      <component id="camera_plat_test" filter="s60,test,api_test" name="Camera Apps Platform API Tests" purpose="development">
+		<!-- can only have one unit. #include from a single bld.inf? -->
+      	<unit bldFile="camera_plat/camcorder_ui_constants_api/tsrc/group"/>
+      	<unit bldFile="camera_plat/active_palette_2_api/tsrc/group"/>
+      </component>
     </collection>
   </package>
 </SystemDefinition>
