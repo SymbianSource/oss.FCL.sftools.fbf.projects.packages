@@ -89,15 +89,20 @@
       </component>
     </collection>
     <collection id="fotaapplication" name="FOTA Application" level="generic">
-    	<!-- need to break up into components after resolving the #ifdefs -->
       <component id="fotaapplication_build" filter="s60" name="FOTA Application Build">
-        <unit bldFile="fotaapplication/fotaserver/fotastartupextplg/group"/>
+    	<!-- remove this component when configuration is in place and the #ifdefs have been worked out -->
+        <unit bldFile="fotaapplication/group"/>
       </component>
       <component id="fotaserver" filter="s60" name="FOTA Server">
-        <unit bldFile="fotaapplication/fotaserver/group"/>
+      	<meta rel="config">
+      		<defined condition="__SYNCML_DM_FOTA"/>
+      	</meta>
+		<!-- uncomment when #ifdefs are resolved -->
+        <!--<unit bldFile="fotaapplication/fotaserver/group"/>-->
       </component>
       <component id="fotacustcmds" filter="s60" name="FOTA Custom Commands">
-        <unit bldFile="fotaapplication/fotaserver/fotacustcmds/group"/>
+		<!-- uncomment when #ifdefs are resolved. Need to put a config meta here-->
+        <!--<unit bldFile="fotaapplication/fotaserver/fotacustcmds/group"/>-->
       </component>
     </collection>
     <collection id="remotemgmt_info" name="Remote Management Info" level="specific">
