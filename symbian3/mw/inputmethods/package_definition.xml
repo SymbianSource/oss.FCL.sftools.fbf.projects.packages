@@ -85,6 +85,12 @@
           <component name="akninputlanguage" filter="s60" long-name="Avkon Input Language">
             <unit bldFile="/sf/mw/inputmethods/textinput/akninputlanguage/group"/>
           </component>
+          <component name="ptihangulcore" filter="s60" long-name="PIT Hangul Core" introduced="^3">
+            <unit bldFile="/sf/mw/inputmethods/textinput/ptihangulcore/group"/>
+          </component>
+          <component name="ptikoreanqwertycore" filter="s60" long-name="PTI Korean QWERTY Core" introduced="^3">
+            <unit bldFile="/sf/mw/inputmethods/textinput/ptikoreanqwertycore/group"/>
+          </component>
           <component name="peninputarc" filter="s60" long-name="Pen Input Arc">
             <unit bldFile="/sf/mw/inputmethods/textinput/peninputarc/group"/>
           </component>
@@ -116,7 +122,28 @@
             <unit bldFile="/sf/mw/inputmethods/textinput/peninputvkbjp/group"/>
           </component>
           <component name="gslangplugin" filter="s60" long-name="GS Language Plugin" plugin="Y">
-            <unit bldFile="/sf/mw/inputmethods/textinput/gslangplugin"/>
+            <unit bldFile="/sf/mw/inputmethods/textinput/GSLangPlugin"/>
+          </component>
+          <component name="peninputgenericitut" filter="s60" long-name="Pen Input Generic ITU-T" introduced="^3" plugin="Y">
+            <unit bldFile="/sf/mw/inputmethods/textinput/peninputgenericitut/group"/>
+          </component>
+          <component name="peninputhwrtrui" filter="s60" long-name="Pen Input Handwriting Recognition Training UI" introduced="^3" plugin="Y">
+            <unit bldFile="/sf/mw/inputmethods/textinput/peninputhwrtrui/group"/>
+          </component>
+          <component name="peninputhwrfscn" filter="s60" long-name="Pen Input Chinese Full Screen Handwriting Recognition" introduced="^3" plugin="Y">
+            <unit bldFile="/sf/mw/inputmethods/textinput/peninputhwrfscn/group"/>
+          </component>
+          <component name="peninputvkbkr" filter="s60" long-name="Pen Input Korean Virtual Keyboard" introduced="^3" plugin="Y">
+            <unit bldFile="/sf/mw/inputmethods/textinput/peninputvkbkr/group"/>
+          </component>
+          <component name="peninputfingerhwr" filter="s60" long-name="Pen Input Finger Handwriting Recognition" introduced="^3" plugin="Y">
+            <unit bldFile="/sf/mw/inputmethods/textinput/peninputfingerhwr/group"/>
+          </component>
+          <component name="peninputsplititut" filter="s60" long-name="Pen Input Split ITU-T" introduced="^3" plugin="Y">
+            <unit bldFile="/sf/mw/inputmethods/textinput/peninputsplititut/group"/>
+          </component>
+          <component name="peninputsplitqwerty" filter="s60" long-name="Pen Input Split QWERTY" introduced="^3" plugin="Y">
+            <unit bldFile="/sf/mw/inputmethods/textinput/peninputsplitqwerty/group"/>
           </component>
           <component name="textinput_build" filter="s60" long-name="Text Input Build">
             <!--needed for #ifdef, can be removed when configuration is implemented -->

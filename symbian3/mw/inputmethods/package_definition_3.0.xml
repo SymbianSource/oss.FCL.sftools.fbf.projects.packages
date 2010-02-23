@@ -12,6 +12,12 @@
       <component id="akninputlanguage" filter="s60" name="Avkon Input Language">
         <unit bldFile="textinput/akninputlanguage/group"/>
       </component>
+      <component id="ptihangulcore" filter="s60" name="PIT Hangul Core" introduced="^3">
+        <unit bldFile="textinput/ptihangulcore/group"/>
+      </component>
+      <component id="ptikoreanqwertycore" filter="s60" name="PTI Korean QWERTY Core" introduced="^3">
+        <unit bldFile="textinput/ptikoreanqwertycore/group"/>
+      </component>
       <component id="peninputarc" filter="s60" name="Pen Input Arc">
         <unit bldFile="textinput/peninputarc/group"/>
       </component>
@@ -43,7 +49,28 @@
         <unit bldFile="textinput/peninputvkbjp/group"/>
       </component>
       <component id="gslangplugin" filter="s60" name="GS Language Plugin" class="plugin">
-        <unit bldFile="textinput/gslangplugin"/>
+        <unit bldFile="textinput/GSLangPlugin"/>
+      </component>
+      <component id="peninputgenericitut" filter="s60" name="Pen Input Generic ITU-T" class="plugin" introduced="^3">
+        <unit bldFile="textinput/peninputgenericitut/group"/>
+      </component>
+      <component id="peninputhwrtrui" filter="s60" name="Pen Input Handwriting Recognition Training UI" class="plugin" introduced="^3">
+        <unit bldFile="textinput/peninputhwrtrui/group"/>
+      </component>
+      <component id="peninputhwrfscn" filter="s60" name="Pen Input Chinese Full Screen Handwriting Recognition" class="plugin" introduced="^3">
+        <unit bldFile="textinput/peninputhwrfscn/group"/>
+      </component>
+      <component id="peninputvkbkr" filter="s60" name="Pen Input Korean Virtual Keyboard" class="plugin" introduced="^3">
+        <unit bldFile="textinput/peninputvkbkr/group"/>
+      </component>
+      <component id="peninputfingerhwr" filter="s60" name="Pen Input Finger Handwriting Recognition" class="plugin" introduced="^3">
+        <unit bldFile="textinput/peninputfingerhwr/group"/>
+      </component>
+      <component id="peninputsplititut" filter="s60" name="Pen Input Split ITU-T" class="plugin" introduced="^3">
+        <unit bldFile="textinput/peninputsplititut/group"/>
+      </component>
+      <component id="peninputsplitqwerty" filter="s60" name="Pen Input Split QWERTY" class="plugin" introduced="^3">
+        <unit bldFile="textinput/peninputsplitqwerty/group"/>
       </component>
       <component id="textinput_build" filter="s60" name="Text Input Build">
        <!--needed for #ifdef, can be removed when configuration is implemented -->
