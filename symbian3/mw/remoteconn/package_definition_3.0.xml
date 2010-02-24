@@ -29,12 +29,17 @@
       <component id="mtpfw" name="MTP Framework" introduced="^2" purpose="optional">
         <unit bldFile="mtpfws/mtpfw/group" mrp="mtpfws/mtpfw/group/mtp_framework.mrp"/>
       </component>
-      
     </collection>
     <collection id="mtpdataproviders" name="MTP Data Providers" level="generic">
       <component id="mtpfileandfolderdp" name="MTP File and Folder Provider" introduced="^2" purpose="optional" class="plugin">
         <unit bldFile="mtpdataproviders/mtpfileandfolderdp/group" mrp="mtpdataproviders/mtpfileandfolderdp/group/mtp_filedp.mrp"/>
       </component>
+     <component id="mtpimagedp" name="MTP Image Data Provider" filter="gt" introduced="^3" purpose="optional" class="plugin">
+      <unit bldFile="mtpdataproviders/mtpimagedp/group" mrp="mtpdataproviders/mtpimagedp/group/mtp_imagedp.mrp"/>
+     </component>
+     <component id="mtppictbridgedp" name="MTP PictBridge Data Provider" filter="gt" introduced="^3" purpose="optional" class="plugin">
+      <unit bldFile="mtpdataproviders/mtppictbridgedp/group" mrp="mtpdataproviders/mtppictbridgedp/group/mtp_pictbridgedp.mrp"/>
+     </component>
     </collection>
     <collection id="backupandrestore" name="Backup and Restore" level="specific">
       <component id="backupengine" name="Backup Engine" introduced="9.0" purpose="optional">

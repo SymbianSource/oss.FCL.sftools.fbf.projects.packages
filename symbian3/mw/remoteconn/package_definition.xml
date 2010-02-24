@@ -110,6 +110,12 @@
           <component name="mtpfileandfolderdp" long-name="MTP File and Folder Provider" introduced="^2" purpose="optional" plugin="Y">
             <unit bldFile="/sf/mw/remoteconn/mtpdataproviders/mtpfileandfolderdp/group" mrp="/sf/mw/remoteconn/mtpdataproviders/mtpfileandfolderdp/group/mtp_filedp.mrp"/>
           </component>
+          <component name="mtpimagedp" long-name="MTP Image Data Provider" filter="gt" introduced="^3" purpose="optional" plugin="Y">
+            <unit bldFile="/sf/mw/remoteconn/mtpdataproviders/mtpimagedp/group" mrp="/sf/mw/remoteconn/mtpdataproviders/mtpimagedp/group/mtp_imagedp.mrp"/>
+          </component>
+          <component name="mtppictbridgedp" long-name="MTP PictBridge Data Provider" filter="gt" introduced="^3" purpose="optional" plugin="Y">
+            <unit bldFile="/sf/mw/remoteconn/mtpdataproviders/mtppictbridgedp/group" mrp="/sf/mw/remoteconn/mtpdataproviders/mtppictbridgedp/group/mtp_pictbridgedp.mrp"/>
+          </component>
         </collection>
         <collection name="backupandrestore" long-name="Backup and Restore" level="specific">
           <component name="backupengine" long-name="Backup Engine" introduced="9.0" purpose="optional">
