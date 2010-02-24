@@ -142,6 +142,9 @@
           <component name="suplproxyprotocolmodule" long-name="SUPL Proxy Protocol Module" introduced="^3" purpose="optional" plugin="Y">
             <unit bldFile="/sf/os/lbs/networkprotocolmodules/suplproxyprotocolmodule/group" mrp="/sf/os/lbs/networkprotocolmodules/suplproxyprotocolmodule/group/lbs_suplproxyprotocolmodule.mrp"/>
           </component>
+          <component name="suplprotocolmodule" long-name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" plugin="Y">
+            <unit bldFile="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/group" mrp="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
+          </component>
         </collection>
         <collection name="lbsapitest" long-name="Location API Tests" level="application-interface">
           <component name="lbshaitest" long-name="Location HAI Tests" introduced="^2" purpose="development" filter="test">

@@ -66,6 +66,9 @@
       <component id="suplproxyprotocolmodule" name="SUPL Proxy Protocol Module" introduced="^3" purpose="optional" class="plugin">
         <unit bldFile="networkprotocolmodules/suplproxyprotocolmodule/group" mrp="networkprotocolmodules/suplproxyprotocolmodule/group/lbs_suplproxyprotocolmodule.mrp"/>
       </component>
+      <component id="suplprotocolmodule" name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" class="plugin">
+        <unit bldFile="networkprotocolmodules/suplprotocolmodule/group" mrp="networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
+      </component>
     </collection>
     <collection id="lbsapitest" name="Location API Tests" level="application-interface">
       <component id="lbshaitest" name="Location HAI Tests" introduced="^2" purpose="development" filter="test">
