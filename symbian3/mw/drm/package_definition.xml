@@ -108,10 +108,10 @@
           <component name="omadrm_build" filter="s60" long-name="OMA DRM Build">
             <unit bldFile="/sf/mw/drm/omadrm/group"/>
           </component>
-          <component name="CMLA certificates" filter="s60,test" long-name="R&amp;D Certificates">
+          <component name="rndcerts" filter="s60,test" long-name="R&amp;D Certificates">
             <unit bldFile="/sf/mw/drm/omadrm/rndcerts/group"/>
           </component>
-          <component name="Dummy certificates" filter="sf_build" long-name="Dummy DRM Certificates">
+          <component name="foundationcerts" filter="sf_build" long-name="Foundation Certificates">
             <unit bldFile="/sf/mw/drm/omadrm/foundationcerts/group"/>
           </component>
         </collection>

@@ -35,10 +35,10 @@
       <component id="omadrm_build" filter="s60" name="OMA DRM Build">
         <unit bldFile="omadrm/group"/>
       </component>
-      <component id="CMLA certificates" filter="s60,test" name="R&amp;D Certificates">
+      <component id="rndcerts" filter="s60,test" name="R&amp;D Certificates">
         <unit bldFile="omadrm/rndcerts/group"/>
       </component>
-      <component id="Dummy certificates" filter="sf_build" name="Dummy DRM Certificates">
+      <component id="foundationcerts" filter="sf_build" name="Foundation Certificates">
         <unit bldFile="omadrm/foundationcerts/group"/>
       </component>
     </collection>
