@@ -16,15 +16,10 @@
     </collection>
     <collection id="widgettools" name="Widget Tools" level="install">
       <component id="hspluginpreinstaller" filter="s60" name="HS Plugin Preinstaller" target="desktop" class="tool" introduced="^3">
-        <unit bldFile="widgettools/hspluginpreinstaller/group"/>
+        <unit bldFile="widgettools/hspluginspreinstaller/group"/>
       </component>
       <component id="wrtwidgetpreinstaller" filter="s60" name="WRT Widget Preinstaller" target="desktop" class="tool" introduced="^3">
         <unit bldFile="widgettools/wrtwidgetpreinstaller/group"/>
-      </component>
-    </collection>
-    <collection id="themetool" name="Theme Tool" level="tool">
-      <component id="themetool_build" filter="s60" name="Theme Tool Build"  target="desktop" class="tool">
-        <unit bldFile="themetool/group"/>
       </component>
     </collection>
   </package>

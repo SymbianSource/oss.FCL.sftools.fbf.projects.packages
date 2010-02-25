@@ -92,15 +92,10 @@
         </collection>
         <collection name="widgettools" long-name="Widget Tools" level="install">
           <component name="hspluginpreinstaller" filter="s60" long-name="HS Plugin Preinstaller" introduced="^3" class="tool PC">
-            <unit bldFile="/sf/app/homescreentools/widgettools/hspluginpreinstaller/group"/>
+            <unit bldFile="/sf/app/homescreentools/widgettools/hspluginspreinstaller/group"/>
           </component>
           <component name="wrtwidgetpreinstaller" filter="s60" long-name="WRT Widget Preinstaller" introduced="^3" class="tool PC">
             <unit bldFile="/sf/app/homescreentools/widgettools/wrtwidgetpreinstaller/group"/>
-          </component>
-        </collection>
-        <collection name="themetool" long-name="Theme Tool" level="tool">
-          <component name="themetool_build" filter="s60" long-name="Theme Tool Build" class="tool PC">
-            <unit bldFile="/sf/app/homescreentools/themetool/group"/>
           </component>
         </collection>
       </block>
