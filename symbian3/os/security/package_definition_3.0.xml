@@ -21,7 +21,8 @@
       <component id="cafrecogniserconfig" name="CAF Recogniser Config" introduced="9.1" purpose="mandatory">
         <unit bldFile="contentmgmt/cafrecogniserconfig" mrp="contentmgmt/cafrecogniserconfig/security_reccafconfig.mrp"/>
       </component>
-      <component id="referencedrmagent" name="Reference DRM Agent" introduced="8.0" purpose="development">      
+      <component id="referencedrmagent" name="Reference DRM Agent" introduced="8.0" purpose="development" filter="test">
+		<!-- remove test filter once cafstreamingsupport is available -->
         <unit bldFile="contentmgmt/referencedrmagent/RefTestAgent/group" mrp="contentmgmt/referencedrmagent/RefTestAgent/group/security_rta.mrp"/>
       </component>
     </collection>
@@ -70,11 +71,8 @@
       <component id="filebasedcertificateandkeystores" name="File-based Certificate and Key Stores" introduced="8.0" purpose="optional">
         <unit bldFile="cryptoservices/filebasedcertificateandkeystores/group" mrp="cryptoservices/filebasedcertificateandkeystores/group/security_filetokens.mrp"/>
       </component>
-      <component id="Browser Root Certificates" introduced="^2" purpose="optional" filter="s60"> <!-- not really s60 -->
+      <component id="Browser Root Certificates" introduced="^2" purpose="optional" filter="sf_build">
         <unit mrp="cryptoservices/browserrootcertificates/browserrootcerts.mrp"/>
-      </component>
-      <component id="rootcertificates" filter="sf_build" name="Root Certificates" introduced="7.0s" purpose="optional">
-        <unit bldFile="cryptoservices/rootcertificates/group" mrp="cryptoservices/rootcertificates/group/rootcerts.mrp"/>
       </component>
       <component id="asnpkcs" name="ASN PKCS" introduced="8.0" purpose="optional">
         <unit bldFile="cryptoservices/asnpkcs/group" mrp="cryptoservices/asnpkcs/group/security_asnpkcs.mrp"/>

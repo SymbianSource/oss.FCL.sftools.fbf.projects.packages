@@ -97,7 +97,8 @@
           <component name="cafrecogniserconfig" long-name="CAF Recogniser Config" introduced="9.1" purpose="mandatory">
             <unit bldFile="/sf/os/security/contentmgmt/cafrecogniserconfig" mrp="/sf/os/security/contentmgmt/cafrecogniserconfig/security_reccafconfig.mrp"/>
           </component>
-          <component name="referencedrmagent" long-name="Reference DRM Agent" introduced="8.0" purpose="development">
+          <component name="referencedrmagent" long-name="Reference DRM Agent" introduced="8.0" purpose="development" filter="test">
+            <!-- remove test filter once cafstreamingsupport is available -->
             <unit bldFile="/sf/os/security/contentmgmt/referencedrmagent/RefTestAgent/group" mrp="/sf/os/security/contentmgmt/referencedrmagent/RefTestAgent/group/security_rta.mrp"/>
           </component>
         </collection>
@@ -146,12 +147,8 @@
           <component name="filebasedcertificateandkeystores" long-name="File-based Certificate and Key Stores" introduced="8.0" purpose="optional">
             <unit bldFile="/sf/os/security/cryptoservices/filebasedcertificateandkeystores/group" mrp="/sf/os/security/cryptoservices/filebasedcertificateandkeystores/group/security_filetokens.mrp"/>
           </component>
-          <component name="Browser Root Certificates" introduced="^2" purpose="optional" filter="s60">
-            <!-- not really s60 -->
+          <component name="Browser Root Certificates" introduced="^2" purpose="optional" filter="sf_build">
             <unit mrp="/sf/os/security/cryptoservices/browserrootcertificates/browserrootcerts.mrp"/>
-          </component>
-          <component id="rootcertificates" filter="sf_build" name="Root Certificates" introduced="7.0s" purpose="optional">
-            <unit bldFile="cryptoservices/rootcertificates/group" mrp="cryptoservices/rootcertificates/group/rootcerts.mrp"/>
           </component>
           <component name="asnpkcs" long-name="ASN PKCS" introduced="8.0" purpose="optional">
             <unit bldFile="/sf/os/security/cryptoservices/asnpkcs/group" mrp="/sf/os/security/cryptoservices/asnpkcs/group/security_asnpkcs.mrp"/>
