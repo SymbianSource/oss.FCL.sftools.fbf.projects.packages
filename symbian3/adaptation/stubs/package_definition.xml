@@ -97,7 +97,7 @@
             <unit bldFile="/sf/adaptation/stubs/posmsgpluginreferenceimpl/group"/>
           </component>
           <component name="srsfenginestub" long-name="SRSF Engine Stub">
-            <unit bldFile="/sf/adaptation/stubs/power_save_display_mode_stub/group"/>
+            <unit bldFile="/sf/adaptation/stubs/srsfenginestub/group"/>
           </component>
           <component name="power_save_display_mode_stub" long-name="Power Save Display Mode Stub">
             <unit bldFile="/sf/adaptation/stubs/power_save_display_mode_stub/group"/>

@@ -21,7 +21,7 @@
       <unit bldFile="posmsgpluginreferenceimpl/group"/>
      </component>
      <component id="srsfenginestub" name="SRSF Engine Stub">
-      <unit bldFile="power_save_display_mode_stub/group"/>
+      <unit bldFile="srsfenginestub/group"/>
      </component>
      <component id="power_save_display_mode_stub" name="Power Save Display Mode Stub">
       <unit bldFile="power_save_display_mode_stub/group"/>
