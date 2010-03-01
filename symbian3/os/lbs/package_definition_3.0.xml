@@ -69,6 +69,12 @@
       <component id="suplprotocolmodule" name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" class="plugin">
         <unit bldFile="networkprotocolmodules/suplprotocolmodule/group" mrp="networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
       </component>
+      <component id="suplrrlpasn1" filter="sf_build" name="SUPL RRLP ASN1 parser">
+        <unit bldFile="networkprotocolmodules/common/suplrrlpasn1/group"/>
+      </component>
+      <component id="suplrrlpprotocol" filter="sf_build" name="SUPL RRLP Protocol Module">
+        <unit bldFile="networkprotocolmodules/suplcontrolplaneprotocols/common/suplrrlpprotocol/group"/>
+      </component>
     </collection>
     <collection id="lbsapitest" name="Location API Tests" level="application-interface">
       <component id="lbshaitest" name="Location HAI Tests" introduced="^2" purpose="development" filter="test">

@@ -145,6 +145,12 @@
           <component name="suplprotocolmodule" long-name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" plugin="Y">
             <unit bldFile="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/group" mrp="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
           </component>
+          <component name="suplrrlpasn1" filter="sf_build" long-name="SUPL RRLP ASN1 parser">
+            <unit bldFile="/sf/os/lbs/networkprotocolmodules/common/suplrrlpasn1/group"/>
+          </component>
+          <component name="suplrrlpprotocol" filter="sf_build" long-name="SUPL RRLP Protocol Module">
+            <unit bldFile="/sf/os/lbs/networkprotocolmodules/suplcontrolplaneprotocols/common/suplrrlpprotocol/group"/>
+          </component>
         </collection>
         <collection name="lbsapitest" long-name="Location API Tests" level="application-interface">
           <component name="lbshaitest" long-name="Location HAI Tests" introduced="^2" purpose="development" filter="test">
