@@ -161,10 +161,13 @@
             <unit bldFile="/sf/mw/uiresources/fontsupport/fontprovider/group"/>
           </component>
 <!-- R&D materials, should be Nokia only
-          <component name="fontutils" filter="s60" long-name="Font Utils">
+          <component name="s60_fonts" filter="s60" long-name="S60 Fonts">
             <unit bldFile="/sf/mw/uiresources/fontsupport/fontutils/group"/>
           </component>
 -->
+          <component name="fontutils" filter="sf_build" long-name="Font Utils">
+            <unit bldFile="/sf/mw/uiresources/fontsupport/fontutils/FontUtils/group"/>
+          </component>
         </collection>
         <collection name="helpthemes" long-name="Help Themes" level="data">
           <!-- collection is really a component. Need to move down a directory -->
