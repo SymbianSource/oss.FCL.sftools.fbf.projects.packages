@@ -147,6 +147,9 @@
           <component name="dialer" filter="s60" long-name="Dialer">
             <unit bldFile="/sf/app/phone/phoneuis/dialer/group"/>
           </component>
+          <component name="easydialing" filter="s60" long-name="Easy Dialing Plugin" plugin="Y" introduced="^3">
+            <unit bldFile="/sf/app/phone/phoneuis/easydialing/group"/>
+          </component>
           <component name="bubblemanager" filter="s60" long-name="Phone Bubble Manager">
             <unit bldFile="/sf/app/phone/phoneuis/bubblemanager/group"/>
           </component>

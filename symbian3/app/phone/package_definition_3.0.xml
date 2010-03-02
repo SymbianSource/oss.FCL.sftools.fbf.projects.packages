@@ -71,6 +71,9 @@
       <component id="dialer" filter="s60" name="Dialer">
         <unit bldFile="phoneuis/dialer/group"/>
       </component>
+      <component id="easydialing" filter="s60" name="Easy Dialing Plugin" class="plugin" introduced="^3">
+        <unit bldFile="phoneuis/easydialing/group"/>
+      </component>
       <component id="bubblemanager" filter="s60" name="Phone Bubble Manager">
         <unit bldFile="phoneuis/bubblemanager/group"/>
       </component>
