@@ -76,9 +76,9 @@
 <SystemDefinition name="Symbian^3" schema="2.0.1">
   <systemModel>
     <layer name="app" long-name="Applications" levels="services apps">
-      <block name="videoplayer" level="apps" long-name="Video Player Apps" levels="support apps">
-        <collection name="videofeeds" long-name="Video Feeds" level="apps">
-          <component name="iptv_utils" filter="s60" long-name="Iptv Util" introduced="^3">
+      <block name="videoplayer" level="apps" long-name="Video Player Apps" levels="support plugin util apps">
+        <collection name="videofeeds" long-name="Video Feeds" level="util">
+          <component name="iptv_utils" filter="s60" long-name="IPTV Util" introduced="^3">
             <unit bldFile="/sf/app/videoplayer/videofeeds/utils/group"/>
           </component>
           <component name="viewmessageutility" filter="s60" long-name="View Message Utility" introduced="^3">
@@ -146,7 +146,7 @@
             <unit bldFile="/sf/app/videoplayer/tsrc/VCXTestMyVideosCollectionClient/group"/>
           </component>
         </collection>
-        <collection name="videocollection" long-name="Video Collection" level="apps">
+        <collection name="videocollection" long-name="Video Collection" level="util">
           <component name="mpxmyvideoscollection" filter="s60" long-name="MPX My Videos Collection" introduced="^3">
             <unit bldFile="/sf/app/videoplayer/videocollection/mpxmyvideoscollection/group"/>
           </component>
@@ -169,7 +169,7 @@
             <unit bldFile="/sf/app/videoplayer/tsrc/VCXTestMyVideosCollectionClient/group"/>
           </component>
         </collection>
-        <collection name="videoplayer_homescreenplugins" long-name="Videoplayer Homescreen Plugins" level="support">
+        <collection name="videoplayer_homescreenplugins" long-name="Videoplayer Homescreen Plugins" level="plugin">
           <component name="videosuiteconf" filter="s60" long-name="Video Suite Configuration" introduced="^3" plugin="Y">
             <unit bldFile="/sf/app/videoplayer/homescreenplugins/videosuiteconf/group"/>
           </component>
@@ -213,7 +213,7 @@
             <unit bldFile="/sf/app/videoplayer/videoplayerapp/videoplayerlauncher/group"/>
           </component>
         </collection>
-        <collection name="videoplayback" long-name="Video Playback Plugins" level="support">
+        <collection name="videoplayback" long-name="Video Playback Plugins" level="plugin">
           <component name="videohelix" long-name="Video Helix" filter="s60" introduced="^3" plugin="Y">
             <unit bldFile="/sf/app/videoplayer/videoplayback/videohelix/group"/>
           </component>

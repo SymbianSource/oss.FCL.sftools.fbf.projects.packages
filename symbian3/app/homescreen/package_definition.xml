@@ -76,7 +76,7 @@
 <SystemDefinition name="Symbian^3" schema="2.0.1">
   <systemModel>
     <layer name="app" long-name="Applications" levels="services apps">
-      <block name="homescreen" level="apps" long-name="Home Screen Apps" levels="fw apps">
+      <block name="homescreen" level="apps" long-name="Home Screen Apps" levels="fw support apps">
         <collection name="idlehomescreen" long-name="Idle Home Screen" level="apps">
           <component name="nativeuicontroller" filter="s60" long-name="Native UI Controller">
             <unit bldFile="/sf/app/homescreen/idlehomescreen/nativeuicontroller/group"/>
@@ -131,7 +131,7 @@
             <unit bldFile="/sf/app/homescreen/menufw/group"/>
           </component>
         </collection>
-        <collection name="taskswitcher" long-name="Task Switcher" level="apps">
+        <collection name="taskswitcher" long-name="Task Switcher" level="support">
           <component name="contextengine" filter="s60" long-name="Context Engine" introduced="^3">
             <unit bldFile="/sf/app/homescreen/taskswitcher/contextengine/group"/>
           </component>

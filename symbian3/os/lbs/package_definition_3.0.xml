@@ -69,10 +69,12 @@
       <component id="suplprotocolmodule" name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" class="plugin">
         <unit bldFile="networkprotocolmodules/suplprotocolmodule/group" mrp="networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
       </component>
-      <component id="suplrrlpasn1" filter="sf_build" name="SUPL RRLP ASN1 parser">
+      <component id="suplrrlpasn1" filter="sf_build" name="SUPL RRLP ASN1 Parser">
+        <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
         <unit bldFile="networkprotocolmodules/common/suplrrlpasn1/group"/>
       </component>
       <component id="suplrrlpprotocol" filter="sf_build" name="SUPL RRLP Protocol Module">
+        <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
         <unit bldFile="networkprotocolmodules/suplcontrolplaneprotocols/common/suplrrlpprotocol/group"/>
       </component>
     </collection>

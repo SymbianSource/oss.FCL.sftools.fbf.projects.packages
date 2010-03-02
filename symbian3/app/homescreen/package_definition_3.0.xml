@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="homescreen" name="Home Screen Apps" levels="fw apps">
+  <package id="homescreen" name="Home Screen Apps" levels="fw support apps">
     <collection id="idlehomescreen" name="Idle Home Screen" level="apps">
       <component id="nativeuicontroller" filter="s60" name="Native UI Controller">
         <unit bldFile="idlehomescreen/nativeuicontroller/group"/>
@@ -59,7 +59,7 @@
         <unit bldFile="menufw/group"/>
       </component>
     </collection>
-    <collection id="taskswitcher" name="Task Switcher" level="apps">
+    <collection id="taskswitcher" name="Task Switcher" level="support">
       <component id="contextengine" filter="s60" name="Context Engine" introduced="^3">
         <unit bldFile="taskswitcher/contextengine/group"/>
       </component>

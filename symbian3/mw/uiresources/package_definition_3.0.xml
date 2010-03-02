@@ -85,7 +85,7 @@
         <unit bldFile="fontsupport/fontprovider/group"/>
       </component>
 <!-- R&D materials, should be Nokia only: exports S60 fonts, removes freetype
-      <component id="s6_fonts" filter="s60" name="S60 Fonts">
+      <component id="s60_fonts" filter="s60" name="S60 Fonts">
         <unit bldFile="fontsupport/fontutils/group"/>
       </component>
 -->

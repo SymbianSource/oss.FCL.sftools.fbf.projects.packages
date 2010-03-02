@@ -160,10 +160,10 @@
           <component name="fontprovider" filter="s60" long-name="Font Provider">
             <unit bldFile="/sf/mw/uiresources/fontsupport/fontprovider/group"/>
           </component>
-<!-- R&D materials, should be Nokia only
-          <component name="s60_fonts" filter="s60" long-name="S60 Fonts">
-            <unit bldFile="/sf/mw/uiresources/fontsupport/fontutils/group"/>
-          </component>
+          <!-- R&D materials, should be Nokia only: exports S60 fonts, removes freetype
+      <component id="s60_fonts" filter="s60" name="S60 Fonts">
+        <unit bldFile="fontsupport/fontutils/group"/>
+      </component>
 -->
           <component name="fontutils" filter="sf_build" long-name="Font Utils">
             <unit bldFile="/sf/mw/uiresources/fontsupport/fontutils/FontUtils/group"/>

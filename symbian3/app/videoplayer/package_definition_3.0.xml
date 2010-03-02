@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="videoplayer" name="Video Player Apps" levels="support apps">
-    <collection id="videofeeds" name="Video Feeds" level="apps">
-      <component id="iptv_utils" filter="s60" name="Iptv Util" introduced="^3">
+  <package id="videoplayer" name="Video Player Apps" levels="support plugin util apps">
+    <collection id="videofeeds" name="Video Feeds" level="util">
+      <component id="iptv_utils" filter="s60" name="IPTV Util" introduced="^3">
         <unit bldFile="videofeeds/utils/group"/>
       </component>
       <component id="viewmessageutility" filter="s60" name="View Message Utility" introduced="^3">
@@ -70,7 +70,7 @@
          <unit bldFile="tsrc/VCXTestMyVideosCollectionClient/group"/>
        </component>
     </collection>
-    <collection id="videocollection" name="Video Collection" level="apps">
+    <collection id="videocollection" name="Video Collection" level="util">
       <component id="mpxmyvideoscollection" filter="s60" name="MPX My Videos Collection" introduced="^3">
         <unit bldFile="videocollection/mpxmyvideoscollection/group"/>
       </component>
@@ -93,7 +93,7 @@
             <unit bldFile="tsrc/VCXTestMyVideosCollectionClient/group"/>
     </component>
     </collection>
-    <collection id="videoplayer_homescreenplugins" name="Videoplayer Homescreen Plugins" level="support">
+    <collection id="videoplayer_homescreenplugins" name="Videoplayer Homescreen Plugins" level="plugin">
       <component id="videosuiteconf" filter="s60" name="Video Suite Configuration" class="plugin" introduced="^3" >
         <unit bldFile="homescreenplugins/videosuiteconf/group"/>
       </component>
@@ -137,7 +137,7 @@
         <unit bldFile="videoplayerapp/videoplayerlauncher/group"/>
       </component>
     </collection>
-    <collection id="videoplayback" name="Video Playback Plugins" level="support">    
+    <collection id="videoplayback" name="Video Playback Plugins" level="plugin">    
       <component id="videohelix" name="Video Helix"  filter="s60" introduced="^3" class="plugin">
         <unit bldFile="videoplayback/videohelix/group"/>
       </component>
