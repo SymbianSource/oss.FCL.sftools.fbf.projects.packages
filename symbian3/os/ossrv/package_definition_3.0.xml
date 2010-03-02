@@ -119,7 +119,7 @@
     <collection id="ossrv_info" name="Generic OS Services Info" level="utilities">
       <component id="ossrv_build" filter="s60" name="Generic OS Services Build">
       <!-- exports should be moved to individual components -->
-        <unit bldFile="group"/>
+        <unit bldFile="rom"/>
       </component>
       <component id="ossrv_plat" filter="s60" name="Generic OS Services Platform Interfaces" class="api">
         <unit bldFile="ossrv_plat/libutils/group"/>
