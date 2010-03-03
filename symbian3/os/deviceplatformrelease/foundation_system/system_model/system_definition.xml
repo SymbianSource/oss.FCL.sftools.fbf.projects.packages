@@ -194,7 +194,7 @@
       <package id="contacts" level="apps" span="2" tech-domain="pr" href="../../../../app/contacts/package_definition_3.0.xml"/>
       <package id="organizer" level="apps" span="2" tech-domain="pr" href="../../../../app/organizer/package_definition_3.0.xml"/>
       <package id="messaging" level="apps" span="2" tech-domain="pr" href="../../../../app/messaging/package_definition_3.0.xml"/>
-      <package id="commonemail" level="apps" tech-domain="pr" href="../../../../app/commonemail/package_definition_3.0.xml"/>
+      <package id="commonemail" level="apps" span="2" tech-domain="pr" href="../../../../app/commonemail/package_definition_3.0.xml"/>
       <package id="conversations" level="apps" tech-domain="pr" href="../../../../app/conversations/package_definition_3.0.xml"/>
       <package id="im" level="apps" tech-domain="pr" href="../../../../app/im/package_definition_3.0.xml"/>
       <package id="dictionary" level="services" tech-domain="pr" href="../../../../app/dictionary/package_definition_3.0.xml"/>
