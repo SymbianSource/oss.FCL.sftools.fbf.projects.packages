@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/MCL/sf/os/buildtools/,/sf/os/buildtools,branch,RCL_3,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/os/buildtools/,/sf/os/buildtools,branch,RCL_3,layers.sysdef.xml
