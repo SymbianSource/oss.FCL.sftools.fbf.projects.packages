@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/MCL/sf/app/screensaver/,/sf/app/screensaver,branch,default,layers.sysdef.xml
+http://developer.symbian.org/oss/MCL/sf/app/screensaver/,/sf/app/screensaver,branch,RCL_3,layers.sysdef.xml
