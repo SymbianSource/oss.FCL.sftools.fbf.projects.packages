@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/MCL/sf/mw/videoutils/,/sf/mw/videoutils,branch,default,layers.sysdef.xml
+http://developer.symbian.org/oss/MCL/sf/mw/videoutils/,/sf/mw/videoutils,branch,RCL_3,layers.sysdef.xml

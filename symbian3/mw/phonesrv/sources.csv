@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/MCL/sf/mw/phonesrv/,/sf/mw/phonesrv,branch,default,layers.sysdef.xml
+http://developer.symbian.org/oss/MCL/sf/mw/phonesrv/,/sf/mw/phonesrv,branch,RCL_3,layers.sysdef.xml
