@@ -213,7 +213,7 @@
       <package id="graphicsuis" level="services" tech-domain="ui" href="../../../../app/graphicsuis/package_definition_3.0.xml"/>
       <package id="profile" level="apps" tech-domain="ui" href="../../../../app/profile/package_definition_3.0.xml"/>
       <package id="speechsrv" level="services" tech-domain="ui" href="../../../../app/speechsrv/package_definition_3.0.xml"/>
-      <package id="homescreentools" level="services" tech-domain="ui"  href="../../../../tools/homescreentools/package_definition_3.0.xml"/>
+      <package id="homescreentools" level="services" tech-domain="ui"  href="../../../../app/homescreentools/package_definition_3.0.xml"/>
       <package id="webuis" level="services" tech-domain="rt" href="../../../../app/webuis/package_definition_3.0.xml"/>
       <package id="jrt" level="services" tech-domain="rt" href="../../../../app/jrt/package_definition_3.0.xml"/>
       <package id="conntools" level="services" tech-domain="dc" href="../../../../app/conntools/package_definition_3.0.xml"/>

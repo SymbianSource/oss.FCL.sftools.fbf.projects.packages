@@ -215,6 +215,9 @@
           <component name="email_plat" filter="s60" long-name="Email Apps Platform Interfaces" class="api">
             <unit bldFile="/sf/app/commonemail/email_plat/group"/>
           </component>
+          <component name="email_pub" filter="s60" long-name="Email Apps Public Interfaces" class="api">
+            <unit bldFile="/sf/app/commonemail/email_pub/group"/>
+          </component>
         </collection>
       </block>
     </layer>

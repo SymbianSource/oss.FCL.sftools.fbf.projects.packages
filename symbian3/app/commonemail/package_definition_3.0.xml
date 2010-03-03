@@ -142,6 +142,9 @@
       <component id="email_plat" filter="s60" class="api" name="Email Apps Platform Interfaces">
         <unit bldFile="email_plat/group"/>
       </component>
+      <component id="email_pub" filter="s60" class="api" name="Email Apps Public Interfaces">
+        <unit bldFile="email_pub/group"/>
+      </component>
     </collection>
   </package>
 </SystemDefinition>
