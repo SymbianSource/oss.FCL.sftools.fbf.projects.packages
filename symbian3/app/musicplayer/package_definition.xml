@@ -84,9 +84,6 @@
           <component name="mpxmusicplayer_commonui" filter="s60" long-name="MPX Common UI">
             <unit bldFile="/sf/app/musicplayer/mpxmusicplayer/commonui/group"/>
           </component>
-          <component name="mpx_activeidle" filter="s60" long-name="MPX Active Idle">
-            <unit bldFile="/sf/app/musicplayer/mpxmusicplayer/activeidle/group"/>
-          </component>
           <component name="mpx_metadatahandler" filter="s60" long-name="MPX Metadata Handler">
             <unit bldFile="/sf/app/musicplayer/mpxmusicplayer/metadatahandler/group"/>
           </component>
