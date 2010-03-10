@@ -150,8 +150,6 @@
           </component>
           <component name="contentpublishingutils" filter="s60" long-name="Content Publishing Utils">
             <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/contentpublishingutils/group"/>
-            <!-- should only have one bld.inf, does the below need to be #included in the above ? -->
-            <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/contentpublishingutils/contentpublishingdebug/group"/>
           </component>
           <component name="contentpublishingserver" filter="s60" long-name="Content Publishing Server">
             <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/contentpublishingserver/group"/>

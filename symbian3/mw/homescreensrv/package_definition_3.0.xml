@@ -83,8 +83,6 @@
       </component>
       <component id="contentpublishingutils" filter="s60" name="Content Publishing Utils">
         <unit bldFile="contentpublishingsrv/contentpublishingutils/group"/>
-		<!-- should only have one bld.inf, does the below need to be #included in the above ? -->
-        <unit bldFile="contentpublishingsrv/contentpublishingutils/contentpublishingdebug/group"/>
       </component>
       <component id="contentpublishingserver" filter="s60" name="Content Publishing Server">
         <unit bldFile="contentpublishingsrv/contentpublishingserver/group"/>
