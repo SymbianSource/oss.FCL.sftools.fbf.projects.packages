@@ -107,8 +107,8 @@
             <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/scppatternplugin/group"/>
             <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/scphistoryplugin/group"/>
             <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/scptimestampplugin/group"/>
-            <unit/>
-            <unit/>
+            <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/scpeventhandler/group"/>
+            <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/dmeventnotifier/group"/>
           </component>
           <component name="terminalsecurity_client" filter="s60" long-name="Terminal Control Client">
             <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/client/group"/>

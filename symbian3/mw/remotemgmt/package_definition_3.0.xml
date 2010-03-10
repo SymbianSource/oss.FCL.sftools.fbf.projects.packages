@@ -31,8 +31,8 @@
         <unit bldFile="terminalsecurity/scp/scppatternplugin/group"/>
         <unit bldFile="terminalsecurity/scp/scphistoryplugin/group"/>
         <unit bldFile="terminalsecurity/scp/scptimestampplugin/group"/>
-        <unit bldfile="terminalsecurity/scp/scpeventhandler/group"/>
-        <unit bldfile="terminalsecurity/scp/dmeventnotifier/group"/>
+        <unit bldFile="terminalsecurity/scp/scpeventhandler/group"/>
+        <unit bldFile="terminalsecurity/scp/dmeventnotifier/group"/>
       </component>
       <component id="terminalsecurity_client" filter="s60" name="Terminal Control Client">
         <unit bldFile="terminalsecurity/client/group"/>
