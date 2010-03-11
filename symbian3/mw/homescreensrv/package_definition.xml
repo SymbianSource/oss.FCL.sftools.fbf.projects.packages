@@ -146,6 +146,7 @@
         </collection>
         <collection name="contentpublishingsrv" long-name="Content Publishing Service" level="server">
           <component name="contentpublishingdebug" filter="s60" long-name="Content Publishing Debug">
+            <!-- need to move this component outside of contentpublishingutils and into separate component directory -->
             <!-- <unit bldFile="contentpublishingsrv/contentpublishingutils/contentpublishingdebug/group"/> -->
           </component>
           <component name="contentpublishingutils" filter="s60" long-name="Content Publishing Utils">

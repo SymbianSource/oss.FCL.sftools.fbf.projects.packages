@@ -76,6 +76,7 @@
     </collection>
     <collection id="contentpublishingsrv" name="Content Publishing Service" level="server">
       <component id="contentpublishingdebug" filter="s60" name="Content Publishing Debug">
+         <!-- need to move this component outside of contentpublishingutils and into separate component directory -->
       	<meta rel="config">
       		<defined condition="CONTENT_PUBLISHER_DEBUG"/>
       	</meta>
