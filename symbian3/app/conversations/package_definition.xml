@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,101 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="conversations" level="apps" long-name="Conversation Apps">
-<collection name="s60">
-<component name="conversations">
-<unit bldFile="/sf/app/conversations/group" mrp=""/>
-</component>
-</collection>
-</block>
+<block name="conversations" level="apps" long-name="Conversation Apps" levels="settings utils plugin ui">
+    <collection name="uiservicetabsettings" long-name="UI Service Tab Settings" level="settings">
+     <!-- this is really at the wrong rank. should move down a directory -->
+     <component name="vimpstsettings" filter="s60" long-name="VIMP Service Tab Settings">
+      <unit bldFile="/sf/app/conversations/uiservicetabsettings/group"/>
+     </component>
+    </collection>
+    <collection name="instantmessagesalert" long-name="Instant Messages Alert" level="utils">
+     <!-- this is really at the wrong rank. should move down a directory -->
+     <component name="instantmessagesalert_build" filter="s60" long-name="Instant Messages Alert build" introduced="^3">
+      <unit bldFile="/sf/app/conversations/instantmessagesalert/group"/>
+     </component>
+    </collection>
+    <collection name="imstutils" long-name="IM Service Tab Utils" level="utils">
+     <component name="imstutils_help" filter="s60" long-name="IM Service Tab Help">
+      <unit bldFile="/sf/app/conversations/imstutils/help/group"/>
+     </component>
+     <component name="imconnectionprovider" filter="s60" long-name="IM Connection Provider" plugin="Y">
+      <unit bldFile="/sf/app/conversations/imstutils/imconnectionprovider/group"/>
+     </component>
+     <component name="xmppadapter" filter="s60" long-name="XMPP Settings Adapter" plugin="Y">
+      <unit bldFile="/sf/app/conversations/imstutils/xmppadapter/group"/>
+     </component>
+     <component name="imconversationview" filter="s60" long-name="IM Conversation View">
+      <unit bldFile="/sf/app/conversations/imstutils/imconversationview/group"/>
+     </component>
+     <component name="imstutils_config" filter="s60" long-name="IM Service Tab Utils config" class="config">
+      <!-- remove the #includes and or moved ithe loc file into one the above components -->
+      <unit bldFile="/sf/app/conversations/imstutils/group"/>
+     </component>
+    </collection>
+    <collection name="uiservicetab" long-name="UI Service Tab" level="ui">
+     <component name="vimpstutils" filter="s60" long-name="VIMP Service Tab Utilities">
+      <!-- need to spell out VIMP at least once -->
+      <unit bldFile="/sf/app/conversations/uiservicetab/vimpstutils/group"/>
+     </component>
+     <component name="vimpststorage" filter="s60" long-name="VIMP Service Tab Storage">
+      <unit bldFile="/sf/app/conversations/uiservicetab/vimpststorage/group"/>
+     </component>
+     <component name="vimpstengine" filter="s60" long-name="VIMP Service Tab Engine">
+      <unit bldFile="/sf/app/conversations/uiservicetab/vimpstengine/group"/>
+     </component>
+     <component name="vimpstcmdprocess" filter="s60" long-name="VIMP Service Tab Command Process">
+      <unit bldFile="/sf/app/conversations/uiservicetab/vimpstcmdprocess/group"/>
+     </component>
+     <component name="vimpstui" filter="s60" long-name="VIMP Service Tab UI">
+      <unit bldFile="/sf/app/conversations/uiservicetab/vimpstui/group"/>
+     </component>
+     <component name="vimpstdetailsviewplugin" filter="s60" long-name="VIMP ST Details View Plugin" plugin="Y">
+      <unit bldFile="/sf/app/conversations/uiservicetab/vimpstdetailsviewplugin/group"/>
+     </component>
+     <component name="uiservicetab_build" filter="s60" long-name="UI Service Tab Build">
+      <!-- can this be distributed into the above bld.infs? -->
+      <unit bldFile="/sf/app/conversations/uiservicetab/group"/>
+     </component>
+    </collection>
+    <collection name="servicewidget" long-name="Service Widget" level="ui">
+     <component name="servicewidgetdatapublisher" filter="s60" long-name="Service Widget Data Publisher" plugin="Y">
+      <unit bldFile="/sf/app/conversations/servicewidget/servicewidgetdatapublisher/group"/>
+     </component>
+     <component name="themes" filter="s60" long-name="Service Widget Themes" class="config">
+      <!-- does this really need to have that number in the directory name? -->
+      <unit bldFile="/sf/app/conversations/servicewidget/themes/install-themes/install/servicewidget_20021383/group"/>
+     </component>
+     <component name="servicewidget_build" filter="s60" long-name="Service Widget Build">
+      <!-- Either move the whole collection down one directory into a single component, or move the ROM and SIS parts into a Service Widget ROM component -->
+      <unit bldFile="/sf/app/conversations/servicewidget/group"/>
+     </component>
+    </collection>
+    <collection name="instantmsgindicatorplugin" long-name="Instant Message Indicator Plugin" level="plugin">
+     <!--  collection is really a component. should move down a directory -->
+     <component name="instantmsgindicatorplugin_build" filter="s60" long-name="Instant Message Indicator Plugin Build" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/conversations/instantmsgindicatorplugin/group"/>
+     </component>
+    </collection>
+    <collection name="imstatuspaneindicatorplugin" long-name="IM Status Pane Indicator Plugin" level="plugin">
+     <!--  collection is really a component. should move down a directory -->
+     <component name="imstatuspaneindicatorplugin_build" filter="s60" long-name="IM Status Pane Indicator Plugin Build" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/conversations/imstatuspaneindicatorplugin/group"/>
+     </component>
+    </collection>
+    <collection name="conversations_info" long-name="Conversation Apps Info" level="ui">
+     <component name="conversations_plat" filter="s60" long-name="Conversation Apps Platform Interfaces" class="api">
+      <unit bldFile="/sf/app/conversations/conversations_plat/group"/>
+     </component>
+     <component name="conversations_build" filter="s60" long-name="Conversation Apps Build">
+      <!-- can the exports be moved to other components? or this remade into a configuration component?-->
+      <unit bldFile="/sf/app/conversations/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

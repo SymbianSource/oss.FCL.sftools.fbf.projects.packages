@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,77 +49,31 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
 <block name="usb" level="services" long-name="USB" levels="adaptation hw-if plugin framework server app-if">
-<collection name="usbldd" long-name="USB Logical Device Drivers" level="hw-if">
-<component name="usbclientdrivers" long-name="USB Client Drivers" introduced="8.1b" purpose="optional">
-<unit bldFile="/sf/os/kernelhwsrv/kernel/eka/drivers/usbc" mrp="/sf/os/kernelhwsrv/kernel/eka/drivers/usbc/base_e32_drivers_usbcli.mrp"/>
-</component>
-</collection>
-<collection name="usbmgmt" long-name="USB Management" level="server">
-<component name="usbmgr" long-name="USB Manager" purpose="optional">
-<unit bldFile="/sf/os/usb/usbmgmt/usbmgr/group" mrp="/sf/os/usb/usbmgmt/usbmgr/group/usb_manager.mrp" version="2"/>
-</component>
-<component name="usbmgrtest" long-name="USB Manager Tests" introduced="7.0" purpose="development">
-<unit mrp="/sf/os/usb/usbmgmt/usbmgrtest/group/usb_test.mrp" version="2"/>
-</component>
-<component name="usbclassandmgrdocs" long-name="USB Class and Manager Documentation" purpose="development" class="doc">
-<unit mrp="/sf/os/usb/usbmgmt/usbclassandmgrdocs/usb_documentation.mrp"/>
-</component>
-</collection>
-<collection name="usb_info" long-name="USB Info" level="app-if">
-<component name="usb_metadata" long-name="USB Metadata" introduced="tb92" purpose="development" class="config PC">
-<unit mrp="/sf/os/usb/usb_info/usb_metadata/usb_metadata.mrp"/>
-</component>
-</collection>
-</block>
+    <collection name="usbldd" long-name="USB Logical Device Drivers" level="hw-if">
+     <!-- usbclientdrivers  to be moved here from kernelhwsrv-->
+    </collection>
+    <collection name="usbmgmt" long-name="USB Management" level="server">
+     <component name="usbmgr" long-name="USB Manager" purpose="optional">
+      <unit bldFile="/sf/os/usb/usbmgmt/usbmgr/group" mrp="/sf/os/usb/usbmgmt/usbmgr/group/usb_manager.mrp" version="2"/>
+     </component>
+     <component name="usbclassandmgrdocs" long-name="USB Class and Manager Documentation" purpose="development" class="doc">
+      <unit mrp="/sf/os/usb/usbmgmt/usbclassandmgrdocs/usb_documentation.mrp"/>
+     </component>
+    </collection>
+    <collection name="usb_info" long-name="USB Info" level="app-if">
+     <component name="usb_plat" filter="s60" long-name="USB Platform Interfaces" class="api">
+      <unit bldFile="/sf/os/usb/usb_plat/group"/>
+     </component>
+     <component name="usb_metadata" long-name="USB Metadata" introduced="^3" purpose="development" class="config PC">
+      <unit mrp="/sf/os/usb/usb_info/usb_metadata/usb_metadata.mrp"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

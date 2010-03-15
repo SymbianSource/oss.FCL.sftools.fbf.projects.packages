@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,177 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
-<layer name="mw">
-<block name="web">
-<collection name="s60">
-<component name="web">
-<unit bldFile="/sf/mw/web/group" mrp=""/>
-</component>
-</collection>
-</block>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="web" level="specific" long-name="Web" levels="plugin utils server generic specific">
+    <collection name="web_info" long-name="Web Info" level="specific">
+     <component name="web_plat" filter="s60" long-name="Web Platform Interfaces" class="api">
+      <unit bldFile="/sf/mw/web/web_plat/group"/>
+     </component>
+     <component name="web_pub" filter="s60" long-name="Web Public Interfaces" class="api">
+      <unit bldFile="/sf/mw/web/web_pub/group"/>
+     </component>
+     <component name="web_build" filter="s60" long-name="Web Build">
+      <!-- when configuration is in place, the #ifdef is no longer needed and this component can be removed -->
+      <unit bldFile="/sf/mw/web/group"/>
+     </component>
+    </collection>
+    <collection name="browserutilities" long-name="Browser Utilities" level="utils">
+     <component name="browserdialogsprovider" filter="s60" long-name="Browser Dialogs Provider">
+      <unit bldFile="/sf/mw/web/browserutilities/browserdialogsprovider/group"/>
+     </component>
+     <component name="recenturlstore" filter="s60" long-name="Recent URL Store">
+      <unit bldFile="/sf/mw/web/browserutilities/recenturlstore/group"/>
+     </component>
+     <component name="xmlparser" filter="s60" long-name="XML Interface">
+      <unit bldFile="/sf/mw/web/browserutilities/xmlparser/group"/>
+     </component>
+     <component name="cxmllibrary" filter="s60" long-name="XML Parser Implementation">
+      <unit bldFile="/sf/mw/web/browserutilities/cxmllibrary/group"/>
+     </component>
+     <component name="downloadmgr" filter="s60" long-name="Download Manager">
+      <unit bldFile="/sf/mw/web/browserutilities/downloadmgr/group"/>
+     </component>
+     <component name="connectionmanager" filter="s60" long-name="Connection Manager">
+      <unit bldFile="/sf/mw/web/browserutilities/connectionmanager/group"/>
+     </component>
+     <component name="browsertelservice" filter="s60" long-name="Browser Telephony Service">
+      <unit bldFile="/sf/mw/web/browserutilities/browsertelservice/group"/>
+     </component>
+     <component name="favouritesengine" filter="s60" long-name="Favourites Engine">
+      <unit bldFile="/sf/mw/web/browserutilities/favouritesengine/group"/>
+     </component>
+     <component name="feedsengine" filter="s60" long-name="Feeds Engine">
+      <unit bldFile="/sf/mw/web/browserutilities/feedsengine/group"/>
+     </component>
+     <component name="multipartparser" filter="s60" long-name="Multipart Parser">
+      <!-- uncomment the unit when configuration is in place, it's currently #included from browserutilities_build -->
+      <!-- <unit bldFile="browserutilities/multipartparser/group"/> -->
+     </component>
+     <component name="schemehandler" filter="s60" long-name="Scheme Handler">
+      <unit bldFile="/sf/mw/web/browserutilities/schemehandler/group"/>
+     </component>
+     <component name="webutils" filter="s60" long-name="Web Utils">
+      <unit bldFile="/sf/mw/web/browserutilities/webutils/group"/>
+     </component>
+     <component name="aiwbrowserprovider" filter="s60" long-name="AIW Browser Provider" plugin="Y">
+      <unit bldFile="/sf/mw/web/browserutilities/aiwbrowserprovider/group"/>
+     </component>
+     <component name="browserutilities_build" filter="s60" long-name="Browser Utilities Build">
+      <!-- when configuration is in place, the #ifdef is no longer needed and this component can be removed -->
+      <unit bldFile="/sf/mw/web/browserutilities/group"/>
+     </component>
+    </collection>
+    <collection name="webengine" long-name="Web Engine" level="server">
+     <component name="osswebengine" filter="s60" long-name="OSS Web Engine">
+      <!-- can only have one unit. Either split into multiple components or #include from a single main bld.inf -->
+      <unit bldFile="/sf/mw/web/webengine/osswebengine/cache/group"/>
+      <unit bldFile="/sf/mw/web/webengine/osswebengine/memorymanager/group"/>
+      <unit bldFile="/sf/mw/web/webengine/osswebengine/npscript/group"/>
+      <unit bldFile="/sf/mw/web/webengine/osswebengine/webkit/s60/group"/>
+      <unit bldFile="/sf/mw/web/webengine/osswebengine/webkit/s60/group/javascriptcore"/>
+     </component>
+     <component name="webkitutils" filter="s60" long-name="WebKit Utils">
+      <unit bldFile="/sf/mw/web/webengine/webkitutils/group"/>
+     </component>
+     <component name="pagescaler" filter="s60" long-name="Page Scaler">
+      <unit bldFile="/sf/mw/web/webengine/pagescaler/group"/>
+     </component>
+     <component name="webwidgetinstaller" filter="s60" long-name="Widget Installer">
+      <unit bldFile="/sf/mw/web/webengine/widgetinstaller/group"/>
+     </component>
+     <component name="widgetregistry" filter="s60" long-name="Widget Registry">
+      <unit bldFile="/sf/mw/web/webengine/widgetregistry/group"/>
+     </component>
+     <component name="wmlengine" filter="s60" long-name="WML Engine">
+      <unit bldFile="/sf/mw/web/webengine/wmlengine/group"/>
+     </component>
+     <component name="device" filter="s60" long-name="Device">
+      <!-- this needs a more meaningful name -->
+      <unit bldFile="/sf/mw/web/webengine/device/group"/>
+     </component>
+     <component name="widgetengine" filter="s60" long-name="Widget Engine">
+      <unit bldFile="/sf/mw/web/webengine/widgetengine/group"/>
+     </component>
+     <component name="web_memoryplugin" long-name="Memory Plugin" filter="s60" plugin="Y">
+      <unit bldFile="/sf/mw/web/webengine/memoryplugin/group"/>
+     </component>
+     <component name="widgetmemoryplugin" filter="s60" long-name="Widget Memory Plugin" plugin="Y">
+      <unit bldFile="/sf/mw/web/webengine/widgetmemoryplugin/group"/>
+     </component>
+     <component name="widgetbackuprestore" filter="s60" long-name="Widget Backup and Restore">
+      <unit bldFile="/sf/mw/web/webengine/widgetbackuprestore/group"/>
+     </component>
+     <component name="browserrecognizers" filter="s60" long-name="Browser Recognizers" plugin="Y">
+      <unit bldFile="/sf/mw/web/webengine/browserrecognizers/group"/>
+     </component>
+     <component name="wrtharvester" filter="s60" long-name="Web Runtime Harvester" plugin="Y">
+      <unit bldFile="/sf/mw/web/webengine/wrtharvester/group"/>
+     </component>
+    </collection>
+    <collection name="codhandler" long-name="Content Object Descriptor Handler" level="specific">
+     <component name="codeng" filter="s60" long-name="COD Engine">
+      <unit bldFile="/sf/mw/web/codhandler/codeng/group"/>
+     </component>
+     <component name="codui" filter="s60" long-name="COD UI">
+      <unit bldFile="/sf/mw/web/codhandler/codui/group"/>
+     </component>
+     <component name="codrecog" filter="s60" long-name="COD Recogniser" plugin="Y">
+      <unit bldFile="/sf/mw/web/codhandler/codrecog/group"/>
+     </component>
+     <component name="codviewer" filter="s60" long-name="COD Viewer">
+      <unit bldFile="/sf/mw/web/codhandler/codviewer/group"/>
+     </component>
+     <component name="ddrecog" filter="s60" long-name="Download Descriptor Recogniser" plugin="Y">
+      <unit bldFile="/sf/mw/web/codhandler/ddrecog/group"/>
+     </component>
+     <component name="ddviewer" filter="s60" long-name="Download Descriptor Viewer">
+      <unit bldFile="/sf/mw/web/codhandler/ddviewer/group"/>
+     </component>
+     <component name="coddownload" filter="s60" long-name="COD Download">
+      <unit bldFile="/sf/mw/web/codhandler/coddownload/group"/>
+     </component>
+     <component name="roapapp" filter="s60" long-name="ROAP Application">
+      <unit bldFile="/sf/mw/web/codhandler/roapapp/group"/>
+     </component>
+     <component name="codhandler_build" filter="s60" long-name="COD Handler Build">
+      <!-- Exports need to go into another component or make this self-contained.
+      		#included .hrh file needs to be #included in each of the other components -->
+      <unit bldFile="/sf/mw/web/codhandler/group"/>
+     </component>
+    </collection>
+    <collection name="widgets" long-name="Web Widget Framework" level="generic">
+     <!-- the following units can be uncommented when configuration is put in place -->
+     <component name="widgetrecognizer" filter="s60" long-name="Widget Recognizer" plugin="Y">
+      <!--<unit bldFile="widgets/widgetrecognizer/group"/>-->
+     </component>
+     <component name="widgetinstaller" filter="s60" long-name="Widget Installer UI" plugin="Y">
+      <!--<unit bldFile="widgets/widgetinstaller/group"/>-->
+     </component>
+     <component name="widgetlauncher" filter="s60" long-name="Widget Launcher">
+      <!-- <unit bldFile="widgets/widgetlauncher/group"/>-->
+     </component>
+     <component name="widgetapp" filter="s60" long-name="Widget UI">
+      <!--<unit bldFile="widgets/widgetapp/group"/>-->
+     </component>
+     <component name="widgetsidchecker" filter="s60" long-name="Widget SID Checker" introduced="^3">
+      <!--<unit bldFile="widgets/widgetsidchecker/group"/>-->
+     </component>
+     <component name="widgetpreinstaller" filter="s60" long-name="Widget Pre-Installer">
+      <!--<unit bldFile="widgets/widgetpreinstaller/group"/>-->
+     </component>
+     <component name="widgetstartup" filter="s60" long-name="Widget Startup">
+      <!--<unit bldFile="widgets/widgetstartup/group"/>-->
+     </component>
+     <component name="widgets_build" filter="s60" long-name="Widgets Build">
+      <!-- when configuration is in place, the #ifdef is no longer needed and this component can be removed 
+      		#included .hrh file needs to be #included in each of the other components -->
+      <unit bldFile="/sf/mw/web/widgets/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

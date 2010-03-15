@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,71 +49,63 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="mw" long-name="Middleware" levels="generic specific">
 <block name="btservices" level="generic" long-name="Bluetooth Services" levels="framework server generic specific plugin">
-<collection name="bluetoothappprofiles" long-name="Bluetooth Application Profiles" level="plugin">
-<component name="avrcp" long-name="Bluetooth AVRCP" introduced="9.1" purpose="optional">
-<unit bldFile="/sf/mw/btservices/bluetoothappprofiles/avrcp" mrp="/sf/mw/btservices/bluetoothappprofiles/avrcp/bluetooth_avrcp.mrp"/>
-</component>
-</collection>
-<collection name="btservices_info" long-name="BT Services Info" level="plugin">
-<component name="btservices_metadata" long-name="BT Services Metadata" introduced="tb92" purpose="development" class="config PC">
-<unit mrp="/sf/mw/btservices/btservices_info/btservices_metadata/btservices_metadata.mrp"/>
-</component>
-</collection>
-<collection name="s60">
-<component name="btservices">
-<unit bldFile="/sf/mw/btservices/group" mrp=""/>
-</component>
-</collection>
-</block>
+    <collection name="bluetoothengine" long-name="Bluetooth Engine" level="framework">
+     <component name="bteng" filter="s60" long-name="Bluetooth Engine">
+      <unit bldFile="/sf/mw/btservices/bluetoothengine/bteng/group"/>
+     </component>
+     <component name="btnotif" filter="s60" long-name="Bluetooth Notifier">
+      <unit bldFile="/sf/mw/btservices/bluetoothengine/btnotif/group"/>
+     </component>
+     <component name="btaudioman" filter="s60" long-name="Bluetooth Audio Manager">
+      <unit bldFile="/sf/mw/btservices/bluetoothengine/btaudioman/group"/>
+     </component>
+     <component name="btmac" filter="s60" long-name="Bluetooth Mono Audio Controller" plugin="Y">
+      <unit bldFile="/sf/mw/btservices/bluetoothengine/btmac/group"/>
+     </component>
+     <component name="btsac" filter="s60" long-name="Bluetooth Stereo Audio Controller" plugin="Y">
+      <unit bldFile="/sf/mw/btservices/bluetoothengine/btsac/group"/>
+     </component>
+     <component name="btaudiostreamer" filter="s60" long-name="Bluetooth Audio Streamer">
+      <unit bldFile="/sf/mw/btservices/bluetoothengine/btaudiostreamer/group"/>
+     </component>
+     <component name="btsap" filter="s60" long-name="Bluetooth SIM Access Profile" plugin="Y">
+      <unit bldFile="/sf/mw/btservices/bluetoothengine/btsap/group"/>
+     </component>
+     <component name="btui" filter="s60" long-name="Bluetooth UI">
+      <unit bldFile="/sf/mw/btservices/bluetoothengine/btui/group"/>
+     </component>
+     <component name="btpbap" filter="s60" long-name="Bluetooth Phonebook Access Profile" plugin="Y">
+      <unit bldFile="/sf/mw/btservices/bluetoothengine/btpbap/group"/>
+     </component>
+     <component name="bthid" filter="s60" long-name="Bluetooth HID">
+      <unit bldFile="/sf/mw/btservices/bluetoothengine/bthid/group"/>
+     </component>
+     <component name="btctrldcmoadapter" filter="s60" long-name="Bluetooth Control DCMO Adapter" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/mw/btservices/bluetoothengine/btctrldcmoadapter/group"/>
+     </component>
+    </collection>
+    <collection name="bluetoothappprofiles" long-name="Bluetooth Application Profiles" level="plugin">
+     <component name="avrcp" long-name="Bluetooth AVRCP" introduced="9.1" purpose="optional">
+      <unit bldFile="/sf/mw/btservices/bluetoothappprofiles/avrcp" mrp="/sf/mw/btservices/bluetoothappprofiles/avrcp/bluetooth_avrcp.mrp"/>
+     </component>
+    </collection>
+    <collection name="btservices_info" long-name="BT Services Info" level="plugin">
+     <component name="btservices_plat" filter="s60" long-name="BT Services Platform Interfaces" class="api">
+      <unit bldFile="/sf/mw/btservices/btservices_plat/group"/>
+     </component>
+     <component name="btservices_pub" filter="s60" long-name="BT Services Public Interfaces" class="api">
+      <unit bldFile="/sf/mw/btservices/btservices_pub/group"/>
+     </component>
+     <component name="btservices_metadata" long-name="BT Services Metadata" introduced="^3" purpose="development" class="config PC">
+      <unit mrp="/sf/mw/btservices/btservices_info/btservices_metadata/btservices_metadata.mrp"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

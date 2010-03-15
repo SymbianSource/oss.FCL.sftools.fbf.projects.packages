@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,88 +49,119 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
 <block name="deviceplatformrelease" level="services" long-name="Device Platform Release" levels="bld mid top">
-<collection name="symbianosbld" long-name="Symbian OS Build" level="bld">
-<component name="cedarutils" long-name="Cedar Utils" purpose="development">
-<unit mrp="/sf/os/deviceplatformrelease/symbianosbld/cedarutils/tools_utils_cedar.mrp"/>
-</component>
-<component name="productionbldcbrconfig" long-name="Production Build CBR Config" filter="gt" purpose="development" class="config">
-<unit mrp="/sf/os/deviceplatformrelease/symbianosbld/productionbldcbrconfig/product_cbr_config.mrp"/>
-</component>
-</collection>
-<collection name="foundation_system" long-name="Foundation System" level="top">
-<component name="systemdocs" long-name="System Documentation" purpose="development" class="doc">
-<unit mrp="/sf/os/deviceplatformrelease/foundation_system/systemdocs/group/system.mrp"/>
-</component>
-<component name="system_model" long-name="System Model" introduced="tb91" purpose="development" class="config PC">
-<unit mrp="/sf/os/deviceplatformrelease/foundation_system/system_model/system_model.mrp"/>
-</component>
-</collection>
-<collection name="deviceplatformrelease_info" long-name="Device Platform Release Info" level="top">
-<component name="deviceplatformrelease_metadata" long-name="Device Platform Release Metadata" introduced="tb91" purpose="development" class="config PC">
-<unit mrp="/sf/os/deviceplatformrelease/deviceplatformrelease_info/deviceplatformrelease_metadata/deviceplatformrelease_metadata.mrp"/>
-</component>
-</collection>
-<collection name="s60">
-<component name="S60Extras">
-<unit bldFile="/sf/os/deviceplatformrelease/S60Extras/group" mrp=""/>
-</component>
-<component name="S60LocFiles">
-<unit bldFile="/sf/os/deviceplatformrelease/S60LocFiles/group" mrp=""/>
-</component>
-<component name="version">
-<unit bldFile="/sf/os/deviceplatformrelease/Version/group" mrp=""/>
-</component>
-</collection>
-</block>
+    <collection name="s60extras" long-name="S60 Extras" level="mid">
+     <!-- collection is really a component. Need to move down a directory -->
+     <component name="s60extras_build" filter="s60" long-name="S60 Extras Build" purpose="development" class="config">
+      <unit bldFile="/sf/os/deviceplatformrelease/S60Extras/group"/>
+     </component>
+    </collection>
+    <collection name="locfiles" long-name="Locale Files" level="mid">
+     <component name="locfiles_build" filter="s60" long-name="S60 Locale Files Build" purpose="development" class="config">
+      <!-- need to move component down a directory -->
+      <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group"/>
+     </component>
+     <component name="locfiles_set1" long-name="Locale Files Set 1" filter="s60" class="config">
+      <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set1"/>
+     </component>
+     <component name="locfiles_set2" long-name="Locale Files Set 2" filter="s60" class="config">
+      <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set2"/>
+     </component>
+     <component name="locfiles_set3" long-name="Locale Files Set 3" filter="s60" class="config">
+      <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set3"/>
+     </component>
+     <component name="locfiles_set4" long-name="Locale Files Set 4" filter="s60" class="config">
+      <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set4"/>
+     </component>
+     <component name="locfiles_set5" long-name="Locale Files Set 5" filter="s60" class="config">
+      <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set5"/>
+     </component>
+     <component name="locfiles_set6" long-name="Locale Files Set 6" filter="s60" class="config">
+      <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set6"/>
+     </component>
+     <!-- is the a problem with SF builds with the following? -->
+     <component name="locfiles_set7" long-name="Locale Files Set 7" filter="s60" class="config">
+      <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set7"/>
+     </component>
+     <component name="locfiles_set8" long-name="Locale Files Set 8" filter="s60" class="config">
+      <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set8"/>
+     </component>
+     <component name="locfiles_set9" long-name="Locale Files Set 9" filter="s60" class="config">
+      <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set9"/>
+     </component>
+     <component name="locfiles_set10" long-name="Locale Files Set 10" filter="s60" class="config">
+      <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set10"/>
+     </component>
+     <component name="locfiles_set11" long-name="Locale Files Set 11" filter="s60" class="config">
+      <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set11"/>
+     </component>
+     <component name="locfiles_set12" long-name="Locale Files Set 12" filter="s60" class="config">
+      <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set12"/>
+     </component>
+     <component name="locfiles_set13" long-name="Locale Files Set 13" filter="s60" class="config">
+      <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set13"/>
+     </component>
+     <component name="locfiles_set14" long-name="Locale Files Set 14" filter="s60" class="config">
+      <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set14"/>
+     </component>
+     <component name="locfiles_set15" long-name="Locale Files Set 15" filter="s60" class="config">
+      <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set15"/>
+     </component>
+     <component name="locfiles_set16" long-name="Locale Files Set 16" filter="s60" class="config">
+      <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set16"/>
+     </component>
+    </collection>
+    <collection name="version" long-name="Version" level="top">
+     <!-- collection is really a component. Need to move down a directory -->
+     <component name="version_build" filter="s60" long-name="Version Build" purpose="development" class="config">
+      <unit bldFile="/sf/os/deviceplatformrelease/Version/group"/>
+     </component>
+    </collection>
+    <collection name="helps_loc2" long-name="Helps Locale 2" level="top">
+     <!-- collection is really a component. Need to move down a directory -->
+     <component name="helps_loc2_build" long-name="Helps Locale 2 Build" filter="s60">
+      <unit bldFile="/sf/os/deviceplatformrelease/helps_loc2/group"/>
+     </component>
+    </collection>
+    <collection name="sf_config" long-name="SF Config" level="mid">
+     <component name="config" filter="s60" long-name="Config" purpose="development" class="config"/>
+     <component name="cenrep" filter="sf_build" long-name="ConE Central Repository Config" purpose="development" class="config">
+      <!-- will shoudl give the id/path something more unique than cenrep -->
+      <unit bldFile="/sf/os/deviceplatformrelease/sf_config/cenrep/group"/>
+     </component>
+    </collection>
+    <!-- should be located locally in buildplatforms/group 
+    <collection id="s60bld" name="S60 Build">
+      <component id="buildplatforms" filter="s60" name="Build Platforms">
+        <unit bldFile="/tools/buildplatforms/group"/>
+      </component>
+    </collection>-->
+    <collection name="symbianosbld" long-name="Symbian OS Build" level="bld">
+     <component name="cedarutils" long-name="Cedar Utils" purpose="development">
+      <unit mrp="/sf/os/deviceplatformrelease/symbianosbld/cedarutils/tools_utils_cedar.mrp"/>
+     </component>
+     <component name="productionbldcbrconfig" long-name="Production Build CBR Config" filter="gt" purpose="development" class="config">
+      <unit mrp="/sf/os/deviceplatformrelease/symbianosbld/productionbldcbrconfig/product_cbr_config.mrp"/>
+     </component>
+     <component name="foundation_s60_packages" long-name="Foundation S60 Packages" introduced="^3" deprecated="^3" purpose="development" class="config PC">
+      <unit mrp="/sf/os/deviceplatformrelease/symbianosbld/foundation_s60_packages/foundation_s60_packages.mrp"/>
+     </component>
+    </collection>
+    <collection name="foundation_system" long-name="Foundation System" level="top">
+     <component name="system_model" long-name="System Model" introduced="^2" purpose="development" class="config PC">
+      <unit mrp="/sf/os/deviceplatformrelease/foundation_system/system_model/system_model.mrp"/>
+     </component>
+    </collection>
+    <collection name="deviceplatformrelease_info" long-name="Device Platform Release Info" level="top">
+     <component name="deviceplatformrelease_metadata" long-name="Device Platform Release Metadata" introduced="^2" purpose="development" class="config PC">
+      <unit mrp="/sf/os/deviceplatformrelease/deviceplatformrelease_info/deviceplatformrelease_metadata/deviceplatformrelease_metadata.mrp"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

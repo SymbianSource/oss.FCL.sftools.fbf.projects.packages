@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,63 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
-<layer name="mw">
-<block name="uitools">
-<collection name="s60">
-<component name="uitools">
-<unit bldFile="/sf/mw/uitools/group" mrp=""/>
-</component>
-</collection>
-</block>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="uitools" level="specific" long-name="UI Tools" levels="compile encode tool if">
+    <collection name="cdlcompilertoolkit" long-name="CDL Compiler Toolkit" level="compile">
+     <!-- collection is actually a component. Needs to be moved down a directory -->
+     <component name="cdlcompilertoolkit_build" filter="s60" long-name="CDL Compiler Toolkit Build">
+      <unit bldFile="/sf/mw/uitools/cdlcompilertoolkit/group"/>
+     </component>
+    </collection>
+    <collection name="cdlcompiler" long-name="CDL Compiler" level="compile">
+     <!-- collection is actually a component. Needs to be moved down a directory -->
+     <component name="cdlcompiler_build" filter="s60" long-name="CDL Compiler Build">
+      <unit bldFile="/sf/mw/uitools/cdlcompiler/group"/>
+     </component>
+    </collection>
+    <collection name="gfxtools" long-name="Graphics Tools" level="tool">
+     <component name="gditools" filter="s60" long-name="GDI Tools" class="PC">
+      <unit bldFile="/sf/mw/uitools/gfxtools/gditools/group"/>
+     </component>
+     <component name="color" filter="s60" long-name="Bitmap Colour Palette" class="PC">
+      <unit bldFile="/sf/mw/uitools/gfxtools/color/group"/>
+     </component>
+    </collection>
+    <collection name="aknlayoutcompiler" long-name="Avkon Layout Compiler" level="compile">
+     <!-- collection is actually a component. Needs to be moved down a directory -->
+     <component name="aknlayoutcompiler_build" filter="s60" long-name="Avkon Layout Compiler Build">
+      <unit bldFile="/sf/mw/uitools/aknlayoutcompiler/group"/>
+     </component>
+    </collection>
+    <collection name="skincompiler" long-name="Skin Compiler" level="compile">
+     <component name="aknskindesccompiler" filter="s60" long-name="Avkon Skin Descriptor Compiler">
+      <unit bldFile="/sf/mw/uitools/skincompiler/AknSkinDescCompiler/group"/>
+     </component>
+    </collection>
+    <collection name="reszip" long-name="Resource Zip" level="encode">
+     <!-- collection is actually a component. Needs to be moved down a directory -->
+     <component name="reszip_build" filter="s60" long-name="Resource Zip Build">
+      <unit bldFile="/sf/mw/uitools/reszip/group"/>
+     </component>
+    </collection>
+    <collection name="toollibraries" long-name="Tool Libraries" level="tool"/>
+    <collection name="svgtencoder" long-name="SVGT Encoder" level="encode">
+     <component name="svgtenc" filter="s60" long-name="Standalone SVGT Encoder" class="PC">
+      <unit bldFile="/sf/mw/uitools/svgtencoder/svgtenc/standalone/group"/>
+     </component>
+    </collection>
+    <collection name="uitools_info" long-name="UI Tools Info" level="if">
+     <component name="uitools_plat" filter="s60" long-name="UI Tools Platform Interfaces" class="api">
+      <unit bldFile="/sf/mw/uitools/uitools_plat/group"/>
+     </component>
+     <component name="uitools_pub" filter="s60" long-name="UI Tools Public Interfaces" class="api">
+      <unit bldFile="/sf/mw/uitools/uitools_pub/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

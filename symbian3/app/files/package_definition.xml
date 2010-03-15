@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,52 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="files" level="apps" long-name="File Manager Apps">
-<collection name="s60">
-<component name="files">
-<unit bldFile="/sf/app/files/group" mrp=""/>
-</component>
-</collection>
-</block>
+<block name="files" level="apps" long-name="File Manager Apps" levels="support apps">
+    <collection name="deviceencryption" long-name="Device Encryption" level="support">
+     <!-- this is either needs to be broken up into idependent bld.infs, or it's really a component and should move down a directory -->
+     <component name="devencnotifplugin" filter="s60" long-name="Device Encryption Notifier Plugin" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/files/deviceencryption/devencnotifplugin/group"/>
+     </component>
+     <component name="devencui" filter="s60" long-name="Device Encryption UI" introduced="^3">
+      <unit bldFile="/sf/app/files/deviceencryption/devencui/group"/>
+     </component>
+     <component name="devencdmadapter" filter="s60" long-name="Device Encryption DM Adapter" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/files/deviceencryption/devencdmadapter/group"/>
+     </component>
+     <component name="devencgsplugin" filter="s60" long-name="Device Encryption GS Plugin" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/files/deviceencryption/devencgsplugin/group"/>
+     </component>
+     <component name="deviceencryption_help" filter="s60" long-name="Device Encryption Help" introduced="^3">
+      <unit bldFile="/sf/app/files/deviceencryption/help/group"/>
+     </component>
+     <component name="deviceencryption_build" filter="s60" long-name="Device Encryption Build" introduced="^3">
+      <unit bldFile="/sf/app/files/deviceencryption/group"/>
+     </component>
+    </collection>
+    <collection name="filemanager" long-name="File Manager" level="apps">
+     <!-- this is really a component, should move down a directory -->
+     <component name="filemanager_build" filter="s60" long-name="File Manager Build">
+      <unit bldFile="/sf/app/files/filemanager/group"/>
+     </component>
+    </collection>
+    <collection name="filesystemuis" long-name="File System UIs" level="support">
+     <component name="memscaneng" filter="s60" long-name="Memory Scan Server">
+      <unit bldFile="/sf/app/files/filesystemuis/memscaneng/group"/>
+     </component>
+     <component name="memstatepopup" filter="s60" long-name="Memory State Popup">
+      <unit bldFile="/sf/app/files/filesystemuis/memstatepopup/group"/>
+     </component>
+    </collection>
+    <collection name="files_info" long-name="File Manager Apps Info" level="apps">
+     <component name="files_plat" filter="s60" long-name="File Manager Apps Platform Interfaces" class="api">
+      <unit bldFile="/sf/app/files/files_plat/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,131 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
-<layer name="mw">
-<block name="homescreensrv">
-<collection name="s60">
-<component name="homescreensrv">
-<unit bldFile="/sf/mw/homescreensrv/group" mrp=""/>
-</component>
-</collection>
-</block>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="homescreensrv" level="specific" long-name="Home Screen Services" levels="plugin framework server generic specific">
+    <collection name="xcfw" long-name="XML Content Framework" level="framework">
+     <!-- collection is really a component, needs to be moved down a directory -->
+     <component name="xcfw_build" filter="s60" long-name="XML Content Framework Build">
+      <unit bldFile="/sf/mw/homescreensrv/xcfw/group"/>
+     </component>
+    </collection>
+    <collection name="homescreenpluginsrv" long-name="Home Screen Plugin Service" level="plugin">
+     <component name="hspsdefinitionengine" filter="s60" long-name="HS Plugin Service Definition Engine" class="placeholder">
+      <!-- <unit bldFile="homescreenpluginsrv/hspsdefinitionengine/group"/> -->
+     </component>
+     <component name="hspsdom" filter="s60" long-name="HS Plugin Service DOM" class="placeholder">
+      <!-- <unit bldFile="homescreenpluginsrv/hspsdom/group"/> -->
+     </component>
+     <component name="hspstools" filter="s60" long-name="HS Server Tools">
+      <!-- <unit bldFile="homescreenpluginsrv/hspstools/group"/> -->
+     </component>
+     <component name="hspspluginregistry" filter="s60" long-name="HS Plugin Registry" class="placeholder">
+      <!-- <unit bldFile="homescreenpluginsrv/hspspluginregistry/group"/>-->
+     </component>
+     <component name="hspsmanager" filter="s60" long-name="HSPS Manager" class="placeholder">
+      <!-- <unit bldFile="homescreenpluginsrv/hspsmanager/group"/>-->
+     </component>
+     <component name="hspsodt" filter="s60" long-name="HSPS Object Description Tree" class="placeholder">
+      <!-- <unit bldFile="homescreenpluginsrv/hspsodt/group"/>-->
+     </component>
+     <component name="hspsresource" filter="s60" long-name="HS Plugin Server Resource" class="placeholder">
+      <!-- <unit bldFile="homescreenpluginsrv/hspsresource/group"/>-->
+     </component>
+     <component name="hspsresult" filter="s60" long-name="HS Plugin Server Result" class="placeholder">
+      <!-- <unit bldFile="homescreenpluginsrv/hspsresult/group"/>-->
+     </component>
+     <component name="homescreen_settings_api" filter="s60" long-name="HS Settings API" class="api placeholder">
+      <!-- <unit bldFile="homescreenpluginsrv/hspsresult/group"/>-->
+     </component>
+     <component name="homescreenpluginsrv_build" filter="s60" long-name="HSPS Build">
+      <!-- need to break this up into the self-contained components above and uncomment them -->
+      <unit bldFile="/sf/mw/homescreensrv/homescreenpluginsrv/group"/>
+     </component>
+    </collection>
+    <collection name="idlefw" long-name="Idle Framework" level="framework">
+     <!-- Uncomment all units when configuration is in place. All currently #included from idlefw_build -->
+     <component name="idlefw_plugins" filter="s60" long-name="Idle Framework Plugins" plugin="Y" class="placeholder">
+      <!--<unit bldFile="idlefw/plugins/group"/>-->
+     </component>
+     <component name="hslaunch" filter="s60" long-name="Home Screen Launch" class="placeholder">
+      <!--<unit bldFile="idlefw/plugins/group"/>-->
+     </component>
+     <component name="idlefw_build" filter="s60" long-name="Idle Framework Build">
+      <!--split this into components, or separate from the above components and move this down a directory -->
+      <unit bldFile="/sf/mw/homescreensrv/idlefw/group"/>
+     </component>
+    </collection>
+    <collection name="menucontentsrv" long-name="Menu Content Service" level="generic">
+     <component name="menusatinterface" filter="s60" long-name="Menu SAT Interface">
+      <unit bldFile="/sf/mw/homescreensrv/menucontentsrv/menusatinterface/group"/>
+     </component>
+     <component name="menucontentsrv_build" filter="s60" long-name="Menu Content Service Build">
+      <!--split this into components, or separate from the above component and move this down a directory -->
+      <unit bldFile="/sf/mw/homescreensrv/menucontentsrv/group"/>
+     </component>
+    </collection>
+    <collection name="backsteppingsrv" long-name="Back Stepping Service" level="server">
+     <!-- collection is really a component, needs to be moved down a directory -->
+     <component name="bsengine" long-name="Back Stepping Engine" filter="s60">
+      <unit bldFile="/sf/mw/homescreensrv/backsteppingsrv/group"/>
+     </component>
+    </collection>
+    <collection name="contentpublishingsrv" long-name="Content Publishing Service" level="server">
+     <component name="contentpublishingdebug" filter="s60" long-name="Content Publishing Debug">
+      <!-- <unit bldFile="contentpublishingsrv/contentpublishingutils/contentpublishingdebug/group"/> -->
+     </component>
+     <component name="contentpublishingutils" filter="s60" long-name="Content Publishing Utils">
+      <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/contentpublishingutils/group"/>
+     </component>
+     <component name="contentpublishingserver" filter="s60" long-name="Content Publishing Server">
+      <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/contentpublishingserver/group"/>
+     </component>
+     <component name="contentharvester" filter="s60" long-name="Content Harvester">
+      <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/contentharvester/group"/>
+     </component>
+     <component name="contentpublishingsrv_build" filter="s60" long-name="Content Publishing Service Build">
+      <!-- need to remove links to the above components and just contain the IBY (or move the IBY into another component). 
+      		If keeping, it need to move down a directory.-->
+      <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/group"/>
+     </component>
+    </collection>
+    <collection name="contextutility" long-name="Context Utility" level="generic">
+     <!-- collection is really a component, needs to be moved down a directory -->
+     <component name="contextutility_build" long-name="Context Utility Build" filter="s60" introduced="^3">
+      <unit bldFile="/sf/mw/homescreensrv/contextutility/group"/>
+     </component>
+    </collection>
+    <collection name="contentcontrolsrv" long-name="Content Control Service" level="server">
+     <component name="ccsrv" long-name="Content Control Service" filter="s60" introduced="^3">
+      <unit bldFile="/sf/mw/homescreensrv/contentcontrolsrv/ccsrv/group"/>
+     </component>
+     <component name="ccsrvapi" long-name="Content Control Service API" filter="s60" introduced="^3" class="api">
+      <unit bldFile="/sf/mw/homescreensrv/contentcontrolsrv/ccsrvapi/group"/>
+     </component>
+     <component name="ccclientsession" long-name="Content Control Client Session" filter="s60" introduced="^3">
+      <unit bldFile="/sf/mw/homescreensrv/contentcontrolsrv/ccclientsession/group"/>
+     </component>
+     <component name="hsccclient" long-name="HS Content Control Client" filter="s60" introduced="^3">
+      <unit bldFile="/sf/mw/homescreensrv/contentcontrolsrv/hsccclient/group"/>
+     </component>
+     <component name="hscontentinfo" long-name="Home Screen Content Info" filter="s60" introduced="^3">
+      <unit bldFile="/sf/mw/homescreensrv/contentcontrolsrv/hscontentinfo/group"/>
+     </component>
+     <component name="contentcontrolsrv_build" long-name="Content Control Service Build" filter="s60" introduced="^3">
+      <!-- need to remove links to the above components and just contain the IBY (or move the IBY into another component). 
+      		If keeping, it need to move down a directory.-->
+      <unit bldFile="/sf/mw/homescreensrv/contentcontrolsrv/group"/>
+     </component>
+    </collection>
+    <collection name="homescreensrv_info" long-name="Home Screen Services Info" level="specific">
+     <component name="homescreensrv_plat" filter="s60" long-name="Home Screen Services Platform Interfaces" class="api">
+      <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

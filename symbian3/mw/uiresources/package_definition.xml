@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,97 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
-<layer name="mw">
-<block name="uiresources">
-<collection name="s60">
-<component name="uiresources">
-<unit bldFile="/sf/mw/uiresources/group" mrp=""/>
-</component>
-</collection>
-</block>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="uiresources" level="generic" long-name="UI Resources" levels="compile plugin framework server generic data">
+    <collection name="uiresources_info" long-name="UI Resources Info" level="data">
+     <component name="uiresources_plat" filter="s60" long-name="UI Resources Platform Interfaces" class="api">
+      <unit bldFile="/sf/mw/uiresources/uiresources_plat/group"/>
+     </component>
+     <component name="uiresources_pub" filter="s60" long-name="UI Resources Public Interfaces" class="api">
+      <unit bldFile="/sf/mw/uiresources/uiresources_pub/group"/>
+     </component>
+     <component name="uiresources_test" filter="s60,test,api_test" long-name="UI Resources Tests" purpose="development"/>
+     <!-- are these custom filters needed? -->
+     <component name="uiresources_test_pat" filter="s60,test,api_test" long-name="UI Resources Platform API Tests" purpose="development" class="placeholder">
+      <!-- can only have one unit. Need to #include from a common one -->
+     </component>
+     <component name="uiresources_test_pat" filter="s60,test,api_test" long-name="UI Resources Public API Tests" purpose="development" class="placeholder">
+      <!-- can only have one unit. Need to #include from a common one -->
+     </component>
+    </collection>
+    <collection name="uigraphics" long-name="UI Graphics" level="generic">
+     <component name="bitmaps2" filter="s60" long-name="Bitmaps 2" class="config">
+      <unit bldFile="/sf/mw/uiresources/uigraphics/bitmaps2/group"/>
+     </component>
+     <component name="icons" filter="s60" long-name="Icons" class="config">
+      <unit bldFile="/sf/mw/uiresources/uigraphics/icons/group"/>
+     </component>
+     <component name="variatedbitmaps" filter="s60" long-name="Variated Bitmaps" class="config">
+      <unit bldFile="/sf/mw/uiresources/uigraphics/variatedbitmaps/group"/>
+     </component>
+     <component name="aknicon" filter="s60" long-name="Avkon Icon Framework">
+      <unit bldFile="/sf/mw/uiresources/uigraphics/aknicon/group"/>
+     </component>
+     <component name="nvgrenderstage" filter="sf_build" long-name="NVG Render Stage">
+      <unit bldFile="/sf/mw/uiresources/uigraphics/nvgrenderstage/group"/>
+     </component>
+    </collection>
+    <collection name="layouts" long-name="Layouts" level="plugin">
+     <component name="cdl" filter="s60" long-name="Customization Definition Language">
+      <!-- can only have one unit. Need to #include them or split into multiple components -->
+      <unit bldFile="/sf/mw/uiresources/layouts/cdl/cdlengine/group"/>
+      <unit bldFile="/sf/mw/uiresources/layouts/cdl/cdlserver/group"/>
+     </component>
+     <component name="aknlayout2" filter="s60" long-name="Avkon Layout 2">
+      <unit bldFile="/sf/mw/uiresources/layouts/aknlayout2/group"/>
+     </component>
+    </collection>
+    <collection name="skins" long-name="Skins" level="data">
+     <component name="aknskincontent" filter="s60" long-name="Avkon Skin Content" class="config">
+      <unit bldFile="/sf/mw/uiresources/skins/aknskincontent/group"/>
+     </component>
+     <component name="aknskins" filter="s60" long-name="Avkon Skin Compiler">
+      <unit bldFile="/sf/mw/uiresources/skins/aknskins/group"/>
+     </component>
+    </collection>
+    <collection name="pictographs" long-name="Pictographs" level="data">
+     <component name="aknpictograph" filter="s60" long-name="Avkon Pictograph">
+      <unit bldFile="/sf/mw/uiresources/pictographs/aknpictograph/group"/>
+     </component>
+    </collection>
+    <collection name="locales" long-name="Locales" level="framework">
+     <component name="locales_build" filter="s60" long-name="Locales Build">
+      <unit bldFile="/sf/mw/uiresources/locales/loce32"/>
+     </component>
+    </collection>
+    <collection name="uiconfig" long-name="UI Config" level="server">
+     <component name="s60config" filter="s60" long-name="S60 UI Config">
+      <unit bldFile="/sf/mw/uiresources/uiconfig/s60config/group"/>
+     </component>
+    </collection>
+    <collection name="fontsupport" long-name="Font Support" level="generic">
+     <component name="fontprovider" filter="s60" long-name="Font Provider">
+      <unit bldFile="/sf/mw/uiresources/fontsupport/fontprovider/group"/>
+     </component>
+     <!-- R&D materials, should be Nokia only: exports S60 fonts, removes freetype
+      <component id="s60_fonts" filter="s60" name="S60 Fonts">
+        <unit bldFile="fontsupport/fontutils/group"/>
+      </component>
+-->
+     <component name="fontutils" filter="sf_build" long-name="Font Utils">
+      <unit bldFile="/sf/mw/uiresources/fontsupport/fontutils/FontUtils/group"/>
+     </component>
+    </collection>
+    <collection name="helpthemes" long-name="Help Themes" level="data">
+     <!-- collection is really a component. Need to move down a directory -->
+     <component name="helpthemes_build" filter="s60" long-name="Help Themes Build" class="config">
+      <unit bldFile="/sf/mw/uiresources/helpthemes/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

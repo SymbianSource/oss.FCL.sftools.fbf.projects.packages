@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,86 +49,57 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
 <block name="xmlsrv" level="services" long-name="XML Services" levels="plugin server framework generic specific">
-<collection name="xml" long-name="XML" level="generic">
-<component name="xmlfw" long-name="XML Framework" introduced="7.0s" purpose="optional">
-<unit bldFile="/sf/os/xmlsrv/xml/xmlfw/group" mrp="/sf/os/xmlsrv/xml/xmlfw/group/syslibs_xml.mrp"/>
-</component>
-<component name="libxml2libs" long-name="Libxml2 Libraries" introduced="tb92" purpose="optional">
-<unit bldFile="/sf/os/xmlsrv/xml/libxml2libs/group" mrp="/sf/os/xmlsrv/xml/libxml2libs/group/syslibs_libxml2.mrp"/>
-</component>
-<component name="xmldomandxpath" long-name="XML DOM and XPath" introduced="tb92" purpose="optional">
-<unit bldFile="/sf/os/xmlsrv/xml/xmldomandxpath/group" mrp="/sf/os/xmlsrv/xml/xmldomandxpath/group/syslibs_xmldom.mrp"/>
-</component>
-<component name="xmlexpatparser" long-name="XML Expat Parser" introduced="7.0s" purpose="optional" plugin="Y">
-<unit bldFile="/sf/os/xmlsrv/xml/xmlexpatparser/group" mrp="/sf/os/xmlsrv/xml/xmlexpatparser/group/syslibs_xmlparser.mrp"/>
-</component>
-<component name="xmllibxml2parser" long-name="XML Libxml2 Parser" introduced="tb92" purpose="optional" plugin="Y">
-<unit bldFile="/sf/os/xmlsrv/xml/xmllibxml2parser/group" mrp="/sf/os/xmlsrv/xml/xmllibxml2parser/group/syslibs_xmlparser2.mrp"/>
-</component>
-<component name="wbxmlparser" long-name="WBXML Parser" introduced="7.0s" purpose="optional" plugin="Y">
-<unit bldFile="/sf/os/xmlsrv/xml/wbxmlparser/group" mrp="/sf/os/xmlsrv/xml/wbxmlparser/group/syslibs_wbxmlparser.mrp"/>
-</component>
-</collection>
-<collection name="xmlsrv_info" long-name="XML Services Info" level="specific">
-<component name="xmlsrv_metadata" long-name="XML Services Metadata" introduced="tb91" purpose="development" class="config PC">
-<unit mrp="/sf/os/xmlsrv/xmlsrv_info/xmlsrv_metadata/xmlsrv_metadata.mrp"/>
-</component>
-</collection>
-<collection name="s60">
-<component name="xmlsrv">
-<unit bldFile="/sf/os/xmlsrv/group" mrp=""/>
-</component>
-</collection>
-</block>
+    <collection name="xmlsecurityengine" long-name="XML Security Engine" level="framework">
+     <component name="xmlseccertman" filter="s60" long-name="XML Security Certificate Manager">
+      <unit bldFile="/sf/os/xmlsrv/xmlsecurityengine/xmlseccertman/group"/>
+     </component>
+     <component name="xmlsec" filter="s60" long-name="XML Security">
+      <unit bldFile="/sf/os/xmlsrv/xmlsecurityengine/xmlsec/group"/>
+     </component>
+     <component name="xmlseccrypto" filter="s60" long-name="XML Security Crypto">
+      <unit bldFile="/sf/os/xmlsrv/xmlsecurityengine/xmlseccrypto/group"/>
+     </component>
+     <component name="xmlsecwrapper" filter="s60" long-name="XML Security Wrapper">
+      <unit bldFile="/sf/os/xmlsrv/xmlsecurityengine/xmlsecwrapper/group"/>
+     </component>
+    </collection>
+    <collection name="xml" long-name="XML" level="generic">
+     <component name="xmlfw" long-name="XML Framework" introduced="7.0s" purpose="optional">
+      <unit bldFile="/sf/os/xmlsrv/xml/xmlfw/group" mrp="/sf/os/xmlsrv/xml/xmlfw/group/syslibs_xml.mrp"/>
+     </component>
+     <component name="libxml2libs" long-name="Libxml2 Libraries" introduced="^3" purpose="optional">
+      <unit bldFile="/sf/os/xmlsrv/xml/libxml2libs/group" mrp="/sf/os/xmlsrv/xml/libxml2libs/group/syslibs_libxml2.mrp"/>
+     </component>
+     <component name="legacyminidomparser" long-name="Legacy Mini-DOM Parser" introduced="7.0s" purpose="optional">
+      <unit bldFile="/sf/os/xmlsrv/xml/legacyminidomparser/GROUP" mrp="/sf/os/xmlsrv/xml/legacyminidomparser/GROUP/syslibs_legacyminidomparser.mrp"/>
+     </component>
+     <component name="xmldomandxpath" long-name="XML DOM and XPath" introduced="^3" purpose="optional">
+      <unit bldFile="/sf/os/xmlsrv/xml/xmldomandxpath/group" mrp="/sf/os/xmlsrv/xml/xmldomandxpath/group/syslibs_xmldom.mrp"/>
+     </component>
+     <component name="xmlexpatparser" long-name="XML Expat Parser" introduced="7.0s" purpose="optional" plugin="Y">
+      <unit bldFile="/sf/os/xmlsrv/xml/xmlexpatparser/group" mrp="/sf/os/xmlsrv/xml/xmlexpatparser/group/syslibs_xmlparser.mrp"/>
+     </component>
+     <component name="xmllibxml2parser" long-name="XML Libxml2 Parser" introduced="^3" purpose="optional" plugin="Y">
+      <unit bldFile="/sf/os/xmlsrv/xml/xmllibxml2parser/group" mrp="/sf/os/xmlsrv/xml/xmllibxml2parser/group/syslibs_xmlparser2.mrp"/>
+     </component>
+     <component name="wbxmlparser" long-name="WBXML Parser" introduced="7.0s" purpose="optional" plugin="Y">
+      <unit bldFile="/sf/os/xmlsrv/xml/wbxmlparser/group" mrp="/sf/os/xmlsrv/xml/wbxmlparser/group/syslibs_wbxmlparser.mrp"/>
+     </component>
+    </collection>
+    <collection name="xmlsrv_info" long-name="XML Services Info" level="specific">
+     <component name="xmlsrv_plat" filter="s60" long-name="XML Services Platform Interfaces" class="api">
+      <unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/group"/>
+     </component>
+     <component name="xmlsrv_metadata" long-name="XML Services Metadata" introduced="^2" purpose="development" class="config PC">
+      <unit mrp="/sf/os/xmlsrv/xmlsrv_info/xmlsrv_metadata/xmlsrv_metadata.mrp"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

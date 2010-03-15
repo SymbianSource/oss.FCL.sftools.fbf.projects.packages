@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,118 +49,51 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
 <block name="buildtools" level="hw" long-name="Build Tools" levels="bld mw fw ui">
-<collection name="bldsystemtools" long-name="Build System Tools" level="bld">
-<component name="buildsystemtools" long-name="Build System Tools" purpose="development">
-<unit bldFile="/sf/os/buildtools/bldsystemtools/buildsystemtools/group" mrp="/sf/os/buildtools/bldsystemtools/buildsystemtools/group/tools_build.mrp"/>
-</component>
-<component name="gttechviewbaseline" long-name="GT Techview Baseline" purpose="development">
-<unit mrp="/sf/os/buildtools/packaging/additionalutils/gt_techview_baseline.mrp"/>
-</component>
-<component name="commonbldutils" long-name="Common Utils" purpose="development">
-<unit mrp="/sf/os/buildtools/bldsystemtools/commonbldutils/tools_utils_common.mrp"/>
-</component>
-</collection>
-<collection name="packaging" long-name="Packaging" level="ui">
-<component name="additionalutils" long-name="Additional Utils" purpose="development">
-<unit mrp="/sf/os/buildtools/packaging/additionalutils/additional_unknown_cedar.mrp"/>
-</component>
-<component name="dummy" long-name="Dummy" purpose="development">
-<unit bldFile="/sf/os/buildtools/packaging/dummy" mrp="/sf/os/buildtools/packaging/dummy/additional_dummy.mrp"/>
-</component>
-</collection>
-<collection name="toolsandutils" long-name="Tools and Utils" level="mw">
-<component name="productionbldtools" long-name="Production Build Tools" filter="gt" purpose="development">
-<unit mrp="/sf/os/buildtools/toolsandutils/productionbldtools/product_tools.mrp"/>
-</component>
-<component name="e32tools" long-name="E32 Tools" deprecated="tb91" purpose="development" class="PC">
-<unit bldFile="/sf/os/buildtools/toolsandutils/e32tools/group" mrp="/sf/os/buildtools/toolsandutils/e32tools/group/tools_e32tools.mrp"/>
-</component>
-<component name="wincredistribution" long-name="WinC Redistribution" purpose="development">
-<unit mrp="/sf/os/buildtools/dist_os/redistributionwinceka2/tools_redistribution_winc.mrp"/>
-</component>
-<component name="additionalredistribution" long-name="Additional Redistribution" purpose="development">
-<unit mrp="/sf/os/buildtools/perltoolsplat_os/redistribution/additional_tools.mrp"/>
-</component>
-<component name="statapi" long-name="STAT API" filter="gt" purpose="development">
-<unit bldFile="/sf/os/buildtools/toolsandutils/statapi/source/statapi/console" mrp="/sf/os/buildtools/toolsandutils/statapi/group/testtools_stat_device_gt.mrp"/>
-</component>
-<component name="wintunnel" long-name="Wintunnel" purpose="development">
-<unit mrp="/sf/os/buildtools/toolsandutils/wintunnel/group/testtools_WinTunnel_srconly.mrp"/>
-</component>
-<component name="autotest" long-name="Autotest" purpose="development">
-<unit bldFile="/sf/os/buildtools/toolsandutils/autotest/group" mrp="/sf/os/buildtools/toolsandutils/autotest/group/tools_autotest.mrp"/>
-</component>
-</collection>
-<collection name="sbsv1_os" long-name="Symbian Build System v1" level="fw">
-<component name="e32toolp" long-name="E32 Perl Tools" purpose="development" class="PC">
-<unit bldFile="/sf/os/buildtools/sbsv1_os/e32toolp/group" mrp="/sf/os/buildtools/sbsv1_os/e32toolp/group/tools_e32toolp.mrp"/>
-</component>
-</collection>
-<collection name="imgtools_os" long-name="Image Tools" level="fw">
-<component name="romkiteka2" long-name="ROMKIT EKA2" deprecated="tb91" purpose="development">
-<unit bldFile="/sf/os/buildtools/imgtools_os/romkiteka2/group" mrp="/sf/os/buildtools/imgtools_os/romkiteka2/group/tools_romkit.mrp"/>
-</component>
-</collection>
-<collection name="misccomponents" long-name="Misc Components" level="mw">
-<component name="emulatorlauncher" long-name="Emulator Launcher" filter="gt" purpose="development">
-<unit bldFile="/sf/os/buildtools/misccomponents/emulatorlauncher/group" mrp="/sf/os/buildtools/misccomponents/emulatorlauncher/group/tools_sdk_eng_emulator_launcher.mrp"/>
-</component>
-</collection>
-<collection name="buildtools_info" long-name="Build Tools Info" level="ui">
-<component name="buildtools_metadata" long-name="Build Tools Metadata" introduced="tb91" purpose="development" class="config PC">
-<unit mrp="/sf/os/buildtools/buildtools_info/buildtools_metadata/buildtools_metadata.mrp"/>
-</component>
-</collection>
-</block>
+    <collection name="bldsystemtools" long-name="Build System Tools" level="bld">
+     <component name="sysdeftools" long-name="System Definition Tools" purpose="development" introduced="^2">
+      <unit mrp="/sf/os/buildtools/bldsystemtools/sysdeftools/group/sysdeftools.mrp"/>
+     </component>
+     <component name="commonbldutils" long-name="Common Utils" purpose="development">
+      <unit mrp="/sf/os/buildtools/bldsystemtools/commonbldutils/tools_utils_common.mrp"/>
+     </component>
+    </collection>
+    <collection name="toolsandutils" long-name="Tools and Utils" level="mw">
+     <component name="productionbldtools" long-name="Production Build Tools" filter="gt" purpose="development">
+      <unit mrp="/sf/os/buildtools/toolsandutils/productionbldtools/product_tools.mrp"/>
+     </component>
+     <component name="e32tools" long-name="E32 Tools" deprecated="^2" purpose="development" class="PC">
+      <unit bldFile="/sf/os/buildtools/toolsandutils/e32tools/group" mrp="/sf/os/buildtools/toolsandutils/e32tools/group/tools_e32tools.mrp"/>
+     </component>
+     <component name="autotest" long-name="Autotest" purpose="development">
+      <unit bldFile="/sf/os/buildtools/toolsandutils/autotest/group" mrp="/sf/os/buildtools/toolsandutils/autotest/group/tools_autotest.mrp"/>
+     </component>
+    </collection>
+    <collection name="sbsv1_os" long-name="Symbian Build System v1" level="fw">
+     <component name="e32toolp" long-name="E32 Perl Tools" purpose="development" filter="sf_build" class="PC">
+      <unit mrp="/sf/os/buildtools/sbsv1_os/e32toolp/group/tools_e32toolp.mrp" bldFile="/sf/os/buildtools/sbsv1_os/e32toolp/group"/>
+     </component>
+    </collection>
+    <collection name="imgtools_os" long-name="Image Tools" level="fw">
+     <component name="romkiteka2" long-name="ROMKIT EKA2" deprecated="^2" purpose="development">
+      <unit bldFile="/sf/os/buildtools/imgtools_os/romkiteka2/group" mrp="/sf/os/buildtools/imgtools_os/romkiteka2/group/tools_romkit.mrp"/>
+     </component>
+    </collection>
+    <collection name="misccomponents" long-name="Misc Components" level="mw">
+     <component name="emulatorlauncher" long-name="Emulator Launcher" filter="gt" purpose="development">
+      <unit bldFile="/sf/os/buildtools/misccomponents/emulatorlauncher/group" mrp="/sf/os/buildtools/misccomponents/emulatorlauncher/group/tools_sdk_eng_emulator_launcher.mrp"/>
+     </component>
+    </collection>
+    <collection name="buildtools_info" long-name="Build Tools Info" level="ui">
+     <component name="buildtools_metadata" long-name="Build Tools Metadata" introduced="^2" purpose="development" class="config PC">
+      <unit mrp="/sf/os/buildtools/buildtools_info/buildtools_metadata/buildtools_metadata.mrp"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

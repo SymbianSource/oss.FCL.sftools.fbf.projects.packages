@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,61 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
-<layer name="mw">
-<block name="drm">
-<collection name="s60">
-<component name="drm">
-<unit bldFile="/sf/mw/drm/group" mrp=""/>
-</component>
-</collection>
-</block>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="drm" level="generic" long-name="DRM" levels="plugin framework server generic specific">
+    <collection name="commondrm" long-name="Common DRM" level="generic">
+     <!-- it looks like this collection would be better as a component. If so, move down a directory. Otherwise, split up the bld.inf -->
+     <component name="drmencryptor" filter="s60" long-name="DRM Encryptor" class="placeholder">
+      <!-- this should have its own bld.inf or be removed as a component -->
+     </component>
+     <component name="drmsettingsplugin" filter="s60" long-name="DRM Settings Plugin" plugin="Y" class="placeholder">
+      <!-- this should have its own bld.inf or be removed as a component -->
+     </component>
+     <component name="drmrightsmanagerui" filter="s60" long-name="DRM Rights Manager UI">
+      <unit bldFile="/sf/mw/drm/commondrm/drmrightsmanagerui/help/group"/>
+     </component>
+     <component name="drmutility" filter="s60" long-name="DRM Utility">
+      <!-- Uncomment unit when configuration is in place. Currently #included from commondrm_build -->
+      <!--<unit bldFile="commondrm/drmutility/group"/>-->
+     </component>
+     <component name="drmserviceapiwrapper" filter="s60" long-name="DRM Service API Wrapper">
+      <unit bldFile="/sf/mw/drm/commondrm/drmserviceapiwrapper/group"/>
+     </component>
+     <component name="drmrightsstoringlocation" filter="s60" long-name="DRM Rights Storing Location">
+      <unit bldFile="/sf/mw/drm/commondrm/drmrightsstoringlocation/group"/>
+     </component>
+     <component name="commondrm_build" filter="s60" long-name="Common DRM Build">
+      <!-- should be split into the above files, or them collapsed into a single component -->
+      <unit bldFile="/sf/mw/drm/commondrm/group"/>
+     </component>
+    </collection>
+    <collection name="omadrm" long-name="OMA DRM" level="server">
+     <!-- collection is really a component. Move down a directory -->
+     <component name="omadrm_build" filter="s60" long-name="OMA DRM Build">
+      <unit bldFile="/sf/mw/drm/omadrm/group"/>
+     </component>
+     <component name="foundationcerts" filter="sf_build" long-name="Foundation Certificates">
+      <unit bldFile="/sf/mw/drm/omadrm/foundationcerts/group"/>
+     </component>
+    </collection>
+    <collection name="wmdrm" long-name="Windows Media DRM" level="framework">
+     <!-- collection is really a component. Move down a directory -->
+     <component name="wmdrm_build" filter="s60" long-name="WM DRM Build">
+      <unit bldFile="/sf/mw/drm/wmdrm/group"/>
+     </component>
+    </collection>
+    <collection name="drm_info" long-name="DRM Info" level="specific">
+     <component name="drm_pub" filter="s60" long-name="DRM Public Interfaces" class="api">
+      <unit bldFile="/sf/mw/drm/drm_pub/group"/>
+     </component>
+     <component name="drm_plat" filter="s60" long-name="DRM Platform Interfaces" class="api">
+      <unit bldFile="/sf/mw/drm/drm_plat/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,112 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
-<layer name="mw">
-<block name="websrv">
-<collection name="s60">
-<component name="websrv">
-<unit bldFile="/sf/mw/websrv/group" mrp=""/>
-</component>
-</collection>
-</block>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="websrv" level="generic" long-name="Web Services" levels="plugin framework server generic specific">
+    <collection name="webservices" long-name="Web Services Framework" level="generic">
+     <!-- consider breaking this collection into more meaningful subsets -->
+     <component name="wsnotifierplugins" filter="s60" long-name="WS Notifier Plugins" plugin="Y">
+      <unit bldFile="/sf/mw/websrv/webservices/wsnotifierplugins/group"/>
+     </component>
+     <component name="wslogger" filter="s60" long-name="WS Logger">
+      <unit bldFile="/sf/mw/websrv/webservices/wslogger/group"/>
+     </component>
+     <component name="wsxml" filter="s60" long-name="WS XML Extensions">
+      <unit bldFile="/sf/mw/websrv/webservices/wsxml/group"/>
+     </component>
+     <component name="wsutils" filter="s60" long-name="WS Utils">
+      <unit bldFile="/sf/mw/websrv/webservices/wsutils/group"/>
+     </component>
+     <component name="wsfragment" filter="s60" long-name="WS Fragment">
+      <unit bldFile="/sf/mw/websrv/webservices/wsfragment/group"/>
+     </component>
+     <component name="wsdescription" filter="s60" long-name="WS Service Description">
+      <unit bldFile="/sf/mw/websrv/webservices/wsdescription/group"/>
+     </component>
+     <component name="wsconnection" filter="s60" long-name="WS Service Connection">
+      <unit bldFile="/sf/mw/websrv/webservices/wsconnection/group"/>
+     </component>
+     <component name="wsmessages" filter="s60" long-name="WS Messages">
+      <unit bldFile="/sf/mw/websrv/webservices/wsmessages/group"/>
+     </component>
+     <component name="wscredentialmanager" filter="s60" long-name="WS Credential Manager">
+      <unit bldFile="/sf/mw/websrv/webservices/wscredentialmanager/group"/>
+     </component>
+     <component name="wsframework" filter="s60" long-name="WS Framework">
+      <unit bldFile="/sf/mw/websrv/webservices/wsframework/group"/>
+     </component>
+     <component name="wshttpchanneltransportplugin" filter="s60" long-name="WS HTTP Channel Transport Plugin" plugin="Y">
+      <unit bldFile="/sf/mw/websrv/webservices/wshttpchanneltransportplugin/group"/>
+     </component>
+     <component name="wsconnectionagent" filter="s60" long-name="WS Connection Agent">
+      <unit bldFile="/sf/mw/websrv/webservices/wsconnectionagent/group"/>
+     </component>
+     <component name="wsprovider" filter="s60" long-name="WS Provider">
+      <unit bldFile="/sf/mw/websrv/webservices/wsprovider/group"/>
+     </component>
+     <component name="wshostletconnection" filter="s60" long-name="WS Hostlet Connection">
+      <unit bldFile="/sf/mw/websrv/webservices/wshostletconnection/group"/>
+     </component>
+     <component name="wsmanager" filter="s60" long-name="WS Service Manager">
+      <unit bldFile="/sf/mw/websrv/webservices/wsmanager/group"/>
+     </component>
+     <component name="wsidentitymanager" filter="s60" long-name="WS Identity Manager">
+      <unit bldFile="/sf/mw/websrv/webservices/wsidentitymanager/group"/>
+     </component>
+     <component name="idwsfplugin" filter="s60" long-name="ID-WSF Plugin" plugin="Y">
+      <unit bldFile="/sf/mw/websrv/webservices/idwsfplugin/group"/>
+     </component>
+     <component name="wsibasicplugin" filter="s60" long-name="WS-I Basic Plugin" plugin="Y">
+      <unit bldFile="/sf/mw/websrv/webservices/wsibasicplugin/group"/>
+     </component>
+     <component name="wsrestplugin" filter="s60" long-name="WS REST Plugin" plugin="Y">
+      <unit bldFile="/sf/mw/websrv/webservices/wsrestplugin/group"/>
+     </component>
+     <component name="idwsfsecuritymechanism" filter="s60" long-name="ID-WSF Security Mechanism">
+      <unit bldFile="/sf/mw/websrv/webservices/idwsfsecuritymechanism/group"/>
+     </component>
+     <component name="wspasswordtransforms" filter="s60" long-name="WS Password Transforms">
+      <unit bldFile="/sf/mw/websrv/webservices/wspasswordtransforms/group"/>
+     </component>
+     <component name="wscore" filter="s60" long-name="WS Core Service Manager">
+      <unit bldFile="/sf/mw/websrv/webservices/wscore/group"/>
+     </component>
+     <component name="wslocaltransportplugin" filter="s60" long-name="WS Local Transport Plugin" plugin="Y">
+      <unit bldFile="/sf/mw/websrv/webservices/wslocaltransportplugin/group"/>
+     </component>
+     <component name="wshostlettransportplugin" filter="s60" long-name="WS Hostlet Transport Plugin" plugin="Y">
+      <unit bldFile="/sf/mw/websrv/webservices/wshostlettransportplugin/group"/>
+     </component>
+     <component name="wsstar" filter="s60" long-name="WS Star">
+      <!-- can only have one unit. Need to split into separate components or #include from a single bld.inf -->
+      <unit bldFile="/sf/mw/websrv/webservices/wsstar/wsstarpolicy/group"/>
+      <unit bldFile="/sf/mw/websrv/webservices/wsstar/wsstarplugin/group"/>
+      <unit bldFile="/sf/mw/websrv/webservices/wsstar/wsstarmessagehandlers/group"/>
+     </component>
+     <component name="wsoviplugin" filter="s60" long-name="WS Ovi Plugin">
+      <unit bldFile="/sf/mw/websrv/webservices/wsoviplugin/group"/>
+     </component>
+     <component name="wsoviplugin" filter="s60" long-name="WS Ovi Plugin">
+      <unit bldFile="/sf/mw/websrv/webservices/wsoviplugin/group"/>
+     </component>
+     <component name="webservices_build" filter="s60" long-name="Web Services Build">
+      <!-- need to split into self-contained components -->
+      <unit bldFile="/sf/mw/websrv/webservices/group"/>
+     </component>
+    </collection>
+    <collection name="websrv_info" long-name="Web Services Info" level="specific">
+     <component name="websrv_bld" filter="s60" long-name="Web Services Build">
+      <!-- need to include common .hrh in each unit -->
+      <unit bldFile="/sf/mw/websrv/group"/>
+     </component>
+     <component name="websrv_pub" filter="s60" long-name="Web Services Public Interfaces" class="api">
+      <unit bldFile="/sf/mw/websrv/websrv_pub/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,76 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="musicplayer" level="apps" long-name="Music Player Apps">
-<collection name="s60">
-<component name="musicplayer">
-<unit bldFile="/sf/app/musicplayer/group" mrp=""/>
-</component>
-</collection>
-</block>
+<block name="musicplayer" level="apps" long-name="Music Player Apps" levels="plugins support hs app">
+    <collection name="mpxmusicplayer" long-name="MPX Music Player" level="app">
+     <component name="mpxmusicplayer_help" filter="s60" long-name="Help">
+      <unit bldFile="/sf/app/musicplayer/mpxmusicplayer/help/group"/>
+     </component>
+     <component name="mpxmusicplayer_commonui" filter="s60" long-name="MPX Common UI">
+      <unit bldFile="/sf/app/musicplayer/mpxmusicplayer/commonui/group"/>
+     </component>
+     <component name="mpx_metadatahandler" filter="s60" long-name="MPX Metadata Handler">
+      <unit bldFile="/sf/app/musicplayer/mpxmusicplayer/metadatahandler/group"/>
+     </component>
+     <component name="mediakeyhandler" filter="s60" long-name="MPX Media Key Handler">
+      <unit bldFile="/sf/app/musicplayer/mpxmusicplayer/mediakeyhandler/group"/>
+     </component>
+     <component name="mpxmusicplayer_app" filter="s60" long-name="MPX Application">
+      <unit bldFile="/sf/app/musicplayer/mpxmusicplayer/app/group"/>
+     </component>
+     <component name="mpxmusicplayer_build" filter="s60" long-name="MPX Music Player Build">
+      <!--  can the exports be distributed to the above components?  -->
+      <unit bldFile="/sf/app/musicplayer/mpxmusicplayer/group"/>
+     </component>
+    </collection>
+    <collection name="musichomescreen_multiview" long-name="Music Home Screen Multiview" level="hs">
+     <!-- Uncomment all units when configuration is in place. All currently #included from musichomescreen_build -->
+     <component name="mpxcollectionpublisher" filter="s60" long-name="MPX Collection Publisher" introduced="^2" class="placeholder">
+      <!--<unit bldFile="musichomescreen_multiview/mpxcollectionpublisher/group"/>-->
+     </component>
+     <component name="musiccontentpublisher" filter="s60" long-name="Music Content Publisher" introduced="^2" class="placeholder">
+      <!--<unit bldFile="musichomescreen_multiview/musiccontentpublisher/group"/>-->
+     </component>
+     <component name="mcpmusicplayer" filter="s60" long-name="Music Player MCP Plugin" introduced="^2" plugin="Y" class="placeholder">
+      <!--<unit bldFile="musichomescreen_multiview/mcpmusicplayer/group"/>-->
+     </component>
+     <component name="musicplayeractionhandlerplugin" filter="s60" long-name="Music Player Action Handler Plugin" introduced="^2" plugin="Y" class="placeholder">
+      <!--<unit bldFile="musichomescreen_multiview/musicplayeractionhandlerplugin/group"/>-->
+     </component>
+     <component name="mpx_data" filter="s60" long-name="MPX Data" introduced="^2" class="placeholder">
+      <!-- does this make sense to be a component? should it just be #include from musichomescreen_multiview/group? -->
+      <!--<unit bldFile="musichomescreen_multiview/data/themes/default/group"/>-->
+     </component>
+     <component name="musichomescreen_build" filter="s60" long-name="Music Homescreen Multiview Build" introduced="^2">
+      <unit bldFile="/sf/app/musicplayer/musichomescreen_multiview/group"/>
+     </component>
+    </collection>
+    <collection name="mpxplugins" long-name="MPX Plugins" level="plugins">
+     <component name="serviceplugins" filter="s60" long-name="MPX Service Plugins" plugin="Y">
+      <unit bldFile="/sf/app/musicplayer/mpxplugins/serviceplugins/group"/>
+     </component>
+     <component name="viewplugins" filter="s60" long-name="MPX View Plugins" plugin="Y">
+      <unit bldFile="/sf/app/musicplayer/mpxplugins/viewplugins/group"/>
+     </component>
+     <component name="mpxplugins_build" filter="s60" long-name="MPX Plugins Build">
+      <!--  can the exports be distributed to the above components?  -->
+      <unit bldFile="/sf/app/musicplayer/mpxplugins/group"/>
+     </component>
+    </collection>
+    <collection name="musicplayer_info" long-name="Music Player Apps Info" level="app">
+     <component name="musicplayer_build" filter="s60" long-name="Music Player Build">
+      <!-- should explicitly #inlcude musicplayerbldvariant.hrh in each component  -->
+      <unit bldFile="/sf/app/musicplayer/group"/>
+     </component>
+     <component name="musicplayer_plat" filter="s60" long-name="Music Player Apps Platform Interfaces" class="api">
+      <unit bldFile="/sf/app/musicplayer/musicplayer_plat/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

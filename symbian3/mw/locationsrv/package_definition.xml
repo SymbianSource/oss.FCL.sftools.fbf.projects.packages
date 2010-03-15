@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,104 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
-<layer name="mw">
-<block name="locationsrv">
-<collection name="s60">
-<component name="locationsrv">
-<unit bldFile="/sf/mw/locationsrv/group" mrp=""/>
-</component>
-</collection>
-</block>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="locationsrv" level="specific" long-name="Location Services" levels="plugin fw server if">
+    <collection name="genericpositioningplugins" long-name="Generic Positioning Plugins" level="plugin">
+     <component name="locationnpppsy" filter="s60" long-name="Location Positioning Proxy PSY" plugin="Y">
+      <unit bldFile="/sf/mw/locationsrv/genericpositioningplugins/locationnpppsy/group"/>
+     </component>
+     <component name="locationsuplpsy" filter="s60" long-name="Location SUPL PSY" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/mw/locationsrv/genericpositioningplugins/locationsuplpsy/group"/>
+     </component>
+     <component name="genericpositioningplugins_build" filter="s60" long-name="Generic Positioning Plugins Build">
+      <!-- need to break this up into the other components -->
+      <unit bldFile="/sf/mw/locationsrv/genericpositioningplugins/group"/>
+     </component>
+    </collection>
+    <collection name="landmarks" long-name="Landmarks" level="server">
+     <component name="locationlandmarks" filter="s60" long-name="Location Landmarks">
+      <unit bldFile="/sf/mw/locationsrv/landmarks/locationlandmarks/group"/>
+     </component>
+    </collection>
+    <collection name="locationmapnavfw" long-name="Location Map and Navigation Framework" level="fw">
+     <component name="mnlibrary" filter="s60" long-name="Map and Navigation Library">
+      <unit bldFile="/sf/mw/locationsrv/locationmapnavfw/library/group"/>
+     </component>
+     <component name="mnaiwprovider" filter="s60" long-name="Map and Navigation AIW Provider" plugin="Y">
+      <unit bldFile="/sf/mw/locationsrv/locationmapnavfw/aiwprovider/group"/>
+     </component>
+     <component name="locationmapnavfw_build" filter="s60" long-name="Location Map and Navigation Framework Build">
+      <!-- need to break this up into the other components -->
+      <unit bldFile="/sf/mw/locationsrv/locationmapnavfw/group"/>
+     </component>
+    </collection>
+    <collection name="locationsystemui" long-name="Location System UI" level="if">
+     <component name="locationsysui" filter="s60" long-name="Location System UI">
+      <unit bldFile="/sf/mw/locationsrv/locationsystemui/locationsysui/group"/>
+     </component>
+    </collection>
+    <collection name="supl" long-name="SUPL" level="fw">
+     <component name="locationsuplfw" filter="s60" long-name="Location SUPL Framework">
+      <unit bldFile="/sf/mw/locationsrv/supl/locationsuplfw/group"/>
+     </component>
+     <component name="locationomasuplprotocolhandler" filter="s60" long-name="OMA SUPL Protocol Handler">
+      <unit bldFile="/sf/mw/locationsrv/supl/locationomasuplprotocolhandler/group"/>
+     </component>
+     <component name="supltiapiimplementation" filter="s60" long-name="SUPL TI API Implementation" introduced="^3">
+      <unit bldFile="/sf/mw/locationsrv/supl/supltiapiimplementation/group"/>
+     </component>
+    </collection>
+    <collection name="locationtriggering" long-name="Location Triggering" level="server">
+     <component name="ltlogger" filter="s60" long-name="LT Logger">
+      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltlogger/group"/>
+     </component>
+     <component name="ltclientlib" filter="s60" long-name="LT Client Library">
+      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltclientlib/group"/>
+     </component>
+     <component name="ltmanagementlib" filter="s60" long-name="LT Management Library">
+      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltmanagementlib/group"/>
+     </component>
+     <component name="ltcontainer" filter="s60" long-name="LT Container">
+      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltcontainer/group"/>
+     </component>
+     <component name="ltserver" filter="s60" long-name="LT Server">
+      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltserver/group"/>
+     </component>
+     <component name="ltstrategypluginapi" filter="s60" long-name="LT Strategy Plugin API">
+      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltstrategypluginapi/group"/>
+     </component>
+     <component name="ltstrategyengine" filter="s60" long-name="LT Strategy Engine">
+      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltstrategyengine/group"/>
+     </component>
+     <component name="ltmovementdetectionpluginapi" filter="s60" long-name="Movement Detection Plugin API">
+      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltmovementdetectionpluginapi/group"/>
+     </component>
+     <component name="ltcellidmovementdetector" filter="s60" long-name="Cell ID Movement Detector">
+      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltcellidmovementdetector/group"/>
+     </component>
+     <component name="lbtmgmtui" filter="s60" long-name="LBT Management UI" plugin="Y">
+      <unit bldFile="/sf/mw/locationsrv/locationtriggering/lbtmgmtui/group"/>
+     </component>
+     <component name="ltcontextsourceplugin" filter="s60" long-name="LT Context Source Plugin" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/mw/locationsrv/locationtriggering/ltcontextsourceplugin/group"/>
+     </component>
+     <component name="locationtriggering_build" filter="s60" long-name="Location Triggering Build">
+      <!--  should remove #include from this and maybe put exports in the above components -->
+      <unit bldFile="/sf/mw/locationsrv/locationtriggering/group"/>
+     </component>
+    </collection>
+    <collection name="locationsrv_info" long-name="Location Services Info" level="if">
+     <component name="locsrv_plat" filter="s60" long-name="Location Services Platform Interfaces" class="api">
+      <unit bldFile="/sf/mw/locationsrv/locsrv_plat/group"/>
+     </component>
+     <component name="locsrv_pub" filter="s60" long-name="Location Services Public Interfaces" class="api">
+      <unit bldFile="/sf/mw/locationsrv/locsrv_pub/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

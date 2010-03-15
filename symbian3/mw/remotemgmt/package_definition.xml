@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,121 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
-<layer name="mw">
-<block name="remotemgmt">
-<collection name="s60">
-<component name="remotemgmt">
-<unit bldFile="/sf/mw/remotemgmt/group" mrp=""/>
-</component>
-</collection>
-</block>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="remotemgmt" level="specific" long-name="Remote Management" levels="plugin framework server generic specific">
+    <collection name="policymanagement" long-name="Policy Management" level="generic">
+     <component name="pmdmadapter" filter="s60" long-name="PM DM Adapter" plugin="Y">
+      <unit bldFile="/sf/mw/remotemgmt/policymanagement/pmdmadapter/group"/>
+     </component>
+     <component name="dmutilserver" filter="s60" long-name="DM Util Server">
+      <unit bldFile="/sf/mw/remotemgmt/policymanagement/dmutilserver/group"/>
+     </component>
+     <component name="policyengine" filter="s60" long-name="Policy Engine">
+      <unit bldFile="/sf/mw/remotemgmt/policymanagement/policyengine/group"/>
+     </component>
+     <component name="policymanagement_build" filter="s60" long-name="Policy Management Build">
+      <!--  need to distribute exports, etc into the other components and remove this-->
+      <unit bldFile="/sf/mw/remotemgmt/policymanagement/group"/>
+     </component>
+    </collection>
+    <collection name="syncmlfw" long-name="SyncML Framework" level="server">
+     <component name="syncmlfw_build" filter="s60" long-name="SyncML Framework Build">
+      <!--  need to break this up into components. Too convoluted a structure to be in a single bld.inf-->
+      <unit bldFile="/sf/mw/remotemgmt/syncmlfw/group"/>
+     </component>
+    </collection>
+    <collection name="terminalsecurity" long-name="Terminal Security" level="specific">
+     <component name="scp" filter="s60" long-name="Security Code Proxy">
+      <!-- can only have one unit, need to have these #included from a single bld.inf -->
+      <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/scpclient/group"/>
+      <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/scpdatabase/group"/>
+      <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/scpserver/group"/>
+      <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/scppatternplugin/group"/>
+      <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/scphistoryplugin/group"/>
+      <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/scptimestampplugin/group"/>
+      <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/scpeventhandler/group"/>
+      <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/dmeventnotifier/group"/>
+     </component>
+     <component name="terminalsecurity_client" filter="s60" long-name="Terminal Control Client">
+      <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/client/group"/>
+     </component>
+     <component name="terminalsecurity_server" filter="s60" long-name="Terminal Control Server">
+      <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/server/group"/>
+     </component>
+     <component name="tcadapter" filter="s60" long-name="Terminal Control Adapter">
+      <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/tcadapter/bld"/>
+     </component>
+     <component name="terminalsecurity_build" filter="s60" long-name="Terminal Security Build">
+      <!--  need to distribute exports, etc into the other components and remove this-->
+      <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/group"/>
+     </component>
+    </collection>
+    <collection name="omaprovisioning" long-name="OMA Provisioning" level="specific">
+     <component name="pnputil" filter="s60" long-name="PnP Util">
+      <unit bldFile="/sf/mw/remotemgmt/omaprovisioning/pnputil/group"/>
+     </component>
+     <component name="provisioning" filter="s60" long-name="Provisioning">
+      <unit bldFile="/sf/mw/remotemgmt/omaprovisioning/provisioning/group"/>
+     </component>
+    </collection>
+    <collection name="devicediagnosticsfw" long-name="Device Diagnostics Framework" level="framework">
+     <component name="diagframework" filter="s60" long-name="Diagnostics Framework">
+      <unit bldFile="/sf/mw/remotemgmt/devicediagnosticsfw/diagframework/group"/>
+     </component>
+     <component name="diagpluginbase" filter="s60" long-name="Diagnostics Plugin Base">
+      <unit bldFile="/sf/mw/remotemgmt/devicediagnosticsfw/diagpluginbase/group"/>
+     </component>
+     <component name="diagresultsdb" filter="s60" long-name="Diagnostics Results Database">
+      <!--  can only have one unit, merge or split into two components -->
+      <unit bldFile="/sf/mw/remotemgmt/devicediagnosticsfw/diagresultsdb/client/group"/>
+      <unit bldFile="/sf/mw/remotemgmt/devicediagnosticsfw/diagresultsdb/server/group"/>
+     </component>
+     <component name="devicediagnosticsfw_build" filter="s60" long-name="Device Diagnostics Framework Build">
+      <!--  need to distribute exports, etc into the other components and remove this-->
+      <unit bldFile="/sf/mw/remotemgmt/devicediagnosticsfw/group"/>
+     </component>
+    </collection>
+    <collection name="dcmofw" long-name="Device Capability Management Object Framework" level="framework">
+     <component name="dcmoclient" filter="s60" long-name="DCMO Client">
+      <unit bldFile="/sf/mw/remotemgmt/dcmofw/dcmoclient/group"/>
+     </component>
+     <component name="dcmoserver" filter="s60" long-name="DCMO Server">
+      <unit bldFile="/sf/mw/remotemgmt/dcmofw/dcmoserver/group"/>
+     </component>
+     <component name="dcmocustcmd" filter="s60" long-name="DCMO Custom Commands">
+      <unit bldFile="/sf/mw/remotemgmt/dcmofw/dcmocustcmd/group"/>
+     </component>
+     <component name="dcmofw_build" filter="s60" long-name="DCMO Build">
+      <!--  need to distribute exports, etc into the other components and remove this-->
+      <unit bldFile="/sf/mw/remotemgmt/dcmofw/group"/>
+     </component>
+    </collection>
+    <collection name="fotaapplication" long-name="FOTA Application" level="generic">
+     <component name="fotaapplication_build" filter="s60" long-name="FOTA Application Build">
+      <!-- remove this component when configuration is in place and the #ifdefs have been worked out -->
+      <unit bldFile="/sf/mw/remotemgmt/fotaapplication/group"/>
+     </component>
+     <component name="fotaserver" filter="s60" long-name="FOTA Server">
+      <!-- uncomment when #ifdefs are resolved -->
+      <!--<unit bldFile="fotaapplication/fotaserver/group"/>-->
+     </component>
+     <component name="fotacustcmds" filter="s60" long-name="FOTA Custom Commands" class="placeholder">
+      <!-- uncomment when #ifdefs are resolved. Need to put a config meta here-->
+      <!--<unit bldFile="fotaapplication/fotaserver/fotacustcmds/group"/>-->
+     </component>
+    </collection>
+    <collection name="remotemgmt_info" long-name="Remote Management Info" level="specific">
+     <component name="remotemgmt_plat" filter="s60" long-name="Remote Management Platform Interfaces" class="api">
+      <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/group"/>
+     </component>
+     <component name="remotemgmt_pub" filter="s60" long-name="Remote Management Public Interfaces" class="api">
+      <unit bldFile="/sf/mw/remotemgmt/remotemgmt_pub/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

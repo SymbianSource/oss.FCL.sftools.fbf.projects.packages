@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,79 +49,108 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="contacts" level="apps" span="2" long-name="Contacts Apps" levels="engine support services ui">
-<collection name="phonebookengines" long-name="Phonebook Engines" level="engine">
-<component name="contactsmodel" long-name="Contacts Model" introduced="ER5" purpose="optional">
-<unit bldFile="/sf/app/contacts/phonebookengines/contactsmodel/groupsql" mrp="/sf/app/contacts/phonebookengines/contactsmodel/groupsql/app-engines_cntmodel.mrp" version="2"/>
-</component>
-</collection>
-<collection name="pimprotocols" long-name="PIM Protocols" level="services">
-<component name="phonebooksync" long-name="Phonebook Sync" purpose="optional" plugin="Y">
-<unit bldFile="/sf/app/contacts/pimprotocols/phonebooksync/group" mrp="/sf/app/contacts/pimprotocols/phonebooksync/group/telephony_phbksync.mrp"/>
-</component>
-<component name="pbap" long-name="Bluetooth PBAP" introduced="9.2" purpose="optional">
-<unit bldFile="/sf/app/contacts/pimprotocols/pbap/group" mrp="/sf/app/contacts/pimprotocols/pbap/group/bluetooth_accesshost.mrp"/>
-</component>
-</collection>
-<collection name="contacts_info" long-name="Contacts Apps Info" level="ui">
-<component name="contacts_metadata" long-name="Contacts Apps Metadata" introduced="tb91" purpose="development" class="config PC">
-<unit mrp="/sf/app/contacts/contacts_info/contacts_metadata/contacts_metadata.mrp"/>
-</component>
-</collection>
-<collection name="s60">
-<component name="contacts">
-<unit bldFile="/sf/app/contacts/group" mrp=""/>
-</component>
-</collection>
-</block>
+    <collection name="contactextensions" long-name="Contacts Extensions" level="services">
+     <component name="predefinedcontacts" filter="s60" long-name="Predefined Contacts">
+      <unit bldFile="/sf/app/contacts/contactextensions/predefinedcontacts/group"/>
+     </component>
+    </collection>
+    <collection name="logsui" long-name="Logs UI" level="ui">
+     <component name="logsui_build" filter="s60" long-name="Logs UI Build">
+      <!-- component at too high a rank, should move down one directory -->
+      <unit bldFile="/sf/app/contacts/logsui/group"/>
+     </component>
+    </collection>
+    <collection name="phonebookui" long-name="Phonebook UI" level="ui">
+     <component name="phonebook" filter="s60" long-name="Phonebook">
+      <unit bldFile="/sf/app/contacts/phonebookui/phonebook/group"/>
+     </component>
+     <component name="speeddial" filter="s60" long-name="Speed Dial">
+      <unit bldFile="/sf/app/contacts/phonebookui/speeddial/group"/>
+     </component>
+     <component name="phonebook2" filter="s60" long-name="Phone Book 2">
+      <unit bldFile="/sf/app/contacts/phonebookui/phonebook2/group"/>
+     </component>
+    </collection>
+    <collection name="phonebookengines" long-name="Phonebook Engines" level="engine">
+     <component name="cntfindplugin" filter="s60" long-name="Contacts Find Plugin" introduced="^2" plugin="Y">
+      <unit bldFile="/sf/app/contacts/phonebookengines/cntfindplugin/group"/>
+     </component>
+     <component name="cntsortplugin" filter="s60" long-name="Contacts Sort Plugin" introduced="^2" plugin="Y">
+      <unit bldFile="/sf/app/contacts/phonebookengines/cntsortplugin/group"/>
+     </component>
+     <component name="virtualphonebook" filter="s60" long-name="Virtual Phonebook" introduced="^2">
+      <unit bldFile="/sf/app/contacts/phonebookengines/virtualphonebook/group"/>
+     </component>
+     <component name="contactsmodel" long-name="Contacts Model" introduced="ER5" purpose="optional">
+      <unit bldFile="/sf/app/contacts/phonebookengines/contactsmodel/groupsql" mrp="/sf/app/contacts/phonebookengines/contactsmodel/groupsql/app-engines_cntmodel.mrp" version="2"/>
+     </component>
+    </collection>
+    <collection name="pimprotocols" long-name="PIM Protocols" level="services">
+     <component name="phonebooksync" long-name="Phonebook Sync" purpose="optional" plugin="Y">
+      <unit bldFile="/sf/app/contacts/pimprotocols/phonebooksync/group" mrp="/sf/app/contacts/pimprotocols/phonebooksync/group/telephony_phbksync.mrp"/>
+     </component>
+     <component name="pbap" long-name="Bluetooth PBAP" introduced="9.2" purpose="optional">
+      <unit bldFile="/sf/app/contacts/pimprotocols/pbap/group" mrp="/sf/app/contacts/pimprotocols/pbap/group/bluetooth_accesshost.mrp"/>
+     </component>
+    </collection>
+    <collection name="ccservices" long-name="Contacts Centric Services" level="services">
+     <component name="cmsservices" filter="s60" long-name="Contact Method Selector Services" introduced="^2">
+      <unit bldFile="/sf/app/contacts/ccservices/cmsservices/group"/>
+     </component>
+    </collection>
+    <collection name="presencecache" long-name="Presence Cache" level="support">
+     <component name="presencecacheutils" filter="s60" long-name="Presence Cache Utils" introduced="^2" class="placeholder">
+      <!-- <unit bldFile="presencecache/presencecacheutils/group"/> -->
+     </component>
+     <component name="presencecacheserver2" filter="s60" long-name="Presence Cache Server" introduced="^2" class="placeholder">
+      <!-- <unit bldFile="presencecache/presencecacheserver2/group"/> -->
+     </component>
+     <component name="presencecacheclient2" filter="s60" long-name="Presence Cache Client" introduced="^2" class="placeholder">
+      <!-- <unit bldFile="presencecache/presencecacheclient2/group"/> -->
+     </component>
+     <component name="presencecache_build" filter="s60" long-name="Presence Cache Build" introduced="^2">
+      <!-- should divide this bld.inf into the other components, or collapse them into a single component -->
+      <unit bldFile="/sf/app/contacts/presencecache/group"/>
+     </component>
+    </collection>
+    <collection name="predictivesearch" long-name="Predictive Search" level="support">
+     <component name="pcsutils" filter="s60" long-name="PCS Utils" introduced="^2">
+      <unit bldFile="/sf/app/contacts/predictivesearch/pcsutils/group"/>
+     </component>
+     <component name="pcsserverclientapi" filter="s60" long-name="PCS Server Client API" introduced="^2">
+      <unit bldFile="/sf/app/contacts/predictivesearch/pcsserverclientapi/group"/>
+     </component>
+     <component name="pcsserver" filter="s60" long-name="PCS Server" introduced="^2">
+      <unit bldFile="/sf/app/contacts/predictivesearch/pcsserver/group"/>
+     </component>
+     <component name="pcsadapters" filter="s60" long-name="PCS Adapters" introduced="^2" plugin="Y">
+      <unit bldFile="/sf/app/contacts/predictivesearch/adapters/contacts/group"/>
+     </component>
+     <component name="pcsalgorithm" filter="s60" long-name="PCS Algorithm" introduced="^2" plugin="Y">
+      <unit bldFile="/sf/app/contacts/predictivesearch/pcsalgorithm/group"/>
+     </component>
+     <component name="predictivesearch_build" filter="s60" long-name="Predictive Search Build" introduced="^2">
+      <!-- need to remove #includes from bld.inf and rename as Predictive Search ROM -->
+      <unit bldFile="/sf/app/contacts/predictivesearch/group"/>
+     </component>
+    </collection>
+    <collection name="contacts_info" long-name="Contacts Apps Info" level="ui">
+     <component name="contacts_plat" filter="s60" long-name="Contacts Apps Platform Interfaces" class="api">
+      <unit bldFile="/sf/app/contacts/contacts_plat/group"/>
+     </component>
+     <component name="contacts_pub" filter="s60" long-name="Contacts Apps Public Interfaces" class="api">
+      <unit bldFile="/sf/app/contacts/contacts_pub/group"/>
+     </component>
+     <component name="contacts_metadata" long-name="Contacts Apps Metadata" introduced="^2" purpose="development" class="config PC">
+      <unit mrp="/sf/app/contacts/contacts_info/contacts_metadata/contacts_metadata.mrp"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

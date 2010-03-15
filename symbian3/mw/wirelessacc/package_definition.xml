@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,59 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
-<layer name="mw">
-<block name="wirelessacc">
-<collection name="s60">
-<component name="wirelessacc">
-<unit bldFile="/sf/mw/wirelessacc/group" mrp=""/>
-</component>
-</collection>
-</block>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="wirelessacc" level="specific" long-name="Wireless Access" levels="framework generic ui">
+    <collection name="hotspotfw" long-name="HotSpot Framework" level="framework">
+     <component name="hsserver" filter="s60" long-name="HotSpot Server" class="placeholder">
+      <!-- needs bld.inf extracted from the hotspotfw/group one, or this component should be removed-->
+     </component>
+     <component name="hsclient" filter="s60" long-name="HotSpot Client" class="placeholder">
+      <!-- needs bld.inf extracted from the hotspotfw/group one, or this component should be removed-->
+     </component>
+     <component name="internetconnectivitytestservice" filter="s60" long-name="Internet Connectivity Test Service" class="placeholder">
+      <!-- needs bld.inf un-#included from hotspotfw/group/bld.inf, or this component should be removed-->
+      <!-- <unit bldFile="hotspotfw/internetconnectivitytestservice/group"/> -->
+     </component>
+     <component name="ictsdialogs" filter="s60" long-name="Internet Connectivity Test Service Dialogs" deprecated="^3" class="placeholder">
+      <!-- needs bld.inf un-#included from hotspotfw/group/bld.inf, or this component should be removed-->
+      <!-- <unit bldFile="hotspotfw/ictsdialogs/group"/> -->
+     </component>
+     <component name="hspluginforagent" filter="s60" long-name="HotSpot Plugin for Agent" plugin="Y" class="placeholder">
+      <!-- needs bld.inf un-#included from hotspotfw/group/bld.inf, or this component should be removed-->
+      <!-- <unit bldFile="hotspotfw/hspluginforagent/group"/> -->
+     </component>
+     <component name="hsbrowser" filter="s60" long-name="HotSpot Browser" class="placeholder">
+      <!-- needs bld.inf un-#included from hotspotfw/group/bld.inf, or this component should be removed-->
+      <!-- <unit bldFile="hotspotfw/hsbrowser/group"/> -->
+     </component>
+     <component name="hotspotfw_build" filter="s60" long-name="Hotspot Framework Build">
+      <!--  should break up this bld.inf into the above components, or collapse them all into a single component -->
+      <unit bldFile="/sf/mw/wirelessacc/hotspotfw/group"/>
+     </component>
+    </collection>
+    <collection name="wlanutilities" long-name="WLAN Utilities" level="generic">
+     <component name="wlanplugin" filter="s60" long-name="WLAN Plugin" plugin="Y">
+      <unit bldFile="/sf/mw/wirelessacc/wlanutilities/wlanplugin/group"/>
+     </component>
+     <component name="wlansettingsui" filter="s60" long-name="WLAN Settings UI">
+      <unit bldFile="/sf/mw/wirelessacc/wlanutilities/wlansettingsui/group"/>
+     </component>
+     <component name="wlansniffer" filter="s60" long-name="WLAN Sniffer">
+      <unit bldFile="/sf/mw/wirelessacc/wlanutilities/wlansniffer/group"/>
+     </component>
+     <component name="wlanindicatorplugin" filter="s60" long-name="WLAN Indicator Plugin" plugin="Y">
+      <unit bldFile="/sf/mw/wirelessacc/wlanutilities/wlanindicatorplugin/group"/>
+     </component>
+    </collection>
+    <collection name="wirelessacc_info" long-name="Wireless Access Info" level="ui">
+     <component name="hsfw_plat" long-name="HotSpot Framework Platform Interfaces" filter="s60" class="api">
+      <unit bldFile="/sf/mw/wirelessacc/hsfw_plat/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

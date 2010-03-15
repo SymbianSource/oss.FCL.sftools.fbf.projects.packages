@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,85 +49,47 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
-<layer name="adaptation">
-<block name="stubs">
-<collection name="s60">
-<component name="audiostubs">
-<unit bldFile="/sf/adaptation/stubs/audiostubs/group" mrp=""/>
-</component>
-<component name="drm_stubs">
-<unit bldFile="/sf/adaptation/stubs/drm_stubs/group" mrp=""/>
-</component>
-<component name="ocrsrv_stub">
-<unit bldFile="/sf/adaptation/stubs/ocrsrv_stub/group" mrp=""/>
-</component>
-<component name="omasuplasnconverterstubimpl">
-<unit bldFile="/sf/adaptation/stubs/omasuplasnconverterstubimpl/group" mrp=""/>
-</component>
-<component name="posmsgpluginreferenceimpl">
-<unit bldFile="/sf/adaptation/stubs/posmsgpluginreferenceimpl/group" mrp=""/>
-</component>
-<component name="power_save_display_mode_stub">
-<unit bldFile="/sf/adaptation/stubs/power_save_display_mode_stub/group" mrp=""/>
-</component>
-<component name="systemswstubs">
-<unit bldFile="/sf/adaptation/stubs/systemswstubs/group" mrp=""/>
-</component>
-<component name="tactileclickplugin_stub">
-<unit bldFile="/sf/adaptation/stubs/tactileclickplugin_stub/group" mrp=""/>
-</component>
-<component name="wlanhwinit_stub">
-<unit bldFile="/sf/adaptation/stubs/wlanhwinit_stub/group" mrp=""/>
-</component>
-</collection>
-</block>
+<layer name="adaptation" long-name="Adaptation" levels="low mw high">
+<block name="stubs" level="high" long-name="Stubs" levels="stub">
+    <collection name="s60_stubs" level="stub">
+     <component name="audiostubs" long-name="Audio Stubs">
+      <unit bldFile="/sf/adaptation/stubs/audiostubs/group"/>
+     </component>
+     <component name="btaudioadaptation_stub" long-name="Bluetooth Audio Adaptation Stub">
+      <unit bldFile="/sf/adaptation/stubs/btaudioadaptation_stub/group"/>
+     </component>
+     <component name="drm_stubs" long-name="DRM Stubs">
+      <unit bldFile="/sf/adaptation/stubs/drm_stubs/group"/>
+     </component>
+     <component name="ocrsrv_stub" long-name="OCR Services Stub">
+      <unit bldFile="/sf/adaptation/stubs/ocrsrv_stub/group"/>
+     </component>
+     <component name="omasuplasnconverterstubimpl" long-name="OMA SUPL ASN Converter Stub Implementation">
+      <unit bldFile="/sf/adaptation/stubs/omasuplasnconverterstubimpl/group"/>
+     </component>
+     <component name="posmsgpluginreferenceimpl" long-name="POS Message Plugin Reference Implementation" plugin="Y">
+      <unit bldFile="/sf/adaptation/stubs/posmsgpluginreferenceimpl/group"/>
+     </component>
+     <component name="srsfenginestub" long-name="SRSF Engine Stub">
+      <unit bldFile="/sf/adaptation/stubs/srsfenginestub/group"/>
+     </component>
+     <component name="power_save_display_mode_stub" long-name="Power Save Display Mode Stub">
+      <unit bldFile="/sf/adaptation/stubs/power_save_display_mode_stub/group"/>
+     </component>
+     <component name="systemswstubs" long-name="System Software Stubs">
+      <unit bldFile="/sf/adaptation/stubs/systemswstubs/group"/>
+     </component>
+     <component name="tactileclickplugin_stub" long-name="Tactile Click Plugin Stub" plugin="Y">
+      <unit bldFile="/sf/adaptation/stubs/tactileclickplugin_stub/group"/>
+     </component>
+     <component name="wlanhwinit_stub" long-name="WLAN Hardware Init Stub">
+      <unit bldFile="/sf/adaptation/stubs/wlanhwinit_stub/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

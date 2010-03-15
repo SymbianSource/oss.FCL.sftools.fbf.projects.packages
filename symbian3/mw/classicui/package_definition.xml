@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,104 +49,135 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="mw" long-name="Middleware" levels="generic specific">
 <block name="classicui" level="generic" long-name="Classic UI" levels="base support server generic specific">
-<collection name="commonuisupport" long-name="Common UI Support" level="support">
-<component name="uikon" long-name="Uikon" introduced="6.0" purpose="mandatory">
-<unit bldFile="/sf/mw/classicui/commonuisupport/uikon/group" mrp="/sf/mw/classicui/commonuisupport/uikon/group/app-framework_uikon.mrp"/>
-</component>
-<component name="errorresolverdata" long-name="Error Resolver Data" purpose="mandatory">
-<unit bldFile="/sf/mw/classicui/commonuisupport/errorresolverdata/group" mrp="/sf/mw/classicui/commonuisupport/errorresolverdata/group/app-framework_errorresgt.mrp"/>
-</component>
-<component name="uilaf" long-name="UI Look and Feel" introduced="6.0" purpose="mandatory">
-<unit bldFile="/sf/mw/classicui/commonuisupport/uilaf/GROUP" mrp="/sf/mw/classicui/commonuisupport/uilaf/GROUP/app-framework_uiklafgt.mrp"/>
-</component>
-<component name="grid" long-name="Grid" purpose="optional">
-<unit bldFile="/sf/mw/classicui/commonuisupport/grid/group" mrp="/sf/mw/classicui/commonuisupport/grid/group/app-framework_grid.mrp"/>
-</component>
-<component name="uifwsdocs" long-name="UI Frameworks Documentation" purpose="development" class="doc">
-<unit mrp="/sf/mw/classicui/commonuisupport/uifwsdocs/app-framework_documentation.mrp"/>
-</component>
-</collection>
-<collection name="lafagnosticuifoundation" long-name="Look-and-Feel Agnostic UI Foundation" level="base">
-<component name="cone" long-name="Control Environment" purpose="mandatory">
-<unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/cone/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/cone/group/app-framework_cone.mrp"/>
-</component>
-<component name="graphicseffects" long-name="Graphics Effects" introduced="9.2" purpose="optional">
-<unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/graphicseffects/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/graphicseffects/group/app-framework_gfxtranseffect.mrp"/>
-</component>
-<component name="uigraphicsutils" long-name="UI Graphics Utilities" purpose="mandatory">
-<unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/uigraphicsutils/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/uigraphicsutils/group/app-framework_egul.mrp"/>
-</component>
-<component name="clockanim" long-name="Clock" purpose="optional" plugin="Y">
-<unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/clockanim/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/clockanim/group/app-framework_clock.mrp"/>
-</component>
-<component name="bmpanimation" long-name="BMP Animation" introduced="6.0" purpose="optional">
-<unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/bmpanimation/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/bmpanimation/group/app-framework_bmpanim.mrp"/>
-</component>
-<component name="animation" long-name="Animation" introduced="9.1" purpose="optional">
-<unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/animation/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/animation/group/app-framework_animation.mrp"/>
-</component>
-</collection>
-<collection name="classicui_info" long-name="Classic UI Info" level="specific">
-<!-- the multiple units in the API components need to be resolved -->
-<component name="classicui_metadata" long-name="Classic UI Metadata" introduced="tb91" purpose="development" class="config PC">
-<unit mrp="/sf/mw/classicui/classicui_info/classicui_metadata/classicui_metadata.mrp"/>
-</component>
-</collection>
-<collection name="s60">
-<component name="classicui">
-<unit bldFile="/sf/mw/classicui/group" mrp=""/>
-</component>
-</collection>
-</block>
+    <collection name="ode" long-name="Open Dynamics Engine" level="support">
+     <!-- the collection is really a component. Move down a directory.-->
+     <component name="ode_build" filter="s60" long-name="ODE">
+      <unit bldFile="/sf/mw/classicui/ode/group"/>
+     </component>
+    </collection>
+    <collection name="uifw" long-name="UI Framework" level="server">
+     <component name="uiklaf" filter="s60" long-name="Uikon Look-and-Feel">
+      <unit bldFile="/sf/mw/classicui/uifw/uiklaf/group"/>
+     </component>
+     <component name="eikctl" filter="s60" long-name="Eikon Controls">
+      <unit bldFile="/sf/mw/classicui/uifw/eikctl/group"/>
+     </component>
+     <component name="avkon" filter="s60" long-name="Avkon">
+      <!-- can only have one unit. Split into 3 components, or #include all from same bld.inf -->
+      <unit bldFile="/sf/mw/classicui/uifw/avkon/aknphysics/group"/>
+      <unit bldFile="/sf/mw/classicui/uifw/avkon/group"/>
+      <unit bldFile="/sf/mw/classicui/uifw/avkon/aknconf/group"/>
+     </component>
+     <component name="eikstd" filter="s60" long-name="Eikon Standard">
+      <unit bldFile="/sf/mw/classicui/uifw/eikstd/group"/>
+     </component>
+     <component name="aknglobalui" filter="s60" long-name="Avkon Global UI">
+      <unit bldFile="/sf/mw/classicui/uifw/aknglobalui/group"/>
+     </component>
+     <component name="ganes" filter="s60" long-name="Ganes">
+      <unit bldFile="/sf/mw/classicui/uifw/ganes/group"/>
+     </component>
+    </collection>
+    <collection name="commonuis" long-name="Common UIs" level="specific">
+     <component name="commonui" filter="s60" long-name="Common UI">
+      <unit bldFile="/sf/mw/classicui/commonuis/commonui/group"/>
+     </component>
+     <component name="commondialogs" filter="s60" long-name="Common Dialogs">
+      <unit bldFile="/sf/mw/classicui/commonuis/commondialogs/group"/>
+     </component>
+    </collection>
+    <collection name="applicationinterworkingfw" long-name="Application Interworking Framework" level="generic">
+     <component name="aifwservicehandler" filter="s60" long-name="Application Interworking Service Handler">
+      <unit bldFile="/sf/mw/classicui/applicationinterworkingfw/servicehandler/group"/>
+     </component>
+    </collection>
+    <collection name="psln" long-name="Personalization" level="specific">
+     <!-- the collection is really a component. Move down a directory. Or it could be split into multiple components-->
+     <component name="psln_build" filter="s60" long-name="Personalization Build">
+      <unit bldFile="/sf/mw/classicui/psln/group"/>
+     </component>
+    </collection>
+    <collection name="commonadapter" long-name="Common Adapter" level="support">
+     <!-- the collection is really a component. Move down a directory.-->
+     <component name="commonadapter_build" filter="s60" long-name="Common Adapter Build">
+      <unit bldFile="/sf/mw/classicui/commonadapter/group"/>
+     </component>
+    </collection>
+    <collection name="akntouchgesturefw" long-name="Avkon Touch Gesture Framework" level="generic">
+     <!-- the collection is really a component. Move down a directory.-->
+     <component name="akntouchgesturefw_build" filter="s60" long-name="Avkon Touch Gesture Framework Build" introduced="^3">
+      <unit bldFile="/sf/mw/classicui/akntouchgesturefw/group"/>
+     </component>
+    </collection>
+    <collection name="uiutils" long-name="UI Utils" level="specific">
+     <component name="localizer" filter="s60" long-name="Directory Localizer">
+      <unit bldFile="/sf/mw/classicui/uiutils/localizer/group"/>
+     </component>
+     <component name="findutil" filter="s60" long-name="Find Utility">
+      <unit bldFile="/sf/mw/classicui/uiutils/findutil/group"/>
+     </component>
+     <component name="gamerecognizer" filter="s60" long-name="Game Recognizer" plugin="Y">
+      <unit bldFile="/sf/mw/classicui/uiutils/gamerecognizer/group"/>
+     </component>
+     <component name="aknjapanesereading" filter="s60" long-name="Avkon Japanese Reading">
+      <unit bldFile="/sf/mw/classicui/uiutils/aknjapanesereading/group"/>
+     </component>
+    </collection>
+    <collection name="commonuisupport" long-name="Common UI Support" level="support">
+     <component name="uikon" long-name="Uikon" introduced="6.0" purpose="mandatory">
+      <unit bldFile="/sf/mw/classicui/commonuisupport/uikon/group" mrp="/sf/mw/classicui/commonuisupport/uikon/group/app-framework_uikon.mrp"/>
+     </component>
+     <component name="errorresolverdata" long-name="Error Resolver Data" purpose="mandatory">
+      <unit bldFile="/sf/mw/classicui/commonuisupport/errorresolverdata/group" mrp="/sf/mw/classicui/commonuisupport/errorresolverdata/group/app-framework_errorresgt.mrp"/>
+     </component>
+     <component name="uilaf" long-name="UI Look and Feel" introduced="6.0" purpose="mandatory">
+      <unit bldFile="/sf/mw/classicui/commonuisupport/uilaf/GROUP" mrp="/sf/mw/classicui/commonuisupport/uilaf/GROUP/app-framework_uiklafgt.mrp"/>
+     </component>
+     <component name="grid" long-name="Grid" purpose="optional">
+      <unit bldFile="/sf/mw/classicui/commonuisupport/grid/group" mrp="/sf/mw/classicui/commonuisupport/grid/group/app-framework_grid.mrp"/>
+     </component>
+     <component name="uifwsdocs" long-name="UI Frameworks Documentation" purpose="development" class="doc">
+      <unit mrp="/sf/mw/classicui/commonuisupport/uifwsdocs/app-framework_documentation.mrp"/>
+     </component>
+    </collection>
+    <collection name="lafagnosticuifoundation" long-name="Look-and-Feel Agnostic UI Foundation" level="base">
+     <component name="cone" long-name="Control Environment" purpose="mandatory">
+      <unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/cone/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/cone/group/app-framework_cone.mrp"/>
+     </component>
+     <component name="graphicseffects" long-name="Graphics Effects" introduced="9.2" purpose="optional">
+      <unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/graphicseffects/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/graphicseffects/group/app-framework_gfxtranseffect.mrp"/>
+     </component>
+     <component name="uigraphicsutils" long-name="UI Graphics Utilities" purpose="mandatory">
+      <unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/uigraphicsutils/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/uigraphicsutils/group/app-framework_egul.mrp"/>
+     </component>
+     <component name="clockanim" long-name="Clock" purpose="optional" plugin="Y">
+      <unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/clockanim/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/clockanim/group/app-framework_clock.mrp"/>
+     </component>
+     <component name="bmpanimation" long-name="BMP Animation" introduced="6.0" purpose="optional">
+      <unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/bmpanimation/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/bmpanimation/group/app-framework_bmpanim.mrp"/>
+     </component>
+     <component name="animation" long-name="Animation" introduced="9.1" purpose="optional">
+      <unit bldFile="/sf/mw/classicui/lafagnosticuifoundation/animation/group" mrp="/sf/mw/classicui/lafagnosticuifoundation/animation/group/app-framework_animation.mrp"/>
+     </component>
+    </collection>
+    <collection name="classicui_info" long-name="Classic UI Info" level="specific">
+     <component name="classicui_pub" filter="s60" long-name="Classic UI Public Interfaces" class="api">
+      <unit bldFile="/sf/mw/classicui/classicui_pub/group"/>
+     </component>
+     <component name="classicui_plat" filter="s60" long-name="Classic UI Platform Interfaces" class="api">
+      <unit bldFile="/sf/mw/classicui/classicui_plat/group"/>
+     </component>
+     <!-- the multiple units in the API test components need to be resolved -->
+     <component name="classicui_metadata" long-name="Classic UI Metadata" introduced="^2" purpose="development" class="config PC">
+      <unit mrp="/sf/mw/classicui/classicui_info/classicui_metadata/classicui_metadata.mrp"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

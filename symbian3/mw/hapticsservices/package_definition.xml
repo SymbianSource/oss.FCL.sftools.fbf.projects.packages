@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,48 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
-<layer name="mw">
-<block name="hapticsservices">
-<collection name="s60">
-<component name="hapticsservices">
-<unit bldFile="/sf/mw/hapticsservices/group" mrp=""/>
-</component>
-</collection>
-</block>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="hapticsservices" level="generic" long-name="Haptics Services" levels="fw server api">
+    <collection name="tacticonserver" long-name="Tacticon Server" level="server">
+     <!-- collection is really a component. Move down a directory  -->
+     <component name="tacticonserver_build" filter="s60" long-name="Tacticon Server Build" introduced="^3">
+      <unit bldFile="/sf/mw/hapticsservices/tacticonserver/group"/>
+      <!-- clients and servers are suauly the same component. Consider moving pluign to a separate component if needed -->
+     </component>
+    </collection>
+    <collection name="tactilefeedback" long-name="Tactile Feedback" level="fw">
+     <component name="tactilearearegistry" filter="s60" long-name="Tactile Area Registry" introduced="^1">
+      <unit bldFile="/sf/mw/hapticsservices/tactilefeedback/tactilearearegistry/group"/>
+     </component>
+     <component name="tactilefeedbackresolver" filter="s60" long-name="Tactile Feedback Resolver" introduced="^1">
+      <unit bldFile="/sf/mw/hapticsservices/tactilefeedback/tactilefeedbackresolver/group"/>
+     </component>
+     <component name="tactileclickplugin" filter="s60" long-name="Tactile Click Plugin" introduced="^1" plugin="Y">
+      <unit bldFile="/sf/mw/hapticsservices/tactilefeedback/tactileclickplugin/group"/>
+     </component>
+     <component name="tactilefeedbackclient" filter="s60" long-name="Tactile Feedback Client" introduced="^1">
+      <unit bldFile="/sf/mw/hapticsservices/tactilefeedback/tactilefeedbackclient/group"/>
+     </component>
+     <component name="tactileactionplugin" filter="s60" long-name="Tactile Action Plugin" introduced="^1" plugin="Y">
+      <unit bldFile="/sf/mw/hapticsservices/tactilefeedback/tactileactionplugin/group"/>
+     </component>
+     <component name="tactilefeedback_build" filter="s60" long-name="Tactile Feedback Build" introduced="^1">
+      <!-- consider moving IBY to one fo the above components -->
+      <unit bldFile="/sf/mw/hapticsservices/tactilefeedback/group"/>
+     </component>
+    </collection>
+    <collection name="hapticsservices_info" long-name="Haptics Services Info" level="api">
+     <component name="hapticsservices_pub" filter="s60" long-name="Haptics Services Public Interfaces" introduced="^1" class="api">
+      <unit bldFile="/sf/mw/hapticsservices/hapticsservices_pub/group"/>
+     </component>
+     <component name="hapticsservices_plat" filter="s60" long-name="Haptics Services Platform Interfaces" introduced="^1" class="api">
+      <unit bldFile="/sf/mw/hapticsservices/hapticsservices_plat/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

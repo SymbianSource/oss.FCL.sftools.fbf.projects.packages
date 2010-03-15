@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,71 +49,104 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="mw" long-name="Middleware" levels="generic specific">
 <block name="inputmethods" level="generic" long-name="Input Methods" levels="plugin engine framework">
-<collection name="fep" long-name="FEP" level="engine">
-<component name="frontendprocessor" long-name="Front End Processor" purpose="mandatory">
-<unit bldFile="/sf/mw/inputmethods/fep/frontendprocessor/group" mrp="/sf/mw/inputmethods/fep/frontendprocessor/group/app-framework_fepbase.mrp"/>
-</component>
-</collection>
-<collection name="inputmethods_info" long-name="Input Methods Info" level="framework">
-<component name="inputmethods_metadata" long-name="Input Methods Metadata" introduced="tb91" purpose="development" class="config PC">
-<unit mrp="/sf/mw/inputmethods/inputmethods_info/inputmethods_metadata/inputmethods_metadata.mrp"/>
-</component>
-</collection>
-<collection name="s60">
-<component name="inputmethods">
-<unit bldFile="/sf/mw/inputmethods/group" mrp=""/>
-</component>
-</collection>
-</block>
+    <collection name="textinput" long-name="Text Input" level="framework">
+     <component name="ptienginev2" filter="s60" long-name="Predictive Text Input Engine">
+      <!--uncomment when configuration is turned on and textinput_build is removed-->
+      <!--  <unit bldFile="textinput/ptienginev2/group"/>-->
+     </component>
+     <component name="akninputlanguage" filter="s60" long-name="Avkon Input Language">
+      <unit bldFile="/sf/mw/inputmethods/textinput/akninputlanguage/group"/>
+     </component>
+     <component name="ptihangulcore" filter="s60" long-name="PIT Hangul Core" introduced="^3">
+      <unit bldFile="/sf/mw/inputmethods/textinput/ptihangulcore/group"/>
+     </component>
+     <component name="ptikoreanqwertycore" filter="s60" long-name="PTI Korean QWERTY Core" introduced="^3">
+      <unit bldFile="/sf/mw/inputmethods/textinput/ptikoreanqwertycore/group"/>
+     </component>
+     <component name="peninputarc" filter="s60" long-name="Pen Input Arc">
+      <unit bldFile="/sf/mw/inputmethods/textinput/peninputarc/group"/>
+     </component>
+     <component name="peninputcommonctrls" filter="s60" long-name="Pen Input Common Controls">
+      <unit bldFile="/sf/mw/inputmethods/textinput/peninputcommonctrls/group"/>
+     </component>
+     <component name="peninputhwrboxcn" filter="s60" long-name="Chinese Handwriting Recognition Box" plugin="Y">
+      <unit bldFile="/sf/mw/inputmethods/textinput/peninputhwrboxcn/group"/>
+     </component>
+     <component name="peninputvkbcn" filter="s60" long-name="Chinese Virtual Keyboard" plugin="Y">
+      <unit bldFile="/sf/mw/inputmethods/textinput/peninputvkbcn/group"/>
+     </component>
+     <component name="peninputcommonlayout" filter="s60" long-name="Pen Input Common Layout">
+      <unit bldFile="/sf/mw/inputmethods/textinput/peninputcommonlayout/group"/>
+     </component>
+     <component name="peninputgenerichwr" filter="s60" long-name="Pen Input Generic Handwriting Recognition" plugin="Y">
+      <unit bldFile="/sf/mw/inputmethods/textinput/peninputgenerichwr/group"/>
+     </component>
+     <component name="peninputgenericvkb" filter="s60" long-name="Pen Input Generic Virtual Keyboard" plugin="Y">
+      <unit bldFile="/sf/mw/inputmethods/textinput/peninputgenericvkb/group"/>
+     </component>
+     <component name="peninputcommonctrlsjp" filter="s60" long-name="Pen Input Common Controls Japanese">
+      <unit bldFile="/sf/mw/inputmethods/textinput/peninputcommonctrlsjp/group"/>
+     </component>
+     <component name="peninputhwrboxjp" filter="s60" long-name="Japanese Handwriting Recognition Box" plugin="Y">
+      <unit bldFile="/sf/mw/inputmethods/textinput/peninputhwrboxjp/group"/>
+     </component>
+     <component name="peninputvkbjp" filter="s60" long-name="Japanese Virtual Keyboard" plugin="Y">
+      <unit bldFile="/sf/mw/inputmethods/textinput/peninputvkbjp/group"/>
+     </component>
+     <component name="gslangplugin" filter="s60" long-name="GS Language Plugin" plugin="Y">
+      <unit bldFile="/sf/mw/inputmethods/textinput/GSLangPlugin"/>
+     </component>
+     <component name="peninputgenericitut" filter="s60" long-name="Pen Input Generic ITU-T" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/mw/inputmethods/textinput/peninputgenericitut/group"/>
+     </component>
+     <component name="peninputhwrtrui" filter="s60" long-name="Pen Input Handwriting Recognition Training UI" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/mw/inputmethods/textinput/peninputhwrtrui/group"/>
+     </component>
+     <component name="peninputhwrfscn" filter="s60" long-name="Pen Input Chinese Full Screen Handwriting Recognition" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/mw/inputmethods/textinput/peninputhwrfscn/group"/>
+     </component>
+     <component name="peninputvkbkr" filter="s60" long-name="Pen Input Korean Virtual Keyboard" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/mw/inputmethods/textinput/peninputvkbkr/group"/>
+     </component>
+     <component name="peninputfingerhwr" filter="s60" long-name="Pen Input Finger Handwriting Recognition" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/mw/inputmethods/textinput/peninputfingerhwr/group"/>
+     </component>
+     <component name="peninputsplititut" filter="s60" long-name="Pen Input Split ITU-T" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/mw/inputmethods/textinput/peninputsplititut/group"/>
+     </component>
+     <component name="peninputsplitqwerty" filter="s60" long-name="Pen Input Split QWERTY" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/mw/inputmethods/textinput/peninputsplitqwerty/group"/>
+     </component>
+     <component name="textinput_build" filter="s60" long-name="Text Input Build">
+      <!--needed for #ifdef, can be removed when configuration is implemented -->
+      <unit bldFile="/sf/mw/inputmethods/textinput/group"/>
+     </component>
+    </collection>
+    <collection name="fep" long-name="FEP" level="engine">
+     <component name="aknfep" filter="s60" long-name="Avkon FEP" plugin="Y">
+      <unit bldFile="/sf/mw/inputmethods/fep/aknfep/group"/>
+     </component>
+     <component name="frontendprocessor" long-name="Front End Processor" purpose="mandatory">
+      <unit bldFile="/sf/mw/inputmethods/fep/frontendprocessor/group" mrp="/sf/mw/inputmethods/fep/frontendprocessor/group/app-framework_fepbase.mrp"/>
+     </component>
+    </collection>
+    <collection name="inputmethods_info" long-name="Input Methods Info" level="framework">
+     <component name="inputmethods_plat" filter="s60" long-name="Input Methods Platform Interfaces" class="api">
+      <unit bldFile="/sf/mw/inputmethods/inputmethods_plat/group"/>
+     </component>
+     <component name="inputmethods_pub" filter="s60" long-name="Input Methods Public Interfaces" class="api">
+      <unit bldFile="/sf/mw/inputmethods/inputmethods_pub/group"/>
+     </component>
+     <component name="inputmethods_metadata" long-name="Input Methods Metadata" introduced="^2" purpose="development" class="config PC">
+      <unit mrp="/sf/mw/inputmethods/inputmethods_info/inputmethods_metadata/inputmethods_metadata.mrp"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

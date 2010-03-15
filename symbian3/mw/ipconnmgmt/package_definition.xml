@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,104 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
-<layer name="mw">
-<block name="ipconnmgmt">
-<collection name="s60">
-<component name="ipconnmgmt">
-<unit bldFile="/sf/mw/ipconnmgmt/group" mrp=""/>
-</component>
-</collection>
-</block>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="ipconnmgmt" level="generic" long-name="IP Connectivity Management" levels="plugin framework server generic utils">
+    <collection name="accesspointcontrol" long-name="Access Point Control" level="plugin">
+     <component name="apcontrollistplugin" filter="s60" long-name="Access Point Control List Plugin" introduced="^2" plugin="Y">
+      <unit bldFile="/sf/mw/ipconnmgmt/accesspointcontrol/apcontrollistplugin/group"/>
+     </component>
+    </collection>
+    <collection name="alwayson_net_plugin" long-name="Always Online Net Plugin" level="server">
+     <component name="pdpcontextmanager2" filter="s60" long-name="PDP Context Manager 2">
+      <unit bldFile="/sf/mw/ipconnmgmt/alwayson_net_plugin/pdpcontextmanager2/group"/>
+     </component>
+    </collection>
+    <collection name="apengine" long-name="Access Point Engine" level="framework">
+     <component name="apeng" filter="s60" long-name="Access Point Engine">
+      <unit bldFile="/sf/mw/ipconnmgmt/apengine/apeng/group"/>
+     </component>
+     <component name="apsettingshandlerui" filter="s60" long-name="Access Point Settings Handler UI">
+      <unit bldFile="/sf/mw/ipconnmgmt/apengine/apsettingshandlerui/group"/>
+     </component>
+     <component name="apsettingsplugin" filter="s60" long-name="Access Point Settings Plugin" plugin="Y">
+      <unit bldFile="/sf/mw/ipconnmgmt/apengine/apsettingsplugin/group"/>
+     </component>
+    </collection>
+    <collection name="bearermanagement" long-name="Bearer Management" level="framework">
+     <component name="mpm" filter="s60" long-name="Mobility Policy Manager">
+      <unit bldFile="/sf/mw/ipconnmgmt/bearermanagement/mpm/group"/>
+     </component>
+     <component name="extendedconnpref" filter="s60" long-name="Extended Connection Preferences">
+      <unit bldFile="/sf/mw/ipconnmgmt/bearermanagement/extendedconnpref/group"/>
+     </component>
+     <component name="s60mcpr" filter="s60" long-name="S60 Meta-Connection Provider" plugin="Y">
+      <unit bldFile="/sf/mw/ipconnmgmt/bearermanagement/S60MCPR/group"/>
+     </component>
+    </collection>
+    <collection name="cmmanager" long-name="Connection Method Manager" level="framework">
+     <component name="cmmgr" filter="s60" long-name="CM Manager">
+      <unit bldFile="/sf/mw/ipconnmgmt/cmmanager/cmmgr/group"/>
+     </component>
+     <component name="gsconnsettingsplugin" filter="s60" long-name="GS Connection Settings Plugin" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/mw/ipconnmgmt/cmmanager/gsconnsettingsplugin/group"/>
+     </component>
+    </collection>
+    <collection name="connectionmonitoring" long-name="Connection Monitoring" level="server">
+     <component name="connectionmonitorplugin" filter="s60" long-name="Connection Monitor Plugin" plugin="Y">
+      <unit bldFile="/sf/mw/ipconnmgmt/connectionmonitoring/connectionmonitorplugin/group"/>
+     </component>
+     <component name="connectionmonitorui" filter="s60" long-name="Connection Monitor UI">
+      <unit bldFile="/sf/mw/ipconnmgmt/connectionmonitoring/connectionmonitorui/group"/>
+     </component>
+     <component name="connmon" filter="s60" long-name="Connection Monitor">
+      <!-- either split into two components, or #include from a common bld.inf -->
+      <unit bldFile="/sf/mw/ipconnmgmt/connectionmonitoring/connmon/connectionmonitor/group"/>
+      <unit bldFile="/sf/mw/ipconnmgmt/connectionmonitoring/connmon/dataconnectionlogger/group"/>
+     </component>
+     <component name="connmonext" filter="s60" long-name="Connection Monitor Extension API">
+      <unit bldFile="/sf/mw/ipconnmgmt/connectionmonitoring/connmonext/group"/>
+     </component>
+    </collection>
+    <collection name="connectionutilities" long-name="Connection Utilities" level="utils">
+     <component name="connectiondialogs" filter="s60" long-name="Connection Dialogs">
+      <unit bldFile="/sf/mw/ipconnmgmt/connectionutilities/connectiondialogs/group"/>
+     </component>
+    </collection>
+    <collection name="dbcreator" long-name="DB Creator" level="utils">
+     <component name="commsdatcreator" filter="s60" long-name="Comms Database Creator" introduced="9.3">
+      <unit bldFile="/sf/mw/ipconnmgmt/dbcreator/commsdatcreator/group"/>
+     </component>
+     <component name="commsdatcreatorrfsplugin" filter="s60" long-name="Comms Database Creator RFS Plugin" introduced="9.3" plugin="Y">
+      <!-- uncomment when config is turned on -->
+      <!-- <unit bldFile="dbcreator/commsdatcreatorrfsplugin/group"/>-->
+     </component>
+     <component name="commsdatstartup" filter="s60" long-name="Comms Database Startup" introduced="9.3">
+      <unit bldFile="/sf/mw/ipconnmgmt/dbcreator/commsdatstartup/group"/>
+     </component>
+     <component name="dbcreatorexe" filter="s60" long-name="DB Creator" introduced="9.3">
+      <unit bldFile="/sf/mw/ipconnmgmt/dbcreator/dbcreatorexe/group"/>
+     </component>
+     <component name="dbcreator_build" filter="s60" long-name="DB Creator Build" introduced="9.3">
+      <!-- move exports to another component, this is needed for the #ifndef for commsdatcreatorrfsplugin until configuration is in place-->
+      <unit bldFile="/sf/mw/ipconnmgmt/dbcreator/group"/>
+     </component>
+    </collection>
+    <collection name="ipconnmgmt_info" long-name="IP Connectivity Management Info" level="utils">
+     <component name="ipcm_pub" filter="s60" long-name="IP Connectivity Management Public Interfaces" class="api">
+      <unit bldFile="/sf/mw/ipconnmgmt/ipcm_pub/group"/>
+     </component>
+     <component name="ipcm_plat" filter="s60" long-name="IP Connectivity Management Platform Interfaces" class="api">
+      <unit bldFile="/sf/mw/ipconnmgmt/ipcm_plat/group"/>
+     </component>
+     <component name="ipcm_build" filter="s60" long-name="IP Connectivity Management Build">
+      <!-- need to move exports to another component, or maek this a config component and revmove the #includes -->
+      <unit bldFile="/sf/mw/ipconnmgmt/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

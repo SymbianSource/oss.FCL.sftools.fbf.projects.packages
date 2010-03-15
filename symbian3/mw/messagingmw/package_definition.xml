@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,110 +49,74 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="mw" long-name="Middleware" levels="generic specific">
 <block name="messagingmw" level="specific" long-name="Messaging Middleware" levels="stack fw api">
-<collection name="messagingfw" long-name="Messaging Framework" level="fw">
-<component name="scheduledsendmtm" long-name="Scheduled Send MTM" introduced="6.0" purpose="optional" plugin="Y">
-<unit bldFile="/sf/mw/messagingmw/messagingfw/scheduledsendmtm/group" mrp="/sf/mw/messagingmw/messagingfw/scheduledsendmtm/group/messaging_schedulesend.mrp"/>
-</component>
-<component name="msgsrvnstore" long-name="Message Server and Store" purpose="optional">
-<unit bldFile="/sf/mw/messagingmw/messagingfw/msgsrvnstore/group" mrp="/sf/mw/messagingmw/messagingfw/msgsrvnstore/group/messaging_framework.mrp"/>
-</component>
-<component name="biomsgfw" long-name="BIO Messaging Framework" introduced="6.0" purpose="optional">
-<unit bldFile="/sf/mw/messagingmw/messagingfw/biomsgfw/group" mrp="/sf/mw/messagingmw/messagingfw/biomsgfw/group/messaging_biomsg.mrp"/>
-</component>
-<component name="msgconf" long-name="Messaging Config" introduced="tb91" purpose="optional" class="config">
-<unit bldFile="/sf/mw/messagingmw/messagingfw/msgconf/group" mrp="/sf/mw/messagingmw/messagingfw/msgconf/group/messaging_config.mrp"/>
-</component>
-<component name="watcherfw" long-name="Watcher Framework" purpose="optional">
-<unit bldFile="/sf/mw/messagingmw/messagingfw/watcherfw/group" mrp="/sf/mw/messagingmw/messagingfw/watcherfw/group/messaging_watcher.mrp"/>
-</component>
-<component name="msgtest" long-name="Messaging Test" purpose="development">
-<unit bldFile="/sf/mw/messagingmw/messagingfw/msgtest/group" mrp="/sf/mw/messagingmw/messagingfw/msgtest/group/messaging_test.mrp"/>
-</component>
-<component name="msgtests" long-name="Messaging Tests" purpose="development">
-<unit mrp="/sf/mw/messagingmw/messagingfw/msgtests/group/messaging.mrp"/>
-</component>
-<component name="msgtestfw" long-name="Messaging Test Framework" deprecated="tb92" purpose="development">
-<unit mrp="/sf/mw/messagingmw/messagingfw/msgtestfw/group/messaging_testframework.mrp"/>
-</component>
-<component name="msgtestproduct" long-name="Messaging Test Product" purpose="development">
-<unit mrp="/sf/mw/messagingmw/messagingfw/msgtestproduct/group/messaging_testproduct.mrp"/>
-</component>
-<component name="sendas" long-name="Send As" purpose="optional">
-<unit bldFile="/sf/mw/messagingmw/messagingfw/sendas/group" mrp="/sf/mw/messagingmw/messagingfw/sendas/group/messaging_sendas2.mrp"/>
-</component>
-<component name="msgurlhandler" long-name="Message URL Handler" introduced="7.0" purpose="optional">
-<unit bldFile="/sf/mw/messagingmw/messagingfw/msgurlhandler/group" mrp="/sf/mw/messagingmw/messagingfw/msgurlhandler/group/messaging_urlhandler.mrp"/>
-</component>
-<component name="wappushfw" long-name="WAP Push Framework" introduced="6.1" purpose="optional">
-<unit bldFile="/sf/mw/messagingmw/messagingfw/wappushfw/group" mrp="/sf/mw/messagingmw/messagingfw/wappushfw/group/wap-browser_wappush.mrp"/>
-</component>
-<component name="suplsmshandler" long-name="SUPL SMS Handler" introduced="tb91" purpose="development" plugin="Y">
-<unit bldFile="/sf/mw/messagingmw/messagingfw/suplsmshandler/group" mrp="/sf/mw/messagingmw/messagingfw/suplsmshandler/group/lbs_suplsmstrigger.mrp"/>
-</component>
-<component name="suplwappushhandler" long-name="SUPL WAP Push Handler" introduced="tb91" purpose="optional" plugin="Y">
-<unit bldFile="/sf/mw/messagingmw/messagingfw/suplwappushhandler/group" mrp="/sf/mw/messagingmw/messagingfw/suplwappushhandler/group/lbs_suplwappush.mrp"/>
-</component>
-</collection>
-<collection name="messagingmw_info" long-name="Messaging Middleware Info" level="api">
-<component name="messagingmw_metadata" long-name="Messaging Middleware Metadata" introduced="tb91" purpose="development" class="config PC">
-<unit mrp="/sf/mw/messagingmw/messagingmw_info/messagingmw_metadata/messagingmw_metadata.mrp"/>
-</component>
-</collection>
-<collection name="s60">
-<component name="messagingmw">
-<unit bldFile="/sf/mw/messagingmw/group" mrp=""/>
-</component>
-</collection>
-</block>
+    <collection name="msgbranched" long-name="Messaging Branched" level="fw">
+     <!-- collection is really a component. Need to move down a directory -->
+     <component name="msgbranched_build" filter="s60" long-name="Messaging Branched Build">
+      <unit bldFile="/sf/mw/messagingmw/msgbranched/group"/>
+     </component>
+    </collection>
+    <collection name="messagingfw" long-name="Messaging Framework" level="fw">
+     <!-- should break this collection up into smaller related collections -->
+     <component name="alwaysonline" filter="s60" long-name="Always Online Server" introduced="^2">
+      <unit bldFile="/sf/mw/messagingmw/messagingfw/alwaysonline/group"/>
+     </component>
+     <component name="msgcommonutils" filter="s60" long-name="Messaging Common Utils" introduced="^2">
+      <unit bldFile="/sf/mw/messagingmw/messagingfw/msgcommonutils/group"/>
+     </component>
+     <component name="senduiservices" filter="s60" long-name="Send UI Services" introduced="^2">
+      <unit bldFile="/sf/mw/messagingmw/messagingfw/senduiservices/group"/>
+     </component>
+     <component name="scheduledsendmtm" long-name="Scheduled Send MTM" introduced="6.0" purpose="optional" plugin="Y">
+      <unit bldFile="/sf/mw/messagingmw/messagingfw/scheduledsendmtm/group" mrp="/sf/mw/messagingmw/messagingfw/scheduledsendmtm/group/messaging_schedulesend.mrp"/>
+     </component>
+     <component name="msgsrvnstore" long-name="Message Server and Store" purpose="optional">
+      <unit bldFile="/sf/mw/messagingmw/messagingfw/msgsrvnstore/group" mrp="/sf/mw/messagingmw/messagingfw/msgsrvnstore/group/messaging_framework.mrp"/>
+     </component>
+     <component name="biomsgfw" long-name="BIO Messaging Framework" introduced="6.0" purpose="optional">
+      <unit bldFile="/sf/mw/messagingmw/messagingfw/biomsgfw/group" mrp="/sf/mw/messagingmw/messagingfw/biomsgfw/group/messaging_biomsg.mrp"/>
+     </component>
+     <component name="msgconf" long-name="Messaging Config" introduced="^2" purpose="optional" class="config">
+      <unit bldFile="/sf/mw/messagingmw/messagingfw/msgconf/group" mrp="/sf/mw/messagingmw/messagingfw/msgconf/group/messaging_config.mrp"/>
+     </component>
+     <component name="watcherfw" long-name="Watcher Framework" purpose="optional">
+      <unit bldFile="/sf/mw/messagingmw/messagingfw/watcherfw/group" mrp="/sf/mw/messagingmw/messagingfw/watcherfw/group/messaging_watcher.mrp"/>
+     </component>
+     <component name="msgtest" long-name="Messaging Test" purpose="development">
+      <unit bldFile="/sf/mw/messagingmw/messagingfw/msgtest/group" mrp="/sf/mw/messagingmw/messagingfw/msgtest/group/messaging_test.mrp"/>
+     </component>
+     <component name="sendas" long-name="Send As" purpose="optional">
+      <unit bldFile="/sf/mw/messagingmw/messagingfw/sendas/group" mrp="/sf/mw/messagingmw/messagingfw/sendas/group/messaging_sendas2.mrp"/>
+     </component>
+     <component name="msgurlhandler" long-name="Message URL Handler" introduced="7.0" purpose="optional">
+      <unit bldFile="/sf/mw/messagingmw/messagingfw/msgurlhandler/group" mrp="/sf/mw/messagingmw/messagingfw/msgurlhandler/group/messaging_urlhandler.mrp"/>
+     </component>
+     <component name="wappushfw" long-name="WAP Push Framework" introduced="6.1" purpose="optional">
+      <unit bldFile="/sf/mw/messagingmw/messagingfw/wappushfw/group" mrp="/sf/mw/messagingmw/messagingfw/wappushfw/group/wap-browser_wappush.mrp"/>
+     </component>
+     <component name="suplsmshandler" long-name="SUPL SMS Handler" introduced="^2" purpose="development" plugin="Y">
+      <unit bldFile="/sf/mw/messagingmw/messagingfw/suplsmshandler/group" mrp="/sf/mw/messagingmw/messagingfw/suplsmshandler/group/lbs_suplsmstrigger.mrp"/>
+     </component>
+     <component name="suplwappushhandler" long-name="SUPL WAP Push Handler" introduced="^2" purpose="optional" plugin="Y">
+      <unit bldFile="/sf/mw/messagingmw/messagingfw/suplwappushhandler/group" mrp="/sf/mw/messagingmw/messagingfw/suplwappushhandler/group/lbs_suplwappush.mrp"/>
+     </component>
+    </collection>
+    <collection name="messagingmw_info" long-name="Messaging Middleware Info" level="api">
+     <component name="msgfw_plat" filter="s60" long-name="Messaging Middleware Platform Interfaces" class="api">
+      <unit bldFile="/sf/mw/messagingmw/msgfw_plat/group"/>
+     </component>
+     <component name="msgfw_pub" filter="s60" long-name="Messaging Middleware Public Interfaces" class="api">
+      <unit bldFile="/sf/mw/messagingmw/msgfw_pub/group"/>
+     </component>
+     <component name="messagingmw_metadata" long-name="Messaging Middleware Metadata" introduced="^2" purpose="development" class="config PC">
+      <unit mrp="/sf/mw/messagingmw/messagingmw_info/messagingmw_metadata/messagingmw_metadata.mrp"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

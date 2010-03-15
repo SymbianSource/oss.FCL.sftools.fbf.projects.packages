@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,55 +49,33 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="homescreentools" level="services" long-name="Home Screen Tools"/>
+<block name="homescreentools" level="services" long-name="Home Screen Tools" levels="tool install">
+    <collection name="dtdinstaller" long-name="DTD Installer" level="install">
+     <!-- collection is really a component. Needs to be moved down a directory -->
+     <!-- this needs to be built first, does build order need to be forced with filters? -->
+     <component name="dtdinstaller_build" filter="s60" long-name="DTD Installer Build" class="tool PC">
+      <unit bldFile="/sf/app/homescreentools/dtdinstaller/group"/>
+     </component>
+    </collection>
+    <collection name="themeinstaller" long-name="Theme Installer" level="install">
+     <!-- collection is really a component. Needs to be moved down a directory -->
+     <component name="themeinstaller_build" filter="s60" long-name="Theme Installer Build" class="tool PC">
+      <unit bldFile="/sf/app/homescreentools/themeinstaller/group"/>
+     </component>
+    </collection>
+    <collection name="widgettools" long-name="Widget Tools" level="install">
+     <component name="hspluginpreinstaller" filter="s60" long-name="HS Plugin Preinstaller" introduced="^3" class="tool PC">
+      <unit bldFile="/sf/app/homescreentools/widgettools/hspluginspreinstaller/group"/>
+     </component>
+     <component name="wrtwidgetpreinstaller" filter="s60" long-name="WRT Widget Preinstaller" introduced="^3" class="tool PC">
+      <unit bldFile="/sf/app/homescreentools/widgettools/wrtwidgetpreinstaller/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>
