@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,79 +49,44 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="videotelephony" level="apps" long-name="Video Telephony Apps">
-<collection name="s60">
-<component name="videotelephony_plat">
-<unit bldFile="/sf/app/videotelephony/videotelephony_plat/group" mrp=""/>
-</component>
-<component name="vtprotocolsstub">
-<unit bldFile="/sf/app/videotelephony/vtprotocolsstub/group" mrp=""/>
-</component>
-<component name="DisplaySink">
-<unit bldFile="/sf/app/videotelephony/vtprotocolplugins/DisplaySink/group" mrp=""/>
-</component>
-<component name="VideoSource">
-<unit bldFile="/sf/app/videotelephony/vtprotocolplugins/VideoSource/group" mrp=""/>
-</component>
-<component name="videoteleng">
-<unit bldFile="/sf/app/videotelephony/vtengines/videoteleng/Group" mrp=""/>
-</component>
-<component name="videotelui">
-<unit bldFile="/sf/app/videotelephony/vtuis/videotelui/group" mrp=""/>
-</component>
-<component name="vtmediatorplugin">
-<unit bldFile="/sf/app/videotelephony/vtengines/vtmediatorplugin/group" mrp=""/>
-</component>
-</collection>
-</block>
+<block name="videotelephony" level="apps" long-name="Video Telephony Apps" levels="engine plugin prot ui">
+    <collection name="vtengines" long-name="Video Telephony Engines" level="engine">
+     <component name="videoteleng" filter="s60" long-name="Video Telephony Engine">
+      <unit bldFile="/sf/app/videotelephony/vtengines/videoteleng/Group"/>
+     </component>
+     <component name="vtmediatorplugin" filter="s60" long-name="VT Mediator Plugin" plugin="Y">
+      <unit bldFile="/sf/app/videotelephony/vtengines/vtmediatorplugin/group"/>
+     </component>
+    </collection>
+    <collection name="vtuis" long-name="Video Telephony UIs" level="ui">
+     <component name="videotelui" filter="s60" long-name="Video Telephony UI">
+      <unit bldFile="/sf/app/videotelephony/vtuis/videotelui/group"/>
+     </component>
+    </collection>
+    <collection name="vtprotocolplugins" long-name="VT Protocol Plugins" level="plugin">
+     <component name="displaysink" filter="s60" long-name="Display Sink" introduced="^2">
+      <unit bldFile="/sf/app/videotelephony/vtprotocolplugins/DisplaySink/group"/>
+     </component>
+     <component name="videosource" filter="s60" long-name="Video Source" introduced="^2">
+      <unit bldFile="/sf/app/videotelephony/vtprotocolplugins/VideoSource/group"/>
+     </component>
+    </collection>
+    <collection name="vtprotocolsstub" long-name="VT Protocols Stub" level="prot">
+     <!--  this collection is really a component, move down a directory -->
+     <component name="videotelproto" filter="s60" long-name="Video Telephony Protocol">
+      <unit bldFile="/sf/app/videotelephony/vtprotocolsstub/group" filter="sf_build"/>
+     </component>
+    </collection>
+    <collection name="videotelephony_info" long-name="VT Apps Info" level="ui">
+     <component name="videotelephony_plat" filter="s60" long-name="VT Apps Platform Interfaces" class="api">
+      <unit bldFile="/sf/app/videotelephony/videotelephony_plat/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

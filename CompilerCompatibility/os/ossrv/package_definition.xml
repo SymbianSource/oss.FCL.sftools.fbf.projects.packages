@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,124 +49,138 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
 <block name="ossrv" level="services" long-name="Generic OS Services" levels="physical-abstraction app-libs encoding translation data-services utilities">
-<collection name="genericservices" long-name="Generic Services" level="utilities">
-<component name="s60compatibilityheaders" long-name="S60 Compatibility Headers" filter="gt" purpose="optional">
-<unit bldFile="/sf/os/ossrv/genericservices/s60compatibilityheaders/groupsymtb101sf" mrp="/sf/os/ossrv/genericservices/s60compatibilityheaders/groupsymtb101sf/tools_s60_header_compatsymtb101sf.mrp" version="tb101sf"/>
-</component>
-<component name="mimerecognitionfw" long-name="MIME Recognition Framework" purpose="mandatory">
-<unit bldFile="/sf/os/ossrv/genericservices/mimerecognitionfw/group" mrp="/sf/os/ossrv/genericservices/mimerecognitionfw/group/app-framework_emime.mrp"/>
-</component>
-<component name="systemagent" long-name="System Agent" introduced="9.0" purpose="mandatory">
-<unit bldFile="/sf/os/ossrv/genericservices/systemagent/group" mrp="/sf/os/ossrv/genericservices/systemagent/group/syslibs_sysagent2.mrp"/>
-</component>
-<component name="taskscheduler" long-name="Task Scheduler" introduced="6.0" purpose="optional">
-<unit bldFile="/sf/os/ossrv/genericservices/taskscheduler/group" mrp="/sf/os/ossrv/genericservices/taskscheduler/group/syslibs_schsvr.mrp"/>
-</component>
-<component name="activebackupclient" long-name="Active Backup Client" purpose="optional">
-<unit bldFile="/sf/os/ossrv/genericservices/activebackupclient/group" mrp="/sf/os/ossrv/genericservices/activebackupclient/group/connectivity_abclient.mrp"/>
-</component>
-<component name="syslibsdocs" long-name="Syslibs Documentation" purpose="development" class="doc">
-<unit mrp="/sf/os/ossrv/genericservices/syslibsdocs/syslibs_documentation.mrp"/>
-</component>
-<component name="httputils" long-name="HTTP Utilities Library" introduced="6.2" purpose="optional">
-<unit bldFile="/sf/os/ossrv/genericservices/httputils/group" mrp="/sf/os/ossrv/genericservices/httputils/group/application-protocols_inetprotutil.mrp"/>
-</component>
-</collection>
-<collection name="syslibsapitest" long-name="SysLibs API Tests" level="utilities">
-<component name="syslibssvs" long-name="Syslibs Verfication Suite" introduced="tb91" purpose="development">
-<unit mrp="/sf/os/ossrv/syslibsapitest/syslibssvs/group/syslibssvs.mrp"/>
-</component>
-</collection>
-<collection name="compressionlibs" long-name="Compression Libraries" level="data-services">
-<component name="ziplib" long-name="Zip Compression Library" introduced="6.0" purpose="mandatory">
-<unit bldFile="/sf/os/ossrv/compressionlibs/ziplib/group" mrp="/sf/os/ossrv/compressionlibs/ziplib/group/syslibs_ezlib2.mrp"/>
-</component>
-</collection>
-<collection name="genericopenlibs" long-name="Generic Open Libraries" level="translation">
-<component name="cstdlib" long-name="C Standard Library" introduced="ER5" purpose="optional">
-<unit bldFile="/sf/os/ossrv/genericopenlibs/cstdlib/group" mrp="/sf/os/ossrv/genericopenlibs/cstdlib/group/syslibs_stdlib.mrp"/>
-</component>
-<component name="cppstdlib" long-name="C++ Standard Library" introduced="tb92" purpose="mandatory">
-<unit bldFile="/sf/os/ossrv/genericopenlibs/cppstdlib/group" mrp="/sf/os/ossrv/genericopenlibs/cppstdlib/group/openenv_libstdcpp.mrp"/>
-</component>
-<component name="openenvcore" long-name="Open Environment Core" introduced="tb91" purpose="mandatory">
-<unit bldFile="/sf/os/ossrv/genericopenlibs/openenvcore/group" mrp="/sf/os/ossrv/genericopenlibs/openenvcore/group/openenv.mrp"/>
-</component>
-<component name="posixrealtimeextensions" long-name="POSIX Realtime Extensions" introduced="tb92" purpose="optional">
-<unit bldFile="/sf/os/ossrv/genericopenlibs/posixrealtimeextensions/group" mrp="/sf/os/ossrv/genericopenlibs/posixrealtimeextensions/group/oeaddons_librt.mrp"/>
-</component>
-</collection>
-<collection name="lowlevellibsandfws" long-name="Low Level Libraries and Frameworks" level="app-libs">
-<component name="pluginfw" long-name="Plugin Framework" introduced="6.2" purpose="mandatory">
-<unit bldFile="/sf/os/ossrv/lowlevellibsandfws/pluginfw/Group" mrp="/sf/os/ossrv/lowlevellibsandfws/pluginfw/Group/syslibs_ecom3.mrp" version="3"/>
-</component>
-<component name="apputils" long-name="Application Utilities" introduced="ER5" purpose="mandatory">
-<unit bldFile="/sf/os/ossrv/lowlevellibsandfws/apputils/group" mrp="/sf/os/ossrv/lowlevellibsandfws/apputils/group/syslibs_bafl.mrp"/>
-</component>
-<component name="genericusabilitylib" long-name="Generic Usability Library" introduced="tb92" purpose="mandatory">
-<unit bldFile="/sf/os/ossrv/lowlevellibsandfws/genericusabilitylib/group" mrp="/sf/os/ossrv/lowlevellibsandfws/genericusabilitylib/group/syslibs_euserhl.mrp"/>
-</component>
-</collection>
-<collection name="ossrv_info" long-name="Generic OS Services Info" level="utilities">
-<component name="ossrv_metadata" long-name="Generic OS Services Metadata" introduced="tb91" purpose="development" class="config PC">
-<unit mrp="/sf/os/ossrv/ossrv_info/ossrv_metadata/ossrv_metadata.mrp"/>
-</component>
-</collection>
-<collection name="s60">
-<component name="ossrv">
-<unit bldFile="/sf/os/ossrv/group" mrp=""/>
-</component>
-</collection>
-</block>
+    <collection name="stdlibs" long-name="Standard Libraries" level="translation">
+     <component name="libz" filter="s60" long-name="Z Compression Library">
+      <unit bldFile="/sf/os/ossrv/stdlibs/libz/group"/>
+     </component>
+     <component name="libcrypt" filter="s60" long-name="Crypt Library">
+      <unit bldFile="/sf/os/ossrv/stdlibs/libcrypt/group"/>
+     </component>
+    </collection>
+    <collection name="ssl" long-name="SSL" level="data-services">
+     <component name="libcrypto" filter="s60" long-name="Crypto Library">
+      <unit bldFile="/sf/os/ossrv/ssl/libcrypto/group"/>
+     </component>
+     <component name="libssl" filter="s60" purpose="development" long-name="SSL Library">
+      <unit bldFile="/sf/os/ossrv/ssl/libssl/group"/>
+     </component>
+    </collection>
+    <collection name="glib" long-name="GLib" level="utilities">
+     <component name="glibbackend" filter="s60" long-name="GLib Backend">
+      <unit bldFile="/sf/os/ossrv/glib/glibbackend/group"/>
+     </component>
+     <component name="libglib" filter="s60" long-name="GLib Library">
+      <unit bldFile="/sf/os/ossrv/glib/libglib/group"/>
+     </component>
+     <component name="libgthread" filter="s60" long-name="Libg Thread">
+      <unit bldFile="/sf/os/ossrv/glib/libgthread/group"/>
+     </component>
+     <component name="libgmodule" filter="s60" long-name="Libg Module">
+      <unit bldFile="/sf/os/ossrv/glib/libgmodule/group"/>
+     </component>
+     <component name="libgobject" filter="s60" long-name="Libg Object">
+      <unit bldFile="/sf/os/ossrv/glib/libgobject/group"/>
+     </component>
+    </collection>
+    <collection name="stdcpp" long-name="C++ Standard Library" level="translation">
+     <!-- collection is really a component. Needs to be moved down a directory -->
+     <component name="stdcpp_build" filter="s60" long-name="Stdcpp">
+      <unit bldFile="/sf/os/ossrv/stdcpp/group"/>
+     </component>
+    </collection>
+    <collection name="ofdbus" long-name="Open Foundation D-Bus" level="utilities">
+     <component name="dbus" filter="s60" long-name="D-Bus">
+      <unit bldFile="/sf/os/ossrv/ofdbus/dbus/group"/>
+     </component>
+     <component name="dbus-glib" filter="s60" long-name="D-Bus GLib">
+      <unit bldFile="/sf/os/ossrv/ofdbus/dbus-glib/group"/>
+     </component>
+     <component name="ofdbus_rom" filter="s60" long-name="D-Bus ROM">
+      <!-- Contains IBY for for dbus. Should remove #includes to above components and move this down a directory 
+            Consider moving IBY file to one of the above as well and removing this component entirely -->
+      <unit bldFile="/sf/os/ossrv/ofdbus/group"/>
+     </component>
+    </collection>
+    <collection name="utilitylibraries" long-name="Utility Libraries" level="encoding">
+     <component name="libutils" filter="s60" long-name="Utility Library">
+      <unit bldFile="/sf/os/ossrv/utilitylibraries/libutils/group"/>
+     </component>
+    </collection>
+    <collection name="genericservices" long-name="Generic Services" level="utilities">
+     <component name="s60compatibilityheaders" long-name="S60 Compatibility Headers" filter="gt" purpose="optional">
+      <unit bldFile="/sf/os/ossrv/genericservices/s60compatibilityheaders/groupsymtb101sf" mrp="/sf/os/ossrv/genericservices/s60compatibilityheaders/groupsymtb101sf/tools_s60_header_compatsymtb101sf.mrp" version="tb101sf"/>
+     </component>
+     <component name="mimerecognitionfw" long-name="MIME Recognition Framework" purpose="mandatory">
+      <unit bldFile="/sf/os/ossrv/genericservices/mimerecognitionfw/group" mrp="/sf/os/ossrv/genericservices/mimerecognitionfw/group/app-framework_emime.mrp"/>
+     </component>
+     <component name="systemagent" long-name="System Agent" introduced="9.0" purpose="mandatory">
+      <unit bldFile="/sf/os/ossrv/genericservices/systemagent/group" mrp="/sf/os/ossrv/genericservices/systemagent/group/syslibs_sysagent2.mrp"/>
+     </component>
+     <component name="taskscheduler" long-name="Task Scheduler" introduced="6.0" purpose="optional">
+      <unit bldFile="/sf/os/ossrv/genericservices/taskscheduler/group" mrp="/sf/os/ossrv/genericservices/taskscheduler/group/syslibs_schsvr.mrp"/>
+     </component>
+     <component name="activebackupclient" long-name="Active Backup Client" purpose="optional">
+      <unit bldFile="/sf/os/ossrv/genericservices/activebackupclient/group" mrp="/sf/os/ossrv/genericservices/activebackupclient/group/connectivity_abclient.mrp"/>
+     </component>
+     <component name="syslibsdocs" long-name="Syslibs Documentation" purpose="development" class="doc">
+      <unit mrp="/sf/os/ossrv/genericservices/syslibsdocs/syslibs_documentation.mrp"/>
+     </component>
+     <component name="httputils" long-name="HTTP Utilities Library" introduced="6.2" purpose="optional">
+      <unit bldFile="/sf/os/ossrv/genericservices/httputils/group" mrp="/sf/os/ossrv/genericservices/httputils/group/application-protocols_inetprotutil.mrp"/>
+     </component>
+    </collection>
+    <collection name="syslibsapitest" long-name="SysLibs API Tests" level="utilities"/>
+    <collection name="compressionlibs" long-name="Compression Libraries" level="data-services">
+     <component name="ziplib" long-name="Zip Compression Library" introduced="6.0" purpose="mandatory">
+      <unit bldFile="/sf/os/ossrv/compressionlibs/ziplib/group" mrp="/sf/os/ossrv/compressionlibs/ziplib/group/syslibs_ezlib2.mrp"/>
+     </component>
+    </collection>
+    <collection name="genericopenlibs" long-name="Generic Open Libraries" level="translation">
+     <component name="cstdlib" long-name="C Standard Library" introduced="ER5" purpose="optional">
+      <unit bldFile="/sf/os/ossrv/genericopenlibs/cstdlib/group" mrp="/sf/os/ossrv/genericopenlibs/cstdlib/group/syslibs_stdlib.mrp"/>
+     </component>
+     <component name="cppstdlib" long-name="C++ Standard Library" introduced="^3" purpose="mandatory">
+      <unit bldFile="/sf/os/ossrv/genericopenlibs/cppstdlib/group" mrp="/sf/os/ossrv/genericopenlibs/cppstdlib/group/openenv_libstdcpp.mrp"/>
+     </component>
+     <component name="openenvcore" long-name="Open Environment Core" introduced="^2" purpose="mandatory">
+      <unit bldFile="/sf/os/ossrv/genericopenlibs/openenvcore/group" mrp="/sf/os/ossrv/genericopenlibs/openenvcore/group/openenv.mrp"/>
+     </component>
+     <component name="posixrealtimeextensions" long-name="POSIX Realtime Extensions" introduced="^3" purpose="optional">
+      <unit bldFile="/sf/os/ossrv/genericopenlibs/posixrealtimeextensions/group" mrp="/sf/os/ossrv/genericopenlibs/posixrealtimeextensions/group/oeaddons_librt.mrp"/>
+     </component>
+    </collection>
+    <collection name="lowlevellibsandfws" long-name="Low Level Libraries and Frameworks" level="app-libs">
+     <component name="pluginfw" long-name="Plugin Framework" introduced="6.2" purpose="mandatory">
+      <unit bldFile="/sf/os/ossrv/lowlevellibsandfws/pluginfw/Group" mrp="/sf/os/ossrv/lowlevellibsandfws/pluginfw/Group/syslibs_ecom3.mrp" version="3"/>
+     </component>
+     <component name="apputils" long-name="Application Utilities" introduced="ER5" purpose="mandatory">
+      <unit bldFile="/sf/os/ossrv/lowlevellibsandfws/apputils/group" mrp="/sf/os/ossrv/lowlevellibsandfws/apputils/group/syslibs_bafl.mrp"/>
+     </component>
+     <component name="genericusabilitylib" long-name="Generic Usability Library" introduced="^3" purpose="mandatory">
+      <unit bldFile="/sf/os/ossrv/lowlevellibsandfws/genericusabilitylib/group" mrp="/sf/os/ossrv/lowlevellibsandfws/genericusabilitylib/group/syslibs_euserhl.mrp"/>
+     </component>
+    </collection>
+    <collection name="ossrv_info" long-name="Generic OS Services Info" level="utilities">
+     <component name="ossrv_build" filter="s60" long-name="Generic OS Services Build">
+      <!-- exports should be moved to individual components -->
+      <unit bldFile="/sf/os/ossrv/rom"/>
+     </component>
+     <component name="ossrv_plat" filter="s60" long-name="Generic OS Services Platform Interfaces" class="api">
+      <unit bldFile="/sf/os/ossrv/ossrv_plat/libutils/group"/>
+     </component>
+     <component name="ossrv_pub" filter="s60" long-name="Generic OS Services Public Interfaces" class="api">
+      <unit bldFile="/sf/os/ossrv/ossrv_pub/group"/>
+     </component>
+     <component name="ossrv_metadata" long-name="Generic OS Services Metadata" introduced="^2" purpose="development" class="config PC">
+      <unit mrp="/sf/os/ossrv/ossrv_info/ossrv_metadata/ossrv_metadata.mrp"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

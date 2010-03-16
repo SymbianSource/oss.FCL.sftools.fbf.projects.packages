@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,71 +49,56 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="mw" long-name="Middleware" levels="generic specific">
 <block name="ipappsrv" level="specific" long-name="IP App Services" levels="framework generic server conn plugin">
-<collection name="multimediacommscontroller" long-name="Multimedia Comms Controller" level="conn">
-<component name="amrpayloadformatter" long-name="AMR Payload Formatter" introduced="tb92" purpose="optional">
-<unit bldFile="/sf/mw/ipappsrv/multimediacommscontroller/amrpayloadformatter/group" mrp="/sf/mw/ipappsrv/multimediacommscontroller/amrpayloadformatter/group/mm-protocols_rtpamr.mrp"/>
-</component>
-</collection>
-<collection name="ipappsrv_info" long-name="IP App Services Info" level="plugin">
-<component name="ipappsrv_metadata" long-name="IP App Services Metadata" introduced="tb91" purpose="development" class="config PC">
-<unit mrp="/sf/mw/ipappsrv/ipappsrv_info/ipappsrv_metadata/ipappsrv_metadata.mrp"/>
-</component>
-</collection>
-<collection name="s60">
-<component name="ipappservice">
-<unit bldFile="/sf/mw/ipappsrv/group" mrp=""/>
-</component>
-</collection>
-</block>
+    <collection name="natfw" long-name="NAT Framework" level="framework">
+     <!-- collection is really a component. Need to move down a directory -->
+     <component name="natfw_build" filter="s60" long-name="NAT Framework Build" introduced="^2">
+      <unit bldFile="/sf/mw/ipappsrv/natfw/group"/>
+     </component>
+    </collection>
+    <collection name="multimediacommscontroller" long-name="Multimedia Comms Controller" level="conn">
+     <!-- collection is really a component. Need to move down a directory -->
+     <component name="multimediacommscontroller_build" filter="s60" long-name="Multimedia Comms Controller Build">
+      <unit bldFile="/sf/mw/ipappsrv/multimediacommscontroller/group"/>
+     </component>
+    </collection>
+    <collection name="multimediacommsengine" long-name="Multimedia Comms Engine" level="generic">
+     <!-- collection is really a component. Need to move down a directory -->
+     <component name="multimediacommsengine_build" filter="s60" long-name="Multimedia Comms Engine Build">
+      <unit bldFile="/sf/mw/ipappsrv/multimediacommsengine/group"/>
+     </component>
+    </collection>
+    <collection name="natplugins" long-name="NAT Plugins" level="plugin">
+     <component name="natpcliprovisioningnatfwadapter" filter="s60" long-name="Client Provisioning NAT Framework Traversal Adapter" introduced="^2" plugin="Y">
+      <unit bldFile="/sf/mw/ipappsrv/natplugins/natpcliprovisioningnatfwadapter/group"/>
+     </component>
+     <component name="natpdevmgmtnatfwadapter" filter="s60" long-name="Device Management NAT Framework Traversal Adapter" plugin="Y">
+      <unit bldFile="/sf/mw/ipappsrv/natplugins/natpdevmgmtnatfwadapter/group"/>
+     </component>
+     <component name="natptraversalcontroller" filter="s60" long-name="NAT Traversal Controller" plugin="Y">
+      <unit bldFile="/sf/mw/ipappsrv/natplugins/natptraversalcontroller/group"/>
+     </component>
+     <component name="natpnatfwsdpprovider" filter="s60" long-name="NAT Framework SDP Provider" plugin="Y">
+      <unit bldFile="/sf/mw/ipappsrv/natplugins/natpnatfwsdpprovider/group"/>
+     </component>
+    </collection>
+    <collection name="ipappsrv_info" long-name="IP App Services Info" level="plugin">
+     <component name="ipappsrv_plat" filter="s60" long-name="IP App Services Platform Interfaces" class="api">
+      <unit bldFile="/sf/mw/ipappsrv/ipappsrv_plat/group"/>
+     </component>
+     <component name="ipappsrv_build" long-name="IP App Services Build" filter="s60">
+      <!-- remove the #includes from here and rename as xxx ROM or move iby/sis files into another component-->
+      <unit mrp="/sf/mw/ipappsrv/group"/>
+     </component>
+     <component name="ipappsrv_metadata" long-name="IP App Services Metadata" introduced="^2" purpose="development" class="config PC">
+      <unit mrp="/sf/mw/ipappsrv/ipappsrv_info/ipappsrv_metadata/ipappsrv_metadata.mrp"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

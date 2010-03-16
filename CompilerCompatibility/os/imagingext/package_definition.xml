@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,37 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
-<layer name="os">
-<block name="imagingext">
-<collection name="s60">
-<component name="imagingext">
-<unit bldFile="/sf/os/imagingext/group" mrp=""/>
-</component>
-</collection>
-</block>
+<layer name="os" long-name="OS" levels="hw services">
+<block name="imagingext" level="services" long-name="Imaging Extensions" levels="adaptation hw-if plugin framework server app-if">
+    <collection name="imageadaptationextensions" long-name="Image Adaptation Extensions" level="app-if">
+     <component name="iclextjpegapi" filter="s60" long-name="ICL Extension JPEG API">
+      <unit bldFile="/sf/os/imagingext/imageadaptationextensions/iclextjpegapi/group"/>
+     </component>
+     <component name="imageadaptationextensions_build" filter="s60" long-name="Image Adaptation Extensions Build">
+      <!--  Move the export from this bld.inf into the above one and remove this component, or make this a ROM component -->
+      <unit bldFile="/sf/os/imagingext/imageadaptationextensions/group"/>
+     </component>
+    </collection>
+    <collection name="imagingmodules" long-name="Imaging Modules" level="hw-if">
+     <component name="exiflib" filter="s60" long-name="Exif Library">
+      <unit bldFile="/sf/os/imagingext/imagingmodules/exiflib/group"/>
+     </component>
+     <component name="jp2kcodec" filter="s60" long-name="JPEG2000 Decoder Plugin" plugin="Y">
+      <unit bldFile="/sf/os/imagingext/imagingmodules/jp2kcodec/group"/>
+     </component>
+    </collection>
+    <collection name="imagingext_info" long-name="Imaging Extensions Info" level="app-if">
+     <component name="imagingext_plat" filter="s60" long-name="Imaging Extensions Platform Interfaces" class="api">
+      <unit bldFile="/sf/os/imagingext/imagingext_plat/group"/>
+     </component>
+     <component name="imagingext_pub" filter="s60" long-name="Imaging Extensions Public Interfaces" class="api">
+      <unit bldFile="/sf/os/imagingext/imagingext_pub/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

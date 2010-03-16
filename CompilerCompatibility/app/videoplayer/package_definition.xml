@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,148 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="videoplayer" level="apps" long-name="Video Player Apps">
-<collection name="s60">
-<component name="videoplayer">
-<unit bldFile="/sf/app/videoplayer/group" mrp=""/>
-</component>
-</collection>
-</block>
+<block name="videoplayer" level="apps" long-name="Video Player Apps" levels="support plugin util apps">
+    <collection name="videofeeds" long-name="Video Feeds" level="util">
+     <component name="iptv_utils" filter="s60" long-name="IPTV Util" introduced="^3">
+      <unit bldFile="/sf/app/videoplayer/videofeeds/utils/group"/>
+     </component>
+     <component name="viewmessageutility" filter="s60" long-name="View Message Utility" introduced="^3">
+      <unit bldFile="/sf/app/videoplayer/videofeeds/viewmessageutility/group"/>
+     </component>
+     <component name="vcxnotifier" filter="s60" long-name="Video Connection Notifier" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/videoplayer/videofeeds/vcxnotifier/group"/>
+     </component>
+     <component name="vccommon" filter="s60" long-name="Video Connection Common" introduced="^3">
+      <unit bldFile="/sf/app/videoplayer/videofeeds/vccommon/group"/>
+     </component>
+     <component name="clientapi" long-name="Server Client" filter="s60" introduced="^3">
+      <unit bldFile="/sf/app/videoplayer/videofeeds/clientapi/group"/>
+     </component>
+     <component name="provisioningprocessor" long-name="Provisioning Processor" filter="s60" introduced="^3">
+      <unit bldFile="/sf/app/videoplayer/videofeeds/provisioningprocessor/group"/>
+     </component>
+     <component name="mrssplugin" long-name="RSS plugin" filter="s60" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/videoplayer/videofeeds/mrssplugin/group"/>
+     </component>
+     <component name="videofeeds_server" long-name="Server" filter="s60" introduced="^3">
+      <unit bldFile="/sf/app/videoplayer/videofeeds/server/group"/>
+     </component>
+     <component name="livetvutils" long-name="LiveTV Utils" filter="s60" introduced="^3">
+      <unit bldFile="/sf/app/videoplayer/videofeeds/livetvutils/group"/>
+     </component>
+     <component name="iptvprovisioningrecognizer" long-name="IP TV Provisioning Recognizer" filter="s60" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/videoplayer/videofeeds/provisioningrecognizer/group"/>
+     </component>
+     <component name="iptvprovisioningappui" long-name="IP TV Provisioning App UI" filter="s60" introduced="^3">
+      <unit bldFile="/sf/app/videoplayer/videofeeds/provisioningappui/group"/>
+     </component>
+     <component name="iptvomaprovisioning" long-name="IP TV OMA Provisioning" filter="s60" introduced="^3">
+      <unit bldFile="/sf/app/videoplayer/videofeeds/omaprovisioning/group"/>
+     </component>
+     <component name="vcnsuiengine" long-name="VoD UI Engine" filter="s60" introduced="^3">
+      <unit bldFile="/sf/app/videoplayer/videofeeds/vcnsuiengine/group"/>
+     </component>
+     <component name="hgvodui" long-name="Ganes UX2.0 VoD UI" filter="s60" introduced="^3">
+      <unit bldFile="/sf/app/videoplayer/videofeeds/hgvodui/group"/>
+     </component>
+     <component name="hgvodplugin" long-name="Ganes UX2.0 VoD UI Plugin" filter="s60" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/videoplayer/videofeeds/hgvodplugin/group"/>
+     </component>
+     <component name="vcnsscheduleview" long-name="Scheduled Download Settings View" filter="s60" introduced="^3">
+      <unit bldFile="/sf/app/videoplayer/videofeeds/vcnsscheduleview/group"/>
+     </component>
+     <component name="vcnsscheduleplugin" long-name="Scheduled Download Settings Plugin" filter="s60" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/videoplayer/videofeeds/vcnsscheduleplugin/group"/>
+     </component>
+     <component name="scheduleddlplugin" long-name="Scheduled download plugin" filter="s60" introduced="^3">
+      <unit bldFile="/sf/app/videoplayer/videofeeds/scheduleddlplugin/group"/>
+     </component>
+    </collection>
+    <collection name="videocollection" long-name="Video Collection" level="util">
+     <component name="mpxmyvideoscollection" filter="s60" long-name="MPX My Videos Collection" introduced="^3">
+      <unit bldFile="/sf/app/videoplayer/videocollection/mpxmyvideoscollection/group"/>
+     </component>
+     <component name="myvideosindicatorplugin" filter="s60" long-name="My Videos Indicator Plugin" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/videoplayer/videocollection/myvideosindicatorplugin/group"/>
+     </component>
+     <component name="hgmyvideos" filter="s60" long-name="Huriganes My Videos" introduced="^3">
+      <unit bldFile="/sf/app/videoplayer/videocollection/hgmyvideos/group"/>
+     </component>
+     <component name="hgmyvideosplugin" filter="s60" long-name="Huriganes My VideosPlugin" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/videoplayer/videocollection/hgmyvideosplugin/group"/>
+     </component>
+    </collection>
+    <collection name="videoplayer_homescreenplugins" long-name="Videoplayer Homescreen Plugins" level="plugin">
+     <component name="videosuiteconf" filter="s60" long-name="Video Suite Configuration" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/videoplayer/homescreenplugins/videosuiteconf/group"/>
+     </component>
+     <component name="videoahlplugin" filter="s60" long-name="Video Player Action Handler" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/videoplayer/homescreenplugins/videoahlplugin/group"/>
+     </component>
+     <component name="videochplugin" filter="s60" long-name="Video Player Content Harvester " introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/videoplayer/homescreenplugins/videochplugin/group"/>
+     </component>
+    </collection>
+    <collection name="mediasettings" long-name="Media Settings" level="support">
+     <!--  this is really a component. Should be moved down a directory -->
+     <component name="mediasettings_build" filter="s60" long-name="Media Settings Build">
+      <unit bldFile="/sf/app/videoplayer/mediasettings/group"/>
+     </component>
+     <component name="videoplayer_test" filter="s60" purpose="development" long-name="Video Player Apps Test">
+      <!--  can only have one unit. Can thes be #included from the above or another  bld.inf?-->
+      <unit bldFile="/sf/app/videoplayer/tsrc/VCXTestCommon/group"/>
+      <unit bldFile="/sf/app/videoplayer/tsrc/VCXTestUtilModule/group"/>
+      <unit bldFile="/sf/app/videoplayer/tsrc/VCXTestMyVideosCollectionClient/group"/>
+      <unit bldFile="/sf/app/videoplayer/mediasettings/mediasettingsengine/tsrc/mediasettingsenginetest/group"/>
+      <unit bldFile="/sf/app/videoplayer/mediasettings/videoplayersettingsengine/tsrc/vpsettingsenginetest/group"/>
+     </component>
+    </collection>
+    <collection name="filedetails" long-name="File Details" level="support">
+     <component name="filedetailsplugin" filter="s60" long-name="File Details Plugin" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/videoplayer/filedetails/filedetailsplugin/group"/>
+     </component>
+     <component name="filedetailsdialog" filter="s60" long-name="File Details Dialog" introduced="^3">
+      <unit bldFile="/sf/app/videoplayer/filedetails/filedetailsdialog/group"/>
+     </component>
+    </collection>
+    <collection name="videoplayerapp" long-name="Video Player App" level="apps">
+     <component name="lwplayer" long-name="Lightweight Player" filter="s60">
+      <unit bldFile="/sf/app/videoplayer/videoplayerapp/lwplayer/group"/>
+     </component>
+     <component name="mpxvideoplayer" filter="s60" long-name="MPX Video Player" plugin="Y">
+      <unit bldFile="/sf/app/videoplayer/videoplayerapp/mpxvideoplayer/group"/>
+     </component>
+     <component name="videoplayerlauncher" filter="s60" long-name="Video Player Launcher">
+      <unit bldFile="/sf/app/videoplayer/videoplayerapp/videoplayerlauncher/group"/>
+     </component>
+    </collection>
+    <collection name="videoplayback" long-name="Video Playback Plugins" level="plugin">
+     <component name="videohelix" long-name="Video Helix" filter="s60" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/videoplayer/videoplayback/videohelix/group"/>
+     </component>
+     <component name="videopdlplaybackviewplugin" filter="s60" long-name="Video PDL Playback View Plugin" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/videoplayer/videoplayback/videopdlplaybackviewplugin/group"/>
+     </component>
+     <component name="videoplaybackcontrols" filter="s60" long-name="Video Playback Controls" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/videoplayer/videoplayback/videoplaybackcontrols/group"/>
+     </component>
+     <component name="videoplaybackviewplugin" filter="s60" long-name="Video Playback View Plugin" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/videoplayer/videoplayback/videoplaybackviewplugin/group"/>
+     </component>
+     <component name="videoplaybackviews" filter="s60" long-name="Video Playback Views" introduced="^3" plugin="Y">
+      <unit bldFile="/sf/app/videoplayer/videoplayback/videoplaybackviews/group"/>
+     </component>
+    </collection>
+    <collection name="videoplayer_info" long-name="Video Player Apps Info" level="apps">
+     <component name="videoplayer_plat" filter="s60" long-name="Video Player Apps Platform Interfaces" class="api">
+      <unit bldFile="/sf/app/videoplayer/videoplayer_plat/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

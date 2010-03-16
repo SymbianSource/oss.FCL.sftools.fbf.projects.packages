@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,33 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
-<layer name="mw">
-<block name="videoutils">
-<collection name="s60">
-<component name="videoutils">
-<unit bldFile="/sf/mw/videoutils/group" mrp=""/>
-</component>
-</collection>
-</block>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="videoutils" level="specific" long-name="Video Utils" levels="eng util if">
+    <collection name="videoscheduler" long-name="Video Scheduler" level="util">
+     <component name="schedulerclient" filter="s60" long-name="Video Scheduler Client">
+      <unit bldFile="/sf/mw/videoutils/videoscheduler/schedulerclient/group"/>
+     </component>
+     <component name="schedulerserver" filter="s60" long-name="Video Scheduler Server">
+      <unit bldFile="/sf/mw/videoutils/videoscheduler/schedulerserver/group"/>
+     </component>
+    </collection>
+    <collection name="videoconnutility" long-name="Video Connection Utility" level="util">
+     <component name="connutilpsworker" filter="s60" long-name="Connection Utility Publish and Subscribe Worker">
+      <unit bldFile="/sf/mw/videoutils/videoconnutility/connutilpsworker/group"/>
+     </component>
+     <component name="video_connutility" filter="s60" long-name="Video Connection Utility">
+      <unit bldFile="/sf/mw/videoutils/videoconnutility/connutility/group"/>
+     </component>
+    </collection>
+    <collection name="videoutils_info" long-name="Video Utils Info" level="if">
+     <component name="videoutils_plat" filter="s60" long-name="Video Utils Platform Interfaces" class="api">
+      <unit bldFile="/sf/mw/videoutils/videoutils_plat/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

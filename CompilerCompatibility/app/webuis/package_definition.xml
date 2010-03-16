@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,53 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="webuis" level="services" long-name="Web UIs">
-<collection name="s60">
-<component name="webuis">
-<unit bldFile="/sf/app/webuis/group" mrp=""/>
-</component>
-</collection>
-</block>
+<block name="webuis" level="services" long-name="Web UIs" levels="plugin app">
+    <collection name="browserui" long-name="Browser UI" level="app">
+     <component name="browser" filter="s60" long-name="Browser">
+      <unit bldFile="/sf/app/webuis/browserui/browser/group"/>
+     </component>
+     <component name="operatormenu" filter="s60" long-name="Browser Operator Menu">
+      <unit bldFile="/sf/app/webuis/browserui/operatormenu/group"/>
+     </component>
+     <component name="videoservices" filter="s60" long-name="Browser Video Services">
+      <unit bldFile="/sf/app/webuis/browserui/videoservices/group"/>
+     </component>
+    </collection>
+    <collection name="browserplugins" long-name="Browser Plugins" level="plugin">
+     <component name="browsersysteminfoplugin" filter="s60" long-name="Browser System Info Plugin" plugin="Y">
+      <!-- uncomment the unit when configuration is in place, it's currently #included from browserplugins_build -->
+      <!-- <unit bldFile="browserplugins/browsersysteminfoplugin/group"/>-->
+     </component>
+     <component name="browsergpsplugin" filter="s60" long-name="Browser GPS Plugin" plugin="Y">
+      <!-- uncomment the unit when configuration is in place, it's currently #included from browserplugins_build -->
+      <!-- <unit bldFile="browserplugins/browsergpsplugin/group"/>-->
+     </component>
+     <component name="browseraudiovideoplugin" filter="s60" long-name="Browser Audio Video Plugin" plugin="Y">
+      <unit bldFile="/sf/app/webuis/browserplugins/browseraudiovideoplugin/group"/>
+     </component>
+     <component name="browserplugins_build" filter="s60" long-name="Browser Plugins Build">
+      <!-- when configuration is in place, the #ifdef is no longer needed and this component can be removed -->
+      <unit bldFile="/sf/app/webuis/browserplugins/group"/>
+     </component>
+    </collection>
+    <collection name="pushmtm" long-name="Push MTM" level="plugin">
+     <component name="pushmtm_help" filter="s60" long-name="Push MTM Help">
+      <unit bldFile="/sf/app/webuis/pushmtm/help/group"/>
+     </component>
+     <component name="plugins" filter="s60" long-name="Push MTM Plugins" plugin="Y">
+      <unit bldFile="/sf/app/webuis/pushmtm/plugins/group"/>
+     </component>
+     <component name="pushmtm_build" filter="s60" long-name="Push MTM Build">
+      <!-- Some content is at collection level and some is at comopnent level. Either make this a single
+			component and move it down a diretcory, or make separate independent components in this collection -->
+      <unit bldFile="/sf/app/webuis/pushmtm/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

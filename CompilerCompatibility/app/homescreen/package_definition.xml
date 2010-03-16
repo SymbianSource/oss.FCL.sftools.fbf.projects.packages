@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,61 +49,76 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="homescreen" level="apps" long-name="Home Screen Apps">
-<collection name="s60">
-<component name="homescreen">
-<unit bldFile="/sf/app/homescreen/group" mrp=""/>
-</component>
-</collection>
-</block>
+<block name="homescreen" level="apps" long-name="Home Screen Apps" levels="fw support apps">
+    <collection name="idlehomescreen" long-name="Idle Home Screen" level="apps">
+     <component name="nativeuicontroller" filter="s60" long-name="Native UI Controller">
+      <unit bldFile="/sf/app/homescreen/idlehomescreen/nativeuicontroller/group"/>
+     </component>
+     <component name="exths" filter="s60" long-name="Active Idle Container" plugin="Y">
+      <!-- why is the ID so different from the name? Is one wrong? -->
+      <unit bldFile="/sf/app/homescreen/idlehomescreen/exths/group"/>
+     </component>
+     <component name="hscontentcontrol" filter="s60" long-name="Home Screen Content Control" introduced="^3">
+      <unit bldFile="/sf/app/homescreen/idlehomescreen/hscontentcontrol/group"/>
+     </component>
+     <component name="hssapiwrapper" filter="s60" long-name="HS SAPI Wrapper" introduced="^3">
+      <!--  can only have one unit. #include from a common bld.inf, or split into two components -->
+      <unit bldFile="/sf/app/homescreen/idlehomescreen/sapiwrapper/cpswrapper/group"/>
+      <unit bldFile="/sf/app/homescreen/idlehomescreen/sapiwrapper/hspswrapper/group"/>
+     </component>
+     <component name="xmluirendering" filter="s60" long-name="XML UI Rendering" introduced="^3">
+      <unit bldFile="/sf/app/homescreen/idlehomescreen/xmluirendering/group"/>
+     </component>
+     <component name="xmluicontroller" filter="s60" long-name="XML UI Controller" introduced="^3">
+      <unit bldFile="/sf/app/homescreen/idlehomescreen/xmluicontroller/group"/>
+     </component>
+     <component name="widgetmanager" filter="s60" long-name="Widget Manager" introduced="^3">
+      <unit bldFile="/sf/app/homescreen/idlehomescreen/widgetmanager/group"/>
+     </component>
+     <component name="idlehomescreen_help" filter="s60" long-name="Idle Home Screen Help">
+      <unit bldFile="/sf/app/homescreen/idlehomescreen/help/group"/>
+     </component>
+     <component name="idlehomescreen_data" filter="s60" long-name="Idle Home Screen Data">
+      <unit bldFile="/sf/app/homescreen/idlehomescreen/data/group"/>
+     </component>
+     <component name="idlehomescreen_build" filter="s60" long-name="Idle Home Screen Build">
+      <!-- can the loc file be moved to another comopnent and this one removed? -->
+      <unit bldFile="/sf/app/homescreen/idlehomescreen/group"/>
+     </component>
+    </collection>
+    <collection name="menufw" long-name="Menu Framework" level="fw">
+     <component name="hierarchynavigator" filter="s60" long-name="Hierarchy Navigator">
+      <unit bldFile="/sf/app/homescreen/menufw/hierarchynavigator/group"/>
+     </component>
+     <component name="menufwui" filter="s60" long-name="Menu Framework UI">
+      <unit bldFile="/sf/app/homescreen/menufw/menufwui/group"/>
+     </component>
+     <component name="menusuites" filter="s60" long-name="Menu Suites">
+      <unit bldFile="/sf/app/homescreen/menufw/menusuites/group"/>
+     </component>
+     <component name="menufw_build" filter="s60" long-name="Menu Framework Build">
+      <!-- can the exports be exported by the other components? -->
+      <unit bldFile="/sf/app/homescreen/menufw/group"/>
+     </component>
+    </collection>
+    <collection name="taskswitcher" long-name="Task Switcher" level="support">
+     <component name="contextengine" filter="s60" long-name="Context Engine" introduced="^3">
+      <unit bldFile="/sf/app/homescreen/taskswitcher/contextengine/group"/>
+     </component>
+     <component name="taskswitcherui" filter="s60" long-name="Task Switcher UI" introduced="^3">
+      <unit bldFile="/sf/app/homescreen/taskswitcher/taskswitcherui/group"/>
+     </component>
+    </collection>
+    <collection name="homescreen_info" long-name="Home Screen Apps Info" level="apps">
+     <component name="homescreen_plat" filter="s60" long-name="Home Screen Apps Platform Interfaces" class="api">
+      <unit bldFile="/sf/app/homescreen/homescreen_plat/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

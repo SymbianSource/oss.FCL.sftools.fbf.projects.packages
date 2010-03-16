@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE SystemDefinition [
- <!ELEMENT SystemDefinition (systemModel?,SystemBuild?)>
+ <!ELEMENT SystemDefinition (systemModel)>
  <!ATTLIST SystemDefinition
   name CDATA #REQUIRED
   schema CDATA #REQUIRED>
@@ -49,55 +49,69 @@
   prebuilt NMTOKEN #IMPLIED
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
- <!ELEMENT SystemBuild (option*|target+|targetList+|list+|configuration+)*>
- <!ATTLIST SystemBuild schema CDATA #REQUIRED>
- <!ELEMENT list (ref+)>
- <!ATTLIST list
-  name ID #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT ref EMPTY>
- <!ATTLIST ref item CDATA #REQUIRED>
- <!ELEMENT targetList EMPTY>
- <!ATTLIST targetList
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  target IDREFS #REQUIRED>
- <!ELEMENT target EMPTY>
- <!ATTLIST target
-  name ID #REQUIRED
-  abldTarget CDATA #REQUIRED
-  description CDATA #REQUIRED>
- <!ELEMENT option EMPTY>
- <!ATTLIST option
-  name ID #REQUIRED
-  abldOption CDATA #REQUIRED
-  description CDATA #REQUIRED
-  enable (Y|N) #REQUIRED>
- <!ELEMENT configuration (listRef+|ref+|task+)*>
- <!ATTLIST configuration
-  name ID #REQUIRED
-  description CDATA #REQUIRED
-  filter CDATA #REQUIRED>
- <!ELEMENT task (listRef*,(buildLayer|specialInstructions))>
- <!ELEMENT listRef EMPTY>
- <!ATTLIST listRef list CDATA #REQUIRED>
- <!ELEMENT buildLayer EMPTY>
- <!ATTLIST buildLayer
-  command CDATA #REQUIRED
-  targetList IDREFS #IMPLIED
-  unitParallel (Y|N) #REQUIRED
-  targetParallel (Y|N) 'N'>
- <!ELEMENT specialInstructions EMPTY>
- <!ATTLIST specialInstructions
-  name CDATA #REQUIRED
-  cwd CDATA #REQUIRED
-  root CDATA #IMPLIED
-  command CDATA #REQUIRED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^3">
+<SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="videoeditor" level="apps" long-name="Video Editor Apps"/>
+<block name="videoeditor" level="apps" long-name="Video Editor Apps" levels="engine ui">
+    <collection name="videditor" long-name="Video Editor" level="ui">
+     <component name="videoeditorcommon" filter="s60" long-name="Video Editor Common" introduced="^2">
+      <unit bldFile="/sf/app/videoeditor/videditor/videoeditorcommon/group"/>
+     </component>
+     <component name="videoeditoruicomponents" filter="s60" long-name="Video Editor UI Components" introduced="^2">
+      <unit bldFile="/sf/app/videoeditor/videditor/videoeditoruicomponents/group"/>
+     </component>
+     <component name="simplevideoeditor" filter="s60" long-name="Simple Video Editor" introduced="^2">
+      <unit bldFile="/sf/app/videoeditor/videditor/simplevideoeditor/group"/>
+     </component>
+     <component name="simplecutvideo" filter="s60" long-name="Simple Cut Video" introduced="^2">
+      <unit bldFile="/sf/app/videoeditor/videditor/simplecutvideo/group"/>
+     </component>
+     <component name="videoprovider" filter="s60" long-name="Video Provider" introduced="^2">
+      <unit bldFile="/sf/app/videoeditor/videditor/videoprovider/group"/>
+     </component>
+     <component name="manualvideoeditor" filter="s60" long-name="Manual Video Editor" introduced="^2" class="placeholder">
+      <!--  uncomment when supported
+      	<meta rel="config">
+      		<defined condition="__INCLUDE_MANUAL_VIDEO_EDITOR__"/>
+      	</meta>
+        <unit bldFile="videditor/manualvideoeditor/group"/> -->
+     </component>
+     <component name="videditor_build" filter="s60" long-name="Video Editor Build" introduced="^2">
+      <!-- can the exports be distributed to the other components? Or should this be collapsed into one component?-->
+      <unit bldFile="/sf/app/videoeditor/videditor/group"/>
+     </component>
+    </collection>
+    <collection name="videoeditorengine" long-name="Video Editor Engine" level="engine">
+     <component name="audioeditorengine" filter="s60" long-name="Audio Editor Engine" introduced="^2">
+      <unit bldFile="/sf/app/videoeditor/videoeditorengine/audioeditorengine/group"/>
+     </component>
+     <component name="avcedit" filter="s60" long-name="AVC Editing" introduced="^2">
+      <unit bldFile="/sf/app/videoeditor/videoeditorengine/avcedit/group"/>
+     </component>
+     <component name="h263decoder" filter="s60" long-name="H.263 Decoder" introduced="^2">
+      <unit bldFile="/sf/app/videoeditor/videoeditorengine/h263decoder/group"/>
+     </component>
+     <component name="mp3aacmaniplib" filter="s60" long-name="MP3 and AAC Manipulation Library" introduced="^2">
+      <unit bldFile="/sf/app/videoeditor/videoeditorengine/mp3aacmaniplib/group"/>
+     </component>
+     <component name="vedtranscoder" filter="s60" long-name="Video Editor Transcoder" introduced="^2">
+      <unit bldFile="/sf/app/videoeditor/videoeditorengine/vedtranscoder/group"/>
+     </component>
+     <component name="vedengine" filter="s60" long-name="Video Editor Engine" introduced="^2">
+      <unit bldFile="/sf/app/videoeditor/videoeditorengine/vedengine/group"/>
+     </component>
+     <component name="videoeditorengine_build" filter="s60" long-name="Video Editor Engine Build" introduced="^2">
+      <!-- can the exports be distributed to the other components? Or should this be collapsed into one component?-->
+      <unit bldFile="/sf/app/videoeditor/videoeditorengine/group"/>
+     </component>
+    </collection>
+    <collection name="videoeditor_info" long-name="Video Editor Apps Info" level="ui">
+     <component name="videoeditor_plat" filter="s60" long-name="Video Editor Apps Platform Interfaces" introduced="^2" class="api">
+      <unit bldFile="/sf/app/videoeditor/videoeditor_plat/group"/>
+     </component>
+    </collection>
+   </block>
 </layer>
 </systemModel>
 </SystemDefinition>

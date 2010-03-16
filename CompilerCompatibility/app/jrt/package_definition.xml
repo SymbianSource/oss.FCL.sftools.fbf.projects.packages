@@ -53,21 +53,30 @@
 <SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="helps" level="apps" span="2" long-name="Help Apps" levels="eng tools if ui">
-    <collection name="csxhelp" long-name="Context Sensitive Extended Help" level="if">
-     <!-- this is really a component. Should move it down a directory -->
-     <component name="csxhelp_build" filter="s60" long-name="Context Sensitive Extended Help Build">
-      <unit bldFile="/sf/app/helps/csxhelp/group"/>
+<block name="jrt" level="services" long-name="Java Runtime" levels="util generic rt ui">
+    <collection name="java_stubs" long-name="Java Stubs" level="util">
+     <!-- uncomment all components when configuration is in place. Currently #included from jrt_build -->
+     <component name="javadrmutils" long-name="Java DRM Utils" filter="s60,sf_build" class="placeholder">
+      <!--<unit bldFile="java_stubs/jrtdrmutils/group"/>-->
+     </component>
+     <component name="javaenvinfo" long-name="Java Environment Info" filter="s60,sf_build" class="placeholder">
+      <!--<unit bldFile="java_stubs/jrtenvinfo/group"/>-->
+     </component>
+     <component name="javaregistry" filter="s60,sf_build" long-name="Java Registry" class="placeholder">
+      <!--<unit bldFile="java_stubs/jrtregistry/clientserver/client/group"/>-->
+     </component>
+     <component name="java_stubs_build" filter="s60,sf_build" long-name="Java Stubs ROM" class="placeholder">
+      <!-- Remove the #includes and rename JRT ROM-->
+      <!--<unit bldFile="java_stubs/group"/>-->
      </component>
     </collection>
-    <collection name="symhelp" long-name="Symbian Help" level="eng">
-     <component name="helpmodel" long-name="Help" introduced="6.0" purpose="optional">
-      <unit bldFile="/sf/app/helps/symhelp/helpmodel/group" mrp="/sf/app/helps/symhelp/helpmodel/group/app-services_hlpmodel.mrp"/>
+    <collection name="jrt_info" long-name="JRT Info" level="rt">
+     <component name="jrt_plat" filter="s60" long-name="JRT Platform Interfaces" class="api">
+      <unit bldFile="/sf/app/jrt/jrt_plat/group"/>
      </component>
-    </collection>
-    <collection name="helps_info" long-name="Help Apps Info" level="ui">
-     <component name="helps_metadata" long-name="Help Apps Metadata" introduced="^2" purpose="development" class="config PC">
-      <unit mrp="/sf/app/helps/helps_info/helps_metadata/helps_metadata.mrp"/>
+     <component name="jrt_build" filter="s60" long-name="JRT Build">
+      <!--  needed for __JAVA_STUBS condition -->
+      <unit bldFile="/sf/app/jrt/java_stubs/group"/>
      </component>
     </collection>
    </block>
