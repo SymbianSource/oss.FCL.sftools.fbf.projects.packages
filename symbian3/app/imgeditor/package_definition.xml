@@ -77,6 +77,23 @@
   <systemModel>
     <layer name="app" long-name="Applications" levels="services apps">
       <block name="imgeditor" level="apps" long-name="Image Editor Apps" levels="engine ui">
+        <collection name="imgeditor_plat" long-name="Image Editor Apps Platform Interfaces" level="ui">
+          <component name="image_editor_debug_utilities_api" long-name="Image Editor Debug Utilities API" filter="s60" class="api">
+            <unit bldFile="/sf/app/imgeditor/imgeditor_plat/image_editor_debug_utilities_api/group"/>
+          </component>
+          <component name="image_editor_utilities_api" long-name="Image Editor Utilities API" filter="s60" class="api">
+            <unit bldFile="/sf/app/imgeditor/imgeditor_plat/image_editor_utilities_api/group"/>
+          </component>
+          <component name="image_editor_definitions_api" long-name="Image Editor Definitions API" filter="s60" class="api">
+            <unit bldFile="/sf/app/imgeditor/imgeditor_plat/image_editor_definitions_api/group"/>
+          </component>
+          <component name="image_editor_system_parameters_api" long-name="Image Editor System Parameters API" filter="s60" class="api">
+            <unit bldFile="/sf/app/imgeditor/imgeditor_plat/image_editor_system_parameters_api/group"/>
+          </component>
+          <component name="image_processing_engine_api" long-name="Image Processing Engine API" filter="s60" class="api">
+            <unit bldFile="/sf/app/imgeditor/imgeditor_plat/image_processing_engine_api/group"/>
+          </component>
+        </collection>
         <collection name="imageeditor" long-name="Image Editor UI" level="ui">
           <component name="pb" filter="s60" long-name="Plugin Base">
             <unit bldFile="/sf/app/imgeditor/imageeditor/pb/group"/>
@@ -163,11 +180,6 @@
           <component name="imageeditorengine_build" filter="s60" long-name="Image Editor Engine Build">
             <!-- should distribute this to the other components -->
             <unit bldFile="/sf/app/imgeditor/imageeditorengine/group"/>
-          </component>
-        </collection>
-        <collection name="imgeditor_info" long-name="Image Editor Apps Info" level="ui">
-          <component name="imgeditor_plat" filter="s60" long-name="Image Editor Apps Platform Interfaces" class="api">
-            <unit bldFile="/sf/app/imgeditor/imgeditor_plat/group"/>
           </component>
         </collection>
       </block>

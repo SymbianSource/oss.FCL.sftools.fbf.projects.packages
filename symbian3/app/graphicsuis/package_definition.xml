@@ -77,9 +77,15 @@
   <systemModel>
     <layer name="app" long-name="Applications" levels="services apps">
       <block name="graphicsuis" level="services" long-name="Graphics UIs" levels="util ui">
-        <collection name="graphicsuis_info" long-name="Graphics UIs Info" level="ui">
-          <component name="graphicsuis_plat" filter="s60" long-name="Graphics UIs Platform Interfaces" class="api">
-            <unit bldFile="/sf/app/graphicsuis/graphicsuis_plat/group"/>
+        <collection name="graphicsuis_plat" long-name="Graphics UIs Platform Interfaces" level="ui">
+          <component name="svgt_viewer_ui_api" long-name="SVG-T Viewer UI API" filter="s60" class="api">
+            <unit bldFile="/sf/app/graphicsuis/graphicsuis_plat/svgt_viewer_ui_api/group"/>
+          </component>
+          <component name="svg_application_observer_utility_api" long-name="SVG Application Observer Utility API" filter="s60" class="api">
+            <unit bldFile="/sf/app/graphicsuis/graphicsuis_plat/svg_application_observer_utility_api/group"/>
+          </component>
+          <component name="svgt_file_view_details_dialog_api" long-name="SVG-T File View Details Dialog API" filter="s60" class="api">
+            <unit bldFile="/sf/app/graphicsuis/graphicsuis_plat/svgt_file_view_details_dialog_api/group"/>
           </component>
         </collection>
         <collection name="svgtviewer" long-name="SVG-T Viewer" level="ui">

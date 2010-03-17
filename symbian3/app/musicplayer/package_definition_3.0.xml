@@ -1,75 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="musicplayer" name="Music Player Apps" levels="plugins support hs app">
-    <collection id="mpxmusicplayer" name="MPX Music Player" level="app">
-      <component id="mpxmusicplayer_help" filter="s60" name="Help">
-        <unit bldFile="mpxmusicplayer/help/group"/>
-      </component>
-      <component id="mpxmusicplayer_commonui" filter="s60" name="MPX Common UI">
-        <unit bldFile="mpxmusicplayer/commonui/group"/>
-      </component>
-      <component id="mpx_metadatahandler" filter="s60" name="MPX Metadata Handler">
-        <unit bldFile="mpxmusicplayer/metadatahandler/group"/>
-      </component>
-      <component id="mediakeyhandler" filter="s60" name="MPX Media Key Handler">
-        <unit bldFile="mpxmusicplayer/mediakeyhandler/group"/>
-      </component>
-      <component id="mpxmusicplayer_app" filter="s60" name="MPX Application">
-        <unit bldFile="mpxmusicplayer/app/group"/>
-      </component>
-      <component id="mpxmusicplayer_build" filter="s60" name="MPX Music Player Build">
-      	<!--  can the exports be distributed to the above components?  -->
-        <unit bldFile="mpxmusicplayer/group"/>
-      </component>
-    </collection>
-    <collection id="musichomescreen_multiview" name="Music Home Screen Multiview" level="hs">
-     <meta rel="config">
-   		<defined condition="IAD_INCLUDE_ENHANCED_HOMESCREEN"/>
-   	  </meta>    
-	  <!-- Uncomment all units when configuration is in place. All currently #included from musichomescreen_build -->
-      <component id="mpxcollectionpublisher" filter="s60" name="MPX Collection Publisher" introduced="^2">
-        <!--<unit bldFile="musichomescreen_multiview/mpxcollectionpublisher/group"/>-->
-      </component>
-      <component id="musiccontentpublisher" filter="s60" name="Music Content Publisher" introduced="^2">
-        <!--<unit bldFile="musichomescreen_multiview/musiccontentpublisher/group"/>-->
-      </component>
-      <component id="mcpmusicplayer" filter="s60" name="Music Player MCP Plugin" class="plugin" introduced="^2">
-        <!--<unit bldFile="musichomescreen_multiview/mcpmusicplayer/group"/>-->
-      </component>
-      <component id="musicplayeractionhandlerplugin" filter="s60" name="Music Player Action Handler Plugin" class="plugin" introduced="^2">
-        <!--<unit bldFile="musichomescreen_multiview/musicplayeractionhandlerplugin/group"/>-->
-      </component>
-      <component id="mpx_data" filter="s60" name="MPX Data" introduced="^2">
-      	<!-- does this make sense to be a component? should it just be #include from musichomescreen_multiview/group? -->
-        <!--<unit bldFile="musichomescreen_multiview/data/themes/default/group"/>-->
-      </component>
-      <component id="musichomescreen_build" filter="s60" name="Music Homescreen Multiview Build" introduced="^2">
-        <unit bldFile="musichomescreen_multiview/group"/>
-      </component>
-    </collection>
-    <collection id="mpxplugins" name="MPX Plugins" level="plugins">
-      <component id="serviceplugins" filter="s60" name="MPX Service Plugins" class="plugin">
-        <unit bldFile="mpxplugins/serviceplugins/group"/>
-      </component>
-      <component id="viewplugins" filter="s60" name="MPX View Plugins" class="plugin">
-        <unit bldFile="mpxplugins/viewplugins/group"/>
-      </component>
-      <component id="mpxplugins_build" filter="s60" name="MPX Plugins Build">
-      	<!--  can the exports be distributed to the above components?  -->
-        <unit bldFile="mpxplugins/group"/>
-      </component>
-    </collection>
-    <collection id="musicplayer_info" name="Music Player Apps Info" level="app">
-      <component id="musicplayer_build" filter="s60" name="Music Player Build">
-      	<!-- should explicitly #inlcude musicplayerbldvariant.hrh in each component  -->
-        <unit bldFile="group"/>
-      </component>
-      <component id="musicplayer_plat" filter="s60" name="Music Player Apps Platform Interfaces" class="api">
-        <unit bldFile="musicplayer_plat/group"/>
-      </component>
-      <component id="musicplayer_test" filter="s60,test,pref_test,api_test" purpose="development" name="Music Player Apps Test">
-		<unit bldFile="tsrc/group"/>
-      </component>
-    </collection>
-  </package>
+ <package id="musicplayer" name="Music Player Apps" levels="plugins support hs app">
+  <collection id="musicplayer_plat" name="Music Player Apps Platform Interfaces" level="app">
+   <component id="mpx_music_player_app_api" name="MPX Music Player App API" class="api" filter="s60">
+    <meta rel="Api" href="musicplayer_plat/mpx_music_player_app_api/mpx_music_player_app_api.metaxml"/>
+    <unit bldFile="musicplayer_plat/mpx_music_player_app_api/group"/>
+   </component>
+   <component id="mpx_music_player_commonui_api" name="MPX Music Player Common UI API" class="api" filter="s60">
+    <meta rel="Api" href="musicplayer_plat/mpx_music_player_commonui_api/mpx_music_player_commonui_api.metaxml"/>
+    <unit bldFile="musicplayer_plat/mpx_music_player_commonui_api/group"/>
+   </component>
+   <component id="mpx_music_player_media_key_handler_api" name="MPX Music Player Media Key Handler API" class="api" filter="s60">
+    <meta rel="Api" href="musicplayer_plat/mpx_music_player_media_key_handler_api/mpx_music_player_media_key_handler_api.metaxml"/>
+    <unit bldFile="musicplayer_plat/mpx_music_player_media_key_handler_api/group"/>
+   </component>
+   <component id="mpx_music_player_remote_control_api" name="MPX Music Player Remote Control API" class="api" filter="s60">
+    <meta rel="Api" href="musicplayer_plat/mpx_music_player_remote_control_api/mpx_music_player_remote_control_api.metaxml"/>
+    <unit bldFile="musicplayer_plat/mpx_music_player_remote_control_api/group"/>
+   </component>
+   <component id="mpx_music_shop_ui_api" name="MPX Music Shop UI API" class="api" filter="s60">
+    <meta rel="Api" href="musicplayer_plat/mpx_music_shop_ui_api/mpx_music_shop_ui_api.metaxml"/>
+    <unit bldFile="musicplayer_plat/mpx_music_shop_ui_api/group"/>
+   </component>
+   <component id="mpx_music_wap_adapter_cenrep_api" name="MPX Music Wap Adapter CenRep API" class="api" filter="s60">
+    <meta rel="Api" href="musicplayer_plat/mpx_music_wap_adapter_cenrep_api/mpx_music_wap_adapter_cenrep_api.metaxml"/>
+    <unit bldFile="musicplayer_plat/mpx_music_wap_adapter_cenrep_api/group"/>
+   </component>
+   <component id="mpx_music_store_api" name="MPX Music Store Find API" class="api" filter="s60">
+    <meta rel="Api" href="musicplayer_plat/mpx_music_store_api/mpx_music_store_api.metaxml"/>
+    <unit bldFile="musicplayer_plat/mpx_music_store_api/group"/>
+   </component>
+   <component id="audio_application_features_api" name="Audio Application Features API" class="api" filter="s60">
+    <meta rel="Api" href="musicplayer_plat/audio_application_features_api/audio_application_features_api.metaxml"/>
+    <unit bldFile="musicplayer_plat/audio_application_features_api/group"/>
+   </component>
+   <component id="music_content_publisher_plugin_api" name="Music Content Publisher Plugin API" class="api" filter="s60">
+    <meta rel="Api" href="musicplayer_plat/music_content_publisher_plugin_api/music_content_publisher_plugin_api.metaxml"/>
+    <unit bldFile="musicplayer_plat/music_content_publisher_plugin_api/group"/>
+   </component>
+  </collection>
+  <collection id="mpxmusicplayer" name="MPX Music Player" level="app">
+   <component id="mpxmusicplayer_help" filter="s60" name="Help">
+    <unit bldFile="mpxmusicplayer/help/group"/>
+   </component>
+   <component id="mpxmusicplayer_commonui" filter="s60" name="MPX Common UI">
+    <unit bldFile="mpxmusicplayer/commonui/group"/>
+   </component>
+   <component id="mpx_metadatahandler" filter="s60" name="MPX Metadata Handler">
+    <unit bldFile="mpxmusicplayer/metadatahandler/group"/>
+   </component>
+   <component id="mediakeyhandler" filter="s60" name="MPX Media Key Handler">
+    <unit bldFile="mpxmusicplayer/mediakeyhandler/group"/>
+   </component>
+   <component id="mpxmusicplayer_app" filter="s60" name="MPX Application">
+    <unit bldFile="mpxmusicplayer/app/group"/>
+   </component>
+   <component id="mpxmusicplayer_build" filter="s60" name="MPX Music Player Build">
+    <!--  can the exports be distributed to the above components?  -->
+    <unit bldFile="mpxmusicplayer/group"/>
+   </component>
+  </collection>
+  <collection id="musichomescreen_multiview" name="Music Home Screen Multiview" level="hs">
+   <meta rel="config">
+    <defined condition="IAD_INCLUDE_ENHANCED_HOMESCREEN"/>
+   </meta>
+   <!-- Uncomment all units when configuration is in place. All currently #included from musichomescreen_build -->
+   <component id="mpxcollectionpublisher" filter="s60" name="MPX Collection Publisher" introduced="^2">
+    <!--<unit bldFile="musichomescreen_multiview/mpxcollectionpublisher/group"/>-->
+   </component>
+   <component id="musiccontentpublisher" filter="s60" name="Music Content Publisher" introduced="^2">
+    <!--<unit bldFile="musichomescreen_multiview/musiccontentpublisher/group"/>-->
+   </component>
+   <component id="mcpmusicplayer" filter="s60" name="Music Player MCP Plugin" class="plugin" introduced="^2">
+    <!--<unit bldFile="musichomescreen_multiview/mcpmusicplayer/group"/>-->
+   </component>
+   <component id="musicplayeractionhandlerplugin" filter="s60" name="Music Player Action Handler Plugin" class="plugin" introduced="^2">
+    <!--<unit bldFile="musichomescreen_multiview/musicplayeractionhandlerplugin/group"/>-->
+   </component>
+   <component id="mpx_data" filter="s60" name="MPX Data" introduced="^2">
+    <!-- does this make sense to be a component? should it just be #include from musichomescreen_multiview/group? -->
+    <!--<unit bldFile="musichomescreen_multiview/data/themes/default/group"/>-->
+   </component>
+   <component id="musichomescreen_build" filter="s60" name="Music Homescreen Multiview Build" introduced="^2">
+    <unit bldFile="musichomescreen_multiview/group"/>
+   </component>
+  </collection>
+  <collection id="mpxplugins" name="MPX Plugins" level="plugins">
+   <component id="serviceplugins" filter="s60" name="MPX Service Plugins" class="plugin">
+    <unit bldFile="mpxplugins/serviceplugins/group"/>
+   </component>
+   <component id="viewplugins" filter="s60" name="MPX View Plugins" class="plugin">
+    <unit bldFile="mpxplugins/viewplugins/group"/>
+   </component>
+   <component id="mpxplugins_build" filter="s60" name="MPX Plugins Build">
+    <!--  can the exports be distributed to the above components?  -->
+    <unit bldFile="mpxplugins/group"/>
+   </component>
+  </collection>
+  <collection id="musicplayer_info" name="Music Player Apps Info" level="app">
+   <component id="musicplayer_build" filter="s60" name="Music Player Build">
+    <!-- should explicitly #inlcude musicplayerbldvariant.hrh in each component  -->
+    <unit bldFile="group"/>
+   </component>
+   <component id="musicplayer_test" filter="s60,test,pref_test,api_test" purpose="development" name="Music Player Apps Test">
+    <unit bldFile="tsrc/group"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>

@@ -77,6 +77,22 @@
   <systemModel>
     <layer name="os" long-name="OS" levels="hw services">
       <block name="textandloc" level="services" long-name="Text and Localisation Services" levels="encoding util fonts tools text">
+        <collection name="textandloc_plat" long-name="Text and Localisation Platform Interfaces" level="text">
+          <component name="findutil_api" long-name="Find Utility API" filter="s60" class="api">
+            <unit bldFile="/sf/os/textandloc/textandloc_plat/findutil_api/group"/>
+          </component>
+          <component name="japanese_language_utilities_api" long-name="Japanese Language Utilities API" filter="s60" class="api">
+            <unit bldFile="/sf/os/textandloc/textandloc_plat/japanese_language_utilities_api/group"/>
+          </component>
+          <component name="sortutil_api" long-name="Sorting Utility API" filter="s60" class="api">
+            <unit bldFile="/sf/os/textandloc/textandloc_plat/sortutil_api/group"/>
+          </component>
+        </collection>
+        <collection name="textandloc_pub" long-name="Text and Localisation Public Interfaces" level="text">
+          <component name="directory_localizer_api" long-name="Directory Localizer API" filter="s60" class="api">
+            <unit bldFile="/sf/os/textandloc/textandloc_pub/directory_localizer_api/group"/>
+          </component>
+        </collection>
         <collection name="charconvfw" long-name="Character Conversion" level="encoding">
           <component name="charconv_fw" long-name="Character Encoding and Conversion Framework" purpose="optional">
             <unit bldFile="/sf/os/textandloc/charconvfw/charconv_fw/group" mrp="/sf/os/textandloc/charconvfw/charconv_fw/group/syslibs_charconv.mrp"/>
@@ -155,12 +171,6 @@
           </component>
         </collection>
         <collection name="textandloc_info" long-name="Text and Localisation Info" level="text">
-          <component name="textandloc_pub" filter="s60" long-name="Text and Localisation Public Interfaces" class="api">
-            <unit bldFile="/sf/os/textandloc/textandloc_pub/group"/>
-          </component>
-          <component name="textandloc_plat" filter="s60" long-name="Text and Localisation Platform Interfaces" class="api">
-            <unit bldFile="/sf/os/textandloc/textandloc_plat/group"/>
-          </component>
           <component name="textandloc_metadata" long-name="Text and Localisation Metadata" introduced="^2" purpose="development" class="config PC">
             <unit mrp="/sf/os/textandloc/textandloc_info/textandloc_metadata/textandloc_metadata.mrp"/>
           </component>

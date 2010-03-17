@@ -1,41 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="hapticsservices" name="Haptics Services" levels="fw server api">
-    <collection id="tacticonserver" name="Tacticon Server" level="server">
-    <!-- collection is really a component. Move down a directory  -->
-      <component id="tacticonserver_build" filter="s60" name="Tacticon Server Build" introduced="^3">
-        <unit bldFile="tacticonserver/group"/>
-        <!-- clients and servers are suauly the same component. Consider moving pluign to a separate component if needed -->
-      </component>
-    </collection>
-    <collection id="tactilefeedback" name="Tactile Feedback" level="fw">
-      <component id="tactilearearegistry" filter="s60" name="Tactile Area Registry" introduced="^1">
-        <unit bldFile="tactilefeedback/tactilearearegistry/group"/>
-      </component>
-      <component id="tactilefeedbackresolver" filter="s60" name="Tactile Feedback Resolver" introduced="^1">
-        <unit bldFile="tactilefeedback/tactilefeedbackresolver/group"/>
-      </component>
-      <component id="tactileclickplugin" filter="s60" name="Tactile Click Plugin" class="plugin" introduced="^1">
-        <unit bldFile="tactilefeedback/tactileclickplugin/group"/>
-      </component>      
-      <component id="tactilefeedbackclient" filter="s60" name="Tactile Feedback Client" introduced="^1">
-        <unit bldFile="tactilefeedback/tactilefeedbackclient/group"/>
-      </component>
-      <component id="tactileactionplugin" filter="s60" name="Tactile Action Plugin" class="plugin" introduced="^1">
-        <unit bldFile="tactilefeedback/tactileactionplugin/group"/>
-      </component>      
-      <component id="tactilefeedback_build" filter="s60" name="Tactile Feedback Build" introduced="^1">
-		<!-- consider moving IBY to one fo the above components -->
-        <unit bldFile="tactilefeedback/group"/>
-      </component>
-    </collection>
-    <collection id="hapticsservices_info" name="Haptics Services Info" level="api">
-      <component id="hapticsservices_pub" filter="s60" name="Haptics Services Public Interfaces" class="api" introduced="^1">
-        <unit bldFile="hapticsservices_pub/group"/>
-      </component>
-      <component id="hapticsservices_plat" filter="s60" name="Haptics Services Platform Interfaces" class="api" introduced="^1">
-        <unit bldFile="hapticsservices_plat/group"/>
-      </component>
-    </collection>
-  </package>
+ <package id="hapticsservices" name="Haptics Services" levels="fw server api">
+  <collection id="hapticsservices_plat" name="Haptics Services Platform Interfaces" level="api">
+   <component id="tacticon_api" name="Tacticon API" introduced="^1" class="api" filter="s60">
+    <meta rel="Api" href="hapticsservices_plat/tacticon_api/tacticon_api.metaxml"/>
+    <unit bldFile="hapticsservices_plat/tacticon_api/group"/>
+   </component>
+   <component id="tactile_feedback_core_api" name="Tactile Feedback Core API" introduced="^1" class="api" filter="s60">
+    <meta rel="Api" href="hapticsservices_plat/tactile_feedback_core_api/tactile_feedback_core_api.metaxml"/>
+    <unit bldFile="hapticsservices_plat/tactile_feedback_core_api/group"/>
+   </component>
+   <component id="tactile_feedback_server_api" name="Tactile Feedback Server API" introduced="^1" class="api" filter="s60">
+    <meta rel="Api" href="hapticsservices_plat/tactile_feedback_server_api/tactile_feedback_server_api.metaxml"/>
+    <unit bldFile="hapticsservices_plat/tactile_feedback_server_api/group"/>
+   </component>
+  </collection>
+  <collection id="hapticsservices_pub" name="Haptics Services Public Interfaces" level="api">
+   <component id="tactile_feedback_client_api" name="Tactile Feedback Client API" introduced="^1" class="api" filter="s60">
+    <meta rel="Api" href="hapticsservices_pub/tactile_feedback_client_api/tactile_feedback_client_api.metaxml"/>
+    <unit bldFile="hapticsservices_pub/tactile_feedback_client_api/group"/>
+   </component>
+  </collection>
+  <collection id="tacticonserver" name="Tacticon Server" level="server">
+   <!-- collection is really a component. Move down a directory  -->
+   <component id="tacticonserver_build" filter="s60" name="Tacticon Server Build" introduced="^3">
+    <unit bldFile="tacticonserver/group"/>
+    <!-- clients and servers are suauly the same component. Consider moving pluign to a separate component if needed -->
+   </component>
+  </collection>
+  <collection id="tactilefeedback" name="Tactile Feedback" level="fw">
+   <component id="tactilearearegistry" filter="s60" name="Tactile Area Registry" introduced="^1">
+    <unit bldFile="tactilefeedback/tactilearearegistry/group"/>
+   </component>
+   <component id="tactilefeedbackresolver" filter="s60" name="Tactile Feedback Resolver" introduced="^1">
+    <unit bldFile="tactilefeedback/tactilefeedbackresolver/group"/>
+   </component>
+   <component id="tactileclickplugin" filter="s60" name="Tactile Click Plugin" class="plugin" introduced="^1">
+    <unit bldFile="tactilefeedback/tactileclickplugin/group"/>
+   </component>
+   <component id="tactilefeedbackclient" filter="s60" name="Tactile Feedback Client" introduced="^1">
+    <unit bldFile="tactilefeedback/tactilefeedbackclient/group"/>
+   </component>
+   <component id="tactileactionplugin" filter="s60" name="Tactile Action Plugin" class="plugin" introduced="^1">
+    <unit bldFile="tactilefeedback/tactileactionplugin/group"/>
+   </component>
+   <component id="tactilefeedback_build" filter="s60" name="Tactile Feedback Build" introduced="^1">
+    <!-- consider moving IBY to one fo the above components -->
+    <unit bldFile="tactilefeedback/group"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>

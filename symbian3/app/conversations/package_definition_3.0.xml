@@ -1,94 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="conversations" name="Conversation Apps" levels="settings utils plugin ui">
-    <collection id="uiservicetabsettings" name="UI Service Tab Settings" level="settings">
-    	<!-- this is really at the wrong rank. should move down a directory -->
-      <component id="vimpstsettings" filter="s60" name="VIMP Service Tab Settings">
-        <unit bldFile="uiservicetabsettings/group"/>
-      </component>
-    </collection>
-    <collection id="instantmessagesalert" name="Instant Messages Alert" level="utils">
-    	<!-- this is really at the wrong rank. should move down a directory -->
-      <component id="instantmessagesalert_build" filter="s60" name="Instant Messages Alert build" introduced="^3">
-        <unit bldFile="instantmessagesalert/group"/>
-      </component>
-    </collection>
-    <collection id="imstutils" name="IM Service Tab Utils" level="utils">
-      <component id="imstutils_help" filter="s60" name="IM Service Tab Help">
-        <unit bldFile="imstutils/help/group"/>
-      </component>
-      <component id="imconnectionprovider" filter="s60" name="IM Connection Provider" class="plugin">
-        <unit bldFile="imstutils/imconnectionprovider/group"/>
-      </component>
-      <component id="xmppadapter" filter="s60" name="XMPP Settings Adapter" class="plugin">
-        <unit bldFile="imstutils/xmppadapter/group"/>
-      </component>
-      <component id="imconversationview" filter="s60" name="IM Conversation View">
-        <unit bldFile="imstutils/imconversationview/group"/>
-      </component>
-      <component id="imstutils_config" filter="s60" name="IM Service Tab Utils config" class="config">
-      	<!-- remove the #includes and or moved ithe loc file into one the above components -->
-        <unit bldFile="imstutils/group"/>
-      </component>
-    </collection>
-    <collection id="uiservicetab" name="UI Service Tab" level="ui">
-      <component id="vimpstutils" filter="s60" name="VIMP Service Tab Utilities">
-      	<!-- need to spell out VIMP at least once -->
-        <unit bldFile="uiservicetab/vimpstutils/group"/>
-      </component>
-      <component id="vimpststorage" filter="s60" name="VIMP Service Tab Storage">
-        <unit bldFile="uiservicetab/vimpststorage/group"/>
-      </component>
-      <component id="vimpstengine" filter="s60" name="VIMP Service Tab Engine">
-        <unit bldFile="uiservicetab/vimpstengine/group"/>
-      </component>
-      <component id="vimpstcmdprocess" filter="s60" name="VIMP Service Tab Command Process">
-        <unit bldFile="uiservicetab/vimpstcmdprocess/group"/>
-      </component>
-      <component id="vimpstui" filter="s60" name="VIMP Service Tab UI">
-        <unit bldFile="uiservicetab/vimpstui/group"/>
-      </component>
-      <component id="vimpstdetailsviewplugin" filter="s60" name="VIMP ST Details View Plugin" class="plugin">
-        <unit bldFile="uiservicetab/vimpstdetailsviewplugin/group"/>
-      </component>
-      <component id="uiservicetab_build" filter="s60" name="UI Service Tab Build">
-      	<!-- can this be distributed into the above bld.infs? -->
-        <unit bldFile="uiservicetab/group"/>
-      </component>
-    </collection>
-    <collection id="servicewidget" name="Service Widget" level="ui">
-      <component id="servicewidgetdatapublisher" filter="s60" name="Service Widget Data Publisher" class="plugin">
-        <unit bldFile="servicewidget/servicewidgetdatapublisher/group"/>
-      </component>
-      <component id="themes" filter="s60" name="Service Widget Themes" class="config">
-		<!-- does this really need to have that number in the directory name? -->
-        <unit bldFile="servicewidget/themes/install-themes/install/servicewidget_20021383/group"/>
-      </component>
-      <component id="servicewidget_build" filter="s60" name="Service Widget Build">
-      	<!-- Either move the whole collection down one directory into a single component, or move the ROM and SIS parts into a Service Widget ROM component -->
-        <unit bldFile="servicewidget/group"/>
-      </component>
-    </collection>
-    <collection id="instantmsgindicatorplugin" name="Instant Message Indicator Plugin" level="plugin">
-    	<!--  collection is really a component. should move down a directory -->
-      <component id="instantmsgindicatorplugin_build" filter="s60" name="Instant Message Indicator Plugin Build" class="plugin" introduced="^3">
-        <unit bldFile="instantmsgindicatorplugin/group"/>
-      </component>
-    </collection>
-    <collection id="imstatuspaneindicatorplugin" name="IM Status Pane Indicator Plugin" level="plugin">
-    	<!--  collection is really a component. should move down a directory -->
-      <component id="imstatuspaneindicatorplugin_build" filter="s60" name="IM Status Pane Indicator Plugin Build" class="plugin"  introduced="^3">
-        <unit bldFile="imstatuspaneindicatorplugin/group"/>
-      </component>
-    </collection>
-    <collection id="conversations_info" name="Conversation Apps Info" level="ui">
-      <component id="conversations_plat" filter="s60" name="Conversation Apps Platform Interfaces" class="api">
-        <unit bldFile="conversations_plat/group"/>
-      </component>
-      <component id="conversations_build" filter="s60" name="Conversation Apps Build">
-      	<!-- can the exports be moved to other components? or this remade into a configuration component?-->
-        <unit bldFile="group"/>
-      </component>
-    </collection>
-  </package>
+ <package id="conversations" name="Conversation Apps" levels="settings utils plugin ui">
+  <collection id="conversations_plat" name="Conversation Apps Platform Interfaces" level="ui">
+   <component id="im_cv_launcher_api" name="IM CV Launcher API" class="api" filter="s60">
+    <meta rel="Api" href="conversations_plat/im_cv_launcher_api/im_cv_launcher_api.metaxml"/>
+    <unit bldFile="conversations_plat/im_cv_launcher_api/group"/>
+   </component>
+   <component id="im_connection_api" name="IM Connection API" class="api" filter="s60">
+    <meta rel="Api" href="conversations_plat/im_connection_api/im_connection_api.metaxml"/>
+    <unit bldFile="conversations_plat/im_connection_api/group"/>
+   </component>
+   <component id="im_cv_appui_api" name="IM CV App UI API" class="api" filter="s60">
+    <unit bldFile="conversations_plat/im_cv_appui_api/group"/>
+   </component>
+  </collection>
+  <collection id="uiservicetabsettings" name="UI Service Tab Settings" level="settings">
+   <!-- this is really at the wrong rank. should move down a directory -->
+   <component id="vimpstsettings" filter="s60" name="VIMP Service Tab Settings">
+    <unit bldFile="uiservicetabsettings/group"/>
+   </component>
+  </collection>
+  <collection id="instantmessagesalert" name="Instant Messages Alert" level="utils">
+   <!-- this is really at the wrong rank. should move down a directory -->
+   <component id="instantmessagesalert_build" filter="s60" name="Instant Messages Alert build" introduced="^3">
+    <unit bldFile="instantmessagesalert/group"/>
+   </component>
+  </collection>
+  <collection id="imstutils" name="IM Service Tab Utils" level="utils">
+   <component id="imstutils_help" filter="s60" name="IM Service Tab Help">
+    <unit bldFile="imstutils/help/group"/>
+   </component>
+   <component id="imconnectionprovider" filter="s60" name="IM Connection Provider" class="plugin">
+    <unit bldFile="imstutils/imconnectionprovider/group"/>
+   </component>
+   <component id="xmppadapter" filter="s60" name="XMPP Settings Adapter" class="plugin">
+    <unit bldFile="imstutils/xmppadapter/group"/>
+   </component>
+   <component id="imconversationview" filter="s60" name="IM Conversation View">
+    <unit bldFile="imstutils/imconversationview/group"/>
+   </component>
+   <component id="imstutils_config" filter="s60" name="IM Service Tab Utils config" class="config">
+    <!-- remove the #includes and or moved ithe loc file into one the above components -->
+    <unit bldFile="imstutils/group"/>
+   </component>
+  </collection>
+  <collection id="uiservicetab" name="UI Service Tab" level="ui">
+   <component id="vimpstutils" filter="s60" name="VIMP Service Tab Utilities">
+    <!-- need to spell out VIMP at least once -->
+    <unit bldFile="uiservicetab/vimpstutils/group"/>
+   </component>
+   <component id="vimpststorage" filter="s60" name="VIMP Service Tab Storage">
+    <unit bldFile="uiservicetab/vimpststorage/group"/>
+   </component>
+   <component id="vimpstengine" filter="s60" name="VIMP Service Tab Engine">
+    <unit bldFile="uiservicetab/vimpstengine/group"/>
+   </component>
+   <component id="vimpstcmdprocess" filter="s60" name="VIMP Service Tab Command Process">
+    <unit bldFile="uiservicetab/vimpstcmdprocess/group"/>
+   </component>
+   <component id="vimpstui" filter="s60" name="VIMP Service Tab UI">
+    <unit bldFile="uiservicetab/vimpstui/group"/>
+   </component>
+   <component id="vimpstdetailsviewplugin" filter="s60" name="VIMP ST Details View Plugin" class="plugin">
+    <unit bldFile="uiservicetab/vimpstdetailsviewplugin/group"/>
+   </component>
+   <component id="uiservicetab_build" filter="s60" name="UI Service Tab Build">
+    <!-- can this be distributed into the above bld.infs? -->
+    <unit bldFile="uiservicetab/group"/>
+   </component>
+  </collection>
+  <collection id="servicewidget" name="Service Widget" level="ui">
+   <component id="servicewidgetdatapublisher" filter="s60" name="Service Widget Data Publisher" class="plugin">
+    <unit bldFile="servicewidget/servicewidgetdatapublisher/group"/>
+   </component>
+   <component id="themes" filter="s60" name="Service Widget Themes" class="config">
+    <!-- does this really need to have that number in the directory name? -->
+    <unit bldFile="servicewidget/themes/install-themes/install/servicewidget_20021383/group"/>
+   </component>
+   <component id="servicewidget_build" filter="s60" name="Service Widget Build">
+    <!-- Either move the whole collection down one directory into a single component, or move the ROM and SIS parts into a Service Widget ROM component -->
+    <unit bldFile="servicewidget/group"/>
+   </component>
+  </collection>
+  <collection id="instantmsgindicatorplugin" name="Instant Message Indicator Plugin" level="plugin">
+   <!--  collection is really a component. should move down a directory -->
+   <component id="instantmsgindicatorplugin_build" filter="s60" name="Instant Message Indicator Plugin Build" class="plugin" introduced="^3">
+    <unit bldFile="instantmsgindicatorplugin/group"/>
+   </component>
+  </collection>
+  <collection id="imstatuspaneindicatorplugin" name="IM Status Pane Indicator Plugin" level="plugin">
+   <!--  collection is really a component. should move down a directory -->
+   <component id="imstatuspaneindicatorplugin_build" filter="s60" name="IM Status Pane Indicator Plugin Build" class="plugin" introduced="^3">
+    <unit bldFile="imstatuspaneindicatorplugin/group"/>
+   </component>
+  </collection>
+  <collection id="conversations_info" name="Conversation Apps Info" level="ui">
+   <component id="conversations_build" filter="s60" name="Conversation Apps Build">
+    <!-- can the exports be moved to other components? or this remade into a configuration component?-->
+    <unit bldFile="group"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>

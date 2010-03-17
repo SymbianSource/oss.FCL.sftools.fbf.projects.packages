@@ -1,117 +1,332 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="contacts" name="Contacts Apps" levels="engine support services ui">
-    <collection id="contactextensions" name="Contacts Extensions" level="services">
-      <component id="predefinedcontacts" filter="s60" name="Predefined Contacts">
-        <unit bldFile="contactextensions/predefinedcontacts/group"/>
-      </component>
-    </collection>
-    <collection id="logsui" name="Logs UI" level="ui">
-      <component id="logsui_build" filter="s60" name="Logs UI Build">
-          <!-- component at too high a rank, should move down one directory -->
-        <unit bldFile="logsui/group"/>
-      </component>
-    </collection>
-    <collection id="phonebookui" name="Phonebook UI" level="ui">
-      <component id="phonebook" filter="s60" name="Phonebook">
-        <unit bldFile="phonebookui/phonebook/group"/>
-      </component>
-      <component id="speeddial" filter="s60" name="Speed Dial">
-        <unit bldFile="phonebookui/speeddial/group"/>
-      </component>
-      <component id="phonebook2" filter="s60" name="Phone Book 2">
-        <unit bldFile="phonebookui/phonebook2/group"/>
-      </component>
-    </collection>
-    <collection id="phonebookengines" name="Phonebook Engines" level="engine">
-      <component id="cntfindplugin" filter="s60" name="Contacts Find Plugin" class="plugin" introduced="^2">
-        <unit bldFile="phonebookengines/cntfindplugin/group"/>
-      </component>
-      <component id="cntsortplugin" filter="s60" name="Contacts Sort Plugin" class="plugin" introduced="^2">
-        <unit bldFile="phonebookengines/cntsortplugin/group"/>
-      </component>
-      <component id="virtualphonebook" filter="s60" name="Virtual Phonebook" introduced="^2">
-        <unit bldFile="phonebookengines/virtualphonebook/group"/>
-      </component>
-      <component id="contactsmodel" name="Contacts Model" introduced="ER5" purpose="optional">
-        <unit version="2" bldFile="phonebookengines/contactsmodel/groupsql" mrp="phonebookengines/contactsmodel/groupsql/app-engines_cntmodel.mrp"/>
-      </component>
-    </collection>
-    <collection id="pimprotocols" name="PIM Protocols" level="services">
-      <component id="phonebooksync" name="Phonebook Sync" purpose="optional" class="plugin">
-        <unit bldFile="pimprotocols/phonebooksync/group" mrp="pimprotocols/phonebooksync/group/telephony_phbksync.mrp"/>
-      </component>
-      <component id="pbap" name="Bluetooth PBAP" introduced="9.2" purpose="optional">
-        <unit bldFile="pimprotocols/pbap/group" mrp="pimprotocols/pbap/group/bluetooth_accesshost.mrp"/>
-      </component>
-    </collection>
-    <collection id="ccservices" name="Contacts Centric Services" level="services">
-      <component id="cmsservices" filter="s60" name="Contact Method Selector Services" introduced="^2">
-        <unit bldFile="ccservices/cmsservices/group"/>
-      </component>
-    </collection>
-    <collection id="presencecache" name="Presence Cache" level="support">
-      <component id="presencecacheutils" filter="s60" name="Presence Cache Utils" introduced="^2">
-        <!-- <unit bldFile="presencecache/presencecacheutils/group"/> -->
-      </component>
-      <component id="presencecacheserver2" filter="s60" name="Presence Cache Server" introduced="^2">
-        <!-- <unit bldFile="presencecache/presencecacheserver2/group"/> -->
-      </component>
-      <component id="presencecacheclient2" filter="s60" name="Presence Cache Client" introduced="^2">
-        <!-- <unit bldFile="presencecache/presencecacheclient2/group"/> -->
-      </component>
-      <component id="presencecache_build" filter="s60" name="Presence Cache Build" introduced="^2">
-		<!-- should divide this bld.inf into the other components, or collapse them into a single component -->
-        <unit bldFile="presencecache/group"/>
-      </component>
-    </collection>
-    <collection id="predictivesearch" name="Predictive Search" level="support">
-      <component id="pcsutils" filter="s60" name="PCS Utils" introduced="^2">
-        <unit bldFile="predictivesearch/pcsutils/group"/>
-      </component>
-      <component id="pcsserverclientapi" filter="s60" name="PCS Server Client API" introduced="^2">
-        <unit bldFile="predictivesearch/pcsserverclientapi/group"/>
-      </component>
-      <component id="pcsserver" filter="s60" name="PCS Server" introduced="^2">
-        <unit bldFile="predictivesearch/pcsserver/group"/>
-      </component>
-      <component id="pcsadapters" filter="s60" name="PCS Adapters" class="plugin" introduced="^2">
-        <unit bldFile="predictivesearch/adapters/contacts/group"/>
-      </component>
-      <component id="pcsalgorithm" filter="s60" name="PCS Algorithm" class="plugin" introduced="^2">
-        <unit bldFile="predictivesearch/pcsalgorithm/group"/>
-      </component>
-      <component id="predictivesearch_build" filter="s60" name="Predictive Search Build" introduced="^2">
-      	<!-- need to remove #includes from bld.inf and rename as Predictive Search ROM -->
-        <unit bldFile="predictivesearch/group"/>
-      </component>
-    </collection>
-    <collection id="contacts_info" name="Contacts Apps Info" level="ui">
-      <component id="contacts_plat" filter="s60" name="Contacts Apps Platform Interfaces" class="api">
-        <unit bldFile="contacts_plat/group"/>
-      </component>
-     <component id="contacts_plat_test" filter="s60,test,api_test" name="Contacts Apps Platform API Test">
-		<!-- can only have one unit. Use common bld.inf? -->
-       <unit bldFile="contacts_plat/cca_launch_api/tsrc/group" />
-       <unit bldFile="contacts_plat/cca_view_plugin_api/tsrc/group" />
-       <unit bldFile="contacts_plat/contactpresence_api/tsrc/group" />
-       <unit bldFile="contacts_plat/presence_cache_api/tsrc/group" />
-       <unit bldFile="contacts_plat/virtual_phonebook_policy_api/tsrc/group" />
-       <unit bldFile="contacts_plat/virtual_phonebook_sim_services_api/tsrc/group" />        
-       <unit bldFile="contacts_plat/virtual_phonebook_store_api/tsrc/group" />        
-       <unit bldFile="contacts_plat/virtual_phonebook_vcard_api/tsrc/group" />        
-       <unit bldFile="contacts_plat/virtual_phonebook_view_definition_api/tsrc/group" />     
-       <unit bldFile="contacts_plat/virtual_phonebook_engine_api/tsrc/group" />     
-       <unit bldFile="contacts_plat/predictivesearch_client_api/tsrc/group" />        
-       <unit bldFile="contacts_plat/predictivesearch_utils_api/tsrc/group" />     
-       <unit bldFile="contacts_plat/phonebook_2_rcl_api/tsrc/group" />     
-     </component>
-      <component id="contacts_pub" filter="s60" name="Contacts Apps Public Interfaces" class="api">
-        <unit bldFile="contacts_pub/group"/>
-      </component>
-      <component id="contacts_metadata" name="Contacts Apps Metadata" class="config" introduced="^2" purpose="development" target="desktop">
-        <unit mrp="contacts_info/contacts_metadata/contacts_metadata.mrp"/>
-      </component>
-    </collection>
-  </package>  
+ <package id="contacts" name="Contacts Apps" levels="engine support services ui">
+  <collection id="contacts_pub" name="Contacts Apps Public Interfaces" level="ui">
+   <component id="phonebook_fetch_ui_api" name="Phonebook Fetch UI API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_pub/phonebook_fetch_ui_api/phonebook_fetch_ui_api.metaxml"/>
+    <unit bldFile="contacts_pub/phonebook_fetch_ui_api/group"/>
+   </component>
+   <component id="phonebook_data_management_api" name="Phonebook Data Management API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_pub/phonebook_data_management_api/phonebook_data_management_api.metaxml"/>
+    <unit bldFile="contacts_pub/phonebook_data_management_api/group"/>
+   </component>
+   <component id="phonebook_vcard_importexport_api" name="Phonebook vCard Import/Export API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_pub/phonebook_vcard_importexport_api/phonebook_vcard_importexport_api.metaxml"/>
+    <unit bldFile="contacts_pub/phonebook_vcard_importexport_api/group"/>
+   </component>
+   <component id="phonebook_data_addedit_ui_api" name="Phonebook Data Add/Edit UI API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_pub/phonebook_data_addedit_ui_api/phonebook_data_addedit_ui_api.metaxml"/>
+    <unit bldFile="contacts_pub/phonebook_data_addedit_ui_api/group"/>
+   </component>
+   <component id="phonebook_ui_utilities_api" name="Phonebook UI Utilities API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_pub/phonebook_ui_utilities_api/phonebook_ui_utilities_api.metaxml"/>
+    <unit bldFile="contacts_pub/phonebook_ui_utilities_api/group"/>
+   </component>
+   <component id="phonebook_thumbnail_operation_api" name="Phonebook Thumbnail Operation API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_pub/phonebook_thumbnail_operation_api/phonebook_thumbnail_operation_api.metaxml"/>
+    <unit bldFile="contacts_pub/phonebook_thumbnail_operation_api/group"/>
+   </component>
+   <component id="speed_dial_utility_control_api" name="Speed Dial Utility Control API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_pub/speed_dial_utility_control_api/speed_dial_utility_control_api.metaxml"/>
+    <unit bldFile="contacts_pub/speed_dial_utility_control_api/group"/>
+   </component>
+  </collection>
+  <collection id="contacts_plat" name="Contacts Apps Platform Interfaces" level="ui">
+   <component id="virtual_phonebook_store_api" name="Virtual Phonebook Store API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/virtual_phonebook_store_api/virtual_phonebook_store_api.metaxml"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_store_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_store_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="virtual_phonebook_sim_services_api" name="Virtual Phonebook SIM Services API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/virtual_phonebook_sim_services_api/virtual_phonebook_sim_services_api.metaxml"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_sim_services_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_sim_services_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="virtual_phonebook_configuration_api" name="Virtual Phonebook Configuration API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/virtual_phonebook_configuration_api/virtual_phonebook_configuration_api.metaxml"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_configuration_api/group"/>
+   </component>
+   <component id="virtual_phonebook_copy_policy_api" name="Virtual Phonebook Copy Policy API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/virtual_phonebook_copy_policy_api/virtual_phonebook_copy_policy_api.metaxml"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_copy_policy_api/group"/>
+   </component>
+   <component id="virtual_phonebook_policy_api" name="Virtual Phonebook Policy API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/virtual_phonebook_policy_api/virtual_phonebook_policy_api.metaxml"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_policy_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_policy_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="virtual_phonebook_engine_api" name="Virtual Phonebook Engine API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/virtual_phonebook_engine_api/virtual_phonebook_engine_api.metaxml"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_engine_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_engine_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="virtual_phonebook_migration_support_api" name="Virtual Phonebook Migration Support API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/virtual_phonebook_migration_support_api/virtual_phonebook_migration_support_api.metaxml"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_migration_support_api/group"/>
+   </component>
+   <component id="virtual_phonebook_view_definition_api" name="Virtual Phonebook View Definition API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/virtual_phonebook_view_definition_api/virtual_phonebook_view_definition_api.metaxml"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_view_definition_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_view_definition_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="virtual_phonebook_vcard_api" name="Virtual Phonebook vCard API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/virtual_phonebook_vcard_api/virtual_phonebook_vcard_api.metaxml"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_vcard_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_vcard_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="cms_contactor_api" name="CMS Contactor API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/cms_contactor_api/cms_contactor_api.metaxml"/>
+    <unit bldFile="contacts_plat/cms_contactor_api/group"/>
+   </component>
+   <component id="contactpresence_api" name="Contact Presence API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/contactpresence_api/contactpresence_api.metaxml"/>
+    <unit bldFile="contacts_plat/contactpresence_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/contactpresence_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="presence_cache_api" name="Presence Cache API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/presence_cache_api/presence_cache_api.metaxml"/>
+    <unit bldFile="contacts_plat/presence_cache_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/presence_cache_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="phonebook_internal_common_api" name="Phonebook Internal Common API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_internal_common_api/phonebook_internal_common_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_internal_common_api/group"/>
+   </component>
+   <component id="phonebook_internal_appfw_api" name="Phonebook Internal App Framework API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_internal_appfw_api/phonebook_internal_appfw_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_internal_appfw_api/group"/>
+   </component>
+   <component id="phonebook_internal_data_management_api" name="Phonebook Internal Data Management API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_internal_data_management_api/phonebook_internal_data_management_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_internal_data_management_api/group"/>
+   </component>
+   <component id="phonebook_2_xsp_extension_manager_api" name="Phonebook 2 xSP Extension Manager API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_2_xsp_extension_manager_api/phonebook_2_xsp_extension_manager_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_2_xsp_extension_manager_api/group"/>
+   </component>
+   <component id="phonebook_ui_controls_api" name="Phonebook UI Controls API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_ui_controls_api/phonebook_ui_controls_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_ui_controls_api/group"/>
+   </component>
+   <component id="phonebook_2_image_management_api" name="Phonebook 2 Image Management API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_2_image_management_api/phonebook_2_image_management_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_2_image_management_api/group"/>
+   </component>
+   <component id="phonebook_extension_api" name="Phonebook Extension API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_extension_api/phonebook_extension_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_extension_api/group"/>
+   </component>
+   <component id="phonebook_public_constants_api" name="Phonebook Public Constants API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_public_constants_api/phonebook_public_constants_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_public_constants_api/group"/>
+   </component>
+   <component id="phonebook_internal_ui_utilities_api" name="Phonebook Internal UI Utilities API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_internal_ui_utilities_api/phonebook_internal_ui_utilities_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_internal_ui_utilities_api/group"/>
+   </component>
+   <component id="logs_engine_api_extensions" name="Logs Engine API Extensions" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/logs_engine_api_extensions/logs_engine_api_extensions.metaxml"/>
+    <unit bldFile="contacts_plat/logs_engine_api_extensions/group"/>
+   </component>
+   <component id="phonebook_thumbnails_api" name="Phonebook Thumbnails API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_thumbnails_api/phonebook_thumbnails_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_thumbnails_api/group"/>
+   </component>
+   <component id="phonebook_2_icon_api" name="Phonebook 2 Icon API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_2_icon_api/phonebook_2_icon_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_2_icon_api/group"/>
+   </component>
+   <component id="phonebook_engine_extension_api" name="Phonebook Engine Extension API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_engine_extension_api/phonebook_engine_extension_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_engine_extension_api/group"/>
+   </component>
+   <component id="phonebook_2_store_configuration_management_api" name="Phonebook 2 Store Configuration Management API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_2_store_configuration_management_api/phonebook_2_store_configuration_management_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_2_store_configuration_management_api/group"/>
+   </component>
+   <component id="logs_ui_command_line_api" name="Logs UI Command Line API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/logs_ui_command_line_api/logs_ui_command_line_api.metaxml"/>
+    <unit bldFile="contacts_plat/logs_ui_command_line_api/group"/>
+   </component>
+   <component id="speed_dial_dialogs_api" name="Speed Dial Dialogs API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/speed_dial_dialogs_api/speed_dial_dialogs_api.metaxml"/>
+    <unit bldFile="contacts_plat/speed_dial_dialogs_api/group"/>
+   </component>
+   <component id="phonebook_2_xsp_view_activation_api" name="Phonebook 2 xSP View Activation API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_2_xsp_view_activation_api/phonebook_2_xsp_view_activation_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_2_xsp_view_activation_api/group"/>
+   </component>
+   <component id="logs_timers_api" name="Logs Timers API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/logs_timers_api/logs_timers_api.metaxml"/>
+    <unit bldFile="contacts_plat/logs_timers_api/group"/>
+   </component>
+   <component id="phonebook_2_ui_extension_definition_api" name="Phonebook 2 UI Extension Definition API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_2_ui_extension_definition_api/phonebook_2_ui_extension_definition_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_2_ui_extension_definition_api/group"/>
+   </component>
+   <component id="phonebook_2_common_ui_api" name="Phonebook 2 Common UI API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_2_common_ui_api/phonebook_2_common_ui_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_2_common_ui_api/group"/>
+   </component>
+   <component id="phonebook_2_ui_extension_api" name="Phonebook 2 UI Extension API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_2_ui_extension_api/phonebook_2_ui_extension_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_2_ui_extension_api/group"/>
+   </component>
+   <component id="phonebook_2_store_property_api" name="Phonebook 2 Store Property API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_2_store_property_api/phonebook_2_store_property_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_2_store_property_api/group"/>
+   </component>
+   <component id="phonebook_2_ui_extension_plugin_api" name="Phonebook 2 UI Extension Plug-In API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_2_ui_extension_plugin_api/phonebook_2_ui_extension_plugin_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_2_ui_extension_plugin_api/group"/>
+   </component>
+   <component id="phonebook_2_ui_controls_api" name="Phonebook 2 UI Controls API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_2_ui_controls_api/phonebook_2_ui_controls_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_2_ui_controls_api/group"/>
+   </component>
+   <component id="phonebook_2_thin_ui_extension_plugin_api" name="Phonebook 2 Thin UI Extension Plugin API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_2_thin_ui_extension_plugin_api/phonebook_2_thin_ui_extension_plugin_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_2_thin_ui_extension_plugin_api/group"/>
+   </component>
+   <component id="phonebook_2_commands_api" name="Phonebook 2 Commands API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_2_commands_api/phonebook_2_commands_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_2_commands_api/group"/>
+   </component>
+   <component id="phonebook_2_presentation_api" name="Phonebook 2 Presentation API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_2_presentation_api/phonebook_2_presentation_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_2_presentation_api/group"/>
+   </component>
+   <component id="phonebook_2_ui_utilities_api" name="Phonebook 2 UI Utilities API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_2_ui_utilities_api/phonebook_2_ui_utilities_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_2_ui_utilities_api/group"/>
+   </component>
+   <component id="phonebook_2_contact_related_icon_customization_api" name="Phonebook 2 Contact Related Icon Customization API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_2_contact_related_icon_customization_api/phonebook_2_contact_related_icon_customization_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_2_contact_related_icon_customization_api/group"/>
+   </component>
+   <component id="cca_launch_api" name="CCA Launch API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/cca_launch_api/cca_launch_api.metaxml"/>
+    <unit bldFile="contacts_plat/cca_launch_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/cca_launch_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="cca_view_plugin_api" name="CCA View Plugin API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/cca_view_plugin_api/cca_view_plugin_api.metaxml"/>
+    <unit bldFile="contacts_plat/cca_view_plugin_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/cca_view_plugin_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="predictivesearch_client_api" name="Predictive Search Client API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/predictivesearch_client_api/predictivesearch_client_api.metaxml"/>
+    <unit bldFile="contacts_plat/predictivesearch_client_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/predictivesearch_client_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="predictivesearch_utils_api" name="Predictive Search Utils API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/predictivesearch_utils_api/predictivesearch_utils_api.metaxml"/>
+    <unit bldFile="contacts_plat/predictivesearch_utils_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/predictivesearch_utils_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="predictivesearch_adapters_api" name="Predictive Search Adapters API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/predictivesearch_adapters_api/predictivesearch_adapters_api.metaxml"/>
+    <unit bldFile="contacts_plat/predictivesearch_adapters_api/group"/>
+   </component>
+   <component id="predictivesearch_algorithm_api" name="Predictive Search Algorithm API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/predictivesearch_algorithm_api/predictivesearch_algorithm_api.metaxml"/>
+    <unit bldFile="contacts_plat/predictivesearch_algorithm_api/group"/>
+   </component>
+   <component id="phonebook_2_rcl_api" name="Phonebook 2 RCL API" class="api" filter="s60">
+    <meta rel="Api" href="contacts_plat/phonebook_2_rcl_api/phonebook_2_rcl_api.metaxml"/>
+    <unit bldFile="contacts_plat/phonebook_2_rcl_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/phonebook_2_rcl_api/tsrc/group" filter="test,api_test"/>
+   </component>
+  </collection>
+  <collection id="contactextensions" name="Contacts Extensions" level="services">
+   <component id="predefinedcontacts" filter="s60" name="Predefined Contacts">
+    <unit bldFile="contactextensions/predefinedcontacts/group"/>
+   </component>
+  </collection>
+  <collection id="logsui" name="Logs UI" level="ui">
+   <component id="logsui_build" filter="s60" name="Logs UI Build">
+    <!-- component at too high a rank, should move down one directory -->
+    <unit bldFile="logsui/group"/>
+   </component>
+  </collection>
+  <collection id="phonebookui" name="Phonebook UI" level="ui">
+   <component id="phonebook" filter="s60" name="Phonebook">
+    <unit bldFile="phonebookui/phonebook/group"/>
+   </component>
+   <component id="speeddial" filter="s60" name="Speed Dial">
+    <unit bldFile="phonebookui/speeddial/group"/>
+   </component>
+   <component id="phonebook2" filter="s60" name="Phone Book 2">
+    <unit bldFile="phonebookui/phonebook2/group"/>
+   </component>
+  </collection>
+  <collection id="phonebookengines" name="Phonebook Engines" level="engine">
+   <component id="cntfindplugin" filter="s60" name="Contacts Find Plugin" class="plugin" introduced="^2">
+    <unit bldFile="phonebookengines/cntfindplugin/group"/>
+   </component>
+   <component id="cntsortplugin" filter="s60" name="Contacts Sort Plugin" class="plugin" introduced="^2">
+    <unit bldFile="phonebookengines/cntsortplugin/group"/>
+   </component>
+   <component id="virtualphonebook" filter="s60" name="Virtual Phonebook" introduced="^2">
+    <unit bldFile="phonebookengines/virtualphonebook/group"/>
+   </component>
+   <component id="contactsmodel" name="Contacts Model" introduced="ER5" purpose="optional">
+    <unit version="2" bldFile="phonebookengines/contactsmodel/groupsql" mrp="phonebookengines/contactsmodel/groupsql/app-engines_cntmodel.mrp"/>
+   </component>
+  </collection>
+  <collection id="pimprotocols" name="PIM Protocols" level="services">
+   <component id="phonebooksync" name="Phonebook Sync" purpose="optional" class="plugin">
+    <unit bldFile="pimprotocols/phonebooksync/group" mrp="pimprotocols/phonebooksync/group/telephony_phbksync.mrp"/>
+   </component>
+   <component id="pbap" name="Bluetooth PBAP" introduced="9.2" purpose="optional">
+    <unit bldFile="pimprotocols/pbap/group" mrp="pimprotocols/pbap/group/bluetooth_accesshost.mrp"/>
+   </component>
+  </collection>
+  <collection id="ccservices" name="Contacts Centric Services" level="services">
+   <component id="cmsservices" filter="s60" name="Contact Method Selector Services" introduced="^2">
+    <unit bldFile="ccservices/cmsservices/group"/>
+   </component>
+  </collection>
+  <collection id="presencecache" name="Presence Cache" level="support">
+   <component id="presencecacheutils" filter="s60" name="Presence Cache Utils" introduced="^2">
+    <!-- <unit bldFile="presencecache/presencecacheutils/group"/> -->
+   </component>
+   <component id="presencecacheserver2" filter="s60" name="Presence Cache Server" introduced="^2">
+    <!-- <unit bldFile="presencecache/presencecacheserver2/group"/> -->
+   </component>
+   <component id="presencecacheclient2" filter="s60" name="Presence Cache Client" introduced="^2">
+    <!-- <unit bldFile="presencecache/presencecacheclient2/group"/> -->
+   </component>
+   <component id="presencecache_build" filter="s60" name="Presence Cache Build" introduced="^2">
+    <!-- should divide this bld.inf into the other components, or collapse them into a single component -->
+    <unit bldFile="presencecache/group"/>
+   </component>
+  </collection>
+  <collection id="predictivesearch" name="Predictive Search" level="support">
+   <component id="pcsutils" filter="s60" name="PCS Utils" introduced="^2">
+    <unit bldFile="predictivesearch/pcsutils/group"/>
+   </component>
+   <component id="pcsserverclientapi" filter="s60" name="PCS Server Client API" introduced="^2">
+    <unit bldFile="predictivesearch/pcsserverclientapi/group"/>
+   </component>
+   <component id="pcsserver" filter="s60" name="PCS Server" introduced="^2">
+    <unit bldFile="predictivesearch/pcsserver/group"/>
+   </component>
+   <component id="pcsadapters" filter="s60" name="PCS Adapters" class="plugin" introduced="^2">
+    <unit bldFile="predictivesearch/adapters/contacts/group"/>
+   </component>
+   <component id="pcsalgorithm" filter="s60" name="PCS Algorithm" class="plugin" introduced="^2">
+    <unit bldFile="predictivesearch/pcsalgorithm/group"/>
+   </component>
+   <component id="predictivesearch_build" filter="s60" name="Predictive Search Build" introduced="^2">
+    <!-- need to remove #includes from bld.inf and rename as Predictive Search ROM -->
+    <unit bldFile="predictivesearch/group"/>
+   </component>
+  </collection>
+  <collection id="contacts_info" name="Contacts Apps Info" level="ui">
+   <component id="contacts_metadata" name="Contacts Apps Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+    <unit mrp="contacts_info/contacts_metadata/contacts_metadata.mrp"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>

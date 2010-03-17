@@ -187,10 +187,6 @@
           </component>
         </collection>
         <collection name="osrndtools_info" long-name="OS R&amp;D tools Info" level="trace">
-          <component name="osrndtools_plat" filter="s60" long-name="OS R&amp;D tools Platform Interfaces" purpose="development" class="api">
-            <unit bldFile="/sf/os/osrndtools/osrndtools_plat/group"/>
-            <!-- currently empty. Remove? -->
-          </component>
           <component name="osrndtools_metadata" long-name="OS R&amp;D tools Metadata" introduced="^2" purpose="development" class="config PC">
             <unit mrp="/sf/os/osrndtools/osrndtools_info/osrndtools_metadata/osrndtools_metadata.mrp"/>
           </component>

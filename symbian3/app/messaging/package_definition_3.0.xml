@@ -1,158 +1,264 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="messaging" name="Messaging Apps" levels="mail eng base ui">
-    <collection id="mobilemessaging" name="Mobile Messaging" level="ui">
-      <component id="audiomsg" filter="s60" name="Audio Message">
-        <unit bldFile="mobilemessaging/audiomsg/group"/>
-      </component>
-      <component id="msgmedia" filter="s60" name="Message Media">
-        <unit bldFile="mobilemessaging/msgmedia/group"/>
-      </component>
-      <component id="unieditor" filter="s60" name="Unified Editor">
-        <unit bldFile="mobilemessaging/unieditor/group"/>
-      </component>
-      <component id="mmsui" filter="s60" name="MMS UI">
-        <unit bldFile="mobilemessaging/mmsui/group"/>
-      </component>
-      <component id="postcard" filter="s60" name="Postcard">
-        <unit bldFile="mobilemessaging/postcard/group"/>
-      </component>
-      <component id="smilui" filter="s60" name="SMIL UI">
-        <unit bldFile="mobilemessaging/smilui/group"/>
-      </component>
-      <component id="smum" filter="s60" name="SMS UI MTM and UI Data MTM" class="plugin">
-        <unit bldFile="mobilemessaging/smum/group"/>
-      </component>
-      <component id="smsui" filter="s60" name="SMS UI">
-        <unit bldFile="mobilemessaging/smsui/group"/>
-      </component>
-      <component id="smsmtm" name="SMS MTM" purpose="optional" class="plugin">
-        <unit bldFile="mobilemessaging/smsmtm/group" mrp="mobilemessaging/smsmtm/group/messaging_sms.mrp"/>
-      </component>
-    </collection>
-    <collection id="mmsengine" name="MMS Engine" level="eng">
-      <component id="mmsconninit" filter="s60" name="MMS Connection Initiator">
-        <!-- <unit bldFile="mmsengine/mmsconninit/bld"/> -->
-      </component>
-      <component id="genutils" filter="s60" name="General Utils">
-        <!-- <unit bldFile="mmsengine/genutils/bld"/> -->
-      </component>
-      <component id="mmsserversettings" filter="s60" name="MMS Server Settings">
-        <!-- <unit bldFile="mmsengine/mmsserversettings/bld"/> -->
-      </component>
-      <component id="mmsmessage" filter="s60" name="MMS Message">
-        <!-- <unit bldFile="mmsengine/mmsmessage/bld"/> -->
-      </component>
-      <component id="mmshttptransport" filter="s60" name="MMS HTTP Transport">
-        <!-- <unit bldFile="mmsengine/mmshttptransport/bld"/> -->
-      </component>
-      <component id="mmscodec" filter="s60" name="MMS Codec">
-        <!-- <unit bldFile="mmsengine/mmscodec/bld"/> -->
-      </component>
-      <component id="mmsserver" filter="s60" name="MMS Server">
-        <!-- <unit bldFile="mmsengine/mmsserver/bld"/> -->
-      </component>
-      <component id="clientmtm" filter="s60" name="MMS Client MTM" class="plugin">
-        <!-- <unit bldFile="mmsengine/clientmtm/bld"/> -->
-      </component>
-      <component id="mmswatcher" filter="s60" name="MMS Watcher" class="plugin">
-        <!-- <unit bldFile="mmsengine/mmswatcher/bld"/> -->
-      </component>
-      <component id="mmspushhandler" filter="s60" name="MMS Push Handler" class="plugin">
-        <!-- <unit bldFile="mmsengine/mmspushhandler/bld"/> -->
-      </component>
-      <component id="applicationadapter" filter="s60" name="MMS Application Adapter">
-        <!-- <unit bldFile="mmsengine/applicationadapter/bld"/> -->
-      </component>
-      <component id="mmscodecclient" filter="s60" name="MMS Codec Client">
-        <!-- <unit bldFile="mmsengine/mmscodecclient/bld"/> -->
-      </component>
-      <component id="mmssettings" name="MMS Settings" introduced="9.2" purpose="optional">
-        <unit bldFile="mmsengine/mmssettings/group" mrp="mmsengine/mmssettings/group/messaging_mmssettings.mrp"/>
-      </component>
-      <component id="mmsconf" name="MMS Configuration" purpose="optional">
-		<unit bldFile="mmsengine/mmsconf" mrp="mmsengine/mmsconf/messaging_mmssettings-config.mrp"/>
-      </component>
-      <component id="mmsengine_build" filter="s60" name="MMS Engine Build">
-	   <!-- this bld.inf should be broken up into the individual other components -->
-        <unit bldFile="mmsengine/group"/>
-      </component>
-    </collection>
-    <collection id="messagingappbase" name="Messaging App Base" level="base">
-      <component id="msgavkon" filter="s60" name="Messaging Avkon UI">
-        <unit bldFile="messagingappbase/msgavkon/group"/>
-      </component>
-      <component id="mce" filter="s60" name="Message Center Application">
-        <unit bldFile="messagingappbase/mce/group"/>
-      </component>
-      <component id="mceextraitems" filter="s60" name="Message Center Extra Items">
-        <unit bldFile="messagingappbase/mceextraitems/group"/>
-      </component>
-      <component id="mcesettings" filter="s60" name="Message Center Settings">
-        <unit bldFile="messagingappbase/mcesettings/group"/>
-      </component>
-      <component id="msgerrorwatcher" filter="s60" name="Messaging Error Watcher" class="plugin">
-        <unit bldFile="messagingappbase/msgerrorwatcher/group"/>
-      </component>
-      <component id="ncnlist" filter="s60" name="New Contacts Note List">
-        <unit bldFile="messagingappbase/ncnlist/group"/>
-      </component>
-      <component id="schemeplugin" filter="s60" name="Scheme Handler Plugin" class="plugin">
-        <unit bldFile="messagingappbase/schemeplugin/group"/>
-      </component>
-      <component id="sendui" filter="s60" name="Send UI" class="plugin">
-        <unit bldFile="messagingappbase/sendui/group"/>
-      </component>
-      <component id="smilengine" filter="s60" name="SMIL Engine">
-        <unit bldFile="messagingappbase/smilengine/group"/>
-      </component>
-      <component id="bium" filter="s60" name="BIO UI MTM" class="plugin">
-        <unit bldFile="messagingappbase/bium/group"/>
-      </component>
-      <component id="smartmessaging" filter="s60" name="Smart Messaging">
-        <unit bldFile="messagingappbase/smartmessaging/group"/>
-      </component>
-      <component id="msgeditor" filter="s60" name="Messaging Editor">
-        <unit bldFile="messagingappbase/msgeditor/group"/>
-      </component>
-      <component id="smilparser" name="SMIL Parser" introduced="7.0s" purpose="optional">
-        <unit bldFile="messagingappbase/smilparser/GROUP" mrp="messagingappbase/smilparser/GROUP/messaging_gmxml.mrp"/>
-      </component>
-      <component id="obexmtms" name="OBEX MTMs" introduced="7.0s" purpose="optional" class="plugin">
-        <unit bldFile="messagingappbase/obexmtms/Group" mrp="messagingappbase/obexmtms/Group/messaging_obex.mrp"/>
-      </component>
-    </collection>
-    <collection id="email" name="Email" level="mail">
-		<!-- use commonemail instead -->
-      <component id="alwaysonlineemailplugin" filter="s60" name="Always Online Mail Plugin" class="plugin" deprecated="^3">
-        <unit bldFile="email/alwaysonlineemailplugin/group"/>
-      </component>
-      <component id="emailnotificationhandler" filter="s60" name="Email Notification Handler" class="plugin" deprecated="^3">
-        <unit bldFile="email/emailnotificationhandler/group"/>
-      </component>
-      <component id="imum" filter="s60" name="Internet Mail UI MTM" class="plugin" deprecated="^3">
-        <unit bldFile="email/imum/group"/>
-      </component>
-      <component id="mail" filter="s60" name="Mail Application" deprecated="^3">
-        <unit bldFile="email/mail/group"/>
-      </component>
-      <component id="pop3andsmtpmtm" name="POP3 and SMTP MTM" purpose="optional" class="plugin" deprecated="^3">
-        <unit bldFile="email/pop3andsmtpmtm/group" mrp="email/pop3andsmtpmtm/group/messaging_email.mrp"/>
-      </component>
-      <component id="imap4mtm" name="IMAP4 MTM" introduced="9.2" purpose="optional" class="plugin" deprecated="^3">
-        <unit bldFile="email/imap4mtm/group" mrp="email/imap4mtm/group/messaging_email_imap.mrp"/>
-      </component>
-    </collection>
-    <collection id="messaging_info" name="Messaging Apps Info" level="ui">
-      <component id="msg_plat" name="Messaging Apps Platform APIs"  filter="s60" class="api">
-        <unit bldFile="msg_plat/group"/>
-      </component>
-      <component id="msg_pub" name="Messaging Apps Public APIs" filter="s60" class="api">
-        <unit bldFile="msg_pub/group"/>
-      </component>
-      <component id="messaging_metadata" name="Messaging Apps Metadata" class="config" introduced="^2" purpose="development" target="desktop">
-        <unit mrp="messaging_info/messaging_metadata/messaging_metadata.mrp"/>
-      </component>
-    </collection>
-  </package>
+ <package id="messaging" name="Messaging Apps" levels="mail eng base ui">
+  <collection id="msg_pub" name="Messaging Apps Public APIs" level="ui">
+   <component id="messaging_integration_api" name="Messaging Integration API" class="api" filter="s60">
+    <meta rel="Api" href="msg_pub/messaging_integration_api/messaging_integration_api.metaxml"/>
+    <unit bldFile="msg_pub/messaging_integration_api/group"/>
+   </component>
+   <component id="plugin_bio_control_api" name="Plug-in Bio Control API" class="api" filter="s60">
+    <meta rel="Api" href="msg_pub/plugin_bio_control_api/plugin_bio_control_api.metaxml"/>
+    <unit bldFile="msg_pub/plugin_bio_control_api/group"/>
+   </component>
+   <component id="mms_client_mtm_api" name="MMS Client MTM API" class="api" filter="s60">
+    <meta rel="Api" href="msg_pub/mms_client_mtm_api/mms_client_mtm_api.metaxml"/>
+    <unit bldFile="msg_pub/mms_client_mtm_api/group"/>
+   </component>
+   <component id="open_new_message_notification_api" name="Open New Message Notification API" class="api" filter="s60">
+    <meta rel="Api" href="msg_pub/open_new_message_notification_api/open_new_message_notification_api.metaxml"/>
+    <unit bldFile="msg_pub/open_new_message_notification_api/group"/>
+   </component>
+   <component id="messaging_editor_constants_api" name="Messaging Editor Constants API" class="api" filter="s60">
+    <meta rel="Api" href="msg_pub/messaging_editor_constants_api/messaging_editor_constants_api.metaxml"/>
+    <unit bldFile="msg_pub/messaging_editor_constants_api/group"/>
+   </component>
+  </collection>
+  <collection id="msg_plat" name="Messaging Apps Platform APIs" level="ui">
+   <component id="smil_player_launch_api" name="SMIL Player Launch API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/smil_player_launch_api/smil_player_launch_api.metaxml"/>
+    <unit bldFile="msg_plat/smil_player_launch_api/group"/>
+   </component>
+   <component id="messaging_media_resolver_api" name="Messaging Media Resolver API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/messaging_media_resolver_api/messaging_media_resolver_api.metaxml"/>
+    <unit bldFile="msg_plat/messaging_media_resolver_api/group"/>
+   </component>
+   <component id="smil_engine_api" name="SMIL Engine API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/smil_engine_api/smil_engine_api.metaxml"/>
+    <unit bldFile="msg_plat/smil_engine_api/group"/>
+   </component>
+   <component id="mms_server_settings_api" name="MMS Server Settings API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/mms_server_settings_api/mms_server_settings_api.metaxml"/>
+    <unit bldFile="msg_plat/mms_server_settings_api/group"/>
+   </component>
+   <component id="new_contacts_note_secondary_display_api" name="New Contacts Note Secondary Display API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/new_contacts_note_secondary_display_api/new_contacts_note_secondary_display_api.metaxml"/>
+    <unit bldFile="msg_plat/new_contacts_note_secondary_display_api/group"/>
+   </component>
+   <component id="messaging_center_ui_utilities_api" name="Messaging Center UI Utilities API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/messaging_center_ui_utilities_api/messaging_center_ui_utilities_api.metaxml"/>
+    <unit bldFile="msg_plat/messaging_center_ui_utilities_api/group"/>
+   </component>
+   <component id="internet_mail_mtm_ui_api" name="Internet Mail MTM UI API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/internet_mail_mtm_ui_api/internet_mail_mtm_ui_api.metaxml"/>
+    <unit bldFile="msg_plat/internet_mail_mtm_ui_api/group"/>
+   </component>
+   <component id="messaging_editor_api" name="Messaging Editor API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/messaging_editor_api/messaging_editor_api.metaxml"/>
+    <unit bldFile="msg_plat/messaging_editor_api/group"/>
+   </component>
+   <component id="email_domain_utilities_api" name="Email Domain Utilities API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/email_domain_utilities_api/email_domain_utilities_api.metaxml"/>
+    <unit bldFile="msg_plat/email_domain_utilities_api/group"/>
+   </component>
+   <component id="smil_transition_api" name="SMIL Transition API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/smil_transition_api/smil_transition_api.metaxml"/>
+    <unit bldFile="msg_plat/smil_transition_api/group"/>
+   </component>
+   <component id="new_contacts_note_status_api" name="New Contacts Note Status API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/new_contacts_note_status_api/new_contacts_note_status_api.metaxml"/>
+    <unit bldFile="msg_plat/new_contacts_note_status_api/group"/>
+   </component>
+   <component id="unified_editor_video_conversion_api" name="Unified Editor Video Conversion API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/unified_editor_video_conversion_api/unified_editor_video_conversion_api.metaxml"/>
+    <unit bldFile="msg_plat/unified_editor_video_conversion_api/group"/>
+   </component>
+   <component id="mms_conformance_api" name="MMS Conformance API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/mms_conformance_api/mms_conformance_api.metaxml"/>
+    <unit bldFile="msg_plat/mms_conformance_api/group"/>
+   </component>
+   <component id="new_contacts_note_variables_api" name="New Contacts Note Variables API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/new_contacts_note_variables_api/new_contacts_note_variables_api.metaxml"/>
+    <unit bldFile="msg_plat/new_contacts_note_variables_api/group"/>
+   </component>
+   <component id="new_message_notification_api" name="New Message Notification API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/new_message_notification_api/new_message_notification_api.metaxml"/>
+    <unit bldFile="msg_plat/new_message_notification_api/group"/>
+   </component>
+   <component id="mms_application_api" name="MMS Application API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/mms_application_api/mms_application_api.metaxml"/>
+    <unit bldFile="msg_plat/mms_application_api/group"/>
+   </component>
+   <component id="mms_engine_settings_api" name="MMS Engine Settings API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/mms_engine_settings_api/mms_engine_settings_api.metaxml"/>
+    <unit bldFile="msg_plat/mms_engine_settings_api/group"/>
+   </component>
+   <component id="mms_codec_client_api" name="MMS Codec Client API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/mms_codec_client_api/mms_codec_client_api.metaxml"/>
+    <unit bldFile="msg_plat/mms_codec_client_api/group"/>
+   </component>
+   <component id="send_ui_meeting_request_api" name="Send UI Meeting Request API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/send_ui_meeting_request_api/send_ui_meeting_request_api.metaxml"/>
+    <unit bldFile="msg_plat/send_ui_meeting_request_api/group"/>
+   </component>
+   <component id="new_contact_notes_extended_api" name="New Contact Notes Extended API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/new_contact_notes_extended_api/new_contact_notes_extended_api.metaxml"/>
+    <unit bldFile="msg_plat/new_contact_notes_extended_api/group"/>
+   </component>
+   <component id="mail_ui_constants_api" name="Mail UI Constants API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/mail_ui_constants_api/mail_ui_constants_api.metaxml"/>
+    <unit bldFile="msg_plat/mail_ui_constants_api/group"/>
+   </component>
+   <component id="sim_dialog_launch_api" name="SIM Dialog Launch API" class="api" filter="s60">
+    <meta rel="Api" href="msg_plat/sim_dialog_launch_api/sim_dialog_launch_api.metaxml"/>
+    <unit bldFile="msg_plat/sim_dialog_launch_api/group"/>
+   </component>
+  </collection>
+  <collection id="mobilemessaging" name="Mobile Messaging" level="ui">
+   <component id="audiomsg" filter="s60" name="Audio Message">
+    <unit bldFile="mobilemessaging/audiomsg/group"/>
+   </component>
+   <component id="msgmedia" filter="s60" name="Message Media">
+    <unit bldFile="mobilemessaging/msgmedia/group"/>
+   </component>
+   <component id="unieditor" filter="s60" name="Unified Editor">
+    <unit bldFile="mobilemessaging/unieditor/group"/>
+   </component>
+   <component id="mmsui" filter="s60" name="MMS UI">
+    <unit bldFile="mobilemessaging/mmsui/group"/>
+   </component>
+   <component id="postcard" filter="s60" name="Postcard">
+    <unit bldFile="mobilemessaging/postcard/group"/>
+   </component>
+   <component id="smilui" filter="s60" name="SMIL UI">
+    <unit bldFile="mobilemessaging/smilui/group"/>
+   </component>
+   <component id="smum" filter="s60" name="SMS UI MTM and UI Data MTM" class="plugin">
+    <unit bldFile="mobilemessaging/smum/group"/>
+   </component>
+   <component id="smsui" filter="s60" name="SMS UI">
+    <unit bldFile="mobilemessaging/smsui/group"/>
+   </component>
+   <component id="smsmtm" name="SMS MTM" purpose="optional" class="plugin">
+    <unit bldFile="mobilemessaging/smsmtm/group" mrp="mobilemessaging/smsmtm/group/messaging_sms.mrp"/>
+   </component>
+  </collection>
+  <collection id="mmsengine" name="MMS Engine" level="eng">
+   <component id="mmsconninit" filter="s60" name="MMS Connection Initiator">
+    <!-- <unit bldFile="mmsengine/mmsconninit/bld"/> -->
+   </component>
+   <component id="genutils" filter="s60" name="General Utils">
+    <!-- <unit bldFile="mmsengine/genutils/bld"/> -->
+   </component>
+   <component id="mmsserversettings" filter="s60" name="MMS Server Settings">
+    <!-- <unit bldFile="mmsengine/mmsserversettings/bld"/> -->
+   </component>
+   <component id="mmsmessage" filter="s60" name="MMS Message">
+    <!-- <unit bldFile="mmsengine/mmsmessage/bld"/> -->
+   </component>
+   <component id="mmshttptransport" filter="s60" name="MMS HTTP Transport">
+    <!-- <unit bldFile="mmsengine/mmshttptransport/bld"/> -->
+   </component>
+   <component id="mmscodec" filter="s60" name="MMS Codec">
+    <!-- <unit bldFile="mmsengine/mmscodec/bld"/> -->
+   </component>
+   <component id="mmsserver" filter="s60" name="MMS Server">
+    <!-- <unit bldFile="mmsengine/mmsserver/bld"/> -->
+   </component>
+   <component id="clientmtm" filter="s60" name="MMS Client MTM" class="plugin">
+    <!-- <unit bldFile="mmsengine/clientmtm/bld"/> -->
+   </component>
+   <component id="mmswatcher" filter="s60" name="MMS Watcher" class="plugin">
+    <!-- <unit bldFile="mmsengine/mmswatcher/bld"/> -->
+   </component>
+   <component id="mmspushhandler" filter="s60" name="MMS Push Handler" class="plugin">
+    <!-- <unit bldFile="mmsengine/mmspushhandler/bld"/> -->
+   </component>
+   <component id="applicationadapter" filter="s60" name="MMS Application Adapter">
+    <!-- <unit bldFile="mmsengine/applicationadapter/bld"/> -->
+   </component>
+   <component id="mmscodecclient" filter="s60" name="MMS Codec Client">
+    <!-- <unit bldFile="mmsengine/mmscodecclient/bld"/> -->
+   </component>
+   <component id="mmssettings" name="MMS Settings" introduced="9.2" purpose="optional">
+    <unit bldFile="mmsengine/mmssettings/group" mrp="mmsengine/mmssettings/group/messaging_mmssettings.mrp"/>
+   </component>
+   <component id="mmsconf" name="MMS Configuration" purpose="optional">
+    <unit bldFile="mmsengine/mmsconf" mrp="mmsengine/mmsconf/messaging_mmssettings-config.mrp"/>
+   </component>
+   <component id="mmsengine_build" filter="s60" name="MMS Engine Build">
+    <!-- this bld.inf should be broken up into the individual other components -->
+    <unit bldFile="mmsengine/group"/>
+   </component>
+  </collection>
+  <collection id="messagingappbase" name="Messaging App Base" level="base">
+   <component id="msgavkon" filter="s60" name="Messaging Avkon UI">
+    <unit bldFile="messagingappbase/msgavkon/group"/>
+   </component>
+   <component id="mce" filter="s60" name="Message Center Application">
+    <unit bldFile="messagingappbase/mce/group"/>
+   </component>
+   <component id="mceextraitems" filter="s60" name="Message Center Extra Items">
+    <unit bldFile="messagingappbase/mceextraitems/group"/>
+   </component>
+   <component id="mcesettings" filter="s60" name="Message Center Settings">
+    <unit bldFile="messagingappbase/mcesettings/group"/>
+   </component>
+   <component id="msgerrorwatcher" filter="s60" name="Messaging Error Watcher" class="plugin">
+    <unit bldFile="messagingappbase/msgerrorwatcher/group"/>
+   </component>
+   <component id="ncnlist" filter="s60" name="New Contacts Note List">
+    <unit bldFile="messagingappbase/ncnlist/group"/>
+   </component>
+   <component id="schemeplugin" filter="s60" name="Scheme Handler Plugin" class="plugin">
+    <unit bldFile="messagingappbase/schemeplugin/group"/>
+   </component>
+   <component id="sendui" filter="s60" name="Send UI" class="plugin">
+    <unit bldFile="messagingappbase/sendui/group"/>
+   </component>
+   <component id="smilengine" filter="s60" name="SMIL Engine">
+    <unit bldFile="messagingappbase/smilengine/group"/>
+   </component>
+   <component id="bium" filter="s60" name="BIO UI MTM" class="plugin">
+    <unit bldFile="messagingappbase/bium/group"/>
+   </component>
+   <component id="smartmessaging" filter="s60" name="Smart Messaging">
+    <unit bldFile="messagingappbase/smartmessaging/group"/>
+   </component>
+   <component id="msgeditor" filter="s60" name="Messaging Editor">
+    <unit bldFile="messagingappbase/msgeditor/group"/>
+   </component>
+   <component id="smilparser" name="SMIL Parser" introduced="7.0s" purpose="optional">
+    <unit bldFile="messagingappbase/smilparser/GROUP" mrp="messagingappbase/smilparser/GROUP/messaging_gmxml.mrp"/>
+   </component>
+   <component id="obexmtms" name="OBEX MTMs" introduced="7.0s" purpose="optional" class="plugin">
+    <unit bldFile="messagingappbase/obexmtms/Group" mrp="messagingappbase/obexmtms/Group/messaging_obex.mrp"/>
+   </component>
+  </collection>
+  <collection id="email" name="Email" level="mail">
+   <!-- use commonemail instead -->
+   <component id="alwaysonlineemailplugin" filter="s60" name="Always Online Mail Plugin" class="plugin" deprecated="^3">
+    <unit bldFile="email/alwaysonlineemailplugin/group"/>
+   </component>
+   <component id="emailnotificationhandler" filter="s60" name="Email Notification Handler" class="plugin" deprecated="^3">
+    <unit bldFile="email/emailnotificationhandler/group"/>
+   </component>
+   <component id="imum" filter="s60" name="Internet Mail UI MTM" class="plugin" deprecated="^3">
+    <unit bldFile="email/imum/group"/>
+   </component>
+   <component id="mail" filter="s60" name="Mail Application" deprecated="^3">
+    <unit bldFile="email/mail/group"/>
+   </component>
+   <component id="pop3andsmtpmtm" name="POP3 and SMTP MTM" purpose="optional" class="plugin" deprecated="^3">
+    <unit bldFile="email/pop3andsmtpmtm/group" mrp="email/pop3andsmtpmtm/group/messaging_email.mrp"/>
+   </component>
+   <component id="imap4mtm" name="IMAP4 MTM" introduced="9.2" purpose="optional" class="plugin" deprecated="^3">
+    <unit bldFile="email/imap4mtm/group" mrp="email/imap4mtm/group/messaging_email_imap.mrp"/>
+   </component>
+  </collection>
+  <collection id="messaging_info" name="Messaging Apps Info" level="ui">
+   <component id="messaging_metadata" name="Messaging Apps Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+    <unit mrp="messaging_info/messaging_metadata/messaging_metadata.mrp"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>

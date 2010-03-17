@@ -1,175 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="videoplayer" name="Video Player Apps" levels="support plugin util apps">
-    <collection id="videofeeds" name="Video Feeds" level="util">
-      <component id="iptv_utils" filter="s60" name="IPTV Util" introduced="^3">
-        <unit bldFile="videofeeds/utils/group"/>
-      </component>
-      <component id="viewmessageutility" filter="s60" name="View Message Utility" introduced="^3">
-        <unit bldFile="videofeeds/viewmessageutility/group"/>
-      </component>
-      <component id="vcxnotifier" filter="s60" name="Video Connection Notifier" introduced="^3" class="plugin">
-        <unit bldFile="videofeeds/vcxnotifier/group"/>
-      </component>
-      <component id="vccommon" filter="s60" name="Video Connection Common" introduced="^3">
-        <unit bldFile="videofeeds/vccommon/group"/>
-      </component>
-		<component id="clientapi" name="Server Client" filter="s60" introduced="^3">
-			<unit bldFile="videofeeds/clientapi/group"/>
-		</component>
-		<component id="provisioningprocessor" name="Provisioning Processor" filter="s60" introduced="^3">
-			<unit bldFile="videofeeds/provisioningprocessor/group"/>
-		</component>
-		<component id="mrssplugin" name="RSS plugin" filter="s60" introduced="^3" class="plugin">
-			<unit bldFile="videofeeds/mrssplugin/group"/>
-		</component>
-		<component id="videofeeds_server" name="Server" filter="s60" introduced="^3">
-			<unit bldFile="videofeeds/server/group"/>
-		</component>
-		<component id="videofeeds_server_tsrc" name="Video Feeds Server Tests" introduced="^3" filter="s60,test,unit_test">
-      	<!--  can only have one unit. Can these be #included from videofeeds_server or a common bld.inf?-->
-         <unit bldFile="videofeeds/server/tsrc/IptvTestUtility/group"/>
-         <unit bldFile="videofeeds/server/tsrc/VCXProvisioningTest/group"/>
-         <unit bldFile="videofeeds/server/tsrc/VCXServiceManagementApiTest/group"/>
-         <unit bldFile="videofeeds/server/tsrc/VCXVodContentApiTest/group"/>
-       </component>
-		<component id="livetvutils" name="LiveTV Utils" filter="s60" introduced="^3">
-			<unit bldFile="videofeeds/livetvutils/group"/>
-		</component>
-		<component id="iptvprovisioningrecognizer" name="IP TV Provisioning Recognizer" filter="s60" introduced="^3" class="plugin">
-			<unit bldFile="videofeeds/provisioningrecognizer/group"/>
-		</component>
-		<component id="iptvprovisioningappui" name="IP TV Provisioning App UI" filter="s60" introduced="^3">
-			<unit bldFile="videofeeds/provisioningappui/group"/>
-		</component>
-		<component id="iptvomaprovisioning" name="IP TV OMA Provisioning" filter="s60" introduced="^3">
-			<unit bldFile="videofeeds/omaprovisioning/group"/>
-		</component>
-	<component id="vcnsuiengine" name="VoD UI Engine" filter="s60" introduced="^3">
-		<unit bldFile="videofeeds/vcnsuiengine/group"/>
-	</component>
-	<component id="hgvodui" name="Ganes UX2.0 VoD UI" filter="s60" introduced="^3">
-		<unit bldFile="videofeeds/hgvodui/group"/>
-	</component>
-	<component id="hgvodplugin" name="Ganes UX2.0 VoD UI Plugin" filter="s60" introduced="^3" class="plugin">
-		<unit bldFile="videofeeds/hgvodplugin/group"/>
-	</component>
-	<component id="vcnsscheduleview" name="Scheduled Download Settings View" filter="s60" introduced="^3">
-		<unit bldFile="videofeeds/vcnsscheduleview/group"/>
-	</component>
-	<component id="vcnsscheduleplugin" name="Scheduled Download Settings Plugin" filter="s60" introduced="^3" class="plugin">
-		<unit bldFile="videofeeds/vcnsscheduleplugin/group"/>
-	</component>
-	<component id="scheduleddlplugin" name="Scheduled download plugin" filter="s60" introduced="^3">
-		<unit bldFile="videofeeds/scheduleddlplugin/group"/>
-	</component>
-    <component id="videofeeds_tsrc" name="Video Feeds Tests" introduced="^3" filter="s60,test,unit_test">
-      	<!--  can only have one unit. Can thes be #included from any of the above or a common bld.inf?-->
-         <unit bldFile="tsrc/VCXTestCommon/group"/>
-         <unit bldFile="tsrc/VCXTestUtilModule/group"/>
-         <unit bldFile="tsrc/VCXTestMyVideosCollectionClient/group"/>
-       </component>
-    </collection>
-    <collection id="videocollection" name="Video Collection" level="util">
-      <component id="mpxmyvideoscollection" filter="s60" name="MPX My Videos Collection" introduced="^3">
-        <unit bldFile="videocollection/mpxmyvideoscollection/group"/>
-      </component>
-      <component id="mpxmyvideoscollection_test" filter="s60,test,unit_test" name="MPX My Videos Collection Tests" introduced="^3" purpose="development">
-            <unit bldFile="videocollection/mpxmyvideoscollection/tsrc/mpxmvcolltest/group"/>
-      </component>
-      <component id="myvideosindicatorplugin" filter="s60" name="My Videos Indicator Plugin" introduced="^3" class="plugin">
-        <unit bldFile="videocollection/myvideosindicatorplugin/group"/>
-      </component>
-      <component id="hgmyvideos" filter="s60" name="Huriganes My Videos" introduced="^3">
-        <unit bldFile="videocollection/hgmyvideos/group"/>
-      </component>
-      <component id="hgmyvideosplugin" filter="s60" name="Huriganes My VideosPlugin" introduced="^3" class="plugin">
-        <unit bldFile="videocollection/hgmyvideosplugin/group"/>
-      </component>
-      <component id="mpxmyvideoscollection_tsrc" name="MPX My Videos Collection Tests" filter="s60,test,unit_test" introduced="^3" purpose="development">
-      	<!--  can only have one unit. Can thes be #included from any of the above or a common bld.inf?-->
-            <unit bldFile="tsrc/VCXTestCommon/group"/>
-            <unit bldFile="tsrc/VCXTestUtilModule/group"/>
-            <unit bldFile="tsrc/VCXTestMyVideosCollectionClient/group"/>
-    </component>
-    </collection>
-    <collection id="videoplayer_homescreenplugins" name="Videoplayer Homescreen Plugins" level="plugin">
-      <component id="videosuiteconf" filter="s60" name="Video Suite Configuration" class="plugin" introduced="^3" >
-        <unit bldFile="homescreenplugins/videosuiteconf/group"/>
-      </component>
-      <component id="videoahlplugin" filter="s60" name="Video Player Action Handler" class="plugin" introduced="^3">
-        <unit bldFile="homescreenplugins/videoahlplugin/group"/>
-      </component>
-      <component id="videochplugin" filter="s60" name="Video Player Content Harvester " class="plugin" introduced="^3">
-        <unit bldFile="homescreenplugins/videochplugin/group"/>
-      </component>
-    </collection>
-    <collection id="mediasettings" name="Media Settings" level="support">
-    	<!--  this is really a component. Should be moved down a directory -->
-      <component id="mediasettings_build" filter="s60" name="Media Settings Build">
-        <unit bldFile="mediasettings/group"/>
-      </component>
-      <component id="videoplayer_test" filter="s60" purpose="development" name="Video Player Apps Test">  
-      	<!--  can only have one unit. Can thes be #included from the above or another  bld.inf?-->
-     	  <unit bldFile="tsrc/VCXTestCommon/group"/>
-		  <unit bldFile="tsrc/VCXTestUtilModule/group"/>
-		  <unit bldFile="tsrc/VCXTestMyVideosCollectionClient/group"/>
-		  <unit bldFile="mediasettings/mediasettingsengine/tsrc/mediasettingsenginetest/group"/>
-		  <unit bldFile="mediasettings/videoplayersettingsengine/tsrc/vpsettingsenginetest/group"/>
-      </component>      
-    </collection>
-    <collection id="filedetails" name="File Details" level="support">
-      <component id="filedetailsplugin" filter="s60" name="File Details Plugin" class="plugin" introduced="^3">
-        <unit bldFile="filedetails/filedetailsplugin/group"/>
-      </component>
-      <component id="filedetailsdialog" filter="s60" name="File Details Dialog" introduced="^3">
-        <unit bldFile="filedetails/filedetailsdialog/group"/>
-      </component>
-    </collection>
-    <collection id="videoplayerapp" name="Video Player App" level="apps">
-      <component id="lwplayer" name="Lightweight Player"  filter="s60">
-        <unit bldFile="videoplayerapp/lwplayer/group"/>
-      </component>
-      <component id="mpxvideoplayer" filter="s60" name="MPX Video Player" class="plugin">
-        <unit bldFile="videoplayerapp/mpxvideoplayer/group"/>
-      </component>
-      <component id="videoplayerlauncher" filter="s60" name="Video Player Launcher">
-        <unit bldFile="videoplayerapp/videoplayerlauncher/group"/>
-      </component>
-    </collection>
-    <collection id="videoplayback" name="Video Playback Plugins" level="plugin">    
-      <component id="videohelix" name="Video Helix"  filter="s60" introduced="^3" class="plugin">
-        <unit bldFile="videoplayback/videohelix/group"/>
-      </component>
-      <component id="videopdlplaybackviewplugin" filter="s60" name="Video PDL Playback View Plugin" class="plugin" introduced="^3">
-        <unit bldFile="videoplayback/videopdlplaybackviewplugin/group"/>
-      </component>
-      <component id="videoplaybackcontrols" filter="s60" name="Video Playback Controls" introduced="^3" class="plugin">
-        <unit bldFile="videoplayback/videoplaybackcontrols/group"/>
-      </component>
-      <component id="videoplaybackviewplugin" filter="s60" name="Video Playback View Plugin" class="plugin" introduced="^3">
-        <unit bldFile="videoplayback/videoplaybackviewplugin/group"/>
-      </component>
-      <component id="videoplaybackviews" filter="s60" name="Video Playback Views" class="plugin" introduced="^3">
-        <unit bldFile="videoplayback/videoplaybackviews/group"/>
-      </component>
-      <component id="videoplayer_tsrc" name="Video Player Tests" filter="s60,test,unit_test" introduced="^3" purpose="development">
-      	<!--  can only have one unit. Can these be #included from any of the above. Why is a videoplayerapp test in here?-->
-          <unit bldFile="videoplayback/videohelix/tsrc/ut_videohelixtest/group"/>
-          <unit bldFile="videoplayback/videoplaybackcontrols/tsrc/videoplaybackcontrols_test/group"/>
-          <unit bldFile="videoplayback/videoplaybackviews/tsrc/ut_userinputhandlertest/group"/>
-          <unit bldFile="videoplayerapp/mpxvideoplayer/tsrc/ut_mpxvideoplayertest/group"/>
-      </component>      
-    </collection>
-    <collection id="videoplayer_info" name="Video Player Apps Info" level="apps">
-      <component id="videoplayer_plat" filter="s60" name="Video Player Apps Platform Interfaces" class="api">
-        <unit bldFile="videoplayer_plat/group"/>
-      </component>
-      <component id="videoplayer_api_test" filter="s60,test,api_test" purpose="development" name="Video Player API Test">
-     		<!--  can only have one unit, #include from a common bld.inf? -->
-	      <unit bldFile="videoplayer_plat/video_player_file_details_dialog_api/tsrc/group"/>
-	      <unit bldFile="videoplayer_plat/videoplayer_startup_api/tsrc/group"/>
-      </component>
-    </collection>
-  </package>
+ <package id="videoplayer" name="Video Player Apps" levels="support plugin util apps">
+  <collection id="videoplayer_plat" name="Video Player Apps Platform Interfaces" level="apps">
+   <component id="videoplayer_startup_api" name="Video Player Startup API" class="api" filter="s60">
+    <unit bldFile="videoplayer_plat/videoplayer_startup_api/group" filter="!test"/>
+    <unit bldFile="videoplayer_plat/videoplayer_startup_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="video_player_file_details_dialog_api" name="Media Player File Details Dialog API" class="api" filter="s60">
+    <meta rel="Api" href="videoplayer_plat/video_player_file_details_dialog_api/media_player_file_details_dialog_api.metaxml"/>
+    <unit bldFile="videoplayer_plat/video_player_file_details_dialog_api/group" filter="!test"/>
+    <unit bldFile="videoplayer_plat/video_player_file_details_dialog_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="videocollection_api" name="Video Collection API" class="api" filter="s60">
+    <unit bldFile="videoplayer_plat/videocollection_api/group"/>
+   </component>
+  </collection>
+  <collection id="videofeeds" name="Video Feeds" level="util">
+   <component id="iptv_utils" filter="s60" name="IPTV Util" introduced="^3">
+    <unit bldFile="videofeeds/utils/group"/>
+   </component>
+   <component id="viewmessageutility" filter="s60" name="View Message Utility" introduced="^3">
+    <unit bldFile="videofeeds/viewmessageutility/group"/>
+   </component>
+   <component id="vcxnotifier" filter="s60" name="Video Connection Notifier" introduced="^3" class="plugin">
+    <unit bldFile="videofeeds/vcxnotifier/group"/>
+   </component>
+   <component id="vccommon" filter="s60" name="Video Connection Common" introduced="^3">
+    <unit bldFile="videofeeds/vccommon/group"/>
+   </component>
+   <component id="clientapi" name="Server Client" filter="s60" introduced="^3">
+    <unit bldFile="videofeeds/clientapi/group"/>
+   </component>
+   <component id="provisioningprocessor" name="Provisioning Processor" filter="s60" introduced="^3">
+    <unit bldFile="videofeeds/provisioningprocessor/group"/>
+   </component>
+   <component id="mrssplugin" name="RSS plugin" filter="s60" introduced="^3" class="plugin">
+    <unit bldFile="videofeeds/mrssplugin/group"/>
+   </component>
+   <component id="videofeeds_server" name="Server" filter="s60" introduced="^3">
+    <unit bldFile="videofeeds/server/group"/>
+   </component>
+   <component id="videofeeds_server_tsrc" name="Video Feeds Server Tests" introduced="^3" filter="s60,test,unit_test">
+    <!--  can only have one unit. Can these be #included from videofeeds_server or a common bld.inf?-->
+    <unit bldFile="videofeeds/server/tsrc/IptvTestUtility/group"/>
+    <unit bldFile="videofeeds/server/tsrc/VCXProvisioningTest/group"/>
+    <unit bldFile="videofeeds/server/tsrc/VCXServiceManagementApiTest/group"/>
+    <unit bldFile="videofeeds/server/tsrc/VCXVodContentApiTest/group"/>
+   </component>
+   <component id="livetvutils" name="LiveTV Utils" filter="s60" introduced="^3">
+    <unit bldFile="videofeeds/livetvutils/group"/>
+   </component>
+   <component id="iptvprovisioningrecognizer" name="IP TV Provisioning Recognizer" filter="s60" introduced="^3" class="plugin">
+    <unit bldFile="videofeeds/provisioningrecognizer/group"/>
+   </component>
+   <component id="iptvprovisioningappui" name="IP TV Provisioning App UI" filter="s60" introduced="^3">
+    <unit bldFile="videofeeds/provisioningappui/group"/>
+   </component>
+   <component id="iptvomaprovisioning" name="IP TV OMA Provisioning" filter="s60" introduced="^3">
+    <unit bldFile="videofeeds/omaprovisioning/group"/>
+   </component>
+   <component id="vcnsuiengine" name="VoD UI Engine" filter="s60" introduced="^3">
+    <unit bldFile="videofeeds/vcnsuiengine/group"/>
+   </component>
+   <component id="hgvodui" name="Ganes UX2.0 VoD UI" filter="s60" introduced="^3">
+    <unit bldFile="videofeeds/hgvodui/group"/>
+   </component>
+   <component id="hgvodplugin" name="Ganes UX2.0 VoD UI Plugin" filter="s60" introduced="^3" class="plugin">
+    <unit bldFile="videofeeds/hgvodplugin/group"/>
+   </component>
+   <component id="vcnsscheduleview" name="Scheduled Download Settings View" filter="s60" introduced="^3">
+    <unit bldFile="videofeeds/vcnsscheduleview/group"/>
+   </component>
+   <component id="vcnsscheduleplugin" name="Scheduled Download Settings Plugin" filter="s60" introduced="^3" class="plugin">
+    <unit bldFile="videofeeds/vcnsscheduleplugin/group"/>
+   </component>
+   <component id="scheduleddlplugin" name="Scheduled download plugin" filter="s60" introduced="^3">
+    <unit bldFile="videofeeds/scheduleddlplugin/group"/>
+   </component>
+   <component id="videofeeds_tsrc" name="Video Feeds Tests" introduced="^3" filter="s60,test,unit_test">
+    <!--  can only have one unit. Can thes be #included from any of the above or a common bld.inf?-->
+    <unit bldFile="tsrc/VCXTestCommon/group"/>
+    <unit bldFile="tsrc/VCXTestUtilModule/group"/>
+    <unit bldFile="tsrc/VCXTestMyVideosCollectionClient/group"/>
+   </component>
+  </collection>
+  <collection id="videocollection" name="Video Collection" level="util">
+   <component id="mpxmyvideoscollection" filter="s60" name="MPX My Videos Collection" introduced="^3">
+    <unit bldFile="videocollection/mpxmyvideoscollection/group"/>
+   </component>
+   <component id="mpxmyvideoscollection_test" filter="s60,test,unit_test" name="MPX My Videos Collection Tests" introduced="^3" purpose="development">
+    <unit bldFile="videocollection/mpxmyvideoscollection/tsrc/mpxmvcolltest/group"/>
+   </component>
+   <component id="myvideosindicatorplugin" filter="s60" name="My Videos Indicator Plugin" introduced="^3" class="plugin">
+    <unit bldFile="videocollection/myvideosindicatorplugin/group"/>
+   </component>
+   <component id="hgmyvideos" filter="s60" name="Huriganes My Videos" introduced="^3">
+    <unit bldFile="videocollection/hgmyvideos/group"/>
+   </component>
+   <component id="hgmyvideosplugin" filter="s60" name="Huriganes My VideosPlugin" introduced="^3" class="plugin">
+    <unit bldFile="videocollection/hgmyvideosplugin/group"/>
+   </component>
+   <component id="mpxmyvideoscollection_tsrc" name="MPX My Videos Collection Tests" filter="s60,test,unit_test" introduced="^3" purpose="development">
+    <!--  can only have one unit. Can thes be #included from any of the above or a common bld.inf?-->
+    <unit bldFile="tsrc/VCXTestCommon/group"/>
+    <unit bldFile="tsrc/VCXTestUtilModule/group"/>
+    <unit bldFile="tsrc/VCXTestMyVideosCollectionClient/group"/>
+   </component>
+  </collection>
+  <collection id="videoplayer_homescreenplugins" name="Videoplayer Homescreen Plugins" level="plugin">
+   <component id="videosuiteconf" filter="s60" name="Video Suite Configuration" class="plugin" introduced="^3">
+    <unit bldFile="homescreenplugins/videosuiteconf/group"/>
+   </component>
+   <component id="videoahlplugin" filter="s60" name="Video Player Action Handler" class="plugin" introduced="^3">
+    <unit bldFile="homescreenplugins/videoahlplugin/group"/>
+   </component>
+   <component id="videochplugin" filter="s60" name="Video Player Content Harvester " class="plugin" introduced="^3">
+    <unit bldFile="homescreenplugins/videochplugin/group"/>
+   </component>
+  </collection>
+  <collection id="mediasettings" name="Media Settings" level="support">
+   <!--  this is really a component. Should be moved down a directory -->
+   <component id="mediasettings_build" filter="s60" name="Media Settings Build">
+    <unit bldFile="mediasettings/group"/>
+   </component>
+   <component id="videoplayer_test" filter="s60" purpose="development" name="Video Player Apps Test">
+    <!--  can only have one unit. Can thes be #included from the above or another  bld.inf?-->
+    <unit bldFile="tsrc/VCXTestCommon/group"/>
+    <unit bldFile="tsrc/VCXTestUtilModule/group"/>
+    <unit bldFile="tsrc/VCXTestMyVideosCollectionClient/group"/>
+    <unit bldFile="mediasettings/mediasettingsengine/tsrc/mediasettingsenginetest/group"/>
+    <unit bldFile="mediasettings/videoplayersettingsengine/tsrc/vpsettingsenginetest/group"/>
+   </component>
+  </collection>
+  <collection id="filedetails" name="File Details" level="support">
+   <component id="filedetailsplugin" filter="s60" name="File Details Plugin" class="plugin" introduced="^3">
+    <unit bldFile="filedetails/filedetailsplugin/group"/>
+   </component>
+   <component id="filedetailsdialog" filter="s60" name="File Details Dialog" introduced="^3">
+    <unit bldFile="filedetails/filedetailsdialog/group"/>
+   </component>
+  </collection>
+  <collection id="videoplayerapp" name="Video Player App" level="apps">
+   <component id="lwplayer" name="Lightweight Player" filter="s60">
+    <unit bldFile="videoplayerapp/lwplayer/group"/>
+   </component>
+   <component id="mpxvideoplayer" filter="s60" name="MPX Video Player" class="plugin">
+    <unit bldFile="videoplayerapp/mpxvideoplayer/group" filter="!test"/>
+    <unit bldFile="videoplayerapp/mpxvideoplayer/tsrc/ut_mpxvideoplayertest/group"  filter="test,unit_test"/>
+   </component>
+   <component id="videoplayerlauncher" filter="s60" name="Video Player Launcher">
+    <unit bldFile="videoplayerapp/videoplayerlauncher/group"/>
+   </component>
+  </collection>
+  <collection id="videoplayback" name="Video Playback Plugins" level="plugin">
+   <component id="videohelix" name="Video Helix" filter="s60" introduced="^3" class="plugin">
+    <unit bldFile="videoplayback/videohelix/group" filter="!test"/>
+    <unit bldFile="videoplayback/videohelix/tsrc/ut_videohelixtest/group" filter="test,unit_test"/>
+   </component>
+   <component id="videopdlplaybackviewplugin" filter="s60" name="Video PDL Playback View Plugin" class="plugin" introduced="^3">
+    <unit bldFile="videoplayback/videopdlplaybackviewplugin/group" filter="!test"/>
+   </component>
+   <component id="videoplaybackcontrols" filter="s60" name="Video Playback Controls" introduced="^3" class="plugin">
+    <unit bldFile="videoplayback/videoplaybackcontrols/group" filter="!test"/>
+    <unit bldFile="videoplayback/videoplaybackcontrols/tsrc/videoplaybackcontrols_test/group" filter="test,unit_test"/>
+   </component>
+   <component id="videoplaybackviewplugin" filter="s60" name="Video Playback View Plugin" class="plugin" introduced="^3">
+    <unit bldFile="videoplayback/videoplaybackviewplugin/group"/>
+   </component>
+   <component id="videoplaybackviews" filter="s60" name="Video Playback Views" class="plugin" introduced="^3">
+    <unit bldFile="videoplayback/videoplaybackviews/group" filter="!test"/>
+    <unit bldFile="videoplayback/videoplaybackviews/tsrc/ut_userinputhandlertest/group" filter="test,unit_test"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>

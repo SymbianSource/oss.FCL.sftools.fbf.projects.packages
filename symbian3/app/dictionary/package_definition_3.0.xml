@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="dictionary" name="Dictionary" levels="utils ui">
-    <collection id="userdict" name="User Dictionary" level="ui">
-    	<!-- collection is really a component, move down a dir -->
-      <component id="userdict_build" filter="s60" name="Japanese User Dictionary">
-        <unit bldFile="userdict/group"/>
-      </component>
-    </collection>
-    <collection id="dictionary_info" name="Dictionary Info" level="ui">
-      <component id="dictionary_plat" filter="s60" name="Dictionary Platform Interfaces" class="api">
-        <unit bldFile="dictionary_plat/group"/>
-      </component>
-    </collection>
-  </package>
+ <package id="dictionary" name="Dictionary" levels="utils ui">
+  <collection id="dictionary_plat" name="Dictionary Platform Interfaces" level="ui">
+   <component id="menu_suites_macros_api" name="Menu Suites Macros API" class="api" filter="s60">
+    <meta rel="Api" href="dictionary_plat/menu_suites_macros_api/menu_suites_macros_api.metaxml"/>
+    <unit bldFile="dictionary_plat/menu_suites_macros_api/group"/>
+   </component>
+  </collection>
+  <collection id="userdict" name="User Dictionary" level="ui">
+   <!-- collection is really a component, move down a dir -->
+   <component id="userdict_build" filter="s60" name="Japanese User Dictionary">
+    <unit bldFile="userdict/group"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>

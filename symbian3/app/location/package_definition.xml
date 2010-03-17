@@ -77,6 +77,19 @@
   <systemModel>
     <layer name="app" long-name="Applications" levels="services apps">
       <block name="location" level="apps" long-name="Location Apps" levels="ui events loc apps">
+        <collection name="loc_plat" long-name="Location Apps Platform Interfaces" level="apps">
+          <component name="location_centre_api" long-name="Location Centre API" introduced="^3" filter="s60" class="api">
+            <unit bldFile="/sf/app/location/loc_plat/location_centre_api/group"/>
+          </component>
+        </collection>
+        <collection name="loc_pub" long-name="Location Apps Public Interfaces" level="apps">
+          <component name="landmarks_ui_selector_api" long-name="Landmarks UI Selector API" filter="s60" class="api">
+            <unit bldFile="/sf/app/location/loc_pub/landmarks_ui_selector_api/group"/>
+          </component>
+          <component name="landmarks_ui_addedit_api" long-name="Landmarks UI Add/Edit API" filter="s60" class="api">
+            <unit bldFile="/sf/app/location/loc_pub/landmarks_ui_addedit_api/group"/>
+          </component>
+        </collection>
         <collection name="basiclocationinfodisplay" long-name="Basic Location Info Display" level="ui">
           <component name="blid" filter="s60" long-name="Basic Location Info Display Build">
             <unit bldFile="/sf/app/location/basiclocationinfodisplay/blid/group"/>
@@ -176,14 +189,6 @@
           <component name="locationcentre_build" filter="s60" long-name="Location Centre Build" introduced="^3">
             <!-- consider distributing this into the other components or collapsing into a single component -->
             <unit bldFile="/sf/app/location/locationcentre/group"/>
-          </component>
-        </collection>
-        <collection name="location_info" long-name="Location Apps Info" level="loc">
-          <component name="loc_pub" filter="s60" long-name="Location Apps Public Interfaces" class="api">
-            <unit bldFile="/sf/app/location/loc_pub/group"/>
-          </component>
-          <component name="loc_plat" filter="s60" long-name="Location Apps Platform Interfaces" introduced="^3" class="api">
-            <unit bldFile="/sf/app/location/loc_plat/group"/>
           </component>
         </collection>
       </block>

@@ -77,6 +77,280 @@
   <systemModel>
     <layer name="os" long-name="OS" levels="hw services">
       <block name="ossrv" level="services" long-name="Generic OS Services" levels="physical-abstraction app-libs encoding translation data-services utilities">
+        <collection name="ossrv_pub" long-name="Generic OS Services Public Interfaces" level="utilities">
+          <component name="boost_apis" long-name="Boost APIs" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/boost_apis/group"/>
+          </component>
+          <component name="cpp_wrappers" long-name="Cpp wrappers" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/cpp_wrappers/group"/>
+          </component>
+          <component name="character_type_apis" long-name="Character Type APIs" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/character_type_apis/group"/>
+          </component>
+          <component name="compiler_specific_runtime_support" long-name="Compiler Specific Runtime Support" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/compiler_specific_runtime_support/group"/>
+          </component>
+          <component name="ossrv_configuration_api" long-name="Generic OS Services Configuration API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/configuration/group"/>
+          </component>
+          <component name="crypto_authentication_codes_and_hash_functions_api" long-name="Crypto Authentication Codes and Hash Functions API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/crypto_authentication_codes_and_hash_functions_api/group"/>
+          </component>
+          <component name="crypto_auxillary_functions_api" long-name="Crypto Auxillary Functions API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/crypto_auxillary_functions_api/group"/>
+          </component>
+          <component name="crypto_certificates_api" long-name="Crypto Certificates API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/crypto_certificates_api/group"/>
+          </component>
+          <component name="crypto_inputoutput_and_data_encoding_api" long-name="Crypto Input/Output and Data Encoding API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/crypto_inputoutput_and_data_encoding_api/group"/>
+          </component>
+          <component name="crypto_public_key_cryptography_and_key_agreement_api" long-name="Crypto Public Key Cryptography and Key Agreement API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/crypto_public_key_cryptography_and_key_agreement_api/group"/>
+          </component>
+          <component name="crypto_symmetric_ciphers_api" long-name="Crypto Symmetric Ciphers API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/crypto_symmetric_ciphers_api/group"/>
+          </component>
+          <component name="crypto_utility_functions_api" long-name="Crypto Utility Functions API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/crypto_utility_functions_api/group"/>
+          </component>
+          <component name="cryptogaphy_related_api" long-name="Cryptogaphy Related API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/cryptogaphy_related_api/group"/>
+          </component>
+          <component name="ossrv_debug_api" long-name="Generic OS Services Debug API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/debug/group"/>
+          </component>
+          <component name="ossrv_exceptions_api" long-name="Generic OS Services Exceptions API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/exceptions/group"/>
+          </component>
+          <component name="gboxed" long-name="GBoxed API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/gboxed/group"/>
+          </component>
+          <component name="glib_arrays" long-name="Glib Arrays API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_arrays/group"/>
+          </component>
+          <component name="glib_asynchronous_queues" long-name="Glib Asynchronous Queues API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_asynchronous_queues/group"/>
+          </component>
+          <component name="glib_atomic_operations" long-name="Glib Atomic Operations API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_atomic_operations/group"/>
+          </component>
+          <component name="glib_automatic_string_completion" long-name="Glib Automatic String Completion API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_automatic_string_completion/group"/>
+          </component>
+          <component name="glib_balanced_binary_trees" long-name="Glib Balanced Binary Trees API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_balanced_binary_trees/group"/>
+          </component>
+          <component name="glib_basic_types" long-name="Glib Basic Types API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_basic_types/group"/>
+          </component>
+          <component name="glib_caches" long-name="Glib Caches API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_caches/group"/>
+          </component>
+          <component name="glib_character_set_conversion" long-name="Glib Character Set Conversion API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_character_set_conversion/group"/>
+          </component>
+          <component name="glib_closures" long-name="Glib Closures API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_closures/group"/>
+          </component>
+          <component name="glib_commandline_option_parser" long-name="Glib Command Line Option Parser API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_commandline_option_parser/group"/>
+          </component>
+          <component name="glib_datasets" long-name="Glib Datasets API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_datasets/group"/>
+          </component>
+          <component name="glib_date_and_time_functions" long-name="Glib Date and Time Functions API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_date_and_time_functions/group"/>
+          </component>
+          <component name="glib_doubleended_queues" long-name="Glib Double-ended Queues API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_doubleended_queues/group"/>
+          </component>
+          <component name="glib_doublylinked_lists" long-name="Glib Doubly-Linked Lists API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_doublylinked_lists/group"/>
+          </component>
+          <component name="glib_dynamic_loading_of_modules" long-name="Glib Dynamic Loading of Modules API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_dynamic_loading_of_modules/group"/>
+          </component>
+          <component name="glib_enums_and_flags" long-name="Glib Enums and Flags API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_enums_and_flags/group"/>
+          </component>
+          <component name="glib_error_reporting" long-name="Glib Error Reporting API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_error_reporting/group"/>
+          </component>
+          <component name="glib_file_utilities" long-name="Glib File Utilities API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_file_utilities/group"/>
+          </component>
+          <component name="glib_generic_values" long-name="Glib Generic Values API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_generic_values/group"/>
+          </component>
+          <component name="glib_globstyle_pattern_matching" long-name="Glib Glob-Style Pattern Matching API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_globstyle_pattern_matching/group"/>
+          </component>
+          <component name="glib_hash_tables" long-name="Glib Hash Tables API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_hash_tables/group"/>
+          </component>
+          <component name="glib_hook_functions" long-name="Glib Hook Functions API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_hook_functions/group"/>
+          </component>
+          <component name="glib_internationalization" long-name="Glib  Internationalization API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_internationalization/group"/>
+          </component>
+          <component name="glib_io_channels" long-name="Glib I/O Channels API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_io_channels/group"/>
+          </component>
+          <component name="glib_keyvalue_file_parser" long-name="Glib Key-Value File Parser API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_keyvalue_file_parser/group"/>
+          </component>
+          <component name="glib_lexical_scanner" long-name="Glib Lexical Scanner API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_lexical_scanner/group"/>
+          </component>
+          <component name="glib_main_event_loop" long-name="Glib Main Event Loop API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_main_event_loop/group"/>
+          </component>
+          <component name="glib_memory_allocation" long-name="Glib Memory Allocation API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_memory_allocation/group"/>
+          </component>
+          <component name="glib_memory_slices" long-name="Glib Memory Slices API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_memory_slices/group"/>
+          </component>
+          <component name="glib_message_logging" long-name="Glib Message Logging API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_message_logging/group"/>
+          </component>
+          <component name="glib_miscellaneous_utility_functions" long-name="Glib Miscellaneous Utility Functions API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_miscellaneous_utility_functions/group"/>
+          </component>
+          <component name="glib_nary_trees" long-name="Glib N-ary Trees API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_nary_trees/group"/>
+          </component>
+          <component name="glib_parameters_and_values" long-name="Glib Parameters and Values API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_parameters_and_values/group"/>
+          </component>
+          <component name="glib_quarks" long-name="Glib Quarks API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_quarks/group"/>
+          </component>
+          <component name="glib_random_numbers" long-name="Glib Random Numbers API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_random_numbers/group"/>
+          </component>
+          <component name="glib_relations_and_tuples" long-name="Glib Relations and Tuples API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_relations_and_tuples/group"/>
+          </component>
+          <component name="glib_shellrelated_utilities" long-name="Glib Shell-related Utilities API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_shellrelated_utilities/group"/>
+          </component>
+          <component name="glib_signals" long-name="Glib Signals API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_signals/group"/>
+          </component>
+          <component name="glib_simple_xml_subset_parser" long-name="Glib Simple XML Subset Parser API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_simple_xml_subset_parser/group"/>
+          </component>
+          <component name="glib_singlylinked_lists" long-name="Glib Singly-Linked Lists API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_singlylinked_lists/group"/>
+          </component>
+          <component name="glib_spawning_processes" long-name="Glib Spawning Processes API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_spawning_processes/group"/>
+          </component>
+          <component name="glib_standard_macros" long-name="Glib Standard Macros API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_standard_macros/group"/>
+          </component>
+          <component name="glib_string_utility_functions" long-name="Glib String Utility Functions API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_string_utility_functions/group"/>
+          </component>
+          <component name="glib_strings" long-name="Glib Strings API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_strings/group"/>
+          </component>
+          <component name="glib_thread_pools" long-name="Glib Thread Pools API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_thread_pools/group"/>
+          </component>
+          <component name="glib_threads" long-name="Glib Threads API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_threads/group"/>
+          </component>
+          <component name="glib_timers" long-name="Glib Timers API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_timers/group"/>
+          </component>
+          <component name="glib_unicode_manipulation" long-name="Glib Unicode Manipulation API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_unicode_manipulation/group"/>
+          </component>
+          <component name="glib_value_arrays" long-name="Glib Value Arrays API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_value_arrays/group"/>
+          </component>
+          <component name="glib_varargs_value_collection" long-name="Glib Varargs Value Collection API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/glib_varargs_value_collection/group"/>
+          </component>
+          <component name="gobject" long-name="GObject API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/gobject/group"/>
+          </component>
+          <component name="gparamspec" long-name="GParamSpec API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/gparamspec/group"/>
+          </component>
+          <component name="gtype" long-name="GType API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/gtype/group"/>
+          </component>
+          <component name="gtypemodule" long-name="GTypeModule API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/gtypemodule/group"/>
+          </component>
+          <component name="gtypeplugin" long-name="GTypePlugin API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/gtypeplugin/group"/>
+          </component>
+          <component name="io_stream_api" long-name="I/O stream API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/io_stream_api/group"/>
+          </component>
+          <component name="localization_function_api" long-name="Localization Function API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/localization_function_api/group"/>
+          </component>
+          <component name="math_operations_api" long-name="Math Operations API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/math_operations_api/group"/>
+          </component>
+          <component name="ossrv_memory_api" long-name="Generic OS Services Memory API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/memory/group"/>
+          </component>
+          <component name="no_namespace_headers" long-name="No Namespace Headers" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/no_namespace_headers/group"/>
+          </component>
+          <component name="openc_headers" long-name="OpenC headers" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/openc_headers/group"/>
+          </component>
+          <component name="openc_wrappers" long-name="OpenC wrappers" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/openc_wrappers/group"/>
+          </component>
+          <component name="ssl_general_api" long-name="SSL General API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/ssl_general_api/group"/>
+          </component>
+          <component name="ssl_protocol_methods_api" long-name="SSL Protocol Methods API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/ssl_protocol_methods_api/group"/>
+          </component>
+          <component name="standard_compressiondecompression_api" long-name="Standard Compression/Decompression API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/standard_compressiondecompression_api/group"/>
+          </component>
+          <component name="stl" long-name="STL API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/stl/group"/>
+          </component>
+          <component name="thread_api" long-name="Thread API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/thread_api/group"/>
+          </component>
+          <component name="type_attributes" long-name="Type Attributes API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/type_attributes/group"/>
+          </component>
+          <component name="typeinfo" long-name="Type Info API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/typeinfo/group"/>
+          </component>
+          <component name="utility_apis" long-name="Utility APIs" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/utility_apis/group"/>
+          </component>
+          <component name="wide_character_classapis" long-name="Wide character class/apis" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/wide_character_classapis/group"/>
+          </component>
+          <component name="dbus_api" long-name="Dbus API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/dbus/group"/>
+          </component>
+          <component name="dbus-glib" long-name="Dbus-glib API" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_pub/dbus-glib/group"/>
+          </component>
+        </collection>
+        <collection name="ossrv_plat" long-name="Generic OS Services Platform Interfaces" level="utilities">
+          <component name="libutils_apis" long-name="Utility Library APIs" filter="s60" class="api">
+            <unit bldFile="/sf/os/ossrv/ossrv_plat/libutils/group"/>
+          </component>
+        </collection>
         <collection name="stdlibs" long-name="Standard Libraries" level="translation">
           <component name="libz" filter="s60" long-name="Z Compression Library">
             <unit bldFile="/sf/os/ossrv/stdlibs/libz/group"/>
@@ -96,18 +370,23 @@
         <collection name="glib" long-name="GLib" level="utilities">
           <component name="glibbackend" filter="s60" long-name="GLib Backend">
             <unit bldFile="/sf/os/ossrv/glib/glibbackend/group"/>
+            <!-- Move to here: <unit bldFile="glib/glibbackend/group"/> -->
           </component>
           <component name="libglib" filter="s60" long-name="GLib Library">
             <unit bldFile="/sf/os/ossrv/glib/libglib/group"/>
+            <!-- Move to here: <unit bldFile="glib/libglib/group"/> -->
           </component>
           <component name="libgthread" filter="s60" long-name="Libg Thread">
             <unit bldFile="/sf/os/ossrv/glib/libgthread/group"/>
+            <!-- Move to here:     <unit bldFile="glib/libgthread/group"/> -->
           </component>
           <component name="libgmodule" filter="s60" long-name="Libg Module">
             <unit bldFile="/sf/os/ossrv/glib/libgmodule/group"/>
+            <!-- Move to here:         <unit bldFile="glib/libgmodule/group"/> -->
           </component>
           <component name="libgobject" filter="s60" long-name="Libg Object">
             <unit bldFile="/sf/os/ossrv/glib/libgobject/group"/>
+            <!-- Move to here:         <unit bldFile="glib/libgobject/group"/> -->
           </component>
         </collection>
         <collection name="stdcpp" long-name="C++ Standard Library" level="translation">
@@ -195,13 +474,7 @@
         <collection name="ossrv_info" long-name="Generic OS Services Info" level="utilities">
           <component name="ossrv_build" filter="s60" long-name="Generic OS Services Build">
             <!-- exports should be moved to individual components -->
-            <unit bldFile="/sf/os/ossrv/rom"/>
-          </component>
-          <component name="ossrv_plat" filter="s60" long-name="Generic OS Services Platform Interfaces" class="api">
-            <unit bldFile="/sf/os/ossrv/ossrv_plat/libutils/group"/>
-          </component>
-          <component name="ossrv_pub" filter="s60" long-name="Generic OS Services Public Interfaces" class="api">
-            <unit bldFile="/sf/os/ossrv/ossrv_pub/group"/>
+            <unit bldFile="/sf/os/ossrv/group"/>
           </component>
           <component name="ossrv_metadata" long-name="Generic OS Services Metadata" introduced="^2" purpose="development" class="config PC">
             <unit mrp="/sf/os/ossrv/ossrv_info/ossrv_metadata/ossrv_metadata.mrp"/>

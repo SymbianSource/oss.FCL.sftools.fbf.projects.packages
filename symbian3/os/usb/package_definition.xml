@@ -77,6 +77,11 @@
   <systemModel>
     <layer name="os" long-name="OS" levels="hw services">
       <block name="usb" level="services" long-name="USB" levels="adaptation hw-if plugin framework server app-if">
+        <collection name="usb_plat" long-name="USB Platform Interfaces" level="app-if">
+          <component name="usb_audio_stream_plugin_api" long-name="USB Audio Stream Plugin API" filter="s60" class="api">
+            <unit bldFile="/sf/os/usb/usb_plat/usb_audio_stream_plugin_api/group"/>
+          </component>
+        </collection>
         <collection name="usbldd" long-name="USB Logical Device Drivers" level="hw-if">
           <!-- usbclientdrivers  to be moved here from kernelhwsrv-->
         </collection>
@@ -92,9 +97,6 @@
           </component>
         </collection>
         <collection name="usb_info" long-name="USB Info" level="app-if">
-          <component name="usb_plat" filter="s60" long-name="USB Platform Interfaces" class="api">
-            <unit bldFile="/sf/os/usb/usb_plat/group"/>
-          </component>
           <component name="usb_metadata" long-name="USB Metadata" introduced="^3" purpose="development" class="config PC">
             <unit mrp="/sf/os/usb/usb_info/usb_metadata/usb_metadata.mrp"/>
           </component>

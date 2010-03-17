@@ -83,9 +83,6 @@
           </component>
         </collection>
         <collection name="remoteconn_info" long-name="Remote Connectivity Info" level="specific">
-          <component name="remoteconn_plat" filter="s60" long-name="Remote Connectivity Platform Interfaces" class="api">
-            <unit bldFile="/sf/mw/remoteconn/remoteconn_plat/group"/>
-          </component>
           <component name="remoteconn_metadata" long-name="Remote Connectivity Metadata" introduced="^2" purpose="development" class="config PC">
             <unit mrp="/sf/mw/remoteconn/remoteconn_info/remoteconn_metadata/remoteconn_metadata.mrp"/>
           </component>

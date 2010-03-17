@@ -128,11 +128,12 @@
             <unit bldFile="/sf/os/graphics/graphicstest/uibench/group" mrp="/sf/os/graphics/graphicstest/uibench/group/graphics_ui_bench.mrp"/>
           </component>
         </collection>
-        <collection name="graphics_info" long-name="Graphics Info" level="app-if">
+        <collection name="graphics_plat" long-name="Graphics Platform Interfaces" level="app-if">
           <component name="m3g_core_api" filter="sf_build" long-name="M3G Core API" class="api">
             <unit bldFile="/sf/os/graphics/graphics_plat/m3g_core_api/group"/>
-            <!-- cope with missing graphics_plat/group -->
           </component>
+        </collection>
+        <collection name="graphics_info" long-name="Graphics Info" level="app-if">
           <component name="graphicsdocs" long-name="Graphics Documentation" purpose="development" class="doc">
             <unit mrp="/sf/os/graphics/graphics_info/graphicsdocs/graphics_documentation.mrp"/>
           </component>

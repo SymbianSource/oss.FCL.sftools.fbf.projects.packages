@@ -1,68 +1,131 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="mmuifw" name="Multimedia UI Framework" levels="mgr mdl util ui">
-    <collection id="mmuifw_info" name="Multimedia UI Framework Info" level="ui">
-      <component id="mmuifw_plat" filter="s60" name="Multimedia UI Framework Platform Interfaces" class="api">
-        <unit bldFile="mmuifw_plat/group"/>
-      </component>
-      <component id="mmuifw_build" filter="s60" name="Multimedia UI Framework Build">
-       	<!-- Move exports into other componetns or remove all #includes and make this a ROM component -->
-        <unit bldFile="group"/>
-      </component>
-    </collection>
-    <collection id="osncore" name="OS Neutral Library Core" level="util">
-    	<!-- collection is really a component. Move down a directory -->
-      <component id="osncore_build" filter="s60" name="OSN Core Build">
-        <unit bldFile="osncore/group"/>
-      </component>
-    </collection>
-    <collection id="alfwidgetutils" name="Accelerated LAF Widget Utils" level="ui">
-    	<!-- collection is really a component. Move down a directory -->
-      <component id="alfwidgetutils_build" filter="s60" name="ALF Widget Utils">
-        <unit bldFile="alfwidgetutils/group"/>
-      </component>
-    </collection>
-    <collection id="resourcepool" name="Resource Pool" level="util">
-    	<!-- collection is really a component. Move down a directory -->
-      <component id="alfresourcepool" filter="s60" name="ALF Resource Pool">
-        <unit bldFile="resourcepool/group"/>
-      </component>
-    </collection>
-    <collection id="widgetmodel" name="Widget Model" level="mdl">
-    	<!-- collection is really a component. Move down a directory -->
-      <component id="widgetmodel_build" filter="s60" name="Widget Model Build">
-        <unit bldFile="widgetmodel/group"/>
-      </component>
-    </collection>
-    <collection id="mulwidgets" name="MUL Widgets" level="ui">
-    	<!-- should spell out MUL in the collection name -->
-      <component id="mullogging" filter="s60" name="MUL Logging">
-        <unit bldFile="mulwidgets/mullogging/group"/>
-      </component>
-      <component id="muldatamodel" filter="s60" name="MUL Data Model">
-        <unit bldFile="mulwidgets/muldatamodel/group"/>
-      </component>
-      <component id="mulwidgets_common" filter="s60" name="MUL Common Utils">
-        <unit bldFile="mulwidgets/common/group"/>
-      </component>
-      <component id="gesturehelper" filter="s60" name="Gesture Helper">
-        <unit bldFile="mulwidgets/gesturehelper/group"/>
-      </component>
-      <component id="mulcoverflowwidget" filter="s60" name="MUL CoverFlow Widget">
-        <unit bldFile="mulwidgets/mulcoverflowwidget/group"/>
-      </component>
-      <component id="mulsliderwidget" filter="s60" name="MUL Slider Widget">
-        <unit bldFile="mulwidgets/mulsliderwidget/group"/>
-      </component>
-      <component id="alfviewwidget" filter="s60" name="ALF View Widget">
-        <unit bldFile="mulwidgets/alfviewwidget/group"/>
-      </component>
-      <component id="alfcontainerwidget" filter="s60" name="ALF Container Widget">
-        <unit bldFile="mulwidgets/alfcontainerwidget/group"/>
-      </component>
-      <component id="alfscrollbarwidget" filter="s60" name="ALF Scrollbar Widget">
-        <unit bldFile="mulwidgets/alfscrollbarwidget/group"/>
-      </component>
-    </collection>
-  </package>
+ <package id="mmuifw" name="Multimedia UI Framework" levels="mgr mdl util ui api">
+  <collection id="mmuifw_plat" name="Multimedia UI Framework Platform Interfaces" level="api">
+   <component id="alf_widgetfactory_api" name="ALF Widget Factory API" class="api" filter="s60">
+    <meta rel="Api" href="mmuifw_plat/alf_widgetfactory_api/alf_widgetfactory_api.metaxml"/>
+    <unit bldFile="mmuifw_plat/alf_widgetfactory_api/group"/>
+   </component>
+   <component id="alf_widgetutils_api" name="ALF Widget Utils API" class="api" filter="s60">
+    <meta rel="Api" href="mmuifw_plat/alf_widgetutils_api/alf_widgetutils_api.metaxml"/>
+    <unit bldFile="mmuifw_plat/alf_widgetutils_api/group"/>
+   </component>
+   <component id="alf_widgetmodel_api" name="ALF Widget Model API" class="api" filter="s60">
+    <meta rel="Api" href="mmuifw_plat/alf_widgetmodel_api/alf_widgetmodel_api.metaxml"/>
+    <unit bldFile="mmuifw_plat/alf_widgetmodel_api/group"/>
+   </component>
+   <component id="osn_container_api" name="OSN Container API" class="api" filter="s60">
+    <meta rel="Api" href="mmuifw_plat/osn_container_api/osn_container_api.metaxml"/>
+    <unit bldFile="mmuifw_plat/osn_container_api/group"/>
+   </component>
+   <component id="osn_global_api" name="OSN Global API" class="api" filter="s60">
+    <meta rel="Api" href="mmuifw_plat/osn_global_api/osn_global_api.metaxml"/>
+    <unit bldFile="mmuifw_plat/osn_global_api/group"/>
+   </component>
+   <component id="osn_string_api" name="OSN String API" class="api" filter="s60">
+    <meta rel="Api" href="mmuifw_plat/osn_string_api/osn_string_api.metaxml"/>
+    <unit bldFile="mmuifw_plat/osn_string_api/group"/>
+   </component>
+   <component id="alf_resourcepool_api" name="ALF Resource Pool API" class="api" filter="s60">
+    <meta rel="Api" href="mmuifw_plat/alf_resourcepool_api/alf_resourcepool_api.metaxml"/>
+    <unit bldFile="mmuifw_plat/alf_resourcepool_api/group"/>
+   </component>
+   <component id="alf_containerwidget_api" name="ALF Container Widget API" class="api" filter="s60">
+    <meta rel="Api" href="mmuifw_plat/alf_containerwidget_api/alf_containerwidget_api.metaxml"/>
+    <unit bldFile="mmuifw_plat/alf_containerwidget_api/group"/>
+   </component>
+   <component id="alf_viewwidget_api" name="ALF View Widget API" class="api" filter="s60">
+    <meta rel="Api" href="mmuifw_plat/alf_viewwidget_api/alf_viewwidget_api.metaxml"/>
+    <unit bldFile="mmuifw_plat/alf_viewwidget_api/group"/>
+   </component>
+   <component id="alf_scrollbarwidget_api" name="ALF Scrollbar Widget API" class="api" filter="s60">
+    <meta rel="Api" href="mmuifw_plat/alf_scrollbarwidget_api/alf_scrollbarwidget_api.metaxml"/>
+    <unit bldFile="mmuifw_plat/alf_scrollbarwidget_api/group"/>
+   </component>
+   <component id="alf_customlayoutmanagers_api" name="ALF Custom Layout Managers API" class="api" filter="s60">
+    <meta rel="Api" href="mmuifw_plat/alf_customlayoutmanagers_api/alf_customlayoutmanagers_api.metaxml"/>
+    <unit bldFile="mmuifw_plat/alf_customlayoutmanagers_api/group"/>
+   </component>
+   <component id="gesturehelper_api" name="Gesture Helper API" class="api" filter="s60">
+    <meta rel="Api" href="mmuifw_plat/gesturehelper_api/gesturehelper_api.metaxml"/>
+    <unit bldFile="mmuifw_plat/gesturehelper_api/group"/>
+   </component>
+   <component id="mul_coverflowwidget_api" name="MUL Coverflow Widget API" class="api" filter="s60">
+    <meta rel="Api" href="mmuifw_plat/mul_coverflowwidget_api/mul_coverflowwidget_api.metaxml"/>
+    <unit bldFile="mmuifw_plat/mul_coverflowwidget_api/group"/>
+   </component>
+   <component id="mul_datamodel_api" name="MUL Data Model API" class="api" filter="s60">
+    <meta rel="Api" href="mmuifw_plat/mul_datamodel_api/mul_datamodel_api.metaxml"/>
+    <unit bldFile="mmuifw_plat/mul_datamodel_api/group"/>
+   </component>
+   <component id="mul_sliderwidget_api" name="MUL Slider Widget API" class="api" filter="s60">
+    <meta rel="Api" href="mmuifw_plat/mul_sliderwidget_api/mul_sliderwidget_api.metaxml"/>
+    <unit bldFile="mmuifw_plat/mul_sliderwidget_api/group"/>
+   </component>
+   <component id="mul_widget_api" name="MUL Widget API" class="api" filter="s60">
+    <meta rel="Api" href="mmuifw_plat/mul_widget_api/mul_widget_api.metaxml"/>
+    <unit bldFile="mmuifw_plat/mul_widget_api/group"/>
+   </component>
+  </collection>
+  <collection id="mmuifw_info" name="Multimedia UI Framework Info" level="ui">
+   <component id="mmuifw_build" filter="s60" name="Multimedia UI Framework Build">
+    <!-- Move exports into other componetns or remove all #includes and make this a ROM component -->
+    <unit bldFile="group"/>
+   </component>
+  </collection>
+  <collection id="osncore" name="OS Neutral Library Core" level="util">
+   <!-- collection is really a component. Move down a directory -->
+   <component id="osncore_build" filter="s60" name="OSN Core Build">
+    <unit bldFile="osncore/group"/>
+   </component>
+  </collection>
+  <collection id="alfwidgetutils" name="Accelerated LAF Widget Utils" level="ui">
+   <!-- collection is really a component. Move down a directory -->
+   <component id="alfwidgetutils_build" filter="s60" name="ALF Widget Utils">
+    <unit bldFile="alfwidgetutils/group"/>
+   </component>
+  </collection>
+  <collection id="resourcepool" name="Resource Pool" level="util">
+   <!-- collection is really a component. Move down a directory -->
+   <component id="alfresourcepool" filter="s60" name="ALF Resource Pool">
+    <unit bldFile="resourcepool/group"/>
+   </component>
+  </collection>
+  <collection id="widgetmodel" name="Widget Model" level="mdl">
+   <!-- collection is really a component. Move down a directory -->
+   <component id="widgetmodel_build" filter="s60" name="Widget Model Build">
+    <unit bldFile="widgetmodel/group"/>
+   </component>
+  </collection>
+  <collection id="mulwidgets" name="MUL Widgets" level="ui">
+   <!-- should spell out MUL in the collection name -->
+   <component id="mullogging" filter="s60" name="MUL Logging">
+    <unit bldFile="mulwidgets/mullogging/group"/>
+   </component>
+   <component id="muldatamodel" filter="s60" name="MUL Data Model">
+    <unit bldFile="mulwidgets/muldatamodel/group"/>
+   </component>
+   <component id="mulwidgets_common" filter="s60" name="MUL Common Utils">
+    <unit bldFile="mulwidgets/common/group"/>
+   </component>
+   <component id="gesturehelper" filter="s60" name="Gesture Helper">
+    <unit bldFile="mulwidgets/gesturehelper/group"/>
+   </component>
+   <component id="mulcoverflowwidget" filter="s60" name="MUL CoverFlow Widget">
+    <unit bldFile="mulwidgets/mulcoverflowwidget/group"/>
+   </component>
+   <component id="mulsliderwidget" filter="s60" name="MUL Slider Widget">
+    <unit bldFile="mulwidgets/mulsliderwidget/group"/>
+   </component>
+   <component id="alfviewwidget" filter="s60" name="ALF View Widget">
+    <unit bldFile="mulwidgets/alfviewwidget/group"/>
+   </component>
+   <component id="alfcontainerwidget" filter="s60" name="ALF Container Widget">
+    <unit bldFile="mulwidgets/alfcontainerwidget/group"/>
+   </component>
+   <component id="alfscrollbarwidget" filter="s60" name="ALF Scrollbar Widget">
+    <unit bldFile="mulwidgets/alfscrollbarwidget/group"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>

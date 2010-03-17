@@ -78,6 +78,11 @@
     <layer name="mw" long-name="Middleware" levels="generic specific">
       <block name="vpnclient" level="specific" long-name="VPN Client" levels="engine ui api">
         <!-- is the !oem_build filter needed? -->
+        <collection name="vpnc_plat" long-name="VPN Client Platform Interfaces" level="api">
+          <component name="vpnapi" filter="s60" long-name="VPN API" class="api">
+            <unit bldFile="/sf/mw/vpnclient/vpnc_plat/vpnapi/group" filter="!oem_build"/>
+          </component>
+        </collection>
         <collection name="vpnapiimpl" long-name="VPN API Implementation" level="api">
           <component name="vpnapi" filter="s60" long-name="VPN API">
             <unit bldFile="/sf/mw/vpnclient/vpnapiimpl/group" filter="!oem_build"/>
@@ -196,9 +201,6 @@
           <component name="vpnclient_build" filter="s60" long-name="VPN Client Build">
             <!-- should split this up into the other components and remove this-->
             <unit bldFile="/sf/mw/vpnclient/group" filter="!oem_build"/>
-          </component>
-          <component name="vpnc_plat" filter="s60" long-name="VPN Client Platform Interfaces" class="api">
-            <unit bldFile="/sf/mw/vpnclient/vpnc_plat/vpnapi/group" filter="!oem_build"/>
           </component>
         </collection>
       </block>

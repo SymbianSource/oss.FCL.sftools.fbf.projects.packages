@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="imgeditor" name="Image Editor Apps" levels="engine ui">
+    <collection id="imgeditor_plat" name="Image Editor Apps Platform Interfaces" level="ui">
+      <component id="image_editor_debug_utilities_api" name="Image Editor Debug Utilities API" class="api" filter="s60">
+        <meta rel="Api" href="imgeditor_plat/image_editor_debug_utilities_api/image_editor_debug_utilities_api.metaxml"/>
+        <unit bldFile="imgeditor_plat/image_editor_debug_utilities_api/group"/>
+      </component>
+      <component id="image_editor_utilities_api" name="Image Editor Utilities API" class="api" filter="s60">
+        <meta rel="Api" href="imgeditor_plat/image_editor_utilities_api/image_editor_utilities_api.metaxml"/>
+        <unit bldFile="imgeditor_plat/image_editor_utilities_api/group"/>
+      </component>
+      <component id="image_editor_definitions_api" name="Image Editor Definitions API" class="api" filter="s60">
+        <meta rel="Api" href="imgeditor_plat/image_editor_definitions_api/image_editor_definitions_api.metaxml"/>
+        <unit bldFile="imgeditor_plat/image_editor_definitions_api/group"/>
+      </component>
+      <component id="image_editor_system_parameters_api" name="Image Editor System Parameters API" class="api" filter="s60">
+        <meta rel="Api" href="imgeditor_plat/image_editor_system_parameters_api/image_editor_system_parameters_api.metaxml"/>
+        <unit bldFile="imgeditor_plat/image_editor_system_parameters_api/group"/>
+      </component>
+      <component id="image_processing_engine_api" name="Image Processing Engine API" class="api" filter="s60">
+        <meta rel="Api" href="imgeditor_plat/image_processing_engine_api/image_processing_engine_api.metaxml"/>
+        <unit bldFile="imgeditor_plat/image_processing_engine_api/group"/>
+      </component>
+    </collection>
     <collection id="imageeditor" name="Image Editor UI" level="ui">
       <component id="pb" filter="s60" name="Plugin Base">
         <unit bldFile="imageeditor/pb/group"/>
@@ -87,11 +109,6 @@
       <component id="imageeditorengine_build" filter="s60" name="Image Editor Engine Build">
       	<!-- should distribute this to the other components -->
         <unit bldFile="imageeditorengine/group"/>
-      </component>
-    </collection>
-    <collection id="imgeditor_info" name="Image Editor Apps Info" level="ui">
-      <component id="imgeditor_plat" filter="s60" name="Image Editor Apps Platform Interfaces" class="api">
-        <unit bldFile="imgeditor_plat/group"/>
       </component>
     </collection>
   </package>

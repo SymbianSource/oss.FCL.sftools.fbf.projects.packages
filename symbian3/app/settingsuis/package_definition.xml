@@ -77,6 +77,15 @@
   <systemModel>
     <layer name="app" long-name="Applications" levels="services apps">
       <block name="settingsuis" level="services" long-name="Settings UIs" levels="rsc ui">
+        <collection name="devmngt_plat" long-name="Settings UIs Platform Interfaces" level="ui">
+          <component name="default_app_client_api" long-name="Default App Client API" introduced="^1" filter="s60" class="api">
+            <unit bldFile="/sf/app/settingsuis/devmngt_plat/default_app_client_api/group"/>
+          </component>
+          <component name="services_db_api" long-name="Services DB API" introduced="^1" filter="s60" class="api">
+            <unit bldFile="/sf/app/settingsuis/devmngt_plat/services_db_api/group" filter="!test"/>
+            <unit bldFile="/sf/app/settingsuis/devmngt_plat/services_db_api/tsrc/ServicesDbApiTest/group" filter="test,unit_test"/>
+          </component>
+        </collection>
         <collection name="defaultapplicationsettings" long-name="Default Application Settings" level="rsc">
           <component name="services_db" filter="s60" long-name="Services Database" introduced="^1">
             <unit bldFile="/sf/app/settingsuis/defaultapplicationsettings/services_db/group"/>
@@ -98,17 +107,6 @@
         <collection name="systemswuis" long-name="System SW UIs" level="ui">
           <component name="touchscreencalib" filter="s60" long-name="Touchscreen Calibration" introduced="^1">
             <unit bldFile="/sf/app/settingsuis/systemswuis/touchscreencalib/group"/>
-          </component>
-        </collection>
-        <collection name="settingsuis_info" long-name="Settings UIs Info" level="ui">
-          <component name="devmngt_plat" filter="s60" long-name="Settings UIs Platform Interfaces" introduced="^1" class="api">
-            <unit bldFile="/sf/app/settingsuis/devmngt_plat/group"/>
-          </component>
-          <component name="devmngt_pub" filter="s60" long-name="Settings UIs Public Interfaces" introduced="^1" class="api">
-            <unit bldFile="/sf/app/settingsuis/devmngt_pub/group"/>
-          </component>
-          <component name="settingsuis_test" filter="s60,test,unit_test" purpose="development" long-name="Settings UIs Test" introduced="^1">
-            <unit bldFile="/sf/app/settingsuis/devmngt_plat/services_db_api/tsrc/ServicesDbApiTest/group"/>
           </component>
         </collection>
       </block>

@@ -1,42 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="imsrv" name="Instant Messaging and Presence Services" levels="plugin framework server generic specific">
-    <collection id="ximpfw" name="XIMP Framework" level="framework">
-    	<!-- collection is really a component. Needs to be moved down a directory -->
-      <component id="ximpfw_build" filter="s60" name="XIMP Framework Build">
-        <unit bldFile="ximpfw/group"/>
-      </component>
-    </collection>
-    <collection id="imservices" name="IM Services" level="generic">
-      <component id="imfeatureplugin" filter="s60" name="IM Feature Plugin" class="plugin" introduced="^2">
-        <unit bldFile="imservices/imfeatureplugin/group"/>
-      </component>
-      <component id="searchfeatureplugin" filter="s60" name="Search Feature Plugin" class="plugin" introduced="^2">
-        <unit bldFile="imservices/searchfeatureplugin/group"/>
-      </component>
-      <component id="xmppsettingsapi" filter="s60" name="XMPP Settings API" introduced="^2">
-        <unit bldFile="imservices/xmppsettingsapi/group"/>
-      </component>
-      <component id="xmppsettingsfetcher" filter="s60" name="XMPP Settings Fetcher" introduced="^2">
-        <unit bldFile="imservices/xmppsettingsfetcher/group"/>
-      </component>
-      <component id="ossprotocoladaptation" filter="s60" name="OSS Protocol Adaptation" class="plugin" introduced="^2">
-        <unit bldFile="imservices/ossprotocoladaptation/group"/>
-      </component>
-      <component id="instantmessagingcache" filter="s60" name="Instant Messaging Cache" introduced="^2">
-        <unit bldFile="imservices/instantmessagingcache/group"/>
-      </component>
-    </collection>
-    <collection id="brandingserver" name="Branding Server" level="specific">
-    	<!-- collection is really a component. Needs to be moved down a directory -->
-      <component id="brandingserver_build" filter="s60" name="Branding Server Build">
-        <unit bldFile="brandingserver/group"/>
-      </component>
-    </collection>
-    <collection id="imsrv_info" name="Instant Messaging and Presence Services Info" level="specific">
-      <component id="imsrv_plat" filter="s60" name="Instant Messaging and Presence Services Platform Interfaces" class="api">
-        <unit bldFile="imsrv_plat/group"/>
-      </component>
-    </collection>
-  </package>
+ <package id="imsrv" name="Instant Messaging and Presence Services" levels="plugin framework server generic specific">
+  <collection id="imsrv_plat" name="Instant Messaging and Presence Services Platform Interfaces" level="specific">
+   <component id="ximp_core_data_model_api" name="XIMP Core Data Model API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_core_data_model_api/ximp_core_data_model_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_core_data_model_api/group"/>
+   </component>
+   <component id="ximp_presence_protocol_plugin_host_api" name="XIMP Presence Protocol Plug-in Host API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_presence_protocol_plugin_host_api/ximp_presence_protocol_plugin_host_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_presence_protocol_plugin_host_api/group"/>
+   </component>
+   <component id="ximp_presence_data_model_api" name="XIMP Presence Data Model API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_presence_data_model_api/ximp_presence_data_model_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_presence_data_model_api/group"/>
+   </component>
+   <component id="ximp_presence_protocol_plugin_api" name="XIMP Presence Protocol Plug-in API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_presence_protocol_plugin_api/ximp_presence_protocol_plugin_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_presence_protocol_plugin_api/group"/>
+   </component>
+   <component id="ximp_presence_management_api" name="XIMP Presence Management API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_presence_management_api/ximp_presence_management_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_presence_management_api/group"/>
+   </component>
+   <component id="ximp_core_protocol_plugin_host_api" name="XIMP Core Protocol Plug-in Host API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_core_protocol_plugin_host_api/ximp_core_protocol_plugin_host_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_core_protocol_plugin_host_api/group"/>
+   </component>
+   <component id="ximp_core_management_api" name="XIMP Core Management API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_core_management_api/ximp_core_management_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_core_management_api/group"/>
+   </component>
+   <component id="ximp_presence_base_api" name="XIMP Presence Base API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_presence_base_api/ximp_presence_base_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_presence_base_api/group"/>
+   </component>
+   <component id="ximp_core_protocol_plugin_api" name="XIMP Core Protocol Plug-in API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_core_protocol_plugin_api/ximp_core_protocol_plugin_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_core_protocol_plugin_api/group"/>
+   </component>
+   <component id="ximp_core_base_api" name="XIMP Core Base API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_core_base_api/ximp_core_base_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_core_base_api/group"/>
+   </component>
+   <component id="ximp_presence_cache_api" name="XIMP Presence Cache API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_presence_cache_api/ximp_presence_cache_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_presence_cache_api/group"/>
+   </component>
+   <component id="ximp_core_feature_plugin_api" name="XIMP Core Feature Plugin API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_core_feature_plugin_api/ximp_core_feature_plugin_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_core_feature_plugin_api/group"/>
+   </component>
+   <component id="ximp_im_protocol_plugin_host_api" name="XIMP IM Protocol Plugin Host API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_im_protocol_plugin_host_api/ximp_im_protocol_plugin_host_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_im_protocol_plugin_host_api/group"/>
+   </component>
+   <component id="ximp_im_data_model_api" name="XIMP IM Data Model API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_im_data_model_api/ximp_im_data_model_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_im_data_model_api/group"/>
+   </component>
+   <component id="ximp_im_protocol_plugin_api" name="XIMP IM Protocol Plugin API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_im_protocol_plugin_api/ximp_im_protocol_plugin_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_im_protocol_plugin_api/group"/>
+   </component>
+   <component id="ximp_im_management_api" name="XIMP IM Management API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_im_management_api/ximp_im_management_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_im_management_api/group"/>
+   </component>
+   <component id="ximp_im_base_api" name="XIMP IM Base API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_im_base_api/ximp_im_base_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_im_base_api/group"/>
+   </component>
+   <component id="ximp_search_protocol_plugin_host_api" name="XIMP Search Protocol Plugin Host API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_search_protocol_plugin_host_api/ximp_search_protocol_plugin_host_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_search_protocol_plugin_host_api/group"/>
+   </component>
+   <component id="ximp_search_data_model_api" name="XIMP Search Data Model API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_search_data_model_api/ximp_search_data_model_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_search_data_model_api/group"/>
+   </component>
+   <component id="ximp_search_protocol_plugin_api" name="XIMP search Protocol Plugin API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_search_protocol_plugin_api/ximp_search_protocol_plugin_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_search_protocol_plugin_api/group"/>
+   </component>
+   <component id="ximp_search_management_api" name="XIMP Search Management API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_search_management_api/ximp_search_management_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_search_management_api/group"/>
+   </component>
+   <component id="ximp_search_base_api" name="XIMP Search Base API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/ximp_search_base_api/ximp_search_base_api.metaxml"/>
+    <unit bldFile="imsrv_plat/ximp_search_base_api/group"/>
+   </component>
+   <component id="xmpp_settings_api" name="XMPP Settings API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/xmpp_settings_api/xmpp_settings_api.metaxml"/>
+    <unit bldFile="imsrv_plat/xmpp_settings_api/group"/>
+   </component>
+   <component id="im_cache_client_api" name="IM Cache Client API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/im_cache_client_api/im_cache_client_api.metaxml"/>
+    <unit bldFile="imsrv_plat/im_cache_client_api/group"/>
+   </component>
+   <component id="im_cache_server_api" name="IM Cache Server API" class="api" filter="s60">
+    <meta rel="Api" href="imsrv_plat/im_cache_server_api/im_cache_server_api.metaxml"/>
+    <unit bldFile="imsrv_plat/im_cache_server_api/group"/>
+   </component>
+   <component id="presence_avabilitytext" name="Presence Avability Text" class="api" filter="s60">
+    <unit bldFile="imsrv_plat/presence_avabilitytext/group"/>
+   </component>
+  </collection>
+  <collection id="ximpfw" name="XIMP Framework" level="framework">
+   <!-- collection is really a component. Needs to be moved down a directory -->
+   <component id="ximpfw_build" filter="s60" name="XIMP Framework Build">
+    <unit bldFile="ximpfw/group"/>
+   </component>
+  </collection>
+  <collection id="imservices" name="IM Services" level="generic">
+   <component id="imfeatureplugin" filter="s60" name="IM Feature Plugin" class="plugin" introduced="^2">
+    <unit bldFile="imservices/imfeatureplugin/group"/>
+   </component>
+   <component id="searchfeatureplugin" filter="s60" name="Search Feature Plugin" class="plugin" introduced="^2">
+    <unit bldFile="imservices/searchfeatureplugin/group"/>
+   </component>
+   <component id="xmppsettingsapi" filter="s60" name="XMPP Settings API" introduced="^2">
+    <unit bldFile="imservices/xmppsettingsapi/group"/>
+   </component>
+   <component id="xmppsettingsfetcher" filter="s60" name="XMPP Settings Fetcher" introduced="^2">
+    <unit bldFile="imservices/xmppsettingsfetcher/group"/>
+   </component>
+   <component id="ossprotocoladaptation" filter="s60" name="OSS Protocol Adaptation" class="plugin" introduced="^2">
+    <unit bldFile="imservices/ossprotocoladaptation/group"/>
+   </component>
+   <component id="instantmessagingcache" filter="s60" name="Instant Messaging Cache" introduced="^2">
+    <unit bldFile="imservices/instantmessagingcache/group"/>
+   </component>
+  </collection>
+  <collection id="brandingserver" name="Branding Server" level="specific">
+   <!-- collection is really a component. Needs to be moved down a directory -->
+   <component id="brandingserver_build" filter="s60" name="Branding Server Build">
+    <unit bldFile="brandingserver/group"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>

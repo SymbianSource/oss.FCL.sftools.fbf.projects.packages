@@ -97,9 +97,11 @@
           <component name="cafrecogniserconfig" long-name="CAF Recogniser Config" introduced="9.1" purpose="mandatory">
             <unit bldFile="/sf/os/security/contentmgmt/cafrecogniserconfig" mrp="/sf/os/security/contentmgmt/cafrecogniserconfig/security_reccafconfig.mrp"/>
           </component>
-          <component name="referencedrmagent" long-name="Reference DRM Agent" introduced="8.0" purpose="development" filter="test">
-            <!-- remove test filter once cafstreamingsupport is available -->
+          <component name="referencedrmagent" long-name="Reference DRM Agent" introduced="8.0" purpose="development">
             <unit bldFile="/sf/os/security/contentmgmt/referencedrmagent/RefTestAgent/group" mrp="/sf/os/security/contentmgmt/referencedrmagent/RefTestAgent/group/security_rta.mrp"/>
+          </component>
+          <component name="cafstreamingsupport" long-name="CAF Streaming Support" introduced="^3" purpose="optional">
+            <unit bldFile="/sf/os/security/contentmgmt/cafstreamingsupport/group" mrp="/sf/os/security/contentmgmt/cafstreamingsupport/group/security_streamingcaf.mrp"/>
           </component>
         </collection>
         <collection name="crypto" long-name="Crypto Libraries" level="libraries">

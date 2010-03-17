@@ -77,6 +77,23 @@
   <systemModel>
     <layer name="os" long-name="OS" levels="hw services">
       <block name="xmlsrv" level="services" long-name="XML Services" levels="plugin server framework generic specific">
+        <collection name="xmlsrv_plat" long-name="XML Services Platform Interfaces" level="specific">
+          <component name="xmlsrv_plat_build" long-name="XML Services Platform Interface Build" filter="s60" class="api">
+            <!-- need to fix the configuration used here. 
+	  Either destribute to other components or use the new feature flags confguration mechanisms.
+	  Remove this component and uncomment the other units when fixed-->
+            <unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/group"/>
+          </component>
+          <component name="xml_encryption_api" long-name="XML Encryption API" filter="s60" class="api">
+            <!-- <unit bldFile="xmlsrv_plat/xml_encryption_api/group"/> -->
+          </component>
+          <component name="xml_signature_api" long-name="XML Signature API" filter="s60" class="api">
+            <!-- <unit bldFile="xmlsrv_plat/xml_signature_api/group"/> -->
+          </component>
+          <component name="xml_security_engine_utils_api" long-name="XML Security Engine Utils API" filter="s60" class="api">
+            <!-- <unit bldFile="xmlsrv_plat/xml_security_engine_utils_api/group"/> -->
+          </component>
+        </collection>
         <collection name="xmlsecurityengine" long-name="XML Security Engine" level="framework">
           <component name="xmlseccertman" filter="s60" long-name="XML Security Certificate Manager">
             <unit bldFile="/sf/os/xmlsrv/xmlsecurityengine/xmlseccertman/group"/>
@@ -115,9 +132,6 @@
           </component>
         </collection>
         <collection name="xmlsrv_info" long-name="XML Services Info" level="specific">
-          <component name="xmlsrv_plat" filter="s60" long-name="XML Services Platform Interfaces" class="api">
-            <unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/group"/>
-          </component>
           <component name="xmlsrv_metadata" long-name="XML Services Metadata" introduced="^2" purpose="development" class="config PC">
             <unit mrp="/sf/os/xmlsrv/xmlsrv_info/xmlsrv_metadata/xmlsrv_metadata.mrp"/>
           </component>

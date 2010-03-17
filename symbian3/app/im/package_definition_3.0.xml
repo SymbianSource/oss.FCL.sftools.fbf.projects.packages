@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="im" name="Instant Messaging Apps" levels="support prot engine apps">
-    <collection id="wvsettings20" name="Wireless Village Settings Engine" level="support">
-      	<!-- this is really a component. should move down a directory -->
-      <component id="wvsapsettingsstore" name="WV SAP Settings Store" filter="s60" introduced="9.3">
-        <unit bldFile="wvsettings20/group"/>
-      </component>
-    </collection>
-    <collection id="im_info" name="Instant Messaging Apps Info" level="apps">
-      <component id="im_plat" filter="s60" name="Instant Messaging Apps Platform Interfaces" class="api">
-        <unit bldFile="im_plat/group"/>
-      </component>
-    </collection>
-  </package>
+ <package id="im" name="Instant Messaging Apps" levels="support prot engine apps">
+  <collection id="im_plat" name="Instant Messaging Apps Platform Interfaces" level="apps">
+   <component id="wv_sap_settings_api" name="WV SAP Settings API" class="api" filter="s60">
+    <meta rel="Api" href="im_plat/wv_sap_settings_api/wv_sap_settings_api.metaxml"/>
+    <unit bldFile="im_plat/wv_sap_settings_api/group"/>
+   </component>
+  </collection>
+  <collection id="wvsettings20" name="Wireless Village Settings Engine" level="support">
+   <!-- this is really a component. should move down a directory -->
+   <component id="wvsapsettingsstore" name="WV SAP Settings Store" filter="s60" introduced="9.3">
+    <unit bldFile="wvsettings20/group"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>

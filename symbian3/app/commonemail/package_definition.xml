@@ -76,7 +76,23 @@
 <SystemDefinition name="Symbian^3" schema="2.0.1">
   <systemModel>
     <layer name="app" long-name="Applications" levels="services apps">
-      <block name="commonemail" level="apps" long-name="Email Apps" levels="service support ui app">
+      <block name="commonemail" level="apps" span="2" long-name="Email Apps" levels="service support ui app">
+        <collection name="email_pub" long-name="Email Apps Public Interfaces" level="app">
+          <component name="email_widget_api" long-name="Email Widget API" filter="s60" class="api">
+            <unit bldFile="/sf/app/commonemail/email_pub/email_widget_api/group"/>
+          </component>
+        </collection>
+        <collection name="email_plat" long-name="Email Apps Platform Interfaces" level="app">
+          <component name="email_client_api" long-name="Email Client API" filter="s60" class="api">
+            <unit bldFile="/sf/app/commonemail/email_plat/email_client_api/group"/>
+          </component>
+          <component name="email_setup_plugin_api" long-name="Email Setup Plugin API" filter="s60" class="api">
+            <unit bldFile="/sf/app/commonemail/email_plat/email_setup_plugin_api/group"/>
+          </component>
+          <component name="email_crkeys_api" long-name="Email CenRep Keys API" filter="s60" class="api">
+            <unit bldFile="/sf/app/commonemail/email_plat/email_crkeys_api/group"/>
+          </component>
+        </collection>
         <collection name="emailservices" long-name="Email Services" level="service">
           <component name="emailframework" filter="s60" long-name="Email Framework" introduced="^2">
             <unit bldFile="/sf/app/commonemail/emailservices/emailframework/group"/>
@@ -211,12 +227,6 @@
           <component name="commonemail_help" filter="s60" long-name="Email Help" introduced="^2" class="placeholder">
             <!-- should this be commented out or not? -->
             <!-- <unit bldFile="help/group"/> -->
-          </component>
-          <component name="email_plat" filter="s60" long-name="Email Apps Platform Interfaces" class="api">
-            <unit bldFile="/sf/app/commonemail/email_plat/group"/>
-          </component>
-          <component name="email_pub" filter="s60" long-name="Email Apps Public Interfaces" class="api">
-            <unit bldFile="/sf/app/commonemail/email_pub/group"/>
           </component>
         </collection>
       </block>

@@ -1,49 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="remotestorage" name="Remote Storage" levels="framework if">
-    <collection id="remotestoragefw" name="Remote Storage Framework" level="framework">
-      <component id="mountstore" filter="s60" name="RSFW Mount Store">
-        <unit bldFile="remotestoragefw/mountstore/group"/>
-      </component>
-      <component id="rsfwnotifierplugins" filter="s60" name="RSFW Notifier Plugins" class="plugin">
-        <unit bldFile="remotestoragefw/rsfwnotifierplugins/group"/>
-      </component>
-      <component id="remotefileengine" filter="s60" name="Remote File Engine">
-        <unit bldFile="remotestoragefw/remotefileengine/group"/>
-      </component>
-      <component id="mountmanager" filter="s60" name="RSFW Mount Manager">
-        <unit bldFile="remotestoragefw/mountmanager/group"/>
-      </component>
-      <component id="webdavaccessplugin" filter="s60" name="WebDAV Access Plugin" class="plugin">
-        <unit bldFile="remotestoragefw/webdavaccessplugin/group"/>
-      </component>
-      <component id="remotefilesystemplugin" filter="s60" name="Remote Filesystem Plugin" class="plugin">
-        <unit bldFile="remotestoragefw/remotefilesystemplugin/group"/>
-      </component>
-      <component id="remotestoragegsplugin" filter="s60" name="RS GS Plugin" class="plugin">
-      	<meta rel="config">
-      		<defined condition="__REMOTE_STORAGE_FW"/>
-      	</meta>
-      	<!-- uncomment the unit when configuration is in place, it's currently #included from remotestoragefw_build -->      
-        <!-- <unit bldFile="remotestoragefw/gsplugin/group"/>-->
-      </component>
-      <component id="remotedriveconfigurationbiocontrol" filter="s60" name="Remote Drive Configuration BIO Control">
-      	<meta rel="config">
-      		<defined condition="__REMOTE_STORAGE_FW"/>
-      	</meta>
-      	<!-- uncomment the unit when configuration is in place, it's currently #included from remotestoragefw_build -->      
-      <!--   <unit bldFile="remotestoragefw/remotedriveconfigurationbiocontrol/group"/>-->
-      </component>
-      <component id="remotestoragefw_build" filter="s60" name="Remote Storage Framework Build">
-			<!-- move exports to other components.
-				This is needed for #includes of configured component until congigiration is in place -->
-        <unit bldFile="remotestoragefw/group"/>
-      </component>
-    </collection>
-    <collection id="remotestorage_info" name="Remote Storage Info" level="if">
-      <component id="rsfw_plat" filter="s60" class="api" name="Remote Storage Platform Interfaces">
+ <package id="remotestorage" name="Remote Storage" levels="framework if">
+  <collection id="rsfw_plat" name="Remote Storage Platform Interfaces" level="if">
+      <component id="rsfw_access_protocol_plugin_api" filter="s60" class="api" name="Remote Storage Framework Access Protocol Plugin API">
+	    <meta rel="Api" href="rsfw_plat/rsfw_access_protocol_plugin_api/remote_storage_fw_mountman_api.metaxml"/>
         <unit bldFile="rsfw_plat/rsfw_access_protocol_plugin_api/group"/>
       </component>
-    </collection>
-  </package>
+  </collection>
+  <collection id="remotestoragefw" name="Remote Storage Framework" level="framework">
+   <component id="mountstore" filter="s60" name="RSFW Mount Store">
+    <unit bldFile="remotestoragefw/mountstore/group"/>
+   </component>
+   <component id="rsfwnotifierplugins" filter="s60" name="RSFW Notifier Plugins" class="plugin">
+    <unit bldFile="remotestoragefw/rsfwnotifierplugins/group"/>
+   </component>
+   <component id="remotefileengine" filter="s60" name="Remote File Engine">
+    <unit bldFile="remotestoragefw/remotefileengine/group"/>
+   </component>
+   <component id="mountmanager" filter="s60" name="RSFW Mount Manager">
+    <unit bldFile="remotestoragefw/mountmanager/group"/>
+   </component>
+   <component id="webdavaccessplugin" filter="s60" name="WebDAV Access Plugin" class="plugin">
+    <unit bldFile="remotestoragefw/webdavaccessplugin/group"/>
+   </component>
+   <component id="remotefilesystemplugin" filter="s60" name="Remote Filesystem Plugin" class="plugin">
+    <unit bldFile="remotestoragefw/remotefilesystemplugin/group"/>
+   </component>
+   <component id="remotestoragegsplugin" filter="s60" name="RS GS Plugin" class="plugin">
+    <meta rel="config">
+     <defined condition="__REMOTE_STORAGE_FW"/>
+    </meta>
+    <!-- uncomment the unit when configuration is in place, it's currently #included from remotestoragefw_build -->
+    <!-- <unit bldFile="remotestoragefw/gsplugin/group"/>-->
+   </component>
+   <component id="remotedriveconfigurationbiocontrol" filter="s60" name="Remote Drive Configuration BIO Control">
+    <meta rel="config">
+     <defined condition="__REMOTE_STORAGE_FW"/>
+    </meta>
+    <!-- uncomment the unit when configuration is in place, it's currently #included from remotestoragefw_build -->
+    <!--   <unit bldFile="remotestoragefw/remotedriveconfigurationbiocontrol/group"/>-->
+   </component>
+   <component id="remotestoragefw_build" filter="s60" name="Remote Storage Framework Build">
+    <!-- move exports to other components.
+				This is needed for #includes of configured component until congigiration is in place -->
+    <unit bldFile="remotestoragefw/group"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>

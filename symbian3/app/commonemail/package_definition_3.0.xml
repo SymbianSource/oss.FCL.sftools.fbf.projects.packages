@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="commonemail" name="Email Apps" levels="service support ui app">
+  <collection id="email_pub" name="Email Apps Public Interfaces" level="app">
+   <component id="email_widget_api" name="Email Widget API" class="api" filter="s60">
+    <meta rel="Api" href="email_pub/email_widget_api/email_widget_api.metaxml"/>
+    <unit bldFile="email_pub/email_widget_api/group"/>
+   </component>
+  </collection>
+  <collection id="email_plat" name="Email Apps Platform Interfaces" level="app">
+   <component id="email_client_api" name="Email Client API" class="api" filter="s60">
+    <meta rel="Api" href="email_plat/email_client_api/email_client_api.metaxml"/>
+    <unit bldFile="email_plat/email_client_api/group"/>
+   </component>
+   <component id="email_setup_plugin_api" name="Email Setup Plugin API" class="api" filter="s60">
+    <meta rel="Api" href="email_plat/email_setup_plugin_api/email_setup_plugin_api.metaxml"/>
+    <unit bldFile="email_plat/email_setup_plugin_api/group"/>
+   </component>
+   <component id="email_crkeys_api" name="Email CenRep Keys API" class="api" filter="s60">
+    <unit bldFile="email_plat/email_crkeys_api/group"/>
+   </component>
+  </collection>
     <collection id="emailservices" name="Email Services" level="service">
       <component id="emailframework" filter="s60" name="Email Framework" introduced="^2">
         <unit bldFile="emailservices/emailframework/group"/>
@@ -138,12 +157,6 @@
       <component id="commonemail_help" filter="s60" name="Email Help" introduced="^2">
       	<!-- should this be commented out or not? -->
         <!-- <unit bldFile="help/group"/> -->
-      </component>
-      <component id="email_plat" filter="s60" class="api" name="Email Apps Platform Interfaces">
-        <unit bldFile="email_plat/group"/>
-      </component>
-      <component id="email_pub" filter="s60" class="api" name="Email Apps Public Interfaces">
-        <unit bldFile="email_pub/group"/>
       </component>
     </collection>
   </package>

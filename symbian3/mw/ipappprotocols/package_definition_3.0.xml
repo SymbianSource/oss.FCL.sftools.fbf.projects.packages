@@ -1,52 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="ipappprotocols" name="IP App Protocols" levels="plugin conn server if">
-    <collection id="rtp" name="RTP" level="server">
-      <component id="srtpstack" filter="s60" name="SRTP Stack">
-        <unit bldFile="rtp/srtpstack/group"/>
-      </component>
-      <component id="rtpstack" filter="s60" name="RTP Stack">
-        <unit bldFile="rtp/rtpstack/group"/>
-      </component>
-    </collection>
-    <collection id="realtimenetprots" name="Real Time Net Protocols" level="server">
-      <component id="symrtp" name="RTP" introduced="9.0" purpose="optional">
-        <!-- Real Time Data Protocol -->
-        <unit bldFile="realtimenetprots/rtp/group" mrp="realtimenetprots/rtp/group/mm-protocols_rtp.mrp"/>
-      </component>
-      <component id="sipfw" name="SIP Framework" introduced="9.2" purpose="optional">
-        <unit version="2" bldFile="realtimenetprots/sipfw/Group" mrp="realtimenetprots/sipfw/Group/mm-protocols_SIP2_Com.mrp"/>
-      </component>
-    </collection>
-    <collection id="sipplugins" name="SIP Plugins" level="plugin">
-      <component id="sippwlanplugin" filter="s60" name="SIP WLAN Plugin" class="plugin">
-        <unit bldFile="sipplugins/sippwlanplugin/group"/>
-      </component>
-      <component id="sippsipsettingsui" filter="s60" name="SIP Settings UI" class="plugin">
-        <unit bldFile="sipplugins/sippsipsettingsui/group"/>
-      </component>
-      <component id="sippdevmgmtsipadapter" filter="s60" name="Device Management SIP Settings Adapter" class="plugin">
-        <unit bldFile="sipplugins/sippdevmgmtsipadapter/group"/>
-      </component>
-      <component id="sippsystemstatemonitor" filter="s60" name="SIP System State Monitor" class="plugin">
-        <unit bldFile="sipplugins/sippsystemstatemonitor/group"/>
-      </component>
-      <component id="sippsipadapter" filter="s60" name="SIP Adapter" class="plugin" introduced="^3">
-        <unit bldFile="sipplugins/sippsipadapter/group"/>
-      </component>
-    </collection>
-    <collection id="sipproviderplugins" name="SIP Provider Plugins" level="conn">
-      <component id="sipprovider" name="SIP Provider" introduced="^2" purpose="optional" class="plugin">
-        <unit bldFile="sipproviderplugins/sipprovider/group" mrp="sipproviderplugins/sipprovider/group/mm-protocols_SipProvider.mrp"/>
-      </component>
-    </collection>
-    <collection id="ipappprotocols_info" name="IP App Protocols Info" level="if">
-      <component id="ipappprotocols_plat" filter="s60" name="IP App Protocols Platform Interfaces" class="api">
-        <unit bldFile="ipappprotocols_plat/group"/>
-      </component>
-      <component id="ipappprotocols_metadata" name="IP App Protocols Metadata" class="config" introduced="^2" purpose="development" target="desktop">
-        <unit mrp="ipappprotocols_info/ipappprotocols_metadata/ipappprotocols_metadata.mrp"/>
-      </component>
-    </collection>
-  </package>
+ <package id="ipappprotocols" name="IP App Protocols" levels="plugin conn server if">
+  <collection id="ipappprotocols_plat" name="IP App Protocols Platform Interfaces" level="if">
+   <component id="srtp_api" name="SRTP API" class="api" filter="s60">
+    <meta rel="Api" href="ipappprotocols_plat/srtp_api/srtp_api.metaxml"/>
+    <unit bldFile="ipappprotocols_plat/srtp_api/group"/>
+   </component>
+   <component id="rtprtcp_api" name="RTP/RTCP API" class="api" filter="s60">
+    <meta rel="Api" href="ipappprotocols_plat/rtprtcp_api/rtprtcp_api.metaxml"/>
+    <unit bldFile="ipappprotocols_plat/rtprtcp_api/group"/>
+   </component>
+  </collection>
+  <collection id="rtp" name="RTP" level="server">
+   <component id="srtpstack" filter="s60" name="SRTP Stack">
+    <unit bldFile="rtp/srtpstack/group"/>
+   </component>
+   <component id="rtpstack" filter="s60" name="RTP Stack">
+    <unit bldFile="rtp/rtpstack/group"/>
+   </component>
+  </collection>
+  <collection id="realtimenetprots" name="Real Time Net Protocols" level="server">
+   <component id="symrtp" name="RTP" introduced="9.0" purpose="optional">
+    <!-- Real Time Data Protocol -->
+    <unit bldFile="realtimenetprots/rtp/group" mrp="realtimenetprots/rtp/group/mm-protocols_rtp.mrp"/>
+   </component>
+   <component id="sipfw" name="SIP Framework" introduced="9.2" purpose="optional">
+    <unit version="2" bldFile="realtimenetprots/sipfw/Group" mrp="realtimenetprots/sipfw/Group/mm-protocols_SIP2_Com.mrp"/>
+   </component>
+  </collection>
+  <collection id="sipplugins" name="SIP Plugins" level="plugin">
+   <component id="sippwlanplugin" filter="s60" name="SIP WLAN Plugin" class="plugin">
+    <unit bldFile="sipplugins/sippwlanplugin/group"/>
+   </component>
+   <component id="sippsipsettingsui" filter="s60" name="SIP Settings UI" class="plugin">
+    <unit bldFile="sipplugins/sippsipsettingsui/group"/>
+   </component>
+   <component id="sippdevmgmtsipadapter" filter="s60" name="Device Management SIP Settings Adapter" class="plugin">
+    <unit bldFile="sipplugins/sippdevmgmtsipadapter/group"/>
+   </component>
+   <component id="sippsystemstatemonitor" filter="s60" name="SIP System State Monitor" class="plugin">
+    <unit bldFile="sipplugins/sippsystemstatemonitor/group"/>
+   </component>
+   <component id="sippsipadapter" filter="s60" name="SIP Adapter" class="plugin" introduced="^3">
+    <unit bldFile="sipplugins/sippsipadapter/group"/>
+   </component>
+  </collection>
+  <collection id="sipproviderplugins" name="SIP Provider Plugins" level="conn">
+   <component id="sipprovider" name="SIP Provider" introduced="^2" purpose="optional" class="plugin">
+    <unit bldFile="sipproviderplugins/sipprovider/group" mrp="sipproviderplugins/sipprovider/group/mm-protocols_SipProvider.mrp"/>
+   </component>
+  </collection>
+  <collection id="ipappprotocols_info" name="IP App Protocols Info" level="if">
+   <component id="ipappprotocols_metadata" name="IP App Protocols Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+    <unit mrp="ipappprotocols_info/ipappprotocols_metadata/ipappprotocols_metadata.mrp"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>

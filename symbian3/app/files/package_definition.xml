@@ -77,6 +77,11 @@
   <systemModel>
     <layer name="app" long-name="Applications" levels="services apps">
       <block name="files" level="apps" long-name="File Manager Apps" levels="support apps">
+        <collection name="files_plat" long-name="File Manager Apps Platform Interfaces" level="apps">
+          <component name="memory_scan_popup_ui_api" long-name="Memory Scan Popup UI API" filter="s60" class="api">
+            <unit bldFile="/sf/app/files/files_plat/memory_scan_popup_ui_api/group"/>
+          </component>
+        </collection>
         <collection name="deviceencryption" long-name="Device Encryption" level="support">
           <!-- this is either needs to be broken up into idependent bld.infs, or it's really a component and should move down a directory -->
           <component name="devencnotifplugin" filter="s60" long-name="Device Encryption Notifier Plugin" introduced="^3" plugin="Y">
@@ -110,11 +115,6 @@
           </component>
           <component name="memstatepopup" filter="s60" long-name="Memory State Popup">
             <unit bldFile="/sf/app/files/filesystemuis/memstatepopup/group"/>
-          </component>
-        </collection>
-        <collection name="files_info" long-name="File Manager Apps Info" level="apps">
-          <component name="files_plat" filter="s60" long-name="File Manager Apps Platform Interfaces" class="api">
-            <unit bldFile="/sf/app/files/files_plat/group"/>
           </component>
         </collection>
       </block>

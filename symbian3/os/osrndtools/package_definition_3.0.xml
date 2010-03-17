@@ -42,19 +42,20 @@
     <unit bldFile="stif/suevent/group"/>
    </component>
    <component id="stifkerneltestclassbase" filter="s60" name="STIF Kernel Test Class Base" purpose="development">
-      	<meta rel="config">
-      		<defined condition="__S60_"/>
-      	</meta>
-      	<!-- uncomment the unit when configuration is in place, it's currently #included from stif_build -->
-        <!-- <unit bldFile="stif/stifkerneltestclassbase/group"/>-->
+    <meta rel="config">
+     <defined condition="__S60_"/>
+    </meta>
+    <!-- uncomment the unit when configuration is in place, it's currently #included from stif_build -->
+    <!-- <unit bldFile="stif/stifkerneltestclassbase/group"/>-->
    </component>
    <component id="stif_build" filter="s60" name="STIF Build" purpose="development">
-   	<!--  move exports into self-contained component. Remove this when configuration is in place-->
+    <!--  move exports into self-contained component. Remove this when configuration is in place-->
     <unit bldFile="stif/group"/>
    </component>
   </collection>
   <collection id="memspy" name="Memspy" level="trace">
     <component id="memspy_plat" filter="s60" name="Memspy Platform Interfaces" class="api" purpose="development">
+    <meta rel="Api" href="memspy/memspy_plat/memspy_api/memspy_api.metaxml"/>
       <unit bldFile="memspy/memspy_plat/group"/>
     </component>
    <component id="driver" filter="s60" name="Memspy Driver" purpose="development">
@@ -70,12 +71,13 @@
     <unit bldFile="memspy/console/group"/>
    </component>
    <component id="memspy_build" filter="s60" name="Memspy Build" purpose="development">
-   	<!--  move exports into self-contained component.-->
+    <!--  move exports into self-contained component.-->
     <unit bldFile="memspy/group"/>
    </component>
   </collection>
   <collection id="hti" name="Harmonized Test Interface" level="trace">
     <component id="hti_plat" filter="s60" name="HTI Platform Interfaces" class="api" purpose="development">
+    <meta rel="Api" href="hti/hti_plat/hti_api/hti_api.metaxml"/>
       <unit bldFile="hti/hti_plat/group"/>
     </component>
    <component id="hticfg" filter="s60" name="HTI Config" purpose="development">
@@ -87,24 +89,21 @@
    <component id="htiframework" filter="s60" name="HTI Framework" purpose="development">
     <unit bldFile="hti/htiframework/group"/>
    </component>
-
    <component id="hticommplugins" filter="s60" name="HTI Communication Plugins" purpose="development" class="plugin">
-   	<!-- need to #include these from a single unit or separate into component at the right directory level -->
-		<unit bldFile="hti/HtiCommPlugins/HtiBtCommPlugin/group"/>
-		<unit bldFile="hti/HtiCommPlugins/HtiIPCommPlugin/group"/>
-		<unit bldFile="hti/HtiCommPlugins/HtiSerialCommPlugin/group"/>
-		<unit bldFile="hti/HtiCommPlugins/HtiUsbSerialCommPlugin/group"/>
+    <!-- need to #include these from a single unit or separate into component at the right directory level -->
+    <unit bldFile="hti/HtiCommPlugins/HtiBtCommPlugin/group"/>
+    <unit bldFile="hti/HtiCommPlugins/HtiIPCommPlugin/group"/>
+    <unit bldFile="hti/HtiCommPlugins/HtiSerialCommPlugin/group"/>
+    <unit bldFile="hti/HtiCommPlugins/HtiUsbSerialCommPlugin/group"/>
    </component>
    <component id="htiserviceplugins" filter="s60" name="HTI Service Plugins" purpose="development" class="plugin">
-   	<!-- need to #include these from a single unit or separate into component at the right directory level -->
-		<unit bldFile="hti/HtiServicePlugins/HtiAppServicePlugin/group"/>
-		<unit bldFile="hti/HtiServicePlugins/HtiEchoServicePlugin/group"/>
-		<unit bldFile="hti/HtiServicePlugins/HtiFtpServicePlugin/group"/>
-		<unit bldFile="hti/HtiServicePlugins/HtiIpProxyServicePlugin/group"/>
-		<unit bldFile="hti/HtiServicePlugins/HtiStifTfServicePlugin/group"/>
+    <!-- need to #include these from a single unit or separate into component at the right directory level -->
+    <unit bldFile="hti/HtiServicePlugins/HtiAppServicePlugin/group"/>
+    <unit bldFile="hti/HtiServicePlugins/HtiEchoServicePlugin/group"/>
+    <unit bldFile="hti/HtiServicePlugins/HtiFtpServicePlugin/group"/>
+    <unit bldFile="hti/HtiServicePlugins/HtiIpProxyServicePlugin/group"/>
+    <unit bldFile="hti/HtiServicePlugins/HtiStifTfServicePlugin/group"/>
    </component>
-
-
    <component id="htifilehlp" filter="s60" name="HTI File Help" purpose="development">
     <unit bldFile="hti/htifilehlp/group"/>
    </component>
@@ -112,17 +111,14 @@
     <unit bldFile="hti/htiwatchdog/group"/>
    </component>
    <component id="hti_build" filter="s60" name="HTI Build" purpose="development">
-   	<!--  move exports into self-contained component.-->
+    <!--  move exports into self-contained component.-->
     <unit bldFile="hti/group"/>
    </component>
   </collection>
-    <collection id="osrndtools_info" name="OS R&amp;D tools Info" level="trace">
-      <component id="osrndtools_plat" filter="s60" name="OS R&amp;D tools Platform Interfaces" class="api" purpose="development">
-        <unit bldFile="osrndtools_plat/group"/>	<!-- currently empty. Remove? -->
-      </component>
-      <component id="osrndtools_metadata" name="OS R&amp;D tools Metadata" class="config" introduced="^2" purpose="development" target="desktop">
-        <unit mrp="osrndtools_info/osrndtools_metadata/osrndtools_metadata.mrp"/>
-      </component>
-    </collection>
-  </package>
+  <collection id="osrndtools_info" name="OS R&amp;D tools Info" level="trace">
+   <component id="osrndtools_metadata" name="OS R&amp;D tools Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+    <unit mrp="osrndtools_info/osrndtools_metadata/osrndtools_metadata.mrp"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>

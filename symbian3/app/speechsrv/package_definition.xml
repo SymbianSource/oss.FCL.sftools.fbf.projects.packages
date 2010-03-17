@@ -77,6 +77,89 @@
   <systemModel>
     <layer name="app" long-name="Applications" levels="services apps">
       <block name="speechsrv" level="services" long-name="Speech Recognition UIs" levels="engine framework ui">
+        <collection name="speechsrv_plat" long-name="Speech Recognition UIs Platform Interfaces" level="ui">
+          <component name="vas_api" long-name="VAS API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/vas_api/group"/>
+          </component>
+          <component name="nss_devasr_api" long-name="NSS DevASR API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/nss_devasr_api/group"/>
+          </component>
+          <component name="tts_hw_device_api" long-name="TTS HW Device API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/tts_hw_device_api/group"/>
+          </component>
+          <component name="voice_commands_resource_header_api" long-name="Voice Commands Resource Header API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/voice_commands_resource_header_api/group"/>
+          </component>
+          <component name="nss_mmf_tts_custom_commands_api" long-name="NSS MMF TTS Custom Commands API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/nss_mmf_tts_custom_commands_api/group"/>
+          </component>
+          <component name="srsf_cenrep_settings_api" long-name="SRSF CenRep Settings API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/srsf_cenrep_settings_api/group"/>
+          </component>
+          <component name="voice_ui_plugin_api" long-name="Voice UI Plug-in API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/voice_ui_plugin_api/group"/>
+          </component>
+          <component name="nss_tts_utility_api" long-name="NSS TTS Utility API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/nss_tts_utility_api/group"/>
+          </component>
+          <component name="nss_srs_custom_commands_api" long-name="NSS SRS Custom Commands API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/nss_srs_custom_commands_api/group"/>
+          </component>
+          <component name="srsf_secondarydisplay_api" long-name="SRSF Secondary Display API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/srsf_secondarydisplay_api/group"/>
+          </component>
+          <component name="asrs_hw_device_api" long-name="ASRS Hardware Device API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/asrs_hw_device_api/group"/>
+          </component>
+          <component name="vas_vcommand_api" long-name="VAS Voice Command API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/vas_vcommand_api/group"/>
+          </component>
+          <component name="adaptation_hw_device_api" long-name="Adaptation Hardware Device API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/adaptation_hw_device_api/group"/>
+          </component>
+          <component name="nss_devtts_api" long-name="NSS DevTTS API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/nss_devtts_api/group"/>
+          </component>
+          <component name="nss_srs_utility_api" long-name="NSS SRS Utility API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/nss_srs_utility_api/group"/>
+          </component>
+          <component name="recognition_hw_device_api" long-name="Recognition Hardware Device API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/recognition_hw_device_api/group"/>
+          </component>
+          <component name="vas_contact_handler_api" long-name="VAS Contact Handler API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/vas_contact_handler_api/group"/>
+          </component>
+          <component name="nlp_hw_device" long-name="NLP Hardware Device" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/nlp_hw_device/group"/>
+          </component>
+          <component name="nss_si_speech_recognition_data_api" long-name="NSS SI Speech Recognition Data API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/nss_si_speech_recognition_data_api/group"/>
+          </component>
+          <component name="nss_tts_common_api" long-name="NSS TTS Common API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/nss_tts_common_api/group"/>
+          </component>
+          <component name="grcompiler_hw_device_api" long-name="Grammar Compiler Hardware Device API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/grcompiler_hw_device_api/group"/>
+          </component>
+          <component name="ttp_hw_device_api" long-name="TTP Hardware Device API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/ttp_hw_device_api/group"/>
+          </component>
+          <component name="vocman_hw_device_api" long-name="VocMan Hardware Device API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/vocman_hw_device_api/group"/>
+          </component>
+          <component name="speech_synthesis_clientserver_api" long-name="Speech Synthesis Client-Server API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/speech_synthesis_clientserver_api/group"/>
+          </component>
+          <component name="voice_ui_accessory_button_handling_api" long-name="Voice UI Accessory Button Handling API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/voice_ui_accessory_button_handling_api/group"/>
+          </component>
+          <component name="ui_voice_recognition_api" long-name="UI Voice Recognition API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/ui_voice_recognition_api/group"/>
+          </component>
+          <component name="vcommand_settings_cenrep_api" long-name="Voice Command Settings CenRep API" filter="s60" class="api">
+            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/vcommand_settings_cenrep_api/group"/>
+          </component>
+        </collection>
         <collection name="voiceui" long-name="Voice UI" level="ui">
           <component name="vcommand" filter="s60" long-name="Voice Commands UI" introduced="^1">
             <unit bldFile="/sf/app/speechsrv/voiceui/vcommand/group"/>
@@ -170,9 +253,6 @@
         <collection name="speechsrv_info" long-name="Speech Recognition UIs Info" level="ui">
           <component name="speechsrv_test" filter="s60,test,unit_test" purpose="development" long-name="Speech Recognition UIs Test">
             <unit bldFile="/sf/app/speechsrv/tsrc/group"/>
-          </component>
-          <component name="speechsrv_plat" filter="s60" long-name="Speech Recognition UIs Platform Interfaces" class="api">
-            <unit bldFile="/sf/app/speechsrv/speechsrv_plat/group"/>
           </component>
         </collection>
       </block>

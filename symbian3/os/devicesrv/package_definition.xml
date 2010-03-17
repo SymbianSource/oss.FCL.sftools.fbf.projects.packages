@@ -77,6 +77,196 @@
   <systemModel>
     <layer name="os" long-name="OS" levels="hw services">
       <block name="devicesrv" level="services" long-name="Device Services" levels="adaptation hw-if plugin framework server app-if">
+        <collection name="devicesrv_pub" long-name="Device Services Public Interfaces" level="app-if">
+          <component name="platform_path_definitions_api" long-name="Platform Path Definitions API" filter="s60,bldmefirst" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_pub/platform_path_definitions_api/group"/>
+          </component>
+          <component name="common_platform_security_definitions_api" long-name="Common Platform Security Definitions API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_pub/common_platform_security_definitions_api/group"/>
+          </component>
+          <component name="feature_discovery_api" long-name="Feature Discovery API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_pub/feature_discovery_api/group"/>
+          </component>
+          <component name="platform_environment_api" long-name="Platform Environment API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_pub/platform_environment_api/group"/>
+          </component>
+          <component name="sensor_channel_api" long-name="Sensor Channel API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_pub/sensor_channel_api/group"/>
+          </component>
+          <component name="sensor_definitions_api" long-name="Sensor Definitions API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_pub/sensor_definitions_api/group"/>
+          </component>
+          <component name="version_info_api" long-name="Version Info API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_pub/version_info_api/group"/>
+          </component>
+          <component name="accessory_monitoring_api" long-name="Accessory Monitoring API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_pub/accessory_monitoring_api/group"/>
+          </component>
+          <component name="haptics_api" long-name="Haptics API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_pub/haptics_api/group"/>
+          </component>
+          <component name="sensor_data_compensator_api" long-name="Sensor Data Compensator API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_pub/sensor_data_compensator_api/group"/>
+          </component>
+          <component name="platform_path_definitions_api" long-name="Platform Path Definitions API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_pub/platform_path_definitions_api/inc/platform_paths.hrh"/>
+          </component>
+        </collection>
+        <collection name="devicesrv_plat" long-name="Device Services Platform Interfaces" level="app-if">
+          <component name="configuration_file_parser_api" long-name="Configuration File Parser API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/configuration_file_parser_api/group"/>
+          </component>
+          <component name="dos_extension_plugin_api" long-name="DOS Extension Plug-In API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/dos_extension_plugin_api/group"/>
+          </component>
+          <component name="mediator_command_initiator_api" long-name="Mediator Command Initiator API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/mediator_command_initiator_api/group"/>
+          </component>
+          <component name="syslangutil_api" long-name="SysLangUtil API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/syslangutil_api/group"/>
+          </component>
+          <component name="wakeup_alarm_api" long-name="Wakeup Alarm API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/wakeup_alarm_api/group"/>
+          </component>
+          <component name="disk_and_memory_level_keys_api" long-name="Disk and Memory Level Keys API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/disk_and_memory_level_keys_api/group"/>
+          </component>
+          <component name="mediator_plugin_api" long-name="Mediator Plugin API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/mediator_plugin_api/group"/>
+          </component>
+          <component name="headset_status_api" long-name="Headset Status API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/headset_status_api/group"/>
+          </component>
+          <component name="system_startup_extension_plugin_api" long-name="System Startup Extension Plugin API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/system_startup_extension_plugin_api/group"/>
+          </component>
+          <component name="sensor_plugin_api" long-name="Sensor Plugin API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/sensor_plugin_api/group"/>
+          </component>
+          <component name="accessory_api" long-name="Accessory API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/accessory_api/group"/>
+          </component>
+          <component name="display_language_definition_api" long-name="Display Language Definition API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/display_language_definition_api/group"/>
+          </component>
+          <component name="mediator_command_responder_api" long-name="Mediator Command Responder API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/mediator_command_responder_api/group"/>
+          </component>
+          <component name="accessory_policy_definitions_api" long-name="Accessory Policy Definitions API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/accessory_policy_definitions_api/group"/>
+          </component>
+          <component name="hw_settings_api" long-name="Hardware Settings API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/hw_settings_api/group"/>
+          </component>
+          <component name="mediator_domain_definitions_api" long-name="Mediator Domain Definitions API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/mediator_domain_definitions_api/group"/>
+          </component>
+          <component name="sensor_extension_api" long-name="Sensor Extension API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/sensor_extension_api/group"/>
+          </component>
+          <component name="accessory_plugin_api" long-name="Accessory Plugin API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/accessory_plugin_api/group"/>
+          </component>
+          <component name="sae_api" long-name="SAE API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/sae_api/group"/>
+          </component>
+          <component name="accessory_control_api" long-name="Accessory Control API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/accessory_control_api/group"/>
+          </component>
+          <component name="mediator_static_registration_api" long-name="Mediator Static Registration API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/mediator_static_registration_api/group"/>
+          </component>
+          <component name="accessory_key_event_handling_api" long-name="Accessory Key Event Handling API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/accessory_key_event_handling_api/group"/>
+          </component>
+          <component name="mediator_notification_api" long-name="Mediator Notification API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/mediator_notification_api/group"/>
+          </component>
+          <component name="accessory_policy_utility_api" long-name="Accessory Policy Utility API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/accessory_policy_utility_api/group"/>
+          </component>
+          <component name="common_dsy_plugin_api" long-name="Common DSY Plugin API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/common_dsy_plugin_api/group"/>
+          </component>
+          <component name="remote_control_extension_api" long-name="Remote Control Extension API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/remote_control_extension_api/group"/>
+          </component>
+          <component name="sensor_channel_filter_api" long-name="Sensor Channel Filter API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/sensor_channel_filter_api/group"/>
+          </component>
+          <component name="dos_extension_api" long-name="DOS Extension API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/dos_extension_api/group"/>
+          </component>
+          <component name="accessory_audio_control_api" long-name="Accessory Audio Control API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/accessory_audio_control_api/group"/>
+          </component>
+          <component name="mediator_event_consumer_api" long-name="Mediator Event Consumer API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/mediator_event_consumer_api/group"/>
+          </component>
+          <component name="shared_data_api" long-name="Shared Data API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/shared_data_api/group"/>
+          </component>
+          <component name="accessory_settings_api" long-name="Accessory Settings API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/accessory_settings_api/group"/>
+          </component>
+          <component name="accessory_bluetooth_control_api" long-name="Accessory Bluetooth Control API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/accessory_bluetooth_control_api/group"/>
+          </component>
+          <component name="extended_version_info_api" long-name="Extended Version Info API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/extended_version_info_api/group"/>
+          </component>
+          <component name="mediator_event_provider_api" long-name="Mediator Event Provider API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/mediator_event_provider_api/group"/>
+          </component>
+          <component name="tv_out_config_api" long-name="TV Out Config API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/tv_out_config_api/group"/>
+          </component>
+          <component name="tspclientmapper_api" long-name="TSP Client Mapper API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/tspclientmapper_api/group"/>
+          </component>
+          <component name="powersave_api" long-name="Power Save API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/powersave_api/group"/>
+          </component>
+          <component name="powersave_definitions_api" long-name="Power Save Definitions API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/powersave_definitions_api/group"/>
+          </component>
+          <component name="powersave_plugin_api" long-name="Power Save Plugin API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/powersave_plugin_api/group"/>
+          </component>
+          <component name="extended_version_info_plugin_api" long-name="Extended Version Info Plugin API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/extended_version_info_plugin_api/group"/>
+          </component>
+          <component name="haptics_plugin_api" long-name="Haptics Plugin API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/haptics_plugin_api/group"/>
+          </component>
+          <component name="haptics_effect_data_getter_plugin_api" long-name="Haptics Effect Data Getter Plugin API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/haptics_effect_data_getter_plugin_api/group"/>
+          </component>
+          <component name="haptics_packetizer_plugin_api" long-name="Haptics Packetizer Plugin API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/haptics_packetizer_plugin_api/group"/>
+          </component>
+          <component name="tiltcompensation_api" long-name="Tilt Compensation API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/tiltcompensation_api/group"/>
+          </component>
+          <component name="disk_notification_handler_api" long-name="Disk Notification Handler API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/disk_notification_handler_api/group"/>
+          </component>
+          <component name="accessory_policy_usb_audio_api" long-name="Accessory Policy USB Audio API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/accessory_policy_usb_audio_api/group"/>
+          </component>
+          <component name="accessory_policy_hdmi_audio_api" long-name="Accessory Policy HDMI Audio API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/accessory_policy_hdmi_audio_api/group"/>
+          </component>
+          <component name="sensor_data_compensator_plugin_api" long-name="Sensor Data Compensator Plugin API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/sensor_data_compensator_plugin_api/group"/>
+          </component>
+          <component name="ddc_access_api" long-name="DDC Access API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/ddc_access_api/group"/>
+          </component>
+          <component name="tv_out_behaviour_api" long-name="TV Out Behaviour API" filter="s60" class="api">
+            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/tv_out_behaviour_api/group"/>
+          </component>
+        </collection>
         <collection name="accessoryservices" long-name="Accessory Services" level="framework">
           <component name="accessorymonitor" filter="s60" long-name="Accessory Monitor">
             <unit bldFile="/sf/os/devicesrv/accessoryservices/accessorymonitor/group"/>
@@ -261,14 +451,6 @@
           </component>
         </collection>
         <collection name="devicesrv_info" long-name="Device Services Info" level="app-if">
-          <component name="devicesrv_plat" filter="s60" long-name="Device Services Platform Interfaces" class="api">
-            <unit bldFile="/sf/os/devicesrv/devicesrv_plat/group"/>
-          </component>
-          <component name="devicesrv_pub" filter="s60" long-name="Device Services Public Interfaces" class="api">
-            <unit bldFile="/sf/os/devicesrv/devicesrv_pub/group"/>
-            <unit bldFile="/sf/os/devicesrv/devicesrv_pub/platform_path_definitions_api/group" filter="bldmefirst"/>
-            <!-- separate to another component? -->
-          </component>
           <component name="devicesrv_metadata" long-name="Device Services Metadata" introduced="^2" purpose="development" class="config PC">
             <unit mrp="/sf/os/devicesrv/devicesrv_info/devicesrv_metadata/devicesrv_metadata.mrp"/>
           </component>

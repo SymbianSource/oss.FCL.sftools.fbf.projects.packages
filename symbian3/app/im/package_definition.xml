@@ -77,15 +77,15 @@
   <systemModel>
     <layer name="app" long-name="Applications" levels="services apps">
       <block name="im" level="apps" long-name="Instant Messaging Apps" levels="support prot engine apps">
+        <collection name="im_plat" long-name="Instant Messaging Apps Platform Interfaces" level="apps">
+          <component name="wv_sap_settings_api" long-name="WV SAP Settings API" filter="s60" class="api">
+            <unit bldFile="/sf/app/im/im_plat/wv_sap_settings_api/group"/>
+          </component>
+        </collection>
         <collection name="wvsettings20" long-name="Wireless Village Settings Engine" level="support">
           <!-- this is really a component. should move down a directory -->
           <component name="wvsapsettingsstore" long-name="WV SAP Settings Store" filter="s60" introduced="9.3">
             <unit bldFile="/sf/app/im/wvsettings20/group"/>
-          </component>
-        </collection>
-        <collection name="im_info" long-name="Instant Messaging Apps Info" level="apps">
-          <component name="im_plat" filter="s60" long-name="Instant Messaging Apps Platform Interfaces" class="api">
-            <unit bldFile="/sf/app/im/im_plat/group"/>
           </component>
         </collection>
       </block>
