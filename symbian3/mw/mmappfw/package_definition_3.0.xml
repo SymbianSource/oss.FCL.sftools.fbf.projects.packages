@@ -3,7 +3,7 @@
  <package id="mmappfw" name="Multimedia App Framework" levels="fw utils if">
   <collection id="mmappfw_plat" name="Multimedia App Framework Platform Interfaces" level="if">
    <component id="inc" name="Inc" introduced="^1" class="api" filter="s60">
-    <unit bldFile="mmappfw_plat/inc/mmappfwbldvariant.hrh"/>
+    <!-- FAULTY <unit bldFile="mmappfw_plat/inc/mmappfwbldvariant.hrh"/> -->
    </component>
    <component id="collection_helper_api" name="Collection Helper API" introduced="^1" class="api" filter="s60">
     <meta rel="Api" href="mmappfw_plat/collection_helper_api/collection_helper_api.metaxml"/>

@@ -29,7 +29,7 @@
   </collection>
   <collection id="web_plat" name="Web Platform Interfaces" level="specific">
    <component id="browser_platform_api" name="Browser Platform API" class="api" filter="s60">
-    <unit bldFile="web_plat/browser_platform_api/inc/browser_platform_variant.hrh"/>
+    <!-- FAULTY <unit bldFile="web_plat/browser_platform_api/inc/browser_platform_variant.hrh"/> -->
    </component>
    <component id="aiw_browser_provider_api" name="AIW Browser Provider API" class="api" filter="s60">
     <meta rel="Api" href="web_plat/aiw_browser_provider_api/aiw_browser_provider_api.metaxml"/>
