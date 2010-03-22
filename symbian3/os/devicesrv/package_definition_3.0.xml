@@ -42,9 +42,6 @@
     <meta rel="Api" href="devicesrv_pub/sensor_data_compensator_api/sensor_data_compensator_api.metaxml"/>
     <unit bldFile="devicesrv_pub/sensor_data_compensator_api/group"/>
    </component>
-   <component id="platform_path_definitions_api" name="Platform Path Definitions API" class="api" filter="s60">
-    <!-- FAULTY <unit bldFile="devicesrv_pub/platform_path_definitions_api/inc/platform_paths.hrh"/> -->
-   </component>
   </collection>
   <collection id="devicesrv_plat" name="Device Services Platform Interfaces" level="app-if">
    <component id="configuration_file_parser_api" name="Configuration File Parser API" class="api" filter="s60">

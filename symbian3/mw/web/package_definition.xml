@@ -98,9 +98,6 @@
           </component>
         </collection>
         <collection name="web_plat" long-name="Web Platform Interfaces" level="specific">
-          <component name="browser_platform_api" long-name="Browser Platform API" filter="s60" class="api">
-            <!-- <unit bldFile="/sf/mw/web/web_plat/browser_platform_api/inc/browser_platform_variant.hrh"/> -->
-          </component>
           <component name="aiw_browser_provider_api" long-name="AIW Browser Provider API" filter="s60" class="api">
             <unit bldFile="/sf/mw/web/web_plat/aiw_browser_provider_api/group"/>
           </component>

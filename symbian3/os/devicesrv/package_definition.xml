@@ -108,9 +108,6 @@
           <component name="sensor_data_compensator_api" long-name="Sensor Data Compensator API" filter="s60" class="api">
             <unit bldFile="/sf/os/devicesrv/devicesrv_pub/sensor_data_compensator_api/group"/>
           </component>
-          <component name="platform_path_definitions_api" long-name="Platform Path Definitions API" filter="s60" class="api">
-            <!-- FAULTY <unit bldFile="/sf/os/devicesrv/devicesrv_pub/platform_path_definitions_api/inc/platform_paths.hrh"/> -->
-          </component>
         </collection>
         <collection name="devicesrv_plat" long-name="Device Services Platform Interfaces" level="app-if">
           <component name="configuration_file_parser_api" long-name="Configuration File Parser API" filter="s60" class="api">
