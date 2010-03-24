@@ -183,9 +183,6 @@
           <component name="wsoviplugin" filter="s60" long-name="WS Ovi Plugin">
             <unit bldFile="/sf/mw/websrv/webservices/wsoviplugin/group"/>
           </component>
-          <component name="wsoviplugin" filter="s60" long-name="WS Ovi Plugin">
-            <unit bldFile="/sf/mw/websrv/webservices/wsoviplugin/group"/>
-          </component>
           <component name="webservices_build" filter="s60" long-name="Web Services Build">
             <!-- need to split into self-contained components -->
             <unit bldFile="/sf/mw/websrv/webservices/group"/>

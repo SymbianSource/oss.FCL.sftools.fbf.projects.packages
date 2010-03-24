@@ -54,7 +54,7 @@
         <unit bldFile="applicationmanagement/amadapter2/group"/>
       </component>
       <component id="omascomoadapter" filter="s60" name="OMA SCOMO Adapter" class="plugin" introduced="^3">
-        <unit bldFile="applicationmanagement/amadapter2/group"/>
+        <unit bldFile="applicationmanagement/omascomoadapter/group"/>
       </component>
       <component id="applicationmanagement_build" filter="s60" name="AM Build">
       	<!-- If thes aren't collapsed into one cmp, can all  #includes removed from here, and it renamed AM ROM? -->
