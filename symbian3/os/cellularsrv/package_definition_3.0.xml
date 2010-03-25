@@ -11,6 +11,11 @@
         <unit bldFile="basebandadaptationplugins/basebandchanneladaptorforc32/group" mrp="basebandadaptationplugins/basebandchanneladaptorforc32/group/networking_c32bca.mrp"/>
       </component>
     </collection>
+    <collection id="fax" name="Fax" level="server">
+      <component id="faxclientandserver" name="Fax Client and Server" purpose="optional">
+        <unit bldFile="fax/faxclientandserver/Group" mrp="fax/faxclientandserver/Group/telephony_fax.mrp"/>
+      </component>
+    </collection>
     <collection id="smsprotocols" name="SMS Protocols" level="framework">
       <component id="smsstack" name="SMS Stack" introduced="6.0" purpose="mandatory" class="plugin">
         <unit bldFile="smsprotocols/smsstack/group" mrp="smsprotocols/smsstack/group/nbprotocols_smsstackv2.mrp"/>

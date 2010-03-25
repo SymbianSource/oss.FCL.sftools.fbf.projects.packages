@@ -87,6 +87,11 @@
             <unit bldFile="/sf/os/cellularsrv/basebandadaptationplugins/basebandchanneladaptorforc32/group" mrp="/sf/os/cellularsrv/basebandadaptationplugins/basebandchanneladaptorforc32/group/networking_c32bca.mrp"/>
           </component>
         </collection>
+        <collection name="fax" long-name="Fax" level="server">
+          <component name="faxclientandserver" long-name="Fax Client and Server" purpose="optional">
+            <unit bldFile="/sf/os/fax/faxclientandserver/Group" mrp="/sf/os/fax/faxclientandserver/Group/telephony_fax.mrp"/>
+          </component>
+        </collection>
         <collection name="smsprotocols" long-name="SMS Protocols" level="framework">
           <component name="smsstack" long-name="SMS Stack" introduced="6.0" purpose="mandatory" plugin="Y">
             <unit bldFile="/sf/os/cellularsrv/smsprotocols/smsstack/group" mrp="/sf/os/cellularsrv/smsprotocols/smsstack/group/nbprotocols_smsstackv2.mrp"/>
