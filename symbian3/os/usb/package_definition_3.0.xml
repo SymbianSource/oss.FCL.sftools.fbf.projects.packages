@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
  <package id="usb" name="USB" levels="adaptation hw-if plugin framework server app-if">
-  <collection id="usb_plat" name="USB Platform Interfaces" level="app-if">
-   <component id="usb_audio_stream_plugin_api" name="USB Audio Stream Plugin API" class="api" filter="s60">
-    <unit bldFile="usb_plat/usb_audio_stream_plugin_api/group"/>
-   </component>
-  </collection>
   <collection id="usbldd" name="USB Logical Device Drivers" level="hw-if">
    <!-- usbclientdrivers  to be moved here from kernelhwsrv-->
   </collection>

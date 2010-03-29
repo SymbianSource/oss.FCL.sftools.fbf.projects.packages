@@ -370,23 +370,18 @@
         <collection name="glib" long-name="GLib" level="utilities">
           <component name="glibbackend" filter="s60" long-name="GLib Backend">
             <unit bldFile="/sf/os/ossrv/glib/glibbackend/group"/>
-            <!-- Move to here: <unit bldFile="glib/glibbackend/group"/> -->
           </component>
           <component name="libglib" filter="s60" long-name="GLib Library">
             <unit bldFile="/sf/os/ossrv/glib/libglib/group"/>
-            <!-- Move to here: <unit bldFile="glib/libglib/group"/> -->
           </component>
           <component name="libgthread" filter="s60" long-name="Libg Thread">
             <unit bldFile="/sf/os/ossrv/glib/libgthread/group"/>
-            <!-- Move to here:     <unit bldFile="glib/libgthread/group"/> -->
           </component>
           <component name="libgmodule" filter="s60" long-name="Libg Module">
             <unit bldFile="/sf/os/ossrv/glib/libgmodule/group"/>
-            <!-- Move to here:         <unit bldFile="glib/libgmodule/group"/> -->
           </component>
           <component name="libgobject" filter="s60" long-name="Libg Object">
             <unit bldFile="/sf/os/ossrv/glib/libgobject/group"/>
-            <!-- Move to here:         <unit bldFile="glib/libgobject/group"/> -->
           </component>
         </collection>
         <collection name="stdcpp" long-name="C++ Standard Library" level="translation">

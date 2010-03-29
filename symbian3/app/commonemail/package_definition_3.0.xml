@@ -16,9 +16,6 @@
     <meta rel="Api" href="email_plat/email_setup_plugin_api/email_setup_plugin_api.metaxml"/>
     <unit bldFile="email_plat/email_setup_plugin_api/group"/>
    </component>
-   <component id="email_crkeys_api" name="Email CenRep Keys API" class="api" filter="s60">
-    <unit bldFile="email_plat/email_crkeys_api/group"/>
-   </component>
   </collection>
     <collection id="emailservices" name="Email Services" level="service">
       <component id="emailframework" filter="s60" name="Email Framework" introduced="^2">

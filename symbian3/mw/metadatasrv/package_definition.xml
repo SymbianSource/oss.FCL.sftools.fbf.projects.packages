@@ -79,10 +79,15 @@
       <block name="metadatasrv" level="specific" long-name="Legacy Metadata Services" levels="plugin framework server generic specific">
         <collection name="metadatasrv_pub" long-name="Legacy Metadata Services Public Interfaces" level="specific">
           <component name="content_listing_framework_api" long-name="Content Listing Framework API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/metadatasrv/metadatasrv_pub/content_listing_framework_api/group"/>
+            <!-- Leave commented out until confguration is in use
+	unit bldFile="metadatasrv_pub/content_listing_framework_api/group"/>-->
           </component>
           <component name="media_fetch_api" long-name="Media Fetch API" filter="s60" class="api">
             <unit bldFile="/sf/mw/metadatasrv/metadatasrv_pub/media_fetch_api/group"/>
+          </component>
+          <component name="metadatasrv_pub_build" long-name="Legacy Metadata Services Public Interface Build" filter="s60" class="api">
+            <!-- only needed for #ifdefs, remove when confguration is in use -->
+            <unit bldFile="/sf/mw/metadatasrv/metadatasrv_pub/group"/>
           </component>
         </collection>
         <collection name="metadatasrv_plat" long-name="Legacy Metadata Services Platform Interfaces" level="specific">
@@ -90,10 +95,16 @@
             <unit bldFile="/sf/mw/metadatasrv/metadatasrv_plat/media_fetch_implementation_api/group"/>
           </component>
           <component name="content_listing_framework_collection_manager_api" long-name="Content Listing Framework Collection Manager API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/metadatasrv/metadatasrv_plat/content_listing_framework_collection_manager_api/group"/>
+            <!-- Leave commented out until confguration is in use
+    <unit bldFile="metadatasrv_plat/content_listing_framework_collection_manager_api/group"/>-->
           </component>
           <component name="content_listing_framework_extended_api" long-name="Content Listing Framework Extended API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/metadatasrv/metadatasrv_plat/content_listing_framework_extended_api/group"/>
+            <!-- Leave commented out until confguration is in use
+    <unit bldFile="metadatasrv_plat/content_listing_framework_extended_api/group"/>-->
+          </component>
+          <component name="metadatasrv_plat_build" long-name="Legacy Metadata Services Platform Interface Build" filter="s60" class="api">
+            <!-- only needed for #ifdefs, remove when confguration is in use -->
+            <unit bldFile="/sf/mw/metadatasrv/metadatasrv_plat/group"/>
           </component>
         </collection>
         <collection name="mediamanagementutilities" long-name="Media Management Utilities" level="generic">

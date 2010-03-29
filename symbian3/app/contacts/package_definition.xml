@@ -229,9 +229,6 @@
           <component name="phonebook_2_ui_utilities_api" long-name="Phonebook 2 UI Utilities API" filter="s60" class="api">
             <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_ui_utilities_api/group"/>
           </component>
-          <component name="phonebook_2_contact_related_icon_customization_api" long-name="Phonebook 2 Contact Related Icon Customization API" filter="s60" class="api">
-            <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_contact_related_icon_customization_api/group"/>
-          </component>
           <component name="cca_launch_api" long-name="CCA Launch API" filter="s60" class="api">
             <unit bldFile="/sf/app/contacts/contacts_plat/cca_launch_api/group"/>
             <unit bldFile="/sf/app/contacts/contacts_plat/cca_launch_api/tsrc/group" filter="test,api_test"/>

@@ -200,10 +200,6 @@
     <meta rel="Api" href="contacts_plat/phonebook_2_ui_utilities_api/phonebook_2_ui_utilities_api.metaxml"/>
     <unit bldFile="contacts_plat/phonebook_2_ui_utilities_api/group"/>
    </component>
-   <component id="phonebook_2_contact_related_icon_customization_api" name="Phonebook 2 Contact Related Icon Customization API" class="api" filter="s60">
-    <meta rel="Api" href="contacts_plat/phonebook_2_contact_related_icon_customization_api/phonebook_2_contact_related_icon_customization_api.metaxml"/>
-    <unit bldFile="contacts_plat/phonebook_2_contact_related_icon_customization_api/group"/>
-   </component>
    <component id="cca_launch_api" name="CCA Launch API" class="api" filter="s60">
     <meta rel="Api" href="contacts_plat/cca_launch_api/cca_launch_api.metaxml"/>
     <unit bldFile="contacts_plat/cca_launch_api/group" fitler="!test"/>

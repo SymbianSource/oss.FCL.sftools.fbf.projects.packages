@@ -79,20 +79,26 @@
     <meta rel="config">
      <defined condition="IAD_INCLUDE_BACKSTEPPING"/>
     </meta>
-    <unit bldFile="mmappfw_plat/mpx_backstepping_utility_api/group"/>
+    <!-- uncomment when configuration is put in place
+	 <unit bldFile="mmappfw_plat/mpx_backstepping_utility_api/group"/> -->
    </component>
    <component id="asx_parser_api" name="ASX Parser API" introduced="^1" class="api" filter="s60">
     <meta rel="Api" href="mmappfw_plat/asx_parser_api/asx_parser_api.metaxml"/>
     <meta rel="config">
      <defined condition="__WINDOWS_MEDIA"/>
     </meta>
-    <unit bldFile="mmappfw_plat/asx_parser_api/group"/>
+	<!-- uncomment when configuration is put in place
+    <unit bldFile="mmappfw_plat/asx_parser_api/group"/> -->
    </component>
    <component id="playback_helper_api" name="Playback Helper API" introduced="^1" class="api" filter="s60">
     <unit bldFile="mmappfw_plat/playback_helper_api/group"/>
    </component>
    <component id="videoplaylist_utility_api" name="Video Playlist Utility API" introduced="^1" class="api" filter="s60">
     <unit bldFile="mmappfw_plat/videoplaylist_utility_api/group"/>
+   </component>
+   <component id="mmappfw_plat_build" name="Multimedia App Framework Platform Interface Build" introduced="^1" class="api" filter="s60">
+	<!-- needed only for #ifdefs. Remove anmd uncomment above units when configuration is in place -->
+    <unit bldFile="mmappfw_plat/group"/>
    </component>
   </collection>
   <collection id="mpx" name="Multimedia Player" level="fw">

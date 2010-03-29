@@ -380,24 +380,19 @@
     </collection>
     <collection id="glib" name="GLib" level="utilities">
       <component id="glibbackend" filter="s60" name="GLib Backend">
-        <unit bldFile="glib/build/symbian/glibbackend/group"/>
-        <!-- Move to here: <unit bldFile="glib/glibbackend/group"/> -->
+        <unit bldFile="glib/glibbackend/group"/>
       </component>
       <component id="libglib" filter="s60" name="GLib Library">
-        <unit bldFile="glib/build/symbian/glib/group"/>
-        <!-- Move to here: <unit bldFile="glib/libglib/group"/> -->
+        <unit bldFile="glib/libglib/group"/>
       </component>
       <component id="libgthread" filter="s60" name="Libg Thread">
-        <unit bldFile="glib/build/symbian/gthread/group"/>
-        <!-- Move to here:     <unit bldFile="glib/libgthread/group"/> -->
+        <unit bldFile="glib/libgthread/group"/>
       </component>
       <component id="libgmodule" filter="s60" name="Libg Module">
-        <unit bldFile="glib/build/symbian/gmodule/group"/>
-        <!-- Move to here:         <unit bldFile="glib/libgmodule/group"/> -->
+        <unit bldFile="glib/libgmodule/group"/>
       </component>
       <component id="libgobject" filter="s60" name="Libg Object">
-        <unit bldFile="glib/build/symbian/gobject/group"/>
-        <!-- Move to here:         <unit bldFile="glib/libgobject/group"/> -->
+        <unit bldFile="glib/libgobject/group"/>
       </component>
     </collection>
     <collection id="stdcpp" name="C++ Standard Library" level="translation">
@@ -469,9 +464,6 @@
       </component>
       <component id="posixrealtimeextensions" name="POSIX Realtime Extensions" introduced="^3" purpose="optional">
         <unit bldFile="genericopenlibs/posixrealtimeextensions/group" mrp="genericopenlibs/posixrealtimeextensions/group/oeaddons_librt.mrp"/>
-      </component>
-	  <component id="liboil" name="Liboil" introduced="^4" purpose="optional">
-        <unit bldFile="genericopenlibs/liboil/group" mrp="genericopenlibs/liboil/group/oeaddons_liboil.mrp"/>
       </component>
     </collection>
     <collection id="lowlevellibsandfws" name="Low Level Libraries and Frameworks" level="app-libs">

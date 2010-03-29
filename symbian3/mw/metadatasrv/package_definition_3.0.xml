@@ -6,11 +6,16 @@
     <meta rel="config">
      <not-defined condition="RD_MDS_2_5"/>
     </meta>
-    <unit bldFile="metadatasrv_pub/content_listing_framework_api/group"/>
+    <!-- Leave commented out until confguration is in use
+	unit bldFile="metadatasrv_pub/content_listing_framework_api/group"/>-->
    </component>
    <component id="media_fetch_api" name="Media Fetch API" class="api" filter="s60">
     <meta rel="Api" href="metadatasrv_pub/media_fetch_api/media_fetch_api.metaxml"/>
     <unit bldFile="metadatasrv_pub/media_fetch_api/group"/>
+   </component>
+   <component id="metadatasrv_pub_build" name="Legacy Metadata Services Public Interface Build" class="api" filter="s60">
+	<!-- only needed for #ifdefs, remove when confguration is in use -->
+    <unit bldFile="metadatasrv_pub/group"/>
    </component>
   </collection>
   <collection id="metadatasrv_plat" name="Legacy Metadata Services Platform Interfaces" level="specific">
@@ -22,13 +27,19 @@
     <meta rel="config">
      <not-defined condition="RD_MDS_2_5"/>
     </meta>
-    <unit bldFile="metadatasrv_plat/content_listing_framework_collection_manager_api/group"/>
+    <!-- Leave commented out until confguration is in use
+    <unit bldFile="metadatasrv_plat/content_listing_framework_collection_manager_api/group"/>-->
    </component>
    <component id="content_listing_framework_extended_api" name="Content Listing Framework Extended API" class="api" filter="s60">
     <meta rel="config">
      <not-defined condition="RD_MDS_2_5"/>
     </meta>
-    <unit bldFile="metadatasrv_plat/content_listing_framework_extended_api/group"/>
+    <!-- Leave commented out until confguration is in use
+    <unit bldFile="metadatasrv_plat/content_listing_framework_extended_api/group"/>-->
+   </component>
+   <component id="metadatasrv_plat_build" name="Legacy Metadata Services Platform Interface Build" class="api" filter="s60">
+	<!-- only needed for #ifdefs, remove when confguration is in use -->
+    <unit bldFile="metadatasrv_plat/group"/>
    </component>
   </collection>
   <collection id="mediamanagementutilities" name="Media Management Utilities" level="generic">

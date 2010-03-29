@@ -134,16 +134,22 @@
             <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/media_player_settings_engine_api/group"/>
           </component>
           <component name="mpx_backstepping_utility_api" long-name="MPX Backstepping Utility API" introduced="^1" filter="s60" class="api">
-            <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/mpx_backstepping_utility_api/group"/>
+            <!-- uncomment when configuration is put in place
+	 <unit bldFile="mmappfw_plat/mpx_backstepping_utility_api/group"/> -->
           </component>
           <component name="asx_parser_api" long-name="ASX Parser API" introduced="^1" filter="s60" class="api">
-            <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/asx_parser_api/group"/>
+            <!-- uncomment when configuration is put in place
+    <unit bldFile="mmappfw_plat/asx_parser_api/group"/> -->
           </component>
           <component name="playback_helper_api" long-name="Playback Helper API" introduced="^1" filter="s60" class="api">
             <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/playback_helper_api/group"/>
           </component>
           <component name="videoplaylist_utility_api" long-name="Video Playlist Utility API" introduced="^1" filter="s60" class="api">
             <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/videoplaylist_utility_api/group"/>
+          </component>
+          <component name="mmappfw_plat_build" long-name="Multimedia App Framework Platform Interface Build" introduced="^1" filter="s60" class="api">
+            <!-- needed only for #ifdefs. Remove anmd uncomment above units when configuration is in place -->
+            <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/group"/>
           </component>
         </collection>
         <collection name="mpx" long-name="Multimedia Player" level="fw">
