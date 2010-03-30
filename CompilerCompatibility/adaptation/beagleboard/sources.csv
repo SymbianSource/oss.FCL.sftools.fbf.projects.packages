@@ -1,2 +1,3 @@
 source,dst,type,pattern,sysdef
 http://developer.symbian.org/oss/FCL/sf/adaptation/beagleboard/,/sf/adaptation/beagleboard,branch,CompilerCompatibility,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/os/kernelhwsrv/,/sf/os/kernelhwsrv,branch,CompilerCompatibility,
