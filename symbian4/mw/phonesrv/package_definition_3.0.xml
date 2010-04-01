@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
+ <package id="phonesrv" name="Telephony and SIM Services" levels="plugin framework server generic specific">
+  <collection id="phonesrv_plat" name="Telephony and SIM Services Platform Interfaces" level="specific">
+   <component id="sat_refresh_api" name="SAT Refresh API" class="api" filter="s60">
+    <meta rel="Api" href="phonesrv_plat/sat_refresh_api/sat_refresh_api.metaxml"/>
+    <unit unitID="tedo.sat_refresh_api.test" bldFile="phonesrv_plat/sat_refresh_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="sat_client_api" name="SAT Client API" class="api" filter="s60">
+    <meta rel="Api" href="phonesrv_plat/sat_client_api/sat_client_api.metaxml"/>
+    <unit unitID="tedo.sat_client_api.test" bldFile="phonesrv_plat/sat_client_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="sat_service_api" name="SAT Service API" class="api" filter="s60">
+    <meta rel="Api" href="phonesrv_plat/sat_service_api/sat_service_api.metaxml"/>
+    <unit unitID="tedo.sat_service_api.test" bldFile="phonesrv_plat/sat_service_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="call_information_api" name="Call Information API" class="api" filter="s60">
+    <meta rel="Api" href="phonesrv_plat/call_information_api/call_information_api.metaxml"/>
+    <unit unitID="tedo.call_information_api.test" bldFile="phonesrv_plat/call_information_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="call_remote_party_information_api" name="Call Remote Party Information API" class="api" filter="s60">
+    <unit unitID="tedo.call_remote_party_information_api.test" bldFile="phonesrv_plat/call_remote_party_information_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="telephony_mediator_api" name="Telephony Mediator API" class="api" filter="s60">
+    <meta rel="Api" href="phonesrv_plat/telephony_mediator_api/telephony_mediator_api.metaxml"/>
+    <unit bldFile="phonesrv_plat/telephony_mediator_api/tsrc/ut_telephony_mediator_api/group" filter="test,api_test"/>
+   </component>
+  </collection>
+  <collection id="cellular" name="Cellular" level="server">
+   <component id="telephonysettings" filter="s60" name="Telephony Settings" purpose="development">
+    <unit bldFile="cellular/telephonysettings/tsrc/public/basic/group" filter="test,api_test"/>
+   </component>
+   <component id="sssettings" filter="s60" name="Supplementary Service Settings" purpose="development">
+    <unit bldFile="cellular/SSSettings/tsrc/public/basic/group" filter="test,api_test"/>
+   </component>
+   <component id="psetnotesui" filter="s60" name="Phone Settings Notes UI" purpose="development">
+    <unit bldFile="cellular/PsetNotesUi/tsrc/public/basic/group" filter="test,api_test"/>
+   </component>
+  </collection>
+  <collection id="convergedcallengine" name="Converged Call Engine" level="framework">
+   <component id="cce" filter="s60" name="CCE"  purpose="development">
+    <unit filter="test,api_test" bldFile="convergedcallengine/cce/tsrc/public/basic/group"/>
+   </component>
+   <component id="spsettings" filter="s60" name="Service Provider Settings"  purpose="development">
+    <unit filter="test,api_test" bldFile="convergedcallengine/spsettings/tsrc/public/basic/group"/>
+   </component>
+  </collection>
+  <collection id="phoneclientserver" name="Phone Client/Server" level="server">
+   <component id="aiwdialdata" filter="s60" name="AIW Dial Data"  purpose="development">
+    <unit filter="test,api_test" bldFile="phoneclientserver/aiwdialdata/tsrc/public/basic/group"/>
+   </component>
+   <component id="dialutils" filter="s60" name="Dial Utils"  purpose="development">
+    <unit filter="test,api_test" bldFile="phoneclientserver/dialutils/tsrc/public/basic/group"/>
+   </component>
+   <component id="phoneclient" filter="s60" name="Phone Client"  purpose="development">
+    <unit filter="test,api_test" bldFile="phoneclientserver/phoneclient/tsrc/public/basic/group"/>
+   </component>
+  </collection>
+  <collection id="phonesrv_info" name="Phone Server Info" level="generic">
+    <component id="phonesrv_build" name="Phone Server Build" filter="s60">
+      <unit bldFile="."  qt:proFile="phonesrv.pro"/>
+     </component>
+  </collection>
+ </package>
+</SystemDefinition>

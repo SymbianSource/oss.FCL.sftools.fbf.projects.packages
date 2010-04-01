@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+ <package id="videoutils" name="Video Utils" levels="eng util if">
+  <collection id="videoutils_plat" name="Video Utils Platform Interfaces" level="if">
+   <component id="videoscheduler_api" name="Video Scheduler API" class="api" filter="s60">
+    <meta rel="Api" href="videoutils_plat/videoscheduler_api/videoscheduler_api.metaxml"/>
+    <unit bldFile="videoutils_plat/videoscheduler_api/group"/>
+   </component>
+   <component id="videoconnutility_api" name="Video Connection Utility API" class="api" filter="s60">
+    <meta rel="Api" href="videoutils_plat/videoconnutility_api/videoconnutility_api.metaxml"/>
+    <unit bldFile="videoutils_plat/videoconnutility_api/group"/>
+   </component>
+   <component id="videoplayer_constants_api" name="Videoplayer Constants API" class="api" filter="s60">
+    <meta rel="Api" href="videoutils_plat/videoplayer_constants_api/videoplayer_constants_api.metaxml"/>
+    <unit bldFile="videoutils_plat/videoplayer_constants_api/group"/>
+   </component>
+  </collection>
+  <collection id="videoscheduler" name="Video Scheduler" level="util">
+   <component id="schedulerclient" filter="s60" name="Video Scheduler Client">
+    <unit bldFile="videoscheduler/schedulerclient/group"/>
+   </component>
+   <component id="schedulerserver" filter="s60" name="Video Scheduler Server">
+    <unit bldFile="videoscheduler/schedulerserver/group"/>
+   </component>
+  </collection>
+  <collection id="videoconnutility" name="Video Connection Utility" level="util">
+   <component id="connutilpsworker" filter="s60" name="Connection Utility Publish and Subscribe Worker">
+    <unit bldFile="videoconnutility/connutilpsworker/group"/>
+   </component>
+   <component id="video_connutility" filter="s60" name="Video Connection Utility">
+    <unit bldFile="videoconnutility/connutility/group"/>
+   </component>
+  </collection>
+  <collection id="videoutils_info" name="Video Utils Info" level="if">
+   <component id="videoutils_test" filter="s60,test,api_test" name="Video Utils Tests">
+    <unit bldFile="tsrc/group"/>
+   </component>
+  </collection>
+ </package>
+</SystemDefinition>

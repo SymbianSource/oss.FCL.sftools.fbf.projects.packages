@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+ <package id="homescreensrv" name="Home Screen Services" levels="plugin framework server generic specific">
+  <collection id="homescreensrv_plat" name="Home Screen Services Platform Interfaces" level="specific">
+   <component id="ai_content_model_api" name="AI Content Model API" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/ai_content_model_api/ai_content_model_api.metaxml"/>
+    <unit bldFile="homescreensrv_plat/ai_content_model_api/group"/>
+   </component>
+   <component id="ai_utilities_api" name="AI Utilities API" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/ai_utilities_api/ai_utilities_api.metaxml"/>
+    <unit bldFile="homescreensrv_plat/ai_utilities_api/group" filter="!test"/>
+    <unit bldFile="homescreensrv_plat/ai_utilities_api/internal/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="ai_plugin_management_api" name="AI Plug-in Management API" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/ai_plugin_management_api/ai_plugin_management_api.metaxml"/>
+    <unit bldFile="homescreensrv_plat/ai_plugin_management_api/group"/>
+   </component>
+   <component id="ai_plugin_information_api" name="AI Plug-in Information API" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/ai_plugin_information_api/ai_plugin_information_api.metaxml"/>
+    <unit bldFile="homescreensrv_plat/ai_plugin_information_api/group"/>
+   </component>
+   <component id="ai_variation_api" name="AI Variation API" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/ai_variation_api/ai_variation_api.metaxml"/>
+    <unit bldFile="homescreensrv_plat/ai_variation_api/group"/>
+   </component>
+   <component id="action_handler_plugin_api" name="Action Handler Plugin API" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/action_handler_plugin_api/action_handler_plugin_api.metaxml"/>
+    <unit bldFile="homescreensrv_plat/action_handler_plugin_api/group" filter="!test"/>
+    <unit bldFile="homescreensrv_plat/action_handler_plugin_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="content_harvester_plugin_api" name="Content Harvester Plugin API" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/content_harvester_plugin_api/content_harvester_plugin_api.metaxml"/>
+    <unit bldFile="homescreensrv_plat/content_harvester_plugin_api/group" filter="!test"/>
+    <unit bldFile="homescreensrv_plat/content_harvester_plugin_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="menu_model_api" name="Menu Model API" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/menu_model_api/menu_model_api.metaxml"/>
+    <unit bldFile="homescreensrv_plat/menu_model_api/group"/>
+   </component>
+   <component id="menu_sat_interface_api" name="Menu SAT Interface API" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/menu_sat_interface_api/menu_sat_interface_api.metaxml"/>
+    <unit bldFile="homescreensrv_plat/menu_sat_interface_api/group" filter="!test"/>
+    <unit bldFile="homescreensrv_plat/menu_sat_interface_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="external_home_screen_api" name="External Home Screen API" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/external_home_screen_api/external_home_screen_api.metaxml"/>
+    <unit bldFile="homescreensrv_plat/external_home_screen_api/group"/>
+   </component>
+   <component id="menu_content_service_api" name="Menu Content Service API" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/menu_content_service_api/menu_content_service_api.metaxml"/>
+    <unit bldFile="homescreensrv_plat/menu_content_service_api/group" filter="!test"/>
+    <unit bldFile="homescreensrv_plat/menu_content_service_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="sapi_contentpublishing" name="SAPI Content Publishing" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/sapi_contentpublishing/sapi_contentpublishing.metaxml"/>
+    <unit bldFile="homescreensrv_plat/sapi_contentpublishing/group"/>
+   </component>
+   <component id="sapi_backstepping" name="SAPI Backstepping" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/sapi_backstepping/sapi_backstepping.metaxml"/>
+    <unit bldFile="homescreensrv_plat/sapi_backstepping/group"/>
+   </component>
+   <component id="sapi_actionhandler" name="SAPI Action Handler" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/sapi_actionhandler/sapi_actionhandler.metaxml"/>
+    <unit bldFile="homescreensrv_plat/sapi_actionhandler/group"/>
+   </component>
+   <component id="sapi_homescreenplugin" name="SAPI Homescreen Plugin" class="api" filter="s60">
+    <unit bldFile="homescreensrv_plat/sapi_homescreenplugin/group" filter="!test"/>
+    <unit bldFile="homescreensrv_plat/sapi_homescreenplugin/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="sapi_menucontent" name="SAPI Menu Content" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/sapi_menucontent/sapi_menucontent.metaxml"/>
+    <unit bldFile="homescreensrv_plat/sapi_menucontent/group"/>
+   </component>
+   <component id="xcfw_api" name="XCFW API" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/xcfw_api/xcfw_api.metaxml"/>
+    <unit bldFile="homescreensrv_plat/xcfw_api/group"/>
+   </component>
+   <component id="idlefw_api" name="Idle Framework API" class="api" filter="s60">
+    <unit bldFile="homescreensrv_plat/idlefw_api/group"/>
+   </component>
+   <component id="hs_widget_publisher_api" name="Home Screen Publishing API" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/hs_widget_publisher_api/hs_widget_publisher_api.metaxml"/>
+    <unit bldFile="homescreensrv_plat/hs_widget_publisher_api/group"/>
+   </component>
+   <component id="context_utility_api" name="UI Context Utility API" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/context_utility_api/ui_context_utility_api.metaxml"/>
+    <unit bldFile="homescreensrv_plat/context_utility_api/group"/>
+   </component>
+   <component id="hs_settings_api" name="HS Settings API" class="api" filter="s60">
+    <unit bldFile="homescreensrv_plat/hs_settings_api/group"/>
+   </component>
+   <component id="hs_content_control_api" name="HS Content Control API" class="api" filter="s60">
+    <unit bldFile="homescreensrv_plat/hs_content_control_api/group"/>
+   </component>
+  </collection>
+  <collection id="xcfw" name="XML Content Framework" level="framework">
+   <!-- collection is really a component, needs to be moved down a directory -->
+   <component id="xcfw_build" filter="s60" name="XML Content Framework Build">
+    <unit bldFile="xcfw/group"/>
+   </component>
+  </collection>
+  <collection id="homescreenpluginsrv" name="Home Screen Plugin Service" level="plugin">
+   <component id="hspsdefinitionengine" filter="s60" name="HS Plugin Service Definition Engine">
+    <!-- <unit bldFile="homescreenpluginsrv/hspsdefinitionengine/group"/> -->
+   </component>
+   <component id="hspsdom" filter="s60" name="HS Plugin Service DOM">
+    <!-- <unit bldFile="homescreenpluginsrv/hspsdom/group"/> -->
+   </component>
+   <component id="hspstools" filter="s60" name="HS Server Tools">
+    <meta rel="config">
+     <defined condition="____HSPS_CFG_LOG_ON____"/>
+    </meta>
+    <!-- <unit bldFile="homescreenpluginsrv/hspstools/group"/> -->
+   </component>
+   <component id="hspspluginregistry" filter="s60" name="HS Plugin Registry">
+    <!-- <unit bldFile="homescreenpluginsrv/hspspluginregistry/group"/>-->
+   </component>
+   <component id="hspsmanager" filter="s60" name="HSPS Manager">
+    <!-- <unit bldFile="homescreenpluginsrv/hspsmanager/group"/>-->
+   </component>
+   <component id="hspsodt" filter="s60" name="HSPS Object Description Tree">
+    <!-- <unit bldFile="homescreenpluginsrv/hspsodt/group"/>-->
+   </component>
+   <component id="hspsresource" filter="s60" name="HS Plugin Server Resource">
+    <!-- <unit bldFile="homescreenpluginsrv/hspsresource/group"/>-->
+   </component>
+   <component id="hspsresult" filter="s60" name="HS Plugin Server Result">
+    <!-- <unit bldFile="homescreenpluginsrv/hspsresult/group"/>-->
+   </component>
+   <component id="homescreen_settings_api" filter="s60" name="HS Settings API" class="api">
+    <!-- <unit bldFile="homescreenpluginsrv/hspsresult/group"/>-->
+   </component>
+   <component id="homescreenpluginsrv_build" filter="s60" name="HSPS Build">
+    <!-- need to break this up into the self-contained components above and uncomment them -->
+    <unit bldFile="homescreenpluginsrv/group"/>
+   </component>
+  </collection>
+  <collection id="idlefw" name="Idle Framework" level="framework">
+   <meta rel="config">
+    <defined condition="RD_CUSTOMIZABLE_AI"/>
+   </meta>
+   <!-- Uncomment all units when configuration is in place. All currently #included from idlefw_build -->
+   <component id="idlefw_plugins" filter="s60" name="Idle Framework Plugins" class="plugin">
+    <!--<unit bldFile="idlefw/plugins/group"/>-->
+   </component>
+   <component id="hslaunch" filter="s60" name="Home Screen Launch">
+    <!--<unit bldFile="idlefw/plugins/group"/>-->
+   </component>
+   <component id="idlefw_build" filter="s60" name="Idle Framework Build">
+    <!--split this into components, or separate from the above components and move this down a directory -->
+    <unit bldFile="idlefw/group"/>
+   </component>
+  </collection>
+  <collection id="menucontentsrv" name="Menu Content Service" level="generic">
+   <component id="menusatinterface" filter="s60" name="Menu SAT Interface">
+    <unit bldFile="menucontentsrv/menusatinterface/group"/>
+   </component>
+   <component id="menucontentsrv_build" filter="s60" name="Menu Content Service Build">
+    <!--split this into components, or separate from the above component and move this down a directory -->
+    <unit bldFile="menucontentsrv/group"/>
+   </component>
+  </collection>
+  <collection id="backsteppingsrv" name="Back Stepping Service" level="server">
+   <!-- collection is really a component, needs to be moved down a directory -->
+   <component id="bsengine" name="Back Stepping Engine" filter="s60">
+    <unit bldFile="backsteppingsrv/group"/>
+   </component>
+  </collection>
+  <collection id="contentpublishingsrv" name="Content Publishing Service" level="server">
+   <component id="contentpublishingdebug" filter="s60" name="Content Publishing Debug">
+    <!-- need to move this component outside of contentpublishingutils and into separate component directory -->
+    <meta rel="config">
+     <defined condition="CONTENT_PUBLISHER_DEBUG"/>
+    </meta>
+    <!-- <unit bldFile="contentpublishingsrv/contentpublishingutils/contentpublishingdebug/group"/> -->
+   </component>
+   <component id="contentpublishingutils" filter="s60" name="Content Publishing Utils">
+    <unit bldFile="contentpublishingsrv/contentpublishingutils/group"/>
+   </component>
+   <component id="contentpublishingserver" filter="s60" name="Content Publishing Server">
+    <unit bldFile="contentpublishingsrv/contentpublishingserver/group"/>
+   </component>
+   <component id="contentharvester" filter="s60" name="Content Harvester">
+    <unit bldFile="contentpublishingsrv/contentharvester/group"/>
+   </component>
+   <component id="contentpublishingsrv_build" filter="s60" name="Content Publishing Service Build">
+    <!-- need to remove links to the above components and just contain the IBY (or move the IBY into another component). 
+      		If keeping, it need to move down a directory.-->
+    <unit bldFile="contentpublishingsrv/group"/>
+   </component>
+  </collection>
+  <collection id="contextutility" name="Context Utility" level="generic">
+   <!-- collection is really a component, needs to be moved down a directory -->
+   <component id="contextutility_build" name="Context Utility Build" filter="s60" introduced="^3">
+    <unit bldFile="contextutility/group"/>
+   </component>
+  </collection>
+  <collection id="contentcontrolsrv" name="Content Control Service" level="server">
+   <component id="ccsrv" name="Content Control Service" filter="s60" introduced="^3">
+    <unit bldFile="contentcontrolsrv/ccsrv/group"/>
+   </component>
+   <component id="ccsrvapi" name="Content Control Service API" filter="s60" introduced="^3" class="api">
+    <unit bldFile="contentcontrolsrv/ccsrvapi/group"/>
+   </component>
+   <component id="ccclientsession" name="Content Control Client Session" filter="s60" introduced="^3">
+    <unit bldFile="contentcontrolsrv/ccclientsession/group"/>
+   </component>
+   <component id="hsccclient" name="HS Content Control Client" filter="s60" introduced="^3">
+    <unit bldFile="contentcontrolsrv/hsccclient/group"/>
+   </component>
+   <component id="hscontentinfo" name="Home Screen Content Info" filter="s60" introduced="^3">
+    <unit bldFile="contentcontrolsrv/hscontentinfo/group"/>
+   </component>
+   <component id="contentcontrolsrv_build" name="Content Control Service Build" filter="s60" introduced="^3">
+    <!-- need to remove links to the above components and just contain the IBY (or move the IBY into another component). 
+      		If keeping, it need to move down a directory.-->
+    <unit bldFile="contentcontrolsrv/group"/>
+   </component>
+  </collection>
+ </package>
+</SystemDefinition>

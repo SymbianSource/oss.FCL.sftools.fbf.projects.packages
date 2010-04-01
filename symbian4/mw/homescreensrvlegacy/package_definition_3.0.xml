@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
+ <package id="homescreensrvlegacy" name="Legacy Home Screen Services" levels="plugin framework server generic specific">
+  <collection id="homescreensrvlegacy_plat" name="Legacy Home Screen Services Platform Interfaces" level="specific">
+   <component id="ai_content_model_api" name="AI Content Model API" class="api" filter="s60">
+    <meta rel="Api" href="ai_content_model_api/ai_content_model_api.metaxml"/>
+    <unit bldFile="ai_content_model_api/group" qt:proFile="group.pro"/>
+   </component>
+   <component id="ai_plugin_information_api" name="AI Plug-in Information API" class="api" filter="s60">
+    <meta rel="Api" href="ai_plugin_information_api/ai_plugin_information_api.metaxml"/>
+    <unit bldFile="ai_plugin_information_api/group" qt:proFile="group.pro"/>
+   </component>
+  </collection>
+ </package>
+</SystemDefinition>

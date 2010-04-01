@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+<!ELEMENT SystemDefinition ( systemModel )>
+<!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED
+>
+<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
+
+<!-- System Model Section of DTD -->
+<!ELEMENT systemModel (layer+)>
+
+<!ELEMENT layer (block* | collection*)*>
+<!-- Kernel Services, Base Services, OS Services, Etc -->
+<!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+>
+
+<!ELEMENT block (subblock* | collection*)*>
+ <!-- Generic OS services, Comms Services, etc -->
+<!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+>
+
+<!ELEMENT subblock (collection)*>
+<!-- Cellular Baseband Services, Networking Services, etc -->
+<!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+>
+
+<!ELEMENT collection (component)*>
+<!-- Screen Driver, Content Handling, etc -->
+<!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+>
+
+<!ELEMENT component (unit)*>
+<!-- contains units or is a  package or prebuilt -->
+<!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) "N"
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose ( optional | mandatory | development ) "optional"
+>
+
+<!ELEMENT unit EMPTY >
+<!-- must be buildable (bld.inf) -->
+<!-- bldFile  may someday be removed in favour of mrp -->
+<!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED
+>
+]>
+<SystemDefinition name="Symbian^4" schema="2.0.1">
+  <systemModel>
+    <layer name="mw" long-name="Middleware" levels="generic specific">
+      <block name="phonesrv" level="specific" long-name="Telephony and SIM Services" levels="plugin framework server generic specific">
+        <collection name="phonesrv_plat" long-name="Telephony and SIM Services Platform Interfaces" level="specific">
+          <component name="sat_refresh_api" long-name="SAT Refresh API" filter="s60" class="api">
+            <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/sat_refresh_api/tsrc/group" filter="test,api_test"/>
+          </component>
+          <component name="sat_client_api" long-name="SAT Client API" filter="s60" class="api">
+            <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/sat_client_api/tsrc/group" filter="test,api_test"/>
+          </component>
+          <component name="sat_service_api" long-name="SAT Service API" filter="s60" class="api">
+            <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/sat_service_api/tsrc/group" filter="test,api_test"/>
+          </component>
+          <component name="call_information_api" long-name="Call Information API" filter="s60" class="api">
+            <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/call_information_api/tsrc/group" filter="test,api_test"/>
+          </component>
+          <component name="call_remote_party_information_api" long-name="Call Remote Party Information API" filter="s60" class="api">
+            <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/call_remote_party_information_api/tsrc/group" filter="test,api_test"/>
+          </component>
+          <component name="telephony_mediator_api" long-name="Telephony Mediator API" filter="s60" class="api">
+            <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/telephony_mediator_api/tsrc/ut_telephony_mediator_api/group" filter="test,api_test"/>
+          </component>
+        </collection>
+        <collection name="cellular" long-name="Cellular" level="server">
+          <component name="telephonysettings" filter="s60" long-name="Telephony Settings" purpose="development">
+            <unit bldFile="/sf/mw/phonesrv/cellular/telephonysettings/tsrc/public/basic/group" filter="test,api_test"/>
+          </component>
+          <component name="sssettings" filter="s60" long-name="Supplementary Service Settings" purpose="development">
+            <unit bldFile="/sf/mw/phonesrv/cellular/SSSettings/tsrc/public/basic/group" filter="test,api_test"/>
+          </component>
+          <component name="psetnotesui" filter="s60" long-name="Phone Settings Notes UI" purpose="development">
+            <unit bldFile="/sf/mw/phonesrv/cellular/PsetNotesUi/tsrc/public/basic/group" filter="test,api_test"/>
+          </component>
+        </collection>
+        <collection name="convergedcallengine" long-name="Converged Call Engine" level="framework">
+          <component name="cce" filter="s60" long-name="CCE" purpose="development">
+            <unit bldFile="/sf/mw/phonesrv/convergedcallengine/cce/tsrc/public/basic/group" filter="test,api_test"/>
+          </component>
+          <component name="spsettings" filter="s60" long-name="Service Provider Settings" purpose="development">
+            <unit bldFile="/sf/mw/phonesrv/convergedcallengine/spsettings/tsrc/public/basic/group" filter="test,api_test"/>
+          </component>
+        </collection>
+        <collection name="phoneclientserver" long-name="Phone Client/Server" level="server">
+          <component name="aiwdialdata" filter="s60" long-name="AIW Dial Data" purpose="development">
+            <unit bldFile="/sf/mw/phonesrv/phoneclientserver/aiwdialdata/tsrc/public/basic/group" filter="test,api_test"/>
+          </component>
+          <component name="dialutils" filter="s60" long-name="Dial Utils" purpose="development">
+            <unit bldFile="/sf/mw/phonesrv/phoneclientserver/dialutils/tsrc/public/basic/group" filter="test,api_test"/>
+          </component>
+          <component name="phoneclient" filter="s60" long-name="Phone Client" purpose="development">
+            <unit bldFile="/sf/mw/phonesrv/phoneclientserver/phoneclient/tsrc/public/basic/group" filter="test,api_test"/>
+          </component>
+        </collection>
+        <collection name="phonesrv_info" long-name="Phone Server Info" level="generic">
+          <component name="phonesrv_build" long-name="Phone Server Build" filter="s60">
+            <unit bldFile="/sf/mw/phonesrv/."/>
+          </component>
+        </collection>
+      </block>
+    </layer>
+  </systemModel>
+</SystemDefinition>

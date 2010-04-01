@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+ <package id="camerasrv" name="Camera Services" levels="plugin fw api">
+  <collection id="camerasrv_plat" name="Camera Services Platform Interfaces" level="api">
+   <component id="media_recorder_sink_api" name="Media Recorder Sink API" class="api" filter="s60">
+    <meta rel="Api" href="camerasrv_plat/media_recorder_sink_api/media_recorder_sink_api.metaxml"/>
+    <unit bldFile="camerasrv_plat/media_recorder_sink_api/group"/>
+   </component>
+   <component id="cae_extentension_api" name="CAE Extension API" class="api" filter="s60">
+    <meta rel="Api" href="camerasrv_plat/cae_extentension_api/cae_extentension_api.metaxml"/>
+    <unit bldFile="camerasrv_plat/cae_extentension_api/group"/>
+   </component>
+   <component id="camera_application_engine_api" name="Camera Application Engine API" class="api" filter="s60">
+    <meta rel="Api" href="camerasrv_plat/camera_application_engine_api/camera_application_engine_api.metaxml"/>
+    <unit bldFile="camerasrv_plat/camera_application_engine_api/group" filter="!test"/>
+    <unit bldFile="camerasrv_plat/camera_application_engine_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="custom_onboard_camera_api" name="Custom Onboard Camera API" class="api" filter="s60">
+    <meta rel="Api" href="camerasrv_plat/custom_onboard_camera_api/custom_onboard_camera_api.metaxml"/>
+    <unit bldFile="camerasrv_plat/custom_onboard_camera_api/group"/>
+   </component>
+   <component id="imaging_configuration_manager_api" name="Imaging Configuration Manager API" class="api" filter="s60">
+    <meta rel="Api" href="camerasrv_plat/imaging_configuration_manager_api/imaging_configuration_manager_api.metaxml"/>
+    <unit bldFile="camerasrv_plat/imaging_configuration_manager_api/group" filter="!test"/>
+    <unit bldFile="camerasrv_plat/imaging_configuration_manager_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="media_recorder_api" name="Media Recorder API" class="api" filter="s60">
+    <meta rel="Api" href="camerasrv_plat/media_recorder_api/media_recorder_api.metaxml"/>
+    <unit bldFile="camerasrv_plat/media_recorder_api/group" filter="!test"/>
+    <unit bldFile="camerasrv_plat/media_recorder_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="3gp_file_composer_api" name="3GP File Composer API" class="api" filter="s60">
+    <meta rel="Api" href="camerasrv_plat/3gp_file_composer_api/3gp_file_composer_api.metaxml"/>
+    <unit bldFile="camerasrv_plat/3gp_file_composer_api/group"/>
+   </component>
+  </collection>
+  <collection id="camcordermmfplugin" name="Camcorder MMF Plugin" level="plugin">
+   <!-- collection is really a component. Should move down a directory -->
+   <component id="camcordermmfplugin_build" filter="s60" name="Camcorder MMF Plugin Build" class="plugin">
+    <unit bldFile="camcordermmfplugin/build"/>
+   </component>
+  </collection>
+  <collection id="configmanagers" name="Config Managers" level="api">
+   <component id="imagingconfigmanager" filter="s60" name="Imaging Config Manager">
+    <unit bldFile="configmanagers/imagingconfigmanager/group"/>
+   </component>
+  </collection>
+  <collection id="camerasrv_info" name="Camera Services Info" level="api">
+   <component id="camerasrv_build" filter="s60" name="Camera Services Build">
+    <!-- should split into individual bld.infs -->
+    <unit bldFile="group"/>
+   </component>
+  </collection>
+ </package>
+</SystemDefinition>

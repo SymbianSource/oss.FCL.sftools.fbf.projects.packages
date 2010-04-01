@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
+	<!-- qt:qmakeArgs attribute is an unsupported extension used as temporary hack to get this to work with abld.
+		This will be removed when sbsv2 builds are working -->
+  <package id="qtextensions" name="Qt Extensions" levels="tool mw app">
+   <collection id="qtecomplugins" name="Qt ECom Plugins" level="app">
+    <component id="qtextensions_examples" filter="qtextensionsexamples" name="Qt ECom Plugin Examples"  purpose="development" introduced="^4">
+      <unit bldFile="qtecomplugins/examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
+     </component>
+    </collection>
+    <collection id="qthighway" name="Qt Highway" level="app">
+    <component id="qthighway_examples" filter="qtextensionsexamples" name="Qt Highway Examples"  purpose="development" introduced="^4">
+      <unit bldFile="qthighway/examples" qtproFile="examples.pro" qt:qmakeArgs="-r"/>
+     </component>
+     <component id="qthighwaytests" filter="qtextensionstests" name="Qt Highway Tests"  purpose="development" introduced="^4">
+      <unit bldFile="qthighway/tests" qt:proFile="tests.pro" qt:qmakeArgs="-r"/>
+     </component>
+    </collection>
+    <collection id="qtmobileextensions" name="Qt Mobile Extensions" level="app">
+    <component id="qtmobileextensions_examples" filter="qtextensionsexamples" name="Qt Mobile Extensions Examples"  purpose="development" introduced="^4">
+      <unit bldFile="qtmobileextensions/examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
+     </component>
+    </collection>
+    <collection id="qtmobility" name="Qt Mobility">
+    <component id="qtmobility_examples" filter="qtextensionsexamples" name="Qt Mobility Examples" purpose="development" introduced="^4">
+      <unit bldFile="qtmobility/examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
+     </component>
+     <component id="qtmobilitytests" filter="qtextensionstests" name="Qt Extensions Tests"  purpose="development" introduced="^4">
+      <unit bldFile="qtmobility/tests" qt:proFile="tests.pro" qt:qmakeArgs="-r"/>
+     </component>
+    </collection>
+    <collection id="qtextensions_info">
+    <component id="qtextensions_build" name="Qt Extensions Confgure" class="conf" introduced="^4">
+      <unit bldFile="group"/>
+     </component>
+     <component id="qtextensions_build" name="Qt Extensions Build" introduced="^4">
+		<!-- break this up into the above collections-->
+      <unit bldFile="." qt:proFile="qtextensions.pro" qt:qmakeArgs="-r"/>
+     </component>
+    </collection>
+  </package>
+</SystemDefinition>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="graphics" name="Graphics" levels="adaptation engines internal-adaptations device-interface internal-utils app-if">
+    <collection id="graphicsaccelaration" name="Graphics Acceleration" level="adaptation">
+      <component id="vgi" filter="s60" name="VGI">
+        <unit bldFile="graphicsaccelaration/vgi/group"/>
+      </component>
+    </collection>
+    <collection id="m3g" name="Mobile 3D Graphics" level="internal-adaptations">
+      <component id="m3gcore11" filter="s60" name="M3G Core 1.1">
+        <unit bldFile="m3g/m3gcore11/group"/>
+      </component>
+    </collection>
+    <collection id="graphicsresourceservices" name="Graphics Resource Services" level="engines">
+      <component id="graphicsresource" name="Graphics Resource" introduced="^3" deprecated="^3" purpose="optional">
+        <unit bldFile="graphicsresourceservices/graphicsresource/group" mrp="graphicsresourceservices/graphicsresource/group/graphics_graphicsresource.mrp"/>
+      </component>
+      <component id="graphicsresourceadaptation" name="Graphics Resource Adaptation" introduced="^3" deprecated="^3" purpose="optional">
+        <unit bldFile="graphicsresourceservices/graphicsresourceadaptation/group" mrp="graphicsresourceservices/graphicsresourceadaptation/group/graphics_graphicsresourceadapter.mrp"/>
+      </component>
+      <component id="graphicsresourceimplementation" name="Graphics Resource Implementation" introduced="^4" purpose="optional">
+        <unit bldFile="graphicsresourceservices/graphicsresourceimplementation/group" mrp="graphicsresourceservices/graphicsresourceimplementation/group/graphics_graphicsresourceimplementation.mrp"/>
+      </component>
+      <component id="graphicsresourceinterface" name="Graphics Resource Interface" introduced="^4" purpose="optional">
+        <unit bldFile="graphicsresourceservices/graphicsresourceinterface/group" mrp="graphicsresourceservices/graphicsresourceinterface/group/graphics_graphicsresourceinterface.mrp"/>
+      </component>
+    </collection>
+    <collection id="graphicsutils" name="Graphics Utils" level="engines">
+      <component id="commongraphicsheaders" name="Common Graphics Headers" introduced="^3" purpose="mandatory">
+        <unit bldFile="graphicsutils/commongraphicsheaders/group" mrp="graphicsutils/commongraphicsheaders/group/graphics_commonheader.mrp"/>
+      </component>
+    </collection>
+    <collection id="graphicshwdrivers" name="Graphics Hardware Drivers" level="adaptation">
+      <!-- displayldd to be moved here -->
+      <component id="surfacemgr" name="Surface Manager" introduced="^3" purpose="optional">
+        <unit bldFile="graphicshwdrivers/surfacemgr/group" mrp="graphicshwdrivers/surfacemgr/group/graphics_surfacemanager.mrp"/>
+      </component>
+    </collection>
+    <collection id="graphicscomposition" name="Graphics Composition" level="engines">
+      <component id="openwfcinterface" name="OpenWF Composition Interface" introduced="^3" purpose="optional">
+        <unit bldFile="graphicscomposition/openwfcinterface/group" mrp="graphicscomposition/openwfcinterface/group/graphics_openwfcinterface.mrp"/>
+      </component>
+      <component id="openwfcompositionengine" name="OpenWF Composition Engine" introduced="^3" purpose="development">
+        <unit bldFile="graphicscomposition/openwfcompositionengine/group" mrp="graphicscomposition/openwfcompositionengine/group/graphics_openwfcompositionengine.mrp"/>
+      </component>
+      <component id="openwfsupport" name="OpenWF Support" introduced="^3" purpose="optional">
+        <unit bldFile="graphicscomposition/openwfsupport/group" mrp="graphicscomposition/openwfsupport/group/graphics_openwfsupport.mrp"/>
+      </component>
+     <component id="surfaceupdate" name="Surface Update" introduced="^3" purpose="optional">
+      <unit bldFile="graphicscomposition/surfaceupdate/group" mrp="graphicscomposition/surfaceupdate/group/graphics_surfaceupdate.mrp"/>
+     </component>
+    </collection>
+    <collection id="graphicstest" name="Graphics Test" level="app-if">
+      <component id="graphicstestharness" name="Graphics Test Harness" introduced="8.1" purpose="development" filter="test">
+        <unit mrp="graphicstest/graphicstestharness/group/graphics_testharness.mrp" bldFile="graphicstest/graphicstestharness/group"/>
+      </component>
+      <component id="uibench" name="UI Bench" introduced="9.2" purpose="development">
+        <unit bldFile="graphicstest/uibench/group" mrp="graphicstest/uibench/group/graphics_ui_bench.mrp"/>
+      </component>
+    </collection>
+  <collection id="graphics_plat" name="Graphics Platform Interfaces" level="app-if">
+   <component id="m3g_core_api" filter="sf_build" name="M3G Core API" class="api">
+    <meta rel="Api" href="graphics_plat/m3g_core_api/m3g_core_api.metaxml"/>
+    <unit bldFile="graphics_plat/m3g_core_api/group"/>
+   </component>
+  </collection>
+  <collection id="graphics_info" name="Graphics Info" level="app-if">
+      <component id="graphicsdocs" name="Graphics Documentation" purpose="development" class="doc">
+        <unit mrp="graphics_info/graphicsdocs/graphics_documentation.mrp"/>
+      </component>
+      <component id="graphics_metadata" name="Graphics Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+        <unit mrp="graphics_info/graphics_metadata/graphics_metadata.mrp"/>
+      </component>
+    </collection>
+    <collection id="windowing" name="Windowing" level="app-if">
+     <component id="windowserver" name="Window Server" purpose="mandatory">
+      <unit bldFile="windowing/windowserver/group" mrp="windowing/windowserver/group/graphics_wserv.mrp"/>
+     </component>
+     <component id="windowserverplugins" name="Window Server Plugins" introduced="^3" purpose="optional" class="plugin">
+      <unit bldFile="windowing/windowserverplugins/group" mrp="windowing/windowserverplugins/group/graphics_wserv_std_plugins.mrp"/>
+     </component>
+    </collection>
+    <collection id="printingservices" name="Printing Services" level="app-if">
+      <component id="printerdriversupport" name="Printer Driver Support" purpose="optional">
+        <unit bldFile="printingservices/printerdriversupport/group" mrp="printingservices/printerdriversupport/group/graphics_pdrstore.mrp"/>
+      </component>
+      <component id="printerdrivers" name="Printer Drivers" purpose="optional" class="plugin">
+        <unit bldFile="printingservices/printerdrivers/group" mrp="printingservices/printerdrivers/group/graphics_printdrv.mrp"/>
+      </component>
+    </collection>
+    <collection id="fbs" name="Font and Bitmap Server" level="device-interface">
+      <component id="fontandbitmapserver" name="Font and Bitmap Server" purpose="mandatory">
+        <unit bldFile="fbs/fontandbitmapserver/group" mrp="fbs/fontandbitmapserver/group/graphics_fbserv.mrp"/>
+      </component>
+    </collection>
+    <collection id="opengles" name="OpenGLES" level="internal-adaptations">
+      <component id="openglesinterface" name="OpenGL ES Interface" introduced="8.0" purpose="optional">
+        <unit bldFile="opengles/openglesinterface/group" mrp="opengles/openglesinterface/group/graphics_openglesheaders.mrp"/>
+      </component>
+      <component id="opengles_stub" filter="sf_build" name="OpenGL ES Stub" purpose="optional" introduced="^2">
+        <unit bldFile="opengles/openglesinterface/group/opengles_stub"/>
+      </component>
+    </collection>
+    <collection id="openvg" name="OpenVG" level="internal-adaptations">
+      <component id="openvginterface" name="OpenVG Interface" introduced="^2" purpose="optional">
+        <unit bldFile="openvg/openvginterface/group" mrp="openvg/openvginterface/group/graphics_openvgheaders.mrp"/>
+      </component>
+      <component id="openvg11" filter="s60" name="OpenVG 1.1">
+     	<!-- this needs to be moved to it's own component directory, ie openvg/openvg11 -->
+        <unit bldFile="openvg/openvginterface/group/openvg11"/>
+      </component>
+      <component id="sfopenvg" filter="sf_build" name="Khronos OpenVG Reference Implementation" introduced="^2" purpose="optional">
+        <unit bldFile="openvg/openvgrefimplementation/sfopenvg/group"/>
+      </component>
+    </collection>
+    <collection id="egl" name="EGL" level="internal-adaptations">
+      <component id="eglinterface" name="EGL Interface" introduced="^2" purpose="optional">
+        <unit bldFile="egl/eglinterface/group" mrp="egl/eglinterface/group/graphics_eglheaders.mrp"/>
+      </component>
+      <component id="eglswitch" name="EGL Switch" introduced="^3" purpose="optional">
+        <unit bldFile="egl/eglswitch/group" mrp="egl/eglswitch/group/graphics_eglswitch.mrp"/>
+      </component>
+      <component id="eglrefimpl" name="EGL Reference Implementation" introduced="^3" purpose="optional">
+        <unit bldFile="egl/eglrefimpl/group" mrp="egl/eglrefimpl/group/graphics_eglrefimpl.mrp"/>
+      </component>
+      <component id="egltest" name="EGL Tests" introduced="^3" purpose="development">
+        <unit bldFile="egl/egltest/group" mrp="egl/egltest/group/graphics_egltest.mrp"/>
+      </component>
+    </collection>
+    <collection id="graphicsdeviceinterface" name="Graphics Device Interface" level="device-interface">
+      <component id="gdi" name="GDI" purpose="mandatory">
+        <unit bldFile="graphicsdeviceinterface/gdi/group" mrp="graphicsdeviceinterface/gdi/group/graphics_gdi.mrp"/>
+      </component>
+      <component id="bitgdi" name="BitGDI" purpose="mandatory">
+        <unit bldFile="graphicsdeviceinterface/bitgdi/group" mrp="graphicsdeviceinterface/bitgdi/group/graphics_bitgdi.mrp"/>
+      </component>
+      <component id="colourpalette" name="Colour Palette" introduced="7.0s" purpose="optional">
+        <unit bldFile="graphicsdeviceinterface/colourpalette/group" mrp="graphicsdeviceinterface/colourpalette/group/graphics_palette.mrp"/>
+      </component>
+      <component id="screendriver" name="Screen Driver" introduced="6.1" purpose="optional" class="plugin">
+        <unit bldFile="graphicsdeviceinterface/screendriver/group" mrp="graphicsdeviceinterface/screendriver/group/graphics_screendriver.mrp"/>
+      </component>
+      <component id="directgdi" name="DirectGDI" introduced="^3" deprecated="^3" purpose="optional">
+        <unit bldFile="graphicsdeviceinterface/directgdi/group" mrp="graphicsdeviceinterface/directgdi/group/graphics_directgdi.mrp"/>
+      </component>
+      <component id="directgdiinterface" name="DirectGDI Interface" introduced="^3" deprecated="^3" purpose="optional">
+        <unit bldFile="graphicsdeviceinterface/directgdiinterface/group" mrp="graphicsdeviceinterface/directgdiinterface/group/graphics_directgdiheaders.mrp"/>
+      </component>
+      <component id="directgdiadaptation" name="DirectGDI Adaptation" introduced="^3" deprecated="^3" purpose="optional">
+        <unit bldFile="graphicsdeviceinterface/directgdiadaptation/group" mrp="graphicsdeviceinterface/directgdiadaptation/group/graphics_directgdiadapter.mrp"/>
+      </component>
+    </collection>
+    <collection id="graphicstools" name="Graphics Tools" level="internal-utils">
+      <component id="gdi_tools" name="GDI Tools" purpose="development" target="desktop">
+        <unit bldFile="graphicstools/gdi_tools/group" mrp="graphicstools/gdi_tools/group/graphics_gditools.mrp"/>
+      </component>
+    </collection>
+    <collection id="graphicsapitest" name="Graphics API Tests" level="app-if">
+      <component id="graphicssvs" name="Graphics Verification Suite" introduced="^2" purpose="development" filter="test">
+        <unit mrp="graphicsapitest/graphicssvs/group/graphicssvs.mrp" bldFile="graphicsapitest/graphicssvs/group"/>
+      </component>
+      <component id="screendriverhaitest" name="Screen Driver HAI Tests" introduced="^2" purpose="development" filter="test">
+	<unit mrp="graphicsapitest/screendriverhaitest/group/screendriverhaitest.mrp" bldFile="graphicsapitest/screendriverhaitest/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="serviceapi" name="Service API" levels="os mw1 mw2 app">
+  	<!-- should break up this collection into something meaningful -->
+    <collection id="serviceproviders" name="Service Providers" level="mw1">
+      <component id="sapi_contacts_vpbk" name="Contacts Phonebook SAPI"  filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_contacts_vpbk/group"/>
+      </component>
+      <component id="sapi_location" name="Location SAPI"  filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_location/group"/>
+      </component>
+      <component id="sapi_mediamanagement" name="Media Management SAPI" filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_mediamanagement/group"/>
+      </component>
+      <component id="sapi_landmarks" name="Landmarks SAPI" filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_landmarks/group"/>
+      </component>
+      <component id="sapi_messaging" name="Messaging SAPI" filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_messaging/group"/>
+      </component>
+
+      <component id="sapi_applicationmanager" name="Application Manager SAPI" filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_applicationmanager/group"/>
+      </component>
+      <component id="sapi_calendar" name="Calendar SAPI" filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_calendar/group"/>
+      </component>
+      <component id="sapi_logging" name="Logging SAPI"  filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_logging/group"/>
+      </component>
+      <component id="sapi_sensor" name="Sensor SAPI" filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_sensor/group"/>
+      </component>
+      <component id="sapi_sysinfo" name="Sysinfo SAPI" filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_sysinfo/group"/>
+      </component>
+      <component id="sapi_serviceregistry" name="Service Registry SAPI" filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/sapi_serviceregistry/group"/>
+      </component>
+      <component id="jsapi" name="Javascript API" filter="s60" class="plugin">
+        <unit bldFile="serviceproviders/jsapi/group"/>
+      </component>
+      <component id="serviceproviders_build" filter="s60" name="Service API Build">
+      	<!--  distribute the exports or make this a ROM component by removing the #includes -->
+        <unit bldFile="serviceproviders/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

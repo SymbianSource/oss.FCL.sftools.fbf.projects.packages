@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
+	<!-- qt:qmakeArgs attribute is an unsupported extension used as temporary hack to get this to work with abld.
+		This will be removed when sbsv2 builds are working -->
+  <package id="qt" name="Qt" levels="tool mw app">
+    <collection id="qtconf" name="Qt Config" level="tool">
+            <component id="qt_deviceconfiguration" name="Qt Device Configuration" class="config tool" introduced="^2">
+                <unit bldFile="src/s60installs/deviceconfiguration"/>
+            </component>
+    </collection>
+    <collection id="qt_info" name="Qt Info" level="mw">
+            <component id="qt_build" name="Qt Build" introduced="^2">
+                <unit bldFile="." qt:proFile="projects.pro" qt:qmakeArgs="&quot;CONFIG+=headerexport symbian_no_export_sqlite&quot; &quot;QMAKE_MOC=/epoc32/tools/qt/moc.exe&quot; &quot;QMAKE_RCC=/epoc32/tools/qt/rcc.exe&quot; &quot;QMAKE_UIC=/epoc32/tools/qt/uic.exe&quot; -r"/>
+            </component>
+    </collection>
+    <collection id="qtdemos" name="Qt Demos" level="app">
+            <component id="qtdemos_build" name="Qt Demos Build" introduced="^2" filter="qtdemos">
+                <unit bldFile="demos" qt:proFile="demos.pro" qt:qmakeArgs="&quot;QMAKE_MOC=/epoc32/tools/qt/moc.exe&quot; &quot;QMAKE_RCC=/epoc32/tools/qt/rcc.exe&quot; &quot;QMAKE_UIC=/epoc32/tools/qt/uic.exe&quot; -r"/>
+            </component>
+    </collection>
+    <collection id="qtexamples" name="Qt Examples" level="app">
+            <component id="qtexamples_build" name="Qt Examples Build" introduced="^2"  filter="qtexamples">
+                <unit bldFile="examples" qt:proFile="examples.pro" qt:qmakeArgs="&quot;QMAKE_MOC=/epoc32/tools/qt/moc.exe&quot; &quot;QMAKE_RCC=/epoc32/tools/qt/rcc.exe&quot; &quot;QMAKE_UIC=/epoc32/tools/qt/uic.exe&quot; -r"/>
+            </component>
+    </collection>
+    <collection id="qt_tests" name="Qt Tests" level="app">
+            <component id="qttestsauto" name="Qt Automated Tests" introduced="^2"  filter="qttestsauto">
+                <unit bldFile="tests/auto"  qt:proFile="qtpauto.pro" qt:makeArgs="&quot;QMAKE_MOC=/epoc32/tools/qt/moc.exe&quot; &quot;QMAKE_RCC=/epoc32/tools/qt/rcc.exe&quot; &quot;QMAKE_UIC=/epoc32/tools/qt/uic.exe&quot; -r"/>
+            </component>
+            <component id="qttestsbenchmarks" name="Qt Benchmarks Tests" introduced="^2" filter="qttestsbenchmarks">
+                <unit bldFile="tests/benchmarks" qt:proFile="benchmarks.pro" qt:qmakeArgs="&quot;QMAKE_MOC=/epoc32/tools/qt/moc.exe&quot; &quot;QMAKE_RCC=/epoc32/tools/qt/rcc.exe&quot; &quot;QMAKE_UIC=/epoc32/tools/qt/uic.exe&quot; -r"/>
+            </component>
+    </collection>
+  </package>
+</SystemDefinition>

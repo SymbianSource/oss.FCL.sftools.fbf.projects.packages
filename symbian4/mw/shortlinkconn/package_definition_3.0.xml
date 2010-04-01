@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+ <package id="shortlinkconn" name="Shortlink Connectivity" levels="framework server generic specific plugin">
+  <!-- Package is pending removal. Contents to be moved to remoteconn and btservices -->
+  <collection id="shortlinkconn_plat" name="Shortlink Connectivity Platform Interfaces" level="plugin">
+   <component id="obex_service_utils_api" name="OBEX Service Utils API" class="api" filter="s60">
+    <meta rel="Api" href="shortlinkconn_plat/obex_service_utils_api/obex_service_utils_api.metaxml"/>
+    <unit bldFile="shortlinkconn_plat/obex_service_utils_api/group"/>
+   </component>
+   <component id="obex_service_plugin_api" name="OBEX Service Plugin API" class="api" filter="s60">
+    <meta rel="Api" href="shortlinkconn_plat/obex_service_plugin_api/obex_service_plugin_api.metaxml"/>
+    <unit bldFile="shortlinkconn_plat/obex_service_plugin_api/group"/>
+   </component>
+   <component id="dialup_connection_status_api" name="Dial-up Connection Status API" class="api" filter="s60">
+    <meta rel="Api" href="shortlinkconn_plat/dialup_connection_status_api/dialup_connection_status_api.metaxml"/>
+    <unit bldFile="shortlinkconn_plat/dialup_connection_status_api/group"/>
+   </component>
+   <component id="dun_secondary_display_notification_api" name="DUN Secondary Display Notification API" class="api" filter="s60">
+    <meta rel="Api" href="shortlinkconn_plat/dun_secondary_display_notification_api/dun_secondary_display_notification_api.metaxml"/>
+    <unit bldFile="shortlinkconn_plat/dun_secondary_display_notification_api/group"/>
+   </component>
+   <component id="obex_secondary_display_notification_api" name="OBEX Secondary Display Notification API" class="api" filter="s60">
+    <meta rel="Api" href="shortlinkconn_plat/obex_secondary_display_notification_api/obex_secondary_display_notification_api.metaxml"/>
+    <unit bldFile="shortlinkconn_plat/obex_secondary_display_notification_api/group"/>
+   </component>
+   <component id="generic_hid_api" name="Generic HID API" class="api" filter="s60">
+    <unit bldFile="shortlinkconn_plat/generic_hid_api/group"/>
+   </component>
+   <component id="locod_bearer_plugin_api" name="Locod Bearer Plugin API" class="api" filter="s60">
+    <unit bldFile="shortlinkconn_plat/locod_bearer_plugin_api/group"/>
+   </component>
+   <component id="usb_obexservicemanager_client_api" name="USB OBEX Service Manager Client API" class="api" filter="s60">
+    <unit bldFile="shortlinkconn_plat/usb_obexservicemanager_client_api/group"/>
+   </component>
+  </collection>
+  <collection id="localconnectivityservice" name="Local Connectivity Service" level="server">
+   <component id="locod" name="Local Connectivity Daemon">
+    <unit bldFile="localconnectivityservice/locod/group"/>
+   </component>
+   <component id="obexserviceman" name="OBEX Service Managar">
+    <unit bldFile="localconnectivityservice/obexserviceman/group"/>
+   </component>
+   <component id="obexsendservices" name="OBEX Send Services">
+    <unit bldFile="localconnectivityservice/obexsendservices/group"/>
+   </component>
+   <component id="obexreceiveservices" name="OBEX Receive Services">
+    <unit bldFile="localconnectivityservice/obexreceiveservices/group"/>
+   </component>
+   <component id="dun" name="Dial Up Networking">
+    <unit bldFile="localconnectivityservice/dun/group"/>
+   </component>
+   <component id="lccustomplugin" name="LC Custom Plugins" class="plugin">
+    <unit bldFile="localconnectivityservice/lccustomplugin/group"/>
+   </component>
+   <component id="lcstylustap" name="LC Stylus Tap Plugins" class="plugin">
+    <unit bldFile="localconnectivityservice/lcstylustap/group"/>
+   </component>
+   <component id="legacymodemplugin" name="Legacy Modem Plugin" class="plugin">
+    <unit bldFile="localconnectivityservice/legacymodemplugin/group"/>
+   </component>
+   <component id="modematplugin" name="Modem AT Plugin" class="plugin">
+    <unit bldFile="localconnectivityservice/modematplugin/group"/>
+   </component>
+   <component id="generichid" name="Generic HID">
+    <unit bldFile="localconnectivityservice/generichid/group"/>
+   </component>
+   <component id="headset" name="Headset">
+    <unit bldFile="localconnectivityservice/headset/group"/>
+   </component>
+  </collection>
+ </package>
+</SystemDefinition>

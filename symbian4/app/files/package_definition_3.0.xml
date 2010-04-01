@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
+ <package id="files" name="File Manager Apps" levels="support apps">
+  <collection id="filemanager" name="File Manager" level="apps">
+   <component id="filemanager_plat" name="File Manager Platform Interfaces" class="api" filter="s60" introduced="^4">
+    <unit base="filemanager/filemanager_plat"/>
+   </component>
+   <component id="fmbkupengine" filter="s60" name="File Manager Backup Engine" introduced="^4">
+       <unit bldFile="filemanager/src/fmbkupengine/group"/>
+   </component>
+   <component id="filemanager_build" filter="s60" name="File Manager Build">
+   <!-- break this up into components or move down a directory -->
+    <unit bldFile="filemanager" qt:proFile="filemanager.pro"/>
+   </component>
+  </collection>
+ </package>
+</SystemDefinition>

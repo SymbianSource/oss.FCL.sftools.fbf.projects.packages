@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
+  <package id="radio" name="Radio Apps" levels="engine ui">
+    <collection id="radioengine" name="Radio Engine" level="engine">
+      <component id="radioengineutils" filter="s60" name="Radio Engine Utils" introduced="^4">
+        <unit bldFile="radioengine/utils/group"/>
+      </component>
+      <component id="radioenginesettings" filter="s60" name="Radio Engine Settings" introduced="^4">
+        <unit bldFile="radioengine/settings/group"/>
+      </component>
+      <component id="radioengine_engine" filter="s60" name="Radio Engine" introduced="^4">
+        <unit bldFile="radioengine/engine/group"/>
+      </component>
+    </collection>
+    <collection id="radioapp" name="Radio App" level="ui">
+      <component id="radioenginewrapper" filter="s60" name="Radio Engine Wrapper" introduced="^4">
+        <unit bldFile="radioapp/radioenginewrapper" qt:proFile="radioenginewrapper.pro"/>
+      </component>
+      <component id="radiopresetstorage" filter="s60" name="Radio Preset Storage" introduced="^4">
+        <unit bldFile="radioapp/radiopresetstorage" qt:proFile="radiopresetstorage.pro"/>
+      </component>
+      <component id="radiouiengine" filter="s60" name="Radio UI Engine" introduced="^4">
+        <unit bldFile="radioapp/radiouiengine" qt:proFile="radiouiengine.pro"/>
+      </component>
+      <component id="radiowidgets" filter="s60" name="Radio Widgets" introduced="^4">
+        <unit bldFile="radioapp/radiowidgets" qt:proFile="radiowidgets.pro"/>
+      </component>
+      <component id="radioapplication" filter="s60" name="Radio Application" introduced="^4">
+        <unit bldFile="radioapp/radioapplication" qt:proFile="radioapplication.pro"/>
+      </component>
+      <component id="radio_rom" filter="s60" name="Radio ROM" introduced="^4">
+        <unit bldFile="rom/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+<!ELEMENT SystemDefinition ( systemModel )>
+<!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED
+>
+<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
+
+<!-- System Model Section of DTD -->
+<!ELEMENT systemModel (layer+)>
+
+<!ELEMENT layer (block* | collection*)*>
+<!-- Kernel Services, Base Services, OS Services, Etc -->
+<!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+>
+
+<!ELEMENT block (subblock* | collection*)*>
+ <!-- Generic OS services, Comms Services, etc -->
+<!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+>
+
+<!ELEMENT subblock (collection)*>
+<!-- Cellular Baseband Services, Networking Services, etc -->
+<!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+>
+
+<!ELEMENT collection (component)*>
+<!-- Screen Driver, Content Handling, etc -->
+<!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+>
+
+<!ELEMENT component (unit)*>
+<!-- contains units or is a  package or prebuilt -->
+<!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) "N"
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose ( optional | mandatory | development ) "optional"
+>
+
+<!ELEMENT unit EMPTY >
+<!-- must be buildable (bld.inf) -->
+<!-- bldFile  may someday be removed in favour of mrp -->
+<!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED
+>
+]>
+<SystemDefinition name="Symbian^4" schema="2.0.1">
+  <systemModel>
+    <layer name="app" long-name="Applications" levels="services apps">
+      <block name="contacts" level="apps" span="2" long-name="Contacts Apps" levels="engine support services ui">
+        <collection name="contacts_plat" long-name="Contacts Apps Platform Interfaces" level="ui">
+          <component name="logs_engine_api" long-name="Logs Engine API" filter="s60" introduced="^4" class="api"/>
+          <component name="logs_engine_api_extensions" long-name="Logs Engine API Extensions" filter="s60" class="api"/>
+          <component name="logs_services_api" long-name="Logs Services API" filter="s60" introduced="^4" class="api"/>
+          <component name="logs_timers_api" long-name="Logs Timers API" filter="s60" class="api"/>
+          <component name="qt_mobility_contacts_api" long-name="Qt Mobility Contacts API" filter="s60" introduced="^4" class="api"/>
+        </collection>
+        <collection name="logsui" long-name="Logs UI" level="ui">
+          <component name="logsui_build" filter="s60" long-name="Logs UI Build">
+            <!-- component at too high a rank, should move down one directory -->
+            <unit bldFile="/sf/app/contacts/logsui"/>
+          </component>
+        </collection>
+        <collection name="phonebookui" long-name="Phonebook UI" level="ui">
+          <component name="mobhistorymodel" filter="s60" long-name="Mobile History Model" introduced="^4" class="placeholder">
+            <!--<unit bldFile="phonebookui/mobhistorymodel" qt:proFile="mobhistorymodel.pro"/> -->
+          </component>
+          <component name="pbkcommonui" filter="s60" long-name="Phonebook Common UI" introduced="^4" class="placeholder">
+            <!--<unit bldFile="phonebookui/pbkcommonui" qt:proFile="pbkcommonui.pro"/> -->
+          </component>
+          <component name="phonebookapp" filter="s60" long-name="Phonebook Application" introduced="^4" class="placeholder">
+            <!--<unit bldFile="phonebookui/phonebookapp" qt:proFile="phonebookapp.pro"/> -->
+          </component>
+          <component name="phonebookservices" filter="s60" long-name="Phonebook Services" introduced="^4" class="placeholder">
+            <!--<unit bldFile="phonebookui/phonebookservices" qt:proFile="phonebookservices.pro"/> -->
+          </component>
+          <component name="phonebookui_build" filter="s60" long-name="Phonebook UI Build" introduced="^4">
+            <!-- break up into components -->
+            <unit bldFile="/sf/app/contacts/phonebookui"/>
+          </component>
+        </collection>
+        <collection name="qtcontactsmobility" long-name="Qt Contacts Mobility" level="support">
+          <component name="qtcontactsmobility_build" filter="s60" long-name="Qt Contacts Mobility Build" introduced="^4" plugin="Y">
+            <!-- not really a component, move down a dir? Break up into compnents? -->
+            <unit bldFile="/sf/app/contacts/qtcontactsmobility"/>
+          </component>
+        </collection>
+        <collection name="phonebookengines" long-name="Phonebook Engines" level="engine">
+          <component name="cntfindplugin" filter="s60" long-name="Contacts Find Plugin" introduced="^2" plugin="Y">
+            <unit bldFile="/sf/app/contacts/phonebookengines/cntfindplugin"/>
+          </component>
+          <component name="contactsmodel" long-name="Contacts Model" introduced="ER5" purpose="optional">
+            <unit bldFile="/sf/app/contacts/phonebookengines/contactsmodel/groupsql" mrp="/sf/app/contacts/phonebookengines/contactsmodel/groupsql/app-engines_cntmodel.mrp" version="2"/>
+          </component>
+          <component name="cntsortplugin" filter="s60" long-name="Contacts Sort Plugin" introduced="^2" plugin="Y">
+            <unit bldFile="/sf/app/contacts/phonebookengines/cntsortplugin"/>
+          </component>
+          <component name="mobcntmodel" filter="s60" long-name="Mobile Contacts Model" introduced="^4">
+            <unit bldFile="/sf/app/contacts/phonebookengines/mobcntmodel"/>
+          </component>
+          <component name="mobcntactions" filter="s60" long-name="Mobile Contacts Actions" introduced="^4">
+            <unit bldFile="/sf/app/contacts/phonebookengines/cntmaptileservice"/>
+          </component>
+          <component name="cntmaptileservice" filter="s60" long-name="Contacts Map Tile Service" introduced="^4">
+            <unit bldFile="/sf/app/contacts/phonebookengines/cntmaptileservice"/>
+          </component>
+          <component name="simutility" filter="s60" long-name="SIM Utility" introduced="^4">
+            <unit bldFile="/sf/app/contacts/phonebookengines/simutility"/>
+          </component>
+        </collection>
+        <collection name="pimprotocols" long-name="PIM Protocols" level="services">
+          <component name="phonebooksync" long-name="Phonebook Sync" purpose="optional" plugin="Y">
+            <unit bldFile="/sf/app/contacts/pimprotocols/phonebooksync/group" mrp="/sf/app/contacts/pimprotocols/phonebooksync/group/telephony_phbksync.mrp"/>
+          </component>
+          <component name="pbap" long-name="Bluetooth PBAP" introduced="9.2" purpose="optional">
+            <unit bldFile="/sf/app/contacts/pimprotocols/pbap/group" mrp="/sf/app/contacts/pimprotocols/pbap/group/bluetooth_accesshost.mrp"/>
+          </component>
+        </collection>
+        <collection name="contacts_info" long-name="Contacts Apps Info" level="ui">
+          <component name="contacts_metadata" long-name="Contacts Apps Metadata" introduced="^2" purpose="development" class="config PC">
+            <unit mrp="/sf/app/contacts/contacts_info/contacts_metadata/contacts_metadata.mrp"/>
+          </component>
+        </collection>
+      </block>
+    </layer>
+  </systemModel>
+</SystemDefinition>

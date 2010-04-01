@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
+  <package id="hgwidgets" name="HG Widgets" levels="framework service api">
+    <collection id="hgwidgets_pub" name="HG Widgets Platform Interfaces" level="api">
+     <component id="ganeswidgets_api" name="Ganes Widgets API" class="api" introduced="^4">
+		<!-- should separate out unit -->
+	 </component>
+    </collection>
+    <collection id="hgwidgets_pub" name="HG Widgets Public Interfaces" level="api"/>
+    <collection id="ganeswidgets" name="Ganes Widgets" level="service">
+		<!-- really a component, should move down a dir level and have a unit -->
+      <component id="ganeswidgets_build" name="Ganes Widgets Build" introduced="^4">
+		<!-- should separate out unit -->
+	 </component>
+    </collection>	 
+    <collection id="hgwidgets_info" name="HG Widgets Info" level="framework">
+     <component id="hgwidgets_build" name="HG Widgets Build" introduced="^4">
+      <unit bldFile="." qt:proFile="hgwidgets.pro"/>
+     </component>
+    </collection>
+  </package>
+</SystemDefinition>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+ <package id="textandloc" name="Text and Localisation Services" levels="encoding util fonts tools text">
+  <collection id="textandloc_plat" name="Text and Localisation Platform Interfaces" level="text">
+   <component id="findutil_api" name="Find Utility API" class="api" filter="s60">
+    <meta rel="Api" href="textandloc_plat/findutil_api/findutil_api.metaxml"/>
+    <unit bldFile="textandloc_plat/findutil_api/group"/>
+   </component>
+   <component id="japanese_language_utilities_api" name="Japanese Language Utilities API" class="api" filter="s60">
+    <meta rel="Api" href="textandloc_plat/japanese_language_utilities_api/japanese_language_utilities_api.metaxml"/>
+    <unit bldFile="textandloc_plat/japanese_language_utilities_api/group"/>
+   </component>
+   <component id="sortutil_api" name="Sorting Utility API" class="api" filter="s60">
+    <meta rel="Api" href="textandloc_plat/sortutil_api/sortutil_api.metaxml"/>
+    <unit bldFile="textandloc_plat/sortutil_api/group"/>
+   </component>
+  </collection>
+  <collection id="textandloc_pub" name="Text and Localisation Public Interfaces" level="text">
+   <component id="directory_localizer_api" name="Directory Localizer API" class="api" filter="s60">
+    <meta rel="Api" href="textandloc_pub/directory_localizer_api/directory_localizer_api.metaxml"/>
+    <unit bldFile="textandloc_pub/directory_localizer_api/group"/>
+   </component>
+  </collection>
+  <collection id="charconvfw" name="Character Conversion" level="encoding">
+   <component id="charconv_fw" name="Character Encoding and Conversion Framework" purpose="optional">
+    <unit bldFile="charconvfw/charconv_fw/group" mrp="charconvfw/charconv_fw/group/syslibs_charconv.mrp"/>
+   </component>
+   <component id="charconvplugins" name="Character Encoding and Conversion Plugins" purpose="optional" class="plugin">
+    <unit bldFile="charconvfw/charconvplugins/group" mrp="charconvfw/charconvplugins/group/syslibs_charconv_plugins.mrp"/>
+   </component>
+   <component id="fatfilenameconversionplugins" name="FAT Filename Conversion Plugins" introduced="9.1" purpose="optional" class="plugin">
+    <unit bldFile="charconvfw/fatfilenameconversionplugins/group" mrp="charconvfw/fatfilenameconversionplugins/group/syslibs_FATCharsetConv.mrp"/>
+   </component>
+  </collection>
+  <collection id="fontandtxtsrv" name="Font and Text Services" level="fonts">
+   <component id="iculayoutengine" name="ICU Layout Engine" introduced="9.2" purpose="optional" class="plugin">
+    <unit bldFile="fontservices/textshaperplugin/group" mrp="fontservices/textshaperplugin/group/graphics_iculayoutengine.mrp"/>
+   </component>
+   <component id="fontstore" name="Font Store" purpose="mandatory">
+    <unit bldFile="fontservices/fontstore/group" mrp="fontservices/fontstore/group/graphics_fntstore.mrp"/>
+   </component>
+   <component id="textrendering" name="Text Rendering" purpose="mandatory">
+    <!-- placeholder for text code from GDI -->
+   </component>
+   <component id="freetypefontrasteriser" name="FreeType Font Rasteriser" purpose="optional" class="plugin">
+    <unit bldFile="fontservices/freetypefontrasteriser/group" mrp="fontservices/freetypefontrasteriser/group/graphics_freetype.mrp"/>
+   </component>
+   <component id="referencefonts" name="Reference Fonts" introduced="6.0" purpose="optional">
+    <unit bldFile="fontservices/referencefonts/group" mrp="fontservices/referencefonts/group/graphics_fonts.mrp"/>
+   </component>
+  </collection>
+  <collection id="textlayout" name="Text Layout" level="text">
+   <component id="texthandling" name="Text Handling" purpose="optional">
+    <unit bldFile="textrendering/texthandling/group" mrp="textrendering/texthandling/group/app-framework_etext.mrp"/>
+   </component>
+   <component id="textformatting" name="Text Formatting" purpose="optional">
+    <unit bldFile="textrendering/textformatting/group" mrp="textrendering/textformatting/group/app-framework_form.mrp"/>
+   </component>
+   <component id="word" name="Word" purpose="development" filter="test">
+    <unit mrp="textrendering/word/group/app-framework_word.mrp" bldFile="textrendering/word/group"/>
+   </component>
+  </collection>
+  <collection id="textandlocutils" name="Text and Localisation Utils" level="util">
+   <!-- components in this collection need to be moved to the right collection.
+    		Either move into the units' directories, or create a new textandlocutils directory -->
+   <component id="numbergrouping" filter="s60" name="Number Grouping">
+    <unit bldFile="charconvfw/numbergrouping/group"/>
+   </component>
+   <component id="jplangutil" filter="s60" name="Japanese Language Utilities">
+    <unit bldFile="charconvfw/jplangutil/group"/>
+   </component>
+   <component id="sortutil" filter="s60" name="Sorting Utility">
+    <unit bldFile="charconvfw/sortutil/group"/>
+   </component>
+   <component id="inlinetext" filter="s60" name="Inline Text">
+    <unit bldFile="charconvfw/inlinetext/group"/>
+   </component>
+   <component id="nearestlangutil" name="Nearest Language Util" introduced="^2" purpose="mandatory">
+    <!-- placeholder for split from bafl -->
+   </component>
+   <component id="numberformatting" name="Number Formatting" introduced="7.0s" purpose="optional">
+    <unit bldFile="textrendering/numberformatting/group" mrp="textrendering/numberformatting/group/app-framework_numberconversion.mrp"/>
+   </component>
+  </collection>
+  <collection id="localesupport" name="Locale Support" level="util">
+   <component id="reflocales" name="Reference Locales" purpose="optional" class="plugin">
+    <unit bldFile="localisation/localesupport" mrp="localisation/localesupport/mmpfiles/base_loce32.mrp"/>
+   </component>
+   <component id="initlocale" name="Initialise Locale" introduced="^2" purpose="mandatory">
+    <!-- placeholder for split from bafl -->
+   </component>
+  </collection>
+  <collection id="textandloctools" name="Text and Localisation Tools" level="tools">
+   <component id="fontcompiler" name="Font Compiler" purpose="development" target="desktop">
+    <!-- placeholder for split from GDI Tools -->
+   </component>
+   <component id="bitmapfonttools" name="Bitmap Font Tools" purpose="development" target="desktop">
+    <unit bldFile="../graphics/graphicstools/bitmapfonttools/group" mrp="../graphics/graphicstools/bitmapfonttools/group/graphics_gdtran.mrp"/>
+   </component>
+  </collection>
+  <collection id="textandloc_info" name="Text and Localisation Info" level="text">
+   <component id="textandloc_metadata" name="Text and Localisation Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+    <unit mrp="textandloc_info/textandloc_metadata/textandloc_metadata.mrp"/>
+   </component>
+  </collection>
+ </package>
+</SystemDefinition>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="webuis" name="Web UIs" levels="plugin app">
+    <collection id="browserui" name="Browser UI" level="app">
+      <component id="browser" filter="s60" name="Browser">
+        <unit bldFile="browserui/browser/group"/>
+      </component>
+      <component id="operatormenu" filter="s60" name="Browser Operator Menu">
+        <unit bldFile="browserui/operatormenu/group"/>
+      </component>
+      <component id="videoservices" filter="s60" name="Browser Video Services">
+        <unit bldFile="browserui/videoservices/group"/>
+      </component>
+    </collection>
+    <collection id="browserplugins" name="Browser Plugins" level="plugin">
+      <component id="browsersysteminfoplugin" filter="s60" name="Browser System Info Plugin" class="plugin">
+      	<meta rel="config">
+      		<defined condition="__WEB_WIDGETS"/>
+      	</meta>
+      	<!-- uncomment the unit when configuration is in place, it's currently #included from browserplugins_build -->
+        <!-- <unit bldFile="browserplugins/browsersysteminfoplugin/group"/>-->
+      </component>
+      <component id="browsergpsplugin" filter="s60" name="Browser GPS Plugin" class="plugin">
+      	<meta rel="config">
+      		<defined condition="__WEB_WIDGETS"/>
+      	</meta>
+      	<!-- uncomment the unit when configuration is in place, it's currently #included from browserplugins_build -->
+        <!-- <unit bldFile="browserplugins/browsergpsplugin/group"/>-->
+      </component>
+      <component id="browseraudiovideoplugin" filter="s60" name="Browser Audio Video Plugin" class="plugin">
+        <unit bldFile="browserplugins/browseraudiovideoplugin/group"/>
+      </component>
+      <component id="browserplugins_build" filter="s60" name="Browser Plugins Build">
+		<!-- when configuration is in place, the #ifdef is no longer needed and this component can be removed -->
+        <unit bldFile="browserplugins/group"/>
+      </component>
+    </collection>
+    <collection id="pushmtm" name="Push MTM" level="plugin">
+      <component id="pushmtm_help" filter="s60" name="Push MTM Help">
+        <unit bldFile="pushmtm/help/group"/>
+      </component>
+      <component id="plugins" filter="s60" name="Push MTM Plugins" class="plugin">
+        <unit bldFile="pushmtm/plugins/group"/>
+      </component>
+      <component id="pushmtm_build" filter="s60" name="Push MTM Build">
+		<!-- Some content is at collection level and some is at comopnent level. Either make this a single
+			component and move it down a diretcory, or make separate independent components in this collection -->
+        <unit bldFile="pushmtm/group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

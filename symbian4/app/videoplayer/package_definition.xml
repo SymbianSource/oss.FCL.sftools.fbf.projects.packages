@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+<!ELEMENT SystemDefinition ( systemModel )>
+<!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED
+>
+<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
+
+<!-- System Model Section of DTD -->
+<!ELEMENT systemModel (layer+)>
+
+<!ELEMENT layer (block* | collection*)*>
+<!-- Kernel Services, Base Services, OS Services, Etc -->
+<!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+>
+
+<!ELEMENT block (subblock* | collection*)*>
+ <!-- Generic OS services, Comms Services, etc -->
+<!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+>
+
+<!ELEMENT subblock (collection)*>
+<!-- Cellular Baseband Services, Networking Services, etc -->
+<!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+>
+
+<!ELEMENT collection (component)*>
+<!-- Screen Driver, Content Handling, etc -->
+<!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+>
+
+<!ELEMENT component (unit)*>
+<!-- contains units or is a  package or prebuilt -->
+<!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) "N"
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose ( optional | mandatory | development ) "optional"
+>
+
+<!ELEMENT unit EMPTY >
+<!-- must be buildable (bld.inf) -->
+<!-- bldFile  may someday be removed in favour of mrp -->
+<!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED
+>
+]>
+<SystemDefinition name="Symbian^4" schema="2.0.1">
+  <systemModel>
+    <layer name="app" long-name="Applications" levels="services apps">
+      <block name="videoplayer" level="apps" long-name="Video Player Apps" levels="support plugin util apps">
+        <collection name="videoplayer_plat" long-name="Video Player Apps Platform Interfaces" level="apps">
+          <component name="videoplayer_startup_api" long-name="Video Player Startup API" filter="s60" class="api">
+            <unit bldFile="/sf/app/videoplayer/videoplayer_plat/videoplayer_startup_api/group" filter="!test"/>
+            <unit bldFile="/sf/app/videoplayer/videoplayer_plat/videoplayer_startup_api/tsrc/group" filter="test,api_test"/>
+          </component>
+          <component name="videocollection_api" long-name="Video Collection API" filter="s60" class="api">
+            <unit bldFile="/sf/app/videoplayer/videoplayer_plat/videocollection_api/group"/>
+          </component>
+        </collection>
+        <collection name="videocollection" long-name="Video Collection" level="util">
+          <component name="mpxmyvideoscollection" filter="s60" long-name="MPX My Videos Collection" introduced="^3">
+            <unit bldFile="/sf/app/videoplayer/videocollection/mpxmyvideoscollection/group"/>
+          </component>
+          <component name="videocollectionwrapper" filter="s60" long-name="Video Collection Wrapper" introduced="^4">
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper"/>
+          </component>
+          <component name="videocollectionwrapper" filter="test,qt_unit_test" long-name="Video Collection Wrapper Tests">
+            <!--Can only have one unit. Need to split into separate component or #include from a common file-->
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideocollectionclient"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideocollectionlistener"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideocollectionwrapper_p"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideodatacontainer"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideodeleteworker"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideomodel"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideomodel_p"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideosortfilterproxymodel"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideothumbnaildata"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideothumbnaildata_p"/>
+          </component>
+          <component name="videocollectionview" filter="s60" long-name="Video Collection View" introduced="^4">
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview"/>
+          </component>
+          <component name="videocollectionview_test" filter="test,qt_unit_test" long-name="Video Collection View Tests">
+            <!--Can only have one unit. Need to split into separate components or #include from a common file-->
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testcollectionview"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testhintwidget"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testlistview"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testlistwidget"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testvideocollectionviewutils"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testvideolistselectiondialog"/>
+          </component>
+          <component name="videofiledetailsview" filter="s60" long-name="Video File Details View" introduced="^4">
+            <unit bldFile="/sf/app/videoplayer/videocollection/videofiledetailsview"/>
+          </component>
+        </collection>
+        <collection name="mediasettings" long-name="Media Settings" level="support">
+          <!--  this is really a component. Should be moved down a directory -->
+          <component name="mediasettings_build" filter="s60" long-name="Media Settings Build">
+            <unit bldFile="/sf/app/videoplayer/mediasettings/group"/>
+          </component>
+        </collection>
+        <collection name="videoplayerapp" long-name="Video Player App" level="apps">
+          <component name="videoplayerengine" long-name="Video Player Engine" filter="s60" introduced="^4">
+            <unit bldFile="/sf/app/videoplayer/videoplayerapp/videoplayerengine"/>
+          </component>
+          <component name="hbvideoplayer" filter="s60" long-name="HB Video Player" introduced="^4">
+            <unit bldFile="/sf/app/videoplayer/videoplayerapp/hbvideoplayer"/>
+          </component>
+        </collection>
+        <collection name="videoplayback" long-name="Video Playback Plugins" level="plugin">
+          <component name="hbvideoplaybackview" filter="s60" long-name="HB Video Playback View" introduced="^4" plugin="Y">
+            <unit bldFile="/sf/app/videoplayer/videoplayback/hbvideoplaybackview"/>
+          </component>
+          <component name="hbvideoplaybackviewplugin" filter="s60" long-name="HB Video Playback View Plugin" introduced="^4" plugin="Y">
+            <unit bldFile="/sf/app/videoplayer/videoplayback/hbvideoplaybackviewplugin"/>
+          </component>
+          <component name="videohelix" long-name="Video Helix" filter="s60" introduced="^3" plugin="Y">
+            <unit bldFile="/sf/app/videoplayer/videoplayback/videohelix/group"/>
+          </component>
+        </collection>
+      </block>
+    </layer>
+  </systemModel>
+</SystemDefinition>

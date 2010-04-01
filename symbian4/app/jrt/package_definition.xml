@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+<!ELEMENT SystemDefinition ( systemModel )>
+<!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED
+>
+<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
+
+<!-- System Model Section of DTD -->
+<!ELEMENT systemModel (layer+)>
+
+<!ELEMENT layer (block* | collection*)*>
+<!-- Kernel Services, Base Services, OS Services, Etc -->
+<!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+>
+
+<!ELEMENT block (subblock* | collection*)*>
+ <!-- Generic OS services, Comms Services, etc -->
+<!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+>
+
+<!ELEMENT subblock (collection)*>
+<!-- Cellular Baseband Services, Networking Services, etc -->
+<!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+>
+
+<!ELEMENT collection (component)*>
+<!-- Screen Driver, Content Handling, etc -->
+<!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+>
+
+<!ELEMENT component (unit)*>
+<!-- contains units or is a  package or prebuilt -->
+<!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) "N"
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose ( optional | mandatory | development ) "optional"
+>
+
+<!ELEMENT unit EMPTY >
+<!-- must be buildable (bld.inf) -->
+<!-- bldFile  may someday be removed in favour of mrp -->
+<!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED
+>
+]>
+<SystemDefinition name="Symbian^4" schema="2.0.1">
+  <systemModel>
+    <layer name="app" long-name="Applications" levels="services apps">
+      <block name="jrt" level="services" long-name="Java Runtime" levels="util generic rt ui">
+        <collection name="jrt_plat" long-name="JRT Platform Interfaces" level="ui">
+          <component name="java_registry_api" long-name="Java Registry API" filter="s60" class="api">
+            <unit bldFile="/sf/app/jrt/jrt_plat/java_registry_api/build"/>
+          </component>
+          <component name="java_env_info_api" long-name="Java Environment Info API" filter="s60" class="api">
+            <unit bldFile="/sf/app/jrt/jrt_plat/java_env_info_api/build"/>
+          </component>
+          <component name="java_debug_api" long-name="Java Debug API" filter="s60" class="api">
+            <unit bldFile="/sf/app/jrt/jrt_plat/java_debug_api/build"/>
+          </component>
+        </collection>
+        <collection name="java_stubs" long-name="Java Stubs" level="util">
+          <!-- uncomment all components when configuration is in place. Currently #included from jrt_build -->
+          <component name="javadrmutils" long-name="Java DRM Utils" filter="s60,sf_build" class="placeholder">
+            <!--<unit bldFile="java_stubs/jrtdrmutils/group"/>-->
+          </component>
+          <component name="javaenvinfo" long-name="Java Environment Info" filter="s60,sf_build" class="placeholder">
+            <!--<unit bldFile="java_stubs/jrtenvinfo/group"/>-->
+          </component>
+          <component name="javaregistry" filter="s60,sf_build" long-name="Java Registry" class="placeholder">
+            <!--<unit bldFile="java_stubs/jrtregistry/clientserver/client/group"/>-->
+          </component>
+          <component name="java_stubs_build" filter="s60,sf_build" long-name="Java Stubs ROM" class="placeholder">
+            <!-- Remove the #includes and rename JRT ROM-->
+            <!--<unit bldFile="java_stubs/group"/>-->
+          </component>
+        </collection>
+        <collection name="jrt_info" long-name="JRT Info" level="rt">
+          <component name="jrt_build" filter="s60" long-name="JRT Build">
+            <!--  needed for __JAVA_STUBS condition -->
+            <unit bldFile="/sf/app/jrt/group"/>
+          </component>
+        </collection>
+      </block>
+    </layer>
+  </systemModel>
+</SystemDefinition>

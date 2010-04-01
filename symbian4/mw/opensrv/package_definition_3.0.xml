@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+ <package id="opensrv" name="Open Services" levels="prt lib server eng">
+  <collection id="opensrv_plat" name="Open Services Platform Interfaces" level="eng">
+   <component id="messagequeue_api" name="Message Queue API" introduced="^2" class="api" filter="s60">
+    <unit bldFile="opensrv_plat/messagequeue_api/group"/>
+   </component>
+  </collection>
+  <collection id="loudmouth" name="Loudmouth" level="prt">
+   <!-- collection is really a component so it needs to be moved down a directory -->
+   <component id="loudmouth_build" filter="s60" name="Loudmouth Build" introduced="^2">
+    <unit bldFile="loudmouth/group"/>
+   </component>
+  </collection>
+  <collection id="libtelepathy" name="Telepathy Library" level="lib">
+   <!-- collection is really a component so it needs to be moved down a directory -->
+   <component id="libtelepathy_build" filter="s60" name="Telepathy Library Build" introduced="^2">
+    <unit bldFile="libtelepathy/group"/>
+   </component>
+  </collection>
+  <collection id="telepathygabble" name="Telepathy Gabble" level="eng">
+   <!-- collection is really a component so it needs to be moved down a directory -->
+   <component id="telepathygabble_build" filter="s60" name="Telepathy Gabble Build" introduced="^2">
+    <unit bldFile="telepathygabble/group"/>
+   </component>
+  </collection>
+  <collection id="isolationserver" name="Isolation Server" level="server">
+   <component id="messagequeue" filter="s60" name="Message Queue" introduced="^2">
+    <unit bldFile="isolationserver/messagequeue/group"/>
+   </component>
+   <component id="isoserver" filter="s60" name="ISO Server" introduced="^2">
+    <unit bldFile="isolationserver/isoserver/group"/>
+   </component>
+   <component id="isolationserver_build" filter="s60" name="Isloation Server Build" introduced="^2">
+    <!-- needs #includes removed. either move the exports to another component or make this a ROM component -->
+    <unit bldFile="isolationserver/group"/>
+   </component>
+  </collection>
+ </package>
+</SystemDefinition>

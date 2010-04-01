@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+ <package id="jrt" name="Java Runtime" levels="util generic rt ui">
+  <collection id="jrt_plat" name="JRT Platform Interfaces" level="ui">
+   <component id="java_registry_api" name="Java Registry API" class="api" filter="s60">
+    <unit bldFile="jrt_plat/java_registry_api/build"/>
+   </component>
+   <component id="java_env_info_api" name="Java Environment Info API" class="api" filter="s60">
+    <unit bldFile="jrt_plat/java_env_info_api/build"/>
+   </component>
+   <component id="java_debug_api" name="Java Debug API" class="api" filter="s60">
+    <unit bldFile="jrt_plat/java_debug_api/build"/>
+   </component>
+  </collection>
+  <collection id="java_stubs" name="Java Stubs" level="util">
+   <meta rel="config">
+    <defined condition="__JAVA_STUBS"/>
+   </meta>
+   <!-- uncomment all components when configuration is in place. Currently #included from jrt_build -->
+   <component id="javadrmutils" name="Java DRM Utils" filter="s60,sf_build">
+    <!--<unit bldFile="java_stubs/jrtdrmutils/group"/>-->
+   </component>
+   <component id="javaenvinfo" name="Java Environment Info" filter="s60,sf_build">
+    <!--<unit bldFile="java_stubs/jrtenvinfo/group"/>-->
+   </component>
+   <component id="javaregistry" filter="s60,sf_build" name="Java Registry">
+    <!--<unit bldFile="java_stubs/jrtregistry/clientserver/client/group"/>-->
+   </component>
+   <component id="java_stubs_build" filter="s60,sf_build" name="Java Stubs ROM">
+    <!-- Remove the #includes and rename JRT ROM-->
+    <!--<unit bldFile="java_stubs/group"/>-->
+   </component>
+  </collection>
+  <collection id="jrt_info" name="JRT Info" level="rt">
+   <component id="jrt_build" filter="s60" name="JRT Build">
+    <!--  needed for __JAVA_STUBS condition -->
+    <unit bldFile="group"/>
+   </component>
+  </collection>
+ </package>
+</SystemDefinition>
