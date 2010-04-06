@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<shapes xmlns:s="http://www.w3.org/2000/svg">
+<s:defs>
+    <s:style type="text/css">
+	svg.package-fixed text.lgd,  svg.package text.lgd,  
+	svg.package-fixed text.layer, 	svg.package text.layer
+	svg.package text.package, svg.package-fixed text.package {
+		font-size: 17px;
+		font-weight: normal
+	} 
+	#legend-box text.lgd {font-size: 4.233px}
+	
+	svg.collection-fixed text.lgd, svg.collection text.lgd, 
+	svg.collection-fixed text.layer,  svg.collection text.layer {
+		font-size: 12px;
+		font-weight: normal
+	} 
+	svg.collection-fixed	text.package {
+		font-size: 6px;
+		font-weight: normal;
+	}
+	svg.collection-fixed  #legend-box g.component use {stroke-width: 0.0882px;}
+	
+	text.title:lang(jp) {letter-spacing: -0.15}
+	#legend-box  text.lgd:lang(zh)  {
+		font-size: 3.5px!important;
+	}
+    </s:style>
+</s:defs>
+
+<patterns match="collection"> 
+	<overlay rule="count(component[@deprecated]) = count(component)" label="Contrib&#xad;uted as Depre&#xad;cated" count=" (1)" type="big-X"/>
+</patterns>
+
+    <styles match="collection" label="Contribution to Symbian Foundation">
+		<style rule="component[contains(@id,':')] and component[not(contains(@id,':'))]" label="Partial Contribu&#xad;tion">fill: white;stroke-width: 1.4!important; stroke-dasharray: 2,3</style>
+ 	  <style rule="component" label="Initial Contribu&#xad;tion">fill:#ddd</style>
+  </styles>
+  
+<colors default="grey" match="package" use="@tech-domain" label="Technology Domain">
+	<color color="tan" value="hb" label="OS Base Services" count=" (1)"/>
+	<color color="rgb(228,14,98)" value="se" label="Security" count=" (1)"/>
+	<color color="whitesmoke" value="lo" label="Location" count=" (1)"/>
+	<color color="darkkhaki" value="vc" label="Personal Communications" count=" (1)"/>
+	<color color="moccasin" value="dc" label="Data Communications" count=" (1)"/>
+	<color color="orchid" value="de" label="Device Connectivity" count=" (1)"/>
+	<color color="darkseagreen" value="dm" label="Device Management" count=" (1)"/>
+	<color color="lightpink" value="pr" label="Productivity" count=" (1)"/>
+	<color color="rgb(175,212,240)" value="mm" label="Multimedia" count=" (1)"/>
+	<color color="#ffff00" value="ma" label="Multimedia Apps" count=" (1)"/>
+	<color color="orange" value="ui" label="User Interface" count=" (1)"/>
+	<color color="slateblue" value="rt" label="Runtimes and Web" count=" (1)"/>
+	<color color="darkgray" value="to" label="Tools" count=" (1)"/>
+	<color color="#dd5" value="ocp" label="Operator Comple&#xad;mentary Packages" count=" (1)"/> 
+</colors> 
+</shapes>

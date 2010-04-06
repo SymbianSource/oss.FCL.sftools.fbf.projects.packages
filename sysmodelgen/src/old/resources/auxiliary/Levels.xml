@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<levels>
+<block name="Generic OS Services" levels="Libraries Services"/>
+	<collection name="Generic Services" level="Services"/>
+	<collection name="Generic Libraries" level="Libraries"/>	
+</levels>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<model name="Symbian OS" label="System Model" shapes="shapes.xml">
+	<!-- for Symbian 9.5 models -->
+	<ignore type="layer" name="Tools and Utils and SDKENG"/>
+	<ignore type="layer" name="MISC"/>
+	<ignore type="block" name="Techview"/>
+	<layout>
+		<layer-group color="rgb(143,188,143)" from="Hardware" to="Application Services">
+			<layer-group color="rgb(93,155,205)" from="Kernel Services" to="OS Services" label="Core OS"/>	
+		</layer-group>
+		<legend label="Key">
+		</legend>
+	</layout>
+</model>

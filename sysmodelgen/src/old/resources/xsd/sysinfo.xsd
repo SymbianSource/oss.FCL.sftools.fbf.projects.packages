@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="info">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element name="item" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+          	<xs:simpleContent>
+          		<xs:extension base="xs:string">
+          			<xs:attribute type="xs:string" name="ref" use="required" />
+          			<xs:attribute type="xs:NMTOKEN" name="status" use="optional" />
+          			<xs:attribute type="xs:NMTOKEN" name="percent" use="optional" />
+          		</xs:extension>
+          	</xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

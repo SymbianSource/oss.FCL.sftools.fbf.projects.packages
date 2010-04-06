@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<model name="Symbian OS" label="System Model" shapes="shapes.xml">
+	<!-- for 9.3 and earlier models -->
+
+	<ignore type="layer" name="Tools and Utils and SDKENG"/>
+	<ignore type="layer" name="MISC"/>
+	<ignore type="layer" name="UI"/>
+	<layout>
+		<display name="UI Framework" align="right"/>
+		<display name="Application Services" align="left"/>
+		<legend label="Key">
+		</legend>
+	</layout>
+</model>

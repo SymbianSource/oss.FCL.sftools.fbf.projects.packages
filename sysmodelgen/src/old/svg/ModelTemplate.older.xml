@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<model name="___NAME___" label="___LABEL___"
+	___OPTIONAL___
+	 shapes="___SHAPES_XML___" >
+	 ___SYSTEM_DEFINITIONS___
+	 ___FILTERS___
+	 ___IGNORE___
+<layout___LAYOUT_OPTIONS___>
+	<display name="UI Framework" align="right"/>
+	<display name="Application Services" align="left"/>
+	___DISPLAY___
+	<legend label="Key"___LEGEND_OPTIONS___>
+	___LEGEND___
+	</legend>
+</layout>
+</model>

@@ -1,0 +1,146 @@
+<dict>
+  <word term="Application" abbrev="App" d="Appli&#xad;cation"/>
+  <word term="Applications" abbrev="Apps" d="Appli&#xad;cations"/>
+  <word term="Reference" abbrev="Ref"/>
+  <word term="and" d="&amp;"/>
+  <word term="Management" abbrev="Mgmt." d="Manage&#xad;ment"/>
+  <word term="Connection" d="Connec&#xad;tion" abbrev="Conn."/>
+  <word term="Interfaces" d="Inter&#xad;faces"/>
+  <word term="Interface" d="Inter&#xad;face"/>
+  <word term="Interworking" d="Inter&#xad;working"/>
+  <word term="Restricted" abbrev="Restr."/>
+  <word term="PacketVideo" d="Packet&#xad;Video"/>
+  <word term="ImagePrint" d="Image&#xad;Print"/>
+  <word term="Verification" d="Verifica&#xad;tion"/>
+  <word term="Postprocessor" abbrev="Post-proc."/>
+  <word term="Supplementary" abbrev="Suppl."/>
+  <word term="Parameters" d="Param&#xad;eters"/>
+  <word term="Middleware" d="Middle&#xad;ware"/>
+  <word term="Multimedia" d="Multi&#xad;media" s="MM"/>
+  <word term="Frameworks" d="Frame&#xad;works" abbrev="Fmwks." s="FW"/>
+  <word term="Framework" d="Frame&#xad;work" abbrev="Fmwk." s="FW"/>
+  <word term="Component" d="Compo&#xad;nent" abbrev="Cmp."/>
+  <word term="compo" d="Cmp."/>
+  <word term="Components" d="Compo&#xad;nents" abbrev="Cmp."/>
+  <word term="Customisation" d="Custom&#xad;isation"/>
+  <word term="Device" d="Dev&#xad;ice"/>
+  <word term="Adaptation" abbrev="Adapt." d="Adapta&#xad;tion"/>
+  <word term="Bluetooth" d="Blue&#xad;tooth" abbrev="Btooth." s="BT"/>
+  <word term="Implementations" d="Implemen&#xad;tations" abbrev="Impl."/>
+  <word term="Implementation" d="Implemen&#xad;tation" abbrev="Impl."/>
+  <word term="Documentation" abbrev="Docs"/>
+  <word term="Networking" d="Network&#xad;ing"/>
+  <word term="Compression" d="Compres&#xad;sion"/>
+  <word term="Conversation" d="Conversa&#xad;tion"/>
+  <word term="Libraries" abbrev="Libs"/>
+  <word term="Certificates" d="Certif&#xad;icates"/>
+  <word term="Environment" d="Environ&#xad;ment" abbrev="Env."/>
+  <word term="Recognition" d="Recog&#xad;nition"/>
+  <word term="Hardware" s="HW"/>
+  <word term="Software" s="SW"/>
+  <word term="ScreenGrabber" d="Screen&#xad;Grabber"/>
+  <word term="Subsystem" d="Sub&#xad;system"/>
+  <word term="Localisation" d="Localis&#xad;ation"/>
+  <word term="Localization" d="Localiz&#xad;ation"/>
+  <word term="Translation" d="Trans&#xad;lation"/>
+  <word term="Abstraction" d="Abstrac&#xad;tion"/>
+  <word term="Characterisation" d="Character&#xad;isation"/>
+  
+  <word term="Transport" d="Trans&#xad;port"/>
+  <word term="Transports" d="Trans&#xad;ports"/>
+  <word term="Permission" d="Permis&#xad;sion"/>
+  <word term="Configuration" abbrev="Config."/>
+  <word term="Customization" abbrev="Custom&#xad;ization"/>
+  <word term="Configurator" abbrev="Config&#xad;urator"/>
+  <word term="Communications" d="Communi&#xad;cations" abbrev="Comms"/>
+  <word term="Connectivity" abbrev="Connect&#xad;ivity"/>
+  <word term="Integration" abbrev="Integ"/>
+  
+  <word term="Initialization" abbrev="Init"/>
+  <word term="Memory" d="Mem&#xad;ory"/>
+  <word term="Notification" d="Notifica&#xad;tion"/>
+  <word term="Architecture" abbrev="App. Arch."/>
+  <word term="Converter" abbrev="Cnvrter."/>
+    <word term="Converters" abbrev="Cnvrters."/>
+  <word term="Converged" d="Con&#xad;verged"/>
+  <word term="Dictionary" d="Dictio&#xad;nary"/>
+  <word term="Recognisers" d="Recog&#xad;nisers"/>
+  <word term="Recogniser" d="Recog&#xad;niser"/>
+  <word term="Recognizers" d="Recog&#xad;nizers"/>
+  <word term="Recognizer" d="Recog&#xad;nizer"/>
+  <word term="Homescreen" d="Home&#xad;screen"/>
+  
+  <word term="Provisioning" d="Provision&#xad;ing" s="Prov."/>
+  <word term="Messaging" abbrev="Msg." d="Messag&#xad;ing"/>
+  <word term="Message" abbrev="Msg."/>
+  <word term="Scheduled" abbrev="Sched."/>
+  <word term="Repository" d="Repos&#xad;itory"/>
+  <word term="Character" abbrev="Char."/>
+  <word term="Encoding" abbrev="Encode."/>
+  <word term="Conversion" abbrev="Conv." d="Conver&#xad;sion"/>
+  <word term="Ethernet" abbrev="Ether."/>
+  <word term="Bootstrap" d="Boot&#xad;strap"/>
+  <word term="Emulator" d="Emu&#xad;lator"/>
+  <word term="Database" abbrev="Dbase." s="DB"/>
+  <word term="Controller" abbrev="Contrllr."/>
+  <word term="Multimode" d="Multi&#xad;mode"/>
+  <word term="Phonebook" d="Phone&#xad;book" s="Phbk."/>
+  <word term="Standard" abbrev="Std."/>
+  <word term="Scheduler" d="Sched&#xad;uler"/>
+  <word term="Rasteriser" abbrev="Rster."/>
+  <word term="Formatting" d="Formatt&#xad;ing"/>
+  <word term="Visualization" d="Visualiza&#xad;tion"/>
+  <word term="Redistribution" d="Redistrib&#xad;ution"/>
+  <word term="Personalization" d="Personal&#xad;ization"/>
+  <word term="Navigation" abbrev="Nav"/>
+  <word term="Validation" d="Valida&#xad;tion"/>
+  <word term="Processor" d="Proces&#xad;sor"/>
+  <word term="Integrator" abbrev="Integrtr."/>
+  <word term="Motherboard" d="Mother&#xad;board"/>
+  <word term="Subconnection" abbrev="Subconn."/>
+  <word term="StrongArm" d="Strong&#xad;Arm"/>
+  <word term="Broadcast" d="Broad&#xad;cast"/>
+  
+  <word term="Extension"  d="Exten&#xad;sion" abbrev="Ext."/>
+  <word term="Extensions" d="Exten&#xad;sions" abbrev="Ext."/>
+  <word term="Transmitter" abbrev="Transmit."/>
+  <word term="Cryptography" abbrev="Crypto."/>
+  <word term="Composition" d="Composi&#xad;tion"/>
+  <word term="Engine" s="Eng."/>
+  <word term="Address" abbrev="Addr"/>
+  <word term="Comparator" d="Compar&#xad;ator"/>
+  <word term="Codewarrior" d="Code&#xad;Warrior"/>
+  <word term="installation" d="Install&#xad;ation"/>
+  <word term="Installation" d="Install&#xad;ation"/>
+  <word term="Infrastructure" d="Infra&#xad;structure"/>
+  <word term="Development" d="Develop&#xad;ment"/>
+  <word term="Diagnostics" d="Diagnos&#xad;tics"/>
+  <word term="Triggering" d="Trigger&#xad;ing"/>
+  	
+  	<word term="Command" abbrev="Cmd."/>
+  	<word term="Description" d="Descrip&#xad;tion"/>
+  	<word term="Transforms" d="Trans&#xad;forms"/>
+  	<word term="Messages" abbrev="Msgs"/>
+  	<word term="Mechanism" d="Mechan&#xad;ism"/>
+  	<word term="Backstepping" d="Back&#xad;stepping"/>
+  <word term="Monitoring" d="Monitor&#xad;ing"/>
+   <word term="Authentication" d="Authenti&#xad;cation"/> 
+   <word term="Authorisation" d="Authori&#xad;sation"/> 
+  	<word term="Enhancements" d="Enhance&#xad;ments"/>
+  	<word term="Pictographs" d="Picto&#xad;graphs"/>
+  	<word term="Thumbnail" d="Thumb&#xad;nail"/>
+  	<word term="Accelerator" d="Accel&#xad;erator"/>
+  	<word term="Landmarks" d="Land&#xad;marks"/>
+  	<word term="Camcorder" d="Cam&#xad;corder"/>
+  	<word term="Connected" d="Con&#xad;nected"/>
+  	<word term="Accelaration" d="Accelara&#xad;tion"/>
+  	<word term="Simulation" d="Simula&#xad;tion"/>
+  	<word term="Rendering" d="Render&#xad;ing"/>
+  	<word term="Loudmouth" d="Loud&#xad;mouth"/>
+  	<word term="NaviEngine" d="Navi&#xad;Engine"/>
+  	<word term="Baseport" d="Base&#xad;port"/>
+  	<word term="Controllers" d="Con&#xad;trollers"/>
+  	<word term="Performance" d="Perfor&#xad;mance"/>
+  	<word term="Generator" d="Gener&#xad;ator"/>
+  	<word term="Foundation" d="Found&#xad;ation"/>
+</dict>

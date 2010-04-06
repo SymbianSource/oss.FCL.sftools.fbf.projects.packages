@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<model name="Symbian OS" label="System Model" shapes="shapes.xml">
+	<layout>
+		<legend label="Key">
+			<legend use="@shapes#colors"/>
+			<legend use="@shapes#styles"/>
+			<legend use="@shapes#patterns"/>
+			<legend use="@shapes#borders"/>
+		</legend>
+	</layout>
+</model>

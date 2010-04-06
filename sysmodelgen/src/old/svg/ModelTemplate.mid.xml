@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<model name="___NAME___" label="___LABEL___"
+	___OPTIONAL___
+	 shapes="___SHAPES_XML___" >
+	 ___SYSTEM_DEFINITIONS___
+	 ___FILTERS___
+	 ___IGNORE___
+<layout___LAYOUT_OPTIONS___>
+	<layer-group color="rgb(143,188,143)" from="HAL" to="Application Services">
+		<layer-group color="rgb(93,155,205)" from="Kernel Services" to="OS Services" label="Core OS"/>	
+	</layer-group>
+	___DISPLAY___
+	<legend label="Key"___LEGEND_OPTIONS___>
+	___LEGEND___
+	</legend>
+</layout>
+</model>

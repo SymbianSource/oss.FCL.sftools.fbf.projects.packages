@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<display-names>
+	<abbrev name="PIM App Services" abbrev="PIM Application Services"/>
+	<abbrev name="Other App Services" abbrev="Other Application Services"/>
+	<abbrev name="Office App Engines" abbrev="Office Application Engines"/>
+	<abbrev name="Device Provisioning" abbrev="Device Management"/>
+	<abbrev name="PIM App Support" abbrev="PIM Application Support"/>
+	<abbrev name="Internet and Web Application Support" abbrev="Internet &amp; Web App Support"/>
+	<abbrev  name="Application Launch Services" abbrev="App. Launch Services"/>
+	<abbrev  name="QoS Interface" abbrev="QOS Interface"/>
+	<abbrev name="Serial Comms and Short Link Services" abbrev="Serial Comms &amp; Short Link Services"/>
+	<abbrev name="Multimedia and Graphics Services" abbrev="Multimedia &amp; Graphics Services"/>
+	<abbrev name="Kernel Services and Hardware Interface" abbrev="Kernel Services &amp; Hardware Interface"/>
+	<!--abbrev name="J2ME" abbrev="Java J2ME"/-->
+	<abbrev name="Localisation" abbrev="Localis&#xAD;ation"/>
+	<abbrev name="Character Conversion Framework" abbrev="Character Conversion"/>
+	<abbrev name="UI Toolkit" abbrev="UI Support"/>
+	<abbrev name="Bluetooth and SMS Push" abbrev="Bluetooth &amp; SMS Push"/>
+	<abbrev name="Telephony Reference Platform" abbrev="Telephony Ref. Platform"/>
+	<abbrev  name="Graphics Device Interface" abbrev="Graphics Dev&#xad;ice Interface"/>
+	<abbrev name="User Side Hardware Abstraction" abbrev="User Side Hardware &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;Abstrac- &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;tion"/>
+	<abbrev name="Generic Open Libraries" abbrev="Generic Open Libs."/>
+	<abbrev name="System State Management" abbrev="State Management"/>
+	<abbrev name="Comms Process and Settings" abbrev="Comms Proc. &amp; Settings"/>
+	<abbrev name="Baseband Adaptation Plugins" abbrev="Baseband Adaptation"/>
+	<abbrev name="Location Request Management" abbrev="Location Request Mgmt."/>    
+	<abbrev name="Graphics Hardware Adaptation" abbrev="Graphics HW Adapt."/>
+	<abbrev name="Multimedia Hardware Adaptation" abbrev="Multimedia HW Adapt."/>
+	<abbrev name="Multimedia Hardware Adaptation Interfaces" abbrev="Multimedia HW Adapt."/>
+	<abbrev name="Open Environment Utilities" abbrev="Open Env. Utilities"/>
+	<abbrev name="Common Application Services" abbrev="Common App Services"/>
+	<abbrev name="Base Connection Providers" abbrev="Base Connec&#xad;tion Providers"/>
+	<abbrev name="Shortlink Logical Device Drivers" abbrev="Shortlink LDD"/>
+</display-names>

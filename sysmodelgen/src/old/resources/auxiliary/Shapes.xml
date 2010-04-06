@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<shapes xmlns:s="http://www.w3.org/2000/svg">
+	
+	<!-- borders to use for OSD components -->
+	<borders use="s12/@osd" label="Sched 12 Category" show-unused="yes">
+		<border type="box"/>
+		<border value="OS" type="box-clipLT" label="Optional Symbian"/>
+		<border value="CS"  type="box-clipLB" label="Common Symbian"/>
+		<border value="CR"  type="box-clipRB" label="Common Replace&#xad;able"/>
+		<border value="OR" type="box-clipRT" label="Optional Replace&#xad;able"/>
+		<border value="T-R" type="box-clipAll" label="Refer&#xad;ence/Test"/>
+	</borders>
+	
+	<patterns show-unused="yes"> <!-- this could be very slow, don't check if used -->
+		 <overlay rule="@deprecated and (VERSION(@deprecated) &lt;=  VERSION())" label="Depre&#xad;cated Compo&#xad;nent" type="big-X"/> 
+		<overlay rule="s12/@ref='true' or @ref='true'" type="striped-diag-up" label="Reference Compo&#xad;nent"/>
+		<overlay rule="@since = /*/systemModel/@ver or @introduced = /*/systemModel/@ver" type="radial-grad" label="New in {@ver}"/>
+	</patterns>
+	
+	<styles>
+		<style>stroke-width: 0.4</style>
+		<style rule="@plugin='true'" label="Plugin Compo&#xad;nent">stroke-width: 2</style>
+	</styles>
+</shapes>

@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<levels>
+<block name="Generic OS Services" levels="Libraries Services"/>
+	<collection name="Generic Services" level="Services"/>
+	<collection name="Generic Libraries" level="Libraries"/>	
+
+
+<layer name="Kernel Services and Hardware Interface" levels="Hardware-dependent Hardware-independent"/>
+  	<collection name="ASSP" level="Hardware-dependent"/>
+  	<collection name="Kernel Services"  level="Hardware-independent"/>
+  	<collection name="Logical Device Drivers" level="Hardware-independent"/>
+  	<collection name="Variant" level="Hardware-dependent"/>
+  	<collection name="Localisation" level="Hardware-independent"/>
+  	<collection name="Screen Driver" level="Hardware-dependent"/>
+  	
+  <layer name="Base Services" levels="Kernel-interface System-interface"/>
+  	<collection name="Low Level Libraries and Frameworks" level="System-interface"/>
+  	<collection name="User Library and File Server" level="Kernel-interface"/>
+  	<collection name="User Side Hardware Abstraction" level="Kernel-interface"/>
+  	<collection name="Text Mode Shell" level="System-interface"/>
+  
+  <layer name="OS Services"  levels="hardware-interface plugin framework server application-interface"/>
+  	<collection name="Comms Process and Settings"   level="server"/>
+  	<collection name="Telephony Utilities" level="application-interface"/>
+  	<collection name="Telephony Server" level="server"/>
+  	<collection name="SMS Protocol Plugins" level="framework"/>
+  	<collection name="SMS Utilities" level="application-interface"/>
+  	<collection name="Telephony Server Plugins" level="plugin"/>
+  	<collection name="Telephony Reference Platform"  level="plugin"/>
+  
+  	<collection name="Serial Comms Server"  level="application-interface"/>
+  	<collection name="Short Link" level="server"/>
+  	<collection name="OBEX" level="application-interface"/>
+  	<collection name="USB Manager" level="application-interface"/>
+  	<collection name="Short Link Protocol Plugins" level="framework"/>
+  	<collection name="Serial Comms Server Plugins"  level="plugin"/>
+  
+  	<collection name="TCP/IP Security" level="application-interface"/>
+  	<collection name="TCP/IP Utilities" level="application-interface"/>
+  	<collection name="Sockets Server" level="server"/>
+  	<collection name="Network Protocol Plugins" level="framework"/>
+  	<collection name="Networking Plugins"  level="plugin"/>
+  	<collection name="Link Layer Control" level="hardware-interface"/>
+  	<collection name="WAP Stack" level="application-interface"/>
+  	<collection name="QoS Interface"  level="server"/>
+  
+  	<collection name="Multimedia" level="application-interface"/>
+  	<collection name="Windowing Framework" level="server"/>
+  	<collection name="OpenGL ES" level="server"/>
+  	<collection name="Graphics and Printing Services" level="framework"/>
+  	<collection name="Graphics Device Interface"  level="plugin"/>
+  	<collection name="OpenVG" level="plugin"/>
+  	<collection name="EGL"  level="plugin"/>
+  
+  	<collection name="Service Providers" level="server"/>
+  	<collection name="Service Framework" level="framework"/>
+  	<collection name="Connectivity PC Side" level="framework"/>
+  	<collection name="Device Connection"  level="plugin"/>
+  
+  <layer name="Application Services"  levels="generic specific"/>
+  	<collection name="PIM App Services" level="specific"/>
+  	<collection name="PIM App Support" level="generic"/>
+  	<collection name="Office App Engines" level="specific"/>
+  	<collection name="Other App Services" level="specific"/>
+  	<collection name="Messaging App Support" level="generic"/>
+  	<collection name="Content Handling" level="specific"/>
+  	<collection name="Data Sync Services" level="specific"/>
+  	<collection name="Device Provisioning" level="specific"/>
+  	<collection name="Client Provisioning" level="specific"/>
+  	<collection name="Internet and Web Application Support" level="generic"/>
+  	<collection name="Application Launch Services" level="generic"/>
+  	<collection name="Application Framework" level="specific"/>
+  	<collection name="Printing Support" level="generic"/>
+  	<collection name="Multimedia Protocols" level="generic"/>
+  	<collection name="Text Rendering" level="generic"/>
+  
+  <layer name="Programming Support" levels="config package profile"/>
+  	<collection name="MIDP 2.0 Profile" level="profile"/>
+  	<collection name="MIDP 2.0 Packages" level="package"/>
+  	<collection name="CLDC 1.1" level="config"/>
+  	<collection name="Bluetooth and SMS Push" level="config"/>
+  	<collection name="Low Level Plugins"  level="config"/>
+  	<collection name="Virtual Machine" level="package"/>
+</levels>

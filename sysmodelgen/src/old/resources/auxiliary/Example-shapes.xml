@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<shapes xmlns:s="http://www.w3.org/2000/svg">
+
+	<s:defs>   
+		<!-- bright circle pattern -->
+		<s:radialGradient id="new" gradientUnits="userSpaceOnUse" cx="10" cy="10" r="14">
+			<s:stop offset="0%" stop-color="white" stop-opacity="1"/>
+			<s:stop offset="100%" stop-opacity="0" stop-color="white" />
+		</s:radialGradient>
+
+		<!-- diagonal line pattern -->
+		<s:linearGradient id="ref" spreadMethod="repeat" gradientUnits="userSpaceOnUse" x1="0%" x2="15%" y1="0%" y2="15%">
+			<s:stop offset="0%" stop-opacity="0" stop-color="white" />
+			<s:stop offset="20%" stop-color="white" stop-opacity="1" />
+			<s:stop offset="40%" stop-opacity="0" stop-color="white" />
+			<s:stop offset="100%" stop-opacity="0" stop-color="white" />
+		</s:linearGradient>
+	</s:defs>
+
+	<!-- for some processors, /*/systemModel is much faster than //systemModel -->
+	
+	<!-- borders to use for OSD components -->
+	<!-- bracket, function or axis notation not allowed in use. Can only use blah/blah/@blah form -->
+	<borders use="s12[@ver=/*/systemModel/@ver]/@osd" label="Sched 12 Category" show-unused="yes">
+		<border type="box"/>
+		<border value="OS" type="box-clipLT"  label="Optional Symbian"/>
+		<border value="CS"  type="box-clipLB" label="Common Symbian"/>
+		<border value="CR"  type="box-clipRB"  label="Common Replace&#xad;able"/>
+		<border value="OR" viewBox="0 0 20 20"  label="Optional Replace&#xad;able">
+  			<s:path d="M 0 0 L 0 20 L 20 20 L 20 5 L 15 0 z" stroke="black" />
+  		</border>	
+		<border value="T-R" type="box-clipAll" label="Refer&#xad;ence/Test"/>
+	</borders>
+	
+	<patterns  show-unused="yes"> <!-- this is very slow, don't check if used -->
+		<overlay rule="s12[@ver=/*/systemModel/@ver]/@ref='true' or @ref='true'" type="striped-diag-up" label="Reference Compo&#xad;nent"/>
+		<overlay rule="@since = /*/systemModel/@ver or @introduced = /*/systemModel/@ver" type="radial-grad" label="New in {@ver}"/>
+	</patterns>
+	
+	<styles>
+		<style>stroke-width: 0.4</style>
+		<style rule="@plugin='true'" label="Plugin Compo&#xad;nent">stroke-width: 2</style>
+	</styles>
+<!--	<styles>
+		<style rule="Build and not(Build/*)" label="No build info">stroke-dasharray: 2,3; </style>
+	</styles> -->
+	 
+	 
+	<colors default="grey" use="@ts" label="Technology Streams">
+		 <color label="Connectivity Services" value="#cfb53b"/>
+		 <color label="Internet and Web Services" value="#ff8f68"/>
+		 <color label="Location Based Services" value="green"/>
+		 <color label="Java" value="#c0d9d9"/>
+		 <color label="Messaging" value="red"/>
+		 <color label="Multimedia" value="#8fbc8f"/>
+		 <color label="PIM Application Services" value="#ffff80"/>
+		 <color label="UI Frameworks" value="#00ff00"/>
+		 <color label="OS Packaging" value="#a29040"/>
+		 <color label="Platform Tools" value="#BAC97E"/>
+		 <color label="Software Engineering Tools" value="#56a1a1"/>
+		 <color label="Technical Documentation" value="#6A5182"/>
+		 <color label="Test Product" value="#544A38"/>
+		 <color label="System Engineering" value="#615FAD"/>
+		 <color label="Base Services" value="#8f8fbd"/>
+		 <color label="Baseband Adaption" value="#5f9f9f"/>
+		 <color label="Comms Framework" value="#527f76"/>
+		 <color label="Crypto Services" value="yellow"/>
+		 <color label="Development Boards" value="#934900"/>
+		 <color label="Kernel" value="#00ffff"/>
+		 <color label="Multimedia Protocols" value="#eaadea"/>
+		 <color label="IP Networking" value="#ff7f00"/>
+		 <color label="Open Environment" value="#817485"/>
+		 <color label="Peripherals" value="#008000"/>
+		 <color label="Persistent Data Services" value="#993366"/>
+		 <color label="Shortlink" value="#db7093"/>
+		 <color label="Telephony Services" value="#3299cc"/>
+		 <color label="Text and I18n Services" value="#9f9f5f"/> 
+	</colors>
+	<!-- these can also go in the model.xml in a legend element -->
+	<examples>
+		<cmp color="Graphics">Plug-in</cmp>
+		<cmp overlay="Reference Compo&#xad;nent" border="Common Symbian">Reference</cmp>
+		<cmp overlay="New in {@ver}">New {@ver}</cmp>
+		<!--<cmp style="No build info">No build info</cmp>	-->	
+	</examples>
+
+<!-- stuff without rule is the fallback option (used only if others are not used) -->
+</shapes>
