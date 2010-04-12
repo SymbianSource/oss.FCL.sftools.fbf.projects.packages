@@ -1,2 +1,3 @@
 source,dst,type,pattern,sysdef
 http://developer.symbian.org/oss/FCL/sf/mw/classicui/,/sf/mw/classicui,branch,CompilerCompatibility,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/mw/appsupport/,/sf/mw/appsupport,branch,CompilerCompatibility,
