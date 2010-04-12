@@ -339,7 +339,6 @@
       		Also move to a standard component location, not under effectspresets -->
             <unit bldFile="/sf/os/mm/devsoundextensions/effectspresets/AudioEqualizerUtility/group" filter="!dfs_build"/>
             <unit bldFile="/sf/os/mm/devsoundextensions/effectspresets/EnvironmentalReverbUtility/group" filter="!dfs_build"/>
-            <unit bldFile="/sf/os/mm/devsoundextensions/effectspresets/StereoWideningUtility/group" filter="!dfs_build"/>
           </component>
           <component name="telephonyaudiorouting" filter="s60" long-name="Telephony Audio Routing">
             <unit bldFile="/sf/os/mm/devsoundextensions/telephonyaudiorouting/group"/>
@@ -534,20 +533,6 @@
           </component>
           <component name="dvbhunittest" long-name="Mobile TV DVB-H Unit Tests" introduced="^2" purpose="development" filter="test">
             <unit mrp="/sf/os/mm/mmhais/dvbhunittest/hai/dvbh/group/multimedia_unittest_dvbhhai.mrp" bldFile="/sf/os/mm/mmhais/dvbhunittest/hai/dvbh/group"/>
-          </component>
-        </collection>
-        <collection name="mmapitest" long-name="Multimedia API Tests" level="app-if">
-          <component name="mmsvs" long-name="Multimedia Verification Suite" introduced="^2" purpose="development">
-            <unit mrp="/sf/os/mm/mmapitest/mmsvs/group/mmsvs.mrp"/>
-          </component>
-          <component name="devvideohaitest" long-name="DevVideo HAI Tests" introduced="^2" purpose="development" filter="test">
-            <unit mrp="/sf/os/mm/mmapitest/devvideohaitest/group/devvideohaitest.mrp" bldFile="/sf/os/mm/mmapitest/devvideohaitest/group"/>
-          </component>
-          <component name="devsoundhaitest" long-name="DevSound HAI Tests" introduced="^2" purpose="development" filter="test">
-            <unit mrp="/sf/os/mm/mmapitest/devsoundhaitest/group/devsoundhaitest.mrp" bldFile="/sf/os/mm/mmapitest/devsoundhaitest/group"/>
-          </component>
-          <component name="devsoundexthaitest" long-name="DevSound Extensions HAI Tests" introduced="^2" purpose="development" filter="test">
-            <unit mrp="/sf/os/mm/mmapitest/devsoundexthaitest/group/devsoundexthaitest.mrp" bldFile="/sf/os/mm/mmapitest/devsoundexthaitest/group"/>
           </component>
         </collection>
       </block>

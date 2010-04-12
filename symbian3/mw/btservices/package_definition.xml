@@ -166,6 +166,14 @@
             <unit bldFile="/sf/mw/btservices/bluetoothappprofiles/avrcp" mrp="/sf/mw/btservices/bluetoothappprofiles/avrcp/bluetooth_avrcp.mrp"/>
           </component>
         </collection>
+        <collection name="atcommands" long-name="AT Commands" level="generic">
+          <component name="modematplugin" long-name="Modem AT Plugin" filter="s60" introduced="^4" plugin="Y">
+            <unit bldFile="/sf/mw/btservices/atcommands/modematplugin/group"/>
+          </component>
+          <component name="lccustomplugin" long-name="LC Custom Plugin" filter="s60" introduced="^4" plugin="Y">
+            <unit bldFile="/sf/mw/btservices/atcommands/lccustomplugin/group"/>
+          </component>
+        </collection>
         <collection name="btservices_info" long-name="BT Services Info" level="plugin">
           <component name="btservices_metadata" long-name="BT Services Metadata" introduced="^3" purpose="development" class="config PC">
             <unit mrp="/sf/mw/btservices/btservices_info/btservices_metadata/btservices_metadata.mrp"/>

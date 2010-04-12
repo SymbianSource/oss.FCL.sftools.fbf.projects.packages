@@ -342,7 +342,6 @@
       		Also move to a standard component location, not under effectspresets -->
     <unit bldFile="devsoundextensions/effectspresets/AudioEqualizerUtility/group" filter="!dfs_build"/>
     <unit bldFile="devsoundextensions/effectspresets/EnvironmentalReverbUtility/group" filter="!dfs_build"/>
-    <unit bldFile="devsoundextensions/effectspresets/StereoWideningUtility/group" filter="!dfs_build"/>
    </component>
    <component id="telephonyaudiorouting" filter="s60" name="Telephony Audio Routing">
     <unit bldFile="devsoundextensions/telephonyaudiorouting/group"/>
@@ -537,20 +536,6 @@
    </component>
    <component id="dvbhunittest" name="Mobile TV DVB-H Unit Tests" introduced="^2" purpose="development" filter="test">
     <unit mrp="mmhais/dvbhunittest/hai/dvbh/group/multimedia_unittest_dvbhhai.mrp" bldFile="mmhais/dvbhunittest/hai/dvbh/group"/>
-   </component>
-  </collection>
-  <collection id="mmapitest" name="Multimedia API Tests" level="app-if">
-   <component id="mmsvs" name="Multimedia Verification Suite" introduced="^2" purpose="development">
-    <unit mrp="mmapitest/mmsvs/group/mmsvs.mrp"/>
-   </component>
-   <component id="devvideohaitest" name="DevVideo HAI Tests" introduced="^2" purpose="development" filter="test">
-    <unit mrp="mmapitest/devvideohaitest/group/devvideohaitest.mrp" bldFile="mmapitest/devvideohaitest/group"/>
-   </component>
-   <component id="devsoundhaitest" name="DevSound HAI Tests" introduced="^2" purpose="development" filter="test">
-    <unit mrp="mmapitest/devsoundhaitest/group/devsoundhaitest.mrp" bldFile="mmapitest/devsoundhaitest/group"/>
-   </component>
-   <component id="devsoundexthaitest" name="DevSound Extensions HAI Tests" introduced="^2" purpose="development" filter="test">
-    <unit mrp="mmapitest/devsoundexthaitest/group/devsoundexthaitest.mrp" bldFile="mmapitest/devsoundexthaitest/group"/>
    </component>
   </collection>
  </package>
