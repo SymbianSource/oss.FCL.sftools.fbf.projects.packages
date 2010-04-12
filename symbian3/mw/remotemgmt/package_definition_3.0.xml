@@ -157,6 +157,12 @@
    <component id="dm_native_notifier_api" name="DM Native Notifier API" class="api" filter="s60">
     <unit bldFile="remotemgmt_plat/dm_native_notifier_api/group"/>
    </component>
+   <component id="syncml_ds_error_reporting_api" name="SyncML DS Error Reporting API" class="api" filter="s60">
+    <unit bldFile="remotemgmt_plat/syncml_ds_error_reporting_api/group"/>
+   </component>
+   <component id="syncml_ds_customization_api" name="SyncML DS Customization API" class="api" filter="s60">
+    <unit bldFile="remotemgmt_plat/syncml_ds_customization_api/group"/>
+   </component>
   </collection>
   <collection id="policymanagement" name="Policy Management" level="generic">
    <component id="pmdmadapter" filter="s60" name="PM DM Adapter" class="plugin">
