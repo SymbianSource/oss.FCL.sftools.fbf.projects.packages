@@ -139,9 +139,6 @@
           <component name="contactactionmenu" filter="s60" long-name="Contact Action Menu" introduced="^2" plugin="Y">
             <unit bldFile="/sf/app/commonemail/emailcontacts/contactactionmenu/group"/>
           </component>
-          <component name="remotecontactlookup" filter="s60" long-name="Remote Contact Lookup" introduced="^2" plugin="Y">
-            <unit bldFile="/sf/app/commonemail/emailcontacts/remotecontactlookup/group"/>
-          </component>
         </collection>
         <collection name="meetingrequest" long-name="Meeting Request" level="ui">
           <component name="mrcommon" filter="s60" long-name="MR Common" introduced="^2">

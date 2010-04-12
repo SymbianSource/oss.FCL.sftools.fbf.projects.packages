@@ -76,12 +76,6 @@
    <component id="akninputlanguage" filter="s60" name="Avkon Input Language">
     <unit bldFile="textinput/akninputlanguage/group"/>
    </component>
-   <component id="ptihangulcore" filter="s60" name="PIT Hangul Core" introduced="^3">
-    <unit bldFile="textinput/ptihangulcore/group"/>
-   </component>
-   <component id="ptikoreanqwertycore" filter="s60" name="PTI Korean QWERTY Core" introduced="^3">
-    <unit bldFile="textinput/ptikoreanqwertycore/group"/>
-   </component>
    <component id="peninputarc" filter="s60" name="Pen Input Arc">
     <unit bldFile="textinput/peninputarc/group"/>
    </component>

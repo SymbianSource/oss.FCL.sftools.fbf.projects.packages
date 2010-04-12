@@ -120,17 +120,8 @@
           <component name="dun" long-name="Dial Up Networking">
             <unit bldFile="/sf/mw/shortlinkconn/localconnectivityservice/dun/group"/>
           </component>
-          <component name="lccustomplugin" long-name="LC Custom Plugins" plugin="Y">
-            <unit bldFile="/sf/mw/shortlinkconn/localconnectivityservice/lccustomplugin/group"/>
-          </component>
           <component name="lcstylustap" long-name="LC Stylus Tap Plugins" plugin="Y">
             <unit bldFile="/sf/mw/shortlinkconn/localconnectivityservice/lcstylustap/group"/>
-          </component>
-          <component name="legacymodemplugin" long-name="Legacy Modem Plugin" plugin="Y">
-            <unit bldFile="/sf/mw/shortlinkconn/localconnectivityservice/legacymodemplugin/group"/>
-          </component>
-          <component name="modematplugin" long-name="Modem AT Plugin" plugin="Y">
-            <unit bldFile="/sf/mw/shortlinkconn/localconnectivityservice/modematplugin/group"/>
           </component>
           <component name="generichid" long-name="Generic HID">
             <unit bldFile="/sf/mw/shortlinkconn/localconnectivityservice/generichid/group"/>

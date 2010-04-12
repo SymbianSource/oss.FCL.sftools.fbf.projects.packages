@@ -66,9 +66,6 @@
       <component id="contactactionmenu" filter="s60" name="Contact Action Menu" class="plugin" introduced="^2">
         <unit bldFile="emailcontacts/contactactionmenu/group"/>
       </component>
-      <component id="remotecontactlookup" filter="s60" name="Remote Contact Lookup" class="plugin" introduced="^2">
-        <unit bldFile="emailcontacts/remotecontactlookup/group"/>
-      </component>
     </collection>
     <collection id="meetingrequest" name="Meeting Request" level="ui">
       <component id="mrcommon" filter="s60" name="MR Common" introduced="^2">

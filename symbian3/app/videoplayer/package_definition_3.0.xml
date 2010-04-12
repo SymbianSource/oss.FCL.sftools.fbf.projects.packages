@@ -107,17 +107,6 @@
     <unit bldFile="tsrc/VCXTestMyVideosCollectionClient/group"/>
    </component>
   </collection>
-  <collection id="videoplayer_homescreenplugins" name="Videoplayer Homescreen Plugins" level="plugin">
-   <component id="videosuiteconf" filter="s60" name="Video Suite Configuration" class="plugin" introduced="^3">
-    <unit bldFile="homescreenplugins/videosuiteconf/group"/>
-   </component>
-   <component id="videoahlplugin" filter="s60" name="Video Player Action Handler" class="plugin" introduced="^3">
-    <unit bldFile="homescreenplugins/videoahlplugin/group"/>
-   </component>
-   <component id="videochplugin" filter="s60" name="Video Player Content Harvester " class="plugin" introduced="^3">
-    <unit bldFile="homescreenplugins/videochplugin/group"/>
-   </component>
-  </collection>
   <collection id="mediasettings" name="Media Settings" level="support">
    <!--  this is really a component. Should be moved down a directory -->
    <component id="mediasettings_build" filter="s60" name="Media Settings Build">
@@ -147,9 +136,6 @@
    <component id="mpxvideoplayer" filter="s60" name="MPX Video Player" class="plugin">
     <unit bldFile="videoplayerapp/mpxvideoplayer/group" filter="!test"/>
     <unit bldFile="videoplayerapp/mpxvideoplayer/tsrc/ut_mpxvideoplayertest/group"  filter="test,unit_test"/>
-   </component>
-   <component id="videoplayerlauncher" filter="s60" name="Video Player Launcher">
-    <unit bldFile="videoplayerapp/videoplayerlauncher/group"/>
    </component>
   </collection>
   <collection id="videoplayback" name="Video Playback Plugins" level="plugin">

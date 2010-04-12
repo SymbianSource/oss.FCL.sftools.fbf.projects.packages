@@ -141,9 +141,6 @@
           <component name="hs_widget_publisher_api" long-name="Home Screen Publishing API" filter="s60" class="api">
             <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/hs_widget_publisher_api/group"/>
           </component>
-          <component name="context_utility_api" long-name="UI Context Utility API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/context_utility_api/group"/>
-          </component>
           <component name="hs_settings_api" long-name="HS Settings API" filter="s60" class="api">
             <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/hs_settings_api/group"/>
           </component>
@@ -236,12 +233,6 @@
             <!-- need to remove links to the above components and just contain the IBY (or move the IBY into another component). 
       		If keeping, it need to move down a directory.-->
             <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/group"/>
-          </component>
-        </collection>
-        <collection name="contextutility" long-name="Context Utility" level="generic">
-          <!-- collection is really a component, needs to be moved down a directory -->
-          <component name="contextutility_build" long-name="Context Utility Build" filter="s60" introduced="^3">
-            <unit bldFile="/sf/mw/homescreensrv/contextutility/group"/>
           </component>
         </collection>
         <collection name="contentcontrolsrv" long-name="Content Control Service" level="server">

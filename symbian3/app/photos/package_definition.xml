@@ -130,12 +130,6 @@
           <component name="slideshow" filter="s60" long-name="Slideshow" introduced="^2">
             <unit bldFile="/sf/app/photos/photosgallery/slideshow/group"/>
           </component>
-          <component name="contentharvesterplugin" filter="s60" long-name="Gallery Content Harvester Plugin" introduced="^2" plugin="Y">
-            <unit bldFile="/sf/app/photos/photosgallery/contentharvesterplugin/group"/>
-          </component>
-          <component name="photossuite" filter="s60" long-name="Photos Suite" introduced="^2" class="config">
-            <unit bldFile="/sf/app/photos/photosgallery/photossuite/group"/>
-          </component>
           <component name="memoryplugin" long-name="Memory Plugin" filter="s60" introduced="^2" plugin="Y">
             <unit bldFile="/sf/app/photos/photosgallery/memoryplugin/group"/>
           </component>

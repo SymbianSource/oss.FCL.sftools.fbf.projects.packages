@@ -82,10 +82,6 @@
     <meta rel="Api" href="homescreensrv_plat/hs_widget_publisher_api/hs_widget_publisher_api.metaxml"/>
     <unit bldFile="homescreensrv_plat/hs_widget_publisher_api/group"/>
    </component>
-   <component id="context_utility_api" name="UI Context Utility API" class="api" filter="s60">
-    <meta rel="Api" href="homescreensrv_plat/context_utility_api/ui_context_utility_api.metaxml"/>
-    <unit bldFile="homescreensrv_plat/context_utility_api/group"/>
-   </component>
    <component id="hs_settings_api" name="HS Settings API" class="api" filter="s60">
     <unit bldFile="homescreensrv_plat/hs_settings_api/group"/>
    </component>
@@ -187,12 +183,6 @@
     <!-- need to remove links to the above components and just contain the IBY (or move the IBY into another component). 
       		If keeping, it need to move down a directory.-->
     <unit bldFile="contentpublishingsrv/group"/>
-   </component>
-  </collection>
-  <collection id="contextutility" name="Context Utility" level="generic">
-   <!-- collection is really a component, needs to be moved down a directory -->
-   <component id="contextutility_build" name="Context Utility Build" filter="s60" introduced="^3">
-    <unit bldFile="contextutility/group"/>
    </component>
   </collection>
   <collection id="contentcontrolsrv" name="Content Control Service" level="server">

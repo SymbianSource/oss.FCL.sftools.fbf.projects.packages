@@ -128,12 +128,6 @@
           <component name="akninputlanguage" filter="s60" long-name="Avkon Input Language">
             <unit bldFile="/sf/mw/inputmethods/textinput/akninputlanguage/group"/>
           </component>
-          <component name="ptihangulcore" filter="s60" long-name="PIT Hangul Core" introduced="^3">
-            <unit bldFile="/sf/mw/inputmethods/textinput/ptihangulcore/group"/>
-          </component>
-          <component name="ptikoreanqwertycore" filter="s60" long-name="PTI Korean QWERTY Core" introduced="^3">
-            <unit bldFile="/sf/mw/inputmethods/textinput/ptikoreanqwertycore/group"/>
-          </component>
           <component name="peninputarc" filter="s60" long-name="Pen Input Arc">
             <unit bldFile="/sf/mw/inputmethods/textinput/peninputarc/group"/>
           </component>

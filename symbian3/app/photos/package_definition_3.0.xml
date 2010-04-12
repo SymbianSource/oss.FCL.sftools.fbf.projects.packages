@@ -54,12 +54,6 @@
    <component id="slideshow" filter="s60" name="Slideshow" introduced="^2">
     <unit bldFile="photosgallery/slideshow/group"/>
    </component>
-   <component id="contentharvesterplugin" filter="s60" name="Gallery Content Harvester Plugin" class="plugin" introduced="^2">
-    <unit bldFile="photosgallery/contentharvesterplugin/group"/>
-   </component>
-   <component id="photossuite" filter="s60" name="Photos Suite" class="config" introduced="^2">
-    <unit bldFile="photosgallery/photossuite/group"/>
-   </component>
    <component id="memoryplugin" name="Memory Plugin" class="plugin" filter="s60" introduced="^2">
     <unit bldFile="photosgallery/memoryplugin/group"/>
    </component>
