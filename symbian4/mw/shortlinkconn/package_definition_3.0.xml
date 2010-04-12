@@ -49,17 +49,8 @@
    <component id="dun" name="Dial Up Networking">
     <unit bldFile="localconnectivityservice/dun/group"/>
    </component>
-   <component id="lccustomplugin" name="LC Custom Plugins" class="plugin">
-    <unit bldFile="localconnectivityservice/lccustomplugin/group"/>
-   </component>
    <component id="lcstylustap" name="LC Stylus Tap Plugins" class="plugin">
     <unit bldFile="localconnectivityservice/lcstylustap/group"/>
-   </component>
-   <component id="legacymodemplugin" name="Legacy Modem Plugin" class="plugin">
-    <unit bldFile="localconnectivityservice/legacymodemplugin/group"/>
-   </component>
-   <component id="modematplugin" name="Modem AT Plugin" class="plugin">
-    <unit bldFile="localconnectivityservice/modematplugin/group"/>
    </component>
    <component id="generichid" name="Generic HID">
     <unit bldFile="localconnectivityservice/generichid/group"/>

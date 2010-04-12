@@ -88,11 +88,6 @@
             <unit bldFile="/sf/app/firsttimeuse/."/>
           </component>
         </collection>
-        <collection name="firsttimeuse_test" long-name="First Time Use Test" level="support">
-          <component name="tsrc_build" long-name="Tsrc Build" filter="test,unit_test">
-            <unit bldFile="/sf/app/firsttimeuse/tsrc"/>
-          </component>
-        </collection>
       </block>
     </layer>
   </systemModel>

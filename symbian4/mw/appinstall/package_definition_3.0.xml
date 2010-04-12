@@ -61,9 +61,6 @@
       </component>
     </collection>
     <collection id="appinstaller" name="Application Installer" level="generic">
-      <component id="appmngr2" filter="s60" name="Application Manager 2" introduced="^2">
-        <unit bldFile="appinstaller/appmngr2/group"/>
-      </component>
       <component id="appinstui" filter="s60" name="Application Installer UI" introduced="^2">
         <unit bldFile="appinstaller/appinstui/group"/>
       </component>

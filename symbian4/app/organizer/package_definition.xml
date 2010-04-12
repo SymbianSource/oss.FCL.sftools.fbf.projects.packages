@@ -121,6 +121,9 @@
           <component name="caleneditor" filter="s60" long-name="Calendar Editor" introduced="^4">
             <unit bldFile="/sf/app/organizer/calendarui/caleneditor"/>
           </component>
+          <component name="agendaeventviewer" filter="s60" long-name="Agenda Event Viewer" introduced="^4">
+            <unit bldFile="/sf/app/organizer/calendarui/agendaeventviewer"/>
+          </component>
           <component name="globaldata" filter="s60" long-name="Calendar Global Data">
             <unit bldFile="/sf/app/organizer/calendarui/globaldata"/>
           </component>
@@ -132,9 +135,6 @@
           </component>
           <component name="customisationmanager" filter="s60" long-name="Calendar Customisation Manager">
             <unit bldFile="/sf/app/organizer/calendarui/customisationmanager"/>
-          </component>
-          <component name="agendaeventviewer" filter="s60" long-name="Agenda Event Viewer" introduced="^4">
-            <unit bldFile="/sf/app/organizer/calendarui/agendaeventviewer"/>
           </component>
           <component name="views" filter="s60" long-name="Calendar Views">
             <unit bldFile="/sf/app/organizer/calendarui/views"/>

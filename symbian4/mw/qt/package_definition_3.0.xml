@@ -10,7 +10,7 @@
     </collection>
     <collection id="qt_info" name="Qt Info" level="mw">
             <component id="qt_build" name="Qt Build" introduced="^2">
-                <unit bldFile="." qt:proFile="projects.pro" qt:qmakeArgs="&quot;CONFIG+=headerexport symbian_no_export_sqlite&quot; &quot;QMAKE_MOC=/epoc32/tools/qt/moc.exe&quot; &quot;QMAKE_RCC=/epoc32/tools/qt/rcc.exe&quot; &quot;QMAKE_UIC=/epoc32/tools/qt/uic.exe&quot; -r"/>
+  		        <unit bldFile="." qt:proFile="projects.pro" qt:qmakeArgs="&quot;QMAKE_MOC=/epoc32/tools/qt/moc.exe&quot; &quot;QMAKE_RCC=/epoc32/tools/qt/rcc.exe&quot; &quot;QMAKE_UIC=/epoc32/tools/qt/uic.exe&quot; -r"/>
             </component>
     </collection>
     <collection id="qtdemos" name="Qt Demos" level="app">

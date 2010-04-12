@@ -176,10 +176,10 @@
           <component name="system_application_plugin_callback_api" long-name="System Application Plug-in Callback API" filter="s60" class="api">
             <unit bldFile="/sf/mw/appsupport/appsupport_plat/system_application_plugin_callback_api/group"/>
           </component>
-          <component name="flash_mmi_service_interface_custom_api" long-name="Flash MMI Service Interface Custom API" filter="s60,!sf_build" class="api">
+          <component name="flash_mmi_service_interface_custom_api" long-name="Flash MMI Service Interface Custom API" filter="s60,!sf_build" introduced="^2" class="api">
             <unit bldFile="/sf/mw/appsupport/appsupport_plat/flash_mmi_service_interface_custom_api/group"/>
           </component>
-          <component name="flash_netscape_plugin_command_api" long-name="Flash Netscape Plugin Command API" filter="s60,!sf_build" class="api">
+          <component name="flash_netscape_plugin_command_api" long-name="Flash Netscape Plugin Command API" filter="s60,!sf_build" introduced="^2" class="api">
             <unit bldFile="/sf/mw/appsupport/appsupport_plat/flash_netscape_plugin_command_api/group"/>
           </component>
         </collection>

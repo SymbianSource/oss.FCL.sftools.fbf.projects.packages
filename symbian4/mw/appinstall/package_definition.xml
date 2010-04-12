@@ -127,9 +127,6 @@
           </component>
         </collection>
         <collection name="appinstaller" long-name="Application Installer" level="generic">
-          <component name="appmngr2" filter="s60" long-name="Application Manager 2" introduced="^2">
-            <unit bldFile="/sf/mw/appinstall/appinstaller/appmngr2/group"/>
-          </component>
           <component name="appinstui" filter="s60" long-name="Application Installer UI" introduced="^2">
             <unit bldFile="/sf/mw/appinstall/appinstaller/appinstui/group"/>
           </component>

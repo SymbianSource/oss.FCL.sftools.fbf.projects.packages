@@ -339,7 +339,6 @@
       		Also move to a standard component location, not under effectspresets -->
             <unit bldFile="/sf/os/mm/devsoundextensions/effectspresets/AudioEqualizerUtility/group" filter="!dfs_build"/>
             <unit bldFile="/sf/os/mm/devsoundextensions/effectspresets/EnvironmentalReverbUtility/group" filter="!dfs_build"/>
-            <unit bldFile="/sf/os/mm/devsoundextensions/effectspresets/StereoWideningUtility/group" filter="!dfs_build"/>
           </component>
           <component name="telephonyaudiorouting" filter="s60" long-name="Telephony Audio Routing">
             <unit bldFile="/sf/os/mm/devsoundextensions/telephonyaudiorouting/group"/>

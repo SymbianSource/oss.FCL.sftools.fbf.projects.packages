@@ -13,10 +13,5 @@
       <unit bldFile="." qt:proFile="ftu.pro" qt:qmakeArgs="-r -config rom"/>
      </component>
     </collection>
-    <collection id="firsttimeuse_test" name="First Time Use Test" level="support">
-    <component id="tsrc_build" name="Tsrc Build" filter="test,unit_test">
-      <unit bldFile="tsrc" qt:proFile="tsrc.pro" qt:qmakeArgs="-r MMP_RULES+=EXPORTUNFROZEN"/>
-     </component>
-    </collection>
    </package>
 </SystemDefinition>

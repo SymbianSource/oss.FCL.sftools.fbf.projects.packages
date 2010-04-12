@@ -170,6 +170,11 @@
             <unit bldFile="/sf/mw/usbservices/usbuis/usbuiqt"/>
           </component>
         </collection>
+        <collection name="usbservices_test" long-name="USB Services Test" level="server">
+          <component name="usbservices_test_build" long-name="USB Services Test Build" filter="test,api_test,s60" introduced="^4">
+            <unit bldFile="/sf/mw/usbservices/tsrc/group"/>
+          </component>
+        </collection>
       </block>
     </layer>
   </systemModel>

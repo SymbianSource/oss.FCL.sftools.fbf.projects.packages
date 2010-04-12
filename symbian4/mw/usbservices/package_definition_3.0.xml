@@ -104,5 +104,10 @@
       <unit bldFile="usbuis/usbuiqt" qt:proFile="usbapplication.pro"/>
     </component>
   </collection>
+  <collection id="usbservices_test" name="USB Services Test" level="server">
+     <component id="usbservices_test_build" name="USB Services Test Build" filter="test,api_test,s60"  introduced="^4">
+      <unit bldFile="tsrc/group"/>
+     </component>
+  </collection>
  </package>
 </SystemDefinition>

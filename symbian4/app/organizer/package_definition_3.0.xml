@@ -58,6 +58,9 @@
    <component id="caleneditor" filter="s60" name="Calendar Editor" introduced="^4">
     <unit bldFile="calendarui/caleneditor" qt:proFile="caleneditor.pro"/>
    </component>
+   <component id="agendaeventviewer" filter="s60" name="Agenda Event Viewer" introduced="^4" >
+    <unit bldFile="calendarui/agendaeventviewer" qt:proFile="agendaeventviewer.pro"/>
+   </component>
    <component id="globaldata" filter="s60" name="Calendar Global Data">
     <unit bldFile="calendarui/globaldata" qt:proFile="globaldata.pro"/>
    </component>
@@ -69,9 +72,6 @@
    </component>
    <component id="customisationmanager" filter="s60" name="Calendar Customisation Manager">
     <unit bldFile="calendarui/customisationmanager" qt:proFile="customisationmanager.pro"/>
-   </component>
-   <component id="agendaeventviewer" filter="s60" name="Agenda Event Viewer" introduced="^4" >
-    <unit bldFile="calendarui/agendaeventviewer" qt:proFile="agendaeventviewer.pro"/>
    </component>
    <component id="views" filter="s60" name="Calendar Views">
     <unit bldFile="calendarui/views" qt:proFile="views.pro"/>

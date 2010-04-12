@@ -132,10 +132,10 @@
     <meta rel="Api" href="appsupport_plat/system_application_plugin_callback_api/system_application_plugin_callback_api.metaxml"/>
     <unit bldFile="appsupport_plat/system_application_plugin_callback_api/group"/>
    </component>
-   <component id="flash_mmi_service_interface_custom_api" name="Flash MMI Service Interface Custom API" class="api" filter="s60,!sf_build">
+   <component id="flash_mmi_service_interface_custom_api" name="Flash MMI Service Interface Custom API" class="api" filter="s60,!sf_build"  introduced="^2">
       <unit bldFile="appsupport_plat/flash_mmi_service_interface_custom_api/group"/>
    </component>
-   <component id="flash_netscape_plugin_command_api" name="Flash Netscape Plugin Command API" class="api" filter="s60,!sf_build">
+   <component id="flash_netscape_plugin_command_api" name="Flash Netscape Plugin Command API" class="api" filter="s60,!sf_build" introduced="^2">
       <unit bldFile="appsupport_plat/flash_netscape_plugin_command_api/group"/>
    </component>
   </collection>

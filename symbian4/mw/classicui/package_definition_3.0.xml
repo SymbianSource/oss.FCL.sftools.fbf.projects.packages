@@ -215,10 +215,6 @@
     <unit bldFile="classicui_plat/extended_notes_api/group" filter="!test"/>
     <unit bldFile="classicui_plat/extended_notes_api/tsrc/group" filter="test,api_test"/>
    </component>
-   <component id="screensaver_animation_plugin_definitions_api" name="Screensaver Animation Plugin Definitions API" class="api" filter="s60">
-    <meta rel="Api" href="classicui_plat/screensaver_animation_plugin_definitions_api/screensaver_animation_plugin_definitions_api.metaxml"/>
-    <unit bldFile="classicui_plat/screensaver_animation_plugin_definitions_api/group"/>
-   </component>
    <component id="text_scroller_api" name="Text Scroller API" class="api" filter="s60">
     <meta rel="Api" href="classicui_plat/text_scroller_api/text_scroller_api.metaxml"/>
     <unit bldFile="classicui_plat/text_scroller_api/group" filter="!test"/>
@@ -228,10 +224,6 @@
     <meta rel="Api" href="classicui_plat/custom_cursors_api/custom_cursors_api.metaxml"/>
     <unit bldFile="classicui_plat/custom_cursors_api/group" filter="!test"/>
     <unit bldFile="classicui_plat/custom_cursors_api/tsrc/group" filter="test,api_test"/>
-   </component>
-   <component id="screensaver_settings_api" name="Screensaver Settings API" class="api" filter="s60">
-    <meta rel="Api" href="classicui_plat/screensaver_settings_api/screensaver_settings_api.metaxml"/>
-    <unit bldFile="classicui_plat/screensaver_settings_api/group"/>
    </component>
    <component id="global_window_priorities_api" name="Global Window Priorities API" class="api" filter="s60">
     <meta rel="Api" href="classicui_plat/global_window_priorities_api/global_window_priorities_api.metaxml"/>
@@ -272,10 +264,6 @@
     <meta rel="Api" href="classicui_plat/phone_number_text_utilities_api/phone_number_text_utilities_api.metaxml"/>
     <unit bldFile="classicui_plat/phone_number_text_utilities_api/group" filter="!test"/>
     <unit bldFile="classicui_plat/phone_number_text_utilities_api/tsrc/group" filter="test,api_test"/>
-   </component>
-   <component id="screensaver_runtime_api" name="Screensaver Runtime API" class="api" filter="s60">
-    <meta rel="Api" href="classicui_plat/screensaver_runtime_api/screensaver_runtime_api.metaxml"/>
-    <unit bldFile="classicui_plat/screensaver_runtime_api/group"/>
    </component>
    <component id="extended_scroller_api" name="Extended Scroller API" class="api" filter="s60">
     <meta rel="Api" href="classicui_plat/extended_scroller_api/extended_scroller_api.metaxml"/>
@@ -499,10 +487,12 @@
     <unit bldFile="classicui_pub/notes_api/group" filter="!test"/>
     <unit bldFile="classicui_pub/notes_api/tsrc/group" filter="test,api_test"/>
    </component>
-   <component id="screen_saver_api" name="Screen Saver API" class="api" filter="s60">
+   <component id="screen_saver_api" name="Screen Saver API" class="api" filter="s60,test,api_test">
     <meta rel="Api" href="classicui_pub/screen_saver_api/screen_saver_api.metaxml"/>
-    <unit bldFile="classicui_pub/screen_saver_api/group" filter="!test"/>
-    <unit bldFile="classicui_pub/screen_saver_api/tsrc/group" filter="test,api_test"/>
+    <meta rel="testbuild">
+       <group name="classicui_pub_api_tests"/>
+    </meta>
+    <unit bldFile="classicui_pub/screen_saver_api/tsrc/group"/>
    </component>
    <component id="status_pane_api" name="Status Pane API" class="api" filter="s60">
     <meta rel="Api" href="classicui_pub/status_pane_api/status_pane_api.metaxml"/>

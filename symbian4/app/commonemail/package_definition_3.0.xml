@@ -23,6 +23,9 @@
       <component id="nmclientapi" filter="s60" name="Nmail Client API" introduced="^4">
        <!-- <unit bldFile="emailservices/nmclientapi" qt:proFile="nmclientapi.pro"/>-->
       </component>
+      <component id="nmailagent" filter="s60" name="Nmail Agent" introduced="^4">
+       <!-- <unit bldFile="emailservices/nmailagent" qt:proFile="nmailagent.pro"/>-->
+      </component>
     </collection>
     <collection id="ipsservices" name="IMAP/POP/SMTP Services" level="service">
       <component id="ipssosplugin" filter="s60" name="IPS SOS Plugin" class="plugin" introduced="^2">
@@ -62,9 +65,15 @@
       <component id="nmailui" filter="s60" name="Nmail UI" introduced="^4">
         <!-- <unit bldFile="emailuis/nmailui" qt:proFile="nmailui.pro"/> -->
       </component>
+      <component id="nmindicatorplugin" filter="s60" name="Nmail Indicator Plugin" class="plugin" introduced="^4">
+        <!-- <unit bldFile="emailuis/nmindicatorplugin" qt:proFile="nmindicatorplugin.pro"/> -->
+      </component>
       <component id="nmframeworkadapter" filter="s60" name="Nmail Framework Adapter" introduced="^4" class="plugin">
         <!-- <unit bldFile="emailuis/nmframeworkadapter" qt:proFile="nmframeworkadapter.pro"/> -->
       </component>
+     <component id="nmhswidget" filter="test,s60,widget_tools" name="Nmail Homescreen Widget">
+      <unit bldFile="emailuis/nmhswidget/tsrc/nmhswidgettestapp" qt:proFile="nmhswidgettestapp.pro" qt:qmakeArgs="-r"/>
+     </component>
     </collection>
     <collection id="commonemail_info" name="Email Apps Info" level="app">
     <component id="commonemail_build" name="Email Apps Build"  introduced="^4">

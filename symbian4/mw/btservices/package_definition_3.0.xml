@@ -105,6 +105,14 @@
     <unit bldFile="bluetoothappprofiles/avrcp" mrp="bluetoothappprofiles/avrcp/bluetooth_avrcp.mrp"/>
    </component>
   </collection>
+  <collection id="atcommands" name="AT Commands" level="generic">
+   <component id="modematplugin" name="Modem AT Plugin" filter="s60" class="plugin" introduced="^4">
+    <unit bldFile="atcommands/modematplugin/group"/>
+   </component>
+   <component id="lccustomplugin" name="LC Custom Plugin" filter="s60" class="plugin" introduced="^4">
+    <unit bldFile="atcommands/lccustomplugin/group"/>
+   </component>
+  </collection>
   <collection id="btservices_info" name="BT Services Info" level="plugin">
    <component id="btservices_metadata" name="BT Services Metadata" class="config" introduced="^3" purpose="development" target="desktop">
     <unit mrp="btservices_info/btservices_metadata/btservices_metadata.mrp"/>
