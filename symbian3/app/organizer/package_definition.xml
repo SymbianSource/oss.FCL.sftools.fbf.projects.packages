@@ -335,6 +335,9 @@
           <component name="chinesecalendarconverter" long-name="Chinese Calendar Converter" introduced="6.1" purpose="optional">
             <unit bldFile="/sf/app/organizer/pimappsupport/chinesecalendarconverter/group" mrp="/sf/app/organizer/pimappsupport/chinesecalendarconverter/group/app-services_calcon.mrp"/>
           </component>
+          <component name="chinesecalendaralg" long-name="Chinese Calendar Algorithm" introduced="S^3" purpose="optional">
+            <unit bldFile="/sf/app/organizer/pimappsupport/chinesecalendaralg/group" mrp="/sf/app/organizer/pimappsupport/chinesecalendaralg/group/app-services_chinesecalendaralgorithm.mrp"/>
+          </component>
         </collection>
         <collection name="organizer_info" long-name="Organizer Application Suite Info" level="app">
           <component name="organizer_metadata" long-name="Organizer Application Suite Metadata" introduced="^2" purpose="development" class="config PC">

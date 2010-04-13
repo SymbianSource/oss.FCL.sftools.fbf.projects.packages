@@ -164,7 +164,9 @@
           <component name="location_local_variation_api" long-name="Location Local Variation API" filter="s60" class="api">
             <unit bldFile="/sf/mw/locationsrv/locsrv_plat/location_local_variation_api/group"/>
           </component>
-        </collection>
+          <component name="query_and_notification_api" long-name="Query and Notification API" class="api" filter="s60">
+            <unit bldFile="/sf/mw/locationsrv/locsrv_plat/query_and_notification_api/group"/>
+          </collection>
         <collection name="genericpositioningplugins" long-name="Generic Positioning Plugins" level="plugin">
           <component name="locationnpppsy" filter="s60" long-name="Location Positioning Proxy PSY" plugin="Y">
             <unit bldFile="/sf/mw/locationsrv/genericpositioningplugins/locationnpppsy/group"/>

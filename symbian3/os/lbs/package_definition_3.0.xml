@@ -63,9 +63,19 @@
       <component id="privacyprotocolmodule" name="Privacy Protocol Module" introduced="^2" purpose="optional" class="plugin">
         <unit bldFile="networkprotocolmodules/privacyprotocolmodule/group" mrp="networkprotocolmodules/privacyprotocolmodule/group/lbs_privacyprotocolmodule.mrp"/>
       </component>
+      <component id="networkprotoutils" name="Network Protocol Common Utilities" introduced="^3">
+        <unit bldFile="networkprotocolmodules/common/utils/group"/>
+      </component>
+      <component id="suplproxyprotocolmodule" name="SUPL Proxy Protocol Module" filter="sf_build" introduced="^3" purpose="optional" class="plugin">
+        <unit bldFile="networkprotocolmodules/suplproxyprotocolmodule/sfgroup"/>
+      </component>
       <component id="suplrrlpasn1" filter="sf_build" name="SUPL RRLP ASN1 Parser">
         <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
         <unit bldFile="networkprotocolmodules/common/suplrrlpasn1/group"/>
+      </component>
+      <component id="suplrrlpprotocol" filter="sf_build" name="SUPL RRLP Protocol Module">
+        <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
+        <unit bldFile="networkprotocolmodules/suplcontrolplaneprotocols/common/suplrrlpprotocol/sfgroup"/>
       </component>
     </collection>
     <collection id="lbsapitest" name="Location API Tests" level="application-interface">
