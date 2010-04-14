@@ -156,6 +156,12 @@
             <!-- will shoudl give the id/path something more unique than cenrep -->
             <unit bldFile="/sf/os/deviceplatformrelease/sf_config/cenrep/group"/>
           </component>
+          <component name="rombuild_syborg" filter="sf_build" long-name="Syborg iMaker Config" purpose="development" class="config">
+            <unit bldFile="/sf/os/deviceplatformrelease/sf_config/rombuild/syborg/group"/>
+          </component>
+          <component name="rombuild_zoom2" filter="sf_build" long-name="Zoom2 iMaker Config" purpose="development" class="config">     
+            <unit bldFile="/sf/os/deviceplatformrelease/sf_config/rombuild/zoom2/group"/>
+          </component>
         </collection>
         <!-- should be located locally in buildplatforms/group 
     <collection id="s60bld" name="S60 Build">
