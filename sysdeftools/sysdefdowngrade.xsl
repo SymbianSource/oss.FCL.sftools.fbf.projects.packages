@@ -217,6 +217,11 @@
 			<xsl:with-param name="path" select="$path"/> 
 		</xsl:apply-templates>
 		<xsl:copy-of select="@filter|@root[not(contains($root,concat(' ',.,'=')))]|@version|@prebuilt|@priority"/>
+		<xsl:for-each select="@*[name()='qt:proFile' or name()='qt:qmakeArgs']">
+			<xsl:attribute name="{local-name()}">
+				<xsl:value-of select="."/>
+			</xsl:attribute>
+		</xsl:for-each>
 	</unit>
 </xsl:template>
 
