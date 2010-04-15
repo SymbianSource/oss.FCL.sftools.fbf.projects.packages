@@ -10,7 +10,7 @@
     </collection>
     <collection id="qt_info" name="Qt Info" level="mw">
             <component id="qt_build" name="Qt Build" introduced="^2">
-                <unit bldFile="."/>
+                <unit bldFile="." qt:proFile="projects.pro" qt:qmakeArgs="-r"/>
             </component>
     </collection>
     <collection id="qtdemos" name="Qt Demos" level="app">
