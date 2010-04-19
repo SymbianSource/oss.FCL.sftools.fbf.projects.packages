@@ -33,6 +33,7 @@
 <xsl:param name="pkgMinWidth" select="$cSize * 3"/><!-- small pkg, use min width of 2 * smallest possible collection -->
 <xsl:param name="subpkgMinWidth" select="$cSize * 3"/> <!-- small nested pkg, use min width of  3 components -->
 <xsl:param name="pkgFixedWidth" select="$mMinWidth * 5"/><!-- fixed width of a  pacakge (mm) -->
+<xsl:param name="pkgAuxWidth" select="0"/><!-- Additional width on the right side of each package (mm) -->
 <xsl:param name="subpkgFixedWidth" select="$mMinWidth * 3"/> <!-- fixed width nested pkg (mm) -->
 <xsl:variable name="inlineLabel" select="3 * $cSize"/> <!-- the max width of an inline label. 3 times the width of a collection by default 
 	I don't like this. Should compute somehow and make local variable. -->
@@ -334,7 +335,7 @@
 	<xsl:param name="layers"/>
 	<xsl:param name="span"/>
 
-	<xsl:variable name="spanning" select="$span/preceding-sibling::layer[position() &lt;= $span/@span]"/>
+	<xsl:variable name="spanning" select="$span/preceding-sibling::layer[not(@span) and position() &lt;= $span/@span]"/>
 	
 	<xsl:variable name="h" select="sum($spanning/@height) + (count($spanning) - 1) * $groupDy"/>
 	<xsl:variable name="even" select="($span/@height - $h) div count($spanning)"/>
@@ -945,12 +946,12 @@
 			<xsl:attribute name="width">
 				<xsl:choose>
 					<xsl:when test="parent::package and $w + $expand-width &lt; $subpkgMinWidth">	<!-- small nested pkg, use width of  3 components -->
-						<xsl:value-of select="$subpkgMinWidth + $ext-w"/>
+						<xsl:value-of select="$subpkgMinWidth + $ext-w + pkgAuxWidth"/>
 					</xsl:when>
 					<xsl:when test="$w + $expand-width  &lt; $pkgMinWidth">	<!-- small pkg, use width of twice smallest possible collection -->
-						<xsl:value-of select="$pkgMinWidth + $ext-w"/>
+						<xsl:value-of select="$pkgMinWidth + $ext-w + $pkgAuxWidth "/>
 					</xsl:when>
-					<xsl:otherwise><xsl:value-of select="$w + $expand-width + $ext-w"/></xsl:otherwise>
+					<xsl:otherwise><xsl:value-of select="$w + $expand-width + $ext-w + $pkgAuxWidth"/></xsl:otherwise>
 				</xsl:choose>
 			</xsl:attribute>
 			<xsl:attribute name="height"><xsl:value-of select="$h"/></xsl:attribute>

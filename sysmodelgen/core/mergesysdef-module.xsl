@@ -1,14 +1,26 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:exslt="http://exslt.org/common"  exclude-result-prefixes="exslt">
+<!--Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
+	All rights reserved.
+	This component and the accompanying materials are made available
+	under the terms of the License "Eclipse Public License v1.0"
+	which accompanies this distribution, and is available
+	at the URL "http://www.eclipse.org/legal/epl-v10.html".
+
+	Initial Contributors:
+	Nokia Corporation - initial contribution.
+	Contributors:
+	Description:
+	XSLT module for merging only two sysdef files according to the 3.0.0 rules. Old syntax not supported and must be converetd before calling.
+-->
 	
-<!--  this merge only two files according to the 3.0.0 rules. Old syntax not supported. Must be converetd before calling -->
 <xsl:variable name="defaultnamespace">http://www.symbian.org/system-definition</xsl:variable>
 
 <xsl:template match="/SystemDefinition[starts-with(@schema,'2.') or starts-with(@schema,'1.')]" priority="2" mode="merge-models">
-	<xsl:message terminate="yes">Syntax <xsl:value-of select="@schema"/> not supported</xsl:message>
+	<xsl:message terminate="yes">ERROR: Syntax <xsl:value-of select="@schema"/> not supported</xsl:message>
 </xsl:template>
-<xsl:template match="/SystemDefinition[not(systemModel)]" priority="2" mode="merge-models">
-	<xsl:message terminate="yes">Can only merge stand-alone system models</xsl:message>
-</xsl:template>
+<!--<xsl:template match="/SystemDefinition[not(systemModel)]" priority="2" mode="merge-models">
+	<xsl:message terminate="yes">ERROR: Can only merge stand-alone system models</xsl:message>
+</xsl:template>-->
 
 <!-- stuff for dealing with namespaces -->
 
@@ -74,7 +86,7 @@
 				<xsl:value-of select="concat($myns,':',$id)"/>
 			</xsl:when>
 			<xsl:otherwise> <!-- some namespace that needed to be defined --> 
-			<xsl:message>"<xsl:value-of select="$ns"/>" for <xsl:value-of select="$id"/></xsl:message>
+			<xsl:message>Warning: need definition for namespace "<xsl:value-of select="$ns"/>" for <xsl:value-of select="$id"/></xsl:message>
 				<xsl:value-of select="."/>					
 			</xsl:otherwise>
 		</xsl:choose>		
@@ -92,7 +104,7 @@
 			<xsl:value-of select="$pre"/>
 		</xsl:when>
 		<xsl:when test="$ns='' and $chars=''">
-			<xsl:message terminate="yes">Cannot create namespace prefix for downstream default namespace</xsl:message>
+			<xsl:message terminate="yes">ERROR: Cannot create namespace prefix for downstream default namespace in <xsl:value-of select="*/@id"/></xsl:message>
 		</xsl:when>
 		<xsl:when test="$name!='' and not(contains($dontuse,concat(' ',$name,' ')))"><xsl:value-of select="$name"/></xsl:when>
 		<xsl:when test="namespace::*[name()=substring($chars,1,1)] or contains($dontuse,concat(' ',substring($chars,1,1),' '))">
@@ -116,10 +128,10 @@
 	
 	<!-- do some testing -->
  	<xsl:if test="$other[starts-with(@schema,'2.') or starts-with(@schema,'1.')]">
-		<xsl:message terminate="yes">Syntax <xsl:value-of select="$other/@schema"/> not supported</xsl:message>
+		<xsl:message terminate="yes">ERROR: Syntax <xsl:value-of select="$other/@schema"/> not supported</xsl:message>
 	</xsl:if>
-	<xsl:if test="not($other/systemModel)">
-		<xsl:message terminate="yes">Can only merge stand-alone system models</xsl:message>
+	<xsl:if test="name(*) != name($other/*)">
+		<xsl:message terminate="yes">ERROR: Can only merge system models of the same rank</xsl:message>
 	</xsl:if>
 	 
 	<xsl:copy>

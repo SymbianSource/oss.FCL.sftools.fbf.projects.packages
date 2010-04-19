@@ -147,7 +147,9 @@ sub new
 	'iHide'			=> { 'type' =>  'attr[=val]', 'ordered' => 1,'param' => "hide-attr=s",
 		 'class' =>'Model Control', 'desc' => 'A mechanism of filtering which allows filtering based on component attribute values. If a value is set for that attribute, the component will not be shown on the model. Use in conjunction with -show-attr for fine contol of what is shown. "class" and "filter" attribtues are handled specially -- see the documentation for details'},
 	'iIgnore'				=> { 'type' => 'item', 'multi' => 1, 'param' => "ignore=s", 'xpath' => '/model/ignore',
-		 'class' =>'Model Control', 'desc' => 'A model entity to not draw, in the  form "[item-type]:[item-name]". Any number of these can be used. Defaults to "layer:Tools and Utils and SDKENG" ,"layer:MISC", "block:Techview"'},
+		 'class' =>'Model Control', 'desc' => 'The ID of a model entity to not draw. Any number of these can be used'},
+	'iIgnoreMeta'				=> { 'type' => 'item', 'multi' => 1, 'param' => "ignore-meta=s", 'xpath' => '/model/ignore',
+		 'class' =>'Model Control', 'desc' => 'The "rel" meta value to ignore. Takes the form of [relvalue] or [relvalue]:[type]. Any number of these can be used'},
 
 	'iNavCtrl'				=>{'param' => "navctrl=s" , 'type'=>'boolean' , 'xpath' => '/model/layout/@navctrl',
 		'class' =>'Model Control', 'desc' => 'If set, a navigation control widget will appear in the upper left corner of the model. The control might not work on some SVG viewers.'},
@@ -188,7 +190,7 @@ sub new
 	'iXsltParam'			=>{  'multi' => 2, 'param' => "xslt-param=s",
 		 'class' =>'Build Control', 'desc' => 'Advanced: Parameters to feed directly to the XSLT transforms'},
 	'iLegendNote'			=>{  'multi' => 1, 'param' => "note=s", 'xpath' => '/model/layout/legend/note',
-		 'class' => 'Labels', 'desc' => 'Free text to appear inside the legend box, on the rightmost side. If multiple ones are provided, they will appear as separate boxes from left to right. Newlines and other special characters can be entity-encoded (e.g. &#xa;)'}
+		 'class' => 'Labels', 'desc' => 'Free text to appear inside the legend box, on the rightmost side. If multiple ones are provided, they will appear as separate boxes from left to right. Newlines and other special characters can be entity-encoded (e.g. &#xa;). When using entities in an INI file, you *must* quote the value, otherwise the # will be treated as a comment delimiter.',}
 				);
 
 	$self->{iArgs} = \%Args;
@@ -668,7 +670,7 @@ my %info='';
 					} elsif(!$cur->{'multi'}){
 						$info{$match}.="\t<info xmlns='' type='$t'  href='",$self->{$param},"'/>\n";
 					}
-				} elsif($param eq 'iIgnore' or $param eq 'iLinkExpr' or $param eq 'iSysDefFile') {
+				} elsif($param eq 'iIgnore' or $param eq 'iIgnoreMeta' or $param eq 'iLinkExpr' or $param eq 'iSysDefFile') {
 					print XSLT "<template match='",$cur->{'xpath'},"'/>\n"	# ignore any already present if set
 				}		
 			} elsif($param eq 'iModel') {
@@ -717,6 +719,11 @@ my %info='';
 		print XSLT "\t<ignore xmlns='' ";
 		if($ig=~/^(.*):(.*)$/) {print XSLT "type='$1' name='$2'/>\n"}
 		else {print XSLT "ref='$ig'/>\n"}
+	}
+	foreach my $ig (@{$self->{'iIgnoreMeta'}}) {
+		print XSLT "\t<ignore xmlns='' ";
+		if($ig=~/^(.*):(.*)$/) {print XSLT "meta-type='$2' meta='$1'/>\n"}
+		else {print XSLT "meta='$ig'/>\n"}
 	}
 	print XSLT join("\n\t",@{$self->{'iFiltering'}}),
 		"</template>\n";

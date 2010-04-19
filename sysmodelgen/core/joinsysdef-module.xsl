@@ -49,7 +49,7 @@
 						<xsl:when test="$origin/@*[name()=$n]"> <!-- don't copy if already set -->
 							<xsl:message>Cannot set "<xsl:value-of select="$n"/>", already set</xsl:message>
 						</xsl:when>
-						<xsl:when test="$n='before'">
+						<xsl:when test="$n='before' or $n='replace'">
 							<!-- ensure ns is correct (if any future attribtues will ever use an ID, process it here too)-->
 							<xsl:apply-templates select="." mode="join">
 								<xsl:with-param name="namespaces" select="$namespaces"/>
@@ -319,7 +319,6 @@
 				<xsl:with-param name="data" select="$data"/>
 			</xsl:apply-templates>
 		 </xsl:variable>
-	 		 
 		<xsl:element name="{name()}"> <!-- use this instead of <copy> so xalan doesn't add extra wrong namespaces -->
 			<xsl:apply-templates select="@*" mode="join">
 				<xsl:with-param name="namespaces" select="$namespaces"/>
@@ -440,7 +439,7 @@
 </xsl:template>
 
 
-<xsl:template match="@id|@before" mode="join">
+<xsl:template match="@id|@before|@replace" mode="join">
 	<xsl:param name="namespaces"/>
 	<!-- this will change the namespace prefixes for all IDs to match the root document -->
 	<xsl:variable name="ns">
@@ -451,10 +450,12 @@
 		<xsl:text>&#xa;</xsl:text>
 		</xsl:message>
 	</xsl:if>
+
 	<xsl:variable name="prefix" select="name($namespaces[.=$ns])"/>
 	<xsl:attribute name="{name()}">
 	<xsl:choose>
-		<xsl:when test="$prefix = 'id-namespace' or  (not($namespaces[name()='id-prefix']) and $ns=$defaultns)"/> <!-- it's the default namespace, no prefix -->
+
+		<xsl:when test="$prefix = 'id-namespace' or  (not($namespaces[name()='id-namespace']) and $ns=$defaultns)"/> <!-- it's the default namespace, no prefix -->
 		<xsl:when test="$prefix='' and contains(.,':')">
 			<!-- complex: copy id and copy namespace (namespace should be copied already)-->
 			<xsl:value-of select="."/>

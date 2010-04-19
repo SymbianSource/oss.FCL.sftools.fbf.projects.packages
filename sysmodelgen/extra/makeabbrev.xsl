@@ -14,6 +14,8 @@
 	<xsl:apply-templates select="document(.,.)/SystemDefinition/*"/>
 </xsl:template>
 
+<xsl:template match="meta/@href"/>
+
 <xsl:template match="/*" priority="1">
 <display-names><xsl:apply-templates select="*"/>
 </display-names>
@@ -104,7 +106,7 @@
 </xsl:template>
 
 
-<xsl:template match="layer" priority="2"><!-- don't abbreviate layer names -->
+<xsl:template match="layer[string-length(@id) &lt; 10]" priority="2"><!-- don't abbreviate short layer names -->
 	<xsl:apply-templates select="*"/>
 </xsl:template>
 

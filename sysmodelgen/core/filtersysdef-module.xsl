@@ -8,7 +8,9 @@
 	<xsl:variable name="result">		<!-- the ordered list of all ignores and filters, the last value is the one to note --> 
 		<xsl:choose>
 			<xsl:when test="$item[self::meta]">
-				<!-- TODO -->
+				<xsl:apply-templates select="ignore|../ignore" mode="filter">
+					<xsl:with-param name="item" select="$item"/>
+				</xsl:apply-templates>
 			</xsl:when>
 			<xsl:when test="$item[self::unit]">	
 				<!-- only filter to determine if it's shown -->
@@ -21,7 +23,7 @@
 				<xsl:variable name="id"><xsl:apply-templates select="$item/@id" mode="my-id"/></xsl:variable>			<!-- namespaceless ID of this here -->
 				<xsl:variable name="ns"><xsl:apply-templates select="$item/@id" mode="my-namespace"/></xsl:variable>	<!-- ID's namespace -->
 				<!-- use ignore and filter to determine if it's shown-->
-				<xsl:apply-templates select="ignore|filter|../ignore|../filter" mode="filter">
+				<xsl:apply-templates select="ignore[not(@meta or @meta-type)]|filter|../ignore[not(@meta or @meta-type)]|../filter" mode="filter">
 					<xsl:with-param name="id" select="$id"/>
 					<xsl:with-param name="ns" select="$ns"/>
 					<xsl:with-param name="item" select="$item"/>
@@ -64,6 +66,19 @@
 <xsl:template match="ignore[not(@ref) and @name and @type]" mode="filter" priority="1"><xsl:param name="item"/>
 	<!-- old way of doing this -->
 	<xsl:if test="$item/@name=@name and name($item)= @type"> ignore </xsl:if>
+</xsl:template>
+
+
+<xsl:template match="ignore[@meta]" mode="filter" priority="2"><xsl:param name="item"/>
+	<!-- ignore certain metadata rel values -->
+	<xsl:if test="$item[self::meta] and (@meta='*' or $item/@rel=@meta  or (not($item/@rel) and @meta='Generic'))
+		and
+		(not(@meta-type) or  $item/@type=@meta-type or  (@meta-type='auto' and not($item/@type)))"> ignore </xsl:if>
+</xsl:template>
+
+<xsl:template match="ignore[@meta-type]" mode="filter" priority="1"><xsl:param name="item"/>
+	<!-- ignore certain metadata types, no rel values specified -->
+	<xsl:if test="$item[self::meta] and $item/@type=@meta-type or (not($item/@type) and @meta-type='Generic')"> ignore </xsl:if>
 </xsl:template>
  
 <xsl:template match="filter" mode="filter"  priority="1"><xsl:param name="item"/>
