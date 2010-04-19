@@ -81,13 +81,13 @@
         <unit base="sf_config/config"/>
       </component>
       <component id="cenrep" filter="sf_build" name="ConE Central Repository Config" class="config" purpose="development">
-		<!-- will should give the id/path something more unique than cenrep -->
+		<!-- will shoudl give the id/path something more unique than cenrep -->
         <unit bldFile="sf_config/cenrep/group"/>
       </component>
-      <component id="rombuild_syborg" filter="sf_build" name="Syborg iMaker Config" purpose="development" class="config">
+      <component id="rombuild_syborg" filter="sf_build" name="Syborg iMaker Config" purpose="development" class="config" introduced="^3">
         <unit bldFile="sf_config/rombuild/syborg/group"/>
       </component>
-      <component id="rombuild_zoom2" filter="sf_build" name="Zoom2 iMaker Config" purpose="development" class="config">     
+      <component id="rombuild_zoom2" filter="sf_build" name="Zoom2 iMaker Config" purpose="development" class="config" introduced="^3">
         <unit bldFile="sf_config/rombuild/zoom2/group"/>
       </component>
     </collection>

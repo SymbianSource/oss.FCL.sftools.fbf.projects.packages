@@ -197,10 +197,10 @@
           <component name="dm_native_notifier_api" long-name="DM Native Notifier API" filter="s60" class="api">
             <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/dm_native_notifier_api/group"/>
           </component>
-          <component name="syncml_ds_error_reporting_api" long-name="SyncML DS Error Reporting API" class="api" filter="s60">
+          <component name="syncml_ds_error_reporting_api" long-name="SyncML DS Error Reporting API" filter="s60" introduced="^3" class="api">
             <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/syncml_ds_error_reporting_api/group"/>
           </component>
-          <component name="syncml_ds_customization_api" long-name="SyncML DS Customization API" class="api" filter="s60">
+          <component name="syncml_ds_customization_api" long-name="SyncML DS Customization API" filter="s60" introduced="^3" class="api">
             <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/syncml_ds_customization_api/group"/>
           </component>
         </collection>

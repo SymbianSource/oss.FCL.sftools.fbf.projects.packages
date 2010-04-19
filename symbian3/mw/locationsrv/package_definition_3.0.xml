@@ -111,13 +111,13 @@
    <component id="oma_supl_asn_codec_plugin_api" name="OMA SUPL ASN Codec Plugin API" class="api" filter="s60">
     <unit bldFile="locsrv_plat/oma_supl_asn_codec_plugin_api/group"/>
    </component>
+   <component id="query_and_notification_api" name="Query and Notification API" class="api" filter="s60" introduced="^3">
+    <!-- needs metadata file: <meta rel="Api" href="locsrv_plat/query_and_notification_api/query_and_notification_api.metaxml"/> -->
+    <unit bldFile="locsrv_plat/query_and_notification_api/group"/>
+   </component>
    <component id="location_local_variation_api" name="Location Local Variation API" class="api" filter="s60">
     <meta rel="Api" href="locsrv_plat/location_local_variation_api/location_local_variation_api.metaxml"/>
     <unit bldFile="locsrv_plat/location_local_variation_api/group"/>
-   </component>
-   <component id="query_and_notification_api" name="Query and Notification API" class="api" filter="s60">
-    <!-- not yet supplied <meta rel="Api" href="locsrv_plat/query_and_notification_api/query_and_notification_api.metaxml"/> -->
-    <unit bldFile="locsrv_plat/query_and_notification_api/group"/>
    </component>
   </collection>
   <collection id="genericpositioningplugins" name="Generic Positioning Plugins" level="plugin">
