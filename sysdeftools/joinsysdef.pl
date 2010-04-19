@@ -271,19 +271,15 @@ sub walk
 				}
 			# if we're here we can just embed the file
 			# no processing logic is done! It's just embedded blindly
-			my  $metadoc = $parser->parsefile ($file);
-			my $item =&firstElement($metadoc->getDocumentElement);
+			my  $metadoc = $parser->parsefile ($link);
+			my $item = $metadoc->getDocumentElement;
 			if(!$item)
 				{
 				print STDERR "Warning: Could not process metadata file: $link\n";
 				next; # do not alter children
 				}
 			$node->removeAttribute('href');
-			foreach my $child (@{$item->getChildNodes})
-				{
-				&blindCopyInto($node,$child);
-				next;
-				}
+			&blindCopyInto($node,$item);
 			}
 		if($node->getAttribute('rel') eq 'link-mapping')
 			{# need to process this now
@@ -745,4 +741,5 @@ sub getDefines
 		else {die "cannot process $_";}
 		}
 	close CPP;
+	$? && die "Call to cpp produced an error";
 	}

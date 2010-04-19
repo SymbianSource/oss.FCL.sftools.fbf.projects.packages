@@ -22,10 +22,16 @@
 <xsl:variable name="downstream" select="document($Downstream,.)/SystemDefinition"/>
 <xsl:param name="upname">
 	<xsl:choose>
-		<xsl:when test="$downstream[starts-with(@schema,'2.') or starts-with(@schema,'1.')  or not(systemModel)]">
+		<xsl:when test="$downstream[starts-with(@schema,'2.') or starts-with(@schema,'1.')]">
 			<xsl:message terminate="yes">Syntax <xsl:value-of select="@schema"/> not supported</xsl:message>
 		</xsl:when>
-		<xsl:when test="/SystemDefinition/systemModel/@name=$downstream/systemModel/@name">
+		<xsl:when test="name($downstream/*)!=name(/SystemDefinition/*)">
+			<xsl:message terminate="yes">Can only merge fragments of the same rank</xsl:message>
+		</xsl:when>
+<!--		<xsl:when test="$downstream[not(systemModel)]">
+			<xsl:message terminate="yes">Needs to be a standalone system definition</xsl:message>
+		</xsl:when>-->
+		<xsl:when test="/SystemDefinition/systemModel/@name=$downstream/systemModel/@name or not(/SystemDefinition/systemModel/@name)">
 			<xsl:apply-templates mode="origin-term" select="/*">
 				<xsl:with-param name="root">Upstream</xsl:with-param>
 			</xsl:apply-templates>
@@ -36,11 +42,14 @@
 
 <xsl:param name="downname">
 	<xsl:choose>
-		<xsl:when test="/SystemDefinition/systemModel/@name=$downstream/systemModel/@name">
+		<xsl:when test="/SystemDefinition/systemModel/@name=$downstream/systemModel/@name or not($downstream/systemModel/@name)">
 			<xsl:apply-templates mode="origin-term" select="$downstream">	
 				<xsl:with-param name="root">Downstream</xsl:with-param>
 			</xsl:apply-templates>
 			</xsl:when>
+		<xsl:when test="name($downstream/*)!=name(/SystemDefinition/*)">
+			<xsl:message terminate="yes">Can only merge fragments of the same rank</xsl:message>
+		</xsl:when>
 		<xsl:otherwise><xsl:value-of select="$downstream/systemModel/@name"/></xsl:otherwise>
 	</xsl:choose>
 </xsl:param>

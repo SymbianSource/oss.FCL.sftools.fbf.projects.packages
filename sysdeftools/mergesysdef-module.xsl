@@ -18,9 +18,9 @@
 <xsl:template match="/SystemDefinition[starts-with(@schema,'2.') or starts-with(@schema,'1.')]" priority="2" mode="merge-models">
 	<xsl:message terminate="yes">ERROR: Syntax <xsl:value-of select="@schema"/> not supported</xsl:message>
 </xsl:template>
-<xsl:template match="/SystemDefinition[not(systemModel)]" priority="2" mode="merge-models">
+<!--<xsl:template match="/SystemDefinition[not(systemModel)]" priority="2" mode="merge-models">
 	<xsl:message terminate="yes">ERROR: Can only merge stand-alone system models</xsl:message>
-</xsl:template>
+</xsl:template>-->
 
 <!-- stuff for dealing with namespaces -->
 
@@ -130,8 +130,8 @@
  	<xsl:if test="$other[starts-with(@schema,'2.') or starts-with(@schema,'1.')]">
 		<xsl:message terminate="yes">ERROR: Syntax <xsl:value-of select="$other/@schema"/> not supported</xsl:message>
 	</xsl:if>
-	<xsl:if test="not($other/systemModel)">
-		<xsl:message terminate="yes">ERROR: Can only merge stand-alone system models</xsl:message>
+	<xsl:if test="name(*) != name($other/*)">
+		<xsl:message terminate="yes">ERROR: Can only merge system models of the same rank</xsl:message>
 	</xsl:if>
 	 
 	<xsl:copy>
@@ -226,7 +226,7 @@
 			<xsl:copy-of select="$other/@levels"/>
 		</xsl:when>
 		<xsl:when test="contains(concat(' ',normalize-space($other/@levels),' '),' - ')">
-			<!-- if other uses + syntax, then pre/append -->
+			<!-- if other uses - syntax, then pre/append -->
 			<xsl:variable name="lev">
 				<xsl:value-of select="substring-before(concat(' ',normalize-space($other/@levels),' '),' - ')"/>
 				<xsl:value-of select="concat(' ',.,' ')"/>
@@ -316,6 +316,43 @@
 	</xsl:choose>
 </xsl:template>
 
+<xsl:template match="node()" mode="merge-data">
+	<xsl:copy-of select="." />
+</xsl:template>
+
+<xsl:template match="meta" mode="merge-data">
+	<xsl:param name="metas" />
+	<!-- compare this meta against all metas in the  merged doc
+		if they are identical, then ignore this one.
+		identical is computed by translating to a string, normalising some known parts. This might be slow in some cases-->
+	<xsl:variable name="val"><xsl:apply-templates select="." mode="as-xml-text" /></xsl:variable>
+	<xsl:variable name="match">
+		<xsl:for-each select="$metas">
+			<xsl:variable name="cur"><xsl:apply-templates select="." mode="as-xml-text" /></xsl:variable>
+			<xsl:if test="$cur=$val">*</xsl:if>
+		</xsl:for-each>
+	</xsl:variable>
+	<xsl:if test="$match='' ">
+		<xsl:copy-of select="." />
+	</xsl:if>
+</xsl:template>
+
+<xsl:template match="text()[normalize-space(.)='']" mode="as-xml-text"/>
+<xsl:template match="node()" mode="as-xml-text"><xsl:value-of select="."/></xsl:template>
+<xsl:template match="comment()" mode="as-xml-text">&lt;--<xsl:value-of select="."/>--&gt;</xsl:template>
+<xsl:template match="@*" mode="as-xml-text">
+	<xsl:value-of select="concat(' ',name())"/>="<xsl:value-of select="."/>"</xsl:template>
+<xsl:template match="*" mode="as-xml-text">
+	<xsl:value-of select="concat('&lt;',name())"/>
+	<xsl:apply-templates select="@*" mode="as-xml-text"/>
+	<xsl:if test="self::meta and not(@rel)"> rel="Generic"</xsl:if>
+	<xsl:if test="self::meta and not(@type)"> type="auto"</xsl:if>
+	<xsl:text>&gt;</xsl:text>
+	<xsl:apply-templates select="node()" mode="as-xml-text"/>
+	<xsl:value-of select="concat('&lt;/',name(),'&gt;')"/>
+</xsl:template>
+
+
 <xsl:template match="layer | package | collection | component" mode="merge-models">
 	<xsl:param name="other"/>	<!-- the downstream item of the parent's rank that contains a potential items this is merged with -->
 	<xsl:param name="up"/>
@@ -324,6 +361,7 @@
 	
 	<!-- match = this item in the downstream model -->	
 	<xsl:variable name="match" select="$other/*[@id=current()/@id]"/>
+	
 	
 	<!-- prev = the previous item before the current one (no metas, only named items)-->
 	<xsl:variable name="prev" select="preceding-sibling::*[@id][1]"/> 
@@ -388,7 +426,10 @@
 			<xsl:otherwise>
 
 				<!--  copy metas and comments in between meta. Do not try to merge metadata between models -->
-				<xsl:copy-of select="meta | $match/meta | comment()[following-sibling::meta]"/>
+				<xsl:apply-templates select="meta | $match/meta | comment()[following-sibling::meta]" mode="merge-data">
+					<xsl:with-param name="metas" select="$match/meta"/>
+				</xsl:apply-templates>
+				<xsl:copy-of select=" $match/meta | $match/comment()[following-sibling::meta]"/>
 				
 				<xsl:apply-templates mode="merge-models">
 					<xsl:with-param name="other" select="$match"/>
