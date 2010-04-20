@@ -127,7 +127,7 @@
           <component name="mobcntmodel" filter="s60" long-name="Mobile Contacts Model" introduced="^4">
             <unit bldFile="/sf/app/contacts/phonebookengines/mobcntmodel"/>
           </component>
-          <component name="" filter="s60" long-name="Mobile Contacts Actions" introduced="^4">
+          <component name="mobcntactions" filter="s60" long-name="Mobile Contacts Actions" introduced="^4">
             <unit bldFile="/sf/app/contacts/phonebookengines/mobcntactions"/>
           </component>
           <component name="cntmaptileservice" filter="s60" long-name="Contacts Map Tile Service" introduced="^4">
