@@ -63,7 +63,7 @@
     <unit bldFile="phonebookengines/mobcntmodel" qt:proFile="mobcntmodel.pro"/>
    </component>
    <component id="mobcntactions" filter="s60" name="Mobile Contacts Actions" introduced="^4">
-    <unit bldFile="phonebookengines/cntmaptileservice" qt:proFile="cntmaptileservice.pro"/>
+    <unit bldFile="phonebookengines/mobcntactions" qt:proFile="mobcntactions.pro"/>
    </component>
    <component id="cntmaptileservice" filter="s60" name="Contacts Map Tile Service" introduced="^4">
     <unit bldFile="phonebookengines/cntmaptileservice" qt:proFile="cntmaptileservice.pro"/>
