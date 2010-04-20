@@ -101,7 +101,7 @@
 <SystemDefinition schema="3.0.0">
   <systemModel name="Symbian^4">
     <layer id="adaptation" name="Adaptation" levels="low mw high">
-      <package id="stubs" tech-domain="hb" level="high" span="2"  href="../../../../adaptation/stubs/package_definition.xml"/>
+      <package id="stubs" tech-domain="hb" level="high" span="2"  href="../../../../adaptation/stubs/package_definition_3.0.xml"/>
       <package id="beagleboard" tech-domain="hb" level="low" href="../../../../adaptation/beagleboard/package_definition_3.0.xml"/>
       <package id="qemu" tech-domain="hb" level="low" href="../../../../adaptation/qemu/package_definition_3.0.xml"/>
     </layer>
@@ -165,7 +165,7 @@
       <package id="inputmethods" level="generic" tech-domain="ui" href="../../../../mw/inputmethods/package_definition_3.0.xml"/>
       <package id="qt" level="generic" tech-domain="ui" href="../../../../mw/qt/package_definition_3.0.xml"/>
       <package id="qtextensions" level="generic" tech-domain="ui" href="../../../../mw/qtextensions/package_definition_3.0.xml"/>
-      <package id="hb" level="generic" tech-domain="ui" href="../../../../mw/hb/package_definition_3.0.xml"/>/>
+      <package id="hb" level="generic" tech-domain="ui" href="../../../../mw/hb/package_definition_3.0.xml"/>
       <package id="classicui" level="generic" tech-domain="ui" href="../../../../mw/classicui/package_definition_3.0.xml"/>
       <package id="svgt" level="generic" tech-domain="ui" href="../../../../mw/svgt/package_definition_3.0.xml"/>
       <package id="uiaccelerator" level="generic" tech-domain="ui" href="../../../../mw/uiaccelerator/package_definition_3.0.xml"/>
