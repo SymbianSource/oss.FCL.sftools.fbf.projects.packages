@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition xmlns:sf="http://www.symbian.org/system-definition" schema="3.0.0" id-namespace="http://www.nokia.com/schema/drd/system-definition" xmlns:qt="http://www.nokia.com/qt">
-    <package id="sf:hb" name="Orbit" levels="engine test api">
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
+    <package id="hb" name="Orbit" levels="engine test api">
     <collection id="hb_info" name="Orbit Info" level="api">
      <component id="hb_build" name="Orbit Build" introduced="^4">
 		<!-- should break this down into actual components -->
