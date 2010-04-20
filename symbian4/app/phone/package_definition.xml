@@ -76,6 +76,7 @@
 <SystemDefinition name="Symbian^4" schema="2.0.1">
   <systemModel>
     <layer name="app" long-name="Applications" levels="services apps">
+      <!-- pending removal -->
       <block name="phone" level="apps" span="2" long-name="Phone Apps" levels="engine plugin ui app">
         <collection name="phoneapp" long-name="Phone Application" level="app">
           <component name="blacklist" filter="s60" long-name="Phone Blacklist Clearing" plugin="Y">

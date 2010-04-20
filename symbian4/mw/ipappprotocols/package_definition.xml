@@ -98,9 +98,6 @@
             <!-- Real Time Data Protocol -->
             <unit bldFile="/sf/mw/ipappprotocols/realtimenetprots/rtp/group" mrp="/sf/mw/ipappprotocols/realtimenetprots/rtp/group/mm-protocols_rtp.mrp"/>
           </component>
-          <component name="srtp" long-name="Secure RTP" introduced="^4" purpose="optional">
-            <unit bldFile="/sf/mw/ipappprotocols/realtimenetprots/srtp/group" mrp="/sf/mw/ipappprotocols/realtimenetprots/srtp/group/mm-protocols_srtp.mrp"/>
-          </component>
           <component name="sipfw" long-name="SIP Framework" introduced="9.2" purpose="optional">
             <unit bldFile="/sf/mw/ipappprotocols/realtimenetprots/sipfw/Group" mrp="/sf/mw/ipappprotocols/realtimenetprots/sipfw/Group/mm-protocols_SIP2_Com.mrp" version="2"/>
           </component>

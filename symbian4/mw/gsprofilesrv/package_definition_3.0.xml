@@ -69,9 +69,6 @@
    <component id="profileengine" filter="s60" name="Profile Engine" introduced="9.1">
     <unit bldFile="profilesservices/profileengine/group"/>
    </component>
-   <component id="ringingtone3dplugin" filter="s60" name="Ringing Tone 3D Plugin" class="plugin" introduced="^2">
-    <unit bldFile="profilesservices/ringingtone3dplugin/group"/>
-   </component>
   </collection>
  </package>
 </SystemDefinition>

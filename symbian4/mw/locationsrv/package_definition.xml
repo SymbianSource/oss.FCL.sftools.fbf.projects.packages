@@ -161,7 +161,7 @@
           <component name="oma_supl_asn_codec_plugin_api" long-name="OMA SUPL ASN Codec Plugin API" filter="s60" class="api">
             <unit bldFile="/sf/mw/locationsrv/locsrv_plat/oma_supl_asn_codec_plugin_api/group"/>
           </component>
-          <component name="query_and_notification_api" long-name="Query and Notification API" filter="s60" introduced="^4" class="api">
+          <component name="query_and_notification_api" long-name="Query and Notification API" filter="s60" introduced="^3" class="api">
             <unit bldFile="/sf/mw/locationsrv/locsrv_plat/query_and_notification_api/group"/>
           </component>
           <component name="location_local_variation_api" long-name="Location Local Variation API" filter="s60" class="api">

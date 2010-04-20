@@ -119,6 +119,9 @@
           <component name="download_mgr_client_api_extn" long-name="Download Manager Client API Extension" filter="s60" class="api">
             <unit bldFile="/sf/mw/web/web_plat/download_mgr_client_api_extn/group"/>
           </component>
+          <component name="download_path_plugin_api" long-name="Download Path Plugin API" filter="s60" introduced="^3" class="api">
+            <unit bldFile="/sf/mw/web/web_plat/download_path_plugin_api/group"/>
+          </component>
           <component name="feeds_engine_api" long-name="Feeds Engine API" filter="s60" class="api">
             <unit bldFile="/sf/mw/web/web_plat/feeds_engine_api/group"/>
           </component>
@@ -145,9 +148,6 @@
           </component>
           <component name="xml_parser_api" long-name="XML Parser API" filter="s60" class="api">
             <unit bldFile="/sf/mw/web/web_plat/xml_parser_api/group"/>
-          </component>
-          <component name="stmgesturefw_api" long-name="State Machine Gesture Framework API " filter="s60" class="api">
-            <unit bldFile="/sf/mw/web/web_plat/stmgesturefw_api/group"/>
           </component>
         </collection>
         <collection name="web_info" long-name="Web Info" level="specific">

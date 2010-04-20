@@ -136,6 +136,9 @@
           <component name="wlanindicatorplugin" filter="s60" long-name="WLAN Indicator Plugin" plugin="Y" class="placeholder">
             <!--<unit bldFile="wlanutilities/wlanindicatorplugin/group" qt:proFile="wlanindicatorplugin.pro"/>-->
           </component>
+          <component name="cpwlansettingsplugin" filter="s60" long-name="WLAN Settings Control Panel Plugin" introduced="^4" plugin="Y" class="placeholder">
+            <!--<unit bldFile="wlanutilities/cpwlansettingsplugin/group" qt:proFile="cpwlansettingsplugin.pro"/>-->
+          </component>
         </collection>
       </block>
     </layer>

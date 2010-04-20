@@ -71,9 +71,6 @@
       </component>
     </collection>
     <collection id="htiui" name="Harmonized Test Interface UI" level="generic">
-      <component id="HtiCommPlugins" filter="s60" name="HTI Comm Plugins" purpose="development" target="device" class="plugin">
-        <unit bldFile="htiui/HtiCommPlugins/HtiBtCommPlugin/group"/>
-      </component>
       <component id="HtiServicePlugins" filter="s60" name="HTI Service Plugins" purpose="development" target="device" class="plugin">
 		<!-- can only have a single unit. Should #include from a common bld.inf file -->
         <unit bldFile="htiui/HtiServicePlugins/HtiAppServicePlugin/group"/>

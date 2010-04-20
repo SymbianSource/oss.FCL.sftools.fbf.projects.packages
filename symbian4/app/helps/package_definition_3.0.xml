@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition schema="3.0.0">
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
   <package id="helps" name="Help Apps" levels="eng tools if ui">
-    <collection id="csxhelp" name="Context Sensitive Extended Help" level="if">
-    	<!-- this is really a component. Should move it down a directory -->
-      <component id="csxhelp_build" filter="s60" name="Context Sensitive Extended Help Build">
-        <unit bldFile="csxhelp/group"/>
-      </component>
+   <collection id="userguide" name="User Guide" level="if">
+	<!-- collection is really a component. Move down a directory -->
+    <component id="userguide_build" name="User Guide Build"  filter="s60" introduced="^4">
+      <unit bldFile="userguide" qt:proFile="Userguide.pro"/>
+     </component>
     </collection>
     <collection id="symhelp" name="Symbian Help" level="eng">
       <component id="helpmodel" name="Help" introduced="6.0" purpose="optional">

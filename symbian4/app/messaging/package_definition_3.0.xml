@@ -67,7 +67,7 @@
   <collection id="messagingappbase" name="Messaging App Base" level="base">
    <component id="messagingappbase_build" filter="s60" name="Messaging App Base Build"  introduced="^4">
 	<!-- break this up into the below components -->
-    <unit bldFile="messagingappbase" qt:proFile="messagingappbase/messagingappbase.pro" qt:qmakeArgs="-r"/>
+    <unit bldFile="messagingappbase" qt:proFile="messagingappbase.pro" qt:qmakeArgs="-r"/>
    </component>
    <component id="msgmedia" filter="s60" name="Message Media">
       <unit base="messagingappbase/msgmedia"/>
@@ -127,34 +127,34 @@
    </component>
    <component id="mmsengine_build" filter="s60" name="MMS Engine Build">
     <!-- this should be broken up into the individual other components -->
-    <unit bldFile="mmsengine" qt:proFile="mmsengine/mmsengine.pro" qt:qmakeArgs="-r"/>
+    <unit bldFile="mmsengine" qt:proFile="mmsengine.pro" qt:qmakeArgs="-r"/>
    </component>
   </collection>
   <collection id="messagingapp" name="Messaging Application" level="app">
    <component id="mmsengine_build" filter="s60" name="MMS Engine Build">
     <!-- this should be broken up into the individual other components -->
-    <unit bldFile="mmsengine" qt:proFile="mmsengine/mmsengine.pro" qt:qmakeArgs="-r"/>
+    <unit bldFile="messagingapp" qt:proFile="messagingapp.pro" qt:qmakeArgs="-r"/>
    </component>
      <component id="msgutils" filter="s60" name="Messaging Utils" introduced="^4">
-      <unit bldFile="msgutils" qt:proFile="msgutils.pro" qt:qmakeArgs="-r"/>
+      <unit bldFile="messagingapp/msgutils" qt:proFile="msgutils.pro" qt:qmakeArgs="-r"/>
      </component>
      <component id="msgappfw" filter="s60" name="Messaging Application Framework" introduced="^4">
-      <unit bldFile="msgappfw" qt:proFile="msgappfw.pro" qt:qmakeArgs="-r"/>
+      <unit bldFile="messagingapp/msgappfw" qt:proFile="msgappfw.pro" qt:qmakeArgs="-r"/>
      </component>
      <component id="msgsettings" filter="s60" name="Messaging Settings" introduced="^4">
-      <unit bldFile="msgsettings" qt:proFile="msgsettings.pro" qt:qmakeArgs="-r"/>
+      <unit bldFile="messagingapp/msgsettings" qt:proFile="msgsettings.pro" qt:qmakeArgs="-r"/>
      </component>
      <component id="msgnotifications" filter="s60" name="Messaging Notifications" introduced="^4">
-      <unit bldFile="msgnotifications" qt:proFile="msgnotifications.pro" qt:qmakeArgs="-r"/>
+      <unit bldFile="messagingapp/msgnotifications" qt:proFile="msgnotifications.pro" qt:qmakeArgs="-r"/>
      </component>
      <component id="smartmessaging" filter="s60" name="Smart Messaging">
       <unit bldFile="messagingapp/smartmessaging" qt:proFile="smartmessaging.pro" qt:qmakeArgs="-r"/>
      </component>
      <component id="shareui" filter="s60" name="Shared UI" introduced="^4">
-      <unit bldFile="shareui" qt:proFile="shareui.pro" qt:qmakeArgs="-r"/>
+      <unit bldFile="messagingapp/shareui" qt:proFile="shareui.pro" qt:qmakeArgs="-r"/>
      </component>
      <component id="msgui" filter="s60" name="Messaging UI" introduced="^4">
-      <unit bldFile="msgui" qt:proFile="msgui.pro" qt:qmakeArgs="-r"/>
+      <unit bldFile="messagingapp/msgui" qt:proFile="msgui.pro" qt:qmakeArgs="-r"/>
      </component>
   </collection>
   <collection id="email" name="Email" level="plugin">

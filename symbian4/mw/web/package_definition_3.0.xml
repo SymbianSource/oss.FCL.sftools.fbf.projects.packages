@@ -56,6 +56,9 @@
     <meta rel="Api" href="web_plat/download_mgr_client_api_extn/download_mgr_client_api_extn.metaxml"/>
     <unit bldFile="web_plat/download_mgr_client_api_extn/group"/>
    </component>
+   <component id="download_path_plugin_api" name="Download Path Plugin API" class="api" filter="s60" introduced="^3">
+    <unit bldFile="web_plat/download_path_plugin_api/group"/>
+   </component>
    <component id="feeds_engine_api" name="Feeds Engine API" class="api" filter="s60">
     <meta rel="Api" href="web_plat/feeds_engine_api/feeds_engine_api.metaxml"/>
     <unit bldFile="web_plat/feeds_engine_api/group"/>
@@ -94,10 +97,6 @@
    <component id="xml_parser_api" name="XML Parser API" class="api" filter="s60">
     <meta rel="Api" href="web_plat/xml_parser_api/xml_parser_api.metaxml"/>
     <unit bldFile="web_plat/xml_parser_api/group"/>
-   </component>
-   <component id="stmgesturefw_api" name="State Machine Gesture Framework API " class="api" filter="s60">
-    <meta rel="Api" href="web_plat/stmgesturefw_api/stmgesturefw_api.metaxml"/>
-    <unit bldFile="web_plat/stmgesturefw_api/group"/>
    </component>
   </collection>
   <collection id="web_info" name="Web Info" level="specific">

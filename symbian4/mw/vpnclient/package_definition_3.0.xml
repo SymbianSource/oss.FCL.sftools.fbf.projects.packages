@@ -109,9 +109,6 @@
    <component id="vpndialogmanager" filter="s60" name="VPN Dialog Manager">
     <unit bldFile="vpnui/vpndialogmanager/group"/>
    </component>
-   <component id="vpnmanagementui" filter="s60" name="VPN Management UI" class="plugin">
-    <unit bldFile="vpnui/vpnmanagementui/group"/>
-   </component>
    <component id="vpnpolins" filter="s60" name="VPN Policy Installer">
     <unit bldFile="vpnui/vpnpolins/group"/>
    </component>

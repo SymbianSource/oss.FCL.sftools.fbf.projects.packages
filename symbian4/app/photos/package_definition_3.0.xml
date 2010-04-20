@@ -46,7 +46,7 @@
   <collection id="photos_info" name="Photos Info" level="support">
    <component id="photos_build" filter="s60" name="Photos Build" introduced="^4">
     <!--  split this up into the above components  -->
-    <unit bldFile="photosgallery" qt:proFile="photos.pro"/>
+    <unit bldFile="." qt:proFile="photos.pro"/>
    </component>
   </collection>
  </package>

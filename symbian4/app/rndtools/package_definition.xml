@@ -141,9 +141,6 @@
           </component>
         </collection>
         <collection name="htiui" long-name="Harmonized Test Interface UI" level="generic">
-          <component name="HtiCommPlugins" filter="s60" long-name="HTI Comm Plugins" purpose="development" plugin="Y">
-            <unit bldFile="/sf/app/rndtools/htiui/HtiCommPlugins/HtiBtCommPlugin/group"/>
-          </component>
           <component name="HtiServicePlugins" filter="s60" long-name="HTI Service Plugins" purpose="development" plugin="Y">
             <!-- can only have a single unit. Should #include from a common bld.inf file -->
             <unit bldFile="/sf/app/rndtools/htiui/HtiServicePlugins/HtiAppServicePlugin/group"/>

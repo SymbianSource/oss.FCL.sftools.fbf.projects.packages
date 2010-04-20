@@ -98,7 +98,7 @@
         <collection name="sf_config" long-name="SF Config" level="mid">
           <component name="config" filter="s60" long-name="Config" purpose="development" class="config"/>
           <component name="cenrep" filter="sf_build" long-name="ConE Central Repository Config" purpose="development" class="config">
-            <!-- will shoudl give the id/path something more unique than cenrep -->
+            <!-- will should give the id/path something more unique than cenrep -->
             <unit bldFile="/sf/os/deviceplatformrelease/sf_config/cenrep/group"/>
           </component>
           <component name="rombuild_syborg" filter="sf_build" long-name="Syborg iMaker Config" purpose="development" introduced="^3" class="config">

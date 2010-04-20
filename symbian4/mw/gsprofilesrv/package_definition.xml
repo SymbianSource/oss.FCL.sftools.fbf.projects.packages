@@ -133,9 +133,6 @@
           <component name="profileengine" filter="s60" long-name="Profile Engine" introduced="9.1">
             <unit bldFile="/sf/mw/gsprofilesrv/profilesservices/profileengine/group"/>
           </component>
-          <component name="ringingtone3dplugin" filter="s60" long-name="Ringing Tone 3D Plugin" introduced="^2" plugin="Y">
-            <unit bldFile="/sf/mw/gsprofilesrv/profilesservices/ringingtone3dplugin/group"/>
-          </component>
         </collection>
       </block>
     </layer>

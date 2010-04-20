@@ -77,10 +77,10 @@
   <systemModel>
     <layer name="app" long-name="Applications" levels="services apps">
       <block name="helps" level="apps" span="2" long-name="Help Apps" levels="eng tools if ui">
-        <collection name="csxhelp" long-name="Context Sensitive Extended Help" level="if">
-          <!-- this is really a component. Should move it down a directory -->
-          <component name="csxhelp_build" filter="s60" long-name="Context Sensitive Extended Help Build">
-            <unit bldFile="/sf/app/helps/csxhelp/group"/>
+        <collection name="userguide" long-name="User Guide" level="if">
+          <!-- collection is really a component. Move down a directory -->
+          <component name="userguide_build" long-name="User Guide Build" filter="s60" introduced="^4">
+            <unit bldFile="/sf/app/helps/userguide"/>
           </component>
         </collection>
         <collection name="symhelp" long-name="Symbian Help" level="eng">

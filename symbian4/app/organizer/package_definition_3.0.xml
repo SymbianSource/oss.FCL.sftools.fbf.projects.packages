@@ -151,6 +151,9 @@
    <component id="chinesecalendarconverter" name="Chinese Calendar Converter" introduced="6.1" purpose="optional">
     <unit bldFile="pimappsupport/chinesecalendarconverter/group" mrp="pimappsupport/chinesecalendarconverter/group/app-services_calcon.mrp"/>
    </component>
+   <component id="chinesecalendaralg" name="Chinese Calendar Algorithm" introduced="^2" purpose="optional" class="plugin">
+    <unit bldFile="pimappsupport/chinesecalendaralg/group" mrp="pimappsupport/chinesecalendaralg/group/app-services_chinesecalendaralgorithm.mrp"/>
+   </component>
   </collection>
   <collection id="alarmui" name="Alarm UI" level="app">
    <!-- collection is really a component, should move down a directory -->

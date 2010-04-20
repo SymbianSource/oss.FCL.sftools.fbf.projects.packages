@@ -81,13 +81,6 @@
           <component name="media_recorder_sink_api" long-name="Media Recorder Sink API" filter="s60" class="api">
             <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/media_recorder_sink_api/group"/>
           </component>
-          <component name="cae_extentension_api" long-name="CAE Extension API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/cae_extentension_api/group"/>
-          </component>
-          <component name="camera_application_engine_api" long-name="Camera Application Engine API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/camera_application_engine_api/group" filter="!test"/>
-            <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/camera_application_engine_api/tsrc/group" filter="test,api_test"/>
-          </component>
           <component name="custom_onboard_camera_api" long-name="Custom Onboard Camera API" filter="s60" class="api">
             <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/custom_onboard_camera_api/group"/>
           </component>

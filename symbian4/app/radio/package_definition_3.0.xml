@@ -29,7 +29,7 @@
         <unit bldFile="radioapp/radioapplication" qt:proFile="radioapplication.pro"/>
       </component>
       <component id="radio_rom" filter="s60" name="Radio ROM" introduced="^4">
-        <unit bldFile="rom/group"/>
+        <unit bldFile="rom"/>
       </component>
     </collection>
   </package>

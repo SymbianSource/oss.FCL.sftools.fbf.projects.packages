@@ -172,28 +172,28 @@
         <collection name="messagingapp" long-name="Messaging Application" level="app">
           <component name="mmsengine_build" filter="s60" long-name="MMS Engine Build">
             <!-- this should be broken up into the individual other components -->
-            <unit bldFile="/sf/app/messaging/mmsengine"/>
+            <unit bldFile="/sf/app/messaging/messagingapp"/>
           </component>
           <component name="msgutils" filter="s60" long-name="Messaging Utils" introduced="^4">
-            <unit bldFile="/sf/app/messaging/msgutils"/>
+            <unit bldFile="/sf/app/messaging/messagingapp/msgutils"/>
           </component>
           <component name="msgappfw" filter="s60" long-name="Messaging Application Framework" introduced="^4">
-            <unit bldFile="/sf/app/messaging/msgappfw"/>
+            <unit bldFile="/sf/app/messaging/messagingapp/msgappfw"/>
           </component>
           <component name="msgsettings" filter="s60" long-name="Messaging Settings" introduced="^4">
-            <unit bldFile="/sf/app/messaging/msgsettings"/>
+            <unit bldFile="/sf/app/messaging/messagingapp/msgsettings"/>
           </component>
           <component name="msgnotifications" filter="s60" long-name="Messaging Notifications" introduced="^4">
-            <unit bldFile="/sf/app/messaging/msgnotifications"/>
+            <unit bldFile="/sf/app/messaging/messagingapp/msgnotifications"/>
           </component>
           <component name="smartmessaging" filter="s60" long-name="Smart Messaging">
             <unit bldFile="/sf/app/messaging/messagingapp/smartmessaging"/>
           </component>
           <component name="shareui" filter="s60" long-name="Shared UI" introduced="^4">
-            <unit bldFile="/sf/app/messaging/shareui"/>
+            <unit bldFile="/sf/app/messaging/messagingapp/shareui"/>
           </component>
           <component name="msgui" filter="s60" long-name="Messaging UI" introduced="^4">
-            <unit bldFile="/sf/app/messaging/msgui"/>
+            <unit bldFile="/sf/app/messaging/messagingapp/msgui"/>
           </component>
         </collection>
         <collection name="email" long-name="Email" level="plugin">

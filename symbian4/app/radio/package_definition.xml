@@ -105,7 +105,7 @@
             <unit bldFile="/sf/app/radio/radioapp/radioapplication"/>
           </component>
           <component name="radio_rom" filter="s60" long-name="Radio ROM" introduced="^4">
-            <unit bldFile="/sf/app/radio/rom/group"/>
+            <unit bldFile="/sf/app/radio/rom"/>
           </component>
         </collection>
       </block>

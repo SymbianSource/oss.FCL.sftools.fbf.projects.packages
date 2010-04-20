@@ -50,7 +50,7 @@
   <collection id="wlanutilities" name="WLAN Utilities" level="generic">
    <component id="wlanutilities_build" name="WLAN Utilities Qt" introduced="^4" filter="s60">
 	<!-- is this uinit needed, or is it sufficient to uncomment the units in the below components? -->
-      <unit bldFile="wlanutilities" qt:proFile="wirelessacc.pro" qt:qmakeArgs="-r"/>
+      <unit bldFile="wlanutilities" qt:proFile="wlanutilities.pro" qt:qmakeArgs="-r"/>
     </component>
    <component id="wlanqtutilities" filter="s60" name="WLAN Qt Utilities" introduced="^4">
     <!--<unit bldFile="wlanutilities/wlanplugin/group" qt:proFile="wlanqtutilities.pro"/>-->
@@ -63,6 +63,9 @@
    </component>
    <component id="wlanindicatorplugin" filter="s60" name="WLAN Indicator Plugin" class="plugin">
     <!--<unit bldFile="wlanutilities/wlanindicatorplugin/group" qt:proFile="wlanindicatorplugin.pro"/>-->
+   </component>
+   <component id="cpwlansettingsplugin" filter="s60" name="WLAN Settings Control Panel Plugin" class="plugin"  introduced="^4">
+    <!--<unit bldFile="wlanutilities/cpwlansettingsplugin/group" qt:proFile="cpwlansettingsplugin.pro"/>-->
    </component>
   </collection>
  </package>

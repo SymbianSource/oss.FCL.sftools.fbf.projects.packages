@@ -111,7 +111,7 @@
    <component id="oma_supl_asn_codec_plugin_api" name="OMA SUPL ASN Codec Plugin API" class="api" filter="s60">
     <unit bldFile="locsrv_plat/oma_supl_asn_codec_plugin_api/group"/>
    </component>
-   <component id="query_and_notification_api" name="Query and Notification API" class="api" filter="s60" introduced="^4">
+  <component id="query_and_notification_api" name="Query and Notification API" class="api" filter="s60" introduced="^3">
       <unit bldFile="locsrv_plat/query_and_notification_api/group"/>
    </component>
    <component id="location_local_variation_api" name="Location Local Variation API" class="api" filter="s60">
