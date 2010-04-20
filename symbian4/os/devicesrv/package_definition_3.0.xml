@@ -286,9 +286,15 @@
     <unit bldFile="commonservices/platformenv/group"/>
    </component>
    <component id="sysutil" name="System Utilities" purpose="mandatory" introduced="ER5">
+    <meta rel="config"> <!-- how can this be mandatory if it can be configured out? -->
+      <defined condition="SYMBIAN_BAFL_SYSUTIL"/>
+    </meta>
     <unit bldFile="commonservices/sysutil/group" mrp="commonservices/sysutil/group/sysutil.mrp"/>
    </component>
    <component id="activitymanager" name="Activity Manager" purpose="mandatory" introduced="ER5">
+    <meta rel="config"> <!-- how can this be mandatory if it can be configured out? -->
+      <defined condition="SYMBIAN_BAFL_SYSUTIL"/>
+    </meta>
     <unit bldFile="commonservices/activitymanager/group" mrp="commonservices/activitymanager/group/activitymanager.mrp"/>
    </component>
   </collection>
@@ -408,11 +414,20 @@
     <unit bldFile="sysstatemgmt/systemstarter/group" mrp="sysstatemgmt/systemstarter/group/app-framework_sysstart.mrp"/>
    </component>
    <component id="systemstatemgr" name="System State Manager" introduced="^3" purpose="mandatory">
+    <meta rel="config"> <!-- how can this be mandatory if it can be configured out? -->
+      <defined condition="SYMBIAN_SYSTEM_STATE_MANAGEMENT"/>
+    </meta>
     <unit bldFile="sysstatemgmt/systemstatemgr/group" mrp="sysstatemgmt/systemstatemgr/group/app-framework_ssma.mrp"/>
    </component>
    <component id="systemstateplugins" name="System State Plugins" introduced="^3" purpose="optional" class="plugin">
+    <meta rel="config">
+      <defined condition="SYMBIAN_SYSTEM_STATE_MANAGEMENT"/>
+    </meta>
     <unit bldFile="sysstatemgmt/systemstateplugins/group" mrp="sysstatemgmt/systemstateplugins/group/app-framework_ssplugins.mrp"/>
    </component>
+    <meta rel="config">
+      <defined condition="SYMBIAN_SYSTEM_STATE_MANAGEMENT"/>
+    </meta>
    <component id="systemstatereferenceplugins" name="System State Reference Plugins" introduced="^3" purpose="optional" class="plugin">
     <unit bldFile="sysstatemgmt/systemstatereferenceplugins/group" mrp="sysstatemgmt/systemstatereferenceplugins/group/app-framework_ssrefplugins.mrp"/>
    </component>

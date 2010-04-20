@@ -83,61 +83,6 @@
             <unit bldFile="/sf/os/deviceplatformrelease/S60Extras/group"/>
           </component>
         </collection>
-        <collection name="locfiles" long-name="Locale Files" level="mid">
-          <component name="locfiles_build" filter="s60" long-name="S60 Locale Files Build" purpose="development" class="config">
-            <!-- need to move component down a directory -->
-            <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group"/>
-          </component>
-          <component name="locfiles_set1" long-name="Locale Files Set 1" filter="s60" class="config">
-            <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set1"/>
-          </component>
-          <component name="locfiles_set2" long-name="Locale Files Set 2" filter="s60" class="config">
-            <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set2"/>
-          </component>
-          <component name="locfiles_set3" long-name="Locale Files Set 3" filter="s60" class="config">
-            <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set3"/>
-          </component>
-          <component name="locfiles_set4" long-name="Locale Files Set 4" filter="s60" class="config">
-            <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set4"/>
-          </component>
-          <component name="locfiles_set5" long-name="Locale Files Set 5" filter="s60" class="config">
-            <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set5"/>
-          </component>
-          <component name="locfiles_set6" long-name="Locale Files Set 6" filter="s60" class="config">
-            <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set6"/>
-          </component>
-          <!-- is the a problem with SF builds with the following? -->
-          <component name="locfiles_set7" long-name="Locale Files Set 7" filter="s60" class="config">
-            <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set7"/>
-          </component>
-          <component name="locfiles_set8" long-name="Locale Files Set 8" filter="s60" class="config">
-            <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set8"/>
-          </component>
-          <component name="locfiles_set9" long-name="Locale Files Set 9" filter="s60" class="config">
-            <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set9"/>
-          </component>
-          <component name="locfiles_set10" long-name="Locale Files Set 10" filter="s60" class="config">
-            <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set10"/>
-          </component>
-          <component name="locfiles_set11" long-name="Locale Files Set 11" filter="s60" class="config">
-            <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set11"/>
-          </component>
-          <component name="locfiles_set12" long-name="Locale Files Set 12" filter="s60" class="config">
-            <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set12"/>
-          </component>
-          <component name="locfiles_set13" long-name="Locale Files Set 13" filter="s60" class="config">
-            <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set13"/>
-          </component>
-          <component name="locfiles_set14" long-name="Locale Files Set 14" filter="s60" class="config">
-            <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set14"/>
-          </component>
-          <component name="locfiles_set15" long-name="Locale Files Set 15" filter="s60" class="config">
-            <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set15"/>
-          </component>
-          <component name="locfiles_set16" long-name="Locale Files Set 16" filter="s60" class="config">
-            <unit bldFile="/sf/os/deviceplatformrelease/locfiles/group/set16"/>
-          </component>
-        </collection>
         <collection name="version" long-name="Version" level="top">
           <!-- collection is really a component. Need to move down a directory -->
           <component name="version_build" filter="s60" long-name="Version Build" purpose="development" class="config">
@@ -155,6 +100,12 @@
           <component name="cenrep" filter="sf_build" long-name="ConE Central Repository Config" purpose="development" class="config">
             <!-- will shoudl give the id/path something more unique than cenrep -->
             <unit bldFile="/sf/os/deviceplatformrelease/sf_config/cenrep/group"/>
+          </component>
+          <component name="rombuild_syborg" filter="sf_build" long-name="Syborg iMaker Config" purpose="development" introduced="^3" class="config">
+            <unit bldFile="/sf/os/deviceplatformrelease/sf_config/rombuild/syborg/group"/>
+          </component>
+          <component name="rombuild_zoom2" filter="sf_build" long-name="Zoom2 iMaker Config" purpose="development" introduced="^3" class="config">
+            <unit bldFile="/sf/os/deviceplatformrelease/sf_config/rombuild/zoom2/group"/>
           </component>
         </collection>
         <!-- should be located locally in buildplatforms/group 

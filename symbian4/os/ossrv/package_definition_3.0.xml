@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
- <package id="ossrv" name="Generic OS Services" levels="physical-abstraction app-libs encoding translation data-services utilities">
+  <package id="ossrv" name="Generic OS Services" levels="physical-abstraction app-libs encoding translation data-services utilities">
   <collection id="ossrv_pub" name="Generic OS Services Public Interfaces" level="utilities">
    <component id="boost_apis" name="Boost APIs" class="api" filter="s60">
     <meta rel="Api" href="ossrv_pub/boost_apis/boost_apis.metaxml"/>
@@ -362,140 +362,137 @@
     <unit bldFile="ossrv_plat/libutils/group"/>
    </component>
   </collection>
-  <collection id="stdlibs" name="Standard Libraries" level="translation">
-   <component id="libz" filter="s60" name="Z Compression Library">
-    <unit bldFile="stdlibs/libz/group"/>
-   </component>
-   <component id="libcrypt" filter="s60" name="Crypt Library">
-    <unit bldFile="stdlibs/libcrypt/group"/>
-   </component>
-  </collection>
-  <collection id="ssl" name="SSL" level="data-services">
-   <component id="libcrypto" filter="s60" name="Crypto Library">
-    <unit bldFile="ssl/libcrypto/group"/>
-   </component>
-   <component id="libssl" filter="s60" purpose="development" name="SSL Library">
-    <unit bldFile="ssl/libssl/group"/>
-   </component>
-  </collection>
-  <collection id="glib" name="GLib" level="utilities">
-   <component id="glibbackend" filter="s60" name="GLib Backend">
-    <unit bldFile="glib/build/symbian/glibbackend/group"/>
-    <!-- Move to here: <unit bldFile="glib/glibbackend/group"/> -->
-   </component>
-   <component id="libglib" filter="s60" name="GLib Library">
-    <unit bldFile="glib/build/symbian/glib/group"/>
-    <!-- Move to here: <unit bldFile="glib/libglib/group"/> -->
-   </component>
-   <component id="libgthread" filter="s60" name="Libg Thread">
-    <unit bldFile="glib/build/symbian/gthread/group"/>
-    <!-- Move to here:     <unit bldFile="glib/libgthread/group"/> -->
-   </component>
-   <component id="libgmodule" filter="s60" name="Libg Module">
-    <unit bldFile="glib/build/symbian/gmodule/group"/>
-    <!-- Move to here:         <unit bldFile="glib/libgmodule/group"/> -->
-   </component>
-   <component id="libgobject" filter="s60" name="Libg Object">
-    <unit bldFile="glib/build/symbian/gobject/group"/>
-    <!-- Move to here:         <unit bldFile="glib/libgobject/group"/> -->
-   </component>
-  </collection>
-  <collection id="stdcpp" name="C++ Standard Library" level="translation">
-   <!-- collection is really a component. Needs to be moved down a directory -->
-   <component id="stdcpp_build" filter="s60" name="Stdcpp">
-    <unit bldFile="stdcpp/group"/>
-   </component>
-  </collection>
-  <collection id="ofdbus" name="Open Foundation D-Bus" level="utilities">
-   <component id="dbus" filter="s60" name="D-Bus">
-    <unit bldFile="ofdbus/dbus/group"/>
-   </component>
-   <component id="dbus-glib" filter="s60" name="D-Bus GLib">
-    <unit bldFile="ofdbus/dbus-glib/group"/>
-   </component>
-   <component id="ofdbus_rom" filter="s60" name="D-Bus ROM">
-    <!-- Contains IBY for for dbus. Should remove #includes to above components and move this down a directory 
+    <collection id="stdlibs" name="Standard Libraries" level="translation">
+      <component id="libz" filter="s60" name="Z Compression Library">
+        <unit bldFile="stdlibs/libz/group"/>
+      </component>
+      <component id="libcrypt" filter="s60" name="Crypt Library">
+        <unit bldFile="stdlibs/libcrypt/group"/>
+      </component>
+    </collection>
+    <collection id="ssl" name="SSL" level="data-services">
+      <component id="libcrypto" filter="s60" name="Crypto Library">
+        <unit bldFile="ssl/libcrypto/group"/>
+      </component>
+      <component id="libssl" filter="s60" purpose="development" name="SSL Library">
+        <unit bldFile="ssl/libssl/group"/>
+      </component>
+    </collection>
+    <collection id="glib" name="GLib" level="utilities">
+      <component id="glibbackend" filter="s60" name="GLib Backend">
+        <unit bldFile="glib/build/symbian/glibbackend/group"/>
+        <!-- Move to here: <unit bldFile="glib/glibbackend/group"/> -->
+      </component>
+      <component id="libglib" filter="s60" name="GLib Library">
+        <unit bldFile="glib/build/symbian/glib/group"/>
+        <!-- Move to here: <unit bldFile="glib/libglib/group"/> -->
+      </component>
+      <component id="libgthread" filter="s60" name="Libg Thread">
+        <unit bldFile="glib/build/symbian/gthread/group"/>
+        <!-- Move to here:     <unit bldFile="glib/libgthread/group"/> -->
+      </component>
+      <component id="libgmodule" filter="s60" name="Libg Module">
+        <unit bldFile="glib/build/symbian/gmodule/group"/>
+        <!-- Move to here:         <unit bldFile="glib/libgmodule/group"/> -->
+      </component>
+      <component id="libgobject" filter="s60" name="Libg Object">
+        <unit bldFile="glib/build/symbian/gobject/group"/>
+        <!-- Move to here:         <unit bldFile="glib/libgobject/group"/> -->
+      </component>
+    </collection>
+    <collection id="stdcpp" name="C++ Standard Library" level="translation">
+    	<!-- collection is really a component. Needs to be moved down a directory -->
+      <component id="stdcpp_build" filter="s60" name="Stdcpp">
+        <unit bldFile="stdcpp/group"/>
+      </component>
+    </collection>
+    <collection id="ofdbus" name="Open Foundation D-Bus" level="utilities">
+      <component id="dbus" filter="s60" name="D-Bus">
+        <unit bldFile="ofdbus/dbus/group"/>
+      </component>
+      <component id="dbus-glib" filter="s60" name="D-Bus GLib">
+        <unit bldFile="ofdbus/dbus-glib/group"/>
+      </component>
+      <component id="ofdbus_rom" filter="s60" name="D-Bus ROM">
+            <!-- Contains IBY for for dbus. Should remove #includes to above components and move this down a directory 
             Consider moving IBY file to one of the above as well and removing this component entirely -->
-    <unit bldFile="ofdbus/group"/>
-   </component>
-  </collection>
-  <collection id="utilitylibraries" name="Utility Libraries" level="encoding">
-   <component id="libutils" filter="s60" name="Utility Library">
-    <unit bldFile="utilitylibraries/libutils/group"/>
-   </component>
-  </collection>
-  <collection id="genericservices" name="Generic Services" level="utilities">
-   <component id="s60compatibilityheaders" name="S60 Compatibility Headers" filter="gt" purpose="optional">
-    <unit version="tb101sf" bldFile="genericservices/s60compatibilityheaders/groupsymtb101sf" mrp="genericservices/s60compatibilityheaders/groupsymtb101sf/tools_s60_header_compatsymtb101sf.mrp"/>
-   </component>
-   <component id="mimerecognitionfw" name="MIME Recognition Framework" purpose="mandatory">
-    <unit bldFile="genericservices/mimerecognitionfw/group" mrp="genericservices/mimerecognitionfw/group/app-framework_emime.mrp"/>
-   </component>
-   <component id="systemagent" name="System Agent" introduced="9.0" purpose="mandatory">
-    <unit bldFile="genericservices/systemagent/group" mrp="genericservices/systemagent/group/syslibs_sysagent2.mrp"/>
-   </component>
-   <component id="taskscheduler" name="Task Scheduler" introduced="6.0" purpose="optional">
-    <unit bldFile="genericservices/taskscheduler/group" mrp="genericservices/taskscheduler/group/syslibs_schsvr.mrp"/>
-   </component>
-   <component id="activebackupclient" name="Active Backup Client" purpose="optional">
-    <unit bldFile="genericservices/activebackupclient/group" mrp="genericservices/activebackupclient/group/connectivity_abclient.mrp"/>
-   </component>
-   <component id="syslibsdocs" name="Syslibs Documentation" purpose="development" class="doc">
-    <unit mrp="genericservices/syslibsdocs/syslibs_documentation.mrp"/>
-   </component>
-   <component id="httputils" name="HTTP Utilities Library" introduced="6.2" purpose="optional">
-    <unit bldFile="genericservices/httputils/group" mrp="genericservices/httputils/group/application-protocols_inetprotutil.mrp"/>
-   </component>
-  </collection>
-  <collection id="syslibsapitest" name="SysLibs API Tests" level="utilities">
-   <component id="syslibssvs" name="Syslibs Verfication Suite" introduced="^2" purpose="development" filter="test">
-    <unit mrp="syslibsapitest/syslibssvs/group/syslibssvs.mrp" bldFile="syslibsapitest/syslibssvs/group"/>
-   </component>
-  </collection>
-  <collection id="compressionlibs" name="Compression Libraries" level="data-services">
-   <component id="ziplib" name="Zip Compression Library" introduced="6.0" purpose="mandatory">
-    <unit bldFile="compressionlibs/ziplib/group" mrp="compressionlibs/ziplib/group/syslibs_ezlib2.mrp"/>
-   </component>
-  </collection>
-  <collection id="genericopenlibs" name="Generic Open Libraries" level="translation">
-   <component id="cstdlib" name="C Standard Library" introduced="ER5" purpose="optional">
-    <unit bldFile="genericopenlibs/cstdlib/group" mrp="genericopenlibs/cstdlib/group/syslibs_stdlib.mrp"/>
-   </component>
-   <component id="cppstdlib" name="C++ Standard Library" introduced="^3" purpose="mandatory">
-    <unit bldFile="genericopenlibs/cppstdlib/group" mrp="genericopenlibs/cppstdlib/group/openenv_libstdcpp.mrp"/>
-   </component>
-   <component id="openenvcore" name="Open Environment Core" introduced="^2" purpose="mandatory">
-    <unit bldFile="genericopenlibs/openenvcore/group" mrp="genericopenlibs/openenvcore/group/openenv.mrp"/>
-   </component>
-   <component id="pluggableauthenticationmodulefw" name="Pluggable Authentication Module Framework" introduced="^4" purpose="optional">
-    <unit bldFile="genericopenlibs/pluggableauthenticationmodulefw/group" mrp="genericopenlibs/pluggableauthenticationmodulefw/group/oeaddons_libpam.mrp"/>
-   </component>
-   <component id="posixrealtimeextensions" name="POSIX Realtime Extensions" introduced="^3" purpose="optional">
-    <unit bldFile="genericopenlibs/posixrealtimeextensions/group" mrp="genericopenlibs/posixrealtimeextensions/group/oeaddons_librt.mrp"/>
-   </component>
-   <component id="liboil" name="Liboil" introduced="^4" purpose="optional">
-    <unit bldFile="genericopenlibs/liboil/group" mrp="genericopenlibs/liboil/group/oeaddons_liboil.mrp"/>
-   </component>
-  </collection>
-  <collection id="lowlevellibsandfws" name="Low Level Libraries and Frameworks" level="app-libs">
-   <component id="pluginfw" name="Plugin Framework" introduced="6.2" purpose="mandatory">
-    <unit version="3" bldFile="lowlevellibsandfws/pluginfw/Group" mrp="lowlevellibsandfws/pluginfw/Group/syslibs_ecom3.mrp"/>
-   </component>
-   <component id="apputils" name="Application Utilities" introduced="ER5" purpose="mandatory">
-    <unit bldFile="lowlevellibsandfws/apputils/group" mrp="lowlevellibsandfws/apputils/group/syslibs_bafl.mrp"/>
-   </component>
-   <component id="genericusabilitylib" name="Generic Usability Library" introduced="^3" purpose="mandatory">
-    <unit bldFile="lowlevellibsandfws/genericusabilitylib/group" mrp="lowlevellibsandfws/genericusabilitylib/group/syslibs_euserhl.mrp"/>
-   </component>
-  </collection>
-  <collection id="ossrv_info" name="Generic OS Services Info" level="utilities">
-   <component id="ossrv_build" filter="s60" name="Generic OS Services Build">
-    <!-- exports should be moved to individual components -->
-    <unit bldFile="group"/>
-   </component>
-   <component id="ossrv_metadata" name="Generic OS Services Metadata" class="config" introduced="^2" purpose="development" target="desktop">
-    <unit mrp="ossrv_info/ossrv_metadata/ossrv_metadata.mrp"/>
-   </component>
-  </collection>
- </package>
+        <unit bldFile="ofdbus/group"/>
+      </component>
+    </collection>
+    <collection id="utilitylibraries" name="Utility Libraries" level="encoding">
+      <component id="libutils" filter="s60" name="Utility Library">
+        <unit bldFile="utilitylibraries/libutils/group"/>
+      </component>
+    </collection>
+    <collection id="genericservices" name="Generic Services" level="utilities">
+      <component id="s60compatibilityheaders" name="S60 Compatibility Headers" filter="gt" purpose="optional">
+        <unit version="tb101sf" bldFile="genericservices/s60compatibilityheaders/groupsymtb101sf" mrp="genericservices/s60compatibilityheaders/groupsymtb101sf/tools_s60_header_compatsymtb101sf.mrp"/>
+      </component>
+      <component id="mimerecognitionfw" name="MIME Recognition Framework" purpose="mandatory">
+        <unit bldFile="genericservices/mimerecognitionfw/group" mrp="genericservices/mimerecognitionfw/group/app-framework_emime.mrp"/>
+      </component>
+      <component id="systemagent" name="System Agent" introduced="9.0" purpose="mandatory">
+        <unit bldFile="genericservices/systemagent/group" mrp="genericservices/systemagent/group/syslibs_sysagent2.mrp"/>
+      </component>
+      <component id="taskscheduler" name="Task Scheduler" introduced="6.0" purpose="optional">
+        <unit bldFile="genericservices/taskscheduler/group" mrp="genericservices/taskscheduler/group/syslibs_schsvr.mrp"/>
+      </component>
+      <component id="activebackupclient" name="Active Backup Client" purpose="optional">
+        <unit bldFile="genericservices/activebackupclient/group" mrp="genericservices/activebackupclient/group/connectivity_abclient.mrp"/>
+      </component>
+      <component id="syslibsdocs" name="Syslibs Documentation" purpose="development" class="doc">
+        <unit mrp="genericservices/syslibsdocs/syslibs_documentation.mrp"/>
+      </component>
+      <component id="httputils" name="HTTP Utilities Library" introduced="6.2" purpose="optional">
+        <unit bldFile="genericservices/httputils/group" mrp="genericservices/httputils/group/application-protocols_inetprotutil.mrp"/>
+      </component>
+    </collection>
+    <collection id="syslibsapitest" name="SysLibs API Tests" level="utilities">
+      <component id="syslibssvs" name="Syslibs Verfication Suite" introduced="^2" purpose="development" filter="test">
+        <unit mrp="syslibsapitest/syslibssvs/group/syslibssvs.mrp" bldFile="syslibsapitest/syslibssvs/group"/>
+      </component>
+    </collection>
+    <collection id="compressionlibs" name="Compression Libraries" level="data-services">
+      <component id="ziplib" name="Zip Compression Library" introduced="6.0" purpose="mandatory">
+        <unit bldFile="compressionlibs/ziplib/group" mrp="compressionlibs/ziplib/group/syslibs_ezlib2.mrp"/>
+      </component>
+    </collection>
+    <collection id="genericopenlibs" name="Generic Open Libraries" level="translation">
+      <component id="cstdlib" name="C Standard Library" introduced="ER5" purpose="optional">
+        <unit bldFile="genericopenlibs/cstdlib/group" mrp="genericopenlibs/cstdlib/group/syslibs_stdlib.mrp"/>
+      </component>
+      <component id="cppstdlib" name="C++ Standard Library" introduced="^3" purpose="mandatory">
+        <unit bldFile="genericopenlibs/cppstdlib/group" mrp="genericopenlibs/cppstdlib/group/openenv_libstdcpp.mrp"/>
+      </component>
+      <component id="openenvcore" name="Open Environment Core" introduced="^2" purpose="mandatory">
+        <unit bldFile="genericopenlibs/openenvcore/group" mrp="genericopenlibs/openenvcore/group/openenv.mrp"/>
+      </component>
+      <component id="posixrealtimeextensions" name="POSIX Realtime Extensions" introduced="^3" purpose="optional">
+        <unit bldFile="genericopenlibs/posixrealtimeextensions/group" mrp="genericopenlibs/posixrealtimeextensions/group/oeaddons_librt.mrp"/>
+      </component>
+	  <component id="liboil" name="Liboil" introduced="^4" purpose="optional">
+        <unit bldFile="genericopenlibs/liboil/group" mrp="genericopenlibs/liboil/group/oeaddons_liboil.mrp"/>
+      </component>
+    </collection>
+    <collection id="lowlevellibsandfws" name="Low Level Libraries and Frameworks" level="app-libs">
+      <component id="pluginfw" name="Plugin Framework" introduced="6.2" purpose="mandatory">
+        <unit version="3" bldFile="lowlevellibsandfws/pluginfw/Group" mrp="lowlevellibsandfws/pluginfw/Group/syslibs_ecom3.mrp"/>
+      </component>
+      <component id="apputils" name="Application Utilities" introduced="ER5" purpose="mandatory">
+        <unit bldFile="lowlevellibsandfws/apputils/group" mrp="lowlevellibsandfws/apputils/group/syslibs_bafl.mrp"/>
+      </component>
+      <component id="genericusabilitylib" name="Generic Usability Library" introduced="^3" purpose="mandatory">
+        <unit bldFile="lowlevellibsandfws/genericusabilitylib/group" mrp="lowlevellibsandfws/genericusabilitylib/group/syslibs_euserhl.mrp"/>
+      </component>
+    </collection>
+    <collection id="ossrv_info" name="Generic OS Services Info" level="utilities">
+      <component id="ossrv_build" filter="s60" name="Generic OS Services Build">
+      <!-- exports should be moved to individual components -->
+        <unit bldFile="group"/>
+      </component>
+      <component id="ossrv_metadata" name="Generic OS Services Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+        <unit mrp="ossrv_info/ossrv_metadata/ossrv_metadata.mrp"/>
+      </component>
+    </collection>
+  </package>
 </SystemDefinition>
