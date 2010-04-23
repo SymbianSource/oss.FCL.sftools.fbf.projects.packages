@@ -201,6 +201,11 @@
             <unit mrp="/sf/os/cellularsrv/cellularsrvapitest/telephonydevsoundhaitest/group/telephonydevsoundhaitest.mrp" bldFile="/sf/os/cellularsrv/cellularsrvapitest/telephonydevsoundhaitest/group"/>
           </component>
         </collection>
+        <collection name="wapstack" long-name="WAP Stack" level="app-if">
+          <component name="wapmessageapi" long-name="WAP Message API" purpose="development">
+            <unit mrp="wapstack/wapmessageapi/group/wap-stack_wapmessage.mrp" bldFile="wapstack/wapmessageapi/group"/>
+          </component>
+        </collection>
       </block>
     </layer>
   </systemModel>
