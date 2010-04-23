@@ -91,12 +91,12 @@
         <unit bldFile="sf_config/rombuild/zoom2/group"/>
       </component>
     </collection>
-        <!-- should be located locally in buildplatforms/group 
+        <!-- should be located locally in buildplatforms/group. NB. This is a different package! -->
     <collection id="s60bld" name="S60 Build">
       <component id="buildplatforms" filter="s60" name="Build Platforms">
         <unit bldFile="/tools/buildplatforms/group"/>
       </component>
-    </collection>-->
+    </collection>
     <collection id="symbianosbld" name="Symbian OS Build" level="bld">
       <component id="cedarutils" name="Cedar Utils" purpose="development">
         <unit mrp="symbianosbld/cedarutils/tools_utils_cedar.mrp"/>
