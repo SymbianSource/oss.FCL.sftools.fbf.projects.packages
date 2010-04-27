@@ -25,7 +25,7 @@
    <component id="sat_refresh_api" name="SAT Refresh API" class="api" filter="s60">
     <meta rel="Api" href="phonesrv_plat/sat_refresh_api/sat_refresh_api.metaxml"/>
     <unit bldFile="phonesrv_plat/sat_refresh_api/group" filter="!test"/>
-    <unit unitID="tedo.sat_refresh_api.test" bldFile="phonesrv_plat/sat_refresh_api/tsrc/group" filter="test,api_test"/>
+    <unit bldFile="phonesrv_plat/sat_refresh_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="network_handling_engine_api" name="Network Handling Engine API" class="api" filter="s60">
     <meta rel="Api" href="phonesrv_plat/network_handling_engine_api/network_handling_engine_api.metaxml"/>
@@ -54,7 +54,7 @@
    <component id="sat_client_api" name="SAT Client API" class="api" filter="s60">
     <meta rel="Api" href="phonesrv_plat/sat_client_api/sat_client_api.metaxml"/>
     <unit bldFile="phonesrv_plat/sat_client_api/group" filter="!test"/>
-    <unit unitID="tedo.sat_client_api.test" bldFile="phonesrv_plat/sat_client_api/tsrc/group" filter="test,api_test"/>
+    <unit bldFile="phonesrv_plat/sat_client_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="phone_client_api" name="Phone Client API" class="api" filter="s60">
     <meta rel="Api" href="phonesrv_plat/phone_client_api/phone_client_api.metaxml"/>
@@ -63,7 +63,7 @@
    <component id="sat_service_api" name="SAT Service API" class="api" filter="s60">
     <meta rel="Api" href="phonesrv_plat/sat_service_api/sat_service_api.metaxml"/>
     <unit bldFile="phonesrv_plat/sat_service_api/group" filter="!test"/>
-    <unit unitID="tedo.sat_service_api.test" bldFile="phonesrv_plat/sat_service_api/tsrc/group" filter="test,api_test"/>
+    <unit bldFile="phonesrv_plat/sat_service_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="cbs_message_api" name="CBS Message API" class="api" filter="s60">
     <meta rel="Api" href="phonesrv_plat/cbs_message_api/cbs_message_api.metaxml"/>
@@ -147,15 +147,16 @@
    <component id="call_information_api" name="Call Information API" class="api" filter="s60">
     <meta rel="Api" href="phonesrv_plat/call_information_api/call_information_api.metaxml"/>
     <unit bldFile="phonesrv_plat/call_information_api/group" filter="!test"/>
-    <unit unitID="tedo.call_information_api.test" bldFile="phonesrv_plat/call_information_api/tsrc/group" filter="test,api_test"/>
+    <unit bldFile="phonesrv_plat/call_information_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="call_remote_party_information_api" name="Call Remote Party Information API" class="api" filter="s60">
     <unit bldFile="phonesrv_plat/call_remote_party_information_api/group" filter="!test"/>
-    <unit unitID="tedo.call_remote_party_information_api.test" bldFile="phonesrv_plat/call_remote_party_information_api/tsrc/group" filter="test,api_test"/>
+    <unit bldFile="phonesrv_plat/call_remote_party_information_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="telephony_mediator_api" name="Telephony Mediator API" class="api" filter="s60">
     <meta rel="Api" href="phonesrv_plat/telephony_mediator_api/telephony_mediator_api.metaxml"/>
-    <unit bldFile="phonesrv_plat/telephony_mediator_api/group"/>
+    <unit bldFile="phonesrv_plat/telephony_mediator_api/group" filter="!test"/>
+    <unit bldFile="phonesrv_plat/telephony_mediator_api/tsrc/ut_telephony_mediator_api/group" filter="test,api_test"/>
    </component>
   </collection>
   <collection id="telutils" name="Telephony Utils" level="generic">
@@ -176,22 +177,19 @@
   </collection>
   <collection id="cellular" name="Cellular" level="server">
    <component id="telephonysettings" filter="s60" name="Telephony Settings">
-    <unit bldFile="cellular/telephonysettings/group"/>
+    <unit bldFile="cellular/telephonysettings/group" filter="!test"/>
+    <unit bldFile="cellular/telephonysettings/tsrc/public/basic/group" filter="test,api_test"/>
    </component>
    <component id="sssettings" filter="s60" name="Supplementary Service Settings">
-    <unit bldFile="cellular/sssettings/group"/>
+    <unit bldFile="cellular/sssettings/group" filter="!test"/>
+    <unit bldFile="cellular/SSSettings/tsrc/public/basic/group" filter="test,api_test"/>
    </component>
    <component id="psetnotesui" filter="s60" name="Phone Settings Notes UI">
-    <unit bldFile="cellular/psetnotesui/group"/>
+    <unit bldFile="cellular/psetnotesui/group" filter="!test"/>
+    <unit bldFile="cellular/PsetNotesUi/tsrc/public/basic/group" filter="test,api_test"/>
    </component>
    <component id="servicerequest" filter="s60" name="Service Request">
     <unit bldFile="cellular/servicerequest/group"/>
-   </component>
-   <component id="cellular_test" filter="s60,test,api_test" name="Cellular Tests" purpose="development">
-    <!-- can only have one unit. Need to #include from a single bld.inf  (cellular/tsrc/bld.inf?) -->
-    <unit unitID="tedo.PsetNotesUi.test" bldFile="cellular/PsetNotesUi/tsrc/public/basic/group"/>
-    <unit unitID="tedo.SSSettings.test" bldFile="cellular/SSSettings/tsrc/public/basic/group"/>
-    <unit unitID="tedo.telephonysettings.test" bldFile="cellular/telephonysettings/tsrc/public/basic/group"/>
    </component>
   </collection>
   <collection id="convergedcallengine" name="Converged Call Engine" level="framework">
@@ -199,10 +197,12 @@
     <unit bldFile="convergedcallengine/callprovider/group"/>
    </component>
    <component id="cce" filter="s60" name="CCE">
-    <unit bldFile="convergedcallengine/cce/group"/>
+    <unit bldFile="convergedcallengine/cce/group" filter="!test"/>
+    <unit filter="test,api_test" bldFile="convergedcallengine/cce/tsrc/public/basic/group"/>
    </component>
    <component id="spsettings" filter="s60" name="Service Provider Settings">
-    <unit bldFile="convergedcallengine/spsettings/group"/>
+    <unit bldFile="convergedcallengine/spsettings/group" filter="!test"/>
+    <unit filter="test,api_test" bldFile="convergedcallengine/spsettings/tsrc/public/basic/group"/>
    </component>
    <component id="cenrepdatabase" filter="s60" name="CCE Cenrep Database">
     <unit bldFile="convergedcallengine/cenrepdatabase/group"/>
@@ -213,11 +213,6 @@
    <component id="csplugin" filter="s60" name="CS Plugin" class="plugin">
     <!--  should spell out CS in name -->
     <unit bldFile="convergedcallengine/csplugin/group"/>
-   </component>
-   <component id="convergedcallengine_test" filter="s60,test,api_test" name="CCE Tests" purpose="development">
-    <!-- can only have one unit. Need to #include from a single bld.inf  (convergedcallengine/tsrc/bld.inf?) -->
-    <unit unitID="tedo.cce.test" bldFile="convergedcallengine/cce/tsrc/public/basic/group"/>
-    <unit unitID="tedo.spsettings.test" bldFile="convergedcallengine/spsettings/tsrc/public/basic/group"/>
    </component>
   </collection>
   <collection id="engines" name="Telephony Engines" level="specific">
@@ -235,25 +230,22 @@
     <unit bldFile="phoneclientserver/enpolicy/group"/>
    </component>
    <component id="aiwdialdata" filter="s60" name="AIW Dial Data">
-    <unit bldFile="phoneclientserver/aiwdialdata/group"/>
+    <unit bldFile="phoneclientserver/aiwdialdata/group" filter="!test"/>
+    <unit filter="test,api_test" bldFile="phoneclientserver/aiwdialdata/tsrc/public/basic/group"/>
    </component>
    <component id="dialutils" filter="s60" name="Dial Utils">
-    <unit bldFile="phoneclientserver/dialutils/group"/>
+    <unit bldFile="phoneclientserver/dialutils/group" filter="!test"/>
+    <unit filter="test,api_test" bldFile="phoneclientserver/dialutils/tsrc/public/basic/group"/>
    </component>
    <component id="phoneclient" filter="s60" name="Phone Client">
-    <unit bldFile="phoneclientserver/phoneclient/group"/>
+    <unit bldFile="phoneclientserver/phoneclient/group" filter="!test"/>
+    <unit filter="test,api_test" bldFile="phoneclientserver/phoneclient/tsrc/public/basic/group"/>
    </component>
    <component id="phoneserver" filter="s60" name="Phone Server">
     <unit bldFile="phoneclientserver/phoneserver/group"/>
    </component>
    <component id="callui" filter="s60" name="Call UI">
     <unit bldFile="phoneclientserver/callui/group"/>
-   </component>
-   <component id="phoneclientserver_test" filter="s60,test,api_test" name="Phone Client/Server Tests" purpose="development">
-    <!-- can only have one unit. Need to #include from a single bld.inf  (phoneclientserver/tsrc/bld.inf?) -->
-    <unit unitID="tedo.aiwdialdata.test" bldFile="phoneclientserver/aiwdialdata/tsrc/public/basic/group"/>
-    <unit unitID="tedo.dialutils.test" bldFile="phoneclientserver/dialutils/tsrc/public/basic/group"/>
-    <unit unitID="tedo.phoneclient.test" bldFile="phoneclientserver/phoneclient/tsrc/public/basic/group"/>
    </component>
   </collection>
   <collection id="satengine" name="SIM Application Toolkit Engine" level="generic">
@@ -272,12 +264,6 @@
   <collection id="phonecmdhandler" name="Phone Command Handler" level="generic">
    <component id="phonecmdhnlr" filter="s60" name="Phone Command Handler">
     <unit bldFile="phonecmdhandler/phonecmdhnlr/group"/>
-   </component>
-  </collection>
-  <collection id="phonesrv_info" name="Telephony and SIM Services Info" level="specific">
-   <component id="phonesrv_test" filter="s60,test,api_test" name="Telephony and SIM Services Tests" purpose="development">
-    <!-- can only have one unit. Need to #include from a single bld.inf  (phonesrv_plat/tsrc/bld.inf?) -->
-    <unit unitID="tedo.telephony_mediator_api.test" bldFile="phonesrv_plat/telephony_mediator_api/tsrc/ut_telephony_mediator_api/group"/>
    </component>
   </collection>
  </package>
