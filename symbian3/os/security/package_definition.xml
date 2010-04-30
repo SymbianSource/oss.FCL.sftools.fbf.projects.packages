@@ -77,11 +77,6 @@
   <systemModel>
     <layer name="os" long-name="OS" levels="hw services">
       <block name="security" level="services" long-name="OS Security" levels="physical-abstraction plugins libraries management services utilities">
-        <collection name="authenticationservices" long-name="Authentication Services" level="utilities">
-          <component name="authenticationserver" long-name="Authentication Server" introduced="^3" purpose="optional">
-            <unit bldFile="/sf/os/security/authenticationservices/authenticationserver/group" mrp="/sf/os/security/authenticationservices/authenticationserver/group/security_authserver.mrp"/>
-          </component>
-        </collection>
         <collection name="authorisation" long-name="Authorisation" level="utilities">
           <component name="userpromptservice" long-name="User Prompt Service" introduced="^3" purpose="mandatory">
             <unit bldFile="/sf/os/security/authorisation/userpromptservice/group" mrp="/sf/os/security/authorisation/userpromptservice/group/security_ups.mrp"/>
