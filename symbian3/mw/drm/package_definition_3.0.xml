@@ -50,6 +50,10 @@
     <meta rel="Api" href="drm_plat/wmdrm_access_api/wmdrm_access_api.metaxml"/>
     <unit bldFile="drm_plat/wmdrm_access_api/group"/>
    </component>
+   <component id="wmdrm_ota_access_api" name="WMDRM OTA Access API" class="api" filter="s60">
+    <meta rel="Api" href="drm_plat/wmdrm_ota_access_api/wmdrm_ota_access_api.metaxml"/>
+    <unit bldFile="drm_plat/wmdrm_ota_access_api/group"/>
+   </component>
    <component id="camese_utility_api" name="Camese Utility API" class="api" filter="s60">
     <meta rel="Api" href="drm_plat/camese_utility_api/camese_utility_api.metaxml"/>
     <meta rel="config">

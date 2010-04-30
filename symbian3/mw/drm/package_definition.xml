@@ -114,6 +114,9 @@
           <component name="wmdrm_access_api" long-name="WMDRM Access API" filter="s60" class="api">
             <unit bldFile="/sf/mw/drm/drm_plat/wmdrm_access_api/group"/>
           </component>
+          <component name="wmdrm_ota_access_api" long-name="WMDRM OTA Access API" filter="s60" class="api">
+            <unit bldFile="/sf/mw/drm/drm_plat/wmdrm_ota_access_api/group"/>
+          </component>
           <component name="camese_utility_api" long-name="Camese Utility API" filter="s60" class="api">
             <unit bldFile="/sf/mw/drm/drm_plat/camese_utility_api/group"/>
           </component>
