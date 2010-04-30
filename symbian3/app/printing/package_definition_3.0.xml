@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="printing" name="Printing" levels="app">
+    <collection id="DirectPrint" name="DirectPrint" level="app">
+      <component id="DirectPrintApp" filter="sf_build" name="DirectPrint App" introduced="^3">
+        <unit bldFile="DirectPrint/DirectPrintApp/group"/>
+      </component>
+      <component id="DirectPrintServer" filter="sf_build" name="DirectPrint Server" introduced="^3">
+        <unit bldFile="DirectPrint/DirectPrintServer/group"/>
+      </component>
+      <component id="DirectPrintClient" filter="sf_build" name="DirectPrint Client" introduced="^3">
+        <unit bldFile="DirectPrint/DirectPrintClient/group"/>
+      </component>
+    </collection>
     <collection id="imageprint" name="ImagePrint" level="app">
       <component id="clog" filter="s60" name="ImagePrint Logging" introduced="^2">
         <unit bldFile="imageprint/clog/group"/>

@@ -77,6 +77,17 @@
   <systemModel>
     <layer name="app" long-name="Applications" levels="services apps">
       <block name="printing" level="services" long-name="Printing" levels="app">
+        <collection name="DirectPrint" long-name="DirectPrint" level="app">
+          <component name="DirectPrintApp" filter="sf_build" long-name="DirectPrint App" introduced="^3">
+            <unit bldFile="/sf/app/printing/DirectPrint/DirectPrintApp/group"/>
+          </component>
+          <component name="DirectPrintServer" filter="sf_build" long-name="DirectPrint Server" introduced="^3">
+            <unit bldFile="/sf/app/printing/DirectPrint/DirectPrintServer/group"/>
+          </component>
+          <component name="DirectPrintClient" filter="sf_build" long-name="DirectPrint Client" introduced="^3">
+            <unit bldFile="/sf/app/printing/DirectPrint/DirectPrintClient/group"/>
+          </component>
+        </collection>
         <collection name="imageprint" long-name="ImagePrint" level="app">
           <component name="clog" filter="s60" long-name="ImagePrint Logging" introduced="^2">
             <unit bldFile="/sf/app/printing/imageprint/clog/group"/>
