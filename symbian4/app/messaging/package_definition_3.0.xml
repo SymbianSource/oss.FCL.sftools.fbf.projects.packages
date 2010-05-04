@@ -170,6 +170,10 @@
    <component id="messaging_metadata" name="Messaging Apps Metadata" class="config" introduced="^2" purpose="development" target="desktop">
     <unit mrp="messaging_info/messaging_metadata/messaging_metadata.mrp"/>
    </component>
+   <component name="messaging_build" long-name="Messaging App Build" introduced="^4">
+    <!-- break this up into the above collections and eventually remove -->
+    <unit bldFile="." proFile="messaging.pro" qmakeArgs="-r"/>
+   </component>
   </collection>
  </package>
 </SystemDefinition>
