@@ -144,7 +144,6 @@
       <package id="messagingmw" level="specific" tech-domain="pr" href="../../../../mw/messagingmw/package_definition_3.0.xml"/>
       <package id="imsrv" level="specific" tech-domain="pr" href="../../../../mw/imsrv/package_definition_3.0.xml"/>
       <package id="legacypresence" level="specific" tech-domain="pr" href="../../../../mw/legacypresence/package_definition_3.0.xml"/>
-      <package id="opensrv" level="specific" tech-domain="pr" href="../../../../mw/opensrv/package_definition_3.0.xml"/>
       <package id="remotemgmt" level="specific" tech-domain="dm" href="../../../../mw/remotemgmt/package_definition_3.0.xml"/>
       <package id="remotestorage" level="generic" tech-domain="de" href="../../../../mw/remotestorage/package_definition_3.0.xml"/>
       <package id="remoteconn" level="generic" tech-domain="de" href="../../../../mw/remoteconn/package_definition_3.0.xml"/>
