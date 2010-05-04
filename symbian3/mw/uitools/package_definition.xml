@@ -103,9 +103,6 @@
           </component>
         </collection>
         <collection name="gfxtools" long-name="Graphics Tools" level="tool">
-          <component name="gditools" filter="s60" long-name="GDI Tools" class="PC">
-            <unit bldFile="/sf/mw/uitools/gfxtools/gditools/group"/>
-          </component>
           <component name="color" filter="s60" long-name="Bitmap Colour Palette" class="PC">
             <unit bldFile="/sf/mw/uitools/gfxtools/color/group"/>
           </component>

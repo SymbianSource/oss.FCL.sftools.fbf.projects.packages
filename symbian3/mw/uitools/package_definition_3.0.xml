@@ -30,9 +30,6 @@
    </component>
   </collection>
   <collection id="gfxtools" name="Graphics Tools" level="tool">
-   <component id="gditools" filter="s60" name="GDI Tools" target="desktop">
-    <unit bldFile="gfxtools/gditools/group"/>
-   </component>
    <component id="color" filter="s60" name="Bitmap Colour Palette" target="desktop">
     <unit bldFile="gfxtools/color/group"/>
    </component>
