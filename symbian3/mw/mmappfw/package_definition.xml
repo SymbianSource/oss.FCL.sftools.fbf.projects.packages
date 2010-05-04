@@ -78,10 +78,6 @@
     <layer name="mw" long-name="Middleware" levels="generic specific">
       <block name="mmappfw" level="specific" long-name="Multimedia App Framework" levels="fw utils if">
         <collection name="mmappfw_plat" long-name="Multimedia App Framework Platform Interfaces" level="if">
-          <component name="mmappfw_plat_build" long-name="Multimedia App Framework Platform Interfaces Build" introduced="^1" filter="s60">
-            <!-- this is no longer necessary when confguration is put in place -->
-            <unit bldFile="/sf/mw/mmappfw/mmappfw_plat"/>
-          </component>
           <component name="collection_helper_api" long-name="Collection Helper API" introduced="^1" filter="s60" class="api">
             <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/collection_helper_api/group"/>
           </component>
