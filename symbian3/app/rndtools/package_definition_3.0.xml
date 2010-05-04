@@ -53,15 +53,11 @@
       </component>
     </collection>
     <collection id="stifui" name="STIF UI" level="generic">
-      <component id="stifui_stifui" filter="s60" name="STIF UI" purpose="development" target="device">
-        <unit bldFile="stifui/stifui/group"/>
+      <component id="stifui_avkon" filter="s60" name="STIF UI for Avkon" purpose="development">
+        <unit bldFile="stifui/avkon/group"/>
       </component>
-      <component id="uitestserverstarter" filter="s60" name="UI Test Server Starter" purpose="development" target="device">
-        <unit bldFile="stifui/uitestserverstarter/group"/>
-      </component>
-      <component id="stifui_build" filter="s60" name="STIF UI Build" purpose="development">
-		<!-- can this be split up into the other components or made a ROM component? -->
-        <unit bldFile="stifui/group"/>
+      <component id="stifui_qt" filter="s60,test" name="STIF UI for Qt" purpose="development">
+        <unit bldFile="stifui/qt" qt:proFile="stifqtui.pro"/> <!-- marked as test until we know what to do with it -->
       </component>
     </collection>
     <collection id="memspyui" name="Memspy UI" level="generic">

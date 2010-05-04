@@ -123,15 +123,8 @@
           </component>
         </collection>
         <collection name="stifui" long-name="STIF UI" level="generic">
-          <component name="stifui_stifui" filter="s60" long-name="STIF UI" purpose="development">
-            <unit bldFile="/sf/app/rndtools/stifui/stifui/group"/>
-          </component>
-          <component name="uitestserverstarter" filter="s60" long-name="UI Test Server Starter" purpose="development">
-            <unit bldFile="/sf/app/rndtools/stifui/uitestserverstarter/group"/>
-          </component>
-          <component name="stifui_build" filter="s60" long-name="STIF UI Build" purpose="development">
-            <!-- can this be split up into the other components or made a ROM component? -->
-            <unit bldFile="/sf/app/rndtools/stifui/group"/>
+          <component name="stifui_avkon" filter="s60" long-name="STIF UI for Akvon" purpose="development">
+            <unit bldFile="/sf/app/rndtools/stifui/avkon/group"/>
           </component>
         </collection>
         <collection name="memspyui" long-name="Memspy UI" level="generic">
