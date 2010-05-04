@@ -4,11 +4,17 @@
 		This will be removed when sbsv2 builds are working -->
   <package id="qtextensions" name="Qt Extensions" levels="tool mw app">
    <collection id="qtecomplugins" name="Qt ECom Plugins" level="app">
-    <component id="qtextensions_examples" filter="qtextensionsexamples" name="Qt ECom Plugin Examples"  purpose="development" introduced="^4">
+     <component id="qtecomplugins" filter="qtecomplugins" name="Qt ECom Plugin"  purpose="development" introduced="^4">
+      <unit bldFile="qtecomplugins" qt:proFile="qtecomplugins.pro" qt:qmakeArgs="-r"/>
+     </component>
+     <component id="qtextensions_examples" filter="qtextensionsexamples" name="Qt ECom Plugin Examples"  purpose="development" introduced="^4">
       <unit bldFile="qtecomplugins/examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
      </component>
     </collection>
     <collection id="qthighway" name="Qt Highway" level="app">
+     <component id="qthighway" filter="qthighway" name="Qt Highway"  purpose="development" introduced="^4">
+      <unit bldFile="qthighway" qt:proFile="qthighway.pro" qt:qmakeArgs="-r"/>
+     </component>
     <component id="qthighway_examples" filter="qtextensionsexamples" name="Qt Highway Examples"  purpose="development" introduced="^4">
       <unit bldFile="qthighway/examples" qtproFile="examples.pro" qt:qmakeArgs="-r"/>
      </component>
@@ -17,12 +23,18 @@
      </component>
     </collection>
     <collection id="qtmobileextensions" name="Qt Mobile Extensions" level="app">
-    <component id="qtmobileextensions_examples" filter="qtextensionsexamples" name="Qt Mobile Extensions Examples"  purpose="development" introduced="^4">
+	 <component id="qtmobileextensions" filter="qtextension" name="Qt Mobile Extensions"  purpose="development" introduced="^4">
+      <unit bldFile="qtmobileextensions" qt:proFile="qtmobileextensions.pro" qt:qmakeArgs="-r"/>
+     </component>
+     <component id="qtmobileextensions_examples" filter="qtextensionsexamples" name="Qt Mobile Extensions Examples"  purpose="development" introduced="^4">
       <unit bldFile="qtmobileextensions/examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
      </component>
     </collection>
     <collection id="qtmobility" name="Qt Mobility">
-    <component id="qtmobility_examples" filter="qtextensionsexamples" name="Qt Mobility Examples" purpose="development" introduced="^4">
+	 <component id="qtmobility" filter="qtmobility" name="Qt Mobility" purpose="development" introduced="^4">
+      <unit bldFile="qtmobility" qt:proFile="qtmobility.pro" qt:qmakeArgs="-r"/>
+     </component>
+     <component id="qtmobility_examples" filter="qtextensionsexamples" name="Qt Mobility Examples" purpose="development" introduced="^4">
       <unit bldFile="qtmobility/examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
      </component>
      <component id="qtmobilitytests" filter="qtextensionstests" name="Qt Extensions Tests"  purpose="development" introduced="^4">
