@@ -172,7 +172,7 @@
    </component>
    <component name="messaging_build" long-name="Messaging App Build" introduced="^4">
     <!-- break this up into the above collections and eventually remove -->
-    <unit bldFile="." proFile="messaging.pro" qmakeArgs="-r"/>
+    <unit bldFile="." qt:proFile="messaging.pro" qt:qmakeArgs="-r"/>
    </component>
   </collection>
  </package>
