@@ -68,9 +68,6 @@
       <component id="uisettingssrv" filter="s60" name="UI Settings Server">
         <unit bldFile="customization/uisettingssrv/bld"/>
       </component>
-      <component id="isadapter" filter="s60" name="Idle State Adapter" class="plugin">
-        <unit bldFile="customization/isadapter/bld"/>
-      </component>
       <component id="supadapter" filter="s60" name="Startup Adapter" class="plugin">
         <unit bldFile="customization/supadapter/bld"/>
       </component>

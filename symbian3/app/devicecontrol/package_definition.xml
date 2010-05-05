@@ -144,9 +144,6 @@
           <component name="uisettingssrv" filter="s60" long-name="UI Settings Server">
             <unit bldFile="/sf/app/devicecontrol/customization/uisettingssrv/bld"/>
           </component>
-          <component name="isadapter" filter="s60" long-name="Idle State Adapter" plugin="Y">
-            <unit bldFile="/sf/app/devicecontrol/customization/isadapter/bld"/>
-          </component>
           <component name="supadapter" filter="s60" long-name="Startup Adapter" plugin="Y">
             <unit bldFile="/sf/app/devicecontrol/customization/supadapter/bld"/>
           </component>
