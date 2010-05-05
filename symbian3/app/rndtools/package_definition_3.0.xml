@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition schema="3.0.0">
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
   <package id="rndtools" name="R&amp;D tools" levels="support generic test util">
     <collection id="creator" name="Creator" level="support">
 	   	<!-- collection is really a component. Should move down a directory -->
@@ -53,10 +53,10 @@
       </component>
     </collection>
     <collection id="stifui" name="STIF UI" level="generic">
-      <component id="stifui_avkon" filter="s60" name="STIF UI for Avkon" purpose="development">
+      <component id="stifui_avkon" filter="s60" name="STIF UI for Avkon" purpose="development" target="device">
         <unit bldFile="stifui/avkon/group"/>
       </component>
-      <component id="stifui_qt" filter="s60,test" name="STIF UI for Qt" purpose="development">
+      <component id="stifui_qt" filter="s60,test" name="STIF UI for Qt" purpose="development" introduced="^4" target="device">
         <unit bldFile="stifui/qt" qt:proFile="stifqtui.pro"/> <!-- marked as test until we know what to do with it -->
       </component>
     </collection>

@@ -78,12 +78,12 @@
     <layer name="app" long-name="Applications" levels="services apps">
       <block name="search" level="apps" long-name="Search Apps" levels="eng base app api">
         <collection name="search_info" long-name="Search Info">
-          <component name="search_build" long-name="Search Build">
+          <component name="search_build" long-name="Search Build" introduced="^4">
             <unit bldFile="/sf/app/search/group"/>
           </component>
         </collection>
         <collection name="searchui" long-name="Search UI">
-          <component name="searchui_build" long-name="Search UI Build">
+          <component name="searchui_build" long-name="Search UI Build" introduced="^4">
             <unit bldFile="/sf/app/search/searchui"/>
           </component>
         </collection>

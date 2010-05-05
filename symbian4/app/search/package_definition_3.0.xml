@@ -1,12 +1,12 @@
 <SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="search" name="Search Apps" levels="eng base app api">
 	<collection id="search_info" name="Search Info"> 
-	<component id="search_build" name="Search Build">
+	<component id="search_build" name="Search Build" introduced="^4">
 	  <unit bldFile="group"/>
 	 </component>
 	</collection>
 	<collection id="searchui" name="Search UI">
-	<component id="searchui_build" name="Search UI Build">
+	<component id="searchui_build" name="Search UI Build" introduced="^4">
 	  <unit bldFile="searchui" qt:proFile="searchui.pro"/>
 	 </component>
 	</collection>

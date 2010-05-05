@@ -123,8 +123,12 @@
           </component>
         </collection>
         <collection name="stifui" long-name="STIF UI" level="generic">
-          <component name="stifui_avkon" filter="s60" long-name="STIF UI for Akvon" purpose="development">
+          <component name="stifui_avkon" filter="s60" long-name="STIF UI for Avkon" purpose="development">
             <unit bldFile="/sf/app/rndtools/stifui/avkon/group"/>
+          </component>
+          <component name="stifui_qt" filter="s60,test" long-name="STIF UI for Qt" purpose="development" introduced="^4">
+            <unit bldFile="/sf/app/rndtools/stifui/qt"/>
+            <!-- marked as test until we know what to do with it -->
           </component>
         </collection>
         <collection name="memspyui" long-name="Memspy UI" level="generic">
