@@ -87,6 +87,12 @@
           <component name="ds_folder_util_api" long-name="DS Folder Util API" filter="s60" class="api">
             <unit bldFile="/sf/app/contentcontrol/contentctrl_plat/ds_folder_util_api/group"/>
           </component>
+          <component name="adapter_customization_api" long-name="Adapter Customization API" filter="s60" class="api">
+            <unit bldFile="/sf/app/contentcontrol/contentctrl_plat/adapter_customization_api/group"/>
+          </component>
+          <component name="ds_data_modification_api" long-name="DS Data Modification API" filter="s60" class="api">
+            <unit bldFile="/sf/app/contentcontrol/contentctrl_plat/ds_data_modification_api/group"/>
+          </component>
         </collection>
         <collection name="dsdcmoadapter" long-name="Data Sync DCMO Adapter" level="plugin">
           <!-- Component at wrong rank, should move down a directory -->
