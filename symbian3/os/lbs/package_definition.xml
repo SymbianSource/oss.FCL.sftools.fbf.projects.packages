@@ -139,9 +139,19 @@
           <component name="privacyprotocolmodule" long-name="Privacy Protocol Module" introduced="^2" purpose="optional" plugin="Y">
             <unit bldFile="/sf/os/lbs/networkprotocolmodules/privacyprotocolmodule/group" mrp="/sf/os/lbs/networkprotocolmodules/privacyprotocolmodule/group/lbs_privacyprotocolmodule.mrp"/>
           </component>
+          <component name="suplproxyprotocolmodule" long-name="SUPL Proxy Protocol Module" introduced="^3" purpose="optional" plugin="Y">
+            <unit bldFile="/sf/os/lbs/networkprotocolmodules/suplproxyprotocolmodule/group" mrp="/sf/os/lbs/networkprotocolmodules/suplproxyprotocolmodule/group/lbs_suplproxyprotocolmodule.mrp"/>
+          </component>
+          <component name="suplprotocolmodule" long-name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" plugin="Y">
+            <unit bldFile="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/group" mrp="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
+          </component>
           <component name="suplrrlpasn1" filter="sf_build" long-name="SUPL RRLP ASN1 Parser">
             <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
             <unit bldFile="/sf/os/lbs/networkprotocolmodules/common/suplrrlpasn1/group"/>
+          </component>
+          <component name="suplrrlpprotocol" filter="sf_build" long-name="SUPL RRLP Protocol Module">
+            <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
+            <unit bldFile="/sf/os/lbs/networkprotocolmodules/suplcontrolplaneprotocols/common/suplrrlpprotocol/group"/>
           </component>
         </collection>
         <collection name="lbsapitest" long-name="Location API Tests" level="application-interface">
