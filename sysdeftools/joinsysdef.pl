@@ -74,8 +74,9 @@ GetOptions
 
  if($path eq '') {$path = '/os/deviceplatformrelease/foundation_system/system_model/system_definition.xml'}
 
-
+($#ARGV == -1 ) && &help();
 my $sysdef = &abspath(shift);	# resolve the location of the root sysdef
+
 
 
 
@@ -91,6 +92,9 @@ if($config ne '')
 
 my $parser = new XML::DOM::Parser;
 my   $sysdefdoc = $parser->parsefile ($sysdef);
+
+
+my $maxschema = $sysdefdoc->getDocumentElement()->getAttribute('schema');	# don't check value, just store it.
 
 
 # find all the namespaces used in all trhe fragments and use that 
@@ -129,6 +133,10 @@ if(!$ns && $nsmap{''})
 	{
 	$docroot->setAttribute('id-namespace',$nsmap{''});
 	}
+
+$docroot->setAttribute('schema',$maxschema);	# output has the largest syntax version of all includes
+
+
 while(my($pre,$uri) = each(%nsmap))
 	{
 	$pre ne '' || next ;
@@ -220,7 +228,7 @@ sub walk
 			my $file = &resolvePath($file,$link); 
 			if(-e $file)
 				{
-				&combineLink($node,&resolveURI($file,$link));
+				&combineLink($node,$file);
 				}
 			else
 				{
@@ -271,11 +279,14 @@ sub walk
 				}
 			# if we're here we can just embed the file
 			# no processing logic is done! It's just embedded blindly
-			my  $metadoc = $parser->parsefile ($link);
-			my $item = $metadoc->getDocumentElement;
+			my $item;
+			eval {
+				my  $metadoc = $parser->parsefile ($link);
+				$item = $metadoc->getDocumentElement;
+			};
 			if(!$item)
 				{
-				print STDERR "Warning: Could not process metadata file: $link\n";
+				print STDERR "Error: Could not process metadata file: $link\n";
 				next; # do not alter children
 				}
 			$node->removeAttribute('href');
@@ -319,7 +330,7 @@ sub combineLink
 	$getfromfile eq '' && return;  # already raised warning, no need to repeat
 	my  $doc = $parser->parsefile ($getfromfile);
 	my $item =&firstElement($doc->getDocumentElement);
-	$item || die "badly formatted $file";
+	$item || die "badly formatted $file";	
 	&fixIDs($item);
 	my %up = &atts($node);
 	my %down = &atts($item);
@@ -567,6 +578,7 @@ sub namespaces
 			if(-e $link)
 				{
 				my  $doc = $parser->parsefile ($link);
+				&checkSyntaxVersion($doc->getDocumentElement->getAttribute('schema'));	# ensure we track we highest syntax number
 				my @docns = &namespaces($link,$doc->getDocumentElement);
 				undef $doc;
 				return (@res,@docns);
@@ -743,3 +755,43 @@ sub getDefines
 	close CPP;
 	$? && die "Call to cpp produced an error";
 	}
+
+sub  checkSyntaxVersion
+	{ # check if supplied version number is greater than $maxschema
+	my $schema = shift;
+	my @max=split(/\./,$maxschema);
+	my @cur=split(/\./,$schema);
+	while(@max) 
+		{
+		($max[0] > $cur[0])  && return;		# max is bigger, do nothing
+		if($cur[0] > $max[0])
+			{
+			$maxschema=$schema;
+			return;
+			}
+		shift @max;
+		shift @cur;
+		}
+	# they are equal - do nothing
+	}
+
+sub help
+	{
+	my $name= $0; $name=~s,^.*[\\/],,;
+	print STDERR "usage: $name  [options...] sysdef\n\nvalid options are:\n",
+		"  -path\tspecifies the full system-model path to the file which is being processed. By default this is  \"/os/deviceplatformrelease/foundation_system/system_model/system_definition.xml\"\n",
+			"\t\tThis must be an absolute path if you're processing a root sysdef.\n",
+			"\t\tIf processing a pkgdef file, you can use \"./package_definition.xml\" to leave all links relative.\n\n",
+
+		"  -output\tspecifies the file to save the output to. If not specified this will write to stdout\n\n",
+
+		"  -config\tspecifies the name of an .hrh file in which the configuration data is acquired from. If not set, no confguration will be done.\n",
+			"\t\tIf it is set, all configuration metadata will be processed and stripped from the output, even if the confguration data is empty\n\n",
+		"  -I[path]\tspecifies the include paths to use when resolving #includes in the .hrh file. This uses the same syntax as cpp command uses: a captial \"I\" followed by the path with no space in between. Any number of these can be provided.\n";
+
+
+	exit(1);
+	}
+
+
+	

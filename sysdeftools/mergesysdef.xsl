@@ -77,7 +77,21 @@
 </xsl:template>
 
 
-<!--  this merge only two files according to the 3.0.0 rules. Old syntax not supported. Must be converetd before calling -->
+<!-- choose the greater of the two versions -->
+<xsl:template name="compare-versions"><xsl:param name="v1"/><xsl:param name="v2"/>
+			<xsl:choose>
+				<xsl:when test="$v1=$v2"><xsl:value-of select="$v1"/></xsl:when>
+				<xsl:when test="substring-before($v1,'.') &gt; substring-before($v2,'.')"><xsl:value-of select="$v1"/></xsl:when>
+				<xsl:when test="substring-before($v1,'.') &lt; substring-before($v2,'.')"><xsl:value-of select="$v2"/></xsl:when>
+				<xsl:when test="substring-before(substring-after($v1,'.'),'.') &gt; substring-before(substring-after($v2,'.'),'.')"><xsl:value-of select="$v1"/></xsl:when>
+				<xsl:when test="substring-before(substring-after($v1,'.'),'.') &lt; substring-before(substring-after($v2,'.'),'.')"><xsl:value-of select="$v2"/></xsl:when>
+				<xsl:when test="substring-after(substring-after($v1,'.'),'.') &gt; substring-after(substring-after($v2,'.'),'.')"><xsl:value-of select="$v1"/></xsl:when>
+				<xsl:when test="substring-after(substring-after($v1,'.'),'.') &lt; substring-after(substring-after($v2,'.'),'.')"><xsl:value-of select="$v2"/></xsl:when>
+				<xsl:otherwise><xsl:value-of select="$v1"/></xsl:otherwise>
+			</xsl:choose>
+</xsl:template>
+
+<!--  this merge only two files according to the 3.0.x rules. Old syntax not supported. Must be converetd before calling -->
 
 
 

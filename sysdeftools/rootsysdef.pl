@@ -118,6 +118,10 @@ foreach(keys %add)
 	my   $fragment = $parser->parsefile ($_);
 	my $fdoc = $fragment->getDocumentElement();
 	my $topmost =&firstElement($fdoc);
+	if(!$topmost) {
+		print STDERR "$warning: $_ has no content. Skipping\n";
+		next;
+	}
 	my $type = $topmost->getTagName;
 	my $id = $topmost->getAttribute('id');
 	my ($localid,$ns) = &idns($topmost,$id);	
@@ -356,6 +360,7 @@ sub walk
 	elsif($tag eq 'meta')
 		{
 		&fixHref($node,$file);
+		foreach my $child (@{$node->getChildNodes}) {$node->removeChild($child)} # can't have children
 		&processMeta($node);
 		next;
 		}
@@ -524,7 +529,7 @@ sub  processMeta
 sub guessIdInPath
 	{
 	my $id = shift;
-	my @path = reverse(split(/\//,shift));
+	my @path = reverse(split(/\//,$_[0]));
 	while(@path)
 		{
 		my $dir = shift(@path);
@@ -532,6 +537,12 @@ sub guessIdInPath
 			{
 			return ($id,@path);
 			}
+		}
+	print STDERR "$warning: Non-standard ID $id in $_[0]\n";
+	@path = reverse(split(/\//,$_[0]));
+	if($path[0] eq 'package_definition.xml')
+		{
+		return @path[1..$#path];
 		}
 	}
 
@@ -567,6 +578,7 @@ sub appendNewItem
 	my $node = shift;
 	my $doc = $node->getOwnerDocument;
 	my $id = shift;
+	if($id eq '') {return}
 	my $fullid=$id;
 	my $contents = shift;
 	my $tag = &childTag($node->getTagName());
@@ -638,7 +650,7 @@ sub getNamespacePrefix
 		my $pre = $a;
 		if($pre=~s/^xmlns://)
 			{
-			if($node->getAttribute ($a) eq $ns)  {return $pre}
+			if($root->getAttribute ($a) eq $ns)  {return $pre}
 			}
 		}
 	die "ERROR: no namespace prefix defined for $ns";
@@ -672,6 +684,7 @@ sub fixHref {
 		$node->getParentNode->removeChild($node);
 		return;
 		}
+	foreach my $child (@{$node->getChildNodes}) {$node->removeChild($child)} # can't have children
 	if($output eq '')
 		{
 		$path=~s,^/?,file:///,;
@@ -695,6 +708,7 @@ sub setHref {
 		{
 		$node->setAttribute('href',&relativeTo(&abspath($output),$file,'file'));
 		}
+	while(my $child =  $node->getFirstChild ) {$node->removeChild($child)}
 }
 
 

@@ -23,8 +23,9 @@
 	<xsl:message terminate="yes">ERROR: Cannot process this document</xsl:message>
 </xsl:template>
 
+<!-- anything in schemas 3.0.x won't add new functional attributes that need processing here, just blindly copy them-->
 
-<xsl:template match="/SystemDefinition[@schema='3.0.0' and count(*)=1]" mode="join">
+<xsl:template match="/SystemDefinition[starts-with(@schema,'3.0.') and count(*)=1]" mode="join">
 	<xsl:param name="origin" select="/.."/>
 	<xsl:param name="root"/>
 	<xsl:param name="filename"/>
@@ -48,7 +49,7 @@
 						<xsl:when test="$origin/@*[name()=$n]"> <!-- don't copy if already set -->
 							<xsl:message>Cannot set "<xsl:value-of select="$n"/>", already set</xsl:message>
 						</xsl:when>
-						<xsl:when test="$n='before'">
+						<xsl:when test="$n='before' or $n='replace'">
 							<!-- ensure ns is correct (if any future attribtues will ever use an ID, process it here too)-->
 							<xsl:apply-templates select="." mode="join">
 								<xsl:with-param name="namespaces" select="$namespaces"/>
@@ -90,7 +91,7 @@
 				</xsl:call-template>
 			</xsl:variable>
 			<xsl:variable name="ns" select="@id-namespace | namespace::* | exslt:node-set($nss)/*"/>
-			<xsl:copy><xsl:copy-of select="@*"/>
+			<xsl:copy><xsl:copy-of select="@*[name()!='schema']"/><xsl:call-template name="set-schema"/>
 				<xsl:apply-templates select="self::*[not(@id-namespace)]" mode="add-id-ns"/>
 				<xsl:for-each select="exslt:node-set($nss)/*"> <!-- add namespace definitions -->
 					<xsl:attribute name="xmlns:{name()}">
@@ -108,7 +109,7 @@
 		</xsl:when>
 		<xsl:otherwise> <!-- can't handle node-set() so put the namespaces in the document instead of the root element-->
 			<xsl:variable name="ns" select="@id-namespace | namespace::*"/>
-			<xsl:copy><xsl:copy-of select="@*"/>
+			<xsl:copy><xsl:copy-of select="@*[name()!='schema']"/><xsl:call-template name="set-schema"/>
 				<!-- no need to call is-content-filtered, it never will be from this element -->
 				<xsl:apply-templates select="*|comment()" mode="join">
 					<xsl:with-param name="namespaces" select="$ns"/>
@@ -188,6 +189,74 @@
 		</xsl:when>
 		<xsl:otherwise>
 			<xsl:value-of select="substring($chars,1,1)"/>
+		</xsl:otherwise>
+	</xsl:choose>
+</xsl:template>
+
+
+<!-- schema handling -->
+
+<xsl:template name="set-schema">
+<xsl:attribute name="schema">
+	<xsl:apply-templates mode="my-schema" select="/SystemDefinition"/>
+</xsl:attribute>
+</xsl:template>
+
+<xsl:template name="compare-versions"><xsl:param name="v1"/><xsl:param name="v2"/>
+			<xsl:choose>
+				<xsl:when test="$v1=$v2"><xsl:value-of select="$v1"/></xsl:when>
+				<xsl:when test="substring-before($v1,'.') &gt; substring-before($v2,'.')"><xsl:value-of select="$v1"/></xsl:when>
+				<xsl:when test="substring-before($v1,'.') &lt; substring-before($v2,'.')"><xsl:value-of select="$v2"/></xsl:when>
+				<xsl:when test="substring-before(substring-after($v1,'.'),'.') &gt; substring-before(substring-after($v2,'.'),'.')"><xsl:value-of select="$v1"/></xsl:when>
+				<xsl:when test="substring-before(substring-after($v1,'.'),'.') &lt; substring-before(substring-after($v2,'.'),'.')"><xsl:value-of select="$v2"/></xsl:when>
+				<xsl:when test="substring-after(substring-after($v1,'.'),'.') &gt; substring-after(substring-after($v2,'.'),'.')"><xsl:value-of select="$v1"/></xsl:when>
+				<xsl:when test="substring-after(substring-after($v1,'.'),'.') &lt; substring-after(substring-after($v2,'.'),'.')"><xsl:value-of select="$v2"/></xsl:when>
+				<xsl:otherwise><xsl:value-of select="$v1"/></xsl:otherwise>
+			</xsl:choose>
+</xsl:template>
+
+<xsl:template name="compare-version-list"><xsl:param name="list"/>
+	<xsl:variable name="cur" select="substring-before($list,' ')"/>
+	<xsl:variable name="remaining" select="substring-after($list,' ')"/>
+	<xsl:choose>
+		<xsl:when test="$remaining=''"><xsl:value-of select="$cur"/></xsl:when>
+		<xsl:otherwise>
+			<xsl:variable name="nextbig">
+				<xsl:call-template name="compare-version-list">
+					<xsl:with-param name="list" select="$remaining"/>
+				</xsl:call-template>
+			</xsl:variable>
+			<xsl:call-template name="compare-versions">
+				<xsl:with-param name="v1" select="$cur"/>
+				<xsl:with-param name="v2" select="$nextbig"/>
+			</xsl:call-template>
+		</xsl:otherwise>
+	</xsl:choose>
+</xsl:template>
+
+<xsl:template match="/SystemDefinition" mode="my-schema"><xsl:param name="biggest" select="@schema"/>
+	<xsl:variable name="linked" select="//*[(self::component or self::collection or self::package or self::layer) and @href]"/>
+	<xsl:choose>
+		<xsl:when test="not($linked)"> <!-- no need to go further -->
+			<xsl:call-template name="compare-versions">
+				<xsl:with-param name="v1" select="@schema"/>
+				<xsl:with-param name="v2" select="$biggest"/>
+			</xsl:call-template>
+		</xsl:when>
+		<xsl:otherwise>
+				<xsl:call-template name="compare-version-list">
+					<xsl:with-param name="list">
+						<xsl:for-each select="$linked">
+						<xsl:call-template name="compare-versions">
+							<xsl:with-param name="v1">
+								<xsl:apply-templates mode="my-schema" select="document(@href,.)/*"/>
+							</xsl:with-param>
+							<xsl:with-param name="v2" select="$biggest"/>
+						</xsl:call-template>
+						<xsl:text> </xsl:text>
+					</xsl:for-each>
+				</xsl:with-param>
+				</xsl:call-template>
 		</xsl:otherwise>
 	</xsl:choose>
 </xsl:template>
@@ -371,7 +440,7 @@
 </xsl:template>
 
 
-<xsl:template match="@id|@before" mode="join">
+<xsl:template match="@id|@before|@replace" mode="join">
 	<xsl:param name="namespaces"/>
 	<!-- this will change the namespace prefixes for all IDs to match the root document -->
 	<xsl:variable name="ns">
