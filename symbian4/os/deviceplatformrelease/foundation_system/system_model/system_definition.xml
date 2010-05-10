@@ -213,6 +213,7 @@
       <package id="rndtools" level="services" tech-domain="to" href="../../../../app/rndtools/package_definition_3.0.xml"/>
       <package id="helps" level="apps" span="2" tech-domain="ui" href="../../../../app/helps/package_definition_3.0.xml"/>
       <package id="techview" level="apps" span="2" tech-domain="ui" href="../../../../app/techview/package_definition_3.0.xml"/>
+      <package id="podcatcher" level="apps" tech-domain="ma" href="../../../../app/podcatcher/package_definition_3.0.xml"/>
     </layer>
   </systemModel>
 </SystemDefinition>
