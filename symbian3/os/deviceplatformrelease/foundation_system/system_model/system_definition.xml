@@ -205,6 +205,7 @@
       <package id="musicplayer" level="apps" tech-domain="ma" href="../../../../app/musicplayer/package_definition_3.0.xml"/>
       <package id="radio" level="apps" tech-domain="ma" href="../../../../app/radio/package_definition_3.0.xml"/>
       <package id="internetradio" level="apps" tech-domain="ma" name="Internet Radio Apps"/>
+      <package id="podcatcher" level="apps" tech-domain="ma" href="../../../../app/podcatcher/package_definition_3.0.xml"/>
       <package id="tv" level="services" tech-domain="ma" name="TV Apps"/>
       <package id="voicerec" level="apps" tech-domain="ma" href="../../../../app/voicerec/package_definition_3.0.xml"/>
       <package id="screensaver" level="apps" tech-domain="ui" href="../../../../app/screensaver/package_definition_3.0.xml"/>
@@ -219,7 +220,6 @@
       <package id="rndtools" level="services" tech-domain="to" href="../../../../app/rndtools/package_definition_3.0.xml"/>
       <package id="helps" level="apps" span="2" tech-domain="ui" href="../../../../app/helps/package_definition_3.0.xml"/>
       <package id="techview" level="apps" span="2" tech-domain="ui" href="../../../../app/techview/package_definition_3.0.xml"/>
-      <package id="podcatcher" level="apps" tech-domain="ma" href="../../../../app/podcatcher/package_definition_3.0.xml"/>
     </layer>
   </systemModel>
 </SystemDefinition>
