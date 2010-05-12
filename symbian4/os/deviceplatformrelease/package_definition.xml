@@ -99,13 +99,13 @@
           <component name="config" filter="s60" long-name="Config" purpose="development" class="config"/>
           <component name="cenrep" filter="sf_build" long-name="ConE Central Repository Config" purpose="development" class="config">
             <!-- will should give the id/path something more unique than cenrep -->
-            <unit bldFile="/sf/os/deviceplatformrelease/sf_config/cenrep/group"/>
+            <unit bldFile="/sf/os/deviceplatformrelease/foundation_system/sf_config/cenrep/group"/>
           </component>
           <component name="rombuild_syborg" filter="sf_build" long-name="Syborg iMaker Config" purpose="development" introduced="^3" class="config">
-            <unit bldFile="/sf/os/deviceplatformrelease/sf_config/rombuild/syborg/group"/>
+            <unit bldFile="/sf/os/deviceplatformrelease/foundation_system/sf_config/rombuild/syborg/group"/>
           </component>
           <component name="rombuild_zoom2" filter="sf_build" long-name="Zoom2 iMaker Config" purpose="development" introduced="^3" class="config">
-            <unit bldFile="/sf/os/deviceplatformrelease/sf_config/rombuild/zoom2/group"/>
+            <unit bldFile="/sf/os/deviceplatformrelease/foundation_system/sf_config/rombuild/zoom2/group"/>
           </component>
         </collection>
         <!-- should be located locally in buildplatforms/group 
