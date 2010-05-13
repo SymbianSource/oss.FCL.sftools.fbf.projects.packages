@@ -1029,6 +1029,20 @@
 	</xsl:if>
 </xsl:template>
 
+
+<xsl:template match="layer/package/package[@levels]" mode="levels" priority="1">
+<!-- a nested package with levels defined in the layer  -->
+	<xsl:call-template name="levels-list">
+		<xsl:with-param name="levels" select="normalize-space(@levels)"/>
+	</xsl:call-template>
+	<xsl:if test="descendant::collection[not(contains(concat(' ',normalize-space(current()/@levels),' '),@level)) or not(@level)]">
+		<!--<xsl:call-template name="Caller-Warning">
+			<xsl:with-param name="text">collection without valid level in package <xsl:value-of select="@id"/></xsl:with-param>
+		</xsl:call-template>-->	
+		<level/>
+	</xsl:if>
+</xsl:template>
+
 <xsl:template match="layer/package[@levels]/package" mode="levels" priority="1">
 	<!-- a package with levels and a nested pkg  -->
 	<xsl:call-template name="levels-list">

@@ -128,7 +128,8 @@
 		reverse order so we can try to use the first namespace prefix defined if it's available-->
 	<xsl:for-each select="document(@href,.)/*">
 		<xsl:apply-templates select="//*[(self::component or self::collection or self::package or self::layer) and @href]" mode="scan-for-namespaces"/>
-		<xsl:for-each select="//namespace::* | @id-namespace">
+		<xsl:for-each select="//namespace::*[.!='http://www.w3.org/XML/1998/namespace'] | @id-namespace">
+			<!-- ignore XML namespace -->
 			<xsl:value-of select="concat(name(),' ',.,'&#xa;')"/>
 		</xsl:for-each>
 	</xsl:for-each>			
