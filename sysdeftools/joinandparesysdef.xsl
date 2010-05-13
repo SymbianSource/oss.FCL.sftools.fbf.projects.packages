@@ -15,11 +15,11 @@
 -->
  	<xsl:output method="xml" indent="yes"/>
 
-	<!-- comma-separated list of IDs in the literal from as the document they appear in (ie same namespace prefix) -->
+	<!-- pare = comma-separated list of IDs in the literal from as the document they appear in (ie same namespace prefix) -->
 <xsl:param name="pare"/>		
 
 
-	<!-- the rank item to pare down. This will remove any item of that rank EXCEPT those in $pare -->
+	<!-- rank = the rank item to pare down. This will remove any item of that rank EXCEPT those in $pare -->
 <xsl:param name="rank">package</xsl:param>
 
 <xsl:variable name="pare-list" select="concat(',',translate(normalize-space($pare),' ',','),',')"/> <!-- accept spaces in pare. Pad with commas to make computing easier -->

@@ -1,3 +1,19 @@
+# Copyright (c) 2010 Nokia Corporation and/or its subsidiary(-ies).
+# All rights reserved.
+# This component and the accompanying materials are made available
+# under the terms of "Eclipse Public License v1.0"
+# which accompanies this distribution, and is available
+# at the URL "http://www.eclipse.org/legal/epl-v10.html".
+#
+# Initial Contributors:
+# Nokia Corporation - initial contribution.
+#
+# Contributors:
+#
+# Description:
+#  This will create a new root system definition file based on the provided template
+#!/usr/bin/perl
+
 use strict;
 
 
@@ -25,7 +41,24 @@ my $placeholders=0;
 
 my @tdOrder =("hb","se", "lo","dc", "vc" , "pr", "dm", "de", "mm", "ma" , "ui",  "rt", "to" );
 
-# need to add options for controlling which metas are filtered out and which are included inline
+sub help
+	{
+	my $name= $0; $name=~s,^.*[\\/],,;
+	print STDERR "usage: $name  [options...] template\n\nThis will create a new root system definition file based on the provided template by globbing for pkgdefs in the filesystem. Any found pkgdef files are added to the end of their layer or at the end of their tech domain section, if one is defined",
+	"\nvalid options are:\n",
+		"  -path [dir]\tspecifies the full system-model path to the file which is being processed. By default this is  \"/os/deviceplatformrelease/foundation_system/system_model/system_definition.xml\"\n",
+		"\t\tThis is only needed when creating a stand-alone sysdef as the output",
+
+		"  -output [file]\tspecifies the file to save the output to. If set, all hrefs will set to be relative to this location. If not specified all href will be absolute file URIs and this will write to stdout\n\n",
+
+		"  -w [Note|Warning|Error]\tspecifies prefix text for any notifications. Defautls to Error\n\n",
+		"  -root [dir]\tspecifies the root directory of the filesystem. All globbing will be done relative to this path\n\n",
+
+		"  -glob [wildcard path]\tThe wildcard search to look for pkgdef files. eg  \"\*\*\package_definition.xml\". Can specify any number of these.\n",
+		"  -placeholders [bool]\tif set, all packages not found in the template will be left in as empty placeholders\n";
+	exit(1);
+	}
+
 GetOptions
 	(
 	 'path=s' => \$path,
@@ -47,7 +80,11 @@ if(!($warning =~/^(Note|Warning|Error)$/)) {$warning="Error"}
 # root = -root g:\sf
 # glob = -glob "\*\*\package_definition.xml"
 
-#rootsysdef.pl -root F:\dev\personal\sftest\sf\mcl  -glob "\*\*\package_definition.xml"  -output ..\..\..\deviceplatformrelease\nokia_system\system_definition.sf.xml  ..\..\..\deviceplatformrelease\foundation_system\system_model\system_definition.xml
+#Example command lines:
+#rootsysdef.pl -root F:\sftest\mcl\sf  -glob "\*\*\package_definition.xml"  -output  F:\sftest\mcl\build\system_definition.sf.xml   F:\sftest\mcl\sf\os\deviceplatformrelease\foundation_system\system_model\system_definition.xml
+#rootsysdef.pl -root F:\sftest\mcl\sf  -glob "\*\*\*\*\package_definition.xml"  -output  F:\sftest\mcl\build\system_definition.mine.xml   F:\sftest\mcl\sf\os\deviceplatformrelease\foundation_system\system_model\system_definition.xml
+if(!scalar $ARGV) {&help()};
+
 
 my %replacefile;
 my $dir;
@@ -66,6 +103,7 @@ foreach(@searchpaths)
 	}
 
 my $sysdef = &abspath(shift);	# resolve the location of the root sysdef
+
 
 # rootmap is a mapping from the filesystem to the paths in the doc
 my %rootmap = &rootMap($path,$sysdef);	
@@ -103,8 +141,8 @@ else
 	}
 
 
-# find all the namespaces used in all trhe fragments and use that 
-# to set the namespaces ni the root element of the created doc
+# find all the namespaces used in all the fragments and use that 
+# to set the namespaces in the root element of the created doc
 #   should be able to optimise by only parsing each doc once and 
 #	maybe skipping the contends of <meta>
 my @nslist = &namespaces($sysdef,$sysdefdoc->getDocumentElement());

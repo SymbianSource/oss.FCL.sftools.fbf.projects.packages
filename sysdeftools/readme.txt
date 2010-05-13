@@ -12,10 +12,17 @@ Merging tools:
 mergesysdef.xsl - Merge two 3.x syntax stand-alone system definitions
 	mergesysdef-module.xsl - XSLT module for merging only two sysdef files according to the 3.0.0 rules
 
-Other Tools:
+Other tools:
 sysdefdowngrade.xsl - Convert a 3.0.0 sysdef to 2.0.1 sytnax
+rootsysdef.pl - Generate a root system definition from a template root sysdef and a set of wildcard paths to look for pkgdef files
 
 XSLT Processing:
 xalan.jar
 xercesImpl.jar
 xml-apis.jar
+
+Validation tools:
+validate/checklinks.pl - check all referenced files in units exist at the specified locations
+validate/modelcheck.xsl - Validate a sysdef file, reporting any errors in HTML format. Can validate a sysdef in a web browser by using <?xml-stylesheet type="text/xsl" href="modelcheck.xsl"?>
+validate/validate-sysdef.xsl - Validate a sysdef file, reporting any errors as plain text
+	validate/test-model.xsl - common module which actually does the validation
