@@ -204,9 +204,7 @@
       <package id="photos" level="apps" tech-domain="ma" href="../../../../app/photos/package_definition_3.0.xml"/>
       <package id="musicplayer" level="apps" tech-domain="ma" href="../../../../app/musicplayer/package_definition_3.0.xml"/>
       <package id="radio" level="apps" tech-domain="ma" href="../../../../app/radio/package_definition_3.0.xml"/>
-      <package id="internetradio" level="apps" tech-domain="ma" name="Internet Radio Apps"/>
       <package id="podcatcher" level="apps" tech-domain="ma" href="../../../../app/podcatcher/package_definition_3.0.xml"/>
-      <package id="tv" level="services" tech-domain="ma" name="TV Apps"/>
       <package id="voicerec" level="apps" tech-domain="ma" href="../../../../app/voicerec/package_definition_3.0.xml"/>
       <package id="screensaver" level="apps" tech-domain="ui" href="../../../../app/screensaver/package_definition_3.0.xml"/>
       <package id="homescreen" level="apps" tech-domain="ui" href="../../../../app/homescreen/package_definition_3.0.xml"/>
