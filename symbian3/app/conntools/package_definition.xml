@@ -54,18 +54,18 @@
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="conntools" level="services" long-name="Connectivity Tools" levels="config app">
-    <collection name="nettools" long-name="Net Tools" level="app">
-     <component name="conntest" filter="s60" long-name="Connection Test" purpose="development">
-      <unit bldFile="/sf/app/conntools/nettools/conntest/group"/>
-     </component>
-    </collection>
-    <collection name="emulatorlan" long-name="Emulator LAN" level="config">
-     <!-- component is actually a colleciton, should be moved down a directory -->
-     <component name="emulatorlan_build" filter="s60" long-name="Emulator LAN Build" purpose="development" class="config">
-      <unit bldFile="/sf/app/conntools/emulatorlan/group"/>
-     </component>
-    </collection>
-   </block>
+<collection name="nettools" long-name="Net Tools" level="app">
+<component name="conntest" filter="s60" long-name="Connection Test" purpose="development">
+<unit bldFile="/sf/app/conntools/nettools/conntest/group"/>
+</component>
+</collection>
+<collection name="emulatorlan" long-name="Emulator LAN" level="config">
+<!-- component is actually a colleciton, should be moved down a directory -->
+<component name="emulatorlan_build" filter="s60" long-name="Emulator LAN Build" purpose="development" class="config">
+<unit bldFile="/sf/app/conntools/emulatorlan/group"/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

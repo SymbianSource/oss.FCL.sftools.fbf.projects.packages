@@ -54,23 +54,23 @@
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="helps" level="apps" span="2" long-name="Help Apps" levels="eng tools if ui">
-    <collection name="csxhelp" long-name="Context Sensitive Extended Help" level="if">
-     <!-- this is really a component. Should move it down a directory -->
-     <component name="csxhelp_build" filter="s60" long-name="Context Sensitive Extended Help Build">
-      <unit bldFile="/sf/app/helps/csxhelp/group"/>
-     </component>
-    </collection>
-    <collection name="symhelp" long-name="Symbian Help" level="eng">
-     <component name="helpmodel" long-name="Help" introduced="6.0" purpose="optional">
-      <unit bldFile="/sf/app/helps/symhelp/helpmodel/group" mrp="/sf/app/helps/symhelp/helpmodel/group/app-services_hlpmodel.mrp"/>
-     </component>
-    </collection>
-    <collection name="helps_info" long-name="Help Apps Info" level="ui">
-     <component name="helps_metadata" long-name="Help Apps Metadata" introduced="^2" purpose="development" class="config PC">
-      <unit mrp="/sf/app/helps/helps_info/helps_metadata/helps_metadata.mrp"/>
-     </component>
-    </collection>
-   </block>
+<collection name="csxhelp" long-name="Context Sensitive Extended Help" level="if">
+<!-- this is really a component. Should move it down a directory -->
+<component name="csxhelp_build" filter="s60" long-name="Context Sensitive Extended Help Build">
+<unit bldFile="/sf/app/helps/csxhelp/group"/>
+</component>
+</collection>
+<collection name="symhelp" long-name="Symbian Help" level="eng">
+<component name="helpmodel" long-name="Help" introduced="6.0" purpose="optional">
+<unit bldFile="/sf/app/helps/symhelp/helpmodel/group" mrp="/sf/app/helps/symhelp/helpmodel/group/app-services_hlpmodel.mrp"/>
+</component>
+</collection>
+<collection name="helps_info" long-name="Help Apps Info" level="ui">
+<component name="helps_metadata" long-name="Help Apps Metadata" introduced="^2" purpose="development" class="config PC">
+<unit mrp="/sf/app/helps/helps_info/helps_metadata/helps_metadata.mrp"/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

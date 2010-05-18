@@ -54,63 +54,60 @@
 <systemModel>
 <layer name="mw" long-name="Middleware" levels="generic specific">
 <block name="remoteconn" level="generic" long-name="Remote Connectivity" levels="plugin framework server generic specific">
-    <collection name="connectivitymodules" long-name="Connectivity Modules" level="framework">
-     <component name="secon" filter="s60" long-name="Service Controllers">
-      <unit bldFile="/sf/mw/remoteconn/connectivitymodules/secon/group"/>
-     </component>
-    </collection>
-    <collection name="remoteconn_info" long-name="Remote Connectivity Info" level="specific">
-     <component name="remoteconn_plat" filter="s60" long-name="Remote Connectivity Platform Interfaces" class="api">
-      <unit bldFile="/sf/mw/remoteconn/remoteconn_plat/group"/>
-     </component>
-     <component name="remoteconn_metadata" long-name="Remote Connectivity Metadata" introduced="^2" purpose="development" class="config PC">
-      <unit mrp="/sf/mw/remoteconn/remoteconn_info/remoteconn_metadata/remoteconn_metadata.mrp"/>
-     </component>
-    </collection>
-    <collection name="mtptransports" long-name="MTP Transports" level="plugin">
-     <component name="mtpusbtransport" long-name="MTP USB Transport" introduced="^2" purpose="optional" plugin="Y">
-      <unit bldFile="/sf/mw/remoteconn/mtptransports/mtpusbtransport/group" mrp="/sf/mw/remoteconn/mtptransports/mtpusbtransport/group/mtp_usbsic.mrp"/>
-     </component>
-     <component name="mtpptpiptransport" long-name="MTP PTP-IP Transport" introduced="^3" purpose="optional" plugin="Y">
-      <unit bldFile="/sf/mw/remoteconn/mtptransports/mtpptpiptransport/group" mrp="/sf/mw/remoteconn/mtptransports/mtpptpiptransport/group/mtp_ptpip.mrp"/>
-     </component>
-     <component name="mtpcontroller" long-name="MTP Controller" introduced="^3" purpose="optional" plugin="Y">
-      <unit bldFile="/sf/mw/remoteconn/mtptransports/mtpcontroller/group" mrp="/sf/mw/remoteconn/mtptransports/mtpcontroller/group/mtpcontroller.mrp"/>
-     </component>
-    </collection>
-    <collection name="mtpfws" long-name="MTP Frameworks" level="framework">
-     <component name="mtpfw" long-name="MTP Framework" introduced="^2" purpose="optional">
-      <unit bldFile="/sf/mw/remoteconn/mtpfws/mtpfw/group" mrp="/sf/mw/remoteconn/mtpfws/mtpfw/group/mtp_framework.mrp"/>
-     </component>
-    </collection>
-    <collection name="mtpdataproviders" long-name="MTP Data Providers" level="generic">
-     <component name="mtpfileandfolderdp" long-name="MTP File and Folder Provider" introduced="^2" purpose="optional" plugin="Y">
-      <unit bldFile="/sf/mw/remoteconn/mtpdataproviders/mtpfileandfolderdp/group" mrp="/sf/mw/remoteconn/mtpdataproviders/mtpfileandfolderdp/group/mtp_filedp.mrp"/>
-     </component>
-     <component name="mtpimagedp" long-name="MTP Image Data Provider" filter="gt" introduced="^3" purpose="optional" plugin="Y">
-      <unit bldFile="/sf/mw/remoteconn/mtpdataproviders/mtpimagedp/group" mrp="/sf/mw/remoteconn/mtpdataproviders/mtpimagedp/group/mtp_imagedp.mrp"/>
-     </component>
-     <component name="mtppictbridgedp" long-name="MTP PictBridge Data Provider" filter="gt" introduced="^3" purpose="optional" plugin="Y">
-      <unit bldFile="/sf/mw/remoteconn/mtpdataproviders/mtppictbridgedp/group" mrp="/sf/mw/remoteconn/mtpdataproviders/mtppictbridgedp/group/mtp_pictbridgedp.mrp"/>
-     </component>
-    </collection>
-    <collection name="backupandrestore" long-name="Backup and Restore" level="specific">
-     <component name="backupengine" long-name="Backup Engine" introduced="9.0" purpose="optional">
-      <unit bldFile="/sf/mw/remoteconn/backupandrestore/backupengine/group" mrp="/sf/mw/remoteconn/backupandrestore/backupengine/group/connectivity_backupengine.mrp"/>
-     </component>
-     <component name="backuptest" long-name="Backup Test" introduced="^2" purpose="development">
-      <unit bldFile="/sf/mw/remoteconn/backupandrestore/backuptest/group" mrp="/sf/mw/remoteconn/backupandrestore/backuptest/group/connectivity_backuptest.mrp"/>
-     </component>
-    </collection>
-    <collection name="obex" long-name="OBEX" level="generic">
-     <component name="obexprotocol" long-name="OBEX Protocol" introduced="9.1" purpose="optional">
-      <unit bldFile="/sf/mw/remoteconn/obex/obexprotocol/group" mrp="/sf/mw/remoteconn/obex/obexprotocol/group/obex.mrp"/>
-     </component>
-     <component name="obexextensionapi" long-name="OBEX Extension API" introduced="9.2" purpose="optional">
-      <unit bldFile="/sf/mw/remoteconn/obex/obexextensionapi/group" mrp="/sf/mw/remoteconn/obex/obexextensionapi/group/obex_extensionapis.mrp"/>
-     </component>
-    </collection>
-   </block>
+<collection name="connectivitymodules" long-name="Connectivity Modules" level="framework">
+<component name="secon" filter="s60" long-name="Service Controllers">
+<unit bldFile="/sf/mw/remoteconn/connectivitymodules/secon/group"/>
+</component>
+</collection>
+<collection name="remoteconn_info" long-name="Remote Connectivity Info" level="specific">
+<component name="remoteconn_metadata" long-name="Remote Connectivity Metadata" introduced="^2" purpose="development" class="config PC">
+<unit mrp="/sf/mw/remoteconn/remoteconn_info/remoteconn_metadata/remoteconn_metadata.mrp"/>
+</component>
+</collection>
+<collection name="mtptransports" long-name="MTP Transports" level="plugin">
+<component name="mtpusbtransport" long-name="MTP USB Transport" introduced="^2" purpose="optional" plugin="Y">
+<unit bldFile="/sf/mw/remoteconn/mtptransports/mtpusbtransport/group" mrp="/sf/mw/remoteconn/mtptransports/mtpusbtransport/group/mtp_usbsic.mrp"/>
+</component>
+<component name="mtpptpiptransport" long-name="MTP PTP-IP Transport" introduced="^3" purpose="optional" plugin="Y">
+<unit bldFile="/sf/mw/remoteconn/mtptransports/mtpptpiptransport/group" mrp="/sf/mw/remoteconn/mtptransports/mtpptpiptransport/group/mtp_ptpip.mrp"/>
+</component>
+<component name="mtpcontroller" long-name="MTP Controller" introduced="^3" purpose="optional" plugin="Y">
+<unit bldFile="/sf/mw/remoteconn/mtptransports/mtpcontroller/group" mrp="/sf/mw/remoteconn/mtptransports/mtpcontroller/group/mtpcontroller.mrp"/>
+</component>
+</collection>
+<collection name="mtpfws" long-name="MTP Frameworks" level="framework">
+<component name="mtpfw" long-name="MTP Framework" introduced="^2" purpose="optional">
+<unit bldFile="/sf/mw/remoteconn/mtpfws/mtpfw/group" mrp="/sf/mw/remoteconn/mtpfws/mtpfw/group/mtp_framework.mrp"/>
+</component>
+</collection>
+<collection name="mtpdataproviders" long-name="MTP Data Providers" level="generic">
+<component name="mtpfileandfolderdp" long-name="MTP File and Folder Provider" introduced="^2" purpose="optional" plugin="Y">
+<unit bldFile="/sf/mw/remoteconn/mtpdataproviders/mtpfileandfolderdp/group" mrp="/sf/mw/remoteconn/mtpdataproviders/mtpfileandfolderdp/group/mtp_filedp.mrp"/>
+</component>
+<component name="mtpimagedp" long-name="MTP Image Data Provider" filter="gt" introduced="^3" purpose="optional" plugin="Y">
+<unit bldFile="/sf/mw/remoteconn/mtpdataproviders/mtpimagedp/group" mrp="/sf/mw/remoteconn/mtpdataproviders/mtpimagedp/group/mtp_imagedp.mrp"/>
+</component>
+<component name="mtppictbridgedp" long-name="MTP PictBridge Data Provider" filter="gt" introduced="^3" purpose="optional" plugin="Y">
+<unit bldFile="/sf/mw/remoteconn/mtpdataproviders/mtppictbridgedp/group" mrp="/sf/mw/remoteconn/mtpdataproviders/mtppictbridgedp/group/mtp_pictbridgedp.mrp"/>
+</component>
+</collection>
+<collection name="backupandrestore" long-name="Backup and Restore" level="specific">
+<component name="backupengine" long-name="Backup Engine" introduced="9.0" purpose="optional">
+<unit bldFile="/sf/mw/remoteconn/backupandrestore/backupengine/group" mrp="/sf/mw/remoteconn/backupandrestore/backupengine/group/connectivity_backupengine.mrp"/>
+</component>
+<component name="backuptest" long-name="Backup Test" introduced="^2" purpose="development">
+<unit bldFile="/sf/mw/remoteconn/backupandrestore/backuptest/group" mrp="/sf/mw/remoteconn/backupandrestore/backuptest/group/connectivity_backuptest.mrp"/>
+</component>
+</collection>
+<collection name="obex" long-name="OBEX" level="generic">
+<component name="obexprotocol" long-name="OBEX Protocol" introduced="9.1" purpose="optional">
+<unit bldFile="/sf/mw/remoteconn/obex/obexprotocol/group" mrp="/sf/mw/remoteconn/obex/obexprotocol/group/obex.mrp"/>
+</component>
+<component name="obexextensionapi" long-name="OBEX Extension API" introduced="9.2" purpose="optional">
+<unit bldFile="/sf/mw/remoteconn/obex/obexextensionapi/group" mrp="/sf/mw/remoteconn/obex/obexextensionapi/group/obex_extensionapis.mrp"/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

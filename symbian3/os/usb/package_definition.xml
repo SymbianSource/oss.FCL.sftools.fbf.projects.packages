@@ -54,26 +54,23 @@
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
 <block name="usb" level="services" long-name="USB" levels="adaptation hw-if plugin framework server app-if">
-    <collection name="usbldd" long-name="USB Logical Device Drivers" level="hw-if">
-     <!-- usbclientdrivers  to be moved here from kernelhwsrv-->
-    </collection>
-    <collection name="usbmgmt" long-name="USB Management" level="server">
-     <component name="usbmgr" long-name="USB Manager" purpose="optional">
-      <unit bldFile="/sf/os/usb/usbmgmt/usbmgr/group" mrp="/sf/os/usb/usbmgmt/usbmgr/group/usb_manager.mrp" version="2"/>
-     </component>
-     <component name="usbclassandmgrdocs" long-name="USB Class and Manager Documentation" purpose="development" class="doc">
-      <unit mrp="/sf/os/usb/usbmgmt/usbclassandmgrdocs/usb_documentation.mrp"/>
-     </component>
-    </collection>
-    <collection name="usb_info" long-name="USB Info" level="app-if">
-     <component name="usb_plat" filter="s60" long-name="USB Platform Interfaces" class="api">
-      <unit bldFile="/sf/os/usb/usb_plat/group"/>
-     </component>
-     <component name="usb_metadata" long-name="USB Metadata" introduced="^3" purpose="development" class="config PC">
-      <unit mrp="/sf/os/usb/usb_info/usb_metadata/usb_metadata.mrp"/>
-     </component>
-    </collection>
-   </block>
+<collection name="usbldd" long-name="USB Logical Device Drivers" level="hw-if">
+<!-- usbclientdrivers  to be moved here from kernelhwsrv-->
+</collection>
+<collection name="usbmgmt" long-name="USB Management" level="server">
+<component name="usbmgr" long-name="USB Manager" purpose="optional">
+<unit bldFile="/sf/os/usb/usbmgmt/usbmgr/group" mrp="/sf/os/usb/usbmgmt/usbmgr/group/usb_manager.mrp" version="2"/>
+</component>
+<component name="usbclassandmgrdocs" long-name="USB Class and Manager Documentation" purpose="development" class="doc">
+<unit mrp="/sf/os/usb/usbmgmt/usbclassandmgrdocs/usb_documentation.mrp"/>
+</component>
+</collection>
+<collection name="usb_info" long-name="USB Info" level="app-if">
+<component name="usb_metadata" long-name="USB Metadata" introduced="^3" purpose="development" class="config PC">
+<unit mrp="/sf/os/usb/usb_info/usb_metadata/usb_metadata.mrp"/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

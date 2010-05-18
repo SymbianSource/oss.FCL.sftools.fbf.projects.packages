@@ -53,7 +53,36 @@
 <SystemDefinition name="Symbian^3" schema="2.0.1">
 <systemModel>
 <layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="qt" level="generic" long-name="Qt"/>
+<block name="qt" level="generic" long-name="Qt" levels="tool mw app">
+<collection name="qtconf" long-name="Qt Config" level="tool">
+<component name="qt_deviceconfiguration" long-name="Qt Device Configuration" introduced="^2" class="config tool">
+<unit bldFile="/sf/mw/qt/src/s60installs/deviceconfiguration"/>
+</component>
+</collection>
+<collection name="qt_info" long-name="Qt Info" level="mw">
+<component name="qt_build" long-name="Qt Build" introduced="^2">
+<unit bldFile="/sf/mw/qt" proFile="projects.pro" qmakeArgs="-r"/>
+</component>
+</collection>
+<collection name="qtdemos" long-name="Qt Demos" level="app">
+<component name="qtdemos_build" long-name="Qt Demos Build" introduced="^2" filter="qtdemos">
+<unit bldFile="/sf/mw/qt/demos" proFile="demos.pro" qmakeArgs="-r"/>
+</component>
+</collection>
+<collection name="qtexamples" long-name="Qt Examples" level="app">
+<component name="qtexamples_build" long-name="Qt Examples Build" introduced="^2" filter="qtexamples">
+<unit bldFile="/sf/mw/qt/examples" proFile="examples.pro" qmakeArgs="-r"/>
+</component>
+</collection>
+<collection name="qt_tests" long-name="Qt Tests" level="app">
+<component name="qttestsauto" long-name="Qt Automated Tests" introduced="^2" filter="qttestsauto">
+<unit bldFile="/sf/mw/qt/tests/auto" proFile="qtpauto.pro"/>
+</component>
+<component name="qttestsbenchmarks" long-name="Qt Benchmarks Tests" introduced="^2" filter="qttestsbenchmarks">
+<unit bldFile="/sf/mw/qt/tests/benchmarks" proFile="benchmarks.pro" qmakeArgs="-r"/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

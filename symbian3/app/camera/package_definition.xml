@@ -54,21 +54,25 @@
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="camera" level="apps" long-name="Camera Apps">
-    <collection name="camerauis" long-name="Camera UIs">
-     <component name="activepalette" filter="s60" long-name="Active Palette">
-      <unit bldFile="/sf/app/camera/camerauis/activepalette/group"/>
-     </component>
-     <component name="cameraapp" filter="s60" long-name="Camera Application">
-      <unit bldFile="/sf/app/camera/camerauis/cameraapp/group"/>
-      <unit bldFile="/sf/app/camera/camerauis/cameraapp/help/group"/>
-     </component>
-    </collection>
-    <collection name="camera_info" long-name="Camera Apps Info">
-     <component name="camera_plat" filter="s60" long-name="Camera Apps Platform Interfaces" class="api">
-      <unit bldFile="/sf/app/camera/camera_plat/group"/>
-     </component>
-    </collection>
-   </block>
+<collection name="camera_plat" long-name="Camera Apps Platform Interfaces">
+<component name="camcorder_ui_constants_api" long-name="Camcorder UI Constants API" filter="s60" class="api">
+<unit bldFile="/sf/app/camera/camera_plat/camcorder_ui_constants_api/group"/>
+</component>
+<component name="active_palette_2_api" long-name="Active Palette 2 API" filter="s60" class="api">
+<unit bldFile="/sf/app/camera/camera_plat/active_palette_2_api/group"/>
+</component>
+</collection>
+<collection name="camerauis" long-name="Camera UIs">
+<component name="activepalette" filter="s60" long-name="Active Palette">
+<unit bldFile="/sf/app/camera/camerauis/activepalette/group"/>
+</component>
+<component name="cameraapp" filter="s60" long-name="Camera Application">
+<unit bldFile="/sf/app/camera/camerauis/cameraapp/group"/>
+<unit bldFile="/sf/app/camera/camerauis/cameraapp/help/group"/>
+</component>
+</collection>
+<collection name="camera_info" long-name="Camera Apps Info"/>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

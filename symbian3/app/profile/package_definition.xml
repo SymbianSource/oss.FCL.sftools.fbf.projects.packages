@@ -54,20 +54,22 @@
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="profile" level="apps" long-name="Profiles" levels="app">
-    <collection name="profilesapplication" long-name="Profiles Application" level="app">
-     <component name="profiles" filter="s60" long-name="Profiles">
-      <unit bldFile="/sf/app/profile/profilesapplication/profiles/group"/>
-     </component>
-    </collection>
-    <collection name="profile_info" long-name="Profiles Info" level="app">
-     <component name="profile_plat" filter="s60" long-name="Profiles Platform Interfaces" class="api">
-      <unit bldFile="/sf/app/profile/profile_plat/group"/>
-     </component>
-     <component name="profile_help" filter="s60" long-name="Profiles Help">
-      <unit bldFile="/sf/app/profile/help/group"/>
-     </component>
-    </collection>
-   </block>
+<collection name="profile_plat" long-name="Profiles Platform Interfaces" level="app">
+<component name="profiles_settings_view_api" long-name="Profiles Settings View API" filter="s60" class="api">
+<unit bldFile="/sf/app/profile/profile_plat/profiles_settings_view_api/group"/>
+</component>
+</collection>
+<collection name="profilesapplication" long-name="Profiles Application" level="app">
+<component name="profiles" filter="s60" long-name="Profiles">
+<unit bldFile="/sf/app/profile/profilesapplication/profiles/group"/>
+</component>
+</collection>
+<collection name="profile_info" long-name="Profiles Info" level="app">
+<component name="profile_help" filter="s60" long-name="Profiles Help">
+<unit bldFile="/sf/app/profile/help/group"/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

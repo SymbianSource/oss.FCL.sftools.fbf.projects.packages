@@ -54,18 +54,18 @@
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="utils" level="apps" long-name="Utility Apps" levels="app">
-    <collection name="extras" long-name="Extras" level="app">
-     <component name="about" filter="s60" long-name="About Application">
-      <unit bldFile="/sf/app/utils/extras/about/group"/>
-     </component>
-     <component name="calcsoft" filter="s60" long-name="Calculator Application">
-      <unit bldFile="/sf/app/utils/extras/calcsoft/group"/>
-     </component>
-     <component name="converter" filter="s60" long-name="Unit Converter">
-      <unit bldFile="/sf/app/utils/extras/converter/group"/>
-     </component>
-    </collection>
-   </block>
+<collection name="extras" long-name="Extras" level="app">
+<component name="about" filter="s60" long-name="About Application">
+<unit bldFile="/sf/app/utils/extras/about/group"/>
+</component>
+<component name="calcsoft" filter="s60" long-name="Calculator Application">
+<unit bldFile="/sf/app/utils/extras/calcsoft/group"/>
+</component>
+<component name="converter" filter="s60" long-name="Unit Converter">
+<unit bldFile="/sf/app/utils/extras/converter/group"/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

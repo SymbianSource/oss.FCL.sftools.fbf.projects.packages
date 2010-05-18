@@ -54,15 +54,15 @@
 <systemModel>
 <layer name="mw" long-name="Middleware" levels="generic specific">
 <block name="platformtools" level="generic" long-name="Platform Tools">
-    <collection name="gfxconversion" long-name="Graphics Conversion">
-     <component name="bmconv_s60" filter="s60" long-name="S60 Bitmap Converter" class="PC">
-      <unit bldFile="/sf/mw/platformtools/gfxconversion/bmconv_s60/group"/>
-     </component>
-     <component name="mifconv" filter="s60" long-name="Multi Icon File Converter" class="PC">
-      <unit bldFile="/sf/mw/platformtools/gfxconversion/mifconv/group"/>
-     </component>
-    </collection>
-   </block>
+<collection name="gfxconversion" long-name="Graphics Conversion">
+<component name="bmconv_s60" filter="s60" long-name="S60 Bitmap Converter" class="PC">
+<unit bldFile="/sf/mw/platformtools/gfxconversion/bmconv_s60/group"/>
+</component>
+<component name="mifconv" filter="s60" long-name="Multi Icon File Converter" class="PC">
+<unit bldFile="/sf/mw/platformtools/gfxconversion/mifconv/group"/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

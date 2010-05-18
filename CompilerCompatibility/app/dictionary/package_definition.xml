@@ -54,18 +54,18 @@
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="dictionary" level="services" long-name="Dictionary" levels="utils ui">
-    <collection name="userdict" long-name="User Dictionary" level="ui">
-     <!-- collection is really a component, move down a dir -->
-     <component name="userdict_build" filter="s60" long-name="Japanese User Dictionary">
-      <unit bldFile="/sf/app/dictionary/userdict/group"/>
-     </component>
-    </collection>
-    <collection name="dictionary_info" long-name="Dictionary Info" level="ui">
-     <component name="dictionary_plat" filter="s60" long-name="Dictionary Platform Interfaces" class="api">
-      <unit bldFile="/sf/app/dictionary/dictionary_plat/group"/>
-     </component>
-    </collection>
-   </block>
+<collection name="dictionary_plat" long-name="Dictionary Platform Interfaces" level="ui">
+<component name="menu_suites_macros_api" long-name="Menu Suites Macros API" filter="s60" class="api">
+<unit bldFile="/sf/app/dictionary/dictionary_plat/menu_suites_macros_api/group"/>
+</component>
+</collection>
+<collection name="userdict" long-name="User Dictionary" level="ui">
+<!-- collection is really a component, move down a dir -->
+<component name="userdict_build" filter="s60" long-name="Japanese User Dictionary">
+<unit bldFile="/sf/app/dictionary/userdict/group"/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

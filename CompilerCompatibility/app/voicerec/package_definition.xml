@@ -54,19 +54,23 @@
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="voicerec" level="apps" long-name="Voice Recorder Apps">
-    <!-- custom filter pref_test-->
-    <collection name="voicerecorder" long-name="Voice Recorder">
-     <!--this is really a component, move down a directory -->
-     <component name="voicerecorder_build" filter="s60" long-name="Voice Recorder Build">
-      <unit bldFile="/sf/app/voicerec/voicerecorder/group"/>
-     </component>
-    </collection>
-    <collection name="voicerec_info" long-name="Voice Recorder Apps Info">
-     <component name="voicerec_plat" filter="s60" long-name="Voice Recorder Apps Platform Interfaces" class="api">
-      <unit bldFile="/sf/app/voicerec/voicerec_plat/group"/>
-     </component>
-    </collection>
-   </block>
+<!-- custom filter pref_test-->
+<collection name="voicerec_plat" long-name="Voice Recorder Apps Platform Interfaces">
+<component name="new_file_service_api" long-name="New File Service API" filter="s60" class="api">
+<unit bldFile="/sf/app/voicerec/voicerec_plat/new_file_service_api/group"/>
+</component>
+<component name="voicerecorder_public_constants_api" long-name="Voice Recorder Public Constants API" filter="s60" class="api">
+<unit bldFile="/sf/app/voicerec/voicerec_plat/voicerecorder_public_constants_api/group"/>
+</component>
+</collection>
+<collection name="voicerecorder" long-name="Voice Recorder">
+<!--this is really a component, move down a directory -->
+<component name="voicerecorder_build" filter="s60" long-name="Voice Recorder Build">
+<unit bldFile="/sf/app/voicerec/voicerecorder/group"/>
+</component>
+</collection>
+<collection name="voicerec_info" long-name="Voice Recorder Apps Info"/>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>

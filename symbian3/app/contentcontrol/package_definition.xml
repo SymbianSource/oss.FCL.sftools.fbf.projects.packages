@@ -54,26 +54,38 @@
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="contentcontrol" level="services" long-name="Content Control Daemons" levels="plugin app">
-    <collection name="dsdcmoadapter" long-name="Data Sync DCMO Adapter" level="plugin">
-     <!-- Component at wrong rank, should move down a directory -->
-     <component name="dsdcmoadapter_build" filter="s60" long-name="Data Sync Control DCMO Adapter">
-      <unit bldFile="/sf/app/contentcontrol/dsdcmoadapter/group"/>
-     </component>
-    </collection>
-    <collection name="omads" long-name="OMA Data Sync" level="app">
-     <component name="omadsappui" filter="s60" long-name="OMA DS Application UI">
-      <unit bldFile="/sf/app/contentcontrol/omads/omadsappui/group"/>
-     </component>
-     <component name="omadsextensions" filter="s60" long-name="OMA DS Extensions" plugin="Y">
-      <unit bldFile="/sf/app/contentcontrol/omads/omadsextensions/group"/>
-     </component>
-    </collection>
-    <collection name="contentcontrol_info" long-name="Content Control Daemons Info" level="app">
-     <component name="contentctrl_plat" filter="s60" long-name="Content Control Daemons Platforn Interfaces" class="api">
-      <unit bldFile="/sf/app/contentcontrol/contentctrl_plat/group"/>
-     </component>
-    </collection>
-   </block>
+<collection name="contentctrl_plat" long-name="Content Control Daemons Platforn Interfaces" level="app">
+<component name="oma_ds_presync_plugin_api" long-name="OMA DS PreSync Plugin API" filter="s60" class="api">
+<unit bldFile="/sf/app/contentcontrol/contentctrl_plat/oma_ds_presync_plugin_api/group"/>
+</component>
+<component name="ds_agenda_handler_plugin_api" long-name="DS Agenda Handler Plugin API" filter="s60" class="api">
+<unit bldFile="/sf/app/contentcontrol/contentctrl_plat/ds_agenda_handler_plugin_api/group"/>
+</component>
+<component name="ds_folder_util_api" long-name="DS Folder Util API" filter="s60" class="api">
+<unit bldFile="/sf/app/contentcontrol/contentctrl_plat/ds_folder_util_api/group"/>
+</component>
+<component name="adapter_customization_api" long-name="Adapter Customization API" filter="s60" introduced="^3" class="api">
+<unit bldFile="/sf/app/contentcontrol/contentctrl_plat/adapter_customization_api/group"/>
+</component>
+<component name="ds_data_modification_api" long-name="DS Data Modification API" filter="s60" introduced="^3" class="api">
+<unit bldFile="/sf/app/contentcontrol/contentctrl_plat/ds_data_modification_api/group"/>
+</component>
+</collection>
+<collection name="dsdcmoadapter" long-name="Data Sync DCMO Adapter" level="plugin">
+<!-- Component at wrong rank, should move down a directory -->
+<component name="dsdcmoadapter_build" filter="s60" long-name="Data Sync Control DCMO Adapter">
+<unit bldFile="/sf/app/contentcontrol/dsdcmoadapter/group"/>
+</component>
+</collection>
+<collection name="omads" long-name="OMA Data Sync" level="app">
+<component name="omadsappui" filter="s60" long-name="OMA DS Application UI">
+<unit bldFile="/sf/app/contentcontrol/omads/omadsappui/group"/>
+</component>
+<component name="omadsextensions" filter="s60" long-name="OMA DS Extensions" plugin="Y">
+<unit bldFile="/sf/app/contentcontrol/omads/omadsextensions/group"/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>
