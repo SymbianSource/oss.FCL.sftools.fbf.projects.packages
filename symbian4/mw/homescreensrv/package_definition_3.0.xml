@@ -48,6 +48,11 @@
       		If keeping, it need to move down a directory.-->
     <unit bldFile="contentpublishingsrv/group"/>
    </component>
+   <component name="homescreensrv_build" long-name="Homescreensrv Build" introduced="^4">
+    <!-- break this up into the above collections and eventually remove -->
+    <unit bldFile="." qt:proFile="homescreensrv.pro" qt:qmakeArgs="-r"/>
+   </component>
   </collection>
  </package>
 </SystemDefinition>
+
