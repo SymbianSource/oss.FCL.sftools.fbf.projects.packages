@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition schema="3.0.0">
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="homescreensrv" name="Home Screen Services" levels="plugin framework server generic specific">
   <collection id="homescreensrv_plat" name="Home Screen Services Platform Interfaces" level="specific">
    <component id="action_handler_plugin_api" name="Action Handler Plugin API" class="api" filter="s60">
