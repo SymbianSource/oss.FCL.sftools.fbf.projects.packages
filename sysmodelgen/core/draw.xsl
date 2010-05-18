@@ -1484,7 +1484,6 @@ function movelegend(id)
 <!-- ====== collections  ============= -->
 
 <xsl:template match="collection">
-
 <xsl:variable name="y" >
 	<xsl:choose>
 		<xsl:when test="ancestor::package/@levels or not(ancestor::layer/meta[@rel='model-levels'])">
@@ -1501,8 +1500,13 @@ function movelegend(id)
 
 	<xsl:variable name="on-level" select="preceding-sibling::collection[(current()[not(@level)] and not(@level)) or @level=current()/@level]"/>
 	
+
 <xsl:variable name="x">
 	<xsl:choose>
+		<xsl:when test="../package and not(preceding-sibling::package)">
+			<!-- treat as if it's a normal collection-->
+			<xsl:value-of  select="sum($on-level/@width) + $groupDx * count($on-level) "/>
+		</xsl:when>
 		<xsl:when test="../package">
 			<xsl:call-template name="sum-list">
 				<xsl:with-param name="list">	

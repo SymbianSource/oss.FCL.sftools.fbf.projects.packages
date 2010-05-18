@@ -35,6 +35,9 @@ my @includes;
 my %defineParams;
 my %defines;
 my $defaultns = 'http://www.symbian.org/system-definition';	# needed if no DTD
+my @excludeMetaList;
+my @cannotExclude= ('link-mapping', 'config');
+my %ID;	# list of all IDs
 
 my @newarg;
 foreach my $a (@ARGV)
@@ -55,7 +58,8 @@ GetOptions
 	(
 	 'path=s' => \$path,
 	'output=s' => \$output,
-	'config=s' => \$config
+	'config=s' => \$config,
+	'exclude-meta=s' => \@excludeMetaList
 	);
 
 # -path specifies the full system-model path to the file which is being processed. 
@@ -78,6 +82,13 @@ GetOptions
 my $sysdef = &abspath(shift);	# resolve the location of the root sysdef
 
 
+my %excludeMeta;
+foreach (@excludeMetaList) {$excludeMeta{$_}=1}	# make list a hash table
+foreach (@cannotExclude)
+	{
+	$excludeMeta{$_} && print STDERR "Error: Cannot exclude meta rel=\"$_\"\n";
+	$excludeMeta{$_}=0
+	}	# cannot exclude any of these rel types
 
 
 # rootmap is a mapping from the filesystem to the paths in the doc
@@ -233,8 +244,24 @@ sub walk
 			else
 				{
 				print STDERR "Note: $file not found\n";
+				$node->removeAttribute('href');
 				}
 			return;
+			}
+		else 
+			{ # only check for duplicate IDs on the implementation
+			my $id= $node->getAttribute('id');
+			my $p = $node->getParentNode();
+			my $ptext = $p->getTagName()." \"".$p->getAttribute('id')."\"";
+			if(defined $ID{$id})
+				{
+				print STDERR "Error: duplicate ID: $tag \"$id\" in $ptext matches $ID{$id}\n";
+				}
+			else 
+				{
+				my $p = $node->getParentNode();
+				$ID{$id}="$tag in $ptext";
+				}
 			}
 		}
 	elsif($tag=~/^(SystemDefinition|systemModel)$/ )
@@ -259,6 +286,12 @@ sub walk
 		}
 	elsif($tag eq 'meta')
 		{
+		my $rel= $node->getAttribute('rel') || 'Generic';
+		if($excludeMeta{$rel})
+			{
+			$node->getParentNode->removeChild($node);
+			return;
+			}
 		my $link= $node->getAttribute('href');
 		$link=~s,^file://(/([a-z]:/))?,$2,; # convert file URI to absolute path
 		if ($link ne '' ) 
@@ -584,7 +617,7 @@ sub namespaces
 				return (@res,@docns);
 				#ignore any children nodes if this is a link
 				}
-			print STDERR "Note: $link not found\n";
+			# print STDERR "Note: $link not found\n";  -- no need to warm now. Do so later when trying to join
 			}
 		}
 	elsif($tag eq 'SystemDefinition' )
@@ -778,17 +811,30 @@ sub  checkSyntaxVersion
 sub help
 	{
 	my $name= $0; $name=~s,^.*[\\/],,;
-	print STDERR "usage: $name  [options...] sysdef\n\nvalid options are:\n",
-		"  -path\tspecifies the full system-model path to the file which is being processed. By default this is  \"/os/deviceplatformrelease/foundation_system/system_model/system_definition.xml\"\n",
-			"\t\tThis must be an absolute path if you're processing a root sysdef.\n",
-			"\t\tIf processing a pkgdef file, you can use \"./package_definition.xml\" to leave all links relative.\n\n",
+my $text;
+format STDERR =
+ ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+  $text,
+     ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<~~
+    $text
+.
+print STDERR "usage: $name  [options...] sysdef\n  valid options are:\n\n";
+	foreach (
+		"-path\tspecifies the full system-model path to the file which is being processed. By default this is  \"/os/deviceplatformrelease/foundation_system/system_model/system_definition.xml\"",
+			"   This must be an absolute path if you're processing a root sysdef.",
+			"   If processing a pkgdef file, you can use \"./package_definition.xml\" to leave all links relative.",
 
-		"  -output\tspecifies the file to save the output to. If not specified this will write to stdout\n\n",
+		"-output\tspecifies the file to save the output to. If not specified this will write to stdout",
 
-		"  -config\tspecifies the name of an .hrh file in which the configuration data is acquired from. If not set, no confguration will be done.\n",
-			"\t\tIf it is set, all configuration metadata will be processed and stripped from the output, even if the confguration data is empty\n\n",
-		"  -I[path]\tspecifies the include paths to use when resolving #includes in the .hrh file. This uses the same syntax as cpp command uses: a captial \"I\" followed by the path with no space in between. Any number of these can be provided.\n";
-
+		"-config\tspecifies the name of an .hrh file in which the configuration data is acquired from. If not set, no confguration will be done.",
+			"   If it is set, all configuration metadata will be processed and stripped from the output, even if the confguration data is empty",
+		"-I[path]\tspecifies the include paths to use when resolving #includes in the .hrh file. This uses the same syntax as cpp command uses: a captial \"I\" followed by the path with no space in between. Any number of these can be provided.",
+		"-exclude-meta [rel]\tspecifies the 'rel' value of <meta> elements to exclude from the output. Any number of these can be provided. The following meta rel values affect the processing of the system definition and cannot be excluded: ".join(', ',@cannotExclude)
+		) {
+		$text = $_;
+		write STDERR;
+		print STDERR "\n";
+	}
 
 	exit(1);
 	}
