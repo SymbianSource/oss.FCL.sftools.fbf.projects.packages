@@ -53,7 +53,13 @@
 <SystemDefinition name="Symbian^4" schema="2.0.1">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
-<block name="browserui" level="services"/>
+<block name="browserui" level="services" long-name="Browser UI" levels="utils support ui">
+<collection name="browserui_info" long-name="Browser UI Info" level="ui">
+<component name="browserui_build" long-name="Bookmarks Engine Build" introduced="^4">
+<unit bldFile="/sf/app/browserui" proFile="browserui.pro" qmakeArgs="&quot;what+=plat_101&quot;"/>
+</component>
+</collection>
+</block>
 </layer>
 </systemModel>
 </SystemDefinition>
