@@ -89,7 +89,7 @@
           <component name="eventlogger" long-name="Event Logger" introduced="6.0" purpose="optional">
             <unit bldFile="/sf/os/persistentdata/loggingservices/eventlogger/group" mrp="/sf/os/persistentdata/loggingservices/eventlogger/group/syslibs_logeng.mrp"/>
           </component>
-          <component name="filelogger" long-name="File Logger" introduced="ER5" purpose="optional">
+          <component name="filelogger" long-name="File Logger" introduced="ER5" deprecated="^4" purpose="optional">
             <unit bldFile="/sf/os/persistentdata/loggingservices/filelogger/group" mrp="/sf/os/persistentdata/loggingservices/filelogger/group/comms-infras_flogger.mrp"/>
           </component>
           <component name="rfilelogger" long-name="RFile Logger" deprecated="^3" introduced="9.1" purpose="development">

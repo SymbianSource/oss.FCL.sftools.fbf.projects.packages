@@ -8,11 +8,11 @@
    </component>
   </collection>
   <collection id="uitools_plat" name="UI Tools Platform Interfaces" level="if">
-   <component id="cdl_api" name="CDL API" class="api" filter="s60">
+   <component id="uitools_cdl_api" name="CDL API" class="api" filter="s60">
     <meta rel="Api" href="uitools_plat/cdl_api/cdl_api.metaxml"/>
     <unit bldFile="uitools_plat/cdl_api/group"/>
    </component>
-   <component id="layout_system_private_api" name="Layout System Private API" class="api" filter="s60">
+   <component id="uitools_layout_system_private_api" name="Layout System Private API" class="api" filter="s60">
     <meta rel="Api" href="uitools_plat/layout_system_private_api/layout_system_private_api.metaxml"/>
     <unit bldFile="uitools_plat/layout_system_private_api/group"/>
    </component>
@@ -30,9 +30,6 @@
    </component>
   </collection>
   <collection id="gfxtools" name="Graphics Tools" level="tool">
-   <component id="gditools" filter="s60" name="GDI Tools" target="desktop">
-    <unit bldFile="gfxtools/gditools/group"/>
-   </component>
    <component id="color" filter="s60" name="Bitmap Colour Palette" target="desktop">
     <unit bldFile="gfxtools/color/group"/>
    </component>

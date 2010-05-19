@@ -190,10 +190,10 @@
    <component id="powersaveutilities" filter="s60" name="Power Save Utilities">
     <unit bldFile="coreapplicationuis/powersaveutilities/group"/>
    </component>
-   <component id="gsserverenginestub" filter="s60" name="GS Server Engine Stub">
+   <component id="gsserverenginestub" filter="s60" name="GS Server Engine Stub" deprecated="^4">
     <unit bldFile="coreapplicationuis/gsserverenginestub/group"/>
    </component>
-   <component id="gsserverengine" filter="s60" name="GS Server Engine">
+   <component id="gsserverengine" filter="s60" name="GS Server Engine" deprecated="^4">
     <unit bldFile="coreapplicationuis/gsserverengine/group"/>
    </component>
    <component id="sensordatacompensatorplugin" filter="s60" name="Sensor Data Compensator Plugin" class="plugin">
@@ -254,7 +254,7 @@
    </component>
   </collection>
   <collection id="hwresourceadaptation" name="Hardware Resource Adaptation" level="generic">
-   <component id="hwresourcemgruiplugin" name="Hardware Resource Manager UI Plugin" introduced="^2" purpose="optional" class="plugin">
+   <component id="hwresourcemgruiplugin" name="Hardware Resource Manager UI Plugin" introduced="^2" purpose="optional" class="plugin" deprecated="^4">
     <unit bldFile="hwresourceadaptation/hwresourcemgruiplugin/group" mrp="hwresourceadaptation/hwresourcemgruiplugin/group/telephony_hwrmuiplugin.mrp"/>
    </component>
   </collection>

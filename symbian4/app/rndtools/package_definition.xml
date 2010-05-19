@@ -113,13 +113,13 @@
         <collection name="perfmon" long-name="Performance Monitor" level="test">
           <!-- collection is really a component. Should move down a directory -->
           <component name="perfmon_build" filter="s60" long-name="Performance Monitor Tool" purpose="development" class="tool">
-            <unit bldFile="/sf/app/rndtools/perfmon/group"/>
+            <unit bldFile="/sf/app/rndtools/perfmon"/>
           </component>
         </collection>
         <collection name="screengrabber" long-name="Screen Grabber" level="util">
           <!-- collection is really a component. Should move down a directory -->
           <component name="screengrabber_build" filter="s60" long-name="ScreenGrabber" purpose="development" class="tool">
-            <unit bldFile="/sf/app/rndtools/screengrabber/group"/>
+            <unit bldFile="/sf/app/rndtools/screengrabber"/>
           </component>
         </collection>
         <collection name="stifui" long-name="STIF UI" level="generic">

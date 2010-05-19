@@ -95,7 +95,21 @@
             <unit bldFile="/sf/os/deviceplatformrelease/helps_loc2/group"/>
           </component>
         </collection>
-        <collection name="sf_config" long-name="SF Config" level="mid">
+        <collection name="symbianosbld" long-name="Symbian OS Build" level="bld">
+          <component name="cedarutils" long-name="Cedar Utils" purpose="development">
+            <unit mrp="/sf/os/deviceplatformrelease/symbianosbld/cedarutils/tools_utils_cedar.mrp"/>
+          </component>
+          <component name="productionbldcbrconfig" long-name="Production Build CBR Config" filter="gt" purpose="development" class="config">
+            <unit mrp="/sf/os/deviceplatformrelease/symbianosbld/productionbldcbrconfig/product_cbr_config.mrp"/>
+          </component>
+        </collection>
+        <collection name="foundation_system" long-name="Foundation System" level="top">
+          <component name="system_model" long-name="System Model" introduced="^2" purpose="development" class="config PC">
+            <unit mrp="/sf/os/deviceplatformrelease/foundation_system/system_model/system_model.mrp"/>
+          </component>
+          <component name="sf_config" long-name="Foundation Config" introduced="^4">
+            <unit bldFile="/sf/os/deviceplatformrelease/foundation_system/sf_config/CI_external/group"/>
+          </component>
           <component name="config" filter="s60" long-name="Config" purpose="development" class="config"/>
           <component name="cenrep" filter="sf_build" long-name="ConE Central Repository Config" purpose="development" class="config">
             <!-- will should give the id/path something more unique than cenrep -->
@@ -106,28 +120,6 @@
           </component>
           <component name="rombuild_zoom2" filter="sf_build" long-name="Zoom2 iMaker Config" purpose="development" introduced="^3" class="config">
             <unit bldFile="/sf/os/deviceplatformrelease/foundation_system/sf_config/rombuild/zoom2/group"/>
-          </component>
-        </collection>
-        <!-- should be located locally in buildplatforms/group 
-    <collection id="s60bld" name="S60 Build">
-      <component id="buildplatforms" filter="s60" name="Build Platforms">
-        <unit bldFile="/tools/buildplatforms/group"/>
-      </component>
-    </collection>-->
-        <collection name="symbianosbld" long-name="Symbian OS Build" level="bld">
-          <component name="cedarutils" long-name="Cedar Utils" purpose="development">
-            <unit mrp="/sf/os/deviceplatformrelease/symbianosbld/cedarutils/tools_utils_cedar.mrp"/>
-          </component>
-          <component name="productionbldcbrconfig" long-name="Production Build CBR Config" filter="gt" purpose="development" class="config">
-            <unit mrp="/sf/os/deviceplatformrelease/symbianosbld/productionbldcbrconfig/product_cbr_config.mrp"/>
-          </component>
-          <component name="foundation_s60_packages" long-name="Foundation S60 Packages" introduced="^3" deprecated="^3" purpose="development" class="config PC">
-            <unit mrp="/sf/os/deviceplatformrelease/symbianosbld/foundation_s60_packages/foundation_s60_packages.mrp"/>
-          </component>
-        </collection>
-        <collection name="foundation_system" long-name="Foundation System" level="top">
-          <component name="system_model" long-name="System Model" introduced="^2" purpose="development" class="config PC">
-            <unit mrp="/sf/os/deviceplatformrelease/foundation_system/system_model/system_model.mrp"/>
           </component>
         </collection>
         <collection name="deviceplatformrelease_info" long-name="Device Platform Release Info" level="top">

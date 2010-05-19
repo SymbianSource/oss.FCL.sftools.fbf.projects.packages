@@ -78,7 +78,7 @@
     <layer name="mw" long-name="Middleware" levels="generic specific">
       <block name="qt" level="generic" long-name="Qt" levels="tool mw app">
         <collection name="qtconf" long-name="Qt Config" level="tool">
-          <component name="qt_deviceconfiguration" long-name="Qt Device Configuration" introduced="^2" class="config tool">
+          <component name="qt_deviceconfiguration" long-name="Qt Device Configuration" filter="qt_tools" introduced="^2" class="config tool">
             <unit bldFile="/sf/mw/qt/src/s60installs/deviceconfiguration"/>
           </component>
         </collection>

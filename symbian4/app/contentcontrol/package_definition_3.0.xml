@@ -2,11 +2,11 @@
 <SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="contentcontrol" name="Content Control Daemons" levels="plugin framework app">
   <collection id="contentctrl_plat" name="Content Control Daemons Platforn Interfaces" level="app">
-   <component id="ds_contactsdatastoreextension_api" name="Adapter Customization API" class="api" filter="s60" introduced="^4">
+   <component id="ds_contactsdatastoreextension_api" name="DS Contacts Data Store Extension API" class="api" filter="s60" introduced="^4">
     <meta rel="Api" href="contentctrl_plat/ds_contactsdatastoreextension_api/ds_contactsdatastoreextension_api.metaxml"/>
     <unit bldFile="contentctrl_plat/ds_contactsdatastoreextension_api/group"/>
    </component>
-   <component id="ds_data_modification_api" name="DS Data Modification API" class="api" filter="s60">
+   <component id="ds_data_modification_api" name="DS Data Modification API" class="api" filter="s60" introduced="^3">
     <meta rel="Api" href="contentctrl_plat/ds_data_modification_api/ds_data_modification_api.metaxml"/>
     <unit bldFile="contentctrl_plat/ds_data_modification_api/group"/>
    </component>
@@ -29,7 +29,7 @@
    <component id="omadsextensions" filter="s60" name="OMA DS Extensions" class="plugin">
     <unit bldFile="omads/omadsextensions/group"/>
    </component>
-   <component id="omadsextensions" filter="s60" name="OMA DS Qt Extensions" class="plugin">
+   <component id="omadsextensions_qt" filter="s60" name="OMA DS Qt Extensions" class="plugin">
     <unit bldFile="omads/omadsextensions" qt:proFile="omadsextensions.pro"/>
    </component>
   </collection>

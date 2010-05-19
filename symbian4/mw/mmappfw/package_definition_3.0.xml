@@ -2,10 +2,6 @@
 <SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="mmappfw" name="Multimedia App Framework" levels="fw utils if">
   <collection id="mmappfw_plat" name="Multimedia App Framework Platform Interfaces" level="if">
-   <component id="mmappfw_plat_build" name="Multimedia App Framework Platform Interfaces Build" introduced="^1" filter="s60">
-    <!-- this is no longer necessary when confguration is put in place -->
-    <unit bldFile="mmappfw_plat"/>
-   </component>
    <component id="collection_helper_api" name="Collection Helper API" introduced="^1" class="api" filter="s60">
     <meta rel="Api" href="mmappfw_plat/collection_helper_api/collection_helper_api.metaxml"/>
     <unit bldFile="mmappfw_plat/collection_helper_api/group"/>

@@ -154,6 +154,9 @@
           <component name="openmax_al_api" long-name="OpenMAX AL API" filter="s60" introduced="^4" class="api">
             <unit bldFile="/sf/mw/mmmw/mmmw_plat/openmax_al_api/group"/>
           </component>
+          <component name="system_tone_service_api" long-name="System Tone Service API" filter="s60" introduced="^4" class="api">
+            <unit bldFile="/sf/mw/mmmw/mmmw_plat/system_tone_service_api/group"/>
+          </component>
         </collection>
         <collection name="mmfenh" long-name="MMF Enhancements" level="generic">
           <component name="advancedaudiocontroller" filter="s60" long-name="Advanced Audio Controllers" plugin="Y">
@@ -208,7 +211,10 @@
             <unit bldFile="/sf/mw/mmmw/mmserv/voipaudioservices/group"/>
           </component>
           <component name="lib3gpextparser" filter="s60" long-name="3GP Extension Metadata Parser Library">
-            <unit bldFile="/sf/mw/mmmw/mmserv/metadatautility/3GPExtParserLib_stub/group" filter="sf_build"/>
+            <unit bldFile="/sf/mw/mmmw/mmserv/metadatautility/3GPExtParserLib_stub/group"/>
+          </component>
+          <component name="sts" long-name="System Tone Service" filter="s60" introduced="^4">
+            <unit bldFile="/sf/mw/mmmw/mmserv/sts/group"/>
           </component>
         </collection>
         <collection name="mmmw_info" long-name="Multimedia Middleware Info" level="specific">

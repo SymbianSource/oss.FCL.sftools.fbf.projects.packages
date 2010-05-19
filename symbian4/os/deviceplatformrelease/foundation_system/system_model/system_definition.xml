@@ -178,6 +178,7 @@
       <package id="appinstall" level="generic" tech-domain="rt" href="../../../../mw/appinstall/package_definition_3.0.xml"/>
       <package id="serviceapifw" level="specific" tech-domain="rt" href="../../../../mw/serviceapifw/package_definition_3.0.xml"/>
       <package id="serviceapi" level="specific" tech-domain="rt" href="../../../../mw/serviceapi/package_definition_3.0.xml"/>
+      <package id="browser" level="specific" tech-domain="rt" href="../../../../mw/browser/package_definition_3.0.xml"/>
       <package id="web" level="specific" tech-domain="rt" href="../../../../mw/web/package_definition_3.0.xml"/>
       <package id="websrv" level="generic" tech-domain="rt" href="../../../../mw/websrv/package_definition_3.0.xml"/>
       <package id="webruntime" level="specific" tech-domain="rt" href="../../../../mw/webruntime/package_definition_3.0.xml"/>
@@ -187,6 +188,7 @@
     <layer id="app" name="Applications" levels="services apps">
       <package id="location" level="apps" tech-domain="lo" href="../../../../app/location/package_definition_3.0.xml"/>  <!-- pending removal -->
       <package id="phone" level="apps" span="2" tech-domain="vc" href="../../../../app/phone/package_definition_3.0.xml"/>
+      <package id="recents" level="apps" tech-domain="vc" href="../../../../app/recents/package_definition_3.0.xml"/>
       <package id="settingsuis" level="services" tech-domain="dm" href="../../../../app/settingsuis/package_definition_3.0.xml"/>
       <package id="contentcontrol" level="services" tech-domain="dm" href="../../../../app/contentcontrol/package_definition_3.0.xml"/>
       <package id="firsttimeuse" level="apps" tech-domain="dm" href="../../../../app/firsttimeuse/package_definition_3.0.xml"/>
@@ -208,8 +210,8 @@
       <package id="internetradio" level="apps" tech-domain="ma" href="../../../../app/internetradio/package_definition_3.0.xml"/>
       <package id="podcatcher" level="apps" tech-domain="ma" href="../../../../app/podcatcher/package_definition_3.0.xml"/>
       <package id="homescreen" level="apps" tech-domain="ui" href="../../../../app/homescreen/package_definition_3.0.xml"/>
-      <package id="homescreentools" level="services" tech-domain="ui" href="../../../../app/homescreentools/package_definition_3.0.xml"/>
       <package id="jrt" level="services" tech-domain="rt" href="../../../../app/jrt/package_definition_3.0.xml"/>
+      <package id="browserui" level="services" tech-domain="rt" href="../../../../app/browserui/package_definition_3.0.xml"/>
       <package id="conntools" level="services" tech-domain="dc" href="../../../../app/conntools/package_definition_3.0.xml"/>
       <package id="rndtools" level="services" tech-domain="to" href="../../../../app/rndtools/package_definition_3.0.xml"/>
       <package id="helps" level="apps" span="2" tech-domain="ui" href="../../../../app/helps/package_definition_3.0.xml"/>

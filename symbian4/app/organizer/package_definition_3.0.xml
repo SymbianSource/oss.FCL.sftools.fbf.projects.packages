@@ -26,7 +26,6 @@
     <!--<unit bldFile="organizer_plat/calendar_importer_api/group"/>-->
    </component>
    <component id="calendar_launcher_api" name="Calendar Launcher API" class="api" filter="s60">
-    <meta rel="Api" href="organizer_plat/calendar_launcher_api/calendar_launcher_api.metaxml"/>
     <!--<unit bldFile="organizer_plat/calendar_launcher_api/group"/> -->
    </component>
    <component id="agenda_interface_api" name="Agenda Interface API" class="api" filter="s60" introduced="^4">
@@ -37,9 +36,6 @@
    </component>
    <component id="notes_editor_api" name="Notes Editor API" class="api" filter="s60" introduced="^4">
     <unit base="organizer_plat/notes_editor_api"/>
-   </component>
-   <component id="agenda_eventviewer_api" name="Agenda Event Viewer API" class="api" filter="s60" introduced="^4">
-    <unit base="organizer_plat/agenda_eventviewer_api"/>
    </component>
   </collection>
   <collection id="agendainterface" name="Agenda Interface" level="services">
@@ -53,7 +49,7 @@
     <unit bldFile="calendarui/commonutils" qt:proFile="commonutils.pro"/>
    </component>
    <component id="calenlauncher" filter="s60" name="Calendar Launcher">
-    <unit bldFile="calendarui/calenlauncher/group" qt:proFile="calenlauncher.pro"/>
+    <unit bldFile="calendarui/calenlauncher" qt:proFile="calenlauncher.pro"/>
    </component>
    <component id="caleneditor" filter="s60" name="Calendar Editor" introduced="^4">
     <unit bldFile="calendarui/caleneditor" qt:proFile="caleneditor.pro"/>
@@ -76,14 +72,14 @@
    <component id="views" filter="s60" name="Calendar Views">
     <unit bldFile="calendarui/views" qt:proFile="views.pro"/>
    </component>
-   <component id="calengriditemstyleplugin" filter="s60" name="calengriditemstyleplugin" introduced="^4"  class="plugin">
-    <unit bldFile="calendarui/styleplugins/calengriditemstyleplugin" qt:proFile="calengriditemstyleplugin.pro"/>
-   </component>
    <component id="calendarui_controller" filter="s60" name="Calendar Controller">
     <unit bldFile="calendarui/controller" qt:proFile="controller.pro"/>
    </component>
    <component id="calendarui_application" filter="s60" name="Calendar Application">
     <unit bldFile="calendarui/application" qt:proFile="application.pro"/>
+   </component>
+   <component id="regionalplugins" name="Regional Plugins" filter="s60" introduced="^4" class="plugin">
+      <unit bldFile="calendarui/regionalplugins" qt:proFile="regionalplugins.pro"/>
    </component>
    <component id="caldav" filter="sf_build" name="CalDAV" class="plugin" introduced="^3">
     <unit bldFile="calendarui/caldav/group"/>

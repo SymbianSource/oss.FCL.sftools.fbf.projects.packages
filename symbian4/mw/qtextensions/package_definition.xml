@@ -78,11 +78,17 @@
     <layer name="mw" long-name="Middleware" levels="generic specific">
       <block name="qtextensions" level="generic" long-name="Qt Extensions" levels="tool mw app">
         <collection name="qtecomplugins" long-name="Qt ECom Plugins" level="app">
+          <component name="qtecomplugins_build" filter="qtecomplugins" long-name="Qt ECom Plugin" purpose="development" introduced="^4" plugin="Y">
+            <unit bldFile="/sf/mw/qtextensions/qtecomplugins"/>
+          </component>
           <component name="qtextensions_examples" filter="qtextensionsexamples" long-name="Qt ECom Plugin Examples" purpose="development" introduced="^4">
             <unit bldFile="/sf/mw/qtextensions/qtecomplugins/examples"/>
           </component>
         </collection>
         <collection name="qthighway" long-name="Qt Highway" level="app">
+          <component name="qthighway_build" filter="qthighway" long-name="Qt Highway" purpose="development" introduced="^4">
+            <unit bldFile="/sf/mw/qtextensions/qthighway"/>
+          </component>
           <component name="qthighway_examples" filter="qtextensionsexamples" long-name="Qt Highway Examples" purpose="development" introduced="^4">
             <unit bldFile="/sf/mw/qtextensions/qthighway/examples"/>
           </component>
@@ -91,11 +97,17 @@
           </component>
         </collection>
         <collection name="qtmobileextensions" long-name="Qt Mobile Extensions" level="app">
+          <component name="qtmobileextensions_build" filter="qtextension" long-name="Qt Mobile Extensions" purpose="development" introduced="^4">
+            <unit bldFile="/sf/mw/qtextensions/qtmobileextensions"/>
+          </component>
           <component name="qtmobileextensions_examples" filter="qtextensionsexamples" long-name="Qt Mobile Extensions Examples" purpose="development" introduced="^4">
             <unit bldFile="/sf/mw/qtextensions/qtmobileextensions/examples"/>
           </component>
         </collection>
-        <collection name="qtmobility" long-name="Qt Mobility">
+        <collection name="qtmobility" long-name="Qt Mobility" level="mw">
+          <component name="qtmobility_build" filter="qtmobility" long-name="Qt Mobility" purpose="development" introduced="^4">
+            <unit bldFile="/sf/mw/qtextensions/qtmobility"/>
+          </component>
           <component name="qtmobility_examples" filter="qtextensionsexamples" long-name="Qt Mobility Examples" purpose="development" introduced="^4">
             <unit bldFile="/sf/mw/qtextensions/qtmobility/examples"/>
           </component>
@@ -103,8 +115,13 @@
             <unit bldFile="/sf/mw/qtextensions/qtmobility/tests"/>
           </component>
         </collection>
-        <collection name="qtextensions_info">
-          <component name="qtextensions_build" long-name="Qt Extensions Confgure" introduced="^4" class="conf">
+        <collection name="qhbstyle" level="mw" long-name="Qt Orbit Style">
+          <component name="qhbstyle_build" long-name="Qt Orbit Style Build" introduced="^4">
+            <unit bldFile="/sf/mw/qtextensions/qhbstyle"/>
+          </component>
+        </collection>
+        <collection name="qtextensions_info" long-name="Qt Extensions Info" level="app">
+          <component name="qtextensions_conf" long-name="Qt Extensions Confgure" introduced="^4" class="conf">
             <unit bldFile="/sf/mw/qtextensions/group"/>
           </component>
           <component name="qtextensions_build" long-name="Qt Extensions Build" introduced="^4">

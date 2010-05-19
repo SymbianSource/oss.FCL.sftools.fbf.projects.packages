@@ -184,7 +184,7 @@
           <component name="phone_application_voip_commands_api" long-name="Phone Application VOIP Commands API" filter="s60" class="api">
             <unit bldFile="/sf/app/phone/phone_plat/phone_application_voip_commands_api/group"/>
           </component>
-          <component name="telephony_mediator_api" long-name="Telephony Mediator API" filter="s60" class="api">
+          <component name="phone_telephony_mediator_api" long-name="Telephony Mediator API" filter="s60" class="api">
             <unit bldFile="/sf/app/phone/phone_plat/telephony_mediator_api/group"/>
           </component>
           <component name="video_telephony_mediator_api" long-name="Video Telephony Mediator API" filter="s60" class="api">

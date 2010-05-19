@@ -72,9 +72,6 @@
    <component id="msgmedia" filter="s60" name="Message Media">
       <unit base="messagingappbase/msgmedia"/>
    </component>
-   <component id="smsmtm" name="SMS MTM" purpose="optional" class="plugin">
-      <unit mrp="messagingappbase/smsmtm/group/messaging_sms.mrp"/>
-   </component>
    <component id="smilparser" name="SMIL Parser" introduced="7.0s" purpose="optional">
     <unit bldFile="messagingappbase/smilparser/GROUP" mrp="messagingappbase/smilparser/GROUP/messaging_gmxml.mrp"/>
    </component>
@@ -131,7 +128,7 @@
    </component>
   </collection>
   <collection id="messagingapp" name="Messaging Application" level="app">
-   <component id="mmsengine_build" filter="s60" name="MMS Engine Build">
+   <component id="messagingapp_build" filter="s60" name="MMS Engine Build">
     <!-- this should be broken up into the individual other components -->
     <unit bldFile="messagingapp" qt:proFile="messagingapp.pro" qt:qmakeArgs="-r"/>
    </component>
@@ -169,10 +166,6 @@
   <collection id="messaging_info" name="Messaging Apps Info" level="api">
    <component id="messaging_metadata" name="Messaging Apps Metadata" class="config" introduced="^2" purpose="development" target="desktop">
     <unit mrp="messaging_info/messaging_metadata/messaging_metadata.mrp"/>
-   </component>
-   <component name="messaging_build" long-name="Messaging App Build" introduced="^4">
-    <!-- break this up into the above collections and eventually remove -->
-    <unit bldFile="." qt:proFile="messaging.pro" qt:qmakeArgs="-r"/>
    </component>
   </collection>
  </package>

@@ -122,11 +122,14 @@
           </component>
         </collection>
         <collection name="controlpanel" long-name="Control Panel" level="generic">
-          <component name="controlpanel_test" long-name="Control Panel Test" filter="test,api_test">
+          <component name="controlpanel_test" long-name="Control Panel Test" filter="s60,test,qt_unit_test">
             <unit bldFile="/sf/mw/gsprofilesrv/controlpanel/tsrc"/>
           </component>
-          <component name="controlpanel_build" long-name="Control Panel Build">
-            <unit bldFile="/sf/mw/gsprofilesrv/controlpanel"/>
+          <component name="controlpanel_rom" long-name="Control Panel ROM" filter="s60">
+            <unit bldFile="/sf/mw/gsprofilesrv/controlpanel/rom"/>
+          </component>
+          <component name="controlpanel_source" long-name="Control Panel Source" filter="s60">
+            <unit bldFile="/sf/mw/gsprofilesrv/controlpanel/src"/>
           </component>
         </collection>
         <collection name="profilesservices" long-name="Profiles Services" level="server">

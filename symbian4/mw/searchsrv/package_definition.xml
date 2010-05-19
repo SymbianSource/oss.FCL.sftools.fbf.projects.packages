@@ -135,7 +135,7 @@
             <!-- move exports to own component and remove this -->
             <unit bldFile="/sf/mw/searchsrv/group"/>
           </component>
-          <component name="searchsrv_build" long-name="Search Services Test" purpose="development" filter="test" introduced="^4">
+          <component name="searchsrv_test" long-name="Search Services Test" purpose="development" filter="test" introduced="^4">
             <unit bldFile="/sf/mw/searchsrv/tsrc/CPixMWTester/group"/>
           </component>
         </collection>

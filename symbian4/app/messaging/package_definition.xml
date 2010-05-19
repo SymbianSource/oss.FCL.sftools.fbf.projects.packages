@@ -111,9 +111,6 @@
             <unit bldFile="/sf/app/messaging/messagingappbase"/>
           </component>
           <component name="msgmedia" filter="s60" long-name="Message Media"/>
-          <component name="smsmtm" long-name="SMS MTM" purpose="optional" plugin="Y">
-            <unit mrp="/sf/app/messaging/messagingappbase/smsmtm/group/messaging_sms.mrp"/>
-          </component>
           <component name="smilparser" long-name="SMIL Parser" introduced="7.0s" purpose="optional">
             <unit bldFile="/sf/app/messaging/messagingappbase/smilparser/GROUP" mrp="/sf/app/messaging/messagingappbase/smilparser/GROUP/messaging_gmxml.mrp"/>
           </component>
@@ -170,7 +167,7 @@
           </component>
         </collection>
         <collection name="messagingapp" long-name="Messaging Application" level="app">
-          <component name="mmsengine_build" filter="s60" long-name="MMS Engine Build">
+          <component name="messagingapp_build" filter="s60" long-name="MMS Engine Build">
             <!-- this should be broken up into the individual other components -->
             <unit bldFile="/sf/app/messaging/messagingapp"/>
           </component>

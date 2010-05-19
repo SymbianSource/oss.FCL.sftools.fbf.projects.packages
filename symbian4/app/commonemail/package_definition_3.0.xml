@@ -72,7 +72,9 @@
         <!-- <unit bldFile="emailuis/nmframeworkadapter" qt:proFile="nmframeworkadapter.pro"/> -->
       </component>
      <component id="nmhswidget" filter="test,s60,widget_tools" name="Nmail Homescreen Widget">
+	 <!-- temporary built from nmail.pro as a workaround to ServiceFW bug on service regisrtations, fix expected on wk18 MCL
       <unit bldFile="emailuis/nmhswidget/tsrc/nmhswidgettestapp" qt:proFile="nmhswidgettestapp.pro" qt:qmakeArgs="-r"/>
+	  -->
      </component>
     </collection>
     <collection id="commonemail_info" name="Email Apps Info" level="app">

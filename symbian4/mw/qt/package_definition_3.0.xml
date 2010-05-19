@@ -4,7 +4,7 @@
 		This will be removed when sbsv2 builds are working -->
   <package id="qt" name="Qt" levels="tool mw app">
     <collection id="qtconf" name="Qt Config" level="tool">
-            <component id="qt_deviceconfiguration" name="Qt Device Configuration" class="config tool" introduced="^2">
+            <component id="qt_deviceconfiguration" name="Qt Device Configuration" class="config tool" filter="qt_tools" introduced="^2">
                 <unit bldFile="src/s60installs/deviceconfiguration"/>
             </component>
     </collection>

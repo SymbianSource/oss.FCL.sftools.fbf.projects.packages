@@ -110,7 +110,7 @@
             <unit bldFile="/sf/app/techview/techviewui/startup/group" mrp="/sf/app/techview/techviewui/startup/group/techview_startup.mrp"/>
           </component>
         </collection>
-        <collection name="controlpanel" long-name="Control Panel" level="ui">
+        <collection name="tv_controlpanel" long-name="Control Panel" level="ui">
           <component name="fepsetup" long-name="FEP Setup" filter="techview" purpose="development">
             <unit bldFile="/sf/app/techview/controlpanel/fepsetup/group" mrp="/sf/app/techview/controlpanel/fepsetup/group/techview_fepsetup.mrp"/>
           </component>

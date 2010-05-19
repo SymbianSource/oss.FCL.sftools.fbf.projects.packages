@@ -113,6 +113,11 @@
     <unit bldFile="atcommands/lccustomplugin/group"/>
    </component>
   </collection>
+  <collection id="cbsatplugin" name="CBS AT Plugin">
+     <component id="atmisccmdplugin" name="AT Misc Commands Plugin"  filter="s60" class="plugin" introduced="^4">
+      <unit bldFile="cbsatplugin/atmisccmdplugin/group"/>
+     </component>
+  </collection>
   <collection id="btservices_info" name="BT Services Info" level="plugin">
    <component id="btservices_metadata" name="BT Services Metadata" class="config" introduced="^3" purpose="development" target="desktop">
     <unit mrp="btservices_info/btservices_metadata/btservices_metadata.mrp"/>

@@ -111,8 +111,11 @@
           <component name="wmdrm_core_api" long-name="WM DRM Core API" filter="s60" class="api">
             <unit bldFile="/sf/mw/drm/drm_plat/wmdrm_core_api/group"/>
           </component>
-          <component name="wmdrm_access_api" long-name="WMDRM Access API" filter="s60" class="api">
+          <component name="wmdrm_access_api" long-name="WM DRM Access API" filter="s60" class="api">
             <unit bldFile="/sf/mw/drm/drm_plat/wmdrm_access_api/group"/>
+          </component>
+          <component name="wmdrm_ota_access_api" long-name="WM DRM OTA Access API" filter="s60" class="api">
+            <unit bldFile="/sf/mw/drm/drm_plat/wmdrm_ota_access_api/group"/>
           </component>
           <component name="camese_utility_api" long-name="Camese Utility API" filter="s60" class="api">
             <unit bldFile="/sf/mw/drm/drm_plat/camese_utility_api/group"/>
@@ -144,8 +147,7 @@
             <unit bldFile="/sf/mw/drm/commondrm/drmrightsmanagerui/help/group"/>
           </component>
           <component name="drmutility" filter="s60" long-name="DRM Utility">
-            <!-- Uncomment unit when configuration is in place. Currently #included from commondrm_build -->
-            <!--<unit bldFile="commondrm/drmutility/group"/>-->
+            <unit bldFile="/sf/mw/drm/commondrm/drmutility/group"/>
           </component>
           <component name="drmserviceapiwrapper" filter="s60" long-name="DRM Service API Wrapper">
             <unit bldFile="/sf/mw/drm/commondrm/drmserviceapiwrapper/group"/>
@@ -162,9 +164,6 @@
           <!-- collection is really a component. Move down a directory -->
           <component name="omadrm_build" filter="s60" long-name="OMA DRM Build">
             <unit bldFile="/sf/mw/drm/omadrm/group"/>
-          </component>
-          <component name="rndcerts" filter="s60,test" long-name="R&amp;D Certificates">
-            <unit bldFile="/sf/mw/drm/omadrm/rndcerts/group"/>
           </component>
           <component name="foundationcerts" filter="sf_build" long-name="Foundation Certificates">
             <unit bldFile="/sf/mw/drm/omadrm/foundationcerts/group"/>

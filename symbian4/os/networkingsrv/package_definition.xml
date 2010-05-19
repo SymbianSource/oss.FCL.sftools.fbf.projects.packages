@@ -139,7 +139,7 @@
           </component>
         </collection>
         <collection name="networkcontrol" long-name="Network Control" level="plugin">
-          <component name="qosfwconfig" long-name="QoS Framework Config" introduced="7.0s" purpose="optional" filter="test" class="config">
+          <component name="qosfwconfig" long-name="QoS Framework Config" introduced="7.0s" purpose="optional" filter="test" deprecated="^4" class="config">
             <unit mrp="/sf/os/networkingsrv/networkcontrol/qosfwconfig/qos/group/networking_qos-config.mrp" bldFile="/sf/os/networkingsrv/networkcontrol/qosfwconfig/qos/data"/>
           </component>
           <component name="qoslib" long-name="QoS Library" introduced="7.0s" purpose="optional">

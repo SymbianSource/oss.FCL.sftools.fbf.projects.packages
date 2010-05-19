@@ -4,8 +4,7 @@
   <collection id="classicui_plat" name="Classic UI Platform Interfaces" level="specific">
    <component id="personalisation_framework_api" name="Personalisation Framework API" class="api" filter="s60">
     <meta rel="Api" href="classicui_plat/personalisation_framework_api/personalisation_framework_api.metaxml"/>
-    <unit bldFile="classicui_plat/personalisation_framework_api/group" filter="!test"/>
-	<unit bldFile="classicui_plat/personalisation_framework_api/tsrc/group" filter="test,api_test"/>
+    <unit bldFile="classicui_plat/personalisation_framework_api/group"/>
    </component>
    <component id="signal_pane_api" name="Signal Pane API" class="api" filter="s60">
     <meta rel="Api" href="classicui_plat/signal_pane_api/signal_pane_api.metaxml"/>
@@ -486,13 +485,6 @@
     <meta rel="Api" href="classicui_pub/notes_api/notes_api.metaxml"/>
     <unit bldFile="classicui_pub/notes_api/group" filter="!test"/>
     <unit bldFile="classicui_pub/notes_api/tsrc/group" filter="test,api_test"/>
-   </component>
-   <component id="screen_saver_api" name="Screen Saver API" class="api" filter="s60,test,api_test">
-    <meta rel="Api" href="classicui_pub/screen_saver_api/screen_saver_api.metaxml"/>
-    <meta rel="testbuild">
-       <group name="classicui_pub_api_tests"/>
-    </meta>
-    <unit bldFile="classicui_pub/screen_saver_api/tsrc/group"/>
    </component>
    <component id="status_pane_api" name="Status Pane API" class="api" filter="s60">
     <meta rel="Api" href="classicui_pub/status_pane_api/status_pane_api.metaxml"/>

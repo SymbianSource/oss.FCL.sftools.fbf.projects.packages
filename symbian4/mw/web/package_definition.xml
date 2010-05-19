@@ -119,9 +119,6 @@
           <component name="download_mgr_client_api_extn" long-name="Download Manager Client API Extension" filter="s60" class="api">
             <unit bldFile="/sf/mw/web/web_plat/download_mgr_client_api_extn/group"/>
           </component>
-          <component name="download_path_plugin_api" long-name="Download Path Plugin API" filter="s60" introduced="^3" class="api">
-            <unit bldFile="/sf/mw/web/web_plat/download_path_plugin_api/group"/>
-          </component>
           <component name="feeds_engine_api" long-name="Feeds Engine API" filter="s60" class="api">
             <unit bldFile="/sf/mw/web/web_plat/feeds_engine_api/group"/>
           </component>
@@ -133,6 +130,9 @@
           </component>
           <component name="recent_url_store_api" long-name="Recent URL Store API" filter="s60" class="api">
             <unit bldFile="/sf/mw/web/web_plat/recent_url_store_api/group"/>
+          </component>
+          <component name="rt_gesturehelper_api" long-name="Runtime Gesture Helper API" filter="s60" introduced="^4" class="api">
+            <unit bldFile="/sf/mw/web/web_plat/rt_gesturehelper_api/group"/>
           </component>
           <component name="scheme_handler_plugin_api" long-name="Scheme Handler Plugin API" filter="s60" class="api">
             <unit bldFile="/sf/mw/web/web_plat/scheme_handler_plugin_api/group"/>
@@ -282,20 +282,17 @@
         </collection>
         <collection name="widgets" long-name="Web Widget Framework" level="generic">
           <!-- the following units can be uncommented when configuration is put in place -->
-          <component name="widgetrecognizer" filter="s60" long-name="Widget Recognizer" plugin="Y">
+          <component name="widgetrecognizer" filter="s60" long-name="Widget Recognizer" plugin="Y" class="placeholder">
             <!--<unit bldFile="widgets/widgetrecognizer/group"/>-->
           </component>
-          <component name="widgetinstaller" filter="s60" long-name="Widget Installer UI" plugin="Y">
+          <component name="widgetinstaller" filter="s60" long-name="Widget Installer UI" plugin="Y" class="placeholder">
             <!--<unit bldFile="widgets/widgetinstaller/group"/>-->
           </component>
-          <component name="widgetlauncher" filter="s60" long-name="Widget Launcher">
+          <component name="widgetlauncher" filter="s60" long-name="Widget Launcher" class="placeholder">
             <!-- <unit bldFile="widgets/widgetlauncher/group"/>-->
           </component>
-          <component name="widgetapp" filter="s60" long-name="Widget UI">
+          <component name="widgetapp" filter="s60" long-name="Widget UI" class="placeholder">
             <!--<unit bldFile="widgets/widgetapp/group"/>-->
-          </component>
-          <component name="widgetsidchecker" filter="s60" long-name="Widget SID Checker" introduced="^3">
-            <!--<unit bldFile="widgets/widgetsidchecker/group"/>-->
           </component>
           <component name="widgetpreinstaller" filter="s60" long-name="Widget Pre-Installer">
             <!--<unit bldFile="widgets/widgetpreinstaller/group"/>-->

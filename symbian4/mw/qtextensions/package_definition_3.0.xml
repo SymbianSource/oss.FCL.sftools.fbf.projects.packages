@@ -4,45 +4,50 @@
 		This will be removed when sbsv2 builds are working -->
   <package id="qtextensions" name="Qt Extensions" levels="tool mw app">
    <collection id="qtecomplugins" name="Qt ECom Plugins" level="app">
-     <component id="qtecomplugins" filter="qtecomplugins" name="Qt ECom Plugin"  purpose="development" introduced="^4">
+     <component id="qtecomplugins_build" filter="qtecomplugins" name="Qt ECom Plugin"  purpose="development" introduced="^4" class="plugin">
       <unit bldFile="qtecomplugins" qt:proFile="qtecomplugins.pro" qt:qmakeArgs="-r"/>
      </component>
-     <component id="qtextensions_examples" filter="qtextensionsexamples" name="Qt ECom Plugin Examples"  purpose="development" introduced="^4">
+    <component id="qtextensions_examples" filter="qtextensionsexamples" name="Qt ECom Plugin Examples"  purpose="development" introduced="^4">
       <unit bldFile="qtecomplugins/examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
      </component>
     </collection>
     <collection id="qthighway" name="Qt Highway" level="app">
-     <component id="qthighway" filter="qthighway" name="Qt Highway"  purpose="development" introduced="^4">
+     <component id="qthighway_build" filter="qthighway" name="Qt Highway"  purpose="development" introduced="^4">
       <unit bldFile="qthighway" qt:proFile="qthighway.pro" qt:qmakeArgs="-r"/>
      </component>
     <component id="qthighway_examples" filter="qtextensionsexamples" name="Qt Highway Examples"  purpose="development" introduced="^4">
-      <unit bldFile="qthighway/examples" qtproFile="examples.pro" qt:qmakeArgs="-r"/>
+      <unit bldFile="qthighway/examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
      </component>
      <component id="qthighwaytests" filter="qtextensionstests" name="Qt Highway Tests"  purpose="development" introduced="^4">
       <unit bldFile="qthighway/tests" qt:proFile="tests.pro" qt:qmakeArgs="-r"/>
      </component>
     </collection>
     <collection id="qtmobileextensions" name="Qt Mobile Extensions" level="app">
-	 <component id="qtmobileextensions" filter="qtextension" name="Qt Mobile Extensions"  purpose="development" introduced="^4">
+	 <component id="qtmobileextensions_build" filter="qtextension" name="Qt Mobile Extensions"  purpose="development" introduced="^4">
       <unit bldFile="qtmobileextensions" qt:proFile="qtmobileextensions.pro" qt:qmakeArgs="-r"/>
      </component>
-     <component id="qtmobileextensions_examples" filter="qtextensionsexamples" name="Qt Mobile Extensions Examples"  purpose="development" introduced="^4">
+    <component id="qtmobileextensions_examples" filter="qtextensionsexamples" name="Qt Mobile Extensions Examples"  purpose="development" introduced="^4">
       <unit bldFile="qtmobileextensions/examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
      </component>
     </collection>
-    <collection id="qtmobility" name="Qt Mobility">
-	 <component id="qtmobility" filter="qtmobility" name="Qt Mobility" purpose="development" introduced="^4">
+    <collection id="qtmobility" name="Qt Mobility" level="mw">
+	 <component id="qtmobility_build" filter="qtmobility" name="Qt Mobility" purpose="development" introduced="^4">
       <unit bldFile="qtmobility" qt:proFile="qtmobility.pro" qt:qmakeArgs="-r"/>
      </component>
-     <component id="qtmobility_examples" filter="qtextensionsexamples" name="Qt Mobility Examples" purpose="development" introduced="^4">
+    <component id="qtmobility_examples" filter="qtextensionsexamples" name="Qt Mobility Examples" purpose="development" introduced="^4">
       <unit bldFile="qtmobility/examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
      </component>
      <component id="qtmobilitytests" filter="qtextensionstests" name="Qt Extensions Tests"  purpose="development" introduced="^4">
       <unit bldFile="qtmobility/tests" qt:proFile="tests.pro" qt:qmakeArgs="-r"/>
      </component>
     </collection>
-    <collection id="qtextensions_info">
-    <component id="qtextensions_build" name="Qt Extensions Confgure" class="conf" introduced="^4">
+    <collection id="qhbstyle" level="mw" name="Qt Orbit Style">
+     <component id="qhbstyle_build" name="Qt Orbit Style Build" introduced="^4">
+      <unit bldFile="qhbstyle" qt:qmakeArgs="-r" qt:proFile="qhbstyle.pro"/>
+     </component>
+    </collection>
+    <collection id="qtextensions_info" name="Qt Extensions Info" level="app">
+    <component id="qtextensions_conf" name="Qt Extensions Confgure" class="conf" introduced="^4">
       <unit bldFile="group"/>
      </component>
      <component id="qtextensions_build" name="Qt Extensions Build" introduced="^4">

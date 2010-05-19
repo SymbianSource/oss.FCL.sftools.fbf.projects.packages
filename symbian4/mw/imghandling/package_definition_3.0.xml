@@ -29,7 +29,7 @@
    <component id="thumbnailmanager" filter="s60" name="Thumbnail Manager">
     <unit bldFile="imagehandlingutilities/thumbnailmanager/group"/>
    </component>
-   <component id="thumbnailmanager" filter="s60" name="Thumbnail Manager Qt" introduced="^4">
+   <component id="thumbnailmanagerqt" filter="s60" name="Thumbnail Manager Qt" introduced="^4">
     <unit bldFile="imagehandlingutilities/thumbnailmanager/thumbnailmanagerqt" qt:proFile="thumbnailmanagerqt.pro" qt:qmakeArgs="-r" filter="!test"/>
     <unit bldFile="imagehandlingutilities/thumbnailmanager/thumbnailmanagerqt/tsrc" qt:proFile="test_qtnmwrapper.pro" filter="test,unit_test"/>
    </component>

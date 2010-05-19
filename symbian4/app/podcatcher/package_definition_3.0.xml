@@ -3,7 +3,14 @@
   <package id="podcatcher" name="Podcatcher" levels="app">
     <collection id="podcatcher_info" name="Podcatcher" level="app">
       <component id="podcatcher_build" filter="sf_build" name="Podcatcher Build" introduced="^3">
+        <!-- has exports from top level bld.inf -->
         <unit bldFile="group"/> 
+      </component>
+      <component id="podcatcher_app" filter="sf_build" name="Podcatcher Application" introduced="^3">
+        <unit bldFile="application/group"/>
+      </component>
+      <component id="podcatcher_engine" filter="sf_build" name="Podcatcher Engine" introduced="^3">
+        <unit bldFile="engine/group"/>
       </component>
     </collection>
   </package>

@@ -62,7 +62,7 @@
 		<!-- move exports to own component and remove this -->
       <unit bldFile="group"/>
      </component>
-    <component id="searchsrv_build" name="Search Services Test" purpose="development" filter="test" introduced="^4">
+    <component id="searchsrv_test" name="Search Services Test" purpose="development" filter="test" introduced="^4">
       <unit bldFile="tsrc/CPixMWTester/group"/>
      </component>
     </collection>

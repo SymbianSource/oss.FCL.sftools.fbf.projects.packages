@@ -3,8 +3,7 @@
  <package id="videoplayer" name="Video Player Apps" levels="support plugin util apps" xmlns:qt="http://www.nokia.com/qt">
   <collection id="videoplayer_plat" name="Video Player Apps Platform Interfaces" level="apps">
    <component id="videoplayer_startup_api" name="Video Player Startup API" class="api" filter="s60">
-    <unit bldFile="videoplayer_plat/videoplayer_startup_api/group" filter="!test"/>
-    <unit bldFile="videoplayer_plat/videoplayer_startup_api/tsrc/group" filter="test,api_test"/>
+    <unit bldFile="videoplayer_plat/videoplayer_startup_api/group"/>
    </component>
    <component id="videocollection_api" name="Video Collection API" class="api" filter="s60">
     <unit bldFile="videoplayer_plat/videocollection_api/group"/>
@@ -17,7 +16,7 @@
    <component id="videocollectionwrapper" filter="s60" name="Video Collection Wrapper" introduced="^4">
     <unit bldFile="videocollection/videocollectionwrapper" qt:proFile="videocollectionwrapper.pro" qt:qmakeArgs="-r"/>
    </component>
-     <component id="videocollectionwrapper" filter="test,qt_unit_test" name="Video Collection Wrapper Tests">
+     <component id="videocollectionwrapper_test" filter="test,qt_unit_test" name="Video Collection Wrapper Tests" introduced="^4">
       <!--Can only have one unit. Need to split into separate component or #include from a common file-->
       <meta rel="testbuild">
        <group name="vado.videocollection.tsrc"/>
@@ -32,6 +31,7 @@
       <unit bldFile="videocollection/videocollectionwrapper/tsrc/testvideosortfilterproxymodel" qt:proFile="testvideosortfilterproxymodel.pro"/>
       <unit bldFile="videocollection/videocollectionwrapper/tsrc/testvideothumbnaildata" qt:proFile="testvideothumbnaildata.pro"/>
       <unit bldFile="videocollection/videocollectionwrapper/tsrc/testvideothumbnaildata_p" qt:proFile="testvideothumbnaildata_p.pro"/>
+      <unit bldFile="videocollection/videocollectionwrapper/tsrc/testvideothumbnailfetcher" qt:proFile="testvideothumbnailfetcher.pro"/>
      </component>
    <component id="videocollectionview" filter="s60" name="Video Collection View" introduced="^4">
     <unit bldFile="videocollection/videocollectionview" qt:proFile="videocollectionview.pro" qt:qmakeArgs="-r"/>
@@ -45,6 +45,7 @@
       <unit bldFile="videocollection/videocollectionview/tsrc/testhintwidget" qt:proFile="testhintwidget.pro"/>
       <unit bldFile="videocollection/videocollectionview/tsrc/testlistview" qt:proFile="testlistview.pro"/>
       <unit bldFile="videocollection/videocollectionview/tsrc/testlistwidget" qt:proFile="testlistwidget.pro"/>
+      <unit bldFile="videocollection/videocollectionview/tsrc/testvideocollectionuiloader" qt:proFile="testvideocollectionuiloader.pro"/>
       <unit bldFile="videocollection/videocollectionview/tsrc/testvideocollectionviewutils" qt:proFile="testvideocollectionviewutils.pro"/>
       <unit bldFile="videocollection/videocollectionview/tsrc/testvideolistselectiondialog" qt:proFile="testvideolistselectiondialog.pro"/>
      </component>

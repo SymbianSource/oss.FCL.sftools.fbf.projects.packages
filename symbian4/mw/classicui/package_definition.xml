@@ -79,8 +79,7 @@
       <block name="classicui" level="generic" long-name="Classic UI" levels="base support server generic specific">
         <collection name="classicui_plat" long-name="Classic UI Platform Interfaces" level="specific">
           <component name="personalisation_framework_api" long-name="Personalisation Framework API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/classicui/classicui_plat/personalisation_framework_api/group" filter="!test"/>
-            <unit bldFile="/sf/mw/classicui/classicui_plat/personalisation_framework_api/tsrc/group" filter="test,api_test"/>
+            <unit bldFile="/sf/mw/classicui/classicui_plat/personalisation_framework_api/group"/>
           </component>
           <component name="signal_pane_api" long-name="Signal Pane API" filter="s60" class="api">
             <unit bldFile="/sf/mw/classicui/classicui_plat/signal_pane_api/group" filter="!test"/>
@@ -463,9 +462,6 @@
           <component name="notes_api" long-name="Notes API" filter="s60" class="api">
             <unit bldFile="/sf/mw/classicui/classicui_pub/notes_api/group" filter="!test"/>
             <unit bldFile="/sf/mw/classicui/classicui_pub/notes_api/tsrc/group" filter="test,api_test"/>
-          </component>
-          <component name="screen_saver_api" long-name="Screen Saver API" filter="s60,test,api_test" class="api">
-            <unit bldFile="/sf/mw/classicui/classicui_pub/screen_saver_api/tsrc/group"/>
           </component>
           <component name="status_pane_api" long-name="Status Pane API" filter="s60" class="api">
             <unit bldFile="/sf/mw/classicui/classicui_pub/status_pane_api/group" filter="!test"/>

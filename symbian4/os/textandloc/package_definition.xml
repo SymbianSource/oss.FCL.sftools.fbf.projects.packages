@@ -78,13 +78,13 @@
     <layer name="os" long-name="OS" levels="hw services">
       <block name="textandloc" level="services" long-name="Text and Localisation Services" levels="encoding util fonts tools text">
         <collection name="textandloc_plat" long-name="Text and Localisation Platform Interfaces" level="text">
-          <component name="findutil_api" long-name="Find Utility API" filter="s60" class="api">
+          <component name="findutil_api" long-name="Find Util API" filter="s60" class="api">
             <unit bldFile="/sf/os/textandloc/textandloc_plat/findutil_api/group"/>
           </component>
           <component name="japanese_language_utilities_api" long-name="Japanese Language Utilities API" filter="s60" class="api">
             <unit bldFile="/sf/os/textandloc/textandloc_plat/japanese_language_utilities_api/group"/>
           </component>
-          <component name="sortutil_api" long-name="Sorting Utility API" filter="s60" class="api">
+          <component name="sortutil_api" long-name="Sort Util API" filter="s60" class="api">
             <unit bldFile="/sf/os/textandloc/textandloc_plat/sortutil_api/group"/>
           </component>
         </collection>
@@ -105,13 +105,13 @@
           </component>
         </collection>
         <collection name="fontandtxtsrv" long-name="Font and Text Services" level="fonts">
-          <component name="iculayoutengine" long-name="ICU Layout Engine" introduced="9.2" purpose="optional" plugin="Y">
+          <component name="iculayoutengine" long-name="ICU Layout Engine" introduced="9.2" purpose="optional" deprecated="^4" plugin="Y">
             <unit bldFile="/sf/os/textandloc/fontservices/textshaperplugin/group" mrp="/sf/os/textandloc/fontservices/textshaperplugin/group/graphics_iculayoutengine.mrp"/>
           </component>
           <component name="fontstore" long-name="Font Store" purpose="mandatory">
             <unit bldFile="/sf/os/textandloc/fontservices/fontstore/group" mrp="/sf/os/textandloc/fontservices/fontstore/group/graphics_fntstore.mrp"/>
           </component>
-          <component name="textrendering" long-name="Text Rendering" purpose="mandatory" class="placeholder">
+          <component name="textbase" long-name="Text Base" purpose="mandatory" class="placeholder">
             <!-- placeholder for text code from GDI -->
           </component>
           <component name="freetypefontrasteriser" long-name="FreeType Font Rasteriser" purpose="optional" plugin="Y">
@@ -133,18 +133,16 @@
           </component>
         </collection>
         <collection name="textandlocutils" long-name="Text and Localisation Utils" level="util">
-          <!-- components in this collection need to be moved to the right collection.
-    		Either move into the units' directories, or create a new textandlocutils directory -->
-          <component name="numbergrouping" filter="s60" long-name="Number Grouping">
+          <component name="numbergrouping" long-name="Number Grouping">
             <unit bldFile="/sf/os/textandloc/charconvfw/numbergrouping/group"/>
           </component>
-          <component name="jplangutil" filter="s60" long-name="Japanese Language Utilities">
+          <component name="jplangutil" long-name="Japanese Language Utilities">
             <unit bldFile="/sf/os/textandloc/charconvfw/jplangutil/group"/>
           </component>
-          <component name="sortutil" filter="s60" long-name="Sorting Utility">
+          <component name="sortutil" long-name="Sorting Utility">
             <unit bldFile="/sf/os/textandloc/charconvfw/sortutil/group"/>
           </component>
-          <component name="inlinetext" filter="s60" long-name="Inline Text">
+          <component name="inlinetext" long-name="Inline Text">
             <unit bldFile="/sf/os/textandloc/charconvfw/inlinetext/group"/>
           </component>
           <component name="nearestlangutil" long-name="Nearest Language Util" introduced="^2" purpose="mandatory" class="placeholder">

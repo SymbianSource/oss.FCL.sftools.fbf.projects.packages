@@ -147,8 +147,10 @@
           <component name="nmframeworkadapter" filter="s60" long-name="Nmail Framework Adapter" introduced="^4" plugin="Y" class="placeholder">
             <!-- <unit bldFile="emailuis/nmframeworkadapter" qt:proFile="nmframeworkadapter.pro"/> -->
           </component>
-          <component name="nmhswidget" filter="test,s60,widget_tools" long-name="Nmail Homescreen Widget">
-            <unit bldFile="/sf/app/commonemail/emailuis/nmhswidget/tsrc/nmhswidgettestapp"/>
+          <component name="nmhswidget" filter="test,s60,widget_tools" long-name="Nmail Homescreen Widget" class="placeholder">
+            <!-- temporary built from nmail.pro as a workaround to ServiceFW bug on service regisrtations, fix expected on wk18 MCL
+      <unit bldFile="emailuis/nmhswidget/tsrc/nmhswidgettestapp" qt:proFile="nmhswidgettestapp.pro" qt:qmakeArgs="-r"/>
+	  -->
           </component>
         </collection>
         <collection name="commonemail_info" long-name="Email Apps Info" level="app">

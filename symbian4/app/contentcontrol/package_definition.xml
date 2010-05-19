@@ -78,10 +78,10 @@
     <layer name="app" long-name="Applications" levels="services apps">
       <block name="contentcontrol" level="services" long-name="Content Control Daemons" levels="plugin framework app">
         <collection name="contentctrl_plat" long-name="Content Control Daemons Platforn Interfaces" level="app">
-          <component name="ds_contactsdatastoreextension_api" long-name="Adapter Customization API" filter="s60" introduced="^4" class="api">
+          <component name="ds_contactsdatastoreextension_api" long-name="DS Contacts Data Store Extension API" filter="s60" introduced="^4" class="api">
             <unit bldFile="/sf/app/contentcontrol/contentctrl_plat/ds_contactsdatastoreextension_api/group"/>
           </component>
-          <component name="ds_data_modification_api" long-name="DS Data Modification API" filter="s60" class="api">
+          <component name="ds_data_modification_api" long-name="DS Data Modification API" filter="s60" introduced="^3" class="api">
             <unit bldFile="/sf/app/contentcontrol/contentctrl_plat/ds_data_modification_api/group"/>
           </component>
         </collection>
@@ -104,7 +104,7 @@
           <component name="omadsextensions" filter="s60" long-name="OMA DS Extensions" plugin="Y">
             <unit bldFile="/sf/app/contentcontrol/omads/omadsextensions/group"/>
           </component>
-          <component name="omadsextensions" filter="s60" long-name="OMA DS Qt Extensions" plugin="Y">
+          <component name="omadsextensions_qt" filter="s60" long-name="OMA DS Qt Extensions" plugin="Y">
             <unit bldFile="/sf/app/contentcontrol/omads/omadsextensions"/>
           </component>
         </collection>

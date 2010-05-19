@@ -97,13 +97,12 @@
           <component name="calendar_importer_api" long-name="Calendar Importer API" filter="s60" class="api">
             <!--<unit bldFile="organizer_plat/calendar_importer_api/group"/>-->
           </component>
-          <component name="calendar_launcher_api" long-name="Calendar Launcher API" filter="s60" class="api">
+          <component name="calendar_launcher_api" long-name="Calendar Launcher API" filter="s60" class="api placeholder">
             <!--<unit bldFile="organizer_plat/calendar_launcher_api/group"/> -->
           </component>
           <component name="agenda_interface_api" long-name="Agenda Interface API" filter="s60" introduced="^4" class="api"/>
           <component name="calendar_editor_api" long-name="Calendar Editor API" filter="s60" introduced="^4" class="api"/>
           <component name="notes_editor_api" long-name="Notes Editor API" filter="s60" introduced="^4" class="api"/>
-          <component name="agenda_eventviewer_api" long-name="Agenda Event Viewer API" filter="s60" introduced="^4" class="api"/>
         </collection>
         <collection name="agendainterface" long-name="Agenda Interface" level="services">
           <!-- collection is really a component, should move down a directory -->
@@ -116,7 +115,7 @@
             <unit bldFile="/sf/app/organizer/calendarui/commonutils"/>
           </component>
           <component name="calenlauncher" filter="s60" long-name="Calendar Launcher">
-            <unit bldFile="/sf/app/organizer/calendarui/calenlauncher/group"/>
+            <unit bldFile="/sf/app/organizer/calendarui/calenlauncher"/>
           </component>
           <component name="caleneditor" filter="s60" long-name="Calendar Editor" introduced="^4">
             <unit bldFile="/sf/app/organizer/calendarui/caleneditor"/>
@@ -139,14 +138,14 @@
           <component name="views" filter="s60" long-name="Calendar Views">
             <unit bldFile="/sf/app/organizer/calendarui/views"/>
           </component>
-          <component name="calengriditemstyleplugin" filter="s60" introduced="^4" plugin="Y">
-            <unit bldFile="/sf/app/organizer/calendarui/styleplugins/calengriditemstyleplugin"/>
-          </component>
           <component name="calendarui_controller" filter="s60" long-name="Calendar Controller">
             <unit bldFile="/sf/app/organizer/calendarui/controller"/>
           </component>
           <component name="calendarui_application" filter="s60" long-name="Calendar Application">
             <unit bldFile="/sf/app/organizer/calendarui/application"/>
+          </component>
+          <component name="regionalplugins" long-name="Regional Plugins" filter="s60" introduced="^4" plugin="Y">
+            <unit bldFile="/sf/app/organizer/calendarui/regionalplugins"/>
           </component>
           <component name="caldav" filter="sf_build" long-name="CalDAV" introduced="^3" plugin="Y">
             <unit bldFile="/sf/app/organizer/calendarui/caldav/group"/>

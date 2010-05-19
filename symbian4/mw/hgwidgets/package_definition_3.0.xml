@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
   <package id="hgwidgets" name="HG Widgets" levels="framework service api">
-    <collection id="hgwidgets_pub" name="HG Widgets Platform Interfaces" level="api">
+    <collection id="hgwidgets_plat" name="HG Widgets Platform Interfaces" level="api">
      <component id="ganeswidgets_api" name="Ganes Widgets API" class="api" introduced="^4">
 		<!-- should separate out unit -->
 	 </component>

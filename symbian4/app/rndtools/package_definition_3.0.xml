@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition schema="3.0.0">
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
   <package id="rndtools" name="R&amp;D tools" levels="support generic test util">
     <collection id="creator" name="Creator" level="support">
 	   	<!-- collection is really a component. Should move down a directory -->
@@ -43,13 +42,13 @@
     <collection id="perfmon" name="Performance Monitor" level="test">
 	   	<!-- collection is really a component. Should move down a directory -->
       <component id="perfmon_build" filter="s60" name="Performance Monitor Tool" purpose="development" target="device" class="tool">
-        <unit bldFile="perfmon/group"/>
+           <unit bldFile="perfmon" qt:proFile="perfmon.pro"/>
       </component>
     </collection>
     <collection id="screengrabber" name="Screen Grabber" level="util">
 	   	<!-- collection is really a component. Should move down a directory -->
       <component id="screengrabber_build" filter="s60"  name="ScreenGrabber" purpose="development" target="device" class="tool">
-        <unit bldFile="screengrabber/group"/>
+		<unit bldFile="screengrabber" qt:proFile="screengrabber.pro"/>
       </component>
     </collection>
     <collection id="stifui" name="STIF UI" level="generic">

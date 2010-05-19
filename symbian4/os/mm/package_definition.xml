@@ -499,7 +499,7 @@
           <component name="refdevsound" long-name="Reference DevSound Plugins" introduced="7.0s" purpose="optional">
             <unit bldFile="/sf/os/mm/devsound/devsoundrefplugin/group" mrp="/sf/os/mm/devsound/devsoundrefplugin/group/multimedia_mdf_devsound_refplugin.mrp"/>
           </component>
-          <component name="btdevsound" long-name="Bluetooth DevSound Plugin" introduced="7.0s" purpose="development" plugin="Y">
+          <component name="btdevsound" long-name="Bluetooth DevSound Plugin" introduced="7.0s" purpose="development" deprecated="^4" plugin="Y">
             <unit bldFile="/sf/os/mm/devsound/sounddevbt/group" mrp="/sf/os/mm/devsound/sounddevbt/group/multimedia_mdf_devsound_refbtplugin.mrp"/>
           </component>
           <component name="a3ftrace" long-name="A3F Trace Utility" introduced="^2" purpose="development">

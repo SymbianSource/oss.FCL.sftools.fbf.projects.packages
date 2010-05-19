@@ -502,7 +502,7 @@
    <component id="refdevsound" name="Reference DevSound Plugins" introduced="7.0s" purpose="optional">
     <unit bldFile="devsound/devsoundrefplugin/group" mrp="devsound/devsoundrefplugin/group/multimedia_mdf_devsound_refplugin.mrp"/>
    </component>
-   <component id="btdevsound" name="Bluetooth DevSound Plugin" introduced="7.0s" purpose="development" class="plugin">
+   <component id="btdevsound" name="Bluetooth DevSound Plugin" introduced="7.0s" purpose="development" class="plugin" deprecated="^4">
     <unit bldFile="devsound/sounddevbt/group" mrp="devsound/sounddevbt/group/multimedia_mdf_devsound_refbtplugin.mrp"/>
    </component>
    <component id="a3ftrace" name="A3F Trace Utility" introduced="^2" purpose="development">

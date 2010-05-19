@@ -55,14 +55,17 @@
     </component>
   </collection>
   <collection id="controlpanel" name="Control Panel" level="generic">
-   <component id="controlpanel_test" name="Control Panel Test" filter="test,api_test">
+   <component id="controlpanel_test" name="Control Panel Test" filter="s60,test,qt_unit_test">
       <meta rel="testbuild">
-       <group name="controlpanel_api_tests"/>
+       <group name="controlpanel_tests"/>
       </meta>
-      <unit bldFile="controlpanel/tsrc"/>
+      <unit bldFile="controlpanel/tsrc" qt:proFile="tsrc.pro" qt:qmakeArgs="-r"/>
+   </component> 
+   <component id="controlpanel_rom" name="Control Panel ROM" filter="s60">
+      <unit bldFile="controlpanel/rom" qt:proFile="cp_rom.pri" qt:qmakeArgs="-r -config rom"/>
    </component>
-   <component id="controlpanel_build" name="Control Panel Build">
-      <unit bldFile="controlpanel" qt:proFile="controlpanel.pro" qt:qmakeArgs="-r -config rom"/>
+   <component id="controlpanel_source" name="Control Panel Source" filter="s60">
+      <unit bldFile="controlpanel/src" qt:qmakeArgs="-r -config rom" qt:proFile="src.pro"/>
    </component>
   </collection>
   <collection id="profilesservices" name="Profiles Services" level="server">

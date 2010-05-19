@@ -46,9 +46,13 @@
     <meta rel="Api" href="drm_plat/wmdrm_core_api/wmdrm_core_api.metaxml"/>
     <unit bldFile="drm_plat/wmdrm_core_api/group"/>
    </component>
-   <component id="wmdrm_access_api" name="WMDRM Access API" class="api" filter="s60">
+   <component id="wmdrm_access_api" name="WM DRM Access API" class="api" filter="s60">
     <meta rel="Api" href="drm_plat/wmdrm_access_api/wmdrm_access_api.metaxml"/>
     <unit bldFile="drm_plat/wmdrm_access_api/group"/>
+   </component>
+   <component id="wmdrm_ota_access_api" name="WM DRM OTA Access API" class="api" filter="s60">
+    <meta rel="Api" href="drm_plat/wmdrm_ota_access_api/wmdrm_ota_access_api.metaxml"/>
+    <unit bldFile="drm_plat/wmdrm_ota_access_api/group"/>
    </component>
    <component id="camese_utility_api" name="Camese Utility API" class="api" filter="s60">
     <meta rel="Api" href="drm_plat/camese_utility_api/camese_utility_api.metaxml"/>
@@ -91,11 +95,7 @@
     <unit bldFile="commondrm/drmrightsmanagerui/help/group"/>
    </component>
    <component id="drmutility" filter="s60" name="DRM Utility">
-    <meta rel="config">
-     <defined condition="RD_DRM_COMMON_INTERFACE_FOR_OMA_AND_WMDRM"/>
-    </meta>
-    <!-- Uncomment unit when configuration is in place. Currently #included from commondrm_build -->
-    <!--<unit bldFile="commondrm/drmutility/group"/>-->
+    <unit bldFile="commondrm/drmutility/group"/>
    </component>
    <component id="drmserviceapiwrapper" filter="s60" name="DRM Service API Wrapper">
     <unit bldFile="commondrm/drmserviceapiwrapper/group"/>
@@ -112,9 +112,6 @@
    <!-- collection is really a component. Move down a directory -->
    <component id="omadrm_build" filter="s60" name="OMA DRM Build">
     <unit bldFile="omadrm/group"/>
-   </component>
-   <component id="rndcerts" filter="s60,test" name="R&amp;D Certificates">
-    <unit bldFile="omadrm/rndcerts/group"/>
    </component>
    <component id="foundationcerts" filter="sf_build" name="Foundation Certificates">
     <unit bldFile="omadrm/foundationcerts/group"/>

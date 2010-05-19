@@ -84,7 +84,7 @@
           </component>
         </collection>
         <collection name="vpnapiimpl" long-name="VPN API Implementation" level="api">
-          <component name="vpnapi" filter="s60" long-name="VPN API">
+          <component name="vpnapi_impl" filter="s60" long-name="VPN API">
             <unit bldFile="/sf/mw/vpnclient/vpnapiimpl/group"/>
           </component>
         </collection>

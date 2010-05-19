@@ -21,13 +21,11 @@
   <collection id="inputmethods_plat" name="Input Methods Platform Interfaces" level="api">
    <component id="pen_input_server_api" name="Pen Input Server API" class="api" filter="s60">
     <meta rel="Api" href="inputmethods_plat/pen_input_server_api/pen_input_server_api.metaxml"/>
-    <unit bldFile="inputmethods_plat/pen_input_server_api/group" filter="!test"/>
-    <unit bldFile="inputmethods_plat/pen_input_server_api/tsrc/group" filter="test,api_test"/>
+    <unit bldFile="inputmethods_plat/pen_input_server_api/group"/>
    </component>
    <component id="ptiengine_hwr_api" name="PTI Engine Handwriting Recognition API" class="api" filter="s60">
     <meta rel="Api" href="inputmethods_plat/ptiengine_hwr_api/ptiengine_hwr_api.metaxml"/>
-    <unit bldFile="inputmethods_plat/ptiengine_hwr_api/group" filter="!test"/>
-    <unit bldFile="inputmethods_plat/ptiengine_hwr_api/tsrc/group" filter="test,api_test"/>
+    <unit bldFile="inputmethods_plat/ptiengine_hwr_api/group"/>
    </component>
    <component id="aknfep_settings_api" name="Avkon FEP Settings API" class="api" filter="s60">
     <meta rel="Api" href="inputmethods_plat/aknfep_settings_api/aknfep_settings_api.metaxml"/>
@@ -61,8 +59,7 @@
    </component>
    <component id="aknfep_uiinterface_api" name="Avkon FEP UI Interface API" class="api" filter="s60">
     <meta rel="Api" href="inputmethods_plat/aknfep_uiinterface_api/aknfep_uiinterface_api.metaxml"/>
-    <unit bldFile="inputmethods_plat/aknfep_uiinterface_api/group" filter="!test"/>
-    <unit bldFile="inputmethods_plat/aknfep_uiinterface_api/tsrc/group" filter="test,api_test"/>
+    <unit bldFile="inputmethods_plat/aknfep_uiinterface_api/group"/>
    </component>
   </collection>
   <collection id="textinput" name="Text Input" level="framework">

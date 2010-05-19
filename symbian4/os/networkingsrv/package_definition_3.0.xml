@@ -63,7 +63,7 @@
       </component>
     </collection>
     <collection id="networkcontrol" name="Network Control" level="plugin">
-      <component id="qosfwconfig" name="QoS Framework Config" introduced="7.0s" purpose="optional" class="config" filter="test">
+      <component id="qosfwconfig" name="QoS Framework Config" introduced="7.0s" purpose="optional" class="config" filter="test" deprecated="^4">
         <unit mrp="networkcontrol/qosfwconfig/qos/group/networking_qos-config.mrp" bldFile="networkcontrol/qosfwconfig/qos/data"/>
       </component>
       <component id="qoslib" name="QoS Library" introduced="7.0s" purpose="optional">

@@ -17,8 +17,8 @@
       <component id="networkpositioningmodule" name="Network Positioning Module" introduced="^3" purpose="optional" class="plugin">
         <unit bldFile="datasourcemodules/networkpositioningmodule/group" mrp="datasourcemodules/networkpositioningmodule/group/lbs_network_positioning_module.mrp"/>
       </component>
-      <component id="locationapesuplpsy" name="APE SUPL PSY" introduced="^3" purpose="optional" class="plugin" filter="s60">
-        <unit bldFile="datasourcemodules/locationapesuplpsy/group"/>
+      <component id="locationapesuplpsy" name="APE SUPL Positioning Module" introduced="^3" purpose="optional" class="plugin">
+        <unit bldFile="datasourcemodules/locationapesuplpsy/group" mrp="datasourcemodules/locationapesuplpsy/group/lbs_ape_supl_positioning_module.mrp"/>
       </component>
     </collection>
     <collection id="datasourceadaptation" name="Data Source Adaptation" level="adaptation">
@@ -63,9 +63,21 @@
       <component id="privacyprotocolmodule" name="Privacy Protocol Module" introduced="^2" purpose="optional" class="plugin">
         <unit bldFile="networkprotocolmodules/privacyprotocolmodule/group" mrp="networkprotocolmodules/privacyprotocolmodule/group/lbs_privacyprotocolmodule.mrp"/>
       </component>
+      <component id="suplproxyprotocolmodule" name="SUPL Proxy Protocol Module" introduced="^3" purpose="optional" class="plugin">
+        <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
+        <unit bldFile="networkprotocolmodules/suplproxyprotocolmodule/sfgroup" mrp="networkprotocolmodules/suplproxyprotocolmodule/group/lbs_suplproxyprotocolmodule.mrp"/>
+      </component>
+      <component id="suplprotocolmodule" name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" class="plugin">
+        <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
+        <unit bldFile="networkprotocolmodules/suplprotocolmodule/sfgroup" mrp="networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
+      </component>
       <component id="suplrrlpasn1" filter="sf_build" name="SUPL RRLP ASN1 Parser">
         <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
         <unit bldFile="networkprotocolmodules/common/suplrrlpasn1/group"/>
+      </component>
+      <component id="suplrrlpprotocol" name="SUPL RRLP Protocol Module">
+        <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
+        <unit bldFile="networkprotocolmodules/suplcontrolplaneprotocols/common/suplrrlpprotocol/sfgroup"/>
       </component>
     </collection>
     <collection id="lbsapitest" name="Location API Tests" level="application-interface">

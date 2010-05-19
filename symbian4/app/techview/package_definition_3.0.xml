@@ -34,7 +34,7 @@
         <unit bldFile="techviewui/startup/group" mrp="techviewui/startup/group/techview_startup.mrp"/>
       </component>
     </collection>
-    <collection id="controlpanel" name="Control Panel" level="ui">
+    <collection id="tv_controlpanel" name="Control Panel" level="ui">
       <component id="fepsetup" name="FEP Setup" filter="techview" purpose="development">
         <unit bldFile="controlpanel/fepsetup/group" mrp="controlpanel/fepsetup/group/techview_fepsetup.mrp"/>
       </component>

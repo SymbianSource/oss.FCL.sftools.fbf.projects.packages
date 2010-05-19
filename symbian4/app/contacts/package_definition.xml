@@ -78,17 +78,7 @@
     <layer name="app" long-name="Applications" levels="services apps">
       <block name="contacts" level="apps" span="2" long-name="Contacts Apps" levels="engine support services ui">
         <collection name="contacts_plat" long-name="Contacts Apps Platform Interfaces" level="ui">
-          <component name="logs_engine_api" long-name="Logs Engine API" filter="s60" introduced="^4" class="api"/>
-          <component name="logs_engine_api_extensions" long-name="Logs Engine API Extensions" filter="s60" class="api"/>
-          <component name="logs_services_api" long-name="Logs Services API" filter="s60" introduced="^4" class="api"/>
-          <component name="logs_timers_api" long-name="Logs Timers API" filter="s60" class="api"/>
           <component name="qt_mobility_contacts_api" long-name="Qt Mobility Contacts API" filter="s60" introduced="^4" class="api"/>
-        </collection>
-        <collection name="logsui" long-name="Logs UI" level="ui">
-          <component name="logsui_build" filter="s60" long-name="Logs UI Build">
-            <!-- component at too high a rank, should move down one directory -->
-            <unit bldFile="/sf/app/contacts/logsui"/>
-          </component>
         </collection>
         <collection name="phonebookui" long-name="Phonebook UI" level="ui">
           <component name="mobhistorymodel" filter="s60" long-name="Mobile History Model" introduced="^4" class="placeholder">
@@ -135,6 +125,9 @@
           </component>
           <component name="simutility" filter="s60" long-name="SIM Utility" introduced="^4">
             <unit bldFile="/sf/app/contacts/phonebookengines/simutility"/>
+          </component>
+          <component name="cntimageutility" long-name="Contacts Image Utility" filter="s60" introduced="^4">
+            <unit bldFile="/sf/app/contacts/phonebookengines/cntimageutility"/>
           </component>
         </collection>
         <collection name="pimprotocols" long-name="PIM Protocols" level="services">

@@ -2,44 +2,44 @@
 <SystemDefinition schema="3.0.0">
   <package id="imgeditor" name="Image Editor Apps" levels="engine ui">
     <collection id="imgeditor_plat" name="Image Editor Apps Platform Interfaces" level="ui">
-      <component id="image_editor_debug_utilities_api" name="Image Editor Debug Utilities API" class="api" filter="s60">
+      <component id="image_editor_debug_utilities_api" name="Image Editor Debug Utilities API" class="api" filter="sf_build">
         <meta rel="Api" href="imgeditor_plat/image_editor_debug_utilities_api/image_editor_debug_utilities_api.metaxml"/>
         <unit bldFile="imgeditor_plat/image_editor_debug_utilities_api/group"/>
       </component>
-      <component id="image_editor_utilities_api" name="Image Editor Utilities API" class="api" filter="s60">
+      <component id="image_editor_utilities_api" name="Image Editor Utilities API" class="api" filter="sf_build">
         <meta rel="Api" href="imgeditor_plat/image_editor_utilities_api/image_editor_utilities_api.metaxml"/>
         <unit bldFile="imgeditor_plat/image_editor_utilities_api/group"/>
       </component>
-      <component id="image_editor_definitions_api" name="Image Editor Definitions API" class="api" filter="s60">
+      <component id="image_editor_definitions_api" name="Image Editor Definitions API" class="api" filter="sf_build">
         <meta rel="Api" href="imgeditor_plat/image_editor_definitions_api/image_editor_definitions_api.metaxml"/>
         <unit bldFile="imgeditor_plat/image_editor_definitions_api/group"/>
       </component>
-      <component id="image_editor_system_parameters_api" name="Image Editor System Parameters API" class="api" filter="s60">
+      <component id="image_editor_system_parameters_api" name="Image Editor System Parameters API" class="api" filter="sf_build">
         <meta rel="Api" href="imgeditor_plat/image_editor_system_parameters_api/image_editor_system_parameters_api.metaxml"/>
         <unit bldFile="imgeditor_plat/image_editor_system_parameters_api/group"/>
       </component>
-      <component id="image_processing_engine_api" name="Image Processing Engine API" class="api" filter="s60">
+      <component id="image_processing_engine_api" name="Image Processing Engine API" class="api" filter="sf_build">
         <meta rel="Api" href="imgeditor_plat/image_processing_engine_api/image_processing_engine_api.metaxml"/>
         <unit bldFile="imgeditor_plat/image_processing_engine_api/group"/>
       </component>
     </collection>
     <collection id="imageeditor" name="Image Editor UI" level="ui">
-      <component id="pb" filter="s60" name="Plugin Base">
+      <component id="pb" filter="sf_build" name="Plugin Base">
         <unit bldFile="imageeditor/pb/group"/>
       </component>
-      <component id="iepb" filter="s60" name="Image Editor Plugin Base">
+      <component id="iepb" filter="sf_build" name="Image Editor Plugin Base">
         <unit bldFile="imageeditor/iepb/group"/>
       </component>
-      <component id="imageeditorui" filter="s60" name="Image Editor UI">
+      <component id="imageeditorui" filter="sf_build" name="Image Editor UI">
         <unit bldFile="imageeditor/imageeditorui/group"/>
       </component>
-      <component id="imageeditormanager" filter="s60" name="Image Editor Manager">
+      <component id="imageeditormanager" filter="sf_build" name="Image Editor Manager">
         <unit bldFile="imageeditor/imageeditormanager/group"/>
       </component>
-      <component id="imageeditorapp" filter="s60" name="Image Editor Application">
+      <component id="imageeditorapp" filter="sf_build" name="Image Editor Application">
         <unit bldFile="imageeditor/imageeditorapp/group"/>
       </component>
-      <component id="imageeditor_plugins" filter="s60" name="Image Editor Plugins" class="plugin">
+      <component id="imageeditor_plugins" filter="sf_build" name="Image Editor Plugins" class="plugin">
       	<!-- can only have one unit. Need to include all from a single bld.inf -->
         <unit bldFile="imageeditor/plugins/blackwhiteplugin/group"/>
         <unit bldFile="imageeditor/plugins/brightnessplugin/group"/>
@@ -62,16 +62,16 @@
         <unit bldFile="imageeditor/plugins/drawplugin/group"/>
          -->
       </component>
-      <component id="editorprovider" filter="s60" name="Image Editor Provider">
+      <component id="editorprovider" filter="sf_build" name="Image Editor Provider">
         <unit bldFile="imageeditor/editorprovider/group"/>
       </component>
-      <component id="imageeditor_build" filter="s60" name="Image Editor Build">
+      <component id="imageeditor_build" filter="sf_build" name="Image Editor Build">
       	<!-- should distribute this to the other components -->
         <unit bldFile="imageeditor/group"/>
       </component>
     </collection>
     <collection id="imageeditorengine" name="Image Editor Engine" level="engine">
-      <component id="filters" filter="s60" name="Image Editor Filters">
+      <component id="filters" filter="sf_build" name="Image Editor Filters">
       	<!-- can only have one unit. Need to include all from a single bld.inf -->
         <unit bldFile="imageeditorengine/filters/filterbrightness/group"/>
         <unit bldFile="imageeditorengine/filters/filterbubble/group"/>
@@ -97,16 +97,16 @@
         <unit bldFile="imageeditorengine/filters/filterdraw/group"/>
          -->
       </component>
-      <component id="imageeditorutils" filter="s60" name="Image Editor Utilities">
+      <component id="imageeditorutils" filter="sf_build" name="Image Editor Utilities">
         <unit bldFile="imageeditorengine/imageeditorutils/group"/>
       </component>
-      <component id="systemparameters" filter="s60" name="System Parameters">
+      <component id="systemparameters" filter="sf_build" name="System Parameters">
         <unit bldFile="imageeditorengine/systemparameters/group"/>
       </component>
-      <component id="enginewrapper" filter="s60" name="Image Editor Engine Wrapper">
+      <component id="enginewrapper" filter="sf_build" name="Image Editor Engine Wrapper">
         <unit bldFile="imageeditorengine/enginewrapper/group"/>
       </component>
-      <component id="imageeditorengine_build" filter="s60" name="Image Editor Engine Build">
+      <component id="imageeditorengine_build" filter="sf_build" name="Image Editor Engine Build">
       	<!-- should distribute this to the other components -->
         <unit bldFile="imageeditorengine/group"/>
       </component>

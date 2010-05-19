@@ -81,32 +81,17 @@
           <component name="videoscheduler_api" long-name="Video Scheduler API" filter="s60" class="api">
             <unit bldFile="/sf/mw/videoutils/videoutils_plat/videoscheduler_api/group"/>
           </component>
-          <component name="videoconnutility_api" long-name="Video Connection Utility API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/videoutils/videoutils_plat/videoconnutility_api/group"/>
-          </component>
           <component name="videoplayer_constants_api" long-name="Videoplayer Constants API" filter="s60" class="api">
             <unit bldFile="/sf/mw/videoutils/videoutils_plat/videoplayer_constants_api/group"/>
           </component>
         </collection>
         <collection name="videoscheduler" long-name="Video Scheduler" level="util">
+          <!-- don't build these -->
           <component name="schedulerclient" filter="s60" long-name="Video Scheduler Client">
-            <unit bldFile="/sf/mw/videoutils/videoscheduler/schedulerclient/group"/>
+            <unit bldFile="/sf/mw/videoutils/videoscheduler/schedulerclient/group" filter="test"/>
           </component>
           <component name="schedulerserver" filter="s60" long-name="Video Scheduler Server">
-            <unit bldFile="/sf/mw/videoutils/videoscheduler/schedulerserver/group"/>
-          </component>
-        </collection>
-        <collection name="videoconnutility" long-name="Video Connection Utility" level="util">
-          <component name="connutilpsworker" filter="s60" long-name="Connection Utility Publish and Subscribe Worker">
-            <unit bldFile="/sf/mw/videoutils/videoconnutility/connutilpsworker/group"/>
-          </component>
-          <component name="video_connutility" filter="s60" long-name="Video Connection Utility">
-            <unit bldFile="/sf/mw/videoutils/videoconnutility/connutility/group"/>
-          </component>
-        </collection>
-        <collection name="videoutils_info" long-name="Video Utils Info" level="if">
-          <component name="videoutils_test" filter="s60,test,api_test" long-name="Video Utils Tests">
-            <unit bldFile="/sf/mw/videoutils/tsrc/group"/>
+            <unit bldFile="/sf/mw/videoutils/videoscheduler/schedulerserver/group" filter="test"/>
           </component>
         </collection>
       </block>

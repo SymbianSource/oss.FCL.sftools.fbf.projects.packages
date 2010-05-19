@@ -79,8 +79,7 @@
       <block name="videoplayer" level="apps" long-name="Video Player Apps" levels="support plugin util apps">
         <collection name="videoplayer_plat" long-name="Video Player Apps Platform Interfaces" level="apps">
           <component name="videoplayer_startup_api" long-name="Video Player Startup API" filter="s60" class="api">
-            <unit bldFile="/sf/app/videoplayer/videoplayer_plat/videoplayer_startup_api/group" filter="!test"/>
-            <unit bldFile="/sf/app/videoplayer/videoplayer_plat/videoplayer_startup_api/tsrc/group" filter="test,api_test"/>
+            <unit bldFile="/sf/app/videoplayer/videoplayer_plat/videoplayer_startup_api/group"/>
           </component>
           <component name="videocollection_api" long-name="Video Collection API" filter="s60" class="api">
             <unit bldFile="/sf/app/videoplayer/videoplayer_plat/videocollection_api/group"/>
@@ -93,7 +92,7 @@
           <component name="videocollectionwrapper" filter="s60" long-name="Video Collection Wrapper" introduced="^4">
             <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper"/>
           </component>
-          <component name="videocollectionwrapper" filter="test,qt_unit_test" long-name="Video Collection Wrapper Tests">
+          <component name="videocollectionwrapper_test" filter="test,qt_unit_test" long-name="Video Collection Wrapper Tests" introduced="^4">
             <!--Can only have one unit. Need to split into separate component or #include from a common file-->
             <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideocollectionclient"/>
             <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideocollectionlistener"/>
@@ -105,6 +104,7 @@
             <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideosortfilterproxymodel"/>
             <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideothumbnaildata"/>
             <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideothumbnaildata_p"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideothumbnailfetcher"/>
           </component>
           <component name="videocollectionview" filter="s60" long-name="Video Collection View" introduced="^4">
             <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview"/>
@@ -115,6 +115,7 @@
             <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testhintwidget"/>
             <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testlistview"/>
             <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testlistwidget"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testvideocollectionuiloader"/>
             <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testvideocollectionviewutils"/>
             <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testvideolistselectiondialog"/>
           </component>

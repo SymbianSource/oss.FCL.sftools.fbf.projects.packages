@@ -102,7 +102,7 @@
           <component name="thumbnailmanager" filter="s60" long-name="Thumbnail Manager">
             <unit bldFile="/sf/mw/imghandling/imagehandlingutilities/thumbnailmanager/group"/>
           </component>
-          <component name="thumbnailmanager" filter="s60" long-name="Thumbnail Manager Qt" introduced="^4">
+          <component name="thumbnailmanagerqt" filter="s60" long-name="Thumbnail Manager Qt" introduced="^4">
             <unit bldFile="/sf/mw/imghandling/imagehandlingutilities/thumbnailmanager/thumbnailmanagerqt" filter="!test"/>
             <unit bldFile="/sf/mw/imghandling/imagehandlingutilities/thumbnailmanager/thumbnailmanagerqt/tsrc" filter="test,unit_test"/>
           </component>
