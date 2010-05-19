@@ -130,7 +130,7 @@
         <collection name="musicplayer_info" long-name="Music Player Apps Info" level="app">
           <component name="musicplayer_build" filter="s60" long-name="Music Player Build">
             <!-- should brak up into individual components  -->
-            <unit bldFile="/sf/app/musicplayer/."/>
+            <unit bldFile="/sf/app/musicplayer/." proFile="qtmusicplayer.pro" qmakeArgs="-r -config rom"/>
           </component>
         </collection>
       </block>

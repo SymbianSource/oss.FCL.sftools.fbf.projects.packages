@@ -90,19 +90,19 @@
         </collection>
         <collection name="radioapp" long-name="Radio App" level="ui">
           <component name="radioenginewrapper" filter="s60" long-name="Radio Engine Wrapper" introduced="^4">
-            <unit bldFile="/sf/app/radio/radioapp/radioenginewrapper"/>
+            <unit bldFile="/sf/app/radio/radioapp/radioenginewrapper" proFile="radioenginewrapper.pro"/>
           </component>
           <component name="radiopresetstorage" filter="s60" long-name="Radio Preset Storage" introduced="^4">
-            <unit bldFile="/sf/app/radio/radioapp/radiopresetstorage"/>
+            <unit bldFile="/sf/app/radio/radioapp/radiopresetstorage" proFile="radiopresetstorage.pro"/>
           </component>
           <component name="radiouiengine" filter="s60" long-name="Radio UI Engine" introduced="^4">
-            <unit bldFile="/sf/app/radio/radioapp/radiouiengine"/>
+            <unit bldFile="/sf/app/radio/radioapp/radiouiengine" proFile="radiouiengine.pro"/>
           </component>
           <component name="radiowidgets" filter="s60" long-name="Radio Widgets" introduced="^4">
-            <unit bldFile="/sf/app/radio/radioapp/radiowidgets"/>
+            <unit bldFile="/sf/app/radio/radioapp/radiowidgets" proFile="radiowidgets.pro"/>
           </component>
           <component name="radioapplication" filter="s60" long-name="Radio Application" introduced="^4">
-            <unit bldFile="/sf/app/radio/radioapp/radioapplication"/>
+            <unit bldFile="/sf/app/radio/radioapp/radioapplication" proFile="radioapplication.pro"/>
           </component>
           <component name="radio_rom" filter="s60" long-name="Radio ROM" introduced="^4">
             <unit bldFile="/sf/app/radio/rom"/>

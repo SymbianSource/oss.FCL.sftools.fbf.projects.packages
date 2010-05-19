@@ -84,7 +84,7 @@
           </component>
           <component name="filemanager_build" filter="s60" long-name="File Manager Build">
             <!-- break this up into components or move down a directory -->
-            <unit bldFile="/sf/app/files/filemanager"/>
+            <unit bldFile="/sf/app/files/filemanager" proFile="filemanager.pro"/>
           </component>
         </collection>
       </block>

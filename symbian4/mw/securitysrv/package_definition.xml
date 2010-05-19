@@ -204,7 +204,7 @@
             <unit bldFile="/sf/mw/securitysrv/securitydialogs/lockapp/group"/>
           </component>
           <component name="secuinotifications" long-name="Security UI Notifications" introduced="^4" filter="s60">
-            <unit bldFile="/sf/mw/securitysrv/securitydialogs/secuinotifications"/>
+            <unit bldFile="/sf/mw/securitysrv/securitydialogs/secuinotifications" proFile="secuinotifications.pro" qmakeArgs="-r"/>
           </component>
         </collection>
         <collection name="boottimeintegritycheck" long-name="Boot Time Integrity Check" level="plugin">

@@ -79,8 +79,8 @@
       <block name="camera" level="apps" long-name="Camera Apps">
         <collection name="camerauis" long-name="Camera UIs">
           <component name="cameraxui" filter="s60" long-name="CameraX UIs">
-            <unit bldFile="/sf/app/camera/camerauis/cameraxui" filter="!test"/>
-            <unit bldFile="/sf/app/camera/camerauis/cameraxui/cxengine/tsrc/unit" filter="test,unit_test"/>
+            <unit bldFile="/sf/app/camera/camerauis/cameraxui" filter="!test" proFile="camerax.pro"/>
+            <unit bldFile="/sf/app/camera/camerauis/cameraxui/cxengine/tsrc/unit" filter="test,unit_test" proFile="unit.pro"/>
           </component>
         </collection>
       </block>

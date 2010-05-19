@@ -80,12 +80,12 @@
         <collection name="homescreen_info" long-name="Home Screen Info" level="support">
           <component name="homescreen_build" long-name="Homescreen Build">
             <!-- break this up properly into components -->
-            <unit bldFile="/sf/app/homescreen/."/>
+            <unit bldFile="/sf/app/homescreen/." proFile="homescreen.pro" qmakeArgs="-r -config rom"/>
           </component>
         </collection>
         <collection name="homescreen_test" long-name="Home Screen Test" level="support">
           <component name="tsrc_build" long-name="Tsrc Build" filter="test,unit_test">
-            <unit bldFile="/sf/app/homescreen/tsrc"/>
+            <unit bldFile="/sf/app/homescreen/tsrc" proFile="tsrc.pro" qmakeArgs="-r MMP_RULES+=EXPORTUNFROZEN"/>
           </component>
         </collection>
         <!-- fiill in details with broken up homescreen_build -->

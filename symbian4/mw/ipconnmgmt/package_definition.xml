@@ -227,7 +227,7 @@
             <unit bldFile="/sf/mw/ipconnmgmt/group"/>
           </component>
           <component name="ipcm_qt_build" long-name="IP Connectivity Management Qt Build" introduced="^4">
-            <unit bldFile="/sf/mw/ipconnmgmt/."/>
+            <unit bldFile="/sf/mw/ipconnmgmt/." proFile="ipconnmgmt.pro" qmakeArgs="-r"/>
           </component>
         </collection>
       </block>

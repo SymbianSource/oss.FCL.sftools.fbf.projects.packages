@@ -108,7 +108,7 @@
         <collection name="messagingappbase" long-name="Messaging App Base" level="base">
           <component name="messagingappbase_build" filter="s60" long-name="Messaging App Base Build" introduced="^4">
             <!-- break this up into the below components -->
-            <unit bldFile="/sf/app/messaging/messagingappbase"/>
+            <unit bldFile="/sf/app/messaging/messagingappbase" proFile="messagingappbase.pro" qmakeArgs="-r"/>
           </component>
           <component name="msgmedia" filter="s60" long-name="Message Media"/>
           <component name="smilparser" long-name="SMIL Parser" introduced="7.0s" purpose="optional">
@@ -163,34 +163,34 @@
           </component>
           <component name="mmsengine_build" filter="s60" long-name="MMS Engine Build">
             <!-- this should be broken up into the individual other components -->
-            <unit bldFile="/sf/app/messaging/mmsengine"/>
+            <unit bldFile="/sf/app/messaging/mmsengine" proFile="mmsengine.pro" qmakeArgs="-r"/>
           </component>
         </collection>
         <collection name="messagingapp" long-name="Messaging Application" level="app">
           <component name="messagingapp_build" filter="s60" long-name="MMS Engine Build">
             <!-- this should be broken up into the individual other components -->
-            <unit bldFile="/sf/app/messaging/messagingapp"/>
+            <unit bldFile="/sf/app/messaging/messagingapp" proFile="messagingapp.pro" qmakeArgs="-r"/>
           </component>
           <component name="msgutils" filter="s60" long-name="Messaging Utils" introduced="^4">
-            <unit bldFile="/sf/app/messaging/messagingapp/msgutils"/>
+            <unit bldFile="/sf/app/messaging/messagingapp/msgutils" proFile="msgutils.pro" qmakeArgs="-r"/>
           </component>
           <component name="msgappfw" filter="s60" long-name="Messaging Application Framework" introduced="^4">
-            <unit bldFile="/sf/app/messaging/messagingapp/msgappfw"/>
+            <unit bldFile="/sf/app/messaging/messagingapp/msgappfw" proFile="msgappfw.pro" qmakeArgs="-r"/>
           </component>
           <component name="msgsettings" filter="s60" long-name="Messaging Settings" introduced="^4">
-            <unit bldFile="/sf/app/messaging/messagingapp/msgsettings"/>
+            <unit bldFile="/sf/app/messaging/messagingapp/msgsettings" proFile="msgsettings.pro" qmakeArgs="-r"/>
           </component>
           <component name="msgnotifications" filter="s60" long-name="Messaging Notifications" introduced="^4">
-            <unit bldFile="/sf/app/messaging/messagingapp/msgnotifications"/>
+            <unit bldFile="/sf/app/messaging/messagingapp/msgnotifications" proFile="msgnotifications.pro" qmakeArgs="-r"/>
           </component>
           <component name="smartmessaging" filter="s60" long-name="Smart Messaging">
-            <unit bldFile="/sf/app/messaging/messagingapp/smartmessaging"/>
+            <unit bldFile="/sf/app/messaging/messagingapp/smartmessaging" proFile="smartmessaging.pro" qmakeArgs="-r"/>
           </component>
           <component name="shareui" filter="s60" long-name="Shared UI" introduced="^4">
-            <unit bldFile="/sf/app/messaging/messagingapp/shareui"/>
+            <unit bldFile="/sf/app/messaging/messagingapp/shareui" proFile="shareui.pro" qmakeArgs="-r"/>
           </component>
           <component name="msgui" filter="s60" long-name="Messaging UI" introduced="^4">
-            <unit bldFile="/sf/app/messaging/messagingapp/msgui"/>
+            <unit bldFile="/sf/app/messaging/messagingapp/msgui" proFile="msgui.pro" qmakeArgs="-r"/>
           </component>
         </collection>
         <collection name="email" long-name="Email" level="plugin">

@@ -234,7 +234,7 @@
         </collection>
         <collection name="phonesrv_info" long-name="Phone Server Info" level="generic">
           <component name="phonesrv_build" long-name="Phone Server Build" filter="s60">
-            <unit bldFile="/sf/mw/phonesrv/."/>
+            <unit bldFile="/sf/mw/phonesrv/." proFile="phonesrv.pro"/>
           </component>
         </collection>
       </block>

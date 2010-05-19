@@ -80,7 +80,7 @@
         <collection name="platformthemes_info" long-name="Platform Themes Info">
           <component name="platformthemes_build" long-name="Platform Themes Build">
             <!-- no real structure in this package. Should break into collections / components -->
-            <unit bldFile="/sf/mw/platformthemes/."/>
+            <unit bldFile="/sf/mw/platformthemes/." proFile="platformthemes.pro"/>
           </component>
         </collection>
       </block>

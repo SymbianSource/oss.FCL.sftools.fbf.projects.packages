@@ -90,37 +90,37 @@
             <unit bldFile="/sf/app/videoplayer/videocollection/mpxmyvideoscollection/group"/>
           </component>
           <component name="videocollectionwrapper" filter="s60" long-name="Video Collection Wrapper" introduced="^4">
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper" proFile="videocollectionwrapper.pro" qmakeArgs="-r"/>
           </component>
           <component name="videocollectionwrapper_test" filter="test,qt_unit_test" long-name="Video Collection Wrapper Tests" introduced="^4">
             <!--Can only have one unit. Need to split into separate component or #include from a common file-->
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideocollectionclient"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideocollectionlistener"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideocollectionwrapper_p"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideodatacontainer"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideodeleteworker"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideomodel"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideomodel_p"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideosortfilterproxymodel"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideothumbnaildata"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideothumbnaildata_p"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideothumbnailfetcher"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideocollectionclient" proFile="testvideocollectionclient.pro"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideocollectionlistener" proFile="testvideocollectionlistener.pro"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideocollectionwrapper_p" proFile="testvideocollectionwrapper_p.pro"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideodatacontainer" proFile="testvideodatacontainer.pro"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideodeleteworker" proFile="testvideodeleteworker.pro"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideomodel" proFile="testvideomodel.pro"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideomodel_p" proFile="testvideomodel_p.pro"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideosortfilterproxymodel" proFile="testvideosortfilterproxymodel.pro"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideothumbnaildata" proFile="testvideothumbnaildata.pro"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideothumbnaildata_p" proFile="testvideothumbnaildata_p.pro"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideothumbnailfetcher" proFile="testvideothumbnailfetcher.pro"/>
           </component>
           <component name="videocollectionview" filter="s60" long-name="Video Collection View" introduced="^4">
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview" proFile="videocollectionview.pro" qmakeArgs="-r"/>
           </component>
           <component name="videocollectionview_test" filter="test,qt_unit_test" long-name="Video Collection View Tests">
             <!--Can only have one unit. Need to split into separate components or #include from a common file-->
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testcollectionview"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testhintwidget"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testlistview"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testlistwidget"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testvideocollectionuiloader"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testvideocollectionviewutils"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testvideolistselectiondialog"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testcollectionview" proFile="testcollectionview.pro"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testhintwidget" proFile="testhintwidget.pro"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testlistview" proFile="testlistview.pro"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testlistwidget" proFile="testlistwidget.pro"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testvideocollectionuiloader" proFile="testvideocollectionuiloader.pro"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testvideocollectionviewutils" proFile="testvideocollectionviewutils.pro"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testvideolistselectiondialog" proFile="testvideolistselectiondialog.pro"/>
           </component>
           <component name="videofiledetailsview" filter="s60" long-name="Video File Details View" introduced="^4">
-            <unit bldFile="/sf/app/videoplayer/videocollection/videofiledetailsview"/>
+            <unit bldFile="/sf/app/videoplayer/videocollection/videofiledetailsview" proFile="videofiledetailsview.pro" qmakeArgs="-r"/>
           </component>
         </collection>
         <collection name="mediasettings" long-name="Media Settings" level="support">
@@ -131,18 +131,18 @@
         </collection>
         <collection name="videoplayerapp" long-name="Video Player App" level="apps">
           <component name="videoplayerengine" long-name="Video Player Engine" filter="s60" introduced="^4">
-            <unit bldFile="/sf/app/videoplayer/videoplayerapp/videoplayerengine"/>
+            <unit bldFile="/sf/app/videoplayer/videoplayerapp/videoplayerengine" proFile="videoplayerengine.pro" qmakeArgs="-r"/>
           </component>
           <component name="hbvideoplayer" filter="s60" long-name="HB Video Player" introduced="^4">
-            <unit bldFile="/sf/app/videoplayer/videoplayerapp/hbvideoplayer"/>
+            <unit bldFile="/sf/app/videoplayer/videoplayerapp/hbvideoplayer" proFile="hbvideoplayer.pro" qmakeArgs="-r"/>
           </component>
         </collection>
         <collection name="videoplayback" long-name="Video Playback Plugins" level="plugin">
           <component name="hbvideoplaybackview" filter="s60" long-name="HB Video Playback View" introduced="^4" plugin="Y">
-            <unit bldFile="/sf/app/videoplayer/videoplayback/hbvideoplaybackview"/>
+            <unit bldFile="/sf/app/videoplayer/videoplayback/hbvideoplaybackview" proFile="hbvideoplaybackview.pro" qmakeArgs="-r"/>
           </component>
           <component name="hbvideoplaybackviewplugin" filter="s60" long-name="HB Video Playback View Plugin" introduced="^4" plugin="Y">
-            <unit bldFile="/sf/app/videoplayer/videoplayback/hbvideoplaybackviewplugin"/>
+            <unit bldFile="/sf/app/videoplayer/videoplayback/hbvideoplaybackviewplugin" proFile="hbvideoplaybackviewplugin.pro" qmakeArgs="-r"/>
           </component>
           <component name="videohelix" long-name="Video Helix" filter="s60" introduced="^3" plugin="Y">
             <unit bldFile="/sf/app/videoplayer/videoplayback/videohelix/group"/>

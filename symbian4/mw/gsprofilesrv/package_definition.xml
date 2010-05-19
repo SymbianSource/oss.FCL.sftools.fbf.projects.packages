@@ -87,7 +87,7 @@
         </collection>
         <collection name="gsprofilesrv_plat" long-name="GS and Profiles Services Platform Interfaces" level="specific">
           <component name="ftuwizardmodel_api" long-name="FTU Wizard Model API" filter="bldfirst,s60" class="api">
-            <unit bldFile="/sf/mw/gsprofilesrv/gsprofilesrv_plat/ftuwizardmodel_api"/>
+            <unit bldFile="/sf/mw/gsprofilesrv/gsprofilesrv_plat/ftuwizardmodel_api" proFile="ftuwizardmodel_api.pro" qmakeArgs="-r -config rom"/>
           </component>
           <component name="profiles_engine_api" long-name="Profiles Engine API" filter="s60" class="api">
             <unit bldFile="/sf/mw/gsprofilesrv/gsprofilesrv_plat/profiles_engine_api/group"/>
@@ -118,18 +118,18 @@
         </collection>
         <collection name="ftuwizardmodel" long-name="FTU Wizard Model" level="generic">
           <component name="ftuwizardmodel_build" long-name="FTU Wizardmodel Build" filter="bldfirst">
-            <unit bldFile="/sf/mw/gsprofilesrv/ftuwizardmodel"/>
+            <unit bldFile="/sf/mw/gsprofilesrv/ftuwizardmodel" proFile="ftuwizardmodel.pro" qmakeArgs="-r -config rom"/>
           </component>
         </collection>
         <collection name="controlpanel" long-name="Control Panel" level="generic">
           <component name="controlpanel_test" long-name="Control Panel Test" filter="s60,test,qt_unit_test">
-            <unit bldFile="/sf/mw/gsprofilesrv/controlpanel/tsrc"/>
+            <unit bldFile="/sf/mw/gsprofilesrv/controlpanel/tsrc" proFile="tsrc.pro" qmakeArgs="-r"/>
           </component>
           <component name="controlpanel_rom" long-name="Control Panel ROM" filter="s60">
-            <unit bldFile="/sf/mw/gsprofilesrv/controlpanel/rom"/>
+            <unit bldFile="/sf/mw/gsprofilesrv/controlpanel/rom" proFile="cp_rom.pri" qmakeArgs="-r -config rom"/>
           </component>
           <component name="controlpanel_source" long-name="Control Panel Source" filter="s60">
-            <unit bldFile="/sf/mw/gsprofilesrv/controlpanel/src"/>
+            <unit bldFile="/sf/mw/gsprofilesrv/controlpanel/src" qmakeArgs="-r -config rom" proFile="src.pro"/>
           </component>
         </collection>
         <collection name="profilesservices" long-name="Profiles Services" level="server">

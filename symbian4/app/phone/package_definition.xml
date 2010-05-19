@@ -98,21 +98,21 @@
             <unit bldFile="/sf/app/phone/phoneapp/phonemediatorcenter/group"/>
           </component>
           <component name="phoneuiview2" filter="s60" long-name="Phone UI View">
-            <unit bldFile="/sf/app/phone/phoneapp/phoneuiview2"/>
+            <unit bldFile="/sf/app/phone/phoneapp/phoneuiview2" proFile="phoneuiview2.pro"/>
           </component>
           <component name="phoneuiqtviewadapter" filter="s60" long-name="Phone UI Qt View Adapter" introduced="^4" plugin="Y">
-            <unit bldFile="/sf/app/phone/phoneapp/phoneuiqtviewadapter"/>
+            <unit bldFile="/sf/app/phone/phoneapp/phoneuiqtviewadapter" proFile="phoneuiqtviewadapter.pro"/>
           </component>
           <component name="phonestringloader" filter="s60" long-name="Phone String Loader" introduced="^4">
-            <unit bldFile="/sf/app/phone/phoneapp/phonestringloader"/>
+            <unit bldFile="/sf/app/phone/phoneapp/phonestringloader" proFile="phonestringloader.pro"/>
           </component>
           <component name="phoneui2" filter="s60" long-name="Phone UI">
-            <unit bldFile="/sf/app/phone/phoneapp/phoneui2"/>
+            <unit bldFile="/sf/app/phone/phoneapp/phoneui2" proFile="phoneui2.pro"/>
           </component>
         </collection>
         <collection name="phoneengine" long-name="Phone Engine" level="engine">
           <component name="phonecntfinder2" filter="s60" long-name="Phone Contact Finder">
-            <unit bldFile="/sf/app/phone/phoneengine/phonecntfinder2"/>
+            <unit bldFile="/sf/app/phone/phoneengine/phonecntfinder2" proFile="phonecntfinder2.pro"/>
           </component>
           <component name="audiohandling" filter="s60" long-name="Phone Audio Handling">
             <unit bldFile="/sf/app/phone/phoneengine/audiohandling/group"/>
@@ -130,21 +130,21 @@
             <unit bldFile="/sf/app/phone/phoneengine/engineinfo/group"/>
           </component>
           <component name="phonemodel" filter="s60" long-name="Phone Model">
-            <unit bldFile="/sf/app/phone/phoneengine/phonemodel"/>
+            <unit bldFile="/sf/app/phone/phoneengine/phonemodel" proFile="phonemodel.pro"/>
           </component>
           <component name="servicehandling" filter="s60" long-name="Phone Service Handling">
             <unit bldFile="/sf/app/phone/phoneengine/servicehandling/group"/>
           </component>
           <component name="phoneservices" filter="s60" long-name="Phone Server" introduced="^4">
-            <unit bldFile="/sf/app/phone/phoneengine/phoneservices"/>
+            <unit bldFile="/sf/app/phone/phoneengine/phoneservices" proFile="phoneservices.pro"/>
           </component>
           <component name="parserrecognizer" filter="s60" long-name="Parser Recognizer" introduced="^4" plugin="Y">
-            <unit bldFile="/sf/app/phone/phoneengine/parserrecognizer"/>
+            <unit bldFile="/sf/app/phone/phoneengine/parserrecognizer" proFile="parserrecognizer.pro"/>
           </component>
         </collection>
         <collection name="phoneuis" long-name="Phone UIs" level="ui">
           <component name="bubblemanager2" filter="s60" long-name="Phone Bubble Manager">
-            <unit bldFile="/sf/app/phone/phoneuis/bubblemanager2"/>
+            <unit bldFile="/sf/app/phone/phoneuis/bubblemanager2" proFile="bubblemanager2.pro"/>
           </component>
           <component name="telephonydevicemode" filter="s60" long-name="Telephony Device Mode">
             <unit bldFile="/sf/app/phone/phoneuis/telephonydevicemode/group"/>
@@ -199,15 +199,15 @@
             <unit bldFile="/sf/app/phone/phoneplugins/csplugin/group"/>
           </component>
           <component name="hsdialerwidgetplugin" filter="s60" long-name="Home Screen Dialer Widget Plugin" introduced="^4" plugin="Y">
-            <unit bldFile="/sf/app/phone/phoneplugins/hsdialerwidgetplugin"/>
+            <unit bldFile="/sf/app/phone/phoneplugins/hsdialerwidgetplugin" proFile="hsdialerwidgetplugin.pro"/>
           </component>
           <component name="infowidgetplugin" filter="s60" long-name="Info Widget Plugin" introduced="^4" plugin="Y">
-            <unit bldFile="/sf/app/phone/phoneplugins/infowidgetplugin"/>
+            <unit bldFile="/sf/app/phone/phoneplugins/infowidgetplugin" proFile="infowidgetplugin.pro"/>
           </component>
         </collection>
         <collection name="phonesettings" long-name="Phone Settings" level="plugin">
           <component name="cpphonesettingsplugins" filter="s60" long-name="CP Phone Settings Plugins" introduced="^4" plugin="Y">
-            <unit bldFile="/sf/app/phone/phonesettings/cpphonesettingsplugins"/>
+            <unit bldFile="/sf/app/phone/phonesettings/cpphonesettingsplugins" proFile="cpphonesettingsplugins.pro"/>
           </component>
         </collection>
       </block>

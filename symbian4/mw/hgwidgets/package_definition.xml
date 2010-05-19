@@ -91,7 +91,7 @@
         </collection>
         <collection name="hgwidgets_info" long-name="HG Widgets Info" level="framework">
           <component name="hgwidgets_build" long-name="HG Widgets Build" introduced="^4">
-            <unit bldFile="/sf/mw/hgwidgets/."/>
+            <unit bldFile="/sf/mw/hgwidgets/." proFile="hgwidgets.pro"/>
           </component>
         </collection>
       </block>

@@ -80,13 +80,13 @@
         <collection name="organizer_pub" long-name="Organizer Application Suite Public Interfaces" level="app">
           <component name="calendar_interim_utils2_api" long-name="Calendar Interim Utils 2 API" filter="s60" class="api">
             <!-- move into own .pro file -->
-            <unit bldFile="/sf/app/organizer/organizer_pub"/>
+            <unit bldFile="/sf/app/organizer/organizer_pub" proFile="organizer_pub.pro"/>
           </component>
         </collection>
         <collection name="organizer_plat" long-name="Organizer Application Suite Platform Interfaces" level="app">
           <component name="organizer_plat_build" long-name="Organizer Application Suite Platform Interface Build" filter="s60" class="api">
             <!-- break up into individual .pro files -->
-            <unit bldFile="/sf/app/organizer/organizer_plat"/>
+            <unit bldFile="/sf/app/organizer/organizer_plat" proFile="organizer_plat.pro"/>
           </component>
           <component name="agenda_versit_2_api" long-name="Agenda Versit 2 API" filter="s60" class="api">
             <!-- <unit bldFile="organizer_plat/agenda_versit_2_api/group"/>-->
@@ -107,45 +107,45 @@
         <collection name="agendainterface" long-name="Agenda Interface" level="services">
           <!-- collection is really a component, should move down a directory -->
           <component name="agendainterface_build" filter="s60" long-name="Agenda Interface Build">
-            <unit bldFile="/sf/app/organizer/agendainterface"/>
+            <unit bldFile="/sf/app/organizer/agendainterface" proFile="agendainterface.pro"/>
           </component>
         </collection>
         <collection name="calendarui" long-name="Calendar UI" level="ui">
           <component name="commonutils" filter="s60" long-name="Calendar Common Utils">
-            <unit bldFile="/sf/app/organizer/calendarui/commonutils"/>
+            <unit bldFile="/sf/app/organizer/calendarui/commonutils" proFile="commonutils.pro"/>
           </component>
           <component name="calenlauncher" filter="s60" long-name="Calendar Launcher">
-            <unit bldFile="/sf/app/organizer/calendarui/calenlauncher"/>
+            <unit bldFile="/sf/app/organizer/calendarui/calenlauncher" proFile="calenlauncher.pro"/>
           </component>
           <component name="caleneditor" filter="s60" long-name="Calendar Editor" introduced="^4">
-            <unit bldFile="/sf/app/organizer/calendarui/caleneditor"/>
+            <unit bldFile="/sf/app/organizer/calendarui/caleneditor" proFile="caleneditor.pro"/>
           </component>
           <component name="agendaeventviewer" filter="s60" long-name="Agenda Event Viewer" introduced="^4">
-            <unit bldFile="/sf/app/organizer/calendarui/agendaeventviewer"/>
+            <unit bldFile="/sf/app/organizer/calendarui/agendaeventviewer" proFile="agendaeventviewer.pro"/>
           </component>
           <component name="globaldata" filter="s60" long-name="Calendar Global Data">
-            <unit bldFile="/sf/app/organizer/calendarui/globaldata"/>
+            <unit bldFile="/sf/app/organizer/calendarui/globaldata" proFile="globaldata.pro"/>
           </component>
           <component name="settings" filter="s60" long-name="Calendar Settings">
-            <unit bldFile="/sf/app/organizer/calendarui/settings"/>
+            <unit bldFile="/sf/app/organizer/calendarui/settings" proFile="settings.pro"/>
           </component>
           <component name="calenplugins" filter="s60" long-name="Calendar Plugins" introduced="^4" plugin="Y">
-            <unit bldFile="/sf/app/organizer/calendarui/calenplugins"/>
+            <unit bldFile="/sf/app/organizer/calendarui/calenplugins" proFile="calenplugins.pro"/>
           </component>
           <component name="customisationmanager" filter="s60" long-name="Calendar Customisation Manager">
-            <unit bldFile="/sf/app/organizer/calendarui/customisationmanager"/>
+            <unit bldFile="/sf/app/organizer/calendarui/customisationmanager" proFile="customisationmanager.pro"/>
           </component>
           <component name="views" filter="s60" long-name="Calendar Views">
-            <unit bldFile="/sf/app/organizer/calendarui/views"/>
+            <unit bldFile="/sf/app/organizer/calendarui/views" proFile="views.pro"/>
           </component>
           <component name="calendarui_controller" filter="s60" long-name="Calendar Controller">
-            <unit bldFile="/sf/app/organizer/calendarui/controller"/>
+            <unit bldFile="/sf/app/organizer/calendarui/controller" proFile="controller.pro"/>
           </component>
           <component name="calendarui_application" filter="s60" long-name="Calendar Application">
-            <unit bldFile="/sf/app/organizer/calendarui/application"/>
+            <unit bldFile="/sf/app/organizer/calendarui/application" proFile="application.pro"/>
           </component>
           <component name="regionalplugins" long-name="Regional Plugins" filter="s60" introduced="^4" plugin="Y">
-            <unit bldFile="/sf/app/organizer/calendarui/regionalplugins"/>
+            <unit bldFile="/sf/app/organizer/calendarui/regionalplugins" proFile="regionalplugins.pro"/>
           </component>
           <component name="caldav" filter="sf_build" long-name="CalDAV" introduced="^3" plugin="Y">
             <unit bldFile="/sf/app/organizer/calendarui/caldav/group"/>
@@ -153,10 +153,10 @@
         </collection>
         <collection name="notes" long-name="Notes" level="ui">
           <component name="noteseditor" filter="s60" long-name="Notes Editor" introduced="^4">
-            <unit bldFile="/sf/app/organizer/notes/notesui/noteseditor"/>
+            <unit bldFile="/sf/app/organizer/notes/notesui/noteseditor" proFile="noteseditor.pro"/>
           </component>
           <component name="notes_build" filter="s60" long-name="Notes Build" introduced="^4">
-            <unit bldFile="/sf/app/organizer/notes"/>
+            <unit bldFile="/sf/app/organizer/notes" proFile="notes.pro"/>
           </component>
         </collection>
         <collection name="calendarengines" long-name="Calendar Engines" level="engine">
@@ -192,7 +192,7 @@
           </component>
           <component name="clock_build" filter="s60" long-name="Clock Build">
             <!-- make exports into a component, or just move to one of the above components, then remove this and uncomment the above -->
-            <unit bldFile="/sf/app/organizer/clock"/>
+            <unit bldFile="/sf/app/organizer/clock" proFile="clock.pro"/>
           </component>
         </collection>
         <collection name="pimappservices" long-name="PIM Application Services" level="services">
@@ -220,7 +220,7 @@
         <collection name="alarmui" long-name="Alarm UI" level="app">
           <!-- collection is really a component, should move down a directory -->
           <component name="alarmui_build" filter="s60" long-name="Alarm UI Build">
-            <unit bldFile="/sf/app/organizer/alarmui"/>
+            <unit bldFile="/sf/app/organizer/alarmui" proFile="alarmui.pro"/>
           </component>
         </collection>
         <collection name="organizer_info" long-name="Organizer Application Suite Info" level="app">

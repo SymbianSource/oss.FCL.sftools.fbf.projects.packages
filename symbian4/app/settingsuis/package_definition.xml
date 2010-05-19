@@ -79,13 +79,13 @@
       <block name="settingsuis" level="services" long-name="Settings UIs" levels="plugin ui">
         <collection name="controlpanelplugins" long-name="Control Panel Plugins" level="plugin">
           <component name="themeplugin" filter="s60" long-name="Theme Plugin" introduced="^4">
-            <unit bldFile="/sf/app/settingsuis/controlpanelplugins/themeplugin"/>
+            <unit bldFile="/sf/app/settingsuis/controlpanelplugins/themeplugin" proFile="themeplugin.pro" qmakeArgs="-r -config rom"/>
           </component>
         </collection>
         <collection name="controlpanelui" long-name="Control Panel UI" level="ui">
           <!-- collection is really a component, move down a dir -->
           <component name="controlpanelui_build" filter="s60" long-name="Control Panel UI Build" introduced="^4">
-            <unit bldFile="/sf/app/settingsuis/controlpanelui"/>
+            <unit bldFile="/sf/app/settingsuis/controlpanelui" proFile="controlpanelui.pro" qmakeArgs="-r -config rom"/>
           </component>
         </collection>
       </block>

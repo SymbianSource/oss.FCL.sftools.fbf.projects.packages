@@ -79,29 +79,29 @@
       <block name="homescreensrv" level="specific" long-name="Home Screen Services" levels="plugin framework server generic specific">
         <collection name="appfoundation" long-name="App Foundation" level="generic">
           <component name="appfoundation_build" long-name="App Foundation Build" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/appfoundation"/>
+            <unit bldFile="/sf/mw/homescreensrv/appfoundation" qmakeArgs="-r" proFile="appfoundation.pro"/>
           </component>
         </collection>
         <collection name="hswidgetmodel" long-name="Home Screen Widget Model" level="framework">
           <component name="hswidgetmodel_build" long-name="Home Screen Widget Model Build" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/hswidgetmodel"/>
+            <unit bldFile="/sf/mw/homescreensrv/hswidgetmodel" qmakeArgs="-r" proFile="hswidgetmodel.pro"/>
           </component>
         </collection>
         <collection name="contentstorage" long-name="Content Storage" level="framework">
           <component name="cautils" long-name="Content Arsenal Utils" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/contentstorage/cautils"/>
+            <unit bldFile="/sf/mw/homescreensrv/contentstorage/cautils" qmakeArgs="-r" proFile="cautils.pro"/>
           </component>
           <component name="contentstorage_build" long-name="Content Storage Build" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/contentstorage/group"/>
+            <unit bldFile="/sf/mw/homescreensrv/contentstorage/group" qmakeArgs="-r" proFile="group.pro"/>
           </component>
           <component name="casrv/calocalizerscanner" long-name="Content Arsenal Server Localizer Scanner" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/contentstorage/casrv/calocalizerscanner"/>
+            <unit bldFile="/sf/mw/homescreensrv/contentstorage/casrv/calocalizerscanner" qmakeArgs="-r" proFile="calocalizerscanner.pro"/>
           </component>
           <component name="cahandler" long-name="Content Arsenal Handler" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/contentstorage/cahandler"/>
+            <unit bldFile="/sf/mw/homescreensrv/contentstorage/cahandler" qmakeArgs="-r" proFile="cahandler.pro"/>
           </component>
           <component name="caclient" long-name="Content Arsenal Client" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/contentstorage/caclient"/>
+            <unit bldFile="/sf/mw/homescreensrv/contentstorage/caclient" qmakeArgs="-r" proFile="caclient.pro"/>
           </component>
         </collection>
         <collection name="contentpublishingsrv" long-name="Content Publishing Service" level="server">
@@ -133,28 +133,28 @@
         </collection>
         <collection name="screensavermodel" long-name="Screensaver Model" level="specific">
           <component name="screensavermodel_build" long-name="Screensaver Model Build" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/screensavermodel"/>
+            <unit bldFile="/sf/mw/homescreensrv/screensavermodel" qmakeArgs="-r" proFile="screensavermodel.pro"/>
           </component>
         </collection>
         <collection name="hsactivityfw" long-name="Activity Framework" level="activityfw">
           <component name="hsactivityfw_build" long-name="Activity Framework Build" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/activityfw"/>
+            <unit bldFile="/sf/mw/homescreensrv/activityfw" qmakeArgs="-r" proFile="activityfw.pro"/>
           </component>
         </collection>
         <collection name="hsappkeyhandler" long-name="HS Appplication Key Handler" level="server">
           <component name="hsappkeyhandler_build" long-name="Appplication Key Handler Build" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/hsappkeyhandler"/>
+            <unit bldFile="/sf/mw/homescreensrv/hsappkeyhandler" qmakeArgs="-r" proFile="hsappkeyhandler.pro"/>
           </component>
         </collection>
         <collection name="homescreensrv_info" long-name="Home Screen Services Info" level="specific">
           <component name="homescreensrvconf" long-name="Home Screen Services Config" introduced="^4" class="config">
-            <unit bldFile="/sf/mw/homescreensrv/."/>
+            <unit bldFile="/sf/mw/homescreensrv/." qmakeArgs="-r" proFile="homescreensrv_exports_to_rom.pri"/>
           </component>
           <component name="homescreensrvrom" long-name="Home Screen Services ROM" introduced="^4">
             <unit bldFile="/sf/mw/homescreensrv/group"/>
           </component>
           <component name="homescreensrv_test" long-name="Home Screen Services Test" filter="test,unit_test" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/tsrc"/>
+            <unit bldFile="/sf/mw/homescreensrv/tsrc" qmakeArgs="-r MMP_RULES+=EXPORTUNFROZEN" proFile="tsrc.pro"/>
           </component>
         </collection>
       </block>

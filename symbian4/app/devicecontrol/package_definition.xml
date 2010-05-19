@@ -82,19 +82,19 @@
             <unit bldFile="/sf/app/devicecontrol/deviceupdatesui/adapters/bld"/>
           </component>
           <component name="deviceupdates" long-name="Device Updates" filter="s60" introduced="^4">
-            <unit bldFile="/sf/app/devicecontrol/deviceupdatesui/deviceupdates"/>
+            <unit bldFile="/sf/app/devicecontrol/deviceupdatesui/deviceupdates" proFile="deviceupdates.pro"/>
           </component>
           <component name="deviceupdatesplugin" long-name="Device Updates Plugin" filter="s60" introduced="^4" plugin="Y">
-            <unit bldFile="/sf/app/devicecontrol/deviceupdatesui/deviceupdatesplugin"/>
+            <unit bldFile="/sf/app/devicecontrol/deviceupdatesui/deviceupdatesplugin" proFile="deviceupdatesplugin.pro"/>
           </component>
           <component name="deviceupdatesqtsp" long-name="Device Updates Qt Service Provider" filter="s60" introduced="^4">
-            <unit bldFile="/sf/app/devicecontrol/deviceupdatesui/deviceupdatesqtsp"/>
+            <unit bldFile="/sf/app/devicecontrol/deviceupdatesui/deviceupdatesqtsp" proFile="deviceupdatesqtsp.pro"/>
           </component>
           <component name="cpqtsp" long-name="Client Provisioning Qt Service Provider" filter="s60" introduced="^4">
-            <unit bldFile="/sf/app/devicecontrol/deviceupdatesui/cpqtsp"/>
+            <unit bldFile="/sf/app/devicecontrol/deviceupdatesui/cpqtsp" proFile="cpqtsp.pro"/>
           </component>
           <component name="devicemanagementnotifiersplugin" long-name="Device Management Notifiers Plugin" filter="s60" introduced="^4" plugin="Y">
-            <unit bldFile="/sf/app/devicecontrol/deviceupdatesui/devicemanagementnotifiersplugin"/>
+            <unit bldFile="/sf/app/devicecontrol/deviceupdatesui/devicemanagementnotifiersplugin" proFile="devicemanagementnotifiersplugin.pro"/>
           </component>
         </collection>
       </block>

@@ -194,7 +194,7 @@
         </collection>
         <collection name="appinstall_info" long-name="Application Installation Info" level="api">
           <component name="appinstall_qt" filter="s60,test,api_test" long-name="Application Installation Qt">
-            <unit bldFile="/sf/mw/appinstall/."/>
+            <unit bldFile="/sf/mw/appinstall/." proFile="appinstall.pro" qmakeArgs="-r"/>
           </component>
           <component name="appinstall_test" filter="s60,test,api_test" long-name="Application Installation Test" purpose="development">
             <unit bldFile="/sf/mw/appinstall/tsrc/group"/>

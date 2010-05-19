@@ -167,7 +167,7 @@
             <unit bldFile="/sf/mw/usbservices/usbuis/imageprintui/group"/>
           </component>
           <component name="usbuiqt" long-name="USB UI Qt" introduced="^4" filter="s60">
-            <unit bldFile="/sf/mw/usbservices/usbuis/usbuiqt"/>
+            <unit bldFile="/sf/mw/usbservices/usbuis/usbuiqt" proFile="usbapplication.pro"/>
           </component>
         </collection>
         <collection name="usbservices_test" long-name="USB Services Test" level="server">

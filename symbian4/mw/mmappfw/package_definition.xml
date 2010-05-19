@@ -156,7 +156,7 @@
             <unit bldFile="/sf/mw/mmappfw/mpx/viewframework/group"/>
           </component>
           <component name="mpxviewframeworkqt" long-name="MPX View Framework Qt" filter="s60">
-            <unit bldFile="/sf/mw/mmappfw/mpx/mpxviewframeworkqt"/>
+            <unit bldFile="/sf/mw/mmappfw/mpx/mpxviewframeworkqt" proFile="mpxviewframeworkqt.pro" qmakeArgs="-r -config rom"/>
           </component>
           <component name="mpx_build" filter="s60" long-name="MPX Build" introduced="^1">
             <!--  Move the export to another component or remove the #includes from this one -->

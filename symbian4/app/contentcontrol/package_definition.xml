@@ -105,7 +105,7 @@
             <unit bldFile="/sf/app/contentcontrol/omads/omadsextensions/group"/>
           </component>
           <component name="omadsextensions_qt" filter="s60" long-name="OMA DS Qt Extensions" plugin="Y">
-            <unit bldFile="/sf/app/contentcontrol/omads/omadsextensions"/>
+            <unit bldFile="/sf/app/contentcontrol/omads/omadsextensions" proFile="omadsextensions.pro"/>
           </component>
         </collection>
       </block>

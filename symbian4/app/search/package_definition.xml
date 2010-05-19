@@ -84,7 +84,7 @@
         </collection>
         <collection name="searchui" long-name="Search UI">
           <component name="searchui_build" long-name="Search UI Build" introduced="^4">
-            <unit bldFile="/sf/app/search/searchui"/>
+            <unit bldFile="/sf/app/search/searchui" proFile="searchui.pro"/>
           </component>
         </collection>
       </block>

@@ -80,7 +80,7 @@
         <!-- need to break up this package nito collections and components -->
         <collection name="webruntime_info" long-name="Web Runtime Info">
           <component name="webruntime_build" long-name="Web Runtime Build" introduced="^4">
-            <unit bldFile="/sf/mw/webruntime/."/>
+            <unit bldFile="/sf/mw/webruntime/." proFile="cwrt.pro" qmakeArgs="&quot;what+=ninetwo&quot; &quot;what+=tenone&quot; &quot;what+=qt_unstable&quot; &quot;what+=wrtlite&quot; &quot;what+=exportiby&quot;"/>
           </component>
         </collection>
       </block>

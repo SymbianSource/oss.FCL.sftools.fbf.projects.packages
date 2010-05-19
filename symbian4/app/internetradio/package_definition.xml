@@ -92,7 +92,7 @@
         <collection name="qtinternetradio" long-name="Qt Internet Radio">
           <component name="qtinternetradio_build" long-name="Qt Internet Radio Build">
             <!--  Move down a dir or break into components-->
-            <unit bldFile="/sf/app/internetradio/qtinternetradio"/>
+            <unit bldFile="/sf/app/internetradio/qtinternetradio" proFile="all.pro" qmakeArgs="-r -config rom"/>
           </component>
           <component name="qtinternetradio_internal" long-name="Qt Internet Radio Internal" filter="test" class="placeholder">
             <!-- appears to be missing. Remove? 

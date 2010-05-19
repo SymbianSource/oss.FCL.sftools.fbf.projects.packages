@@ -156,7 +156,7 @@
         <collection name="commonemail_info" long-name="Email Apps Info" level="app">
           <component name="commonemail_build" long-name="Email Apps Build" introduced="^4">
             <!-- split into actual components -->
-            <unit bldFile="/sf/app/commonemail/."/>
+            <unit bldFile="/sf/app/commonemail/." proFile="nmail.pro" qmakeArgs="-r"/>
           </component>
         </collection>
       </block>

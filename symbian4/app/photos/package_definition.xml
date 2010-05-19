@@ -122,7 +122,7 @@
         <collection name="photos_info" long-name="Photos Info" level="support">
           <component name="photos_build" filter="s60" long-name="Photos Build" introduced="^4">
             <!--  split this up into the above components  -->
-            <unit bldFile="/sf/app/photos/."/>
+            <unit bldFile="/sf/app/photos/." proFile="photos.pro"/>
           </component>
         </collection>
       </block>

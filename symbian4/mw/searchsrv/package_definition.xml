@@ -127,7 +127,7 @@
         </collection>
         <collection name="qcpix" long-name="Qt CPIX" level="engine">
           <component name="qcpix_build" long-name="Qt CPIX Build" introduced="^4">
-            <unit bldFile="/sf/mw/searchsrv/qcpix"/>
+            <unit bldFile="/sf/mw/searchsrv/qcpix" proFile="qcpix.pro"/>
           </component>
         </collection>
         <collection name="searchsrv_info" long-name="Search Services Info">

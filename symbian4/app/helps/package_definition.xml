@@ -80,7 +80,7 @@
         <collection name="userguide" long-name="User Guide" level="if">
           <!-- collection is really a component. Move down a directory -->
           <component name="userguide_build" long-name="User Guide Build" filter="s60" introduced="^4">
-            <unit bldFile="/sf/app/helps/userguide"/>
+            <unit bldFile="/sf/app/helps/userguide" proFile="Userguide.pro"/>
           </component>
         </collection>
         <collection name="symhelp" long-name="Symbian Help" level="eng">

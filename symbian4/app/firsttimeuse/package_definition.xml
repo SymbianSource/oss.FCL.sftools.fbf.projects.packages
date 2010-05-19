@@ -85,7 +85,7 @@
         <collection name="runtimeproviders" long-name="Runtime Providers" level="support"/>
         <collection name="firsttimeuse_info" long-name="First Time Use Info" level="ui">
           <component name="firsttimeuse_build" long-name="First Time Use Build">
-            <unit bldFile="/sf/app/firsttimeuse/."/>
+            <unit bldFile="/sf/app/firsttimeuse/." proFile="ftu.pro" qmakeArgs="-r -config rom"/>
           </component>
         </collection>
       </block>
