@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/FCL/sf/mw/websrv/,/sf/mw/websrv,branch,default,layers.sysdef.xml

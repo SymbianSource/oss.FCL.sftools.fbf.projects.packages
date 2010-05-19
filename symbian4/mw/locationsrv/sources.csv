@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/FCL/sf/mw/locationsrv/,/sf/mw/locationsrv,branch,default,layers.sysdef.xml

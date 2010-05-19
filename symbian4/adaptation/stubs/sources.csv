@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/FCL/sf/adaptation/stubs/,/sf/adaptation/stubs,branch,default,layers.sysdef.xml

@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/FCL/sf/os/security/,/sf/os/security,branch,default,layers.sysdef.xml

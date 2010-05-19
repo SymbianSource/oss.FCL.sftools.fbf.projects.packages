@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/FCL/sf/mw/imghandling/,/sf/mw/imghandling,branch,default,layers.sysdef.xml

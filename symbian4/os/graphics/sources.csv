@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/FCL/sf/os/graphics/,/sf/os/graphics,branch,default,layers.sysdef.xml
