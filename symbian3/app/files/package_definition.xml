@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+]>
+<SystemDefinition name="Symbian^3" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="files" level="apps" long-name="File Manager Apps" levels="support apps">
+<collection name="files_plat" long-name="File Manager Apps Platform Interfaces" level="apps">
+<component name="memory_scan_popup_ui_api" long-name="Memory Scan Popup UI API" filter="s60" class="api">
+<unit bldFile="/sf/app/files/files_plat/memory_scan_popup_ui_api/group"/>
+</component>
+</collection>
+<collection name="deviceencryption" long-name="Device Encryption" level="support">
+<!-- this is either needs to be broken up into idependent bld.infs, or it's really a component and should move down a directory -->
+<component name="devencnotifplugin" filter="s60" long-name="Device Encryption Notifier Plugin" introduced="^3" plugin="Y">
+<unit bldFile="/sf/app/files/deviceencryption/devencnotifplugin/group"/>
+</component>
+<component name="devencui" filter="s60" long-name="Device Encryption UI" introduced="^3">
+<unit bldFile="/sf/app/files/deviceencryption/devencui/group"/>
+</component>
+<component name="devencdmadapter" filter="s60" long-name="Device Encryption DM Adapter" introduced="^3" plugin="Y">
+<unit bldFile="/sf/app/files/deviceencryption/devencdmadapter/group"/>
+</component>
+<component name="devencgsplugin" filter="s60" long-name="Device Encryption GS Plugin" introduced="^3" plugin="Y">
+<unit bldFile="/sf/app/files/deviceencryption/devencgsplugin/group"/>
+</component>
+<component name="deviceencryption_help" filter="s60" long-name="Device Encryption Help" introduced="^3">
+<unit bldFile="/sf/app/files/deviceencryption/help/group"/>
+</component>
+<component name="deviceencryption_build" filter="s60" long-name="Device Encryption Build" introduced="^3">
+<unit bldFile="/sf/app/files/deviceencryption/group"/>
+</component>
+</collection>
+<collection name="filemanager" long-name="File Manager" level="apps">
+<!-- this is really a component, should move down a directory -->
+<component name="filemanager_build" filter="s60" long-name="File Manager Build">
+<unit bldFile="/sf/app/files/filemanager/group"/>
+</component>
+</collection>
+<collection name="filesystemuis" long-name="File System UIs" level="support">
+<component name="memscaneng" filter="s60" long-name="Memory Scan Server">
+<unit bldFile="/sf/app/files/filesystemuis/memscaneng/group"/>
+</component>
+<component name="memstatepopup" filter="s60" long-name="Memory State Popup">
+<unit bldFile="/sf/app/files/filesystemuis/memstatepopup/group"/>
+</component>
+</collection>
+</block>
+</layer>
+</systemModel>
+</SystemDefinition>

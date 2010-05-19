@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+]>
+<SystemDefinition name="Symbian^3" schema="2.0.1">
+<systemModel>
+<layer name="mw" long-name="Middleware" levels="generic specific">
+<block name="homescreensrv" level="specific" long-name="Home Screen Services" levels="plugin framework server generic specific">
+<collection name="homescreensrv_plat" long-name="Home Screen Services Platform Interfaces" level="specific">
+<component name="ai_content_model_api" long-name="AI Content Model API" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/ai_content_model_api/group"/>
+</component>
+<component name="ai_utilities_api" long-name="AI Utilities API" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/ai_utilities_api/group" filter="!test"/>
+</component>
+<component name="ai_plugin_management_api" long-name="AI Plug-in Management API" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/ai_plugin_management_api/group"/>
+</component>
+<component name="ai_plugin_information_api" long-name="AI Plug-in Information API" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/ai_plugin_information_api/group"/>
+</component>
+<component name="ai_variation_api" long-name="AI Variation API" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/ai_variation_api/group"/>
+</component>
+<component name="action_handler_plugin_api" long-name="Action Handler Plugin API" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/action_handler_plugin_api/group" filter="!test"/>
+</component>
+<component name="content_harvester_plugin_api" long-name="Content Harvester Plugin API" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/content_harvester_plugin_api/group" filter="!test"/>
+</component>
+<component name="menu_model_api" long-name="Menu Model API" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/menu_model_api/group"/>
+</component>
+<component name="menu_sat_interface_api" long-name="Menu SAT Interface API" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/menu_sat_interface_api/group" filter="!test"/>
+</component>
+<component name="external_home_screen_api" long-name="External Home Screen API" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/external_home_screen_api/group"/>
+</component>
+<component name="menu_content_service_api" long-name="Menu Content Service API" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/menu_content_service_api/group" filter="!test"/>
+</component>
+<component name="sapi_contentpublishing" long-name="SAPI Content Publishing" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/sapi_contentpublishing/group"/>
+</component>
+<component name="sapi_backstepping" long-name="SAPI Backstepping" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/sapi_backstepping/group"/>
+</component>
+<component name="sapi_actionhandler" long-name="SAPI Action Handler" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/sapi_actionhandler/group"/>
+</component>
+<component name="sapi_homescreenplugin" long-name="SAPI Homescreen Plugin" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/sapi_homescreenplugin/group" filter="!test"/>
+</component>
+<component name="sapi_menucontent" long-name="SAPI Menu Content" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/sapi_menucontent/group"/>
+</component>
+<component name="xcfw_api" long-name="XCFW API" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/xcfw_api/group"/>
+</component>
+<component name="idlefw_api" long-name="Idle Framework API" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/idlefw_api/group"/>
+</component>
+<component name="hs_widget_publisher_api" long-name="Home Screen Publishing API" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/hs_widget_publisher_api/group"/>
+</component>
+<component name="hs_settings_api" long-name="HS Settings API" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/hs_settings_api/group"/>
+</component>
+<component name="hs_content_control_api" long-name="HS Content Control API" filter="s60" class="api">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat/hs_content_control_api/group"/>
+</component>
+</collection>
+<collection name="xcfw" long-name="XML Content Framework" level="framework">
+<!-- collection is really a component, needs to be moved down a directory -->
+<component name="xcfw_build" filter="s60" long-name="XML Content Framework Build">
+<unit bldFile="/sf/mw/homescreensrv/xcfw/group"/>
+</component>
+</collection>
+<collection name="homescreenpluginsrv" long-name="Home Screen Plugin Service" level="plugin">
+<component name="hspsdefinitionengine" filter="s60" long-name="HS Plugin Service Definition Engine" class="placeholder">
+<!-- <unit bldFile="homescreenpluginsrv/hspsdefinitionengine/group"/> -->
+</component>
+<component name="hspsdom" filter="s60" long-name="HS Plugin Service DOM" class="placeholder">
+<!-- <unit bldFile="homescreenpluginsrv/hspsdom/group"/> -->
+</component>
+<component name="hspstools" filter="s60" long-name="HS Server Tools">
+<!-- <unit bldFile="homescreenpluginsrv/hspstools/group"/> -->
+</component>
+<component name="hspspluginregistry" filter="s60" long-name="HS Plugin Registry" class="placeholder">
+<!-- <unit bldFile="homescreenpluginsrv/hspspluginregistry/group"/>-->
+</component>
+<component name="hspsmanager" filter="s60" long-name="HSPS Manager" class="placeholder">
+<!-- <unit bldFile="homescreenpluginsrv/hspsmanager/group"/>-->
+</component>
+<component name="hspsodt" filter="s60" long-name="HSPS Object Description Tree" class="placeholder">
+<!-- <unit bldFile="homescreenpluginsrv/hspsodt/group"/>-->
+</component>
+<component name="hspsresource" filter="s60" long-name="HS Plugin Server Resource" class="placeholder">
+<!-- <unit bldFile="homescreenpluginsrv/hspsresource/group"/>-->
+</component>
+<component name="hspsresult" filter="s60" long-name="HS Plugin Server Result" class="placeholder">
+<!-- <unit bldFile="homescreenpluginsrv/hspsresult/group"/>-->
+</component>
+<component name="homescreen_settings_api" filter="s60" long-name="HS Settings API" class="api placeholder">
+<!-- <unit bldFile="homescreenpluginsrv/hspsresult/group"/>-->
+</component>
+<component name="homescreenpluginsrv_build" filter="s60" long-name="HSPS Build">
+<!-- need to break this up into the self-contained components above and uncomment them -->
+<unit bldFile="/sf/mw/homescreensrv/homescreenpluginsrv/group"/>
+</component>
+</collection>
+<collection name="idlefw" long-name="Idle Framework" level="framework">
+<!-- Uncomment all units when configuration is in place. All currently #included from idlefw_build -->
+<component name="idlefw_plugins" filter="s60" long-name="Idle Framework Plugins" plugin="Y" class="placeholder">
+<!--<unit bldFile="idlefw/plugins/group"/>-->
+</component>
+<component name="hslaunch" filter="s60" long-name="Home Screen Launch" class="placeholder">
+<!--<unit bldFile="idlefw/plugins/group"/>-->
+</component>
+<component name="idlefw_build" filter="s60" long-name="Idle Framework Build">
+<!--split this into components, or separate from the above components and move this down a directory -->
+<unit bldFile="/sf/mw/homescreensrv/idlefw/group"/>
+</component>
+</collection>
+<collection name="menucontentsrv" long-name="Menu Content Service" level="generic">
+<component name="menusatinterface" filter="s60" long-name="Menu SAT Interface">
+<unit bldFile="/sf/mw/homescreensrv/menucontentsrv/menusatinterface/group"/>
+</component>
+<component name="menucontentsrv_build" filter="s60" long-name="Menu Content Service Build">
+<!--split this into components, or separate from the above component and move this down a directory -->
+<unit bldFile="/sf/mw/homescreensrv/menucontentsrv/group"/>
+</component>
+</collection>
+<collection name="backsteppingsrv" long-name="Back Stepping Service" level="server">
+<!-- collection is really a component, needs to be moved down a directory -->
+<component name="bsengine" long-name="Back Stepping Engine" filter="s60">
+<unit bldFile="/sf/mw/homescreensrv/backsteppingsrv/group"/>
+</component>
+</collection>
+<collection name="contentpublishingsrv" long-name="Content Publishing Service" level="server">
+<component name="contentpublishingdebug" filter="s60" long-name="Content Publishing Debug">
+<!-- need to move this component outside of contentpublishingutils and into separate component directory -->
+<!-- <unit bldFile="contentpublishingsrv/contentpublishingutils/contentpublishingdebug/group"/> -->
+</component>
+<component name="contentpublishingutils" filter="s60" long-name="Content Publishing Utils">
+<unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/contentpublishingutils/group"/>
+</component>
+<component name="contentpublishingserver" filter="s60" long-name="Content Publishing Server">
+<unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/contentpublishingserver/group"/>
+</component>
+<component name="contentharvester" filter="s60" long-name="Content Harvester">
+<unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/contentharvester/group"/>
+</component>
+<component name="contentpublishingsrv_build" filter="s60" long-name="Content Publishing Service Build">
+<!-- need to remove links to the above components and just contain the IBY (or move the IBY into another component). 
+      		If keeping, it need to move down a directory.-->
+<unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/group"/>
+</component>
+</collection>
+<collection name="contentcontrolsrv" long-name="Content Control Service" level="server">
+<component name="ccsrv" long-name="Content Control Service" filter="s60" introduced="^3">
+<unit bldFile="/sf/mw/homescreensrv/contentcontrolsrv/ccsrv/group"/>
+</component>
+<component name="ccsrvapi" long-name="Content Control Service API" filter="s60" introduced="^3" class="api">
+<unit bldFile="/sf/mw/homescreensrv/contentcontrolsrv/ccsrvapi/group"/>
+</component>
+<component name="ccclientsession" long-name="Content Control Client Session" filter="s60" introduced="^3">
+<unit bldFile="/sf/mw/homescreensrv/contentcontrolsrv/ccclientsession/group"/>
+</component>
+<component name="hsccclient" long-name="HS Content Control Client" filter="s60" introduced="^3">
+<unit bldFile="/sf/mw/homescreensrv/contentcontrolsrv/hsccclient/group"/>
+</component>
+<component name="hscontentinfo" long-name="Home Screen Content Info" filter="s60" introduced="^3">
+<unit bldFile="/sf/mw/homescreensrv/contentcontrolsrv/hscontentinfo/group"/>
+</component>
+<component name="contentcontrolsrv_build" long-name="Content Control Service Build" filter="s60" introduced="^3">
+<!-- need to remove links to the above components and just contain the IBY (or move the IBY into another component). 
+      		If keeping, it need to move down a directory.-->
+<unit bldFile="/sf/mw/homescreensrv/contentcontrolsrv/group"/>
+</component>
+</collection>
+</block>
+</layer>
+</systemModel>
+</SystemDefinition>

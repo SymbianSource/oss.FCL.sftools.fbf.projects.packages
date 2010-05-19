@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+]>
+<SystemDefinition name="Symbian^3" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="camera" level="apps" long-name="Camera Apps">
+<collection name="camera_plat" long-name="Camera Apps Platform Interfaces">
+<component name="camcorder_ui_constants_api" long-name="Camcorder UI Constants API" filter="s60" class="api">
+<unit bldFile="/sf/app/camera/camera_plat/camcorder_ui_constants_api/group"/>
+</component>
+<component name="active_palette_2_api" long-name="Active Palette 2 API" filter="s60" class="api">
+<unit bldFile="/sf/app/camera/camera_plat/active_palette_2_api/group"/>
+</component>
+</collection>
+<collection name="camerauis" long-name="Camera UIs">
+<component name="activepalette" filter="s60" long-name="Active Palette">
+<unit bldFile="/sf/app/camera/camerauis/activepalette/group"/>
+</component>
+<component name="cameraapp" filter="s60" long-name="Camera Application">
+<unit bldFile="/sf/app/camera/camerauis/cameraapp/group"/>
+<unit bldFile="/sf/app/camera/camerauis/cameraapp/help/group"/>
+</component>
+</collection>
+<collection name="camera_info" long-name="Camera Apps Info"/>
+</block>
+</layer>
+</systemModel>
+</SystemDefinition>

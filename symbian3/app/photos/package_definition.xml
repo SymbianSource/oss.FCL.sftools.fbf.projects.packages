@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+]>
+<SystemDefinition name="Symbian^3" schema="2.0.1">
+<systemModel>
+<layer name="app" long-name="Applications" levels="services apps">
+<block name="photos" level="apps" long-name="Photos" levels="support fw ui app">
+<collection name="photos_plat" long-name="Photos Platform Interfaces" level="app">
+<component name="collection_plugins_api" long-name="Collection Plugins API" introduced="^2" filter="s60" class="api">
+<unit bldFile="/sf/app/photos/photos_plat/collection_plugins_api/group"/>
+</component>
+<component name="controllers_collection_api" long-name="Controllers Collection API" introduced="^2" filter="s60" class="api">
+<unit bldFile="/sf/app/photos/photos_plat/controllers_collection_api/group"/>
+</component>
+<component name="gallery_utilities_api" long-name="Gallery Utilities API" introduced="^2" filter="s60" class="api">
+<unit bldFile="/sf/app/photos/photos_plat/gallery_utilities_api/group"/>
+</component>
+<component name="slideshow_ui_constants_api" long-name="Slideshow Ui Constants API" introduced="^2" filter="s60" class="api">
+<unit bldFile="/sf/app/photos/photos_plat/slideshow_ui_constants_api/group"/>
+</component>
+<component name="views_metadatadialog_api" long-name="Views Metadata Dialog API" introduced="^2" filter="s60" class="api">
+<unit bldFile="/sf/app/photos/photos_plat/views_metadatadialog_api/group"/>
+</component>
+</collection>
+<collection name="photosgallery" long-name="Photos Gallery" level="app">
+<!-- consider splitting this collection into the application itself, and the frameworks behind it -->
+<component name="photosgallery_help" filter="s60" long-name="Photos Help" introduced="^2">
+<unit bldFile="/sf/app/photos/photosgallery/help/group"/>
+</component>
+<component name="logging" filter="s60" long-name="Photos Logging" introduced="^2">
+<unit bldFile="/sf/app/photos/photosgallery/logging/group"/>
+</component>
+<component name="photosgallery_common" filter="s60" long-name="Photos Common" introduced="^2">
+<unit bldFile="/sf/app/photos/photosgallery/common/group"/>
+</component>
+<component name="photosgallery_commonui" filter="s60" long-name="Photos Common UI" introduced="^2">
+<unit bldFile="/sf/app/photos/photosgallery/commonui/group"/>
+</component>
+<component name="photosgalleryollectionfw" filter="s60" long-name="Photos Collection Framework" introduced="^2">
+<unit bldFile="/sf/app/photos/photosgallery/collectionframework/group"/>
+</component>
+<component name="galleryicons" filter="s60" long-name="Photos Icons" introduced="^2" class="config">
+<unit bldFile="/sf/app/photos/photosgallery/icons"/>
+</component>
+<component name="imageviewer" filter="s60" long-name="Image Viewer" introduced="^3">
+<!-- this is really a part of controllers component, #include from there instead -->
+<unit bldFile="/sf/app/photos/photosgallery/controllers/imageviewer/group"/>
+</component>
+<component name="photosgalleryviewfw" filter="s60" long-name="View Framework" introduced="^2">
+<unit bldFile="/sf/app/photos/photosgallery/viewframework/group"/>
+</component>
+<component name="controllers" filter="s60" long-name="Photos Controllers" introduced="^2">
+<unit bldFile="/sf/app/photos/photosgallery/controllers/group"/>
+</component>
+<component name="photogallery" filter="s60" long-name="Media Gallery" introduced="^2">
+<unit bldFile="/sf/app/photos/photosgallery/gallery/group"/>
+</component>
+<component name="slideshow" filter="s60" long-name="Slideshow" introduced="^2">
+<unit bldFile="/sf/app/photos/photosgallery/slideshow/group"/>
+</component>
+<component name="memoryplugin" long-name="Memory Plugin" filter="s60" introduced="^2" plugin="Y">
+<unit bldFile="/sf/app/photos/photosgallery/memoryplugin/group"/>
+</component>
+<component name="imgvwr" filter="s60" long-name="Photos Image Viewer" introduced="^3">
+<unit bldFile="/sf/app/photos/photosgallery/imgvwr/group"/>
+</component>
+<component name="photosgallery_build" filter="s60" long-name="Photos Gallery Build" introduced="^2">
+<!--  need to remove the #included above bld.infs from this  -->
+<unit bldFile="/sf/app/photos/photosgallery/group"/>
+</component>
+</collection>
+</block>
+</layer>
+</systemModel>
+</SystemDefinition>
