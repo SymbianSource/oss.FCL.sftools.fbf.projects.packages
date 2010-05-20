@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="gstreamer" name="GStreamer" levels="plugin core api">
+      	<meta rel="config">
+      		<defined condition="FF_GSTREAMER"/>
+      	</meta>
+	<!-- Uncomment all units when configuration is in place. All currently #included from gstreamer_build -->
+	<!-- structure matches planned directory layout -->
+    <collection id="gstreamerfw" name="GStreamer Framework" level="core">
+      <component id="gstreamer_core" name="GStreamer Core" introduced="^3">
+        <!--<unit bldFile="gstreamer_core/group"/>-->
+      </component>
+    </collection>
+    <collection id="gst_plugins" name="GStreamer Plugins" level="plugin">
+      <component id="gst_plugins_base" name="GStreamer Base Plugins" introduced="^3">
+        <!--<unit bldFile="gst_plugins_base/group"/>-->
+      </component>
+      <component id="gst_plugins_good" name="GStreamer Good Plugins" introduced="^3">
+        <!--<unit bldFile="gst_plugins_good/group"/>-->
+      </component>
+      <component id="gst_plugins_symbian" filter="s60" name="GStreamer Sybmian Plugins" introduced="^3">
+        <!--<unit bldFile="gst_plugins_symbian/group" filter="!test"/>-->
+        <!--<unit bldFile="gst_plugins_symbian/tsrc/GStreamerTestModule/group" filter="test,pref_test"/>-->
+      </component>
+    </collection>
+    <collection id="gstregistrygenerator" name="GStreamer Registry Generator" level="core">
+    	<!-- collection is really a component. Move down an directory -->
+      <component id="gstregistrygenerator_build" filter="s60" name="GStreamer Registry Generator Build" introduced="^3">
+        <!-- <unit bldFile="gstregistrygenerator/group"/>-->
+      </component>
+    </collection>
+    <collection id="gst_test_apps" name="GStreamer Test Applications" level="api">
+      <component id="gst_player" filter="s60" name="GStreamer Player" introduced="^3" purpose="development">
+        <!-- <unit bldFile="gst_test_apps/gst_player/group"/>-->
+      </component>
+    </collection>
+    <collection id="gstreamer_info" name="GStreamer Info" level="api">
+      <component id="gstreamer_build" filter="s60" name="GStreamer Build" introduced="^3">
+      	<!-- make this a ROM component or split up instead? -->
+        <unit bldFile="group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>
