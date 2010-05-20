@@ -46,7 +46,7 @@
    <component id="contentharvester" filter="s60" name="Content Harvester">
     <unit bldFile="contentpublishingsrv/contentharvester/group"/>
    </component>
-   <component id="contentpublishingsrv_build" filter="s60" name="Content Publishing Service Build">
+   <component id="contentpublishingsrv_rom" filter="s60" name="Content Publishing Service ROM">
     <!-- need to remove links to the above components and just contain the IBY (or move the IBY into another component). 
       		If keeping, it need to move down a directory.-->
     <unit bldFile="contentpublishingsrv/group"/>
@@ -54,6 +54,9 @@
   </collection>
 
   <collection id="homescreensrv_plat" name="Home Screen Services Platform Interfaces" level="specific">
+     <component id="homescreensrv_plat_build" name="Home Screen Services Platform Interfaces build"  introduced="^4">
+      <unit bldFile="homescreensrv_plat" qt:qmakeArgs="-r" qt:proFile="homescreensrv_plat.pro"/>
+     </component>
    <component id="action_handler_plugin_api" name="Action Handler Plugin API" class="api" filter="s60">
     <meta rel="Api" href="homescreensrv_plat/action_handler_plugin_api/action_handler_plugin_api.metaxml"/>
     <unit base="homescreensrv_plat/action_handler_plugin_api"/>
@@ -62,10 +65,6 @@
     <meta rel="Api" href="homescreensrv_plat/content_harvester_plugin_api/content_harvester_plugin_api.metaxml"/>
     <unit base="homescreensrv_plat/content_harvester_plugin_api"/>
    </component>
-   <component id="menu_sat_interface_api" name="Menu SAT Interface API" class="api" filter="s60">
-    <meta rel="Api" href="homescreensrv_plat/menu_sat_interface_api/menu_sat_interface_api.metaxml"/>
-    <unit base="homescreensrv_plat/menu_sat_interface_api"/>
-   </component>
    <component id="sapi_contentpublishing" name="SAPI Content Publishing" class="api" filter="s60">
     <meta rel="Api" href="homescreensrv_plat/sapi_contentpublishing/sapi_contentpublishing.metaxml"/>
     <unit base="homescreensrv_plat/sapi_contentpublishing"/>
@@ -73,6 +72,25 @@
    <component id="sapi_actionhandler" name="SAPI Action Handler" class="api" filter="s60">
     <meta rel="Api" href="homescreensrv_plat/sapi_actionhandler/sapi_actionhandler.metaxml"/>
     <unit base="homescreensrv_plat/sapi_actionhandler"/>
+   </component>
+   <component id="menu_sat_interface_api" name="Menu SAT Interface API" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/menu_sat_interface_api/menu_sat_interface_api.metaxml"/>
+    <unit base="homescreensrv_plat/menu_sat_interface_api"/>
+   </component>
+   <component id="appruntimemodel_api" name="Appliction Run-Time Model API" class="api" filter="s60" introduced="^4">
+    <unit base="homescreensrv_plat/appruntimemodel_api"/>
+   </component>
+   <component id="contentstorage_api" name="Content Storage API" class="api" filter="s60" introduced="^4">
+    <unit base="homescreensrv_plat/contentstorage_api"/>
+   </component>
+   <component id="hswidgetmodel_api" name="HS Widget Model API" class="api" filter="s60" introduced="^4">
+    <unit base="homescreensrv_plat/hswidgetmodel_api"/>
+   </component>
+   <component id="statemodel_api" name="State Model API" class="api" filter="s60" introduced="^4">
+    <unit base="homescreensrv_plat/statemodel_api"/>
+   </component>
+   <component id="homescreen_information_api" name="Homescreen Information API" class="api" filter="s60" introduced="^4">
+    <unit base="homescreensrv_plat/homescreen_information_api"/>
    </component>
   </collection>
   <collection id="screensavermodel" name="Screensaver Model" level="specific">
