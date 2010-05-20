@@ -177,6 +177,7 @@
       <package id="websrv" level="generic" tech-domain="rt" href="../../../../mw/websrv/package_definition_3.0.xml"/>
       <package id="platformtools" level="generic" tech-domain="to" href="../../../../mw/platformtools/package_definition_3.0.xml"/>
       <package id="uitools" level="specific" tech-domain="to" href="../../../../mw/uitools/package_definition_3.0.xml"/>
+      <package id="opensrv" level="specific" tech-domain="pr" href="../../../../mw/opensrv/package_definition_3.0.xml"/>
     </layer>
     <layer id="app" name="Applications" levels="services apps">
       <package id="location" level="apps" tech-domain="lo" href="../../../../app/location/package_definition_3.0.xml"/>
