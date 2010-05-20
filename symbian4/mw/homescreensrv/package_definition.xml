@@ -95,18 +95,26 @@
 <component name="contentharvester" filter="s60" long-name="Content Harvester">
 <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/contentharvester/group"/>
 </component>
-<component name="contentpublishingsrv_build" filter="s60" long-name="Content Publishing Service Build">
+<component name="contentpublishingsrv_rom" filter="s60" long-name="Content Publishing Service ROM">
 <!-- need to remove links to the above components and just contain the IBY (or move the IBY into another component). 
       		If keeping, it need to move down a directory.-->
 <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/group"/>
 </component>
 </collection>
 <collection name="homescreensrv_plat" long-name="Home Screen Services Platform Interfaces" level="specific">
+<component name="homescreensrv_plat_build" long-name="Home Screen Services Platform Interfaces build" introduced="^4">
+<unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat" qmakeArgs="-r" proFile="homescreensrv_plat.pro"/>
+</component>
 <component name="action_handler_plugin_api" long-name="Action Handler Plugin API" filter="s60" class="api"/>
 <component name="content_harvester_plugin_api" long-name="Content Harvester Plugin API" filter="s60" class="api"/>
-<component name="menu_sat_interface_api" long-name="Menu SAT Interface API" filter="s60" class="api"/>
 <component name="sapi_contentpublishing" long-name="SAPI Content Publishing" filter="s60" class="api"/>
 <component name="sapi_actionhandler" long-name="SAPI Action Handler" filter="s60" class="api"/>
+<component name="menu_sat_interface_api" long-name="Menu SAT Interface API" filter="s60" class="api"/>
+<component name="appruntimemodel_api" long-name="Appliction Run-Time Model API" filter="s60" introduced="^4" class="api"/>
+<component name="contentstorage_api" long-name="Content Storage API" filter="s60" introduced="^4" class="api"/>
+<component name="hswidgetmodel_api" long-name="HS Widget Model API" filter="s60" introduced="^4" class="api"/>
+<component name="statemodel_api" long-name="State Model API" filter="s60" introduced="^4" class="api"/>
+<component name="homescreen_information_api" long-name="Homescreen Information API" filter="s60" introduced="^4" class="api"/>
 </collection>
 <collection name="screensavermodel" long-name="Screensaver Model" level="specific">
 <component name="screensavermodel_build" long-name="Screensaver Model Build" introduced="^4">
