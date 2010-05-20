@@ -61,17 +61,17 @@
 </collection>
 <collection name="qt_info" long-name="Qt Info" level="mw">
 <component name="qt_build" long-name="Qt Build" introduced="^2">
-<unit bldFile="/sf/mw/qt" proFile="projects.pro" qmakeArgs="&quot;QMAKE_MOC=/epoc32/tools/qt/moc.exe&quot; &quot;QMAKE_RCC=/epoc32/tools/qt/rcc.exe&quot; &quot;QMAKE_UIC=/epoc32/tools/qt/uic.exe&quot; -r"/>
+<unit bldFile="/sf/mw/qt" proFile="projects.pro" qmakeArgs="-r"/>
 </component>
 </collection>
 <collection name="qtdemos" long-name="Qt Demos" level="app">
 <component name="qtdemos_build" long-name="Qt Demos Build" introduced="^2" filter="qtdemos">
-<unit bldFile="/sf/mw/qt/demos" proFile="demos.pro" qmakeArgs="&quot;QMAKE_MOC=/epoc32/tools/qt/moc.exe&quot; &quot;QMAKE_RCC=/epoc32/tools/qt/rcc.exe&quot; &quot;QMAKE_UIC=/epoc32/tools/qt/uic.exe&quot; -r"/>
+<unit bldFile="/sf/mw/qt/demos" proFile="demos.pro" qmakeArgs="-r"/>
 </component>
 </collection>
 <collection name="qtexamples" long-name="Qt Examples" level="app">
 <component name="qtexamples_build" long-name="Qt Examples Build" introduced="^2" filter="qtexamples">
-<unit bldFile="/sf/mw/qt/examples" proFile="examples.pro" qmakeArgs="&quot;QMAKE_MOC=/epoc32/tools/qt/moc.exe&quot; &quot;QMAKE_RCC=/epoc32/tools/qt/rcc.exe&quot; &quot;QMAKE_UIC=/epoc32/tools/qt/uic.exe&quot; -r"/>
+<unit bldFile="/sf/mw/qt/examples" proFile="examples.pro" qmakeArgs="-r"/>
 </component>
 </collection>
 <collection name="qt_tests" long-name="Qt Tests" level="app"/>
