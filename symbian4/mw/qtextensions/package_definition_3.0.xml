@@ -18,7 +18,7 @@
     <component id="qthighway_examples" filter="qtextensionsexamples" name="Qt Highway Examples"  purpose="development" introduced="^4">
       <unit bldFile="qthighway/examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
      </component>
-     <component id="qthighwaytests" filter="qtextensionstests" name="Qt Highway Tests"  purpose="development" introduced="^4">
+     <component id="qthighwaytests" filter="test,qtextensionstests" name="Qt Highway Tests"  purpose="development" introduced="^4">
       <unit bldFile="qthighway/tests" qt:proFile="tests.pro" qt:qmakeArgs="-r"/>
      </component>
     </collection>
@@ -37,7 +37,7 @@
     <component id="qtmobility_examples" filter="qtextensionsexamples" name="Qt Mobility Examples" purpose="development" introduced="^4">
       <unit bldFile="qtmobility/examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
      </component>
-     <component id="qtmobilitytests" filter="qtextensionstests" name="Qt Extensions Tests"  purpose="development" introduced="^4">
+     <component id="qtmobilitytests" filter="test,qtextensionstests" name="Qt Extensions Tests"  purpose="development" introduced="^4">
       <unit bldFile="qtmobility/tests" qt:proFile="tests.pro" qt:qmakeArgs="-r"/>
      </component>
     </collection>
@@ -47,7 +47,7 @@
      </component>
     </collection>
     <collection id="qtextensions_info" name="Qt Extensions Info" level="app">
-    <component id="qtextensions_conf" name="Qt Extensions Confgure" class="conf" introduced="^4">
+    <component id="qtextensions_conf" name="Qt Extensions Confgure" class="conf" introduced="^4" filter="qt_tools">
       <unit bldFile="group"/>
      </component>
      <component id="qtextensions_build" name="Qt Extensions Build" introduced="^4">

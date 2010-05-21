@@ -92,7 +92,7 @@
           <component name="qthighway_examples" filter="qtextensionsexamples" long-name="Qt Highway Examples" purpose="development" introduced="^4">
             <unit bldFile="/sf/mw/qtextensions/qthighway/examples" proFile="examples.pro" qmakeArgs="-r"/>
           </component>
-          <component name="qthighwaytests" filter="qtextensionstests" long-name="Qt Highway Tests" purpose="development" introduced="^4">
+          <component name="qthighwaytests" filter="test,qtextensionstests" long-name="Qt Highway Tests" purpose="development" introduced="^4">
             <unit bldFile="/sf/mw/qtextensions/qthighway/tests" proFile="tests.pro" qmakeArgs="-r"/>
           </component>
         </collection>
@@ -111,7 +111,7 @@
           <component name="qtmobility_examples" filter="qtextensionsexamples" long-name="Qt Mobility Examples" purpose="development" introduced="^4">
             <unit bldFile="/sf/mw/qtextensions/qtmobility/examples" proFile="examples.pro" qmakeArgs="-r"/>
           </component>
-          <component name="qtmobilitytests" filter="qtextensionstests" long-name="Qt Extensions Tests" purpose="development" introduced="^4">
+          <component name="qtmobilitytests" filter="test,qtextensionstests" long-name="Qt Extensions Tests" purpose="development" introduced="^4">
             <unit bldFile="/sf/mw/qtextensions/qtmobility/tests" proFile="tests.pro" qmakeArgs="-r"/>
           </component>
         </collection>
@@ -121,7 +121,7 @@
           </component>
         </collection>
         <collection name="qtextensions_info" long-name="Qt Extensions Info" level="app">
-          <component name="qtextensions_conf" long-name="Qt Extensions Confgure" introduced="^4" class="conf">
+          <component name="qtextensions_conf" long-name="Qt Extensions Confgure" introduced="^4" filter="qt_tools" class="conf">
             <unit bldFile="/sf/mw/qtextensions/group"/>
           </component>
           <component name="qtextensions_build" long-name="Qt Extensions Build" introduced="^4">
