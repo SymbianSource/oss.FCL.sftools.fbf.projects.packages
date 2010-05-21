@@ -158,7 +158,7 @@
       <package id="mds" level="specific" tech-domain="mm" href="../../../../mw/mds/package_definition_3.0.xml"/>
       <package id="videoutils" level="specific" tech-domain="mm" href="../../../../mw/videoutils/package_definition_3.0.xml"/>
       <package id="mmmw" level="generic" tech-domain="mm" href="../../../../mw/mmmw/package_definition_3.0.xml"/>
-      <package id="gstreamer" level="generic" tech-domain="mm" href="../../../../mw/gstreamer/package_definition.xml_3.0"/> 
+      <package id="gstreamer" level="generic" tech-domain="mm" href="../../../../mw/gstreamer/package_definition_3.0.xml"/> 
       <package id="helix" level="generic" tech-domain="mm" href="../../../../mw/helix/package_definition_3.0.xml"/>
       <package id="camerasrv" level="specific" tech-domain="mm" href="../../../../mw/camerasrv/package_definition_3.0.xml"/>
       <package id="mmappfw" level="specific" tech-domain="mm" href="../../../../mw/mmappfw/package_definition_3.0.xml"/>
