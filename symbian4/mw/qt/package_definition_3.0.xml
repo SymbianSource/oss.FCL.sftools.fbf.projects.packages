@@ -10,7 +10,7 @@
     </collection>
     <collection id="qt_info" name="Qt Info" level="mw">
             <component id="qt_build" name="Qt Build" introduced="^2">
-  		        <unit bldFile="." qt:proFile="projects.pro" qt:qmakeArgs="-r"/>
+  		        <unit bldFile="." qt:proFile="projects.pro" qt:qmakeArgs="-r -config sgimagelite_support"/>
             </component>
     </collection>
     <collection id="qtdemos" name="Qt Demos" level="app">
