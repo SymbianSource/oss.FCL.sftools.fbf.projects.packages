@@ -133,7 +133,7 @@
 </collection>
 <collection name="homescreensrv_info" long-name="Home Screen Services Info" level="specific">
 <component name="homescreensrvconf" long-name="Home Screen Services Config" introduced="^4" class="config">
-<unit bldFile="/sf/mw/homescreensrv" qmakeArgs="-r" proFile="homescreensrv_exports_to_rom.pri"/>
+<unit bldFile="/sf/mw/homescreensrv" qmakeArgs="-r" proFile="homescreensrv.pro"/>
 </component>
 <component name="homescreensrvrom" long-name="Home Screen Services ROM" introduced="^4">
 <unit bldFile="/sf/mw/homescreensrv/group"/>

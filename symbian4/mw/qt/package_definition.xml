@@ -61,7 +61,7 @@
 </collection>
 <collection name="qt_info" long-name="Qt Info" level="mw">
 <component name="qt_build" long-name="Qt Build" introduced="^2">
-<unit bldFile="/sf/mw/qt" proFile="projects.pro" qmakeArgs="-r"/>
+<unit bldFile="/sf/mw/qt" proFile="projects.pro" qmakeArgs="-r -config sgimagelite_support"/>
 </component>
 </collection>
 <collection name="qtdemos" long-name="Qt Demos" level="app">

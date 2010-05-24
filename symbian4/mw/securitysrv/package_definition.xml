@@ -174,8 +174,8 @@
 <component name="securitynotifier" filter="s60" long-name="Security Notifier">
 <unit bldFile="/sf/mw/securitysrv/securitydialogs/securitynotifier/group"/>
 </component>
-<component name="lockclient" filter="s60" long-name="Lock Client" introduced="^3">
-<unit bldFile="/sf/mw/securitysrv/securitydialogs/lockclient/group"/>
+<component name="lockclient" filter="s60" long-name="Lock Client" introduced="^4">
+<unit bldFile="/sf/mw/securitysrv/securitydialogs/lockclient/group" proFile="lockclient.pro" qmakeArgs="-r"/>
 </component>
 <component name="lockapp" filter="s60" long-name="Lock Application" introduced="^3">
 <unit bldFile="/sf/mw/securitysrv/securitydialogs/lockapp/group"/>
