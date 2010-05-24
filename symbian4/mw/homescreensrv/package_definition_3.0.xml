@@ -110,7 +110,7 @@
   </collection>
     <collection id="homescreensrv_info" name="Home Screen Services Info" level="specific">
      <component id="homescreensrvconf" name="Home Screen Services Config" class="config" introduced="^4">
-      <unit bldFile="." qt:qmakeArgs="-r" qt:proFile="homescreensrv_exports_to_rom.pri"/>
+      <unit bldFile="." qt:qmakeArgs="-r" qt:proFile="homescreensrv.pro"/>
      </component>
      <component id="homescreensrvrom" name="Home Screen Services ROM" introduced="^4">
       <unit bldFile="group"/>
