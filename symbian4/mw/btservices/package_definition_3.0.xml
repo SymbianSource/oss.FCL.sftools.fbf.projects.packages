@@ -102,7 +102,9 @@
    <component id="btserviceutil" filter="s60" name="Bluetooth Service Utils">
     <unit bldFile="bluetoothengine/btserviceutil/group"/>
    </component>
-
+   <component id="btnotifclient" filter="s60" name="Bluetooth Notifier Client">
+    <unit bldFile="bluetoothengine/btnotif/btnotifclient/group"/>
+   </component>
   </collection>
   <collection id="bluetoothappprofiles" name="Bluetooth Application Profiles" level="plugin">
    <component id="avrcp" name="Bluetooth AVRCP" introduced="9.1" purpose="optional">
