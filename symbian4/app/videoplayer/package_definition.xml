@@ -1,154 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE SystemDefinition [
-<!ELEMENT SystemDefinition ( systemModel )>
-<!ATTLIST SystemDefinition
-  name CDATA #REQUIRED
-  schema CDATA #REQUIRED
->
-<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
-
-<!-- System Model Section of DTD -->
-<!ELEMENT systemModel (layer+)>
-
-<!ELEMENT layer (block* | collection*)*>
-<!-- Kernel Services, Base Services, OS Services, Etc -->
-<!ATTLIST layer
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
->
-
-<!ELEMENT block (subblock* | collection*)*>
- <!-- Generic OS services, Comms Services, etc -->
-<!ATTLIST block
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT subblock (collection)*>
-<!-- Cellular Baseband Services, Networking Services, etc -->
-<!ATTLIST subblock
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT collection (component)*>
-<!-- Screen Driver, Content Handling, etc -->
-<!ATTLIST collection
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
->
-
-<!ELEMENT component (unit)*>
-<!-- contains units or is a  package or prebuilt -->
-<!ATTLIST component
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  deprecated CDATA #IMPLIED
-  introduced CDATA #IMPLIED
-  contract CDATA #IMPLIED
-  plugin (Y|N) "N"
-  filter CDATA #IMPLIED
-  class NMTOKENS #IMPLIED
-  supports CDATA #IMPLIED
-  purpose ( optional | mandatory | development ) "optional"
->
-
-<!ELEMENT unit EMPTY >
-<!-- must be buildable (bld.inf) -->
-<!-- bldFile  may someday be removed in favour of mrp -->
-<!ATTLIST unit
-  mrp CDATA #IMPLIED
-  filter CDATA #IMPLIED
-  bldFile CDATA #IMPLIED
-  root CDATA #IMPLIED
-  version NMTOKEN #IMPLIED
-  prebuilt NMTOKEN #IMPLIED
-  late (Y|N) #IMPLIED
-  priority CDATA #IMPLIED
->
-]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
-  <systemModel>
-    <layer name="app" long-name="Applications" levels="services apps">
-      <block name="videoplayer" level="apps" long-name="Video Player Apps" levels="support plugin util apps">
-        <collection name="videoplayer_plat" long-name="Video Player Apps Platform Interfaces" level="apps">
-          <component name="videoplayer_startup_api" long-name="Video Player Startup API" filter="s60" class="api">
-            <unit bldFile="/sf/app/videoplayer/videoplayer_plat/videoplayer_startup_api/group"/>
-          </component>
-          <component name="videocollection_api" long-name="Video Collection API" filter="s60" class="api">
-            <unit bldFile="/sf/app/videoplayer/videoplayer_plat/videocollection_api/group"/>
-          </component>
-        </collection>
-        <collection name="videocollection" long-name="Video Collection" level="util">
-          <component name="mpxmyvideoscollection" filter="s60" long-name="MPX My Videos Collection" introduced="^3">
-            <unit bldFile="/sf/app/videoplayer/videocollection/mpxmyvideoscollection/group"/>
-          </component>
-          <component name="videocollectionwrapper" filter="s60" long-name="Video Collection Wrapper" introduced="^4">
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper" proFile="videocollectionwrapper.pro" qmakeArgs="-r"/>
-          </component>
-          <component name="videocollectionwrapper_test" filter="test,qt_unit_test" long-name="Video Collection Wrapper Tests" introduced="^4">
-            <!--Can only have one unit. Need to split into separate component or #include from a common file-->
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideocollectionclient" proFile="testvideocollectionclient.pro"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideocollectionlistener" proFile="testvideocollectionlistener.pro"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideocollectionwrapper_p" proFile="testvideocollectionwrapper_p.pro"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideodatacontainer" proFile="testvideodatacontainer.pro"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideodeleteworker" proFile="testvideodeleteworker.pro"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideomodel" proFile="testvideomodel.pro"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideomodel_p" proFile="testvideomodel_p.pro"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideosortfilterproxymodel" proFile="testvideosortfilterproxymodel.pro"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideothumbnaildata" proFile="testvideothumbnaildata.pro"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideothumbnaildata_p" proFile="testvideothumbnaildata_p.pro"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper/tsrc/testvideothumbnailfetcher" proFile="testvideothumbnailfetcher.pro"/>
-          </component>
-          <component name="videocollectionview" filter="s60" long-name="Video Collection View" introduced="^4">
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview" proFile="videocollectionview.pro" qmakeArgs="-r"/>
-          </component>
-          <component name="videocollectionview_test" filter="test,qt_unit_test" long-name="Video Collection View Tests">
-            <!--Can only have one unit. Need to split into separate components or #include from a common file-->
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testcollectionview" proFile="testcollectionview.pro"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testhintwidget" proFile="testhintwidget.pro"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testlistview" proFile="testlistview.pro"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testlistwidget" proFile="testlistwidget.pro"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testvideocollectionuiloader" proFile="testvideocollectionuiloader.pro"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testvideocollectionviewutils" proFile="testvideocollectionviewutils.pro"/>
-            <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionview/tsrc/testvideolistselectiondialog" proFile="testvideolistselectiondialog.pro"/>
-          </component>
-          <component name="videofiledetailsview" filter="s60" long-name="Video File Details View" introduced="^4">
-            <unit bldFile="/sf/app/videoplayer/videocollection/videofiledetailsview" proFile="videofiledetailsview.pro" qmakeArgs="-r"/>
-          </component>
-        </collection>
-        <collection name="mediasettings" long-name="Media Settings" level="support">
-          <!--  this is really a component. Should be moved down a directory -->
-          <component name="mediasettings_build" filter="s60" long-name="Media Settings Build">
-            <unit bldFile="/sf/app/videoplayer/mediasettings/group"/>
-          </component>
-        </collection>
-        <collection name="videoplayerapp" long-name="Video Player App" level="apps">
-          <component name="videoplayerengine" long-name="Video Player Engine" filter="s60" introduced="^4">
-            <unit bldFile="/sf/app/videoplayer/videoplayerapp/videoplayerengine" proFile="videoplayerengine.pro" qmakeArgs="-r"/>
-          </component>
-          <component name="hbvideoplayer" filter="s60" long-name="HB Video Player" introduced="^4">
-            <unit bldFile="/sf/app/videoplayer/videoplayerapp/hbvideoplayer" proFile="hbvideoplayer.pro" qmakeArgs="-r"/>
-          </component>
-        </collection>
-        <collection name="videoplayback" long-name="Video Playback Plugins" level="plugin">
-          <component name="hbvideoplaybackview" filter="s60" long-name="HB Video Playback View" introduced="^4" plugin="Y">
-            <unit bldFile="/sf/app/videoplayer/videoplayback/hbvideoplaybackview" proFile="hbvideoplaybackview.pro" qmakeArgs="-r"/>
-          </component>
-          <component name="hbvideoplaybackviewplugin" filter="s60" long-name="HB Video Playback View Plugin" introduced="^4" plugin="Y">
-            <unit bldFile="/sf/app/videoplayer/videoplayback/hbvideoplaybackviewplugin" proFile="hbvideoplaybackviewplugin.pro" qmakeArgs="-r"/>
-          </component>
-          <component name="videohelix" long-name="Video Helix" filter="s60" introduced="^3" plugin="Y">
-            <unit bldFile="/sf/app/videoplayer/videoplayback/videohelix/group"/>
-          </component>
-        </collection>
-      </block>
-    </layer>
-  </systemModel>
+<SystemDefinition schema="3.0.0">
+ <package id="videoplayer" name="Video Player Apps" levels="support plugin util apps" xmlns:qt="http://www.nokia.com/qt">
+  <collection id="videoplayer_plat" name="Video Player Apps Platform Interfaces" level="apps">
+   <component id="videoplayer_startup_api" name="Video Player Startup API" class="api" filter="s60">
+    <unit bldFile="videoplayer_plat/videoplayer_startup_api/group"/>
+   </component>
+   <component id="videocollection_api" name="Video Collection API" class="api" filter="s60">
+    <unit bldFile="videoplayer_plat/videocollection_api/group"/>
+   </component>
+  </collection>
+  <collection id="videocollection" name="Video Collection" level="util">
+   <component id="mpxmyvideoscollection" filter="s60" name="MPX My Videos Collection" introduced="^3">
+    <unit bldFile="videocollection/mpxmyvideoscollection/group"/>
+   </component>
+   <component id="videocollectionwrapper" filter="s60" name="Video Collection Wrapper" introduced="^4">
+    <unit bldFile="videocollection/videocollectionwrapper" qt:proFile="videocollectionwrapper.pro" qt:qmakeArgs="-r"/>
+   </component>
+     <component id="videocollectionwrapper_test" filter="test,qt_unit_test" name="Video Collection Wrapper Tests" introduced="^4">
+      <!--Can only have one unit. Need to split into separate component or #include from a common file-->
+      <meta rel="testbuild">
+       <group name="vado.videocollection.tsrc"/>
+      </meta>
+      <unit bldFile="videocollection/videocollectionwrapper/tsrc/testvideocollectionclient" qt:proFile="testvideocollectionclient.pro"/>
+      <unit bldFile="videocollection/videocollectionwrapper/tsrc/testvideocollectionlistener" qt:proFile="testvideocollectionlistener.pro"/>
+      <unit bldFile="videocollection/videocollectionwrapper/tsrc/testvideocollectionwrapper_p" qt:proFile="testvideocollectionwrapper_p.pro"/>
+      <unit bldFile="videocollection/videocollectionwrapper/tsrc/testvideodatacontainer" qt:proFile="testvideodatacontainer.pro"/>
+      <unit bldFile="videocollection/videocollectionwrapper/tsrc/testvideodeleteworker" qt:proFile="testvideodeleteworker.pro"/>
+      <unit bldFile="videocollection/videocollectionwrapper/tsrc/testvideomodel" qt:proFile="testvideomodel.pro"/>
+      <unit bldFile="videocollection/videocollectionwrapper/tsrc/testvideomodel_p" qt:proFile="testvideomodel_p.pro"/>
+      <unit bldFile="videocollection/videocollectionwrapper/tsrc/testvideosortfilterproxymodel" qt:proFile="testvideosortfilterproxymodel.pro"/>
+      <unit bldFile="videocollection/videocollectionwrapper/tsrc/testvideothumbnaildata" qt:proFile="testvideothumbnaildata.pro"/>
+      <unit bldFile="videocollection/videocollectionwrapper/tsrc/testvideothumbnaildata_p" qt:proFile="testvideothumbnaildata_p.pro"/>
+      <unit bldFile="videocollection/videocollectionwrapper/tsrc/testvideothumbnailfetcher" qt:proFile="testvideothumbnailfetcher.pro"/>
+     </component>
+   <component id="videocollectionview" filter="s60" name="Video Collection View" introduced="^4">
+    <unit bldFile="videocollection/videocollectionview" qt:proFile="videocollectionview.pro" qt:qmakeArgs="-r"/>
+   </component>
+    <component id="videocollectionview_test" filter="test,qt_unit_test" name="Video Collection View Tests">
+      <!--Can only have one unit. Need to split into separate components or #include from a common file-->
+      <meta rel="testbuild">
+       <group name="vado.videocollection.tsrc"/>
+      </meta>
+      <unit bldFile="videocollection/videocollectionview/tsrc/testcollectionview" qt:proFile="testcollectionview.pro"/>
+      <unit bldFile="videocollection/videocollectionview/tsrc/testhintwidget" qt:proFile="testhintwidget.pro"/>
+      <unit bldFile="videocollection/videocollectionview/tsrc/testlistview" qt:proFile="testlistview.pro"/>
+      <unit bldFile="videocollection/videocollectionview/tsrc/testlistwidget" qt:proFile="testlistwidget.pro"/>
+      <unit bldFile="videocollection/videocollectionview/tsrc/testvideocollectionuiloader" qt:proFile="testvideocollectionuiloader.pro"/>
+      <unit bldFile="videocollection/videocollectionview/tsrc/testvideocollectionviewutils" qt:proFile="testvideocollectionviewutils.pro"/>
+      <unit bldFile="videocollection/videocollectionview/tsrc/testvideolistselectiondialog" qt:proFile="testvideolistselectiondialog.pro"/>
+     </component>
+   <component id="videofiledetailsview" filter="s60" name="Video File Details View" introduced="^4">
+    <unit bldFile="videocollection/videofiledetailsview" qt:proFile="videofiledetailsview.pro" qt:qmakeArgs="-r"/>
+   </component>
+  </collection>
+  <collection id="mediasettings" name="Media Settings" level="support">
+   <!--  this is really a component. Should be moved down a directory -->
+   <component id="mediasettings_build" filter="s60" name="Media Settings Build">
+    <unit bldFile="mediasettings/group"/>
+   </component>
+  </collection>
+  <collection id="videoplayerapp" name="Video Player App" level="apps">
+   <component id="videoplayerengine" name="Video Player Engine" filter="s60"  introduced="^4">
+    <unit bldFile="videoplayerapp/videoplayerengine" qt:proFile="videoplayerengine.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="hbvideoplayer" filter="s60" name="HB Video Player" introduced="^4">
+    <unit bldFile="videoplayerapp/hbvideoplayer" qt:proFile="hbvideoplayer.pro" qt:qmakeArgs="-r"/>
+   </component>
+  </collection>
+  <collection id="videoplayback" name="Video Playback Plugins" level="plugin">
+   <component id="hbvideoplaybackview" filter="s60" name="HB Video Playback View" class="plugin" introduced="^4">
+    <unit bldFile="videoplayback/hbvideoplaybackview"  qt:proFile="hbvideoplaybackview.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="hbvideoplaybackviewplugin" filter="s60" name="HB Video Playback View Plugin" introduced="^4" class="plugin">
+    <unit bldFile="videoplayback/hbvideoplaybackviewplugin"  qt:proFile="hbvideoplaybackviewplugin.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="videohelix" name="Video Helix" filter="s60" introduced="^3" class="plugin">
+    <unit bldFile="videoplayback/videohelix/group"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>
+

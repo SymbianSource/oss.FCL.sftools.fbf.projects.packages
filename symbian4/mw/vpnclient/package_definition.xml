@@ -1,206 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE SystemDefinition [
-<!ELEMENT SystemDefinition ( systemModel )>
-<!ATTLIST SystemDefinition
-  name CDATA #REQUIRED
-  schema CDATA #REQUIRED
->
-<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
-
-<!-- System Model Section of DTD -->
-<!ELEMENT systemModel (layer+)>
-
-<!ELEMENT layer (block* | collection*)*>
-<!-- Kernel Services, Base Services, OS Services, Etc -->
-<!ATTLIST layer
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
->
-
-<!ELEMENT block (subblock* | collection*)*>
- <!-- Generic OS services, Comms Services, etc -->
-<!ATTLIST block
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT subblock (collection)*>
-<!-- Cellular Baseband Services, Networking Services, etc -->
-<!ATTLIST subblock
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT collection (component)*>
-<!-- Screen Driver, Content Handling, etc -->
-<!ATTLIST collection
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
->
-
-<!ELEMENT component (unit)*>
-<!-- contains units or is a  package or prebuilt -->
-<!ATTLIST component
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  deprecated CDATA #IMPLIED
-  introduced CDATA #IMPLIED
-  contract CDATA #IMPLIED
-  plugin (Y|N) "N"
-  filter CDATA #IMPLIED
-  class NMTOKENS #IMPLIED
-  supports CDATA #IMPLIED
-  purpose ( optional | mandatory | development ) "optional"
->
-
-<!ELEMENT unit EMPTY >
-<!-- must be buildable (bld.inf) -->
-<!-- bldFile  may someday be removed in favour of mrp -->
-<!ATTLIST unit
-  mrp CDATA #IMPLIED
-  filter CDATA #IMPLIED
-  bldFile CDATA #IMPLIED
-  root CDATA #IMPLIED
-  version NMTOKEN #IMPLIED
-  prebuilt NMTOKEN #IMPLIED
-  late (Y|N) #IMPLIED
-  priority CDATA #IMPLIED
->
-]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
-  <systemModel>
-    <layer name="mw" long-name="Middleware" levels="generic specific">
-      <block name="vpnclient" level="specific" long-name="VPN Client" levels="engine ui api">
-        <!-- is the !oem_build filter needed? -->
-        <collection name="vpnc_plat" long-name="VPN Client Platform Interfaces" level="api">
-          <component name="vpnapi" filter="s60" long-name="VPN API" class="api">
-            <unit bldFile="/sf/mw/vpnclient/vpnc_plat/vpnapi/group"/>
-          </component>
-        </collection>
-        <collection name="vpnapiimpl" long-name="VPN API Implementation" level="api">
-          <component name="vpnapi_impl" filter="s60" long-name="VPN API">
-            <unit bldFile="/sf/mw/vpnclient/vpnapiimpl/group"/>
-          </component>
-        </collection>
-        <collection name="vpnengine" long-name="VPN Engine" level="engine">
-          <!-- too many components in this collection.
+<SystemDefinition schema="3.0.0">
+ <package id="vpnclient" name="VPN Client" levels="engine ui api">
+  <!-- is the !oem_build filter needed? -->
+  <collection id="vpnc_plat" name="VPN Client Platform Interfaces" level="api">
+      <component id="vpnapi" filter="s60" class="api" name="VPN API">
+		<meta rel="Api" href="vpnc_plat/vpnapi/vpn_api.metaxml"/>
+        <unit bldFile="vpnc_plat/vpnapi/group"/>
+      </component>
+  </collection>
+  <collection id="vpnapiimpl" name="VPN API Implementation" level="api">
+   <component id="vpnapi_impl" filter="s60" name="VPN API">
+    <unit bldFile="vpnapiimpl/group"/>
+   </component>
+  </collection>
+  <collection id="vpnengine" name="VPN Engine" level="engine">
+   <!-- too many components in this collection.
     		Probably best to group the binaries together into larger components
     		or maybe split the collection into more reasonable groups  -->
-          <component name="eventmediatorapi" filter="s60" long-name="Event Mediator API">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/eventmediatorapi/group"/>
-          </component>
-          <component name="eventviewer" filter="s60" long-name="Event Viewer">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/eventviewer/group"/>
-          </component>
-          <component name="vpnins" filter="s60" long-name="VPN Installer">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/vpnins/group"/>
-          </component>
-          <component name="ikepolparser" filter="s60" long-name="IKE Policy Parser">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/ikepolparser/group"/>
-          </component>
-          <component name="utlbase64" filter="s60" long-name="Base64 Utilities">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/utlbase64/group"/>
-          </component>
-          <component name="utlcrypto" filter="s60" long-name="Crypto Utilities">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/utlcrypto/group"/>
-          </component>
-          <component name="utlxml" filter="s60" long-name="XML Utilities">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/utlxml/group"/>
-          </component>
-          <component name="utlpkcs10" filter="s60" long-name="PKCS#10 Utilities">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/utlpkcs10/group"/>
-          </component>
-          <component name="pkiserviceapi" filter="s60" long-name="PKI Service API">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/pkiserviceapi/group"/>
-          </component>
-          <component name="ikecert" filter="s60" long-name="IKE Certificate Management">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/ikecert/group"/>
-          </component>
-          <component name="kmdapi" filter="s60" long-name="Key Management Daemon API">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/kmdapi/group"/>
-          </component>
-          <component name="kmdserver" filter="s60" long-name="Key Management Daemon Server">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/kmdserver/group"/>
-          </component>
-          <component name="ikeutils" filter="s60" long-name="Internet Key Exchange Utils">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/ikeutils/group"/>
-          </component>
-          <component name="ikev1lib" filter="s60" long-name="IKEv1 Library">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/ikev1lib/group"/>
-          </component>
-          <component name="ikev2lib" filter="s60" long-name="IKEv2 Library">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/ikev2lib/group"/>
-          </component>
-          <component name="vpnipsecpolparser" filter="s60" long-name="VPN IPsec Policy Parser">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/vpnipsecpolparser/group"/>
-          </component>
-          <component name="sit" filter="s60" long-name="Socket Interaction Thread">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/sit/group"/>
-          </component>
-          <component name="vpntcwrapper" filter="s60" long-name="VPN Terminal Control Wrapper">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/vpntcwrapper/group"/>
-          </component>
-          <component name="eventmediator" filter="s60" long-name="Event Mediator">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/eventmediator/group"/>
-          </component>
-          <component name="pkiservice" filter="s60" long-name="PKI Service">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/pkiservice/group"/>
-          </component>
-          <component name="vpnconnagt" filter="s60" long-name="VPN Connection Agent">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/vpnconnagt/group"/>
-          </component>
-          <component name="vpnmanager" filter="s60" long-name="VPN Manager">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/vpnmanager/group"/>
-          </component>
-          <component name="vpncleaner" filter="s60" long-name="VPN Cleaner">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/vpncleaner/group"/>
-          </component>
-          <component name="utlpkcs12" filter="s60" long-name="PKCS#12 Utilities">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/utlpkcs12/group"/>
-          </component>
-          <component name="dmadengine" filter="s60" long-name="DM Adapter Engine">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/dmadengine/group"/>
-          </component>
-          <component name="dmadipsecvpn" filter="s60" long-name="IPsec VPN DM Adapter" plugin="Y">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/dmadipsecvpn/group"/>
-          </component>
-          <component name="dmadpki" filter="s60" long-name="PKI DM Adapter" plugin="Y">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/dmadpki/group"/>
-          </component>
-          <component name="ikesocket" filter="s60" long-name="IKE Socket" introduced="^3">
-            <unit bldFile="/sf/mw/vpnclient/vpnengine/ikesocket/group"/>
-          </component>
-        </collection>
-        <collection name="vpnui" long-name="VPN UI" level="ui">
-          <component name="vpnecomnotifier" filter="s60" long-name="VPN ECOM Notifier" plugin="Y">
-            <unit bldFile="/sf/mw/vpnclient/vpnui/vpnecomnotifier/group"/>
-          </component>
-          <component name="vpndialogmanager" filter="s60" long-name="VPN Dialog Manager">
-            <unit bldFile="/sf/mw/vpnclient/vpnui/vpndialogmanager/group"/>
-          </component>
-          <component name="vpnpolins" filter="s60" long-name="VPN Policy Installer">
-            <unit bldFile="/sf/mw/vpnclient/vpnui/vpnpolins/group"/>
-          </component>
-          <component name="vpnpolicyrecognizer" filter="s60" long-name="VPN Policy Recognizer" plugin="Y">
-            <unit bldFile="/sf/mw/vpnclient/vpnui/vpnpolicyrecognizer/group"/>
-          </component>
-        </collection>
-        <collection name="vpnclient_info" long-name="VPN Client Info" level="api">
-          <component name="vpnclient_help" filter="s60" long-name="VPN Client Help">
-            <unit bldFile="/sf/mw/vpnclient/help/group"/>
-          </component>
-          <component name="vpnclient_build" filter="s60" long-name="VPN Client Build">
-            <!-- should split this up into the other components and remove this-->
-            <unit bldFile="/sf/mw/vpnclient/group"/>
-          </component>
-        </collection>
-      </block>
-    </layer>
-  </systemModel>
+   <component id="eventmediatorapi" filter="s60" name="Event Mediator API">
+    <unit bldFile="vpnengine/eventmediatorapi/group"/>
+   </component>
+   <component id="eventviewer" filter="s60" name="Event Viewer">
+    <unit bldFile="vpnengine/eventviewer/group"/>
+   </component>
+   <component id="vpnins" filter="s60" name="VPN Installer">
+    <unit bldFile="vpnengine/vpnins/group"/>
+   </component>
+   <component id="ikepolparser" filter="s60" name="IKE Policy Parser">
+    <unit bldFile="vpnengine/ikepolparser/group"/>
+   </component>
+   <component id="utlbase64" filter="s60" name="Base64 Utilities">
+    <unit bldFile="vpnengine/utlbase64/group"/>
+   </component>
+   <component id="utlcrypto" filter="s60" name="Crypto Utilities">
+    <unit bldFile="vpnengine/utlcrypto/group"/>
+   </component>
+   <component id="utlxml" filter="s60" name="XML Utilities">
+    <unit bldFile="vpnengine/utlxml/group"/>
+   </component>
+   <component id="utlpkcs10" filter="s60" name="PKCS#10 Utilities">
+    <unit bldFile="vpnengine/utlpkcs10/group"/>
+   </component>
+   <component id="pkiserviceapi" filter="s60" name="PKI Service API">
+    <unit bldFile="vpnengine/pkiserviceapi/group"/>
+   </component>
+   <component id="ikecert" filter="s60" name="IKE Certificate Management">
+    <unit bldFile="vpnengine/ikecert/group"/>
+   </component>
+   <component id="kmdapi" filter="s60" name="Key Management Daemon API">
+    <unit bldFile="vpnengine/kmdapi/group"/>
+   </component>
+   <component id="kmdserver" filter="s60" name="Key Management Daemon Server">
+    <unit bldFile="vpnengine/kmdserver/group"/>
+   </component>
+   <component id="ikeutils" filter="s60" name="Internet Key Exchange Utils">
+    <unit bldFile="vpnengine/ikeutils/group"/>
+   </component>
+   <component id="ikev1lib" filter="s60" name="IKEv1 Library">
+    <unit bldFile="vpnengine/ikev1lib/group"/>
+   </component>
+   <component id="ikev2lib" filter="s60" name="IKEv2 Library">
+    <unit bldFile="vpnengine/ikev2lib/group"/>
+   </component>
+   <component id="vpnipsecpolparser" filter="s60" name="VPN IPsec Policy Parser">
+    <unit bldFile="vpnengine/vpnipsecpolparser/group"/>
+   </component>
+   <component id="sit" filter="s60" name="Socket Interaction Thread">
+    <unit bldFile="vpnengine/sit/group"/>
+   </component>
+   <component id="vpntcwrapper" filter="s60" name="VPN Terminal Control Wrapper">
+    <unit bldFile="vpnengine/vpntcwrapper/group"/>
+   </component>
+   <component id="eventmediator" filter="s60" name="Event Mediator">
+    <unit bldFile="vpnengine/eventmediator/group"/>
+   </component>
+   <component id="pkiservice" filter="s60" name="PKI Service">
+    <unit bldFile="vpnengine/pkiservice/group"/>
+   </component>
+   <component id="vpnconnagt" filter="s60" name="VPN Connection Agent">
+    <unit bldFile="vpnengine/vpnconnagt/group"/>
+   </component>
+   <component id="vpnmanager" filter="s60" name="VPN Manager">
+    <unit bldFile="vpnengine/vpnmanager/group"/>
+   </component>
+   <component id="vpncleaner" filter="s60" name="VPN Cleaner">
+    <unit bldFile="vpnengine/vpncleaner/group"/>
+   </component>
+   <component id="utlpkcs12" filter="s60" name="PKCS#12 Utilities">
+    <unit bldFile="vpnengine/utlpkcs12/group"/>
+   </component>
+   <component id="dmadengine" filter="s60" name="DM Adapter Engine">
+    <unit bldFile="vpnengine/dmadengine/group"/>
+   </component>
+   <component id="dmadipsecvpn" filter="s60" name="IPsec VPN DM Adapter" class="plugin">
+    <unit bldFile="vpnengine/dmadipsecvpn/group"/>
+   </component>
+   <component id="dmadpki" filter="s60" name="PKI DM Adapter" class="plugin">
+    <unit bldFile="vpnengine/dmadpki/group"/>
+   </component>
+   <component id="ikesocket" filter="s60" name="IKE Socket" introduced="^3">
+    <unit bldFile="vpnengine/ikesocket/group"/>
+   </component>
+  </collection>
+  <collection id="vpnui" name="VPN UI" level="ui">
+   <component id="vpnecomnotifier" filter="s60" name="VPN ECOM Notifier" class="plugin">
+    <unit bldFile="vpnui/vpnecomnotifier/group"/>
+   </component>
+   <component id="vpndialogmanager" filter="s60" name="VPN Dialog Manager">
+    <unit bldFile="vpnui/vpndialogmanager/group"/>
+   </component>
+   <component id="vpnpolins" filter="s60" name="VPN Policy Installer">
+    <unit bldFile="vpnui/vpnpolins/group"/>
+   </component>
+   <component id="vpnpolicyrecognizer" filter="s60" name="VPN Policy Recognizer" class="plugin">
+    <unit bldFile="vpnui/vpnpolicyrecognizer/group"/>
+   </component>
+  </collection>
+  <collection id="vpnclient_info" name="VPN Client Info" level="api">
+   <component id="vpnclient_help" filter="s60" name="VPN Client Help">
+    <unit bldFile="help/group"/>
+   </component>
+   <component id="vpnclient_build" filter="s60" name="VPN Client Build">
+    <!-- should split this up into the other components and remove this-->
+    <unit bldFile="group"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>

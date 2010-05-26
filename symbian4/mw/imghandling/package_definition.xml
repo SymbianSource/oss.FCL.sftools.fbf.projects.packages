@@ -1,113 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE SystemDefinition [
-<!ELEMENT SystemDefinition ( systemModel )>
-<!ATTLIST SystemDefinition
-  name CDATA #REQUIRED
-  schema CDATA #REQUIRED
->
-<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
-
-<!-- System Model Section of DTD -->
-<!ELEMENT systemModel (layer+)>
-
-<!ELEMENT layer (block* | collection*)*>
-<!-- Kernel Services, Base Services, OS Services, Etc -->
-<!ATTLIST layer
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
->
-
-<!ELEMENT block (subblock* | collection*)*>
- <!-- Generic OS services, Comms Services, etc -->
-<!ATTLIST block
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT subblock (collection)*>
-<!-- Cellular Baseband Services, Networking Services, etc -->
-<!ATTLIST subblock
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT collection (component)*>
-<!-- Screen Driver, Content Handling, etc -->
-<!ATTLIST collection
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
->
-
-<!ELEMENT component (unit)*>
-<!-- contains units or is a  package or prebuilt -->
-<!ATTLIST component
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  deprecated CDATA #IMPLIED
-  introduced CDATA #IMPLIED
-  contract CDATA #IMPLIED
-  plugin (Y|N) "N"
-  filter CDATA #IMPLIED
-  class NMTOKENS #IMPLIED
-  supports CDATA #IMPLIED
-  purpose ( optional | mandatory | development ) "optional"
->
-
-<!ELEMENT unit EMPTY >
-<!-- must be buildable (bld.inf) -->
-<!-- bldFile  may someday be removed in favour of mrp -->
-<!ATTLIST unit
-  mrp CDATA #IMPLIED
-  filter CDATA #IMPLIED
-  bldFile CDATA #IMPLIED
-  root CDATA #IMPLIED
-  version NMTOKEN #IMPLIED
-  prebuilt NMTOKEN #IMPLIED
-  late (Y|N) #IMPLIED
-  priority CDATA #IMPLIED
->
-]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
-  <systemModel>
-    <layer name="mw" long-name="Middleware" levels="generic specific">
-      <block name="imghandling" level="specific" long-name="Image Handling" levels="lib util if">
-        <collection name="imagehandling_plat" long-name="Image Handling Platform Interfaces" level="if">
-          <component name="image_handling_library_api" long-name="Image Handling Library API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/imghandling/imagehandling_plat/image_handling_library_api/group"/>
-          </component>
-          <component name="3gp_library_api" long-name="3GP Library API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/imghandling/imagehandling_plat/3gp_library_api/group"/>
-          </component>
-          <component name="thumbnailmanager_api" long-name="Thumbnail Manager API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/imghandling/imagehandling_plat/thumbnailmanager_api/group" filter="!test"/>
-            <unit bldFile="/sf/mw/imghandling/imagehandling_plat/thumbnailmanager_api/tsrc/group" filter="test,api_test"/>
-          </component>
-        </collection>
-        <collection name="imagehandlinglib" long-name="Image Handling Library" level="lib">
-          <!-- collection is really a component, need to move down a directory -->
-          <component name="ihl" filter="s60" long-name="IHL">
-            <unit bldFile="/sf/mw/imghandling/imagehandlinglib/group"/>
-          </component>
-          <component name="imagehandlinglib_api" filter="s60,test,api_test" long-name="Image Handling Library API Test" purpose="development">
-            <unit bldFile="/sf/mw/imghandling/imagehandlinglib/tsrc/public/basic/group"/>
-          </component>
-        </collection>
-        <collection name="imagehandlingutilities" long-name="Image Handling Utilities" level="util">
-          <component name="thumbnailmanager" filter="s60" long-name="Thumbnail Manager">
-            <unit bldFile="/sf/mw/imghandling/imagehandlingutilities/thumbnailmanager/group"/>
-          </component>
-          <component name="thumbnailmanagerqt" filter="s60" long-name="Thumbnail Manager Qt" introduced="^4">
-            <unit bldFile="/sf/mw/imghandling/imagehandlingutilities/thumbnailmanager/thumbnailmanagerqt" filter="!test" proFile="thumbnailmanagerqt.pro" qmakeArgs="-r"/>
-            <unit bldFile="/sf/mw/imghandling/imagehandlingutilities/thumbnailmanager/thumbnailmanagerqt/tsrc" filter="test,unit_test" proFile="test_qtnmwrapper.pro"/>
-          </component>
-        </collection>
-      </block>
-    </layer>
-  </systemModel>
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
+ <package id="imghandling" name="Image Handling" levels="lib util if">
+  <collection id="imagehandling_plat" name="Image Handling Platform Interfaces" level="if">
+   <component id="image_handling_library_api" name="Image Handling Library API" class="api" filter="s60">
+    <meta rel="Api" href="imagehandling_plat/image_handling_library_api/image_handling_library_api.metaxml"/>
+    <unit bldFile="imagehandling_plat/image_handling_library_api/group"/>
+   </component>
+   <component id="3gp_library_api" name="3GP Library API" class="api" filter="s60">
+    <meta rel="Api" href="imagehandling_plat/3gp_library_api/3gp_library_api.metaxml"/>
+    <unit bldFile="imagehandling_plat/3gp_library_api/group"/>
+   </component>
+   <component id="thumbnailmanager_api" name="Thumbnail Manager API" class="api" filter="s60">
+    <meta rel="Api" href="imagehandling_plat/thumbnailmanager_api/thumbnailmanager_api.metaxml"/>
+    <unit bldFile="imagehandling_plat/thumbnailmanager_api/group" filter="!test"/>
+    <unit bldFile="imagehandling_plat/thumbnailmanager_api/tsrc/group" filter="test,api_test"/>
+   </component>
+  </collection>
+  <collection id="imagehandlinglib" name="Image Handling Library" level="lib">
+   <!-- collection is really a component, need to move down a directory -->
+   <component id="ihl" filter="s60" name="IHL">
+    <unit bldFile="imagehandlinglib/group"/>
+   </component>
+   <component id="imagehandlinglib_api" filter="s60,test,api_test" name="Image Handling Library API Test" purpose="development">
+    <unit bldFile="imagehandlinglib/tsrc/public/basic/group"/>
+   </component>
+  </collection>
+  <collection id="imagehandlingutilities" name="Image Handling Utilities" level="util">
+   <component id="thumbnailmanager" filter="s60" name="Thumbnail Manager">
+    <unit bldFile="imagehandlingutilities/thumbnailmanager/group"/>
+   </component>
+   <component id="thumbnailmanagerqt" filter="s60" name="Thumbnail Manager Qt" introduced="^4">
+    <unit bldFile="imagehandlingutilities/thumbnailmanager/thumbnailmanagerqt" qt:proFile="thumbnailmanagerqt.pro" qt:qmakeArgs="-r" filter="!test"/>
+    <unit bldFile="imagehandlingutilities/thumbnailmanager/thumbnailmanagerqt/tsrc" qt:proFile="test_qtnmwrapper.pro" filter="test,unit_test"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>

@@ -1,99 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE SystemDefinition [
-<!ELEMENT SystemDefinition ( systemModel )>
-<!ATTLIST SystemDefinition
-  name CDATA #REQUIRED
-  schema CDATA #REQUIRED
->
-<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
-
-<!-- System Model Section of DTD -->
-<!ELEMENT systemModel (layer+)>
-
-<!ELEMENT layer (block* | collection*)*>
-<!-- Kernel Services, Base Services, OS Services, Etc -->
-<!ATTLIST layer
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
->
-
-<!ELEMENT block (subblock* | collection*)*>
- <!-- Generic OS services, Comms Services, etc -->
-<!ATTLIST block
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT subblock (collection)*>
-<!-- Cellular Baseband Services, Networking Services, etc -->
-<!ATTLIST subblock
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT collection (component)*>
-<!-- Screen Driver, Content Handling, etc -->
-<!ATTLIST collection
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
->
-
-<!ELEMENT component (unit)*>
-<!-- contains units or is a  package or prebuilt -->
-<!ATTLIST component
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  deprecated CDATA #IMPLIED
-  introduced CDATA #IMPLIED
-  contract CDATA #IMPLIED
-  plugin (Y|N) "N"
-  filter CDATA #IMPLIED
-  class NMTOKENS #IMPLIED
-  supports CDATA #IMPLIED
-  purpose ( optional | mandatory | development ) "optional"
->
-
-<!ELEMENT unit EMPTY >
-<!-- must be buildable (bld.inf) -->
-<!-- bldFile  may someday be removed in favour of mrp -->
-<!ATTLIST unit
-  mrp CDATA #IMPLIED
-  filter CDATA #IMPLIED
-  bldFile CDATA #IMPLIED
-  root CDATA #IMPLIED
-  version NMTOKEN #IMPLIED
-  prebuilt NMTOKEN #IMPLIED
-  late (Y|N) #IMPLIED
-  priority CDATA #IMPLIED
->
-]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
-  <systemModel>
-    <layer name="app" long-name="Applications" levels="services apps">
-      <block name="helps" level="apps" span="2" long-name="Help Apps" levels="eng tools if ui">
-        <collection name="userguide" long-name="User Guide" level="if">
-          <!-- collection is really a component. Move down a directory -->
-          <component name="userguide_build" long-name="User Guide Build" filter="s60" introduced="^4">
-            <unit bldFile="/sf/app/helps/userguide" proFile="Userguide.pro"/>
-          </component>
-        </collection>
-        <collection name="symhelp" long-name="Symbian Help" level="eng">
-          <component name="helpmodel" long-name="Help" introduced="6.0" purpose="optional">
-            <unit bldFile="/sf/app/helps/symhelp/helpmodel/group" mrp="/sf/app/helps/symhelp/helpmodel/group/app-services_hlpmodel.mrp"/>
-          </component>
-        </collection>
-        <collection name="helps_info" long-name="Help Apps Info" level="ui">
-          <component name="helps_metadata" long-name="Help Apps Metadata" introduced="^2" purpose="development" class="config PC">
-            <unit mrp="/sf/app/helps/helps_info/helps_metadata/helps_metadata.mrp"/>
-          </component>
-        </collection>
-      </block>
-    </layer>
-  </systemModel>
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
+  <package id="helps" name="Help Apps" levels="eng tools if ui">
+   <collection id="userguide" name="User Guide" level="if">
+	<!-- collection is really a component. Move down a directory -->
+    <component id="userguide_build" name="User Guide Build"  filter="s60" introduced="^4">
+      <unit bldFile="userguide" qt:proFile="Userguide.pro"/>
+     </component>
+    </collection>
+    <collection id="symhelp" name="Symbian Help" level="eng">
+      <component id="helpmodel" name="Help" introduced="6.0" purpose="optional">
+        <unit bldFile="symhelp/helpmodel/group" mrp="symhelp/helpmodel/group/app-services_hlpmodel.mrp"/>
+      </component>
+    </collection>
+    <collection id="helps_info" name="Help Apps Info" level="ui">
+      <component id="helps_metadata" name="Help Apps Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+        <unit mrp="helps_info/helps_metadata/helps_metadata.mrp"/>
+      </component>
+    </collection>
+  </package>
 </SystemDefinition>

@@ -101,122 +101,122 @@
 <SystemDefinition schema="3.0.0">
   <systemModel name="Symbian^4">
     <layer id="adaptation" name="Adaptation" levels="low mw high">
-      <package id="stubs" tech-domain="hb" level="high" span="2"  href="../../../../adaptation/stubs/package_definition_3.0.xml"/>
-      <package id="beagleboard" tech-domain="hb" level="low" href="../../../../adaptation/beagleboard/package_definition_3.0.xml"/>
-      <package id="qemu" tech-domain="hb" level="low" href="../../../../adaptation/qemu/package_definition_3.0.xml"/>
+      <package id="stubs" tech-domain="hb" level="high" span="2"  href="../../../../adaptation/stubs/package_definition.xml"/>
+      <package id="beagleboard" tech-domain="hb" level="low" href="../../../../adaptation/beagleboard/package_definition.xml"/>
+      <package id="qemu" tech-domain="hb" level="low" href="../../../../adaptation/qemu/package_definition.xml"/>
     </layer>
     <layer id="os" name="OS" levels="hw services">
-      <package id="kernelhwsrv" level="hw" tech-domain="hb" href="../../../../os/kernelhwsrv/package_definition_3.0.xml"/>
-      <package id="boardsupport" level="hw" tech-domain="hb" href="../../../../os/boardsupport/package_definition_3.0.xml"/>
-      <package id="buildtools" level="hw" tech-domain="to" href="../../../../os/buildtools/package_definition_3.0.xml"/>
-      <package id="ossrv" level="services" tech-domain="hb" href="../../../../os/ossrv/package_definition_3.0.xml"/>
-      <package id="persistentdata" level="services" tech-domain="hb" href="../../../../os/persistentdata/package_definition_3.0.xml"/>
-      <package id="devicesrv" level="services" tech-domain="hb" href="../../../../os/devicesrv/package_definition_3.0.xml"/>
-      <package id="security" level="services" tech-domain="se" href="../../../../os/security/package_definition_3.0.xml"/>
-      <package id="lbs" level="services" tech-domain="lo" href="../../../../os/lbs/package_definition_3.0.xml"/>
-      <package id="commsfw" level="services" tech-domain="dc" href="../../../../os/commsfw/package_definition_3.0.xml"/>
-      <package id="networkingsrv" level="services" tech-domain="dc" href="../../../../os/networkingsrv/package_definition_3.0.xml"/>
-      <package id="wlan" level="services" tech-domain="dc" href="../../../../os/wlan/package_definition_3.0.xml"/>
-      <package id="cellularsrv" level="services" tech-domain="vc" href="../../../../os/cellularsrv/package_definition_3.0.xml"/>
-      <package id="bt" level="services" tech-domain="de" href="../../../../os/bt/package_definition_3.0.xml"/> 
-      <package id="usb" level="services" tech-domain="de" href="../../../../os/usb/package_definition_3.0.xml"/> 
-      <package id="mm" level="services" tech-domain="mm" href="../../../../os/mm/package_definition_3.0.xml"/>
-      <package id="imagingext" level="services" tech-domain="mm" href="../../../../os/imagingext/package_definition_3.0.xml"/>
-      <package id="graphics" level="services" tech-domain="ui" href="../../../../os/graphics/package_definition_3.0.xml"/>
-      <package id="textandloc" level="services" tech-domain="ui" href="../../../../os/textandloc/package_definition_3.0.xml"/>
-      <package id="xmlsrv" level="services" tech-domain="rt" href="../../../../os/xmlsrv/package_definition_3.0.xml"/>
-      <package id="deviceplatformrelease" level="services" tech-domain="to" href="../../../../os/deviceplatformrelease/package_definition_3.0.xml"/>
-      <package id="osrndtools" level="services" tech-domain="to" href="../../../../os/osrndtools/package_definition_3.0.xml"/>
+      <package id="kernelhwsrv" level="hw" tech-domain="hb" href="../../../../os/kernelhwsrv/package_definition.xml"/>
+      <package id="boardsupport" level="hw" tech-domain="hb" href="../../../../os/boardsupport/package_definition.xml"/>
+      <package id="buildtools" level="hw" tech-domain="to" href="../../../../os/buildtools/package_definition.xml"/>
+      <package id="ossrv" level="services" tech-domain="hb" href="../../../../os/ossrv/package_definition.xml"/>
+      <package id="persistentdata" level="services" tech-domain="hb" href="../../../../os/persistentdata/package_definition.xml"/>
+      <package id="devicesrv" level="services" tech-domain="hb" href="../../../../os/devicesrv/package_definition.xml"/>
+      <package id="security" level="services" tech-domain="se" href="../../../../os/security/package_definition.xml"/>
+      <package id="lbs" level="services" tech-domain="lo" href="../../../../os/lbs/package_definition.xml"/>
+      <package id="commsfw" level="services" tech-domain="dc" href="../../../../os/commsfw/package_definition.xml"/>
+      <package id="networkingsrv" level="services" tech-domain="dc" href="../../../../os/networkingsrv/package_definition.xml"/>
+      <package id="wlan" level="services" tech-domain="dc" href="../../../../os/wlan/package_definition.xml"/>
+      <package id="cellularsrv" level="services" tech-domain="vc" href="../../../../os/cellularsrv/package_definition.xml"/>
+      <package id="bt" level="services" tech-domain="de" href="../../../../os/bt/package_definition.xml"/> 
+      <package id="usb" level="services" tech-domain="de" href="../../../../os/usb/package_definition.xml"/> 
+      <package id="mm" level="services" tech-domain="mm" href="../../../../os/mm/package_definition.xml"/>
+      <package id="imagingext" level="services" tech-domain="mm" href="../../../../os/imagingext/package_definition.xml"/>
+      <package id="graphics" level="services" tech-domain="ui" href="../../../../os/graphics/package_definition.xml"/>
+      <package id="textandloc" level="services" tech-domain="ui" href="../../../../os/textandloc/package_definition.xml"/>
+      <package id="xmlsrv" level="services" tech-domain="rt" href="../../../../os/xmlsrv/package_definition.xml"/>
+      <package id="deviceplatformrelease" level="services" tech-domain="to" href="../../../../os/deviceplatformrelease/package_definition.xml"/>
+      <package id="osrndtools" level="services" tech-domain="to" href="../../../../os/osrndtools/package_definition.xml"/>
     </layer>
     <layer id="mw" name="Middleware" levels="generic specific">
-      <package id="appsupport" level="generic" tech-domain="rt" href="../../../../mw/appsupport/package_definition_3.0.xml"/>
-      <package id="securitysrv" level="generic" tech-domain="se" href="../../../../mw/securitysrv/package_definition_3.0.xml"/>
-      <package id="drm" level="generic" tech-domain="se" href="../../../../mw/drm/package_definition_3.0.xml"/>
-      <package id="locationsrv" level="specific" tech-domain="lo" href="../../../../mw/locationsrv/package_definition_3.0.xml"/>
-      <package id="accesssec" level="generic" tech-domain="dc" href="../../../../mw/accesssec/package_definition_3.0.xml"/>
-      <package id="ipconnmgmt" level="generic" tech-domain="dc" href="../../../../mw/ipconnmgmt/package_definition_3.0.xml"/>
-      <package id="netprotocols" level="generic" tech-domain="dc" href="../../../../mw/netprotocols/package_definition_3.0.xml"/>
-      <package id="ipappprotocols" level="generic" tech-domain="dc" href="../../../../mw/ipappprotocols/package_definition_3.0.xml"/>
-      <package id="wirelessacc" level="specific" tech-domain="dc" href="../../../../mw/wirelessacc/package_definition_3.0.xml"/>
-      <package id="vpnclient" level="specific" tech-domain="dc" href="../../../../mw/vpnclient/package_definition_3.0.xml"/>
-      <package id="ipappsrv" level="specific" tech-domain="vc" href="../../../../mw/ipappsrv/package_definition_3.0.xml"/>
-      <package id="phonesrv" level="specific" tech-domain="vc" href="../../../../mw/phonesrv/package_definition_3.0.xml"/>
-      <package id="messagingmw" level="specific" tech-domain="pr" href="../../../../mw/messagingmw/package_definition_3.0.xml"/>
-      <package id="imsrv" level="specific" tech-domain="pr" href="../../../../mw/imsrv/package_definition_3.0.xml"/>
-      <package id="legacypresence" level="specific" tech-domain="pr" href="../../../../mw/legacypresence/package_definition_3.0.xml"/>
-      <package id="opensrv" level="specific" tech-domain="pr" href="../../../../mw/opensrv/package_definition_3.0.xml"/>
-      <package id="searchsrv" level="specific" tech-domain="pr" href="../../../../mw/searchsrv/package_definition_3.0.xml"/>
-      <package id="remotemgmt" level="specific" tech-domain="dm" href="../../../../mw/remotemgmt/package_definition_3.0.xml"/>
-      <package id="remoteconn" level="generic" tech-domain="de" href="../../../../mw/remoteconn/package_definition_3.0.xml"/>
-      <package id="srvdiscovery" level="generic" tech-domain="de" href="../../../../mw/srvdiscovery/package_definition_3.0.xml"/>
-      <package id="dlnasrv" level="specific" tech-domain="de" href="../../../../mw/dlnasrv/package_definition_3.0.xml"/>
-      <package id="btservices" level="generic" tech-domain="de" href="../../../../mw/btservices/package_definition_3.0.xml"/>
-      <package id="usbservices" level="generic" tech-domain="de" href="../../../../mw/usbservices/package_definition_3.0.xml"/>
-      <package id="shortlinkconn" level="generic" tech-domain="de" href="../../../../mw/shortlinkconn/package_definition_3.0.xml"/>
-      <package id="imghandling" level="specific" tech-domain="mm" href="../../../../mw/imghandling/package_definition_3.0.xml"/>
-      <package id="metadatasrv" level="specific" tech-domain="mm" href="../../../../mw/metadatasrv/package_definition_3.0.xml"/>
-      <package id="mds" level="specific" tech-domain="mm" href="../../../../mw/mds/package_definition_3.0.xml"/>
-      <package id="videoutils" level="specific" tech-domain="mm" href="../../../../mw/videoutils/package_definition_3.0.xml"/>
-      <package id="mmmw" level="generic" tech-domain="mm" href="../../../../mw/mmmw/package_definition_3.0.xml"/>
-      <package id="gstreamer" level="generic" tech-domain="mm" href="../../../../mw/gstreamer/package_definition_3.0.xml"/> 
-      <package id="helix" level="generic" tech-domain="mm" href="../../../../mw/helix/package_definition_3.0.xml"/>
-      <package id="camerasrv" level="specific" tech-domain="mm" href="../../../../mw/camerasrv/package_definition_3.0.xml"/>
-      <package id="mmappfw" level="specific" tech-domain="mm" href="../../../../mw/mmappfw/package_definition_3.0.xml"/>
-      <package id="hgwidgets" level="specific" tech-domain="mm" href="../../../../mw/hgwidgets/package_definition_3.0.xml"/>
-      <package id="inputmethods" level="generic" tech-domain="ui" href="../../../../mw/inputmethods/package_definition_3.0.xml"/>
-      <package id="qt" level="generic" tech-domain="ui" href="../../../../mw/qt/package_definition_3.0.xml"/>
-      <package id="qtextensions" level="generic" tech-domain="ui" href="../../../../mw/qtextensions/package_definition_3.0.xml"/>
-      <package id="hb" level="generic" tech-domain="ui" href="../../../../mw/hb/package_definition_3.0.xml"/>
-      <package id="classicui" level="generic" tech-domain="ui" href="../../../../mw/classicui/package_definition_3.0.xml"/>
-      <package id="svgt" level="generic" tech-domain="ui" href="../../../../mw/svgt/package_definition_3.0.xml"/>
-      <package id="uiaccelerator" level="generic" tech-domain="ui" href="../../../../mw/uiaccelerator/package_definition_3.0.xml"/>
-      <package id="uiresources" level="generic" tech-domain="ui" href="../../../../mw/uiresources/package_definition_3.0.xml"/>
-      <package id="hapticsservices" level="generic" tech-domain="ui" href="../../../../mw/hapticsservices/package_definition_3.0.xml"/>
-      <package id="platformthemes" level="specific" tech-domain="ui" href="../../../../mw/platformthemes/package_definition_3.0.xml"/>
-      <package id="gsprofilesrv" level="generic" tech-domain="ui" href="../../../../mw/gsprofilesrv/package_definition_3.0.xml"/>
-      <package id="homescreensrv" level="specific" tech-domain="ui" href="../../../../mw/homescreensrv/package_definition_3.0.xml"/>
-      <package id="homescreensrvlegacy" level="generic" tech-domain="ui" href="../../../../mw/homescreensrvlegacy/package_definition_3.0.xml"/>
-      <package id="appinstall" level="generic" tech-domain="rt" href="../../../../mw/appinstall/package_definition_3.0.xml"/>
-      <package id="serviceapifw" level="specific" tech-domain="rt" href="../../../../mw/serviceapifw/package_definition_3.0.xml"/>
-      <package id="serviceapi" level="specific" tech-domain="rt" href="../../../../mw/serviceapi/package_definition_3.0.xml"/>
-      <package id="browser" level="specific" tech-domain="rt" href="../../../../mw/browser/package_definition_3.0.xml"/>
-      <package id="web" level="specific" tech-domain="rt" href="../../../../mw/web/package_definition_3.0.xml"/>
-      <package id="websrv" level="generic" tech-domain="rt" href="../../../../mw/websrv/package_definition_3.0.xml"/>
-      <package id="webruntime" level="specific" tech-domain="rt" href="../../../../mw/webruntime/package_definition_3.0.xml"/>
-      <package id="platformtools" level="generic" tech-domain="to" href="../../../../mw/platformtools/package_definition_3.0.xml"/>
-      <package id="uitools" level="specific" tech-domain="to" href="../../../../mw/uitools/package_definition_3.0.xml"/>
+      <package id="appsupport" level="generic" tech-domain="rt" href="../../../../mw/appsupport/package_definition.xml"/>
+      <package id="securitysrv" level="generic" tech-domain="se" href="../../../../mw/securitysrv/package_definition.xml"/>
+      <package id="drm" level="generic" tech-domain="se" href="../../../../mw/drm/package_definition.xml"/>
+      <package id="locationsrv" level="specific" tech-domain="lo" href="../../../../mw/locationsrv/package_definition.xml"/>
+      <package id="accesssec" level="generic" tech-domain="dc" href="../../../../mw/accesssec/package_definition.xml"/>
+      <package id="ipconnmgmt" level="generic" tech-domain="dc" href="../../../../mw/ipconnmgmt/package_definition.xml"/>
+      <package id="netprotocols" level="generic" tech-domain="dc" href="../../../../mw/netprotocols/package_definition.xml"/>
+      <package id="ipappprotocols" level="generic" tech-domain="dc" href="../../../../mw/ipappprotocols/package_definition.xml"/>
+      <package id="wirelessacc" level="specific" tech-domain="dc" href="../../../../mw/wirelessacc/package_definition.xml"/>
+      <package id="vpnclient" level="specific" tech-domain="dc" href="../../../../mw/vpnclient/package_definition.xml"/>
+      <package id="ipappsrv" level="specific" tech-domain="vc" href="../../../../mw/ipappsrv/package_definition.xml"/>
+      <package id="phonesrv" level="specific" tech-domain="vc" href="../../../../mw/phonesrv/package_definition.xml"/>
+      <package id="messagingmw" level="specific" tech-domain="pr" href="../../../../mw/messagingmw/package_definition.xml"/>
+      <package id="imsrv" level="specific" tech-domain="pr" href="../../../../mw/imsrv/package_definition.xml"/>
+      <package id="legacypresence" level="specific" tech-domain="pr" href="../../../../mw/legacypresence/package_definition.xml"/>
+      <package id="opensrv" level="specific" tech-domain="pr" href="../../../../mw/opensrv/package_definition.xml"/>
+      <package id="searchsrv" level="specific" tech-domain="pr" href="../../../../mw/searchsrv/package_definition.xml"/>
+      <package id="remotemgmt" level="specific" tech-domain="dm" href="../../../../mw/remotemgmt/package_definition.xml"/>
+      <package id="remoteconn" level="generic" tech-domain="de" href="../../../../mw/remoteconn/package_definition.xml"/>
+      <package id="srvdiscovery" level="generic" tech-domain="de" href="../../../../mw/srvdiscovery/package_definition.xml"/>
+      <package id="dlnasrv" level="specific" tech-domain="de" href="../../../../mw/dlnasrv/package_definition.xml"/>
+      <package id="btservices" level="generic" tech-domain="de" href="../../../../mw/btservices/package_definition.xml"/>
+      <package id="usbservices" level="generic" tech-domain="de" href="../../../../mw/usbservices/package_definition.xml"/>
+      <package id="shortlinkconn" level="generic" tech-domain="de" href="../../../../mw/shortlinkconn/package_definition.xml"/>
+      <package id="imghandling" level="specific" tech-domain="mm" href="../../../../mw/imghandling/package_definition.xml"/>
+      <package id="metadatasrv" level="specific" tech-domain="mm" href="../../../../mw/metadatasrv/package_definition.xml"/>
+      <package id="mds" level="specific" tech-domain="mm" href="../../../../mw/mds/package_definition.xml"/>
+      <package id="videoutils" level="specific" tech-domain="mm" href="../../../../mw/videoutils/package_definition.xml"/>
+      <package id="mmmw" level="generic" tech-domain="mm" href="../../../../mw/mmmw/package_definition.xml"/>
+      <package id="gstreamer" level="generic" tech-domain="mm" href="../../../../mw/gstreamer/package_definition.xml"/> 
+      <package id="helix" level="generic" tech-domain="mm" href="../../../../mw/helix/package_definition.xml"/>
+      <package id="camerasrv" level="specific" tech-domain="mm" href="../../../../mw/camerasrv/package_definition.xml"/>
+      <package id="mmappfw" level="specific" tech-domain="mm" href="../../../../mw/mmappfw/package_definition.xml"/>
+      <package id="hgwidgets" level="specific" tech-domain="mm" href="../../../../mw/hgwidgets/package_definition.xml"/>
+      <package id="inputmethods" level="generic" tech-domain="ui" href="../../../../mw/inputmethods/package_definition.xml"/>
+      <package id="qt" level="generic" tech-domain="ui" href="../../../../mw/qt/package_definition.xml"/>
+      <package id="qtextensions" level="generic" tech-domain="ui" href="../../../../mw/qtextensions/package_definition.xml"/>
+      <package id="hb" level="generic" tech-domain="ui" href="../../../../mw/hb/package_definition.xml"/>
+      <package id="classicui" level="generic" tech-domain="ui" href="../../../../mw/classicui/package_definition.xml"/>
+      <package id="svgt" level="generic" tech-domain="ui" href="../../../../mw/svgt/package_definition.xml"/>
+      <package id="uiaccelerator" level="generic" tech-domain="ui" href="../../../../mw/uiaccelerator/package_definition.xml"/>
+      <package id="uiresources" level="generic" tech-domain="ui" href="../../../../mw/uiresources/package_definition.xml"/>
+      <package id="hapticsservices" level="generic" tech-domain="ui" href="../../../../mw/hapticsservices/package_definition.xml"/>
+      <package id="platformthemes" level="specific" tech-domain="ui" href="../../../../mw/platformthemes/package_definition.xml"/>
+      <package id="gsprofilesrv" level="generic" tech-domain="ui" href="../../../../mw/gsprofilesrv/package_definition.xml"/>
+      <package id="homescreensrv" level="specific" tech-domain="ui" href="../../../../mw/homescreensrv/package_definition.xml"/>
+      <package id="homescreensrvlegacy" level="generic" tech-domain="ui" href="../../../../mw/homescreensrvlegacy/package_definition.xml"/>
+      <package id="appinstall" level="generic" tech-domain="rt" href="../../../../mw/appinstall/package_definition.xml"/>
+      <package id="serviceapifw" level="specific" tech-domain="rt" href="../../../../mw/serviceapifw/package_definition.xml"/>
+      <package id="serviceapi" level="specific" tech-domain="rt" href="../../../../mw/serviceapi/package_definition.xml"/>
+      <package id="browser" level="specific" tech-domain="rt" href="../../../../mw/browser/package_definition.xml"/>
+      <package id="web" level="specific" tech-domain="rt" href="../../../../mw/web/package_definition.xml"/>
+      <package id="websrv" level="generic" tech-domain="rt" href="../../../../mw/websrv/package_definition.xml"/>
+      <package id="webruntime" level="specific" tech-domain="rt" href="../../../../mw/webruntime/package_definition.xml"/>
+      <package id="platformtools" level="generic" tech-domain="to" href="../../../../mw/platformtools/package_definition.xml"/>
+      <package id="uitools" level="specific" tech-domain="to" href="../../../../mw/uitools/package_definition.xml"/>
     </layer>
     <layer id="app" name="Applications" levels="services apps">
-      <package id="location" level="apps" tech-domain="lo" href="../../../../app/location/package_definition_3.0.xml"/>  <!-- pending removal -->
-      <package id="phone" level="apps" span="2" tech-domain="vc" href="../../../../app/phone/package_definition_3.0.xml"/>
-      <package id="recents" level="apps" tech-domain="vc" href="../../../../app/recents/package_definition_3.0.xml"/>
-      <package id="settingsuis" level="services" tech-domain="dm" href="../../../../app/settingsuis/package_definition_3.0.xml"/>
-      <package id="contentcontrol" level="services" tech-domain="dm" href="../../../../app/contentcontrol/package_definition_3.0.xml"/>
-      <package id="firsttimeuse" level="apps" tech-domain="dm" href="../../../../app/firsttimeuse/package_definition_3.0.xml"/>
-      <package id="devicecontrol" level="services" tech-domain="dm" href="../../../../app/devicecontrol/package_definition_3.0.xml"/>
+      <package id="location" level="apps" tech-domain="lo" href="../../../../app/location/package_definition.xml"/>  <!-- pending removal -->
+      <package id="phone" level="apps" span="2" tech-domain="vc" href="../../../../app/phone/package_definition.xml"/>
+      <package id="recents" level="apps" tech-domain="vc" href="../../../../app/recents/package_definition.xml"/>
+      <package id="settingsuis" level="services" tech-domain="dm" href="../../../../app/settingsuis/package_definition.xml"/>
+      <package id="contentcontrol" level="services" tech-domain="dm" href="../../../../app/contentcontrol/package_definition.xml"/>
+      <package id="firsttimeuse" level="apps" tech-domain="dm" href="../../../../app/firsttimeuse/package_definition.xml"/>
+      <package id="devicecontrol" level="services" tech-domain="dm" href="../../../../app/devicecontrol/package_definition.xml"/>
       <package id="printing" level="services" tech-domain="de" name="Printing"/>
-      <package id="files" level="apps" tech-domain="pr" href="../../../../app/files/package_definition_3.0.xml"/>
-      <package id="search" level="apps" tech-domain="pr" href="../../../../app/search/package_definition_3.0.xml"/>
-      <package id="contacts" level="apps" span="2" tech-domain="pr" href="../../../../app/contacts/package_definition_3.0.xml"/>
-      <package id="organizer" level="apps" span="2" tech-domain="pr" href="../../../../app/organizer/package_definition_3.0.xml"/>
-      <package id="messaging" level="apps" span="2" tech-domain="pr" href="../../../../app/messaging/package_definition_3.0.xml"/>
-      <package id="commonemail" level="apps" span="2" tech-domain="pr" href="../../../../app/commonemail/package_definition_3.0.xml"/>
-      <package id="camera" level="apps" tech-domain="ma" href="../../../../app/camera/package_definition_3.0.xml"/>
-      <package id="imgeditor" level="apps" tech-domain="ma" href="../../../../app/imgeditor/package_definition_3.0.xml"/>
-      <package id="videoeditor" level="apps" tech-domain="ma" href="../../../../app/videoeditor/package_definition_3.0.xml"/>
-      <package id="videoplayer" level="apps" tech-domain="ma" href="../../../../app/videoplayer/package_definition_3.0.xml"/>
-      <package id="photos" level="apps" tech-domain="ma" href="../../../../app/photos/package_definition_3.0.xml"/>
-      <package id="musicplayer" level="apps" tech-domain="ma" href="../../../../app/musicplayer/package_definition_3.0.xml"/>
-      <package id="radio" level="apps" tech-domain="ma" href="../../../../app/radio/package_definition_3.0.xml"/>
-      <package id="internetradio" level="apps" tech-domain="ma" href="../../../../app/internetradio/package_definition_3.0.xml"/>
-      <package id="podcatcher" level="apps" tech-domain="ma" href="../../../../app/podcatcher/package_definition_3.0.xml"/>
-      <package id="homescreen" level="apps" tech-domain="ui" href="../../../../app/homescreen/package_definition_3.0.xml"/>
-      <package id="jrt" level="services" tech-domain="rt" href="../../../../app/jrt/package_definition_3.0.xml"/>
-      <package id="browserui" level="services" tech-domain="rt" href="../../../../app/browserui/package_definition_3.0.xml"/>
-      <package id="conntools" level="services" tech-domain="dc" href="../../../../app/conntools/package_definition_3.0.xml"/>
-      <package id="rndtools" level="services" tech-domain="to" href="../../../../app/rndtools/package_definition_3.0.xml"/>
-      <package id="helps" level="apps" span="2" tech-domain="ui" href="../../../../app/helps/package_definition_3.0.xml"/>
-      <package id="techview" level="apps" span="2" tech-domain="ui" href="../../../../app/techview/package_definition_3.0.xml"/>
+      <package id="files" level="apps" tech-domain="pr" href="../../../../app/files/package_definition.xml"/>
+      <package id="search" level="apps" tech-domain="pr" href="../../../../app/search/package_definition.xml"/>
+      <package id="contacts" level="apps" span="2" tech-domain="pr" href="../../../../app/contacts/package_definition.xml"/>
+      <package id="organizer" level="apps" span="2" tech-domain="pr" href="../../../../app/organizer/package_definition.xml"/>
+      <package id="messaging" level="apps" span="2" tech-domain="pr" href="../../../../app/messaging/package_definition.xml"/>
+      <package id="commonemail" level="apps" span="2" tech-domain="pr" href="../../../../app/commonemail/package_definition.xml"/>
+      <package id="camera" level="apps" tech-domain="ma" href="../../../../app/camera/package_definition.xml"/>
+      <package id="imgeditor" level="apps" tech-domain="ma" href="../../../../app/imgeditor/package_definition.xml"/>
+      <package id="videoeditor" level="apps" tech-domain="ma" href="../../../../app/videoeditor/package_definition.xml"/>
+      <package id="videoplayer" level="apps" tech-domain="ma" href="../../../../app/videoplayer/package_definition.xml"/>
+      <package id="photos" level="apps" tech-domain="ma" href="../../../../app/photos/package_definition.xml"/>
+      <package id="musicplayer" level="apps" tech-domain="ma" href="../../../../app/musicplayer/package_definition.xml"/>
+      <package id="radio" level="apps" tech-domain="ma" href="../../../../app/radio/package_definition.xml"/>
+      <package id="internetradio" level="apps" tech-domain="ma" href="../../../../app/internetradio/package_definition.xml"/>
+      <package id="podcatcher" level="apps" tech-domain="ma" href="../../../../app/podcatcher/package_definition.xml"/>
+      <package id="homescreen" level="apps" tech-domain="ui" href="../../../../app/homescreen/package_definition.xml"/>
+      <package id="jrt" level="services" tech-domain="rt" href="../../../../app/jrt/package_definition.xml"/>
+      <package id="browserui" level="services" tech-domain="rt" href="../../../../app/browserui/package_definition.xml"/>
+      <package id="conntools" level="services" tech-domain="dc" href="../../../../app/conntools/package_definition.xml"/>
+      <package id="rndtools" level="services" tech-domain="to" href="../../../../app/rndtools/package_definition.xml"/>
+      <package id="helps" level="apps" span="2" tech-domain="ui" href="../../../../app/helps/package_definition.xml"/>
+      <package id="techview" level="apps" span="2" tech-domain="ui" href="../../../../app/techview/package_definition.xml"/>
     </layer>
   </systemModel>
 </SystemDefinition>

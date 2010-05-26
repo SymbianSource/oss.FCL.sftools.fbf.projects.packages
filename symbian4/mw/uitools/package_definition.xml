@@ -1,136 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE SystemDefinition [
-<!ELEMENT SystemDefinition ( systemModel )>
-<!ATTLIST SystemDefinition
-  name CDATA #REQUIRED
-  schema CDATA #REQUIRED
->
-<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
-
-<!-- System Model Section of DTD -->
-<!ELEMENT systemModel (layer+)>
-
-<!ELEMENT layer (block* | collection*)*>
-<!-- Kernel Services, Base Services, OS Services, Etc -->
-<!ATTLIST layer
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
->
-
-<!ELEMENT block (subblock* | collection*)*>
- <!-- Generic OS services, Comms Services, etc -->
-<!ATTLIST block
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT subblock (collection)*>
-<!-- Cellular Baseband Services, Networking Services, etc -->
-<!ATTLIST subblock
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT collection (component)*>
-<!-- Screen Driver, Content Handling, etc -->
-<!ATTLIST collection
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
->
-
-<!ELEMENT component (unit)*>
-<!-- contains units or is a  package or prebuilt -->
-<!ATTLIST component
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  deprecated CDATA #IMPLIED
-  introduced CDATA #IMPLIED
-  contract CDATA #IMPLIED
-  plugin (Y|N) "N"
-  filter CDATA #IMPLIED
-  class NMTOKENS #IMPLIED
-  supports CDATA #IMPLIED
-  purpose ( optional | mandatory | development ) "optional"
->
-
-<!ELEMENT unit EMPTY >
-<!-- must be buildable (bld.inf) -->
-<!-- bldFile  may someday be removed in favour of mrp -->
-<!ATTLIST unit
-  mrp CDATA #IMPLIED
-  filter CDATA #IMPLIED
-  bldFile CDATA #IMPLIED
-  root CDATA #IMPLIED
-  version NMTOKEN #IMPLIED
-  prebuilt NMTOKEN #IMPLIED
-  late (Y|N) #IMPLIED
-  priority CDATA #IMPLIED
->
-]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
-  <systemModel>
-    <layer name="mw" long-name="Middleware" levels="generic specific">
-      <block name="uitools" level="specific" long-name="UI Tools" levels="compile encode tool if">
-        <collection name="uitools_pub" long-name="UI Tools Public Interfaces" level="if">
-          <component name="third_party_bitmap_palette_api" long-name="Third Party Bitmap Palette API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/uitools/uitools_pub/third_party_bitmap_palette_api/group"/>
-          </component>
-        </collection>
-        <collection name="uitools_plat" long-name="UI Tools Platform Interfaces" level="if">
-          <component name="uitools_cdl_api" long-name="CDL API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/uitools/uitools_plat/cdl_api/group"/>
-          </component>
-          <component name="uitools_layout_system_private_api" long-name="Layout System Private API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/uitools/uitools_plat/layout_system_private_api/group"/>
-          </component>
-        </collection>
-        <collection name="cdlcompilertoolkit" long-name="CDL Compiler Toolkit" level="compile">
-          <!-- collection is actually a component. Needs to be moved down a directory -->
-          <component name="cdlcompilertoolkit_build" filter="s60" long-name="CDL Compiler Toolkit Build">
-            <unit bldFile="/sf/mw/uitools/cdlcompilertoolkit/group"/>
-          </component>
-        </collection>
-        <collection name="cdlcompiler" long-name="CDL Compiler" level="compile">
-          <!-- collection is actually a component. Needs to be moved down a directory -->
-          <component name="cdlcompiler_build" filter="s60" long-name="CDL Compiler Build">
-            <unit bldFile="/sf/mw/uitools/cdlcompiler/group"/>
-          </component>
-        </collection>
-        <collection name="gfxtools" long-name="Graphics Tools" level="tool">
-          <component name="color" filter="s60" long-name="Bitmap Colour Palette" class="PC">
-            <unit bldFile="/sf/mw/uitools/gfxtools/color/group"/>
-          </component>
-        </collection>
-        <collection name="aknlayoutcompiler" long-name="Avkon Layout Compiler" level="compile">
-          <!-- collection is actually a component. Needs to be moved down a directory -->
-          <component name="aknlayoutcompiler_build" filter="s60" long-name="Avkon Layout Compiler Build">
-            <unit bldFile="/sf/mw/uitools/aknlayoutcompiler/group"/>
-          </component>
-        </collection>
-        <collection name="skincompiler" long-name="Skin Compiler" level="compile">
-          <component name="aknskindesccompiler" filter="s60" long-name="Avkon Skin Descriptor Compiler">
-            <unit bldFile="/sf/mw/uitools/skincompiler/AknSkinDescCompiler/group"/>
-          </component>
-        </collection>
-        <collection name="reszip" long-name="Resource Zip" level="encode">
-          <!-- collection is actually a component. Needs to be moved down a directory -->
-          <component name="reszip_build" filter="s60" long-name="Resource Zip Build">
-            <unit bldFile="/sf/mw/uitools/reszip/group"/>
-          </component>
-        </collection>
-        <collection name="toollibraries" long-name="Tool Libraries" level="tool"/>
-        <collection name="svgtencoder" long-name="SVGT Encoder" level="encode">
-          <component name="svgtenc" filter="s60" long-name="Standalone SVGT Encoder" class="PC">
-            <unit bldFile="/sf/mw/uitools/svgtencoder/svgtenc/standalone/group"/>
-          </component>
-        </collection>
-      </block>
-    </layer>
-  </systemModel>
+<SystemDefinition schema="3.0.0">
+ <package id="uitools" name="UI Tools" levels="compile encode tool if">
+  <collection id="uitools_pub" name="UI Tools Public Interfaces" level="if">
+   <component id="third_party_bitmap_palette_api" name="Third Party Bitmap Palette API" class="api" filter="s60">
+    <meta rel="Api" href="uitools_pub/third_party_bitmap_palette_api/third_party_bitmap_palette_api.metaxml"/>
+    <unit bldFile="uitools_pub/third_party_bitmap_palette_api/group"/>
+   </component>
+  </collection>
+  <collection id="uitools_plat" name="UI Tools Platform Interfaces" level="if">
+   <component id="uitools_cdl_api" name="CDL API" class="api" filter="s60">
+    <meta rel="Api" href="uitools_plat/cdl_api/cdl_api.metaxml"/>
+    <unit bldFile="uitools_plat/cdl_api/group"/>
+   </component>
+   <component id="uitools_layout_system_private_api" name="Layout System Private API" class="api" filter="s60">
+    <meta rel="Api" href="uitools_plat/layout_system_private_api/layout_system_private_api.metaxml"/>
+    <unit bldFile="uitools_plat/layout_system_private_api/group"/>
+   </component>
+  </collection>
+  <collection id="cdlcompilertoolkit" name="CDL Compiler Toolkit" level="compile">
+   <!-- collection is actually a component. Needs to be moved down a directory -->
+   <component id="cdlcompilertoolkit_build" filter="s60" name="CDL Compiler Toolkit Build">
+    <unit bldFile="cdlcompilertoolkit/group"/>
+   </component>
+  </collection>
+  <collection id="cdlcompiler" name="CDL Compiler" level="compile">
+   <!-- collection is actually a component. Needs to be moved down a directory -->
+   <component id="cdlcompiler_build" filter="s60" name="CDL Compiler Build">
+    <unit bldFile="cdlcompiler/group"/>
+   </component>
+  </collection>
+  <collection id="gfxtools" name="Graphics Tools" level="tool">
+   <component id="color" filter="s60" name="Bitmap Colour Palette" target="desktop">
+    <unit bldFile="gfxtools/color/group"/>
+   </component>
+  </collection>
+  <collection id="aknlayoutcompiler" name="Avkon Layout Compiler" level="compile">
+   <!-- collection is actually a component. Needs to be moved down a directory -->
+   <component id="aknlayoutcompiler_build" filter="s60" name="Avkon Layout Compiler Build">
+    <unit bldFile="../uitools/aknlayoutcompiler/group"/>
+   </component>
+  </collection>
+  <collection id="skincompiler" name="Skin Compiler" level="compile">
+   <component id="aknskindesccompiler" filter="s60" name="Avkon Skin Descriptor Compiler">
+    <unit bldFile="skincompiler/AknSkinDescCompiler/group"/>
+   </component>
+  </collection>
+  <collection id="reszip" name="Resource Zip" level="encode">
+   <!-- collection is actually a component. Needs to be moved down a directory -->
+   <component id="reszip_build" filter="s60" name="Resource Zip Build">
+    <unit bldFile="reszip/group"/>
+   </component>
+  </collection>
+  <collection id="toollibraries" name="Tool Libraries" level="tool"/>
+  <collection id="svgtencoder" name="SVGT Encoder" level="encode">
+   <component id="svgtenc" filter="s60" name="Standalone SVGT Encoder" target="desktop">
+    <unit bldFile="svgtencoder/svgtenc/standalone/group"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>

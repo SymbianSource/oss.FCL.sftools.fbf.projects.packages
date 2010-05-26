@@ -1,163 +1,124 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE SystemDefinition [
-<!ELEMENT SystemDefinition ( systemModel )>
-<!ATTLIST SystemDefinition
-  name CDATA #REQUIRED
-  schema CDATA #REQUIRED
->
-<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
+ <package id="homescreensrv" name="Home Screen Services" levels="plugin framework server generic specific">
 
-<!-- System Model Section of DTD -->
-<!ELEMENT systemModel (layer+)>
+  <collection id="appfoundation" name="App Foundation" level="generic">
+     <component id="appfoundation_build" name="App Foundation Build"  introduced="^4">
+      <unit bldFile="appfoundation" qt:qmakeArgs="-r" qt:proFile="appfoundation.pro"/>
+     </component>
+  </collection>
+  <collection id="hswidgetmodel" name="Home Screen Widget Model" level="framework">
+     <component id="hswidgetmodel_build" name="Home Screen Widget Model Build"  introduced="^4">
+      <unit bldFile="hswidgetmodel" qt:qmakeArgs="-r" qt:proFile="hswidgetmodel.pro"/>
+     </component>
+  </collection>
+  <collection id="contentstorage" name="Content Storage" level="framework">
+     <component id="cautils" name="Content Arsenal Utils"  introduced="^4">
+      <unit bldFile="contentstorage/cautils" qt:qmakeArgs="-r" qt:proFile="cautils.pro"/>
+     </component>
+     <component id="contentstorage_build" name="Content Storage Build"  introduced="^4">
+      <unit bldFile="contentstorage/group" qt:qmakeArgs="-r" qt:proFile="group.pro"/>
+     </component>
+     <component id="casrv/calocalizerscanner" name="Content Arsenal Server Localizer Scanner"  introduced="^4">
+      <unit bldFile="contentstorage/casrv/calocalizerscanner" qt:qmakeArgs="-r" qt:proFile="calocalizerscanner.pro"/>
+     </component>
+     <component id="cahandler" name="Content Arsenal Handler"  introduced="^4">
+      <unit bldFile="contentstorage/cahandler" qt:qmakeArgs="-r" qt:proFile="cahandler.pro"/>
+     </component>
+     <component id="caclient" name="Content Arsenal Client"  introduced="^4">
+      <unit bldFile="contentstorage/caclient" qt:qmakeArgs="-r" qt:proFile="caclient.pro"/>
+     </component>
+  </collection>
 
-<!ELEMENT layer (block* | collection*)*>
-<!-- Kernel Services, Base Services, OS Services, Etc -->
-<!ATTLIST layer
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
->
-
-<!ELEMENT block (subblock* | collection*)*>
- <!-- Generic OS services, Comms Services, etc -->
-<!ATTLIST block
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT subblock (collection)*>
-<!-- Cellular Baseband Services, Networking Services, etc -->
-<!ATTLIST subblock
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT collection (component)*>
-<!-- Screen Driver, Content Handling, etc -->
-<!ATTLIST collection
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
->
-
-<!ELEMENT component (unit)*>
-<!-- contains units or is a  package or prebuilt -->
-<!ATTLIST component
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  deprecated CDATA #IMPLIED
-  introduced CDATA #IMPLIED
-  contract CDATA #IMPLIED
-  plugin (Y|N) "N"
-  filter CDATA #IMPLIED
-  class NMTOKENS #IMPLIED
-  supports CDATA #IMPLIED
-  purpose ( optional | mandatory | development ) "optional"
->
-
-<!ELEMENT unit EMPTY >
-<!-- must be buildable (bld.inf) -->
-<!-- bldFile  may someday be removed in favour of mrp -->
-<!ATTLIST unit
-  mrp CDATA #IMPLIED
-  filter CDATA #IMPLIED
-  bldFile CDATA #IMPLIED
-  root CDATA #IMPLIED
-  version NMTOKEN #IMPLIED
-  prebuilt NMTOKEN #IMPLIED
-  late (Y|N) #IMPLIED
-  priority CDATA #IMPLIED
->
-]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
-  <systemModel>
-    <layer name="mw" long-name="Middleware" levels="generic specific">
-      <block name="homescreensrv" level="specific" long-name="Home Screen Services" levels="plugin framework server generic specific">
-        <collection name="appfoundation" long-name="App Foundation" level="generic">
-          <component name="appfoundation_build" long-name="App Foundation Build" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/appfoundation" qmakeArgs="-r" proFile="appfoundation.pro"/>
-          </component>
-        </collection>
-        <collection name="hswidgetmodel" long-name="Home Screen Widget Model" level="framework">
-          <component name="hswidgetmodel_build" long-name="Home Screen Widget Model Build" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/hswidgetmodel" qmakeArgs="-r" proFile="hswidgetmodel.pro"/>
-          </component>
-        </collection>
-        <collection name="contentstorage" long-name="Content Storage" level="framework">
-          <component name="cautils" long-name="Content Arsenal Utils" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/contentstorage/cautils" qmakeArgs="-r" proFile="cautils.pro"/>
-          </component>
-          <component name="contentstorage_build" long-name="Content Storage Build" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/contentstorage/group" qmakeArgs="-r" proFile="group.pro"/>
-          </component>
-          <component name="casrv/calocalizerscanner" long-name="Content Arsenal Server Localizer Scanner" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/contentstorage/casrv/calocalizerscanner" qmakeArgs="-r" proFile="calocalizerscanner.pro"/>
-          </component>
-          <component name="cahandler" long-name="Content Arsenal Handler" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/contentstorage/cahandler" qmakeArgs="-r" proFile="cahandler.pro"/>
-          </component>
-          <component name="caclient" long-name="Content Arsenal Client" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/contentstorage/caclient" qmakeArgs="-r" proFile="caclient.pro"/>
-          </component>
-        </collection>
-        <collection name="contentpublishingsrv" long-name="Content Publishing Service" level="server">
-          <component name="contentpublishingdebug" filter="s60" long-name="Content Publishing Debug">
-            <!-- need to move this component outside of contentpublishingutils and into separate component directory -->
-            <!-- <unit bldFile="contentpublishingsrv/contentpublishingutils/contentpublishingdebug/group"/> -->
-          </component>
-          <component name="contentpublishingutils" filter="s60" long-name="Content Publishing Utils">
-            <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/contentpublishingutils/group"/>
-          </component>
-          <component name="contentpublishingserver" filter="s60" long-name="Content Publishing Server">
-            <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/contentpublishingserver/group"/>
-          </component>
-          <component name="contentharvester" filter="s60" long-name="Content Harvester">
-            <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/contentharvester/group"/>
-          </component>
-          <component name="contentpublishingsrv_build" filter="s60" long-name="Content Publishing Service Build">
-            <!-- need to remove links to the above components and just contain the IBY (or move the IBY into another component). 
+  <collection id="contentpublishingsrv" name="Content Publishing Service" level="server">
+   <component id="contentpublishingdebug" filter="s60" name="Content Publishing Debug">
+    <!-- need to move this component outside of contentpublishingutils and into separate component directory -->
+    <meta rel="config">
+     <defined condition="CONTENT_PUBLISHER_DEBUG"/>
+    </meta>
+    <!-- <unit bldFile="contentpublishingsrv/contentpublishingutils/contentpublishingdebug/group"/> -->
+   </component>
+   <component id="contentpublishingutils" filter="s60" name="Content Publishing Utils">
+    <unit bldFile="contentpublishingsrv/contentpublishingutils/group"/>
+   </component>
+   <component id="contentpublishingserver" filter="s60" name="Content Publishing Server">
+    <unit bldFile="contentpublishingsrv/contentpublishingserver/group"/>
+   </component>
+   <component id="contentharvester" filter="s60" name="Content Harvester">
+    <unit bldFile="contentpublishingsrv/contentharvester/group"/>
+   </component>
+   <component id="contentpublishingsrv_rom" filter="s60" name="Content Publishing Service ROM">
+    <!-- need to remove links to the above components and just contain the IBY (or move the IBY into another component). 
       		If keeping, it need to move down a directory.-->
-            <unit bldFile="/sf/mw/homescreensrv/contentpublishingsrv/group"/>
-          </component>
-        </collection>
-        <collection name="homescreensrv_plat" long-name="Home Screen Services Platform Interfaces" level="specific">
-          <component name="action_handler_plugin_api" long-name="Action Handler Plugin API" filter="s60" class="api"/>
-          <component name="content_harvester_plugin_api" long-name="Content Harvester Plugin API" filter="s60" class="api"/>
-          <component name="menu_sat_interface_api" long-name="Menu SAT Interface API" filter="s60" class="api"/>
-          <component name="sapi_contentpublishing" long-name="SAPI Content Publishing" filter="s60" class="api"/>
-          <component name="sapi_actionhandler" long-name="SAPI Action Handler" filter="s60" class="api"/>
-        </collection>
-        <collection name="screensavermodel" long-name="Screensaver Model" level="specific">
-          <component name="screensavermodel_build" long-name="Screensaver Model Build" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/screensavermodel" qmakeArgs="-r" proFile="screensavermodel.pro"/>
-          </component>
-        </collection>
-        <collection name="hsactivityfw" long-name="Activity Framework" level="activityfw">
-          <component name="hsactivityfw_build" long-name="Activity Framework Build" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/activityfw" qmakeArgs="-r" proFile="activityfw.pro"/>
-          </component>
-        </collection>
-        <collection name="hsappkeyhandler" long-name="HS Appplication Key Handler" level="server">
-          <component name="hsappkeyhandler_build" long-name="Appplication Key Handler Build" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/hsappkeyhandler" qmakeArgs="-r" proFile="hsappkeyhandler.pro"/>
-          </component>
-        </collection>
-        <collection name="homescreensrv_info" long-name="Home Screen Services Info" level="specific">
-          <component name="homescreensrvconf" long-name="Home Screen Services Config" introduced="^4" class="config">
-            <unit bldFile="/sf/mw/homescreensrv/." qmakeArgs="-r" proFile="homescreensrv_exports_to_rom.pri"/>
-          </component>
-          <component name="homescreensrvrom" long-name="Home Screen Services ROM" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/group"/>
-          </component>
-          <component name="homescreensrv_test" long-name="Home Screen Services Test" filter="test,unit_test" introduced="^4">
-            <unit bldFile="/sf/mw/homescreensrv/tsrc" qmakeArgs="-r MMP_RULES+=EXPORTUNFROZEN" proFile="tsrc.pro"/>
-          </component>
-        </collection>
-      </block>
-    </layer>
-  </systemModel>
+    <unit bldFile="contentpublishingsrv/group"/>
+   </component>
+  </collection>
+
+  <collection id="homescreensrv_plat" name="Home Screen Services Platform Interfaces" level="specific">
+     <component id="homescreensrv_plat_build" name="Home Screen Services Platform Interfaces build"  introduced="^4">
+      <unit bldFile="homescreensrv_plat" qt:qmakeArgs="-r" qt:proFile="homescreensrv_plat.pro"/>
+     </component>
+   <component id="action_handler_plugin_api" name="Action Handler Plugin API" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/action_handler_plugin_api/action_handler_plugin_api.metaxml"/>
+    <unit base="homescreensrv_plat/action_handler_plugin_api"/>
+   </component>
+   <component id="content_harvester_plugin_api" name="Content Harvester Plugin API" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/content_harvester_plugin_api/content_harvester_plugin_api.metaxml"/>
+    <unit base="homescreensrv_plat/content_harvester_plugin_api"/>
+   </component>
+   <component id="sapi_contentpublishing" name="SAPI Content Publishing" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/sapi_contentpublishing/sapi_contentpublishing.metaxml"/>
+    <unit base="homescreensrv_plat/sapi_contentpublishing"/>
+   </component>
+   <component id="sapi_actionhandler" name="SAPI Action Handler" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/sapi_actionhandler/sapi_actionhandler.metaxml"/>
+    <unit base="homescreensrv_plat/sapi_actionhandler"/>
+   </component>
+   <component id="menu_sat_interface_api" name="Menu SAT Interface API" class="api" filter="s60">
+    <meta rel="Api" href="homescreensrv_plat/menu_sat_interface_api/menu_sat_interface_api.metaxml"/>
+    <unit base="homescreensrv_plat/menu_sat_interface_api"/>
+   </component>
+   <component id="appruntimemodel_api" name="Appliction Run-Time Model API" class="api" filter="s60" introduced="^4">
+    <unit base="homescreensrv_plat/appruntimemodel_api"/>
+   </component>
+   <component id="contentstorage_api" name="Content Storage API" class="api" filter="s60" introduced="^4">
+    <unit base="homescreensrv_plat/contentstorage_api"/>
+   </component>
+   <component id="hswidgetmodel_api" name="HS Widget Model API" class="api" filter="s60" introduced="^4">
+    <unit base="homescreensrv_plat/hswidgetmodel_api"/>
+   </component>
+   <component id="statemodel_api" name="State Model API" class="api" filter="s60" introduced="^4">
+    <unit base="homescreensrv_plat/statemodel_api"/>
+   </component>
+   <component id="homescreen_information_api" name="Homescreen Information API" class="api" filter="s60" introduced="^4">
+    <unit base="homescreensrv_plat/homescreen_information_api"/>
+   </component>
+  </collection>
+  <collection id="screensavermodel" name="Screensaver Model" level="specific">
+     <component id="screensavermodel_build" name="Screensaver Model Build"  introduced="^4">
+      <unit bldFile="screensavermodel" qt:qmakeArgs="-r" qt:proFile="screensavermodel.pro"/>
+     </component>
+  </collection>
+  <collection id="hsactivityfw" name="Activity Framework" level="activityfw">
+     <component id="hsactivityfw_build" name="Activity Framework Build"  introduced="^4">
+      <unit bldFile="activityfw" qt:qmakeArgs="-r" qt:proFile="activityfw.pro"/>
+     </component>
+  </collection>
+  <collection id="hsappkeyhandler" name="HS Appplication Key Handler" level="server">
+     <component id="hsappkeyhandler_build" name="Appplication Key Handler Build"  introduced="^4">
+      <unit bldFile="hsappkeyhandler" qt:qmakeArgs="-r" qt:proFile="hsappkeyhandler.pro"/>
+     </component>
+  </collection>
+    <collection id="homescreensrv_info" name="Home Screen Services Info" level="specific">
+     <component id="homescreensrvconf" name="Home Screen Services Config" class="config" introduced="^4">
+      <unit bldFile="." qt:qmakeArgs="-r" qt:proFile="homescreensrv.pro"/>
+     </component>
+     <component id="homescreensrvrom" name="Home Screen Services ROM" introduced="^4">
+      <unit bldFile="group"/>
+     </component>
+     <component id="homescreensrv_test" name="Home Screen Services Test" filter="test,unit_test" introduced="^4">
+      <unit bldFile="tsrc" qt:qmakeArgs="-r MMP_RULES+=EXPORTUNFROZEN" qt:proFile="tsrc.pro"/>
+     </component>
+    </collection>
+ </package>
 </SystemDefinition>
+
