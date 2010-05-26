@@ -67,7 +67,7 @@
 <component name="shareui_api" long-name="Share UI API" filter="s60" introduced="^4" class="api"/>
 <component name="messaging_history_api" long-name="Messaging History API" filter="s60" introduced="^4" class="api"/>
 <component name="msg_plat_build" long-name="Messaging Apps Platform APIs Build" filter="s60" introduced="^4" class="api">
-<!-- break this up into the above units and replace their base attributes with bldFile, etc -->
+<unit bldFile="/sf/app/messaging/msg_plat" proFile="msg_plat.pro" qmakeArgs="-r"/>
 </component>
 </collection>
 <collection name="msg_pub" long-name="Messaging Apps Public APIs" level="api">
