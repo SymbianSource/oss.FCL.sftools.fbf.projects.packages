@@ -1,311 +1,272 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE SystemDefinition [
-<!ELEMENT SystemDefinition ( systemModel )>
-<!ATTLIST SystemDefinition
-  name CDATA #REQUIRED
-  schema CDATA #REQUIRED
->
-<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
-
-<!-- System Model Section of DTD -->
-<!ELEMENT systemModel (layer+)>
-
-<!ELEMENT layer (block* | collection*)*>
-<!-- Kernel Services, Base Services, OS Services, Etc -->
-<!ATTLIST layer
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
->
-
-<!ELEMENT block (subblock* | collection*)*>
- <!-- Generic OS services, Comms Services, etc -->
-<!ATTLIST block
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT subblock (collection)*>
-<!-- Cellular Baseband Services, Networking Services, etc -->
-<!ATTLIST subblock
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT collection (component)*>
-<!-- Screen Driver, Content Handling, etc -->
-<!ATTLIST collection
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
->
-
-<!ELEMENT component (unit)*>
-<!-- contains units or is a  package or prebuilt -->
-<!ATTLIST component
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  deprecated CDATA #IMPLIED
-  introduced CDATA #IMPLIED
-  contract CDATA #IMPLIED
-  plugin (Y|N) "N"
-  filter CDATA #IMPLIED
-  class NMTOKENS #IMPLIED
-  supports CDATA #IMPLIED
-  purpose ( optional | mandatory | development ) "optional"
->
-
-<!ELEMENT unit EMPTY >
-<!-- must be buildable (bld.inf) -->
-<!-- bldFile  may someday be removed in favour of mrp -->
-<!ATTLIST unit
-  mrp CDATA #IMPLIED
-  filter CDATA #IMPLIED
-  bldFile CDATA #IMPLIED
-  root CDATA #IMPLIED
-  version NMTOKEN #IMPLIED
-  prebuilt NMTOKEN #IMPLIED
-  late (Y|N) #IMPLIED
-  priority CDATA #IMPLIED
->
-]>
-<SystemDefinition name="Symbian^3" schema="2.0.1">
-  <systemModel>
-    <layer name="mw" long-name="Middleware" levels="generic specific">
-      <block name="remotemgmt" level="specific" long-name="Remote Management" levels="plugin framework server generic specific">
-        <collection name="remotemgmt_pub" long-name="Remote Management Public Interfaces" level="specific">
-          <component name="synchronization_capability_api" long-name="Synchronization Capability API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_pub/synchronization_capability_api/group"/>
-          </component>
-        </collection>
-        <collection name="remotemgmt_plat" long-name="Remote Management Platform Interfaces" level="specific">
-          <component name="common_agent_util_and_definitions_api" long-name="Common Agent util and definitions API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/common_agent_util_and_definitions_api/group"/>
-          </component>
-          <component name="policy_management_certificate_api" long-name="Policy Management Certificate API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/policy_management_certificate_api/group"/>
-          </component>
-          <component name="oma_provisioning_adapter_api" long-name="OMA Provisioning Adapter API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/oma_provisioning_adapter_api/group"/>
-          </component>
-          <component name="device_management_parameter_api" long-name="Device Management Parameter API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/device_management_parameter_api/group"/>
-          </component>
-          <component name="data_synchronization_plugin_api" long-name="Data Synchronization Plug-in API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/data_synchronization_plugin_api/group"/>
-          </component>
-          <component name="sync_alert_handler_api" long-name="Sync Alert Handler API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/sync_alert_handler_api/group"/>
-          </component>
-          <component name="syncml_notifier_api" long-name="SyncML Notifier API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/syncml_notifier_api/group"/>
-          </component>
-          <component name="syncml_client_api" long-name="SyncML Client API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/syncml_client_api/group"/>
-          </component>
-          <component name="device_management_plugin_api" long-name="Device Management plug-in API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/device_management_plugin_api/group"/>
-          </component>
-          <component name="dm_tree_apis" long-name="DM Tree APIs" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/dm_tree_apis/group"/>
-          </component>
-          <component name="terminal_security_device_lock_api" long-name="Terminal Security Device Lock API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/terminal_security_device_lock_api/group"/>
-          </component>
-          <component name="policy_management_request_api" long-name="Policy Management Request API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/policy_management_request_api/group"/>
-          </component>
-          <component name="ds_constant_definitions_api" long-name="DS Constant Definitions API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/ds_constant_definitions_api/group"/>
-          </component>
-          <component name="scp_server_api" long-name="SCP Server API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/scp_server_api/group"/>
-          </component>
-          <component name="data_synchronization_notification_api" long-name="Data Synchronization Notification API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/data_synchronization_notification_api/group"/>
-          </component>
-          <component name="oma_provisioning_engine_api" long-name="OMA Provisioning Engine API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/oma_provisioning_engine_api/group"/>
-          </component>
-          <component name="dm_utils_api" long-name="DM Utils API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/dm_utils_api/group"/>
-          </component>
-          <component name="syncml_alert_api" long-name="SyncML Alert API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/syncml_alert_api/group"/>
-          </component>
-          <component name="obex_client_session_api" long-name="OBEX Client session API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/obex_client_session_api/group"/>
-          </component>
-          <component name="setting_enforcement_info_api" long-name="Setting Enforcement Info API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/setting_enforcement_info_api/group"/>
-          </component>
-          <component name="dm_constant_definitions_api" long-name="DM Constant Definitions API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/dm_constant_definitions_api/group"/>
-          </component>
-          <component name="oma_ds_extensions_api" long-name="OMA DS Extensions API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/oma_ds_extensions_api/group"/>
-          </component>
-          <component name="pnpms_utils_api" long-name="PNPMS Utils API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/pnpms_utils_api/group"/>
-          </component>
-          <component name="diagnostics_plugin_utility_api" long-name="Diagnostics Plugin Utility API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/diagnostics_plugin_utility_api/group"/>
-          </component>
-          <component name="diagnostics_plugin_api" long-name="Diagnostics Plug-in API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/diagnostics_plugin_api/group"/>
-          </component>
-          <component name="diagnostics_framework_api" long-name="Diagnostics Framework API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/diagnostics_framework_api/group"/>
-          </component>
-          <component name="diagnostics_results_api" long-name="Diagnostics Results API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/diagnostics_results_api/group"/>
-          </component>
-          <component name="diagnostics_plugin_pool_api" long-name="Diagnostics Plugin Pool API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/diagnostics_plugin_pool_api/group"/>
-          </component>
-          <component name="adaptive_history_list_api" long-name="Adaptive History List API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/adaptive_history_list_api/group"/>
-          </component>
-          <component name="adaptive_history_list_session_api" long-name="Adaptive History List Session API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/adaptive_history_list_session_api/group"/>
-          </component>
-          <component name="fota_engine_api" long-name="FOTA Engine API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/fota_engine_api/group"/>
-          </component>
-          <component name="update_package_storage_plugin_api" long-name="Update Package Storage Plug-in API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/update_package_storage_plugin_api/group"/>
-          </component>
-          <component name="syncml_notifier_roaming_api" long-name="SyncML Notifier Roaming API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/syncml_notifier_roaming_api/group"/>
-          </component>
-          <component name="sync_service_api" long-name="Sync Service API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/sync_service_api/group"/>
-          </component>
-          <component name="dcmo_adapter_api" long-name="DCMO Adapter API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/dcmo_adapter_api/group"/>
-          </component>
-          <component name="dcmo_control_api" long-name="DCMO Control API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/dcmo_control_api/group"/>
-          </component>
-          <component name="ds_capability_mgmt_plugin_api" long-name="DS Capability Management Plugin API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/ds_capability_mgmt_plugin_api/group"/>
-          </component>
-          <component name="dm_native_notifier_api" long-name="DM Native Notifier API" filter="s60" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/dm_native_notifier_api/group"/>
-          </component>
-          <component name="syncml_ds_error_reporting_api" long-name="SyncML DS Error Reporting API" filter="s60" introduced="^3" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/syncml_ds_error_reporting_api/group"/>
-          </component>
-          <component name="syncml_ds_customization_api" long-name="SyncML DS Customization API" filter="s60" introduced="^3" class="api">
-            <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/syncml_ds_customization_api/group"/>
-          </component>
-        </collection>
-        <collection name="policymanagement" long-name="Policy Management" level="generic">
-          <component name="pmdmadapter" filter="s60" long-name="PM DM Adapter" plugin="Y">
-            <unit bldFile="/sf/mw/remotemgmt/policymanagement/pmdmadapter/group"/>
-          </component>
-          <component name="dmutilserver" filter="s60" long-name="DM Util Server">
-            <unit bldFile="/sf/mw/remotemgmt/policymanagement/dmutilserver/group"/>
-          </component>
-          <component name="policyengine" filter="s60" long-name="Policy Engine">
-            <unit bldFile="/sf/mw/remotemgmt/policymanagement/policyengine/group"/>
-          </component>
-          <component name="policymanagement_build" filter="s60" long-name="Policy Management Build">
-            <!--  need to distribute exports, etc into the other components and remove this-->
-            <unit bldFile="/sf/mw/remotemgmt/policymanagement/group"/>
-          </component>
-        </collection>
-        <collection name="syncmlfw" long-name="SyncML Framework" level="server">
-          <component name="syncmlfw_build" filter="s60" long-name="SyncML Framework Build">
-            <!--  need to break this up into components. Too convoluted a structure to be in a single bld.inf-->
-            <unit bldFile="/sf/mw/remotemgmt/syncmlfw/group"/>
-          </component>
-        </collection>
-        <collection name="terminalsecurity" long-name="Terminal Security" level="specific">
-          <component name="scp" filter="s60" long-name="Security Code Proxy">
-            <!-- can only have one unit, need to have these #included from a single bld.inf -->
-            <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/scpclient/group"/>
-            <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/scpdatabase/group"/>
-            <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/scpserver/group"/>
-            <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/scppatternplugin/group"/>
-            <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/scphistoryplugin/group"/>
-            <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/scptimestampplugin/group"/>
-            <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/scpeventhandler/group"/>
-            <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/scp/dmeventnotifier/group"/>
-          </component>
-          <component name="terminalsecurity_client" filter="s60" long-name="Terminal Control Client">
-            <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/client/group"/>
-          </component>
-          <component name="terminalsecurity_server" filter="s60" long-name="Terminal Control Server">
-            <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/server/group"/>
-          </component>
-          <component name="tcadapter" filter="s60" long-name="Terminal Control Adapter">
-            <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/tcadapter/bld"/>
-          </component>
-          <component name="terminalsecurity_build" filter="s60" long-name="Terminal Security Build">
-            <!--  need to distribute exports, etc into the other components and remove this-->
-            <unit bldFile="/sf/mw/remotemgmt/terminalsecurity/group"/>
-          </component>
-        </collection>
-        <collection name="omaprovisioning" long-name="OMA Provisioning" level="specific">
-          <component name="pnputil" filter="s60" long-name="PnP Util">
-            <unit bldFile="/sf/mw/remotemgmt/omaprovisioning/pnputil/group"/>
-          </component>
-          <component name="provisioning" filter="s60" long-name="Provisioning">
-            <unit bldFile="/sf/mw/remotemgmt/omaprovisioning/provisioning/group"/>
-          </component>
-        </collection>
-        <collection name="devicediagnosticsfw" long-name="Device Diagnostics Framework" level="framework">
-          <component name="diagframework" filter="s60" long-name="Diagnostics Framework">
-            <unit bldFile="/sf/mw/remotemgmt/devicediagnosticsfw/diagframework/group"/>
-          </component>
-          <component name="diagpluginbase" filter="s60" long-name="Diagnostics Plugin Base">
-            <unit bldFile="/sf/mw/remotemgmt/devicediagnosticsfw/diagpluginbase/group"/>
-          </component>
-          <component name="diagresultsdb" filter="s60" long-name="Diagnostics Results Database">
-            <!--  can only have one unit, merge or split into two components -->
-            <unit bldFile="/sf/mw/remotemgmt/devicediagnosticsfw/diagresultsdb/client/group"/>
-            <unit bldFile="/sf/mw/remotemgmt/devicediagnosticsfw/diagresultsdb/server/group"/>
-          </component>
-          <component name="devicediagnosticsfw_build" filter="s60" long-name="Device Diagnostics Framework Build">
-            <!--  need to distribute exports, etc into the other components and remove this-->
-            <unit bldFile="/sf/mw/remotemgmt/devicediagnosticsfw/group"/>
-          </component>
-        </collection>
-        <collection name="dcmofw" long-name="Device Capability Management Object Framework" level="framework">
-          <component name="dcmoclient" filter="s60" long-name="DCMO Client">
-            <unit bldFile="/sf/mw/remotemgmt/dcmofw/dcmoclient/group"/>
-          </component>
-          <component name="dcmoserver" filter="s60" long-name="DCMO Server">
-            <unit bldFile="/sf/mw/remotemgmt/dcmofw/dcmoserver/group"/>
-          </component>
-          <component name="dcmocustcmd" filter="s60" long-name="DCMO Custom Commands">
-            <unit bldFile="/sf/mw/remotemgmt/dcmofw/dcmocustcmd/group"/>
-          </component>
-          <component name="dcmofw_build" filter="s60" long-name="DCMO Build">
-            <!--  need to distribute exports, etc into the other components and remove this-->
-            <unit bldFile="/sf/mw/remotemgmt/dcmofw/group"/>
-          </component>
-        </collection>
-        <collection name="fotaapplication" long-name="FOTA Application" level="generic">
-          <component name="fotaapplication_build" filter="s60" long-name="FOTA Application Build">
-            <!-- remove this component when configuration is in place and the #ifdefs have been worked out -->
-            <unit bldFile="/sf/mw/remotemgmt/fotaapplication/group"/>
-          </component>
-          <component name="fotaserver" filter="s60" long-name="FOTA Server">
-            <!-- uncomment when #ifdefs are resolved -->
-            <!--<unit bldFile="fotaapplication/fotaserver/group"/>-->
-          </component>
-          <component name="fotacustcmds" filter="s60" long-name="FOTA Custom Commands" class="placeholder">
-            <!-- uncomment when #ifdefs are resolved. Need to put a config meta here-->
-            <!--<unit bldFile="fotaapplication/fotaserver/fotacustcmds/group"/>-->
-          </component>
-        </collection>
-      </block>
-    </layer>
-  </systemModel>
+<SystemDefinition schema="3.0.0">
+ <package id="remotemgmt" name="Remote Management" levels="plugin framework server generic specific">
+  <collection id="remotemgmt_pub" name="Remote Management Public Interfaces" level="specific">
+   <component id="synchronization_capability_api" name="Synchronization Capability API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_pub/synchronization_capability_api/synchronization_capability_api.metaxml"/>
+    <unit bldFile="remotemgmt_pub/synchronization_capability_api/group"/>
+   </component>
+  </collection>
+  <collection id="remotemgmt_plat" name="Remote Management Platform Interfaces" level="specific">
+   <component id="common_agent_util_and_definitions_api" name="Common Agent util and definitions API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/common_agent_util_and_definitions_api/common_agent_util_and_definitions_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/common_agent_util_and_definitions_api/group"/>
+   </component>
+   <component id="policy_management_certificate_api" name="Policy Management Certificate API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/policy_management_certificate_api/policy_management_certificate_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/policy_management_certificate_api/group"/>
+   </component>
+   <component id="oma_provisioning_adapter_api" name="OMA Provisioning Adapter API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/oma_provisioning_adapter_api/oma_provisioning_adapter_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/oma_provisioning_adapter_api/group"/>
+   </component>
+   <component id="device_management_parameter_api" name="Device Management Parameter API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/device_management_parameter_api/device_management_parameter_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/device_management_parameter_api/group"/>
+   </component>
+   <component id="data_synchronization_plugin_api" name="Data Synchronization Plug-in API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/data_synchronization_plugin_api/data_synchronization_plugin_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/data_synchronization_plugin_api/group"/>
+   </component>
+   <component id="sync_alert_handler_api" name="Sync Alert Handler API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/sync_alert_handler_api/sync_alert_handler_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/sync_alert_handler_api/group"/>
+   </component>
+   <component id="syncml_notifier_api" name="SyncML Notifier API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/syncml_notifier_api/syncml_notifier_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/syncml_notifier_api/group"/>
+   </component>
+   <component id="syncml_client_api" name="SyncML Client API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/syncml_client_api/syncml_client_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/syncml_client_api/group"/>
+   </component>
+   <component id="device_management_plugin_api" name="Device Management plug-in API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/device_management_plugin_api/device_management_plugin_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/device_management_plugin_api/group"/>
+   </component>
+   <component id="dm_tree_apis" name="DM Tree APIs" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/dm_tree_apis/dm_tree_apis.metaxml"/>
+    <unit bldFile="remotemgmt_plat/dm_tree_apis/group"/>
+   </component>
+   <component id="terminal_security_device_lock_api" name="Terminal Security Device Lock API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/terminal_security_device_lock_api/terminal_security_device_lock_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/terminal_security_device_lock_api/group"/>
+   </component>
+   <component id="policy_management_request_api" name="Policy Management Request API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/policy_management_request_api/policy_management_request_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/policy_management_request_api/group"/>
+   </component>
+   <component id="ds_constant_definitions_api" name="DS Constant Definitions API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/ds_constant_definitions_api/ds_constant_definitions_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/ds_constant_definitions_api/group"/>
+   </component>
+   <component id="scp_server_api" name="SCP Server API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/scp_server_api/scp_server_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/scp_server_api/group"/>
+   </component>
+   <component id="data_synchronization_notification_api" name="Data Synchronization Notification API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/data_synchronization_notification_api/data_synchronization_notification_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/data_synchronization_notification_api/group"/>
+   </component>
+   <component id="oma_provisioning_engine_api" name="OMA Provisioning Engine API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/oma_provisioning_engine_api/oma_provisioning_engine_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/oma_provisioning_engine_api/group"/>
+   </component>
+   <component id="dm_utils_api" name="DM Utils API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/dm_utils_api/dm_utils_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/dm_utils_api/group"/>
+   </component>
+   <component id="syncml_alert_api" name="SyncML Alert API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/syncml_alert_api/syncml_alert_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/syncml_alert_api/group"/>
+   </component>
+   <component id="obex_client_session_api" name="OBEX Client session API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/obex_client_session_api/obex_client_session_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/obex_client_session_api/group"/>
+   </component>
+   <component id="setting_enforcement_info_api" name="Setting Enforcement Info API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/setting_enforcement_info_api/setting_enforcement_info_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/setting_enforcement_info_api/group"/>
+   </component>
+   <component id="dm_constant_definitions_api" name="DM Constant Definitions API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/dm_constant_definitions_api/dm_constant_definitions_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/dm_constant_definitions_api/group"/>
+   </component>
+   <component id="oma_ds_extensions_api" name="OMA DS Extensions API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/oma_ds_extensions_api/oma_ds_extensions_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/oma_ds_extensions_api/group"/>
+   </component>
+   <component id="pnpms_utils_api" name="PNPMS Utils API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/pnpms_utils_api/pnpms_utils_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/pnpms_utils_api/group"/>
+   </component>
+   <component id="diagnostics_plugin_utility_api" name="Diagnostics Plugin Utility API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/diagnostics_plugin_utility_api/diagnostics_plugin_utility_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/diagnostics_plugin_utility_api/group"/>
+   </component>
+   <component id="diagnostics_plugin_api" name="Diagnostics Plug-in API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/diagnostics_plugin_api/diagnostics_plugin_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/diagnostics_plugin_api/group"/>
+   </component>
+   <component id="diagnostics_framework_api" name="Diagnostics Framework API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/diagnostics_framework_api/diagnostics_framework_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/diagnostics_framework_api/group"/>
+   </component>
+   <component id="diagnostics_results_api" name="Diagnostics Results API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/diagnostics_results_api/diagnostics_results_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/diagnostics_results_api/group"/>
+   </component>
+   <component id="diagnostics_plugin_pool_api" name="Diagnostics Plugin Pool API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/diagnostics_plugin_pool_api/diagnostics_plugin_pool_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/diagnostics_plugin_pool_api/group"/>
+   </component>
+   <component id="adaptive_history_list_api" name="Adaptive History List API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/adaptive_history_list_api/adaptive_history_list_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/adaptive_history_list_api/group"/>
+   </component>
+   <component id="adaptive_history_list_session_api" name="Adaptive History List Session API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/adaptive_history_list_session_api/adaptive_history_list_session_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/adaptive_history_list_session_api/group"/>
+   </component>
+   <component id="fota_engine_api" name="FOTA Engine API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/fota_engine_api/fota_engine_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/fota_engine_api/group"/>
+   </component>
+   <component id="update_package_storage_plugin_api" name="Update Package Storage Plug-in API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/update_package_storage_plugin_api/update_package_storage_plugin_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/update_package_storage_plugin_api/group"/>
+   </component>
+   <component id="syncml_notifier_roaming_api" name="SyncML Notifier Roaming API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/syncml_notifier_roaming_api/syncml_notifier_roaming_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/syncml_notifier_roaming_api/group"/>
+   </component>
+   <component id="sync_service_api" name="Sync Service API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/sync_service_api/sync_service_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/sync_service_api/group"/>
+   </component>
+   <component id="dcmo_adapter_api" name="DCMO Adapter API" class="api" filter="s60">
+    <unit bldFile="remotemgmt_plat/dcmo_adapter_api/group"/>
+   </component>
+   <component id="dcmo_control_api" name="DCMO Control API" class="api" filter="s60">
+    <unit bldFile="remotemgmt_plat/dcmo_control_api/group"/>
+   </component>
+   <component id="ds_capability_mgmt_plugin_api" name="DS Capability Management Plugin API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/ds_capability_mgmt_plugin_api/ds_capability_mgmt_plugin_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/ds_capability_mgmt_plugin_api/group"/>
+   </component>
+   <component id="dm_native_notifier_api" name="DM Native Notifier API" class="api" filter="s60">
+    <unit bldFile="remotemgmt_plat/dm_native_notifier_api/group"/>
+   </component>
+   <component id="syncml_ds_error_reporting_api" name="SyncML DS Error Reporting API" class="api" filter="s60" introduced="^3">
+    <unit bldFile="remotemgmt_plat/syncml_ds_error_reporting_api/group"/>
+   </component>
+   <component id="syncml_ds_customization_api" name="SyncML DS Customization API" class="api" filter="s60" introduced="^3">
+    <unit bldFile="remotemgmt_plat/syncml_ds_customization_api/group"/>
+   </component>
+  </collection>
+  <collection id="policymanagement" name="Policy Management" level="generic">
+   <component id="pmdmadapter" filter="s60" name="PM DM Adapter" class="plugin">
+    <unit bldFile="policymanagement/pmdmadapter/group"/>
+   </component>
+   <component id="dmutilserver" filter="s60" name="DM Util Server">
+    <unit bldFile="policymanagement/dmutilserver/group"/>
+   </component>
+   <component id="policyengine" filter="s60" name="Policy Engine">
+    <unit bldFile="policymanagement/policyengine/group"/>
+   </component>
+   <component id="policymanagement_build" filter="s60" name="Policy Management Build">
+    <!--  need to distribute exports, etc into the other components and remove this-->
+    <unit bldFile="policymanagement/group"/>
+   </component>
+  </collection>
+  <collection id="syncmlfw" name="SyncML Framework" level="server">
+   <component id="syncmlfw_build" filter="s60" name="SyncML Framework Build">
+    <!--  need to break this up into components. Too convoluted a structure to be in a single bld.inf-->
+    <unit bldFile="syncmlfw/group"/>
+   </component>
+  </collection>
+  <collection id="terminalsecurity" name="Terminal Security" level="specific">
+   <component id="scp" filter="s60" name="Security Code Proxy">
+    <!-- can only have one unit, need to have these #included from a single bld.inf -->
+    <unit bldFile="terminalsecurity/scp/scpclient/group"/>
+    <unit bldFile="terminalsecurity/scp/scpdatabase/group"/>
+    <unit bldFile="terminalsecurity/scp/scpserver/group"/>
+    <unit bldFile="terminalsecurity/scp/scppatternplugin/group"/>
+    <unit bldFile="terminalsecurity/scp/scphistoryplugin/group"/>
+    <unit bldFile="terminalsecurity/scp/scptimestampplugin/group"/>
+    <unit bldFile="terminalsecurity/scp/scpeventhandler/group"/>
+    <unit bldFile="terminalsecurity/scp/dmeventnotifier/group"/>
+   </component>
+   <component id="terminalsecurity_client" filter="s60" name="Terminal Control Client">
+    <unit bldFile="terminalsecurity/client/group"/>
+   </component>
+   <component id="terminalsecurity_server" filter="s60" name="Terminal Control Server">
+    <unit bldFile="terminalsecurity/server/group"/>
+   </component>
+   <component id="tcadapter" filter="s60" name="Terminal Control Adapter">
+    <unit bldFile="terminalsecurity/tcadapter/bld"/>
+   </component>
+   <component id="terminalsecurity_build" filter="s60" name="Terminal Security Build">
+    <!--  need to distribute exports, etc into the other components and remove this-->
+    <unit bldFile="terminalsecurity/group"/>
+   </component>
+  </collection>
+  <collection id="omaprovisioning" name="OMA Provisioning" level="specific">
+   <component id="pnputil" filter="s60" name="PnP Util">
+    <unit bldFile="omaprovisioning/pnputil/group"/>
+   </component>
+   <component id="provisioning" filter="s60" name="Provisioning">
+    <unit bldFile="omaprovisioning/provisioning/group"/>
+   </component>
+  </collection>
+  <collection id="devicediagnosticsfw" name="Device Diagnostics Framework" level="framework">
+   <component id="diagframework" filter="s60" name="Diagnostics Framework">
+    <unit bldFile="devicediagnosticsfw/diagframework/group"/>
+   </component>
+   <component id="diagpluginbase" filter="s60" name="Diagnostics Plugin Base">
+    <unit bldFile="devicediagnosticsfw/diagpluginbase/group"/>
+   </component>
+   <component id="diagresultsdb" filter="s60" name="Diagnostics Results Database">
+    <!--  can only have one unit, merge or split into two components -->
+    <unit bldFile="devicediagnosticsfw/diagresultsdb/client/group"/>
+    <unit bldFile="devicediagnosticsfw/diagresultsdb/server/group"/>
+   </component>
+   <component id="devicediagnosticsfw_build" filter="s60" name="Device Diagnostics Framework Build">
+    <!--  need to distribute exports, etc into the other components and remove this-->
+    <unit bldFile="devicediagnosticsfw/group"/>
+   </component>
+  </collection>
+  <collection id="dcmofw" name="Device Capability Management Object Framework" level="framework">
+   <component id="dcmoclient" filter="s60" name="DCMO Client">
+    <unit bldFile="dcmofw/dcmoclient/group"/>
+   </component>
+   <component id="dcmoserver" filter="s60" name="DCMO Server">
+    <unit bldFile="dcmofw/dcmoserver/group"/>
+   </component>
+   <component id="dcmocustcmd" filter="s60" name="DCMO Custom Commands">
+    <unit bldFile="dcmofw/dcmocustcmd/group"/>
+   </component>
+   <component id="dcmofw_build" filter="s60" name="DCMO Build">
+    <!--  need to distribute exports, etc into the other components and remove this-->
+    <unit bldFile="dcmofw/group"/>
+   </component>
+  </collection>
+  <collection id="fotaapplication" name="FOTA Application" level="generic">
+   <component id="fotaapplication_build" filter="s60" name="FOTA Application Build">
+    <!-- remove this component when configuration is in place and the #ifdefs have been worked out -->
+    <unit bldFile="fotaapplication/group"/>
+   </component>
+   <component id="fotaserver" filter="s60" name="FOTA Server">
+    <meta rel="config">
+     <defined condition="__SYNCML_DM_FOTA"/>
+    </meta>
+    <!-- uncomment when #ifdefs are resolved -->
+    <!--<unit bldFile="fotaapplication/fotaserver/group"/>-->
+   </component>
+   <component id="fotacustcmds" filter="s60" name="FOTA Custom Commands">
+    <!-- uncomment when #ifdefs are resolved. Need to put a config meta here-->
+    <!--<unit bldFile="fotaapplication/fotaserver/fotacustcmds/group"/>-->
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>

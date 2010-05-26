@@ -1,229 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE SystemDefinition [
-<!ELEMENT SystemDefinition ( systemModel )>
-<!ATTLIST SystemDefinition
-  name CDATA #REQUIRED
-  schema CDATA #REQUIRED
->
-<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
-
-<!-- System Model Section of DTD -->
-<!ELEMENT systemModel (layer+)>
-
-<!ELEMENT layer (block* | collection*)*>
-<!-- Kernel Services, Base Services, OS Services, Etc -->
-<!ATTLIST layer
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
->
-
-<!ELEMENT block (subblock* | collection*)*>
- <!-- Generic OS services, Comms Services, etc -->
-<!ATTLIST block
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT subblock (collection)*>
-<!-- Cellular Baseband Services, Networking Services, etc -->
-<!ATTLIST subblock
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT collection (component)*>
-<!-- Screen Driver, Content Handling, etc -->
-<!ATTLIST collection
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
->
-
-<!ELEMENT component (unit)*>
-<!-- contains units or is a  package or prebuilt -->
-<!ATTLIST component
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  deprecated CDATA #IMPLIED
-  introduced CDATA #IMPLIED
-  contract CDATA #IMPLIED
-  plugin (Y|N) "N"
-  filter CDATA #IMPLIED
-  class NMTOKENS #IMPLIED
-  supports CDATA #IMPLIED
-  purpose ( optional | mandatory | development ) "optional"
->
-
-<!ELEMENT unit EMPTY >
-<!-- must be buildable (bld.inf) -->
-<!-- bldFile  may someday be removed in favour of mrp -->
-<!ATTLIST unit
-  mrp CDATA #IMPLIED
-  filter CDATA #IMPLIED
-  bldFile CDATA #IMPLIED
-  root CDATA #IMPLIED
-  version NMTOKEN #IMPLIED
-  prebuilt NMTOKEN #IMPLIED
-  late (Y|N) #IMPLIED
-  priority CDATA #IMPLIED
->
-]>
-<SystemDefinition name="Symbian^3" schema="2.0.1">
-  <systemModel>
-    <layer name="app" long-name="Applications" levels="services apps">
-      <block name="commonemail" level="apps" span="2" long-name="Email Apps" levels="service support ui app">
-        <collection name="email_pub" long-name="Email Apps Public Interfaces" level="app">
-          <component name="email_widget_api" long-name="Email Widget API" filter="s60" class="api">
-            <unit bldFile="/sf/app/commonemail/email_pub/email_widget_api/group"/>
-          </component>
-        </collection>
-        <collection name="email_plat" long-name="Email Apps Platform Interfaces" level="app">
-          <component name="email_client_api" long-name="Email Client API" filter="s60" class="api">
-            <unit bldFile="/sf/app/commonemail/email_plat/email_client_api/group"/>
-          </component>
-          <component name="email_setup_plugin_api" long-name="Email Setup Plugin API" filter="s60" class="api">
-            <unit bldFile="/sf/app/commonemail/email_plat/email_setup_plugin_api/group"/>
-          </component>
-        </collection>
-        <collection name="emailservices" long-name="Email Services" level="service">
-          <component name="emailframework" filter="s60" long-name="Email Framework" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/emailservices/emailframework/group"/>
-          </component>
-          <component name="emailclientapi" filter="s60" long-name="Email Client API" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/emailservices/emailclientapi/group"/>
-          </component>
-          <component name="emailserver" filter="s60" long-name="Email Server" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/emailservices/emailserver/group"/>
-          </component>
-          <component name="emailservermonitor" filter="s60" long-name="Email Server Monitor" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/emailservices/emailservermonitor/group"/>
-          </component>
-          <component name="psmruadapter" filter="s60" long-name="Predictive Search Most Recent Used Adapter" introduced="^2" plugin="Y">
-            <unit bldFile="/sf/app/commonemail/emailservices/psmruadapter/group"/>
-          </component>
-          <component name="emailstore" filter="s60" long-name="Email Store" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/emailservices/emailstore/group"/>
-          </component>
-          <component name="emaildebug" filter="s60" long-name="Email Debug" introduced="^2" class="api">
-            <unit bldFile="/sf/app/commonemail/emailservices/emaildebug/group"/>
-          </component>
-          <component name="emailinstallationinitiator" filter="s60" long-name="Email Installation Initiator" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/emailservices/emailinstallationinitiator/group"/>
-          </component>
-        </collection>
-        <collection name="ipsservices" long-name="IMAP/POP/SMTP Services" level="service">
-          <component name="ipssossettings" filter="s60" long-name="IPS SOS Settings" introduced="^2">
-            <!-- SOS? Consider spelling it out since the abbreviation is ambiguous -->
-            <unit bldFile="/sf/app/commonemail/ipsservices/ipssossettings/group"/>
-          </component>
-          <component name="ipssosplugin" filter="s60" long-name="IPS SOS Plugin" introduced="^2" plugin="Y">
-            <unit bldFile="/sf/app/commonemail/ipsservices/ipssosplugin/group"/>
-          </component>
-          <component name="ipssosaoplugin" filter="s60" long-name="IPS SOS Always Online Plugin" introduced="^2" plugin="Y">
-            <unit bldFile="/sf/app/commonemail/ipsservices/ipssosaoplugin/group"/>
-          </component>
-          <component name="ipsservices_build" filter="s60" long-name="IPS Services Build" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/ipsservices/group"/>
-            <!-- can the exports be broken up into the other components or made a config component?-->
-          </component>
-        </collection>
-        <collection name="emailcontacts" long-name="Email Contacts" level="support">
-          <component name="contactactionservice" filter="s60" long-name="Contact Action Service" introduced="^2" plugin="Y">
-            <unit bldFile="/sf/app/commonemail/emailcontacts/contactactionservice/group"/>
-          </component>
-          <component name="contactactionmenu" filter="s60" long-name="Contact Action Menu" introduced="^2" plugin="Y">
-            <unit bldFile="/sf/app/commonemail/emailcontacts/contactactionmenu/group"/>
-          </component>
-        </collection>
-        <collection name="meetingrequest" long-name="Meeting Request" level="ui">
-          <component name="mrcommon" filter="s60" long-name="MR Common" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/meetingrequest/mrcommon/group"/>
-          </component>
-          <component name="mrdb" filter="s60" long-name="MR Database" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/meetingrequest/mrdb/group"/>
-          </component>
-          <component name="mrpolicy" filter="s60" long-name="MR Policy" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/meetingrequest/mrpolicy/group"/>
-          </component>
-          <component name="mrservices" filter="s60" long-name="MR Services" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/meetingrequest/mrservices/group"/>
-          </component>
-          <component name="mrgui" filter="s60" long-name="MR GUI" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/meetingrequest/mrgui/group"/>
-          </component>
-          <component name="mrentry" filter="s60" long-name="MR Entry" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/meetingrequest/mrentry/group"/>
-          </component>
-          <component name="mrtasks" filter="s60" long-name="MR Tasks" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/meetingrequest/mrtasks/group"/>
-          </component>
-          <component name="mrutils" filter="s60" long-name="MR Utils" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/meetingrequest/mrutils/group"/>
-          </component>
-          <component name="mrutilscalplugin" filter="s60" long-name="MR Utils Calendar Plugin" introduced="^2" plugin="Y">
-            <unit bldFile="/sf/app/commonemail/meetingrequest/mrutilscalplugin/group"/>
-          </component>
-          <component name="mrviewer" filter="s60" long-name="MR Viewer" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/meetingrequest/mrviewer/group"/>
-          </component>
-          <component name="mrviewercalplugin" filter="s60" long-name="MR Viewer Calendar Plugin" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/meetingrequest/mrviewercalplugin/group"/>
-          </component>
-          <component name="mricalviewer" filter="s60" long-name="MR iCal Viewer" introduced="^2" plugin="Y">
-            <unit bldFile="/sf/app/commonemail/meetingrequest/mricalviewer/group"/>
-          </component>
-          <component name="mrversit2" filter="s60" long-name="MR Versit2" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/meetingrequest/mrversit2/group"/>
-          </component>
-          <component name="mragnversit2" filter="s60" long-name="MR Agenda Versit2" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/meetingrequest/mragnversit2/group"/>
-          </component>
-          <component name="mrcasplugin" filter="s60" long-name="MR Contact Action Service Plugin" introduced="^2" plugin="Y">
-            <unit bldFile="/sf/app/commonemail/meetingrequest/mrcasplugin/group"/>
-          </component>
-          <component name="mrurlparserplugin" filter="s60" long-name="MR URL Parser Plugin" introduced="^2" plugin="Y">
-            <unit bldFile="/sf/app/commonemail/meetingrequest/mrurlparserplugin/group"/>
-          </component>
-          <component name="meetingrequest_build" filter="s60" long-name="MR Build" introduced="^2">
-            <!-- can the exports be broken up into the other components ?
+<SystemDefinition schema="3.0.0">
+  <package id="commonemail" name="Email Apps" levels="service support ui app">
+  <collection id="email_pub" name="Email Apps Public Interfaces" level="app">
+   <component id="email_widget_api" name="Email Widget API" class="api" filter="s60">
+    <meta rel="Api" href="email_pub/email_widget_api/email_widget_api.metaxml"/>
+    <unit bldFile="email_pub/email_widget_api/group"/>
+   </component>
+  </collection>
+  <collection id="email_plat" name="Email Apps Platform Interfaces" level="app">
+   <component id="email_client_api" name="Email Client API" class="api" filter="s60">
+    <meta rel="Api" href="email_plat/email_client_api/email_client_api.metaxml"/>
+    <unit bldFile="email_plat/email_client_api/group"/>
+   </component>
+   <component id="email_setup_plugin_api" name="Email Setup Plugin API" class="api" filter="s60">
+    <meta rel="Api" href="email_plat/email_setup_plugin_api/email_setup_plugin_api.metaxml"/>
+    <unit bldFile="email_plat/email_setup_plugin_api/group"/>
+   </component>
+  </collection>
+    <collection id="emailservices" name="Email Services" level="service">
+      <component id="emailframework" filter="s60" name="Email Framework" introduced="^2">
+        <unit bldFile="emailservices/emailframework/group"/>
+      </component>
+      <component id="emailclientapi" filter="s60" name="Email Client API" introduced="^2">
+        <unit bldFile="emailservices/emailclientapi/group"/>
+      </component>
+      <component id="emailserver" filter="s60" name="Email Server" introduced="^2">
+        <unit bldFile="emailservices/emailserver/group"/>
+      </component>
+      <component id="emailservermonitor" filter="s60" name="Email Server Monitor" introduced="^2">
+        <unit bldFile="emailservices/emailservermonitor/group"/>
+      </component>
+      <component id="psmruadapter" filter="s60" name="Predictive Search Most Recent Used Adapter" class="plugin" introduced="^2">
+        <unit bldFile="emailservices/psmruadapter/group"/>
+      </component>
+      <component id="emailstore" filter="s60" name="Email Store" introduced="^2">
+        <unit bldFile="emailservices/emailstore/group"/>
+      </component>
+      <component id="emaildebug" filter="s60" name="Email Debug" class="api" introduced="^2">
+        <unit bldFile="emailservices/emaildebug/group"/>
+      </component>
+      <component id="emailinstallationinitiator" filter="s60" name="Email Installation Initiator" introduced="^2">
+        <unit bldFile="emailservices/emailinstallationinitiator/group"/>
+      </component>
+    </collection>
+    <collection id="ipsservices" name="IMAP/POP/SMTP Services" level="service">
+      <component id="ipssossettings" filter="s60" name="IPS SOS Settings" introduced="^2">
+    		<!-- SOS? Consider spelling it out since the abbreviation is ambiguous -->
+        <unit bldFile="ipsservices/ipssossettings/group"/>
+      </component>
+      <component id="ipssosplugin" filter="s60" name="IPS SOS Plugin" class="plugin" introduced="^2">
+        <unit bldFile="ipsservices/ipssosplugin/group"/>
+      </component>
+      <component id="ipssosaoplugin" filter="s60" name="IPS SOS Always Online Plugin" class="plugin" introduced="^2">
+        <unit bldFile="ipsservices/ipssosaoplugin/group"/>
+      </component>
+      <component id="ipsservices_build" filter="s60" name="IPS Services Build" introduced="^2">
+        <unit bldFile="ipsservices/group"/>
+		<!-- can the exports be broken up into the other components or made a config component?-->
+      </component>
+    </collection>
+    <collection id="emailcontacts" name="Email Contacts" level="support">
+      <component id="contactactionservice" filter="s60" name="Contact Action Service"  class="plugin" introduced="^2">
+        <unit bldFile="emailcontacts/contactactionservice/group"/>
+      </component>
+      <component id="contactactionmenu" filter="s60" name="Contact Action Menu" class="plugin" introduced="^2">
+        <unit bldFile="emailcontacts/contactactionmenu/group"/>
+      </component>
+    </collection>
+    <collection id="meetingrequest" name="Meeting Request" level="ui">
+      <component id="mrcommon" filter="s60" name="MR Common" introduced="^2">
+        <unit bldFile="meetingrequest/mrcommon/group"/>
+      </component>
+      <component id="mrdb" filter="s60" name="MR Database" introduced="^2">
+        <unit bldFile="meetingrequest/mrdb/group"/>
+      </component>
+      <component id="mrpolicy" filter="s60" name="MR Policy" introduced="^2">
+        <unit bldFile="meetingrequest/mrpolicy/group"/>
+      </component>
+      <component id="mrservices" filter="s60" name="MR Services" introduced="^2">
+        <unit bldFile="meetingrequest/mrservices/group"/>
+      </component>
+      <component id="mrgui" filter="s60" name="MR GUI" introduced="^2">
+        <unit bldFile="meetingrequest/mrgui/group"/>
+      </component>
+      <component id="mrentry" filter="s60" name="MR Entry" introduced="^2">
+        <unit bldFile="meetingrequest/mrentry/group"/>
+      </component>
+      <component id="mrtasks" filter="s60" name="MR Tasks" introduced="^2">
+        <unit bldFile="meetingrequest/mrtasks/group"/>
+      </component>
+      <component id="mrutils" filter="s60" name="MR Utils" introduced="^2">
+        <unit bldFile="meetingrequest/mrutils/group"/>
+      </component>
+      <component id="mrutilscalplugin" filter="s60" name="MR Utils Calendar Plugin" class="plugin" introduced="^2">
+        <unit bldFile="meetingrequest/mrutilscalplugin/group"/>
+      </component>
+      <component id="mrviewer" filter="s60" name="MR Viewer" introduced="^2">
+        <unit bldFile="meetingrequest/mrviewer/group"/>
+      </component>
+      <component id="mrviewercalplugin" filter="s60" name="MR Viewer Calendar Plugin" introduced="^2">
+        <unit bldFile="meetingrequest/mrviewercalplugin/group"/>
+      </component>
+      <component id="mricalviewer" filter="s60" name="MR iCal Viewer" class="plugin" introduced="^2">
+        <unit bldFile="meetingrequest/mricalviewer/group"/>
+      </component>
+      <component id="mrversit2" filter="s60" name="MR Versit2" introduced="^2">
+        <unit bldFile="meetingrequest/mrversit2/group"/>
+      </component>
+      <component id="mragnversit2" filter="s60" name="MR Agenda Versit2" introduced="^2">
+        <unit bldFile="meetingrequest/mragnversit2/group"/>
+      </component>
+      <component id="mrcasplugin" filter="s60" name="MR Contact Action Service Plugin" class="plugin" introduced="^2">
+        <unit bldFile="meetingrequest/mrcasplugin/group"/>
+      </component>
+      <component id="mrurlparserplugin" filter="s60" name="MR URL Parser Plugin" class="plugin" introduced="^2">
+        <unit bldFile="meetingrequest/mrurlparserplugin/group"/>
+      </component>
+      <component id="meetingrequest_build" filter="s60" name="MR Build" introduced="^2">
+		<!-- can the exports be broken up into the other components ?
 			alternatively, move the exports into a RM Config component-->
-            <unit bldFile="/sf/app/commonemail/meetingrequest/group"/>
-          </component>
-        </collection>
-        <collection name="emailuis" long-name="Email UIs" level="app">
-          <component name="emailui" filter="s60" long-name="Email UI" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/emailuis/emailui/group"/>
-          </component>
-          <component name="gsemailsettings" filter="s60" long-name="Email GS Settings" introduced="^2" plugin="Y">
-            <unit bldFile="/sf/app/commonemail/emailuis/gsemailsettings/group"/>
-          </component>
-          <component name="uicomponents" filter="s60" long-name="Email UI Components" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/emailuis/uicomponents/group"/>
-          </component>
-          <component name="widget" filter="s60" long-name="Email Widget" introduced="^2">
-            <!-- Uncomment unit when configuration is in place. Currently #included from emailuis_build, which should be removed at the same time. -->
-            <!--<unit bldFile="emailuis/widget/group"/>-->
-          </component>
-          <component name="emailuis_build" filter="s60" long-name="Email UIs Build" introduced="^2">
-            <unit bldFile="/sf/app/commonemail/emailuis/group"/>
-          </component>
-        </collection>
-        <collection name="commonemail_info" long-name="Email Apps Info" level="app">
-          <component name="emailhelp" filter="s60" long-name="Email Help" class="placeholder">
-            <!-- should this be commented out or not? -->
-            <!-- <unit bldFile="emailhelp/group"/> -->
-          </component>
-          <component name="commonemail_help" filter="s60" long-name="Email Help" introduced="^2" class="placeholder">
-            <!-- should this be commented out or not? -->
-            <!-- <unit bldFile="help/group"/> -->
-          </component>
-        </collection>
-      </block>
-    </layer>
-  </systemModel>
+        <unit bldFile="meetingrequest/group"/>
+      </component>
+    </collection>
+    <collection id="emailuis" name="Email UIs" level="app">
+      <component id="emailui" filter="s60" name="Email UI" introduced="^2">
+        <unit bldFile="emailuis/emailui/group"/>
+      </component>
+      <component id="gsemailsettings" filter="s60" name="Email GS Settings" class="plugin" introduced="^2">
+        <unit bldFile="emailuis/gsemailsettings/group"/>
+      </component>
+      <component id="uicomponents" filter="s60" name="Email UI Components" introduced="^2">
+        <unit bldFile="emailuis/uicomponents/group"/>
+      </component>
+      <component id="widget" filter="s60" name="Email Widget" introduced="^2">
+        <meta rel="config">
+        	<not-defined condition="FF_CMAIL_INTEGRATION"/>
+        </meta>      
+		<!-- Uncomment unit when configuration is in place. Currently #included from emailuis_build, which should be removed at the same time. -->
+        <!--<unit bldFile="emailuis/widget/group"/>-->
+      </component>
+      <component id="emailuis_build" filter="s60" name="Email UIs Build" introduced="^2">
+        <unit bldFile="emailuis/group"/>
+      </component>
+    </collection>
+    <collection id="commonemail_info" name="Email Apps Info" level="app">
+      <component id="emailhelp" filter="s60" name="Email Help">
+      	<!-- should this be commented out or not? -->
+        <!-- <unit bldFile="emailhelp/group"/> -->
+      </component>
+      <component id="commonemail_help" filter="s60" name="Email Help" introduced="^2">
+      	<!-- should this be commented out or not? -->
+        <!-- <unit bldFile="help/group"/> -->
+      </component>
+    </collection>
+  </package>
 </SystemDefinition>

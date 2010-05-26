@@ -1,178 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE SystemDefinition [
-<!ELEMENT SystemDefinition ( systemModel )>
-<!ATTLIST SystemDefinition
-  name CDATA #REQUIRED
-  schema CDATA #REQUIRED
->
-<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
-
-<!-- System Model Section of DTD -->
-<!ELEMENT systemModel (layer+)>
-
-<!ELEMENT layer (block* | collection*)*>
-<!-- Kernel Services, Base Services, OS Services, Etc -->
-<!ATTLIST layer
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
->
-
-<!ELEMENT block (subblock* | collection*)*>
- <!-- Generic OS services, Comms Services, etc -->
-<!ATTLIST block
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT subblock (collection)*>
-<!-- Cellular Baseband Services, Networking Services, etc -->
-<!ATTLIST subblock
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT collection (component)*>
-<!-- Screen Driver, Content Handling, etc -->
-<!ATTLIST collection
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
->
-
-<!ELEMENT component (unit)*>
-<!-- contains units or is a  package or prebuilt -->
-<!ATTLIST component
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  deprecated CDATA #IMPLIED
-  introduced CDATA #IMPLIED
-  contract CDATA #IMPLIED
-  plugin (Y|N) "N"
-  filter CDATA #IMPLIED
-  class NMTOKENS #IMPLIED
-  supports CDATA #IMPLIED
-  purpose ( optional | mandatory | development ) "optional"
->
-
-<!ELEMENT unit EMPTY >
-<!-- must be buildable (bld.inf) -->
-<!-- bldFile  may someday be removed in favour of mrp -->
-<!ATTLIST unit
-  mrp CDATA #IMPLIED
-  filter CDATA #IMPLIED
-  bldFile CDATA #IMPLIED
-  root CDATA #IMPLIED
-  version NMTOKEN #IMPLIED
-  prebuilt NMTOKEN #IMPLIED
-  late (Y|N) #IMPLIED
-  priority CDATA #IMPLIED
->
-]>
-<SystemDefinition name="Symbian^3" schema="2.0.1">
-  <systemModel>
-    <layer name="app" long-name="Applications" levels="services apps">
-      <block name="devicecontrol" level="services" long-name="Device Control Daemons" levels="oma mid app">
-        <collection name="devicediagnostics" long-name="Device Diagnostics" level="app">
-          <component name="devdiagapp" filter="s60" long-name="Device Diagnostics App">
-            <unit bldFile="/sf/app/devicecontrol/devicediagnostics/devdiagapp/group"/>
-          </component>
-          <component name="devdiaggsplugin" filter="s60" long-name="Device Diagnostics GS Plugin" plugin="Y">
-            <unit bldFile="/sf/app/devicecontrol/devicediagnostics/devdiaggsplugin/group"/>
-          </component>
-          <component name="diagplugins" filter="s60" long-name="Diagnostics Plugins" plugin="Y">
-            <unit bldFile="/sf/app/devicecontrol/devicediagnostics/diagplugins/group"/>
-          </component>
-          <component name="diagsuites" filter="s60" long-name="Diagnostics Suites" plugin="Y">
-            <unit bldFile="/sf/app/devicecontrol/devicediagnostics/diagsuites/group"/>
-          </component>
-          <component name="devicediagnostics_build" filter="s60" long-name="Device Diagnostics Build">
-            <!-- can the exports be moved to one of the other components?
+<SystemDefinition schema="3.0.0">
+  <package id="devicecontrol" name="Device Control Daemons" levels="oma mid app">
+    <collection id="devicediagnostics" name="Device Diagnostics" level="app">
+      <component id="devdiagapp" filter="s60" name="Device Diagnostics App">
+        <unit bldFile="devicediagnostics/devdiagapp/group"/>
+      </component>
+      <component id="devdiaggsplugin" filter="s60" name="Device Diagnostics GS Plugin" class="plugin">
+        <unit bldFile="devicediagnostics/devdiaggsplugin/group"/>
+      </component>
+      <component id="diagplugins" filter="s60" name="Diagnostics Plugins" class="plugin">
+        <unit bldFile="devicediagnostics/diagplugins/group"/>
+      </component>
+      <component id="diagsuites" filter="s60" name="Diagnostics Suites" class="plugin">
+        <unit bldFile="devicediagnostics/diagsuites/group"/>
+      </component>
+      <component id="devicediagnostics_build" filter="s60" name="Device Diagnostics Build">
+      	<!-- can the exports be moved to one of the other components?
 			or all  #includes removed from here, and it renamed Device Diagnostics ROM -->
-            <unit bldFile="/sf/app/devicecontrol/devicediagnostics/group"/>
-          </component>
-        </collection>
-        <collection name="omadm" long-name="OMA Device Management" level="oma">
-          <component name="omadmappui" filter="s60" long-name="OMA DM Application UI">
-            <unit bldFile="/sf/app/devicecontrol/omadm/omadmappui/group"/>
-          </component>
-          <component name="omadmextensions" filter="s60" long-name="OMA DM Extensions" plugin="Y">
-            <unit bldFile="/sf/app/devicecontrol/omadm/omadmextensions/group"/>
-          </component>
-          <component name="dcmo" filter="s60" long-name="Device Capabilities Management Object" introduced="^3" plugin="Y">
-            <unit bldFile="/sf/app/devicecontrol/omadm/dcmo/group"/>
-          </component>
-        </collection>
-        <collection name="pnpmobileservices" long-name="PnP Mobile Services" level="mid">
-          <component name="pnpms" filter="s60" long-name="PnP MS">
-            <unit bldFile="/sf/app/devicecontrol/pnpmobileservices/pnpms/group"/>
-          </component>
-        </collection>
-        <collection name="applicationmanagement" long-name="Application Management" level="app">
-          <!-- could this collection be collapsed into a single component and moved down a dir? Do all these need to be noted separately? -->
-          <component name="applicationmanagement_options" filter="s60" long-name="AM Install Options">
-            <unit bldFile="/sf/app/devicecontrol/applicationmanagement/options/group"/>
-          </component>
-          <component name="applicationmanagement_client" filter="s60" long-name="AM Client">
-            <unit bldFile="/sf/app/devicecontrol/applicationmanagement/client/group"/>
-          </component>
-          <component name="applicationmanagement_server" filter="s60" long-name="AM Server">
-            <unit bldFile="/sf/app/devicecontrol/applicationmanagement/server/group"/>
-          </component>
-          <component name="rfsplugin" filter="s60" long-name="AM RFS Plugin" plugin="Y">
-            <unit bldFile="/sf/app/devicecontrol/applicationmanagement/rfsplugin/group"/>
-          </component>
-          <component name="amadapter2" filter="s60" long-name="AM Adapter" plugin="Y">
-            <unit bldFile="/sf/app/devicecontrol/applicationmanagement/amadapter2/group"/>
-          </component>
-          <component name="omascomoadapter" filter="s60" long-name="OMA SCOMO Adapter" introduced="^3" plugin="Y">
-            <unit bldFile="/sf/app/devicecontrol/applicationmanagement/omascomoadapter/group"/>
-          </component>
-          <component name="applicationmanagement_build" filter="s60" long-name="AM Build">
-            <!-- If thes aren't collapsed into one cmp, can all  #includes removed from here, and it renamed AM ROM? -->
-            <unit bldFile="/sf/app/devicecontrol/applicationmanagement/group"/>
-          </component>
-        </collection>
-        <collection name="customization" long-name="DM Customization Adapters" level="mid">
-          <component name="dmutils" long-name="DM Utils" filter="s60">
-            <unit bldFile="/sf/app/devicecontrol/customization/dmutils/bld"/>
-          </component>
-          <component name="uisettingssrv" filter="s60" long-name="UI Settings Server">
-            <unit bldFile="/sf/app/devicecontrol/customization/uisettingssrv/bld"/>
-          </component>
-          <component name="supadapter" filter="s60" long-name="Startup Adapter" plugin="Y">
-            <unit bldFile="/sf/app/devicecontrol/customization/supadapter/bld"/>
-          </component>
-          <component name="wallpaperadapter" filter="s60" long-name="Wallpaper Adapter" plugin="Y">
-            <unit bldFile="/sf/app/devicecontrol/customization/wallpaperadapter/bld"/>
-          </component>
-          <component name="operatorlogoadapter" filter="s60" long-name="Operator Logo Adapter" plugin="Y">
-            <unit bldFile="/sf/app/devicecontrol/customization/operatorlogoadapter/bld"/>
-          </component>
-          <component name="screensaveradapter" filter="s60" long-name="Screen Saver Adapter" plugin="Y">
-            <unit bldFile="/sf/app/devicecontrol/customization/screensaveradapter/bld"/>
-          </component>
-          <component name="themesadapter" filter="s60" long-name="Themes Adapter" plugin="Y">
-            <unit bldFile="/sf/app/devicecontrol/customization/themesadapter/bld"/>
-          </component>
-          <component name="embeddedlinkadapter" filter="s60" long-name="Embedded Link Adapter" plugin="Y">
-            <unit bldFile="/sf/app/devicecontrol/customization/embeddedlinkadapter/bld"/>
-          </component>
-          <component name="customization_build" filter="s60" long-name="DM Customization Build">
-            <!-- If thes aren't collapsed into one cmp, can all  #includes removed from here, and it renamed DM Customization ROM? -->
-            <unit bldFile="/sf/app/devicecontrol/customization/group"/>
-          </component>
-        </collection>
-        <collection name="omacp" long-name="OMA Content Provisioning" level="oma">
-          <component name="omacpadapters" filter="s60" long-name="OMA CP Adapters" plugin="Y">
-            <unit bldFile="/sf/app/devicecontrol/omacp/omacpadapters/group"/>
-          </component>
-        </collection>
-      </block>
-    </layer>
-  </systemModel>
+        <unit bldFile="devicediagnostics/group"/>
+      </component>
+    </collection>
+    <collection id="omadm" name="OMA Device Management" level="oma">
+      <component id="omadmappui" filter="s60" name="OMA DM Application UI">
+        <unit bldFile="omadm/omadmappui/group"/>
+      </component>
+      <component id="omadmextensions" filter="s60" name="OMA DM Extensions" class="plugin">
+        <unit bldFile="omadm/omadmextensions/group"/>
+      </component>
+      <component id="dcmo" filter="s60" name="Device Capabilities Management Object" class="plugin" introduced="^3">
+        <unit bldFile="omadm/dcmo/group"/>
+      </component>
+    </collection>
+    <collection id="pnpmobileservices" name="PnP Mobile Services" level="mid">
+      <component id="pnpms" filter="s60" name="PnP MS">
+        <unit bldFile="pnpmobileservices/pnpms/group"/>
+      </component>
+    </collection>
+    <collection id="applicationmanagement" name="Application Management" level="app">
+	   	<!-- could this collection be collapsed into a single component and moved down a dir? Do all these need to be noted separately? --> 
+      <component id="applicationmanagement_options" filter="s60" name="AM Install Options">
+        <unit bldFile="applicationmanagement/options/group"/>
+      </component>
+      <component id="applicationmanagement_client" filter="s60" name="AM Client">
+        <unit bldFile="applicationmanagement/client/group"/>
+      </component>
+      <component id="applicationmanagement_server" filter="s60" name="AM Server">
+        <unit bldFile="applicationmanagement/server/group"/>
+      </component>
+      <component id="rfsplugin" filter="s60" name="AM RFS Plugin" class="plugin">
+        <unit bldFile="applicationmanagement/rfsplugin/group"/>
+      </component>
+      <component id="amadapter2" filter="s60" name="AM Adapter" class="plugin">
+        <unit bldFile="applicationmanagement/amadapter2/group"/>
+      </component>
+      <component id="omascomoadapter" filter="s60" name="OMA SCOMO Adapter" class="plugin" introduced="^3">
+        <unit bldFile="applicationmanagement/omascomoadapter/group"/>
+      </component>
+      <component id="applicationmanagement_build" filter="s60" name="AM Build">
+      	<!-- If thes aren't collapsed into one cmp, can all  #includes removed from here, and it renamed AM ROM? -->
+        <unit bldFile="applicationmanagement/group"/>
+      </component>
+    </collection>
+    <collection id="customization" name="DM Customization Adapters" level="mid">
+      <component id="dmutils" name="DM Utils" filter="s60">
+        <unit bldFile="customization/dmutils/bld"/>
+      </component>
+      <component id="uisettingssrv" filter="s60" name="UI Settings Server">
+        <unit bldFile="customization/uisettingssrv/bld"/>
+      </component>
+      <component id="supadapter" filter="s60" name="Startup Adapter" class="plugin">
+        <unit bldFile="customization/supadapter/bld"/>
+      </component>
+      <component id="wallpaperadapter" filter="s60" name="Wallpaper Adapter" class="plugin">
+        <unit bldFile="customization/wallpaperadapter/bld"/>
+      </component>
+      <component id="operatorlogoadapter" filter="s60" name="Operator Logo Adapter" class="plugin">
+        <unit bldFile="customization/operatorlogoadapter/bld"/>
+      </component>
+      <component id="screensaveradapter" filter="s60" name="Screen Saver Adapter" class="plugin">
+        <unit bldFile="customization/screensaveradapter/bld"/>
+      </component>
+      <component id="themesadapter" filter="s60" name="Themes Adapter" class="plugin">
+        <unit bldFile="customization/themesadapter/bld"/>
+      </component>
+      <component id="embeddedlinkadapter" filter="s60" name="Embedded Link Adapter" class="plugin">
+        <unit bldFile="customization/embeddedlinkadapter/bld"/>
+      </component>
+      <component id="customization_build" filter="s60" name="DM Customization Build">
+      	<!-- If thes aren't collapsed into one cmp, can all  #includes removed from here, and it renamed DM Customization ROM? -->
+        <unit bldFile="customization/group"/>
+      </component>
+    </collection>
+    <collection id="omacp" name="OMA Content Provisioning" level="oma">
+      <component id="omacpadapters" filter="s60" name="OMA CP Adapters" class="plugin">
+        <unit bldFile="omacp/omacpadapters/group"/>
+      </component>
+    </collection>
+  </package>
 </SystemDefinition>

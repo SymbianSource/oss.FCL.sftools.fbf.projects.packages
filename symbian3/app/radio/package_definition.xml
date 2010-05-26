@@ -1,107 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE SystemDefinition [
-<!ELEMENT SystemDefinition ( systemModel )>
-<!ATTLIST SystemDefinition
-  name CDATA #REQUIRED
-  schema CDATA #REQUIRED
->
-<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
-
-<!-- System Model Section of DTD -->
-<!ELEMENT systemModel (layer+)>
-
-<!ELEMENT layer (block* | collection*)*>
-<!-- Kernel Services, Base Services, OS Services, Etc -->
-<!ATTLIST layer
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
->
-
-<!ELEMENT block (subblock* | collection*)*>
- <!-- Generic OS services, Comms Services, etc -->
-<!ATTLIST block
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT subblock (collection)*>
-<!-- Cellular Baseband Services, Networking Services, etc -->
-<!ATTLIST subblock
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT collection (component)*>
-<!-- Screen Driver, Content Handling, etc -->
-<!ATTLIST collection
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
->
-
-<!ELEMENT component (unit)*>
-<!-- contains units or is a  package or prebuilt -->
-<!ATTLIST component
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  deprecated CDATA #IMPLIED
-  introduced CDATA #IMPLIED
-  contract CDATA #IMPLIED
-  plugin (Y|N) "N"
-  filter CDATA #IMPLIED
-  class NMTOKENS #IMPLIED
-  supports CDATA #IMPLIED
-  purpose ( optional | mandatory | development ) "optional"
->
-
-<!ELEMENT unit EMPTY >
-<!-- must be buildable (bld.inf) -->
-<!-- bldFile  may someday be removed in favour of mrp -->
-<!ATTLIST unit
-  mrp CDATA #IMPLIED
-  filter CDATA #IMPLIED
-  bldFile CDATA #IMPLIED
-  root CDATA #IMPLIED
-  version NMTOKEN #IMPLIED
-  prebuilt NMTOKEN #IMPLIED
-  late (Y|N) #IMPLIED
-  priority CDATA #IMPLIED
->
-]>
-<SystemDefinition name="Symbian^3" schema="2.0.1">
-  <systemModel>
-    <layer name="app" long-name="Applications" levels="services apps">
-      <block name="radio" level="apps" long-name="Radio Apps" levels="engine ui">
-        <collection name="fmradio" long-name="FM Radio" level="ui">
-          <component name="activeidleengine" filter="s60" long-name="FM Radio Active Idle Engine">
-            <unit bldFile="/sf/app/radio/fmradio/activeidleengine/group"/>
-          </component>
-          <component name="fmradioengine" filter="s60" long-name="FM Radio Engine">
-            <unit bldFile="/sf/app/radio/fmradio/fmradioengine/group"/>
-          </component>
-          <component name="fmradioactionhandler" filter="s60" long-name="FM Radio Action Handler" plugin="Y">
-            <unit bldFile="/sf/app/radio/fmradio/fmradioactionhandler/group"/>
-          </component>
-          <component name="fmradiomcpplugin" filter="s60" long-name="FM Radio Content Publisher Plugin" plugin="Y">
-            <unit bldFile="/sf/app/radio/fmradio/fmradiomcpplugin/group"/>
-          </component>
-          <component name="fmradio_build" filter="s60" long-name="FM Radio Build">
-            <unit bldFile="/sf/app/radio/fmradio/fmradio/group"/>
-          </component>
-          <component name="fmradio_help" filter="s60" long-name="FM Radio Help">
-            <unit bldFile="/sf/app/radio/fmradio/help/group"/>
-          </component>
-          <component name="fmradio_build" filter="s60" long-name="FM Radio ROM">
-            <!--  remove above #included bld.infs -->
-            <unit bldFile="/sf/app/radio/fmradio/group"/>
-          </component>
-        </collection>
-      </block>
-    </layer>
-  </systemModel>
+<SystemDefinition schema="3.0.0">
+  <package id="radio" name="Radio Apps" levels="engine ui">
+    <collection id="fmradio" name="FM Radio" level="ui">
+      <component id="activeidleengine" filter="s60" name="FM Radio Active Idle Engine">
+        <unit bldFile="fmradio/activeidleengine/group"/>
+      </component>
+      <component id="fmradioengine" filter="s60" name="FM Radio Engine">
+        <unit bldFile="fmradio/fmradioengine/group"/>
+      </component>
+      <component id="fmradioactionhandler" filter="s60" name="FM Radio Action Handler" class="plugin">
+        <unit bldFile="fmradio/fmradioactionhandler/group"/>
+      </component>
+      <component id="fmradiomcpplugin" filter="s60" name="FM Radio Content Publisher Plugin" class="plugin">
+        <unit bldFile="fmradio/fmradiomcpplugin/group"/>
+      </component>
+      <component id="fmradio_build" filter="s60" name="FM Radio Build">
+        <unit bldFile="fmradio/fmradio/group"/>
+      </component>
+      <component id="fmradio_help" filter="s60" name="FM Radio Help">
+        <unit bldFile="fmradio/help/group"/>
+      </component>
+      <component id="fmradio_build" filter="s60" name="FM Radio ROM">
+      	<!--  remove above #included bld.infs -->
+        <unit bldFile="fmradio/group"/>
+      </component>
+    </collection>
+  </package>
 </SystemDefinition>

@@ -1,156 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE SystemDefinition [
-<!ELEMENT SystemDefinition ( systemModel )>
-<!ATTLIST SystemDefinition
-  name CDATA #REQUIRED
-  schema CDATA #REQUIRED
->
-<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
-
-<!-- System Model Section of DTD -->
-<!ELEMENT systemModel (layer+)>
-
-<!ELEMENT layer (block* | collection*)*>
-<!-- Kernel Services, Base Services, OS Services, Etc -->
-<!ATTLIST layer
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
->
-
-<!ELEMENT block (subblock* | collection*)*>
- <!-- Generic OS services, Comms Services, etc -->
-<!ATTLIST block
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT subblock (collection)*>
-<!-- Cellular Baseband Services, Networking Services, etc -->
-<!ATTLIST subblock
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT collection (component)*>
-<!-- Screen Driver, Content Handling, etc -->
-<!ATTLIST collection
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
->
-
-<!ELEMENT component (unit)*>
-<!-- contains units or is a  package or prebuilt -->
-<!ATTLIST component
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  deprecated CDATA #IMPLIED
-  introduced CDATA #IMPLIED
-  contract CDATA #IMPLIED
-  plugin (Y|N) "N"
-  filter CDATA #IMPLIED
-  class NMTOKENS #IMPLIED
-  supports CDATA #IMPLIED
-  purpose ( optional | mandatory | development ) "optional"
->
-
-<!ELEMENT unit EMPTY >
-<!-- must be buildable (bld.inf) -->
-<!-- bldFile  may someday be removed in favour of mrp -->
-<!ATTLIST unit
-  mrp CDATA #IMPLIED
-  filter CDATA #IMPLIED
-  bldFile CDATA #IMPLIED
-  root CDATA #IMPLIED
-  version NMTOKEN #IMPLIED
-  prebuilt NMTOKEN #IMPLIED
-  late (Y|N) #IMPLIED
-  priority CDATA #IMPLIED
->
-]>
-<SystemDefinition name="Symbian^3" schema="2.0.1">
-  <systemModel>
-    <layer name="app" long-name="Applications" levels="services apps">
-      <block name="homescreen" level="apps" long-name="Home Screen Apps" levels="fw support apps">
-        <collection name="homescreen_plat" long-name="Home Screen Apps Platform Interfaces" level="apps">
-          <component name="menu_settings_api" long-name="Menu Settings API" filter="s60" class="api">
-            <unit bldFile="/sf/app/homescreen/homescreen_plat/menu_settings_api/group"/>
-          </component>
-          <component name="hs_content_control_ui" long-name="HS Content Control Ui" filter="s60" class="api">
-            <unit bldFile="/sf/app/homescreen/homescreen_plat/hs_content_control_ui/group"/>
-          </component>
-          <component name="hs_renderingplugin_api" long-name="HS Rendering Plugin API" filter="s60" class="api">
-            <unit bldFile="/sf/app/homescreen/homescreen_plat/hs_renderingplugin_api/group"/>
-          </component>
-        </collection>
-        <collection name="idlehomescreen" long-name="Idle Home Screen" level="apps">
-          <component name="nativeuicontroller" filter="s60" long-name="Native UI Controller">
-            <unit bldFile="/sf/app/homescreen/idlehomescreen/nativeuicontroller/group"/>
-          </component>
-          <component name="exths" filter="s60" long-name="Active Idle Container" plugin="Y">
-            <!-- why is the ID so different from the name? Is one wrong? -->
-            <unit bldFile="/sf/app/homescreen/idlehomescreen/exths/group"/>
-          </component>
-          <component name="hscontentcontrol" filter="s60" long-name="Home Screen Content Control" introduced="^3">
-            <unit bldFile="/sf/app/homescreen/idlehomescreen/hscontentcontrol/group"/>
-          </component>
-          <component name="hssapiwrapper" filter="s60" long-name="HS SAPI Wrapper" introduced="^3">
-            <!--  can only have one unit. #include from a common bld.inf, or split into two components -->
-            <unit bldFile="/sf/app/homescreen/idlehomescreen/sapiwrapper/cpswrapper/group"/>
-            <unit bldFile="/sf/app/homescreen/idlehomescreen/sapiwrapper/hspswrapper/group"/>
-          </component>
-          <component name="xmluirendering" filter="s60" long-name="XML UI Rendering" introduced="^3">
-            <unit bldFile="/sf/app/homescreen/idlehomescreen/xmluirendering/group"/>
-          </component>
-          <component name="xmluicontroller" filter="s60" long-name="XML UI Controller" introduced="^3">
-            <unit bldFile="/sf/app/homescreen/idlehomescreen/xmluicontroller/group"/>
-          </component>
-          <component name="widgetmanager" filter="s60" long-name="Widget Manager" introduced="^3">
-            <unit bldFile="/sf/app/homescreen/idlehomescreen/widgetmanager/group"/>
-          </component>
-          <component name="idlehomescreen_help" filter="s60" long-name="Idle Home Screen Help">
-            <unit bldFile="/sf/app/homescreen/idlehomescreen/help/group"/>
-          </component>
-          <component name="idlehomescreen_data" filter="s60" long-name="Idle Home Screen Data">
-            <unit bldFile="/sf/app/homescreen/idlehomescreen/data/group"/>
-          </component>
-          <component name="idlehomescreen_build" filter="s60" long-name="Idle Home Screen Build">
-            <!-- can the loc file be moved to another comopnent and this one removed? -->
-            <unit bldFile="/sf/app/homescreen/idlehomescreen/group"/>
-          </component>
-          <component name="homescreen_test" filter="s60,test,unit_test" purpose="development" long-name="Home Screen Apps Test">
-            <unit bldFile="/sf/app/homescreen/idlehomescreen/widgetmanager/tsrc/wmunittest/group"/>
-          </component>
-        </collection>
-        <collection name="menufw" long-name="Menu Framework" level="fw">
-          <component name="hierarchynavigator" filter="s60" long-name="Hierarchy Navigator">
-            <unit bldFile="/sf/app/homescreen/menufw/hierarchynavigator/group"/>
-          </component>
-          <component name="menufwui" filter="s60" long-name="Menu Framework UI">
-            <unit bldFile="/sf/app/homescreen/menufw/menufwui/group"/>
-          </component>
-          <component name="menusuites" filter="s60" long-name="Menu Suites">
-            <unit bldFile="/sf/app/homescreen/menufw/menusuites/group"/>
-          </component>
-          <component name="menufw_build" filter="s60" long-name="Menu Framework Build">
-            <!-- can the exports be exported by the other components? -->
-            <unit bldFile="/sf/app/homescreen/menufw/group"/>
-          </component>
-        </collection>
-        <collection name="taskswitcher" long-name="Task Switcher" level="support">
-          <component name="contextengine" filter="s60" long-name="Context Engine" introduced="^3">
-            <unit bldFile="/sf/app/homescreen/taskswitcher/contextengine/group"/>
-          </component>
-          <component name="taskswitcherui" filter="s60" long-name="Task Switcher UI" introduced="^3">
-            <unit bldFile="/sf/app/homescreen/taskswitcher/taskswitcherui/group"/>
-          </component>
-        </collection>
-      </block>
-    </layer>
-  </systemModel>
+<SystemDefinition schema="3.0.0">
+ <package id="homescreen" name="Home Screen Apps" levels="fw support apps">
+  <collection id="homescreen_plat" name="Home Screen Apps Platform Interfaces" level="apps">
+   <component id="menu_settings_api" name="Menu Settings API" class="api" filter="s60">
+    <meta rel="Api" href="homescreen_plat/menu_settings_api/menu_settings_api.metaxml"/>
+    <unit bldFile="homescreen_plat/menu_settings_api/group"/>
+   </component>
+   <component id="hs_content_control_ui" name="HS Content Control Ui" class="api" filter="s60">
+    <unit bldFile="homescreen_plat/hs_content_control_ui/group"/>
+   </component>
+   <component id="hs_renderingplugin_api" name="HS Rendering Plugin API" class="api" filter="s60">
+    <unit bldFile="homescreen_plat/hs_renderingplugin_api/group"/>
+   </component>
+  </collection>
+  <collection id="idlehomescreen" name="Idle Home Screen" level="apps">
+   <component id="nativeuicontroller" filter="s60" name="Native UI Controller">
+    <unit bldFile="idlehomescreen/nativeuicontroller/group"/>
+   </component>
+   <component id="exths" filter="s60" name="Active Idle Container" class="plugin">
+    <!-- why is the ID so different from the name? Is one wrong? -->
+    <unit bldFile="idlehomescreen/exths/group"/>
+   </component>
+   <component id="hscontentcontrol" filter="s60" name="Home Screen Content Control" introduced="^3">
+    <unit bldFile="idlehomescreen/hscontentcontrol/group"/>
+   </component>
+   <component id="hssapiwrapper" filter="s60" name="HS SAPI Wrapper" introduced="^3">
+    <!--  can only have one unit. #include from a common bld.inf, or split into two components -->
+    <unit bldFile="idlehomescreen/sapiwrapper/cpswrapper/group"/>
+    <unit bldFile="idlehomescreen/sapiwrapper/hspswrapper/group"/>
+   </component>
+   <component id="xmluirendering" filter="s60" name="XML UI Rendering" introduced="^3">
+    <unit bldFile="idlehomescreen/xmluirendering/group"/>
+   </component>
+   <component id="xmluicontroller" filter="s60" name="XML UI Controller" introduced="^3">
+    <unit bldFile="idlehomescreen/xmluicontroller/group"/>
+   </component>
+   <component id="widgetmanager" filter="s60" name="Widget Manager" introduced="^3">
+    <unit bldFile="idlehomescreen/widgetmanager/group"/>
+   </component>
+   <component id="idlehomescreen_help" filter="s60" name="Idle Home Screen Help">
+    <unit bldFile="idlehomescreen/help/group"/>
+   </component>
+   <component id="idlehomescreen_data" filter="s60" name="Idle Home Screen Data">
+    <meta rel="config">
+     <defined condition="FF_HOMESCREEN_COMMON_IDLEFW"/>
+     <!-- currently always on, so safe to define here for now -->
+    </meta>
+    <unit bldFile="idlehomescreen/data/group"/>
+   </component>
+   <component id="idlehomescreen_build" filter="s60" name="Idle Home Screen Build">
+    <!-- can the loc file be moved to another comopnent and this one removed? -->
+    <unit bldFile="idlehomescreen/group"/>
+   </component>
+   <component id="homescreen_test" filter="s60,test,unit_test" purpose="development" name="Home Screen Apps Test">
+    <unit bldFile="idlehomescreen/widgetmanager/tsrc/wmunittest/group"/>
+   </component>
+  </collection>
+  <collection id="menufw" name="Menu Framework" level="fw">
+   <component id="hierarchynavigator" filter="s60" name="Hierarchy Navigator">
+    <unit bldFile="menufw/hierarchynavigator/group"/>
+   </component>
+   <component id="menufwui" filter="s60" name="Menu Framework UI">
+    <unit bldFile="menufw/menufwui/group"/>
+   </component>
+   <component id="menusuites" filter="s60" name="Menu Suites">
+    <unit bldFile="menufw/menusuites/group"/>
+   </component>
+   <component id="menufw_build" filter="s60" name="Menu Framework Build">
+    <!-- can the exports be exported by the other components? -->
+    <unit bldFile="menufw/group"/>
+   </component>
+  </collection>
+  <collection id="taskswitcher" name="Task Switcher" level="support">
+   <component id="contextengine" filter="s60" name="Context Engine" introduced="^3">
+    <unit bldFile="taskswitcher/contextengine/group"/>
+   </component>
+   <component id="taskswitcherui" filter="s60" name="Task Switcher UI" introduced="^3">
+    <unit bldFile="taskswitcher/taskswitcherui/group"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>

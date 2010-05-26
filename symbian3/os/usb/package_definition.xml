@@ -1,102 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE SystemDefinition [
-<!ELEMENT SystemDefinition ( systemModel )>
-<!ATTLIST SystemDefinition
-  name CDATA #REQUIRED
-  schema CDATA #REQUIRED
->
-<!-- all paths are relative to the environment variable specified by the root attribute, or SOURCEROOT if not.  -->
-
-<!-- System Model Section of DTD -->
-<!ELEMENT systemModel (layer+)>
-
-<!ELEMENT layer (block* | collection*)*>
-<!-- Kernel Services, Base Services, OS Services, Etc -->
-<!ATTLIST layer
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
->
-
-<!ELEMENT block (subblock* | collection*)*>
- <!-- Generic OS services, Comms Services, etc -->
-<!ATTLIST block
-  levels NMTOKENS #IMPLIED
-  span CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT subblock (collection)*>
-<!-- Cellular Baseband Services, Networking Services, etc -->
-<!ATTLIST subblock
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
->
-
-<!ELEMENT collection (component)*>
-<!-- Screen Driver, Content Handling, etc -->
-<!ATTLIST collection
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  level NMTOKEN #IMPLIED
->
-
-<!ELEMENT component (unit)*>
-<!-- contains units or is a  package or prebuilt -->
-<!ATTLIST component
-  name CDATA #REQUIRED
-  long-name CDATA #IMPLIED
-  deprecated CDATA #IMPLIED
-  introduced CDATA #IMPLIED
-  contract CDATA #IMPLIED
-  plugin (Y|N) "N"
-  filter CDATA #IMPLIED
-  class NMTOKENS #IMPLIED
-  supports CDATA #IMPLIED
-  purpose ( optional | mandatory | development ) "optional"
->
-
-<!ELEMENT unit EMPTY >
-<!-- must be buildable (bld.inf) -->
-<!-- bldFile  may someday be removed in favour of mrp -->
-<!ATTLIST unit
-  mrp CDATA #IMPLIED
-  filter CDATA #IMPLIED
-  bldFile CDATA #IMPLIED
-  root CDATA #IMPLIED
-  version NMTOKEN #IMPLIED
-  prebuilt NMTOKEN #IMPLIED
-  late (Y|N) #IMPLIED
-  priority CDATA #IMPLIED
->
-]>
-<SystemDefinition name="Symbian^3" schema="2.0.1">
-  <systemModel>
-    <layer name="os" long-name="OS" levels="hw services">
-      <block name="usb" level="services" long-name="USB" levels="adaptation hw-if plugin framework server app-if">
-        <collection name="usbldd" long-name="USB Logical Device Drivers" level="hw-if">
-          <!-- usbclientdrivers  to be moved here from kernelhwsrv-->
-        </collection>
-        <collection name="usbmgmt" long-name="USB Management" level="server">
-          <component name="usbmgr" long-name="USB Manager" purpose="optional">
-            <unit bldFile="/sf/os/usb/usbmgmt/usbmgr/group" mrp="/sf/os/usb/usbmgmt/usbmgr/group/usb_manager.mrp" version="2"/>
-          </component>
-          <component name="usbmgrtest" long-name="USB Manager Tests" introduced="7.0" purpose="development" filter="test">
-            <unit mrp="/sf/os/usb/usbmgmt/usbmgrtest/group/usb_test.mrp" bldFile="/sf/os/usb/usbmgmt/usbmgrtest/group" version="2"/>
-          </component>
-          <component name="usbclassandmgrdocs" long-name="USB Class and Manager Documentation" purpose="development" class="doc">
-            <unit mrp="/sf/os/usb/usbmgmt/usbclassandmgrdocs/usb_documentation.mrp"/>
-          </component>
-        </collection>
-        <collection name="usb_info" long-name="USB Info" level="app-if">
-          <component name="usb_metadata" long-name="USB Metadata" introduced="^3" purpose="development" class="config PC">
-            <unit mrp="/sf/os/usb/usb_info/usb_metadata/usb_metadata.mrp"/>
-          </component>
-        </collection>
-      </block>
-    </layer>
-  </systemModel>
+<SystemDefinition schema="3.0.0">
+ <package id="usb" name="USB" levels="adaptation hw-if plugin framework server app-if">
+  <collection id="usbldd" name="USB Logical Device Drivers" level="hw-if">
+   <!-- usbclientdrivers  to be moved here from kernelhwsrv-->
+  </collection>
+  <collection id="usbmgmt" name="USB Management" level="server">
+   <component id="usbmgr" name="USB Manager" purpose="optional">
+    <unit version="2" bldFile="usbmgmt/usbmgr/group" mrp="usbmgmt/usbmgr/group/usb_manager.mrp"/>
+   </component>
+   <component id="usbmgrtest" name="USB Manager Tests" introduced="7.0" purpose="development" filter="test">
+    <unit version="2" mrp="usbmgmt/usbmgrtest/group/usb_test.mrp" bldFile="usbmgmt/usbmgrtest/group"/>
+   </component>
+   <component id="usbclassandmgrdocs" name="USB Class and Manager Documentation" purpose="development" class="doc">
+    <unit mrp="usbmgmt/usbclassandmgrdocs/usb_documentation.mrp"/>
+   </component>
+  </collection>
+  <collection id="usb_info" name="USB Info" level="app-if">
+   <component id="usb_metadata" name="USB Metadata" class="config" introduced="^3" purpose="development" target="desktop">
+    <unit mrp="usb_info/usb_metadata/usb_metadata.mrp"/>
+   </component>
+  </collection>
+ </package>
 </SystemDefinition>
