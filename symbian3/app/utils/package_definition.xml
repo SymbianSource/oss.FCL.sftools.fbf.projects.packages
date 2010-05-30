@@ -8,9 +8,6 @@
       <component id="calcsoft" filter="s60" name="Calculator Application">
         <unit bldFile="extras/calcsoft/group"/>
       </component>
-      <component id="converter" filter="s60" name="Unit Converter">
-        <unit bldFile="extras/converter/group"/>
-      </component>
     </collection>
   </package>
 </SystemDefinition>
