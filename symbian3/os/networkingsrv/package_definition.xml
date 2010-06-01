@@ -138,10 +138,10 @@
       <component id="ipanalyzer" name="IP Analyzer" deprecated="^3" introduced="7.0" purpose="development" filter="test">
         <unit mrp="networkingtestandutils/ipanalyzer/group/networking_iprotor.mrp" bldFile="networkingtestandutils/ipanalyzer/group"/>
       </component>
-      <component id="networkingintegrationtest" name="Networking Integration Test" introduced="ER5" purpose="development">
+      <component id="networkingintegrationtest" name="Networking Integration Test" introduced="ER5" purpose="development" filter="test"">
         <unit bldFile="networkingtestandutils/networkingintegrationtest/Group" mrp="networkingtestandutils/networkingintegrationtest/Group/networking_integrationtest.mrp"/>
       </component>
-      <component id="networkingperformancemeasurementtools" name="Networking Performance Measurement Tools" introduced="^3" purpose="development">
+      <component id="networkingperformancemeasurementtools" name="Networking Performance Measurement Tools" introduced="^3" purpose="development" filter="test"">
         <unit bldFile="networkingtestandutils/networkingperformancemeasurementtools/group" mrp="networkingtestandutils/networkingperformancemeasurementtools/group/networking_netperf.mrp"/>
       </component>
     </collection>
