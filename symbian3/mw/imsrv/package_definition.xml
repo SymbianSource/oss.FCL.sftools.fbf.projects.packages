@@ -102,7 +102,7 @@
     <meta rel="Api" href="imsrv_plat/im_cache_server_api/im_cache_server_api.metaxml"/>
     <unit bldFile="imsrv_plat/im_cache_server_api/group"/>
    </component>
-   <component id="presence_avabilitytext" name="Presence Avability Text" class="api" filter="s60">
+   <component id="presence_avabilitytext" name="Presence Availbility Text" class="api" filter="s60">
     <unit bldFile="imsrv_plat/presence_avabilitytext/group"/>
    </component>
   </collection>
@@ -124,9 +124,6 @@
    </component>
    <component id="xmppsettingsfetcher" filter="s60" name="XMPP Settings Fetcher" introduced="^2">
     <unit bldFile="imservices/xmppsettingsfetcher/group"/>
-   </component>
-   <component id="ossprotocoladaptation" filter="s60" name="OSS Protocol Adaptation" class="plugin" introduced="^2">
-    <unit bldFile="imservices/ossprotocoladaptation/group"/>
    </component>
    <component id="instantmessagingcache" filter="s60" name="Instant Messaging Cache" introduced="^2">
     <unit bldFile="imservices/instantmessagingcache/group"/>

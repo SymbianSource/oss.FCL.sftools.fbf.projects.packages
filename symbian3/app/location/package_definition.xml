@@ -2,10 +2,6 @@
 <SystemDefinition schema="3.0.0">
  <package id="location" name="Location Apps" levels="ui events loc apps">
   <collection id="loc_plat" name="Location Apps Platform Interfaces" level="apps">
-   <component id="location_centre_api" name="Location Centre API" introduced="^3" class="api" filter="s60">
-    <meta rel="Api" href="loc_plat/location_centre_api/location_centre_api.metaxml"/>
-    <unit bldFile="loc_plat/location_centre_api/group"/>
-   </component>
   </collection>
   <collection id="loc_pub" name="Location Apps Public Interfaces" level="apps">
    <component id="landmarks_ui_selector_api" name="Landmarks UI Selector API" class="api" filter="s60">
@@ -97,24 +93,6 @@
    <!-- this is a component, needs to be moved down a directory -->
    <component id="mapnavproviderrefapp_build" filter="s60" name="Map and Navigation Provider Reference Application">
     <unit bldFile="mapnavproviderrefapp/group"/>
-   </component>
-  </collection>
-  <collection id="locationcentre" name="Location Centre" level="loc">
-   <component id="lcutils" name="Location Centre Utilities" filter="s60" introduced="^3">
-    <unit bldFile="locationcentre/lcutils/group"/>
-   </component>
-   <component id="lcservice" name="Location Centre Service Project" filter="s60" introduced="^3">
-    <unit bldFile="locationcentre/lcservice/group"/>
-   </component>
-   <component id="lcserver" name="Location Centre Server Project" filter="s60" introduced="^3">
-    <unit bldFile="locationcentre/lcserver/group"/>
-   </component>
-   <component id="lcapp" name="Location Centre Application" filter="s60" introduced="^3">
-    <unit bldFile="locationcentre/lcapp/group"/>
-   </component>
-   <component id="locationcentre_build" filter="s60" name="Location Centre Build" introduced="^3">
-    <!-- consider distributing this into the other components or collapsing into a single component -->
-    <unit bldFile="locationcentre/group"/>
    </component>
   </collection>
  </package>

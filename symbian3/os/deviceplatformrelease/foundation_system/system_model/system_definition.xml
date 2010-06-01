@@ -177,7 +177,7 @@
       <package id="websrv" level="generic" tech-domain="rt" href="../../../../mw/websrv/package_definition.xml"/>
       <package id="platformtools" level="generic" tech-domain="to" href="../../../../mw/platformtools/package_definition.xml"/>
       <package id="uitools" level="specific" tech-domain="to" href="../../../../mw/uitools/package_definition.xml"/>
-      <package id="opensrv" level="specific" tech-domain="pr" href="../../../../mw/opensrv/package_definition.xml"/>
+      <!-- <package id="opensrv" level="specific" tech-domain="pr" href="../../../../mw/opensrv/package_definition.xml"/> -->
     </layer>
     <layer id="app" name="Applications" levels="services apps">
       <package id="location" level="apps" tech-domain="lo" href="../../../../app/location/package_definition.xml"/>
@@ -200,7 +200,7 @@
       <package id="dictionary" level="services" tech-domain="pr" href="../../../../app/dictionary/package_definition.xml"/>
       <package id="camera" level="apps" tech-domain="ma" href="../../../../app/camera/package_definition.xml"/>
       <package id="imgeditor" level="apps" tech-domain="ma" href="../../../../app/imgeditor/package_definition.xml"/>
-      <package id="videoeditor" level="apps" tech-domain="ma" href="../../../../app/videoeditor/package_definition.xml"/>
+      <!-- <package id="videoeditor" level="apps" tech-domain="ma" href="../../../../app/videoeditor/package_definition.xml"/> -->
       <package id="videoplayer" level="apps" tech-domain="ma" href="../../../../app/videoplayer/package_definition.xml"/>
       <package id="photos" level="apps" tech-domain="ma" href="../../../../app/photos/package_definition.xml"/>
       <package id="musicplayer" level="apps" tech-domain="ma" href="../../../../app/musicplayer/package_definition.xml"/>
