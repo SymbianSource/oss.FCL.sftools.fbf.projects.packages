@@ -74,7 +74,7 @@
 <component name="mms_client_mtm_api" long-name="MMS Client MTM API" filter="s60" class="api"/>
 <component name="msg_smil_dtd_api" long-name="Messaging SMIL DTD API" filter="s60" introduced="^4" class="api"/>
 <component name="msg_pub_build" long-name="Messaging Apps Public APIs Build" filter="s60" introduced="^4" class="api">
-<!-- break this up into the above units and replace their base attributes with bldFile, etc -->
+<unit bldFile="/sf/app/messaging/msg_pub" proFile="msg_pub.pro" qmakeArgs="-r"/>
 </component>
 </collection>
 <collection name="mobilemessaging" long-name="Mobile Messaging" level="plugin">
