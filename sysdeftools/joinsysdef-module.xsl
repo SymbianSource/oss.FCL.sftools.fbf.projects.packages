@@ -20,7 +20,14 @@
 <!-- create a stand-alone sysdef from a linked set of fragments -->
 
 <xsl:template match="/*" mode="join">
-	<xsl:message terminate="yes">ERROR: Cannot process this document</xsl:message>
+	<xsl:param name="filename"/>
+	<xsl:message terminate="yes">ERROR: Cannot process this document<xsl:if test="$filename !=''"> (<xsl:value-of select="$filename)</xsl:if>
+		<xsl:choose>
+			<xsl:when test="self::SystemDefinition/@schema">. Unrecognised syntax schema="<xsl:value-of select="@schema"/>"</xsl:when>
+			<xsl:when test="self::SystemDefinition">. Missing schema</xsl:when>
+			<xsl:otherwise>. Invalid file type: <xsl:value-of select="name()"/></xsl:otherwise>
+		<xsl:choose>
+	</xsl:message>
 </xsl:template>
 
 <!-- anything in schemas 3.0.x won't add new functional attributes that need processing here, just blindly copy them-->
@@ -47,7 +54,7 @@
 					<xsl:choose>
 						<xsl:when test="$n='id'"/> <!-- never copy this, always set -->
 						<xsl:when test="$origin/@*[name()=$n]"> <!-- don't copy if already set -->
-							<xsl:message>Cannot set "<xsl:value-of select="$n"/>", already set</xsl:message>
+							<xsl:message>Note: Cannot set "<xsl:value-of select="$n"/>", already set. Ignoring linked value</xsl:message>
 						</xsl:when>
 						<xsl:when test="$n='before' or $n='replace'">
 							<!-- ensure ns is correct (if any future attribtues will ever use an ID, process it here too)-->

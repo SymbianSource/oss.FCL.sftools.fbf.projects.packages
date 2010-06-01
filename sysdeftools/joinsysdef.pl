@@ -610,12 +610,19 @@ sub namespaces
 			$link=&resolvePath($file,$link);
 			if(-e $link)
 				{
-				my  $doc = $parser->parsefile ($link);
-				&checkSyntaxVersion($doc->getDocumentElement->getAttribute('schema'));	# ensure we track we highest syntax number
-				my @docns = &namespaces($link,$doc->getDocumentElement);
-				undef $doc;
-				return (@res,@docns);
-				#ignore any children nodes if this is a link
+				my  $doc;
+				eval {
+					$doc = $parser->parsefile ($link);
+				};
+				if($doc)
+					{
+					&checkSyntaxVersion($doc->getDocumentElement->getAttribute('schema'));	# ensure we track we highest syntax number
+					my @docns = &namespaces($link,$doc->getDocumentElement);
+					undef $doc;
+					return (@res,@docns);
+					#ignore any children nodes if this is a link
+					}
+				print STDERR "Error: Malformed XML. Could not process $link\n";
 				}
 			# print STDERR "Note: $link not found\n";  -- no need to warm now. Do so later when trying to join
 			}
