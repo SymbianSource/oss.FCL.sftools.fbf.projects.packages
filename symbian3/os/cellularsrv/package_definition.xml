@@ -77,7 +77,7 @@
       <component id="multimodetsy" name="Multimode TSY" purpose="development" class="plugin">
         <unit bldFile="telephonyserverplugins/multimodetsy/group" mrp="telephonyserverplugins/multimodetsy/group/telephony_mmtsy.mrp"/>
       </component>
-      <component id="simtsy" name="SIM TSY" introduced="7.0" purpose="development" class="plugin">
+      <component id="simtsy" name="SIM TSY" introduced="7.0" purpose="development" class="plugin" filter="test">
         <unit bldFile="telephonyserverplugins/simtsy/group" mrp="telephonyserverplugins/simtsy/group/telephony_simtsy.mrp"/>
       </component>
       <component id="ctsydispatchlayer" name="C-TSY Dispatch Layer" introduced="^3" purpose="optional" class="plugin">
