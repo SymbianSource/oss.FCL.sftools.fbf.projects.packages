@@ -50,15 +50,11 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^3" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="location" level="apps" long-name="Location Apps" levels="ui events loc apps">
-<collection name="loc_plat" long-name="Location Apps Platform Interfaces" level="apps">
-<component name="location_centre_api" long-name="Location Centre API" introduced="^3" filter="s60" class="api">
-<unit bldFile="/sf/app/location/loc_plat/location_centre_api/group"/>
-</component>
-</collection>
+<collection name="loc_plat" long-name="Location Apps Platform Interfaces" level="apps"/>
 <collection name="loc_pub" long-name="Location Apps Public Interfaces" level="apps">
 <component name="landmarks_ui_selector_api" long-name="Landmarks UI Selector API" filter="s60" class="api">
 <unit bldFile="/sf/app/location/loc_pub/landmarks_ui_selector_api/group"/>
@@ -148,24 +144,6 @@
 <!-- this is a component, needs to be moved down a directory -->
 <component name="mapnavproviderrefapp_build" filter="s60" long-name="Map and Navigation Provider Reference Application">
 <unit bldFile="/sf/app/location/mapnavproviderrefapp/group"/>
-</component>
-</collection>
-<collection name="locationcentre" long-name="Location Centre" level="loc">
-<component name="lcutils" long-name="Location Centre Utilities" filter="s60" introduced="^3">
-<unit bldFile="/sf/app/location/locationcentre/lcutils/group"/>
-</component>
-<component name="lcservice" long-name="Location Centre Service Project" filter="s60" introduced="^3">
-<unit bldFile="/sf/app/location/locationcentre/lcservice/group"/>
-</component>
-<component name="lcserver" long-name="Location Centre Server Project" filter="s60" introduced="^3">
-<unit bldFile="/sf/app/location/locationcentre/lcserver/group"/>
-</component>
-<component name="lcapp" long-name="Location Centre Application" filter="s60" introduced="^3">
-<unit bldFile="/sf/app/location/locationcentre/lcapp/group"/>
-</component>
-<component name="locationcentre_build" filter="s60" long-name="Location Centre Build" introduced="^3">
-<!-- consider distributing this into the other components or collapsing into a single component -->
-<unit bldFile="/sf/app/location/locationcentre/group"/>
 </component>
 </collection>
 </block>

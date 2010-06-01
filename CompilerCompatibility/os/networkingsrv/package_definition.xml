@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^3" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
 <block name="networkingsrv" level="services" long-name="Networking Services" levels="adaptation hw-if plugin framework server app-if">
@@ -160,12 +160,6 @@
 <collection name="networkingtestandutils" long-name="Networking Test and Utils" level="app-if">
 <component name="networkingexamples" long-name="Networking Examples" introduced="7.0" purpose="development">
 <unit bldFile="/sf/os/networkingsrv/networkingtestandutils/networkingexamples/examplecode/group" mrp="/sf/os/networkingsrv/networkingtestandutils/networkingexamples/examplecode/group/networking_examplecode.mrp"/>
-</component>
-<component name="networkingintegrationtest" long-name="Networking Integration Test" introduced="ER5" purpose="development">
-<unit bldFile="/sf/os/networkingsrv/networkingtestandutils/networkingintegrationtest/Group" mrp="/sf/os/networkingsrv/networkingtestandutils/networkingintegrationtest/Group/networking_integrationtest.mrp"/>
-</component>
-<component name="networkingperformancemeasurementtools" long-name="Networking Performance Measurement Tools" introduced="^3" purpose="development">
-<unit bldFile="/sf/os/networkingsrv/networkingtestandutils/networkingperformancemeasurementtools/group" mrp="/sf/os/networkingsrv/networkingtestandutils/networkingperformancemeasurementtools/group/networking_netperf.mrp"/>
 </component>
 </collection>
 <collection name="networkingsrv_info" long-name="Networking Services Info" level="app-if">

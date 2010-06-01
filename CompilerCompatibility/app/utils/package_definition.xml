@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^3" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="app" long-name="Applications" levels="services apps">
 <block name="utils" level="apps" long-name="Utility Apps" levels="app">
@@ -60,9 +60,6 @@
 </component>
 <component name="calcsoft" filter="s60" long-name="Calculator Application">
 <unit bldFile="/sf/app/utils/extras/calcsoft/group"/>
-</component>
-<component name="converter" filter="s60" long-name="Unit Converter">
-<unit bldFile="/sf/app/utils/extras/converter/group"/>
 </component>
 </collection>
 </block>

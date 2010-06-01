@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^3" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
 <block name="cellularsrv" level="services" long-name="Cellular Baseband Services" levels="adaptation hw-if plugin framework server app-if">
@@ -126,9 +126,6 @@
 </component>
 <component name="multimodetsy" long-name="Multimode TSY" purpose="development" plugin="Y">
 <unit bldFile="/sf/os/cellularsrv/telephonyserverplugins/multimodetsy/group" mrp="/sf/os/cellularsrv/telephonyserverplugins/multimodetsy/group/telephony_mmtsy.mrp"/>
-</component>
-<component name="simtsy" long-name="SIM TSY" introduced="7.0" purpose="development" plugin="Y">
-<unit bldFile="/sf/os/cellularsrv/telephonyserverplugins/simtsy/group" mrp="/sf/os/cellularsrv/telephonyserverplugins/simtsy/group/telephony_simtsy.mrp"/>
 </component>
 <component name="ctsydispatchlayer" long-name="C-TSY Dispatch Layer" introduced="^3" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/cellularsrv/telephonyserverplugins/ctsydispatchlayer/group" mrp="/sf/os/cellularsrv/telephonyserverplugins/ctsydispatchlayer/group/telephony_dispatcher.mrp"/>
