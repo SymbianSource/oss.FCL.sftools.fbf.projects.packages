@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/mw/accesssec/,/sf/mw/accesssec,branch,default,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/mw/accesssec/,/sf/mw/accesssec,changeset,093cf0757204,layers.sysdef.xml
