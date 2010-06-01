@@ -21,12 +21,12 @@
 
 <xsl:template match="/*" mode="join">
 	<xsl:param name="filename"/>
-	<xsl:message terminate="yes">ERROR: Cannot process this document<xsl:if test="$filename !=''"> (<xsl:value-of select="$filename)</xsl:if>
+	<xsl:message terminate="yes">ERROR: Cannot process this document<xsl:if test="$filename !=''"> (<xsl:value-of select="$filename"/>)</xsl:if>
 		<xsl:choose>
 			<xsl:when test="self::SystemDefinition/@schema">. Unrecognised syntax schema="<xsl:value-of select="@schema"/>"</xsl:when>
 			<xsl:when test="self::SystemDefinition">. Missing schema</xsl:when>
 			<xsl:otherwise>. Invalid file type: <xsl:value-of select="name()"/></xsl:otherwise>
-		<xsl:choose>
+		</xsl:choose>
 	</xsl:message>
 </xsl:template>
 
