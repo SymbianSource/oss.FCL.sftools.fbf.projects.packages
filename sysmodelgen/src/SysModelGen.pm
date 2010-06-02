@@ -717,7 +717,8 @@ my %info='';
 		"<template name=\"filter\">\n";
 	foreach my $ig (@{$self->{'iIgnore'}}) {
 		print XSLT "\t<ignore xmlns='' ";
-		if($ig=~/^(.*):(.*)$/) {print XSLT "type='$1' name='$2'/>\n"}
+		if($ig=~/^(layer|package|block|logicalset|logicalsubset|subblock|collection|module|component):(.*)$/) {print XSLT "type='$1' name='$2'/>\n"}
+		elsif($ig=~/:.*\//) {print XSLT "namespace='$ig'/>\n"} # assume it's a namespace if it has a colon and a slash
 		else {print XSLT "ref='$ig'/>\n"}
 	}
 	foreach my $ig (@{$self->{'iIgnoreMeta'}}) {

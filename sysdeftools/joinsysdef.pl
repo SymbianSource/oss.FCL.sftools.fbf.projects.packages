@@ -30,7 +30,7 @@ use XML::DOM;
 
 my $output;
 my $path;
-my $config;
+my @config;
 my @includes;
 my %defineParams;
 my %defines;
@@ -58,7 +58,7 @@ GetOptions
 	(
 	 'path=s' => \$path,
 	'output=s' => \$output,
-	'config=s' => \$config,
+	'config=s' => \@config,
 	'exclude-meta=s' => \@excludeMetaList
 	);
 
@@ -96,9 +96,9 @@ my %rootmap = &rootMap($path,$sysdef);
 my %nsmap;
 my %urimap;
 
-if($config ne '') 
+foreach my $conf (@config) 
 	{ # run cpp to get all #defines
-	&getDefines($config);
+	&getDefines($conf);
 	}
 
 my $parser = new XML::DOM::Parser;
@@ -340,7 +340,7 @@ sub walk
 		$checkversion = $checkversion  || ($tag eq 'component' &&  $item->getNodeType==1 && $item->getAttribute('version') ne '');
 		}
 
-	if($checkversion && $config ne '')
+	if($checkversion && scalar(@config))
 		{ # need to check the conf metadata on the units in this component
 		&doCmpConfig($node);
 		}
@@ -647,7 +647,7 @@ sub processMeta
 	my $metanode = shift;
 
 	my $rel = $metanode->getAttribute('rel') || 'Generic';
-	if($rel eq 'config' && $config ne '')
+	if($rel eq 'config' && scalar(@config))
 		{ # only process if there is something to configure
 		&doconfig($metanode);
 		}
