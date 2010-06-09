@@ -65,9 +65,9 @@
 <unit bldFile="/sf/app/jrt/jrt_plat/java_debug_api/build"/>
 </component>
 </collection>
-<collection name="java_stubs" long-name="Java Stubs" level="util">
-<component name="java_stubs_build" filter="s60" long-name="JRT Stubs Build">
-<unit bldFile="/sf/app/jrt/java_stubs/group"/>
+<collection name="java_build" long-name="JRT Build" level="util">
+<component name="java_build_sf" filter="sf_build" long-name="JRT Build for Symbian Foundation">
+<unit bldFile="/sf/app/jrt/group/sf"/>
 </component>
 </collection>
 </block>
