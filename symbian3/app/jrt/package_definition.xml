@@ -12,9 +12,9 @@
     <unit bldFile="jrt_plat/java_debug_api/build"/>
    </component>
   </collection>
-  <collection id="java_stubs" name="Java Stubs" level="util">
-   <component id="java_stubs_build" filter="s60" name="JRT Stubs Build">
-    <unit bldFile="java_stubs/group"/>
+  <collection id="java_build" name="JRT Build" level="util">
+   <component id="java_build_sf" filter="sf_build" name="JRT Build for Symbian Foundation">
+    <unit bldFile="group/sf"/>
    </component>
   </collection>
  </package>
