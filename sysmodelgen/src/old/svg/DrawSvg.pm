@@ -806,8 +806,8 @@ sub getModel()
 
 	# Step 1:
 	# Create a Model.xml based on the ModelTemplate.xml
-	open (INPUT, $modelTemplateXml) or &Logger::LogError("Xalan error ($error) occured in Step 1 of SVG building...", KOldSystemModelGenerator, 1);
-	open (OUTPUT, ">$modelXml") or &Logger::LogError("Xalan error ($error) occured in Step 1 of SVG building...", KOldSystemModelGenerator, 1);
+	open (INPUT, $modelTemplateXml) or &Logger::LogError("Xalan error ($?) occured in Step 1 of SVG building (<$modelTemplateXml)...", KOldSystemModelGenerator, 1);
+	open (OUTPUT, ">$modelXml") or &Logger::LogError("Xalan error ($?) occured in Step 1 of SVG building (>$modelXml)...", KOldSystemModelGenerator, 1);
 	my $release = $self->{iRelease};
 	
 	
@@ -957,8 +957,8 @@ sub GetXsltDir()
 	{
 	my $self = shift;
 	my $xsltDir = $FindBin::Bin."/svg";  # calcluated w.r.t old directory
-	$xsltDir = $FindBin::Bin  if ! -d $xsltDir; # calculated w.r.t the /svg directory
 	$xsltDir = $FindBin::Bin."/src/old/svg" if ! -d $xsltDir; # calculated w.r.t the root directory
+	$xsltDir = $FindBin::Bin  if ! -d $xsltDir; # calculated w.r.t the /svg directory
 	return $xsltDir;
 	}
 
