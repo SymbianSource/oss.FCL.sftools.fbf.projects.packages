@@ -12,15 +12,7 @@
       <component id="version_build" filter="s60" name="Version Build" class="config" purpose="development">
         <unit bldFile="Version/group"/>
       </component>
-    </collection>
-    
-   <collection id="helps_loc2" name="Helps Locale 2" level="top">
-    	<!-- collection is really a component. Need to move down a directory -->    
-      <component id="helps_loc2_build" name="Helps Locale 2 Build" filter="s60">
-        <unit bldFile="helps_loc2/group"/>
-      </component>
-     </collection>
-    
+    </collection>   
     <collection id="symbianosbld" name="Symbian OS Build" level="bld">
       <component id="cedarutils" name="Cedar Utils" purpose="development">
         <unit mrp="symbianosbld/cedarutils/tools_utils_cedar.mrp"/>

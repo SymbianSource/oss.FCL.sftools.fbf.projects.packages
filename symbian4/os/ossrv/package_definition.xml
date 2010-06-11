@@ -243,9 +243,6 @@
    <component id="openenvcore" name="Open Environment Core" introduced="^2" purpose="mandatory">
     <unit bldFile="genericopenlibs/openenvcore/group" mrp="genericopenlibs/openenvcore/group/openenv.mrp"/>
    </component>
-   <component id="pluggableauthenticationmodulefw" name="Pluggable Authentication Module Framework" introduced="^4" purpose="optional">
-    <unit bldFile="genericopenlibs/pluggableauthenticationmodulefw/group" mrp="genericopenlibs/pluggableauthenticationmodulefw/group/oeaddons_libpam.mrp"/>
-   </component>
    <component id="posixrealtimeextensions" name="POSIX Realtime Extensions" introduced="^3" purpose="optional">
     <unit bldFile="genericopenlibs/posixrealtimeextensions/group" mrp="genericopenlibs/posixrealtimeextensions/group/oeaddons_librt.mrp"/>
    </component>
