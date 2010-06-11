@@ -82,7 +82,7 @@
       <unit bldFile="calendarui/regionalplugins" qt:proFile="regionalplugins.pro"/>
    </component>
    <component id="caldav" filter="sf_build" name="CalDAV" class="plugin" introduced="^3">
-    <unit bldFile="calendarui/caldav/group"/>
+    <!-- not yet delivered in S^4 <unit bldFile="calendarui/caldav/group"/>-->
    </component>
   </collection>
   <collection id="notes" name="Notes" level="ui">
@@ -107,7 +107,7 @@
     <unit bldFile="calendarengines/calenimp/group"/>
    </component>
    <component id="caldavsrv" filter="sf_build" name="CalDAV Server" introduced="^3">
-    <unit bldFile="calendarengines/caldav/group"/>
+    <!-- Not yet delivered in S^4 <unit bldFile="calendarengines/caldav/group"/> -->
    </component>
   </collection>
   <collection id="clock" name="Clock" level="app">
