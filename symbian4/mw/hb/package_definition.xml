@@ -7,17 +7,6 @@
       <unit bldFile="." qt:proFile="hb.pro" qt:qmakeArgs="-r MMP_RULES+=EXPORTUNFROZEN"/>
      </component>
     </collection>
-    <collection id="hb_test" name="Orbit Test" level="test">
-     <component id="hb_fute" filter="hb_fute_app" name="Fute" introduced="^4">
-      <unit bldFile="tsrc/fute"  qt:proFile="fute.pro" qt:qmakeArgs="-r MMP_RULES+=EXPORTUNFROZEN"/>
-     </component>
-     <component id="hb_unit" filter="test,hb_unit_test,unit_test" name="HB Unit Tests" introduced="^4">
-      <unit bldFile="tsrc/unit" qt:proFile="unit.pro" qt:qmakeArgs="-r MMP_RULES+=EXPORTUNFROZEN"/>
-     </component>
-     <component id="hb_test_resources" filter="test,hb_test_resources" name="Orbit Test Resources"  introduced="^4">
-      <unit bldFile="tsrc/resources" qt:qmakeArgs="-r MMP_RULES+=EXPORTUNFROZEN" qt:proFile="resources.pro"/>
-     </component>
-    </collection>
    </package>
 </SystemDefinition>
 
