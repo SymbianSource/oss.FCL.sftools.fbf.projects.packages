@@ -24,29 +24,9 @@
    </component>
   </collection>
   <collection id="locsrv_plat" name="Location Services Platform Interfaces" level="if">
-   <component id="map_and_navigation_api" name="Map and Navigation API" class="api" filter="s60">
-    <meta rel="Api" href="locsrv_plat/map_and_navigation_api/map_and_navigation_api.metaxml"/>
-    <unit bldFile="locsrv_plat/map_and_navigation_api/group"/>
-   </component>
-   <component id="map_and_navigation_provider_discovery_api" name="Map and Navigation Provider Discovery API" class="api" filter="s60">
-    <meta rel="Api" href="locsrv_plat/map_and_navigation_provider_discovery_api/map_and_navigation_provider_discovery_api.metaxml"/>
-    <unit bldFile="locsrv_plat/map_and_navigation_provider_discovery_api/group"/>
-   </component>
    <component id="geocoding_api" name="Geocoding API" class="api" filter="s60">
     <meta rel="Api" href="locsrv_plat/geocoding_api/geocoding_api.metaxml"/>
     <unit bldFile="locsrv_plat/geocoding_api/group"/>
-   </component>
-   <component id="map_image_api" name="Map Image API" class="api" filter="s60">
-    <meta rel="Api" href="locsrv_plat/map_image_api/map_image_api.metaxml"/>
-    <unit bldFile="locsrv_plat/map_image_api/group"/>
-   </component>
-   <component id="map_and_navigation_aiw_api" name="Map and Navigation AIW API" class="api" filter="s60">
-    <meta rel="Api" href="locsrv_plat/map_and_navigation_aiw_api/map_and_navigation_aiw_api.metaxml"/>
-    <unit bldFile="locsrv_plat/map_and_navigation_aiw_api/group"/>
-   </component>
-   <component id="map_and_navigation_provider_api" name="Map and Navigation Provider API" class="api" filter="s60">
-    <meta rel="Api" href="locsrv_plat/map_and_navigation_provider_api/map_and_navigation_provider_api.metaxml"/>
-    <unit bldFile="locsrv_plat/map_and_navigation_provider_api/group"/>
    </component>
    <component id="landmarks_category_definition_api" name="Landmarks Category Definition API" class="api" filter="s60">
     <meta rel="Api" href="locsrv_plat/landmarks_category_definition_api/landmarks_category_definition_api.metaxml"/>
@@ -56,18 +36,6 @@
     <meta rel="Api" href="locsrv_plat/supl_settings_api/supl_settings_api.metaxml"/>
     <unit bldFile="locsrv_plat/supl_settings_api/group"/>
    </component>
-   <component id="location_settings_launch_api" name="Location Settings Launch API" class="api" filter="s60">
-    <meta rel="Api" href="locsrv_plat/location_settings_launch_api/location_settings_launch_api.metaxml"/>
-    <unit bldFile="locsrv_plat/location_settings_launch_api/group"/>
-   </component>
-   <component id="map_image_conversion_plugin_api" name="Map Image Conversion Plug-In API" class="api" filter="s60">
-    <meta rel="Api" href="locsrv_plat/map_image_conversion_plugin_api/map_image_conversion_plugin_api.metaxml"/>
-    <unit bldFile="locsrv_plat/map_image_conversion_plugin_api/group"/>
-   </component>
-   <component id="psy_configuration_ui_plugin_api" name="PSY Configuration UI Plug-in API" class="api" filter="s60">
-    <meta rel="Api" href="locsrv_plat/psy_configuration_ui_plugin_api/psy_configuration_ui_plugin_api.metaxml"/>
-    <unit bldFile="locsrv_plat/psy_configuration_ui_plugin_api/group"/>
-   </component>
    <component id="np_proxy_configuration_api" name="NP Proxy Configuration API" class="api" filter="s60">
     <meta rel="Api" href="locsrv_plat/np_proxy_configuration_api/np_proxy_configuration_api.metaxml"/>
     <unit bldFile="locsrv_plat/np_proxy_configuration_api/group"/>
@@ -76,29 +44,13 @@
     <meta rel="Api" href="locsrv_plat/supl_terminal_initiation_api/supl_terminal_initiation_api.metaxml"/>
     <unit bldFile="locsrv_plat/supl_terminal_initiation_api/group"/>
    </component>
-   <component id="location_notation_preferences_settings_api" name="Location Notation Preferences Settings API" class="api" filter="s60">
-    <meta rel="Api" href="locsrv_plat/location_notation_preferences_settings_api/location_notation_preferences_settings_api.metaxml"/>
-    <unit bldFile="locsrv_plat/location_notation_preferences_settings_api/group"/>
-   </component>
-   <component id="supl_settings_notifier_secondary_display_api" name="SUPL Settings Notifier Secondary Display API" class="api" filter="s60">
-    <meta rel="Api" href="locsrv_plat/supl_settings_notifier_secondary_display_api/supl_settings_notifier_secondary_display_api.metaxml"/>
-    <unit bldFile="locsrv_plat/supl_settings_notifier_secondary_display_api/group"/>
-   </component>
    <component id="supl_network_initiation_api" name="SUPL Network Initiation API" class="api" filter="s60">
     <meta rel="Api" href="locsrv_plat/supl_network_initiation_api/supl_network_initiation_api.metaxml"/>
     <unit bldFile="locsrv_plat/supl_network_initiation_api/group"/>
    </component>
-   <component id="privacy_notifiers_secondary_display_api" name="Privacy Notifiers Secondary Display API" class="api" filter="s60">
-    <meta rel="Api" href="locsrv_plat/privacy_notifiers_secondary_display_api/privacy_notifiers_secondary_display_api.metaxml"/>
-    <unit bldFile="locsrv_plat/privacy_notifiers_secondary_display_api/group"/>
-   </component>
    <component id="oma_supl_configuration_parameter_api" name="OMA SUPL Configuration Parameter API" class="api" filter="s60">
     <meta rel="Api" href="locsrv_plat/oma_supl_configuration_parameter_api/oma_supl_configuration_parameter_api.metaxml"/>
     <unit bldFile="locsrv_plat/oma_supl_configuration_parameter_api/group"/>
-   </component>
-   <component id="supl_query_secondary_display_api" name="SUPL Query Secondary Display API" class="api" filter="s60">
-    <meta rel="Api" href="locsrv_plat/supl_query_secondary_display_api/supl_query_secondary_display_api.metaxml"/>
-    <unit bldFile="locsrv_plat/supl_query_secondary_display_api/group"/>
    </component>
    <component id="location_triggering_management_api" name="Location Triggering Management API" class="api" filter="s60">
     <meta rel="Api" href="locsrv_plat/location_triggering_management_api/location_triggering_management_api.metaxml"/>
@@ -134,18 +86,6 @@
   <collection id="landmarks" name="Landmarks" level="server">
    <component id="locationlandmarks" filter="s60" name="Location Landmarks">
     <unit bldFile="landmarks/locationlandmarks/group"/>
-   </component>
-  </collection>
-  <collection id="locationmapnavfw" name="Location Map and Navigation Framework" level="fw">
-   <component id="mnlibrary" filter="s60" name="Map and Navigation Library">
-    <unit bldFile="locationmapnavfw/library/group"/>
-   </component>
-   <component id="mnaiwprovider" filter="s60" name="Map and Navigation AIW Provider" class="plugin">
-    <unit bldFile="locationmapnavfw/aiwprovider/group"/>
-   </component>
-   <component id="locationmapnavfw_build" filter="s60" name="Location Map and Navigation Framework Build">
-    <!-- need to break this up into the other components -->
-    <unit bldFile="locationmapnavfw/group"/>
    </component>
   </collection>
   <collection id="locationsystemui" name="Location System UI" level="if">
@@ -191,9 +131,6 @@
    </component>
    <component id="ltcellidmovementdetector" filter="s60" name="Cell ID Movement Detector">
     <unit bldFile="locationtriggering/ltcellidmovementdetector/group"/>
-   </component>
-   <component id="lbtmgmtui" filter="s60" name="LBT Management UI" class="plugin">
-    <unit bldFile="locationtriggering/lbtmgmtui/group"/>
    </component>
    <component id="ltcontextsourceplugin" filter="s60" name="LT Context Source Plugin" class="plugin" introduced="^3">
     <unit bldFile="locationtriggering/ltcontextsourceplugin/group"/>
