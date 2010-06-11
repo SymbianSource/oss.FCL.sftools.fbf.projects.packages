@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="conversations" level="apps" long-name="Conversation Apps" levels="settings utils plugin ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="conversations" level="apps" long-name="Conversation Apps" levels="settings utils plugin ui">
 <collection name="conversations_plat" long-name="Conversation Apps Platform Interfaces" level="ui">
 <component name="im_cv_launcher_api" long-name="IM CV Launcher API" filter="s60" class="api">
 <unit bldFile="/sf/app/conversations/conversations_plat/im_cv_launcher_api/group"/>
@@ -152,6 +152,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

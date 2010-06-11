@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="metadatasrv" level="specific" long-name="Legacy Metadata Services" levels="plugin framework server generic specific">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="metadatasrv" level="specific" long-name="Legacy Metadata Services" levels="plugin framework server generic specific">
 <collection name="metadatasrv_pub" long-name="Legacy Metadata Services Public Interfaces" level="specific">
 <component name="content_listing_framework_api" long-name="Content Listing Framework API" filter="s60" class="api">
 <!-- Leave commented out until confguration is in use
@@ -90,6 +90,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

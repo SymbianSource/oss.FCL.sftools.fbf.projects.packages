@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="uiresources" level="generic" long-name="UI Resources" levels="compile plugin framework server generic data">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="uiresources" level="generic" long-name="UI Resources" levels="compile plugin framework server generic data">
 <!-- are the custom filters below needed? -->
 <collection name="uiresources_pub" long-name="UI Resources Public Interfaces" level="data">
 <component name="pictograph_api" long-name="Pictograph API" filter="s60" class="api">
@@ -198,6 +198,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

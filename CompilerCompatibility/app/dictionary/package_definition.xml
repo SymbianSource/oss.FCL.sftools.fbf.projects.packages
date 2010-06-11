@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="dictionary" level="services" long-name="Dictionary" levels="utils ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="dictionary" level="services" long-name="Dictionary" levels="utils ui">
 <collection name="dictionary_plat" long-name="Dictionary Platform Interfaces" level="ui">
 <component name="menu_suites_macros_api" long-name="Menu Suites Macros API" filter="s60" class="api">
 <unit bldFile="/sf/app/dictionary/dictionary_plat/menu_suites_macros_api/group"/>
@@ -66,6 +66,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

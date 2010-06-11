@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="cellularsrv" level="services" long-name="Cellular Baseband Services" levels="adaptation hw-if plugin framework server app-if">
+ <systemModel>
+  <layer name="os" long-name="OS" levels="hw services">
+   <block name="cellularsrv" level="services" long-name="Cellular Baseband Services" levels="adaptation hw-if plugin framework server app-if">
 <collection name="basebandabstraction" long-name="Baseband Abstraction" level="hw-if">
 <component name="basebandchanneladaptor" long-name="Baseband Channel Adaptor" introduced="8.1" purpose="optional">
 <unit bldFile="/sf/os/cellularsrv/basebandabstraction/basebandchanneladaptor/group" mrp="/sf/os/cellularsrv/basebandabstraction/basebandchanneladaptor/group/networking_bca.mrp"/>
@@ -168,6 +168,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="mmappfw" level="specific" long-name="Multimedia App Framework" levels="fw utils if">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="mmappfw" level="specific" long-name="Multimedia App Framework" levels="fw utils if">
 <collection name="mmappfw_plat" long-name="Multimedia App Framework Platform Interfaces" level="if">
 <component name="collection_helper_api" long-name="Collection Helper API" introduced="^1" filter="s60" class="api">
 <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/collection_helper_api/group"/>
@@ -190,6 +190,6 @@
 <component name="mmappfw_test" filter="s60,test,api_test,pref_test" long-name="Multimedia App Framework Test" purpose="development" introduced="^1"/>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

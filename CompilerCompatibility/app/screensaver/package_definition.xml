@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="screensaver" level="apps" long-name="Screen Saver Apps" levels="plugin ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="screensaver" level="apps" long-name="Screen Saver Apps" levels="plugin ui">
 <!-- is this a user-facing application or a daemon? -->
 <!-- units need to be commented out until configuration is in place. They are currently #included from screensaver_build-->
 <collection name="scrsaver" long-name="Screen Saver" level="plugin">
@@ -76,6 +76,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

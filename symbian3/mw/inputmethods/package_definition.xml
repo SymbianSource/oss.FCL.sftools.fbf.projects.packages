@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="inputmethods" level="generic" long-name="Input Methods" levels="plugin engine framework api">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="inputmethods" level="generic" long-name="Input Methods" levels="plugin engine framework api">
 <collection name="inputmethods_pub" long-name="Input Methods Public Interfaces" level="api">
 <component name="ptiengine_iti_api" long-name="PTI Engine API" filter="s60" class="api">
 <unit bldFile="/sf/mw/inputmethods/inputmethods_pub/ptiengine_iti_api/group"/>
@@ -175,6 +175,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

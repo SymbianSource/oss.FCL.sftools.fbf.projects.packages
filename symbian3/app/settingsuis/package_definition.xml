@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="settingsuis" level="services" long-name="Settings UIs" levels="rsc ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="settingsuis" level="services" long-name="Settings UIs" levels="rsc ui">
 <collection name="devmngt_plat" long-name="Settings UIs Platform Interfaces" level="ui">
 <component name="default_app_client_api" long-name="Default App Client API" introduced="^1" filter="s60" class="api">
 <unit bldFile="/sf/app/settingsuis/devmngt_plat/default_app_client_api/group"/>
@@ -86,6 +86,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

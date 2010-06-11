@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="remoteconn" level="generic" long-name="Remote Connectivity" levels="plugin framework server generic specific">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="remoteconn" level="generic" long-name="Remote Connectivity" levels="plugin framework server generic specific">
 <collection name="connectivitymodules" long-name="Connectivity Modules" level="framework">
 <component name="secon" filter="s60" long-name="Service Controllers">
 <unit bldFile="/sf/mw/remoteconn/connectivitymodules/secon/group"/>
@@ -108,6 +108,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

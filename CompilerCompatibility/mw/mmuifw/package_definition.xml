@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="mmuifw" level="specific" long-name="Multimedia UI Framework" levels="mgr mdl util ui api">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="mmuifw" level="specific" long-name="Multimedia UI Framework" levels="mgr mdl util ui api">
 <collection name="mmuifw_plat" long-name="Multimedia UI Framework Platform Interfaces" level="api">
 <component name="alf_widgetfactory_api" long-name="ALF Widget Factory API" filter="s60" class="api">
 <unit bldFile="/sf/mw/mmuifw/mmuifw_plat/alf_widgetfactory_api/group"/>
@@ -165,6 +165,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

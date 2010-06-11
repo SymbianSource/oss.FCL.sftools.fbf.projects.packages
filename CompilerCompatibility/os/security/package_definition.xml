@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="security" level="services" long-name="OS Security" levels="physical-abstraction plugins libraries management services utilities">
+ <systemModel>
+  <layer name="os" long-name="OS" levels="hw services">
+   <block name="security" level="services" long-name="OS Security" levels="physical-abstraction plugins libraries management services utilities">
 <collection name="authorisation" long-name="Authorisation" level="utilities">
 <component name="userpromptservice" long-name="User Prompt Service" introduced="^3" purpose="mandatory">
 <unit bldFile="/sf/os/security/authorisation/userpromptservice/group" mrp="/sf/os/security/authorisation/userpromptservice/group/security_ups.mrp"/>
@@ -129,6 +129,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

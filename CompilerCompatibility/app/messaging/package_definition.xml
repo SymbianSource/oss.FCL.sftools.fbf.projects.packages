@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="messaging" level="apps" span="2" long-name="Messaging Apps" levels="mail eng base ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="messaging" level="apps" span="2" long-name="Messaging Apps" levels="mail eng base ui">
 <collection name="msg_pub" long-name="Messaging Apps Public APIs" level="ui">
 <component name="messaging_integration_api" long-name="Messaging Integration API" filter="s60" class="api">
 <unit bldFile="/sf/app/messaging/msg_pub/messaging_integration_api/group"/>
@@ -287,6 +287,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

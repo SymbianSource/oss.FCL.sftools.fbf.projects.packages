@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="radio" level="apps" long-name="Radio Apps" levels="engine ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="radio" level="apps" long-name="Radio Apps" levels="engine ui">
 <collection name="fmradio" long-name="FM Radio" level="ui">
 <component name="activeidleengine" filter="s60" long-name="FM Radio Active Idle Engine">
 <unit bldFile="/sf/app/radio/fmradio/activeidleengine/group"/>
@@ -79,6 +79,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

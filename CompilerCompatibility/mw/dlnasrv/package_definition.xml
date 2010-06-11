@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="dlnasrv" level="specific" long-name="DLNA Services" levels="stack server ctrl framework plugin">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="dlnasrv" level="specific" long-name="DLNA Services" levels="stack server ctrl framework plugin">
 <!-- uncomment all the units when configuration is in place, they're currently #included from other xxx_build components -->
 <collection name="dlnasrv_plat" long-name="DLNA Services Platform Interfaces" level="plugin">
 <component name="upnp_media_server_settings_api" long-name="UPnP Media Server Settings API" filter="s60" class="api">
@@ -245,6 +245,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

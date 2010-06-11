@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="phone" level="apps" span="2" long-name="Phone Apps" levels="engine plugin ui app">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="phone" level="apps" span="2" long-name="Phone Apps" levels="engine plugin ui app">
 <collection name="phone_plat" long-name="Phone Apps Platform Interfaces" level="app">
 <component name="3d_ringing_tone_enabler_api" long-name="3D Ringing Tone Enabler API" filter="s60" class="api">
 <unit bldFile="/sf/app/phone/phone_plat/3d_ringing_tone_enabler_api/group"/>
@@ -199,6 +199,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="ossrv" level="services" long-name="Generic OS Services" levels="physical-abstraction app-libs encoding translation data-services utilities">
+ <systemModel>
+  <layer name="os" long-name="OS" levels="hw services">
+   <block name="ossrv" level="services" long-name="Generic OS Services" levels="physical-abstraction app-libs encoding translation data-services utilities">
 <collection name="ossrv_pub" long-name="Generic OS Services Public Interfaces" level="utilities">
 <component name="boost_apis" long-name="Boost APIs" filter="s60" class="api">
 <unit bldFile="/sf/os/ossrv/ossrv_pub/boost_apis/group"/>
@@ -449,6 +449,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

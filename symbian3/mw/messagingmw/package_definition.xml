@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="messagingmw" level="specific" long-name="Messaging Middleware" levels="stack fw api">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="messagingmw" level="specific" long-name="Messaging Middleware" levels="stack fw api">
 <collection name="msgfw_pub" long-name="Messaging Middleware Public Interfaces" level="api">
 <component name="send_ui_api" long-name="Send UI API" filter="s60" class="api">
 <unit bldFile="/sf/mw/messagingmw/msgfw_pub/send_ui_api/group"/>
@@ -133,6 +133,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="contacts" level="apps" span="2" long-name="Contacts Apps" levels="engine support services ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="contacts" level="apps" span="2" long-name="Contacts Apps" levels="engine support services ui">
 <collection name="contacts_pub" long-name="Contacts Apps Public Interfaces" level="ui">
 <component name="phonebook_fetch_ui_api" long-name="Phonebook Fetch UI API" filter="s60" class="api">
 <unit bldFile="/sf/app/contacts/contacts_pub/phonebook_fetch_ui_api/group"/>
@@ -311,6 +311,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

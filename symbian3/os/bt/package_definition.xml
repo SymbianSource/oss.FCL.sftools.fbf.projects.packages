@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="bt" level="services" long-name="Bluetooth" levels="adaptation hw-if plugin framework server app-if">
+ <systemModel>
+  <layer name="os" long-name="OS" levels="hw services">
+   <block name="bt" level="services" long-name="Bluetooth" levels="adaptation hw-if plugin framework server app-if">
 <collection name="bt_plat" long-name="Bluetooth Platform Interfaces" level="app-if">
 <component name="bluetooth_audio_adaptation_api" long-name="Bluetooth Audio Adaptation API" filter="s60" class="api">
 <unit bldFile="/sf/os/bt/bt_plat/bluetooth_audio_adaptation_api/group"/>
@@ -136,6 +136,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

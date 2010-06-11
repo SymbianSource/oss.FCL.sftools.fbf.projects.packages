@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="imagingext" level="services" long-name="Imaging Extensions" levels="adaptation hw-if plugin framework server app-if">
+ <systemModel>
+  <layer name="os" long-name="OS" levels="hw services">
+   <block name="imagingext" level="services" long-name="Imaging Extensions" levels="adaptation hw-if plugin framework server app-if">
 <collection name="imagingext_pub" long-name="Imaging Extensions Public Interfaces" level="app-if">
 <component name="exif_api" long-name="Exif API" filter="s60" class="api">
 <unit bldFile="/sf/os/imagingext/imagingext_pub/exif_api/group" filter="!test"/>
@@ -100,6 +100,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

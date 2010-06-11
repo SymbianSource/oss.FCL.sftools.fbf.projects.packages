@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="serviceapi" level="specific" long-name="Service API" levels="os mw1 mw2 app">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="serviceapi" level="specific" long-name="Service API" levels="os mw1 mw2 app">
 <!-- should break up this collection into something meaningful -->
 <collection name="serviceproviders" long-name="Service Providers" level="mw1">
 <component name="sapi_contacts_vpbk" long-name="Contacts Phonebook SAPI" filter="s60" plugin="Y">
@@ -98,6 +98,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

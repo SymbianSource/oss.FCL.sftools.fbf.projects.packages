@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="musicplayer" level="apps" long-name="Music Player Apps" levels="plugins support hs app">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="musicplayer" level="apps" long-name="Music Player Apps" levels="plugins support hs app">
 <collection name="musicplayer_plat" long-name="Music Player Apps Platform Interfaces" level="app">
 <component name="mpx_music_player_app_api" long-name="MPX Music Player App API" filter="s60" class="api">
 <unit bldFile="/sf/app/musicplayer/musicplayer_plat/mpx_music_player_app_api/group"/>
@@ -145,6 +145,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

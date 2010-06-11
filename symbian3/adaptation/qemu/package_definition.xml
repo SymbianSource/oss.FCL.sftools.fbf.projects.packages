@@ -51,15 +51,15 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="adaptation" long-name="Adaptation" levels="low mw high">
-<block name="qemu" level="low" long-name="QEMU and Baseport" levels="hw-if">
+ <systemModel>
+  <layer name="adaptation" long-name="Adaptation" levels="low mw high">
+   <block name="qemu" level="low" long-name="QEMU and Baseport" levels="hw-if">
 <collection name="qemu_baseport" long-name="Baseport" level="hw-if">
 <component name="syborg" long-name="Syborg" introduced="^2" purpose="optional" filter="sf_build">
 <unit bldFile="/sf/adaptation/qemu/baseport/syborg" mrp="/sf/adaptation/qemu/baseport/syborg/syborg.mrp"/>
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

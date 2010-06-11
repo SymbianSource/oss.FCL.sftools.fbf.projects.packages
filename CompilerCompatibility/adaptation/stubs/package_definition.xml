@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="adaptation" long-name="Adaptation" levels="low mw high">
-<block name="stubs" level="high" long-name="Stubs" levels="stub">
+ <systemModel>
+  <layer name="adaptation" long-name="Adaptation" levels="low mw high">
+   <block name="stubs" level="high" long-name="Stubs" levels="stub">
 <collection name="s60_stubs" level="stub">
 <component name="audiostubs" long-name="Audio Stubs">
 <unit bldFile="/sf/adaptation/stubs/audiostubs/group"/>
@@ -90,6 +90,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

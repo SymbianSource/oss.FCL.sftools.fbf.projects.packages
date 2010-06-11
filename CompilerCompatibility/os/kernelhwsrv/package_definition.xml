@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="kernelhwsrv" level="hw" long-name="Kernel and Hardware Services" levels="hw-if adaptation framework test">
+ <systemModel>
+  <layer name="os" long-name="OS" levels="hw services">
+   <block name="kernelhwsrv" level="hw" long-name="Kernel and Hardware Services" levels="hw-if adaptation framework test">
 <collection name="brdbootldr" long-name="Board Boot Loader" level="hw-if">
 <component name="ubootldr" long-name="Boot Loader" introduced="9.2" purpose="optional">
 <unit mrp="/sf/os/kernelhwsrv/brdbootldr/ubootldr/base_ubootldr.mrp"/>
@@ -192,6 +192,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="web" level="specific" long-name="Web" levels="plugin utils server generic specific">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="web" level="specific" long-name="Web" levels="plugin utils server generic specific">
 <collection name="web_pub" long-name="Web Public Interfaces" level="specific">
 <component name="browser_control_api" long-name="Browser Control API" filter="s60" class="api">
 <unit bldFile="/sf/mw/web/web_pub/browser_control_api/group"/>
@@ -290,6 +290,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

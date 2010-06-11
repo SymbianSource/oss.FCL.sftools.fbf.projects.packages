@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="homescreen" level="apps" long-name="Home Screen Apps" levels="fw support apps">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="homescreen" level="apps" long-name="Home Screen Apps" levels="fw support apps">
 <collection name="homescreen_plat" long-name="Home Screen Apps Platform Interfaces" level="apps">
 <component name="menu_settings_api" long-name="Menu Settings API" filter="s60" class="api">
 <unit bldFile="/sf/app/homescreen/homescreen_plat/menu_settings_api/group"/>
@@ -125,6 +125,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

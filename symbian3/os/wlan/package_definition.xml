@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="wlan" level="services" long-name="WLAN" levels="hw low mid high tools test">
+ <systemModel>
+  <layer name="os" long-name="OS" levels="hw services">
+   <block name="wlan" level="services" long-name="WLAN" levels="hw low mid high tools test">
 <collection name="wlan_plat" long-name="WLAN Platform Interfaces" level="test">
 <component name="wlan_dbif_api" long-name="WLAN DBIF API" filter="s60" class="api">
 <unit bldFile="/sf/os/wlan/wlan_plat/wlan_dbif_api/group"/>
@@ -134,6 +134,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

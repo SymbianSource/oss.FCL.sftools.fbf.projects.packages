@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="remotemgmt" level="specific" long-name="Remote Management" levels="plugin framework server generic specific">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="remotemgmt" level="specific" long-name="Remote Management" levels="plugin framework server generic specific">
 <collection name="remotemgmt_pub" long-name="Remote Management Public Interfaces" level="specific">
 <component name="synchronization_capability_api" long-name="Synchronization Capability API" filter="s60" class="api">
 <unit bldFile="/sf/mw/remotemgmt/remotemgmt_pub/synchronization_capability_api/group"/>
@@ -283,6 +283,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

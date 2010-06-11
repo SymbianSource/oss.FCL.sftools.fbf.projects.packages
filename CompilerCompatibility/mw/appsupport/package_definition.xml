@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="appsupport" level="generic" long-name="Generic Application Support" levels="system plugin framework server generic specific">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="appsupport" level="generic" long-name="Generic Application Support" levels="system plugin framework server generic specific">
 <collection name="appsupport_pub" long-name="Generic Application Support Public Interfaces" level="specific">
 <component name="flash_viewer_framework_api" long-name="Flash Viewer Framework API" filter="s60" class="api">
 <unit bldFile="/sf/mw/appsupport/appsupport_pub/flash_viewer_framework_api/group"/>
@@ -335,6 +335,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

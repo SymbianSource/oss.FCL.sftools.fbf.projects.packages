@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="techview" level="apps" span="2" long-name="Techview" levels="services ui utils apps1 apps2 apps3">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="techview" level="apps" span="2" long-name="Techview" levels="services ui utils apps1 apps2 apps3">
 <collection name="buildverification" long-name="Build Verification" level="services">
 <component name="autosmoketest" long-name="Auto Smoke Test" filter="gt" purpose="development" introduced="9.1">
 <unit bldFile="/sf/app/techview/buildverification/autosmoketest/Group" mrp="/sf/app/techview/buildverification/autosmoketest/Group/testtools_autosmoketest.mrp"/>
@@ -83,6 +83,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

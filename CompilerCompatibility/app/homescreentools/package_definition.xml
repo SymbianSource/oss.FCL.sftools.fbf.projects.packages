@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="homescreentools" level="services" long-name="Home Screen Tools" levels="tool install">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="homescreentools" level="services" long-name="Home Screen Tools" levels="tool install">
 <collection name="dtdinstaller" long-name="DTD Installer" level="install">
 <!-- collection is really a component. Needs to be moved down a directory -->
 <!-- this needs to be built first, does build order need to be forced with filters? -->
@@ -76,6 +76,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="profile" level="apps" long-name="Profiles" levels="app">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="profile" level="apps" long-name="Profiles" levels="app">
 <collection name="profile_plat" long-name="Profiles Platform Interfaces" level="app">
 <component name="profiles_settings_view_api" long-name="Profiles Settings View API" filter="s60" class="api">
 <unit bldFile="/sf/app/profile/profile_plat/profiles_settings_view_api/group"/>
@@ -70,6 +70,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="jrt" level="services" long-name="Java Runtime" levels="util generic rt ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="jrt" level="services" long-name="Java Runtime" levels="util generic rt ui">
 <collection name="jrt_plat" long-name="JRT Platform Interfaces" level="ui">
 <component name="java_registry_api" long-name="Java Registry API" filter="s60" class="api">
 <unit bldFile="/sf/app/jrt/jrt_plat/java_registry_api/build"/>
@@ -71,6 +71,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="mmsharinguis" level="services" long-name="Multimedia Sharing UIs" levels="base plugin if">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="mmsharinguis" level="services" long-name="Multimedia Sharing UIs" levels="base plugin if">
 <collection name="mmsharinguis_plat" long-name="Multimedia Sharing UIs Platform Interfaces" level="if">
 <component name="multimedia_sharing_settings_api" long-name="Multimedia Sharing Settings API" filter="s60" class="api">
 <unit bldFile="/sf/app/mmsharinguis/mmsharinguis_plat/multimedia_sharing_settings_api/group"/>
@@ -115,6 +115,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

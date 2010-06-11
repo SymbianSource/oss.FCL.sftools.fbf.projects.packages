@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="files" level="apps" long-name="File Manager Apps" levels="support apps">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="files" level="apps" long-name="File Manager Apps" levels="support apps">
 <collection name="files_plat" long-name="File Manager Apps Platform Interfaces" level="apps">
 <component name="memory_scan_popup_ui_api" long-name="Memory Scan Popup UI API" filter="s60" class="api">
 <unit bldFile="/sf/app/files/files_plat/memory_scan_popup_ui_api/group"/>
@@ -95,6 +95,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

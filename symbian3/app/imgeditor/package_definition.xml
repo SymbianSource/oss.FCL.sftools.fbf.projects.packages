@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="imgeditor" level="apps" long-name="Image Editor Apps" levels="engine ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="imgeditor" level="apps" long-name="Image Editor Apps" levels="engine ui">
 <collection name="imgeditor_plat" long-name="Image Editor Apps Platform Interfaces" level="ui">
 <component name="image_editor_debug_utilities_api" long-name="Image Editor Debug Utilities API" filter="s60" class="api">
 <unit bldFile="/sf/app/imgeditor/imgeditor_plat/image_editor_debug_utilities_api/group"/>
@@ -160,6 +160,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

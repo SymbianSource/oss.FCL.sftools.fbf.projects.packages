@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="videotelephony" level="apps" long-name="Video Telephony Apps" levels="engine plugin prot ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="videotelephony" level="apps" long-name="Video Telephony Apps" levels="engine plugin prot ui">
 <collection name="videotelephony_plat" long-name="VT Apps Platform Interfaces" level="ui">
 <component name="video_telephony_control_mediator_api" long-name="Video Telephony Control Mediator API" filter="s60" class="api">
 <unit bldFile="/sf/app/videotelephony/videotelephony_plat/video_telephony_control_mediator_api/group"/>
@@ -90,6 +90,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

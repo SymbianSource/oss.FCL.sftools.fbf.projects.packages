@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="helps" level="apps" span="2" long-name="Help Apps" levels="eng tools if ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="helps" level="apps" span="2" long-name="Help Apps" levels="eng tools if ui">
 <collection name="csxhelp" long-name="Context Sensitive Extended Help" level="if">
 <!-- this is really a component. Should move it down a directory -->
 <component name="csxhelp_build" filter="s60" long-name="Context Sensitive Extended Help Build">
@@ -71,6 +71,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="camera" level="apps" long-name="Camera Apps">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="camera" level="apps" long-name="Camera Apps">
 <collection name="camera_plat" long-name="Camera Apps Platform Interfaces">
 <component name="camcorder_ui_constants_api" long-name="Camcorder UI Constants API" filter="s60" class="api">
 <unit bldFile="/sf/app/camera/camera_plat/camcorder_ui_constants_api/group"/>
@@ -73,6 +73,6 @@
 </collection>
 <collection name="camera_info" long-name="Camera Apps Info"/>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

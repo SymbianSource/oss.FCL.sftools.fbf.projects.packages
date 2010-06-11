@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="contentcontrol" level="services" long-name="Content Control Daemons" levels="plugin app">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="contentcontrol" level="services" long-name="Content Control Daemons" levels="plugin app">
 <collection name="contentctrl_plat" long-name="Content Control Daemons Platforn Interfaces" level="app">
 <component name="oma_ds_presync_plugin_api" long-name="OMA DS PreSync Plugin API" filter="s60" class="api">
 <unit bldFile="/sf/app/contentcontrol/contentctrl_plat/oma_ds_presync_plugin_api/group"/>
@@ -86,6 +86,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

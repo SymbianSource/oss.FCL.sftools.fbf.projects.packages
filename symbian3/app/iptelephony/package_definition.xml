@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="iptelephony" level="apps" long-name="IP Telephony" levels="eng plugin util ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="iptelephony" level="apps" long-name="IP Telephony" levels="eng plugin util ui">
 <collection name="iptel_plat" long-name="IP Telephony Platform Interfaces" level="ui">
 <component name="richcallsettingsengine_api" long-name="Rich Call Settings Engine API" introduced="^2" filter="s60" class="api">
 <unit bldFile="/sf/app/iptelephony/iptel_plat/richcallsettingsengine_api/group"/>
@@ -181,6 +181,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="webuis" level="services" long-name="Web UIs" levels="plugin app">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="webuis" level="services" long-name="Web UIs" levels="plugin app">
 <collection name="browserui" long-name="Browser UI" level="app">
 <component name="browser" filter="s60" long-name="Browser">
 <unit bldFile="/sf/app/webuis/browserui/browser/group"/>
@@ -96,6 +96,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

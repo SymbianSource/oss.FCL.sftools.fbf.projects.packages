@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="remotestorage" level="generic" long-name="Remote Storage" levels="framework if">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="remotestorage" level="generic" long-name="Remote Storage" levels="framework if">
 <collection name="rsfw_plat" long-name="Remote Storage Platform Interfaces" level="if">
 <component name="rsfw_access_protocol_plugin_api" filter="s60" long-name="Remote Storage Framework Access Protocol Plugin API" class="api">
 <unit bldFile="/sf/mw/remotestorage/rsfw_plat/rsfw_access_protocol_plugin_api/group"/>
@@ -93,6 +93,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

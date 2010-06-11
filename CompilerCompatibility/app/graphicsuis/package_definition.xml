@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="graphicsuis" level="services" long-name="Graphics UIs" levels="util ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="graphicsuis" level="services" long-name="Graphics UIs" levels="util ui">
 <collection name="graphicsuis_plat" long-name="Graphics UIs Platform Interfaces" level="ui">
 <component name="svgt_viewer_ui_api" long-name="SVG-T Viewer UI API" filter="s60" class="api">
 <unit bldFile="/sf/app/graphicsuis/graphicsuis_plat/svgt_viewer_ui_api/group"/>
@@ -71,6 +71,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

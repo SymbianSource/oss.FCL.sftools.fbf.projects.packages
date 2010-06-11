@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="voicerec" level="apps" long-name="Voice Recorder Apps">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="voicerec" level="apps" long-name="Voice Recorder Apps">
 <!-- custom filter pref_test-->
 <collection name="voicerec_plat" long-name="Voice Recorder Apps Platform Interfaces">
 <component name="new_file_service_api" long-name="New File Service API" filter="s60" class="api">
@@ -71,6 +71,6 @@
 </collection>
 <collection name="voicerec_info" long-name="Voice Recorder Apps Info"/>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

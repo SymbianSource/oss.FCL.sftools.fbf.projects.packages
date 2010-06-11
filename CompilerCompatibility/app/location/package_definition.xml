@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="location" level="apps" long-name="Location Apps" levels="ui events loc apps">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="location" level="apps" long-name="Location Apps" levels="ui events loc apps">
 <collection name="loc_plat" long-name="Location Apps Platform Interfaces" level="apps"/>
 <collection name="loc_pub" long-name="Location Apps Public Interfaces" level="apps">
 <component name="landmarks_ui_selector_api" long-name="Landmarks UI Selector API" filter="s60" class="api">
@@ -147,6 +147,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

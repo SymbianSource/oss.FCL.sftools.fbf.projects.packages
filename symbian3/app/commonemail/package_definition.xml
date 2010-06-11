@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="commonemail" level="apps" span="2" long-name="Email Apps" levels="service support ui app">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="commonemail" level="apps" span="2" long-name="Email Apps" levels="service support ui app">
 <collection name="email_pub" long-name="Email Apps Public Interfaces" level="app">
 <component name="email_widget_api" long-name="Email Widget API" filter="s60" class="api">
 <unit bldFile="/sf/app/commonemail/email_pub/email_widget_api/group"/>
@@ -201,6 +201,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

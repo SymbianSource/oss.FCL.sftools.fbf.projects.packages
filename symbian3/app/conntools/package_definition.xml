@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="conntools" level="services" long-name="Connectivity Tools" levels="config app">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="conntools" level="services" long-name="Connectivity Tools" levels="config app">
 <collection name="nettools" long-name="Net Tools" level="app">
 <component name="conntest" filter="s60" long-name="Connection Test" purpose="development">
 <unit bldFile="/sf/app/conntools/nettools/conntest/group"/>
@@ -66,6 +66,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

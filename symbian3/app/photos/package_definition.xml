@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="photos" level="apps" long-name="Photos" levels="support fw ui app">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="photos" level="apps" long-name="Photos" levels="support fw ui app">
 <collection name="photos_plat" long-name="Photos Platform Interfaces" level="app">
 <component name="collection_plugins_api" long-name="Collection Plugins API" introduced="^2" filter="s60" class="api">
 <unit bldFile="/sf/app/photos/photos_plat/collection_plugins_api/group"/>
@@ -119,6 +119,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

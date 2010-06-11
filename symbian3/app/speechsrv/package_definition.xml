@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="speechsrv" level="services" long-name="Speech Recognition UIs" levels="engine framework ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="speechsrv" level="services" long-name="Speech Recognition UIs" levels="engine framework ui">
 <collection name="speechsrv_plat" long-name="Speech Recognition UIs Platform Interfaces" level="ui">
 <component name="vas_api" long-name="VAS API" filter="s60" class="api">
 <unit bldFile="/sf/app/speechsrv/speechsrv_plat/vas_api/group"/>
@@ -229,6 +229,6 @@
 </collection>
 <collection name="speechsrv_info" long-name="Speech Recognition UIs Info" level="ui"/>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>
