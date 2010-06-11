@@ -29,30 +29,6 @@
      </component>
   </collection>
 
-  <collection id="contentpublishingsrv" name="Content Publishing Service" level="server">
-   <component id="contentpublishingdebug" filter="s60" name="Content Publishing Debug">
-    <!-- need to move this component outside of contentpublishingutils and into separate component directory -->
-    <meta rel="config">
-     <defined condition="CONTENT_PUBLISHER_DEBUG"/>
-    </meta>
-    <!-- <unit bldFile="contentpublishingsrv/contentpublishingutils/contentpublishingdebug/group"/> -->
-   </component>
-   <component id="contentpublishingutils" filter="s60" name="Content Publishing Utils">
-    <unit bldFile="contentpublishingsrv/contentpublishingutils/group"/>
-   </component>
-   <component id="contentpublishingserver" filter="s60" name="Content Publishing Server">
-    <unit bldFile="contentpublishingsrv/contentpublishingserver/group"/>
-   </component>
-   <component id="contentharvester" filter="s60" name="Content Harvester">
-    <unit bldFile="contentpublishingsrv/contentharvester/group"/>
-   </component>
-   <component id="contentpublishingsrv_rom" filter="s60" name="Content Publishing Service ROM">
-    <!-- need to remove links to the above components and just contain the IBY (or move the IBY into another component). 
-      		If keeping, it need to move down a directory.-->
-    <unit bldFile="contentpublishingsrv/group"/>
-   </component>
-  </collection>
-
   <collection id="homescreensrv_plat" name="Home Screen Services Platform Interfaces" level="specific">
      <component id="homescreensrv_plat_build" name="Home Screen Services Platform Interfaces build"  introduced="^4">
       <unit bldFile="homescreensrv_plat" qt:qmakeArgs="-r" qt:proFile="homescreensrv_plat.pro"/>
@@ -92,11 +68,6 @@
    <component id="homescreen_information_api" name="Homescreen Information API" class="api" filter="s60" introduced="^4">
     <unit base="homescreensrv_plat/homescreen_information_api"/>
    </component>
-  </collection>
-  <collection id="screensavermodel" name="Screensaver Model" level="specific">
-     <component id="screensavermodel_build" name="Screensaver Model Build"  introduced="^4">
-      <unit bldFile="screensavermodel" qt:qmakeArgs="-r" qt:proFile="screensavermodel.pro"/>
-     </component>
   </collection>
   <collection id="hsactivityfw" name="Activity Framework" level="activityfw">
      <component id="hsactivityfw_build" name="Activity Framework Build"  introduced="^4">
