@@ -144,7 +144,6 @@
       <package id="messagingmw" level="specific" tech-domain="pr" href="../../../../mw/messagingmw/package_definition.xml"/>
       <package id="imsrv" level="specific" tech-domain="pr" href="../../../../mw/imsrv/package_definition.xml"/>
       <package id="legacypresence" level="specific" tech-domain="pr" href="../../../../mw/legacypresence/package_definition.xml"/>
-      <package id="opensrv" level="specific" tech-domain="pr" href="../../../../mw/opensrv/package_definition.xml"/>
       <package id="searchsrv" level="specific" tech-domain="pr" href="../../../../mw/searchsrv/package_definition.xml"/>
       <package id="remotemgmt" level="specific" tech-domain="dm" href="../../../../mw/remotemgmt/package_definition.xml"/>
       <package id="remoteconn" level="generic" tech-domain="de" href="../../../../mw/remoteconn/package_definition.xml"/>
@@ -203,7 +202,7 @@
       <package id="commonemail" level="apps" span="2" tech-domain="pr" href="../../../../app/commonemail/package_definition.xml"/>
       <package id="camera" level="apps" tech-domain="ma" href="../../../../app/camera/package_definition.xml"/>
       <package id="imgeditor" level="apps" tech-domain="ma" href="../../../../app/imgeditor/package_definition.xml"/>
-      <package id="videoeditor" level="apps" tech-domain="ma" href="../../../../app/videoeditor/package_definition.xml"/>
+      <!-- <package id="videoeditor" level="apps" tech-domain="ma" href="../../../../app/videoeditor/package_definition.xml"/> -->
       <package id="videoplayer" level="apps" tech-domain="ma" href="../../../../app/videoplayer/package_definition.xml"/>
       <package id="photos" level="apps" tech-domain="ma" href="../../../../app/photos/package_definition.xml"/>
       <package id="musicplayer" level="apps" tech-domain="ma" href="../../../../app/musicplayer/package_definition.xml"/>
