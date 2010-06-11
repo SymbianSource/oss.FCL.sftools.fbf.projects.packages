@@ -49,9 +49,6 @@
    <component id="dun" name="Dial Up Networking">
     <unit bldFile="localconnectivityservice/dun/group"/>
    </component>
-   <component id="lcstylustap" name="LC Stylus Tap Plugins" class="plugin">
-    <unit bldFile="localconnectivityservice/lcstylustap/group"/>
-   </component>
    <component id="generichid" name="Generic HID">
     <unit bldFile="localconnectivityservice/generichid/group"/>
    </component>
