@@ -10,6 +10,10 @@
     <meta rel="Api" href="ai_plugin_information_api/ai_plugin_information_api.metaxml"/>
     <unit bldFile="ai_plugin_information_api/group" qt:proFile="group.pro"/>
    </component>
+   <component id="content_harvester_plugin_api" name="Content Harvester Plug-in API" class="api" filter="s60">
+    <meta rel="Api" href="content_harvester_plugin_api/content_harvester_plugin_api.metaxml"/>
+    <unit bldFile="content_harvester_plugin_api/group"/>
+   </component>
   </collection>
  </package>
 </SystemDefinition>
