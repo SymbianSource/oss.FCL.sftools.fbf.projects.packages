@@ -201,7 +201,7 @@
       <package id="messaging" level="apps" span="2" tech-domain="pr" href="../../../../app/messaging/package_definition.xml"/>
       <package id="commonemail" level="apps" span="2" tech-domain="pr" href="../../../../app/commonemail/package_definition.xml"/>
       <package id="camera" level="apps" tech-domain="ma" href="../../../../app/camera/package_definition.xml"/>
-      <package id="imgeditor" level="apps" tech-domain="ma" href="../../../../app/imgeditor/package_definition.xml"/>
+      <!-- <package id="imgeditor" level="apps" tech-domain="ma" href="../../../../app/imgeditor/package_definition.xml"/> -->
       <!-- <package id="videoeditor" level="apps" tech-domain="ma" href="../../../../app/videoeditor/package_definition.xml"/> -->
       <package id="videoplayer" level="apps" tech-domain="ma" href="../../../../app/videoplayer/package_definition.xml"/>
       <package id="photos" level="apps" tech-domain="ma" href="../../../../app/photos/package_definition.xml"/>
