@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition schema="3.0.0">
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="accesssec" name="Access Security" levels="plugin framework server generic specific">
   <collection id="accesssec_plat" name="Access Security Platform Interfaces" level="specific">
    <component id="eap_vpn_api" name="EAP VPN API" class="api" filter="s60">
