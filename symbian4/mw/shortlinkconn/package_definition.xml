@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="shortlinkconn" level="generic" long-name="Shortlink Connectivity" levels="framework server generic specific plugin">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="shortlinkconn" level="generic" long-name="Shortlink Connectivity" levels="framework server generic specific plugin">
 <!-- Package is pending removal. Contents to be moved to remoteconn and btservices -->
 <collection name="shortlinkconn_plat" long-name="Shortlink Connectivity Platform Interfaces" level="plugin">
 <component name="obex_service_utils_api" long-name="OBEX Service Utils API" filter="s60" class="api">
@@ -108,6 +108,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

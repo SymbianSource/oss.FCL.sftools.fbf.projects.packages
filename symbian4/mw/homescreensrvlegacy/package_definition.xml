@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="homescreensrvlegacy" level="generic" long-name="Legacy Home Screen Services" levels="plugin framework server generic specific">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="homescreensrvlegacy" level="generic" long-name="Legacy Home Screen Services" levels="plugin framework server generic specific">
 <collection name="homescreensrvlegacy_plat" long-name="Legacy Home Screen Services Platform Interfaces" level="specific">
 <component name="ai_content_model_api" long-name="AI Content Model API" filter="s60" class="api">
 <unit bldFile="/sf/mw/homescreensrvlegacy/ai_content_model_api/group" proFile="group.pro"/>
@@ -63,6 +63,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

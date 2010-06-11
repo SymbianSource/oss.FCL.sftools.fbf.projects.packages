@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="camerasrv" level="specific" long-name="Camera Services" levels="plugin fw api">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="camerasrv" level="specific" long-name="Camera Services" levels="plugin fw api">
 <collection name="camerasrv_plat" long-name="Camera Services Platform Interfaces" level="api">
 <component name="media_recorder_sink_api" long-name="Media Recorder Sink API" filter="s60" class="api">
 <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/media_recorder_sink_api/group"/>
@@ -89,6 +89,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

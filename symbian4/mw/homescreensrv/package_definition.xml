@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="homescreensrv" level="specific" long-name="Home Screen Services" levels="plugin framework server generic specific">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="homescreensrv" level="specific" long-name="Home Screen Services" levels="plugin framework server generic specific">
 <collection name="appfoundation" long-name="App Foundation" level="generic">
 <component name="appfoundation_build" long-name="App Foundation Build" introduced="^4">
 <unit bldFile="/sf/mw/homescreensrv/appfoundation" qmakeArgs="-r" proFile="appfoundation.pro"/>
@@ -140,6 +140,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

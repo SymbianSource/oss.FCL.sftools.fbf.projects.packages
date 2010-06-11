@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="mm" level="services" long-name="Multimedia" levels="adaptation hw-if device-fw devices middleware app-if">
+ <systemModel>
+  <layer name="os" long-name="OS" levels="hw services">
+   <block name="mm" level="services" long-name="Multimedia" levels="adaptation hw-if device-fw devices middleware app-if">
 <collection name="mm_pub" long-name="Multimedia Public Interfaces" level="app-if">
 <component name="audio_effects_api" long-name="Audio Effects API" filter="s60" class="api">
 <unit bldFile="/sf/os/mm/mm_pub/audio_effects_api/group"/>
@@ -470,6 +470,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

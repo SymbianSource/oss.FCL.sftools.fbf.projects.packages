@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="uitools" level="specific" long-name="UI Tools" levels="compile encode tool if">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="uitools" level="specific" long-name="UI Tools" levels="compile encode tool if">
 <collection name="uitools_pub" long-name="UI Tools Public Interfaces" level="if">
 <component name="third_party_bitmap_palette_api" long-name="Third Party Bitmap Palette API" filter="s60" class="api">
 <unit bldFile="/sf/mw/uitools/uitools_pub/third_party_bitmap_palette_api/group"/>
@@ -108,6 +108,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

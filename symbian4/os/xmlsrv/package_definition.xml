@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="xmlsrv" level="services" long-name="XML Services" levels="plugin server framework generic specific">
+ <systemModel>
+  <layer name="os" long-name="OS" levels="hw services">
+   <block name="xmlsrv" level="services" long-name="XML Services" levels="plugin server framework generic specific">
 <collection name="xmlsrv_plat" long-name="XML Services Platform Interfaces" level="specific">
 <component name="xmlsrv_plat_build" long-name="XML Services Platform Interface Build" filter="s60" class="api">
 <!-- need to fix the configuration used here. 
@@ -114,6 +114,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

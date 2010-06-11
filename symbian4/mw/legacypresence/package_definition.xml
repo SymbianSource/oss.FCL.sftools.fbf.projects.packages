@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="legacypresence" level="specific" long-name="Legacy Presence Services" levels="engine fw ui">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="legacypresence" level="specific" long-name="Legacy Presence Services" levels="engine fw ui">
 <collection name="pressrv_plat" long-name="Legacy Presence Services Platform Interfaces" level="ui">
 <component name="presence_list_api" long-name="Presence List API" filter="s60" class="api">
 <unit bldFile="/sf/mw/legacypresence/pressrv_plat/presence_list_api/group"/>
@@ -143,6 +143,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

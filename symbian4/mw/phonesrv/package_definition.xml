@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="phonesrv" level="specific" long-name="Telephony and SIM Services" levels="plugin framework server generic specific">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="phonesrv" level="specific" long-name="Telephony and SIM Services" levels="plugin framework server generic specific">
 <collection name="phonesrv_plat" long-name="Telephony and SIM Services Platform Interfaces" level="specific">
 <component name="string_parser_api" long-name="String Parser API" filter="s60" class="api">
 <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/string_parser_api/group"/>
@@ -193,6 +193,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="recents" level="apps" long-name="Recent Events" levels="engine support ui api">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="recents" level="apps" long-name="Recent Events" levels="engine support ui api">
 <collection name="recents_plat" long-name="Recent Events Platform Interfaces" level="api">
 <component name="logs_services_api" long-name="Logs Services API" filter="s60" introduced="^4" class="api"/>
 <component name="logs_engine_api" long-name="Logs Engine API" filter="s60" introduced="^4" class="api"/>
@@ -67,6 +67,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

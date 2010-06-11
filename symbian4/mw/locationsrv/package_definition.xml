@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="locationsrv" level="specific" long-name="Location Services" levels="plugin fw server if">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="locationsrv" level="specific" long-name="Location Services" levels="plugin fw server if">
 <collection name="locsrv_pub" long-name="Location Services Public Interfaces" level="if">
 <component name="landmarks_search_api" long-name="Landmarks Search API" filter="s60" class="api">
 <unit bldFile="/sf/mw/locationsrv/locsrv_pub/landmarks_search_api/group"/>
@@ -230,6 +230,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

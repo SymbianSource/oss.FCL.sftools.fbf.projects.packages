@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="homescreen" level="apps" long-name="Home Screen Apps" levels="support task ss hs">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="homescreen" level="apps" long-name="Home Screen Apps" levels="support task ss hs">
 <collection name="homescreen_info" long-name="Home Screen Info" level="support">
 <component name="homescreen_build" long-name="Homescreen Build">
 <!-- break this up properly into components -->
@@ -88,6 +88,6 @@
 <component name="tsapplication" long-name="Task Switcher Application" introduced="^4"/>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

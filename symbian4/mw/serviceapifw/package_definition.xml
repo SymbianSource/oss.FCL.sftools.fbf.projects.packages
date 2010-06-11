@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="serviceapifw" level="specific" long-name="Service API Framework" levels="plugin framework server generic specific">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="serviceapifw" level="specific" long-name="Service API Framework" levels="plugin framework server generic specific">
 <collection name="serviceapifw_pub" long-name="Service API Framework Public Interfaces" level="specific"/>
 <collection name="serviceapifw_plat" long-name="Service API Framework Platform Interfaces" level="specific">
 <component name="rtsecuritymanager_common_api" long-name="Runtime Security Manager Common API" filter="s60" class="api">
@@ -105,6 +105,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

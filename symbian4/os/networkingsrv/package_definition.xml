@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="networkingsrv" level="services" long-name="Networking Services" levels="adaptation hw-if plugin framework server app-if">
+ <systemModel>
+  <layer name="os" long-name="OS" levels="hw services">
+   <block name="networkingsrv" level="services" long-name="Networking Services" levels="adaptation hw-if plugin framework server app-if">
 <collection name="esockapiextensions" long-name="ESock API Extensions" level="app-if">
 <component name="internetsockets" long-name="Internet Sockets" introduced="ER5" purpose="mandatory">
 <unit bldFile="/sf/os/networkingsrv/esockapiextensions/internetsockets/group" mrp="/sf/os/networkingsrv/esockapiextensions/internetsockets/group/networking_insock.mrp"/>
@@ -186,6 +186,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

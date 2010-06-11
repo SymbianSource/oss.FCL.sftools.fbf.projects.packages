@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="metadatasrv" level="specific" long-name="Legacy Metadata Services" levels="plugin framework server generic specific">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="metadatasrv" level="specific" long-name="Legacy Metadata Services" levels="plugin framework server generic specific">
 <collection name="metadatasrv_pub" long-name="Legacy Metadata Services Public Interfaces" level="specific">
 <component name="media_fetch_api" long-name="Media Fetch API" filter="s60" class="api">
 <unit bldFile="/sf/mw/metadatasrv/metadatasrv_pub/media_fetch_api/group"/>
@@ -70,6 +70,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

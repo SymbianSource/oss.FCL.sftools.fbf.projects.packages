@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="hb" level="generic" long-name="Orbit" levels="engine test api">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="hb" level="generic" long-name="Orbit" levels="engine test api">
 <collection name="hb_info" long-name="Orbit Info" level="api">
 <component name="hb_build" long-name="Orbit Build" introduced="^4">
 <!-- should break this down into actual components -->
@@ -66,6 +66,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

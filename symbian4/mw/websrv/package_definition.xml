@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="websrv" level="generic" long-name="Web Services" levels="plugin framework server generic specific">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="websrv" level="generic" long-name="Web Services" levels="plugin framework server generic specific">
 <collection name="websrv_pub" long-name="Web Services Public Interfaces" level="specific">
 <component name="web_service_description_api" long-name="Web Service Description API" filter="s60" class="api">
 <unit bldFile="/sf/mw/websrv/websrv_pub/web_service_description_api/group"/>
@@ -172,6 +172,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

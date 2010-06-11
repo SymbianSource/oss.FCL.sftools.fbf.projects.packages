@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="osrndtools" level="services" long-name="OS R&amp;D tools" levels="fw trace">
+ <systemModel>
+  <layer name="os" long-name="OS" levels="hw services">
+   <block name="osrndtools" level="services" long-name="OS R&amp;D tools" levels="fw trace">
 <collection name="stif" long-name="STIF" level="fw">
 <component name="stif_plat" filter="s60" long-name="STIF Platform Interfaces" purpose="development" class="api">
 <unit bldFile="/sf/os/osrndtools/stif/stif_plat/group"/>
@@ -169,6 +169,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

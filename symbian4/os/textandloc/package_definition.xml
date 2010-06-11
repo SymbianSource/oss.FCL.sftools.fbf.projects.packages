@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="textandloc" level="services" long-name="Text and Localisation Services" levels="encoding util fonts tools text">
+ <systemModel>
+  <layer name="os" long-name="OS" levels="hw services">
+   <block name="textandloc" level="services" long-name="Text and Localisation Services" levels="encoding util fonts tools text">
 <collection name="textandloc_plat" long-name="Text and Localisation Platform Interfaces" level="text">
 <component name="findutil_api" long-name="Find Util API" filter="s60" class="api">
 <unit bldFile="/sf/os/textandloc/textandloc_plat/findutil_api/group"/>
@@ -148,6 +148,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

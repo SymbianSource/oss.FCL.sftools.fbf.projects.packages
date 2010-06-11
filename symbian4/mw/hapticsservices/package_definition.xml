@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="hapticsservices" level="generic" long-name="Haptics Services" levels="fw server api">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="hapticsservices" level="generic" long-name="Haptics Services" levels="fw server api">
 <collection name="hapticsservices_plat" long-name="Haptics Services Platform Interfaces" level="api">
 <component name="tacticon_api" long-name="Tacticon API" introduced="^1" filter="s60" class="api">
 <unit bldFile="/sf/mw/hapticsservices/hapticsservices_plat/tacticon_api/group"/>
@@ -99,6 +99,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

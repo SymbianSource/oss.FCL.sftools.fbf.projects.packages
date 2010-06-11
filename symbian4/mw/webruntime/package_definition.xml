@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="webruntime" level="specific" long-name="Web Runtime">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="webruntime" level="specific" long-name="Web Runtime">
 <!-- need to break up this package nito collections and components -->
 <collection name="webruntime_info" long-name="Web Runtime Info">
 <component name="webruntime_build" long-name="Web Runtime Build" introduced="^4">
@@ -61,6 +61,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

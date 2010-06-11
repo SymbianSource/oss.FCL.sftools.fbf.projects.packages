@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="rndtools" level="services" long-name="R&amp;D tools" levels="support generic test util">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="rndtools" level="services" long-name="R&amp;D tools" levels="support generic test util">
 <collection name="creator" long-name="Creator" level="support">
 <!-- collection is really a component. Should move down a directory -->
 <component name="creator_build" filter="s60" long-name="Creator Tool" purpose="development" class="tool">
@@ -144,6 +144,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

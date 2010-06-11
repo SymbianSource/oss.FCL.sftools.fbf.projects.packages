@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="security" level="services" long-name="OS Security" levels="physical-abstraction plugins libraries management services utilities">
+ <systemModel>
+  <layer name="os" long-name="OS" levels="hw services">
+   <block name="security" level="services" long-name="OS Security" levels="physical-abstraction plugins libraries management services utilities">
 <collection name="authenticationservices" long-name="Authentication Services" level="utilities">
 <component name="authenticationserver" long-name="Authentication Server" introduced="^4" purpose="optional">
 <unit bldFile="/sf/os/security/authenticationservices/authenticationserver/group" mrp="/sf/os/security/authenticationservices/authenticationserver/group/security_authserver.mrp"/>
@@ -136,6 +136,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="search" level="apps" long-name="Search Apps" levels="eng base app api">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="search" level="apps" long-name="Search Apps" levels="eng base app api">
 <collection name="search_info" long-name="Search Info">
 <component name="search_build" long-name="Search Build" introduced="^4">
 <unit bldFile="/sf/app/search/group"/>
@@ -65,6 +65,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="qtextensions" level="generic" long-name="Qt Extensions" levels="tool mw app">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="qtextensions" level="generic" long-name="Qt Extensions" levels="tool mw app">
 <collection name="qtecomplugins" long-name="Qt ECom Plugins" level="app">
 <component name="qtecomplugins_build" filter="qtecomplugins" long-name="Qt ECom Plugin" purpose="development" introduced="^4" plugin="Y">
 <unit bldFile="/sf/mw/qtextensions/qtecomplugins" proFile="qtecomplugins.pro" qmakeArgs="-r"/>
@@ -101,6 +101,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

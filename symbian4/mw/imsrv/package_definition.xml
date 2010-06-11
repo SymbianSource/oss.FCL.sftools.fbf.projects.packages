@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="imsrv" level="specific" long-name="Instant Messaging and Presence Services" levels="plugin framework server generic specific">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="imsrv" level="specific" long-name="Instant Messaging and Presence Services" levels="plugin framework server generic specific">
 <collection name="imsrv_plat" long-name="Instant Messaging and Presence Services Platform Interfaces" level="specific">
 <component name="ximp_core_data_model_api" long-name="XIMP Core Data Model API" filter="s60" class="api">
 <unit bldFile="/sf/mw/imsrv/imsrv_plat/ximp_core_data_model_api/group"/>
@@ -164,6 +164,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

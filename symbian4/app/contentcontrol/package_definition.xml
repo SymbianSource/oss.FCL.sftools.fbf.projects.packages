@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="contentcontrol" level="services" long-name="Content Control Daemons" levels="plugin framework app">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="contentcontrol" level="services" long-name="Content Control Daemons" levels="plugin framework app">
 <collection name="contentctrl_plat" long-name="Content Control Daemons Platforn Interfaces" level="app">
 <component name="ds_contactsdatastoreextension_api" long-name="DS Contacts Data Store Extension API" filter="s60" introduced="^4" class="api">
 <unit bldFile="/sf/app/contentcontrol/contentctrl_plat/ds_contactsdatastoreextension_api/group"/>
@@ -86,6 +86,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,15 +51,15 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="camera" level="apps" long-name="Camera Apps">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="camera" level="apps" long-name="Camera Apps">
 <collection name="camerauis" long-name="Camera UIs">
 <component name="cameraxui" filter="s60" long-name="CameraX UIs">
 <unit bldFile="/sf/app/camera/camerauis/cameraxui" filter="!test" proFile="camerax.pro"/>
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

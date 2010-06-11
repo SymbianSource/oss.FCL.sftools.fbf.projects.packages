@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="podcatcher" level="apps" long-name="Podcatcher" levels="app">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="podcatcher" level="apps" long-name="Podcatcher" levels="app">
 <collection name="podcatcher_info" long-name="Podcatcher" level="app">
 <component name="podcatcher_build" filter="sf_build" long-name="Podcatcher Build" introduced="^3">
 <!-- has exports from top level bld.inf -->
@@ -67,6 +67,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

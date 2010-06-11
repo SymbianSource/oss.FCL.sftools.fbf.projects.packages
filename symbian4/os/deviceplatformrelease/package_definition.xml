@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="deviceplatformrelease" level="services" long-name="Device Platform Release" levels="bld mid top">
+ <systemModel>
+  <layer name="os" long-name="OS" levels="hw services">
+   <block name="deviceplatformrelease" level="services" long-name="Device Platform Release" levels="bld mid top">
 <collection name="s60extras" long-name="S60 Extras" level="mid">
 <!-- collection is really a component. Need to move down a directory -->
 <component name="s60extras_build" filter="s60" long-name="S60 Extras Build" purpose="development" class="config">
@@ -110,6 +110,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="buildtools" level="hw" long-name="Build Tools" levels="bld mw fw ui">
+ <systemModel>
+  <layer name="os" long-name="OS" levels="hw services">
+   <block name="buildtools" level="hw" long-name="Build Tools" levels="bld mw fw ui">
 <collection name="bldsystemtools" long-name="Build System Tools" level="bld">
 <component name="sysdeftools" long-name="System Definition Tools" purpose="development" introduced="^2">
 <unit mrp="/sf/os/buildtools/bldsystemtools/sysdeftools/group/sysdeftools.mrp"/>
@@ -94,6 +94,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

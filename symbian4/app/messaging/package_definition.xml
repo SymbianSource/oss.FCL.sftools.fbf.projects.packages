@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="messaging" level="apps" span="2" long-name="Messaging Apps" levels="plugin eng base app api">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="messaging" level="apps" span="2" long-name="Messaging Apps" levels="plugin eng base app api">
 <collection name="msg_plat" long-name="Messaging Apps Platform APIs" level="api">
 <component name="messaging_media_resolver_api" long-name="Messaging Media Resolver API" filter="s60" class="api"/>
 <component name="mms_application_api" long-name="MMS Application API" filter="s60" class="api"/>
@@ -185,6 +185,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

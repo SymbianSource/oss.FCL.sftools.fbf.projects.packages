@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="videoeditor" level="apps" long-name="Video Editor Apps" levels="engine ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="videoeditor" level="apps" long-name="Video Editor Apps" levels="engine ui">
 <collection name="videoeditor_plat" long-name="Video Editor Apps Platform Interfaces" level="ui">
 <component name="video_editor_engine_api" filter="sf_build" long-name="Video Editor Engine API" introduced="^2" class="api">
 <unit bldFile="/sf/app/videoeditor/videoeditor_plat/video_editor_engine_api/group"/>
@@ -112,6 +112,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

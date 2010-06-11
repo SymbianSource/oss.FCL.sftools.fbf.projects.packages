@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="contacts" level="apps" span="2" long-name="Contacts Apps" levels="engine support services ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="contacts" level="apps" span="2" long-name="Contacts Apps" levels="engine support services ui">
 <collection name="contacts_plat" long-name="Contacts Apps Platform Interfaces" level="ui">
 <component name="qt_mobility_contacts_api" long-name="Qt Mobility Contacts API" filter="s60" introduced="^4" class="api"/>
 </collection>
@@ -121,6 +121,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

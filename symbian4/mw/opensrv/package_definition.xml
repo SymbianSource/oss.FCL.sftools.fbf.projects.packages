@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="opensrv" level="specific" long-name="Open Services" levels="prt lib server eng">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="opensrv" level="specific" long-name="Open Services" levels="prt lib server eng">
 <collection name="opensrv_plat" long-name="Open Services Platform Interfaces" level="eng">
 <component name="messagequeue_api" long-name="Message Queue API" introduced="^2" filter="s60" class="api">
 <unit bldFile="/sf/mw/opensrv/opensrv_plat/messagequeue_api/group"/>
@@ -90,6 +90,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="photos" level="apps" long-name="Photos" levels="util support ui app">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="photos" level="apps" long-name="Photos" levels="util support ui app">
 <collection name="photos_group" long-name="Photos Group" level="support">
 <component name="photos_group_build" filter="s60" long-name="Photos Group Build" introduced="^4" class="placeholder">
 <!--<unit bldFile="group" qt:proFile="group.pro"/> -->
@@ -103,6 +103,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="gstreamer" level="generic" long-name="GStreamer" levels="plugin core api">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="gstreamer" level="generic" long-name="GStreamer" levels="plugin core api">
 <!-- Uncomment all units when configuration is in place. All currently #included from gstreamer_build -->
 <!-- structure matches planned directory layout -->
 <collection name="gstreamerfw" long-name="GStreamer Framework" level="core">
@@ -91,6 +91,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

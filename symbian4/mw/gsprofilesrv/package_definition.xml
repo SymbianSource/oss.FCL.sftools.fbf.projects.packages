@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="gsprofilesrv" level="generic" long-name="General Settings and Profiles Services" levels="system plugin framework server generic specific">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="gsprofilesrv" level="generic" long-name="General Settings and Profiles Services" levels="system plugin framework server generic specific">
 <collection name="gsprofilesrv_pub" long-name="GS and Profiles Services Public Interfaces" level="specific">
 <component name="profiles_engine_active_profile_settings_api" long-name="Profiles Engine Active Profile Settings API" filter="s60" class="api">
 <unit bldFile="/sf/mw/gsprofilesrv/gsprofilesrv_pub/profiles_engine_active_profile_settings_api/group"/>
@@ -112,6 +112,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="btservices" level="generic" long-name="Bluetooth Services" levels="framework server generic specific plugin">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="btservices" level="generic" long-name="Bluetooth Services" levels="framework server generic specific plugin">
 <collection name="btservices_pub" long-name="BT Services Public Interfaces" level="plugin">
 <component name="bluetooth_power_state_api" long-name="Bluetooth Power State API" filter="s60" class="api">
 <unit bldFile="/sf/mw/btservices/btservices_pub/bluetooth_power_state_api/group"/>
@@ -168,6 +168,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

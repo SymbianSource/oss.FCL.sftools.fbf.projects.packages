@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="location" level="apps" long-name="Location Apps" levels="ui events loc api">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="location" level="apps" long-name="Location Apps" levels="ui events loc api">
 <collection name="location_plat" long-name="Location Apps Platform Interfaces" level="api">
 <component name="location_picker_service_api" long-name="Location Picker Service API" introduced="^4" filter="s60" class="api">
 <unit bldFile="/sf/app/location/location_plat" proFile="location_plat.pro"/>
@@ -72,6 +72,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

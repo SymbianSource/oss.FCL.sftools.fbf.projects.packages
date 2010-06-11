@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="messagingmw" level="specific" long-name="Messaging Middleware" levels="stack support fw api">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="messagingmw" level="specific" long-name="Messaging Middleware" levels="stack support fw api">
 <collection name="msgfw_plat" long-name="Messaging Middleware Platform Interfaces" level="api">
 <component name="always_online_plugin_api" long-name="Always Online Plugin API" filter="s60" class="api">
 <unit bldFile="/sf/mw/messagingmw/msgfw_plat/always_online_plugin_api/group"/>
@@ -137,6 +137,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

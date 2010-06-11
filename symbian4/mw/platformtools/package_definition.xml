@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="platformtools" level="generic" long-name="Platform Tools">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="platformtools" level="generic" long-name="Platform Tools">
 <collection name="gfxconversion" long-name="Graphics Conversion">
 <component name="bmconv_s60" filter="s60" long-name="S60 Bitmap Converter" class="PC">
 <unit bldFile="/sf/mw/platformtools/gfxconversion/bmconv_s60/group"/>
@@ -63,6 +63,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

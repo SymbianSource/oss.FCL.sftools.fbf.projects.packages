@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="drm" level="generic" long-name="DRM" levels="plugin framework server generic specific">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="drm" level="generic" long-name="DRM" levels="plugin framework server generic specific">
 <collection name="drm_plat" long-name="DRM Platform Interfaces" level="specific">
 <component name="roap_api" long-name="ROAP API" filter="s60" class="api">
 <unit bldFile="/sf/mw/drm/drm_plat/roap_api/group"/>
@@ -154,6 +154,6 @@
 </collection>
 <collection name="drm_info" long-name="DRM Info" level="specific"/>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

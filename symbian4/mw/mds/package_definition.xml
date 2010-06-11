@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="mds" level="specific" long-name="Metadata Services" levels="mgr eng server int">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="mds" level="specific" long-name="Metadata Services" levels="mgr eng server int">
 <collection name="mds_plat" long-name="Metadata Services Platform Interfaces" level="int">
 <component name="context_engine_plugin_api" long-name="Context Engine Plugin API" introduced="^2" filter="s60" class="api">
 <unit bldFile="/sf/mw/mds/mds_plat/context_engine_plugin_api/group" filter="!test"/>
@@ -169,6 +169,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

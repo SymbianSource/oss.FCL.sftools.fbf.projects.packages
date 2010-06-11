@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="platformthemes" level="specific" long-name="Platform Themes" levels="framework generic ui">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="platformthemes" level="specific" long-name="Platform Themes" levels="framework generic ui">
 <collection name="platformthemes_info" long-name="Platform Themes Info">
 <component name="platformthemes_build" long-name="Platform Themes Build">
 <!-- no real structure in this package. Should break into collections / components -->
@@ -61,6 +61,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

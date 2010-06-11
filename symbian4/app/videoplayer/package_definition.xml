@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="videoplayer" level="apps" long-name="Video Player Apps" levels="support plugin util apps">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="videoplayer" level="apps" long-name="Video Player Apps" levels="support plugin util apps">
 <collection name="videoplayer_plat" long-name="Video Player Apps Platform Interfaces" level="apps">
 <component name="videoplayer_startup_api" long-name="Video Player Startup API" filter="s60" class="api">
 <unit bldFile="/sf/app/videoplayer/videoplayer_plat/videoplayer_startup_api/group"/>
@@ -102,6 +102,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

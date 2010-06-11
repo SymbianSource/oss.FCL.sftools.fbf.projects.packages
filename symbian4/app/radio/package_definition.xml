@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="radio" level="apps" long-name="Radio Apps" levels="engine ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="radio" level="apps" long-name="Radio Apps" levels="engine ui">
 <collection name="radioengine" long-name="Radio Engine" level="engine">
 <component name="radioengineutils" filter="s60" long-name="Radio Engine Utils" introduced="^4">
 <unit bldFile="/sf/app/radio/radioengine/utils/group"/>
@@ -86,6 +86,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

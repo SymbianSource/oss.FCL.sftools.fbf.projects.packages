@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="vpnclient" level="specific" long-name="VPN Client" levels="engine ui api">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="vpnclient" level="specific" long-name="VPN Client" levels="engine ui api">
 <!-- is the !oem_build filter needed? -->
 <collection name="vpnc_plat" long-name="VPN Client Platform Interfaces" level="api">
 <component name="vpnapi" filter="s60" long-name="VPN API" class="api">
@@ -178,6 +178,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

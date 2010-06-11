@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="helix" level="generic" long-name="Helix" levels="plugin framework server generic specific">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="helix" level="generic" long-name="Helix" levels="plugin framework server generic specific">
 <collection name="helix_ren" long-name="Helix Engine" level="framework">
 <!-- what does "ren" stand for? -->
 <component name="helix_stub" filter="s60" long-name="Helix Stub" introduced="^2" class="api">
@@ -61,6 +61,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

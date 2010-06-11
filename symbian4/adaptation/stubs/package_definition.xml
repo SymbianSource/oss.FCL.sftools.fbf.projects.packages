@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="adaptation" long-name="Adaptation" levels="low mw high">
-<block name="stubs" level="high" span="2" long-name="Stubs" levels="adaptation plugin mid engine">
+ <systemModel>
+  <layer name="adaptation" long-name="Adaptation" levels="low mw high">
+   <block name="stubs" level="high" span="2" long-name="Stubs" levels="adaptation plugin mid engine">
 <collection name="audiostubs" long-name="Audio Stubs" level="adaptation">
 <component name="devsoundextensions_stubs" long-name="Devsound Extensions Stubs">
 <unit bldFile="/sf/adaptation/stubs/audiostubs/devsoundextensions_stubs/group"/>
@@ -155,6 +155,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

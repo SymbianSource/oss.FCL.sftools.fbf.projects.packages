@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="internetradio" level="apps" long-name="Internet Radio Apps" levels="engine server ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="internetradio" level="apps" long-name="Internet Radio Apps" levels="engine server ui">
 <collection name="internetradio2_0" long-name="Internet Radio 2.0" level="ui">
 <!-- collection is really a component. Move down a dir -->
 <component name="internetradio2_0_build" long-name="Internet Radio 2.0 Build">
@@ -73,6 +73,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="printing" level="services" long-name="Printing"/>
-</layer>
-</systemModel>
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="printing" level="services" long-name="Printing"/>
+  </layer>
+ </systemModel>
 </SystemDefinition>

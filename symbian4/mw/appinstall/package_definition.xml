@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="appinstall" level="generic" long-name="Application Installation" levels="tool framework generic api">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="appinstall" level="generic" long-name="Application Installation" levels="tool framework generic api">
 <collection name="appinstall_plat" long-name="Application Installation Platform Interfaces" level="api">
 <component name="iaupdate_api" long-name="IA Update API" filter="s60" class="api">
 <unit bldFile="/sf/mw/appinstall/appinstall_plat/iaupdate_api/group"/>
@@ -172,6 +172,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

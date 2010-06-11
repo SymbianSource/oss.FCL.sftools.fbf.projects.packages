@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="netprotocols" level="generic" long-name="High-level Internet Protocols" levels="plugin framework server generic specific">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="netprotocols" level="generic" long-name="High-level Internet Protocols" levels="plugin framework server generic specific">
 <collection name="netprotocols_plat" long-name="High-level Internet Protocols Platform Interfaces" level="specific">
 <component name="cookie_manager_api" long-name="Cookie Manager API" filter="s60" class="api">
 <unit bldFile="/sf/mw/netprotocols/netprotocols_plat/cookie_manager_api/group"/>
@@ -137,6 +137,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

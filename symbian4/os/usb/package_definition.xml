@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="usb" level="services" long-name="USB" levels="adaptation hw-if plugin framework server app-if">
+ <systemModel>
+  <layer name="os" long-name="OS" levels="hw services">
+   <block name="usb" level="services" long-name="USB" levels="adaptation hw-if plugin framework server app-if">
 <collection name="usbldd" long-name="USB Logical Device Drivers" level="hw-if">
 <!-- usbclientdrivers  to be moved here from kernelhwsrv-->
 </collection>
@@ -71,6 +71,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

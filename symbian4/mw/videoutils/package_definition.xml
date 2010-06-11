@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="videoutils" level="specific" long-name="Video Utils" levels="eng util if">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="videoutils" level="specific" long-name="Video Utils" levels="eng util if">
 <collection name="videoutils_plat" long-name="Video Utils Platform Interfaces" level="if">
 <component name="videoscheduler_api" long-name="Video Scheduler API" filter="s60" class="api">
 <unit bldFile="/sf/mw/videoutils/videoutils_plat/videoscheduler_api/group"/>
@@ -68,6 +68,6 @@
 <component name="schedulerserver" filter="s60" long-name="Video Scheduler Server"/>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

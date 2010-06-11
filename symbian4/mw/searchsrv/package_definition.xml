@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="searchsrv" level="specific" long-name="Search Services" levels="services engine generic api">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="searchsrv" level="specific" long-name="Search Services" levels="services engine generic api">
 <collection name="searchsrv_plat" long-name="Search Services Platform Interfaces" level="api">
 <component name="cpix_utility_api" long-name="CPIX Utility API" filter="s60" introduced="^4" class="api">
 <unit bldFile="/sf/mw/searchsrv/searchsrv_plat/cpix_utility_api/group"/>
@@ -114,6 +114,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

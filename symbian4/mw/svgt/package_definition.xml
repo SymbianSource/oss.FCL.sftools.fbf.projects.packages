@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="svgt" level="generic" long-name="SVG Tiny" levels="util ui">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="svgt" level="generic" long-name="SVG Tiny" levels="util ui">
 <collection name="svgt_plat" long-name="SVG Tiny Platform Interfaces" level="ui">
 <component name="svgt_api" long-name="SVGT API" introduced="9.2" filter="s60" class="api">
 <unit bldFile="/sf/mw/svgt/svgt_plat/svgt_api/group"/>
@@ -72,6 +72,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="commsfw" level="services" long-name="Communications Framework" levels="server support framework process app-if">
+ <systemModel>
+  <layer name="os" long-name="OS" levels="hw services">
+   <block name="commsfw" level="services" long-name="Communications Framework" levels="server support framework process app-if">
 <collection name="commsprocess" long-name="Comms Process" level="process">
 <component name="commsrootserver" long-name="Comms Root Server" introduced="7.0s" purpose="mandatory">
 <unit bldFile="/sf/os/commsfw/commsprocess/commsrootserverconfig/group" mrp="/sf/os/commsfw/commsprocess/commsrootserverconfig/group/comms-infras_rootserver.mrp"/>
@@ -133,6 +133,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

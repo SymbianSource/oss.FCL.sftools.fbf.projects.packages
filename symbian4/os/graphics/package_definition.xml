@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="os" long-name="OS" levels="hw services">
-<block name="graphics" level="services" long-name="Graphics" levels="adaptation engines internal-adaptations device-interface internal-utils app-if">
+ <systemModel>
+  <layer name="os" long-name="OS" levels="hw services">
+   <block name="graphics" level="services" long-name="Graphics" levels="adaptation engines internal-adaptations device-interface internal-utils app-if">
 <collection name="graphicsaccelaration" long-name="Graphics Acceleration" level="adaptation">
 <component name="vgi" filter="s60" long-name="VGI">
 <unit bldFile="/sf/os/graphics/graphicsaccelaration/vgi/group"/>
@@ -206,6 +206,6 @@
 </collection>
 <collection name="graphicsapitest" long-name="Graphics API Tests" level="app-if"/>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

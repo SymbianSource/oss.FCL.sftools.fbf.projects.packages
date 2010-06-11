@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="usbservices" level="generic" long-name="USB Services" levels="framework server generic specific plugin">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="usbservices" level="generic" long-name="USB Services" levels="framework server generic specific plugin">
 <collection name="usbservices_plat" long-name="USB Services Platform Interfaces" level="plugin">
 <component name="pictbridge_api" long-name="PictBridge API" filter="s60" class="api">
 <unit bldFile="/sf/mw/usbservices/usbservices_plat/pictbridge_api/group"/>
@@ -149,6 +149,6 @@
 </collection>
 <collection name="usbservices_test" long-name="USB Services Test" level="server"/>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

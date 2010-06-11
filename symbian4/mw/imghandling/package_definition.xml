@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="imghandling" level="specific" long-name="Image Handling" levels="lib util if">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="imghandling" level="specific" long-name="Image Handling" levels="lib util if">
 <collection name="imagehandling_plat" long-name="Image Handling Platform Interfaces" level="if">
 <component name="image_handling_library_api" long-name="Image Handling Library API" filter="s60" class="api">
 <unit bldFile="/sf/mw/imghandling/imagehandling_plat/image_handling_library_api/group"/>
@@ -80,6 +80,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

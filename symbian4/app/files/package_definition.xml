@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="files" level="apps" long-name="File Manager Apps" levels="support apps">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="files" level="apps" long-name="File Manager Apps" levels="support apps">
 <collection name="filemanager" long-name="File Manager" level="apps">
 <component name="filemanager_plat" long-name="File Manager Platform Interfaces" filter="s60" introduced="^4" class="api"/>
 <component name="fmbkupengine" filter="s60" long-name="File Manager Backup Engine" introduced="^4">
@@ -65,6 +65,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

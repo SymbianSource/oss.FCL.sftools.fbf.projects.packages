@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="musicplayer" level="apps" long-name="Music Player Apps" levels="plugins support hs app">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="musicplayer" level="apps" long-name="Music Player Apps" levels="plugins support hs app">
 <!-- move the export .pri files into their components and uncomment the units -->
 <collection name="musicplayer_utilities " long-name="Music Player Utilities" level="support">
 <component name="mpnowplayingbanner" filter="s60" long-name="MP Now Playing Banner" introduced="^4" class="placeholder">
@@ -111,6 +111,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

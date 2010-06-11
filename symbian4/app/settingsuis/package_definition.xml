@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="settingsuis" level="services" long-name="Settings UIs" levels="plugin ui">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="settingsuis" level="services" long-name="Settings UIs" levels="plugin ui">
 <collection name="controlpanelplugins" long-name="Control Panel Plugins" level="plugin">
 <component name="themeplugin" filter="s60" long-name="Theme Plugin" introduced="^4">
 <unit bldFile="/sf/app/settingsuis/controlpanelplugins/themeplugin" proFile="themeplugin.pro" qmakeArgs="-r -config rom"/>
@@ -66,6 +66,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

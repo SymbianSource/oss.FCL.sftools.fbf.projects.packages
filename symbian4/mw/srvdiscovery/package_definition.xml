@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="mw" long-name="Middleware" levels="generic specific">
-<block name="srvdiscovery" level="generic" long-name="Service Discovery and Usage" levels="plugin framework server generic specific">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="srvdiscovery" level="generic" long-name="Service Discovery and Usage" levels="plugin framework server generic specific">
 <collection name="upnpstack_plat" long-name="UPnP Stack Platform Interfaces" level="specific">
 <component name="upnp_device_api" long-name="UPnP Device API" purpose="optional" introduced="^3" class="api">
 <unit bldFile="/sf/mw/srvdiscovery/upnp/upnpstack_plat/upnp_device_api/group"/>
@@ -90,6 +90,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>

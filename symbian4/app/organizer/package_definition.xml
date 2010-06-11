@@ -51,9 +51,9 @@
   priority CDATA #IMPLIED>
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
-<systemModel>
-<layer name="app" long-name="Applications" levels="services apps">
-<block name="organizer" level="apps" span="2" long-name="Organizer Application Suite" levels="support services engine ui app">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="organizer" level="apps" span="2" long-name="Organizer Application Suite" levels="support services engine ui app">
 <collection name="organizer_pub" long-name="Organizer Application Suite Public Interfaces" level="app">
 <component name="calendar_interim_utils2_api" long-name="Calendar Interim Utils 2 API" filter="s60" class="api">
 <!-- move into own .pro file -->
@@ -206,6 +206,6 @@
 </component>
 </collection>
 </block>
-</layer>
-</systemModel>
+  </layer>
+ </systemModel>
 </SystemDefinition>
