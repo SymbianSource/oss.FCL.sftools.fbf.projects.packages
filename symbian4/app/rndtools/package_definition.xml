@@ -3,7 +3,7 @@
     <collection id="creator" name="Creator" level="support">
 	   	<!-- collection is really a component. Should move down a directory -->
       <component id="creator_build" filter="s60" name="Creator Tool" purpose="development" target="device" class="tool">
-        <unit bldFile="creator/group"/>
+        <unit bldFile="creator" qt:qmakeArgs="-r" qt:proFile="creator.pro"/>
       </component>
     </collection>
     <collection id="filebrowser" name="File Browser" level="util">
@@ -52,23 +52,10 @@
       </component>
     </collection>
     <collection id="stifui" name="STIF UI" level="generic">
-      <component id="stifui_stifui" filter="s60" name="STIF UI" purpose="development" target="device">
-        <unit bldFile="stifui/stifui/group"/>
+      <component id="stifui_avkon" filter="s60" name="STIF UI for Avkon" purpose="development" target="device">
+        <unit bldFile="stifui/akvon/group"/>
       </component>
-      <component id="uitestserverstarter" filter="s60" name="UI Test Server Starter" purpose="development" target="device">
-        <unit bldFile="stifui/uitestserverstarter/group"/>
-      </component>
-      <component id="stifui_build" filter="s60" name="STIF UI Build" purpose="development">
-		<!-- can this be split up into the other components or made a ROM component? -->
-        <unit bldFile="stifui/group"/>
-      </component>
-    </collection>
-    <collection id="memspyui" name="Memspy UI" level="generic">
-	   	<!-- collection is really a component. Should move down a directory -->
-      <component id="memspyui_build" filter="s60" name="Memspy UI Application" purpose="development" target="device" class="tool">
-        <unit bldFile="memspyui/group"/>
-      </component>
-    </collection>
+   </collection>
     <collection id="htiui" name="Harmonized Test Interface UI" level="generic">
       <component id="HtiServicePlugins" filter="s60" name="HTI Service Plugins" purpose="development" target="device" class="plugin">
 		<!-- can only have a single unit. Should #include from a common bld.inf file -->
@@ -89,10 +76,6 @@
       </component>
       <component id="htiadmin" filter="s60" name="HTI Admin" purpose="development" target="device">
         <unit bldFile="htiui/htiadmin/group"/>
-      </component>
-      <component id="htiui_build" filter="s60" name="HTI UI Build" purpose="development">
-		<!-- can this be split up into the other components or made a ROM component? -->
-        <unit bldFile="htiui/group"/>
       </component>
     </collection>
   </package>
