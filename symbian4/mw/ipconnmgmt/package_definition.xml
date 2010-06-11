@@ -101,9 +101,6 @@
    <component id="apsettingshandlerui" filter="s60" name="Access Point Settings Handler UI">
     <unit bldFile="apengine/apsettingshandlerui/group"/>
    </component>
-   <component id="apsettingsplugin" filter="s60" name="Access Point Settings Plugin" class="plugin">
-    <unit bldFile="apengine/apsettingsplugin/group"/>
-   </component>
   </collection>
   <collection id="bearermanagement" name="Bearer Management" level="framework">
    <component id="mpm" filter="s60" name="Mobility Policy Manager">
@@ -120,14 +117,8 @@
    <component id="cmmgr" filter="s60" name="CM Manager">
     <unit bldFile="cmmanager/cmmgr/group"/>
    </component>
-   <component id="gsconnsettingsplugin" filter="s60" name="GS Connection Settings Plugin" introduced="^3" class="plugin">
-    <unit bldFile="cmmanager/gsconnsettingsplugin/group"/>
-   </component>
   </collection>
   <collection id="connectionmonitoring" name="Connection Monitoring" level="server">
-   <component id="connectionmonitorplugin" filter="s60" name="Connection Monitor Plugin" class="plugin">
-    <unit bldFile="connectionmonitoring/connectionmonitorplugin/group"/>
-   </component>
    <component id="connectionmonitorui" filter="s60" name="Connection Monitor UI">
     <unit bldFile="connectionmonitoring/connectionmonitorui/group"/>
    </component>
