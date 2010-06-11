@@ -10,7 +10,7 @@
    </component>
    <component id="filemanager_build" filter="s60" name="File Manager Build">
    <!-- break this up into components or move down a directory -->
-    <unit bldFile="filemanager" qt:proFile="filemanager.pro"/>
+    <unit bldFile="filemanager" qt:qmakeArgs="-r" qt:proFile="filemanager.pro"/>
    </component>
   </collection>
  </package>
