@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+]>
+<SystemDefinition name="Symbian^4" schema="2.0.1">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="ipconnmgmt" level="generic" long-name="IP Connectivity Management" levels="plugin framework server utils api">
+<collection name="ipcm_plat" long-name="IP Connectivity Management Platform Interfaces" level="api">
+<component name="access_point_engine_misc_api" long-name="Access Point Engine Misc API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_plat/access_point_engine_misc_api/group"/>
+</component>
+<component name="bearer_settings_plugin_api" long-name="Bearer Settings Plugin API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_plat/bearer_settings_plugin_api/group"/>
+</component>
+<component name="commsdat_wlan_api" long-name="CommsDat WLAN API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_plat/commsdat_wlan_api/group"/>
+</component>
+<component name="connection_monitor_extension_api" long-name="Connection Monitor Extension API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_plat/connection_monitor_extension_api/group"/>
+</component>
+<component name="connection_ui_utilities_api" long-name="Connection UI Utilities API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_plat/connection_ui_utilities_api/group"/>
+</component>
+<component name="disconnect_dialog_api" long-name="Disconnect Dialog API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_plat/disconnect_dialog_api/group"/>
+</component>
+<component name="disconnect_dialog_disable_api" long-name="Disconnect Dialog Disable API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_plat/disconnect_dialog_disable_api/group"/>
+</component>
+<component name="extended_connection_settings_api" long-name="Extended Connection Settings API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_plat/extended_connection_settings_api/group"/>
+</component>
+<component name="mpm_default_connection_api" long-name="MPM Default Connection API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_plat/mpm_default_connection_api/group"/>
+</component>
+<component name="pdpcontextmanager2_reset_factory_settings_api" long-name="PDP Context Manager 2 Reset Factory Settings API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_plat/pdpcontextmanager2_reset_factory_settings_api/group"/>
+</component>
+<component name="pdpcontextmanager2_settings_api" long-name="PDP Context Manager 2 Settings API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_plat/pdpcontextmanager2_settings_api/group"/>
+</component>
+<component name="mpm_connect_screen_api" long-name="MPM Connect Screen API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_plat/mpm_connect_screen_api/group"/>
+</component>
+</collection>
+<collection name="ipcm_pub" long-name="IP Connectivity Management Public Interfaces" level="api">
+<component name="connection_settings_api" long-name="Connection Settings API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_pub/connection_settings_api/group"/>
+</component>
+<component name="access_point_engine_api" long-name="Access Point Engine API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_pub/access_point_engine_api/group"/>
+</component>
+<component name="access_point_settings_handler_api" long-name="Access Point Settings Handler API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_pub/access_point_settings_handler_api/group"/>
+</component>
+<component name="data_connection_log_counters_api" long-name="Data Connection Log Counters API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_pub/data_connection_log_counters_api/group"/>
+</component>
+<component name="connection_monitor_server_api" long-name="Connection Monitor Server API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_pub/connection_monitor_server_api/group"/>
+</component>
+<component name="connection_settings_ui_api" long-name="Connection Settings UI API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_pub/connection_settings_ui_api/group"/>
+</component>
+<component name="agent_dialog_api" long-name="Agent Dialog API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_pub/agent_dialog_api/group"/>
+</component>
+<component name="extendedconnpref_api" long-name="Extended Connection Preferences API" filter="s60" class="api">
+<unit bldFile="/sf/mw/ipconnmgmt/ipcm_pub/extendedconnpref_api/group"/>
+</component>
+</collection>
+<collection name="accesspointcontrol" long-name="Access Point Control" level="plugin">
+<component name="apcontrollistplugin" filter="s60" long-name="Access Point Control List Plugin" introduced="^2" plugin="Y">
+<unit bldFile="/sf/mw/ipconnmgmt/accesspointcontrol/apcontrollistplugin/group"/>
+</component>
+</collection>
+<collection name="alwayson_net_plugin" long-name="Always Online Net Plugin" level="server">
+<component name="pdpcontextmanager2" filter="s60" long-name="PDP Context Manager 2">
+<unit bldFile="/sf/mw/ipconnmgmt/alwayson_net_plugin/pdpcontextmanager2/group"/>
+</component>
+</collection>
+<collection name="apengine" long-name="Access Point Engine" level="framework">
+<component name="apeng" filter="s60" long-name="Access Point Engine">
+<unit bldFile="/sf/mw/ipconnmgmt/apengine/apeng/group"/>
+</component>
+<component name="apsettingshandlerui" filter="s60" long-name="Access Point Settings Handler UI">
+<unit bldFile="/sf/mw/ipconnmgmt/apengine/apsettingshandlerui/group"/>
+</component>
+</collection>
+<collection name="bearermanagement" long-name="Bearer Management" level="framework">
+<component name="mpm" filter="s60" long-name="Mobility Policy Manager">
+<unit bldFile="/sf/mw/ipconnmgmt/bearermanagement/mpm/group"/>
+</component>
+<component name="extendedconnpref" filter="s60" long-name="Extended Connection Preferences">
+<unit bldFile="/sf/mw/ipconnmgmt/bearermanagement/extendedconnpref/group"/>
+</component>
+<component name="s60mcpr" filter="s60" long-name="S60 Meta-Connection Provider" plugin="Y">
+<unit bldFile="/sf/mw/ipconnmgmt/bearermanagement/S60MCPR/group"/>
+</component>
+</collection>
+<collection name="cmmanager" long-name="Connection Method Manager" level="framework">
+<component name="cmmgr" filter="s60" long-name="CM Manager">
+<unit bldFile="/sf/mw/ipconnmgmt/cmmanager/cmmgr/group"/>
+</component>
+</collection>
+<collection name="connectionmonitoring" long-name="Connection Monitoring" level="server">
+<component name="connectionmonitorui" filter="s60" long-name="Connection Monitor UI">
+<unit bldFile="/sf/mw/ipconnmgmt/connectionmonitoring/connectionmonitorui/group"/>
+</component>
+<component name="connmon" filter="s60" long-name="Connection Monitor">
+<!-- either split into two components, or #include from a common bld.inf -->
+<unit bldFile="/sf/mw/ipconnmgmt/connectionmonitoring/connmon/connectionmonitor/group"/>
+<unit bldFile="/sf/mw/ipconnmgmt/connectionmonitoring/connmon/dataconnectionlogger/group"/>
+</component>
+<component name="connmonext" filter="s60" long-name="Connection Monitor Extension API">
+<unit bldFile="/sf/mw/ipconnmgmt/connectionmonitoring/connmonext/group"/>
+</component>
+</collection>
+<collection name="connectionutilities" long-name="Connection Utilities" level="utils">
+<component name="connectiondialogs" filter="s60" long-name="Connection Dialogs">
+<unit bldFile="/sf/mw/ipconnmgmt/connectionutilities/connectiondialogs/group"/>
+</component>
+</collection>
+<collection name="dbcreator" long-name="DB Creator" level="utils">
+<component name="commsdatcreator" filter="s60" long-name="Comms Database Creator" introduced="9.3">
+<unit bldFile="/sf/mw/ipconnmgmt/dbcreator/commsdatcreator/group"/>
+</component>
+<component name="commsdatcreatorrfsplugin" filter="s60" long-name="Comms Database Creator RFS Plugin" introduced="9.3" plugin="Y">
+<!-- uncomment when config is turned on -->
+<!-- <unit bldFile="dbcreator/commsdatcreatorrfsplugin/group"/>-->
+</component>
+<component name="commsdatstartup" filter="s60" long-name="Comms Database Startup" introduced="9.3">
+<unit bldFile="/sf/mw/ipconnmgmt/dbcreator/commsdatstartup/group"/>
+</component>
+<component name="dbcreatorexe" filter="s60" long-name="DB Creator" introduced="9.3">
+<unit bldFile="/sf/mw/ipconnmgmt/dbcreator/dbcreatorexe/group"/>
+</component>
+<component name="dbcreator_build" filter="s60" long-name="DB Creator Build" introduced="9.3">
+<!-- move exports to another component, this is needed for the #ifndef for commsdatcreatorrfsplugin until configuration is in place-->
+<unit bldFile="/sf/mw/ipconnmgmt/dbcreator/group"/>
+</component>
+</collection>
+<collection name="ipconnmgmt_info" long-name="IP Connectivity Management Info" level="api">
+<component name="ipcm_build" filter="s60" long-name="IP Connectivity Management Build">
+<!-- need to move exports to another component, or maek this a config component and revmove the #includes -->
+<unit bldFile="/sf/mw/ipconnmgmt/group"/>
+</component>
+<component name="ipcm_qt_build" long-name="IP Connectivity Management Qt Build" introduced="^4">
+<unit bldFile="/sf/mw/ipconnmgmt" proFile="ipconnmgmt.pro" qmakeArgs="-r"/>
+</component>
+</collection>
+</block>
+  </layer>
+ </systemModel>
+</SystemDefinition>

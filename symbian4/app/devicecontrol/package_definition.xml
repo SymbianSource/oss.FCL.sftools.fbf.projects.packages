@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+]>
+<SystemDefinition name="Symbian^4" schema="2.0.1">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="devicecontrol" level="services" long-name="Device Control Daemons" levels="oma mid app">
+<collection name="deviceupdatesui" long-name="Device Updates UI" level="app">
+<component name="deviceupdatesui_adapters" long-name="Device Updates Adapters" filter="s60" introduced="^4" plugin="Y">
+<unit bldFile="/sf/app/devicecontrol/deviceupdatesui/adapters/bld"/>
+</component>
+<component name="deviceupdates" long-name="Device Updates" filter="s60" introduced="^4">
+<unit bldFile="/sf/app/devicecontrol/deviceupdatesui/deviceupdates" proFile="deviceupdates.pro"/>
+</component>
+<component name="deviceupdatesplugin" long-name="Device Updates Plugin" filter="s60" introduced="^4" plugin="Y">
+<unit bldFile="/sf/app/devicecontrol/deviceupdatesui/deviceupdatesplugin" proFile="deviceupdatesplugin.pro"/>
+</component>
+<component name="deviceupdatesqtsp" long-name="Device Updates Qt Service Provider" filter="s60" introduced="^4">
+<unit bldFile="/sf/app/devicecontrol/deviceupdatesui/deviceupdatesqtsp" proFile="deviceupdatesqtsp.pro"/>
+</component>
+<component name="cpqtsp" long-name="Client Provisioning Qt Service Provider" filter="s60" introduced="^4">
+<unit bldFile="/sf/app/devicecontrol/deviceupdatesui/cpqtsp" proFile="cpqtsp.pro"/>
+</component>
+<component name="devicemanagementnotifiersplugin" long-name="Device Management Notifiers Plugin" filter="s60" introduced="^4" plugin="Y">
+<unit bldFile="/sf/app/devicecontrol/deviceupdatesui/devicemanagementnotifiersplugin" proFile="devicemanagementnotifiersplugin.pro"/>
+</component>
+</collection>
+</block>
+  </layer>
+ </systemModel>
+</SystemDefinition>
