@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="printing" level="services" long-name="Printing" levels="app">
+<collection name="DirectPrint" level="app">
+<component name="DirectPrintApp" filter="sf_build" long-name="DirectPrint App" introduced="^3">
+<unit bldFile="/sf/app/printing/DirectPrint/DirectPrintApp/group"/>
+</component>
+<component name="DirectPrintServer" filter="sf_build" long-name="DirectPrint Server" introduced="^3">
+<unit bldFile="/sf/app/printing/DirectPrint/DirectPrintServer/group"/>
+</component>
+<component name="DirectPrintClient" filter="sf_build" long-name="DirectPrint Client" introduced="^3">
+<unit bldFile="/sf/app/printing/DirectPrint/DirectPrintClient/group"/>
+</component>
+</collection>
+<collection name="imageprint" long-name="ImagePrint" level="app">
+<component name="clog" filter="s60" long-name="ImagePrint Logging" introduced="^2">
+<unit bldFile="/sf/app/printing/imageprint/clog/group"/>
+</component>
+<component name="imageprintengine" filter="s60" long-name="ImagePrint Engine" introduced="^2">
+<unit bldFile="/sf/app/printing/imageprint/imageprintengine/group"/>
+</component>
+<component name="imageprintui" filter="s60" long-name="ImagePrint UI" introduced="^2">
+<unit bldFile="/sf/app/printing/imageprint/imageprintui/group"/>
+</component>
+<component name="imageprint_build" filter="s60" long-name="ImagePrint Build" introduced="^2">
+<!--  Need to break the IBY includes into the other components, or remove #includes and make this a ROM component -->
+<unit bldFile="/sf/app/printing/imageprint/group"/>
+</component>
+</collection>
+</block>
+  </layer>
+ </systemModel>
+</SystemDefinition>

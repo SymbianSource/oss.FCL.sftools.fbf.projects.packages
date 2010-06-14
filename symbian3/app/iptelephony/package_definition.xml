@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="iptelephony" level="apps" long-name="IP Telephony" levels="eng plugin util ui">
+<collection name="iptel_plat" long-name="IP Telephony Platform Interfaces" level="ui">
+<component name="richcallsettingsengine_api" long-name="Rich Call Settings Engine API" introduced="^2" filter="s60" class="api">
+<unit bldFile="/sf/app/iptelephony/iptel_plat/richcallsettingsengine_api/group"/>
+</component>
+<component name="cch_client_api" long-name="CCH Client API" introduced="^2" filter="s60" class="api">
+<unit bldFile="/sf/app/iptelephony/iptel_plat/cch_client_api/group"/>
+</component>
+<component name="cch_server_api" long-name="CCH Server API" introduced="^2" filter="s60" class="api">
+<unit bldFile="/sf/app/iptelephony/iptel_plat/cch_server_api/group"/>
+</component>
+<component name="csc_settingsui_api" long-name="CSC Settings UI API" introduced="^2" filter="s60" class="api">
+<unit bldFile="/sf/app/iptelephony/iptel_plat/csc_settingsui_api/group"/>
+</component>
+<component name="vccpropertyhandler_api" long-name="VCC Property Handler API" introduced="^2" filter="s60" class="api">
+<unit bldFile="/sf/app/iptelephony/iptel_plat/vccpropertyhandler_api/group"/>
+</component>
+<component name="vcc_api" long-name="VCC API" introduced="^2" filter="s60" class="api">
+<unit bldFile="/sf/app/iptelephony/iptel_plat/vcc_api/group"/>
+</component>
+</collection>
+<collection name="iptelcommsconfig" long-name="IP Telephony Comms Config" level="ui">
+<component name="cscgsplugin" filter="s60" long-name="CSC GS Plugin" introduced="^2" plugin="Y">
+<unit bldFile="/sf/app/iptelephony/commsconfig/cscgsplugin/group"/>
+</component>
+<component name="cscsipvoipcleanupplugin" filter="s60" long-name="CSC SIP VoIP Cleanup Plugin" introduced="^2" plugin="Y">
+<unit bldFile="/sf/app/iptelephony/commsconfig/cscsipvoipcleanupplugin/group"/>
+</component>
+<component name="cscengine" filter="s60" long-name="Connection Service Configurator Engine" introduced="^2">
+<unit bldFile="/sf/app/iptelephony/commsconfig/cscengine/group"/>
+</component>
+<component name="cscsettingsui" filter="s60" long-name="CSC Settings UI" introduced="^2">
+<unit bldFile="/sf/app/iptelephony/commsconfig/cscsettingsui/group"/>
+</component>
+<component name="cscapplicationui" filter="s60" long-name="CSC Application UI" introduced="^2">
+<unit bldFile="/sf/app/iptelephony/commsconfig/cscapplicationui/group"/>
+</component>
+<component name="commsconfig_build" filter="s60" long-name="Comms Config Build" introduced="^2">
+<!--  consider distributing this into the above components -->
+<unit bldFile="/sf/app/iptelephony/commsconfig/group"/>
+</component>
+</collection>
+<collection name="convergedconnectionhandler" long-name="Converged Connection Handler" level="eng">
+<component name="cchserver" filter="s60" long-name="CCH Server" introduced="^2">
+<unit bldFile="/sf/app/iptelephony/convergedconnectionhandler/cchserver/group"/>
+</component>
+<component name="cchclient" filter="s60" long-name="CCH Client" introduced="^2">
+<unit bldFile="/sf/app/iptelephony/convergedconnectionhandler/cchclient/group"/>
+</component>
+<component name="cchclientapi" filter="s60" long-name="CCH Client API" introduced="^2">
+<unit bldFile="/sf/app/iptelephony/convergedconnectionhandler/cchclientapi/group"/>
+</component>
+<component name="convergedconnectionhandler_build" filter="s60" long-name="CCH Build" introduced="^2">
+<!--  consider distributing this into the above components, or collapse the collection into a single component. 
+      		The latter is a better option since clients and sevrers are rarely separate components -->
+<unit bldFile="/sf/app/iptelephony/convergedconnectionhandler/group"/>
+</component>
+</collection>
+<collection name="richcallsettingsengine" long-name="Rich Call Settings Engine" level="eng">
+<component name="rcse2" filter="s60" long-name="Rich Call Settings Engine Build" introduced="^2">
+<unit bldFile="/sf/app/iptelephony/richcallsettingsengine/rcse2/group"/>
+</component>
+</collection>
+<collection name="sipvoipprovider" long-name="SIP VoIP Provider" level="plugin">
+<!-- collection is really a component. Should move down a directory -->
+<component name="svp" filter="s60" long-name="SIP VoIP Provider Build" introduced="^2" plugin="Y">
+<unit bldFile="/sf/app/iptelephony/sipvoipprovider/group"/>
+</component>
+</collection>
+<collection name="voipplugins" long-name="VoIP Plugins" level="plugin">
+<component name="sipmxresolver" filter="s60" long-name="SIP MX Resolver" introduced="^2" plugin="Y">
+<unit bldFile="/sf/app/iptelephony/voipplugins/sipmxresolver/group"/>
+</component>
+<component name="sipconnectionprovider" filter="s60" long-name="SIP Connection Provider" introduced="^2" plugin="Y">
+<unit bldFile="/sf/app/iptelephony/voipplugins/sipconnectionprovider/group"/>
+<!-- can only have one unit, can the next be #'included from the above? -->
+<unit bldFile="/sf/app/iptelephony/voipplugins/sipconnectionprovider/ipvoicemailengine/group"/>
+</component>
+<component name="ipapputils" filter="s60" long-name="IP App Utils" introduced="^2">
+<unit bldFile="/sf/app/iptelephony/voipplugins/ipapputils/group"/>
+</component>
+<component name="voipadapters" filter="s60" long-name="VoIP Adapters" introduced="^2" plugin="Y">
+<unit bldFile="/sf/app/iptelephony/voipplugins/voipadapters/group"/>
+</component>
+<component name="accountcreationplugin" filter="s60" long-name="Account Creation Plugin" introduced="^2" plugin="Y">
+<unit bldFile="/sf/app/iptelephony/voipplugins/accountcreationplugin/group"/>
+</component>
+<component name="dhcppositionprovider" filter="s60" long-name="DHCP Position Provider" introduced="^2" plugin="Y">
+<unit bldFile="/sf/app/iptelephony/voipplugins/dhcppositionprovider/group"/>
+</component>
+<component name="svtmatching" filter="s60" long-name="SIP VoIP Telephony Matching" introduced="^2" plugin="Y">
+<unit bldFile="/sf/app/iptelephony/voipplugins/svtmatching/group"/>
+</component>
+<component name="svtlogging" filter="s60" long-name="SVT Logging" introduced="^2" plugin="Y">
+<unit bldFile="/sf/app/iptelephony/voipplugins/svtlogging/group"/>
+</component>
+<component name="svtcallmenu" filter="s60" long-name="SVT Call Menu" introduced="^2" plugin="Y">
+<unit bldFile="/sf/app/iptelephony/voipplugins/svtcallmenu/group"/>
+</component>
+<component name="sipimresolver" filter="s60" long-name="SIP IM Resolver" introduced="^3" plugin="Y">
+<unit bldFile="/sf/app/iptelephony/voipplugins/sipimresolver/group"/>
+</component>
+</collection>
+<collection name="callcontinuity" long-name="Call Continuity" level="util">
+<component name="vccutils" filter="s60" long-name="VCC Utils" introduced="^2">
+<unit bldFile="/sf/app/iptelephony/callcontinuity/vccutils/group"/>
+</component>
+<component name="nsmldmvccadapter" filter="s60" long-name="SyncML DM VCC Adapter" introduced="^2" plugin="Y">
+<unit bldFile="/sf/app/iptelephony/callcontinuity/nsmldmvccadapter/group"/>
+</component>
+<component name="vccclientprovisioningadapter" filter="s60" long-name="VCC Client Provisioning Adapter" introduced="^2" plugin="Y">
+<unit bldFile="/sf/app/iptelephony/callcontinuity/vccclientprovisioningadapter/group"/>
+</component>
+<component name="vccpropertyhandler" filter="s60" long-name="VCC Property Handler" introduced="^2">
+<unit bldFile="/sf/app/iptelephony/callcontinuity/vccpropertyhandler/group"/>
+</component>
+<component name="vcchotrigger" filter="s60" long-name="VCC HO Trigger" introduced="^2">
+<unit bldFile="/sf/app/iptelephony/callcontinuity/vcchotrigger/group"/>
+</component>
+<component name="vcc" filter="s60" long-name="VoIP Call Continuity" introduced="^2" plugin="Y">
+<unit bldFile="/sf/app/iptelephony/callcontinuity/vcc/group"/>
+</component>
+<component name="callcontinuity_build" filter="s60" long-name="Call Continuity Build" introduced="^2">
+<!--  consider distributing this into the above components -->
+<unit bldFile="/sf/app/iptelephony/callcontinuity/group"/>
+</component>
+</collection>
+</block>
+  </layer>
+ </systemModel>
+</SystemDefinition>

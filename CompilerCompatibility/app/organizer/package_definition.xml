@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+]>
+<SystemDefinition schema="2.0.1" name="Symbian^3">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="organizer" level="apps" span="2" long-name="Organizer Application Suite" levels="support services engine ui app">
+<collection name="organizer_plat" long-name="Organizer Application Suite Platform Interfaces" level="app">
+<component name="meeting_request_mailbox_utilities_api" long-name="Meeting Request Mailbox Utilities API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/meeting_request_mailbox_utilities_api/group"/>
+</component>
+<component name="meeting_request_uids_api" long-name="Meeting Request UIDs API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/meeting_request_uids_api/group"/>
+</component>
+<component name="calendar_exporter_api" long-name="Calendar Exporter API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/calendar_exporter_api/group"/>
+</component>
+<component name="agenda_versit_2_api" long-name="Agenda Versit 2 API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/agenda_versit_2_api/group"/>
+</component>
+<component name="calendar_importer_api" long-name="Calendar Importer API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/calendar_importer_api/group"/>
+</component>
+<component name="calendar_launcher_api" long-name="Calendar Launcher API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/calendar_launcher_api/group"/>
+</component>
+<component name="calendar_common_utils_api" long-name="Calendar Common Utils API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/calendar_common_utils_api/group"/>
+</component>
+<component name="searchfw_launcher_api" long-name="Search Framework Launcher API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/searchfw_launcher_api/group"/>
+</component>
+<component name="alarm_const_api" long-name="Alarm Const API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/alarm_const_api/group"/>
+</component>
+<component name="alarm_ui_external_control_api" long-name="Alarm UI External Control API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/alarm_ui_external_control_api/group"/>
+</component>
+<component name="calendar_settings_keys_api" long-name="Calendar Settings Keys API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/calendar_settings_keys_api/group"/>
+</component>
+<component name="calendar_tones_settings_keys_api" long-name="Calendar Tones Settings Keys API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/calendar_tones_settings_keys_api/group"/>
+</component>
+<component name="clock_settings_api" long-name="Clock Settings API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/clock_settings_api/group"/>
+</component>
+<component name="common_alarm_editor_api" long-name="Common Alarm Editor API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/common_alarm_editor_api/group"/>
+</component>
+<component name="alarm_ui_secondary_display_api" long-name="Alarm UI Secondary Display API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/alarm_ui_secondary_display_api/group"/>
+</component>
+<component name="searchui_launcher_api" long-name="Search UI Launcher API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/searchui_launcher_api/group"/>
+</component>
+<component name="agenda_entry_ui_api" long-name="Agenda Entry UI API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/agenda_entry_ui_api/group"/>
+</component>
+<component name="meeting_request_utillities_api" long-name="Meeting Request Utillities API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/meeting_request_utillities_api/group"/>
+</component>
+<component name="meeting_request_viewer_api" long-name="Meeting Request Viewer API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/meeting_request_viewer_api/group"/>
+</component>
+<component name="calendar_custamization_api" long-name="Calendar Customization API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_plat/calendar_custamization_api/group"/>
+</component>
+</collection>
+<collection name="organizer_pub" long-name="Organizer Application Suite Public Interfaces" level="app">
+<component name="calendar_interim_utils2_api" long-name="Calendar Interim Utils 2 API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_pub/calendar_interim_utils2_api/group"/>
+</component>
+<component name="notepad_library_api" long-name="Notepad Library API" filter="s60" class="api">
+<unit bldFile="/sf/app/organizer/organizer_pub/notepad_library_api/group"/>
+</component>
+</collection>
+<collection name="alarmengines" long-name="Alarm Engines" level="engine">
+<component name="missedalarmstore" filter="s60" long-name="Missed Alarm Store">
+<unit bldFile="/sf/app/organizer/alarmengines/missedalarmstore/group"/>
+</component>
+</collection>
+<collection name="calendarengines" long-name="Calendar Engines" level="engine">
+<component name="versit2" filter="s60" long-name="Versit 2 iCal Parser" introduced="9.2">
+<unit bldFile="/sf/app/organizer/calendarengines/versit2/group"/>
+</component>
+<component name="agnversit2" filter="s60" long-name="Versit 2 Agenda Interface" introduced="9.2" plugin="Y">
+<unit bldFile="/sf/app/organizer/calendarengines/agnversit2/group"/>
+</component>
+<component name="caleninterimutils" filter="s60" long-name="Calendar Interim Utils" introduced="9.1">
+<unit bldFile="/sf/app/organizer/calendarengines/caleninterimutils/group"/>
+</component>
+<component name="calenimp" filter="s60" long-name="Calendar Import Wrapper" introduced="7.0s">
+<unit bldFile="/sf/app/organizer/calendarengines/calenimp/group"/>
+</component>
+<component name="calenlauncher" filter="s60" long-name="Calendar Launcher">
+<unit bldFile="/sf/app/organizer/calendarengines/calenlauncher/group"/>
+</component>
+<component name="caldavsrv" filter="sf_build" long-name="CalDAV Server" introduced="^3">
+<unit bldFile="/sf/app/organizer/calendarengines/caldav/group"/>
+</component>
+</collection>
+<collection name="meetingrequestengines" long-name="Meeting Request Engines" level="engine">
+<component name="mrmailbox" filter="s60" long-name="Meeting Request Mailbox">
+<unit bldFile="/sf/app/organizer/meetingrequestengines/mrmailbox/group"/>
+</component>
+<component name="mrmailboxutils" filter="s60" long-name="Meeting Request Mailbox Utils" plugin="Y">
+<unit bldFile="/sf/app/organizer/meetingrequestengines/mrmailboxutils/group"/>
+</component>
+</collection>
+<collection name="searchfw" long-name="Search Framework" level="services">
+<!-- Uncomment all units when configuration is in place. All currently #included from searchfw_build, which should be removed at the same time. -->
+<component name="coresearchfw" filter="s60" long-name="Core Search Framework" introduced="^1" class="placeholder">
+<!--<unit bldFile="searchfw/coresearchfw/group"/>-->
+</component>
+<component name="searchfw_plugins" filter="s60" long-name="Search Plugins" introduced="^1" plugin="Y" class="placeholder">
+<!--<unit bldFile="searchfw/plugins/group"/>-->
+</component>
+<component name="searchfw_build" filter="s60" long-name="Search Framework Build" introduced="^1">
+<unit bldFile="/sf/app/organizer/searchfw/group"/>
+</component>
+</collection>
+<collection name="alarmui" long-name="Alarm UI" level="app">
+<!-- collection is really a component, should move down a directory -->
+<component name="alarmui_build" filter="s60" long-name="Alarm UI Build">
+<unit bldFile="/sf/app/organizer/alarmui/group"/>
+</component>
+</collection>
+<collection name="calendarui" long-name="Calendar UI" level="ui">
+<component name="calendarui_help" filter="s60" long-name="Calendar UI Help">
+<unit bldFile="/sf/app/organizer/calendarui/help/group"/>
+</component>
+<component name="commonutils" filter="s60" long-name="Calendar Common Utils">
+<unit bldFile="/sf/app/organizer/calendarui/commonutils/group"/>
+</component>
+<component name="globaldata" filter="s60" long-name="Calendar Global Data">
+<unit bldFile="/sf/app/organizer/calendarui/globaldata/group"/>
+</component>
+<component name="settings" filter="s60" long-name="Calendar Settings">
+<!-- these should be merged into a single bld.inf or split into two components -->
+<unit bldFile="/sf/app/organizer/calendarui/settings/gsplugin/group"/>
+<unit bldFile="/sf/app/organizer/calendarui/settings/settingsui/group"/>
+</component>
+<component name="customisation" filter="s60" long-name="Calendar Customisation">
+<unit bldFile="/sf/app/organizer/calendarui/customisation/group"/>
+</component>
+<component name="customisationmanager" filter="s60" long-name="Calendar Customisation Manager">
+<unit bldFile="/sf/app/organizer/calendarui/customisationmanager/group"/>
+</component>
+<component name="multicaluidialog" filter="s60" long-name="Multi-Calendar UI Dialog" introduced="^3">
+<unit bldFile="/sf/app/organizer/calendarui/multicaluidialog/group"/>
+</component>
+<component name="views" filter="s60" long-name="Calendar Views">
+<unit bldFile="/sf/app/organizer/calendarui/views/group"/>
+</component>
+<component name="calendarui_controller" filter="s60" long-name="Calendar Controller">
+<unit bldFile="/sf/app/organizer/calendarui/controller/group"/>
+</component>
+<component name="calendarui_editors" filter="s60" long-name="Calendar Editors">
+<unit bldFile="/sf/app/organizer/calendarui/editors/group"/>
+</component>
+<component name="calendarui_application" filter="s60" long-name="Calendar Application">
+<unit bldFile="/sf/app/organizer/calendarui/application/group"/>
+</component>
+<component name="missedalarmindicatorplugin" filter="s60" long-name="Missed Alarm Indicator Plugin" plugin="Y">
+<unit bldFile="/sf/app/organizer/calendarui/missedalarmindicatorplugin/group"/>
+</component>
+<component name="calendarui_server" filter="s60" long-name="Calendar Server">
+<!-- these should be merged into a single bld.inf or split into two components -->
+<unit bldFile="/sf/app/organizer/calendarui/server/calensvr/group"/>
+<unit bldFile="/sf/app/organizer/calendarui/server/calensvrclient/group"/>
+</component>
+<component name="regionalplugins" filter="s60" long-name="Calendar Regional Plugins" plugin="Y">
+<!-- these should be merged into a single bld.inf or split into four components -->
+<unit bldFile="/sf/app/organizer/calendarui/regionalplugins/calenregionalutil/group"/>
+<unit bldFile="/sf/app/organizer/calendarui/regionalplugins/lunarchinese/group"/>
+<unit bldFile="/sf/app/organizer/calendarui/regionalplugins/lunarvietnamese/group"/>
+<unit bldFile="/sf/app/organizer/calendarui/regionalplugins/thai/group"/>
+</component>
+<component name="calenaiwprovider" filter="s60" long-name="Calendar AIW Proivder" introduced="^3" plugin="Y">
+<unit bldFile="/sf/app/organizer/calendarui/calenaiwprovider/group"/>
+</component>
+<component name="caldav" filter="sf_build" long-name="CalDAV" introduced="^3" plugin="Y">
+<unit bldFile="/sf/app/organizer/calendarui/caldav/group"/>
+</component>
+<component name="calendarui_build" filter="s60" long-name="Calendar UI Build">
+<!-- split contents into separate components -->
+<unit bldFile="/sf/app/organizer/calendarui/group"/>
+</component>
+</collection>
+<collection name="meetingui" long-name="Meeting UI" level="ui">
+<component name="attendeeview" filter="s60" long-name="Attendee View">
+<unit bldFile="/sf/app/organizer/meetingui/attendeeview/group"/>
+</component>
+<component name="agnentryui" filter="s60" long-name="Agenda Entry UI" plugin="Y">
+<unit bldFile="/sf/app/organizer/meetingui/agnentryui/group"/>
+</component>
+<component name="meetingrequestutils" filter="s60" long-name="Meeting Request Utils">
+<unit bldFile="/sf/app/organizer/meetingui/meetingrequestutils/group"/>
+</component>
+<component name="meetingrequestviewers" filter="s60" long-name="Meeting Request Viewers" plugin="Y">
+<unit bldFile="/sf/app/organizer/meetingui/meetingrequestviewers/group"/>
+</component>
+<component name="meetingui_build" filter="s60" long-name="Meeting UI Build">
+<!-- split contents into separate components -->
+<unit bldFile="/sf/app/organizer/meetingui/group"/>
+</component>
+</collection>
+<collection name="clock2" long-name="Clock" level="app">
+<component name="clockengines" filter="s60" long-name="Clock Engines">
+<unit bldFile="/sf/app/organizer/clock2/clockengines/group"/>
+</component>
+<component name="clockui" filter="s60" long-name="Clock UI">
+<unit bldFile="/sf/app/organizer/clock2/clockui/group"/>
+</component>
+<component name="clock2_help" filter="s60" long-name="Clock Help">
+<unit bldFile="/sf/app/organizer/clock2/help/group"/>
+</component>
+<component name="clock2_build" filter="s60" long-name="Clock Build">
+<!-- split contents into separate components, or just make this one component -->
+<unit bldFile="/sf/app/organizer/clock2/group"/>
+</component>
+</collection>
+<collection name="notepad" long-name="Notepad" level="ui">
+<component name="notepad_help" filter="s60" long-name="Notepad Help">
+<unit bldFile="/sf/app/organizer/notepad/help/group"/>
+</component>
+<component name="notepad1" filter="s60" long-name="Notepad Application 1">
+<unit bldFile="/sf/app/organizer/notepad/notepad1/group"/>
+</component>
+<component name="txtrecog" filter="s60" long-name="Text Recognizer" plugin="Y">
+<unit bldFile="/sf/app/organizer/notepad/txtrecog/group"/>
+</component>
+</collection>
+<collection name="searchui" long-name="Search UI" level="app">
+<!-- consider making this a single component -->
+<!-- Uncomment all units when configuration is in place. All currently #included from searchui_build, which should be removed at the same time. -->
+<component name="searchui_help" filter="s60" long-name="Search UI Help" class="placeholder">
+<!--<unit bldFile="searchui/help/group"/>-->
+</component>
+<component name="searchapp" filter="s60" long-name="Search Application" class="placeholder">
+<!--<unit bldFile="searchui/searchapp/group"/>-->
+</component>
+<component name="searchui_build" filter="s60" long-name="Search UI Build">
+<unit bldFile="/sf/app/organizer/searchui/group"/>
+</component>
+</collection>
+<collection name="pimappservices" long-name="PIM Application Services" level="services">
+<component name="calendar" long-name="Calendar" introduced="9.2" purpose="optional">
+<unit bldFile="/sf/app/organizer/pimappservices/calendar/group" mrp="/sf/app/organizer/pimappservices/calendar/group/app-engines_calendar.mrp" version="2"/>
+</component>
+<component name="calendarvcalplugin" long-name="Calendar vCal Plugin" introduced="8.1" purpose="optional" plugin="Y">
+<unit bldFile="/sf/app/organizer/pimappservices/calendarvcalplugin/group" mrp="/sf/app/organizer/pimappservices/calendarvcalplugin/group/app-engines_agnversit2.mrp" version="2"/>
+</component>
+<component name="appenginesdocs" long-name="Application Engines Documentation" purpose="development" class="doc">
+<unit mrp="/sf/app/organizer/pimappservices/appenginesdocs/app-engines_documentation.mrp"/>
+</component>
+</collection>
+<collection name="pimappsupport" long-name="PIM Application Support" level="support">
+<component name="vcardandvcal" long-name="vCard and vCal" introduced="ER5" purpose="optional">
+<unit bldFile="/sf/app/organizer/pimappsupport/vcardandvcal/group" mrp="/sf/app/organizer/pimappsupport/vcardandvcal/group/app-services_versit.mrp"/>
+</component>
+<component name="chinesecalendarconverter" long-name="Chinese Calendar Converter" introduced="6.1" purpose="optional">
+<unit bldFile="/sf/app/organizer/pimappsupport/chinesecalendarconverter/group" mrp="/sf/app/organizer/pimappsupport/chinesecalendarconverter/group/app-services_calcon.mrp"/>
+</component>
+<component name="chinesecalendaralg" long-name="Chinese Calendar Algorithm" introduced="^2" purpose="optional" plugin="Y">
+<unit bldFile="/sf/app/organizer/pimappsupport/chinesecalendaralg/group" mrp="/sf/app/organizer/pimappsupport/chinesecalendaralg/group/app-services_chinesecalendaralgorithm.mrp"/>
+</component>
+</collection>
+<collection name="organizer_info" long-name="Organizer Application Suite Info" level="app">
+<component name="organizer_metadata" long-name="Organizer Application Suite Metadata" introduced="^2" purpose="development" class="config PC">
+<unit mrp="/sf/app/organizer/organizer_info/organizer_metadata/organizer_metadata.mrp"/>
+</component>
+</collection>
+</block>
+  </layer>
+ </systemModel>
+</SystemDefinition>
