@@ -11,9 +11,12 @@
     <unit bldFile="accesssec_plat/eap_type_api/group"/>
    </component>
   </collection>
-  <collection id="securitysettings" name="Security Settings QT" level="generic">
-   <component id="securitysettings_build" name="Security Settings Build"  introduced="^4">
-    <unit bldFile="securitysettings" qt:qmakeArgs="-r" qt:proFile="securitysettings.pro"/>
+  <collection id="securitysettings" name="WLAN Security Settings" level="specific">
+   <component id="accesssec_qtconfigutils" filter="s60" name="Access Security Config Utils" introduced="^4">
+    <unit bldFile="securitysettings/qtconfigutils" qt:proFile="qtconfigutils.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="cpwlansecurityuiplugins" filter="s60" name="Control Panel WLAN Security UI Plugins" introduced="^4">
+    <unit bldFile="securitysettings/cpwlansecurityuiplugins" qt:proFile="cpwlansecurityuiplugins.pro" qt:qmakeArgs="-r"/>
    </component>
   </collection>
   <collection id="eapol" name="EAPOL" level="framework">
