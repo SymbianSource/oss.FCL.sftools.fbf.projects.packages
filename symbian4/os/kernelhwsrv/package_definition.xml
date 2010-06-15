@@ -136,8 +136,11 @@
 <component name="euser" long-name="User Library" purpose="mandatory">
 <unit bldFile="/sf/os/kernelhwsrv/kernel/eka/euser" mrp="/sf/os/kernelhwsrv/kernel/eka/euser/base_e32_euser.mrp"/>
 </component>
-<component name="compsupp" long-name="Compiler Runtime Support" filter="gt" purpose="mandatory">
+<component name="compsupp" long-name="RVCT Compiler Runtime Support" filter="gt" purpose="mandatory">
 <unit bldFile="/sf/os/kernelhwsrv/kernel/eka/compsupp" mrp="/sf/os/kernelhwsrv/kernel/eka/compsupp/base_e32_compsupp.mrp"/>
+</component>
+<component name="compsupp_gcc" long-name="GCC Compiler Runtime Support" filter="gt,sf_build" purpose="mandatory">
+<unit bldFile="/sf/os/kernelhwsrv/kernel/eka/compsupp/gcce"/>
 </component>
 <component name="fileserver" long-name="File Server" filter="gt" purpose="mandatory">
 <unit bldFile="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/group" mrp="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/group/base_f32.mrp"/>
