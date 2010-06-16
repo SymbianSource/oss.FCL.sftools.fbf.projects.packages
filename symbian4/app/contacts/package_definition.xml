@@ -86,22 +86,22 @@
 <unit bldFile="/sf/app/contacts/phonebookengines/cntfindplugin" proFile="cntfindplugin.pro"/>
 </component>
 <component name="contactsmodel" long-name="Contacts Model" introduced="ER5" purpose="optional">
-<unit bldFile="/sf/app/contacts/phonebookengines/contactsmodel/groupsql" mrp="/sf/app/contacts/phonebookengines/contactsmodel/groupsql/app-engines_cntmodel.mrp" version="2"/>
+<unit bldFile="/sf/app/contacts/phonebookengines/contactsmodel" profile="contactsmodel.pro"/>
 </component>
 <component name="cntsortplugin" filter="s60" long-name="Contacts Sort Plugin" introduced="^2" plugin="Y">
 <unit bldFile="/sf/app/contacts/phonebookengines/cntsortplugin" proFile="cntsortplugin.pro"/>
 </component>
-<component name="mobcntmodel" filter="s60" long-name="Mobile Contacts Model" introduced="^4">
-<unit bldFile="/sf/app/contacts/phonebookengines/mobcntmodel" proFile="mobcntmodel.pro"/>
+<component name="cntlistmodel" filter="s60" long-name="Contacts List Model" introduced="^4">
+<unit bldFile="/sf/app/contacts/phonebookengines/cntlistmodel" proFile="cntlistmodel.pro"/>
 </component>
-<component name="mobcntactions" filter="s60" long-name="Mobile Contacts Actions" introduced="^4">
-<unit bldFile="/sf/app/contacts/phonebookengines/mobcntactions" proFile="mobcntactions.pro"/>
+<component name="cntactions" filter="s60" long-name="Contacts Actions" introduced="^4">
+<unit bldFile="/sf/app/contacts/phonebookengines/cntactions" proFile="cntactions.pro"/>
 </component>
 <component name="cntmaptileservice" filter="s60" long-name="Contacts Map Tile Service" introduced="^4">
 <unit bldFile="/sf/app/contacts/phonebookengines/cntmaptileservice" proFile="cntmaptileservice.pro"/>
 </component>
-<component name="simutility" filter="s60" long-name="SIM Utility" introduced="^4">
-<unit bldFile="/sf/app/contacts/phonebookengines/simutility" proFile="simutility.pro"/>
+<component name="cntsimutility" filter="s60" long-name="Contacts SIM Utility" introduced="^4">
+<unit bldFile="/sf/app/contacts/phonebookengines/cntsimutility" proFile="cntsimutility.pro"/>
 </component>
 <component name="cntimageutility" long-name="Contacts Image Utility" filter="s60" introduced="^4">
 <unit bldFile="/sf/app/contacts/phonebookengines/cntimageutility" proFile="cntimageutility.pro"/>
