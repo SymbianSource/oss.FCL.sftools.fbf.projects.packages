@@ -36,22 +36,22 @@
     <unit bldFile="phonebookengines/cntfindplugin" qt:proFile="cntfindplugin.pro"/>
    </component>
    <component id="contactsmodel" name="Contacts Model" introduced="ER5" purpose="optional">
-    <unit version="2" bldFile="phonebookengines/contactsmodel/groupsql" mrp="phonebookengines/contactsmodel/groupsql/app-engines_cntmodel.mrp"/>
+    <unit bldFile="phonebookengines/contactsmodel" qt:proFile="contactsmodel.pro"/>
    </component>
    <component id="cntsortplugin" filter="s60" name="Contacts Sort Plugin" class="plugin" introduced="^2">
     <unit bldFile="phonebookengines/cntsortplugin" qt:proFile="cntsortplugin.pro"/>
    </component>
-   <component id="mobcntmodel" filter="s60" name="Mobile Contacts Model" introduced="^4">
-    <unit bldFile="phonebookengines/mobcntmodel" qt:proFile="mobcntmodel.pro"/>
+   <component id="cntlistmodel" filter="s60" name="Contacts List Model" introduced="^4">
+    <unit bldFile="phonebookengines/cntlistmodel" qt:proFile="cntlistmodel.pro"/>
    </component>
-   <component id="mobcntactions" filter="s60" name="Mobile Contacts Actions" introduced="^4">
-    <unit bldFile="phonebookengines/mobcntactions" qt:proFile="mobcntactions.pro"/>
+   <component id="cntactions" filter="s60" name="cntactions" introduced="^4">
+    <unit bldFile="phonebookengines/cntactions" qt:proFile="cntactions.pro"/>
    </component>
    <component id="cntmaptileservice" filter="s60" name="Contacts Map Tile Service" introduced="^4">
     <unit bldFile="phonebookengines/cntmaptileservice" qt:proFile="cntmaptileservice.pro"/>
    </component>
-   <component id="simutility" filter="s60" name="SIM Utility" introduced="^4">
-    <unit bldFile="phonebookengines/simutility" qt:proFile="simutility.pro"/>
+   <component id="cndsimutility" filter="s60" name="Contacts SIM Utility" introduced="^4">
+    <unit bldFile="phonebookengines/cntsimutility" qt:proFile="cntsimutility.pro"/>
    </component>
    <component id="cntimageutility" name="Contacts Image Utility" filter="s60" introduced="^4">
       <unit bldFile="phonebookengines/cntimageutility" qt:proFile="cntimageutility.pro"/>
