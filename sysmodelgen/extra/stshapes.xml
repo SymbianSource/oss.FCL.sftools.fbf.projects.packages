@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<shapes xmlns:s="http://www.w3.org/2000/svg">
+<s:defs>
+    <s:style type="text/css">
+	 text.layer {
+		font-size: 10px;
+	 }
+	svg.package text.package, svg.package-fixed text.package {
+		font-size: 17.00px;
+		font-weight: normal
+	} 
+	
+	svg.collection-fixed text.layer,  svg.collection text.layer {
+		font-size: 12px;
+		font-weight: normal
+	} 
+	svg.collection-fixed	text.package {
+		font-size: 6px;
+		font-weight: normal;
+	}
+    </s:style>
+</s:defs>
+
+
+    <borders label="Usage">
+            <border type="box"/>
+            <border label="Imported Compo&#xad;nent" rule="unit/@prebuilt" type="hexagon"/>
+            <border rule="CLASS('plugin')" label="Plugin"  viewBox="0 0 20 20">
+                <s:path d="M 0 0 L 0 20 L 20 20 L 20 8 L 17.6 5.6 A 2.7 2.7 30 1 0 14.4 2.4 L12 0 z" stroke="black"/>
+            </border>
+            <border rule="CLASS('config')" type="box-clipAll" label="Config&#xad;uration"/>
+            <border rule="CLASS('doc')" type="box-clipRT" label="Document&#xad;ation"/>
+            <border rule="CLASS('api')" type="round" label="Inter&#xad;face"/>
+    </borders>
+
+<patterns match="collection[ancestor::SystemDefintion/@detail!='component']" detail="collection">  
+	<overlay rule="count(component[@deprecated]) = count(component)" label="Depre&#xad;cated" count=" (1)" type="big-X"/>
+</patterns>
+
+
+  <patterns>
+          <overlay rule="not(unit)" label="Place&#xad;holder Compo&#xad;nent">
+              <s:radialGradient gradientUnits="userSpaceOnUse" cx="10" cy="10" r="14">
+                <s:stop offset="15%" stop-color="white" stop-opacity="0"/>
+                <s:stop offset="20%" stop-color="white" stop-opacity="0.75"/>
+                <s:stop offset="25%" stop-color="white" stop-opacity="0"/>
+                <s:stop offset="35%" stop-color="white" stop-opacity="0"/>
+                <s:stop offset="40%" stop-color="white" stop-opacity="0.75"/>
+                <s:stop offset="45%" stop-color="white" stop-opacity="0"/>
+                <s:stop offset="55%" stop-color="white" stop-opacity="0"/>
+                <s:stop offset="60%" stop-color="white" stop-opacity="0.75"/>
+                <s:stop offset="65%" stop-color="white" stop-opacity="0"/>
+              </s:radialGradient>
+          </overlay>
+ </patterns>
+
+  <patterns>          
+          <overlay rule="@purpose='development'" type="striped-diag-up" label="Test Compo&#xad;nent" count=" (1)"/>
+  </patterns>
+
+  <patterns>
+           <overlay rule="@deprecated and VERSION(@deprecated) &lt;= VERSION('^3')" label="Depre&#xad;cated in ^3" count=" (1)" type="big-X"/>
+           <overlay rule="@deprecated" label="Depre&#xad;cated after ^3" count=" (1)">
+                  <s:pattern patternUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%" viewBox="0 0 10 10">
+                          <s:path d="M 1 1 L 9 9 M 1 9  L 9 1" stroke="yellow" stroke-width="0.7" stroke-linecap="round"/>
+                  </s:pattern>
+          </overlay>
+</patterns>
+
+
+  <patterns>          
+          <overlay rule="VERSION(@introduced) = VERSION('^2')" type="radial-grad" label="New in ^2" count=" (1)"/>
+          <overlay rule="VERSION(@introduced) = VERSION('^3')" label="New in ^3" count=" (1)">
+                  <s:radialGradient gradientUnits="userSpaceOnUse" cx="10" cy="10" r="14">
+                          <s:stop offset="0%" stop-color="yellow" stop-opacity="1"/>
+                          <s:stop offset="85%" stop-opacity="0" stop-color="white" />
+                          <s:stop offset="100%" stop-opacity="0" stop-color="white" />
+                  </s:radialGradient>
+          </overlay>
+          <overlay rule="VERSION(@introduced) = VERSION('^4')" label="New in ^4" count=" (1)">
+                  <s:radialGradient gradientUnits="userSpaceOnUse" cx="10" cy="10" r="14">
+                          <s:stop offset="0%" stop-color="rgb(180  52 255)" stop-opacity="1"/>
+                          <s:stop offset="85%" stop-opacity="0" stop-color="white" />
+                          <s:stop offset="100%" stop-opacity="0" stop-color="white" />
+                  </s:radialGradient>
+          </overlay>
+</patterns>
+
+    <styles show-unused="yes">
+          <style>stroke-width: 0.5</style>
+          <style rule="@purpose='mandatory'" label="Mandatory Compo&#xad;nent">stroke-width: 2</style>
+   </styles>
+  
+
+<colors match="package" label="BRAG Status">
+	<color color="grey" rule="@critical &gt; 0" label="Black" count=" (1)"/>
+	<color color="rgb(228,14,98)" rule="@major &gt; 0" label="Red" count=" (1)"/>
+	<color color="rgb(249,242,6)" rule="@minor &gt; 0 or  @unknown &gt; 0" label="Amber" count=" (1)"/>
+	<color color="rgb(68,165,28)" rule="@critical" label="Green" count=" (1)"/>
+	<color color="white" label="Not built" count=" (1)"/>
+</colors> 
+
+<!--  
+<styles match="package" use="@tech-domain" label="Technology Domain">
+	<style value="hb" label="OS Base Services" count=" (1)">stroke: tan</style>
+	<style value="se" label="Security" count=" (1)">stroke: rgb(228,14,98)</style>
+	<style value="lo" label="Location" count=" (1)">stroke: whitesmoke</style>
+	<style value="dc" label="Data Communications" count=" (1)">stroke: moccasin</style>
+	<style value="vc" label="Personal Communications" count=" (1)">stroke: darkkhaki</style>
+	<style value="de" label="Device Connectivity" count=" (1)">stroke: orchid</style>
+	<style value="dm" label="Device Management" count=" (1)">stroke: darkseagreen</style>
+	<style value="pr" label="Productivity" count=" (1)">stroke: lightpink</style>
+	<style value="mm" label="Multimedia" count=" (1)">stroke: rgb(175,212,240)</style>
+	<style value="ma" label="Multimedia Apps" count=" (1)">stroke: #ffff00</style>
+	<style value="ui" label="User Interface" count=" (1)">stroke: orange</style>
+	<style value="rt" label="Runtimes and Web" count=" (1)">stroke: slateblue</style>
+	<style value="to" label="Tools" count=" (1)">stroke: darkgray</style>
+</styles> 
+
+
+-->
+
+<colors match="collection" use="../@tech-domain" label="Technology Domain">
+	<color color="tan" value="hb" label="OS Base Services" count=" (1)"/>
+	<color color="rgb(228,14,98)" value="se" label="Security" count=" (1)"/>
+	<color color="whitesmoke" value="lo" label="Location" count=" (1)"/>
+	<color color="moccasin" value="dc" label="Data Communications" count=" (1)"/>
+	<color color="darkkhaki" value="vc" label="Personal Communications" count=" (1)"/>
+	<color color="orchid" value="de" label="Device Connectivity" count=" (1)"/>
+	<color color="darkseagreen" value="dm" label="Device Management" count=" (1)"/>
+	<color color="lightpink" value="pr" label="Productivity" count=" (1)"/>
+	<color color="rgb(175,212,240)" value="mm" label="Multimedia" count=" (1)"/>
+	<color color="#ffff00" value="ma" label="Multimedia Apps" count=" (1)"/>
+	<color color="orange" value="ui" label="User Interface" count=" (1)"/>
+	<color color="slateblue" value="rt" label="Runtimes and Web" count=" (1)"/>
+	<color color="darkgray" value="to" label="Tools" count=" (1)"/>
+</colors> 
+
+
+<colors default="grey" match="component" label="Origin">
+  <color color="#32cd99" rule="descendant-or-self::*[contains(@filter,'s60')]" label="S60"/>
+  <color color="rgb(93,155,205)" rule="self::component" label="Symbian"/>
+</colors>
+</shapes>
