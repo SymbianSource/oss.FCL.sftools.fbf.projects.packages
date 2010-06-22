@@ -81,7 +81,14 @@ my %nsmap;
 my %urimap;
 
 my $parser = new XML::DOM::Parser;
-my   $sysdefdoc = $parser->parsefile ($sysdef);
+my   $sysdefdoc;
+eval {
+	$sysdefdoc = $parser->parsefile ($sysdef);
+};
+if(!$sysdefdoc) {
+	die "ERROR: could not open $sysdef\n";
+}
+
 
 
 my $maxschema = $sysdefdoc->getDocumentElement()->getAttribute('schema');	# don't check value, just store it.
@@ -212,6 +219,7 @@ sub walk
 			if($link ne '')
 				{
 				my $ok = 0;
+				my $trylink;
 				if($link && !($link=~/^\//))
 					{
 					$link= &abspath(File::Basename::dirname($file)."/$link");
@@ -231,7 +239,7 @@ sub walk
 					{
 					foreach my $a (keys %unitmap) {
 						if($a eq substr($link,0,length($a))) {
-							my $trylink = $unitmap{$a}.substr($link,length($a));
+							$trylink = $unitmap{$a}.substr($link,length($a));
 							if(-e "$trylink$ext") {
 								$ok=1;
 								$link = $trylink;
@@ -242,7 +250,7 @@ sub walk
 					}
 				if(!$ok)
 					{
-					print "Error: $atr not found in $link$filter\n";
+					print "Error: $atr not found in ",($trylink ne '') ? $trylink : $link,"$filter\n";
 					}				
 				}
 			}
@@ -310,24 +318,20 @@ sub combineLink
 	my $file = shift;
 	my $getfromfile = &localfile($file);
 	$getfromfile eq '' && return;  # already raised warning, no need to repeat
-	my  $doc = $parser->parsefile ($getfromfile);
+	my $doc;
+	eval {
+		$doc = $parser->parsefile ($getfromfile);
+	};
+	if(!$doc) {
+		print "ERROR: could not open $getfromfile\n";
+		return;
+	}
 	my $item =&firstElement($doc->getDocumentElement);
 	$item || die "badly formatted $file";	
-	&fixIDs($item);
-	my %up = &atts($node);
-	my %down = &atts($item);
-	$up{'id'} eq $down{'id'}  || die "$up{id} differs from $down{id}";
-	$node->removeAttribute('href');
-	foreach my $v (keys %up) {delete $down{$v}}
-	foreach my $v (keys %down)
-		{
-		$node->setAttribute($v,$down{$v})
-		}
-	foreach my $child (@{$item->getChildNodes})
-		{
-		&copyInto($node,$child);
-		}
-	&walk($file,$node);
+	my @upid = &getNamespaceAndValue($node,'id');
+	my @downid = &getNamespaceAndValue($item,'id');
+	(($upid[0] eq $downid[0]) && ($upid[1] eq $downid[1]))  || die "$upid[1] ($upid[0]) differs from $downid[1] ($downid[0]) ";	# make sure the link is valid
+	&walk($getfromfile,$item);
 	}
 
 
@@ -341,7 +345,6 @@ sub copyInto
 	my $new;
 	if($type==1) 
 		{
-		&fixIDs($item);
 		$new = $doc->createElement($item->getTagName);
 		my %down = &atts($item);
 		foreach my $ordered ('id','name','bldFile','mrp','level','levels','introduced','deprecated','filter')
@@ -375,6 +378,26 @@ sub copyInto
 		}
 	}
 
+
+sub getNamespaceAndValue
+	{
+	my $node = shift;
+	my $attr = shift || 'id';
+	my $id = $node->getAttribute($attr);
+	if($id eq '') {return}
+	my $ns;
+	if($id=~s/^(.*)://)
+		{ # it's got a ns, find out what it is
+		$ns=&getNs($node,$1);
+		}
+	else
+		{
+		$ns = $node->getOwnerDocument->getDocumentElement->getAttribute("id-namespace") ||
+			$defaultns;
+		}
+	return ($ns,$id);;
+	}
+
 sub getNs
 	{
 	# find the namespace URI that applies to the specified prefix.
@@ -390,38 +413,6 @@ sub getNs
 	}
 
 
-sub fixIDs
-	{
-	# translate the ID to use the root doc's namespaces 
-	my $node = shift;
-	foreach my $id ('id','before')
-		{
-		&fixID($node,$id);
-		}
-}
-
-sub fixID
-	{
-	# translate the ID to use the root doc's namespaces 
-	my $node = shift;
-	my $attr = shift || 'id';
-	my $id = $node->getAttribute($attr);
-	if($id eq '') {return}
-	my $ns;
-	if($id=~s/^(.*)://)
-		{ # it's got a ns, find out what it is
-		my $pre = $1;
-		$ns=&getNs($node,$pre);
-		}
-	else
-		{
-		$ns = $node->getOwnerDocument->getDocumentElement->getAttribute("id-namespace") ||
-			$defaultns;
-		}
-	$ns = $urimap{$ns};
-	$id = ($ns eq '') ? $id : "$ns:$id";
-	return $node->setAttribute($attr,$id);
-}
 
 sub firstElement {
 	# return the first element in this node

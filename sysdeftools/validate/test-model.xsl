@@ -13,6 +13,7 @@
 	Module containing the validation logic for system definition 3.0.0 syntax
 -->
 	<xsl:key name="named" match="*[ancestor::systemModel]" use="@name"/>
+	<xsl:param name="path-errors" select="0"/>
 	<xsl:param name="Filename"/>
 	<xsl:variable name="info" select="document(/model//info[@type='extra']/@href,/model)//c"/>
 
@@ -90,7 +91,7 @@
 	<xsl:call-template name="Error"><xsl:with-param name="text">Attribute <xsl:value-of select="name()"/>="<xsl:value-of select="."/>" is not valid for <xsl:value-of select="name(..)"/></xsl:with-param></xsl:call-template>
 </xsl:template>
 
-<xsl:template match="@before|@id|package/@span|collection/@level|package/@level|package/@levels|layer/@levels" mode="valid"/> <!-- really should check syntax -->
+<xsl:template match="@before|@id|package/@span|layer/@span|collection/@level|package/@level|package/@levels|layer/@levels" mode="valid"/> <!-- really should check syntax -->
 
 <xsl:template match="@name|@href|@filter" mode="valid"/> 
 
@@ -211,11 +212,12 @@
 <xsl:apply-templates select="@id"/>
 <xsl:if test="self::component">
 	<xsl:choose>
+		<xsl:when test="count(unit[not(@filter | @version)]) = 0 "/>
 		<xsl:when test="count(unit[not(@version)]) &gt; 1 and @filter='s60'">
-			<xsl:call-template name="Warning"><xsl:with-param name="text">S60 Component "<xsl:value-of select="@id"/>" has <xsl:value-of select="count(*)"/> children.</xsl:with-param></xsl:call-template>
+			<xsl:call-template name="Warning"><xsl:with-param name="text">S60 Component "<xsl:value-of select="@id"/>" has <xsl:value-of select="count(unit)"/> units.</xsl:with-param></xsl:call-template>
 		</xsl:when>
 		<xsl:when test="count(unit[not(@version)]) &gt; 1">
-			<xsl:call-template name="Error"><xsl:with-param name="text">Component "<xsl:value-of select="@id"/>" has <xsl:value-of select="count(*)"/> children.</xsl:with-param></xsl:call-template>
+			<xsl:call-template name="Error"><xsl:with-param name="text">Component "<xsl:value-of select="@id"/>" has <xsl:value-of select="count(unit)"/> units.</xsl:with-param></xsl:call-template>
 		</xsl:when>
 	</xsl:choose>
 	<xsl:choose>
@@ -280,7 +282,6 @@
 
 <xsl:template match="meta/@rel | meta/@type | meta/@href"/> <!-- anything is valid -->
 
-
 <xsl:template match="unit">	<xsl:param name="filename"/>
 	<xsl:apply-templates select="@mrp|@bldFile">
 		<xsl:with-param name="filename" select="$filename"/>
@@ -314,8 +315,6 @@
 		<xsl:otherwise><xsl:value-of select="@id"/></xsl:otherwise>
 	</xsl:choose>
 </xsl:template>
-
-
 <xsl:template match="@bldFile|@mrp"><xsl:param name="filename"/>
 <xsl:if test="substring(.,string-length(.))='/'">
 		<xsl:call-template name="Warning"><xsl:with-param name="text"><code><xsl:value-of select="name()"/></code> path "<xsl:value-of select="."/>" should not end in /</xsl:with-param></xsl:call-template>
@@ -353,7 +352,7 @@
 				<xsl:when test="ancestor::collection"/>
 			</xsl:choose>/<xsl:apply-templates select="ancestor::component" mode="localid"/>/</xsl:variable>
 		<xsl:choose>
-			<xsl:when test="not(starts-with(concat(.,'/'),$segment))">
+			<xsl:when test="not(starts-with(concat(.,'/'),$segment)) and $path-errors">
 				<xsl:call-template name="Note"><xsl:with-param name="text">Unexpected <code><xsl:value-of select="name()"/></code> path for <xsl:apply-templates mode="path" select="../../../@id"/> -&gt; <strong><xsl:apply-templates mode="path" select="../../@id"/></strong>: "<xsl:value-of select="$fullpath"/>"</xsl:with-param></xsl:call-template>
 			</xsl:when>
 		</xsl:choose>
@@ -403,13 +402,14 @@
 <xsl:choose>
 	<xsl:when test="contains($filename,':')">
 		<xsl:choose>
-			<xsl:when test="not(starts-with(.,$path) or concat(.,'/')=$path)">
+			<xsl:when test="not(starts-with(.,$path) or concat(.,'/')=$path) and $path-errors">
 				<xsl:call-template name="Note"><xsl:with-param name="text">Unexpected <code><xsl:value-of select="name()"/></code> path for <xsl:apply-templates mode="path" select="../../../@id"/> -&gt; <strong><xsl:apply-templates mode="path" select="../../@id"/></strong>: "<xsl:value-of select="."/>"</xsl:with-param></xsl:call-template>
 			</xsl:when>
 		</xsl:choose>
 	</xsl:when>
 	<xsl:otherwise>
 		<xsl:choose>
+			<xsl:when test="not($path-errors)"/>
 			<xsl:when test="substring-before(substring($segment,2),'/') != substring-before(substring($path,2),'/') and (ancestor::SystemDefinition/@id-namespace!='http://www.symbian.org/system-definition' and not(contains(../../@id,':')))">
 				<xsl:call-template name="Warning"><xsl:with-param name="text">Unexpected <code><xsl:value-of select="name()"/></code> path for <xsl:apply-templates mode="path" select="../../../@id"/> -&gt; <strong><xsl:apply-templates mode="path" select="../../@id"/></strong>: "<xsl:value-of select="$fullpath"/>"</xsl:with-param></xsl:call-template>
 			</xsl:when>

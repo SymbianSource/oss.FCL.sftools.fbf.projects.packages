@@ -38,6 +38,7 @@ my %add;
 my %newNs;
 my $warning = "Error";
 my $placeholders=0;
+my $sysmodelname;
 
 my @tdOrder =("hb","se", "lo","dc", "vc" , "pr", "dm", "de", "mm", "ma" , "ui",  "rt", "to" );
 
@@ -54,14 +55,16 @@ sub help
 		"  -w [Note|Warning|Error]\tspecifies prefix text for any notifications. Defautls to Error\n\n",
 		"  -root [dir]\tspecifies the root directory of the filesystem. All globbing will be done relative to this path\n\n",
 
-		"  -glob [wildcard path]\tThe wildcard search to look for pkgdef files. eg  \"\*\*\package_definition.xml\". Can specify any number of these.\n",
+		"  -glob [wildcard path]\tThe wildcard search to look for pkgdef files. eg  \"\\*\\*\package_definition.xml\". Can specify any number of these.\n",
 		"  -placeholders [bool]\tif set, all packages not found in the template will be left in as empty placeholders\n";
+		"  -name [text]\tthe name in <systemModel> to use for the generated root sysdef. If not present, this will use the name from the templat\n";
 	exit(1);
 	}
 
 GetOptions
 	(
 	 'path=s' => \$path,
+	 'name=s' => \$sysmodelname,
 	'output=s' => \$output,
 	'w=s' => \$warning,
 	'root=s' => \@searchroots,
@@ -83,7 +86,7 @@ if(!($warning =~/^(Note|Warning|Error)$/)) {$warning="Error"}
 #Example command lines:
 #rootsysdef.pl -root F:\sftest\mcl\sf  -glob "\*\*\package_definition.xml"  -output  F:\sftest\mcl\build\system_definition.sf.xml   F:\sftest\mcl\sf\os\deviceplatformrelease\foundation_system\system_model\system_definition.xml
 #rootsysdef.pl -root F:\sftest\mcl\sf  -glob "\*\*\*\*\package_definition.xml"  -output  F:\sftest\mcl\build\system_definition.mine.xml   F:\sftest\mcl\sf\os\deviceplatformrelease\foundation_system\system_model\system_definition.xml
-if(!scalar $ARGV) {&help()};
+if(!scalar @ARGV && !scalar @searchpaths) {&help()};
 
 
 my %replacefile;
@@ -102,18 +105,26 @@ foreach(@searchpaths)
 		}
 	}
 
-my $sysdef = &abspath(shift);	# resolve the location of the root sysdef
+my $parser = new XML::DOM::Parser;
+my $sysdef;
+my %rootmap;
+my  $sysdefdoc;
+if(scalar @ARGV)
+	{
+	$sysdef = &abspath(shift);	# resolve the location of the root sysdef
 
+	# rootmap is a mapping from the filesystem to the paths in the doc
+	%rootmap = &rootMap($path,$sysdef);	
 
-# rootmap is a mapping from the filesystem to the paths in the doc
-my %rootmap = &rootMap($path,$sysdef);	
+	$sysdefdoc = $parser->parsefile ($sysdef);
+	}
+else 
+	{
+	$sysdefdoc = $parser->parse('<SystemDefinition schema="3.0.1"><systemModel name="System Model"/></SystemDefinition>');
+	}
+
 my %nsmap;
 my %urimap;
-
-
-
-my $parser = new XML::DOM::Parser;
-my   $sysdefdoc = $parser->parsefile ($sysdef);
 
 my $mapmeta;
 my $modpath;
@@ -368,9 +379,11 @@ sub walk
 	elsif($tag eq 'systemModel' && $mapmeta)
 		{ # need absolute paths for all links
 		$node->insertBefore ($mapmeta,$node->getFirstChild);
+		$sysmodelname eq '' || $node->setAttribute('name',$sysmodelname);
 		}
 	elsif($tag=~/^(SystemDefinition|systemModel)$/ )
 		{
+		($sysmodelname ne '' && $tag eq 'systemModel') && $node->setAttribute('name',$sysmodelname);
 		}
 	elsif($tag eq 'unit')
 		{
