@@ -139,6 +139,9 @@
 <component name="rombuild_zoom2" filter="sf_build" long-name="Zoom2 iMaker Config" purpose="development" introduced="^3" class="config">
 <unit bldFile="/sf/os/deviceplatformrelease/sf_config/rombuild/zoom2/group"/>
 </component>
+<component name="rombuild_sfrefhw" filter="sf_build" long-name="sf_refhw iMaker Config" purpose="development" introduced="^3" class="config">
+<unit bldFile="/sf/os/deviceplatformrelease/sf_config/rombuild/sf_refhw/group"/>
+</component>
 </collection>
 <!-- should be located locally in buildplatforms/group. NB. This is a different package! -->
 <collection name="s60bld" long-name="S60 Build">
