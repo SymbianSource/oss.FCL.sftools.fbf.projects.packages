@@ -159,6 +159,9 @@
 <component name="aknskincontent" filter="s60" long-name="Avkon Skin Content" class="config">
 <unit bldFile="/sf/mw/uiresources/skins/aknskincontent/group"/>
 </component>
+<component name="symbiantheme" filter="sf_build" long-name="Symbian^3 Theme">
+<unit bldFile="/sf/mw/uiresources/skins/Symbian/group"/>
+</component>
 <component name="aknskins" filter="s60" long-name="Avkon Skin Compiler">
 <unit bldFile="/sf/mw/uiresources/skins/aknskins/group"/>
 </component>
