@@ -47,7 +47,7 @@
      </component>
     </collection>
     <collection id="qtextensions_info" name="Qt Extensions Info" level="app">
-    <component id="qtextensions_conf" name="Qt Extensions Confgure" class="conf" introduced="^4" filter="qt_tools">
+    <component id="qtextensions_conf" name="Qt Extensions Confgure" class="config" introduced="^4" filter="qt_tools">
       <unit bldFile="group"/>
      </component>
      <component id="qtextensions_build" name="Qt Extensions Build" introduced="^4">

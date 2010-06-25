@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
- <package id="osrndtools" name="OS R&amp;D tools" levels="fw trace">
+ <package id="osrndtools" name="OS R&amp;D tools" levels="fw trace analysis">
   <collection id="stif" name="STIF" level="fw">
     <component id="stif_plat" filter="s60" name="STIF Platform Interfaces" class="api" purpose="development">
       <unit bldFile="stif/stif_plat/group"/>
@@ -45,32 +45,37 @@
     <meta rel="config">
      <defined condition="__S60_"/>
     </meta>
-    <!-- uncomment the unit when configuration is in place, it's currently #included from stif_build -->
-    <!-- <unit bldFile="stif/stifkerneltestclassbase/group"/>-->
+    <unit bldFile="stif/stifkerneltestclassbase/group"/>
    </component>
-   <component id="stif_build" filter="s60" name="STIF Build" purpose="development">
-    <!--  move exports into self-contained component. Remove this when configuration is in place-->
+   <component id="stif_data" filter="s60" name="STIF Data" purpose="development" class="config">
+    <!--  This is a component. Should move down a directory. or move into other STIF components-->
     <unit bldFile="stif/group"/>
    </component>
   </collection>
-  <collection id="memspy" name="Memspy" level="trace">
-    <component id="memspy_plat" filter="s60" name="Memspy Platform Interfaces" class="api" purpose="development">
+  <collection id="memspy" name="MemSpy" level="trace">
+    <component id="memspy_plat" filter="s60" name="MemSpy Platform Interfaces" class="api" purpose="development">
     <meta rel="Api" href="memspy/memspy_plat/memspy_api/memspy_api.metaxml"/>
       <unit bldFile="memspy/memspy_plat/group"/>
     </component>
-   <component id="driver" filter="s60" name="Memspy Driver" purpose="development">
+   <component id="driver" filter="s60" name="MemSpy Driver" purpose="development">
     <unit bldFile="memspy/driver/group"/>
    </component>
-   <component id="memspy_engine" filter="s60" name="Memspy Engine" purpose="development">
+   <component id="memspy_engine" filter="s60" name="MemSpy Engine" purpose="development">
     <unit bldFile="memspy/engine/group"/>
    </component>
-   <component id="commandline" filter="s60" name="Memspy Command Line" purpose="development">
+   <component id="commandline" filter="s60" name="MemSpy Command Line" purpose="development">
     <unit bldFile="memspy/commandline/group"/>
    </component>
-   <component id="console" filter="s60" name="Memspy Console" purpose="development">
+   <component id="console" filter="s60" name="MemSpy Console" purpose="development">
     <unit bldFile="memspy/console/group"/>
    </component>
-   <component id="memspy_build" filter="s60" name="Memspy Build" purpose="development">
+   <component id="memspyserver" filter="s60" name="MemSpy Server" purpose="development" introduced="^4">
+    <unit bldFile="memspy/MemSpyServer/group"/>
+   </component>
+   <component id="memspyclient" filter="s60" name="MemSpy Client" purpose="development" introduced="^4">
+    <unit bldFile="memspy/MemSpyClient/group"/>
+   </component>
+   <component id="memspy_build" filter="s60" name="MemSpy Build" purpose="development">
     <!--  move exports into self-contained component.-->
     <unit bldFile="memspy/group"/>
    </component>
@@ -114,6 +119,16 @@
     <!--  move exports into self-contained component.-->
     <unit bldFile="hti/group"/>
    </component>
+  </collection>
+  <collection id="piprofiler" name="Performance Investigator Profiler" level="analysis">
+     <component id="piprofiler_build" name="Performance Investigator Profiler Build" introduced="^4">
+      <unit bldFile="piprofiler/group"/>
+     </component>
+  </collection>
+  <collection id="analyzetool" name="Analyze Tool" level="analysis">
+     <component id="analyzetool_build" name="Analyze Tool Build" introduced="^4">
+      <unit bldFile="analyzetool/group"/>
+     </component>
   </collection>
   <collection id="osrndtools_info" name="OS R&amp;D tools Info" level="trace">
    <component id="osrndtools_metadata" name="OS R&amp;D tools Metadata" class="config" introduced="^2" purpose="development" target="desktop">

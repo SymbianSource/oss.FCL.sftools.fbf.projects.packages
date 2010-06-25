@@ -4,15 +4,15 @@
     <collection id="s60extras" name="S60 Extras" level="mid">
     	<!-- collection is really a component. Need to move down a directory -->
       <component id="s60extras_build" filter="s60" name="S60 Extras Build" class="config" purpose="development">
-        <unit bldFile="S60Extras/group"/>
+        <unit bldFile="s60extras/group"/>
       </component>
     </collection>
     <collection id="version" name="Version" level="top">
     	<!-- collection is really a component. Need to move down a directory -->    
       <component id="version_build" filter="s60" name="Version Build" class="config" purpose="development">
-        <unit bldFile="Version/group"/>
+        <unit bldFile="version/group"/>
       </component>
-    </collection>   
+    </collection>
     <collection id="symbianosbld" name="Symbian OS Build" level="bld">
       <component id="cedarutils" name="Cedar Utils" purpose="development">
         <unit mrp="symbianosbld/cedarutils/tools_utils_cedar.mrp"/>
@@ -25,7 +25,7 @@
       <component id="system_model" name="System Model" class="config" introduced="^2" purpose="development" target="desktop">
         <unit mrp="foundation_system/system_model/system_model.mrp"/>
       </component>
-      <component id="sf_config" name="Foundation Config" introduced="^4">
+      <component id="sf_config" filter="s60" name="Foundation Config" introduced="^4">
         <unit bldFile="foundation_system/sf_config/CI_external/group"/>
       </component>
       <component id="config" filter="s60" name="Config" class="config" purpose="development">

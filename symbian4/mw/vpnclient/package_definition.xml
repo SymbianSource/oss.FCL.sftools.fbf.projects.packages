@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
  <package id="vpnclient" name="VPN Client" levels="engine ui api">
-  <!-- is the !oem_build filter needed? -->
   <collection id="vpnc_plat" name="VPN Client Platform Interfaces" level="api">
       <component id="vpnapi" filter="s60" class="api" name="VPN API">
 		<meta rel="Api" href="vpnc_plat/vpnapi/vpn_api.metaxml"/>

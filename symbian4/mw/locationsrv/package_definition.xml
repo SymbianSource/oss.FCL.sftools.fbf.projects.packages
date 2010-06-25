@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition schema="3.0.0">
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="locationsrv" name="Location Services" levels="plugin fw server if">
   <collection id="locsrv_pub" name="Location Services Public Interfaces" level="if">
    <component id="landmarks_search_api" name="Landmarks Search API" class="api" filter="s60">
@@ -27,6 +27,12 @@
    <component id="geocoding_api" name="Geocoding API" class="api" filter="s60">
     <meta rel="Api" href="locsrv_plat/geocoding_api/geocoding_api.metaxml"/>
     <unit bldFile="locsrv_plat/geocoding_api/group"/>
+   </component>
+   <component id="supl_pos_message_plugin_api" name="SUPL POS Message Plugin API" class="api" filter="s60">
+	<!-- placeholder
+    <meta rel="Api" href="locsrv_plat/supl_pos_message_plugin_api/supl_pos_message_plugin_api.metaxml"/>
+    <unit bldFile="locsrv_plat/supl_pos_message_plugin_api/group"/>
+	 -->
    </component>
    <component id="landmarks_category_definition_api" name="Landmarks Category Definition API" class="api" filter="s60">
     <meta rel="Api" href="locsrv_plat/landmarks_category_definition_api/landmarks_category_definition_api.metaxml"/>
@@ -91,6 +97,9 @@
   <collection id="locationsystemui" name="Location System UI" level="if">
    <component id="locationsysui" filter="s60" name="Location System UI">
     <unit bldFile="locationsystemui/locationsysui/group"/>
+   </component>
+   <component id="locationsysui" filter="s60" name="Location System Qt UI">
+    <unit bldFile="locationsystemui/locationsysui" qt:proFile="locsysui.pro"/>
    </component>
   </collection>
   <collection id="supl" name="SUPL" level="fw">

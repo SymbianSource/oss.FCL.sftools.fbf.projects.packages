@@ -363,9 +363,7 @@
     <meta rel="config">
      <defined condition="__HWRM_TARGET_MODIFIER_PLUGIN"/>
     </meta>
-    <!-- uncomment the unit when configuration is in place, it's currently #included from resourcemgmt_build, 
-      		may need to  -->
-    <!-- <unit bldFile="resourcemgmt/hwrmtargetmodifierplugin/group"/> -->
+    <unit bldFile="resourcemgmt/hwrmtargetmodifierplugin/group"/>
    </component>
    <component id="vibractrl" filter="s60" name="Vibra Control" deprecated="9.1">
     <unit bldFile="resourcemgmt/vibractrl/group"/>
@@ -376,9 +374,8 @@
    <component id="hwresourcesmgrconfig" name="Hardware Resources Manager Config" introduced="^3" purpose="optional" class="config">
     <unit bldFile="resourcemgmt/hwresourcesmgrconfig" mrp="resourcemgmt/hwresourcesmgrconfig/telephony_hwrm-config.mrp"/>
    </component>
-   <component id="resourcemgmt_build" filter="s60" name="Resource Management Build">
-    <!-- Move exports to a self-contained component.
-         	This needs to be kept around until configuration is in place -->
+   <component id="resourcemgmt_data" filter="s60" name="Resource Management Data" class="config">
+    <!-- Move exports to a self-contained component. Or leave as a component but move down a dir -->
     <unit bldFile="resourcemgmt/group"/>
    </component>
    <component id="powerandmemorynotificationservice" name="Power and Memory Notification Service" introduced="6.0" purpose="mandatory">

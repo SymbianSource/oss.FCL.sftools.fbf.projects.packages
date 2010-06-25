@@ -20,7 +20,7 @@
       </component>
       <component id="gst_plugins_symbian" filter="s60" name="GStreamer Sybmian Plugins" introduced="^3">
         <!--<unit bldFile="gst_plugins_symbian/group" filter="!test"/>-->
-        <!--<unit bldFile="gst_plugins_symbian/tsrc/GStreamerTestModule/group" filter="test,pref_test"/>-->
+        <unit bldFile="gst_plugins_symbian/tsrc/gstreamertestmodule/group" filter="test"/> <!-- add ,pref_test,TA_GSTREAMER filters later -->
       </component>
     </collection>
     <collection id="gstregistrygenerator" name="GStreamer Registry Generator" level="core">

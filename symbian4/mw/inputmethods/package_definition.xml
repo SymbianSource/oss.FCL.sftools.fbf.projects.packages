@@ -67,27 +67,13 @@
     <meta rel="config">
      <defined condition="RD_INTELLIGENT_TEXT_INPUT"/>
     </meta>
-    <!--uncomment when configuration is turned on and textinput_build is removed-->
-    <!--  <unit bldFile="textinput/ptienginev2/group"/>-->
+	<unit bldFile="textinput/ptienginev2/group"/>
    </component>
    <component id="akninputlanguage" filter="s60" name="Avkon Input Language">
     <unit bldFile="textinput/akninputlanguage/group"/>
    </component>
    <component id="peninputarc" filter="s60" name="Pen Input Arc">
     <unit bldFile="textinput/peninputarc/group"/>
-   </component>
-   <component id="peninputcommonctrls" filter="s60" name="Pen Input Common Controls">
-    <unit bldFile="textinput/peninputcommonctrls/group"/>
-   </component>
-   <component id="peninputcommonlayout" filter="s60" name="Pen Input Common Layout">
-    <unit bldFile="textinput/peninputcommonlayout/group"/>
-   </component>
-   <component id="peninputhwrtrui" filter="s60" name="Pen Input Handwriting Recognition Training UI" class="plugin" introduced="^3">
-    <unit bldFile="textinput/peninputhwrtrui/group"/>
-   </component>
-   <component id="textinput_build" filter="s60" name="Text Input Build">
-    <!--needed for #ifdef, can be removed when configuration is implemented -->
-    <unit bldFile="textinput/group"/>
    </component>
   </collection>
   <collection id="fep" name="FEP" level="engine">

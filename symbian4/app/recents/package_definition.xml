@@ -16,8 +16,20 @@
    </component>
   </collection>
   <collection id="logsui" name="Logs UI" level="ui">
+    <!-- split into actual components -->
+   <component id="logsservices" filter="s60" name="Logs Services" introduced="^4">
+     <!-- <unit bldFile="logsui/logsservices" qt:proFile="logsui.pro"/> -->
+   </component>
+   <component id="logscntfinder" filter="s60" name="Logs Contact finder">
+    <!--<unit bldFile="logsui/logscntfinder" qt:proFile="logscntfinder.pro"/> -->
+   </component>
+   <component id="logsengine" filter="s60" name="Logs Engine" introduced="^4">
+    <!--<unit bldFile="logsui/logsengine" qt:proFile="logsengine.pro"/> -->
+   </component>
+   <component id="logsapp" filter="s60" name="Logs Application">
+    <!--<unit bldFile="logsui/logsengine" qt:proFile="logsengine.pro"/> -->
+   </component>
    <component id="logsui_build" filter="s60" name="Logs UI Build">
-    <!-- component at too high a rank, should move down one directory -->
     <unit bldFile="logsui" qt:proFile="logsui.pro"/>
    </component>
   </collection>

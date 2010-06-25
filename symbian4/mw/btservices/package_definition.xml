@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition schema="3.0.0">
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="btservices" name="Bluetooth Services" levels="framework server generic specific plugin">
   <collection id="btservices_pub" name="BT Services Public Interfaces" level="plugin">
    <component id="bluetooth_power_state_api" name="Bluetooth Power State API" class="api" filter="s60">
@@ -66,11 +66,21 @@
    </component>
   </collection>
   <collection id="bluetoothengine" name="Bluetooth Engine" level="framework">
+   <component id="btnotifclient" filter="s60" name="Bluetooth Notification Client" introduced="^4">
+	<!-- cannot put a component under another component. Move up a directory -->
+    <unit bldFile="bluetoothengine/btnotif/btnotifclient/group"/>
+   </component>
    <component id="bteng" filter="s60" name="Bluetooth Engine">
     <unit bldFile="bluetoothengine/bteng/group"/>
    </component>
+   <component id="btserviceutil" filter="s60" name="Bluetooth Service Utils" introduced="^4">
+    <unit bldFile="bluetoothengine/btserviceutil/group"/>
+   </component>
    <component id="btnotif" filter="s60" name="Bluetooth Notifier">
     <unit bldFile="bluetoothengine/btnotif/group"/>
+   </component>
+   <component id="btdevicedialogplugin" filter="s60" name="Bluetooth Device Dialog Plugin" class="plugin" introduced="^4">
+    <unit bldFile="bluetoothengine/btnotif/btdevicedialogplugin" qt:proFile="btdevicedialogplugin.pro"/>
    </component>
    <component id="btaudioman" filter="s60" name="Bluetooth Audio Manager">
     <unit bldFile="bluetoothengine/btaudioman/group"/>
@@ -88,7 +98,7 @@
     <unit bldFile="bluetoothengine/btsap/group"/>
    </component>
    <component id="btui" filter="s60" name="Bluetooth UI">
-    <unit bldFile="bluetoothengine/btui/group"/>
+	 <unit  bldFile="bluetoothengine/btui" qt:proFile="btui.pro" />
    </component>
    <component id="btpbap" filter="s60" name="Bluetooth Phonebook Access Profile" class="plugin">
     <unit bldFile="bluetoothengine/btpbap/group"/>
@@ -98,12 +108,6 @@
    </component>
    <component id="btctrldcmoadapter" filter="s60" name="Bluetooth Control DCMO Adapter" class="plugin" introduced="^3">
     <unit bldFile="bluetoothengine/btctrldcmoadapter/group"/>
-   </component>
-   <component id="btserviceutil" filter="s60" name="Bluetooth Service Utils">
-    <unit bldFile="bluetoothengine/btserviceutil/group"/>
-   </component>
-   <component id="btnotifclient" filter="s60" name="Bluetooth Notifier Client">
-    <unit bldFile="bluetoothengine/btnotif/btnotifclient/group"/>
    </component>
   </collection>
   <collection id="bluetoothappprofiles" name="Bluetooth Application Profiles" level="plugin">

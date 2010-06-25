@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition schema="3.0.0">
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="shortlinkconn" name="Shortlink Connectivity" levels="framework server generic specific plugin">
   <!-- Package is pending removal. Contents to be moved to remoteconn and btservices -->
   <collection id="shortlinkconn_plat" name="Shortlink Connectivity Platform Interfaces" level="plugin">
@@ -42,6 +42,10 @@
    </component>
    <component id="obexsendservices" name="OBEX Send Services">
     <unit bldFile="localconnectivityservice/obexsendservices/group"/>
+   </component>
+   <component id="obexhighway" name="OBEX Highway" introduced="^4">
+	<!-- component must be moved to its own directory. Components cannot live in others component's directories -->
+    <unit bldFile="localconnectivityservice/obexsendservices/obexhighway" qt:proFile="obexhighway.pro"/>
    </component>
    <component id="obexreceiveservices" name="OBEX Receive Services">
     <unit bldFile="localconnectivityservice/obexreceiveservices/group"/>

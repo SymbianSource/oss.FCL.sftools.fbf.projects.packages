@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
-  <package id="hgwidgets" name="HG Widgets" levels="framework service api">
-    <collection id="hgwidgets_plat" name="HG Widgets Platform Interfaces" level="api">
+  <package id="hgwidgets" name="Multimedia Widgets" levels="framework service api">
+    <collection id="hgwidgets_plat" name="Multimedia Widgets Platform Interfaces" level="api">
      <component id="ganeswidgets_api" name="Ganes Widgets API" class="api" introduced="^4">
 		<!-- should separate out unit -->
 	 </component>
+     <component id="hgcacheproxymodel_api" name="Hg Cache Proxy Model API" class="api" introduced="^4">
+		<!-- should separate out unit -->
+	 </component>
+     <component id="hgwidgets_plat_build" name="Multimedia Widgets Platform Interfaces Build" class="api" introduced="^4">
+		<!-- break this up into separate components -->
+      <unit bldFile="hgwidgets_plat" qt:proFile="hgwidgets_plat.pro"/>
+	 </component>
     </collection>
-    <collection id="hgwidgets_pub" name="HG Widgets Public Interfaces" level="api"/>
     <collection id="ganeswidgets" name="Ganes Widgets" level="service">
 		<!-- really a component, should move down a dir level and have a unit -->
       <component id="ganeswidgets_build" name="Ganes Widgets Build" introduced="^4">
-		<!-- should separate out unit -->
+        <unit bldFile="ganeswidgets" qt:proFile="ganeswidgets.pro"/>
 	 </component>
     </collection>	 
-    <collection id="hgwidgets_info" name="HG Widgets Info" level="framework">
-     <component id="hgwidgets_build" name="HG Widgets Build" introduced="^4">
-      <unit bldFile="." qt:proFile="hgwidgets.pro"/>
-     </component>
+    <collection id="hgcacheproxymodel" name="Hurriganes Cache Proxy Model" level="framework">
+		<!-- really a component, should move down a dir level and have a unit -->
+      <component id="hgcacheproxymodel_build" name="Hurriganes Cache Proxy Model Build" introduced="^4">
+        <unit bldFile="hgcacheproxymodel" qt:proFile="hgcacheproxymodel.pro"/>
+	 </component>
     </collection>
   </package>
 </SystemDefinition>

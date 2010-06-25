@@ -18,9 +18,9 @@
 	<!--  Move down a dir or break into components-->
       <unit bldFile="qtinternetradio"  qt:proFile="all.pro" qt:qmakeArgs="-r -config rom"/>
      </component>
-     <component id="qtinternetradio_internal" name="Qt Internet Radio Internal" filter="test">
+     <component id="qtinternetradio_internal" name="Qt Internet Radio Internal" filter="test,qt_unit_test">
 	  <!-- appears to be missing. Remove? 
-	  <unit bldFile="qtinternetradio/internal/tsrc" qt:proFile="tsrc.pro" qt:qmakeArgs="-r -config rom"/> -->
+	  <unit bldFile="qtinternetradio/internal/tsrc" qt:proFile="tsrc.pro" qt:qmakeArgs="-r" filter="TA_InternetRadio"/> -->
      </component>
     </collection>
   </package>

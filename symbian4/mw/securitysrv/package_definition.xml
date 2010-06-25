@@ -83,17 +83,11 @@
    <component id="pkcs12" filter="s60" name="PKCS #12">
     <unit bldFile="pkiutilities/pkcs12/group"/>
    </component>
-   <component id="certmanui" filter="s60" name="Certificate Management UI">
-    <unit bldFile="pkiutilities/certmanui/group"/>
-   </component>
    <component id="ctsecuritydialogs" filter="s60" name="Crypto Token Security Dialogs">
     <unit bldFile="pkiutilities/ctsecuritydialogs/group"/>
    </component>
    <component id="certsaver" filter="s60" name="Certificate Saver">
     <unit bldFile="pkiutilities/certsaver/group"/>
-   </component>
-   <component id="secmodui" filter="s60" name="Security Module UI">
-    <unit bldFile="pkiutilities/secmodui/group"/>
    </component>
    <component id="devicetoken" filter="s60" name="Device Token">
     <unit bldFile="pkiutilities/devicetoken/group"/>
@@ -134,7 +128,8 @@
    <component id="securitynotifier" filter="s60" name="Security Notifier">
     <unit bldFile="securitydialogs/securitynotifier/group"/>
    </component>
-   <component id="lockclient" filter="s60" name="Lock Client" introduced="^4">
+   <component id="lockclient" filter="s60" name="Lock Client" introduced="^3">
+	<!-- This overwrites the bld.inf already in this dir. I'm pretty sure this will cause problems with the export -->
     <unit bldFile="securitydialogs/lockclient/group" qt:proFile="lockclient.pro" qt:qmakeArgs="-r"/>
    </component>
    <component id="lockapp" filter="s60" name="Lock Application" introduced="^3">
@@ -142,6 +137,29 @@
    </component>
    <component id="secuinotifications" name="Security UI Notifications" introduced="^4" filter="s60">
       <unit bldFile="securitydialogs/secuinotifications" qt:proFile="secuinotifications.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="indicatorautolockplugin" name="Auto Lock Indicator Plugin" introduced="^4" filter="s60" class="plugin">
+		<!-- directory at the wrong level to be a component-->
+      <unit bldFile="securitydialogs/AutolockSrv/indicatorplugin" qt:proFile="indicatorautolockplugin.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="autolockuseractivityservice" name="Auto Lock User Activity Service" introduced="^4" filter="s60">
+		<!-- Can't have two .pro files in the same dir: their generated bld.infs will overwrite each other-->
+      <unit bldFile="securitydialogs/AutolockSrv" qt:proFile="autolockuseractivityservice.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="autolocksrv" name="Auto Lock Server" introduced="^4" filter="s60">
+		<!-- directory at the wrong level to be a component-->
+      <unit bldFile="securitydialogs/AutolockSrv" qt:proFile="AutolockSrv.pro" qt:qmakeArgs="-r"/>
+   </component>
+  </collection>
+  <collection id="cpsecplugins" name="Security Settings Plugins" level="plugin">
+   <component id="devicelockplugin" name="Device Lock Plugin" introduced="^4" filter="s60">
+      <unit bldFile="cpsecplugins/devicelockplugin" qt:proFile="devicelockplugin.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="simpincodeplugin" name="SIM PIN Code Plugin" introduced="^4" filter="s60">
+      <unit bldFile="cpsecplugins/simpincodeplugin" qt:proFile="pincodeplugin.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="cpadvancedsecplugin" name="Advanced Security Plugin" introduced="^4" filter="s60">
+      <unit bldFile="cpsecplugins/cpadvancedsecplugin/group" qt:proFile="advancedsecplugin.pro" qt:qmakeArgs="-r"/>
    </component>
   </collection>
   <collection id="boottimeintegritycheck" name="Boot Time Integrity Check" level="plugin">

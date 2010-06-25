@@ -19,34 +19,9 @@
     <meta rel="Api" href="gsprofilesrv_plat/profiles_engine_api/profiles_engine_api.metaxml"/>
     <unit bldFile="gsprofilesrv_plat/profiles_engine_api/group"/>
    </component>
-   <component id="settings_backgroundimage_api" name="Settings Background Image API" class="api" filter="s60">
-    <meta rel="Api" href="gsprofilesrv_plat/settings_backgroundimage_api/settings_backgroundimage_api.metaxml"/>
-    <unit bldFile="gsprofilesrv_plat/settings_backgroundimage_api/group"/>
-   </component>
-   <component id="settings_framework_api" name="Settings Framework API" class="api" filter="s60">
-    <meta rel="Api" href="gsprofilesrv_plat/settings_framework_api/settings_framework_api.metaxml"/>
-    <unit bldFile="gsprofilesrv_plat/settings_framework_api/group"/>
-   </component>
-   <component id="settings_launch_api" name="Settings Launch API" class="api" filter="s60">
-    <meta rel="Api" href="gsprofilesrv_plat/settings_launch_api/settings_launch_api.metaxml"/>
-    <unit bldFile="gsprofilesrv_plat/settings_launch_api/group"/>
-   </component>
-   <component id="settings_listbox_api" name="Settings List Box API" class="api" filter="s60">
-    <meta rel="Api" href="gsprofilesrv_plat/settings_listbox_api/settings_listbox_api.metaxml"/>
-    <unit bldFile="gsprofilesrv_plat/settings_listbox_api/group"/>
-   </component>
-   <component id="settings_plugin_api" name="Settings Plugin API" class="api" filter="s60">
-    <meta rel="Api" href="gsprofilesrv_plat/settings_plugin_api/settings_plugin_api.metaxml"/>
-    <unit bldFile="gsprofilesrv_plat/settings_plugin_api/group"/>
-   </component>
    <component id="settings_uis_cenrep_collection_api" name="Settings UIs CenRep Collection API" class="api" filter="s60">
     <meta rel="Api" href="gsprofilesrv_plat/settings_uis_cenrep_collection_api/settings_uis_cenrep_collection_api.metaxml"/>
     <unit bldFile="gsprofilesrv_plat/settings_uis_cenrep_collection_api/group"/>
-   </component>
-  </collection>
-  <collection id="gssettingsuis" name="General Settings UIs" level="framework">
-   <component id="gs" filter="s60" name="General Settings" introduced="9.2">
-    <unit bldFile="gssettingsuis/gs/group"/>
    </component>
   </collection>
   <collection id="ftuwizardmodel" name="FTU Wizard Model" level="generic">
@@ -59,13 +34,23 @@
       <meta rel="testbuild">
        <group name="controlpanel_tests"/>
       </meta>
-      <unit bldFile="controlpanel/tsrc" qt:proFile="tsrc.pro" qt:qmakeArgs="-r"/>
+      <unit bldFile="controlpanel/tsrc" qt:proFile="tsrc.pro" qt:qmakeArgs="-r"/> 
    </component> 
    <component id="controlpanel_rom" name="Control Panel ROM" filter="s60">
-      <unit bldFile="controlpanel/rom" qt:proFile="cp_rom.pri" qt:qmakeArgs="-r -config rom"/>
+      <!-- Need to create a real .pro file for this 
+	  <unit bldFile="controlpanel/rom" qt:proFile="cp_rom.pri" qt:qmakeArgs="-r -config rom"/> -->
+   </component>
+   <component id="controlpanel_config" name="Control Panel Config" filter="s60" class="config" introduced="^4">
+      <!-- Need to create a real .pro file for this 
+	  <unit bldFile="controlpanel/conf" qt:proFile="conf.pri" qt:qmakeArgs="-r -config rom"/> -->
    </component>
    <component id="controlpanel_source" name="Control Panel Source" filter="s60">
-      <unit bldFile="controlpanel/src" qt:qmakeArgs="-r -config rom" qt:proFile="src.pro"/>
+      <!-- Uncomment when controlpanel_build is removed
+	  <unit bldFile="controlpanel/src" qt:qmakeArgs="-r -config rom" qt:proFile="src.pro"/> -->
+   </component>
+   <component id="controlpanel_build" name="Control Panel Build" filter="s60">
+	<!-- need to make included .pri file into a real .pro file -->
+      <unit bldFile="controlpanel" qt:qmakeArgs="-r -config rom" qt:proFile="controlpanel.pro"/>
    </component>
   </collection>
   <collection id="profilesservices" name="Profiles Services" level="server">

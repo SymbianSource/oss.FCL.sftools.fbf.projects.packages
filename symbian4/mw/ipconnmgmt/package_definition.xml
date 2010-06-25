@@ -84,11 +84,6 @@
     <unit bldFile="ipcm_pub/extendedconnpref_api/group"/>
    </component>
   </collection>
-  <collection id="accesspointcontrol" name="Access Point Control" level="plugin">
-   <component id="apcontrollistplugin" filter="s60" name="Access Point Control List Plugin" class="plugin" introduced="^2">
-    <unit bldFile="accesspointcontrol/apcontrollistplugin/group"/>
-   </component>
-  </collection>
   <collection id="alwayson_net_plugin" name="Always Online Net Plugin" level="server">
    <component id="pdpcontextmanager2" filter="s60" name="PDP Context Manager 2">
     <unit bldFile="alwayson_net_plugin/pdpcontextmanager2/group"/>
@@ -144,8 +139,7 @@
     <meta rel="config">
      <not-defined condition="WINSCW"/>
     </meta>
-    <!-- uncomment when config is turned on -->
-    <!-- <unit bldFile="dbcreator/commsdatcreatorrfsplugin/group"/>-->
+    <unit bldFile="dbcreator/commsdatcreatorrfsplugin/group"/>
    </component>
    <component id="commsdatstartup" filter="s60" name="Comms Database Startup" introduced="9.3">
     <unit bldFile="dbcreator/commsdatstartup/group"/>
@@ -160,7 +154,7 @@
   </collection>
   <collection id="ipconnmgmt_info" name="IP Connectivity Management Info" level="api">
    <component id="ipcm_build" filter="s60" name="IP Connectivity Management Build">
-    <!-- need to move exports to another component, or maek this a config component and revmove the #includes -->
+    <!-- need to move exports to another component, or make this a config component and revmove the #includes -->
     <unit bldFile="group"/>
    </component>
    <component id="ipcm_qt_build" name="IP Connectivity Management Qt Build" introduced="^4">

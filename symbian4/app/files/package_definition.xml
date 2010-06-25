@@ -5,13 +5,20 @@
    <component id="filemanager_plat" name="File Manager Platform Interfaces" class="api" filter="s60" introduced="^4">
     <unit base="filemanager/filemanager_plat"/>
    </component>
-   <component id="fmbkupengine" filter="s60" name="File Manager Backup Engine" introduced="^4">
+   <component id="fmbkupengine" filter="s60,bldfirst" name="File Manager Backup Engine" introduced="^4">
        <unit bldFile="filemanager/src/fmbkupengine/group"/>
+   </component>
+   <component id="fmfiledialog" filter="s60,bldfirst" name="File Manager File Dialog" introduced="^4">
+       <unit bldFile="filemanager/src/fmfiledialog" qt:proFile="fmfiledialog.pro" qt:qmakeArgs="-r -config rom"/>
    </component>
    <component id="filemanager_build" filter="s60" name="File Manager Build">
    <!-- break this up into components or move down a directory -->
     <unit bldFile="filemanager" qt:qmakeArgs="-r" qt:proFile="filemanager.pro"/>
    </component>
+   <component id="filemanager_tests" name="File Manager Tests" filter="s60,test,qt_unit_test">
+     <unit bldFile="filemanager/tsrc" qt:proFile="tsrc.pro" qt:qmakeArgs="-r"/>
+   </component>
   </collection>
  </package>
 </SystemDefinition>
+        

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
-  <package id="radio" name="Radio Apps" levels="engine ui">
+  <package id="radio" name="Radio Apps" levels="engine plugin ui">
     <collection id="radioengine" name="Radio Engine" level="engine">
       <component id="radioengineutils" filter="s60" name="Radio Engine Utils" introduced="^4">
         <unit bldFile="radioengine/utils/group"/>
@@ -30,6 +30,17 @@
       </component>
       <component id="radio_rom" filter="s60" name="Radio ROM" introduced="^4">
         <unit bldFile="rom"/>
+      </component>
+    </collection>
+    <collection id="radio_hswidgetplugin" name="FM Radio Homescreen Widget Plugin" level="plugin">
+      <component id="fmradiohswidgetplugin" filter="s60" name="FM Radio HS Widget Plugin" class="plugin" introduced="^4">
+        <unit bldFile="hswidgetplugin/fmradiohswidgetplugin" qt:proFile="fmradiohswidgetplugin.pro"/>
+      </component>
+      <component id="fmradiohswidgetplugininstaller" filter="s60" name="FM Radio HS Widget Plugin Installer" introduced="^4">
+        <unit bldFile="hswidgetplugin/fmradiohswidgetplugininstaller" qt:proFile="fmradiohswidgetplugininstaller.pro"/>
+      </component>
+      <component id="fmradiohswidgetplugin_exports_to_rom" filter="s60" name="FM Radio HS Widget Plugin ROM" introduced="^4">
+        <unit bldFile="hswidgetplugin" qt:proFile="fmradiohswidgetplugin_exports_to_rom.pri"/>
       </component>
     </collection>
   </package>

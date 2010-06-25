@@ -83,11 +83,8 @@
       <component id="euser" name="User Library" purpose="mandatory">
         <unit bldFile="kernel/eka/euser" mrp="kernel/eka/euser/base_e32_euser.mrp"/>
       </component>
-      <component id="compsupp" name="RVCT Compiler Runtime Support" filter="gt" purpose="mandatory">
+      <component id="compsupp" name="Compiler Runtime Support" filter="gt" purpose="mandatory">
         <unit bldFile="kernel/eka/compsupp" mrp="kernel/eka/compsupp/base_e32_compsupp.mrp"/>
-      </component>
-      <component id="compsupp_gcc" name="GCC Compiler Runtime Support" filter="gt,sf_build" purpose="mandatory">
-        <unit bldFile="kernel/eka/compsupp/gcce"/>
       </component>
       <component id="fileserver" name="File Server" filter="gt" purpose="mandatory">
         <unit bldFile="userlibandfileserver/fileserver/group" mrp="userlibandfileserver/fileserver/group/base_f32.mrp"/>
@@ -144,7 +141,7 @@
       <component id="kernelhwsrv_metadata" name="Kernel and Hardware Services Metadata" class="config" introduced="^2" purpose="development" target="desktop">
         <unit mrp="kernelhwsrv_info/kernelhwsrv_metadata/kernelhwsrv_metadata.mrp"/>
       </component>
-      <component id="kernelhwsrv_metadata" name="Kernel and Hardware Services Public Documentation" class="doc" introduced="^3" purpose="development">
+      <component id="kernelhwsrv_docpub" name="Kernel and Hardware Services Public Documentation" class="doc" introduced="^3" purpose="development">
         <unit mrp="kernelhwsrv_info/doc_pub/kernelhwsrv_doc_pub.mrp"/>
       </component>
     </collection>

@@ -34,10 +34,6 @@
     <meta rel="Api" href="appinstall_plat/sw_installer_ps_keys/sw_installer_ps_keys.metaxml"/>
     <unit bldFile="appinstall_plat/sw_installer_ps_keys/group"/>
    </component>
-   <component id="appmngr2runtimeapi" name="Application Manager 2 Runtime Plugin API" class="api" filter="s60">
-    <meta rel="Api" href="appinstall_plat/appmngr2runtimeapi/appmngr2runtimeapi.metaxml"/>
-    <unit bldFile="appinstall_plat/appmngr2runtimeapi/group"/>
-   </component>
    <component id="sifui_api" name="STIF UI API" class="api" filter="s60">
     <unit bldFile="appinstall_plat/sifui_api/group"/>
    </component>
@@ -49,13 +45,7 @@
    </component>
   </collection>
     <collection id="ncdengine" name="Nokia Content Discover" level="framework">
-    	<!-- is this really just a component? If so move down one diretcory. Otherwise properly split up the bld.inf -->
-      <component id="ncdengine_engine" filter="s60" name="NCD Engine" introduced="^1">
-        <unit bldFile="ncdengine/engine/group"/>
-      </component>
-      <component id="debuglogger" filter="s60" name="NCD Debug Logger" introduced="^1">
-        <!-- <unit bldFile="ncdengine/debuglogger/group"/> -->
-      </component>
+    	<!-- collection is really just a component. Move down one diretcory -->
       <component id="ncdengine_build" filter="s60" name="NCD Build" introduced="^1">
         <unit bldFile="ncdengine/group"/>
       </component>
@@ -63,6 +53,9 @@
     <collection id="appinstaller" name="Application Installer" level="generic">
       <component id="appinstui" filter="s60" name="Application Installer UI" introduced="^2">
         <unit bldFile="appinstaller/appinstui/group"/>
+      </component>
+      <component id="appinstui_qt" filter="s60" name="Application Installer Qt UI" introduced="^2">
+        <unit bldFile="appinstaller/appinstui" qt:proFile="appinstui.pro" qt:qmakeArgs="-r"/>
       </component>
     </collection>
     <collection id="iaupdateapi_stub" name="IA Update API Stub" level="api">
@@ -72,12 +65,9 @@
       </component>
     </collection>
     <collection id="iaupdate" name="Independent Apps Update" level="api">
-    	<!-- is this really just a component? If so move down one diretcory. Otherwise properly split up the bld.inf -->
-      <component id="iad" name="Software Update" filter="s60" introduced="^2">
-        <unit bldFile="iaupdate/iad/group"/>
-      </component>
-      <component id="iaupdate_help" filter="s60" name="IA Update Help" introduced="^2">
-        <unit bldFile="iaupdate/help/group"/>
+    	<!-- Should reorganise into actual components -->
+      <component id="iad" name="Independent App delivery" filter="s60" introduced="^4" purpose="development">
+        <unit bldFile="iaupdate" qt:proFile="iaupdate.pro" qt:qmakeArgs="-r"/>
       </component>
       <component id="iaupdate_build" filter="s60" name="IA Update Build" introduced="^2">
         <unit bldFile="iaupdate/group"/>
@@ -127,9 +117,6 @@
       </component>
     </collection>
     <collection id="appinstall_info" name="Application Installation Info" level="api">
-      <component id="appinstall_qt" filter="s60,test,api_test" name="Application Installation Qt">
-        <unit bldFile="." qt:proFile="appinstall.pro" qt:qmakeArgs="-r"/>
-      </component>
       <component id="appinstall_test" filter="s60,test,api_test" name="Application Installation Test" purpose="development">
         <unit bldFile="tsrc/group"/>
       </component>

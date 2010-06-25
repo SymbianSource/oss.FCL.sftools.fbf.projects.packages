@@ -15,7 +15,11 @@
     <unit bldFile="jrt_plat/java_debug_api/build"/>
    </component>
   </collection>
-
+   <collection id="java_stubs" name="Java Stubs" level="rt">
+   <component id="java_stubs_build"  name="Build Native Java" filter="sf_build" introduced="^4">
+      <unit bldFile="java_stubs/group"/>
+   </component>
+  </collection>
    <collection id="build_nativejava" name="Build Native Java">
    <component id="nativejava"  name="Build Native Java" filter="s60" introduced="^4">
       <unit bldFile="build/nativejava" qt:proFile="nativejava.pro" qt:qmakeArgs="-r" filter="!sf_build"/>

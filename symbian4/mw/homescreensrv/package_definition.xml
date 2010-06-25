@@ -1,6 +1,5 @@
 <SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="homescreensrv" name="Home Screen Services" levels="plugin framework server generic specific">
-
   <collection id="appfoundation" name="App Foundation" level="generic">
      <component id="appfoundation_build" name="App Foundation Build"  introduced="^4">
       <unit bldFile="appfoundation" qt:qmakeArgs="-r" qt:proFile="appfoundation.pro"/>
@@ -27,27 +26,13 @@
      <component id="caclient" name="Content Arsenal Client"  introduced="^4">
       <unit bldFile="contentstorage/caclient" qt:qmakeArgs="-r" qt:proFile="caclient.pro"/>
      </component>
+     <component id="casoftwareregistry" name="Content Arsenal Software Registry"  introduced="^4">
+      <unit bldFile="contentstorage/casoftwareregistry" qt:qmakeArgs="-r" qt:proFile="casoftwareregistry.pro"/>
+     </component>
   </collection>
-
   <collection id="homescreensrv_plat" name="Home Screen Services Platform Interfaces" level="specific">
      <component id="homescreensrv_plat_build" name="Home Screen Services Platform Interfaces build"  introduced="^4">
       <unit bldFile="homescreensrv_plat" qt:qmakeArgs="-r" qt:proFile="homescreensrv_plat.pro"/>
-     </component>
-   <component id="action_handler_plugin_api" name="Action Handler Plugin API" class="api" filter="s60">
-    <meta rel="Api" href="homescreensrv_plat/action_handler_plugin_api/action_handler_plugin_api.metaxml"/>
-    <unit base="homescreensrv_plat/action_handler_plugin_api"/>
-   </component>
-   <component id="content_harvester_plugin_api" name="Content Harvester Plugin API" class="api" filter="s60">
-    <meta rel="Api" href="homescreensrv_plat/content_harvester_plugin_api/content_harvester_plugin_api.metaxml"/>
-    <unit base="homescreensrv_plat/content_harvester_plugin_api"/>
-   </component>
-   <component id="sapi_contentpublishing" name="SAPI Content Publishing" class="api" filter="s60">
-    <meta rel="Api" href="homescreensrv_plat/sapi_contentpublishing/sapi_contentpublishing.metaxml"/>
-    <unit base="homescreensrv_plat/sapi_contentpublishing"/>
-   </component>
-   <component id="sapi_actionhandler" name="SAPI Action Handler" class="api" filter="s60">
-    <meta rel="Api" href="homescreensrv_plat/sapi_actionhandler/sapi_actionhandler.metaxml"/>
-    <unit base="homescreensrv_plat/sapi_actionhandler"/>
    </component>
    <component id="menu_sat_interface_api" name="Menu SAT Interface API" class="api" filter="s60">
     <meta rel="Api" href="homescreensrv_plat/menu_sat_interface_api/menu_sat_interface_api.metaxml"/>
@@ -69,9 +54,15 @@
     <unit base="homescreensrv_plat/homescreen_information_api"/>
    </component>
   </collection>
-  <collection id="hsactivityfw" name="Activity Framework" level="activityfw">
+  <collection id="hsactivityfw" name="Activity Framework" level="fw">
      <component id="hsactivityfw_build" name="Activity Framework Build"  introduced="^4">
       <unit bldFile="activityfw" qt:qmakeArgs="-r" qt:proFile="activityfw.pro"/>
+     </component>
+  </collection>
+  <collection id="tstaskmonitor" name="Task Switcher Task Monitor" level="fw">	
+	<!-- move collection down to a component directory or split up into component .pro files -->
+     <component id="tstaskmonitor_build" name="Task Switcher Task Monitor Build"  introduced="^4">
+      <unit bldFile="tstaskmonitor" qt:qmakeArgs="-r" qt:proFile="tstaskmonitor.pro"/>
      </component>
   </collection>
   <collection id="hsappkeyhandler" name="HS Appplication Key Handler" level="server">
@@ -81,7 +72,7 @@
   </collection>
     <collection id="homescreensrv_info" name="Home Screen Services Info" level="specific">
      <component id="homescreensrvconf" name="Home Screen Services Config" class="config" introduced="^4">
-      <unit bldFile="." qt:qmakeArgs="-r" qt:proFile="homescreensrv.pro"/>
+      <unit bldFile="." qt:qmakeArgs="-r" qt:proFile="homescreensrv_exports_to_rom.pri"/>
      </component>
      <component id="homescreensrvrom" name="Home Screen Services ROM" introduced="^4">
       <unit bldFile="group"/>

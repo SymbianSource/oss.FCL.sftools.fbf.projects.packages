@@ -2,10 +2,6 @@
 <SystemDefinition schema="3.0.0">
  <package id="classicui" name="Classic UI" levels="base support server generic specific">
   <collection id="classicui_plat" name="Classic UI Platform Interfaces" level="specific">
-   <component id="personalisation_framework_api" name="Personalisation Framework API" class="api" filter="s60">
-    <meta rel="Api" href="classicui_plat/personalisation_framework_api/personalisation_framework_api.metaxml"/>
-    <unit bldFile="classicui_plat/personalisation_framework_api/group"/>
-   </component>
    <component id="signal_pane_api" name="Signal Pane API" class="api" filter="s60">
     <meta rel="Api" href="classicui_plat/signal_pane_api/signal_pane_api.metaxml"/>
     <unit bldFile="classicui_plat/signal_pane_api/group" filter="!test"/>
@@ -36,18 +32,10 @@
     <unit bldFile="classicui_plat/extended_utilities_api/group" filter="!test"/>
     <unit bldFile="classicui_plat/extended_utilities_api/tsrc/group" filter="test,api_test"/>
    </component>
-   <component id="personalisation_plugin_api" name="Personalisation Plugin API" class="api" filter="s60">
-    <meta rel="Api" href="classicui_plat/personalisation_plugin_api/personalisation_plugin_api.metaxml"/>
-    <unit bldFile="classicui_plat/personalisation_plugin_api/group"/>
-   </component>
    <component id="extended_aiw_criteria_api" name="Extended AIW Criteria API" class="api" filter="s60">
     <meta rel="Api" href="classicui_plat/extended_aiw_criteria_api/extended_aiw_criteria_api.metaxml"/>
     <unit bldFile="classicui_plat/extended_aiw_criteria_api/group" filter="!test"/>
     <unit bldFile="classicui_plat/extended_aiw_criteria_api/tsrc/group" filter="test,api_test"/>
-   </component>
-   <component id="personalisation_application_api" name="Personalisation Application API" class="api" filter="s60">
-    <meta rel="Api" href="classicui_plat/personalisation_application_api/personalisation_application_api.metaxml"/>
-    <unit bldFile="classicui_plat/personalisation_application_api/group"/>
    </component>
    <component id="volume_popup_api" name="Volume Popup API" class="api" filter="s60">
     <meta rel="Api" href="classicui_plat/volume_popup_api/volume_popup_api.metaxml"/>
@@ -98,10 +86,6 @@
     <meta rel="Api" href="classicui_plat/task_list_api/task_list_api.metaxml"/>
     <unit bldFile="classicui_plat/task_list_api/group" filter="!test"/>
     <unit bldFile="classicui_plat/task_list_api/tsrc/group" filter="test,api_test"/>
-   </component>
-   <component id="personalisation_slide_show_dialog_api" name="Personalisation Slide Show Dialog API" class="api" filter="s60">
-    <meta rel="Api" href="classicui_plat/personalisation_slide_show_dialog_api/personalisation_slide_show_dialog_api.metaxml"/>
-    <unit bldFile="classicui_plat/personalisation_slide_show_dialog_api/group"/>
    </component>
    <component id="key_event_utilities_api" name="Key Event Utilities API" class="api" filter="s60">
     <meta rel="Api" href="classicui_plat/key_event_utilities_api/key_event_utilities_api.metaxml"/>
@@ -177,10 +161,6 @@
    <component id="fep_document_navigation_api" name="FEP Document Navigation API" class="api" filter="s60">
     <meta rel="Api" href="classicui_plat/fep_document_navigation_api/fep_document_navigation_api.metaxml"/>
     <unit bldFile="classicui_plat/fep_document_navigation_api/group"/>
-   </component>
-   <component id="personalisation_localised_texts_api" name="Personalisation Localised Texts API" class="api" filter="s60">
-    <meta rel="Api" href="classicui_plat/personalisation_localised_texts_api/personalisation_localised_texts_api.metaxml"/>
-    <unit bldFile="classicui_plat/personalisation_localised_texts_api/group"/>
    </component>
    <component id="memory_card_ui_api" name="Memory Card UI API" class="api" filter="s60">
     <meta rel="Api" href="classicui_plat/memory_card_ui_api/memory_card_ui_api.metaxml"/>
@@ -403,6 +383,14 @@
     <meta rel="Api" href="classicui_plat/extended_options_menu_api/extended_options_menu_api.metaxml"/>
     <unit bldFile="classicui_plat/extended_options_menu_api/group" filter="!test"/>
     <unit bldFile="classicui_plat/extended_options_menu_api/tsrc/group" filter="test,api_test"/>
+   </component>
+   <component id="directory_localizer_api" class="api" name="Directory Localizer API" filter="s60">
+      <meta rel="Api" href="classicui_plat/directory_localizer_api/directory_localizer_api.metaxml"/>
+      <unit bldFile="classicui_plat/directory_localizer_api/group"/>
+   </component>
+   <component id="findutil_api" class="api" name="Find Util API" filter="s60">
+      <meta rel="Api" href="classicui_plat/findutil_api/findutil_api.metaxml"/>
+      <unit bldFile="classicui_plat/findutil_api/group"/>
    </component>
   </collection>
   <collection id="classicui_pub" name="Classic UI Public Interfaces" level="specific">
@@ -745,12 +733,6 @@
   <collection id="applicationinterworkingfw" name="Application Interworking Framework" level="generic">
    <component id="aifwservicehandler" filter="s60" name="Application Interworking Service Handler">
     <unit bldFile="applicationinterworkingfw/servicehandler/group"/>
-   </component>
-  </collection>
-  <collection id="psln" name="Personalization" level="specific">
-   <!-- the collection is really a component. Move down a directory. Or it could be split into multiple components-->
-   <component id="psln_build" filter="s60" name="Personalization Build">
-    <unit bldFile="psln/group"/>
    </component>
   </collection>
   <collection id="commonadapter" name="Common Adapter" level="support">

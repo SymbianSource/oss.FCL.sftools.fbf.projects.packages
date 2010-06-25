@@ -102,7 +102,7 @@
     <meta rel="Api" href="imsrv_plat/im_cache_server_api/im_cache_server_api.metaxml"/>
     <unit bldFile="imsrv_plat/im_cache_server_api/group"/>
    </component>
-   <component id="presence_avabilitytext" name="Presence Avability Text" class="api" filter="s60">
+   <component id="presence_avabilitytext" name="Presence Availability Text" class="api" filter="s60">
     <unit bldFile="imsrv_plat/presence_avabilitytext/group"/>
    </component>
   </collection>

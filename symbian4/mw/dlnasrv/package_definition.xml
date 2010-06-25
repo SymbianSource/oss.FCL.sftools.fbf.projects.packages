@@ -92,31 +92,31 @@
     <meta rel="config">
      <defined condition="FF_UPNP_FRAMEWORK_2_0"/>
     </meta>
-    <!-- <unit bldFile="upnpframework/upnpextensionpluginif/group"/> -->
+    <unit bldFile="upnpframework/upnpextensionpluginif/group"/>
    </component>
    <component id="upnpfiletransferengine" filter="s60" name="UPnP File Transfer Engine" introduced="^2" deprecated="^3">
     <meta rel="config">
      <defined condition="FF_UPNP_FRAMEWORK_2_0"/>
     </meta>
-    <!-- <unit bldFile="upnpframework/upnpfiletransferengine/group"/>-->
+    <unit bldFile="upnpframework/upnpfiletransferengine/group"/>
    </component>
    <component id="upnpcommonui" filter="s60" name="UPnP Common UI" introduced="^2" deprecated="^3">
     <meta rel="config">
      <defined condition="FF_UPNP_FRAMEWORK_2_0"/>
     </meta>
-    <!--<unit bldFile="upnpframework/upnpcommonui/group"/>-->
+    <unit bldFile="upnpframework/upnpcommonui/group"/>
    </component>
    <component id="upnpaiwengine" filter="s60" name="UPnP AIW Engine" introduced="^2" deprecated="^3">
     <meta rel="config">
      <defined condition="FF_UPNP_FRAMEWORK_2_0"/>
     </meta>
-    <!--<unit bldFile="upnpframework/upnpaiwengine/group"/> -->
+    <unit bldFile="upnpframework/upnpaiwengine/group"/>
    </component>
    <component id="upnpaiwprovider" filter="s60" name="UPnP AIW Provider" class="plugin" introduced="^2" deprecated="^3">
     <meta rel="config">
      <defined condition="FF_UPNP_FRAMEWORK_2_0"/>
     </meta>
-    <!--<unit bldFile="upnpframework/upnpaiwprovider/group"/>-->
+    <unit bldFile="upnpframework/upnpaiwprovider/group"/>
    </component>
    <component id="upnpmusicadapter" filter="s60" name="UPnP Music Adapter" introduced="^2">
     <unit bldFile="upnpframework/upnpmusicadapter/group"/>
@@ -125,7 +125,7 @@
     <unit bldFile="upnpframework/upnpcommand/group"/>
    </component>
    <component id="upnpframework_build" filter="s60" name="UPnP Framework Build" introduced="^2">
-    <!-- move exports content into one of above components -->
+    <!-- move exports content into one or more of above components -->
     <unit bldFile="upnpframework/group"/>
    </component>
   </collection>
@@ -137,21 +137,24 @@
     <meta rel="config">
      <defined condition="FF_UPNP_FRAMEWORK_2_0"/>
     </meta>
-    <!--<unit bldFile="upnpsettings/multiselectionui/group"/>-->
+    <unit bldFile="upnpsettings/multiselectionui/group"/>
    </component>
    <component id="appwizard" filter="s60" name="UPnP Settings Wizard App" introduced="^2" deprecated="^3">
     <meta rel="config">
      <defined condition="FF_UPNP_FRAMEWORK_2_0"/>
     </meta>
-    <!--<unit bldFile="upnpsettings/appwizard/group"/>-->
+    <unit bldFile="upnpsettings/appwizard/group"/>
    </component>
    <component id="upnpsharingui" filter="s60" name="UPnP Sharing UI" introduced="^2" deprecated="^3">
     <meta rel="config">
      <defined condition="FF_UPNP_FRAMEWORK_2_0"/>
     </meta>
-    <!--<unit bldFile="upnpsettings/upnpsharingui/group"/>-->
+    <unit bldFile="upnpsettings/upnpsharingui/group"/>
    </component>
    <component id="upnpgsplugin" filter="s60" name="UPnP GS Plugin" class="plugin" introduced="^2">
+    <meta rel="config">
+     <defined condition="FF_UPNP_FRAMEWORK_2_0"/>
+    </meta>
     <unit bldFile="upnpsettings/upnpgsplugin/group"/>
    </component>
    <component id="upnpsettings_build" filter="s60" name="UPnP Settings Build" introduced="^2">
@@ -192,20 +195,20 @@
    </meta>
    <component id="upnpharvester_common" filter="s60" name="UPnP Harvester Common" introduced="^2" deprecated="^3">
     <!-- need to merge or #include these to a single bld.inf -->
-    <!--<unit bldFile="upnpharvester/common/cmlibrary/group"/>
+    <unit bldFile="upnpharvester/common/cmlibrary/group"/>
         <unit bldFile="upnpharvester/common/cmsettings/group"/>
         <unit bldFile="upnpharvester/common/cmsqlwrapper/group"/>
-        <unit bldFile="upnpharvester/common/dbmanager/group"/>-->
+        <unit bldFile="upnpharvester/common/dbmanager/group"/>
    </component>
    <component id="cdssync" filter="s60" name="CDS Sync" introduced="^2" deprecated="^3">
-    <!-- <unit bldFile="upnpharvester/cdssync/common"/>-->
+    <unit bldFile="upnpharvester/cdssync/common"/>
    </component>
    <component id="mdhserver" filter="s60" name="Metadata Harvester Server" introduced="^2" deprecated="^3">
-    <!--<unit bldFile="upnpharvester/mdhserver/group"/>-->
+    <unit bldFile="upnpharvester/mdhserver/group"/>
    </component>
    <component id="upnpharvester_build" filter="s60" name="UPnP Harvester Build" introduced="^2" deprecated="^3">
     <!-- could just make the whole collection one component and move down a dir. Or move the exports here into the other component -->
-    <!--<unit bldFile="upnpharvester/group"/>-->
+    <unit bldFile="upnpharvester/group"/>
    </component>
   </collection>
   <collection id="homesync" name="Home Sync" level="plugin">
@@ -213,7 +216,7 @@
     <defined condition="FF_UPNP_FRAMEWORK_2_0"/>
    </meta>
    <component id="contentmanager" filter="s60" name="Content Manager" introduced="^2" deprecated="^3">
-        <!-- <unit bldFile="homesync/group"/>-->  <!-- move bld.inf into contentmanager dir -->
+        <unit bldFile="homesync/group"/> <!-- move bld.inf into contentmanager dir -->
    </component>
   </collection>
   <collection id="homemedia" name="Home Media" level="framework">
@@ -222,14 +225,10 @@
    </meta>
    <!-- collection is really just a component. Move down a directory -->
    <component id="homemedia_build" filter="s60" name="Home Media" introduced="^2" deprecated="^3">
-    <!-- <unit bldFile="homemedia/group"/> -->
+     <unit bldFile="homemedia/group"/> 
    </component>
   </collection>
   <collection id="dlnasrv_info" name="DLNA Services Info" level="plugin">
-   <component id="dlnasrv_build" filter="s60" name="DLNA Services Build">
-    <!-- need to #include upnpplatformvar.hrh from each #included bld.inf, then this can be removed  -->
-    <unit bldFile="group"/>
-   </component>
    <component id="dlnasrv_api_test" filter="s60,test,api_test" name="DLNA Services API Tests" purpose="development">
     <unit bldFile="tsrc/group"/>
    </component>

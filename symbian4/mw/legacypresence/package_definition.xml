@@ -60,12 +60,6 @@
     <unit bldFile="xdmengine/group"/>
    </component>
   </collection>
-  <collection id="xdmsettingsui" name="XDM Settings UI" level="ui">
-   <!-- collection is really a component. Need to move down a directory (eg xdm/xdmsettingsui)-->
-   <component id="xdmsettingsui_build" filter="s60" name="XDM Settings UI Build">
-    <unit bldFile="xdmsettingsui/group"/>
-   </component>
-  </collection>
   <collection id="xdmprotocols" name="XDM Protocols" level="fw">
    <!-- collection is really a component. Need to move down a directory (eg xdm/xdmprotocols)-->
    <component id="xdmprotocols_build" filter="s60" name="XDM Protocols Build">
@@ -76,12 +70,6 @@
    <!-- collection is really a component. Need to move down a directory-->
    <component id="msgconnmanager_build" filter="s60" name="Messaging Connection Manager Build">
     <unit bldFile="msgconnmanager/group"/>
-   </component>
-  </collection>
-  <collection id="presencesettingsui" name="Presence Settings UI" level="ui">
-   <!-- collection is really a component. Need to move down a directory-->
-   <component id="presencesettingsui_build" filter="s60" name="Presence Settings UI Build">
-    <unit bldFile="presencesettingsui/group"/>
    </component>
   </collection>
   <collection id="simpleengine" name="SIMPLE Engine" level="engine">

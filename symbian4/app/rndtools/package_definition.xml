@@ -3,46 +3,37 @@
     <collection id="creator" name="Creator" level="support">
 	   	<!-- collection is really a component. Should move down a directory -->
       <component id="creator_build" filter="s60" name="Creator Tool" purpose="development" target="device" class="tool">
-        <unit bldFile="creator" qt:qmakeArgs="-r" qt:proFile="creator.pro"/>
+        <unit bldFile="creator" qt:proFile="creator.pro"/>
       </component>
     </collection>
     <collection id="filebrowser" name="File Browser" level="util">
-		<!-- consider collapsing into a single component -->
-      <component id="fileopserver" filter="s60" name="File Operations Server" purpose="development" target="device" class="tool">
-      	<meta rel="config">
-      		<not-defined condition="FILEBROWSER_LITE"/>
-      	</meta>
-      	<!-- uncomment the unit when configuration is in place, it's currently #included from filebrowser_build -->
-        <!-- <unit bldFile="filebrowser/fileopserver/group"/>-->
-      </component>
-      <component id="fileopclient" filter="s60" name="File Operations Client" purpose="development" target="device" class="tool">
-      	<meta rel="config">
-      		<not-defined condition="FILEBROWSER_LITE"/>
-      	</meta>
-      	<!-- uncomment the unit when configuration is in place, it's currently #included from filebrowser_build -->
-        <!--<unit bldFile="filebrowser/fileopclient/group"/>-->
-      </component>
-      <component id="filebrowser_build" filter="s60" name="File Browser Application" purpose="development" target="device" class="tool">
-		<!-- Need to make this a self-contained component by removing #includes. Can only do when configuration is in place-->
-        <unit bldFile="filebrowser/group"/>
+	   	<!-- collection is really a component. Should move down a directory -->
+      <component id="filebrowser_build" filter="s60" name="File Browser Build" purpose="development" target="device" class="tool">
+        <unit bldFile="filebrowser" qt:proFile="filebrowser.pro" />
       </component>
     </collection>
     <collection id="launcher" name="Launcher" level="util">
 	   	<!-- collection is really a component. Should move down a directory -->
       <component id="launcher_build" filter="s60" name="Launcher Utility" purpose="development" target="device" class="tool">
-        <unit bldFile="launcher/group"/>
+        <unit bldFile="launcher" qt:proFile="launcher.pro" />
       </component>
     </collection>
     <collection id="loadgen" name="Load Generator" level="test">
 	   	<!-- collection is really a component. Should move down a directory -->
       <component id="loadgen_build" filter="s60" name="Load Generator Application" purpose="development" target="device" class="tool">
-        <unit bldFile="loadgen/group"/>
+        <unit bldFile="loadgen" qt:proFile="loadgen.pro" />
       </component>
     </collection>
     <collection id="perfmon" name="Performance Monitor" level="test">
 	   	<!-- collection is really a component. Should move down a directory -->
       <component id="perfmon_build" filter="s60" name="Performance Monitor Tool" purpose="development" target="device" class="tool">
            <unit bldFile="perfmon" qt:proFile="perfmon.pro"/>
+      </component>
+    </collection>
+    <collection id="piprofilerui" name="Performance Investigator Profiler UI" level="generic">
+	   	<!-- collection is really a component. Should move down a directory -->
+      <component id="piprofilerui_build" filter="s60" name="Performance Investigator Profiler UI Build" purpose="development" target="device" introduced="^4">
+			<unit bldFile="piprofilerui" qt:proFile="piprofilerui.pro" />
       </component>
     </collection>
     <collection id="screengrabber" name="Screen Grabber" level="util">
@@ -52,30 +43,23 @@
       </component>
     </collection>
     <collection id="stifui" name="STIF UI" level="generic">
-      <component id="stifui_avkon" filter="s60" name="STIF UI for Avkon" purpose="development" target="device">
-        <unit bldFile="stifui/akvon/group"/>
+      <component id="stifuiqt" filter="s60" name="STIF Qt UI" purpose="development" target="device" introduced="^4">
+		<unit bldFile="stifui/qt" qt:proFile="stifqtui.pro" /> <!-- should use stifuiqt as the dir name -->
       </component>
-   </collection>
+    </collection>
+    <collection id="memspyui" name="Memspy UI" level="generic">
+	   	<!-- collection is really a component. Should move down a directory -->
+      <component id="memspyui_build" filter="s60" name="Memspy UI Application" purpose="development" target="device" class="tool">
+        <unit bldFile="memspyui" qt:proFile="memspyui.pro" />
+      </component>
+    </collection>
     <collection id="htiui" name="Harmonized Test Interface UI" level="generic">
-      <component id="HtiServicePlugins" filter="s60" name="HTI Service Plugins" purpose="development" target="device" class="plugin">
-		<!-- can only have a single unit. Should #include from a common bld.inf file -->
-        <unit bldFile="htiui/HtiServicePlugins/HtiAppServicePlugin/group"/>
-        <unit bldFile="htiui/HtiServicePlugins/HtiAudioServicePlugin/group"/>
-        <unit bldFile="htiui/HtiServicePlugins/HtiKeyEventServicePlugin/group"/>
-        <unit bldFile="htiui/HtiServicePlugins/HtiMessagesServicePlugin/group"/>
-        <unit bldFile="htiui/HtiServicePlugins/HtiPIMServicePlugin/group"/>
-        <unit bldFile="htiui/HtiServicePlugins/HtiScreenshotServicePlugin/group"/>
-        <unit bldFile="htiui/HtiServicePlugins/HtiSysInfoServicePlugin/group"/>
-        <unit bldFile="htiui/HtiServicePlugins/HtiFtpBackupFake/group"/>
+      <component id="htiui_build" filter="s60" name="HTI UI Build" purpose="development" target="device">
+		<!-- should split up into individual components -->
+        <unit bldFile="htiui/group"/>
       </component>
-      <component id="htidevicereboot" filter="s60" name="HTI Device Reboot" purpose="development" target="device">
-        <unit bldFile="htiui/htidevicereboot/group"/>
-      </component>
-      <component id="htistartupwait" filter="s60" name="HTI Startup Wait" purpose="development" target="device">
-        <unit bldFile="htiui/htistartupwait/group"/>
-      </component>
-      <component id="htiadmin" filter="s60" name="HTI Admin" purpose="development" target="device">
-        <unit bldFile="htiui/htiadmin/group"/>
+      <component id="htiadminqt" filter="s60" name="HTI Admin Qt" purpose="development" target="device">
+        <unit bldFile="htiui/htiadminqt" qt:proFile="HtiAdmin.pro"/>
       </component>
     </collection>
   </package>

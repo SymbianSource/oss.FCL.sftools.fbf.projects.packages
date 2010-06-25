@@ -10,7 +10,10 @@
   </collection>
   <collection id="organizer_plat" name="Organizer Application Suite Platform Interfaces" level="app">
    <component id="organizer_plat_build" name="Organizer Application Suite Platform Interface Build" class="api" filter="s60">
-		<!-- break up into individual .pro files -->
+    <meta rel="Api" href="organizer_plat/agenda_versit_2_api/agenda_versit_2_api.metaxml"/>
+    <meta rel="Api" href="organizer_plat/calendar_exporter_api/calendar_exporter_api.metaxml"/>
+    <meta rel="Api" href="organizer_plat/calendar_importer_api/calendar_importer_api.metaxml"/>
+		<!-- break up into individual .pro files, move the above metaxmls to those components -->
     <unit bldFile="organizer_plat" qt:proFile="organizer_plat.pro"/>
    </component>
    <component id="agenda_versit_2_api" name="Agenda Versit 2 API" class="api" filter="s60">
@@ -120,9 +123,6 @@
    </component>
    <component id="clockui" filter="s60" name="Clock UI">
     <!--<unit bldFile="clock/clockui" qt:proFile="clockui.pro"/>-->
-   </component>
-   <component id="ftudatetimewizard" filter="s60" name="First Time Use Date/Time Wizard" introduced="^4">
-    <!--<unit bldFile="clock/ftudatetimewizard" qt:proFile="ftudatetimewizard.pro"/>-->
    </component>
    <component id="clock_build" filter="s60" name="Clock Build">
     <!-- make exports into a component, or just move to one of the above components, then remove this and uncomment the above -->

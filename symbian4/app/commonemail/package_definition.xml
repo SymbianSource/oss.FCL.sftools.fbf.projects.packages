@@ -26,6 +26,9 @@
       <component id="nmailagent" filter="s60" name="Nmail Agent" introduced="^4">
        <!-- <unit bldFile="emailservices/nmailagent" qt:proFile="nmailagent.pro"/>-->
       </component>
+     <component id="nmutilities" filter="s60" name="Nmail Utilities" introduced="^4">
+        <!-- <unit bldFile="emailservices/nmutilities" qt:proFile="nmutilities.pro"/> -->
+      </component>
     </collection>
     <collection id="ipsservices" name="IMAP/POP/SMTP Services" level="service">
       <component id="ipssosplugin" filter="s60" name="IPS SOS Plugin" class="plugin" introduced="^2">

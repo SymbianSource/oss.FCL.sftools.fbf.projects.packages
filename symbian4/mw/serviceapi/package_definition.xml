@@ -3,8 +3,9 @@
   <package id="serviceapi" name="Service API" levels="os mw1 mw2 app">
   	<!-- should break up this collection into something meaningful -->
     <collection id="serviceproviders" name="Service Providers" level="mw1">
+		<!-- are commented out components to be removed? -->
       <component id="sapi_contacts_vpbk" name="Contacts Phonebook SAPI"  filter="s60" class="plugin">
-        <unit bldFile="serviceproviders/sapi_contacts_vpbk/group"/>
+        <!--<unit bldFile="serviceproviders/sapi_contacts_vpbk/group"/>-->
       </component>
       <component id="sapi_location" name="Location SAPI"  filter="s60" class="plugin">
         <unit bldFile="serviceproviders/sapi_location/group"/>
@@ -16,14 +17,13 @@
         <unit bldFile="serviceproviders/sapi_landmarks/group"/>
       </component>
       <component id="sapi_messaging" name="Messaging SAPI" filter="s60" class="plugin">
-        <unit bldFile="serviceproviders/sapi_messaging/group"/>
+        <!-- <unit bldFile="serviceproviders/sapi_messaging/group"/> -->
       </component>
-
       <component id="sapi_applicationmanager" name="Application Manager SAPI" filter="s60" class="plugin">
-        <unit bldFile="serviceproviders/sapi_applicationmanager/group"/>
+       <!--  <unit bldFile="serviceproviders/sapi_applicationmanager/group"/>-->
       </component>
       <component id="sapi_calendar" name="Calendar SAPI" filter="s60" class="plugin">
-        <unit bldFile="serviceproviders/sapi_calendar/group"/>
+        <!-- <unit bldFile="serviceproviders/sapi_calendar/group"/> -->
       </component>
       <component id="sapi_logging" name="Logging SAPI"  filter="s60" class="plugin">
         <unit bldFile="serviceproviders/sapi_logging/group"/>

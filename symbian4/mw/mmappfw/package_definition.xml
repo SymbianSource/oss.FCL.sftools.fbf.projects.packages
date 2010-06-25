@@ -90,6 +90,9 @@
    <component id="videoplaylist_utility_api" name="Video Playlist Utility API" introduced="^1" class="api" filter="s60">
     <unit bldFile="mmappfw_plat/videoplaylist_utility_api/group"/>
    </component>
+   <component id="qt_telephony_multimedia_service_api" name="Qt Telephony Multimedia Service API" introduced="^4" class="api" filter="s60">
+    <unit bldFile="mmappfw_plat/qt_telephony_multimedia_service_api/group"/>
+   </component>
   </collection>
   <collection id="mpx" name="Multimedia Player" level="fw">
    <component id="commonframework" filter="s60" name="MPX Common Framework" introduced="^1">
@@ -104,7 +107,7 @@
    <component id="mpxviewfw" filter="s60" name="MPX View Framework" introduced="^1">
     <unit bldFile="mpx/viewframework/group"/>
    </component>
-   <component id="mpxviewframeworkqt" name="MPX View Framework Qt" filter="s60" introducde="^4">
+   <component id="mpxviewframeworkqt" name="MPX View Framework Qt" filter="s60" introduced="^4">
       <unit bldFile="mpx/mpxviewframeworkqt" qt:proFile="mpxviewframeworkqt.pro" qt:qmakeArgs="-r -config rom"/>
    </component>
    <component id="mpx_build" filter="s60" name="MPX Build" introduced="^1">
@@ -137,15 +140,13 @@
     <meta rel="config">
      <defined condition="IAD_INCLUDE_AUDIOFETCHER"/>
     </meta>
-    <!-- uncomment when config is in place, currently #included in mmappcomponents_build -->
-    <!-- <unit bldFile="mmappcomponents/audiofetcher/group"/>-->
+    <unit bldFile="mmappcomponents/audiofetcher/group"/>
    </component>
    <component id="asxparser" filter="s60" name="ASX Parser" introduced="^1">
     <meta rel="config">
      <defined condition="__WINDOWS_MEDIA"/>
     </meta>
-    <!-- uncomment when config is in place, currently #included in mmappcomponents_build -->
-    <!-- <unit bldFile="mmappcomponents/asxparser/group"/>-->
+    <unit bldFile="mmappcomponents/asxparser/group"/>
    </component>
    <component id="playbackhelper" filter="s60" name="Playback Helper" introduced="^3">
     <unit bldFile="mmappcomponents/playbackhelper/group"/>
@@ -155,6 +156,12 @@
    </component>
    <component id="mmmtpdataprovider" filter="s60" name="Multimedia MTP Data Provider" introduced="^3">
     <unit bldFile="mmappcomponents/mmmtpdataprovider/group"/>
+   </component>
+  </collection>
+  <collection id="qtms" name="Qt Telephony Multimedia Services" level="fw">
+   <component id="qtms_build" filter="s60" name="Qt Telephony Multimedia Services Build" introduced="^4">
+    <!--  Collection is really a component. Move down a dir -->
+    <unit bldFile="qtms" qt:proFile="qtmsapi.pro" qt:qmakeArgs="-r -config rom"/>
    </component>
   </collection>
   <collection id="mmappfw_info" name="Multimedia App Framework Info" level="if">

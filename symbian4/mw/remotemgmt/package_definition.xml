@@ -100,26 +100,6 @@
     <meta rel="Api" href="remotemgmt_plat/pnpms_utils_api/pnpms_utils_api.metaxml"/>
     <unit bldFile="remotemgmt_plat/pnpms_utils_api/group"/>
    </component>
-   <component id="diagnostics_plugin_utility_api" name="Diagnostics Plugin Utility API" class="api" filter="s60">
-    <meta rel="Api" href="remotemgmt_plat/diagnostics_plugin_utility_api/diagnostics_plugin_utility_api.metaxml"/>
-    <unit bldFile="remotemgmt_plat/diagnostics_plugin_utility_api/group"/>
-   </component>
-   <component id="diagnostics_plugin_api" name="Diagnostics Plug-in API" class="api" filter="s60">
-    <meta rel="Api" href="remotemgmt_plat/diagnostics_plugin_api/diagnostics_plugin_api.metaxml"/>
-    <unit bldFile="remotemgmt_plat/diagnostics_plugin_api/group"/>
-   </component>
-   <component id="diagnostics_framework_api" name="Diagnostics Framework API" class="api" filter="s60">
-    <meta rel="Api" href="remotemgmt_plat/diagnostics_framework_api/diagnostics_framework_api.metaxml"/>
-    <unit bldFile="remotemgmt_plat/diagnostics_framework_api/group"/>
-   </component>
-   <component id="diagnostics_results_api" name="Diagnostics Results API" class="api" filter="s60">
-    <meta rel="Api" href="remotemgmt_plat/diagnostics_results_api/diagnostics_results_api.metaxml"/>
-    <unit bldFile="remotemgmt_plat/diagnostics_results_api/group"/>
-   </component>
-   <component id="diagnostics_plugin_pool_api" name="Diagnostics Plugin Pool API" class="api" filter="s60">
-    <meta rel="Api" href="remotemgmt_plat/diagnostics_plugin_pool_api/diagnostics_plugin_pool_api.metaxml"/>
-    <unit bldFile="remotemgmt_plat/diagnostics_plugin_pool_api/group"/>
-   </component>
    <component id="adaptive_history_list_api" name="Adaptive History List API" class="api" filter="s60">
     <meta rel="Api" href="remotemgmt_plat/adaptive_history_list_api/adaptive_history_list_api.metaxml"/>
     <unit bldFile="remotemgmt_plat/adaptive_history_list_api/group"/>
@@ -210,23 +190,6 @@
     <unit bldFile="omaprovisioning/provisioning/group"/>
    </component>
   </collection>
-  <collection id="devicediagnosticsfw" name="Device Diagnostics Framework" level="framework">
-   <component id="diagframework" filter="s60" name="Diagnostics Framework">
-    <unit bldFile="devicediagnosticsfw/diagframework/group"/>
-   </component>
-   <component id="diagpluginbase" filter="s60" name="Diagnostics Plugin Base">
-    <unit bldFile="devicediagnosticsfw/diagpluginbase/group"/>
-   </component>
-   <component id="diagresultsdb" filter="s60" name="Diagnostics Results Database">
-    <!--  can only have one unit, merge or split into two components -->
-    <unit bldFile="devicediagnosticsfw/diagresultsdb/client/group"/>
-    <unit bldFile="devicediagnosticsfw/diagresultsdb/server/group"/>
-   </component>
-   <component id="devicediagnosticsfw_build" filter="s60" name="Device Diagnostics Framework Build">
-    <!--  need to distribute exports, etc into the other components and remove this-->
-    <unit bldFile="devicediagnosticsfw/group"/>
-   </component>
-  </collection>
   <collection id="dcmofw" name="Device Capability Management Object Framework" level="framework">
    <component id="dcmoclient" filter="s60" name="DCMO Client">
     <unit bldFile="dcmofw/dcmoclient/group"/>
@@ -243,20 +206,25 @@
    </component>
   </collection>
   <collection id="fotaapplication" name="FOTA Application" level="generic">
-   <component id="fotaapplication_build" filter="s60" name="FOTA Application Build">
-    <!-- remove this component when configuration is in place and the #ifdefs have been worked out -->
-    <unit bldFile="fotaapplication/group"/>
-   </component>
    <component id="fotaserver" filter="s60" name="FOTA Server">
     <meta rel="config">
      <defined condition="__SYNCML_DM_FOTA"/>
     </meta>
-    <!-- uncomment when #ifdefs are resolved -->
-    <!--<unit bldFile="fotaapplication/fotaserver/group"/>-->
+    <unit bldFile="fotaapplication/fotaserver/group"/>
    </component>
    <component id="fotacustcmds" filter="s60" name="FOTA Custom Commands">
-    <!-- uncomment when #ifdefs are resolved. Need to put a config meta here-->
-    <!--<unit bldFile="fotaapplication/fotaserver/fotacustcmds/group"/>-->
+    <meta rel="config">
+     <defined condition="__SYNCML_DM"/>
+     <not-defined condition="__PLUG_AND_PLAY_MOBILE_SERVICES"/>
+    </meta>
+    <unit bldFile="fotaapplication/fotaserver/fotacustcmds/group"/>
+   </component>
+   <!-- really need to find a better way to do this -->
+   <component id="fotacustcmds-alt" filter="s60" name="FOTA Custom Commands">
+    <meta rel="config">
+     <defined condition="__PLUG_AND_PLAY_MOBILE_SERVICES"/>
+    </meta>
+    <unit bldFile="fotaapplication/fotaserver/fotacustcmds/group"/>
    </component>
   </collection>
  </package>

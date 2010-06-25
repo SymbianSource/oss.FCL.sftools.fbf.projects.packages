@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="webruntime" name="Web Runtime">
-	<!-- need to break up this package nito collections and components -->
+	<!-- need to break up this package into collections and components -->
     <collection id="webruntime_info" name="Web Runtime Info">
      <component id="webruntime_build" name="Web Runtime Build" introduced="^4">
-      <unit bldFile="." qt:proFile="cwrt.pro" qt:qmakeArgs="&quot;what+=ninetwo&quot; &quot;what+=tenone&quot; &quot;what+=qt_unstable&quot; &quot;what+=wrtlite&quot; &quot;what+=exportiby&quot;"/>
+      <unit bldFile="." qt:proFile="cwrt.pro" qt:qmakeArgs="&quot;what+=qtsfw&quot; &quot;what+=qt_unstable&quot; &quot;what+=tenone&quot; &quot;what+=usif&quot; &quot;what+=services&quot; &quot;what+=wrtlite&quot; &quot;what+=exportiby&quot;"/>
      </component>
     </collection>
    </package>

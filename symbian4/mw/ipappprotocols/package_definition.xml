@@ -33,7 +33,7 @@
         <unit bldFile="sipplugins/sippwlanplugin/group"/>
       </component>
       <component id="sippsipsettingsui" filter="s60" name="SIP Settings UI" class="plugin">
-        <unit bldFile="sipplugins/sippsipsettingsui/group"/>
+        <!--<unit bldFile="sipplugins/sippsipsettingsui/group"/> -->
       </component>
       <component id="sippdevmgmtsipadapter" filter="s60" name="Device Management SIP Settings Adapter" class="plugin">
         <unit bldFile="sipplugins/sippdevmgmtsipadapter/group"/>

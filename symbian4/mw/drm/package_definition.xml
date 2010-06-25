@@ -88,9 +88,6 @@
    <component id="drmencryptor" filter="s60" name="DRM Encryptor">
     <!-- this should have its own bld.inf or be removed as a component -->
    </component>
-   <component id="drmsettingsplugin" filter="s60" name="DRM Settings Plugin" class="plugin">
-    <!-- this should have its own bld.inf or be removed as a component -->
-   </component>
    <component id="drmrightsmanagerui" filter="s60" name="DRM Rights Manager UI">
     <unit bldFile="commondrm/drmrightsmanagerui/help/group"/>
    </component>

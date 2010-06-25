@@ -5,7 +5,7 @@
   schema CDATA #REQUIRED
   id-namespace CDATA "http://www.symbian.org/system-definition"
 >
-<!-- this DTD describes schema="3.0.0" --> 
+<!-- this DTD describes schema="3.0.1" --> 
 
 <!-- all relative paths are relative to this file
 	all absolute paths are relative to the environment variable specified by the root attribute, or SRCROOT if not.  -->
@@ -38,6 +38,7 @@
   levels NMTOKENS #IMPLIED
   span CDATA #IMPLIED
   before NMTOKEN #IMPLIED
+  replace NMTOKEN #IMPLIED
 >
 
 <!ELEMENT package (meta*,  (package | collection)*)>
@@ -52,6 +53,7 @@
   span CDATA #IMPLIED
   level NMTOKEN #IMPLIED
   before NMTOKEN #IMPLIED  
+  replace NMTOKEN #IMPLIED
 >
 
 <!ELEMENT collection (meta*, (component* ))>
@@ -61,6 +63,7 @@
   href		CDATA #IMPLIED
   level NMTOKEN #IMPLIED
   before NMTOKEN #IMPLIED  
+  replace NMTOKEN #IMPLIED
 >
 
 <!ELEMENT component (meta*, unit*)>
@@ -76,10 +79,10 @@
   class NMTOKENS #IMPLIED
   filter CDATA #IMPLIED
   before NMTOKEN #IMPLIED  
+  replace NMTOKEN #IMPLIED
   origin-model CDATA #IMPLIED
 >
 <!--
-	"filter" attribute is deprecated
 	"origin-model" attribute is only to be inserted by tools when merging models
  	recommended class values are: doc, config, plugin, tool, api -->
 
@@ -95,10 +98,10 @@
   filter CDATA #IMPLIED
   priority CDATA #IMPLIED
 >
-<!-- filter and priority are deprecated 
+<!-- priority is deprecated 
 	"root" attribute will usually be inserted by tools when merging models, although it can be set manually-->
 ]>
-<SystemDefinition schema="3.0.0">
+<SystemDefinition schema="3.0.1">
   <systemModel name="Symbian^4">
     <layer id="adaptation" name="Adaptation" levels="low mw high">
       <package id="stubs" tech-domain="hb" level="high" span="2"  href="../../../../adaptation/stubs/package_definition.xml"/>
@@ -201,14 +204,14 @@
       <package id="messaging" level="apps" span="2" tech-domain="pr" href="../../../../app/messaging/package_definition.xml"/>
       <package id="commonemail" level="apps" span="2" tech-domain="pr" href="../../../../app/commonemail/package_definition.xml"/>
       <package id="camera" level="apps" tech-domain="ma" href="../../../../app/camera/package_definition.xml"/>
-      <!-- <package id="imgeditor" level="apps" tech-domain="ma" href="../../../../app/imgeditor/package_definition.xml"/> -->
-      <!-- <package id="videoeditor" level="apps" tech-domain="ma" href="../../../../app/videoeditor/package_definition.xml"/> -->
+      <package id="imgeditor" level="apps" tech-domain="ma" name="Image Editor"/>
+      <package id="videoeditor" level="apps" tech-domain="ma" name="Video Editor"/>
       <package id="videoplayer" level="apps" tech-domain="ma" href="../../../../app/videoplayer/package_definition.xml"/>
       <package id="photos" level="apps" tech-domain="ma" href="../../../../app/photos/package_definition.xml"/>
       <package id="musicplayer" level="apps" tech-domain="ma" href="../../../../app/musicplayer/package_definition.xml"/>
       <package id="radio" level="apps" tech-domain="ma" href="../../../../app/radio/package_definition.xml"/>
       <package id="internetradio" level="apps" tech-domain="ma" href="../../../../app/internetradio/package_definition.xml"/>
-      <package id="podcatcher" level="apps" tech-domain="ma" href="../../../../app/podcatcher/package_definition.xml"/>
+	  <package id="podcatcher" level="apps" tech-domain="ma" href="../../../../app/podcatcher/package_definition.xml"/>
       <package id="homescreen" level="apps" tech-domain="ui" href="../../../../app/homescreen/package_definition.xml"/>
       <package id="jrt" level="services" tech-domain="rt" href="../../../../app/jrt/package_definition.xml"/>
       <package id="browserui" level="services" tech-domain="rt" href="../../../../app/browserui/package_definition.xml"/>

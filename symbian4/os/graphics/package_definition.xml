@@ -51,7 +51,7 @@
      </component>
     </collection>
     <collection id="graphicstest" name="Graphics Test" level="app-if">
-      <component id="graphicstestharness" name="Graphics Test Harness" introduced="8.1" purpose="development" filter="test">
+      <component id="graphicstestharness" name="Graphics Test Harness" introduced="8.1" purpose="development" filter="test,api_test">
         <unit mrp="graphicstest/graphicstestharness/group/graphics_testharness.mrp" bldFile="graphicstest/graphicstestharness/group"/>
       </component>
       <component id="uibench" name="UI Bench" introduced="9.2" purpose="development">
@@ -131,7 +131,7 @@
       <component id="gdi" name="GDI" purpose="mandatory">
         <unit bldFile="graphicsdeviceinterface/gdi/group" mrp="graphicsdeviceinterface/gdi/group/graphics_gdi.mrp"/>
       </component>
-      <component id="bitgdi" name="BitGDI" purpose="mandatory">
+      <component id="bitgdi" name="BitGDI" purpose="mandatory" filter="api_test"> <!-- just api_test, not test -->
         <unit bldFile="graphicsdeviceinterface/bitgdi/group" mrp="graphicsdeviceinterface/bitgdi/group/graphics_bitgdi.mrp"/>
       </component>
       <component id="colourpalette" name="Colour Palette" introduced="7.0s" purpose="optional">

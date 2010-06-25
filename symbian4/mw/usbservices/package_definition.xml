@@ -87,10 +87,8 @@
     <unit bldFile="usbclasses/usbphoneasmodem/group"/>
    </component>
   </collection>
+
   <collection id="usbuis" name="USB UIs" level="specific">
-   <component id="usbui" filter="s60" name="USB UI">
-    <unit bldFile="usbuis/usbui/group"/>
-   </component>
    <component id="usbuinotif" filter="s60" name="USB UI Notifiers">
     <unit bldFile="usbuis/usbuinotif/group"/>
    </component>
@@ -100,8 +98,11 @@
    <component id="usbimageprintui" filter="s60" name="ImagePrint UI">
     <unit bldFile="usbuis/imageprintui/group"/>
    </component>
-   <component id="usbuiqt" name="USB UI Qt" introduced="^4" filter="s60">
-      <unit bldFile="usbuis/usbuiqt" qt:proFile="usbapplication.pro"/>
+   <component id="usbsettingsapp" name="USB Settings Application" introduced="^4" filter="s60">
+      <unit bldFile="usbuis/usbsettingsapp" qt:proFile="usbsettingsapp.pro" qt:qmakeArgs="-r"/>
+    </component>
+   <component id="usbindicatorplugin" name="USB Indicator Plugin" introduced="^4" filter="s60" class="plugin">
+      <unit bldFile="usbuis/usbindicatorplugin" qt:proFile="usbindicatorplugin.pro" qt:qmakeArgs="-r"/>
     </component>
   </collection>
   <collection id="usbservices_test" name="USB Services Test" level="server">

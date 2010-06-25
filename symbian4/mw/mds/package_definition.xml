@@ -135,8 +135,7 @@
     <defined condition="RD_MDS_2_5"/>
    </meta>
    <component id="clfwrapper_build" filter="s60" name="CLF Wrapper Build" introduced="^2">
-    <!-- Uncomment unit when configuration is in place. Currently #included from mds_build -->
-    <!--<unit bldFile="clfwrapper/group"/>-->
+    <unit bldFile="clfwrapper/group"/>
    </component>
   </collection>
   <collection id="mds_info" name="Metadata Services Info" level="int">

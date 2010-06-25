@@ -2,10 +2,6 @@
 <SystemDefinition schema="3.0.0">
   <package id="textandloc" name="Text and Localisation Services" levels="encoding util fonts tools text">
     <collection id="textandloc_plat" name="Text and Localisation Platform Interfaces" level="text">
-     <component id="findutil_api" class="api" name="Find Util API" filter="s60">
-      <meta rel="Api" href="textandloc_plat/findutil_api/findutil_api.metaxml"/>
-      <unit bldFile="textandloc_plat/findutil_api/group"/>
-     </component>
      <component id="japanese_language_utilities_api" class="api" name="Japanese Language Utilities API" filter="s60">
       <meta rel="Api" href="textandloc_plat/japanese_language_utilities_api/japanese_language_utilities_api.metaxml"/>
       <unit bldFile="textandloc_plat/japanese_language_utilities_api/group"/>
@@ -13,12 +9,6 @@
      <component id="sortutil_api" class="api" name="Sort Util API" filter="s60">
       <meta rel="Api" href="textandloc_plat/sortutil_api/sortutil_api.metaxml"/>
       <unit bldFile="textandloc_plat/sortutil_api/group"/>
-     </component>
-    </collection>
-    <collection id="textandloc_pub" name="Text and Localisation Public Interfaces" level="text">
-     <component id="directory_localizer_api" class="api" name="Directory Localizer API" filter="s60">
-      <meta rel="Api" href="textandloc_pub/directory_localizer_api/directory_localizer_api.metaxml"/>
-      <unit bldFile="textandloc_pub/directory_localizer_api/group"/>
      </component>
     </collection>
     <collection id="charconvfw" name="Character Conversion" level="encoding">
@@ -62,19 +52,16 @@
     </collection>
     <collection id="textandlocutils" name="Text and Localisation Utils" level="util">
       <component id="numbergrouping" name="Number Grouping">
-        <unit bldFile="charconvfw/numbergrouping/group"/>
+        <unit bldFile="textandlocutils/numbergrouping/group" mrp="textandlocutils/numbergrouping/group/tls_numbergrouping.mrp"/>
       </component>
       <component id="jplangutil" name="Japanese Language Utilities">
-        <unit bldFile="charconvfw/jplangutil/group"/>
+        <unit bldFile="textandlocutils/jplangutil/group" mrp="textandlocutils/jplangutil/group/tls_jplangutil.mrp"/>
       </component>
       <component id="sortutil" name="Sorting Utility">
-        <unit bldFile="charconvfw/sortutil/group"/>
+        <unit bldFile="textandlocutils/sortutil/group" mrp="textandlocutils/sortutil/group/tls_sortutil.mrp"/>
       </component>
       <component id="inlinetext" name="Inline Text">
-        <unit bldFile="charconvfw/inlinetext/group"/>
-      </component>
-     <component id="nearestlangutil" name="Nearest Language Util" introduced="^2" purpose="mandatory">
-     	<!-- placeholder for split from bafl -->
+        <unit bldFile="textandlocutils/inlinetext/group" mrp="textandlocutils/inlinetext/group/tls_inlinetext.mrp"/>
      </component>
       <component id="numberformatting" name="Number Formatting" introduced="7.0s" purpose="optional">
         <unit bldFile="textrendering/numberformatting/group" mrp="textrendering/numberformatting/group/app-framework_numberconversion.mrp"/>

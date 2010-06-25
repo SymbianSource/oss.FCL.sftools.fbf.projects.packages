@@ -128,9 +128,8 @@
    </component>
   </collection>
   <collection id="messagingapp" name="Messaging Application" level="app">
-   <component id="messagingapp_build" filter="s60" name="MMS Engine Build">
-    <!-- this should be broken up into the individual other components -->
-    <unit bldFile="messagingapp" qt:proFile="messagingapp.pro" qt:qmakeArgs="-r"/>
+   <component id="messaging_conf" filter="s60" name="Messaging Application Configuration" class="config" introduced="^4">
+    <unit bldFile="messagingapp/conf" qt:proFile="messaging_conf.pro" qt:qmakeArgs="-r"/>
    </component>
      <component id="msgutils" filter="s60" name="Messaging Utils" introduced="^4">
       <unit bldFile="messagingapp/msgutils" qt:proFile="msgutils.pro" qt:qmakeArgs="-r"/>
@@ -152,6 +151,9 @@
      </component>
      <component id="msgui" filter="s60" name="Messaging UI" introduced="^4">
       <unit bldFile="messagingapp/msgui" qt:proFile="msgui.pro" qt:qmakeArgs="-r"/>
+     </component>
+     <component id="msgservices" filter="s60" name="Messaging Services" introduced="^4">
+      <unit bldFile="messagingapp/msgservices" qt:proFile="msgservices.pro" qt:qmakeArgs="-r"/>
      </component>
   </collection>
   <collection id="email" name="Email" level="plugin">

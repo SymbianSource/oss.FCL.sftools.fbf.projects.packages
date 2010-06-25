@@ -38,6 +38,11 @@
     <!--<unit bldFile="main" qt:proFile="main.pro"/> -->
    </component>
   </collection>
+  <collection id="gallery" name="Gallery" level="ui">
+   <component id="gallery_build" filter="s60" name="Gallery Build" introduced="^4">
+    <!--<unit bldFile="gallery" qt:proFile="gallery.pro"/> -->
+   </component>
+  </collection>
   <collection id="imageviewerapp" name="Image Viewer App" level="support">
    <component id="imageviewerapp_build" filter="s60" name="Image Viewer App Build" introduced="^4">
     <!--<unit bldFile="imageviewerapp" qt:proFile="imageviewerapp.pro"/> -->

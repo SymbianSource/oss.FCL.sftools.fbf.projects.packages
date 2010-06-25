@@ -1,43 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="homescreen" name="Home Screen Apps" levels="support task ss hs">
-
-   <collection id="homescreen_info" name="Home Screen Info" level="support">
-    <component id="homescreen_build" name="Homescreen Build">
-		<!-- break this up properly into components -->
-      <unit bldFile="."  qt:proFile="homescreen.pro" qt:qmakeArgs="-r -config rom"/>
-     </component>
-    </collection>
     <collection id="homescreen_test" name="Home Screen Test" level="support">
-    <component id="tsrc_build" name="Tsrc Build" filter="test,unit_test">
+    <component id="homescreen_tsrc_build" name="Home Screen Test Build" filter="test,unit_test">
       <unit bldFile="tsrc" qt:proFile="tsrc.pro" qt:qmakeArgs="-r MMP_RULES+=EXPORTUNFROZEN"/>
      </component>
     </collection>
-	<!-- fiill in details with broken up homescreen_build -->
   <collection id="homescreenapp" name="Home Screen Application" level="hs">
-	<component id="hsutils" name="Home Screen Utils" introduced="^4"/>
-	<component id="hsdomainmodel" name="HS Domain Model" introduced="^4"/>
-	<component id="hs_runtimeplugins" name="HS Runtime Plugins" introduced="^4" class="plugin"/>
-	<component id="hs_serviceproviders" name="HS Service Providers" introduced="^4" class="plugin"/>
-	<component id="hs_stateplugins" name="HS State Plugins" introduced="^4" class="plugin"/>
-	<component id="hs_widgetplugins" name="HS Widget Plugins" introduced="^4" class="plugin"/>
-	<component id="hsapplication" name="Home Screen Application" introduced="^4"/>
-	<component id="hshomescreenclientplugin" name="Home Screen Client Plugin" introduced="^4" class="plugin"/>
-	<component id="hsmenucontentpublish" name="HS Menu Content Publish" introduced="^4"/>
-    </collection>
-  <collection id="screensaverapp" name="Screen Saver Application" level="ss">
-	<component id="snsrutils" name="Screen Saver Utils" introduced="^4"/>
-	<component id="snsr_serviceproviders" name="Screen Saver Service Providers" introduced="^4" class="plugin"/>
-	<component id="snsr_stateproviders" name="Screen Saver State Providers" introduced="^4" class="plugin"/>
-	<component id="snsr_runtimeproviders" name="Screen Saver Runtime Providers" introduced="^4" class="plugin"/>
-	<component id="snsrapplication" name="Screen Saver Application" introduced="^4"/>
-	<component id="screensaverproviders" name="Screen Saver Providers" introduced="^4" class="plugin"/>
+	<component id="hsutils" name="Home Screen Utils" introduced="^4">
+      <unit bldFile="homescreenapp/hsutils"  qt:proFile="hsutils.pro" qt:qmakeArgs="-r -config rom"/>
+     </component>
+	<component id="hsdomainmodel" name="HS Domain Model" introduced="^4">
+      <unit bldFile="homescreenapp/hsdomainmodel"  qt:proFile="hsdomainmodel.pro" qt:qmakeArgs="-r -config rom"/>
+     </component>
+	<component id="hs_runtimeplugins" name="HS Runtime Plugins" introduced="^4" class="plugin">
+      <unit bldFile="homescreenapp/runtimeplugins"  qt:proFile="runtimeplugins.pro" qt:qmakeArgs="-r -config rom"/>
+     </component>
+	<component id="hs_serviceproviders" name="HS Service Providers" introduced="^4" class="plugin">
+      <unit bldFile="homescreenapp/serviceproviders"  qt:proFile="serviceproviders.pro" qt:qmakeArgs="-r -config rom"/>
+     </component>
+	<component id="hs_stateplugins" name="HS State Plugins" introduced="^4" class="plugin">
+      <unit bldFile="homescreenapp/stateplugins"  qt:proFile="stateplugins.pro" qt:qmakeArgs="-r -config rom"/>
+     </component>
+	<component id="hs_widgetplugins" name="HS Widget Plugins" introduced="^4" class="plugin">
+      <unit bldFile="homescreenapp/widgetplugins"  qt:proFile="widgetplugins.pro" qt:qmakeArgs="-r -config rom"/>
+     </component>
+	<component id="hsapplication" name="Home Screen Application" introduced="^4">
+      <unit bldFile="homescreenapp/hsapplication"  qt:proFile="hsapplication.pro" qt:qmakeArgs="-r -config rom"/>
+     </component>
+	<component id="hsmenuclientplugin" name="Home Screen Menu Client Plugin" introduced="^4" class="plugin">
+      <unit bldFile="homescreenapp/hsmenuclientplugin"  qt:proFile="hsmenuclientplugin.pro" qt:qmakeArgs="-r -config rom"/>
+     </component>
+	<component id="hshomescreenclientplugin" name="HS Menu Client Plugin" introduced="^4" class="plugin">
+      <unit bldFile="homescreenapp/hshomescreenclientplugin"  qt:proFile="hshomescreenclientplugin.pro" qt:qmakeArgs="-r -config rom"/>
+     </component>
+	<component id="hswidgetuninstaller" name="HS Widget Uninstaller" introduced="^4">
+      <unit bldFile="homescreenapp/hswidgetuninstaller"  qt:proFile="hswidgetuninstaller.pro" qt:qmakeArgs="-r -config rom"/>
+     </component>
+	<component id="homescreenapp_rom" name="Home Screen App ROM" introduced="^4">
+      <unit bldFile="homescreenapp"  qt:proFile="homescreenapp_exports_to_rom.pri" qt:qmakeArgs="-r -config rom"/>
+     </component>
     </collection>
   <collection id="taskswitcherapp" name="Task Switcher Application" level="task">
-	<component id="taskswitcherappecom" name="Task Switcher Application ECom" introduced="^4"/>
-	<component id="tsserviceplugin" name="Task Switcher Service Plugin" introduced="^4" class="plugin"/>
-	<component id="ts_runtimeplugins" name="TS Runtime Plugins" introduced="^4" class="plugin"/>
-	<component id="tsapplication" name="Task Switcher Application" introduced="^4"/>
+	<!-- break collection info components, or move down a dir and make it a component -->
+    <component id="taskswitcherapp_build" name="Task Switcher Application Build">
+      <unit bldFile="taskswitcherapp"  qt:proFile="taskswitcherapp.pro" qt:qmakeArgs="-r -config rom"/>
+     </component>
+	<component id="tsdevicedialogplugin" name="Task Switcher Device Dialog Plugin" introduced="^4" class="plugin"/>
     </collection>
  </package>
 </SystemDefinition>
