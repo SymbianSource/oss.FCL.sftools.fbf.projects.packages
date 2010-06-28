@@ -133,12 +133,16 @@
 <xsl:template match="*[@href and not(self::meta)]" mode="scan-for-namespaces">
 	<!-- produce a list of namespace-prefix namespace pairs separated by newlines, in reverse order found in documents 
 		reverse order so we can try to use the first namespace prefix defined if it's available-->
-	<xsl:for-each select="document(@href,.)/*">
+	<xsl:variable name="linked" select="document(@href,.)/*"/>
+	<xsl:for-each select="$linked">
 		<xsl:apply-templates select="//*[(self::component or self::collection or self::package or self::layer) and @href]" mode="scan-for-namespaces"/>
 		<xsl:for-each select="//namespace::* | @id-namespace">
 			<xsl:value-of select="concat(name(),' ',.,'&#xa;')"/>
 		</xsl:for-each>
-	</xsl:for-each>			
+	</xsl:for-each>
+	<xsl:if test="not($linked)">
+	<xsl:message>Note: The link to <xsl:value-of select="@href"/> from <xsl:value-of select="concat(name(),' ',@id)"/> could not be resolved. Perhaps there's an error in the XML?</xsl:message>
+	</xsl:if>
 </xsl:template>
 
 <xsl:template name="needed-namespaces">

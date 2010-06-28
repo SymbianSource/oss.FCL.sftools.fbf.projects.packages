@@ -19,6 +19,7 @@
 	<!-- $Path is the location of the root system definition XML file. Must not end in /
 		This is used to compute the absolute paths the 2.0 syntax needs-->
 	<xsl:param name="Root"/> <!-- space separated list of root variables in the form "VAR1=value1 VAR=value2" --> 
+	<xsl:param name="Strict" select="0"/> <!-- Strict processing on means namespaced extensions are stripped out --> 
 	<xsl:variable name="root" select="concat(' ',$Root,' ')"/> <!-- sort of hack to allow absolute paths in downgraded output -->
 	<xsl:variable name="srcroot" select="substring-before(substring-after($root,' SRCROOT='),' ')"/> <!-- the default path prefix -->
 
@@ -26,10 +27,10 @@
 	<xsl:message terminate="yes">ERROR: Cannot process this document</xsl:message>
 </xsl:template>
 
-<!-- can only handle 3.0.0 to 2.0.1 transforms
+<!-- can only handle 3.0.x to 2.0.1 transforms
 	Assumes only packages are using href
  -->
-<xsl:template match="/SystemDefinition[@schema='3.0.0']"> 
+<xsl:template match="/SystemDefinition[starts-with(@schema,'3.0.')]"> 
 	<!-- process root system definition or package definition-->
 	<xsl:call-template name="DTD"/> <!-- insert 2.0.01 DTD -->
   <SystemDefinition name="{*/@name}" schema="2.0.1">
@@ -37,7 +38,7 @@
   </SystemDefinition>
 </xsl:template>
 
-<xsl:template match="/SystemDefinition[@schema='3.0.0' and systemModel]"> 
+<xsl:template match="/SystemDefinition[starts-with(@schema,'3.0.') and systemModel]"> 
 	<xsl:call-template name="DTD"/> <!-- insert 2.0.01 DTD -->
   <SystemDefinition name="{systemModel/@name}" schema="2.0.1">
   	<xsl:apply-templates select="*|comment()"/>
@@ -217,7 +218,7 @@
 			<xsl:with-param name="path" select="$path"/> 
 		</xsl:apply-templates>
 		<xsl:copy-of select="@filter|@root[not(contains($root,concat(' ',.,'=')))]|@version|@prebuilt|@priority"/>
-		<xsl:for-each select="@*[name()='qt:proFile' or name()='qt:qmakeArgs']">
+		<xsl:for-each select="@*[contains(name(),':') and not($Strict)]">
 			<xsl:attribute name="{local-name()}">
 				<xsl:value-of select="."/>
 			</xsl:attribute>

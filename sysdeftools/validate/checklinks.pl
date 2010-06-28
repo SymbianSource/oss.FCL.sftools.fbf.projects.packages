@@ -70,7 +70,7 @@ my @p1=reverse(split(/[\\\/]/,$sysdef));
 my @p2=reverse(split(/[\\\/]/,$realloc));
 
 shift(@p1);shift(@p2); # don't care abt file name
-while(lc($p1[0]) eq lc($p2[0])) {shift(@p1);shift(@p2)}
+while(lc($p1[0]) eq lc($p2[0]) && scalar(@p1)) {shift(@p1);shift(@p2)}
 
 $unitmap{join('/',reverse(@p1))} = join("/",reverse(@p2));
 

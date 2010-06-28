@@ -374,15 +374,16 @@
 
 	<xsl:choose>
 		<xsl:when test="$replaces[.=$this/@id] or (self::component and $match)">  <!-- replace the item instead of merge -->
-			<xsl:message>Note: <xsl:value-of select="name()"/> "<xsl:value-of select="@id"/>" <xsl:choose>
+			<xsl:message>Note: <xsl:value-of select="name()"/> "<xsl:value-of select="@id"/>" in "<xsl:value-of select="../@id"/>" <xsl:choose>
 				<xsl:when test="self::component and $match">overridden in downstream sysdef</xsl:when>
-				<xsl:otherwise><xsl:for-each select="$replaces[.=$this/@id]/..">replaced by <xsl:value-of select="name()"/> "<xsl:value-of select="@id"/>"</xsl:for-each></xsl:otherwise>
+				<xsl:otherwise><xsl:for-each select="$replaces[.=$this/@id]/..">replaced by <xsl:value-of select="name()"/> "<xsl:value-of select="@id"/>" in "<xsl:value-of select="../@id"/>"</xsl:for-each></xsl:otherwise>
 			</xsl:choose>
 			</xsl:message>
 			<!-- if the removed item is in the downstream doc, just copy that and ignore the upstream contents -->
 			<xsl:apply-templates mode="merge-copy-of" select="$match">
 				<xsl:with-param name="origin" select="$down"/>
 				<xsl:with-param name="root" select="$this/ancestor::systemModel"/>			
+				<xsl:with-param name="replaces" select="$replaces"/>
 			</xsl:apply-templates>		
 		</xsl:when>
 		<xsl:otherwise>
@@ -408,6 +409,7 @@
 		<xsl:apply-templates mode="merge-copy-of" select="$match/preceding-sibling::*[@id and not(@before)]">
 			<xsl:with-param name="origin" select="$down"/>
 			<xsl:with-param name="root" select="$this/ancestor::systemModel"/>	
+			<xsl:with-param name="replaces" select="$replaces"/>
 		</xsl:apply-templates>
 	</xsl:when>
 	</xsl:choose>
@@ -417,6 +419,7 @@
 		<xsl:with-param name="remove-before" select="1"/>
 		<xsl:with-param name="origin" select="$down"/>
 		<xsl:with-param name="root" select="$this/ancestor::systemModel"/>	
+		<xsl:with-param name="replaces" select="$replaces"/>
 	</xsl:apply-templates>
 
 	
@@ -475,6 +478,7 @@
 						<xsl:apply-templates mode="merge-copy-of" select=".">
 							<xsl:with-param name="origin" select="$down"/>
 							<xsl:with-param name="root" select="$this/ancestor::systemModel"/>			
+							<xsl:with-param name="replaces" select="$replaces"/>
 						</xsl:apply-templates>
 					</xsl:if>
 				</xsl:for-each>
@@ -490,6 +494,7 @@
 		<xsl:apply-templates mode="merge-copy-of" select="$other/layer[not(@before) and not(following-sibling::*[@id=$this/../layer/@id]) and not(@id=$this/../layer/@id)]">
 			<xsl:with-param name="origin" select="$down"/>
 			<xsl:with-param name="root" select="$this/ancestor::systemModel"/>			
+			<xsl:with-param name="replaces" select="$replaces"/>
 		</xsl:apply-templates>		
 	</xsl:if>
 </xsl:template>
@@ -500,10 +505,12 @@
 	<xsl:param name="remove-before" select="0"/> <!-- set to true if any before attribute is to be removed -->
 	<xsl:param name="origin"/>	<!--the element containing the @name to use the origin-model attribute  -->
 	<xsl:param name="root"/> 	<!--the systemModel element in the upstream doc  -->
+	<xsl:param name="replaces" select="ancestor::SystemDefinition/descendant::*[(self::component or self::collection or self::package or self::layer) and not(ancestor::meta)]/@replace"/> <!-- recalculate this is necessarfy, but should just pass down as a param -->
 
+	<xsl:variable name="moved" select="$root/descendant::*[name()=name(current()/..) and @id!=current()/../@id]/*[@id=current()/@id]"/>
 	<xsl:choose>
 		<!-- this might slow things down, consider making optional -->
-		<xsl:when test="not(self::layer) and count($root/descendant::*[name()=name(current()/..) and @id!=current()/../@id]/*[@id=current()/@id])">
+		<xsl:when test="not(self::layer) and (count($moved) and not($moved[ancestor-or-self::*/@id=$replaces]) )">
 			<xsl:message>Warning: <xsl:value-of select="name()"/> "<xsl:value-of select="@id"/>" moved in downstream model. Ignoring moved <xsl:value-of select="name()"/>
 				<xsl:text>&#xa;</xsl:text>
 			</xsl:message>
@@ -514,6 +521,7 @@
 				<xsl:apply-templates select="*|comment()" mode="merge-copy-of">
 					<xsl:with-param name="origin" select="$origin"/>
 					<xsl:with-param name="root" select="$root"/>
+					<xsl:with-param name="replaces" select="$replaces"/>
 				</xsl:apply-templates>
 			</xsl:variable>
 			<xsl:choose>
