@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="messaging" level="apps" span="2" long-name="Messaging Apps" levels="plugin eng base app api">
@@ -67,14 +67,14 @@
 <component name="shareui_api" long-name="Share UI API" filter="s60" introduced="^4" class="api"/>
 <component name="messaging_history_api" long-name="Messaging History API" filter="s60" introduced="^4" class="api"/>
 <component name="msg_plat_build" long-name="Messaging Apps Platform APIs Build" filter="s60" introduced="^4" class="api">
-<unit bldFile="/sf/app/messaging/msg_plat" proFile="msg_plat.pro" qmakeArgs="-r"/>
+<!-- break this up into the above units and replace their base attributes with bldFile, etc -->
 </component>
 </collection>
 <collection name="msg_pub" long-name="Messaging Apps Public APIs" level="api">
 <component name="mms_client_mtm_api" long-name="MMS Client MTM API" filter="s60" class="api"/>
 <component name="msg_smil_dtd_api" long-name="Messaging SMIL DTD API" filter="s60" introduced="^4" class="api"/>
 <component name="msg_pub_build" long-name="Messaging Apps Public APIs Build" filter="s60" introduced="^4" class="api">
-<unit bldFile="/sf/app/messaging/msg_pub" proFile="msg_pub.pro" qmakeArgs="-r"/>
+<!-- break this up into the above units and replace their base attributes with bldFile, etc -->
 </component>
 </collection>
 <collection name="mobilemessaging" long-name="Mobile Messaging" level="plugin">
@@ -144,9 +144,8 @@
 </component>
 </collection>
 <collection name="messagingapp" long-name="Messaging Application" level="app">
-<component name="messagingapp_build" filter="s60" long-name="MMS Engine Build">
-<!-- this should be broken up into the individual other components -->
-<unit bldFile="/sf/app/messaging/messagingapp" proFile="messagingapp.pro" qmakeArgs="-r"/>
+<component name="messaging_conf" filter="s60" long-name="Messaging Application Configuration" introduced="^4" class="config">
+<unit bldFile="/sf/app/messaging/messagingapp/conf" proFile="messaging_conf.pro" qmakeArgs="-r"/>
 </component>
 <component name="msgutils" filter="s60" long-name="Messaging Utils" introduced="^4">
 <unit bldFile="/sf/app/messaging/messagingapp/msgutils" proFile="msgutils.pro" qmakeArgs="-r"/>
@@ -168,6 +167,9 @@
 </component>
 <component name="msgui" filter="s60" long-name="Messaging UI" introduced="^4">
 <unit bldFile="/sf/app/messaging/messagingapp/msgui" proFile="msgui.pro" qmakeArgs="-r"/>
+</component>
+<component name="msgservices" filter="s60" long-name="Messaging Services" introduced="^4">
+<unit bldFile="/sf/app/messaging/messagingapp/msgservices" proFile="msgservices.pro" qmakeArgs="-r"/>
 </component>
 </collection>
 <collection name="email" long-name="Email" level="plugin">

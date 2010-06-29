@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="jrt" level="services" long-name="Java Runtime" levels="util generic rt ui">
@@ -63,6 +63,11 @@
 </component>
 <component name="java_debug_api" long-name="Java Debug API" filter="s60" class="api">
 <unit bldFile="/sf/app/jrt/jrt_plat/java_debug_api/build"/>
+</component>
+</collection>
+<collection name="java_stubs" long-name="Java Stubs" level="rt">
+<component name="java_stubs_build" long-name="Build Native Java" filter="sf_build" introduced="^4">
+<unit bldFile="/sf/app/jrt/java_stubs/group"/>
 </component>
 </collection>
 <collection name="build_nativejava" long-name="Build Native Java">

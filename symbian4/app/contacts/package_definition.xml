@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="contacts" level="apps" span="2" long-name="Contacts Apps" levels="engine support services ui">
@@ -58,8 +58,8 @@
 <component name="qt_mobility_contacts_api" long-name="Qt Mobility Contacts API" filter="s60" introduced="^4" class="api"/>
 </collection>
 <collection name="phonebookui" long-name="Phonebook UI" level="ui">
-<component name="mobhistorymodel" filter="s60" long-name="Mobile History Model" introduced="^4" class="placeholder">
-<!--<unit bldFile="phonebookui/mobhistorymodel" qt:proFile="mobhistorymodel.pro"/> -->
+<component name="cnthistorymodel" filter="s60" long-name="Contacts History Model" introduced="^4" class="placeholder">
+<!--<unit bldFile="phonebookui/cnthistorymodel" qt:proFile="cnthistorymodel.pro"/> -->
 </component>
 <component name="pbkcommonui" filter="s60" long-name="Phonebook Common UI" introduced="^4" class="placeholder">
 <!--<unit bldFile="phonebookui/pbkcommonui" qt:proFile="pbkcommonui.pro"/> -->
@@ -75,33 +75,31 @@
 <unit bldFile="/sf/app/contacts/phonebookui" proFile="phonebookui.pro"/>
 </component>
 </collection>
-<collection name="qtcontactsmobility" long-name="Qt Contacts Mobility" level="support">
-<component name="qtcontactsmobility_build" filter="s60" long-name="Qt Contacts Mobility Build" introduced="^4" plugin="Y">
-<!-- not really a component, move down a dir? Break up into compnents? -->
-<unit bldFile="/sf/app/contacts/qtcontactsmobility" proFile="qtcontactsmobility.pro"/>
-</component>
-</collection>
 <collection name="phonebookengines" long-name="Phonebook Engines" level="engine">
 <component name="cntfindplugin" filter="s60" long-name="Contacts Find Plugin" introduced="^2" plugin="Y">
 <unit bldFile="/sf/app/contacts/phonebookengines/cntfindplugin" proFile="cntfindplugin.pro"/>
 </component>
 <component name="contactsmodel" long-name="Contacts Model" introduced="ER5" purpose="optional">
-<unit bldFile="/sf/app/contacts/phonebookengines/contactsmodel" profile="contactsmodel.pro"/>
+<unit bldFile="/sf/app/contacts/phonebookengines/contactsmodel/groupsql" mrp="/sf/app/contacts/phonebookengines/contactsmodel/groupsql/app-engines_cntmodel.mrp" version="2"/>
 </component>
 <component name="cntsortplugin" filter="s60" long-name="Contacts Sort Plugin" introduced="^2" plugin="Y">
 <unit bldFile="/sf/app/contacts/phonebookengines/cntsortplugin" proFile="cntsortplugin.pro"/>
 </component>
-<component name="cntlistmodel" filter="s60" long-name="Contacts List Model" introduced="^4">
-<unit bldFile="/sf/app/contacts/phonebookengines/cntlistmodel" proFile="cntlistmodel.pro"/>
+<component name="qtcontactsmobility" filter="s60" long-name="Qt Contacts Mobility" introduced="^4" plugin="Y">
+<!-- need to move to this actual dir rather than including something from another collection -->
+<unit bldFile="/sf/app/contacts/qtcontactsmobility" proFile="qtcontactsmobility.pro"/>
 </component>
-<component name="cntactions" filter="s60" long-name="Contacts Actions" introduced="^4">
-<unit bldFile="/sf/app/contacts/phonebookengines/cntactions" proFile="cntactions.pro"/>
+<component name="mobcntmodel" filter="s60" long-name="Mobile Contacts Model" introduced="^4">
+<unit bldFile="/sf/app/contacts/phonebookengines/mobcntmodel" proFile="mobcntmodel.pro"/>
+</component>
+<component name="mobcntactions" filter="s60" long-name="Mobile Contacts Actions" introduced="^4">
+<unit bldFile="/sf/app/contacts/phonebookengines/mobcntactions" proFile="mobcntactions.pro"/>
 </component>
 <component name="cntmaptileservice" filter="s60" long-name="Contacts Map Tile Service" introduced="^4">
 <unit bldFile="/sf/app/contacts/phonebookengines/cntmaptileservice" proFile="cntmaptileservice.pro"/>
 </component>
-<component name="cntsimutility" filter="s60" long-name="Contacts SIM Utility" introduced="^4">
-<unit bldFile="/sf/app/contacts/phonebookengines/cntsimutility" proFile="cntsimutility.pro"/>
+<component name="simutility" filter="s60" long-name="SIM Utility" introduced="^4">
+<unit bldFile="/sf/app/contacts/phonebookengines/simutility" proFile="simutility.pro"/>
 </component>
 <component name="cntimageutility" long-name="Contacts Image Utility" filter="s60" introduced="^4">
 <unit bldFile="/sf/app/contacts/phonebookengines/cntimageutility" proFile="cntimageutility.pro"/>

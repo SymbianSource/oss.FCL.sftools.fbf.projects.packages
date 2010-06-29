@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="recents" level="apps" long-name="Recent Events" levels="engine support ui api">
@@ -61,8 +61,20 @@
 <component name="logs_engine_api_extensions" long-name="Logs Engine API Extensions" filter="s60" class="api"/>
 </collection>
 <collection name="logsui" long-name="Logs UI" level="ui">
+<!-- split into actual components -->
+<component name="logsservices" filter="s60" long-name="Logs Services" introduced="^4" class="placeholder">
+<!-- <unit bldFile="logsui/logsservices" qt:proFile="logsui.pro"/> -->
+</component>
+<component name="logscntfinder" filter="s60" long-name="Logs Contact finder" class="placeholder">
+<!--<unit bldFile="logsui/logscntfinder" qt:proFile="logscntfinder.pro"/> -->
+</component>
+<component name="logsengine" filter="s60" long-name="Logs Engine" introduced="^4" class="placeholder">
+<!--<unit bldFile="logsui/logsengine" qt:proFile="logsengine.pro"/> -->
+</component>
+<component name="logsapp" filter="s60" long-name="Logs Application" class="placeholder">
+<!--<unit bldFile="logsui/logsengine" qt:proFile="logsengine.pro"/> -->
+</component>
 <component name="logsui_build" filter="s60" long-name="Logs UI Build">
-<!-- component at too high a rank, should move down one directory -->
 <unit bldFile="/sf/app/recents/logsui" proFile="logsui.pro"/>
 </component>
 </collection>

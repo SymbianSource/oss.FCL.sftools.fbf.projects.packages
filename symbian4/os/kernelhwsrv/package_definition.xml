@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
    <block name="kernelhwsrv" level="hw" long-name="Kernel and Hardware Services" levels="hw-if adaptation framework test">
@@ -136,11 +136,8 @@
 <component name="euser" long-name="User Library" purpose="mandatory">
 <unit bldFile="/sf/os/kernelhwsrv/kernel/eka/euser" mrp="/sf/os/kernelhwsrv/kernel/eka/euser/base_e32_euser.mrp"/>
 </component>
-<component name="compsupp" long-name="RVCT Compiler Runtime Support" filter="gt" purpose="mandatory">
+<component name="compsupp" long-name="Compiler Runtime Support" filter="gt" purpose="mandatory">
 <unit bldFile="/sf/os/kernelhwsrv/kernel/eka/compsupp" mrp="/sf/os/kernelhwsrv/kernel/eka/compsupp/base_e32_compsupp.mrp"/>
-</component>
-<component name="compsupp_gcc" long-name="GCC Compiler Runtime Support" filter="gt,sf_build" purpose="mandatory">
-<unit bldFile="/sf/os/kernelhwsrv/kernel/eka/compsupp/gcce"/>
 </component>
 <component name="fileserver" long-name="File Server" filter="gt" purpose="mandatory">
 <unit bldFile="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/group" mrp="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/group/base_f32.mrp"/>
@@ -192,6 +189,9 @@
 <collection name="kernelhwsrv_info" long-name="Kernel and Hardware Services Info" level="test">
 <component name="kernelhwsrv_metadata" long-name="Kernel and Hardware Services Metadata" introduced="^2" purpose="development" class="config PC">
 <unit mrp="/sf/os/kernelhwsrv/kernelhwsrv_info/kernelhwsrv_metadata/kernelhwsrv_metadata.mrp"/>
+</component>
+<component name="kernelhwsrv_docpub" long-name="Kernel and Hardware Services Public Documentation" introduced="^3" purpose="development" class="doc">
+<unit mrp="/sf/os/kernelhwsrv/kernelhwsrv_info/doc_pub/kernelhwsrv_doc_pub.mrp"/>
 </component>
 </collection>
 </block>

@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="organizer" level="apps" span="2" long-name="Organizer Application Suite" levels="support services engine ui app">
@@ -62,7 +62,7 @@
 </collection>
 <collection name="organizer_plat" long-name="Organizer Application Suite Platform Interfaces" level="app">
 <component name="organizer_plat_build" long-name="Organizer Application Suite Platform Interface Build" filter="s60" class="api">
-<!-- break up into individual .pro files -->
+<!-- break up into individual .pro files, move the above metaxmls to those components -->
 <unit bldFile="/sf/app/organizer/organizer_plat" proFile="organizer_plat.pro"/>
 </component>
 <component name="agenda_versit_2_api" long-name="Agenda Versit 2 API" filter="s60" class="api placeholder">
@@ -124,6 +124,9 @@
 <component name="regionalplugins" long-name="Regional Plugins" filter="s60" introduced="^4" plugin="Y">
 <unit bldFile="/sf/app/organizer/calendarui/regionalplugins" proFile="regionalplugins.pro"/>
 </component>
+<component name="caldav" filter="sf_build" long-name="CalDAV" introduced="^3" plugin="Y" class="placeholder">
+<!-- not yet delivered in S^4 <unit bldFile="calendarui/caldav/group"/>-->
+</component>
 </collection>
 <collection name="notes" long-name="Notes" level="ui">
 <component name="noteseditor" filter="s60" long-name="Notes Editor" introduced="^4">
@@ -146,6 +149,9 @@
 <component name="calenimp" filter="s60" long-name="Calendar Import Wrapper" introduced="7.0s">
 <unit bldFile="/sf/app/organizer/calendarengines/calenimp/group"/>
 </component>
+<component name="caldavsrv" filter="sf_build" long-name="CalDAV Server" introduced="^3" class="placeholder">
+<!-- Not yet delivered in S^4 <unit bldFile="calendarengines/caldav/group"/> -->
+</component>
 </collection>
 <collection name="clock" long-name="Clock" level="app">
 <!-- uncomment unit when block_build is split up-->
@@ -157,9 +163,6 @@
 </component>
 <component name="clockui" filter="s60" long-name="Clock UI" class="placeholder">
 <!--<unit bldFile="clock/clockui" qt:proFile="clockui.pro"/>-->
-</component>
-<component name="ftudatetimewizard" filter="s60" long-name="First Time Use Date/Time Wizard" introduced="^4" class="placeholder">
-<!--<unit bldFile="clock/ftudatetimewizard" qt:proFile="ftudatetimewizard.pro"/>-->
 </component>
 <component name="clock_build" filter="s60" long-name="Clock Build">
 <!-- make exports into a component, or just move to one of the above components, then remove this and uncomment the above -->

@@ -50,20 +50,20 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
    <block name="deviceplatformrelease" level="services" long-name="Device Platform Release" levels="bld mid top">
 <collection name="s60extras" long-name="S60 Extras" level="mid">
 <!-- collection is really a component. Need to move down a directory -->
 <component name="s60extras_build" filter="s60" long-name="S60 Extras Build" purpose="development" class="config">
-<unit bldFile="/sf/os/deviceplatformrelease/S60Extras/group"/>
+<unit bldFile="/sf/os/deviceplatformrelease/s60extras/group"/>
 </component>
 </collection>
 <collection name="version" long-name="Version" level="top">
 <!-- collection is really a component. Need to move down a directory -->
 <component name="version_build" filter="s60" long-name="Version Build" purpose="development" class="config">
-<unit bldFile="/sf/os/deviceplatformrelease/Version/group"/>
+<unit bldFile="/sf/os/deviceplatformrelease/version/group"/>
 </component>
 </collection>
 <collection name="symbianosbld" long-name="Symbian OS Build" level="bld">
@@ -78,7 +78,7 @@
 <component name="system_model" long-name="System Model" introduced="^2" purpose="development" class="config PC">
 <unit mrp="/sf/os/deviceplatformrelease/foundation_system/system_model/system_model.mrp"/>
 </component>
-<component name="sf_config" long-name="Foundation Config" introduced="^4">
+<component name="sf_config" filter="s60" long-name="Foundation Config" introduced="^4">
 <unit bldFile="/sf/os/deviceplatformrelease/foundation_system/sf_config/CI_external/group"/>
 </component>
 <component name="config" filter="s60" long-name="Config" purpose="development" class="config"/>
@@ -86,16 +86,11 @@
 <!-- will should give the id/path something more unique than cenrep -->
 <unit bldFile="/sf/os/deviceplatformrelease/foundation_system/sf_config/cenrep/group"/>
 </component>
-<!-- comment out until rom configs are added -->
-<!-- component name="rombuild_syborg" filter="sf_build" long-name="Syborg iMaker Config" purpose="development" introduced="^3" class="config">
-<unit bldFile="os/deviceplatformrelease/foundation_system/sf_config/rombuild/syborg/group"/>
+<component name="rombuild_syborg" filter="sf_build" long-name="Syborg iMaker Config" purpose="development" introduced="^3" class="config">
+<unit bldFile="/sf/os/deviceplatformrelease/foundation_system/sf_config/rombuild/syborg/group"/>
 </component>
 <component name="rombuild_zoom2" filter="sf_build" long-name="Zoom2 iMaker Config" purpose="development" introduced="^3" class="config">
-<unit bldFile="os/deviceplatformrelease/foundation_system/sf_config/rombuild/zoom2/group"/>
-</component -->
-<component name="sbs" filter="sf_build" long-name="Foundation SBS config" purpose="development" class="config">
-<!-- will should give the id/path something more unique than sbs -->
-<unit bldFile="/sf/os/deviceplatformrelease/foundation_system/sf_config/sbs/group"/>
+<unit bldFile="/sf/os/deviceplatformrelease/foundation_system/sf_config/rombuild/zoom2/group"/>
 </component>
 </collection>
 <collection name="deviceplatformrelease_info" long-name="Device Platform Release Info" level="top">

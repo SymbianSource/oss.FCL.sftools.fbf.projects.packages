@@ -50,14 +50,17 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="files" level="apps" long-name="File Manager Apps" levels="support apps">
 <collection name="filemanager" long-name="File Manager" level="apps">
 <component name="filemanager_plat" long-name="File Manager Platform Interfaces" filter="s60" introduced="^4" class="api"/>
-<component name="fmbkupengine" filter="s60" long-name="File Manager Backup Engine" introduced="^4">
+<component name="fmbkupengine" filter="s60,bldfirst" long-name="File Manager Backup Engine" introduced="^4">
 <unit bldFile="/sf/app/files/filemanager/src/fmbkupengine/group"/>
+</component>
+<component name="fmfiledialog" filter="s60,bldfirst" long-name="File Manager File Dialog" introduced="^4">
+<unit bldFile="/sf/app/files/filemanager/src/fmfiledialog" proFile="fmfiledialog.pro" qmakeArgs="-r -config rom"/>
 </component>
 <component name="filemanager_build" filter="s60" long-name="File Manager Build">
 <!-- break this up into components or move down a directory -->

@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="photos" level="apps" long-name="Photos" levels="util support ui app">
@@ -89,6 +89,11 @@
 <collection name="photos_main" long-name="Photos Main" level="support">
 <component name="photos_main_build" filter="s60" long-name="Photos Main Build" introduced="^4" class="placeholder">
 <!--<unit bldFile="main" qt:proFile="main.pro"/> -->
+</component>
+</collection>
+<collection name="gallery" long-name="Gallery" level="ui">
+<component name="gallery_build" filter="s60" long-name="Gallery Build" introduced="^4" class="placeholder">
+<!--<unit bldFile="gallery" qt:proFile="gallery.pro"/> -->
 </component>
 </collection>
 <collection name="imageviewerapp" long-name="Image Viewer App" level="support">

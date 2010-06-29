@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="commonemail" level="apps" span="2" long-name="Email Apps" levels="service support ui app">
@@ -78,6 +78,9 @@
 </component>
 <component name="nmailagent" filter="s60" long-name="Nmail Agent" introduced="^4" class="placeholder">
 <!-- <unit bldFile="emailservices/nmailagent" qt:proFile="nmailagent.pro"/>-->
+</component>
+<component name="nmutilities" filter="s60" long-name="Nmail Utilities" introduced="^4" class="placeholder">
+<!-- <unit bldFile="emailservices/nmutilities" qt:proFile="nmutilities.pro"/> -->
 </component>
 </collection>
 <collection name="ipsservices" long-name="IMAP/POP/SMTP Services" level="service">

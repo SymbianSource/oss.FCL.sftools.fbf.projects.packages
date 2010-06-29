@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="mw" long-name="Middleware" levels="generic specific">
    <block name="browser" level="specific" long-name="Browser" levels="plugin utils support main">

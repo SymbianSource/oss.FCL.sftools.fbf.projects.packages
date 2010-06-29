@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="mw" long-name="Middleware" levels="generic specific">
    <block name="btservices" level="generic" long-name="Bluetooth Services" levels="framework server generic specific plugin">
@@ -104,11 +104,21 @@
 </component>
 </collection>
 <collection name="bluetoothengine" long-name="Bluetooth Engine" level="framework">
+<component name="btnotifclient" filter="s60" long-name="Bluetooth Notification Client" introduced="^4">
+<!-- cannot put a component under another component. Move up a directory -->
+<unit bldFile="/sf/mw/btservices/bluetoothengine/btnotif/btnotifclient/group"/>
+</component>
 <component name="bteng" filter="s60" long-name="Bluetooth Engine">
 <unit bldFile="/sf/mw/btservices/bluetoothengine/bteng/group"/>
 </component>
+<component name="btserviceutil" filter="s60" long-name="Bluetooth Service Utils" introduced="^4">
+<unit bldFile="/sf/mw/btservices/bluetoothengine/btserviceutil/group"/>
+</component>
 <component name="btnotif" filter="s60" long-name="Bluetooth Notifier">
 <unit bldFile="/sf/mw/btservices/bluetoothengine/btnotif/group"/>
+</component>
+<component name="btdevicedialogplugin" filter="s60" long-name="Bluetooth Device Dialog Plugin" introduced="^4" plugin="Y">
+<unit bldFile="/sf/mw/btservices/bluetoothengine/btnotif/btdevicedialogplugin" proFile="btdevicedialogplugin.pro"/>
 </component>
 <component name="btaudioman" filter="s60" long-name="Bluetooth Audio Manager">
 <unit bldFile="/sf/mw/btservices/bluetoothengine/btaudioman/group"/>
@@ -126,7 +136,7 @@
 <unit bldFile="/sf/mw/btservices/bluetoothengine/btsap/group"/>
 </component>
 <component name="btui" filter="s60" long-name="Bluetooth UI">
-<unit bldFile="/sf/mw/btservices/bluetoothengine/btui/group"/>
+<unit bldFile="/sf/mw/btservices/bluetoothengine/btui" proFile="btui.pro"/>
 </component>
 <component name="btpbap" filter="s60" long-name="Bluetooth Phonebook Access Profile" plugin="Y">
 <unit bldFile="/sf/mw/btservices/bluetoothengine/btpbap/group"/>
@@ -136,12 +146,6 @@
 </component>
 <component name="btctrldcmoadapter" filter="s60" long-name="Bluetooth Control DCMO Adapter" introduced="^3" plugin="Y">
 <unit bldFile="/sf/mw/btservices/bluetoothengine/btctrldcmoadapter/group"/>
-</component>
-<component name="btserviceutil" filter="s60" long-name="Bluetooth Service Utils">
-<unit bldFile="/sf/mw/btservices/bluetoothengine/btserviceutil/group"/>
-</component>
-<component name="btnotifclient" filter="s60" long-name="Bluetooth Notifier Client">
-<unit bldFile="/sf/mw/btservices/bluetoothengine/btnotif/btnotifclient/group"/>
 </component>
 </collection>
 <collection name="bluetoothappprofiles" long-name="Bluetooth Application Profiles" level="plugin">
