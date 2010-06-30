@@ -34,10 +34,6 @@
     <meta rel="Api" href="ipcm_plat/extended_connection_settings_api/extended_connection_settings_api.metaxml"/>
     <unit bldFile="ipcm_plat/extended_connection_settings_api/group"/>
    </component>
-   <component id="mpm_default_connection_api" name="MPM Default Connection API" class="api" filter="s60">
-    <meta rel="Api" href="ipcm_plat/mpm_default_connection_api/mpm_default_connection_api.metaxml"/>
-    <unit bldFile="ipcm_plat/mpm_default_connection_api/group"/>
-   </component>
    <component id="pdpcontextmanager2_reset_factory_settings_api" name="PDP Context Manager 2 Reset Factory Settings API" class="api" filter="s60">
     <meta rel="Api" href="ipcm_plat/pdpcontextmanager2_reset_factory_settings_api/pdpcontextmanager2_reset_factory_settings_api.metaxml"/>
     <unit bldFile="ipcm_plat/pdpcontextmanager2_reset_factory_settings_api/group"/>
@@ -48,6 +44,9 @@
    </component>
    <component id="mpm_connect_screen_api" name="MPM Connect Screen API" class="api" filter="s60">
     <unit bldFile="ipcm_plat/mpm_connect_screen_api/group"/>
+   </component>
+   <component id="flextimer_api" name="Flex Timer API" class="api" filter="s60" introduced="^4">
+    <unit bldFile="ipcm_plat/flextimer_api/group"/>
    </component>
   </collection>
   <collection id="ipcm_pub" name="IP Connectivity Management Public Interfaces" level="api">
@@ -129,6 +128,11 @@
   <collection id="connectionutilities" name="Connection Utilities" level="utils">
    <component id="connectiondialogs" filter="s60" name="Connection Dialogs">
     <unit bldFile="connectionutilities/connectiondialogs/group"/>
+   </component>
+  </collection>
+  <collection id="keepalive" name="Keep Alive" level="server">
+   <component id="flextimer" filter="s60" name="Flex Timer" introduced="^4">
+    <unit bldFile="keepalive/flextimer/group"/>
    </component>
   </collection>
   <collection id="dbcreator" name="DB Creator" level="utils">

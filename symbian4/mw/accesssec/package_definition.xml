@@ -21,7 +21,7 @@
   </collection>
   <collection id="eapol" name="EAPOL" level="framework">
    <component id="eapol_framework" filter="s60" name="EAPOL Framework" introduced="9.2">
-    <unit bldFile="eapol/eapol_framework/eapol_symbian/group"/>
+    <unit bldFile="eapol/group"/>
    </component>
   </collection>
  </package>

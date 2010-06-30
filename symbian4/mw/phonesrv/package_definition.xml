@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
- <package id="phonesrv" name="Telephony and SIM Services" levels="plugin framework server generic specific">
+ <package id="phonesrv" name="Telephony and SIM Services" levels="utils framework server ui specific">
   <collection id="phonesrv_plat" name="Telephony and SIM Services Platform Interfaces" level="specific">
    <component id="string_parser_api" name="String Parser API" class="api" filter="s60">
     <meta rel="Api" href="phonesrv_plat/string_parser_api/string_parser_api.metaxml"/>
@@ -161,40 +161,122 @@
     <unit bldFile="phonesrv_plat/dialpad_api/group"/>
    </component>
   </collection>
+  <collection id="telutils" name="Telephony Utils" level="utils">
+   <component id="phoneparser" filter="s60" name="Phone Parser">
+    <unit bldFile="telutils/phoneparser/group"/>
+   </component>
+   <component id="telephonyservice" filter="s60" name="Telephony Service">
+    <unit bldFile="telutils/telephonyservice/group"/>
+   </component>
+   <component id="xqtelephonyservice" filter="s60" name="X Qt Telephony Service" introduced="^4">
+    <unit bldFile="telutils/xqtelephonyservice" qt:proFile="xqtelephonyservice.pro"/>
+   </component>
+   <component id="dialpad" filter="s60" name="Dial Pad" introduced="^4">
+    <unit bldFile="telutils/dialpad" qt:proFile="dialpad.pro"/>
+   </component>
+   <component id="keysequencerecognitionservice" filter="s60" name="Key Sequence Recognition Service" introduced="^4">
+    <unit bldFile="telutils/keysequencerecognitionservice" qt:proFile="keysequencerecognitionservice.pro"/>
+   </component>
+  </collection>
+  <collection id="cbs" name="Cellular Baseband Services" level="utils">
+   <component id="cbsserver" filter="s60" name="CBS Server">
+    <unit bldFile="cbs/cbsserver/group"/>
+   </component>
+  </collection>
   <collection id="cellular" name="Cellular" level="server">
    <component id="telephonysettings" filter="s60" name="Telephony Settings" purpose="development">
+    <unit bldFile="cellular/telephonysettings/group" filter="!test"/>
     <unit bldFile="cellular/telephonysettings/tsrc/public/basic/group" filter="test,api_test"/>
    </component>
+   <component id="psetwrapper" filter="s60" name="Provider Settings Wrapper" introduced="^4">
+	<!-- need to move to own component, not under sssettings -->
+    <unit bldFile="cellular/telephonysettings/xqbindings/psetwrapper" qt:proFile="psetwrapper.pro"/>
+   </component>
    <component id="sssettings" filter="s60" name="Supplementary Service Settings" purpose="development">
+    <unit bldFile="cellular/sssettings/group" filter="!test"/>
     <unit bldFile="cellular/SSSettings/tsrc/public/basic/group" filter="test,api_test"/>
    </component>
+   <component id="sssettingswrapper" filter="s60" name="Supplementary Service Settings Wrapper" introduced="^4">
+	<!-- need to move to own component, not under sssettings -->
+    <unit bldFile="cellular/sssettings/xqbindings/sssettingswrapper" qt:proFile="sssettingswrapper.pro"/>
+   </component>
    <component id="psetnotesui" filter="s60" name="Phone Settings Notes UI" purpose="development">
+    <unit bldFile="cellular/psetnotesui/group" filter="!test"/>
     <unit bldFile="cellular/PsetNotesUi/tsrc/public/basic/group" filter="test,api_test"/>
+   </component>
+   <component id="servicerequest" filter="s60" name="Service Request">
+    <unit bldFile="cellular/servicerequest/group"/>
    </component>
   </collection>
   <collection id="convergedcallengine" name="Converged Call Engine" level="framework">
-   <component id="cce" filter="s60" name="CCE"  purpose="development">
+   <component id="callprovider" filter="s60" name="Call Provider">
+    <unit bldFile="convergedcallengine/callprovider/group"/>
+   </component>
+   <component id="cce" filter="s60" name="CCE">
+    <unit bldFile="convergedcallengine/cce/group" filter="!test"/>
     <unit filter="test,api_test" bldFile="convergedcallengine/cce/tsrc/public/basic/group"/>
    </component>
-   <component id="spsettings" filter="s60" name="Service Provider Settings"  purpose="development">
+   <component id="spsettings" filter="s60" name="Service Provider Settings">
+    <unit bldFile="convergedcallengine/spsettings/group" filter="!test"/>
     <unit filter="test,api_test" bldFile="convergedcallengine/spsettings/tsrc/public/basic/group"/>
+   </component>
+   <component id="cenrepdatabase" filter="s60" name="CCE Cenrep Database">
+    <unit bldFile="convergedcallengine/cenrepdatabase/group"/>
+   </component>
+   <component id="serviceselector" filter="s60" name="Service Selector">
+    <unit bldFile="convergedcallengine/serviceselector/group"/>
+   </component>
+  </collection>
+  <collection id="networkhandling" name="Network Handling" level="framework">
+   <component id="networkhandlingengine" filter="s60" name="Network Handling Engine">
+    <unit bldFile="networkhandling/networkhandlingengine/group"/>
    </component>
   </collection>
   <collection id="phoneclientserver" name="Phone Client/Server" level="server">
-   <component id="aiwdialdata" filter="s60" name="AIW Dial Data"  purpose="development">
+   <component id="enpolicy" filter="s60" name="Emergency Number Policy">
+    <unit bldFile="phoneclientserver/enpolicy/group"/>
+   </component>
+   <component id="aiwdialdata" filter="s60" name="AIW Dial Data">
+    <unit bldFile="phoneclientserver/aiwdialdata/group" filter="!test"/>
     <unit filter="test,api_test" bldFile="phoneclientserver/aiwdialdata/tsrc/public/basic/group"/>
    </component>
-   <component id="dialutils" filter="s60" name="Dial Utils"  purpose="development">
+   <component id="dialutils" filter="s60" name="Dial Utils">
+    <unit bldFile="phoneclientserver/dialutils/group" filter="!test"/>
     <unit filter="test,api_test" bldFile="phoneclientserver/dialutils/tsrc/public/basic/group"/>
    </component>
-   <component id="phoneclient" filter="s60" name="Phone Client"  purpose="development">
+   <component id="phoneclient" filter="s60" name="Phone Client">
+    <unit bldFile="phoneclientserver/phoneclient/group" filter="!test"/>
     <unit filter="test,api_test" bldFile="phoneclientserver/phoneclient/tsrc/public/basic/group"/>
    </component>
+   <component id="phoneserver" filter="s60" name="Phone Server">
+    <unit bldFile="phoneclientserver/phoneserver/group"/>
+   </component>
   </collection>
-  <collection id="phonesrv_info" name="Phone Server Info" level="generic">
-    <component id="phonesrv_build" name="Phone Server Build" filter="s60">
-      <unit bldFile="."  qt:proFile="phonesrv.pro"/>
-     </component>
+  <collection id="phonecmdhandler" name="Phone Command Handler" level="generic">
+   <component id="phonecmdhnlr" filter="s60" name="Phone Command Handler">
+    <unit bldFile="phonecmdhandler/phonecmdhnlr/group"/>
+   </component>
+  </collection>
+  <collection id="satengine" name="SAT Engine" level="server">
+   <component id="satserver" filter="s60" name="SAT Server">
+    <unit bldFile="satengine/satserver/group"/>
+   </component>
+  </collection>
+  <collection id="satui" name="SAT UI" level="ui">
+   <component id="satshellcontroller" filter="s60" name="SAT Shell Controller">
+    <unit bldFile="satui/satshellcontroller/group"/>
+   </component>
+   <component id="satapp" filter="s60" name="SAT Application" introduced="^4">
+    <unit bldFile="satui/satapp" qt:proFile="satapp.pro"/>
+   </component>
+  </collection>
+  <collection id="vmbx" name="Voice Mailbox" level="ui">
+   <component id="vmbxcpplugin" filter="s60" name="Voice Mailbox CP Plugin" class="plugin" introduced="^4">
+    <unit bldFile="vmbx/vmbxcpplugin" qt:proFile="vmbxcpplugin.pro"/>
+   </component>
+   <component id="vmbxengine" filter="s60" name="Voice Mailbox Engine"  introduced="^4">
+    <unit bldFile="vmbx/vmbxengine" qt:proFile="vmbxengine.pro"/>
+   </component>
   </collection>
  </package>
 </SystemDefinition>

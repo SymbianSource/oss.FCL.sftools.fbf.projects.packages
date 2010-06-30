@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition schema="3.0.0">
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="appsupport" name="Generic Application Support" levels="system plugin framework server generic specific">
   <collection id="appsupport_pub" name="Generic Application Support Public Interfaces" level="specific">
    <component id="flash_viewer_framework_api" name="Flash Viewer Framework API" class="api" filter="s60">
@@ -196,6 +196,9 @@
    </component>
    <component id="atcmdplugin" name="AT Command Plugin" class="plugin" filter="s60,!oem_build">
       <unit bldFile="coreapplicationuis/atcmdplugin/group"/>
+   </component>
+   <component id="devicepowermenuplugin" name="Device Power Menu Plugin" class="plugin" introduced="^4">
+      <unit bldFile="coreapplicationuis/devicepowermenuplugin" qt:proFile="devicepowermenuplugin.pro"/>
    </component>
   </collection>
   <collection id="flashliteapi_3_1" name="Flash Lite API 3.1" level="specific">

@@ -53,19 +53,22 @@
       <unit bldFile="wlanutilities" qt:proFile="wlanutilities.pro" qt:qmakeArgs="-r"/>
     </component>
    <component id="wlanqtutilities" filter="s60" name="WLAN Qt Utilities" introduced="^4">
-    <!--<unit bldFile="wlanutilities/wlanplugin/group" qt:proFile="wlanqtutilities.pro"/>-->
+    <!--<unit bldFile="wlanutilities/wlanplugin" qt:proFile="wlanqtutilities.pro"/>-->
+   </component>
+   <component id="wlanwizard " filter="s60" name="WLAN Wizard" introduced="^4">
+    <!--<unit bldFile="wlanutilities/wlanwizard" qt:proFile="wlanwizard.pro"/>-->
    </component>
    <component id="wlansniffer" filter="s60" name="WLAN Sniffer">
-    <!--<unit bldFile="wlanutilities/wlansettingsui/group" qt:proFile="wlansniffer.pro"/>-->
+    <!--<unit bldFile="wlanutilities/wlansettingsui" qt:proFile="wlansniffer.pro"/>-->
    </component>
    <component id="wlanentryplugin" filter="s60" name="WLAN Entry Plugin" class="plugin">
-    <!--<unit bldFile="wlanutilities/wlansniffer/group" qt:proFile="wlanentryplugin.pro"/>-->
+    <!--<unit bldFile="wlanutilities/wlansniffer" qt:proFile="wlanentryplugin.pro"/>-->
    </component>
    <component id="wlanindicatorplugin" filter="s60" name="WLAN Indicator Plugin" class="plugin">
-    <!--<unit bldFile="wlanutilities/wlanindicatorplugin/group" qt:proFile="wlanindicatorplugin.pro"/>-->
+    <!--<unit bldFile="wlanutilities/wlanindicatorplugin" qt:proFile="wlanindicatorplugin.pro"/>-->
    </component>
    <component id="cpwlansettingsplugin" filter="s60" name="WLAN Settings Control Panel Plugin" class="plugin"  introduced="^4">
-    <!--<unit bldFile="wlanutilities/cpwlansettingsplugin/group" qt:proFile="cpwlansettingsplugin.pro"/>-->
+    <!--<unit bldFile="wlanutilities/cpwlansettingsplugin" qt:proFile="cpwlansettingsplugin.pro"/>-->
    </component>
   </collection>
  </package>

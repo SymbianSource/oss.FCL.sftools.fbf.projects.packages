@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition schema="3.0.0">
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="drm" name="DRM" levels="plugin framework server generic specific">
   <collection id="drm_plat" name="DRM Platform Interfaces" level="specific">
    <component id="roap_api" name="ROAP API" class="api" filter="s60">
@@ -85,8 +85,8 @@
   </collection>
   <collection id="commondrm" name="Common DRM" level="generic">
    <!-- it looks like this collection would be better as a component. If so, move down a directory. Otherwise, split up the bld.inf -->
-   <component id="drmencryptor" filter="s60" name="DRM Encryptor">
-    <!-- this should have its own bld.inf or be removed as a component -->
+   <component id="drmqtencryptor" filter="s60" name="DRM Qt Encryptor" introduced="^4">
+    <unit bldFile="commondrm/drmqtencryptor"  qt:proFile="qt_drmencryptor.pro" qt:qmakeArgs="-r" />
    </component>
    <component id="drmrightsmanagerui" filter="s60" name="DRM Rights Manager UI">
     <unit bldFile="commondrm/drmrightsmanagerui/help/group"/>

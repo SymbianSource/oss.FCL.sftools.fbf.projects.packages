@@ -28,17 +28,17 @@
    </component>
   </collection>
   <collection id="servicediscoveryandcontrol" name="Service Discovery and Control" level="framework">
-   <component id="servicediscoveryfw" name="Service Discovery Framework" introduced="^3" purpose="optional">
+      <component id="servicediscoveryfw" name="Service Discovery Framework" introduced="^3" purpose="optional" filter="s60">
     <unit bldFile="servicediscoveryandcontrol/pnp/group" mrp="servicediscoveryandcontrol/pnp/group/servicediscoveryframework.mrp"/>
    </component>
   </collection>
   <collection id="upnp" name="UPnP" level="server">
-   <component id="upnpstack" name="UPnP Stack" introduced="^3" purpose="optional">
+      <component id="upnpstack" name="UPnP Stack" introduced="^3" purpose="optional" filter="s60">
     <unit bldFile="upnp/upnpstack/group"/>
    </component>
   </collection>
   <collection id="srvdiscovery_info" name="Service Discovery and Usage Info" level="specific">
-   <component id="srvdiscovery_metadata" name="Service Discovery and Usage Metadata" class="config" introduced="^2" purpose="development" target="desktop">
+      <component id="srvdiscovery_metadata" name="Service Discovery and Usage Metadata" class="config" introduced="^2" purpose="development" target="desktop" filter="s60">
     <unit mrp="srvdiscovery_info/srvdiscovery_metadata/srvdiscovery_metadata.mrp"/>
    </component>
   </collection>

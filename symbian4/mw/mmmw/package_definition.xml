@@ -2,13 +2,17 @@
 <SystemDefinition schema="3.0.1">
  <package id="mmmw" name="Multimedia Middleware" levels="plugin framework server generic specific">
   <collection id="mmmw_plat" name="Multimedia Middleware Platform Interfaces" level="specific">
+      <meta rel="testbuild">
+       <group name="mmmw_tsrc_group"/>
+      </meta>
    <component id="multimedia_data_source_api" name="Multimedia Data Source API" class="api" filter="s60">
     <meta rel="Api" href="mmmw_plat/multimedia_data_source_api/multimedia_data_source_api.metaxml"/>
     <unit bldFile="mmmw_plat/multimedia_data_source_api/group"/>
    </component>
    <component id="enhanced_media_client_api" name="Enhanced Media Client API" class="api" filter="s60">
     <meta rel="Api" href="mmmw_plat/enhanced_media_client_api/enhanced_media_client_api.metaxml"/>
-    <unit bldFile="mmmw_plat/enhanced_media_client_api/group"/>
+    <unit bldFile="mmmw_plat/enhanced_media_client_api/group" filter="!test"/>
+    <unit bldFile="mmmw_plat/enhanced_media_client_api/tsrc/Group" filter="test,api_test,pref_test,TA_MMMW"/>
    </component>
    <component id="stream_control_custom_command_api" name="Stream Control Custom Command API" class="api" filter="s60">
     <meta rel="Api" href="mmmw_plat/stream_control_custom_command_api/stream_control_custom_command_api.metaxml"/>
@@ -24,7 +28,8 @@
    </component>
    <component id="audio_metadata_reader_api" name="Audio MetaData Reader API" class="api" filter="s60">
     <meta rel="Api" href="mmmw_plat/audio_metadata_reader_api/audio_metadata_reader_api.metaxml"/>
-    <unit bldFile="mmmw_plat/audio_metadata_reader_api/group"/>
+    <unit bldFile="mmmw_plat/audio_metadata_reader_api/group" filter="!test"/>
+    <unit bldFile="mmmw_plat/audio_metadata_reader_api/tsrc/Group" filter="test,api_test,pref_test,TA_MMMW"/>
    </component>
    <component id="emc_volume_effect_api" name="EMC Volume Effect API" class="api" filter="s60">
     <meta rel="Api" href="mmmw_plat/emc_volume_effect_api/emc_volume_effect_api.metaxml"/>
@@ -43,7 +48,8 @@
    </component>
    <component id="voip_audio_services_api" name="VoIP Audio Services" class="api" filter="s60">
     <meta rel="Api" href="mmmw_plat/voip_audio_services_api/voip_audio_services_api.metaxml"/>
-    <unit bldFile="mmmw_plat/voip_audio_services_api/group"/>
+    <unit bldFile="mmmw_plat/voip_audio_services_api/group" filter="!test"/>
+    <unit bldFile="mmmw_plat/voip_audio_services_api/tsrc/Group" filter="test,api_test,pref_test,TA_MMMW"/>
    </component>
    <component id="configuration_components_factory_api" name="Configuration Components Factory API" class="api" filter="s60">
     <meta rel="Api" href="mmmw_plat/configuration_components_factory_api/configuration_components_factory_api.metaxml"/>
@@ -51,7 +57,8 @@
    </component>
    <component id="audio_output_control_utility_api" name="Audio Output Control Utility API" class="api" filter="s60">
     <meta rel="Api" href="mmmw_plat/audio_output_control_utility_api/audio_output_control_utility_api.metaxml"/>
-    <unit bldFile="mmmw_plat/audio_output_control_utility_api/group"/>
+    <unit bldFile="mmmw_plat/audio_output_control_utility_api/group" filter="!test"/>
+    <unit bldFile="mmmw_plat/audio_output_control_utility_api/tsrc/Group" filter="test,api_test,pref_test,TA_MMMW"/>
    </component>
    <component id="audio_output_control_utility_proxy_api" name="Audio Output Control Utility Proxy API" class="api" filter="s60">
     <meta rel="Api" href="mmmw_plat/audio_output_control_utility_proxy_api/audio_output_control_utility_proxy_api.metaxml"/>
@@ -63,11 +70,13 @@
    </component>
    <component id="call_audio_control_api" name="Call AudioControl API" class="api" filter="s60">
     <meta rel="Api" href="mmmw_plat/call_audio_control_api/call_audiocontrol_api.metaxml"/>
-    <unit bldFile="mmmw_plat/call_audio_control_api/group"/>
+    <unit bldFile="mmmw_plat/call_audio_control_api/group" filter="!test"/>
+    <unit bldFile="mmmw_plat/call_audio_control_api/tsrc/Group" filter="test,api_test,pref_test,TA_MMMW"/>
    </component>
    <component id="radio_utilities_api" name="Radio Utilities API" class="api" filter="s60">
     <meta rel="Api" href="mmmw_plat/radio_utilities_api/radio_utilities_api.metaxml"/>
-    <unit bldFile="mmmw_plat/radio_utilities_api/group"/>
+    <unit bldFile="mmmw_plat/radio_utilities_api/group" filter="!test"/>
+    <unit bldFile="mmmw_plat/radio_utilities_api/tsrc/Group" filter="test,api_test,pref_test,TA_MMMW"/>
    </component>
    <component id="radio_preset_utilities_api" name="Radio Preset Utilities API" class="api" filter="s60">
     <meta rel="Api" href="mmmw_plat/radio_preset_utilities_api/radio_preset_utilities_api.metaxml"/>
@@ -79,15 +88,20 @@
    </component>
    <component id="thumbnail_engine_api" name="Thumbnail Engine API" class="api" filter="s60">
     <meta rel="Api" href="mmmw_plat/thumbnail_engine_api/thumbnail_engine_api.metaxml"/>
-    <unit bldFile="mmmw_plat/thumbnail_engine_api/group"/>
+    <unit bldFile="mmmw_plat/thumbnail_engine_api/group" filter="!test"/>
+    <unit bldFile="mmmw_plat/thumbnail_engine_api/tsrc/Group" filter="test,api_test,pref_test,TA_MMMW"/>
    </component>
    <component id="telephony_multimedia_service_api" name="Telephony Multimedia Service API" class="api" filter="s60">
+      <meta rel="testbuild">
+       <group name="mmmw_tms_tsrc_group"/>
+      </meta>
     <unit bldFile="mmmw_plat/telephony_multimedia_service_api/group" filter="!test"/>
-    <unit bldFile="mmmw_plat/telephony_multimedia_service_api/tsrc/group" filter="test,api_test"/>
+    <unit bldFile="mmmw_plat/telephony_multimedia_service_api/tsrc/group" filter="test,api_test,pref_test,TA_MMMW,TA_TMS"/>
    </component>
    <component id="openmax_al_api" name="OpenMAX AL API" class="api" filter="s60" introduced="^4">
       <meta rel="Api" href="mmmw_plat/openmax_al_api/openmax_al_api.metaxml"/>
-      <unit bldFile="mmmw_plat/openmax_al_api/group"/>
+      <unit bldFile="mmmw_plat/openmax_al_api/group" filter="!test"/>
+      <unit bldFile="mmmw_plat/openmax_al_api/tsrc/openmaxaltestmodule/group" filter="test,api_test,pref_test,TA_MMMW"/>
    </component>
    <component id="openmax_al_ext_api" name="OpenMAX AL Extensions API" class="api" filter="s60" introduced="^4">
       <meta rel="Api" href="mmmw_plat/openmax_al_ext_api/openmax_al_ext_api.metaxml"/>
@@ -95,6 +109,7 @@
    </component>
    <component id="system_tone_service_api" name="System Tone Service API" class="api" filter="s60" introduced="^4">
       <unit bldFile="mmmw_plat/system_tone_service_api/group"/>
+      <unit bldFile="mmmw_plat/system_tone_service_api/tsrc/group" filter="test,api_test,pref_test,TA_MMMW"/>
    </component>
   </collection>
   <collection id="khronosfws" name="Khronos Frameworks" level="framework">
@@ -122,7 +137,10 @@
     <unit bldFile="mmfenh/profilesettingsmonitor/group"/>
    </component>
    <component id="mmfenh_test" filter="s60,test,module_test,pref_test" name="MMF Enhancements Tests" purpose="development">
-    <unit bldFile="mmfenh/advancedaudiocontroller/tsrc/advancedaudiocontrollertestmodule/group"/>
+      <meta rel="testbuild">
+       <group name="advancedaudiocontroller_tsrc_group"/>
+      </meta>
+    <unit bldFile="mmfenh/advancedaudiocontroller/tsrc/advancedaudiocontrollertestmodule/group" filter="TA_ADVANCEDAUDIOCONTROLLER"/>
    </component>
   </collection>
   <collection id="mmserv" name="Multimedia Services" level="specific">

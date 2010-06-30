@@ -15,11 +15,11 @@
     </collection>
     <collection id="ganeswidgets" name="Ganes Widgets" level="service">
 		<!-- really a component, should move down a dir level and have a unit -->
-      <component id="ganeswidgets_build" name="Ganes Widgets Build" introduced="^4">
+      <component id="ganeswidgets_build" name="Ganes Widgets Build" introduced="^4" filter="build_as_app">
         <unit bldFile="ganeswidgets" qt:proFile="ganeswidgets.pro"/>
 	 </component>
     </collection>	 
-    <collection id="hgcacheproxymodel" name="Hurriganes Cache Proxy Model" level="framework">
+    <collection id="hgcacheproxymodel" name="Hurriganes Cache Proxy Model" level="framework" filter="build_as_app">
 		<!-- really a component, should move down a dir level and have a unit -->
       <component id="hgcacheproxymodel_build" name="Hurriganes Cache Proxy Model Build" introduced="^4">
         <unit bldFile="hgcacheproxymodel" qt:proFile="hgcacheproxymodel.pro"/>

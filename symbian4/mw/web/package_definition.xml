@@ -165,9 +165,6 @@
    <component id="widgetregistry" filter="s60" name="Widget Registry">
     <unit bldFile="webengine/widgetregistry/group"/>
    </component>
-   <component id="wmlengine" filter="s60" name="WML Engine">
-    <unit bldFile="webengine/wmlengine/group"/>
-   </component>
    <component id="device" filter="s60" name="Device">
     <!-- this needs a more meaningful name -->
     <unit bldFile="webengine/device/group"/>

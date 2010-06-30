@@ -7,7 +7,10 @@
      <component id="qtecomplugins_build" filter="qtecomplugins" name="Qt ECom Plugin"  purpose="development" introduced="^4" class="plugin">
       <unit bldFile="qtecomplugins" qt:proFile="qtecomplugins.pro" qt:qmakeArgs="-r"/>
      </component>
-    <component id="qtextensions_examples" filter="qtextensionsexamples" name="Qt ECom Plugin Examples"  purpose="development" introduced="^4">
+    <component id="qtextensions_examples" filter="qtextensionsexamples,build_as_app" name="Qt ECom Plugin Examples"  purpose="development" introduced="^4">
+      <meta rel="testbuild">
+       <group name="qtextensionsexamples"/>
+      </meta>
       <unit bldFile="qtecomplugins/examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
      </component>
     </collection>
@@ -15,10 +18,16 @@
      <component id="qthighway_build" filter="qthighway" name="Qt Highway"  purpose="development" introduced="^4">
       <unit bldFile="qthighway" qt:proFile="qthighway.pro" qt:qmakeArgs="-r"/>
      </component>
-    <component id="qthighway_examples" filter="qtextensionsexamples" name="Qt Highway Examples"  purpose="development" introduced="^4">
+    <component id="qthighway_examples" filter="qtextensionsexamples,build_as_app" name="Qt Highway Examples"  purpose="development" introduced="^4">
+      <meta rel="testbuild">
+       <group name="qtextensionsexamples"/>
+      </meta>
       <unit bldFile="qthighway/examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
      </component>
-     <component id="qthighwaytests" filter="test,qtextensionstests" name="Qt Highway Tests"  purpose="development" introduced="^4">
+     <component id="qthighwaytests" filter="test,qtextensionstests,build_as_app" name="Qt Highway Tests"  purpose="development" introduced="^4">
+      <meta rel="testbuild">
+       <group name="qtextensionstests"/>
+      </meta>
       <unit bldFile="qthighway/tests" qt:proFile="tests.pro" qt:qmakeArgs="-r"/>
      </component>
     </collection>
@@ -26,7 +35,10 @@
 	 <component id="qtmobileextensions_build" filter="qtextension" name="Qt Mobile Extensions"  purpose="development" introduced="^4">
       <unit bldFile="qtmobileextensions" qt:proFile="qtmobileextensions.pro" qt:qmakeArgs="-r"/>
      </component>
-    <component id="qtmobileextensions_examples" filter="qtextensionsexamples" name="Qt Mobile Extensions Examples"  purpose="development" introduced="^4">
+    <component id="qtmobileextensions_examples" filter="qtextensionsexamples,build_as_app" name="Qt Mobile Extensions Examples"  purpose="development" introduced="^4">
+      <meta rel="testbuild">
+       <group name="qtextensionsexamples"/>
+      </meta>
       <unit bldFile="qtmobileextensions/examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
      </component>
     </collection>
@@ -34,10 +46,16 @@
 	 <component id="qtmobility_build" filter="qtmobility" name="Qt Mobility" purpose="development" introduced="^4">
       <unit bldFile="qtmobility" qt:proFile="qtmobility.pro" qt:qmakeArgs="-r"/>
      </component>
-    <component id="qtmobility_examples" filter="qtextensionsexamples" name="Qt Mobility Examples" purpose="development" introduced="^4">
+    <component id="qtmobility_examples" filter="qtextensionsexamples,build_as_app" name="Qt Mobility Examples" purpose="development" introduced="^4">
+      <meta rel="testbuild">
+       <group name="qtextensionsexamples"/>
+      </meta>
       <unit bldFile="qtmobility/examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
      </component>
-     <component id="qtmobilitytests" filter="test,qtextensionstests" name="Qt Extensions Tests"  purpose="development" introduced="^4">
+     <component id="qtmobilitytests" filter="test,qtextensionstests,build_as_app" name="Qt Extensions Tests"  purpose="development" introduced="^4">
+      <meta rel="testbuild">
+       <group name="qtextensionstests"/>
+      </meta>
       <unit bldFile="qtmobility/tests" qt:proFile="tests.pro" qt:qmakeArgs="-r"/>
      </component>
     </collection>

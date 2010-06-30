@@ -4,7 +4,7 @@
 	<!-- need to break up this package into collections and components -->
     <collection id="webruntime_info" name="Web Runtime Info">
      <component id="webruntime_build" name="Web Runtime Build" introduced="^4">
-      <unit bldFile="." qt:proFile="cwrt.pro" qt:qmakeArgs="&quot;what+=qtsfw&quot; &quot;what+=qt_unstable&quot; &quot;what+=tenone&quot; &quot;what+=usif&quot; &quot;what+=services&quot; &quot;what+=wrtlite&quot; &quot;what+=exportiby&quot;"/>
+      <unit bldFile="." qt:proFile="cwrt.pro" qt:qmakeArgs="&quot;what+=qtsfw&quot; &quot;what+=tenone&quot; &quot;what+=usif&quot; &quot;what+=services&quot; &quot;what+=wrtlite&quot; &quot;what+=exportiby&quot;"/>
      </component>
     </collection>
    </package>

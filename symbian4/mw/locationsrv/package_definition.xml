@@ -98,7 +98,7 @@
    <component id="locationsysui" filter="s60" name="Location System UI">
     <unit bldFile="locationsystemui/locationsysui/group"/>
    </component>
-   <component id="locationsysui" filter="s60" name="Location System Qt UI">
+   <component id="qtlocationsysui" filter="s60" name="Location System Qt UI">
     <unit bldFile="locationsystemui/locationsysui" qt:proFile="locsysui.pro"/>
    </component>
   </collection>

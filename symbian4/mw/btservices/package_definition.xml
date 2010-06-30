@@ -26,15 +26,18 @@
    </component>
    <component id="bluetooth_engine_connection_management_api" name="Bluetooth Engine Connection Management API" class="api" filter="s60">
     <meta rel="Api" href="btservices_plat/bluetooth_engine_connection_management_api/bluetooth_engine_connection_management_api.metaxml"/>
-    <unit bldFile="btservices_plat/bluetooth_engine_connection_management_api/group"/>
+    <unit bldFile="btservices_plat/bluetooth_engine_connection_management_api/group" filter="!test"/>
+    <unit bldFiile="btservices_plat/bluetooth_engine_connection_management_api/tsrc/group"  filter="test,api_test"/>
    </component>
    <component id="bluetooth_engine_device_management_api" name="Bluetooth Engine Device Management API" class="api" filter="s60">
     <meta rel="Api" href="btservices_plat/bluetooth_engine_device_management_api/bluetooth_engine_device_management_api.metaxml"/>
-    <unit bldFile="btservices_plat/bluetooth_engine_device_management_api/group"/>
+    <unit bldFile="btservices_plat/bluetooth_engine_device_management_api/group" filter="!test"/>
+    <unit bldFiile="btservices_plat/bluetooth_engine_device_management_api/tsrc/group"  filter="test,api_test"/>
    </component>
    <component id="bluetooth_engine_discovery_api" name="Bluetooth Engine Discovery API" class="api" filter="s60">
     <meta rel="Api" href="btservices_plat/bluetooth_engine_discovery_api/bluetooth_engine_discovery_api.metaxml"/>
-    <unit bldFile="btservices_plat/bluetooth_engine_discovery_api/group"/>
+    <unit bldFile="btservices_plat/bluetooth_engine_discovery_api/group" filter="!test"/>
+    <unit bldFiile="btservices_plat/bluetooth_engine_discovery_api/tsrc/group"  filter="test,api_test"/>
    </component>
    <component id="bluetooth_engine_features_api" name="Bluetooth Engine Features API" class="api" filter="s60">
     <meta rel="Api" href="btservices_plat/bluetooth_engine_features_api/bluetooth_engine_features_api.metaxml"/>
@@ -42,7 +45,8 @@
    </component>
    <component id="bluetooth_engine_settings_api" name="Bluetooth Engine Settings API" class="api" filter="s60">
     <meta rel="Api" href="btservices_plat/bluetooth_engine_settings_api/bluetooth_engine_settings_api.metaxml"/>
-    <unit bldFile="btservices_plat/bluetooth_engine_settings_api/group"/>
+    <unit bldFile="btservices_plat/bluetooth_engine_settings_api/group" filter="!test"/>
+    <unit bldFiile="btservices_plat/bluetooth_engine_settings_api/tsrc/group"  filter="test,api_test"/>
    </component>
    <component id="bluetooth_engine_plugin_api" name="Bluetooth Engine Plugin API" class="api" filter="s60">
     <meta rel="Api" href="btservices_plat/bluetooth_engine_plugin_api/bluetooth_engine_plugin_api.metaxml"/>
@@ -64,6 +68,21 @@
     <meta rel="Api" href="btservices_plat/bluetooth_secondary_display_notification_api/bluetooth_secondary_display_notification_api.metaxml"/>
     <unit bldFile="btservices_plat/bluetooth_secondary_display_notification_api/group"/>
    </component>
+   <component id="obex_secondary_display_notification_api" name="OBEX Secondary Display Notification API" class="api" filter="s60">
+    <meta rel="Api" href="btservices_plat/obex_secondary_display_notification_api/obex_secondary_display_notification_api.metaxml"/>
+    <unit bldFile="btservices_plat/obex_secondary_display_notification_api/group"/>
+   </component>
+   <component id="obex_service_plugin_api" name="OBEX Service Plugin API" class="api" filter="s60">
+    <meta rel="Api" href="btservices_plat/obex_service_plugin_api/obex_service_plugin_api.metaxml"/>
+    <unit bldFile="btservices_plat/obex_service_plugin_api/group"/>
+   </component>
+   <component id="obex_service_utils_api" name="OBEX Service Utils API" class="api" filter="s60">
+    <meta rel="Api" href="btservices_plat/obex_service_utils_api/obex_service_utils_api.metaxml"/>
+    <unit bldFile="btservices_plat/obex_service_utils_api/group"/>
+   </component>
+   <component id="usb_obexservicemanager_client_api" name="OBEX Service Manager Client API" class="api" filter="s60">
+    <unit bldFile="btservices_plat/usb_obexservicemanager_client_api/group"/>
+   </component>
   </collection>
   <collection id="bluetoothengine" name="Bluetooth Engine" level="framework">
    <component id="btnotifclient" filter="s60" name="Bluetooth Notification Client" introduced="^4">
@@ -74,7 +93,8 @@
     <unit bldFile="bluetoothengine/bteng/group"/>
    </component>
    <component id="btserviceutil" filter="s60" name="Bluetooth Service Utils" introduced="^4">
-    <unit bldFile="bluetoothengine/btserviceutil/group"/>
+    <unit bldFile="bluetoothengine/btserviceutil/group" filter="!test"/>
+    <unit bldFiile="bluetoothengine/btserviceutil/tsrc/btserviceutiltest/group"  filter="test,api_test"/>
    </component>
    <component id="btnotif" filter="s60" name="Bluetooth Notifier">
     <unit bldFile="bluetoothengine/btnotif/group"/>
@@ -83,7 +103,8 @@
     <unit bldFile="bluetoothengine/btnotif/btdevicedialogplugin" qt:proFile="btdevicedialogplugin.pro"/>
    </component>
    <component id="btaudioman" filter="s60" name="Bluetooth Audio Manager">
-    <unit bldFile="bluetoothengine/btaudioman/group"/>
+    <unit bldFile="bluetoothengine/btaudioman/group" filter="!test"/>
+    <unit bldFiile="bluetoothengine/btaudioman/tsrc/btAudioManApiTest/group"  filter="test,api_test"/>
    </component>
    <component id="btmac" filter="s60" name="Bluetooth Mono Audio Controller" class="plugin">
     <unit bldFile="bluetoothengine/btmac/group"/>
@@ -92,7 +113,8 @@
     <unit bldFile="bluetoothengine/btsac/group"/>
    </component>
    <component id="btaudiostreamer" filter="s60" name="Bluetooth Audio Streamer">
-    <unit bldFile="bluetoothengine/btaudiostreamer/group"/>
+    <unit bldFile="bluetoothengine/btaudiostreamer/group" filter="!test"/>
+    <unit bldFiile="bluetoothengine/btaudiostreamer/tsrc/BtAudioStreamerApiTest/group" filter="test,api_test"/>
    </component>
    <component id="btsap" filter="s60" name="Bluetooth SIM Access Profile" class="plugin">
     <unit bldFile="bluetoothengine/btsap/group"/>
@@ -123,17 +145,29 @@
     <unit bldFile="atcommands/lccustomplugin/group"/>
    </component>
   </collection>
-  <collection id="cbsatplugin" name="CBS AT Plugin">
+  <collection id="cbsatplugin" name="CBS AT Plugin" level="plugin">
      <component id="atmisccmdplugin" name="AT Misc Commands Plugin"  filter="s60" class="plugin" introduced="^4">
       <unit bldFile="cbsatplugin/atmisccmdplugin/group"/>
+     </component>
+  </collection>
+  <collection id="btobexprofiles" name="BT OBEX Profiles" level="generic">
+     <component id="obexreceiveservices" name="OBEX Receive Services"  filter="s60">
+      <unit bldFile="btobexprofiles/obexreceiveservices/group"/>
+     </component>
+     <component id="obexsendservices" name="OBEX Send Services"  filter="s60">
+      <unit bldFile="btobexprofiles/obexsendservices/group"/>
+     </component>
+     <component id="obexhighway" name="OBEX Highway"  filter="s60" introduced="^4">
+		<!-- should be moved out from under obexsendservices into own component dir -->
+        <unit bldFile="btobexprofiles/obexsendservices/obexhighway" qt:proFile="obexhighway.pro"/>
+     </component>
+     <component id="obexserviceman" name="OBEX Service Manager"  filter="s60">
+      <unit bldFile="btobexprofiles/obexserviceman/group"/>
      </component>
   </collection>
   <collection id="btservices_info" name="BT Services Info" level="plugin">
    <component id="btservices_metadata" name="BT Services Metadata" class="config" introduced="^3" purpose="development" target="desktop">
     <unit mrp="btservices_info/btservices_metadata/btservices_metadata.mrp"/>
-   </component>
-   <component id="btservices_api_test" name="BT Services API Tests" purpose="development" filter="s60,test,api_test">
-    <unit bldFiile="tsrc/group"/>
    </component>
   </collection>
  </package>
