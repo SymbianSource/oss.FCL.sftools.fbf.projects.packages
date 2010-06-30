@@ -56,7 +56,7 @@
    </component>
    <component id="msg_pub_build" name="Messaging Apps Public APIs Build" class="api" filter="s60" introduced="^4">
 	<!-- break this up into the above units and replace their base attributes with bldFile, etc -->
-    <unit base="msg_pub" qt:proFile="msg_pub.pro" qt:qmakeArgs="-r"/>
+    <unit bldFile="msg_pub" qt:proFile="msg_pub.pro" qt:qmakeArgs="-r"/>
    </component>
   </collection>
   <collection id="mobilemessaging" name="Mobile Messaging" level="plugin">
