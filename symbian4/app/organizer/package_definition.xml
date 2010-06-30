@@ -40,6 +40,9 @@
    <component id="notes_editor_api" name="Notes Editor API" class="api" filter="s60" introduced="^4">
     <unit base="organizer_plat/notes_editor_api"/>
    </component>
+   <component id="clock_settingsview_plugin_api" name="Clock Settings View Plugin API" class="api" filter="s60" introduced="^4">
+    <unit base="organizer_plat/clock_settingsview_plugin_api"/>
+   </component>
   </collection>
   <collection id="agendainterface" name="Agenda Interface" level="services">
    <!-- collection is really a component, should move down a directory -->
@@ -56,7 +59,7 @@
    </component>
    <component id="caleneditor" filter="s60" name="Calendar Editor" introduced="^4">
     <unit bldFile="calendarui/caleneditor" qt:proFile="caleneditor.pro"/>
-   </component>
+   </component>   
    <component id="agendaeventviewer" filter="s60" name="Agenda Event Viewer" introduced="^4" >
     <unit bldFile="calendarui/agendaeventviewer" qt:proFile="agendaeventviewer.pro"/>
    </component>
@@ -72,7 +75,7 @@
    <component id="customisationmanager" filter="s60" name="Calendar Customisation Manager">
     <unit bldFile="calendarui/customisationmanager" qt:proFile="customisationmanager.pro"/>
    </component>
-   <component id="views" filter="s60" name="Calendar Views">
+   <component id="calendarui_views" filter="s60" name="Calendar Views">
     <unit bldFile="calendarui/views" qt:proFile="views.pro"/>
    </component>
    <component id="calendarui_controller" filter="s60" name="Calendar Controller">
@@ -84,14 +87,14 @@
    <component id="regionalplugins" name="Regional Plugins" filter="s60" introduced="^4" class="plugin">
       <unit bldFile="calendarui/regionalplugins" qt:proFile="regionalplugins.pro"/>
    </component>
+   <component id="calenviewerservice" name="Calendar Viewer Service" filter="s60" introduced="^4" class="plugin">
+      <unit bldFile="calendarui/calenviewerservice" qt:proFile="calenviewerservice.pro"/>
+   </component>
    <component id="caldav" filter="sf_build" name="CalDAV" class="plugin" introduced="^3">
     <!-- not yet delivered in S^4 <unit bldFile="calendarui/caldav/group"/>-->
    </component>
   </collection>
   <collection id="notes" name="Notes" level="ui">
-   <component id="noteseditor" filter="s60" name="Notes Editor" introduced="^4">
-    <unit bldFile="notes/notesui/noteseditor" qt:proFile="noteseditor.pro"/>
-   </component>
    <component id="notes_build" filter="s60" name="Notes Build" introduced="^4">
     <unit bldFile="notes" qt:proFile="notes.pro"/>
    </component>

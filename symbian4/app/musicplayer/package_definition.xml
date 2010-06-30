@@ -2,7 +2,18 @@
 <SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="musicplayer" name="Music Player Apps" levels="plugins support engine app">
 	<!-- move the rom .pri files into their components and uncomment the units -->
-
+  <collection id="mpdata " name="Music Player Data" level="support">
+	<!-- collection is really a component, move down a directory -->
+   <component id="mpdata_build" filter="s60" name="Music Player Data Build" introduced="^4">
+	<!-- <unit bldFile="mpdata" qt:proFile="mpdata.pro" qt:qmakeArgs="-r -config rom"/> -->
+   </component>
+  </collection>
+  <collection id="mpengine " name="Music Player Engine" level="engine">
+	<!-- collection is really a component, move down a directory -->
+   <component id="mpengine_build" filter="s60" name="Music Player Engine Build" introduced="^4">
+	<!-- <unit bldFile="mpengine" qt:proFile="mpengine.pro" qt:qmakeArgs="-r -config rom"/> -->
+   </component>
+  </collection>
   <collection id="musicplayer_utilities " name="Music Player Utilities" level="support">
    <component id="mpnowplayingbanner" filter="s60" name="MP Now Playing Banner" introduced="^4">
 	<!-- <unit bldFile="utilities/mpnowplayingbanner" qt:proFile="mpnowplayingbanner.pro" qt:qmakeArgs="-r -config rom"/> -->
@@ -23,18 +34,6 @@
 	<!-- <unit bldFile="app" qt:proFile="app.pro" qt:qmakeArgs="-r -config rom"/> -->
    </component>
   </collection>
-  <collection id="mpdata " name="Music Player Data" level="support">
-	<!-- collection is really a component, move down a directory -->
-   <component id="mpdata_build" filter="s60" name="Music Player Data Build" introduced="^4">
-	<!-- <unit bldFile="mpdata" qt:proFile="mpdata.pro" qt:qmakeArgs="-r -config rom"/> -->
-   </component>
-  </collection>
-  <collection id="mpengine " name="Music Player Engine" level="engine">
-	<!-- collection is really a component, move down a directory -->
-   <component id="mpengine_build" filter="s60" name="Music Player Engine Build" introduced="^4">
-	<!-- <unit bldFile="mpengine" qt:proFile="mpengine.pro" qt:qmakeArgs="-r -config rom"/> -->
-   </component>
-  </collection>
   <collection id="mpviewplugins" name="Music Player View Plugins" level="plugins">
    <component id="mpcollectionviewplugin" filter="s60" name="MP Collection View Plugin" introduced="^4" class="plugin">
     <!--<unit bldFile="mpviewplugins/mpcollectionviewplugin" qt:proFile="mpcollectionviewplugin.pro" qt:qmakeArgs="-r -config rom"/> -->
@@ -50,6 +49,11 @@
    </component>
    <component id="mpmediawallviewplugin" filter="s60" name="MP Media Wall View Plugin" introduced="^4" class="plugin">
     <!--<unit bldFile="mpviewplugins/mpmediawallviewplugin" qt:proFile="mpmediawallviewplugin.pro" qt:qmakeArgs="-r -config rom"/> -->
+   </component>
+  </collection>
+  <collection id="musicwidgetplugin" name="Music Widget Plugin" level="plugins">
+   <component id="musicwidgetplugin_build" filter="s60" name="Music Widget Plugin" introduced="^4" class="plugin">
+    <!--<unit bldFile="musicwidgetplugin" qt:proFile="musicwidgetplugin.pro" qt:qmakeArgs="-r -config rom"/> -->
    </component>
   </collection>
   <collection id="mpserviceplugins" name="Music Player Service Plugins" level="plugins">

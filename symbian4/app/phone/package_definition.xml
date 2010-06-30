@@ -61,9 +61,6 @@
    <component id="phoneservices" filter="s60" name="Phone Server" introduced="^4">
     <unit bldFile="phoneengine/phoneservices" qt:proFile="phoneservices.pro"/>
    </component>
-   <component id="parserrecognizer" filter="s60" name="Parser Recognizer" introduced="^4" class="plugin">
-    <unit bldFile="phoneengine/parserrecognizer" qt:proFile="parserrecognizer.pro"/>
-   </component>
   </collection>
   <collection id="phoneuis" name="Phone UIs" level="ui">
    <component id="bubblemanager2" filter="s60" name="Phone Bubble Manager">

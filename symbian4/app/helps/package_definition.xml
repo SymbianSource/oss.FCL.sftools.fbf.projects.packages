@@ -12,10 +12,5 @@
         <unit bldFile="symhelp/helpmodel/group" mrp="symhelp/helpmodel/group/app-services_hlpmodel.mrp"/>
       </component>
     </collection>
-    <collection id="helps_info" name="Help Apps Info" level="ui">
-      <component id="helps_metadata" name="Help Apps Metadata" class="config" introduced="^2" purpose="development" target="desktop">
-        <unit mrp="helps_info/helps_metadata/helps_metadata.mrp"/>
-      </component>
-    </collection>
   </package>
 </SystemDefinition>

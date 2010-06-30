@@ -29,11 +29,8 @@
    <component id="cntfindplugin" filter="s60" name="Contacts Find Plugin" class="plugin" introduced="^2">
     <unit bldFile="phonebookengines/cntfindplugin" qt:proFile="cntfindplugin.pro"/>
    </component>
-   <component id="contactsmodel" filter="s60" name="Mobile Contacts Model" introduced="^4">
-    <unit bldFile="phonebookengines/contactsmodel" qt:proFile="contactsmodel.pro"/>
-   </component>
-   <component id="contactsmodel_old" name="Contacts Model" introduced="ER5" purpose="optional">
-    <unit version="2" bldFile="phonebookengines_old/contactsmodel/groupsql" mrp="phonebookengines_old/contactsmodel/groupsql/app-engines_cntmodel.mrp"/>
+   <component id="contactsmodel" name="Contacts Model" introduced="ER5" purpose="optional">
+        <unit version="2" bldFile="phonebookengines_old/contactsmodel/groupsql" mrp="phonebookengines_old/contactsmodel/groupsql/app-engines_cntmodel.mrp"/>
    </component>
    <component id="cntsortplugin" filter="s60" name="Contacts Sort Plugin" class="plugin" introduced="^2">
     <unit bldFile="phonebookengines/cntsortplugin" qt:proFile="cntsortplugin.pro"/>
@@ -42,13 +39,16 @@
 	<!-- need to move to this actual dir rather than including something from another collection -->
     <unit bldFile="qtcontactsmobility" qt:proFile="qtcontactsmobility.pro"/>
    </component>
-   <component id="cntactions" filter="s60" name="Mobile Contacts Actions" introduced="^4">
+   <component id="cntlistmodel" filter="s60" name="Contact List Model" introduced="^4">
+    <unit bldFile="phonebookengines/cntlistmodel" qt:proFile="cntlistmodel.pro"/>
+   </component>
+   <component id="cntactions" filter="s60" name="Contacts Actions" introduced="^4">
     <unit bldFile="phonebookengines/cntactions" qt:proFile="cntactions.pro"/>
    </component>
    <component id="cntmaptileservice" filter="s60" name="Contacts Map Tile Service" introduced="^4">
     <unit bldFile="phonebookengines/cntmaptileservice" qt:proFile="cntmaptileservice.pro"/>
    </component>
-   <component id="simutility" filter="s60" name="SIM Utility" introduced="^4">
+   <component id="cntsimutility" filter="s60" name="Contacts SIM Utility" introduced="^4">
     <unit bldFile="phonebookengines/cntsimutility" qt:proFile="cntsimutility.pro"/>
    </component>
    <component id="cntimageutility" name="Contacts Image Utility" filter="s60" introduced="^4">
@@ -59,15 +59,15 @@
    <component id="phonebooksync" name="Phonebook Sync" purpose="optional" class="plugin">
     <unit bldFile="pimprotocols/phonebooksync/group" mrp="pimprotocols/phonebooksync/group/telephony_phbksync.mrp"/>
    </component>
-   <component id="pbap" name="Bluetooth PBAP" introduced="9.2" purpose="optional">
+   <component id="pbap" filter="s60" name="Bluetooth PBAP" introduced="9.2" purpose="optional">
     <unit bldFile="pimprotocols/pbap/group" mrp="pimprotocols/pbap/group/bluetooth_accesshost.mrp"/>
    </component>
   </collection>
-  <collection id="presencecache" name="Presence Cache"  introduced="^4" level="services">
-   <component id="presencecachesymbian" name="Presence Cache Symbian">
+  <collection id="presencecache" name="Presence Cache" level="support">
+   <component id="presencecachesymbian" filter="s60" name="Presence Cache Symbian" introduced="^4">
     <unit bldFile="presencecache/presencecachesymbian" qt:proFile="presencecachesymbian.pro"/>
    </component>
-   <component id="presencecacheqt" name="Presence Cache Qt">
+   <component id="presencecacheqt" filter="s60" name="Presence Cache Qt" introduced="^4">
     <unit bldFile="presencecache/presencecacheqt" qt:proFile="presencecacheqt.pro"/>
    </component>
   </collection>

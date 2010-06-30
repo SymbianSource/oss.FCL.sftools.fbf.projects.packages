@@ -20,11 +20,21 @@
    </component>
   </collection>
   <collection id="photos_ui" name="Photos UI" level="ui">
+	<!-- need to move exports from ui.pro into separate .pro or bld.inf -->
+   <component id="detailscustomwidget " filter="s60" name="Details Custom Widget" introduced="^4">
+    <!--<unit bldFile="ui/detailscustomwidget " qt:proFile="detailscustomwidget .pro"/> -->
+   </component>
    <component id="photos_uiengine" filter="s60" name="Photos UI Engine" introduced="^4">
     <!--<unit bldFile="ui/uiengine" qt:proFile="uiengine.pro"/> -->
    </component>
    <component id="photos_commandhandlers" filter="s60" name="Photos Command Handlers" introduced="^4">
     <!--<unit bldFile="ui/commandhandlers" qt:proFile="commandhandlers.pro"/> -->
+   </component>
+   <component id="photos_viewutilities" filter="s60" name="Photos View Utilities" introduced="^4">
+    <!--<unit bldFile="ui/viewutilities" qt:proFile="commandhandlers.pro"/> -->
+   </component>
+   <component id="photos_widgets" filter="s60" name="Photos Widgets" introduced="^4">
+    <!--<unit bldFile="ui/widgets" qt:proFile="widgets.pro"/> -->
    </component>
    <component id="photos_views" filter="s60" name="Photos Views" introduced="^4">
     <!--<unit bldFile="ui/views" qt:proFile="views.pro"/> -->

@@ -32,15 +32,10 @@
         <unit bldFile="rom"/>
       </component>
     </collection>
-    <collection id="radio_hswidgetplugin" name="FM Radio Homescreen Widget Plugin" level="plugin">
-      <component id="fmradiohswidgetplugin" filter="s60" name="FM Radio HS Widget Plugin" class="plugin" introduced="^4">
-        <unit bldFile="hswidgetplugin/fmradiohswidgetplugin" qt:proFile="fmradiohswidgetplugin.pro"/>
-      </component>
-      <component id="fmradiohswidgetplugininstaller" filter="s60" name="FM Radio HS Widget Plugin Installer" introduced="^4">
-        <unit bldFile="hswidgetplugin/fmradiohswidgetplugininstaller" qt:proFile="fmradiohswidgetplugininstaller.pro"/>
-      </component>
-      <component id="fmradiohswidgetplugin_exports_to_rom" filter="s60" name="FM Radio HS Widget Plugin ROM" introduced="^4">
-        <unit bldFile="hswidgetplugin" qt:proFile="fmradiohswidgetplugin_exports_to_rom.pri"/>
+    <collection id="radiohswidget" name="Radio Homescreen Widget" level="plugin">
+		<!-- collection is really a component. Move down a directory -->
+      <component id="radiohswidget_build" filter="s60" name="Radio HS Widget Build" introduced="^4">
+        <unit bldFile="radiohswidget" qt:proFile="radiohswidget.pro"/>
       </component>
     </collection>
   </package>
