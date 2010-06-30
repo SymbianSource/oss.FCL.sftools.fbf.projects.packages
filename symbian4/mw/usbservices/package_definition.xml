@@ -70,19 +70,6 @@
    <component id="usbmscpersonality" filter="s60" name="USB MSC Personality" class="plugin">
     <unit bldFile="usbclasses/usbmscpersonality/group"/>
    </component>
-   <!--	commented out in bld.inf. Should this be deleted?     
-  <component id="ptpstack" filter="s60" name="Picture Transfer Protocol Stack">
-        <unit bldFile="usbclasses/ptpstack/group"/>
-      </component>
-      <component id="sicdusbplugin" filter="s60" name="SICD USB Plugin" class="plugin">
-        <unit bldFile="usbclasses/sicdusbplugin/group"/>
-      </component>
-      <component id="ptpserver" filter="s60" name="Picture Transfer Protocol Server">
-        <unit bldFile="usbclasses/ptpserver/group"/>
-      </component>-->
-   <component id="pictbridgeengine" filter="s60" name="PictBridge Engine">
-    <unit bldFile="usbclasses/pictbridgeengine/group"/>
-   </component>
    <component id="usbphoneasmodem" filter="s60" name="USB Phone as Modem" introduced="^3">
     <unit bldFile="usbclasses/usbphoneasmodem/group"/>
    </component>
@@ -90,7 +77,7 @@
 
   <collection id="usbuis" name="USB UIs" level="specific">
    <component id="usbuinotif" filter="s60" name="USB UI Notifiers">
-    <unit bldFile="usbuis/usbuinotif/group"/>
+    <unit bldFile="usbuis/usbuinotif" qt:proFile="usbuinotif.pro" qt:qmakeArgs="-r"/>
    </component>
    <component id="imageprintuiprovider" filter="s60" name="ImagePrint UI Provider" class="plugin">
     <unit bldFile="usbuis/imageprintuiprovider/group"/>
