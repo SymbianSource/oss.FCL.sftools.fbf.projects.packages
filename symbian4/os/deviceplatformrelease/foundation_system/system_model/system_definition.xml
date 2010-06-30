@@ -154,7 +154,6 @@
       <package id="dlnasrv" level="specific" tech-domain="de" href="../../../../mw/dlnasrv/package_definition.xml"/>
       <package id="btservices" level="generic" tech-domain="de" href="../../../../mw/btservices/package_definition.xml"/>
       <package id="usbservices" level="generic" tech-domain="de" href="../../../../mw/usbservices/package_definition.xml"/>
-      <package id="shortlinkconn" level="generic" tech-domain="de" href="../../../../mw/shortlinkconn/package_definition.xml"/>
       <package id="imghandling" level="specific" tech-domain="mm" href="../../../../mw/imghandling/package_definition.xml"/>
       <package id="metadatasrv" level="specific" tech-domain="mm" href="../../../../mw/metadatasrv/package_definition.xml"/>
       <package id="mds" level="specific" tech-domain="mm" href="../../../../mw/mds/package_definition.xml"/>

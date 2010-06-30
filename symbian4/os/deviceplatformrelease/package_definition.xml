@@ -25,7 +25,7 @@
       <component id="system_model" name="System Model" class="config" introduced="^2" purpose="development" target="desktop">
         <unit mrp="foundation_system/system_model/system_model.mrp"/>
       </component>
-      <component id="sf_config" filter="s60" name="Foundation Config" introduced="^4">
+      <component id="sf_config" filter="s60,build_as_app" name="Foundation Config" introduced="^4">
         <unit bldFile="foundation_system/sf_config/CI_external/group"/>
       </component>
       <component id="config" filter="s60" name="Config" class="config" purpose="development">

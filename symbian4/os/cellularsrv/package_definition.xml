@@ -120,5 +120,10 @@
 			  <unit mrp="cellularsrvapitest/telephonydevsoundhaitest/group/telephonydevsoundhaitest.mrp" bldFile="cellularsrvapitest/telephonydevsoundhaitest/group"/>
       </component>
     </collection>
+    <collection id="wapstack" name="WAP Stack" level="plugin">
+      <component id="wapmessageapi" name="WAP Message API" purpose="optional">
+        <unit bldFile="wapstack/wapmessageapi/group" mrp="wapstack/wapmessageapi/group/wap-stack_wapmessage.mrp" /> 
+      </component>
+    </collection>
   </package>
 </SystemDefinition>

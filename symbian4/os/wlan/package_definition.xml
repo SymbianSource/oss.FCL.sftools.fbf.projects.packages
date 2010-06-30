@@ -90,15 +90,5 @@
     <unit bldFile="wlan_bearer/wlannwif/group"/>
    </component>
   </collection>
-  <collection id="wlanapitest" name="WLAN API Tests" level="test">
-   <component id="wlanhaitest" name="WLAN HAI Tests" introduced="^2" purpose="development" filter="test">
-    <unit mrp="wlanapitest/wlanhaitest/group/wlanhaitest.mrp" bldFile="wlanapitest/wlanhaitest/group"/>
-   </component>
-  </collection>
-  <collection id="wlan_info" name="WLAN Info" level="test">
-   <component id="wlan_metadata" name="WLAN Metadata" class="config" introduced="^2" purpose="development" target="desktop">
-    <unit mrp="wlan_info/wlan_metadata/wlan_metadata.mrp"/>
-   </component>
-  </collection>
  </package>
 </SystemDefinition>

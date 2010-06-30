@@ -4,15 +4,18 @@
   <collection id="mm_pub" name="Multimedia Public Interfaces" level="app-if">
    <component id="audio_effects_api" name="Audio Effects API" class="api" filter="s60">
     <meta rel="Api" href="mm_pub/audio_effects_api/audio_effects_api.metaxml"/>
-    <unit bldFile="mm_pub/audio_effects_api/group"/>
+    <unit bldFile="mm_pub/audio_effects_api/group" filter="!test"/>
+    <unit bldFile="mm_pub/audio_effects_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="audio_effects_presets_api" name="Audio Effects Presets API" class="api" filter="s60">
     <meta rel="Api" href="mm_pub/audio_effects_presets_api/audio_effects_presets_api.metaxml"/>
-    <unit bldFile="mm_pub/audio_effects_presets_api/group"/>
+    <unit bldFile="mm_pub/audio_effects_presets_api/group" filter="!test"/>
+    <unit bldFile="mm_pub/audio_effects_presets_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="drm_audio_player_api" name="DRM Audio Player API" class="api" filter="s60">
     <meta rel="Api" href="mm_pub/drm_audio_player_api/drm_audio_player_api.metaxml"/>
-    <unit bldFile="mm_pub/drm_audio_player_api/group"/>
+    <unit bldFile="mm_pub/drm_audio_player_api/group" filter="!test"/>
+    <unit bldFile="mm_pub/drm_audio_player_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="multimedia_extension_interfaces_api" name="Multimedia Extension Interfaces API" class="api" filter="s60">
     <meta rel="Api" href="mm_pub/multimedia_extension_interfaces_api/multimedia_extension_interfaces_api.metaxml"/>
@@ -22,7 +25,8 @@
   <collection id="mm_plat" name="Multimedia Platform Interfaces" level="app-if">
    <component id="aac_decoder_config_api" name="AAC Decoder Config API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/aac_decoder_config_api/aac_decoder_config_api.metaxml"/>
-    <unit bldFile="mm_plat/aac_decoder_config_api/group"/>
+    <unit bldFile="mm_plat/aac_decoder_config_api/group" filter="!test"/>
+    <unit bldFile="mm_plat/aac_decoder_config_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="aac_decoder_config_msg_hdlr_api" name="AAC Decoder Config Msg Hdlr API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/aac_decoder_config_msg_hdlr_api/aac_decoder_config_msg_hdlr_api.metaxml"/>
@@ -58,7 +62,8 @@
    </component>
    <component id="audio_routing_api" name="Audio Routing API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/audio_routing_api/audio_routing_api.metaxml"/>
-    <unit bldFile="mm_plat/audio_routing_api/group"/>
+    <unit bldFile="mm_plat/audio_routing_api/group" filter="!test"/>
+    <unit bldFile="mm_plat/audio_routing_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="audio_routing_msg_hdlr_api" name="Audio Routing Msg Hdlr API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/audio_routing_msg_hdlr_api/audio_routing_msg_hdlr_api.metaxml"/>
@@ -94,7 +99,8 @@
    </component>
    <component id="eaac_plus_decoder_interface_api" name="eAAC Plus Decoder Interface API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/eaac_plus_decoder_interface_api/eaac_plus_decoder_interface_api.metaxml"/>
-    <unit bldFile="mm_plat/eaac_plus_decoder_interface_api/group"/>
+    <unit bldFile="mm_plat/eaac_plus_decoder_interface_api/group" filter="!test"/>
+    <unit bldFile="mm_plat/eaac_plus_decoder_interface_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="eaac_plus_decoder_interface_msg_hdlr_api" name="eAAC Plus Decoder Interface Message Handler API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/eaac_plus_decoder_interface_msg_hdlr_api/eaac_plus_decoder_interface_msg_hdlr_api.metaxml"/>
@@ -106,7 +112,8 @@
    </component>
    <component id="error_concealment_interface_api" name="Error Concealment Interface API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/error_concealment_interface_api/error_concealment_interface_api.metaxml"/>
-    <unit bldFile="mm_plat/error_concealment_interface_api/group"/>
+    <unit bldFile="mm_plat/error_concealment_interface_api/group" filter="!test"/>
+    <unit bldFile="mm_plat/error_concealment_interface_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="error_concealment_interface_msg_hdlr_api" name="Error Concealment Interface Message Handler API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/error_concealment_interface_msg_hdlr_api/error_concealment_interface_msg_hdlr_api.metaxml"/>
@@ -122,7 +129,8 @@
    </component>
    <component id="g711_decoder_interface_api" name="G711 Decoder Interface API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/g711_decoder_interface_api/g711_decoder_interface_api.metaxml"/>
-    <unit bldFile="mm_plat/g711_decoder_interface_api/group"/>
+    <unit bldFile="mm_plat/g711_decoder_interface_api/group" filter="!test"/>
+    <unit bldFile="mm_plat/g711_decoder_interface_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="g711_decoder_interface_msg_hdlr_api" name="G711 Decoder Interface Message Handler API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/g711_decoder_interface_msg_hdlr_api/g711_decoder_interface_msg_hdlr_api.metaxml"/>
@@ -134,7 +142,8 @@
    </component>
    <component id="g711_encoder_interface_api" name="G711 Encoder Interface API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/g711_encoder_interface_api/g711_encoder_interface_api.metaxml"/>
-    <unit bldFile="mm_plat/g711_encoder_interface_api/group"/>
+    <unit bldFile="mm_plat/g711_encoder_interface_api/group" filter="!test"/>
+    <unit bldFile="mm_plat/g711_encoder_interface_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="g711_encoder_interface_msg_hdlr_api" name="G711 Encoder Interface Message Handler API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/g711_encoder_interface_msg_hdlr_api/g711_encoder_interface_msg_hdlr_api.metaxml"/>
@@ -146,7 +155,8 @@
    </component>
    <component id="g729_decoder_interface_api" name="G729 Decoder Interface API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/g729_decoder_interface_api/g729_decoder_interface_api.metaxml"/>
-    <unit bldFile="mm_plat/g729_decoder_interface_api/group"/>
+    <unit bldFile="mm_plat/g729_decoder_interface_api/group" filter="!test"/>
+    <unit bldFile="mm_plat/g729_decoder_interface_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="g729_decoder_interface_msg_hdlr_api" name="G729 Decoder Interface Message Handler API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/g729_decoder_interface_msg_hdlr_api/g729_decoder_interface_msg_hdlr_api.metaxml"/>
@@ -158,7 +168,8 @@
    </component>
    <component id="g729_encoder_interface_api" name="G729 Encoder Interface API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/g729_encoder_interface_api/g729_encoder_interface_api.metaxml"/>
-    <unit bldFile="mm_plat/g729_encoder_interface_api/group"/>
+    <unit bldFile="mm_plat/g729_encoder_interface_api/group" filter="!test"/>
+    <unit bldFile="mm_plat/g729_encoder_interface_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="g729_encoder_interface_proxy_api" name="G729 Encoder Interface Proxy API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/g729_encoder_interface_proxy_api/g729_encoder_interface_proxy_api.metaxml"/>
@@ -170,7 +181,8 @@
    </component>
    <component id="global_audio_settings_api" name="Global Audio Settings API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/global_audio_settings_api/global_audio_settings_api.metaxml"/>
-    <unit bldFile="mm_plat/global_audio_settings_api/group"/>
+    <unit bldFile="mm_plat/global_audio_settings_api/group" filter="!test"/>
+    <unit bldFile="mm_plat/global_audio_settings_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="global_audio_settings_definition_api" name="Global Audio Settings Definition API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/global_audio_settings_definition_api/global_audio_settings_definition_api.metaxml"/>
@@ -178,7 +190,8 @@
    </component>
    <component id="ilbc_decoder_interface_api" name="Ilbc Decoder Interface API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/ilbc_decoder_interface_api/ilbc_decoder_interface_api.metaxml"/>
-    <unit bldFile="mm_plat/ilbc_decoder_interface_api/group"/>
+    <unit bldFile="mm_plat/ilbc_decoder_interface_api/group" filter="!test"/>
+    <unit bldFile="mm_plat/ilbc_decoder_interface_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="ilbc_decoder_interface_msg_hdlr_api" name="Ilbc Decoder Interface Message Handler API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/ilbc_decoder_interface_msg_hdlr_api/ilbc_decoder_interface_msg_hdlr_api.metaxml"/>
@@ -190,7 +203,8 @@
    </component>
    <component id="ilbc_encoder_interface_api" name="Ilbc Encoder Interface API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/ilbc_encoder_interface_api/ilbc_encoder_interface_api.metaxml"/>
-    <unit bldFile="mm_plat/ilbc_encoder_interface_api/group"/>
+    <unit bldFile="mm_plat/ilbc_encoder_interface_api/group" filter="!test"/>
+    <unit bldFile="mm_plat/ilbc_encoder_interface_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="ilbc_encoder_interface_msg_hdlr_api" name="Ilbc Encoder Interface Message Handler API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/ilbc_encoder_interface_msg_hdlr_api/ilbc_encoder_interface_msg_hdlr_api.metaxml"/>
@@ -218,7 +232,8 @@
    </component>
    <component id="ra8_decoder_interface_api" name="RA8 Decoder Interface API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/ra8_decoder_interface_api/ra8_decoder_interface_api.metaxml"/>
-    <unit bldFile="mm_plat/ra8_decoder_interface_api/group"/>
+    <unit bldFile="mm_plat/ra8_decoder_interface_api/group" filter="!test"/>
+    <unit bldFile="mm_plat/ra8_decoder_interface_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="ra8_decoder_interface_msg_hdlr_api" name="RA8 Decoder Interface Message Handler API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/ra8_decoder_interface_msg_hdlr_api/ra8_decoder_interface_msg_hdlr_api.metaxml"/>
@@ -234,7 +249,8 @@
    </component>
    <component id="restricted_audio_output_api" name="Restricted Audio Output API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/restricted_audio_output_api/restricted_audio_output_api.metaxml"/>
-    <unit bldFile="mm_plat/restricted_audio_output_api/group"/>
+    <unit bldFile="mm_plat/restricted_audio_output_api/group" filter="!test"/>
+    <unit bldFile="mm_plat/restricted_audio_output_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="restricted_audio_output_msg_hdlr_api" name="Restricted Audio Output Message Handler API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/restricted_audio_output_msg_hdlr_api/restricted_audio_output_msg_hdlr_api.metaxml"/>
@@ -246,7 +262,8 @@
    </component>
    <component id="sbc_encoder_interface_api" name="SBC Encoder Interface API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/sbc_encoder_interface_api/sbc_encoder_interface_api.metaxml"/>
-    <unit bldFile="mm_plat/sbc_encoder_interface_api/group"/>
+    <unit bldFile="mm_plat/sbc_encoder_interface_api/group" filter="!test"/>
+    <unit bldFile="mm_plat/sbc_encoder_interface_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="sbc_encoder_interface_msg_hdlr_api" name="SBC Encoder Interface Message Handler API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/sbc_encoder_interface_msg_hdlr_api/sbc_encoder_interface_msg_hdlr_api.metaxml"/>
@@ -262,7 +279,8 @@
    </component>
    <component id="speech_encoder_config_api" name="Speech Encoder Config API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/speech_encoder_config_api/speech_encoder_config_api.metaxml"/>
-    <unit bldFile="mm_plat/speech_encoder_config_api/group"/>
+    <unit bldFile="mm_plat/speech_encoder_config_api/group" filter="!test"/>
+    <unit bldFile="mm_plat/speech_encoder_config_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="speech_encoder_config_msg_hdlr_api" name="Speech Encoder Config Message Handler API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/speech_encoder_config_msg_hdlr_api/speech_encoder_config_msg_hdlr_api.metaxml"/>
@@ -302,7 +320,8 @@
    </component>
    <component id="wma_decoder_interface_api" name="WMA Decoder Interface API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/wma_decoder_interface_api/wma_decoder_interface_api.metaxml"/>
-    <unit bldFile="mm_plat/wma_decoder_interface_api/group"/>
+    <unit bldFile="mm_plat/wma_decoder_interface_api/group" filter="!test"/>
+    <unit bldFile="mm_plat/wma_decoder_interface_api/tsrc/group" filter="s60,test,api_test,pref_test"/>
    </component>
    <component id="wma_decoder_interface_msg_hdlr_api" name="WMA Decoder Interface Message Handler API" class="api" filter="s60">
     <meta rel="Api" href="mm_plat/wma_decoder_interface_msg_hdlr_api/wma_decoder_interface_msg_hdlr_api.metaxml"/>
@@ -420,9 +439,6 @@
   <collection id="mm_info" name="Multimedia Info" level="app-if">
    <component id="mmdocs" name="Multimedia Documentation" purpose="development" class="doc">
     <unit mrp="mm_info/mmdocs/multimedia_documentation.mrp"/>
-   </component>
-   <component id="mm_tsrc" name="Multimedia Tests" purpose="development" filter="s60,test,api_test,pref_test">
-    <unit bldFile="tsrc/group"/>
    </component>
    <component id="mm_metadata" name="Multimedia Metadata" class="config" introduced="^2" purpose="development" target="desktop">
     <unit mrp="mm_info/mm_metadata/mm_metadata.mrp"/>

@@ -114,7 +114,7 @@
       </component>
     </collection>
     <collection id="egl" name="EGL" level="internal-adaptations">
-      <component id="eglinterface" name="EGL Interface" introduced="^2" purpose="optional">
+      <component id="eglinterface" name="EGL Interface" introduced="^2" purpose="mandatory">
         <unit bldFile="egl/eglinterface/group" mrp="egl/eglinterface/group/graphics_eglheaders.mrp"/>
       </component>
       <component id="eglswitch" name="EGL Switch" introduced="^3" purpose="optional">

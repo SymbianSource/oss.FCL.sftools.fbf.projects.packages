@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="textandloc" name="Text and Localisation Services" levels="encoding util fonts tools text">
-    <collection id="textandloc_plat" name="Text and Localisation Platform Interfaces" level="text">
-     <component id="japanese_language_utilities_api" class="api" name="Japanese Language Utilities API" filter="s60">
-      <meta rel="Api" href="textandloc_plat/japanese_language_utilities_api/japanese_language_utilities_api.metaxml"/>
-      <unit bldFile="textandloc_plat/japanese_language_utilities_api/group"/>
-     </component>
-     <component id="sortutil_api" class="api" name="Sort Util API" filter="s60">
-      <meta rel="Api" href="textandloc_plat/sortutil_api/sortutil_api.metaxml"/>
-      <unit bldFile="textandloc_plat/sortutil_api/group"/>
-     </component>
-    </collection>
     <collection id="charconvfw" name="Character Conversion" level="encoding">
-      <component id="charconv_fw" name="Character Encoding and Conversion Framework" purpose="optional">
+      <component id="charconv_fw" name="Character Encoding and Conversion Framework" purpose="optional" filter="api_test"> <!-- both production and api_test-->
+    	<meta rel="testbuild">
+          <group name="test.syslibs_charconv"/>
+        </meta>
         <unit bldFile="charconvfw/charconv_fw/group" mrp="charconvfw/charconv_fw/group/syslibs_charconv.mrp"/>
       </component>
-      <component id="charconvplugins" name="Character Encoding and Conversion Plugins" purpose="optional" class="plugin">
+      <component id="charconvplugins" name="Character Encoding and Conversion Plugins" purpose="optional" class="plugin" filter="apit_test">  <!-- both production and api_test-->
+    	<meta rel="testbuild">
+          <group name="test.syslibs_charconv_plugins"/>
+        </meta>
         <unit bldFile="charconvfw/charconvplugins/group" mrp="charconvfw/charconvplugins/group/syslibs_charconv_plugins.mrp"/>
       </component>
-      <component id="fatfilenameconversionplugins" name="FAT Filename Conversion Plugins" introduced="9.1" purpose="optional" class="plugin">
+      <component id="fatfilenameconversionplugins" name="FAT Filename Conversion Plugins" introduced="9.1" purpose="optional" class="plugin" filter="api_test">   <!-- both production and api_test-->
+    	<meta rel="testbuild">
+          <group name="test.syslibs_fatcharsetconv"/>
+        </meta>
         <unit bldFile="charconvfw/fatfilenameconversionplugins/group" mrp="charconvfw/fatfilenameconversionplugins/group/syslibs_FATCharsetConv.mrp"/>
       </component>      
     </collection>
@@ -26,7 +25,10 @@
       <component id="iculayoutengine" name="ICU Layout Engine" introduced="9.2" purpose="optional" class="plugin" deprecated="^4">
         <unit bldFile="fontservices/textshaperplugin/group" mrp="fontservices/textshaperplugin/group/graphics_iculayoutengine.mrp"/>
       </component>
-      <component id="fontstore" name="Font Store" purpose="mandatory">
+      <component id="fontstore" name="Font Store" purpose="mandatory" filter="api_test"> <!-- both production and api_test-->
+    	<meta rel="testbuild">
+          <group name="test.graphics_fntstore"/>
+        </meta>
         <unit bldFile="fontservices/fontstore/group" mrp="fontservices/fontstore/group/graphics_fntstore.mrp"/>
       </component>
      <component id="textbase" name="Text Base" purpose="mandatory">
@@ -86,6 +88,13 @@
     <collection id="textandloc_info" name="Text and Localisation Info" level="text">
       <component id="textandloc_metadata" name="Text and Localisation Metadata" class="config" introduced="^2" purpose="development" target="desktop">
         <unit mrp="textandloc_info/textandloc_metadata/textandloc_metadata.mrp"/>
+      </component>
+      <component id="textandloc_graphicstestharness" name="Graphics Test Harness" introduced="8.1" purpose="development" filter="test,api_test">
+	  	<!-- this is not part of this package, it should not be refrerenced here -->
+    	<meta rel="testbuild">
+          <group name="test.graphics_testharness"/>
+        </meta>
+        <unit bldFile="../graphics/graphicstest/graphicstestharness/group"/>
       </component>
     </collection>
   </package>
