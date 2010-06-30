@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
    <block name="graphics" level="services" long-name="Graphics" levels="adaptation engines internal-adaptations device-interface internal-utils app-if">
@@ -163,7 +163,7 @@
 </component>
 </collection>
 <collection name="egl" long-name="EGL" level="internal-adaptations">
-<component name="eglinterface" long-name="EGL Interface" introduced="^2" purpose="optional">
+<component name="eglinterface" long-name="EGL Interface" introduced="^2" purpose="mandatory">
 <unit bldFile="/sf/os/graphics/egl/eglinterface/group" mrp="/sf/os/graphics/egl/eglinterface/group/graphics_eglheaders.mrp"/>
 </component>
 <component name="eglswitch" long-name="EGL Switch" introduced="^3" purpose="optional">

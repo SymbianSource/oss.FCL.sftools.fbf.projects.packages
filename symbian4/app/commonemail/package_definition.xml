@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="commonemail" level="apps" span="2" long-name="Email Apps" levels="service support ui app">
@@ -131,7 +131,7 @@
 <collection name="commonemail_info" long-name="Email Apps Info" level="app">
 <component name="commonemail_build" long-name="Email Apps Build" introduced="^4">
 <!-- split into actual components -->
-<unit bldFile="/sf/app/commonemail" proFile="nmail.pro" qmakeArgs="-r"/>
+<unit bldFile="/sf/app/commonemail/group"/>
 </component>
 </collection>
 </block>

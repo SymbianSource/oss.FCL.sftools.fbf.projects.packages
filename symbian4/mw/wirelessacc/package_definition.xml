@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="mw" long-name="Middleware" levels="generic specific">
    <block name="wirelessacc" level="specific" long-name="Wireless Access" levels="framework generic ui">
@@ -102,19 +102,22 @@
 <unit bldFile="/sf/mw/wirelessacc/wlanutilities" proFile="wlanutilities.pro" qmakeArgs="-r"/>
 </component>
 <component name="wlanqtutilities" filter="s60" long-name="WLAN Qt Utilities" introduced="^4" class="placeholder">
-<!--<unit bldFile="wlanutilities/wlanplugin/group" qt:proFile="wlanqtutilities.pro"/>-->
+<!--<unit bldFile="wlanutilities/wlanplugin" qt:proFile="wlanqtutilities.pro"/>-->
+</component>
+<component name="wlanwizard " filter="s60" long-name="WLAN Wizard" introduced="^4" class="placeholder">
+<!--<unit bldFile="wlanutilities/wlanwizard" qt:proFile="wlanwizard.pro"/>-->
 </component>
 <component name="wlansniffer" filter="s60" long-name="WLAN Sniffer" class="placeholder">
-<!--<unit bldFile="wlanutilities/wlansettingsui/group" qt:proFile="wlansniffer.pro"/>-->
+<!--<unit bldFile="wlanutilities/wlansettingsui" qt:proFile="wlansniffer.pro"/>-->
 </component>
 <component name="wlanentryplugin" filter="s60" long-name="WLAN Entry Plugin" plugin="Y" class="placeholder">
-<!--<unit bldFile="wlanutilities/wlansniffer/group" qt:proFile="wlanentryplugin.pro"/>-->
+<!--<unit bldFile="wlanutilities/wlansniffer" qt:proFile="wlanentryplugin.pro"/>-->
 </component>
 <component name="wlanindicatorplugin" filter="s60" long-name="WLAN Indicator Plugin" plugin="Y" class="placeholder">
-<!--<unit bldFile="wlanutilities/wlanindicatorplugin/group" qt:proFile="wlanindicatorplugin.pro"/>-->
+<!--<unit bldFile="wlanutilities/wlanindicatorplugin" qt:proFile="wlanindicatorplugin.pro"/>-->
 </component>
 <component name="cpwlansettingsplugin" filter="s60" long-name="WLAN Settings Control Panel Plugin" introduced="^4" plugin="Y" class="placeholder">
-<!--<unit bldFile="wlanutilities/cpwlansettingsplugin/group" qt:proFile="cpwlansettingsplugin.pro"/>-->
+<!--<unit bldFile="wlanutilities/cpwlansettingsplugin" qt:proFile="cpwlansettingsplugin.pro"/>-->
 </component>
 </collection>
 </block>

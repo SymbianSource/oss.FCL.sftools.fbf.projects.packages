@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="mw" long-name="Middleware" levels="generic specific">
    <block name="srvdiscovery" level="generic" long-name="Service Discovery and Usage" levels="plugin framework server generic specific">
@@ -75,17 +75,17 @@
 </component>
 </collection>
 <collection name="servicediscoveryandcontrol" long-name="Service Discovery and Control" level="framework">
-<component name="servicediscoveryfw" long-name="Service Discovery Framework" introduced="^3" purpose="optional">
+<component name="servicediscoveryfw" long-name="Service Discovery Framework" introduced="^3" purpose="optional" filter="s60">
 <unit bldFile="/sf/mw/srvdiscovery/servicediscoveryandcontrol/pnp/group" mrp="/sf/mw/srvdiscovery/servicediscoveryandcontrol/pnp/group/servicediscoveryframework.mrp"/>
 </component>
 </collection>
 <collection name="upnp" long-name="UPnP" level="server">
-<component name="upnpstack" long-name="UPnP Stack" introduced="^3" purpose="optional">
+<component name="upnpstack" long-name="UPnP Stack" introduced="^3" purpose="optional" filter="s60">
 <unit bldFile="/sf/mw/srvdiscovery/upnp/upnpstack/group"/>
 </component>
 </collection>
 <collection name="srvdiscovery_info" long-name="Service Discovery and Usage Info" level="specific">
-<component name="srvdiscovery_metadata" long-name="Service Discovery and Usage Metadata" introduced="^2" purpose="development" class="config PC">
+<component name="srvdiscovery_metadata" long-name="Service Discovery and Usage Metadata" introduced="^2" purpose="development" filter="s60" class="config PC">
 <unit mrp="/sf/mw/srvdiscovery/srvdiscovery_info/srvdiscovery_metadata/srvdiscovery_metadata.mrp"/>
 </component>
 </collection>

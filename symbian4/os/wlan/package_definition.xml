@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
    <block name="wlan" level="services" long-name="WLAN" levels="hw low mid high tools test">
@@ -125,12 +125,6 @@
 </component>
 <component name="wlannwif" filter="s60" long-name="WLAN Network Interface">
 <unit bldFile="/sf/os/wlan/wlan_bearer/wlannwif/group"/>
-</component>
-</collection>
-<collection name="wlanapitest" long-name="WLAN API Tests" level="test"/>
-<collection name="wlan_info" long-name="WLAN Info" level="test">
-<component name="wlan_metadata" long-name="WLAN Metadata" introduced="^2" purpose="development" class="config PC">
-<unit mrp="/sf/os/wlan/wlan_info/wlan_metadata/wlan_metadata.mrp"/>
 </component>
 </collection>
 </block>

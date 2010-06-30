@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="mw" long-name="Middleware" levels="generic specific">
    <block name="usbservices" level="generic" long-name="USB Services" levels="framework server generic specific plugin">
@@ -113,26 +113,13 @@
 <component name="usbmscpersonality" filter="s60" long-name="USB MSC Personality" plugin="Y">
 <unit bldFile="/sf/mw/usbservices/usbclasses/usbmscpersonality/group"/>
 </component>
-<!--	commented out in bld.inf. Should this be deleted?     
-  <component id="ptpstack" filter="s60" name="Picture Transfer Protocol Stack">
-        <unit bldFile="usbclasses/ptpstack/group"/>
-      </component>
-      <component id="sicdusbplugin" filter="s60" name="SICD USB Plugin" class="plugin">
-        <unit bldFile="usbclasses/sicdusbplugin/group"/>
-      </component>
-      <component id="ptpserver" filter="s60" name="Picture Transfer Protocol Server">
-        <unit bldFile="usbclasses/ptpserver/group"/>
-      </component>-->
-<component name="pictbridgeengine" filter="s60" long-name="PictBridge Engine">
-<unit bldFile="/sf/mw/usbservices/usbclasses/pictbridgeengine/group"/>
-</component>
 <component name="usbphoneasmodem" filter="s60" long-name="USB Phone as Modem" introduced="^3">
 <unit bldFile="/sf/mw/usbservices/usbclasses/usbphoneasmodem/group"/>
 </component>
 </collection>
 <collection name="usbuis" long-name="USB UIs" level="specific">
 <component name="usbuinotif" filter="s60" long-name="USB UI Notifiers">
-<unit bldFile="/sf/mw/usbservices/usbuis/usbuinotif/group"/>
+<unit bldFile="/sf/mw/usbservices/usbuis/usbuinotif" proFile="usbuinotif.pro" qmakeArgs="-r"/>
 </component>
 <component name="imageprintuiprovider" filter="s60" long-name="ImagePrint UI Provider" plugin="Y">
 <unit bldFile="/sf/mw/usbservices/usbuis/imageprintuiprovider/group"/>

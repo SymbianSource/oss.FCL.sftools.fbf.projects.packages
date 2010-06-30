@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="radio" level="apps" long-name="Radio Apps" levels="engine plugin ui">
@@ -85,15 +85,10 @@
 <unit bldFile="/sf/app/radio/rom"/>
 </component>
 </collection>
-<collection name="radio_hswidgetplugin" long-name="FM Radio Homescreen Widget Plugin" level="plugin">
-<component name="fmradiohswidgetplugin" filter="s60" long-name="FM Radio HS Widget Plugin" introduced="^4" plugin="Y">
-<unit bldFile="/sf/app/radio/hswidgetplugin/fmradiohswidgetplugin" proFile="fmradiohswidgetplugin.pro"/>
-</component>
-<component name="fmradiohswidgetplugininstaller" filter="s60" long-name="FM Radio HS Widget Plugin Installer" introduced="^4">
-<unit bldFile="/sf/app/radio/hswidgetplugin/fmradiohswidgetplugininstaller" proFile="fmradiohswidgetplugininstaller.pro"/>
-</component>
-<component name="fmradiohswidgetplugin_exports_to_rom" filter="s60" long-name="FM Radio HS Widget Plugin ROM" introduced="^4">
-<unit bldFile="/sf/app/radio/hswidgetplugin" proFile="fmradiohswidgetplugin_exports_to_rom.pri"/>
+<collection name="radiohswidget" long-name="Radio Homescreen Widget" level="plugin">
+<!-- collection is really a component. Move down a directory -->
+<component name="radiohswidget_build" filter="s60" long-name="Radio HS Widget Build" introduced="^4">
+<unit bldFile="/sf/app/radio/radiohswidget" proFile="radiohswidget.pro"/>
 </component>
 </collection>
 </block>

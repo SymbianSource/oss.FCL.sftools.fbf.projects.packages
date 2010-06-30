@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="mw" long-name="Middleware" levels="generic specific">
    <block name="mmmw" level="generic" long-name="Multimedia Middleware" levels="plugin framework server generic specific">
@@ -59,7 +59,7 @@
 <unit bldFile="/sf/mw/mmmw/mmmw_plat/multimedia_data_source_api/group"/>
 </component>
 <component name="enhanced_media_client_api" long-name="Enhanced Media Client API" filter="s60" class="api">
-<unit bldFile="/sf/mw/mmmw/mmmw_plat/enhanced_media_client_api/group"/>
+<unit bldFile="/sf/mw/mmmw/mmmw_plat/enhanced_media_client_api/group" filter="!test"/>
 </component>
 <component name="stream_control_custom_command_api" long-name="Stream Control Custom Command API" filter="s60" class="api">
 <unit bldFile="/sf/mw/mmmw/mmmw_plat/stream_control_custom_command_api/group"/>
@@ -71,7 +71,7 @@
 <unit bldFile="/sf/mw/mmmw/mmmw_plat/emc_file_source_api/group"/>
 </component>
 <component name="audio_metadata_reader_api" long-name="Audio MetaData Reader API" filter="s60" class="api">
-<unit bldFile="/sf/mw/mmmw/mmmw_plat/audio_metadata_reader_api/group"/>
+<unit bldFile="/sf/mw/mmmw/mmmw_plat/audio_metadata_reader_api/group" filter="!test"/>
 </component>
 <component name="emc_volume_effect_api" long-name="EMC Volume Effect API" filter="s60" class="api">
 <unit bldFile="/sf/mw/mmmw/mmmw_plat/emc_volume_effect_api/group"/>
@@ -86,13 +86,13 @@
 <unit bldFile="/sf/mw/mmmw/mmmw_plat/emc_drm_config_intfc_api/group"/>
 </component>
 <component name="voip_audio_services_api" long-name="VoIP Audio Services" filter="s60" class="api">
-<unit bldFile="/sf/mw/mmmw/mmmw_plat/voip_audio_services_api/group"/>
+<unit bldFile="/sf/mw/mmmw/mmmw_plat/voip_audio_services_api/group" filter="!test"/>
 </component>
 <component name="configuration_components_factory_api" long-name="Configuration Components Factory API" filter="s60" class="api">
 <unit bldFile="/sf/mw/mmmw/mmmw_plat/configuration_components_factory_api/group"/>
 </component>
 <component name="audio_output_control_utility_api" long-name="Audio Output Control Utility API" filter="s60" class="api">
-<unit bldFile="/sf/mw/mmmw/mmmw_plat/audio_output_control_utility_api/group"/>
+<unit bldFile="/sf/mw/mmmw/mmmw_plat/audio_output_control_utility_api/group" filter="!test"/>
 </component>
 <component name="audio_output_control_utility_proxy_api" long-name="Audio Output Control Utility Proxy API" filter="s60" class="api">
 <unit bldFile="/sf/mw/mmmw/mmmw_plat/audio_output_control_utility_proxy_api/group"/>
@@ -101,10 +101,10 @@
 <unit bldFile="/sf/mw/mmmw/mmmw_plat/emc_audio_effects_api/group"/>
 </component>
 <component name="call_audio_control_api" long-name="Call AudioControl API" filter="s60" class="api">
-<unit bldFile="/sf/mw/mmmw/mmmw_plat/call_audio_control_api/group"/>
+<unit bldFile="/sf/mw/mmmw/mmmw_plat/call_audio_control_api/group" filter="!test"/>
 </component>
 <component name="radio_utilities_api" long-name="Radio Utilities API" filter="s60" class="api">
-<unit bldFile="/sf/mw/mmmw/mmmw_plat/radio_utilities_api/group"/>
+<unit bldFile="/sf/mw/mmmw/mmmw_plat/radio_utilities_api/group" filter="!test"/>
 </component>
 <component name="radio_preset_utilities_api" long-name="Radio Preset Utilities API" filter="s60" class="api">
 <unit bldFile="/sf/mw/mmmw/mmmw_plat/radio_preset_utilities_api/group"/>
@@ -113,13 +113,13 @@
 <unit bldFile="/sf/mw/mmmw/mmmw_plat/radio_monitor_api/group"/>
 </component>
 <component name="thumbnail_engine_api" long-name="Thumbnail Engine API" filter="s60" class="api">
-<unit bldFile="/sf/mw/mmmw/mmmw_plat/thumbnail_engine_api/group"/>
+<unit bldFile="/sf/mw/mmmw/mmmw_plat/thumbnail_engine_api/group" filter="!test"/>
 </component>
 <component name="telephony_multimedia_service_api" long-name="Telephony Multimedia Service API" filter="s60" class="api">
 <unit bldFile="/sf/mw/mmmw/mmmw_plat/telephony_multimedia_service_api/group" filter="!test"/>
 </component>
 <component name="openmax_al_api" long-name="OpenMAX AL API" filter="s60" introduced="^4" class="api">
-<unit bldFile="/sf/mw/mmmw/mmmw_plat/openmax_al_api/group"/>
+<unit bldFile="/sf/mw/mmmw/mmmw_plat/openmax_al_api/group" filter="!test"/>
 </component>
 <component name="openmax_al_ext_api" long-name="OpenMAX AL Extensions API" filter="s60" introduced="^4" class="api">
 <unit bldFile="/sf/mw/mmmw/mmmw_plat/openmax_al_ext_api/group"/>
@@ -152,6 +152,7 @@
 <component name="profilesettingsmonitor" filter="s60" long-name="Profile Settings Monitor">
 <unit bldFile="/sf/mw/mmmw/mmfenh/profilesettingsmonitor/group"/>
 </component>
+<component name="mmfenh_test" filter="s60,test,module_test,pref_test" long-name="MMF Enhancements Tests" purpose="development"/>
 </collection>
 <collection name="mmserv" long-name="Multimedia Services" level="specific">
 <component name="callaudiocontrol" filter="s60" long-name="Call Audio Control">

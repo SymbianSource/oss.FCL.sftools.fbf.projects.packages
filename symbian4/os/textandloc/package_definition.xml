@@ -50,26 +50,21 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
    <block name="textandloc" level="services" long-name="Text and Localisation Services" levels="encoding util fonts tools text">
-<collection name="textandloc_plat" long-name="Text and Localisation Platform Interfaces" level="text">
-<component name="japanese_language_utilities_api" long-name="Japanese Language Utilities API" filter="s60" class="api">
-<unit bldFile="/sf/os/textandloc/textandloc_plat/japanese_language_utilities_api/group"/>
-</component>
-<component name="sortutil_api" long-name="Sort Util API" filter="s60" class="api">
-<unit bldFile="/sf/os/textandloc/textandloc_plat/sortutil_api/group"/>
-</component>
-</collection>
 <collection name="charconvfw" long-name="Character Conversion" level="encoding">
-<component name="charconv_fw" long-name="Character Encoding and Conversion Framework" purpose="optional">
+<component name="charconv_fw" long-name="Character Encoding and Conversion Framework" purpose="optional" filter="api_test">
+<!-- both production and api_test-->
 <unit bldFile="/sf/os/textandloc/charconvfw/charconv_fw/group" mrp="/sf/os/textandloc/charconvfw/charconv_fw/group/syslibs_charconv.mrp"/>
 </component>
-<component name="charconvplugins" long-name="Character Encoding and Conversion Plugins" purpose="optional" plugin="Y">
+<component name="charconvplugins" long-name="Character Encoding and Conversion Plugins" purpose="optional" filter="apit_test" plugin="Y">
+<!-- both production and api_test-->
 <unit bldFile="/sf/os/textandloc/charconvfw/charconvplugins/group" mrp="/sf/os/textandloc/charconvfw/charconvplugins/group/syslibs_charconv_plugins.mrp"/>
 </component>
-<component name="fatfilenameconversionplugins" long-name="FAT Filename Conversion Plugins" introduced="9.1" purpose="optional" plugin="Y">
+<component name="fatfilenameconversionplugins" long-name="FAT Filename Conversion Plugins" introduced="9.1" purpose="optional" filter="api_test" plugin="Y">
+<!-- both production and api_test-->
 <unit bldFile="/sf/os/textandloc/charconvfw/fatfilenameconversionplugins/group" mrp="/sf/os/textandloc/charconvfw/fatfilenameconversionplugins/group/syslibs_FATCharsetConv.mrp"/>
 </component>
 </collection>
@@ -77,7 +72,8 @@
 <component name="iculayoutengine" long-name="ICU Layout Engine" introduced="9.2" purpose="optional" deprecated="^4" plugin="Y">
 <unit bldFile="/sf/os/textandloc/fontservices/textshaperplugin/group" mrp="/sf/os/textandloc/fontservices/textshaperplugin/group/graphics_iculayoutengine.mrp"/>
 </component>
-<component name="fontstore" long-name="Font Store" purpose="mandatory">
+<component name="fontstore" long-name="Font Store" purpose="mandatory" filter="api_test">
+<!-- both production and api_test-->
 <unit bldFile="/sf/os/textandloc/fontservices/fontstore/group" mrp="/sf/os/textandloc/fontservices/fontstore/group/graphics_fntstore.mrp"/>
 </component>
 <component name="textbase" long-name="Text Base" purpose="mandatory" class="placeholder">

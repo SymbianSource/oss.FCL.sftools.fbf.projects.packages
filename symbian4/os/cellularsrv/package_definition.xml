@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
    <block name="cellularsrv" level="services" long-name="Cellular Baseband Services" levels="adaptation hw-if plugin framework server app-if">
@@ -157,6 +157,11 @@
 </component>
 </collection>
 <collection name="cellularsrvapitest" long-name="Telephony API Tests" level="app-if"/>
+<collection name="wapstack" long-name="WAP Stack" level="plugin">
+<component name="wapmessageapi" long-name="WAP Message API" purpose="optional">
+<unit bldFile="/sf/os/cellularsrv/wapstack/wapmessageapi/group" mrp="/sf/os/cellularsrv/wapstack/wapmessageapi/group/wap-stack_wapmessage.mrp"/>
+</component>
+</collection>
 </block>
   </layer>
  </systemModel>

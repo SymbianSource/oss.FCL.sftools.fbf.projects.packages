@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="phone" level="apps" span="2" long-name="Phone Apps" levels="engine plugin ui app">
@@ -113,9 +113,6 @@
 </component>
 <component name="phoneservices" filter="s60" long-name="Phone Server" introduced="^4">
 <unit bldFile="/sf/app/phone/phoneengine/phoneservices" proFile="phoneservices.pro"/>
-</component>
-<component name="parserrecognizer" filter="s60" long-name="Parser Recognizer" introduced="^4" plugin="Y">
-<unit bldFile="/sf/app/phone/phoneengine/parserrecognizer" proFile="parserrecognizer.pro"/>
 </component>
 </collection>
 <collection name="phoneuis" long-name="Phone UIs" level="ui">

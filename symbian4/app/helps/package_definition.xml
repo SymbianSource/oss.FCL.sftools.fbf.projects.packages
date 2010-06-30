@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="helps" level="apps" span="2" long-name="Help Apps" levels="eng tools if ui">
@@ -63,11 +63,6 @@
 <collection name="symhelp" long-name="Symbian Help" level="eng">
 <component name="helpmodel" long-name="Help" introduced="6.0" purpose="optional">
 <unit bldFile="/sf/app/helps/symhelp/helpmodel/group" mrp="/sf/app/helps/symhelp/helpmodel/group/app-services_hlpmodel.mrp"/>
-</component>
-</collection>
-<collection name="helps_info" long-name="Help Apps Info" level="ui">
-<component name="helps_metadata" long-name="Help Apps Metadata" introduced="^2" purpose="development" class="config PC">
-<unit mrp="/sf/app/helps/helps_info/helps_metadata/helps_metadata.mrp"/>
 </component>
 </collection>
 </block>

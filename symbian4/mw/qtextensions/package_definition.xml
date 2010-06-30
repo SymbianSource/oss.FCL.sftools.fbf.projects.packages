@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="mw" long-name="Middleware" levels="generic specific">
    <block name="qtextensions" level="generic" long-name="Qt Extensions" levels="tool mw app">
@@ -58,7 +58,7 @@
 <component name="qtecomplugins_build" filter="qtecomplugins" long-name="Qt ECom Plugin" purpose="development" introduced="^4" plugin="Y">
 <unit bldFile="/sf/mw/qtextensions/qtecomplugins" proFile="qtecomplugins.pro" qmakeArgs="-r"/>
 </component>
-<component name="qtextensions_examples" filter="qtextensionsexamples" long-name="Qt ECom Plugin Examples" purpose="development" introduced="^4">
+<component name="qtextensions_examples" filter="qtextensionsexamples,build_as_app" long-name="Qt ECom Plugin Examples" purpose="development" introduced="^4">
 <unit bldFile="/sf/mw/qtextensions/qtecomplugins/examples" proFile="examples.pro" qmakeArgs="-r"/>
 </component>
 </collection>
@@ -66,7 +66,7 @@
 <component name="qthighway_build" filter="qthighway" long-name="Qt Highway" purpose="development" introduced="^4">
 <unit bldFile="/sf/mw/qtextensions/qthighway" proFile="qthighway.pro" qmakeArgs="-r"/>
 </component>
-<component name="qthighway_examples" filter="qtextensionsexamples" long-name="Qt Highway Examples" purpose="development" introduced="^4">
+<component name="qthighway_examples" filter="qtextensionsexamples,build_as_app" long-name="Qt Highway Examples" purpose="development" introduced="^4">
 <unit bldFile="/sf/mw/qtextensions/qthighway/examples" proFile="examples.pro" qmakeArgs="-r"/>
 </component>
 </collection>
@@ -74,7 +74,7 @@
 <component name="qtmobileextensions_build" filter="qtextension" long-name="Qt Mobile Extensions" purpose="development" introduced="^4">
 <unit bldFile="/sf/mw/qtextensions/qtmobileextensions" proFile="qtmobileextensions.pro" qmakeArgs="-r"/>
 </component>
-<component name="qtmobileextensions_examples" filter="qtextensionsexamples" long-name="Qt Mobile Extensions Examples" purpose="development" introduced="^4">
+<component name="qtmobileextensions_examples" filter="qtextensionsexamples,build_as_app" long-name="Qt Mobile Extensions Examples" purpose="development" introduced="^4">
 <unit bldFile="/sf/mw/qtextensions/qtmobileextensions/examples" proFile="examples.pro" qmakeArgs="-r"/>
 </component>
 </collection>
@@ -82,7 +82,7 @@
 <component name="qtmobility_build" filter="qtmobility" long-name="Qt Mobility" purpose="development" introduced="^4">
 <unit bldFile="/sf/mw/qtextensions/qtmobility" proFile="qtmobility.pro" qmakeArgs="-r"/>
 </component>
-<component name="qtmobility_examples" filter="qtextensionsexamples" long-name="Qt Mobility Examples" purpose="development" introduced="^4">
+<component name="qtmobility_examples" filter="qtextensionsexamples,build_as_app" long-name="Qt Mobility Examples" purpose="development" introduced="^4">
 <unit bldFile="/sf/mw/qtextensions/qtmobility/examples" proFile="examples.pro" qmakeArgs="-r"/>
 </component>
 </collection>

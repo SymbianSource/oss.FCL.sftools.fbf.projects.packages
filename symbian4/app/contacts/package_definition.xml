@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="contacts" level="apps" span="2" long-name="Contacts Apps" levels="engine support services ui">
@@ -80,7 +80,7 @@
 <unit bldFile="/sf/app/contacts/phonebookengines/cntfindplugin" proFile="cntfindplugin.pro"/>
 </component>
 <component name="contactsmodel" long-name="Contacts Model" introduced="ER5" purpose="optional">
-<unit bldFile="/sf/app/contacts/phonebookengines/contactsmodel/groupsql" mrp="/sf/app/contacts/phonebookengines/contactsmodel/groupsql/app-engines_cntmodel.mrp" version="2"/>
+<unit bldFile="/sf/app/contacts/phonebookengines_old/contactsmodel/groupsql" mrp="/sf/app/contacts/phonebookengines_old/contactsmodel/groupsql/app-engines_cntmodel.mrp" version="2"/>
 </component>
 <component name="cntsortplugin" filter="s60" long-name="Contacts Sort Plugin" introduced="^2" plugin="Y">
 <unit bldFile="/sf/app/contacts/phonebookengines/cntsortplugin" proFile="cntsortplugin.pro"/>
@@ -89,17 +89,17 @@
 <!-- need to move to this actual dir rather than including something from another collection -->
 <unit bldFile="/sf/app/contacts/qtcontactsmobility" proFile="qtcontactsmobility.pro"/>
 </component>
-<component name="mobcntmodel" filter="s60" long-name="Mobile Contacts Model" introduced="^4">
-<unit bldFile="/sf/app/contacts/phonebookengines/mobcntmodel" proFile="mobcntmodel.pro"/>
+<component name="cntlistmodel" filter="s60" long-name="Contact List Model" introduced="^4">
+<unit bldFile="/sf/app/contacts/phonebookengines/cntlistmodel" proFile="cntlistmodel.pro"/>
 </component>
-<component name="mobcntactions" filter="s60" long-name="Mobile Contacts Actions" introduced="^4">
-<unit bldFile="/sf/app/contacts/phonebookengines/mobcntactions" proFile="mobcntactions.pro"/>
+<component name="cntactions" filter="s60" long-name="Contacts Actions" introduced="^4">
+<unit bldFile="/sf/app/contacts/phonebookengines/cntactions" proFile="cntactions.pro"/>
 </component>
 <component name="cntmaptileservice" filter="s60" long-name="Contacts Map Tile Service" introduced="^4">
 <unit bldFile="/sf/app/contacts/phonebookengines/cntmaptileservice" proFile="cntmaptileservice.pro"/>
 </component>
-<component name="simutility" filter="s60" long-name="SIM Utility" introduced="^4">
-<unit bldFile="/sf/app/contacts/phonebookengines/simutility" proFile="simutility.pro"/>
+<component name="cntsimutility" filter="s60" long-name="Contacts SIM Utility" introduced="^4">
+<unit bldFile="/sf/app/contacts/phonebookengines/cntsimutility" proFile="cntsimutility.pro"/>
 </component>
 <component name="cntimageutility" long-name="Contacts Image Utility" filter="s60" introduced="^4">
 <unit bldFile="/sf/app/contacts/phonebookengines/cntimageutility" proFile="cntimageutility.pro"/>
@@ -109,8 +109,16 @@
 <component name="phonebooksync" long-name="Phonebook Sync" purpose="optional" plugin="Y">
 <unit bldFile="/sf/app/contacts/pimprotocols/phonebooksync/group" mrp="/sf/app/contacts/pimprotocols/phonebooksync/group/telephony_phbksync.mrp"/>
 </component>
-<component name="pbap" long-name="Bluetooth PBAP" introduced="9.2" purpose="optional">
+<component name="pbap" filter="s60" long-name="Bluetooth PBAP" introduced="9.2" purpose="optional">
 <unit bldFile="/sf/app/contacts/pimprotocols/pbap/group" mrp="/sf/app/contacts/pimprotocols/pbap/group/bluetooth_accesshost.mrp"/>
+</component>
+</collection>
+<collection name="presencecache" long-name="Presence Cache" level="support">
+<component name="presencecachesymbian" filter="s60" long-name="Presence Cache Symbian" introduced="^4">
+<unit bldFile="/sf/app/contacts/presencecache/presencecachesymbian" proFile="presencecachesymbian.pro"/>
+</component>
+<component name="presencecacheqt" filter="s60" long-name="Presence Cache Qt" introduced="^4">
+<unit bldFile="/sf/app/contacts/presencecache/presencecacheqt" proFile="presencecacheqt.pro"/>
 </component>
 </collection>
 <collection name="contacts_info" long-name="Contacts Apps Info" level="ui">

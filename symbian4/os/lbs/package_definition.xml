@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
    <block name="lbs" level="services" long-name="Locating Services" levels="hw-if data-acquisition adaptation management application-interface">
@@ -113,21 +113,23 @@
 <component name="privacyprotocolmodule" long-name="Privacy Protocol Module" introduced="^2" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/lbs/networkprotocolmodules/privacyprotocolmodule/group" mrp="/sf/os/lbs/networkprotocolmodules/privacyprotocolmodule/group/lbs_privacyprotocolmodule.mrp"/>
 </component>
+<component name="networkpmutils" long-name="Network Protocol Module Utilities" introduced="^3" purpose="optional" plugin="Y">
+<unit bldFile="/sf/os/lbs/networkprotocolmodules/networkpmutils/group" mrp="/sf/os/lbs/networkprotocolmodules/networkpmutils/group/lbs_networkpmutils.mrp"/>
+</component>
+<component name="suplpmcore" long-name="SUPL Protocol Module Core" introduced="^3" purpose="optional" plugin="Y">
+<unit bldFile="/sf/os/lbs/networkprotocolmodules/suplpmcore/group" mrp="/sf/os/lbs/networkprotocolmodules/suplpmcore/group/lbs_suplpmcore.mrp"/>
+</component>
+<component name="networkpmasn1_pub" long-name="Network Protocol Module ASN1 Public Interfaces" introduced="^3" purpose="optional" class="api">
+<unit bldFile="/sf/os/lbs/networkprotocolmodules/networkpmasn1_pub/group" mrp="/sf/os/lbs/networkprotocolmodules/networkpmasn1_pub/group/lbs_networkpmasn1_pub.mrp"/>
+</component>
+<component name="suplcontrolplaneprotocols" long-name="SUPL Control Plane Protocols" introduced="^3" purpose="optional" plugin="Y">
+<unit bldFile="/sf/os/lbs/networkprotocolmodules/suplcontrolplaneprotocols/group" mrp="/sf/os/lbs/networkprotocolmodules/suplcontrolplaneprotocols/group/lbs_suplcontrolplaneprotocols.mrp"/>
+</component>
 <component name="suplproxyprotocolmodule" long-name="SUPL Proxy Protocol Module" introduced="^3" purpose="optional" plugin="Y">
-<!-- hack for Foundation builds needed while collection is reorganised into proper components -->
-<unit bldFile="/sf/os/lbs/networkprotocolmodules/suplproxyprotocolmodule/sfgroup" mrp="/sf/os/lbs/networkprotocolmodules/suplproxyprotocolmodule/group/lbs_suplproxyprotocolmodule.mrp"/>
+<unit bldFile="/sf/os/lbs/networkprotocolmodules/suplproxyprotocolmodule/group" mrp="/sf/os/lbs/networkprotocolmodules/suplproxyprotocolmodule/group/lbs_suplproxyprotocolmodule.mrp"/>
 </component>
 <component name="suplprotocolmodule" long-name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" plugin="Y">
-<!-- hack for Foundation builds needed while collection is reorganised into proper components -->
-<unit bldFile="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/sfgroup" mrp="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
-</component>
-<component name="suplrrlpasn1" filter="sf_build" long-name="SUPL RRLP ASN1 Parser">
-<!-- hack for Foundation builds needed while collection is reorganised into proper components -->
-<unit bldFile="/sf/os/lbs/networkprotocolmodules/common/suplrrlpasn1/group"/>
-</component>
-<component name="suplrrlpprotocol" long-name="SUPL RRLP Protocol Module">
-<!-- hack for Foundation builds needed while collection is reorganised into proper components -->
-<unit bldFile="/sf/os/lbs/networkprotocolmodules/suplcontrolplaneprotocols/common/suplrrlpprotocol/sfgroup"/>
+<unit bldFile="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/group" mrp="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
 </component>
 </collection>
 <collection name="lbsapitest" long-name="Location API Tests" level="application-interface"/>

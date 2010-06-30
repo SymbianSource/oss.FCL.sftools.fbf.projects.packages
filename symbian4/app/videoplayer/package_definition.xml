@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="videoplayer" level="apps" long-name="Video Player Apps" levels="support plugin util apps">
@@ -64,7 +64,7 @@
 </collection>
 <collection name="videocollection" long-name="Video Collection" level="util">
 <component name="mpxmyvideoscollection" filter="s60" long-name="MPX My Videos Collection" introduced="^3">
-<unit bldFile="/sf/app/videoplayer/videocollection/mpxmyvideoscollection/group"/>
+<unit bldFile="/sf/app/videoplayer/videocollection/mpxmyvideoscollection/group" filter="!test"/>
 </component>
 <component name="videocollectionwrapper" filter="s60" long-name="Video Collection Wrapper" introduced="^4">
 <unit bldFile="/sf/app/videoplayer/videocollection/videocollectionwrapper" proFile="videocollectionwrapper.pro" qmakeArgs="-r"/>
@@ -77,17 +77,19 @@
 </component>
 </collection>
 <collection name="mediasettings" long-name="Media Settings" level="support">
-<!--  this is really a component. Should be moved down a directory -->
-<component name="mediasettings_build" filter="s60" long-name="Media Settings Build">
-<unit bldFile="/sf/app/videoplayer/mediasettings/group"/>
+<component name="mediasettingsengine" filter="s60" long-name="Media Settings Engine">
+<unit bldFile="/sf/app/videoplayer/mediasettings/mediasettingsengine/group"/>
+</component>
+<component name="videosettingsplugin" filter="s60" long-name="Video Settings Plugin" plugin="Y" class="placeholder">
+<!--<unit bldFile="mediasettings/videosettingsplugin" qt:proFile="videosettingsplugin.pro"/> -->
 </component>
 </collection>
 <collection name="videoplayerapp" long-name="Video Player App" level="apps">
 <component name="videoplayerengine" long-name="Video Player Engine" filter="s60" introduced="^4">
 <unit bldFile="/sf/app/videoplayer/videoplayerapp/videoplayerengine" proFile="videoplayerengine.pro" qmakeArgs="-r"/>
 </component>
-<component name="hbvideoplayer" filter="s60" long-name="HB Video Player" introduced="^4">
-<unit bldFile="/sf/app/videoplayer/videoplayerapp/hbvideoplayer" proFile="hbvideoplayer.pro" qmakeArgs="-r"/>
+<component name="hbvideoplayer" filter="s60" long-name="Video Player" introduced="^4">
+<unit bldFile="/sf/app/videoplayer/videoplayerapp/videoplayer" proFile="videoplayer.pro" qmakeArgs="-r"/>
 </component>
 </collection>
 <collection name="videoplayback" long-name="Video Playback Plugins" level="plugin">
@@ -98,7 +100,7 @@
 <unit bldFile="/sf/app/videoplayer/videoplayback/hbvideoplaybackviewplugin" proFile="hbvideoplaybackviewplugin.pro" qmakeArgs="-r"/>
 </component>
 <component name="videohelix" long-name="Video Helix" filter="s60" introduced="^3" plugin="Y">
-<unit bldFile="/sf/app/videoplayer/videoplayback/videohelix/group"/>
+<unit bldFile="/sf/app/videoplayer/videoplayback/videohelix/group" filter="!test"/>
 </component>
 </collection>
 </block>

@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="organizer" level="apps" span="2" long-name="Organizer Application Suite" levels="support services engine ui app">
@@ -80,6 +80,7 @@
 <component name="agenda_interface_api" long-name="Agenda Interface API" filter="s60" introduced="^4" class="api"/>
 <component name="calendar_editor_api" long-name="Calendar Editor API" filter="s60" introduced="^4" class="api"/>
 <component name="notes_editor_api" long-name="Notes Editor API" filter="s60" introduced="^4" class="api"/>
+<component name="clock_settingsview_plugin_api" long-name="Clock Settings View Plugin API" filter="s60" introduced="^4" class="api"/>
 </collection>
 <collection name="agendainterface" long-name="Agenda Interface" level="services">
 <!-- collection is really a component, should move down a directory -->
@@ -112,7 +113,7 @@
 <component name="customisationmanager" filter="s60" long-name="Calendar Customisation Manager">
 <unit bldFile="/sf/app/organizer/calendarui/customisationmanager" proFile="customisationmanager.pro"/>
 </component>
-<component name="views" filter="s60" long-name="Calendar Views">
+<component name="calendarui_views" filter="s60" long-name="Calendar Views">
 <unit bldFile="/sf/app/organizer/calendarui/views" proFile="views.pro"/>
 </component>
 <component name="calendarui_controller" filter="s60" long-name="Calendar Controller">
@@ -124,14 +125,14 @@
 <component name="regionalplugins" long-name="Regional Plugins" filter="s60" introduced="^4" plugin="Y">
 <unit bldFile="/sf/app/organizer/calendarui/regionalplugins" proFile="regionalplugins.pro"/>
 </component>
+<component name="calenviewerservice" long-name="Calendar Viewer Service" filter="s60" introduced="^4" plugin="Y">
+<unit bldFile="/sf/app/organizer/calendarui/calenviewerservice" proFile="calenviewerservice.pro"/>
+</component>
 <component name="caldav" filter="sf_build" long-name="CalDAV" introduced="^3" plugin="Y" class="placeholder">
 <!-- not yet delivered in S^4 <unit bldFile="calendarui/caldav/group"/>-->
 </component>
 </collection>
 <collection name="notes" long-name="Notes" level="ui">
-<component name="noteseditor" filter="s60" long-name="Notes Editor" introduced="^4">
-<unit bldFile="/sf/app/organizer/notes/notesui/noteseditor" proFile="noteseditor.pro"/>
-</component>
 <component name="notes_build" filter="s60" long-name="Notes Build" introduced="^4">
 <unit bldFile="/sf/app/organizer/notes" proFile="notes.pro"/>
 </component>

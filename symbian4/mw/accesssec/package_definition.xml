@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="mw" long-name="Middleware" levels="generic specific">
    <block name="accesssec" level="generic" long-name="Access Security" levels="plugin framework server generic specific">
@@ -72,7 +72,7 @@
 </collection>
 <collection name="eapol" long-name="EAPOL" level="framework">
 <component name="eapol_framework" filter="s60" long-name="EAPOL Framework" introduced="9.2">
-<unit bldFile="/sf/mw/accesssec/eapol/eapol_framework/eapol_symbian/group"/>
+<unit bldFile="/sf/mw/accesssec/eapol/group"/>
 </component>
 </collection>
 </block>

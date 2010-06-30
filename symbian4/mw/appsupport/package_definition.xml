@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="mw" long-name="Middleware" levels="generic specific">
    <block name="appsupport" level="generic" long-name="Generic Application Support" levels="system plugin framework server generic specific">
@@ -211,6 +211,9 @@
 </component>
 <component name="atcmdplugin" long-name="AT Command Plugin" filter="s60,!oem_build" plugin="Y">
 <unit bldFile="/sf/mw/appsupport/coreapplicationuis/atcmdplugin/group"/>
+</component>
+<component name="devicepowermenuplugin" long-name="Device Power Menu Plugin" introduced="^4" plugin="Y">
+<unit bldFile="/sf/mw/appsupport/coreapplicationuis/devicepowermenuplugin" proFile="devicepowermenuplugin.pro"/>
 </component>
 </collection>
 <collection name="flashliteapi_3_1" long-name="Flash Lite API 3.1" level="specific">

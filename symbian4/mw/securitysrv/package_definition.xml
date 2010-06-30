@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="mw" long-name="Middleware" levels="generic specific">
    <block name="securitysrv" level="generic" long-name="Security Services" levels="plugin framework server generic specific">
@@ -160,7 +160,7 @@
 <unit bldFile="/sf/mw/securitysrv/securitydialogs/keylockpolicyapi/group"/>
 </component>
 <component name="autolock" long-name="Autolock" filter="s60">
-<unit bldFile="/sf/mw/securitysrv/securitydialogs/autolock/group"/>
+<unit bldFile="/sf/mw/securitysrv/securitydialogs/autolock" proFile="autolock.pro"/>
 </component>
 <component name="secui" filter="s60" long-name="Security UI">
 <unit bldFile="/sf/mw/securitysrv/securitydialogs/secui/group"/>
@@ -178,17 +178,8 @@
 <component name="secuinotifications" long-name="Security UI Notifications" introduced="^4" filter="s60">
 <unit bldFile="/sf/mw/securitysrv/securitydialogs/secuinotifications" proFile="secuinotifications.pro" qmakeArgs="-r"/>
 </component>
-<component name="indicatorautolockplugin" long-name="Auto Lock Indicator Plugin" introduced="^4" filter="s60" plugin="Y">
-<!-- directory at the wrong level to be a component-->
-<unit bldFile="/sf/mw/securitysrv/securitydialogs/AutolockSrv/indicatorplugin" proFile="indicatorautolockplugin.pro" qmakeArgs="-r"/>
-</component>
 <component name="autolockuseractivityservice" long-name="Auto Lock User Activity Service" introduced="^4" filter="s60">
-<!-- Can't have two .pro files in the same dir: their generated bld.infs will overwrite each other-->
-<unit bldFile="/sf/mw/securitysrv/securitydialogs/AutolockSrv" proFile="autolockuseractivityservice.pro" qmakeArgs="-r"/>
-</component>
-<component name="autolocksrv" long-name="Auto Lock Server" introduced="^4" filter="s60">
-<!-- directory at the wrong level to be a component-->
-<unit bldFile="/sf/mw/securitysrv/securitydialogs/AutolockSrv" proFile="AutolockSrv.pro" qmakeArgs="-r"/>
+<unit bldFile="/sf/mw/securitysrv/securitydialogs/Autolock/autolockuseractivityservice" proFile="autolockuseractivityservice.pro" qmakeArgs="-r"/>
 </component>
 </collection>
 <collection name="cpsecplugins" long-name="Security Settings Plugins" level="plugin">

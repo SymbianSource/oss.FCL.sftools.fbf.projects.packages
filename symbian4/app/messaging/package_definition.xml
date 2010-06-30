@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="messaging" level="apps" span="2" long-name="Messaging Apps" levels="plugin eng base app api">
@@ -68,6 +68,7 @@
 <component name="messaging_history_api" long-name="Messaging History API" filter="s60" introduced="^4" class="api"/>
 <component name="msg_plat_build" long-name="Messaging Apps Platform APIs Build" filter="s60" introduced="^4" class="api">
 <!-- break this up into the above units and replace their base attributes with bldFile, etc -->
+<unit bldFile="/sf/app/messaging/msg_plat" proFile="msg_plat.pro" qmakeArgs="-r"/>
 </component>
 </collection>
 <collection name="msg_pub" long-name="Messaging Apps Public APIs" level="api">
@@ -75,6 +76,7 @@
 <component name="msg_smil_dtd_api" long-name="Messaging SMIL DTD API" filter="s60" introduced="^4" class="api"/>
 <component name="msg_pub_build" long-name="Messaging Apps Public APIs Build" filter="s60" introduced="^4" class="api">
 <!-- break this up into the above units and replace their base attributes with bldFile, etc -->
+<unit bldFile="/sf/app/messaging/msg_pub" proFile="msg_pub.pro" qmakeArgs="-r"/>
 </component>
 </collection>
 <collection name="mobilemessaging" long-name="Mobile Messaging" level="plugin">

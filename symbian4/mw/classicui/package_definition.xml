@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="mw" long-name="Middleware" levels="generic specific">
    <block name="classicui" level="generic" long-name="Classic UI" levels="base support server generic specific">
@@ -236,7 +236,7 @@
 <unit bldFile="/sf/mw/classicui/classicui_plat/layout_configuration_api/group" filter="!test"/>
 </component>
 <component name="common_file_dialogs_filter_factory_api" long-name="Common File Dialogs Filter Factory API" filter="s60" class="api">
-<unit bldFile="/sf/mw/classicui/classicui_plat/common_file_dialogs_filter_factory_api/group" filter="!test"/>
+<unit bldFile="/sf/mw/classicui/classicui_plat/common_file_dialogs_filter_factory_api/group"/>
 </component>
 <component name="avkon_anim_dll_api" long-name="AVKON Anim DLL API" filter="s60" class="api">
 <unit bldFile="/sf/mw/classicui/classicui_plat/avkon_anim_dll_api/group"/>
@@ -342,7 +342,7 @@
 <unit bldFile="/sf/mw/classicui/classicui_pub/editors_api/group" filter="!test"/>
 </component>
 <component name="common_file_dialogs_api" long-name="Common File Dialogs API" filter="s60" class="api">
-<unit bldFile="/sf/mw/classicui/classicui_pub/common_file_dialogs_api/group" filter="!test"/>
+<unit bldFile="/sf/mw/classicui/classicui_pub/common_file_dialogs_api/group"/>
 </component>
 <component name="dialog_shutter_api" long-name="Dialog Shutter API" filter="s60" class="api">
 <unit bldFile="/sf/mw/classicui/classicui_pub/dialog_shutter_api/group" filter="!test"/>

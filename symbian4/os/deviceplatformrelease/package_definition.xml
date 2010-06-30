@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
    <block name="deviceplatformrelease" level="services" long-name="Device Platform Release" levels="bld mid top">
@@ -78,7 +78,7 @@
 <component name="system_model" long-name="System Model" introduced="^2" purpose="development" class="config PC">
 <unit mrp="/sf/os/deviceplatformrelease/foundation_system/system_model/system_model.mrp"/>
 </component>
-<component name="sf_config" filter="s60" long-name="Foundation Config" introduced="^4">
+<component name="sf_config" filter="s60,build_as_app" long-name="Foundation Config" introduced="^4">
 <unit bldFile="/sf/os/deviceplatformrelease/foundation_system/sf_config/CI_external/group"/>
 </component>
 <component name="config" filter="s60" long-name="Config" purpose="development" class="config"/>
