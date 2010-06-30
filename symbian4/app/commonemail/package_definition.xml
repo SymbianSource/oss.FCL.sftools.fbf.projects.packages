@@ -83,7 +83,7 @@
     <collection id="commonemail_info" name="Email Apps Info" level="app">
     <component id="commonemail_build" name="Email Apps Build"  introduced="^4">
 		<!-- split into actual components -->
-      <unit bldFile="."  qt:proFile="nmail.pro" qt:qmakeArgs="-r"/>
+      <unit bldFile="group"/>
     </component>
     </collection>
   </package>
