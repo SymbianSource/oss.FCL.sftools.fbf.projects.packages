@@ -54,7 +54,7 @@
 					<xsl:choose>
 						<xsl:when test="$n='id'"/> <!-- never copy this, always set -->
 						<xsl:when test="$origin/@*[name()=$n]"> <!-- don't copy if already set -->
-							<xsl:message>Note: Cannot set "<xsl:value-of select="$n"/>", already set. Ignoring linked value</xsl:message>
+							<xsl:message>Note: Cannot set "<xsl:value-of select="$n"/>", already set on <xsl:value-of select="$origin/@id"/>. Ignoring linked value</xsl:message>
 						</xsl:when>
 						<xsl:when test="$n='before' or $n='replace'">
 							<!-- ensure ns is correct (if any future attribtues will ever use an ID, process it here too)-->

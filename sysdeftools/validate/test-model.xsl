@@ -13,7 +13,6 @@
 	Module containing the validation logic for system definition 3.0.0 syntax
 -->
 	<xsl:key name="named" match="*[ancestor::systemModel]" use="@name"/>
-	<xsl:param name="path-errors" select="0"/>
 	<xsl:param name="Filename"/>
 	<xsl:variable name="info" select="document(/model//info[@type='extra']/@href,/model)//c"/>
 
@@ -93,10 +92,27 @@
 
 <xsl:template match="@before|@id|package/@span|layer/@span|collection/@level|package/@level|package/@levels|layer/@levels" mode="valid"/> <!-- really should check syntax -->
 
-<xsl:template match="@name|@href|@filter" mode="valid"/> 
+<xsl:template match="@name|@href|@filter|unit/@version|unit/@prebuilt" mode="valid"/> 
 
 <xsl:template match="component/@introduced|component/@deprecated" mode="valid"/> 
 
+<xsl:template match="component/@origin-model" mode="valid"/>
+
+<xsl:template match="unit/@priority" mode="valid">
+	<xsl:call-template name="Note"><xsl:with-param name="text">Attribute <xsl:value-of select="name()"/> is deprecated</xsl:with-param></xsl:call-template>
+</xsl:template>
+
+
+<xsl:template match="@*[namespace-uri()!='']" mode="valid"> 
+	<xsl:call-template name="Note"><xsl:with-param name="text">Extension attribute <xsl:value-of select="local-name()"/>="<xsl:value-of select="."/>" in namespace <xsl:value-of select="namespace-uri()"/></xsl:with-param></xsl:call-template>
+</xsl:template>
+
+<xsl:template match="@*[namespace-uri()='http://www.nokia.com/qt' and local-name()='proFile']" mode="valid"/> 
+	
+
+<xsl:template match="@*[namespace-uri()='http://www.nokia.com/qt' and local-name()='qmakeArgs']" mode="valid"> 
+	<xsl:call-template name="Note"><xsl:with-param name="text">Should avoid using extension attribute <xsl:value-of select="local-name()"/>="<xsl:value-of select="."/>" in namespace <xsl:value-of select="namespace-uri()"/></xsl:with-param></xsl:call-template>
+</xsl:template>
 
 
 <xsl:template match="@replace" mode="valid">
@@ -283,9 +299,14 @@
 <xsl:template match="meta/@rel | meta/@type | meta/@href"/> <!-- anything is valid -->
 
 <xsl:template match="unit">	<xsl:param name="filename"/>
-	<xsl:apply-templates select="@mrp|@bldFile">
+	<xsl:apply-templates select="@*">
 		<xsl:with-param name="filename" select="$filename"/>
 	</xsl:apply-templates>
+</xsl:template>
+
+
+<xsl:template match="unit/@*" priority="-1">	
+	<xsl:apply-templates select="." mode="valid"/>
 </xsl:template>
 
 
@@ -315,7 +336,7 @@
 		<xsl:otherwise><xsl:value-of select="@id"/></xsl:otherwise>
 	</xsl:choose>
 </xsl:template>
-<xsl:template match="@bldFile|@mrp"><xsl:param name="filename"/>
+<xsl:template match="@bldFile|@mrp|@base"><xsl:param name="filename"/>
 <xsl:if test="substring(.,string-length(.))='/'">
 		<xsl:call-template name="Warning"><xsl:with-param name="text"><code><xsl:value-of select="name()"/></code> path "<xsl:value-of select="."/>" should not end in /</xsl:with-param></xsl:call-template>
 </xsl:if>

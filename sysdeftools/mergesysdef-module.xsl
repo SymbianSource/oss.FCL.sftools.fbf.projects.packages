@@ -244,7 +244,7 @@
 			<xsl:attribute name="levels"><xsl:value-of select="normalize-space($lev)"/></xsl:attribute>
 		</xsl:when>
 		<xsl:otherwise> <!--  if they differ, use the origin's levels -->
-			<xsl:message>Note: levels differ "<xsl:value-of select="."/>" vs "<xsl:value-of select="$other/@levels"/>"</xsl:message>
+			<xsl:message>Note: levels differ "<xsl:value-of select="."/>" vs "<xsl:value-of select="$other/@levels"/>" on <xsl:value-of select="../@id"/></xsl:message>
 			<xsl:copy-of select="."/>
 		</xsl:otherwise>
 	</xsl:choose>

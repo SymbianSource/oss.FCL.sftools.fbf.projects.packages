@@ -14,6 +14,8 @@
 -->
 	<xsl:output method="html"/>
 	<xsl:include href="test-model.xsl"/>
+	<xsl:param name="path-errors" select="/model/@path-errors='yes' "/>
+
 <xsl:template match="/model">
 	<html><head>
 		<title>Cross-Checking System Model</title>

@@ -15,6 +15,7 @@
 	<xsl:output method="text"/>
 	<xsl:include href="test-model.xsl"/>
 	<xsl:param name="level" select="3"/>
+	<xsl:param name="path-errors" select="0"/>
 
 <xsl:template name="Section"><xsl:param name="text"/><xsl:param name="sub"/>
 <xsl:text>&#xa;&#xa;</xsl:text>
