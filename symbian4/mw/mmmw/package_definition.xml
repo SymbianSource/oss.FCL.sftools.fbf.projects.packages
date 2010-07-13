@@ -69,7 +69,7 @@
     <unit bldFile="mmmw_plat/emc_audio_effects_api/group"/>
    </component>
    <component id="call_audio_control_api" name="Call AudioControl API" class="api" filter="s60">
-    <meta rel="Api" href="mmmw_plat/call_audio_control_api/call_audiocontrol_api.metaxml"/>
+    <meta rel="Api" href="mmmw_plat/call_audio_control_api/call_audio_control_api.metaxml"/>
     <unit bldFile="mmmw_plat/call_audio_control_api/group" filter="!test"/>
     <unit bldFile="mmmw_plat/call_audio_control_api/tsrc/Group" filter="test,api_test,pref_test,TA_MMMW"/>
    </component>

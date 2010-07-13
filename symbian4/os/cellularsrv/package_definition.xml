@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="cellularsrv" name="Cellular Baseband Services" levels="adaptation hw-if plugin framework server app-if">
+    <meta rel="License">
+      <license type="EPL"><supplier>Nokia</supplier></license>	
+    </meta>
     <collection id="basebandabstraction" name="Baseband Abstraction" level="hw-if">
       <component id="basebandchanneladaptor" name="Baseband Channel Adaptor" introduced="8.1" purpose="optional">
         <unit bldFile="basebandabstraction/basebandchanneladaptor/group" mrp="basebandabstraction/basebandchanneladaptor/group/networking_bca.mrp"/>
@@ -31,9 +34,6 @@
       </component>
       <component id="qosextnapi" name="QoS Extn API" introduced="9.2" purpose="optional">
         <unit bldFile="telephonyprotocols/qosextnapi/group" mrp="telephonyprotocols/qosextnapi/group/networking_qosextnapi.mrp"/>
-      </component>
-      <component id="secondarypdpcontextumtsdriver" name="Secondary PDP context UMTS Driver" introduced="8.1" purpose="optional">
-        <unit bldFile="telephonyprotocols/secondarypdpcontextumtsdriver/group" mrp="telephonyprotocols/secondarypdpcontextumtsdriver/group/networking_spud.mrp"/>
       </component>
       <component id="qos3gppcpr" name="QoS 3GPP CPR" introduced="9.2" purpose="optional" class="plugin">
         <unit bldFile="telephonyprotocols/qos3gppcpr/group" mrp="telephonyprotocols/qos3gppcpr/group/networking_Qos3GPP.mrp"/>
@@ -120,6 +120,14 @@
 			  <unit mrp="cellularsrvapitest/telephonydevsoundhaitest/group/telephonydevsoundhaitest.mrp" bldFile="cellularsrvapitest/telephonydevsoundhaitest/group"/>
       </component>
     </collection>
+    <collection id="cbsref" name="CBS Reference" level="plugin">
+      <component id="csyrefplugins" name="CSY Reference Plugins" introduced="^3" purpose="development" class="plugin" filter="test">
+        <unit bldFile="cbsref/csyrefplugins/group"/>
+      </component>
+      <component id="telephonyrefplugins" name="TSY Reference Plugins" introduced="^3" purpose="development" class="plugin" filter="test">
+        <unit bldFile="cbsref/telephonyrefplugins/group"/>
+      </component>
+    </collection>        
     <collection id="wapstack" name="WAP Stack" level="plugin">
       <component id="wapmessageapi" name="WAP Message API" purpose="optional">
         <unit bldFile="wapstack/wapmessageapi/group" mrp="wapstack/wapmessageapi/group/wap-stack_wapmessage.mrp" /> 

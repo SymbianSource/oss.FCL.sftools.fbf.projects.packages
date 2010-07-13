@@ -2,6 +2,9 @@
 <SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="ipconnmgmt" name="IP Connectivity Management" levels="plugin framework server utils api">
   <collection id="ipcm_plat" name="IP Connectivity Management Platform Interfaces" level="api">
+   <component id="ipcm_plat_qt_build" name="IP Connectivity Management Qt Platform Interfaces" class="api" filter="s60" introduced="^4">
+    <unit bldFile="ipcm_plat" qt:proFile="ipcm_plat.pro"/>
+   </component>
    <component id="access_point_engine_misc_api" name="Access Point Engine Misc API" class="api" filter="s60">
     <meta rel="Api" href="ipcm_plat/access_point_engine_misc_api/access_point_engine_misc_api.metaxml"/>
     <unit bldFile="ipcm_plat/access_point_engine_misc_api/group"/>
@@ -47,6 +50,10 @@
    </component>
    <component id="flextimer_api" name="Flex Timer API" class="api" filter="s60" introduced="^4">
     <unit bldFile="ipcm_plat/flextimer_api/group"/>
+   </component>
+   <component id="mpm_vpn_toggle_api" name="MPM VPN Toggle API" class="api" filter="s60" introduced="^4">
+    <meta rel="Api" href="ipcm_plat/mpm_vpn_toggle_api/mpm_vpn_toggle_api.metaxml"/>
+    <unit bldFile="ipcm_plat/mpm_vpn_toggle_api/group"/>
    </component>
   </collection>
   <collection id="ipcm_pub" name="IP Connectivity Management Public Interfaces" level="api">
@@ -111,6 +118,24 @@
    <component id="cmmgr" filter="s60" name="CM Manager">
     <unit bldFile="cmmanager/cmmgr/group"/>
    </component>
+   <component id="connection_settings_shim" name="Connection Settings Shim" introduced="^4">
+     <unit bldFile="cmmanager/connection_settings_shim" qt:proFile="connection_settings_shim.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="cmapplsettingsui" name="Connection Settings UI" introduced="^4">
+     <unit bldFile="cmmanager/cmapplsettingsui" qt:proFile="cmapplsettingsui.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="cpipsettingsplugin" name="Connection Settings IP Plugin" class="plugin" introduced="^4">
+     <unit bldFile="cmmanager/cpipsettingsplugin" qt:proFile="cpipsettingsplugin.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="cpdestinationplugin" name="CP Destination Plugin" class="plugin" introduced="^4">
+     <unit bldFile="cmmanager/cpdestinationplugin" qt:proFile="cpdestinationplugin.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="cppacketdataapplugin" name="CP Packet Data AP Pplugin" class="plugin" introduced="^4">
+     <unit bldFile="cmmanager/cppacketdataapplugin" qt:proFile="cppacketdataapplugin.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="cpwlanapplugin" name="CP WLAN AP Plugin" class="plugin" introduced="^4">
+     <unit bldFile="cmmanager/cpwlanapplugin" qt:proFile="cpwlanapplugin.pro" qt:qmakeArgs="-r"/>
+   </component>
   </collection>
   <collection id="connectionmonitoring" name="Connection Monitoring" level="server">
    <component id="connectionmonitorui" filter="s60" name="Connection Monitor UI">
@@ -124,10 +149,22 @@
    <component id="connmonext" filter="s60" name="Connection Monitor Extension API">
     <unit bldFile="connectionmonitoring/connmonext/group"/>
    </component>
+   <component id="cellularindicatorplugin" name="Cellular Indicator Plugin" class="plugin" introduced="^4">
+     <unit bldFile="connectionmonitoring/cellularindicatorplugin" qt:proFile="cellularindicatorplugin.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="indicatorobserver" name="Indicator Observer" introduced="^4">
+     <unit bldFile="connectionmonitoring/indicatorobserver" qt:proFile="indicatorobserver.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="connectionmonitoringnview" name="Connection View" introduced="^4">
+     <unit bldFile="connectionmonitoring/connectionview" qt:proFile="connectionview.pro" qt:qmakeArgs="-r"/>
+   </component>
   </collection>
   <collection id="connectionutilities" name="Connection Utilities" level="utils">
    <component id="connectiondialogs" filter="s60" name="Connection Dialogs">
     <unit bldFile="connectionutilities/connectiondialogs/group"/>
+   </component>
+   <component id="confirmqueries" name="Confirm Queries" introduced="^4">
+     <unit bldFile="connectionutilities/confirmqueries" qt:proFile="confirmqueries.pro" qt:qmakeArgs="-r"/>
    </component>
   </collection>
   <collection id="keepalive" name="Keep Alive" level="server">
@@ -160,9 +197,6 @@
    <component id="ipcm_build" filter="s60" name="IP Connectivity Management Build">
     <!-- need to move exports to another component, or make this a config component and revmove the #includes -->
     <unit bldFile="group"/>
-   </component>
-   <component id="ipcm_qt_build" name="IP Connectivity Management Qt Build" introduced="^4">
-     <unit bldFile="." qt:proFile="ipconnmgmt.pro" qt:qmakeArgs="-r"/>
    </component>
   </collection>
  </package>

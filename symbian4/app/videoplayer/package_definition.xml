@@ -62,7 +62,7 @@
     <unit bldFile="mediasettings/mediasettingsengine/group"/>
    </component>
    <component id="videosettingsplugin" filter="s60" name="Video Settings Plugin" class="plugin">
-    <!--<unit bldFile="mediasettings/videosettingsplugin" qt:proFile="videosettingsplugin.pro"/> -->
+    <unit bldFile="mediasettings/videosettingsplugin" qt:proFile="videosettingsplugin.pro"/>
    </component>
   </collection>
   <collection id="videoplayerapp" name="Video Player App" level="apps">

@@ -9,11 +9,6 @@
       <unit bldFile="audiostubs/fmradiotunercontrolstub/group"/>
      </component>
     </collection>
-   <collection id="btaudioadaptation_stub" name="Bluetooth Audio Adaptation Stub" level="adaptation">
-     <component id="btaudioadaptation_stub_build" name="Bluetooth Audio Adaptation Stub Build" filter="oem_build">
-      <unit bldFile="btaudioadaptation_stub/group"/>
-     </component>
-    </collection>
    <collection id="drm_stubs" name="DRM Stubs" level="plugin">
      <component id="drm_stubs_build" name="DRM Stubs Build">
       <unit bldFile="drm_stubs/group"/>

@@ -160,6 +160,10 @@
    <component id="dialpad_api" name="Dialpad API" class="api" filter="s60" introduced="^4">
     <unit bldFile="phonesrv_plat/dialpad_api/group"/>
    </component>
+   <component id="phone_settings_ui_notes_api" name="Phone Settings UI Notes API" class="api" filter="s60" introduced="^4">
+    <meta rel="Api" href="phonesrv_plat/phone_settings_ui_notes_api/phone_settings_ui_notes_api.metaxml"/>
+    <unit bldFile="phonesrv_plat/phone_settings_ui_notes_api/group"/>
+   </component>
   </collection>
   <collection id="telutils" name="Telephony Utils" level="utils">
    <component id="phoneparser" filter="s60" name="Phone Parser">
@@ -203,6 +207,9 @@
    <component id="psetnotesui" filter="s60" name="Phone Settings Notes UI" purpose="development">
     <unit bldFile="cellular/psetnotesui/group" filter="!test"/>
     <unit bldFile="cellular/PsetNotesUi/tsrc/public/basic/group" filter="test,api_test"/>
+   </component>
+   <component id="psuinotes" filter="s60" name="Phone Settings Notes UI" introduced="^4">
+    <unit bldFile="cellular/psuinotes" qt:proFile="psuinotes.pro"/>
    </component>
    <component id="servicerequest" filter="s60" name="Service Request">
     <unit bldFile="cellular/servicerequest/group"/>

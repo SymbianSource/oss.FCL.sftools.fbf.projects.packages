@@ -54,40 +54,5 @@
     <unit bldFile="pressrv_plat/simple_instant_msg_api/group"/>
    </component>
   </collection>
-  <collection id="xdmengine" name="XDM Engine" level="engine">
-   <!-- collection is really a component. Need to move down a directory (eg xdm/xdmengine)-->
-   <component id="xdmengine_build" filter="s60" name="XDM Engine Build">
-    <unit bldFile="xdmengine/group"/>
-   </component>
-  </collection>
-  <collection id="xdmprotocols" name="XDM Protocols" level="fw">
-   <!-- collection is really a component. Need to move down a directory (eg xdm/xdmprotocols)-->
-   <component id="xdmprotocols_build" filter="s60" name="XDM Protocols Build">
-    <unit bldFile="xdmprotocols/group"/>
-   </component>
-  </collection>
-  <collection id="msgconnmanager" name="Messaging Connection Manager" level="fw">
-   <!-- collection is really a component. Need to move down a directory-->
-   <component id="msgconnmanager_build" filter="s60" name="Messaging Connection Manager Build">
-    <unit bldFile="msgconnmanager/group"/>
-   </component>
-  </collection>
-  <collection id="simpleengine" name="SIMPLE Engine" level="engine">
-   <!-- collection is really a component. Need to move down a directory-->
-   <component id="simpleengine_build" filter="s60" name="SIMPLE Engine Build">
-    <unit bldFile="simpleengine/group"/>
-   </component>
-  </collection>
-  <collection id="presencefwsimpleadpt" name="Presence Framework SIMPLE Adaptation" level="fw">
-   <!-- collection is really a component. Need to move down a directory-->
-   <component id="simpleplugin" filter="s60" class="plugin" name="SIMPLE Plugin">
-    <unit bldFile="presencefwsimpleadpt/group"/>
-   </component>
-  </collection>
-  <collection id="simpledatamodeladapter" name="SIMPLE Data Model Adapter" level="fw">
-   <component id="presenceplugin" filter="s60" class="plugin" name="Presence Plugin" introduced="^2">
-    <unit bldFile="simpledatamodeladapter/group"/>
-   </component>
-  </collection>
  </package>
 </SystemDefinition>

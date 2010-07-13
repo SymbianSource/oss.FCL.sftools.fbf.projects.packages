@@ -3,6 +3,7 @@
  <package id="devicesrv" name="Device Services" levels="adaptation hw-if plugin framework server app-if">
   <collection id="devicesrv_pub" name="Device Services Public Interfaces" level="app-if">
    <component id="platform_path_definitions_api" name="Platform Path Definitions API" class="api" filter="s60,bldmefirst">
+	<!-- this needs to be moved to deviceplatformrelease -->
     <meta rel="Api" href="devicesrv_pub/platform_path_definitions_api/platform_path_definitions_api.metaxml"/>
     <unit bldFile="devicesrv_pub/platform_path_definitions_api/group"/>
    </component>
@@ -390,7 +391,7 @@
     <!-- Move exports to a self-contained component. Or leave as a component but move down a dir -->
     <unit bldFile="resourcemgmt/group"/>
    </component>
-   <component id="powerandmemorynotificationservice" name="Power and Memory Notification Service" introduced="6.0" purpose="mandatory">
+   <component id="powerandmemorynotificationservice" name="Power and Memory Notification Service" introduced="6.0" purpose="mandatory" filter="s60">
     <unit bldFile="resourcemgmt/powerandmemorynotificationservice/group" mrp="resourcemgmt/powerandmemorynotificationservice/group/syslibs_pwrcli.mrp"/>
    </component>
   </collection>

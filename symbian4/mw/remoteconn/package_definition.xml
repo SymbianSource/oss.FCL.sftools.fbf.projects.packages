@@ -14,6 +14,9 @@
     <unit bldFile="mtptransports/mtpptpiptransport/group" mrp="mtptransports/mtpptpiptransport/group/mtp_ptpip.mrp"/>
    </component>
    <component id="mtpcontroller" name="MTP Controller" introduced="^3" purpose="optional" class="plugin">
+    <meta rel="config">
+     <defined condition="FF_MTP_CONTROLLER"/>
+    </meta>
     <unit bldFile="mtptransports/mtpcontroller/group" mrp="mtptransports/mtpcontroller/group/mtpcontroller.mrp"/>
    </component>
   </collection>
@@ -31,6 +34,9 @@
    </component>
    <component id="mtppictbridgedp" name="MTP PictBridge Data Provider" filter="gt" introduced="^3" purpose="optional" class="plugin">
     <unit bldFile="mtpdataproviders/mtppictbridgedp/group" mrp="mtpdataproviders/mtppictbridgedp/group/mtp_pictbridgedp.mrp"/>
+   </component>
+   <component id="mtpplaybackcontroldp" name="MTP Playback Control Data Provider" introduced="^4" purpose="optional" class="plugin">
+    <unit bldFile="mtpdataproviders/mtpplaybackcontroldp/group" mrp="mtpdataproviders/mtpplaybackcontroldp/group/mtp_playbackcontroldp.mrp"/>
    </component>
   </collection>
   <collection id="backupandrestore" name="Backup and Restore" level="specific">

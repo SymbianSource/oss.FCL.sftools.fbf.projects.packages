@@ -48,10 +48,6 @@
     <meta rel="Api" href="web_plat/connection_manager_api/connection_manager_api.metaxml"/>
     <unit bldFile="web_plat/connection_manager_api/group"/>
    </component>
-   <component id="cxml_library_api" name="cXml Library API" class="api" filter="s60">
-    <meta rel="Api" href="web_plat/cxml_library_api/cxml_library_api.metaxml"/>
-    <unit bldFile="web_plat/cxml_library_api/group"/>
-   </component>
    <component id="download_mgr_client_api_extn" name="Download Manager Client API Extension" class="api" filter="s60">
     <meta rel="Api" href="web_plat/download_mgr_client_api_extn/download_mgr_client_api_extn.metaxml"/>
     <unit bldFile="web_plat/download_mgr_client_api_extn/group"/>
@@ -95,10 +91,6 @@
     <meta rel="Api" href="web_plat/widget_registry_api/widget_registry_api.metaxml"/>
     <unit bldFile="web_plat/widget_registry_api/group"/>
    </component>
-   <component id="xml_parser_api" name="XML Parser API" class="api" filter="s60">
-    <meta rel="Api" href="web_plat/xml_parser_api/xml_parser_api.metaxml"/>
-    <unit bldFile="web_plat/xml_parser_api/group"/>
-   </component>
   </collection>
   <collection id="browserutilities" name="Browser Utilities" level="utils">
    <component id="browserdialogsprovider" filter="s60" name="Browser Dialogs Provider">
@@ -106,12 +98,6 @@
    </component>
    <component id="recenturlstore" filter="s60" name="Recent URL Store">
     <unit bldFile="browserutilities/recenturlstore/group"/>
-   </component>
-   <component id="xmlparser" filter="s60" name="XML Interface">
-    <unit bldFile="browserutilities/xmlparser/group"/>
-   </component>
-   <component id="cxmllibrary" filter="s60" name="XML Parser Implementation">
-    <unit bldFile="browserutilities/cxmllibrary/group"/>
    </component>
    <component id="downloadmgr" filter="s60" name="Download Manager">
     <unit bldFile="browserutilities/downloadmgr/group"/>

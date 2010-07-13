@@ -43,7 +43,10 @@
       </component>
     </collection>
     <collection id="stifui" name="STIF UI" level="generic">
-      <component id="stifuiqt" filter="s60" name="STIF Qt UI" purpose="development" target="device" introduced="^4">
+      <component id="stifui_avkon" filter="s60" name="STIF UI for Avkon" purpose="development" target="device">
+        <unit bldFile="stifui/avkon/group"/>
+      </component>
+      <component id="stifuiqt" filter="s60,test" name="STIF Qt UI" purpose="development" target="device" introduced="^4">
 		<unit bldFile="stifui/qt" qt:proFile="stifqtui.pro" /> <!-- should use stifuiqt as the dir name -->
       </component>
     </collection>

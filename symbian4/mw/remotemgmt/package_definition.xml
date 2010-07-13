@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SystemDefinition schema="3.0.0">
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="remotemgmt" name="Remote Management" levels="plugin framework server generic specific">
   <collection id="remotemgmt_pub" name="Remote Management Public Interfaces" level="specific">
    <component id="synchronization_capability_api" name="Synchronization Capability API" class="api" filter="s60">
@@ -120,10 +120,6 @@
     <meta rel="Api" href="remotemgmt_plat/syncml_notifier_roaming_api/syncml_notifier_roaming_api.metaxml"/>
     <unit bldFile="remotemgmt_plat/syncml_notifier_roaming_api/group"/>
    </component>
-   <component id="sync_service_api" name="Sync Service API" class="api" filter="s60">
-    <meta rel="Api" href="remotemgmt_plat/sync_service_api/sync_service_api.metaxml"/>
-    <unit bldFile="remotemgmt_plat/sync_service_api/group"/>
-   </component>
    <component id="dcmo_adapter_api" name="DCMO Adapter API" class="api" filter="s60">
     <unit bldFile="remotemgmt_plat/dcmo_adapter_api/group"/>
    </component>
@@ -137,19 +133,19 @@
    <component id="devicemgmt_dialogs_api" name="Device Management Dialogs API" class="api" filter="s60" introduced="^4">
     <unit bldFile="remotemgmt_plat/devicemgmt_dialogs_api/group"/>
    </component>
+   <component id="dm_device_dialog_api" name="DM Device Dialog API" class="api" filter="s60" introduced="^4">
+    <meta rel="Api" href="remotemgmt_plat/dm_device_dialog_api/dm_device_dialog_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/dm_device_dialog_api/group"/>
+   </component>
   </collection>
   <collection id="policymanagement" name="Policy Management" level="generic">
-   <component id="pmdmadapter" filter="s60" name="PM DM Adapter" class="plugin">
-    <unit bldFile="policymanagement/pmdmadapter/group"/>
-   </component>
-   <component id="dmutilserver" filter="s60" name="DM Util Server">
-    <unit bldFile="policymanagement/dmutilserver/group"/>
+   <component id="policyenginepolicies" name="Policy Engine Policies" filter="s60,!dfs_build">
+    <unit bldFile="policymanagement/policyengine/policyenginepolicies/group"/>
    </component>
    <component id="policyengine" filter="s60" name="Policy Engine">
-    <unit bldFile="policymanagement/policyengine/group" filter="!dfs_build"/>
+    <unit bldFile="policymanagement/policyengine" qt:proFile="policyengine.pro"/>
    </component>
-   <component id="policymanagement_build" filter="s60" name="Policy Management Build">
-    <!--  need to distribute exports, etc into the other components and remove this-->
+   <component id="policymanagement_config" filter="s60" name="Policy Management Config" class="config">
     <unit bldFile="policymanagement/group"/>
    </component>
   </collection>
@@ -209,25 +205,23 @@
    </component>
   </collection>
   <collection id="fotaapplication" name="FOTA Application" level="generic">
+   <component id="fotaapplication_build" filter="s60" name="FOTA Application Build">
+	<!-- need to make this a real component: move down a dir? break up? -->
+    <unit bldFile="fotaapplication/group"/>
+   </component>
    <component id="fotaserver" filter="s60" name="FOTA Server">
-    <meta rel="config">
-     <defined condition="__SYNCML_DM_FOTA"/>
-    </meta>
-    <unit bldFile="fotaapplication/fotaserver/group"/>
+    <unit bldFile="fotaapplication/fotaserver" qt:proFile="fotaserver.pro"/>
    </component>
-   <component id="fotacustcmds" filter="s60" name="FOTA Custom Commands">
-    <meta rel="config">
-     <defined condition="__SYNCML_DM"/>
-     <not-defined condition="__PLUG_AND_PLAY_MOBILE_SERVICES"/>
-    </meta>
-    <unit bldFile="fotaapplication/fotaserver/fotacustcmds/group"/>
+  </collection>
+  <collection id="devicemgmtnotifications" name="Device Management Notifications" level="server">
+   <component id="devicemgmtnotifications_rom" filter="s60" name="DM Notifications ROM" introduced="^4">
+    <unit bldFile="devicemgmtnotifications/rom"/>
    </component>
-   <!-- really need to find a better way to do this -->
-   <component id="fotacustcmds-alt" filter="s60" name="FOTA Custom Commands">
-    <meta rel="config">
-     <defined condition="__PLUG_AND_PLAY_MOBILE_SERVICES"/>
-    </meta>
-    <unit bldFile="fotaapplication/fotaserver/fotacustcmds/group"/>
+   <component id="dmdevdialogclient" filter="s60" name="DM Device Dialog Client" introduced="^4">
+    <unit bldFile="devicemgmtnotifications/dmdevdialogclient/bld"/>
+   </component>
+   <component id="dmdevdialogserver" filter="s60" name="DM Device Dialog Server" introduced="^4">
+    <unit bldFile="devicemgmtnotifications/dmdevdialogserver/bld"/>
    </component>
   </collection>
  </package>

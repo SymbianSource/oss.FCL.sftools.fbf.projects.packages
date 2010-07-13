@@ -33,7 +33,7 @@
        <component id="searchserver" name="Search Server" filter="s60" introduced="^4">
 			<unit bldFile="searcher/SearchServer/group"/>
        </component>
-       <component id="searcher_test" name="Searcher Tests" filter="s60,test" purpose="development" introduced="^4">
+       <component id="searcher_test" name="Searcher Tests" filter="s60" purpose="development" introduced="^4">
 			<!-- #include from common bld.inf or split into two components -->
 			<unit bldFile="searcher/tsrc/RobustnessTest/group"/>
 			<unit bldFile="searcher/tsrc/LogPlayer/group"/>
@@ -44,7 +44,7 @@
 			<unit bldFile="harvester/pluginfw/group"/>
        </component>
        <component id="searchsrv_harvesterserver" name="Search Harvester Server" filter="s60" introduced="^4">
-			<unit bldFile="harvester/HarvesterServer/group"/>
+			<unit bldFile="harvester/harvesterserver" qt:proFile="harvester.pro"/>
        </component>
     </collection>
     <collection id="searchsrv_watchdog" name="Search Services Watch Dog" level="services">
@@ -53,18 +53,8 @@
        </component>
     </collection>
     <collection id="qcpix" name="Qt CPIX" level="engine">     
-     <component id="qcpixsearchclient" name="Qt CPIX Search Client" introduced="^4">
-    	<!-- Snag! qcpix.pro and qcpixsearchclient.pro in same directory! -->
-      <unit bldFile="qcpix"  qt:proFile="qcpixsearchclient.pro"/>
-     </component>
-     <component id="qsamplesearch" name="Qt CPIX Sample Search" filter="test" introduced="^4">
-      <unit bldFile="qcpix/tsrc/SampleSearch"  qt:proFile="SampleSearch.pro"/>
-     </component>
-     <component id="orbitsearch" name="Qt CPIX Orbit Search" filter="test" introduced="^4">
-      <unit bldFile="qcpix/tsrc/orbitsearch"  qt:proFile="orbitsearch.pro"/>
-     </component>
-     <component id="qcpixunittests" name="Qt CPIX Unit Tests" filter="test" introduced="^4">
-      <unit bldFile="qcpix/tsrc/qtcpixunittests"  qt:proFile="qtcpixunittests.pro"/>
+    <component id="qcpix_build" name="Qt CPIX Build" introduced="^4">
+      <unit bldFile="qcpix"  qt:proFile="qcpix.pro"/>
      </component>
     </collection>
     <collection id="searchsrv_info" name="Search Services Info">

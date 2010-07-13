@@ -104,11 +104,18 @@
     <!-- should be split into the above files, or them collapsed into a single component -->
     <unit bldFile="commondrm/group"/>
    </component>
+   <component id="commondrm_qt_build" filter="s60" name="Common DRM Qt Build"  introduced="^4">
+   <!-- split up build components -->
+    <unit bldFile="commondrm"  qt:qmakeArgs="-r" qt:proFile="commondrm.pro"/>
+   </component>
   </collection>
   <collection id="omadrm" name="OMA DRM" level="server">
-   <!-- collection is really a component. Move down a directory -->
+   <!-- split up build components -->
    <component id="omadrm_build" filter="s60" name="OMA DRM Build">
     <unit bldFile="omadrm/group"/>
+   </component>
+   <component id="omadrm_qt_build" filter="s60" name="OMA DRM Qt Build" introduced="^4">
+    <unit bldFile="omadrm" qt:proFile="omadrm.pro"/>
    </component>
    <component id="foundationcerts" filter="sf_build" name="Foundation Certificates">
     <unit bldFile="omadrm/foundationcerts/group"/>

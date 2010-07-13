@@ -27,17 +27,17 @@
    <component id="bluetooth_engine_connection_management_api" name="Bluetooth Engine Connection Management API" class="api" filter="s60">
     <meta rel="Api" href="btservices_plat/bluetooth_engine_connection_management_api/bluetooth_engine_connection_management_api.metaxml"/>
     <unit bldFile="btservices_plat/bluetooth_engine_connection_management_api/group" filter="!test"/>
-    <unit bldFiile="btservices_plat/bluetooth_engine_connection_management_api/tsrc/group"  filter="test,api_test"/>
+    <unit bldFile="btservices_plat/bluetooth_engine_connection_management_api/tsrc/group"  filter="test,api_test"/>
    </component>
    <component id="bluetooth_engine_device_management_api" name="Bluetooth Engine Device Management API" class="api" filter="s60">
     <meta rel="Api" href="btservices_plat/bluetooth_engine_device_management_api/bluetooth_engine_device_management_api.metaxml"/>
     <unit bldFile="btservices_plat/bluetooth_engine_device_management_api/group" filter="!test"/>
-    <unit bldFiile="btservices_plat/bluetooth_engine_device_management_api/tsrc/group"  filter="test,api_test"/>
+    <unit bldFile="btservices_plat/bluetooth_engine_device_management_api/tsrc/group"  filter="test,api_test"/>
    </component>
    <component id="bluetooth_engine_discovery_api" name="Bluetooth Engine Discovery API" class="api" filter="s60">
     <meta rel="Api" href="btservices_plat/bluetooth_engine_discovery_api/bluetooth_engine_discovery_api.metaxml"/>
     <unit bldFile="btservices_plat/bluetooth_engine_discovery_api/group" filter="!test"/>
-    <unit bldFiile="btservices_plat/bluetooth_engine_discovery_api/tsrc/group"  filter="test,api_test"/>
+    <unit bldFile="btservices_plat/bluetooth_engine_discovery_api/tsrc/group"  filter="test,api_test"/>
    </component>
    <component id="bluetooth_engine_features_api" name="Bluetooth Engine Features API" class="api" filter="s60">
     <meta rel="Api" href="btservices_plat/bluetooth_engine_features_api/bluetooth_engine_features_api.metaxml"/>
@@ -46,7 +46,7 @@
    <component id="bluetooth_engine_settings_api" name="Bluetooth Engine Settings API" class="api" filter="s60">
     <meta rel="Api" href="btservices_plat/bluetooth_engine_settings_api/bluetooth_engine_settings_api.metaxml"/>
     <unit bldFile="btservices_plat/bluetooth_engine_settings_api/group" filter="!test"/>
-    <unit bldFiile="btservices_plat/bluetooth_engine_settings_api/tsrc/group"  filter="test,api_test"/>
+    <unit bldFile="btservices_plat/bluetooth_engine_settings_api/tsrc/group"  filter="test,api_test"/>
    </component>
    <component id="bluetooth_engine_plugin_api" name="Bluetooth Engine Plugin API" class="api" filter="s60">
     <meta rel="Api" href="btservices_plat/bluetooth_engine_plugin_api/bluetooth_engine_plugin_api.metaxml"/>
@@ -83,6 +83,9 @@
    <component id="usb_obexservicemanager_client_api" name="OBEX Service Manager Client API" class="api" filter="s60">
     <unit bldFile="btservices_plat/usb_obexservicemanager_client_api/group"/>
    </component>
+   <component id="bt_remote_device_setting_api" name="BT Remote Device Setting API" class="api" filter="s60" introduced="^4">
+    <unit bldFile="btservices_plat" qt:proFile="btservices_plat.pro"/>
+   </component>
   </collection>
   <collection id="bluetoothengine" name="Bluetooth Engine" level="framework">
    <component id="btnotifclient" filter="s60" name="Bluetooth Notification Client" introduced="^4">
@@ -94,7 +97,7 @@
    </component>
    <component id="btserviceutil" filter="s60" name="Bluetooth Service Utils" introduced="^4">
     <unit bldFile="bluetoothengine/btserviceutil/group" filter="!test"/>
-    <unit bldFiile="bluetoothengine/btserviceutil/tsrc/btserviceutiltest/group"  filter="test,api_test"/>
+    <unit bldFile="bluetoothengine/btserviceutil/tsrc/btserviceutiltest/group"  filter="test,api_test"/>
    </component>
    <component id="btnotif" filter="s60" name="Bluetooth Notifier">
     <unit bldFile="bluetoothengine/btnotif/group"/>
@@ -104,7 +107,7 @@
    </component>
    <component id="btaudioman" filter="s60" name="Bluetooth Audio Manager">
     <unit bldFile="bluetoothengine/btaudioman/group" filter="!test"/>
-    <unit bldFiile="bluetoothengine/btaudioman/tsrc/btAudioManApiTest/group"  filter="test,api_test"/>
+    <unit bldFile="bluetoothengine/btaudioman/tsrc/btAudioManApiTest/group"  filter="test,api_test"/>
    </component>
    <component id="btmac" filter="s60" name="Bluetooth Mono Audio Controller" class="plugin">
     <unit bldFile="bluetoothengine/btmac/group"/>
@@ -114,7 +117,7 @@
    </component>
    <component id="btaudiostreamer" filter="s60" name="Bluetooth Audio Streamer">
     <unit bldFile="bluetoothengine/btaudiostreamer/group" filter="!test"/>
-    <unit bldFiile="bluetoothengine/btaudiostreamer/tsrc/BtAudioStreamerApiTest/group" filter="test,api_test"/>
+    <unit bldFile="bluetoothengine/btaudiostreamer/tsrc/BtAudioStreamerApiTest/group" filter="test,api_test"/>
    </component>
    <component id="btsap" filter="s60" name="Bluetooth SIM Access Profile" class="plugin">
     <unit bldFile="bluetoothengine/btsap/group"/>
@@ -130,6 +133,12 @@
    </component>
    <component id="btctrldcmoadapter" filter="s60" name="Bluetooth Control DCMO Adapter" class="plugin" introduced="^3">
     <unit bldFile="bluetoothengine/btctrldcmoadapter/group"/>
+   </component>
+   <component id="btindicator" filter="s60" name="Bluetooth Indicator" introduced="^4">
+    <unit bldFile="bluetoothengine/btindicator" qt:proFile="btindicator.pro"/>
+   </component>
+   <component id="bluetoothengine_conf" filter="s60" name="Bluetooth Engine Config" class="config" introduced="^4">
+    <unit bldFile="bluetoothengine/conf"/>
    </component>
   </collection>
   <collection id="bluetoothappprofiles" name="Bluetooth Application Profiles" level="plugin">
@@ -153,6 +162,10 @@
   <collection id="btobexprofiles" name="BT OBEX Profiles" level="generic">
      <component id="obexreceiveservices" name="OBEX Receive Services"  filter="s60">
       <unit bldFile="btobexprofiles/obexreceiveservices/group"/>
+     </component>
+     <component id="btmsgviewer" name="BT Message Viewer"  filter="s60" introduced="^4">
+		<!-- should be moved out from under obexreceiveservices into own component dir -->
+        <unit bldFile="btobexprofiles/obexreceiveservices/btmsgviewer" qt:proFile="btmsgviewer.pro"/>
      </component>
      <component id="obexsendservices" name="OBEX Send Services"  filter="s60">
       <unit bldFile="btobexprofiles/obexsendservices/group"/>

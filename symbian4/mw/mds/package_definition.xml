@@ -70,6 +70,36 @@
    </component>
   </collection>
   <collection id="locationmanager" name="Location Manager" level="mgr">
+   <component id="geoconverter" filter="s60" name="Geoconverter" introduced="^4">
+    <meta rel="config">
+    <defined condition="_LOC_GEOTAGGING_CELLID"/>
+   </meta>
+    <unit bldFile="locationmanager/geoconverter/group"/>
+   </component>
+   <component id="geo_tagcreator" filter="s60" name="Geo Tag Creator" introduced="^4">
+    <meta rel="config">
+    <defined condition="_LOC_REVERSEGEOCODE"/>
+   </meta>
+    <unit bldFile="locationmanager/tagcreator/group"/>
+   </component>
+   <component id="reversegeocode" filter="s60" name="Reverse Geocode" introduced="^4">
+    <meta rel="config">
+    <defined condition="_LOC_REVERSEGEOCODE"/>
+   </meta>
+    <unit bldFile="locationmanager/ReverseGeocode/group"/>
+   </component>
+   <component id="reversegeocoderplugin" filter="s60" name="Reverse Geo-Coder Plugin" class="plugin" introduced="^4">
+    <meta rel="config">
+    <defined condition="_LOC_REVERSEGEOCODE"/>
+   </meta>
+    <unit bldFile="locationmanager/ReverseGeoCoderPlugin/group"/>
+   </component>
+   <component id="geotagger" filter="s60" name="Geo Tagger" introduced="^4">
+    <meta rel="config">
+    <defined condition="_LOC_REVERSEGEOCODE"/>
+   </meta>
+    <unit bldFile="locationmanager/geotagger/group"/>
+   </component>
    <component id="locationtrail" filter="s60" name="Location Trail" introduced="^2">
     <unit bldFile="locationmanager/locationtrail/group"/>
    </component>

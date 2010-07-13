@@ -102,6 +102,9 @@
    <component id="ocsp" name="Online Certificate Status Protocol" introduced="^2" purpose="optional">
     <unit bldFile="pkiutilities/ocsp/group" mrp="pkiutilities/ocsp/group/securitysrv_ocsp.mrp"/>
    </component>
+   <component id="untrustedcertificatedialog" filter="s60" name="Untrusted Certificate Dialog" introduced="^4">
+    <unit bldFile="pkiutilities/untrustedcertificatedialog" qt:proFile="untrustedcertificateplugin.pro" qt:qmakeArgs="-r"/>
+   </component>
   </collection>
   <collection id="wim" name="Wireless Identity Module" level="framework">
    <!-- collection is really a component. Need to move down a directory-->
@@ -119,9 +122,6 @@
    <component id="keylockpolicyapi" filter="s60" name="Keylock Policy API">
     <unit bldFile="securitydialogs/keylockpolicyapi/group"/>
    </component>
-   <component id="autolock" name="Autolock" filter="s60">
-    <unit bldFile="securitydialogs/autolock" qt:proFile="autolock.pro"/>
-   </component>
    <component id="secui" filter="s60" name="Security UI">
     <unit bldFile="securitydialogs/secui/group"/>
    </component>
@@ -138,8 +138,17 @@
    <component id="secuinotifications" name="Security UI Notifications" introduced="^4" filter="s60">
       <unit bldFile="securitydialogs/secuinotifications" qt:proFile="secuinotifications.pro" qt:qmakeArgs="-r"/>
    </component>
+   <component id="indicatorautolockplugin" name="Auto Lock Indicator Plugin" introduced="^4" filter="s60" class="plugin">
+		<!-- directory at the wrong level to be a component-->
+      <unit bldFile="securitydialogs/autolock/indicatorplugin" qt:proFile="indicatorautolockplugin.pro" qt:qmakeArgs="-r"/>
+   </component>
    <component id="autolockuseractivityservice" name="Auto Lock User Activity Service" introduced="^4" filter="s60">
-      <unit bldFile="securitydialogs/Autolock/autolockuseractivityservice" qt:proFile="autolockuseractivityservice.pro" qt:qmakeArgs="-r"/>
+		<!-- Can't have two .pro files in the same dir: their generated bld.infs will overwrite each other-->
+      <unit bldFile="securitydialogs/autolock" qt:proFile="autolockuseractivityservice.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="autolocksrv" name="Auto Lock Server" introduced="^4" filter="s60">
+		<!-- Can't have two .pro files in the same dir: their generated bld.infs will overwrite each other-->
+      <unit bldFile="securitydialogs/autolock" qt:proFile="autolock.pro" qt:qmakeArgs="-r"/>
    </component>
   </collection>
   <collection id="cpsecplugins" name="Security Settings Plugins" level="plugin">
@@ -197,7 +206,7 @@
   </collection>
   <collection id="securitysrv_info" name="Security Services Info" level="specific">
    <component id="securitysrv_test" filter="s60,test,api_test" purpose="development" name="Security Services Test">
-    <unit bldFile="tsrc/group"/>
+    <unit bldFile="tsrc/group" filter="TA_SECURITYSRV"/>
    </component>
    <component id="securitysrv_metadata" name="Security Services Metadata" class="config" introduced="^2" purpose="development" target="desktop">
     <unit mrp="securitysrv_info/securitysrv_metadata/securitysrv_metadata.mrp"/>

@@ -200,6 +200,7 @@
       <package id="search" level="apps" tech-domain="pr" href="../../../../app/search/package_definition.xml"/>
       <package id="contacts" level="apps" span="2" tech-domain="pr" href="../../../../app/contacts/package_definition.xml"/>
       <package id="organizer" level="apps" span="2" tech-domain="pr" href="../../../../app/organizer/package_definition.xml"/>
+	  <package id="calendarwidget" level="apps" tech-domain="pr" href="../../../../app/calendarwidget/package_definition.xml"/>
       <package id="messaging" level="apps" span="2" tech-domain="pr" href="../../../../app/messaging/package_definition.xml"/>
       <package id="commonemail" level="apps" span="2" tech-domain="pr" href="../../../../app/commonemail/package_definition.xml"/>
       <package id="camera" level="apps" tech-domain="ma" href="../../../../app/camera/package_definition.xml"/>

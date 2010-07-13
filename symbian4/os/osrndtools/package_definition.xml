@@ -66,9 +66,6 @@
    <component id="commandline" filter="s60" name="MemSpy Command Line" purpose="development">
     <unit bldFile="memspy/commandline/group"/>
    </component>
-   <component id="console" filter="s60" name="MemSpy Console" purpose="development">
-    <unit bldFile="memspy/console/group"/>
-   </component>
    <component id="memspyserver" filter="s60" name="MemSpy Server" purpose="development" introduced="^4">
     <unit bldFile="memspy/MemSpyServer/group"/>
    </component>
@@ -129,11 +126,6 @@
      <component id="analyzetool_build" name="Analyze Tool Build" introduced="^4">
       <unit bldFile="analyzetool/group"/>
      </component>
-  </collection>
-  <collection id="osrndtools_info" name="OS R&amp;D tools Info" level="trace">
-   <component id="osrndtools_metadata" name="OS R&amp;D tools Metadata" class="config" introduced="^2" purpose="development" target="desktop">
-    <unit mrp="osrndtools_info/osrndtools_metadata/osrndtools_metadata.mrp"/>
-   </component>
   </collection>
  </package>
 </SystemDefinition>

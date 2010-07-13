@@ -7,6 +7,12 @@
         <unit bldFile="devicemgmtdialogsplugin" qt:proFile="devicemgmtdialogsplugin.pro"/>
       </component>
     </collection>
+    <collection id="devicemgmtindicatorsplugin" name="Device Management Indicators Plugin" level="support">
+		<!-- collection is really a component. Need to move down a dir -->
+      <component id="devicemgmtindicatorsplugin_build" name="Device Management Indicators Plugin Build" filter="s60" introduced="^4" class="plugin">
+        <unit bldFile="devicemgmtindicatorsplugin" qt:proFile="devicemgmtindicatorsplugin.pro"/>
+      </component>
+    </collection>
     <collection id="deviceupdatesui" name="Device Updates UI" level="app">
       <component id="deviceupdates" name="Device Updates" filter="s60" introduced="^4">
         <unit bldFile="deviceupdatesui/deviceupdates" qt:proFile="deviceupdates.pro"/>
@@ -21,6 +27,15 @@
     <collection id="clientprovisioning" name="Client Provisioning" level="mid">
       <component id="cpqtsp" name="Client Provisioning Qt Service Provider" filter="s60" introduced="^4">
         <unit bldFile="clientprovisioning/cpqtsp" qt:proFile="cpqtsp.pro"/>
+      </component>
+    </collection>
+    <collection id="applicationmanagement" name="Applicaton Management" level="mid">
+      <component id="applicationmgmtserver" name="Applicaton Management Server" filter="s60" introduced="^4">
+        <unit bldFile="applicationmanagement/server" qt:proFile="server.pro"/>
+      </component>
+      <component id="applicationmgmt_build" name="Applicaton Management Build" filter="s60" introduced="^4">
+		<!-- need to break up into components or move down a directory -->
+        <unit bldFile="applicationmanagement/group"/>
       </component>
     </collection>
     <collection id="omadmadapters" name="OMA DM Adapters" level="support">
@@ -50,7 +65,7 @@
         <unit bldFile="omadmadapters/globalwlansettings/group"/>
       </component>
       <component id="nsmldminternet" name="nsmldminternet" filter="s60">
-        <!--  <unit bldFile="omadmadapters/nsmldminternet/group"/> -->
+		<unit bldFile="omadmadapters/nsmldminternet/group"/>
       </component>
       <component id="nsmldmalwaysonadapter" name="Always Online Device Management Adapter" filter="s60" introduced="9.1" class="plugin">
         <unit bldFile="omadmadapters/nsmldmalwaysonadapter/group"/>
@@ -83,7 +98,7 @@
         <meta rel="config">
           <defined condition="__SYNCML_DM_FOTA"/>
         </meta>
-        <!--  <unit bldFile="omadmadapters/fota/bld"/> -->
+		<unit bldFile="omadmadapters/fota/bld"/>
       </component>
       <component id="omadm_imps" name="OMA DM IMPS" filter="s60">
         <meta rel="config">
@@ -92,7 +107,19 @@
         <!--  <unit bldFile="omadmadapters/imps/bld"/> -->
       </component>
       <component id="dcmodmadapter" name="DC Management Object  DM Adapter" filter="s60" class="plugin">
-        <!--  <unit bldFile="omadmadapters/dcmodmadapter/group"/> -->
+		<unit bldFile="omadmadapters/dcmodmadapter/group"/>
+      </component>
+    </collection>
+    <collection id="omadcmoadapters" name="OMA DC Management Object Adapters" level="support">
+      <component id="omadcmoadapters_build" name="OMA DCMA Adapters Build" filter="s60" introduced="^4">
+		<!-- need to break up into components  -->
+        <unit bldFile="omadcmoadapters/group"/>
+      </component>
+    </collection>
+    <collection id="omacpadapters" name="OMA Client Provisioning Adapters" level="support">
+      <component id="omacpadapters_build" name="OMA CP Adapters Build" filter="s60" introduced="^4">
+		<!-- need to break up into components  -->
+        <unit bldFile="omacpadapters/bld"/>
       </component>
     </collection>
   </package>

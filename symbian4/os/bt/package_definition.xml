@@ -95,5 +95,10 @@
     <unit mrp="bt_info/bt_metadata/bt_metadata.mrp"/>
    </component>
   </collection>
+    <collection id="btsimulator" name="Bluetooth Simulator" level="internal-utils">
+      <component id="btaudioadaptation_stub" name="Bluetooth Audio Adaption Stub" introduced="^3" purpose="optional" filter="s60">
+        <unit bldFile="btsimulator/btaudioadaptation_stub/group"/>
+      </component>
+    </collection>
  </package>
 </SystemDefinition>

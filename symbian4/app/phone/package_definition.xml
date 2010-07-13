@@ -125,8 +125,8 @@
    <component id="csplugin" filter="s60" name="Circuit Switched Plugin" class="plugin" introduced="^4">
     <unit bldFile="phoneplugins/csplugin/group"/>
    </component>
-   <component id="hsdialerwidgetplugin" filter="s60" name="Home Screen Dialer Widget Plugin" class="plugin" introduced="^4">
-    <unit bldFile="phoneplugins/hsdialerwidgetplugin" qt:proFile="hsdialerwidgetplugin.pro"/>
+   <component id="dialerwidgetplugin" filter="s60" name="Dialer Widget Plugin" class="plugin" introduced="^4">
+    <unit bldFile="phoneplugins/dialerwidgetplugin" qt:proFile="dialerwidgetplugin.pro"/>
    </component>
    <component id="infowidgetplugin" filter="s60" name="Info Widget Plugin" class="plugin" introduced="^4">
     <unit bldFile="phoneplugins/infowidgetplugin" qt:proFile="infowidgetplugin.pro"/>

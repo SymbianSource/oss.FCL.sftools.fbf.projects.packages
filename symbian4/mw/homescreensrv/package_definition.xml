@@ -1,10 +1,5 @@
 <SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="homescreensrv" name="Home Screen Services" levels="plugin framework server generic specific">
-  <collection id="appfoundation" name="App Foundation" level="generic">
-     <component id="appfoundation_build" name="App Foundation Build"  introduced="^4">
-      <unit bldFile="appfoundation" qt:qmakeArgs="-r" qt:proFile="appfoundation.pro"/>
-     </component>
-  </collection>
   <collection id="hswidgetmodel" name="Home Screen Widget Model" level="framework">
      <component id="hswidgetmodel_build" name="Home Screen Widget Model Build"  introduced="^4">
       <unit bldFile="hswidgetmodel" qt:qmakeArgs="-r" qt:proFile="hswidgetmodel.pro"/>
@@ -38,17 +33,11 @@
     <meta rel="Api" href="homescreensrv_plat/menu_sat_interface_api/menu_sat_interface_api.metaxml"/>
     <unit base="homescreensrv_plat/menu_sat_interface_api"/>
    </component>
-   <component id="appruntimemodel_api" name="Appliction Run-Time Model API" class="api" filter="s60" introduced="^4">
-    <unit base="homescreensrv_plat/appruntimemodel_api"/>
-   </component>
    <component id="contentstorage_api" name="Content Storage API" class="api" filter="s60" introduced="^4">
     <unit base="homescreensrv_plat/contentstorage_api"/>
    </component>
    <component id="hswidgetmodel_api" name="HS Widget Model API" class="api" filter="s60" introduced="^4">
     <unit base="homescreensrv_plat/hswidgetmodel_api"/>
-   </component>
-   <component id="statemodel_api" name="State Model API" class="api" filter="s60" introduced="^4">
-    <unit base="homescreensrv_plat/statemodel_api"/>
    </component>
    <component id="homescreen_information_api" name="Homescreen Information API" class="api" filter="s60" introduced="^4">
     <unit base="homescreensrv_plat/homescreen_information_api"/>
@@ -68,6 +57,12 @@
   <collection id="hsappkeyhandler" name="HS Appplication Key Handler" level="server">
      <component id="hsappkeyhandler_build" name="Appplication Key Handler Build"  introduced="^4">
       <unit bldFile="hsappkeyhandler" qt:qmakeArgs="-r" qt:proFile="hsappkeyhandler.pro"/>
+     </component>
+  </collection>
+   <collection id="tsdevicedialog" name="Task Switcher Device Dialog" level="plugin">
+     <component id="tsdevicedialog_build" name="Task Switcher Device Dialog Build"  introduced="^4">
+		<!-- break this up into real components -->
+      <unit bldFile="tsdevicedialog" qt:qmakeArgs="-r" qt:proFile="tsdevicedialog.pro"/>
      </component>
   </collection>
     <collection id="homescreensrv_info" name="Home Screen Services Info" level="specific">

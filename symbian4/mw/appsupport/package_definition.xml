@@ -236,8 +236,15 @@
    <component id="gssensorplugin" filter="s60" name="GS Sensor Plugin" class="plugin">
     <unit bldFile="systemsettings/gssensorplugin/group"/>
    </component>
-   <component id="gsaccessoryplugin" filter="s60" name="GS Accessory Plugin" class="plugin">
+   <component id="gsaccessoryplugin" filter="s60,test" name="GS Accessory Plugin" class="plugin"> <!-- don't build -->
     <unit bldFile="systemsettings/gsaccessoryplugin/group"/>
+   </component>
+   <component id="accindicatorplugin" filter="s60" name="ACC Indicator Plugin" class="plugin">
+    <unit bldFile="systemsettings/accindicatorplugin" qt:proFile="accindicatorplugin.pro"/>
+   </component>
+   <component id="accindicatorsettings" filter="s60" name="ACC Indicator Settings">
+	<!-- can't have a component inside another component -->
+    <unit bldFile="systemsettings/accindicatorplugin/accindicatorsettings" qt:proFile="accindicatorsettings.pro"/>
    </component>
   </collection>
   <collection id="filehandling" name="File Handling" level="server">
@@ -267,7 +274,7 @@
     <unit mrp="commonappservices/coreappstest/Group/app-services_CoreAppsTest.mrp" bldFile="commonappservices/coreappstest/Group"/>
    </component>
    <component id="appservicesdocs" name="Application Services Documentation" purpose="development" class="doc">
-    <unit mrp="commonappservices/appservicesdocs/app-services_documentation.mrp"/>
+        <unit mrp="commonappservices/doc_pub/app-services_documentation.mrp"/>
    </component>
    <component id="backuprestorenotification" name="Backup Restore Notification" introduced="8.1" purpose="optional">
     <unit bldFile="commonappservices/backuprestorenotification/group" mrp="commonappservices/backuprestorenotification/group/app-services_BackupRestoreNotification.mrp"/>

@@ -4,7 +4,16 @@
    <!-- need to resolve the qt parts into proper components, then uncomment the units -->
   <collection id="email_plat" name="Email Apps Platform Interfaces" level="app">
    <component id="nmail_client_api" name="NMail Client API" class="api" filter="s60" introduced="^4">
-    <!--<unit bldFile="email_plat" qt:proFile="email_plat.pro"/> -->
+    <!--<unit bldFile="email_plat/nmail_client_api" qt:proFile="nmail_client_api.pro"/> -->
+   </component>
+   <component id="email_services_api" name="Email Services API" class="api" filter="s60" introduced="^4">
+    <!--<unit bldFile="email_plat/email_services_api" qt:proFile="email_services_api.pro"/> -->
+   </component>
+   <component id="nmail_settings_api" name="NMail Settings API" class="api" filter="s60" introduced="^4">
+    <!--<unit bldFile="email_plat/nmail_settings_api" qt:proFile="nmail_settings_api.pro"/> -->
+   </component>
+   <component id="email_client_api" name="EMail Client API" class="api" filter="s60" introduced="^4">
+    <!--<unit bldFile="email_plat/email_client_api" qt:proFile="email_client_api.pro"/> -->
    </component>
   </collection>
     <collection id="emailservices" name="Email Services" level="service">
@@ -78,7 +87,7 @@
     <collection id="commonemail_info" name="Email Apps Info" level="app">
     <component id="commonemail_build" name="Email Apps Build"  introduced="^4">
 		<!-- split into actual components -->
-      <unit bldFile="group"/>
+      <unit bldFile="."  qt:proFile="nmail.pro" qt:qmakeArgs="-r"/>
     </component>
     </collection>
   </package>

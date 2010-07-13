@@ -20,55 +20,38 @@
    </component>
   </collection>
   <collection id="hotspotfw" name="HotSpot Framework" level="framework">
-   <component id="hsserver" filter="s60" name="HotSpot Server">
-    <!-- needs bld.inf extracted from the hotspotfw/group one, or this component should be removed-->
-   </component>
-   <component id="hsclient" filter="s60" name="HotSpot Client">
-    <!-- needs bld.inf extracted from the hotspotfw/group one, or this component should be removed-->
-   </component>
-   <component id="internetconnectivitytestservice" filter="s60" name="Internet Connectivity Test Service">
-    <!-- needs bld.inf un-#included from hotspotfw/group/bld.inf, or this component should be removed-->
-    <!-- <unit bldFile="hotspotfw/internetconnectivitytestservice/group"/> -->
-   </component>
-   <component id="ictsdialogs" filter="s60" name="Internet Connectivity Test Service Dialogs" deprecated="^3">
-    <!-- needs bld.inf un-#included from hotspotfw/group/bld.inf, or this component should be removed-->
-    <!-- <unit bldFile="hotspotfw/ictsdialogs/group"/> -->
-   </component>
-   <component id="hspluginforagent" filter="s60" name="HotSpot Plugin for Agent" class="plugin">
-    <!-- needs bld.inf un-#included from hotspotfw/group/bld.inf, or this component should be removed-->
-    <!-- <unit bldFile="hotspotfw/hspluginforagent/group"/> -->
-   </component>
-   <component id="hsbrowser" filter="s60" name="HotSpot Browser">
-    <!-- needs bld.inf un-#included from hotspotfw/group/bld.inf, or this component should be removed-->
-    <!-- <unit bldFile="hotspotfw/hsbrowser/group"/> -->
-   </component>
-   <component id="hotspotfw_build" filter="s60" name="Hotspot Framework Build">
-    <!--  should break up this bld.inf into the above components, or collapse them all into a single component -->
+	<!-- collection is really a component. Needs to move down a dir -->
+   <component id="hotspotfw_build" filter="s60" name="HotSpot Framework Build">
     <unit bldFile="hotspotfw/group"/>
    </component>
   </collection>
   <collection id="wlanutilities" name="WLAN Utilities" level="generic">
-   <component id="wlanutilities_build" name="WLAN Utilities Qt" introduced="^4" filter="s60">
-	<!-- is this uinit needed, or is it sufficient to uncomment the units in the below components? -->
-      <unit bldFile="wlanutilities" qt:proFile="wlanutilities.pro" qt:qmakeArgs="-r"/>
-    </component>
    <component id="wlanqtutilities" filter="s60" name="WLAN Qt Utilities" introduced="^4">
-    <!--<unit bldFile="wlanutilities/wlanplugin" qt:proFile="wlanqtutilities.pro"/>-->
+    <unit bldFile="wlanutilities/wlanqtutilities" qt:proFile="wlanqtutilities.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="eapwizard " filter="s60" name="EAP Wizard" introduced="^4">
+    <unit bldFile="wlanutilities/eapwizard" qt:proFile="eapwizard.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="wpswizard " filter="s60" name="WPS Wizard" introduced="^4">
+    <unit bldFile="wlanutilities/wpswizard" qt:proFile="wpswizard.pro" qt:qmakeArgs="-r"/>
    </component>
    <component id="wlanwizard " filter="s60" name="WLAN Wizard" introduced="^4">
-    <!--<unit bldFile="wlanutilities/wlanwizard" qt:proFile="wlanwizard.pro"/>-->
+    <unit bldFile="wlanutilities/wlanwizard" qt:proFile="wlanwizard.pro" qt:qmakeArgs="-r"/>
    </component>
    <component id="wlansniffer" filter="s60" name="WLAN Sniffer">
-    <!--<unit bldFile="wlanutilities/wlansettingsui" qt:proFile="wlansniffer.pro"/>-->
+    <unit bldFile="wlanutilities/wlansniffer" qt:proFile="wlansniffer.pro" qt:qmakeArgs="-r"/>
    </component>
    <component id="wlanentryplugin" filter="s60" name="WLAN Entry Plugin" class="plugin">
-    <!--<unit bldFile="wlanutilities/wlansniffer" qt:proFile="wlanentryplugin.pro"/>-->
+    <unit bldFile="wlanutilities/wlanentryplugin" qt:proFile="wlanentryplugin.pro" qt:qmakeArgs="-r"/>
    </component>
    <component id="wlanindicatorplugin" filter="s60" name="WLAN Indicator Plugin" class="plugin">
-    <!--<unit bldFile="wlanutilities/wlanindicatorplugin" qt:proFile="wlanindicatorplugin.pro"/>-->
+    <unit bldFile="wlanutilities/wlanindicatorplugin" qt:proFile="wlanindicatorplugin.pro" qt:qmakeArgs="-r"/>
    </component>
    <component id="cpwlansettingsplugin" filter="s60" name="WLAN Settings Control Panel Plugin" class="plugin"  introduced="^4">
-    <!--<unit bldFile="wlanutilities/cpwlansettingsplugin" qt:proFile="cpwlansettingsplugin.pro"/>-->
+    <unit bldFile="wlanutilities/cpwlansettingsplugin" qt:proFile="cpwlansettingsplugin.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="wlanlogin" filter="s60" name="WLAN Login" introduced="^4">
+    <unit bldFile="wlanutilities/wlanlogin" qt:proFile="wlanlogin.pro" qt:qmakeArgs="-r"/>
    </component>
   </collection>
  </package>

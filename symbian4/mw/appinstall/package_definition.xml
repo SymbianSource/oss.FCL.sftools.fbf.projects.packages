@@ -45,9 +45,8 @@
    </component>
   </collection>
     <collection id="ncdengine" name="Nokia Content Discover" level="framework">
-    	<!-- collection is really just a component. Move down one diretcory -->
-      <component id="ncdengine_build" filter="s60" name="NCD Build" introduced="^1">
-        <unit bldFile="ncdengine/group"/>
+      <component id="ncdengine_build" filter="s60" name="NCD Engine" introduced="^1">
+        <unit bldFile="ncdengine/engine"  qt:proFile="engine.pro" qt:qmakeArgs="-r"/>
       </component>
     </collection>
     <collection id="appinstaller" name="Application Installer" level="generic">

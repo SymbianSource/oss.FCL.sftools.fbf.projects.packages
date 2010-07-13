@@ -10,13 +10,22 @@
     <meta rel="Api" href="accesssec_plat/eap_type_api/eap_type_api.metaxml"/>
     <unit bldFile="accesssec_plat/eap_type_api/group"/>
    </component>
+   <component id="eap_qt_configuration_api" name="EAP Qt Configuration API" class="api" filter="s60" introduced="^4">
+    <unit bldFile="accesssec_plat" qt:proFile="accesssec_plat.pro" qt:qmakeArgs="-r"/>
+   </component>
   </collection>
   <collection id="securitysettings" name="WLAN Security Settings" level="specific">
    <component id="accesssec_qtconfigutils" filter="s60" name="Access Security Config Utils" introduced="^4">
     <unit bldFile="securitysettings/qtconfigutils" qt:proFile="qtconfigutils.pro" qt:qmakeArgs="-r"/>
    </component>
-   <component id="cpwlansecurityuiplugins" filter="s60" name="Control Panel WLAN Security UI Plugins" introduced="^4">
+   <component id="cpwlansecurityuiplugins" filter="s60" name="Control Panel WLAN Security UI Plugins" class="plugin" introduced="^4">
     <unit bldFile="securitysettings/cpwlansecurityuiplugins" qt:proFile="cpwlansecurityuiplugins.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="cpeapuiplugins" filter="s60" name="Control Panel EAP UI Pugins" class="plugin"  introduced="^4">
+    <unit bldFile="securitysettings/cpeapuiplugins" qt:proFile="cpeapuiplugins.pro" qt:qmakeArgs="-r"/>
+   </component>
+   <component id="eapqtdialogs" filter="s60" name="EAP Qt Dialogs" introduced="^4">
+    <unit bldFile="securitysettings/eapqtdialogs" qt:proFile="eapqtdialogs.pro" qt:qmakeArgs="-r"/>
    </component>
   </collection>
   <collection id="eapol" name="EAPOL" level="framework">

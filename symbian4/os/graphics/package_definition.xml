@@ -156,9 +156,6 @@
       </component>
     </collection>
     <collection id="graphicsapitest" name="Graphics API Tests" level="app-if">
-      <component id="graphicssvs" name="Graphics Verification Suite" introduced="^2" purpose="development" filter="test">
-        <unit mrp="graphicsapitest/graphicssvs/group/graphicssvs.mrp" bldFile="graphicsapitest/graphicssvs/group"/>
-      </component>
       <component id="screendriverhaitest" name="Screen Driver HAI Tests" introduced="^2" purpose="development" filter="test">
 	<unit mrp="graphicsapitest/screendriverhaitest/group/screendriverhaitest.mrp" bldFile="graphicsapitest/screendriverhaitest/group"/>
       </component>

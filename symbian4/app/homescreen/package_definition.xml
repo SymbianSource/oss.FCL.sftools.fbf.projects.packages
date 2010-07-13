@@ -41,12 +41,11 @@
       <unit bldFile="homescreenapp"  qt:proFile="homescreenapp_exports_to_rom.pri" qt:qmakeArgs="-r -config rom"/>
      </component>
     </collection>
-  <collection id="taskswitcherapp" name="Task Switcher Application" level="task">
-	<!-- break collection info components, or move down a dir and make it a component -->
-    <component id="taskswitcherapp_build" name="Task Switcher Application Build">
-      <unit bldFile="taskswitcherapp"  qt:proFile="taskswitcherapp.pro" qt:qmakeArgs="-r -config rom"/>
+  <collection id="screensaver" name="Screen Saver" level="ss">
+	<!-- break collection into components, or move down a dir and make it a component -->
+    <component id="screensaver_build" name="Screen Saver Build">
+      <unit bldFile="screensaver"  qt:proFile="screensaver.pro" qt:qmakeArgs="-r -config rom"/>
      </component>
-	<component id="tsdevicedialogplugin" name="Task Switcher Device Dialog Plugin" introduced="^4" class="plugin"/>
     </collection>
  </package>
 </SystemDefinition>

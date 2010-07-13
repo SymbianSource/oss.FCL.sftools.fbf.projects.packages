@@ -1,11 +1,26 @@
 <SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="search" name="Search Apps" levels="eng base app api">
-	<collection id="search_info" name="Search Info"> 
+	<collection id="search_info" name="Search Info" level="base"> 
 	<component id="search_build" name="Search Build" introduced="^4">
 	  <unit bldFile="group"/>
 	 </component>
 	</collection>
-	<collection id="searchui" name="Search UI">
+	<collection id="search_plat" name="Search Platform Interfaces" level="api">
+	<component id="search_plat_build" name="Search Platform Interfaces Build" introduced="^4" class="api">
+	  <unit bldFile="search_plat" qt:proFile="search_plat.pro"/>
+	 </component>
+	</collection>
+	<collection id="onlinesearchproviders" name="Online Search Providers" level="eng">
+	<component id="onlinesearchproviders_build" name="Online Search Providers Build" introduced="^4">
+	  <unit bldFile="onlinesearchproviders" qt:proFile="onlinesearchproviders.pro"/>
+	 </component>
+	</collection>
+	<collection id="search_harvesterplugins" name="Search Harvester Plugins" level="base">
+	<component id="search_qtemailfetcher" name="Search Qt Email Fetcher" introduced="^4" class="plugin">
+	  <unit bldFile="harvesterplugins/messaging/email/qtemailfetcher" qt:proFile="qtemailfetcher.pro"/>
+	 </component>
+	</collection>
+	<collection id="searchui" name="Search UI" level="app">
 	<component id="searchui_build" name="Search UI Build" introduced="^4">
 	  <unit bldFile="searchui" qt:proFile="searchui.pro"/>
 	 </component>
