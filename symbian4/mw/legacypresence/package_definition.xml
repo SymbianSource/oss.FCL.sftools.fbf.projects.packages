@@ -95,41 +95,6 @@
 <unit bldFile="/sf/mw/legacypresence/pressrv_plat/simple_instant_msg_api/group"/>
 </component>
 </collection>
-<collection name="xdmengine" long-name="XDM Engine" level="engine">
-<!-- collection is really a component. Need to move down a directory (eg xdm/xdmengine)-->
-<component name="xdmengine_build" filter="s60" long-name="XDM Engine Build">
-<unit bldFile="/sf/mw/legacypresence/xdmengine/group"/>
-</component>
-</collection>
-<collection name="xdmprotocols" long-name="XDM Protocols" level="fw">
-<!-- collection is really a component. Need to move down a directory (eg xdm/xdmprotocols)-->
-<component name="xdmprotocols_build" filter="s60" long-name="XDM Protocols Build">
-<unit bldFile="/sf/mw/legacypresence/xdmprotocols/group"/>
-</component>
-</collection>
-<collection name="msgconnmanager" long-name="Messaging Connection Manager" level="fw">
-<!-- collection is really a component. Need to move down a directory-->
-<component name="msgconnmanager_build" filter="s60" long-name="Messaging Connection Manager Build">
-<unit bldFile="/sf/mw/legacypresence/msgconnmanager/group"/>
-</component>
-</collection>
-<collection name="simpleengine" long-name="SIMPLE Engine" level="engine">
-<!-- collection is really a component. Need to move down a directory-->
-<component name="simpleengine_build" filter="s60" long-name="SIMPLE Engine Build">
-<unit bldFile="/sf/mw/legacypresence/simpleengine/group"/>
-</component>
-</collection>
-<collection name="presencefwsimpleadpt" long-name="Presence Framework SIMPLE Adaptation" level="fw">
-<!-- collection is really a component. Need to move down a directory-->
-<component name="simpleplugin" filter="s60" long-name="SIMPLE Plugin" plugin="Y">
-<unit bldFile="/sf/mw/legacypresence/presencefwsimpleadpt/group"/>
-</component>
-</collection>
-<collection name="simpledatamodeladapter" long-name="SIMPLE Data Model Adapter" level="fw">
-<component name="presenceplugin" filter="s60" long-name="Presence Plugin" introduced="^2" plugin="Y">
-<unit bldFile="/sf/mw/legacypresence/simpledatamodeladapter/group"/>
-</component>
-</collection>
 </block>
   </layer>
  </systemModel>

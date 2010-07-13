@@ -171,8 +171,8 @@
 <component name="csplugin" filter="s60" long-name="Circuit Switched Plugin" introduced="^4" plugin="Y">
 <unit bldFile="/sf/app/phone/phoneplugins/csplugin/group"/>
 </component>
-<component name="hsdialerwidgetplugin" filter="s60" long-name="Home Screen Dialer Widget Plugin" introduced="^4" plugin="Y">
-<unit bldFile="/sf/app/phone/phoneplugins/hsdialerwidgetplugin" proFile="hsdialerwidgetplugin.pro"/>
+<component name="dialerwidgetplugin" filter="s60" long-name="Dialer Widget Plugin" introduced="^4" plugin="Y">
+<unit bldFile="/sf/app/phone/phoneplugins/dialerwidgetplugin" proFile="dialerwidgetplugin.pro"/>
 </component>
 <component name="infowidgetplugin" filter="s60" long-name="Info Widget Plugin" introduced="^4" plugin="Y">
 <unit bldFile="/sf/app/phone/phoneplugins/infowidgetplugin" proFile="infowidgetplugin.pro"/>

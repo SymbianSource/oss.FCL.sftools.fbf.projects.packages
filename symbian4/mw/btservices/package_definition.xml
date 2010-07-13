@@ -114,6 +114,9 @@
 <component name="usb_obexservicemanager_client_api" long-name="OBEX Service Manager Client API" filter="s60" class="api">
 <unit bldFile="/sf/mw/btservices/btservices_plat/usb_obexservicemanager_client_api/group"/>
 </component>
+<component name="bt_remote_device_setting_api" long-name="BT Remote Device Setting API" filter="s60" introduced="^4" class="api">
+<unit bldFile="/sf/mw/btservices/btservices_plat" proFile="btservices_plat.pro"/>
+</component>
 </collection>
 <collection name="bluetoothengine" long-name="Bluetooth Engine" level="framework">
 <component name="btnotifclient" filter="s60" long-name="Bluetooth Notification Client" introduced="^4">
@@ -159,6 +162,12 @@
 <component name="btctrldcmoadapter" filter="s60" long-name="Bluetooth Control DCMO Adapter" introduced="^3" plugin="Y">
 <unit bldFile="/sf/mw/btservices/bluetoothengine/btctrldcmoadapter/group"/>
 </component>
+<component name="btindicator" filter="s60" long-name="Bluetooth Indicator" introduced="^4">
+<unit bldFile="/sf/mw/btservices/bluetoothengine/btindicator" proFile="btindicator.pro"/>
+</component>
+<component name="bluetoothengine_conf" filter="s60" long-name="Bluetooth Engine Config" introduced="^4" class="config">
+<unit bldFile="/sf/mw/btservices/bluetoothengine/conf"/>
+</component>
 </collection>
 <collection name="bluetoothappprofiles" long-name="Bluetooth Application Profiles" level="plugin">
 <component name="avrcp" long-name="Bluetooth AVRCP" introduced="9.1" purpose="optional">
@@ -181,6 +190,10 @@
 <collection name="btobexprofiles" long-name="BT OBEX Profiles" level="generic">
 <component name="obexreceiveservices" long-name="OBEX Receive Services" filter="s60">
 <unit bldFile="/sf/mw/btservices/btobexprofiles/obexreceiveservices/group"/>
+</component>
+<component name="btmsgviewer" long-name="BT Message Viewer" filter="s60" introduced="^4">
+<!-- should be moved out from under obexreceiveservices into own component dir -->
+<unit bldFile="/sf/mw/btservices/btobexprofiles/obexreceiveservices/btmsgviewer" proFile="btmsgviewer.pro"/>
 </component>
 <component name="obexsendservices" long-name="OBEX Send Services" filter="s60">
 <unit bldFile="/sf/mw/btservices/btobexprofiles/obexsendservices/group"/>

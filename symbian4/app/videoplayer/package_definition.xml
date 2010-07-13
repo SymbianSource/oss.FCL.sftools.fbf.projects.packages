@@ -80,8 +80,8 @@
 <component name="mediasettingsengine" filter="s60" long-name="Media Settings Engine">
 <unit bldFile="/sf/app/videoplayer/mediasettings/mediasettingsengine/group"/>
 </component>
-<component name="videosettingsplugin" filter="s60" long-name="Video Settings Plugin" plugin="Y" class="placeholder">
-<!--<unit bldFile="mediasettings/videosettingsplugin" qt:proFile="videosettingsplugin.pro"/> -->
+<component name="videosettingsplugin" filter="s60" long-name="Video Settings Plugin" plugin="Y">
+<unit bldFile="/sf/app/videoplayer/mediasettings/videosettingsplugin" proFile="videosettingsplugin.pro"/>
 </component>
 </collection>
 <collection name="videoplayerapp" long-name="Video Player App" level="apps">

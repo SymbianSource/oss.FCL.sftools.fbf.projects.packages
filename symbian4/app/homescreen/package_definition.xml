@@ -90,12 +90,11 @@
 <unit bldFile="/sf/app/homescreen/homescreenapp" proFile="homescreenapp_exports_to_rom.pri" qmakeArgs="-r -config rom"/>
 </component>
 </collection>
-<collection name="taskswitcherapp" long-name="Task Switcher Application" level="task">
-<!-- break collection info components, or move down a dir and make it a component -->
-<component name="taskswitcherapp_build" long-name="Task Switcher Application Build">
-<unit bldFile="/sf/app/homescreen/taskswitcherapp" proFile="taskswitcherapp.pro" qmakeArgs="-r -config rom"/>
+<collection name="screensaver" long-name="Screen Saver" level="ss">
+<!-- break collection into components, or move down a dir and make it a component -->
+<component name="screensaver_build" long-name="Screen Saver Build">
+<unit bldFile="/sf/app/homescreen/screensaver" proFile="screensaver.pro" qmakeArgs="-r -config rom"/>
 </component>
-<component name="tsdevicedialogplugin" long-name="Task Switcher Device Dialog Plugin" introduced="^4" plugin="Y"/>
 </collection>
 </block>
   </layer>

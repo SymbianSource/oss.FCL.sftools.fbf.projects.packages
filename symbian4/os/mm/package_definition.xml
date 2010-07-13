@@ -341,13 +341,17 @@
 <unit bldFile="/sf/os/mm/mdfdevvideoextensions/nga_mdf_postprocessor/group"/>
 </component>
 </collection>
-<collection name="audio" long-name="Audio Codecs" level="middleware">
-<component name="arm_cmmf_codecs" filter="s60" long-name="ARM CMMF Codecs" plugin="Y">
-<unit bldFile="/sf/os/mm/audio/arm_cmmf_codecs/group"/>
+<collection name="frametable_stub" long-name="Frametable Stub" level="device-fw">
+<!-- collection is really a component. Needs to move down a directory -->
+<component name="frametable_stub_build" long-name="Frametable Stub Build" filter="s60" introduced="^4">
+<unit bldFile="/sf/os/mm/frametable_stub/group"/>
 </component>
 </collection>
-<collection name="video" long-name="Video Codecs" level="middleware">
-<!-- empty -->
+<collection name="eaacplusutil_stub" long-name="eAAC Plus Utils Stub" level="hw-if">
+<!-- collection is really a component. Needs to move down a directory -->
+<component name="eaacplusutil_stub_build" long-name="eAAC Plus Utils Stub Build" filter="s60" introduced="^4">
+<unit bldFile="/sf/os/mm/eaacplusutil_stub/group"/>
+</component>
 </collection>
 <collection name="imagingandcamerafws" long-name="Imaging and Camera Frameworks" level="app-if">
 <component name="imagingfws" long-name="Imaging Frameworks" introduced="7.0s" purpose="mandatory">

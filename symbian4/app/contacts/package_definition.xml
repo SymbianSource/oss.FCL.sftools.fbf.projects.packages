@@ -53,7 +53,7 @@
 <SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
-   <block name="contacts" level="apps" span="2" long-name="Contacts Apps" levels="engine support services ui">
+   <block name="contacts" level="apps" span="2" long-name="Contacts Apps" levels="engine support services plugin ui">
 <collection name="contacts_plat" long-name="Contacts Apps Platform Interfaces" level="ui">
 <component name="qt_mobility_contacts_api" long-name="Qt Mobility Contacts API" filter="s60" introduced="^4" class="api"/>
 </collection>
@@ -75,19 +75,21 @@
 <unit bldFile="/sf/app/contacts/phonebookui" proFile="phonebookui.pro"/>
 </component>
 </collection>
+<collection name="phonebookengines_old" long-name="Old Phonebook Engines" level="engine">
+<component name="contactsmodel" long-name="Contacts Model" introduced="ER5" purpose="optional">
+<unit bldFile="/sf/app/contacts/phonebookengines_old/contactsmodel/groupsql" mrp="/sf/app/contacts/phonebookengines_old/contactsmodel/groupsql/app-engines_cntmodel.mrp" version="2"/>
+</component>
+</collection>
 <collection name="phonebookengines" long-name="Phonebook Engines" level="engine">
 <component name="cntfindplugin" filter="s60" long-name="Contacts Find Plugin" introduced="^2" plugin="Y">
 <unit bldFile="/sf/app/contacts/phonebookengines/cntfindplugin" proFile="cntfindplugin.pro"/>
 </component>
-<component name="contactsmodel" long-name="Contacts Model" introduced="ER5" purpose="optional">
-<unit bldFile="/sf/app/contacts/phonebookengines_old/contactsmodel/groupsql" mrp="/sf/app/contacts/phonebookengines_old/contactsmodel/groupsql/app-engines_cntmodel.mrp" version="2"/>
-</component>
 <component name="cntsortplugin" filter="s60" long-name="Contacts Sort Plugin" introduced="^2" plugin="Y">
 <unit bldFile="/sf/app/contacts/phonebookengines/cntsortplugin" proFile="cntsortplugin.pro"/>
 </component>
-<component name="qtcontactsmobility" filter="s60" long-name="Qt Contacts Mobility" introduced="^4" plugin="Y">
+<component name="qtcontactsmobility" filter="s60" long-name="Qt Contacts Mobility" introduced="^4" plugin="Y" class="placeholder">
 <!-- need to move to this actual dir rather than including something from another collection -->
-<unit bldFile="/sf/app/contacts/qtcontactsmobility" proFile="qtcontactsmobility.pro"/>
+<!-- <unit bldFile="qtcontactsmobility" qt:proFile="qtcontactsmobility.pro"/> -->
 </component>
 <component name="cntlistmodel" filter="s60" long-name="Contact List Model" introduced="^4">
 <unit bldFile="/sf/app/contacts/phonebookengines/cntlistmodel" proFile="cntlistmodel.pro"/>
@@ -119,6 +121,12 @@
 </component>
 <component name="presencecacheqt" filter="s60" long-name="Presence Cache Qt" introduced="^4">
 <unit bldFile="/sf/app/contacts/presencecache/presencecacheqt" proFile="presencecacheqt.pro"/>
+</component>
+</collection>
+<collection name="contactwidgethsplugin" long-name="Contact Widget Homescreen Plugin" level="plugin">
+<!-- collection is really a component, move down a directory -->
+<component name="contactwidgethsplugin_build" long-name="Contact Widget Homescreen Plugin Build" introduced="^4">
+<unit bldFile="/sf/app/contacts/contactwidgethsplugin" proFile="contactwidgethsplugin.pro"/>
 </component>
 </collection>
 <collection name="contacts_info" long-name="Contacts Apps Info" level="ui">

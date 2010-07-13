@@ -62,11 +62,6 @@
 <unit bldFile="/sf/adaptation/stubs/audiostubs/fmradiotunercontrolstub/group"/>
 </component>
 </collection>
-<collection name="btaudioadaptation_stub" long-name="Bluetooth Audio Adaptation Stub" level="adaptation">
-<component name="btaudioadaptation_stub_build" long-name="Bluetooth Audio Adaptation Stub Build" filter="oem_build">
-<unit bldFile="/sf/adaptation/stubs/btaudioadaptation_stub/group"/>
-</component>
-</collection>
 <collection name="drm_stubs" long-name="DRM Stubs" level="plugin">
 <component name="drm_stubs_build" long-name="DRM Stubs Build">
 <unit bldFile="/sf/adaptation/stubs/drm_stubs/group"/>

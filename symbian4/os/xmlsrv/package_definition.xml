@@ -64,6 +64,12 @@
 <component name="xml_security_engine_utils_api" long-name="XML Security Engine Utils API" filter="s60" class="api">
 <unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/xml_security_engine_utils_api/group"/>
 </component>
+<component name="cxml_library_api" long-name="cXml Library API" filter="s60" class="api">
+<unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/cxml_library_api/group"/>
+</component>
+<component name="xml_parser_api" long-name="XML Parser API" filter="s60" class="api">
+<unit bldFile="/sf/os/xmlsrv/xmlsrv_plat/xml_parser_api/group"/>
+</component>
 </collection>
 <collection name="xmlsecurityengine" long-name="XML Security Engine" level="framework">
 <component name="xmlseccertman" filter="s60" long-name="XML Security Certificate Manager">
@@ -81,25 +87,31 @@
 </collection>
 <collection name="xml" long-name="XML" level="generic">
 <component name="xmlfw" long-name="XML Framework" introduced="7.0s" purpose="optional">
-<unit bldFile="/sf/os/xmlsrv/xml/xmlfw/group" mrp="/sf/os/xmlsrv/xml/xmlfw/group/syslibs_xml.mrp"/>
+<unit bldFile="/sf/os/xmlsrv/xml/xmlfw/group" mrp="/sf/os/xmlsrv/xml/xmlfw/group/syslibs_xml.mrp" filter="!test"/>
 </component>
 <component name="libxml2libs" long-name="Libxml2 Libraries" introduced="^3" purpose="optional">
-<unit bldFile="/sf/os/xmlsrv/xml/libxml2libs/group" mrp="/sf/os/xmlsrv/xml/libxml2libs/group/syslibs_libxml2.mrp"/>
+<unit bldFile="/sf/os/xmlsrv/xml/libxml2libs/group" mrp="/sf/os/xmlsrv/xml/libxml2libs/group/syslibs_libxml2.mrp" filter="!test"/>
 </component>
 <component name="legacyminidomparser" long-name="Legacy Mini-DOM Parser" introduced="7.0s" purpose="optional">
-<unit bldFile="/sf/os/xmlsrv/xml/legacyminidomparser/GROUP" mrp="/sf/os/xmlsrv/xml/legacyminidomparser/GROUP/syslibs_legacyminidomparser.mrp"/>
+<unit bldFile="/sf/os/xmlsrv/xml/legacyminidomparser/GROUP" mrp="/sf/os/xmlsrv/xml/legacyminidomparser/GROUP/syslibs_legacyminidomparser.mrp" filter="!test"/>
 </component>
 <component name="xmldomandxpath" long-name="XML DOM and XPath" introduced="^3" purpose="optional">
-<unit bldFile="/sf/os/xmlsrv/xml/xmldomandxpath/group" mrp="/sf/os/xmlsrv/xml/xmldomandxpath/group/syslibs_xmldom.mrp"/>
+<unit bldFile="/sf/os/xmlsrv/xml/xmldomandxpath/group" mrp="/sf/os/xmlsrv/xml/xmldomandxpath/group/syslibs_xmldom.mrp" filter="!test"/>
 </component>
 <component name="xmlexpatparser" long-name="XML Expat Parser" introduced="7.0s" purpose="optional" plugin="Y">
-<unit bldFile="/sf/os/xmlsrv/xml/xmlexpatparser/group" mrp="/sf/os/xmlsrv/xml/xmlexpatparser/group/syslibs_xmlparser.mrp"/>
+<unit bldFile="/sf/os/xmlsrv/xml/xmlexpatparser/group" mrp="/sf/os/xmlsrv/xml/xmlexpatparser/group/syslibs_xmlparser.mrp" filter="!test"/>
 </component>
 <component name="xmllibxml2parser" long-name="XML Libxml2 Parser" introduced="^3" purpose="optional" plugin="Y">
-<unit bldFile="/sf/os/xmlsrv/xml/xmllibxml2parser/group" mrp="/sf/os/xmlsrv/xml/xmllibxml2parser/group/syslibs_xmlparser2.mrp"/>
+<unit bldFile="/sf/os/xmlsrv/xml/xmllibxml2parser/group" mrp="/sf/os/xmlsrv/xml/xmllibxml2parser/group/syslibs_xmlparser2.mrp" filter="!test"/>
 </component>
 <component name="wbxmlparser" long-name="WBXML Parser" introduced="7.0s" purpose="optional" plugin="Y">
-<unit bldFile="/sf/os/xmlsrv/xml/wbxmlparser/group" mrp="/sf/os/xmlsrv/xml/wbxmlparser/group/syslibs_wbxmlparser.mrp"/>
+<unit bldFile="/sf/os/xmlsrv/xml/wbxmlparser/group" mrp="/sf/os/xmlsrv/xml/wbxmlparser/group/syslibs_wbxmlparser.mrp" filter="!test"/>
+</component>
+<component name="cxmllibrary" filter="s60" long-name="cXml Library">
+<unit bldFile="/sf/os/xmlsrv/xml/cxmllibrary/group"/>
+</component>
+<component name="xmlparser" filter="s60" long-name="XML Interface">
+<unit bldFile="/sf/os/xmlsrv/xml/xmlparser/group"/>
 </component>
 </collection>
 <collection name="xmlsrv_info" long-name="XML Services Info" level="specific">

@@ -57,7 +57,16 @@
 <!-- need to resolve the qt parts into proper components, then uncomment the units -->
 <collection name="email_plat" long-name="Email Apps Platform Interfaces" level="app">
 <component name="nmail_client_api" long-name="NMail Client API" filter="s60" introduced="^4" class="api placeholder">
-<!--<unit bldFile="email_plat" qt:proFile="email_plat.pro"/> -->
+<!--<unit bldFile="email_plat/nmail_client_api" qt:proFile="nmail_client_api.pro"/> -->
+</component>
+<component name="email_services_api" long-name="Email Services API" filter="s60" introduced="^4" class="api placeholder">
+<!--<unit bldFile="email_plat/email_services_api" qt:proFile="email_services_api.pro"/> -->
+</component>
+<component name="nmail_settings_api" long-name="NMail Settings API" filter="s60" introduced="^4" class="api placeholder">
+<!--<unit bldFile="email_plat/nmail_settings_api" qt:proFile="nmail_settings_api.pro"/> -->
+</component>
+<component name="email_client_api" long-name="EMail Client API" filter="s60" introduced="^4" class="api placeholder">
+<!--<unit bldFile="email_plat/email_client_api" qt:proFile="email_client_api.pro"/> -->
 </component>
 </collection>
 <collection name="emailservices" long-name="Email Services" level="service">
@@ -131,7 +140,7 @@
 <collection name="commonemail_info" long-name="Email Apps Info" level="app">
 <component name="commonemail_build" long-name="Email Apps Build" introduced="^4">
 <!-- split into actual components -->
-<unit bldFile="/sf/app/commonemail/group"/>
+<unit bldFile="/sf/app/commonemail" proFile="nmail.pro" qmakeArgs="-r"/>
 </component>
 </collection>
 </block>

@@ -53,30 +53,28 @@
 <SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
-   <block name="search" level="apps" long-name="Search Apps" levels="eng base app api">
-<collection name="search_info" long-name="Search Info" level="base">
-<component name="search_build" long-name="Search Build" introduced="^4">
-<unit bldFile="/sf/app/search/group"/>
+   <block name="calendarwidget" level="apps" long-name="Calendar Widget" levels="build app">
+<collection name="calendarwidget_info" long-name="Calendar Widget Info" level="build">
+<component name="calendarwidget_rom" long-name="Calendar Widget ROM" filter="dfs_build" introduced="^4">
+<!-- remove subdirs and put exports into a real bld.inf  -->
+<unit bldFile="/sf/app/calendarwidget" proFile="calendarwidget.pro" qmakeArgs="-r"/>
 </component>
 </collection>
-<collection name="search_plat" long-name="Search Platform Interfaces" level="api">
-<component name="search_plat_build" long-name="Search Platform Interfaces Build" introduced="^4" class="api">
-<unit bldFile="/sf/app/search/search_plat" proFile="search_plat.pro"/>
+<collection name="calendarwidgetinstaller" long-name="Calendar Widget Installer" level="build">
+<!-- collection is really a component, need to move down a directory -->
+<component name="calendarwidgetinstaller_build" long-name="Calendar Widget Installer Build" filter="dfs_build" introduced="^4" class="placeholder">
+<!--  built by calendarwidget_rom
+	  <unit bldFile="calendarwidgetinstaller" qt:qmakeArgs="-r" qt:proFile="calendarwidgetinstaller.pro"/> -->
 </component>
 </collection>
-<collection name="onlinesearchproviders" long-name="Online Search Providers" level="eng">
-<component name="onlinesearchproviders_build" long-name="Online Search Providers Build" introduced="^4">
-<unit bldFile="/sf/app/search/onlinesearchproviders" proFile="onlinesearchproviders.pro"/>
+<collection name="calendarwidgetplugin" long-name="Calendar Widget Plugin" level="app">
+<!-- collection is really a component, need to move down a directory -->
+<component name="calendarwidgetplugin_build" long-name="Calendar Widget Plugin Build" filter="dfs_build" introduced="^4" plugin="Y" class="placeholder">
+<!--  built by calendarwidget_rom
+	  <unit bldFile="calendarwidgetplugin" qt:qmakeArgs="-r" qt:proFile="calendarwidgetplugin.pro"/> -->
 </component>
-</collection>
-<collection name="search_harvesterplugins" long-name="Search Harvester Plugins" level="base">
-<component name="search_qtemailfetcher" long-name="Search Qt Email Fetcher" introduced="^4" plugin="Y">
-<unit bldFile="/sf/app/search/harvesterplugins/messaging/email/qtemailfetcher" proFile="qtemailfetcher.pro"/>
-</component>
-</collection>
-<collection name="searchui" long-name="Search UI" level="app">
-<component name="searchui_build" long-name="Search UI Build" introduced="^4">
-<unit bldFile="/sf/app/search/searchui" proFile="searchui.pro"/>
+<component name="calendarwidgetplugin_test" long-name="Calendar Widget Plugin Test" filter="dfs_build" introduced="^4">
+<unit bldFile="/sf/app/calendarwidget/calendarwidgetplugin/tsrc" qmakeArgs="-r" proFile="tsrc.pro"/>
 </component>
 </collection>
 </block>

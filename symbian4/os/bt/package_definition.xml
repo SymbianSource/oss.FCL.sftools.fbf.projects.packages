@@ -135,6 +135,11 @@
 <unit mrp="/sf/os/bt/bt_info/bt_metadata/bt_metadata.mrp"/>
 </component>
 </collection>
+<collection name="btsimulator" long-name="Bluetooth Simulator" level="internal-utils">
+<component name="btaudioadaptation_stub" long-name="Bluetooth Audio Adaption Stub" introduced="^3" purpose="optional" filter="s60">
+<unit bldFile="/sf/os/bt/btsimulator/btaudioadaptation_stub/group"/>
+</component>
+</collection>
 </block>
   </layer>
  </systemModel>

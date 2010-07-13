@@ -69,55 +69,38 @@
 </component>
 </collection>
 <collection name="hotspotfw" long-name="HotSpot Framework" level="framework">
-<component name="hsserver" filter="s60" long-name="HotSpot Server" class="placeholder">
-<!-- needs bld.inf extracted from the hotspotfw/group one, or this component should be removed-->
-</component>
-<component name="hsclient" filter="s60" long-name="HotSpot Client" class="placeholder">
-<!-- needs bld.inf extracted from the hotspotfw/group one, or this component should be removed-->
-</component>
-<component name="internetconnectivitytestservice" filter="s60" long-name="Internet Connectivity Test Service" class="placeholder">
-<!-- needs bld.inf un-#included from hotspotfw/group/bld.inf, or this component should be removed-->
-<!-- <unit bldFile="hotspotfw/internetconnectivitytestservice/group"/> -->
-</component>
-<component name="ictsdialogs" filter="s60" long-name="Internet Connectivity Test Service Dialogs" deprecated="^3" class="placeholder">
-<!-- needs bld.inf un-#included from hotspotfw/group/bld.inf, or this component should be removed-->
-<!-- <unit bldFile="hotspotfw/ictsdialogs/group"/> -->
-</component>
-<component name="hspluginforagent" filter="s60" long-name="HotSpot Plugin for Agent" plugin="Y" class="placeholder">
-<!-- needs bld.inf un-#included from hotspotfw/group/bld.inf, or this component should be removed-->
-<!-- <unit bldFile="hotspotfw/hspluginforagent/group"/> -->
-</component>
-<component name="hsbrowser" filter="s60" long-name="HotSpot Browser" class="placeholder">
-<!-- needs bld.inf un-#included from hotspotfw/group/bld.inf, or this component should be removed-->
-<!-- <unit bldFile="hotspotfw/hsbrowser/group"/> -->
-</component>
-<component name="hotspotfw_build" filter="s60" long-name="Hotspot Framework Build">
-<!--  should break up this bld.inf into the above components, or collapse them all into a single component -->
+<!-- collection is really a component. Needs to move down a dir -->
+<component name="hotspotfw_build" filter="s60" long-name="HotSpot Framework Build">
 <unit bldFile="/sf/mw/wirelessacc/hotspotfw/group"/>
 </component>
 </collection>
 <collection name="wlanutilities" long-name="WLAN Utilities" level="generic">
-<component name="wlanutilities_build" long-name="WLAN Utilities Qt" introduced="^4" filter="s60">
-<!-- is this uinit needed, or is it sufficient to uncomment the units in the below components? -->
-<unit bldFile="/sf/mw/wirelessacc/wlanutilities" proFile="wlanutilities.pro" qmakeArgs="-r"/>
+<component name="wlanqtutilities" filter="s60" long-name="WLAN Qt Utilities" introduced="^4">
+<unit bldFile="/sf/mw/wirelessacc/wlanutilities/wlanqtutilities" proFile="wlanqtutilities.pro" qmakeArgs="-r"/>
 </component>
-<component name="wlanqtutilities" filter="s60" long-name="WLAN Qt Utilities" introduced="^4" class="placeholder">
-<!--<unit bldFile="wlanutilities/wlanplugin" qt:proFile="wlanqtutilities.pro"/>-->
+<component name="eapwizard " filter="s60" long-name="EAP Wizard" introduced="^4">
+<unit bldFile="/sf/mw/wirelessacc/wlanutilities/eapwizard" proFile="eapwizard.pro" qmakeArgs="-r"/>
 </component>
-<component name="wlanwizard " filter="s60" long-name="WLAN Wizard" introduced="^4" class="placeholder">
-<!--<unit bldFile="wlanutilities/wlanwizard" qt:proFile="wlanwizard.pro"/>-->
+<component name="wpswizard " filter="s60" long-name="WPS Wizard" introduced="^4">
+<unit bldFile="/sf/mw/wirelessacc/wlanutilities/wpswizard" proFile="wpswizard.pro" qmakeArgs="-r"/>
 </component>
-<component name="wlansniffer" filter="s60" long-name="WLAN Sniffer" class="placeholder">
-<!--<unit bldFile="wlanutilities/wlansettingsui" qt:proFile="wlansniffer.pro"/>-->
+<component name="wlanwizard " filter="s60" long-name="WLAN Wizard" introduced="^4">
+<unit bldFile="/sf/mw/wirelessacc/wlanutilities/wlanwizard" proFile="wlanwizard.pro" qmakeArgs="-r"/>
 </component>
-<component name="wlanentryplugin" filter="s60" long-name="WLAN Entry Plugin" plugin="Y" class="placeholder">
-<!--<unit bldFile="wlanutilities/wlansniffer" qt:proFile="wlanentryplugin.pro"/>-->
+<component name="wlansniffer" filter="s60" long-name="WLAN Sniffer">
+<unit bldFile="/sf/mw/wirelessacc/wlanutilities/wlansniffer" proFile="wlansniffer.pro" qmakeArgs="-r"/>
 </component>
-<component name="wlanindicatorplugin" filter="s60" long-name="WLAN Indicator Plugin" plugin="Y" class="placeholder">
-<!--<unit bldFile="wlanutilities/wlanindicatorplugin" qt:proFile="wlanindicatorplugin.pro"/>-->
+<component name="wlanentryplugin" filter="s60" long-name="WLAN Entry Plugin" plugin="Y">
+<unit bldFile="/sf/mw/wirelessacc/wlanutilities/wlanentryplugin" proFile="wlanentryplugin.pro" qmakeArgs="-r"/>
 </component>
-<component name="cpwlansettingsplugin" filter="s60" long-name="WLAN Settings Control Panel Plugin" introduced="^4" plugin="Y" class="placeholder">
-<!--<unit bldFile="wlanutilities/cpwlansettingsplugin" qt:proFile="cpwlansettingsplugin.pro"/>-->
+<component name="wlanindicatorplugin" filter="s60" long-name="WLAN Indicator Plugin" plugin="Y">
+<unit bldFile="/sf/mw/wirelessacc/wlanutilities/wlanindicatorplugin" proFile="wlanindicatorplugin.pro" qmakeArgs="-r"/>
+</component>
+<component name="cpwlansettingsplugin" filter="s60" long-name="WLAN Settings Control Panel Plugin" introduced="^4" plugin="Y">
+<unit bldFile="/sf/mw/wirelessacc/wlanutilities/cpwlansettingsplugin" proFile="cpwlansettingsplugin.pro" qmakeArgs="-r"/>
+</component>
+<component name="wlanlogin" filter="s60" long-name="WLAN Login" introduced="^4">
+<unit bldFile="/sf/mw/wirelessacc/wlanutilities/wlanlogin" proFile="wlanlogin.pro" qmakeArgs="-r"/>
 </component>
 </collection>
 </block>

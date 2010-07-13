@@ -85,6 +85,9 @@
 <component name="mtppictbridgedp" long-name="MTP PictBridge Data Provider" filter="gt" introduced="^3" purpose="optional" plugin="Y">
 <unit bldFile="/sf/mw/remoteconn/mtpdataproviders/mtppictbridgedp/group" mrp="/sf/mw/remoteconn/mtpdataproviders/mtppictbridgedp/group/mtp_pictbridgedp.mrp"/>
 </component>
+<component name="mtpplaybackcontroldp" long-name="MTP Playback Control Data Provider" introduced="^4" purpose="optional" plugin="Y">
+<unit bldFile="/sf/mw/remoteconn/mtpdataproviders/mtpplaybackcontroldp/group" mrp="/sf/mw/remoteconn/mtpdataproviders/mtpplaybackcontroldp/group/mtp_playbackcontroldp.mrp"/>
+</component>
 </collection>
 <collection name="backupandrestore" long-name="Backup and Restore" level="specific">
 <component name="backupengine" long-name="Backup Engine" introduced="9.0" purpose="optional">

@@ -75,9 +75,6 @@
 <component name="deflatefilter" filter="s60" long-name="Deflate Filter" plugin="Y">
 <unit bldFile="/sf/mw/netprotocols/httpfilters/deflatefilter/group"/>
 </component>
-<component name="httpfilteracceptheader" filter="s60" long-name="Accept Header Filter" plugin="Y">
-<unit bldFile="/sf/mw/netprotocols/httpfilters/httpfilteracceptheader/group"/>
-</component>
 <component name="httpfilterauthentication" filter="s60" long-name="Authentication Filter" plugin="Y">
 <unit bldFile="/sf/mw/netprotocols/httpfilters/httpfilterauthentication/group"/>
 </component>
@@ -89,9 +86,6 @@
 </component>
 <component name="httpfilterproxy" filter="s60" long-name="HTTP Proxy Filter" plugin="Y">
 <unit bldFile="/sf/mw/netprotocols/httpfilters/httpfilterproxy/group"/>
-</component>
-<component name="uaproffilter" filter="s60" long-name="UAProf Filter" plugin="Y">
-<unit bldFile="/sf/mw/netprotocols/httpfilters/uaproffilter/group"/>
 </component>
 </collection>
 <collection name="applayerprotocols" long-name="Application Layer Protocols" level="server">

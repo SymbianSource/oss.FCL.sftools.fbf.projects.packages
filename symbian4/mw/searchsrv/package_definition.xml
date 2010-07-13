@@ -83,13 +83,18 @@
 <component name="searchserver" long-name="Search Server" filter="s60" introduced="^4">
 <unit bldFile="/sf/mw/searchsrv/searcher/SearchServer/group"/>
 </component>
+<component name="searcher_test" long-name="Searcher Tests" filter="s60" purpose="development" introduced="^4">
+<!-- #include from common bld.inf or split into two components -->
+<unit bldFile="/sf/mw/searchsrv/searcher/tsrc/RobustnessTest/group"/>
+<unit bldFile="/sf/mw/searchsrv/searcher/tsrc/LogPlayer/group"/>
+</component>
 </collection>
 <collection name="searchsrv_harvester" long-name="Search Services Harvester" level="services">
 <component name="searchsrv_pluginfw" long-name="Search Server" filter="s60" introduced="^4">
 <unit bldFile="/sf/mw/searchsrv/harvester/pluginfw/group"/>
 </component>
 <component name="searchsrv_harvesterserver" long-name="Search Harvester Server" filter="s60" introduced="^4">
-<unit bldFile="/sf/mw/searchsrv/harvester/HarvesterServer/group"/>
+<unit bldFile="/sf/mw/searchsrv/harvester/harvesterserver" proFile="harvester.pro"/>
 </component>
 </collection>
 <collection name="searchsrv_watchdog" long-name="Search Services Watch Dog" level="services">
@@ -98,9 +103,8 @@
 </component>
 </collection>
 <collection name="qcpix" long-name="Qt CPIX" level="engine">
-<component name="qcpixsearchclient" long-name="Qt CPIX Search Client" introduced="^4">
-<!-- Snag! qcpix.pro and qcpixsearchclient.pro in same directory! -->
-<unit bldFile="/sf/mw/searchsrv/qcpix" proFile="qcpixsearchclient.pro"/>
+<component name="qcpix_build" long-name="Qt CPIX Build" introduced="^4">
+<unit bldFile="/sf/mw/searchsrv/qcpix" proFile="qcpix.pro"/>
 </component>
 </collection>
 <collection name="searchsrv_info" long-name="Search Services Info">

@@ -90,9 +90,6 @@
 <component name="connection_manager_api" long-name="Connection Manager API" filter="s60" class="api">
 <unit bldFile="/sf/mw/web/web_plat/connection_manager_api/group"/>
 </component>
-<component name="cxml_library_api" long-name="cXml Library API" filter="s60" class="api">
-<unit bldFile="/sf/mw/web/web_plat/cxml_library_api/group"/>
-</component>
 <component name="download_mgr_client_api_extn" long-name="Download Manager Client API Extension" filter="s60" class="api">
 <unit bldFile="/sf/mw/web/web_plat/download_mgr_client_api_extn/group"/>
 </component>
@@ -123,9 +120,6 @@
 <component name="widget_registry_api" long-name="Widget Registry API" filter="s60" class="api">
 <unit bldFile="/sf/mw/web/web_plat/widget_registry_api/group"/>
 </component>
-<component name="xml_parser_api" long-name="XML Parser API" filter="s60" class="api">
-<unit bldFile="/sf/mw/web/web_plat/xml_parser_api/group"/>
-</component>
 </collection>
 <collection name="browserutilities" long-name="Browser Utilities" level="utils">
 <component name="browserdialogsprovider" filter="s60" long-name="Browser Dialogs Provider">
@@ -133,12 +127,6 @@
 </component>
 <component name="recenturlstore" filter="s60" long-name="Recent URL Store">
 <unit bldFile="/sf/mw/web/browserutilities/recenturlstore/group"/>
-</component>
-<component name="xmlparser" filter="s60" long-name="XML Interface">
-<unit bldFile="/sf/mw/web/browserutilities/xmlparser/group"/>
-</component>
-<component name="cxmllibrary" filter="s60" long-name="XML Parser Implementation">
-<unit bldFile="/sf/mw/web/browserutilities/cxmllibrary/group"/>
 </component>
 <component name="downloadmgr" filter="s60" long-name="Download Manager">
 <unit bldFile="/sf/mw/web/browserutilities/downloadmgr/group"/>

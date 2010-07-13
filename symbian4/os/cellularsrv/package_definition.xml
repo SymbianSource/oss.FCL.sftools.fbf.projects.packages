@@ -85,9 +85,6 @@
 <component name="qosextnapi" long-name="QoS Extn API" introduced="9.2" purpose="optional">
 <unit bldFile="/sf/os/cellularsrv/telephonyprotocols/qosextnapi/group" mrp="/sf/os/cellularsrv/telephonyprotocols/qosextnapi/group/networking_qosextnapi.mrp"/>
 </component>
-<component name="secondarypdpcontextumtsdriver" long-name="Secondary PDP context UMTS Driver" introduced="8.1" purpose="optional">
-<unit bldFile="/sf/os/cellularsrv/telephonyprotocols/secondarypdpcontextumtsdriver/group" mrp="/sf/os/cellularsrv/telephonyprotocols/secondarypdpcontextumtsdriver/group/networking_spud.mrp"/>
-</component>
 <component name="qos3gppcpr" long-name="QoS 3GPP CPR" introduced="9.2" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/cellularsrv/telephonyprotocols/qos3gppcpr/group" mrp="/sf/os/cellularsrv/telephonyprotocols/qos3gppcpr/group/networking_Qos3GPP.mrp"/>
 </component>
@@ -157,6 +154,7 @@
 </component>
 </collection>
 <collection name="cellularsrvapitest" long-name="Telephony API Tests" level="app-if"/>
+<collection name="cbsref" long-name="CBS Reference" level="plugin"/>
 <collection name="wapstack" long-name="WAP Stack" level="plugin">
 <component name="wapmessageapi" long-name="WAP Message API" purpose="optional">
 <unit bldFile="/sf/os/cellularsrv/wapstack/wapmessageapi/group" mrp="/sf/os/cellularsrv/wapstack/wapmessageapi/group/wap-stack_wapmessage.mrp"/>

@@ -249,8 +249,12 @@
 <component name="gssensorplugin" filter="s60" long-name="GS Sensor Plugin" plugin="Y">
 <unit bldFile="/sf/mw/appsupport/systemsettings/gssensorplugin/group"/>
 </component>
-<component name="gsaccessoryplugin" filter="s60" long-name="GS Accessory Plugin" plugin="Y">
-<unit bldFile="/sf/mw/appsupport/systemsettings/gsaccessoryplugin/group"/>
+<component name="accindicatorplugin" filter="s60" long-name="ACC Indicator Plugin" plugin="Y">
+<unit bldFile="/sf/mw/appsupport/systemsettings/accindicatorplugin" proFile="accindicatorplugin.pro"/>
+</component>
+<component name="accindicatorsettings" filter="s60" long-name="ACC Indicator Settings">
+<!-- can't have a component inside another component -->
+<unit bldFile="/sf/mw/appsupport/systemsettings/accindicatorplugin/accindicatorsettings" proFile="accindicatorsettings.pro"/>
 </component>
 </collection>
 <collection name="filehandling" long-name="File Handling" level="server">
@@ -277,7 +281,7 @@
 <unit bldFile="/sf/mw/appsupport/commonappservices/alarmservertest/TestAlarmSrv" mrp="/sf/mw/appsupport/commonappservices/alarmservertest/TestAlarmSrv/app-services_testalarmsrv.mrp"/>
 </component>
 <component name="appservicesdocs" long-name="Application Services Documentation" purpose="development" class="doc">
-<unit mrp="/sf/mw/appsupport/commonappservices/appservicesdocs/app-services_documentation.mrp"/>
+<unit mrp="/sf/mw/appsupport/commonappservices/doc_pub/app-services_documentation.mrp"/>
 </component>
 <component name="backuprestorenotification" long-name="Backup Restore Notification" introduced="8.1" purpose="optional">
 <unit bldFile="/sf/mw/appsupport/commonappservices/backuprestorenotification/group" mrp="/sf/mw/appsupport/commonappservices/backuprestorenotification/group/app-services_BackupRestoreNotification.mrp"/>

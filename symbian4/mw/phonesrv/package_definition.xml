@@ -172,6 +172,9 @@
 <component name="dialpad_api" long-name="Dialpad API" filter="s60" introduced="^4" class="api">
 <unit bldFile="/sf/mw/phonesrv/phonesrv_plat/dialpad_api/group"/>
 </component>
+<component name="phone_settings_ui_notes_api" long-name="Phone Settings UI Notes API" filter="s60" introduced="^4" class="api">
+<unit bldFile="/sf/mw/phonesrv/phonesrv_plat/phone_settings_ui_notes_api/group"/>
+</component>
 </collection>
 <collection name="telutils" long-name="Telephony Utils" level="utils">
 <component name="phoneparser" filter="s60" long-name="Phone Parser">
@@ -212,6 +215,9 @@
 </component>
 <component name="psetnotesui" filter="s60" long-name="Phone Settings Notes UI" purpose="development">
 <unit bldFile="/sf/mw/phonesrv/cellular/psetnotesui/group" filter="!test"/>
+</component>
+<component name="psuinotes" filter="s60" long-name="Phone Settings Notes UI" introduced="^4">
+<unit bldFile="/sf/mw/phonesrv/cellular/psuinotes" proFile="psuinotes.pro"/>
 </component>
 <component name="servicerequest" filter="s60" long-name="Service Request">
 <unit bldFile="/sf/mw/phonesrv/cellular/servicerequest/group"/>

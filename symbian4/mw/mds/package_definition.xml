@@ -96,6 +96,21 @@
 </component>
 </collection>
 <collection name="locationmanager" long-name="Location Manager" level="mgr">
+<component name="geoconverter" filter="s60" long-name="Geoconverter" introduced="^4">
+<unit bldFile="/sf/mw/mds/locationmanager/geoconverter/group"/>
+</component>
+<component name="geo_tagcreator" filter="s60" long-name="Geo Tag Creator" introduced="^4">
+<unit bldFile="/sf/mw/mds/locationmanager/tagcreator/group"/>
+</component>
+<component name="reversegeocode" filter="s60" long-name="Reverse Geocode" introduced="^4">
+<unit bldFile="/sf/mw/mds/locationmanager/ReverseGeocode/group"/>
+</component>
+<component name="reversegeocoderplugin" filter="s60" long-name="Reverse Geo-Coder Plugin" introduced="^4" plugin="Y">
+<unit bldFile="/sf/mw/mds/locationmanager/ReverseGeoCoderPlugin/group"/>
+</component>
+<component name="geotagger" filter="s60" long-name="Geo Tagger" introduced="^4">
+<unit bldFile="/sf/mw/mds/locationmanager/geotagger/group"/>
+</component>
 <component name="locationtrail" filter="s60" long-name="Location Trail" introduced="^2">
 <unit bldFile="/sf/mw/mds/locationmanager/locationtrail/group"/>
 </component>

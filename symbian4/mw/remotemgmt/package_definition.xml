@@ -144,9 +144,6 @@
 <component name="syncml_notifier_roaming_api" long-name="SyncML Notifier Roaming API" filter="s60" class="api">
 <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/syncml_notifier_roaming_api/group"/>
 </component>
-<component name="sync_service_api" long-name="Sync Service API" filter="s60" class="api">
-<unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/sync_service_api/group"/>
-</component>
 <component name="dcmo_adapter_api" long-name="DCMO Adapter API" filter="s60" class="api">
 <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/dcmo_adapter_api/group"/>
 </component>
@@ -159,19 +156,18 @@
 <component name="devicemgmt_dialogs_api" long-name="Device Management Dialogs API" filter="s60" introduced="^4" class="api">
 <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/devicemgmt_dialogs_api/group"/>
 </component>
+<component name="dm_device_dialog_api" long-name="DM Device Dialog API" filter="s60" introduced="^4" class="api">
+<unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/dm_device_dialog_api/group"/>
+</component>
 </collection>
 <collection name="policymanagement" long-name="Policy Management" level="generic">
-<component name="pmdmadapter" filter="s60" long-name="PM DM Adapter" plugin="Y">
-<unit bldFile="/sf/mw/remotemgmt/policymanagement/pmdmadapter/group"/>
-</component>
-<component name="dmutilserver" filter="s60" long-name="DM Util Server">
-<unit bldFile="/sf/mw/remotemgmt/policymanagement/dmutilserver/group"/>
+<component name="policyenginepolicies" long-name="Policy Engine Policies" filter="s60,!dfs_build">
+<unit bldFile="/sf/mw/remotemgmt/policymanagement/policyengine/policyenginepolicies/group"/>
 </component>
 <component name="policyengine" filter="s60" long-name="Policy Engine">
-<unit bldFile="/sf/mw/remotemgmt/policymanagement/policyengine/group" filter="!dfs_build"/>
+<unit bldFile="/sf/mw/remotemgmt/policymanagement/policyengine" proFile="policyengine.pro"/>
 </component>
-<component name="policymanagement_build" filter="s60" long-name="Policy Management Build">
-<!--  need to distribute exports, etc into the other components and remove this-->
+<component name="policymanagement_config" filter="s60" long-name="Policy Management Config" class="config">
 <unit bldFile="/sf/mw/remotemgmt/policymanagement/group"/>
 </component>
 </collection>
@@ -231,15 +227,23 @@
 </component>
 </collection>
 <collection name="fotaapplication" long-name="FOTA Application" level="generic">
+<component name="fotaapplication_build" filter="s60" long-name="FOTA Application Build">
+<!-- need to make this a real component: move down a dir? break up? -->
+<unit bldFile="/sf/mw/remotemgmt/fotaapplication/group"/>
+</component>
 <component name="fotaserver" filter="s60" long-name="FOTA Server">
-<unit bldFile="/sf/mw/remotemgmt/fotaapplication/fotaserver/group"/>
+<unit bldFile="/sf/mw/remotemgmt/fotaapplication/fotaserver" proFile="fotaserver.pro"/>
 </component>
-<component name="fotacustcmds" filter="s60" long-name="FOTA Custom Commands">
-<unit bldFile="/sf/mw/remotemgmt/fotaapplication/fotaserver/fotacustcmds/group"/>
+</collection>
+<collection name="devicemgmtnotifications" long-name="Device Management Notifications" level="server">
+<component name="devicemgmtnotifications_rom" filter="s60" long-name="DM Notifications ROM" introduced="^4">
+<unit bldFile="/sf/mw/remotemgmt/devicemgmtnotifications/rom"/>
 </component>
-<!-- really need to find a better way to do this -->
-<component name="fotacustcmds-alt" filter="s60" long-name="FOTA Custom Commands">
-<unit bldFile="/sf/mw/remotemgmt/fotaapplication/fotaserver/fotacustcmds/group"/>
+<component name="dmdevdialogclient" filter="s60" long-name="DM Device Dialog Client" introduced="^4">
+<unit bldFile="/sf/mw/remotemgmt/devicemgmtnotifications/dmdevdialogclient/bld"/>
+</component>
+<component name="dmdevdialogserver" filter="s60" long-name="DM Device Dialog Server" introduced="^4">
+<unit bldFile="/sf/mw/remotemgmt/devicemgmtnotifications/dmdevdialogserver/bld"/>
 </component>
 </collection>
 </block>

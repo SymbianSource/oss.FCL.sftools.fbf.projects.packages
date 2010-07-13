@@ -68,12 +68,6 @@
 <unit bldFile="/sf/mw/messagingmw/msgfw_plat/muiu_utils_api/group"/>
 </component>
 </collection>
-<collection name="msgbranched" long-name="Messaging Branched" level="support">
-<!-- collection is really a component. Need to move down a directory -->
-<component name="msgbranched_build" filter="s60" long-name="Messaging Branched Build" class="config">
-<unit bldFile="/sf/mw/messagingmw/msgbranched/group"/>
-</component>
-</collection>
 <collection name="messagingfw" long-name="Messaging Framework" level="fw">
 <!-- should break this collection up into smaller related collections -->
 <component name="send_ui_api" long-name="Send UI API" filter="s60" deprecated="^4" class="api">

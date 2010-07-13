@@ -54,11 +54,6 @@
  <systemModel>
   <layer name="mw" long-name="Middleware" levels="generic specific">
    <block name="homescreensrv" level="specific" long-name="Home Screen Services" levels="plugin framework server generic specific">
-<collection name="appfoundation" long-name="App Foundation" level="generic">
-<component name="appfoundation_build" long-name="App Foundation Build" introduced="^4">
-<unit bldFile="/sf/mw/homescreensrv/appfoundation" qmakeArgs="-r" proFile="appfoundation.pro"/>
-</component>
-</collection>
 <collection name="hswidgetmodel" long-name="Home Screen Widget Model" level="framework">
 <component name="hswidgetmodel_build" long-name="Home Screen Widget Model Build" introduced="^4">
 <unit bldFile="/sf/mw/homescreensrv/hswidgetmodel" qmakeArgs="-r" proFile="hswidgetmodel.pro"/>
@@ -89,10 +84,8 @@
 <unit bldFile="/sf/mw/homescreensrv/homescreensrv_plat" qmakeArgs="-r" proFile="homescreensrv_plat.pro"/>
 </component>
 <component name="menu_sat_interface_api" long-name="Menu SAT Interface API" filter="s60" class="api"/>
-<component name="appruntimemodel_api" long-name="Appliction Run-Time Model API" filter="s60" introduced="^4" class="api"/>
 <component name="contentstorage_api" long-name="Content Storage API" filter="s60" introduced="^4" class="api"/>
 <component name="hswidgetmodel_api" long-name="HS Widget Model API" filter="s60" introduced="^4" class="api"/>
-<component name="statemodel_api" long-name="State Model API" filter="s60" introduced="^4" class="api"/>
 <component name="homescreen_information_api" long-name="Homescreen Information API" filter="s60" introduced="^4" class="api"/>
 </collection>
 <collection name="hsactivityfw" long-name="Activity Framework" level="fw">
@@ -109,6 +102,12 @@
 <collection name="hsappkeyhandler" long-name="HS Appplication Key Handler" level="server">
 <component name="hsappkeyhandler_build" long-name="Appplication Key Handler Build" introduced="^4">
 <unit bldFile="/sf/mw/homescreensrv/hsappkeyhandler" qmakeArgs="-r" proFile="hsappkeyhandler.pro"/>
+</component>
+</collection>
+<collection name="tsdevicedialog" long-name="Task Switcher Device Dialog" level="plugin">
+<component name="tsdevicedialog_build" long-name="Task Switcher Device Dialog Build" introduced="^4">
+<!-- break this up into real components -->
+<unit bldFile="/sf/mw/homescreensrv/tsdevicedialog" qmakeArgs="-r" proFile="tsdevicedialog.pro"/>
 </component>
 </collection>
 <collection name="homescreensrv_info" long-name="Home Screen Services Info" level="specific">

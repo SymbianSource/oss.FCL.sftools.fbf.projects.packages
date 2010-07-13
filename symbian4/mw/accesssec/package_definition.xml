@@ -61,13 +61,22 @@
 <component name="eap_type_api" long-name="EAP Type API" filter="s60" class="api">
 <unit bldFile="/sf/mw/accesssec/accesssec_plat/eap_type_api/group"/>
 </component>
+<component name="eap_qt_configuration_api" long-name="EAP Qt Configuration API" filter="s60" introduced="^4" class="api">
+<unit bldFile="/sf/mw/accesssec/accesssec_plat" proFile="accesssec_plat.pro" qmakeArgs="-r"/>
+</component>
 </collection>
 <collection name="securitysettings" long-name="WLAN Security Settings" level="specific">
 <component name="accesssec_qtconfigutils" filter="s60" long-name="Access Security Config Utils" introduced="^4">
 <unit bldFile="/sf/mw/accesssec/securitysettings/qtconfigutils" proFile="qtconfigutils.pro" qmakeArgs="-r"/>
 </component>
-<component name="cpwlansecurityuiplugins" filter="s60" long-name="Control Panel WLAN Security UI Plugins" introduced="^4">
+<component name="cpwlansecurityuiplugins" filter="s60" long-name="Control Panel WLAN Security UI Plugins" introduced="^4" plugin="Y">
 <unit bldFile="/sf/mw/accesssec/securitysettings/cpwlansecurityuiplugins" proFile="cpwlansecurityuiplugins.pro" qmakeArgs="-r"/>
+</component>
+<component name="cpeapuiplugins" filter="s60" long-name="Control Panel EAP UI Pugins" introduced="^4" plugin="Y">
+<unit bldFile="/sf/mw/accesssec/securitysettings/cpeapuiplugins" proFile="cpeapuiplugins.pro" qmakeArgs="-r"/>
+</component>
+<component name="eapqtdialogs" filter="s60" long-name="EAP Qt Dialogs" introduced="^4">
+<unit bldFile="/sf/mw/accesssec/securitysettings/eapqtdialogs" proFile="eapqtdialogs.pro" qmakeArgs="-r"/>
 </component>
 </collection>
 <collection name="eapol" long-name="EAPOL" level="framework">
