@@ -368,7 +368,6 @@
 	<xsl:param name="down"/>
 	<xsl:param name="replaces"/>
 	<xsl:variable name="this" select="."/>	<!-- current item -->
-
 	<!-- match = this item in the downstream model -->	
 	<xsl:variable name="match" select="$other/*[@id=current()/@id]"/>
 
@@ -570,7 +569,6 @@
 	<xsl:param name="remove-before" select="0"/> <!-- set to true if any before attribute is to be removed -->
 	<xsl:param name="origin"/>	<!--the element containing the @name to use the origin-model attribute  -->
 	<xsl:param name="root"/> 	<!--the systemModel element in the upstream doc  -->
-
 	<xsl:choose>
 		<!-- this might slow things down, consider making optional -->
 		<xsl:when test="$root/descendant::collection[@id!=current()/../@id]/component[@id=current()/@id]">
@@ -592,10 +590,65 @@
 						<xsl:copy-of select="$origin/@root"/>
 					</xsl:if>
 				</xsl:if>
-				<xsl:copy-of select="*|comment()"/>
+				<xsl:apply-templates select="*|comment()" mode="merge-copy-of">
+					<xsl:with-param name="origin" select="$origin"/>
+					<xsl:with-param name="root" select="$root"/>
+				</xsl:apply-templates>
 			</xsl:copy>
 		</xsl:otherwise>
 	</xsl:choose>
+</xsl:template>
+
+
+<xsl:template match="unit" mode="merge-copy-of">
+	<xsl:param name="origin"/>	<!--the element containing the @name to use the origin-model attribute  -->
+	<xsl:param name="root"/> 	<!--the systemModel element in the upstream doc  -->
+	<xsl:copy>
+				<xsl:apply-templates select="@*" mode="merge-copy-of">
+					<xsl:with-param name="origin" select="$origin"/>
+					<xsl:with-param name="root" select="$root"/>
+				</xsl:apply-templates>
+	</xsl:copy>
+</xsl:template>
+
+
+
+<xsl:template match="unit/@bldFile | unit/@mrp | unit/@bldfile" mode="merge-copy-of">
+	<xsl:param name="origin" select="/.."/>	<!--the element containing the @name to use the origin-model attribute  -->
+
+	<xsl:attribute name="{name()}">
+		<xsl:choose>
+			<xsl:when test="not($origin/@pathto)"><xsl:value-of select="."/></xsl:when>
+			<xsl:when test="(contains(.,'://') and not(contains(substring-before(.,'://'),'/'))) or starts-with(.,'/')"> <!-- absolute URI or absolute path-->
+				<xsl:value-of select="."/>
+			</xsl:when>
+			<xsl:when test="contains($origin/@pathto,'://') and not(contains(substring-before($origin/@pathto,'://'),'/'))"> <!-- absolute URI for downstream sysdef not valif for unit paths, just copy and raise warning-->
+				<xsl:message>ERROR: Could not resolve relative path in downstream file: <xsl:value-of select="."/> relative to absolute URI <xsl:value-of select="$origin/@pathto"/></xsl:message>
+				<xsl:value-of select="."/>
+			</xsl:when>
+		<xsl:otherwise> <!-- relative link -->
+			<xsl:call-template name="lastbefore">
+				<xsl:with-param name="string" select="$origin/@pathto"/>
+			</xsl:call-template>/<xsl:value-of select="."/>
+		</xsl:otherwise>
+		</xsl:choose>
+	</xsl:attribute>
+</xsl:template>
+
+
+<!-- path handling follows -->
+
+ <xsl:template name="lastbefore"><xsl:param name="string"/><xsl:param name="substr" select="'/'"/>
+        <xsl:if test="contains($string,$substr)">
+                <xsl:value-of select="substring-before($string,$substr)"/>
+                <xsl:if test="contains(substring-after($string,$substr),$substr)">
+	                <xsl:value-of select="$substr"/>
+	              </xsl:if>
+        <xsl:call-template name="lastbefore">
+                <xsl:with-param name="string" select="substring-after($string,$substr)"/>
+                <xsl:with-param name="substr" select="$substr"/>
+        </xsl:call-template>
+        </xsl:if>
 </xsl:template>
 
 </xsl:stylesheet>

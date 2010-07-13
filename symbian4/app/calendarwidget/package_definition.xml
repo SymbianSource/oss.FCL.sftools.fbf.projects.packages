@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
+   <package id="calendarwidget" name="Calendar Widget" levels="build app">
+    <collection id="calendarwidget_info" name="Calendar Widget Info" level="build">
+     <component id="calendarwidget_rom" name="Calendar Widget ROM" filter="dfs_build" introduced="^4">
+		<!-- remove subdirs and put exports into a real bld.inf  -->
+      <unit bldFile="." qt:proFile="calendarwidget.pro" qt:qmakeArgs="-r"/>
+     </component>
+    </collection>
+    <collection id="calendarwidgetinstaller" name="Calendar Widget Installer" level="build">
+		<!-- collection is really a component, need to move down a directory -->
+     <component id="calendarwidgetinstaller_build" name="Calendar Widget Installer Build" filter="dfs_build" introduced="^4">
+      <!--  built by calendarwidget_rom
+	  <unit bldFile="calendarwidgetinstaller" qt:qmakeArgs="-r" qt:proFile="calendarwidgetinstaller.pro"/> -->
+     </component>
+    </collection>
+    <collection id="calendarwidgetplugin" name="Calendar Widget Plugin" level="app">
+		<!-- collection is really a component, need to move down a directory -->
+     <component id="calendarwidgetplugin_build" name="Calendar Widget Plugin Build" filter="dfs_build" introduced="^4" class="plugin">
+      <!--  built by calendarwidget_rom
+	  <unit bldFile="calendarwidgetplugin" qt:qmakeArgs="-r" qt:proFile="calendarwidgetplugin.pro"/> -->
+     </component>
+     <component id="calendarwidgetplugin_test" name="Calendar Widget Plugin Test" filter="dfs_build" introduced="^4">
+      <unit bldFile="calendarwidgetplugin/tsrc" qt:qmakeArgs="-r" qt:proFile="tsrc.pro"/>
+     </component>
+    </collection>
+   </package>
+</SystemDefinition>

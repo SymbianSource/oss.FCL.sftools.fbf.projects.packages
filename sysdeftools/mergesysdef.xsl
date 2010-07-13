@@ -1,4 +1,4 @@
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:exslt="http://exslt.org/common">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:exslt="http://exslt.org/common" exclude-result-prefixes="exslt">
 <!--Copyright (c) 2009 Nokia Corporation and/or its subsidiary(-ies).
 	All rights reserved.
 	This component and the accompanying materials are made available
@@ -100,7 +100,7 @@
 		<sysdef name="{$upname}"/>
 	</xsl:variable>
 	<xsl:variable name="downmodel">
-		<sysdef name="{$downname}"/>
+		<sysdef name="{$downname}" pathto="{$Downstream}"/>
 	</xsl:variable>
 	
 	<xsl:choose>
