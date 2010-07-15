@@ -92,7 +92,7 @@
 
 <xsl:template match="@before|@id|package/@span|layer/@span|collection/@level|package/@level|package/@levels|layer/@levels" mode="valid"/> <!-- really should check syntax -->
 
-<xsl:template match="@name|@href|@filter|unit/@version|unit/@prebuilt" mode="valid"/> 
+<xsl:template match="@name|@href|@filter|package/@version|unit/@version|unit/@prebuilt" mode="valid"/> 
 
 <xsl:template match="component/@introduced|component/@deprecated" mode="valid"/> 
 
@@ -305,7 +305,7 @@
 </xsl:template>
 
 
-<xsl:template match="unit/@*" priority="-1">	
+<xsl:template match="unit/@* | meta/@*" priority="-1">	
 	<xsl:apply-templates select="." mode="valid"/>
 </xsl:template>
 
@@ -373,7 +373,7 @@
 				<xsl:when test="ancestor::collection"/>
 			</xsl:choose>/<xsl:apply-templates select="ancestor::component" mode="localid"/>/</xsl:variable>
 		<xsl:choose>
-			<xsl:when test="not(starts-with(concat(.,'/'),$segment)) and $path-errors">
+			<xsl:when test="not(starts-with(concat(.,'/'),$segment) or starts-with(concat('/',.,'/'),$segment)) and $path-errors">
 				<xsl:call-template name="Note"><xsl:with-param name="text">Unexpected <code><xsl:value-of select="name()"/></code> path for <xsl:apply-templates mode="path" select="../../../@id"/> -&gt; <strong><xsl:apply-templates mode="path" select="../../@id"/></strong>: "<xsl:value-of select="$fullpath"/>"</xsl:with-param></xsl:call-template>
 			</xsl:when>
 		</xsl:choose>
