@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
- <package id="remoteconn" name="Remote Connectivity" levels="plugin framework server generic specific">
-  <collection id="remoteconn_info" name="Remote Connectivity Info" level="specific">
+ <package id="remoteconn" name="Remote Connectivity" levels="plugin framework server generic api">
+  <collection id="remoteconn_info" name="Remote Connectivity Info" level="api">
    <component id="remoteconn_metadata" name="Remote Connectivity Metadata" class="config" introduced="^2" purpose="development" target="desktop">
     <unit mrp="remoteconn_info/remoteconn_metadata/remoteconn_metadata.mrp"/>
+   </component>
+  </collection>
+  <collection id="remoteconn_plat" name="Remote Connectivity Platform Interfaces" level="api">
+   <component id="dialup_connection_status_api" name="Dialup Connection Status API" class="api" filter="s60">
+    <meta rel="Api" href="remoteconn_plat/dialup_connection_status_api/dialup_connection_status_api.metaxml"/>
+    <unit bldFile="remoteconn_plat/dialup_connection_status_api/group"/>
+   </component>
+   <component id="dun_secondary_display_notification_api" name="Dialup Secondary Display Notification API" class="api" filter="s60">
+    <meta rel="Api" href="remoteconn_plat/dun_secondary_display_notification_api/dun_secondary_display_notification_api.metaxml"/>
+    <unit bldFile="remoteconn_plat/dun_secondary_display_notification_api/group"/>
+   </component>
+   <component id="generic_hid_api" name="Generic HID API" class="api" filter="s60">
+    <!-- Missing? <meta rel="Api" href="remoteconn_plat/generic_hid_api/generic_hid_api.metaxml"/> -->
+    <unit bldFile="remoteconn_plat/generic_hid_api/group"/>
+   </component>
+   <component id="locod_bearer_plugin_api" name="LOCOD Bearer Plugin API" class="api" filter="s60">
+    <!-- Missing? <meta rel="Api" href="remoteconn_plat/locod_bearer_plugin_api/locod_bearer_plugin_api.metaxml"/> -->
+    <unit bldFile="remoteconn_plat/locod_bearer_plugin_api/group"/>
+   </component>
+   <component id="locod_service_plugin_api" name="LOCOD Service Plugin API" class="api" filter="s60">
+    <!-- Missing? <meta rel="Api" href="remoteconn_plat/locod_service_plugin_api/locod_service_plugin_api.metaxml"/> -->
+    <unit bldFile="remoteconn_plat/locod_service_plugin_api/group"/>
    </component>
   </collection>
   <collection id="mtptransports" name="MTP Transports" level="plugin">
