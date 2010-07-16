@@ -183,11 +183,9 @@
 <unit bldFile="/sf/mw/securitysrv/securitydialogs/autolock/indicatorplugin" proFile="indicatorautolockplugin.pro" qmakeArgs="-r"/>
 </component>
 <component name="autolockuseractivityservice" long-name="Auto Lock User Activity Service" introduced="^4" filter="s60">
-<!-- Can't have two .pro files in the same dir: their generated bld.infs will overwrite each other-->
-<unit bldFile="/sf/mw/securitysrv/securitydialogs/autolock" proFile="autolockuseractivityservice.pro" qmakeArgs="-r"/>
+<unit bldFile="/sf/mw/securitysrv/securitydialogs/autolock/autolockuseractivityservice" proFile="autolockuseractivityservice.pro" qmakeArgs="-r"/>
 </component>
 <component name="autolocksrv" long-name="Auto Lock Server" introduced="^4" filter="s60">
-<!-- Can't have two .pro files in the same dir: their generated bld.infs will overwrite each other-->
 <unit bldFile="/sf/mw/securitysrv/securitydialogs/autolock" proFile="autolock.pro" qmakeArgs="-r"/>
 </component>
 </collection>

@@ -61,6 +61,10 @@
 <component name="input_language_info_api" long-name="Input Language Info API" filter="s60" class="api">
 <unit bldFile="/sf/mw/inputmethods/inputmethods_pub/input_language_info_api/group"/>
 </component>
+<component name="ptiengine_iti_api" long-name="PtiEngine API" filter="s60" class="api">
+<!-- conditional on RD_INTELLIGENT_TEXT_INPUT, but this is #defined in SF builds -->
+<unit bldFile="/sf/mw/inputmethods/inputmethods_pub/ptiengine_iti_api/group"/>
+</component>
 </collection>
 <collection name="inputmethods_plat" long-name="Input Methods Platform Interfaces" level="api">
 <component name="pen_input_server_api" long-name="Pen Input Server API" filter="s60" class="api">
