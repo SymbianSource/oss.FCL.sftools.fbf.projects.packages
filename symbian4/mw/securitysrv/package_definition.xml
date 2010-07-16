@@ -143,11 +143,9 @@
       <unit bldFile="securitydialogs/autolock/indicatorplugin" qt:proFile="indicatorautolockplugin.pro" qt:qmakeArgs="-r"/>
    </component>
    <component id="autolockuseractivityservice" name="Auto Lock User Activity Service" introduced="^4" filter="s60">
-		<!-- Can't have two .pro files in the same dir: their generated bld.infs will overwrite each other-->
-      <unit bldFile="securitydialogs/autolock" qt:proFile="autolockuseractivityservice.pro" qt:qmakeArgs="-r"/>
+      <unit bldFile="securitydialogs/autolock/autolockuseractivityservice" qt:proFile="autolockuseractivityservice.pro" qt:qmakeArgs="-r"/>
    </component>
    <component id="autolocksrv" name="Auto Lock Server" introduced="^4" filter="s60">
-		<!-- Can't have two .pro files in the same dir: their generated bld.infs will overwrite each other-->
       <unit bldFile="securitydialogs/autolock" qt:proFile="autolock.pro" qt:qmakeArgs="-r"/>
    </component>
   </collection>
