@@ -36,6 +36,13 @@
     </meta>
     <unit bldFile="inputmethods_plat/aknfep_status_api/group"/>
    </component>
+   <component id="ptiengine_key_definations_api" name="PTI Engine Key Definitions API" class="api" filter="s60">
+    <meta rel="Api" href="inputmethods_plat/ptiengine_key_definations_api/ptiengine_key_definations_api.metaxml"/>
+    <meta rel="config">
+     <defined condition="RD_INTELLIGENT_TEXT_INPUT"/>
+    </meta>
+    <unit bldFile="inputmethods_plat/ptiengine_key_definations_api/group"/>
+   </component>
    <component id="aknfep_definitions_api" name="Avkon FEP Definitions API" class="api" filter="s60">
     <meta rel="Api" href="inputmethods_plat/aknfep_definitions_api/aknfep_definitions_api.metaxml"/>
     <unit bldFile="inputmethods_plat/aknfep_definitions_api/group"/>
