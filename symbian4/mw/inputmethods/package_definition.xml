@@ -79,6 +79,9 @@
 <component name="aknfep_status_api" long-name="Avkon FEP Status API" filter="s60" class="api">
 <unit bldFile="/sf/mw/inputmethods/inputmethods_plat/aknfep_status_api/group"/>
 </component>
+<component name="ptiengine_key_definations_api" long-name="PTI Engine Key Definitions API" filter="s60" class="api">
+<unit bldFile="/sf/mw/inputmethods/inputmethods_plat/ptiengine_key_definations_api/group"/>
+</component>
 <component name="aknfep_definitions_api" long-name="Avkon FEP Definitions API" filter="s60" class="api">
 <unit bldFile="/sf/mw/inputmethods/inputmethods_plat/aknfep_definitions_api/group"/>
 </component>
