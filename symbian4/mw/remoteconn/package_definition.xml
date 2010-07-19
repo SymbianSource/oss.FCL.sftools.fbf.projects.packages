@@ -28,6 +28,20 @@
     <unit bldFile="remoteconn_plat/locod_service_plugin_api/group"/>
    </component>
   </collection>
+  <collection id="localconnectivityservice" name="Local Connectivity Service" level="plugin">
+   <component id="locod" name="LOCOD" introduced="^4">
+    <unit bldFile="localconnectivityservice/locod/group" mrp="localconnectivityservice/locod/group/locod.mrp"/>
+   </component>
+   <component id="dun" name="dun" introduced="^4">
+    <unit bldFile="localconnectivityservice/dun/group" mrp="localconnectivityservice/dun/group/dun.mrp"/>
+   </component>
+   <component id="generichid" name="Generic HID" introduced="^4">
+    <unit bldFile="localconnectivityservice/generichid/group" mrp="localconnectivityservice/generichid/group/generichid.mrp"/>
+   </component>
+   <component id="headset" name="Headset" introduced="^4">
+    <unit bldFile="localconnectivityservice/headset/group" mrp="localconnectivityservice/headset/group/headset.mrp"/>
+   </component>
+  </collection>
   <collection id="mtptransports" name="MTP Transports" level="plugin">
    <component id="mtpusbtransport" name="MTP USB Transport" introduced="^2" purpose="optional" class="plugin">
     <unit bldFile="mtptransports/mtpusbtransport/group" mrp="mtptransports/mtpusbtransport/group/mtp_usbsic.mrp"/>
