@@ -157,6 +157,9 @@
 <component name="phone_application_voip_commands_api" long-name="Phone Application VOIP Commands API" filter="s60" class="api">
 <unit bldFile="/sf/app/phone/phone_plat/phone_application_voip_commands_api/group"/>
 </component>
+<component name="phone_telephony_menu_extension_api" long-name="Telephony Menu Extension API" filter="s60" class="api">
+<unit bldFile="/sf/app/phone/phone_plat/telephony_menu_extension_api/group"/>
+</component>
 <component name="phone_telephony_mediator_api" long-name="Telephony Mediator API" filter="s60" class="api">
 <unit bldFile="/sf/app/phone/phone_plat/telephony_mediator_api/group"/>
 </component>
@@ -176,6 +179,9 @@
 </component>
 <component name="infowidgetplugin" filter="s60" long-name="Info Widget Plugin" introduced="^4" plugin="Y">
 <unit bldFile="/sf/app/phone/phoneplugins/infowidgetplugin" proFile="infowidgetplugin.pro"/>
+</component>
+<component name="phoneindicatorplugin" filter="s60" long-name="Phone Indicator Plugin" introduced="^4" plugin="Y">
+<unit bldFile="/sf/app/phone/phoneplugins/phoneindicatorplugin" proFile="phoneindicatorplugin.pro"/>
 </component>
 </collection>
 <collection name="phonesettings" long-name="Phone Settings" level="plugin">
