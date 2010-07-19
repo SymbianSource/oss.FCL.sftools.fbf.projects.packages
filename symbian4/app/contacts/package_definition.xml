@@ -75,11 +75,6 @@
 <unit bldFile="/sf/app/contacts/phonebookui" proFile="phonebookui.pro"/>
 </component>
 </collection>
-<collection name="phonebookengines_old" long-name="Old Phonebook Engines" level="engine">
-<component name="contactsmodel" long-name="Contacts Model" introduced="ER5" purpose="optional">
-<unit bldFile="/sf/app/contacts/phonebookengines_old/contactsmodel/groupsql" mrp="/sf/app/contacts/phonebookengines_old/contactsmodel/groupsql/app-engines_cntmodel.mrp" version="2"/>
-</component>
-</collection>
 <collection name="phonebookengines" long-name="Phonebook Engines" level="engine">
 <component name="cntfindplugin" filter="s60" long-name="Contacts Find Plugin" introduced="^2" plugin="Y">
 <unit bldFile="/sf/app/contacts/phonebookengines/cntfindplugin" proFile="cntfindplugin.pro"/>
