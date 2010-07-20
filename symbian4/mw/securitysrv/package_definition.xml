@@ -143,6 +143,7 @@
       <unit bldFile="securitydialogs/autolock/indicatorplugin" qt:proFile="indicatorautolockplugin.pro" qt:qmakeArgs="-r"/>
    </component>
    <component id="autolockuseractivityservice" name="Auto Lock User Activity Service" introduced="^4" filter="s60">
+		<!-- Can't have a component inside another. Need to move to securitydialogs/autolockuseractivityservice -->
       <unit bldFile="securitydialogs/autolock/autolockuseractivityservice" qt:proFile="autolockuseractivityservice.pro" qt:qmakeArgs="-r"/>
    </component>
    <component id="autolocksrv" name="Auto Lock Server" introduced="^4" filter="s60">

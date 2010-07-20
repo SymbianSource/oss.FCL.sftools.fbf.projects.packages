@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
- <package id="remoteconn" name="Remote Connectivity" levels="plugin framework server generic api">
-  <collection id="remoteconn_info" name="Remote Connectivity Info" level="api">
+ <package id="remoteconn" name="Remote Connectivity" levels="plugin framework server generic specific">
+  <collection id="remoteconn_info" name="Remote Connectivity Info" level="specific">
    <component id="remoteconn_metadata" name="Remote Connectivity Metadata" class="config" introduced="^2" purpose="development" target="desktop">
     <unit mrp="remoteconn_info/remoteconn_metadata/remoteconn_metadata.mrp"/>
    </component>
   </collection>
-  <collection id="remoteconn_plat" name="Remote Connectivity Platform Interfaces" level="api">
+  <collection id="remoteconn_plat" name="Remote Connectivity Platform Interfaces" level="specific">
    <component id="dialup_connection_status_api" name="Dialup Connection Status API" class="api" filter="s60">
     <meta rel="Api" href="remoteconn_plat/dialup_connection_status_api/dialup_connection_status_api.metaxml"/>
     <unit bldFile="remoteconn_plat/dialup_connection_status_api/group"/>
@@ -19,34 +19,34 @@
     <!-- Missing? <meta rel="Api" href="remoteconn_plat/generic_hid_api/generic_hid_api.metaxml"/> -->
     <unit bldFile="remoteconn_plat/generic_hid_api/group"/>
    </component>
-   <component id="locod_bearer_plugin_api" name="LOCOD Bearer Plugin API" class="api" filter="s60">
+   <component id="locod_bearer_plugin_api" name="Local Connectivity Daemon Bearer Plugin API" class="api" filter="s60">
     <!-- Missing? <meta rel="Api" href="remoteconn_plat/locod_bearer_plugin_api/locod_bearer_plugin_api.metaxml"/> -->
     <unit bldFile="remoteconn_plat/locod_bearer_plugin_api/group"/>
    </component>
-   <component id="locod_service_plugin_api" name="LOCOD Service Plugin API" class="api" filter="s60">
+   <component id="locod_service_plugin_api" name="Local Connectivity Daemon Service Plugin API" class="api" filter="s60">
     <!-- Missing? <meta rel="Api" href="remoteconn_plat/locod_service_plugin_api/locod_service_plugin_api.metaxml"/> -->
     <unit bldFile="remoteconn_plat/locod_service_plugin_api/group"/>
    </component>
   </collection>
-  <collection id="localconnectivityservice" name="Local Connectivity Service" level="plugin">
-   <component id="locod" name="LOCOD" introduced="^4">
-    <unit bldFile="localconnectivityservice/locod/group" mrp="localconnectivityservice/locod/group/locod.mrp"/>
+  <collection id="localconnectivityservice" name="Local Connectivity Service" level="server">
+   <component id="locod" name="Local Connectivity Daemon" introduced="^4" purpose="optional" filter="s60">
+         <unit bldFile="localconnectivityservice/locod/group"/>
    </component>
-   <component id="dun" name="dun" introduced="^4">
-    <unit bldFile="localconnectivityservice/dun/group" mrp="localconnectivityservice/dun/group/dun.mrp"/>
+   <component id="dun" name="Dial-Up Networking" introduced="^4" purpose="optional" filter="s60">
+         <unit bldFile="localconnectivityservice/dun/group"/>
    </component>
-   <component id="generichid" name="Generic HID" introduced="^4">
-    <unit bldFile="localconnectivityservice/generichid/group" mrp="localconnectivityservice/generichid/group/generichid.mrp"/>
+   <component id="generichid" name="Generic Human-Interface Device" introduced="^4" purpose="optional" filter="s60">
+         <unit bldFile="localconnectivityservice/generichid/group"/>
    </component>
-   <component id="headset" name="Headset" introduced="^4">
-    <unit bldFile="localconnectivityservice/headset/group" mrp="localconnectivityservice/headset/group/headset.mrp"/>
+   <component id="headset" name="Headset" introduced="^4" purpose="optional" filter="s60">
+         <unit bldFile="localconnectivityservice/headset/group"/>
    </component>
   </collection>
   <collection id="mtptransports" name="MTP Transports" level="plugin">
-   <component id="mtpusbtransport" name="MTP USB Transport" introduced="^2" purpose="optional" class="plugin">
+   <component id="mtpusbtransport" name="MTP USB Transport" introduced="^2" purpose="optional" class="plugin" filter="s60">
     <unit bldFile="mtptransports/mtpusbtransport/group" mrp="mtptransports/mtpusbtransport/group/mtp_usbsic.mrp"/>
    </component>
-   <component id="mtpptpiptransport" name="MTP PTP-IP Transport" introduced="^3" purpose="optional" class="plugin">
+   <component id="mtpptpiptransport" name="MTP PTP-IP Transport" introduced="^3" purpose="optional" class="plugin" filter="s60">
     <unit bldFile="mtptransports/mtpptpiptransport/group" mrp="mtptransports/mtpptpiptransport/group/mtp_ptpip.mrp"/>
    </component>
    <component id="mtpcontroller" name="MTP Controller" introduced="^3" purpose="optional" class="plugin">
@@ -57,26 +57,34 @@
    </component>
   </collection>
   <collection id="mtpfws" name="MTP Frameworks" level="framework">
-   <component id="mtpfw" name="MTP Framework" introduced="^2" purpose="optional">
+   <component id="mtpfw" name="MTP Framework" introduced="^2" purpose="optional" filter="s60">
     <unit bldFile="mtpfws/mtpfw/group" mrp="mtpfws/mtpfw/group/mtp_framework.mrp"/>
+   </component>
+   <component id="devdpextn" name="MTP Device Provider Extension" introduced="^4" purpose="optional" filter="s60">
+ 	  <!-- can't have a component inside another component. Need to move to mtpfws/devdpextn/group -->
+	 <unit bldFile="mtpfws/mtpfw/dataproviders/devdp/devdpextn/group"/>
    </component>
   </collection>
   <collection id="mtpdataproviders" name="MTP Data Providers" level="generic">
-   <component id="mtpfileandfolderdp" name="MTP File and Folder Provider" introduced="^2" purpose="optional" class="plugin">
+   <component id="mtpfileandfolderdp" name="MTP File and Folder Provider" introduced="^2" purpose="optional" class="plugin" filter="s60">
     <unit bldFile="mtpdataproviders/mtpfileandfolderdp/group" mrp="mtpdataproviders/mtpfileandfolderdp/group/mtp_filedp.mrp"/>
    </component>
-   <component id="mtpimagedp" name="MTP Image Data Provider" filter="gt" introduced="^3" purpose="optional" class="plugin">
+   <component id="mtpimagedp" name="MTP Image Data Provider" introduced="^3" purpose="optional" class="plugin" filter="s60">
     <unit bldFile="mtpdataproviders/mtpimagedp/group" mrp="mtpdataproviders/mtpimagedp/group/mtp_imagedp.mrp"/>
    </component>
-   <component id="mtppictbridgedp" name="MTP PictBridge Data Provider" filter="gt" introduced="^3" purpose="optional" class="plugin">
+   <component id="mtppictbridgedp" name="MTP PictBridge Data Provider" introduced="^3" purpose="optional" class="plugin" filter="s60">
     <unit bldFile="mtpdataproviders/mtppictbridgedp/group" mrp="mtpdataproviders/mtppictbridgedp/group/mtp_pictbridgedp.mrp"/>
    </component>
-   <component id="mtpplaybackcontroldp" name="MTP Playback Control Data Provider" introduced="^4" purpose="optional" class="plugin">
+   <component id="pictbridgeengine" name="MTP PictBridge Engine" introduced="^4" purpose="optional" filter="s60">
+ 	  <!-- can't have a component inside another component. Need to move to mtpdataproviders/pictbridgeengine/group -->
+     <unit bldFile="mtpdataproviders/mtppictbridgedp/pictbridgeengine/group"/>
+   </component>
+   <component id="mtpplaybackcontroldp" name="MTP Playback Control Data Provider" introduced="^4" purpose="optional" class="plugin" filter="s60">
     <unit bldFile="mtpdataproviders/mtpplaybackcontroldp/group" mrp="mtpdataproviders/mtpplaybackcontroldp/group/mtp_playbackcontroldp.mrp"/>
    </component>
   </collection>
   <collection id="backupandrestore" name="Backup and Restore" level="specific">
-   <component id="backupengine" name="Backup Engine" introduced="9.0" purpose="optional">
+   <component id="backupengine" name="Backup Engine" introduced="9.0" purpose="optional" filter="s60">
     <unit bldFile="backupandrestore/backupengine/group" mrp="backupandrestore/backupengine/group/connectivity_backupengine.mrp"/>
    </component>
    <component id="backuptest" name="Backup Test" introduced="^2" purpose="development">
