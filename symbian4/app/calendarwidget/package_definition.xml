@@ -50,31 +50,31 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
-   <block name="calendarwidget" level="apps" long-name="Calendar Widget" levels="build app">
+   <block name="calendarwidget" level="apps" levels="build app" long-name="Calendar Widget">
 <collection name="calendarwidget_info" long-name="Calendar Widget Info" level="build">
-<component name="calendarwidget_rom" long-name="Calendar Widget ROM" filter="dfs_build" introduced="^4">
+<component name="calendarwidget_rom" long-name="Calendar Widget ROM" introduced="^4" filter="dfs_build" purpose="optional">
 <!-- remove subdirs and put exports into a real bld.inf  -->
-<unit bldFile="/sf/app/calendarwidget" proFile="calendarwidget.pro" qmakeArgs="-r"/>
+<unit bldFile="/sf/app/calendarwidget/." proFile="calendarwidget.pro" qmakeArgs="-r"/>
 </component>
 </collection>
 <collection name="calendarwidgetinstaller" long-name="Calendar Widget Installer" level="build">
 <!-- collection is really a component, need to move down a directory -->
-<component name="calendarwidgetinstaller_build" long-name="Calendar Widget Installer Build" filter="dfs_build" introduced="^4" class="placeholder">
+<component name="calendarwidgetinstaller_build" long-name="Calendar Widget Installer Build" introduced="^4" filter="dfs_build" purpose="optional" class="placeholder">
 <!--  built by calendarwidget_rom
 	  <unit bldFile="calendarwidgetinstaller" qt:qmakeArgs="-r" qt:proFile="calendarwidgetinstaller.pro"/> -->
 </component>
 </collection>
 <collection name="calendarwidgetplugin" long-name="Calendar Widget Plugin" level="app">
 <!-- collection is really a component, need to move down a directory -->
-<component name="calendarwidgetplugin_build" long-name="Calendar Widget Plugin Build" filter="dfs_build" introduced="^4" plugin="Y" class="placeholder">
+<component name="calendarwidgetplugin_build" long-name="Calendar Widget Plugin Build" introduced="^4" filter="dfs_build" purpose="optional" plugin="Y" class="placeholder">
 <!--  built by calendarwidget_rom
 	  <unit bldFile="calendarwidgetplugin" qt:qmakeArgs="-r" qt:proFile="calendarwidgetplugin.pro"/> -->
 </component>
-<component name="calendarwidgetplugin_test" long-name="Calendar Widget Plugin Test" filter="dfs_build" introduced="^4">
-<unit bldFile="/sf/app/calendarwidget/calendarwidgetplugin/tsrc" qmakeArgs="-r" proFile="tsrc.pro"/>
+<component name="calendarwidgetplugin_test" long-name="Calendar Widget Plugin Test" introduced="^4" filter="dfs_build" purpose="optional">
+<unit bldFile="/sf/app/calendarwidget/calendarwidgetplugin/tsrc" proFile="tsrc.pro" qmakeArgs="-r"/>
 </component>
 </collection>
 </block>

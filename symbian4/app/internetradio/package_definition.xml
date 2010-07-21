@@ -50,24 +50,24 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
-   <block name="internetradio" level="apps" long-name="Internet Radio Apps" levels="engine server ui">
+   <block name="internetradio" level="apps" levels="engine server ui" long-name="Internet Radio Apps">
 <collection name="internetradio2_0" long-name="Internet Radio 2.0" level="ui">
 <!-- collection is really a component. Move down a dir -->
-<component name="internetradio2_0_build" long-name="Internet Radio 2.0 Build">
+<component name="internetradio2_0_build" long-name="Internet Radio 2.0 Build" purpose="optional">
 <unit bldFile="/sf/app/internetradio/internetradio2.0/group"/>
 </component>
 </collection>
 <collection name="presetserver" long-name="Preset Server" level="server">
 <!-- collection is really a component. Move down a dir -->
-<component name="presetserver_build" long-name="Preset Server Build">
+<component name="presetserver_build" long-name="Preset Server Build" purpose="optional">
 <unit bldFile="/sf/app/internetradio/presetserver/group"/>
 </component>
 </collection>
 <collection name="qtinternetradio" long-name="Qt Internet Radio">
-<component name="qtinternetradio_build" long-name="Qt Internet Radio Build">
+<component name="qtinternetradio_build" long-name="Qt Internet Radio Build" purpose="optional">
 <!--  Move down a dir or break into components-->
 <unit bldFile="/sf/app/internetradio/qtinternetradio" proFile="all.pro" qmakeArgs="-r -config rom"/>
 </component>
