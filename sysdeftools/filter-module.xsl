@@ -46,7 +46,7 @@
 <!-- filter-has =  item's @filter must have all filters in the list. ie it can have any other filters, but these must all be present	
 -->
 <xsl:template match="filter-has" mode="filter"><xsl:param name="item"/>
-	<xsl:if test="$item[(self::component or self::unit)  and not(unit/@filter or self::unit[not(../unit[@filter])])]">
+	<xsl:if test="$item[self::component and not(unit/@filter)] or $item[self::unit and ../unit/@filter]">
 		<xsl:variable name="my-filters">
 			<xsl:call-template name="filter-list">
 				<xsl:with-param name="f" select="$item/parent::component/@filter"/>

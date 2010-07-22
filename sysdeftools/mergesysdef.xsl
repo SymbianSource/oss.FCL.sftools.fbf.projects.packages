@@ -119,5 +119,14 @@
 	</xsl:choose>
 </xsl:template>
 
+<xsl:include href="path-module.xsl"/>
 <xsl:include href="mergesysdef-module.xsl"/>
+
+<xsl:template match="@*[local-name()='proFile' or local-name()='qmakeArgs'  or namespace-uri()='qt']" mode="merge-copy-of">
+	<!-- this fixes a xalan-j bug where it changes the namespace in the merged model to just "qt"-->
+	<xsl:attribute name="{local-name()}" namespace="http://www.nokia.com/qt">
+		<xsl:value-of select="."/>
+	</xsl:attribute>
+</xsl:template>
+
 </xsl:stylesheet>
