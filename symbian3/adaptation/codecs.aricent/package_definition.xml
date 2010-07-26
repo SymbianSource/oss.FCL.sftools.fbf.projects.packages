@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="codecs.aricent" name="Aricent Codecs">
+    <collection id="utilities" name="Aricent Utilities">
+      <component id="ariprocessengine" name="Aricent Process Engine">
+        <unit bldFile="utilities/ariprocessengine/group" />
+      </component>
+      <component id="aristatemachine" name="Aricent State Machine">
+        <unit bldFile="utilities/aristatemachine/group" />
+      </component>
+    </collection>
+    <collection id="aaclc_enc" level="plugin">
+      <component id="ariaaclcencmmfcodec">
+        <unit bldFile="aaclc_enc/ariaaclcencmmfcodec/group" />
+      </component>
+    </collection>
+    <collection id="amrnb_dec" level="plugin">
+      <component id="ariamrnbdecmmfcodec">
+        <unit bldFile="amrnb_dec/ariamrnbdecmmfcodec/group" />
+      </component>
+    </collection>
+    <collection id="amrnb_enc" level="plugin">
+      <component id="ariamrnbencmmfcodec">
+        <unit bldFile="amrnb_enc/ariamrnbencmmfcodec/group" />
+      </component>
+    </collection>
+    <collection id="amrwb_dec" level="plugin">
+      <component id="ariamrwbdecmmfcodec">
+        <unit bldFile="amrwb_dec/ariamrwbdecmmfcodec/group" />
+      </component>
+    </collection>
+    <collection id="h264_dec" level="plugin">
+      <component id="arih264dechwdevice">
+        <unit bldFile="h264_dec/arih264dechwdevice/group" />
+      </component>
+    </collection>
+    <collection id="h264_enc" level="plugin">
+      <component id="arih264enchwdevice">
+        <unit bldFile="h264_enc/arih264enchwdevice/group" />
+      </component>
+    </collection>
+    <collection id="heaac_dec" level="plugin">
+      <component id="ariheaacdecmmfcodec">
+        <unit bldFile="heaac_dec/ariheaacdecmmfcodec/group" />
+      </component>
+    </collection>
+    <collection id="mp3_dec" level="plugin">
+      <component id="arimp3decmmfcodec">
+        <unit bldFile="mp3_dec/arimp3decmmfcodec/group" />
+      </component>
+    </collection>
+    <collection id="mp4asp_dec" level="plugin">
+      <component id="arimpeg4aspdechwdevice">
+        <unit bldFile="mp4asp_dec/arimpeg4aspdechwdevice/group" />
+      </component>
+    </collection>
+    <collection id="mp4sp_enc" level="plugin">
+      <component id="arimp4spenchwdevice">
+        <unit bldFile="mp4sp_enc/arimp4spenchwdevice/group" />
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>
