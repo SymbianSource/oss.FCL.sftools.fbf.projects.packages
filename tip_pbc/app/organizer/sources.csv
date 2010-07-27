@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/FCL/sf/app/organizer/,/sf/app/organizer,branch,tip_pbc,layers.sysdef.xml
