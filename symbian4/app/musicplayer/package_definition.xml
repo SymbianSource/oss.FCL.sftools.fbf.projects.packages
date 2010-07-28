@@ -50,96 +50,96 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
-   <block name="musicplayer" level="apps" levels="plugins support engine app" long-name="Music Player Apps">
+   <block name="musicplayer" level="apps" long-name="Music Player Apps" levels="plugins support engine app">
 <!-- move the rom .pri files into their components and uncomment the units -->
-<collection name="mpdata" long-name="Music Player Data" level="support">
+<collection name="mpdata " long-name="Music Player Data" level="support">
 <!-- collection is really a component, move down a directory -->
-<component name="mpdata_build" long-name="Music Player Data Build" introduced="^4" filter="s60" purpose="optional" class="placeholder">
+<component name="mpdata_build" filter="s60" long-name="Music Player Data Build" introduced="^4" class="placeholder">
 <!-- <unit bldFile="mpdata" qt:proFile="mpdata.pro" qt:qmakeArgs="-r -config rom"/> -->
 </component>
 </collection>
-<collection name="mpengine" long-name="Music Player Engine" level="engine">
+<collection name="mpengine " long-name="Music Player Engine" level="engine">
 <!-- collection is really a component, move down a directory -->
-<component name="mpengine_build" long-name="Music Player Engine Build" introduced="^4" filter="s60" purpose="optional" class="placeholder">
+<component name="mpengine_build" filter="s60" long-name="Music Player Engine Build" introduced="^4" class="placeholder">
 <!-- <unit bldFile="mpengine" qt:proFile="mpengine.pro" qt:qmakeArgs="-r -config rom"/> -->
 </component>
 </collection>
-<collection name="musicplayer_utilities" long-name="Music Player Utilities" level="support">
-<component name="mpnowplayingbanner" long-name="MP Now Playing Banner" introduced="^4" filter="s60" purpose="optional" class="placeholder">
+<collection name="musicplayer_utilities " long-name="Music Player Utilities" level="support">
+<component name="mpnowplayingbanner" filter="s60" long-name="MP Now Playing Banner" introduced="^4" class="placeholder">
 <!-- <unit bldFile="utilities/mpnowplayingbanner" qt:proFile="mpnowplayingbanner.pro" qt:qmakeArgs="-r -config rom"/> -->
 </component>
-<component name="mpsettingsmanager" long-name="MP Settings Manager" introduced="^4" filter="s60" purpose="optional" class="placeholder">
+<component name="mpsettingsmanager" filter="s60" long-name="MP Settings Manager" introduced="^4" class="placeholder">
 <!-- <unit bldFile="utilities/mpsettingsmanager" qt:proFile="mpsettingsmanager.pro" qt:qmakeArgs="-r -config rom"/> -->
 </component>
 </collection>
-<collection name="musicservices" long-name="Music Services" level="support">
+<collection name="musicservices " long-name="Music Services" level="support">
 <!-- collection is really a component, move down a directory -->
-<component name="musicservices_build" long-name="Music Services Build" introduced="^4" filter="s60" purpose="optional" class="placeholder">
+<component name="musicservices_build" filter="s60" long-name="Music Services Build" introduced="^4" class="placeholder">
 <!-- <unit bldFile="musicservices" qt:proFile="musicservices.pro" qt:qmakeArgs="-r -config rom"/> -->
 </component>
 </collection>
-<collection name="musicplayer_app" long-name="Music Player Application" level="app">
+<collection name="musicplayer_app " long-name="Music Player Application" level="app">
 <!-- collection is really a component, move down a directory -->
-<component name="musicplayer_app_build" long-name="Music Player Application Build" introduced="^4" filter="s60" purpose="optional" class="placeholder">
+<component name="musicplayer_app_build" filter="s60" long-name="Music Player Application Build" introduced="^4" class="placeholder">
 <!-- <unit bldFile="app" qt:proFile="app.pro" qt:qmakeArgs="-r -config rom"/> -->
 </component>
 </collection>
 <collection name="mpviewplugins" long-name="Music Player View Plugins" level="plugins">
-<component name="mpcollectionviewplugin" long-name="MP Collection View Plugin" introduced="^4" filter="s60" purpose="optional" plugin="Y" class="placeholder">
+<component name="mpcollectionviewplugin" filter="s60" long-name="MP Collection View Plugin" introduced="^4" plugin="Y" class="placeholder">
 <!--<unit bldFile="mpviewplugins/mpcollectionviewplugin" qt:proFile="mpcollectionviewplugin.pro" qt:qmakeArgs="-r -config rom"/> -->
 </component>
-<component name="mpplaybackviewplugin" long-name="MP Playback View Plugin" introduced="^4" filter="s60" purpose="optional" plugin="Y" class="placeholder">
+<component name="mpplaybackviewplugin" filter="s60" long-name="MP Playback View Plugin" introduced="^4" plugin="Y" class="placeholder">
 <!--<unit bldFile="mpviewplugins/mpplaybackviewplugin" qt:proFile="mpplaybackviewplugin.pro" qt:qmakeArgs="-r -config rom"/> -->
 </component>
-<component name="mpsettingsviewplugin" long-name="MP Settings View Plugin" introduced="^4" filter="s60" purpose="optional" plugin="Y" class="placeholder">
+<component name="mpsettingsviewplugin" filter="s60" long-name="MP Settings View Plugin" introduced="^4" plugin="Y" class="placeholder">
 <!--<unit bldFile="mpviewplugins/mpsettingsviewplugin" qt:proFile="mpsettingsviewplugin.pro" qt:qmakeArgs="-r -config rom"/> -->
 </component>
-<component name="mpdetailsviewplugin" long-name="MP Details View Plugin" introduced="^4" filter="s60" purpose="optional" plugin="Y" class="placeholder">
+<component name="mpdetailsviewplugin" filter="s60" long-name="MP Details View Plugin" introduced="^4" plugin="Y" class="placeholder">
 <!--<unit bldFile="mpviewplugins/mpdetailsviewplugin" qt:proFile="mpdetailsviewplugin.pro" qt:qmakeArgs="-r -config rom"/> -->
 </component>
-<component name="mpmediawallviewplugin" long-name="MP Media Wall View Plugin" introduced="^4" filter="s60" purpose="optional" plugin="Y" class="placeholder">
+<component name="mpmediawallviewplugin" filter="s60" long-name="MP Media Wall View Plugin" introduced="^4" plugin="Y" class="placeholder">
 <!--<unit bldFile="mpviewplugins/mpmediawallviewplugin" qt:proFile="mpmediawallviewplugin.pro" qt:qmakeArgs="-r -config rom"/> -->
 </component>
 </collection>
 <collection name="musicwidgetplugin" long-name="Music Widget Plugin" level="plugins">
-<component name="musicwidgetplugin_build" long-name="Music Widget Plugin" introduced="^4" filter="s60" purpose="optional" plugin="Y" class="placeholder">
+<component name="musicwidgetplugin_build" filter="s60" long-name="Music Widget Plugin" introduced="^4" plugin="Y" class="placeholder">
 <!--<unit bldFile="musicwidgetplugin" qt:proFile="musicwidgetplugin.pro" qt:qmakeArgs="-r -config rom"/> -->
 </component>
 </collection>
 <collection name="mpserviceplugins" long-name="Music Player Service Plugins" level="plugins">
-<component name="audioeffects" long-name="Audio Effects" introduced="^4" filter="s60" purpose="optional" plugin="Y" class="placeholder">
+<component name="audioeffects" filter="s60" long-name="Audio Effects" introduced="^4" plugin="Y" class="placeholder">
 <!--<unit bldFile="mpserviceplugins/audioeffects/group"/>-->
 </component>
-<component name="localaudio" long-name="Local Audio" introduced="^4" filter="s60" purpose="optional" plugin="Y" class="placeholder">
+<component name="localaudio" filter="s60" long-name="Local Audio" introduced="^4" plugin="Y" class="placeholder">
 <!--<unit bldFile="mpserviceplugins/localaudio/group"/>-->
 </component>
 <!-- Note: it's called SQLite, not SQLLite, just the one "L" -->
-<component name="mpxsqlitedbcommon" long-name="MPX SQLite Database Common" introduced="^4" filter="s60" purpose="optional" class="placeholder">
+<component name="mpxsqlitedbcommon" filter="s60" long-name="MPX SQLite Database Common" introduced="^4" class="placeholder">
 <!--<unit bldFile="mpserviceplugins/mpxsqlitedbcommon/group"/>-->
 </component>
-<component name="mpxsqlitedbhgplugin" long-name="MPX SQLite Database Hg Plugin" introduced="^4" filter="s60" purpose="optional" plugin="Y" class="placeholder">
+<component name="mpxsqlitedbhgplugin" filter="s60" long-name="MPX SQLite Database Hg Plugin" introduced="^4" plugin="Y" class="placeholder">
 <!--<unit bldFile="mpserviceplugins/mpxsqlitedbhgplugin/group"/>-->
 </component>
-<component name="mpxsqlitedbplugin" long-name="MPX SQLite Database Plugin" introduced="^4" filter="s60" purpose="optional" plugin="Y" class="placeholder">
+<component name="mpxsqlitedbplugin" filter="s60" long-name="MPX SQLite Database Plugin" introduced="^4" plugin="Y" class="placeholder">
 <!--<unit bldFile="mpserviceplugins/mpxsqlitedbplugin/group"/>-->
 </component>
-<component name="mpxsqlitepodcastdbplugin" long-name="MPX SQLlite Podcast Database Plugin" introduced="^4" filter="s60" purpose="optional" plugin="Y" class="placeholder">
+<component name="mpxsqlitepodcastdbplugin" filter="s60" long-name="MPX SQLlite Podcast Database Plugin" introduced="^4" plugin="Y" class="placeholder">
 <!--<unit bldFile="mpserviceplugins/mpxsqlitepodcastdbplugin/group"/>-->
 </component>
-<component name="mpxinmemoryplugin" long-name="MPX In-Memory Plugin" introduced="^4" filter="s60" purpose="optional" plugin="Y" class="placeholder">
+<component name="mpxinmemoryplugin" filter="s60" long-name="MPX In-Memory Plugin" introduced="^4" plugin="Y" class="placeholder">
 <!--<unit bldFile="mpserviceplugins/mpxinmemoryplugin/group"/>-->
 </component>
-<component name="m3uplaylistplugin" long-name="M3U Playlist Plugin" introduced="^4" filter="s60" purpose="optional" plugin="Y" class="placeholder">
+<component name="m3uplaylistplugin" filter="s60" long-name="M3U Playlist Plugin" introduced="^4" plugin="Y" class="placeholder">
 <!--<unit bldFile="mpserviceplugins/mpxsqlitepodcastdbplugin/group"/>-->
 </component>
 </collection>
 <collection name="musicplayer_info" long-name="Music Player Apps Info" level="app">
-<component name="musicplayer_build" long-name="Music Player Build" filter="s60" purpose="optional">
+<component name="musicplayer_build" filter="s60" long-name="Music Player Build">
 <!-- break up into individual components. ROM includes should be in their components -->
-<unit bldFile="/sf/app/musicplayer/." proFile="qtmusicplayer.pro" qmakeArgs="-r -config rom"/>
+<unit bldFile="/sf/app/musicplayer" proFile="qtmusicplayer.pro" qmakeArgs="-r -config rom"/>
 </component>
 </collection>
 </block>

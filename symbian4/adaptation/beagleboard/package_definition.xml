@@ -50,18 +50,18 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="adaptation" long-name="Adaptation" levels="low mw high">
-   <block name="beagleboard" level="low" levels="hw-if" long-name="Beagle Board">
+   <block name="beagleboard" level="low" long-name="Beagle Board" levels="hw-if">
 <collection name="omap3530" long-name="OMAP 3530" level="hw-if">
-<component name="omap3530_build" long-name="Beagle Board Common" introduced="^3" filter="sf_build" purpose="optional">
+<component name="omap3530_build" long-name="Beagle Board Common" introduced="^3" purpose="optional" filter="sf_build">
 <unit bldFile="/sf/adaptation/beagleboard/omap3530" mrp="/sf/adaptation/beagleboard/omap3530/base_beagle.mrp"/>
 </component>
-<component name="omap3530_kernel" long-name="Beagle Board Kernel" introduced="^3" filter="sf_build" purpose="optional">
+<component name="omap3530_kernel" long-name="Beagle Board Kernel" introduced="^3" purpose="optional" filter="sf_build">
 <unit bldFile="/sf/adaptation/beagleboard/omap3530/kernel"/>
 </component>
-<component name="beagleboard_Baseport" long-name="Beagle Board Baseport" introduced="^3" filter="sf_build" purpose="optional">
+<component name="beagleboard_Baseport" long-name="Beagle Board Baseport" introduced="^3" purpose="optional" filter="sf_build">
 <unit bldFile="/sf/adaptation/beagleboard/omap3530/beagleboard"/>
 </component>
 </collection>

@@ -50,69 +50,69 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
-   <block name="rndtools" level="services" levels="support generic test util" long-name="R&amp;D tools">
+   <block name="rndtools" level="services" long-name="R&amp;D tools" levels="support generic test util">
 <collection name="creator" long-name="Creator" level="support">
 <!-- collection is really a component. Should move down a directory -->
-<component name="creator_build" long-name="Creator Tool" filter="s60" purpose="development" class="tool">
+<component name="creator_build" filter="s60" long-name="Creator Tool" purpose="development" class="tool">
 <unit bldFile="/sf/app/rndtools/creator" proFile="creator.pro"/>
 </component>
 </collection>
 <collection name="filebrowser" long-name="File Browser" level="util">
 <!-- collection is really a component. Should move down a directory -->
-<component name="filebrowser_build" long-name="File Browser Build" filter="s60" purpose="development" class="tool">
+<component name="filebrowser_build" filter="s60" long-name="File Browser Build" purpose="development" class="tool">
 <unit bldFile="/sf/app/rndtools/filebrowser" proFile="filebrowser.pro"/>
 </component>
 </collection>
 <collection name="launcher" long-name="Launcher" level="util">
 <!-- collection is really a component. Should move down a directory -->
-<component name="launcher_build" long-name="Launcher Utility" filter="s60" purpose="development" class="tool">
+<component name="launcher_build" filter="s60" long-name="Launcher Utility" purpose="development" class="tool">
 <unit bldFile="/sf/app/rndtools/launcher" proFile="launcher.pro"/>
 </component>
 </collection>
 <collection name="loadgen" long-name="Load Generator" level="test">
 <!-- collection is really a component. Should move down a directory -->
-<component name="loadgen_build" long-name="Load Generator Application" filter="s60" purpose="development" class="tool">
+<component name="loadgen_build" filter="s60" long-name="Load Generator Application" purpose="development" class="tool">
 <unit bldFile="/sf/app/rndtools/loadgen" proFile="loadgen.pro"/>
 </component>
 </collection>
 <collection name="perfmon" long-name="Performance Monitor" level="test">
 <!-- collection is really a component. Should move down a directory -->
-<component name="perfmon_build" long-name="Performance Monitor Tool" filter="s60" purpose="development" class="tool">
+<component name="perfmon_build" filter="s60" long-name="Performance Monitor Tool" purpose="development" class="tool">
 <unit bldFile="/sf/app/rndtools/perfmon" proFile="perfmon.pro"/>
 </component>
 </collection>
 <collection name="piprofilerui" long-name="Performance Investigator Profiler UI" level="generic">
 <!-- collection is really a component. Should move down a directory -->
-<component name="piprofilerui_build" long-name="Performance Investigator Profiler UI Build" introduced="^4" filter="s60" purpose="development">
+<component name="piprofilerui_build" filter="s60" long-name="Performance Investigator Profiler UI Build" purpose="development" introduced="^4">
 <unit bldFile="/sf/app/rndtools/piprofilerui" proFile="piprofilerui.pro"/>
 </component>
 </collection>
 <collection name="screengrabber" long-name="Screen Grabber" level="util">
 <!-- collection is really a component. Should move down a directory -->
-<component name="screengrabber_build" long-name="ScreenGrabber" filter="s60" purpose="development" class="tool">
+<component name="screengrabber_build" filter="s60" long-name="ScreenGrabber" purpose="development" class="tool">
 <unit bldFile="/sf/app/rndtools/screengrabber" proFile="screengrabber.pro"/>
 </component>
 </collection>
 <collection name="stifui" long-name="STIF UI" level="generic">
-<component name="stifui_avkon" long-name="STIF UI for Avkon" filter="s60" purpose="development">
+<component name="stifui_avkon" filter="s60" long-name="STIF UI for Avkon" purpose="development">
 <unit bldFile="/sf/app/rndtools/stifui/avkon/group"/>
 </component>
 </collection>
 <collection name="memspyui" long-name="Memspy UI" level="generic">
 <!-- collection is really a component. Should move down a directory -->
-<component name="memspyui_build" long-name="Memspy UI Application" filter="s60" purpose="development" class="tool">
+<component name="memspyui_build" filter="s60" long-name="Memspy UI Application" purpose="development" class="tool">
 <unit bldFile="/sf/app/rndtools/memspyui" proFile="memspyui.pro"/>
 </component>
 </collection>
 <collection name="htiui" long-name="Harmonized Test Interface UI" level="generic">
-<component name="htiui_build" long-name="HTI UI Build" filter="s60" purpose="development">
+<component name="htiui_build" filter="s60" long-name="HTI UI Build" purpose="development">
 <!-- should split up into individual components -->
 <unit bldFile="/sf/app/rndtools/htiui/group"/>
 </component>
-<component name="htiadminqt" long-name="HTI Admin Qt" filter="s60" purpose="development">
+<component name="htiadminqt" filter="s60" long-name="HTI Admin Qt" purpose="development">
 <unit bldFile="/sf/app/rndtools/htiui/htiadminqt" proFile="HtiAdmin.pro"/>
 </component>
 </collection>

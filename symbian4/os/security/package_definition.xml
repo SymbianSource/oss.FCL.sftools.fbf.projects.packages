@@ -50,10 +50,10 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="security" level="services" levels="physical-abstraction plugins libraries management services utilities" long-name="OS Security">
+   <block name="security" level="services" long-name="OS Security" levels="physical-abstraction plugins libraries management services utilities">
 <collection name="authenticationservices" long-name="Authentication Services" level="utilities">
 <component name="authenticationserver" long-name="Authentication Server" introduced="^4" purpose="optional">
 <unit bldFile="/sf/os/security/authenticationservices/authenticationserver/group" mrp="/sf/os/security/authenticationservices/authenticationserver/group/security_authserver.mrp"/>
@@ -82,10 +82,10 @@
 </component>
 </collection>
 <collection name="crypto" long-name="Crypto Libraries" level="libraries">
-<component name="weakcryptospi" long-name="Weak Crypto SPI" introduced="^3" filter="gt" purpose="optional">
+<component name="weakcryptospi" long-name="Weak Crypto SPI" filter="gt" introduced="^3" purpose="optional">
 <unit bldFile="/sf/os/security/crypto/weakcryptospi/group" mrp="/sf/os/security/crypto/weakcryptospi/group/security_cryptospi_weak.mrp"/>
 </component>
-<component name="strongcryptospi" long-name="Strong Crypto SPI" introduced="^3" filter="gt" purpose="optional">
+<component name="strongcryptospi" long-name="Strong Crypto SPI" filter="gt" introduced="^3" purpose="optional">
 <unit bldFile="/sf/os/security/crypto/weakcryptospi/strong" mrp="/sf/os/security/crypto/weakcryptospi/group/security_cryptospi_strong.mrp"/>
 </component>
 </collection>
@@ -112,7 +112,7 @@
 </component>
 </collection>
 <collection name="cryptoplugins" long-name="Crypto Plugins" level="plugins">
-<component name="cryptospiplugins" long-name="Crypto SPI Plugins" introduced="^3" filter="gt" purpose="optional" plugin="Y">
+<component name="cryptospiplugins" long-name="Crypto SPI Plugins" filter="gt" introduced="^3" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/security/cryptoplugins/cryptospiplugins/group" mrp="/sf/os/security/cryptoplugins/cryptospiplugins/group/security_cryptospi_plugins.mrp"/>
 </component>
 </collection>
@@ -123,7 +123,7 @@
 <component name="filebasedcertificateandkeystores" long-name="File-based Certificate and Key Stores" introduced="8.0" purpose="optional">
 <unit bldFile="/sf/os/security/cryptoservices/filebasedcertificateandkeystores/group" mrp="/sf/os/security/cryptoservices/filebasedcertificateandkeystores/group/security_filetokens.mrp"/>
 </component>
-<component name="browserrootcertificates" long-name="Browser Root Certificates" introduced="^2" filter="sf_build" purpose="optional">
+<component name="browserrootcertificates" long-name="Browser Root Certificates" introduced="^2" purpose="optional" filter="sf_build">
 <unit mrp="/sf/os/security/cryptoservices/browserrootcertificates/browserrootcerts.mrp"/>
 </component>
 <component name="asnpkcs" long-name="ASN PKCS" introduced="8.0" purpose="optional">
