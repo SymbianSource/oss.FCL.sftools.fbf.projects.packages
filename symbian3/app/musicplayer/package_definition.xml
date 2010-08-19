@@ -146,10 +146,5 @@
 </collection>
 </block>
   </layer>
-  <layer name="api_test_layer">
-    <module name="musicplayer_tsrc">
-      <unit bldFile="sf/app/musicplayer/tsrc/group" unitID="musicplayer_tsrc" name="musicplayer_tsrc" mrp="" />
-    </module>
-  </layer>
  </systemModel>
 </SystemDefinition>
