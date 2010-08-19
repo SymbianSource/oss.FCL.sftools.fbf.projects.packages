@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+]>
+<SystemDefinition name="Symbian^3" schema="2.0.1">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="webuis" level="services" long-name="Web UIs" levels="plugin app">
+<collection name="browserui" long-name="Browser UI" level="app">
+<component name="browser" filter="s60" long-name="Browser">
+<unit bldFile="/sf/app/webuis/browserui/browser/group"/>
+</component>
+<component name="operatormenu" filter="s60" long-name="Browser Operator Menu">
+<unit bldFile="/sf/app/webuis/browserui/operatormenu/group"/>
+</component>
+<component name="videoservices" filter="s60" long-name="Browser Video Services">
+<unit bldFile="/sf/app/webuis/browserui/videoservices/group"/>
+</component>
+</collection>
+<collection name="browserplugins" long-name="Browser Plugins" level="plugin">
+<component name="browsersysteminfoplugin" filter="s60" long-name="Browser System Info Plugin" plugin="Y">
+<!-- uncomment the unit when configuration is in place, it's currently #included from browserplugins_build -->
+<!-- <unit bldFile="browserplugins/browsersysteminfoplugin/group"/>-->
+</component>
+<component name="browsergpsplugin" filter="s60" long-name="Browser GPS Plugin" plugin="Y">
+<!-- uncomment the unit when configuration is in place, it's currently #included from browserplugins_build -->
+<!-- <unit bldFile="browserplugins/browsergpsplugin/group"/>-->
+</component>
+<component name="browseraudiovideoplugin" filter="s60" long-name="Browser Audio Video Plugin" plugin="Y">
+<unit bldFile="/sf/app/webuis/browserplugins/browseraudiovideoplugin/group"/>
+</component>
+<component name="browserplugins_build" filter="s60" long-name="Browser Plugins Build">
+<!-- when configuration is in place, the #ifdef is no longer needed and this component can be removed -->
+<unit bldFile="/sf/app/webuis/browserplugins/group"/>
+</component>
+</collection>
+<collection name="pushmtm" long-name="Push MTM" level="plugin">
+<component name="pushmtm_help" filter="s60" long-name="Push MTM Help">
+<unit bldFile="/sf/app/webuis/pushmtm/help/group"/>
+</component>
+<component name="plugins" filter="s60" long-name="Push MTM Plugins" plugin="Y">
+<unit bldFile="/sf/app/webuis/pushmtm/plugins/group"/>
+</component>
+<component name="pushmtm_build" filter="s60" long-name="Push MTM Build">
+<!-- Some content is at collection level and some is at comopnent level. Either make this a single
+			component and move it down a diretcory, or make separate independent components in this collection -->
+<unit bldFile="/sf/app/webuis/pushmtm/group"/>
+</component>
+</collection>
+</block>
+  </layer>
+ </systemModel>
+</SystemDefinition>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+]>
+<SystemDefinition name="Symbian^3" schema="2.0.1">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="mmsharinguis" level="services" long-name="Multimedia Sharing UIs" levels="base plugin if">
+<collection name="mmsharinguis_plat" long-name="Multimedia Sharing UIs Platform Interfaces" level="if">
+<component name="multimedia_sharing_settings_api" long-name="Multimedia Sharing Settings API" filter="s60" class="api">
+<unit bldFile="/sf/app/mmsharinguis/mmsharinguis_plat/multimedia_sharing_settings_api/group"/>
+</component>
+<component name="multimedia_sharing_resource_api" long-name="Multimedia Sharing Resource API" filter="s60" class="api">
+<unit bldFile="/sf/app/mmsharinguis/mmsharinguis_plat/multimedia_sharing_resource_api/group"/>
+</component>
+<component name="multimedia_sharing_manager_api" long-name="Multimedia Sharing Manager API" filter="s60" class="api">
+<unit bldFile="/sf/app/mmsharinguis/mmsharinguis_plat/multimedia_sharing_manager_api/group"/>
+</component>
+</collection>
+<collection name="mmsharing" long-name="Multimedia Sharing" level="base">
+<component name="mmshavailability" filter="s60" long-name="Multimedia Sharing Availability">
+<unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshavailability/group"/>
+</component>
+<component name="mmshindicator" filter="s60" long-name="Multimedia Sharing Indicator">
+<unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshindicator/group"/>
+</component>
+<!-- consider putting client and server in the same component -->
+<component name="mmshmanagercli" filter="s60" long-name="Multimedia Sharing Manager Client">
+<unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshmanagercli/group" filter="!test"/>
+</component>
+<component name="mmshmanagersrv" filter="s60" long-name="Multimedia Sharing Manager Server">
+<unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshmanagersrv/group"/>
+</component>
+<component name="mmshengine" filter="s60" long-name="Multimedia Sharing Engine">
+<unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshengine/group"/>
+</component>
+<component name="mmshui" filter="s60" long-name="Multimedia Sharing UI">
+<!-- can only have one unit: need to #include one from the other if it's needed -->
+<unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshui/group"/>
+<unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshui/help/group"/>
+</component>
+<component name="mmsharing_build" filter="s60" long-name="MM Sharing Build">
+<unit bldFile="/sf/app/mmsharinguis/mmsharing/group"/>
+</component>
+</collection>
+<collection name="mmshplugins" long-name="Multimedia Sharing Plugins" level="plugin">
+<component name="mmshaoplugin" filter="s60" long-name="Multimedia Sharing Always Online Plugin" plugin="Y">
+<unit bldFile="/sf/app/mmsharinguis/mmshplugins/mmshaoplugin/group"/>
+</component>
+<component name="mmshaiwplugin" filter="s60" long-name="Multimedia Sharing AIW Plugin" plugin="Y">
+<unit bldFile="/sf/app/mmsharinguis/mmshplugins/mmshaiwplugin/group"/>
+</component>
+<component name="mmshsipcrplugin" filter="s60" long-name="Multimedia Sharing SIP Client Resolver Plugin" plugin="Y">
+<unit bldFile="/sf/app/mmsharinguis/mmshplugins/mmshsipcrplugin/group"/>
+</component>
+<component name="mmshsettingsuiplugin" filter="s60" long-name="Multimedia Sharing Settings UI Plugin" plugin="Y">
+<unit bldFile="/sf/app/mmsharinguis/mmshplugins/mmshsettingsuiplugin/group"/>
+</component>
+<component name="mmshwpadapterplugin" filter="s60" long-name="Multimedia Sharing WAP Provisioning Adapter" plugin="Y">
+<unit bldFile="/sf/app/mmsharinguis/mmshplugins/mmshwpadapterplugin/group"/>
+</component>
+</collection>
+<collection name="mmsharinguis_info" long-name="Multimedia Sharing UIs Info" level="if">
+<component name="mmsharinguis_build" filter="s60" long-name="Multimedia Sharing UIs Build">
+<!--  consider distributing to other components -->
+<unit bldFile="/sf/app/mmsharinguis/group"/>
+</component>
+</collection>
+</block>
+  </layer>
+ </systemModel>
+</SystemDefinition>

@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/MCL/sf/mw/homescreensrv/,/sf/mw/homescreensrv,branch,tip_bulk_s3,layers.sysdef.xml

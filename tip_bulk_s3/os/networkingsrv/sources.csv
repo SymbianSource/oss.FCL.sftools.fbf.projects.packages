@@ -1,0 +1,4 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/MCL/sf/os/networkingsrv/,/sf/os/networkingsrv,branch,tip_bulk_s3,layers.sysdef.xml
+http://developer.symbian.org/oss/MCL/sf/os/commsfw/,/sf/os/commsfw,branch,tip_bulk_s3,
+http://developer.symbian.org/oss/MCL/sf/os/security/,/sf/os/security,branch,tip_bulk_s3,

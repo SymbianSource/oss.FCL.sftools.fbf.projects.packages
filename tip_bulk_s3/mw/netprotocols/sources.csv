@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/MCL/sf/mw/netprotocols/,/sf/mw/netprotocols,branch,tip_bulk_s3,layers.sysdef.xml

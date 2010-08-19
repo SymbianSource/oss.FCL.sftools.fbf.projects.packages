@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+]>
+<SystemDefinition name="Symbian^3" schema="2.0.1">
+ <systemModel>
+  <layer name="mw" long-name="Middleware" levels="generic specific">
+   <block name="usbservices" level="generic" long-name="USB Services" levels="framework server generic specific plugin">
+<collection name="usbservices_plat" long-name="USB Services Platform Interfaces" level="plugin">
+<component name="pictbridge_api" long-name="PictBridge API" filter="s60" class="api">
+<unit bldFile="/sf/mw/usbservices/usbservices_plat/pictbridge_api/group"/>
+</component>
+<component name="ptp_responder_api" long-name="PTP Responder API" filter="s60" class="api">
+<unit bldFile="/sf/mw/usbservices/usbservices_plat/ptp_responder_api/group"/>
+</component>
+<component name="ptp_transport_api" long-name="PTP Transport API" filter="s60" class="api">
+<unit bldFile="/sf/mw/usbservices/usbservices_plat/ptp_transport_api/group"/>
+</component>
+<component name="usb_device_control_plugin_api" long-name="USB Device Control Plug-in API" filter="s60" class="api">
+<unit bldFile="/sf/mw/usbservices/usbservices_plat/usb_device_control_plugin_api/group"/>
+</component>
+<component name="usb_notifier_api" long-name="USB Notifier API" filter="s60" class="api">
+<unit bldFile="/sf/mw/usbservices/usbservices_plat/usb_notifier_api/group"/>
+</component>
+<component name="usb_personality_api_header" long-name="USB Personality API" filter="s60" class="api">
+<unit bldFile="/sf/mw/usbservices/usbservices_plat/usb_personality_api_header/group"/>
+</component>
+<component name="usb_personality_plugin_api" long-name="USB Personality Plug-in API" filter="s60" class="api">
+<unit bldFile="/sf/mw/usbservices/usbservices_plat/usb_personality_plugin_api/group"/>
+</component>
+<component name="usb_secondary_display_api" long-name="USB Secondary Display API" filter="s60" class="api">
+<unit bldFile="/sf/mw/usbservices/usbservices_plat/usb_secondary_display_api/group"/>
+</component>
+<component name="usb_watcher_api" long-name="USB Watcher API" filter="s60" class="api">
+<unit bldFile="/sf/mw/usbservices/usbservices_plat/usb_watcher_api/group"/>
+</component>
+<component name="usb_watcher_info_api_header" long-name="USB Watcher Info API" filter="s60" class="api">
+<unit bldFile="/sf/mw/usbservices/usbservices_plat/usb_watcher_info_api_header/group"/>
+</component>
+</collection>
+<collection name="usbservices_info" long-name="USB Services Info" level="plugin"/>
+<collection name="usbengines" long-name="USB Engines" level="generic">
+<component name="usbotgwatcher" filter="s60" long-name="USB OTG Watcher">
+<unit bldFile="/sf/mw/usbservices/usbengines/usbotgwatcher/group"/>
+</component>
+<component name="usbwatcher" filter="s60" long-name="USB Watcher">
+<unit bldFile="/sf/mw/usbservices/usbengines/usbwatcher/group"/>
+</component>
+<component name="usblocodplugin" filter="s60" long-name="USB Local Connectivity Domain Plugin" plugin="Y">
+<unit bldFile="/sf/mw/usbservices/usbengines/usblocodplugin/group"/>
+</component>
+<component name="usbdevcon" filter="s60" long-name="USB Device Control">
+<unit bldFile="/sf/mw/usbservices/usbengines/usbdevcon/group"/>
+</component>
+<component name="usbremotepersonality" filter="s60" long-name="USB Remote Personality">
+<unit bldFile="/sf/mw/usbservices/usbengines/usbremotepersonality/group"/>
+</component>
+</collection>
+<collection name="usbclasses" long-name="USB Classes" level="framework">
+<component name="usbobexclasscontroller" filter="s60" long-name="USB OBEX Class Controller" plugin="Y">
+<unit bldFile="/sf/mw/usbservices/usbclasses/usbobexclasscontroller/group"/>
+</component>
+<component name="usbbasicpersonality" filter="s60" long-name="USB Basic Personality" plugin="Y">
+<unit bldFile="/sf/mw/usbservices/usbclasses/usbbasicpersonality/group"/>
+</component>
+<component name="usbmscpersonality" filter="s60" long-name="USB MSC Personality" plugin="Y">
+<unit bldFile="/sf/mw/usbservices/usbclasses/usbmscpersonality/group"/>
+</component>
+<!--	commented out in bld.inf. Should this be deleted?     
+  <component id="ptpstack" filter="s60" name="Picture Transfer Protocol Stack">
+        <unit bldFile="usbclasses/ptpstack/group"/>
+      </component>
+      <component id="sicdusbplugin" filter="s60" name="SICD USB Plugin" class="plugin">
+        <unit bldFile="usbclasses/sicdusbplugin/group"/>
+      </component>
+      <component id="ptpserver" filter="s60" name="Picture Transfer Protocol Server">
+        <unit bldFile="usbclasses/ptpserver/group"/>
+      </component>-->
+<component name="pictbridgeengine" filter="s60" long-name="PictBridge Engine">
+<unit bldFile="/sf/mw/usbservices/usbclasses/pictbridgeengine/group"/>
+</component>
+<component name="usbphoneasmodem" filter="s60" long-name="USB Phone as Modem" introduced="^3">
+<unit bldFile="/sf/mw/usbservices/usbclasses/usbphoneasmodem/group"/>
+</component>
+</collection>
+<collection name="usbuis" long-name="USB UIs" level="specific">
+<component name="usbui" filter="s60" long-name="USB UI">
+<unit bldFile="/sf/mw/usbservices/usbuis/usbui/group"/>
+</component>
+<component name="usbuinotif" filter="s60" long-name="USB UI Notifiers">
+<unit bldFile="/sf/mw/usbservices/usbuis/usbuinotif/group"/>
+</component>
+<component name="imageprintuiprovider" filter="s60" long-name="ImagePrint UI Provider" plugin="Y">
+<unit bldFile="/sf/mw/usbservices/usbuis/imageprintuiprovider/group"/>
+</component>
+<component name="usbimageprintui" filter="s60" long-name="ImagePrint UI">
+<unit bldFile="/sf/mw/usbservices/usbuis/imageprintui/group"/>
+</component>
+</collection>
+</block>
+  </layer>
+ </systemModel>
+</SystemDefinition>

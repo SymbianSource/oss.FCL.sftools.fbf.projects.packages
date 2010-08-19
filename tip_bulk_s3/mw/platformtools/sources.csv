@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/MCL/sf/mw/platformtools/,/sf/mw/platformtools,branch,tip_bulk_s3,layers.sysdef.xml

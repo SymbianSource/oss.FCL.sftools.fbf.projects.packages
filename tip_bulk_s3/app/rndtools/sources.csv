@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/MCL/sf/app/rndtools/,/sf/app/rndtools,branch,tip_bulk_s3,layers.sysdef.xml

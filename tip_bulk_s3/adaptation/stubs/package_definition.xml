@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+]>
+<SystemDefinition name="Symbian^3" schema="2.0.1">
+ <systemModel>
+  <layer name="adaptation" long-name="Adaptation" levels="low mw high">
+   <block name="stubs" level="high" long-name="Stubs" levels="stub">
+<collection name="s60_stubs" level="stub">
+<component name="audiostubs" long-name="Audio Stubs">
+<unit bldFile="/sf/adaptation/stubs/audiostubs/group"/>
+</component>
+<component name="btaudioadaptation_stub" long-name="Bluetooth Audio Adaptation Stub">
+<unit bldFile="/sf/adaptation/stubs/btaudioadaptation_stub/group"/>
+</component>
+<component name="drm_stubs" long-name="DRM Stubs">
+<unit bldFile="/sf/adaptation/stubs/drm_stubs/group"/>
+</component>
+<component name="ocrsrv_stub" long-name="OCR Services Stub">
+<unit bldFile="/sf/adaptation/stubs/ocrsrv_stub/group"/>
+</component>
+<component name="omasuplasnconverterstubimpl" long-name="OMA SUPL ASN Converter Stub Implementation">
+<unit bldFile="/sf/adaptation/stubs/omasuplasnconverterstubimpl/group"/>
+</component>
+<component name="posmsgpluginreferenceimpl" long-name="POS Message Plugin Reference Implementation" plugin="Y">
+<unit bldFile="/sf/adaptation/stubs/posmsgpluginreferenceimpl/group"/>
+</component>
+<component name="srsfenginestub" long-name="SRSF Engine Stub">
+<unit bldFile="/sf/adaptation/stubs/srsfenginestub/group"/>
+</component>
+<component name="power_save_display_mode_stub" long-name="Power Save Display Mode Stub">
+<unit bldFile="/sf/adaptation/stubs/power_save_display_mode_stub/group"/>
+</component>
+<component name="systemswstubs" long-name="System Software Stubs">
+<unit bldFile="/sf/adaptation/stubs/systemswstubs/group"/>
+</component>
+<component name="tactileclickplugin_stub" long-name="Tactile Click Plugin Stub" plugin="Y">
+<unit bldFile="/sf/adaptation/stubs/tactileclickplugin_stub/group"/>
+</component>
+<component name="wlanhwinit_stub" long-name="WLAN Hardware Init Stub">
+<unit bldFile="/sf/adaptation/stubs/wlanhwinit_stub/group"/>
+</component>
+</collection>
+</block>
+  </layer>
+ </systemModel>
+</SystemDefinition>
