@@ -50,18 +50,18 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
-   <block name="settingsuis" level="services" levels="plugin ui" long-name="Settings UIs">
+   <block name="settingsuis" level="services" long-name="Settings UIs" levels="plugin ui">
 <collection name="controlpanelplugins" long-name="Control Panel Plugins" level="plugin">
-<component name="themeplugin" long-name="Theme Plugin" introduced="^4" filter="s60" purpose="optional">
+<component name="themeplugin" filter="s60" long-name="Theme Plugin" introduced="^4">
 <unit bldFile="/sf/app/settingsuis/controlpanelplugins/themeplugin" proFile="themeplugin.pro" qmakeArgs="-r -config rom"/>
 </component>
 </collection>
 <collection name="controlpanelui" long-name="Control Panel UI" level="ui">
 <!-- collection is really a component, move down a dir -->
-<component name="controlpanelui_build" long-name="Control Panel UI Build" introduced="^4" filter="s60" purpose="optional">
+<component name="controlpanelui_build" filter="s60" long-name="Control Panel UI Build" introduced="^4">
 <unit bldFile="/sf/app/settingsuis/controlpanelui" proFile="controlpanelui.pro" qmakeArgs="-r -config rom"/>
 </component>
 </collection>

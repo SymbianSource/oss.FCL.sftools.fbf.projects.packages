@@ -50,12 +50,12 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
-   <block name="techview" level="apps" span="2" levels="services ui utils apps1 apps2 apps3" long-name="Techview">
+   <block name="techview" level="apps" span="2" long-name="Techview" levels="services ui utils apps1 apps2 apps3">
 <collection name="buildverification" long-name="Build Verification" level="services">
-<component name="autosmoketest" long-name="Auto Smoke Test" introduced="9.1" filter="gt" purpose="development">
+<component name="autosmoketest" long-name="Auto Smoke Test" filter="gt" purpose="development" introduced="9.1">
 <unit bldFile="/sf/app/techview/buildverification/autosmoketest/Group" mrp="/sf/app/techview/buildverification/autosmoketest/Group/testtools_autosmoketest.mrp"/>
 </component>
 <component name="smoketest" long-name="Smoke Test" filter="gt" purpose="development">

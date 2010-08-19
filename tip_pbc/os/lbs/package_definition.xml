@@ -50,10 +50,10 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="lbs" level="services" levels="hw-if data-acquisition adaptation management application-interface" long-name="Locating Services">
+   <block name="lbs" level="services" long-name="Locating Services" levels="hw-if data-acquisition adaptation management application-interface">
 <collection name="datasourcemodules" long-name="Generic Positioning Plugins" level="data-acquisition">
 <component name="defaultpositioningmodule" long-name="Default Positioning Module" introduced="^2" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/lbs/datasourcemodules/defaultpositioningmodule/group" mrp="/sf/os/lbs/datasourcemodules/defaultpositioningmodule/group/lbs_default_positioning_module.mrp"/>

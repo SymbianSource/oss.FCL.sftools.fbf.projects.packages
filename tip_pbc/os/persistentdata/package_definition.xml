@@ -50,10 +50,10 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="persistentdata" level="services" levels="adaptation hw-if plugin framework server app-if" long-name="Persistent Data Services">
+   <block name="persistentdata" level="services" long-name="Persistent Data Services" levels="adaptation hw-if plugin framework server app-if">
 <collection name="featuremgmt" long-name="Feature Management" level="framework">
 <component name="featuremgr" long-name="Feature Manager" introduced="^3" purpose="mandatory">
 <unit bldFile="/sf/os/persistentdata/featuremgmt/featuremgr/group" mrp="/sf/os/persistentdata/featuremgmt/featuremgr/group/syslibs_featmgr.mrp"/>
@@ -69,7 +69,7 @@
 <component name="filelogger" long-name="File Logger" introduced="ER5" deprecated="^3" purpose="optional">
 <unit bldFile="/sf/os/persistentdata/loggingservices/filelogger/group" mrp="/sf/os/persistentdata/loggingservices/filelogger/group/comms-infras_flogger.mrp"/>
 </component>
-<component name="rfilelogger" long-name="RFile Logger" introduced="9.1" deprecated="^3" purpose="development">
+<component name="rfilelogger" long-name="RFile Logger" deprecated="^3" introduced="9.1" purpose="development">
 <unit bldFile="/sf/os/persistentdata/loggingservices/rfilelogger/group" mrp="/sf/os/persistentdata/loggingservices/rfilelogger/group/testtools_utilities.mrp"/>
 </component>
 </collection>

@@ -50,18 +50,18 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
-   <block name="conntools" level="services" levels="config app" long-name="Connectivity Tools">
+   <block name="conntools" level="services" long-name="Connectivity Tools" levels="config app">
 <collection name="nettools" long-name="Net Tools" level="app">
-<component name="conntest" long-name="Connection Test" filter="s60" purpose="development">
+<component name="conntest" filter="s60" long-name="Connection Test" purpose="development">
 <unit bldFile="/sf/app/conntools/nettools/conntest/group"/>
 </component>
 </collection>
 <collection name="emulatorlan" long-name="Emulator LAN" level="config">
 <!-- component is actually a colleciton, should be moved down a directory -->
-<component name="emulatorlan_build" long-name="Emulator LAN Build" filter="s60" purpose="development" class="config">
+<component name="emulatorlan_build" filter="s60" long-name="Emulator LAN Build" purpose="development" class="config">
 <unit bldFile="/sf/app/conntools/emulatorlan/group"/>
 </component>
 </collection>

@@ -50,19 +50,19 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
-   <block name="podcatcher" level="apps" levels="app" long-name="Podcatcher">
+   <block name="podcatcher" level="apps" long-name="Podcatcher" levels="app">
 <collection name="podcatcher_info" long-name="Podcatcher" level="app">
-<component name="podcatcher_build" long-name="Podcatcher Build" introduced="^3" filter="sf_build" purpose="optional">
+<component name="podcatcher_build" filter="sf_build" long-name="Podcatcher Build" introduced="^3">
 <!-- has exports from top level bld.inf -->
 <unit bldFile="/sf/app/podcatcher/group"/>
 </component>
-<component name="podcatcher_app" long-name="Podcatcher Application" introduced="^3" filter="sf_build" purpose="optional">
+<component name="podcatcher_app" filter="sf_build" long-name="Podcatcher Application" introduced="^3">
 <unit bldFile="/sf/app/podcatcher/application/group"/>
 </component>
-<component name="podcatcher_engine" long-name="Podcatcher Engine" introduced="^3" filter="sf_build" purpose="optional">
+<component name="podcatcher_engine" filter="sf_build" long-name="Podcatcher Engine" introduced="^3">
 <unit bldFile="/sf/app/podcatcher/engine/group"/>
 </component>
 </collection>
