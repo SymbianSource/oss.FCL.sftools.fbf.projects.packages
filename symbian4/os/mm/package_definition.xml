@@ -398,23 +398,6 @@
     <unit bldFile="eaacplusutil_stub/group"/>
    </component>
   </collection>
-  <collection id="imagingandcamerafws" name="Imaging and Camera Frameworks" level="app-if">
-   <component id="imagingfws" name="Imaging Frameworks" introduced="7.0s" purpose="mandatory">
-    <unit bldFile="imagingandcamerafws/imagingfws/group" mrp="imagingandcamerafws/imagingfws/group/multimedia_icl.mrp"/>
-   </component>
-   <component id="imagingunittest" name="Imaging Unit Tests" introduced="7.0s" purpose="development" filter="test">
-    <unit mrp="imagingandcamerafws/imagingunittest/group/multimedia_unittest_icl_source.mrp" bldFile="imagingandcamerafws/imagingunittest/group"/>
-   </component>
-   <component id="imaginginttest" name="Imaging Integration Tests" introduced="7.0s" purpose="development" filter="test">
-    <unit mrp="imagingandcamerafws/imaginginttest/group/multimedia_inttest_icl_source.mrp" bldFile="imagingandcamerafws/imaginginttest/group"/>
-   </component>
-   <component id="camerafw" name="Camera Framework" introduced="7.0s" purpose="optional">
-    <unit bldFile="imagingandcamerafws/camerafw/group" mrp="imagingandcamerafws/camerafw/group/multimedia_ecam_framework.mrp"/>
-   </component>
-   <component id="cameraunittest" name="Camera Unit Tests" introduced="9.2" purpose="development" filter="test">
-    <unit mrp="imagingandcamerafws/cameraunittest/group/multimedia_unittest_ecam_source.mrp" bldFile="imagingandcamerafws/cameraunittest/group"/>
-   </component>
-  </collection>
   <collection id="mmlibs" name="Multimedia Libraries" level="middleware">
    <component id="mmutilitylib" name="Multimedia Utility Library" introduced="8.1" purpose="mandatory">
     <unit bldFile="mmlibs/mmutilitylib/group" mrp="mmlibs/mmutilitylib/group/multimedia_common.mrp"/>
@@ -481,29 +464,6 @@
    </component>
    <component id="mmtesttools" name="Multimedia Test Tools" purpose="development" filter="test">
     <unit mrp="mmtestenv/mmtesttools/Group/multimedia_testtools_source.mrp" bldFile="mmtestenv/mmtesttools/Group"/>
-   </component>
-  </collection>
-  <collection id="omxil" name="OpenMAX IL" level="hw-if">
-   <component id="omxilapi" name="OpenMAX IL API" introduced="^3" purpose="optional">
-    <unit version="1" bldFile="omxil/omxilapi/group" mrp="omxil/omxilapi/group/multimedia_omx_il_api.mrp"/>
-   </component>
-   <component id="omxilcore" name="OpenMAX IL Core" introduced="^3" purpose="optional">
-    <unit version="1" bldFile="omxil/omxilcore/group" mrp="omxil/omxilcore/group/multimedia_omx_il_core.mrp"/>
-   </component>
-   <component id="omxilcomponentcommon" name="OpenMAX IL Component Framework" introduced="^3" purpose="optional">
-    <unit version="1" bldFile="omxil/omxilcomponentcommon/group" mrp="omxil/omxilcomponentcommon/group/multimedia_omx_il_comp.mrp"/>
-   </component>
-   <component id="omxilrefcomps" name="OpenMAX IL Reference Components" introduced="^3" purpose="optional">
-    <unit version="1" bldFile="omxil/omxilrefcomps/ref_components/group" mrp="omxil/omxilrefcomps/ref_components/group/multimedia_omx_il_comp_ref.mrp"/>
-   </component>
-   <component id="omxilunittest" name="OpenMAX IL Unit Tests" introduced="^3" purpose="development" filter="test">
-    <unit mrp="omxil/omxilunittest/group/multimedia_unittest_omx_il.mrp" bldFile="omxil/omxilunittest/group"/>
-   </component>
-   <component id="omxilcoreconftest" name="OpenMAX IL Core Conformance Suite" introduced="^3" purpose="development" filter="test">
-    <unit mrp="omxil/omxilcoreconftest/group/multimedia_omx_il_core_loader_conf_suite.mrp" bldFile="omxil/omxilcoreconftest/group"/>
-   </component>
-   <component id="mmilapi" name="Multimedia Integration Layer API" introduced="^3" purpose="development">
-    <unit bldFile="omxil/mmilapi/group" mrp="omxil/mmilapi/group/multimedia_il_api.mrp"/>
    </component>
   </collection>
   <collection id="devsound" name="Sound Device" level="devices">

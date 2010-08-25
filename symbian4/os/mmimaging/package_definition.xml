@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="mmimaging" name="Multimedia Imaging" levels="adaptation hw-if device-fw devices middleware app-if">
+    <collection id="imaging" name="Imaging Frameworks and Plugins" level="app-if">
+      <component id="imagingfws" name="Imaging Frameworks" introduced="7.0s" purpose="mandatory">
+        <unit bldFile="imaging/imagingfws/group" mrp="imaging/imagingfws/group/multimedia_icl.mrp"/>
+      </component>
+      <component id="imagingplugins" name="Imaging Plugins" introduced="7.0s" purpose="optional" class="plugin">
+        <unit bldFile="imaging/imagingplugins/group" mrp="imaging/imagingplugins/group/multimedia_icl_plugin.mrp"/>
+      </component>
+      <component id="imagingunittest" name="Imaging Unit Tests" introduced="7.0s" purpose="development" filter="test">
+        <unit mrp="imaging/imagingunittest/group/multimedia_unittest_icl_source.mrp" bldFile="imaging/imagingunittest/group"/>
+      </component>
+      <component id="imaginginttest" name="Imaging Integration Tests" introduced="7.0s" purpose="development" filter="test">
+        <unit mrp="imaging/imaginginttest/group/multimedia_inttest_icl_source.mrp" bldFile="imaging/imaginginttest/group"/>
+      </component>
+      <component id="imagingdocs" name="Imaging Documentation" purpose="development" class="doc">
+      	<unit mrp="imaging/imagingdocs/imaging_documentation.mrp" />
+      </component>	  
+    </collection>
+    <collection id="imagingtestenv" name="Imaging Test Environment" level="device-fw">
+      <component id="imagingtestfw" name="Imaging Test Framework" introduced="7.0s" purpose="development" filter="test">
+        <unit mrp="imagingtestenv/imagingtestfw/group/imaging_testframework_source.mrp" bldFile="imagingtestenv/imagingtestfw/group"/>
+      </component>
+      <component id="imagingtestfwunittest" name="Imaging Test Framework Unit Tests" introduced="7.0s" purpose="development" filter="test">
+        <unit mrp="imagingtestenv/imagingtestfwunittest/group/imaging_unittest_testframework_source.mrp" bldFile="imagingtestenv/imagingtestfwunittest/group"/>
+      </component>
+      <component id="imagingtestagent" name="Imaging Test Agent" introduced="8.0" purpose="development" filter="test">
+        <unit mrp="imagingtestenv/imagingtestagent/group/imagingtestagent_source.mrp" bldFile="imagingtestenv/imagingtestagent/group"/>
+      </component>
+      <component id="imagingtesttools" name="Imaging Test Tools" purpose="development" filter="test">
+        <unit mrp="imagingtestenv/imagingtesttools/Group/imaging_testtools_source.mrp" bldFile="imagingtestenv/imagingtesttools/Group"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

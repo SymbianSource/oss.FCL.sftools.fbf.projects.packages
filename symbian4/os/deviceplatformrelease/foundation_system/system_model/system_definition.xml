@@ -125,6 +125,8 @@
       <package id="bt" level="services" tech-domain="de" href="../../../../os/bt/package_definition.xml"/> 
       <package id="usb" level="services" tech-domain="de" href="../../../../os/usb/package_definition.xml"/> 
       <package id="mm" level="services" tech-domain="mm" href="../../../../os/mm/package_definition.xml"/>
+      <package id="mmimaging" level="services" tech-domain="mm" href="../../../../os/mmimaging/package_definition.xml"/>
+      <package id="openmaxil" level="services" tech-domain="mm" href="../../../../os/openmaxil/package_definition.xml"/>
       <package id="imagingext" level="services" tech-domain="mm" href="../../../../os/imagingext/package_definition.xml"/>
       <package id="graphics" level="services" tech-domain="ui" href="../../../../os/graphics/package_definition.xml"/>
       <package id="textandloc" level="services" tech-domain="ui" href="../../../../os/textandloc/package_definition.xml"/>
@@ -167,6 +169,7 @@
       <package id="hgwidgets" level="specific" tech-domain="mm" href="../../../../mw/hgwidgets/package_definition.xml"/>
       <package id="inputmethods" level="generic" tech-domain="ui" href="../../../../mw/inputmethods/package_definition.xml"/>
       <package id="qt" level="generic" tech-domain="ui" href="../../../../mw/qt/package_definition.xml"/>
+      <package id="qtmobility" level="generic" tech-domain="ui" href="../../../../mw/qtmobility/package_definition.xml"/>
       <package id="qtextensions" level="generic" tech-domain="ui" href="../../../../mw/qtextensions/package_definition.xml"/>
       <package id="hb" level="generic" tech-domain="ui" href="../../../../mw/hb/package_definition.xml"/>
       <package id="classicui" level="generic" tech-domain="ui" href="../../../../mw/classicui/package_definition.xml"/>

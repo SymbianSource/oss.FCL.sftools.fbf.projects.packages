@@ -42,23 +42,6 @@
       <unit bldFile="qtmobileextensions/examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
      </component>
     </collection>
-    <collection id="qtmobility" name="Qt Mobility" level="mw">
-	 <component id="qtmobility_build" filter="qtmobility" name="Qt Mobility" purpose="development" introduced="^4">
-      <unit bldFile="qtmobility" qt:proFile="qtmobility.pro" qt:qmakeArgs="-r"/>
-     </component>
-    <component id="qtmobility_examples" filter="qtextensionsexamples,build_as_app" name="Qt Mobility Examples" purpose="development" introduced="^4">
-      <meta rel="testbuild">
-       <group name="qtextensionsexamples"/>
-      </meta>
-      <unit bldFile="qtmobility/examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
-     </component>
-     <component id="qtmobilitytests" filter="test,qtextensionstests,build_as_app" name="Qt Extensions Tests"  purpose="development" introduced="^4">
-      <meta rel="testbuild">
-       <group name="qtextensionstests"/>
-      </meta>
-      <unit bldFile="qtmobility/tests" qt:proFile="tests.pro" qt:qmakeArgs="-r"/>
-     </component>
-    </collection>
     <collection id="qhbstyle" level="mw" name="Qt Orbit Style">
      <component id="qhbstyle_build" name="Qt Orbit Style Build" introduced="^4">
       <unit bldFile="qhbstyle" qt:qmakeArgs="-r" qt:proFile="qhbstyle.pro"/>
