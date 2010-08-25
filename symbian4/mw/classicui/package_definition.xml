@@ -745,6 +745,9 @@
    <component id="uikon" name="Uikon" introduced="6.0" purpose="mandatory">
     <unit bldFile="commonuisupport/uikon/group" mrp="commonuisupport/uikon/group/app-framework_uikon.mrp"/>
    </component>
+   <component id="uikon_ncp" name="Uikon (NCP)" introduced="S^4" purpose="mandatory">
+    <unit bldFile="commonuisupport/uikon/group_ncp"/>
+   </component>
    <component id="errorresolverdata" name="Error Resolver Data" purpose="mandatory">
     <unit bldFile="commonuisupport/errorresolverdata/group" mrp="commonuisupport/errorresolverdata/group/app-framework_errorresgt.mrp"/>
    </component>
