@@ -133,6 +133,7 @@
       <package id="xmlsrv" level="services" tech-domain="rt" href="../../../../os/xmlsrv/package_definition.xml"/>
       <package id="deviceplatformrelease" level="services" tech-domain="to" href="../../../../os/deviceplatformrelease/package_definition.xml"/>
       <package id="osrndtools" level="services" tech-domain="to" href="../../../../os/osrndtools/package_definition.xml"/>
+      <package id="ostesttools" level="services" tech-domain="to" href="../../../../os/ostesttools/package_definition.xml"/>
     </layer>
     <layer id="mw" name="Middleware" levels="generic specific">
       <package id="appsupport" level="generic" tech-domain="rt" href="../../../../mw/appsupport/package_definition.xml"/>

@@ -1,57 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
  <package id="osrndtools" name="OS R&amp;D tools" levels="fw trace analysis">
-  <collection id="stif" name="STIF" level="fw">
-    <component id="stif_plat" filter="s60" name="STIF Platform Interfaces" class="api" purpose="development">
-      <unit bldFile="stif/stif_plat/group"/>
-    </component>
-   <component id="testinterface" filter="s60" name="Test Interface" purpose="development">
-    <unit bldFile="stif/testinterface/group"/>
-   </component>
-   <component id="testserver" filter="s60" name="Test Server" purpose="development">
-    <unit bldFile="stif/testserver/group"/>
-   </component>
-   <component id="testengine" filter="s60" name="Test Engine" purpose="development">
-    <unit bldFile="stif/testengine/group"/>
-   </component>
-   <component id="testserverstarter" filter="s60" name="Test Server Starter" purpose="development">
-    <unit bldFile="stif/testserverstarter/group"/>
-   </component>
-   <component id="stiftfwif" filter="s60" name="STIF Test Framework Interface" purpose="development">
-    <unit bldFile="stif/stiftfwif/group"/>
-   </component>
-   <component id="consoleui" filter="s60" name="Console UI" purpose="development">
-    <unit bldFile="stif/consoleui/group"/>
-   </component>
-   <component id="testcombiner" filter="s60" name="Test Combiner" purpose="development">
-    <unit bldFile="stif/testcombiner/group"/>
-   </component>
-   <component id="demomodule" filter="s60" name="Demo Module" purpose="development">
-    <unit bldFile="stif/demomodule/group"/>
-   </component>
-   <component id="atslogger" filter="s60" name="ATS Logger" purpose="development">
-    <unit bldFile="stif/atslogger/group"/>
-   </component>
-   <component id="atsinterface" filter="s60" name="ATS Interface" purpose="development">
-    <unit bldFile="stif/atsinterface/group"/>
-   </component>
-   <component id="testscripter" filter="s60" name="Test Scripter" purpose="development">
-    <unit bldFile="stif/testscripter/group"/>
-   </component>
-   <component id="suevent" filter="s60" name="SU Event" purpose="development">
-    <unit bldFile="stif/suevent/group"/>
-   </component>
-   <component id="stifkerneltestclassbase" filter="s60" name="STIF Kernel Test Class Base" purpose="development">
-    <meta rel="config">
-     <defined condition="__S60_"/>
-    </meta>
-    <unit bldFile="stif/stifkerneltestclassbase/group"/>
-   </component>
-   <component id="stif_data" filter="s60" name="STIF Data" purpose="development" class="config">
-    <!--  This is a component. Should move down a directory. or move into other STIF components-->
-    <unit bldFile="stif/group"/>
-   </component>
-  </collection>
   <collection id="memspy" name="MemSpy" level="trace">
     <component id="memspy_plat" filter="s60" name="MemSpy Platform Interfaces" class="api" purpose="development">
     <meta rel="Api" href="memspy/memspy_plat/memspy_api/memspy_api.metaxml"/>
@@ -75,46 +24,6 @@
    <component id="memspy_build" filter="s60" name="MemSpy Build" purpose="development">
     <!--  move exports into self-contained component.-->
     <unit bldFile="memspy/group"/>
-   </component>
-  </collection>
-  <collection id="hti" name="Harmonized Test Interface" level="trace">
-    <component id="hti_plat" filter="s60" name="HTI Platform Interfaces" class="api" purpose="development">
-    <meta rel="Api" href="hti/hti_plat/hti_api/hti_api.metaxml"/>
-      <unit bldFile="hti/hti_plat/group"/>
-    </component>
-   <component id="hticfg" filter="s60" name="HTI Config" purpose="development">
-    <unit bldFile="hti/hticfg/group"/>
-   </component>
-   <component id="htiautostart" filter="s60" name="HTI Autostart" purpose="development">
-    <unit bldFile="hti/htiautostart/group"/>
-   </component>
-   <component id="htiframework" filter="s60" name="HTI Framework" purpose="development">
-    <unit bldFile="hti/htiframework/group"/>
-   </component>
-   <component id="hticommplugins" filter="s60" name="HTI Communication Plugins" purpose="development" class="plugin">
-    <!-- need to #include these from a single unit or separate into component at the right directory level -->
-    <unit bldFile="hti/HtiCommPlugins/HtiBtCommPlugin/group"/>
-    <unit bldFile="hti/HtiCommPlugins/HtiIPCommPlugin/group"/>
-    <unit bldFile="hti/HtiCommPlugins/HtiSerialCommPlugin/group"/>
-    <unit bldFile="hti/HtiCommPlugins/HtiUsbSerialCommPlugin/group"/>
-   </component>
-   <component id="htiserviceplugins" filter="s60" name="HTI Service Plugins" purpose="development" class="plugin">
-    <!-- need to #include these from a single unit or separate into component at the right directory level -->
-    <unit bldFile="hti/HtiServicePlugins/HtiAppServicePlugin/group"/>
-    <unit bldFile="hti/HtiServicePlugins/HtiEchoServicePlugin/group"/>
-    <unit bldFile="hti/HtiServicePlugins/HtiFtpServicePlugin/group"/>
-    <unit bldFile="hti/HtiServicePlugins/HtiIpProxyServicePlugin/group"/>
-    <unit bldFile="hti/HtiServicePlugins/HtiStifTfServicePlugin/group"/>
-   </component>
-   <component id="htifilehlp" filter="s60" name="HTI File Help" purpose="development">
-    <unit bldFile="hti/htifilehlp/group"/>
-   </component>
-   <component id="htiwatchdog" filter="s60" name="HTI Watchdog" purpose="development">
-    <unit bldFile="hti/htiwatchdog/group"/>
-   </component>
-   <component id="hti_build" filter="s60" name="HTI Build" purpose="development">
-    <!--  move exports into self-contained component.-->
-    <unit bldFile="hti/group"/>
    </component>
   </collection>
   <collection id="piprofiler" name="Performance Investigator Profiler" level="analysis">
