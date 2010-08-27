@@ -49,6 +49,12 @@
      <component id="surfaceupdate" name="Surface Update" introduced="^3" purpose="optional">
       <unit bldFile="graphicscomposition/surfaceupdate/group" mrp="graphicscomposition/surfaceupdate/group/graphics_surfaceupdate.mrp"/>
      </component>
+     <component id="openwfc_ri_displaychannel" name="OpenWFC RI Display Channel" introduced="^4" purpose="optional">
+      <unit bldFile="graphicscomposition/openwfc_ri_displaychannel/group" mrp="graphicscomposition/openwfc_ri_displaychannel/group/openwfc_ri_displaychannel.mrp"/>
+     </component>
+     <component id="openwfc_ri_displayupdater" name="OpenWFC RI Display Update" introduced="^4" purpose="optional">
+      <unit bldFile="graphicscomposition/openwfc_ri_displayupdater/group" mrp="graphicscomposition/openwfc_ri_displayupdater/group/openwfc_ri_displayupdater.mrp"/>
+     </component>
     </collection>
     <collection id="graphicstest" name="Graphics Test" level="app-if">
       <component id="graphicstestharness" name="Graphics Test Harness" introduced="8.1" purpose="development" filter="test,api_test">
