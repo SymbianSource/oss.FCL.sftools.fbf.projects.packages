@@ -695,9 +695,6 @@
    <component id="aknglobalui" filter="s60" name="Avkon Global UI">
     <unit bldFile="uifw/aknglobalui/group"/>
    </component>
-   <component id="ganes" filter="s60" name="Ganes">
-    <unit bldFile="uifw/ganes/group"/>
-   </component>
   </collection>
   <collection id="commonuis" name="Common UIs" level="specific">
    <component id="commonui" filter="s60" name="Common UI">
@@ -712,30 +709,12 @@
     <unit bldFile="applicationinterworkingfw/servicehandler/group"/>
    </component>
   </collection>
-  <collection id="commonadapter" name="Common Adapter" level="support">
-   <!-- the collection is really a component. Move down a directory.-->
-   <component id="commonadapter_build" filter="s60" name="Common Adapter Build">
-    <unit bldFile="commonadapter/group"/>
-   </component>
-  </collection>
-  <collection id="akntouchgesturefw" name="Avkon Touch Gesture Framework" level="generic">
-   <!-- the collection is really a component. Move down a directory.-->
-   <component id="akntouchgesturefw_build" filter="s60" name="Avkon Touch Gesture Framework Build" introduced="^3">
-    <unit bldFile="akntouchgesturefw/group"/>
-   </component>
-  </collection>
   <collection id="uiutils" name="UI Utils" level="specific">
    <component id="localizer" filter="s60" name="Directory Localizer">
     <unit bldFile="uiutils/localizer/group"/>
    </component>
    <component id="findutil" filter="s60" name="Find Utility">
     <unit bldFile="uiutils/findutil/group"/>
-   </component>
-   <component id="gamerecognizer" filter="s60" name="Game Recognizer" class="plugin">
-    <unit bldFile="uiutils/gamerecognizer/group"/>
-   </component>
-   <component id="aknjapanesereading" filter="s60" name="Avkon Japanese Reading">
-    <unit bldFile="uiutils/aknjapanesereading/group"/>
    </component>
    <component id="hlplch" name="Help Launcher" filter="s60,bldfirst">
       <unit bldFile="uiutils/hlplch/group"/>
