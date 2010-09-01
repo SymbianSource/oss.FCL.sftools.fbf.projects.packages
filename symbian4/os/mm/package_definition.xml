@@ -415,9 +415,6 @@
    </component>
   </collection>
   <collection id="mmplugins" name="Multimedia Plugins" level="middleware">
-   <component id="imagingplugins" name="Imaging Plugins" introduced="7.0s" purpose="optional" class="plugin">
-    <unit bldFile="mmplugins/imagingplugins/group" mrp="mmplugins/imagingplugins/group/multimedia_icl_plugin.mrp"/>
-   </component>
    <component id="cameraplugins" name="Camera Plugins" introduced="7.0s" purpose="optional" class="plugin">
     <unit bldFile="mmplugins/cameraplugins/group" mrp="mmplugins/cameraplugins/group/multimedia_ecam_plugins.mrp"/>
    </component>
