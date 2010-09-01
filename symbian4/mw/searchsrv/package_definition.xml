@@ -54,7 +54,7 @@
     </collection>
     <collection id="qcpix" name="Qt CPIX" level="engine">     
     <component id="qcpix_build" name="Qt CPIX Build" introduced="^4">
-      <unit bldFile="qcpix"  qt:proFile="qcpix.pro"/>
+      <unit bldFile="qcpix"  qt:proFile="cpix.pro"/>
      </component>
     </collection>
     <collection id="searchsrv_info" name="Search Services Info">
