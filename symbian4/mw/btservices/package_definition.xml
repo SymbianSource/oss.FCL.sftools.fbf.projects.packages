@@ -137,9 +137,6 @@
    <component id="btindicator" filter="s60" name="Bluetooth Indicator" introduced="^4">
     <unit bldFile="bluetoothengine/btindicator" qt:proFile="btindicator.pro"/>
    </component>
-   <component id="bluetoothengine_conf" filter="s60" name="Bluetooth Engine Config" class="config" introduced="^4">
-    <unit bldFile="bluetoothengine/conf"/>
-   </component>
   </collection>
   <collection id="bluetoothappprofiles" name="Bluetooth Application Profiles" level="plugin">
    <component id="avrcp" name="Bluetooth AVRCP" introduced="9.1" purpose="optional">
