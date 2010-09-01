@@ -398,6 +398,14 @@
     <unit bldFile="eaacplusutil_stub/group"/>
    </component>
   </collection>
+  <collection id="imagingandcamerafws" name="Imaging and Camera Frameworks" level="app-if">
+   <component id="camerafw" name="Camera Framework" introduced="7.0s" purpose="optional">
+    <unit bldFile="imagingandcamerafws/camerafw/group" mrp="imagingandcamerafws/camerafw/group/multimedia_ecam_framework.mrp"/>
+   </component>
+   <component id="cameraunittest" name="Camera Unit Tests" introduced="9.2" purpose="development" filter="test">
+    <unit mrp="imagingandcamerafws/cameraunittest/group/multimedia_unittest_ecam_source.mrp" bldFile="imagingandcamerafws/cameraunittest/group"/>
+   </component>
+  </collection>
   <collection id="mmlibs" name="Multimedia Libraries" level="middleware">
    <component id="mmutilitylib" name="Multimedia Utility Library" introduced="8.1" purpose="mandatory">
     <unit bldFile="mmlibs/mmutilitylib/group" mrp="mmlibs/mmutilitylib/group/multimedia_common.mrp"/>
