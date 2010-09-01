@@ -45,7 +45,10 @@
    </component>
   </collection>
     <collection id="ncdengine" name="Nokia Content Discover" level="framework">
-      <component id="ncdengine_build" filter="s60" name="NCD Engine" introduced="^1">
+      <component id="ncdengine_build" filter="s60" name="NCD API" introduced="^1">
+        <unit bldFile="ncdengine/group" />
+      </component>
+      <component id="ncdengine_engine" filter="s60" name="NCD Engine" introduced="^1">
         <unit bldFile="ncdengine/engine"  qt:proFile="engine.pro" qt:qmakeArgs="-r"/>
       </component>
     </collection>
