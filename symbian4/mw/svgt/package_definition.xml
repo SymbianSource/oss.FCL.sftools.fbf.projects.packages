@@ -16,9 +16,6 @@
     <!-- component is at collection level. Needs to be moved down a directory -->
     <unit bldFile="svgtopt/group"/>
    </component>
-   <component id="svgtplugin" filter="s60" name="SVG Plugin" class="plugin" introduced="9.2">
-    <unit bldFile="svgtopt/svgtplugin/group"/>
-   </component>
   </collection>
  </package>
 </SystemDefinition>
