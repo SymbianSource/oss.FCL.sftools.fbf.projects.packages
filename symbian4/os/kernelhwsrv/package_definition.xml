@@ -50,10 +50,10 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="kernelhwsrv" level="hw" long-name="Kernel and Hardware Services" levels="hw-if adaptation framework test">
+   <block name="kernelhwsrv" level="hw" levels="hw-if adaptation framework test" long-name="Kernel and Hardware Services">
 <collection name="brdbootldr" long-name="Board Boot Loader" level="hw-if">
 <component name="ubootldr" long-name="Boot Loader" introduced="9.2" purpose="optional">
 <unit bldFile="/sf/os/kernelhwsrv/brdbootldr/ubootldr" mrp="/sf/os/kernelhwsrv/brdbootldr/ubootldr/base_ubootldr.mrp"/>
@@ -103,9 +103,6 @@
 <component name="btrace" long-name="Kernel Trace Tool" purpose="mandatory">
 <unit bldFile="/sf/os/kernelhwsrv/kernel/eka/drivers/trace" mrp="/sf/os/kernelhwsrv/kernel/eka/drivers/trace/base_e32_drivers_trace.mrp"/>
 </component>
-<component name="cameraldd" long-name="Camera Drivers" introduced="^3" purpose="optional">
-<unit bldFile="/sf/os/kernelhwsrv/kernel/eka/drivers/camerasc" mrp="/sf/os/kernelhwsrv/kernel/eka/drivers/camerasc/base_drivers_camerasc.mrp"/>
-</component>
 <component name="displayldd" long-name="Display Drivers" introduced="^3" purpose="optional">
 <!-- owned and maintained by graphics package. To be moved there as soon as technical limitations are resolved -->
 <unit bldFile="/sf/os/kernelhwsrv/kernel/eka/drivers/display" mrp="/sf/os/kernelhwsrv/kernel/eka/drivers/display/base_e32_drivers_display.mrp"/>
@@ -142,6 +139,9 @@
 <component name="fileserver" long-name="File Server" filter="gt" purpose="mandatory">
 <unit bldFile="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/group" mrp="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/group/base_f32.mrp"/>
 </component>
+<component name="automounter" long-name="Automounter" filter="gt" purpose="mandatory">
+<unit bldFile="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/automounter" mrp="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/automounter/base_f32_automounter.mrp"/>
+</component>
 <component name="estart" long-name="Base Starter" filter="gt" purpose="optional">
 <unit bldFile="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/estart" mrp="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/estart/base_f32_estart.mrp"/>
 </component>
@@ -159,7 +159,7 @@
 <component name="usbmsfs" long-name="USB Mass Storage File System" filter="gt" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/smassstorage" mrp="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/smassstorage/base_f32_smassstorage.mrp"/>
 </component>
-<component name="usbhostmssrv" long-name="USB Host Mass Storage Server" filter="gt" introduced="^3" purpose="optional" plugin="Y">
+<component name="usbhostmssrv" long-name="USB Host Mass Storage Server" introduced="^3" filter="gt" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/shostmassstorage" mrp="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/shostmassstorage/base_f32_shostmassstorage.mrp"/>
 </component>
 <component name="fat32fs" long-name="FAT32 File System" filter="gt" purpose="optional" plugin="Y">

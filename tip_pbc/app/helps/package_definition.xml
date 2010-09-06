@@ -50,13 +50,13 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
-   <block name="helps" level="apps" span="2" long-name="Help Apps" levels="eng tools if ui">
+   <block name="helps" level="apps" span="2" levels="eng tools if ui" long-name="Help Apps">
 <collection name="userguide" long-name="User Guide" level="if">
 <!-- collection is really a component. Move down a directory -->
-<component name="userguide_build" long-name="User Guide Build" filter="s60" introduced="^4">
+<component name="userguide_build" long-name="User Guide Build" introduced="^4" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/helps/userguide" proFile="Userguide.pro"/>
 </component>
 </collection>

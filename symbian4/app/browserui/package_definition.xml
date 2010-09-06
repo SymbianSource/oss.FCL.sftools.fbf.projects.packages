@@ -50,13 +50,13 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
-   <block name="browserui" level="services" long-name="Browser UI" levels="utils support ui">
+   <block name="browserui" level="services" levels="utils support ui" long-name="Browser UI">
 <collection name="browserui_info" long-name="Browser UI Info" level="ui">
-<component name="browserui_build" long-name="Bookmarks Engine Build" introduced="^4">
-<unit bldFile="/sf/app/browserui" proFile="browserui.pro"/>
+<component name="browserui_build" long-name="Bookmarks Engine Build" introduced="^4" purpose="optional">
+<unit bldFile="/sf/app/browserui/." proFile="browserui.pro"/>
 </component>
 </collection>
 </block>

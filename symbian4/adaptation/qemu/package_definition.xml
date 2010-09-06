@@ -50,12 +50,12 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="adaptation" long-name="Adaptation" levels="low mw high">
-   <block name="qemu" level="low" long-name="QEMU and Baseport" levels="hw-if">
+   <block name="qemu" level="low" levels="hw-if" long-name="QEMU and Baseport">
 <collection name="qemu_baseport" long-name="Baseport" level="hw-if">
-<component name="syborg" long-name="Syborg" introduced="^2" purpose="optional" filter="sf_build">
+<component name="syborg" long-name="Syborg" introduced="^2" filter="sf_build" purpose="optional">
 <unit bldFile="/sf/adaptation/qemu/baseport/syborg" mrp="/sf/adaptation/qemu/baseport/syborg/syborg.mrp"/>
 </component>
 </collection>

@@ -50,24 +50,24 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
-   <block name="location" level="apps" long-name="Location Apps" levels="ui events loc api">
+   <block name="location" level="apps" levels="ui events loc api" long-name="Location Apps">
 <collection name="location_plat" long-name="Location Apps Platform Interfaces" level="api">
-<component name="location_picker_service_api" long-name="Location Picker Service API" introduced="^4" filter="s60" class="api">
+<component name="location_picker_service_api" long-name="Location Picker Service API" introduced="^4" filter="s60" purpose="optional" class="api">
 <unit bldFile="/sf/app/location/location_plat" proFile="location_plat.pro"/>
 </component>
 </collection>
 <collection name="locationpickerservice" long-name="Location Picker Service" level="loc">
 <!--collection is really a component. Should move down a directory -->
-<component name="locationpickerservice_build" filter="s60" long-name="Location Picker Service Build" introduced="^4">
+<component name="locationpickerservice_build" long-name="Location Picker Service Build" introduced="^4" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/location/locationpickerservice" proFile="locationpickerservice.pro"/>
 </component>
 </collection>
 <collection name="locationdataharvester" long-name="Location Data Harvester" level="events">
 <!--collection is really a component. Should move down a directory -->
-<component name="locationdataharvester_build" long-name="Location Data Harvester Build" filter="s60" introduced="^4">
+<component name="locationdataharvester_build" long-name="Location Data Harvester Build" introduced="^4" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/location/locationdataharvester" proFile="locationdataharvester.pro"/>
 </component>
 </collection>

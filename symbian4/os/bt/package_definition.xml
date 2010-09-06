@@ -50,18 +50,18 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="bt" level="services" long-name="Bluetooth" levels="adaptation hw-if plugin framework server app-if">
+   <block name="bt" level="services" levels="adaptation hw-if plugin framework server app-if" long-name="Bluetooth">
 <collection name="bt_plat" long-name="Bluetooth Platform Interfaces" level="app-if">
-<component name="bluetooth_audio_adaptation_api" long-name="Bluetooth Audio Adaptation API" filter="s60" class="api">
+<component name="bluetooth_audio_adaptation_api" long-name="Bluetooth Audio Adaptation API" filter="s60" purpose="optional" class="api">
 <unit bldFile="/sf/os/bt/bt_plat/bluetooth_audio_adaptation_api/group"/>
 </component>
-<component name="bluetooth_power_management_api" long-name="Bluetooth Power Management API" filter="s60" class="api">
+<component name="bluetooth_power_management_api" long-name="Bluetooth Power Management API" filter="s60" purpose="optional" class="api">
 <unit bldFile="/sf/os/bt/bt_plat/bluetooth_power_management_api/group"/>
 </component>
-<component name="at_command_handler_plugin_api" long-name="AT Command Handler Plugin API" filter="s60" class="api">
+<component name="at_command_handler_plugin_api" long-name="AT Command Handler Plugin API" filter="s60" purpose="optional" class="api">
 <unit bldFile="/sf/os/bt/bt_plat/at_command_handler_plugin_api/group"/>
 </component>
 </collection>
@@ -126,7 +126,7 @@
 <collection name="bluetoothapitest" long-name="Bluetooth API Tests" level="app-if"/>
 <collection name="atext" long-name="AT Extensions" level="server">
 <!-- collection is really a component. Need to move down a directory -->
-<component name="atext_build" long-name="AT Extension Build" introduced="^3" purpose="optional" filter="s60">
+<component name="atext_build" long-name="AT Extension Build" introduced="^3" filter="s60" purpose="optional">
 <unit bldFile="/sf/os/bt/atext/group"/>
 </component>
 </collection>
@@ -136,7 +136,7 @@
 </component>
 </collection>
 <collection name="btsimulator" long-name="Bluetooth Simulator" level="internal-utils">
-<component name="btaudioadaptation_stub" long-name="Bluetooth Audio Adaption Stub" introduced="^3" purpose="optional" filter="s60">
+<component name="btaudioadaptation_stub" long-name="Bluetooth Audio Adaption Stub" introduced="^3" filter="s60" purpose="optional">
 <unit bldFile="/sf/os/bt/btsimulator/btaudioadaptation_stub/group"/>
 </component>
 </collection>
