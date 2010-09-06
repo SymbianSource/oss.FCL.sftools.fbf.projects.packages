@@ -10,7 +10,10 @@
 	Nokia Corporation - initial contribution.
 	Contributors:
 	Description:
-	XSLT module for merging only two sysdef files according to the 3.0.0 rules. Old syntax not supported and must be converetd before calling.
+	XSLT module for merging only two sysdef files according to the 3.0.1 rules. 
+		2.x and older syntax not supported and must be converetd before calling.
+
+		Requires the including XSLT to also include path-module.xsl
 -->
 	
 <xsl:variable name="defaultnamespace">http://www.symbian.org/system-definition</xsl:variable>
@@ -290,7 +293,7 @@
 					don't copy if the before ID is found in $base	-->
 				<xsl:apply-templates mode="merge-copy-of" select="$to-sort[1]">
 					<xsl:with-param name="origin" select="$down"/>
-					<xsl:with-param name="root" select="$end/ancestor::systemModel"/>
+					<xsl:with-param name="root" select="$end/ancestor::SystemDefinition"/>
 				</xsl:apply-templates>
 			</xsl:if>			
 		<xsl:call-template name="copy-sorted-content">
@@ -381,7 +384,7 @@
 			<!-- if the removed item is in the downstream doc, just copy that and ignore the upstream contents -->
 			<xsl:apply-templates mode="merge-copy-of" select="$match">
 				<xsl:with-param name="origin" select="$down"/>
-				<xsl:with-param name="root" select="$this/ancestor::systemModel"/>			
+				<xsl:with-param name="root" select="$this/ancestor::SystemDefinition"/>			
 				<xsl:with-param name="replaces" select="$replaces"/>
 			</xsl:apply-templates>		
 		</xsl:when>
@@ -407,7 +410,7 @@
 		<!-- if this is the first item in other that's also in this, then put all new items from other here -->
 		<xsl:apply-templates mode="merge-copy-of" select="$match/preceding-sibling::*[@id and not(@before)]">
 			<xsl:with-param name="origin" select="$down"/>
-			<xsl:with-param name="root" select="$this/ancestor::systemModel"/>	
+			<xsl:with-param name="root" select="$this/ancestor::SystemDefinition"/>	
 			<xsl:with-param name="replaces" select="$replaces"/>
 		</xsl:apply-templates>
 	</xsl:when>
@@ -417,7 +420,7 @@
 	<xsl:apply-templates mode="merge-copy-of" select="$other/*[@before=current()/@id]">
 		<xsl:with-param name="remove-before" select="1"/>
 		<xsl:with-param name="origin" select="$down"/>
-		<xsl:with-param name="root" select="$this/ancestor::systemModel"/>	
+		<xsl:with-param name="root" select="$this/ancestor::SystemDefinition"/>	
 		<xsl:with-param name="replaces" select="$replaces"/>
 	</xsl:apply-templates>
 
@@ -476,7 +479,7 @@
 					<xsl:if test="not($this/*[@id=current()/@id])">
 						<xsl:apply-templates mode="merge-copy-of" select=".">
 							<xsl:with-param name="origin" select="$down"/>
-							<xsl:with-param name="root" select="$this/ancestor::systemModel"/>			
+							<xsl:with-param name="root" select="$this/ancestor::SystemDefinition"/>			
 							<xsl:with-param name="replaces" select="$replaces"/>
 						</xsl:apply-templates>
 					</xsl:if>
@@ -492,7 +495,7 @@
 		<!-- for the last layer, tack on any remaining layers -->
 		<xsl:apply-templates mode="merge-copy-of" select="$other/layer[not(@before) and not(following-sibling::*[@id=$this/../layer/@id]) and not(@id=$this/../layer/@id)]">
 			<xsl:with-param name="origin" select="$down"/>
-			<xsl:with-param name="root" select="$this/ancestor::systemModel"/>			
+			<xsl:with-param name="root" select="$this/ancestor::SystemDefinition"/>			
 			<xsl:with-param name="replaces" select="$replaces"/>
 		</xsl:apply-templates>		
 	</xsl:if>
@@ -505,7 +508,6 @@
 	<xsl:param name="origin"/>	<!--the element containing the @name to use the origin-model attribute  -->
 	<xsl:param name="root"/> 	<!--the systemModel element in the upstream doc  -->
 	<xsl:param name="replaces" select="ancestor::SystemDefinition/descendant::*[(self::component or self::collection or self::package or self::layer) and not(ancestor::meta)]/@replace"/> <!-- recalculate this is necessarfy, but should just pass down as a param -->
-
 	<xsl:variable name="moved" select="$root/descendant::*[name()=name(current()/..) and @id!=current()/../@id]/*[@id=current()/@id]"/>
 	<xsl:choose>
 		<!-- this might slow things down, consider making optional -->
@@ -543,8 +545,6 @@
 		</xsl:otherwise>
 	</xsl:choose>
 </xsl:template>
-
-
 <xsl:template match="comment()|@*" mode="merge-copy-of">
 	<xsl:copy-of select="."/>
 </xsl:template>
@@ -553,6 +553,7 @@
 <xsl:template name="merge-copy-of-atts">
 	<xsl:param name="remove-before" select="0"/> <!-- set to true if any before attribute is to be removed -->
 	<xsl:param name="root"/> 	<!--the systemModel element in the upstream doc  -->
+	
 	<xsl:choose>
 		<xsl:when test="$remove-before">
 			<xsl:copy-of select="@*[name()!='before' and name()!='replace']"/>
@@ -613,7 +614,21 @@
 
 
 
-<xsl:template match="unit/@bldFile | unit/@mrp | unit/@bldfile" mode="merge-copy-of">
+
+<xsl:template match="meta" mode="merge-copy-of">
+	<xsl:param name="origin"/>	<!--the element containing the @name to use the origin-model attribute  -->
+	<xsl:param name="root"/> 	<!--the systemModel element in the upstream doc  -->
+	<xsl:copy>
+		<xsl:apply-templates select="@*" mode="merge-copy-of">
+			<xsl:with-param name="origin" select="$origin"/>
+			<xsl:with-param name="root" select="$root"/>
+		</xsl:apply-templates>
+		<xsl:copy-of select="node()"/>
+	</xsl:copy>
+</xsl:template>
+
+
+<xsl:template match="unit/@bldFile | unit/@mrp | unit/@base | meta/@href" mode="merge-copy-of">
 	<xsl:param name="origin" select="/.."/>	<!--the element containing the @name to use the origin-model attribute  -->
 
 	<xsl:attribute name="{name()}">
@@ -627,28 +642,12 @@
 				<xsl:value-of select="."/>
 			</xsl:when>
 		<xsl:otherwise> <!-- relative link -->
-			<xsl:call-template name="lastbefore">
-				<xsl:with-param name="string" select="$origin/@pathto"/>
-			</xsl:call-template>/<xsl:value-of select="."/>
+			<xsl:call-template name="joinpath">
+				<xsl:with-param name="file" select="$origin/@pathto"/>
+				<xsl:with-param name="rel" select="."/>
+			</xsl:call-template>
 		</xsl:otherwise>
 		</xsl:choose>
 	</xsl:attribute>
 </xsl:template>
-
-
-<!-- path handling follows -->
-
- <xsl:template name="lastbefore"><xsl:param name="string"/><xsl:param name="substr" select="'/'"/>
-        <xsl:if test="contains($string,$substr)">
-                <xsl:value-of select="substring-before($string,$substr)"/>
-                <xsl:if test="contains(substring-after($string,$substr),$substr)">
-	                <xsl:value-of select="$substr"/>
-	              </xsl:if>
-        <xsl:call-template name="lastbefore">
-                <xsl:with-param name="string" select="substring-after($string,$substr)"/>
-                <xsl:with-param name="substr" select="$substr"/>
-        </xsl:call-template>
-        </xsl:if>
-</xsl:template>
-
 </xsl:stylesheet>
