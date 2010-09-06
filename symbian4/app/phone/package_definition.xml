@@ -5,6 +5,9 @@
    <component id="blacklist" filter="s60" name="Phone Blacklist Clearing" class="plugin">
     <unit bldFile="phoneapp/blacklist/group"/>
    </component>
+   <component id="phoneringingtoneplayer" filter="s60" name="Phone Ringingtone Player" introduced="^4">
+    <unit bldFile="phoneapp/phoneringingtoneplayer/group"/>
+   </component>
    <component id="phoneuicontrol" filter="s60" name="Phone UI Control">
     <unit bldFile="phoneapp/phoneuicontrol/group"/>
    </component>
@@ -61,6 +64,9 @@
    <component id="phoneservices" filter="s60" name="Phone Server" introduced="^4">
     <unit bldFile="phoneengine/phoneservices" qt:proFile="phoneservices.pro"/>
    </component>
+   <component id="networkhandlingstarter" filter="s60" name="Network Handling Starter" introduced="^4">
+    <unit bldFile="phoneengine/networkhandlingstarter" qt:proFile="networkhandlingstarter.pro"/>
+   </component>
   </collection>
   <collection id="phoneuis" name="Phone UIs" level="ui">
    <component id="bubblemanager2" filter="s60" name="Phone Bubble Manager">
@@ -68,6 +74,9 @@
    </component>
    <component id="telephonydevicemode" filter="s60" name="Telephony Device Mode">
     <unit bldFile="phoneuis/telephonydevicemode/group"/>
+   </component>
+   <component id="ussdeditor" filter="s60" name="USSD Editor" introduced="^4">
+    <unit bldFile="phoneuis/ussdeditor" qt:proFile="ussdeditor.pro"/>
    </component>
   </collection>
   <collection id="phone_plat" name="Phone Apps Platform Interfaces" level="app">
@@ -87,6 +96,10 @@
     <meta rel="Api" href="phone_plat/telephony_device_mode_api/telephony_device_mode_api.metaxml"/>
     <unit bldFile="phone_plat/telephony_device_mode_api/group"/>
    </component>
+   <component id="telephony_menu_extension_api" name="Telephony Menu Extension API" class="api" filter="s60"  introduced="^4">
+    <meta rel="Api" href="phone_plat/telephony_menu_extension_api/telephony_menu_extension_api.metaxml"/>
+    <unit bldFile="phone_plat/telephony_menu_extension_api/group"/>
+   </component>   
    <component id="telephony_remote_party_information_api" name="Telephony Remote Party Information API" class="api" filter="s60">
     <meta rel="Api" href="phone_plat/telephony_remote_party_information_api/telephony_remote_party_information_api.metaxml"/>
     <unit bldFile="phone_plat/telephony_remote_party_information_api/group"/>
@@ -111,9 +124,6 @@
    <component id="phone_application_voip_commands_api" name="Phone Application VOIP Commands API" class="api" filter="s60">
     <unit bldFile="phone_plat/phone_application_voip_commands_api/group"/>
    </component>
-   <component id="phone_telephony_menu_extension_api" name="Telephony Menu Extension API" class="api" filter="s60">
-    <unit bldFile="phone_plat/telephony_menu_extension_api/group"/>
-   </component>
    <component id="phone_telephony_mediator_api" name="Telephony Mediator API" class="api" filter="s60">
     <unit bldFile="phone_plat/telephony_mediator_api/group"/>
    </component>
@@ -128,18 +138,18 @@
    <component id="csplugin" filter="s60" name="Circuit Switched Plugin" class="plugin" introduced="^4">
     <unit bldFile="phoneplugins/csplugin/group"/>
    </component>
+   <component id="phoneindicatorplugin" filter="s60" name="Phone Indicator Plugin" class="plugin" introduced="^4">
+    <unit bldFile="phoneplugins/phoneindicatorplugin" qt:proFile="phoneindicatorplugin.pro"/>
+   </component>
    <component id="dialerwidgetplugin" filter="s60" name="Dialer Widget Plugin" class="plugin" introduced="^4">
     <unit bldFile="phoneplugins/dialerwidgetplugin" qt:proFile="dialerwidgetplugin.pro"/>
    </component>
    <component id="infowidgetplugin" filter="s60" name="Info Widget Plugin" class="plugin" introduced="^4">
     <unit bldFile="phoneplugins/infowidgetplugin" qt:proFile="infowidgetplugin.pro"/>
    </component>
-   <component id="phoneindicatorplugin" filter="s60" name="Phone Indicator Plugin" class="plugin" introduced="^4">
-    <unit bldFile="phoneplugins/phoneindicatorplugin" qt:proFile="phoneindicatorplugin.pro"/>
-   </component>
   </collection>
   <collection id="phonesettings" name="Phone Settings" level="plugin">
-   <component id="cpphonesettingsplugins" filter="s60" name="CP Phone Settings Plugins" class="plugin" introduced="^4">
+   <component id="cpphonesettingsplugins" filter="s60" name="Control Panel Phone Settings Plugins" class="plugin" introduced="^4">
     <unit bldFile="phonesettings/cpphonesettingsplugins" qt:proFile="cpphonesettingsplugins.pro"/>
    </component>
   </collection>
