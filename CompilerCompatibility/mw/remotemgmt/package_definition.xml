@@ -180,6 +180,9 @@
 <component name="syncml_ds_customization_api" long-name="SyncML DS Customization API" filter="s60" introduced="^3" class="api">
 <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/syncml_ds_customization_api/group"/>
 </component>
+<component name="lawmo_plugin_api" long-name="Lawmo Plugin API" filter="s60" introduced="^3" class="api">
+<unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/lawmo_plugin_api/group"/>
+</component>
 </collection>
 <collection name="policymanagement" long-name="Policy Management" level="generic">
 <component name="pmdmadapter" filter="s60" long-name="PM DM Adapter" plugin="Y">
