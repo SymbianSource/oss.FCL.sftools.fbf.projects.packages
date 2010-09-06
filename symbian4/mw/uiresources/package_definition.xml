@@ -162,14 +162,12 @@
   </collection>
   <collection id="fontsupport" name="Font Support" level="generic">
    <component id="fontprovider" filter="s60" name="Font Provider">
+    <meta rel="config">
+       <not-defined condition="FF_PRODUCT_FONTS"/>
+    </meta>
     <unit bldFile="fontsupport/fontprovider/group"/>
    </component>
-   <!-- R&D materials, should be Nokia only: exports S60 fonts, removes freetype
-      <component id="s60_fonts" filter="s60" name="S60 Fonts">
-        <unit bldFile="fontsupport/fontutils/group"/>
-      </component>
--->
-   <component id="fontutils" filter="sf_build" name="Font Utils">
+   <component id="fontutils" name="Font Utils" filter="s60">
     <unit bldFile="fontsupport/fontutils/FontUtils/group"/>
    </component>
   </collection>

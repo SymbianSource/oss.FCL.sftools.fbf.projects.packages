@@ -28,7 +28,10 @@
       <component id="radioapplication" filter="s60" name="Radio Application" introduced="^4">
         <unit bldFile="radioapp/radioapplication" qt:proFile="radioapplication.pro"/>
       </component>
-      <component id="radio_rom" filter="s60" name="Radio ROM" introduced="^4">
+      <component id="radiowidgetsplugin" filter="s60" name="Radio Widgets Plugin" introduced="^4" class="plugin">
+        <unit bldFile="radioapp/radiowidgetsplugin" qt:proFile="radiowidgetsplugin.pro"/>
+      </component>      
+      <component id="radio_rom" filter="s60" name="Radio ROM" introduced="^4" class="config">
         <unit bldFile="rom"/>
       </component>
     </collection>

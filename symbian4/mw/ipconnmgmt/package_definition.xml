@@ -118,29 +118,26 @@
    <component id="cmmgr" filter="s60" name="CM Manager">
     <unit bldFile="cmmanager/cmmgr/group"/>
    </component>
-   <component id="connection_settings_shim" name="Connection Settings Shim" introduced="^4">
-     <unit bldFile="cmmanager/connection_settings_shim" qt:proFile="connection_settings_shim.pro" qt:qmakeArgs="-r"/>
+   <component id="connection_settings_shim" name="Connection Settings Shim" introduced="^4" filter="s60">
+     <unit bldFile="cmmanager/connection_settings_shim" qt:proFile="connection_settings_shim.pro"/>
    </component>
-   <component id="cmapplsettingsui" name="Connection Settings UI" introduced="^4">
-     <unit bldFile="cmmanager/cmapplsettingsui" qt:proFile="cmapplsettingsui.pro" qt:qmakeArgs="-r"/>
+   <component id="cmapplsettingsui" name="Connection Settings UI" introduced="^4" filter="s60">
+     <unit bldFile="cmmanager/cmapplsettingsui" qt:proFile="cmapplsettingsui.pro"/>
    </component>
-   <component id="cpipsettingsplugin" name="Connection Settings IP Plugin" class="plugin" introduced="^4">
-     <unit bldFile="cmmanager/cpipsettingsplugin" qt:proFile="cpipsettingsplugin.pro" qt:qmakeArgs="-r"/>
+   <component id="cpipsettingsplugin" name="Connection Settings IP Plugin" class="plugin" introduced="^4" filter="s60">
+     <unit bldFile="cmmanager/cpipsettingsplugin" qt:proFile="cpipsettingsplugin.pro"/>
    </component>
-   <component id="cpdestinationplugin" name="CP Destination Plugin" class="plugin" introduced="^4">
-     <unit bldFile="cmmanager/cpdestinationplugin" qt:proFile="cpdestinationplugin.pro" qt:qmakeArgs="-r"/>
+   <component id="cpdestinationplugin" name="CP Destination Plugin" class="plugin" introduced="^4" filter="s60">
+     <unit bldFile="cmmanager/cpdestinationplugin" qt:proFile="cpdestinationplugin.pro"/>
    </component>
-   <component id="cppacketdataapplugin" name="CP Packet Data AP Pplugin" class="plugin" introduced="^4">
-     <unit bldFile="cmmanager/cppacketdataapplugin" qt:proFile="cppacketdataapplugin.pro" qt:qmakeArgs="-r"/>
+   <component id="cppacketdataapplugin" name="CP Packet Data AP Pplugin" class="plugin" introduced="^4" filter="s60">
+     <unit bldFile="cmmanager/cppacketdataapplugin" qt:proFile="cppacketdataapplugin.pro"/>
    </component>
-   <component id="cpwlanapplugin" name="CP WLAN AP Plugin" class="plugin" introduced="^4">
-     <unit bldFile="cmmanager/cpwlanapplugin" qt:proFile="cpwlanapplugin.pro" qt:qmakeArgs="-r"/>
+   <component id="cpwlanapplugin" name="CP WLAN AP Plugin" class="plugin" introduced="^4" filter="s60">
+     <unit bldFile="cmmanager/cpwlanapplugin" qt:proFile="cpwlanapplugin.pro"/>
    </component>
   </collection>
   <collection id="connectionmonitoring" name="Connection Monitoring" level="server">
-   <component id="connectionmonitorui" filter="s60" name="Connection Monitor UI">
-    <unit bldFile="connectionmonitoring/connectionmonitorui/group"/>
-   </component>
    <component id="connmon" filter="s60" name="Connection Monitor">
     <!-- either split into two components, or #include from a common bld.inf -->
     <unit bldFile="connectionmonitoring/connmon/connectionmonitor/group"/>
@@ -149,22 +146,22 @@
    <component id="connmonext" filter="s60" name="Connection Monitor Extension API">
     <unit bldFile="connectionmonitoring/connmonext/group"/>
    </component>
-   <component id="cellularindicatorplugin" name="Cellular Indicator Plugin" class="plugin" introduced="^4">
-     <unit bldFile="connectionmonitoring/cellularindicatorplugin" qt:proFile="cellularindicatorplugin.pro" qt:qmakeArgs="-r"/>
+   <component id="cellularindicatorplugin" name="Cellular Indicator Plugin" class="plugin" introduced="^4" filter="s60">
+     <unit bldFile="connectionmonitoring/cellularindicatorplugin" qt:proFile="cellularindicatorplugin.pro"/>
    </component>
-   <component id="indicatorobserver" name="Indicator Observer" introduced="^4">
-     <unit bldFile="connectionmonitoring/indicatorobserver" qt:proFile="indicatorobserver.pro" qt:qmakeArgs="-r"/>
+   <component id="indicatorobserver" name="Indicator Observer" introduced="^4" filter="s60">
+     <unit bldFile="connectionmonitoring/indicatorobserver" qt:proFile="indicatorobserver.pro"/>
    </component>
-   <component id="connectionmonitoringnview" name="Connection View" introduced="^4">
-     <unit bldFile="connectionmonitoring/connectionview" qt:proFile="connectionview.pro" qt:qmakeArgs="-r"/>
+   <component id="connectionmonitoringnview" name="Connection View" introduced="^4" filter="s60">
+     <unit bldFile="connectionmonitoring/connectionview" qt:proFile="connectionview.pro"/>
    </component>
   </collection>
   <collection id="connectionutilities" name="Connection Utilities" level="utils">
    <component id="connectiondialogs" filter="s60" name="Connection Dialogs">
     <unit bldFile="connectionutilities/connectiondialogs/group"/>
    </component>
-   <component id="confirmqueries" name="Confirm Queries" introduced="^4">
-     <unit bldFile="connectionutilities/confirmqueries" qt:proFile="confirmqueries.pro" qt:qmakeArgs="-r"/>
+   <component id="confirmqueries" name="Confirm Queries" introduced="^4" filter="s60">
+     <unit bldFile="connectionutilities/confirmqueries" qt:proFile="confirmqueries.pro"/>
    </component>
   </collection>
   <collection id="keepalive" name="Keep Alive" level="server">
@@ -188,15 +185,13 @@
    <component id="dbcreatorexe" filter="s60" name="DB Creator" introduced="9.3">
     <unit bldFile="dbcreator/dbcreatorexe/group"/>
    </component>
-   <component id="dbcreator_build" filter="s60" name="DB Creator Build" introduced="9.3">
-    <!-- move exports to another component, this is needed for the #ifndef for commsdatcreatorrfsplugin until configuration is in place-->
-    <unit bldFile="dbcreator/group"/>
+   <component id="dbcreator_conf" filter="s60" name="DB Creator Config" class="config" introduced="9.3">
+    <unit bldFile="dbcreator/conf"/>
    </component>
   </collection>
   <collection id="ipconnmgmt_info" name="IP Connectivity Management Info" level="api">
-   <component id="ipcm_build" filter="s60" name="IP Connectivity Management Build">
-    <!-- need to move exports to another component, or make this a config component and revmove the #includes -->
-    <unit bldFile="group"/>
+   <component id="ipcm_data" filter="s60" name="IP Connectivity Management Data" class="config">
+    <unit bldFile="data"/>
    </component>
   </collection>
  </package>

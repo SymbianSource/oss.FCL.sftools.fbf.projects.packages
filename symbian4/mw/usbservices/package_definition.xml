@@ -45,7 +45,8 @@
   </collection>
   <collection id="usbengines" name="USB Engines" level="generic">
    <component id="usbotgwatcher" filter="s60" name="USB OTG Watcher">
-    <unit bldFile="usbengines/usbotgwatcher/group"/>
+    <unit bldFile="usbengines/usbotgwatcher/group" filter="!test"/>
+    <unit bldFile="usbengines/usbotgwatcher/tsrc/UsbOtgWatcherTest/group" filter="test,api_test"/>
    </component>
    <component id="usbwatcher" filter="s60" name="USB Watcher">
     <unit bldFile="usbengines/usbwatcher/group"/>
@@ -76,7 +77,7 @@
   </collection>
   <collection id="usbuis" name="USB UIs" level="specific">
    <component id="usbuinotif" filter="s60" name="USB UI Notifiers">
-    <unit bldFile="usbuis/usbuinotif" qt:proFile="usbuinotif.pro" qt:qmakeArgs="-r" filter="!test"/>
+    <unit bldFile="usbuis/usbuinotif" qt:proFile="usbuinotif.pro" filter="!test"/>
     <unit bldFile="usbuis/usbuinotif/tsrc/USBUiNotifApiTest/group" filter="test,api_test" />
    </component>
    <component id="imageprintuiprovider" filter="s60" name="ImagePrint UI Provider" class="plugin">
@@ -86,10 +87,15 @@
     <unit bldFile="usbuis/imageprintui/group"/>
    </component>
    <component id="usbsettingsapp" name="USB Settings Application" introduced="^4" filter="s60">
-      <unit bldFile="usbuis/usbsettingsapp" qt:proFile="usbsettingsapp.pro" qt:qmakeArgs="-r"/>
+      <unit bldFile="usbuis/usbsettingsapp" qt:proFile="usbsettingsapp.pro"/>
     </component>
    <component id="usbindicatorplugin" name="USB Indicator Plugin" introduced="^4" filter="s60" class="plugin">
-      <unit bldFile="usbuis/usbindicatorplugin" qt:proFile="usbindicatorplugin.pro" qt:qmakeArgs="-r"/>
+      <unit bldFile="usbuis/usbindicatorplugin" qt:proFile="usbindicatorplugin.pro"/>
+    </component>
+  </collection>
+  <collection id="usb_testtools" name="USB Test Tools" level="server">
+   <component id="usb_stubsrv" name="USB Stub Server" introduced="^4" filter="s60">
+      <unit bldFile="tsrc/testtools/stubsrv/group"/>
     </component>
   </collection>
  </package>

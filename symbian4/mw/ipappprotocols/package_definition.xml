@@ -20,11 +20,11 @@
       </component>
     </collection>
     <collection id="realtimenetprots" name="Real Time Net Protocols" level="server">
-      <component id="symrtp" name="RTP" introduced="9.0" purpose="optional">
+      <component id="symrtp" name="RTP" introduced="9.0" filter="s60" purpose="optional">
         <!-- Real Time Data Protocol -->
         <unit bldFile="realtimenetprots/rtp/group" mrp="realtimenetprots/rtp/group/mm-protocols_rtp.mrp"/>
       </component>
-      <component id="sipfw" name="SIP Framework" introduced="9.2" purpose="optional">
+      <component id="sipfw" name="SIP Framework" introduced="9.2" filter="s60" purpose="optional">
         <unit version="2" bldFile="realtimenetprots/sipfw/Group" mrp="realtimenetprots/sipfw/Group/mm-protocols_SIP2_Com.mrp"/>
       </component>
     </collection>
@@ -46,7 +46,7 @@
       </component>
     </collection>
     <collection id="sipproviderplugins" name="SIP Provider Plugins" level="conn">
-      <component id="sipprovider" name="SIP Provider" introduced="^2" purpose="optional" class="plugin">
+      <component id="sipprovider" name="SIP Provider" introduced="^2"  filter="s60" purpose="optional" class="plugin">
         <unit bldFile="sipproviderplugins/sipprovider/group" mrp="sipproviderplugins/sipprovider/group/mm-protocols_SipProvider.mrp"/>
       </component>
     </collection>

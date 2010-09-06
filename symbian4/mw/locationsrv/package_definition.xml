@@ -84,9 +84,8 @@
    <component id="locationsuplpsy" filter="s60" name="Location SUPL PSY" class="plugin" introduced="^3">
     <unit bldFile="genericpositioningplugins/locationsuplpsy/group"/>
    </component>
-   <component id="genericpositioningplugins_build" filter="s60" name="Generic Positioning Plugins Build">
-    <!-- need to break this up into the other components -->
-    <unit bldFile="genericpositioningplugins/group"/>
+   <component id="genericpositioningplugins_rom" filter="s60" name="Generic Positioning Plugins ROM" class="config">
+    <unit bldFile="genericpositioningplugins/rom"/>
    </component>
   </collection>
   <collection id="landmarks" name="Landmarks" level="server">
@@ -144,9 +143,8 @@
    <component id="ltcontextsourceplugin" filter="s60" name="LT Context Source Plugin" class="plugin" introduced="^3">
     <unit bldFile="locationtriggering/ltcontextsourceplugin/group"/>
    </component>
-   <component id="locationtriggering_build" filter="s60" name="Location Triggering Build">
-    <!--  should remove #include from this and maybe put exports in the above components -->
-    <unit bldFile="locationtriggering/group"/>
+   <component id="locationtriggering_rom" filter="s60" name="Location Triggering ROM" class="config">
+    <unit bldFile="locationtriggering/rom"/>
    </component>
   </collection>
  </package>

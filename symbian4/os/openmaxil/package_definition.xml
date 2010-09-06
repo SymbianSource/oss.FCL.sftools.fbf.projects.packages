@@ -4,13 +4,13 @@
 
 
     <collection id="openmaxil_plat" name="OpenMAX IL Platform Exports" level="hw-if">
-      <component id="khronos_api" name="OpenMAX IL API" introduced="^3" purpose="mandatory" class="api">
+      <component id="openmaxil_khronos_api" name="OpenMAX IL API" introduced="^3" purpose="mandatory" class="api">
         <unit version="1" bldFile="openmaxil_plat/khronos_api/group"/>
       </component>
-      <component id="symbian_api" name="OpenMAX IL Symbian API" introduced="^3" purpose="mandatory" class="api">
+      <component id="openmaxil_symbian_api" name="OpenMAX IL Symbian API" introduced="^3" purpose="mandatory" class="api">
         <unit version="1" bldFile="openmaxil_plat/symbian_api/group"/>
       </component>
-      <component id="test_api" name="OpenMAX IL test headers" introduced="^3" purpose="development" class="api">
+      <component id="openmaxil_test_api" name="OpenMAX IL test headers" introduced="^3" purpose="development" class="api">
         <unit version="1" bldFile="openmaxil_plat/test_api/group"/>
       </component>
     </collection>
@@ -27,7 +27,7 @@
       </component>
     </collection>
 
-    <collection id="tsrc" name="OpenMAX IL Test code" level="hw-if">
+    <collection id="openmaxil_tsrc" name="OpenMAX IL Test code" level="hw-if">
       <component id="xmltestharness" name="OpenMAX IL XML Test Harness" introduced="^3" purpose="development">
         <unit version="1" bldFile="tsrc/xmltestharness/group"/>
       </component>

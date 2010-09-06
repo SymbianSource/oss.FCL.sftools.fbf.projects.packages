@@ -55,17 +55,8 @@
    </component>
   </collection>
   <collection id="metadataengine" name="Metadata Engine" level="eng">
-   <component id="metadataengine_common" filter="s60" name="Metadata Engine Common" introduced="^2">
-    <unit bldFile="metadataengine/common/group"/>
-   </component>
-   <component id="metadataengine_server" filter="s60" name="Metadata Engine Server" introduced="^2">
-    <unit bldFile="metadataengine/server/group"/>
-   </component>
-   <component id="metadataengine_client" filter="s60" name="Metadata Engine Client" introduced="^2">
-    <unit bldFile="metadataengine/client/group"/>
-   </component>
    <component id="metadataengine_build" filter="s60" name="Metadata Engine Build" introduced="^2">
-    <!--make this collection a single component, or split this bld.inf into the other units  -->
+    <!--collection is really a component. Move down a directory  -->
     <unit bldFile="metadataengine/group"/>
    </component>
   </collection>
@@ -95,9 +86,6 @@
     <unit bldFile="locationmanager/ReverseGeoCoderPlugin/group"/>
    </component>
    <component id="geotagger" filter="s60" name="Geo Tagger" introduced="^4">
-    <meta rel="config">
-    <defined condition="_LOC_REVERSEGEOCODE"/>
-   </meta>
     <unit bldFile="locationmanager/geotagger/group"/>
    </component>
    <component id="locationtrail" filter="s60" name="Location Trail" introduced="^2">
@@ -109,17 +97,13 @@
    <component id="locationmanager_client" filter="s60" name="Location Manager Client" introduced="^2">
     <unit bldFile="locationmanager/client/group"/>
    </component>
-   <component id="locationmanager_build" filter="s60" name="Location Manager Build" introduced="^2">
-    <!--make this collection a single component, or split this bld.inf into the other units  -->
-    <unit bldFile="locationmanager/group"/>
+   <component id="locationmanager_data" filter="s60" name="Location Manager Data" introduced="^2">
+    <unit bldFile="locationmanager/data"/>
    </component>
   </collection>
   <collection id="contextengine" name="Context Engine" level="eng">
-   <component id="contextengine_plugins" filter="s60" name="Context Engine Plugins" class="plugin" introduced="^2">
-    <unit bldFile="contextengine/plugins/group"/>
-   </component>
    <component id="contextengine_build" filter="s60" name="Context Engine Build" introduced="^2">
-    <!--make this collection a single component, or make this unit self-contained  -->
+   <!-- collection is really a component. Move down a directory -->
     <unit bldFile="contextengine/group"/>
    </component>
   </collection>
@@ -148,9 +132,9 @@
    <component id="harvester_client" filter="s60" name="Harvester Client" introduced="^2">
     <unit bldFile="harvester/client/group"/>
    </component>
-   <component id="harvester_build" filter="s60" name="Harvester Build" introduced="^2">
-    <!-- split these exports into the other components -->
-    <unit bldFile="harvester/group"/>
+   <component id="harvester_data" filter="s60" name="Harvester Data" class="config" introduced="^2">
+    <!-- consider moving these exports into the other components -->
+    <unit bldFile="harvester/data"/>
    </component>
   </collection>
   <collection id="watchdog" name="Watchdog" level="server">
@@ -169,9 +153,9 @@
    </component>
   </collection>
   <collection id="mds_info" name="Metadata Services Info" level="int">
-   <component id="mds_build" filter="s60" name="Metadata Services Build" introduced="^2">
-    <!-- consider distributiing this into the rest of the components in the package -->
-    <unit bldFile="group"/>
+   <component id="mds_rom" filter="s60" name="Metadata Services ROM" class="config" introduced="^2">
+    <!-- consider moving these exports into the other collections -->
+    <unit bldFile="rom"/>
    </component>
   </collection>
  </package>

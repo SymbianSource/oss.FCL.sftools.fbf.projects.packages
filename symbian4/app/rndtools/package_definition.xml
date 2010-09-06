@@ -42,27 +42,10 @@
 		<unit bldFile="screengrabber" qt:proFile="screengrabber.pro"/>
       </component>
     </collection>
-    <collection id="stifui" name="STIF UI" level="generic">
-      <component id="stifui_avkon" filter="s60" name="STIF UI for Avkon" purpose="development" target="device">
-        <unit bldFile="stifui/avkon/group"/>
-      </component>
-      <component id="stifuiqt" filter="s60,test" name="STIF Qt UI" purpose="development" target="device" introduced="^4">
-		<unit bldFile="stifui/qt" qt:proFile="stifqtui.pro" /> <!-- should use stifuiqt as the dir name -->
-      </component>
-    </collection>
     <collection id="memspyui" name="Memspy UI" level="generic">
 	   	<!-- collection is really a component. Should move down a directory -->
       <component id="memspyui_build" filter="s60" name="Memspy UI Application" purpose="development" target="device" class="tool">
         <unit bldFile="memspyui" qt:proFile="memspyui.pro" />
-      </component>
-    </collection>
-    <collection id="htiui" name="Harmonized Test Interface UI" level="generic">
-      <component id="htiui_build" filter="s60" name="HTI UI Build" purpose="development" target="device">
-		<!-- should split up into individual components -->
-        <unit bldFile="htiui/group"/>
-      </component>
-      <component id="htiadminqt" filter="s60" name="HTI Admin Qt" purpose="development" target="device">
-        <unit bldFile="htiui/htiadminqt" qt:proFile="HtiAdmin.pro"/>
       </component>
     </collection>
   </package>

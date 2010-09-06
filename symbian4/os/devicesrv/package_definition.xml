@@ -275,7 +275,7 @@
    <component id="tspclientmapper" filter="s60" name="TSP Client Mapper">
     <unit bldFile="accessoryservices/tspclientmapper/group"/>
    </component>
-   <component id="remotecontrolfw" name="Remote Control Framework" introduced="9.1" purpose="optional" filter="s60">
+   <component id="remotecontrolfw" name="Remote Control Framework" introduced="9.1" purpose="optional">
     <unit bldFile="accessoryservices/remotecontrolfw/group" mrp="accessoryservices/remotecontrolfw/group/bluetooth_remotecontrol.mrp"/>
    </component>
    <component id="gid_pc_tool" filter="s60" name="Generic ID PC Tool" target="desktop" class="tool">
@@ -298,13 +298,13 @@
    <component id="platformenv" filter="s60" name="Platform Environment">
     <unit bldFile="commonservices/platformenv/group"/>
    </component>
-   <component id="sysutil" name="System Utilities" purpose="mandatory" introduced="ER5" filter="s60">
+   <component id="sysutil" name="System Utilities" purpose="mandatory" introduced="ER5">
     <meta rel="config"> 
       <defined condition="SYMBIAN_BAFL_SYSUTIL"/>
     </meta>
     <unit bldFile="commonservices/sysutil/group" mrp="commonservices/sysutil/group/sysutil.mrp"/>
    </component>
-   <component id="activitymanager" name="Activity Manager" purpose="mandatory" introduced="ER5" filter="s60">
+   <component id="activitymanager" name="Activity Manager" purpose="mandatory" introduced="ER5">
     <meta rel="config"> 
       <defined condition="SYMBIAN_BAFL_SYSUTIL"/>
     </meta>
@@ -381,17 +381,16 @@
    <component id="vibractrl" filter="s60" name="Vibra Control" deprecated="9.1">
     <unit bldFile="resourcemgmt/vibractrl/group"/>
    </component>
-   <component id="hwresourcesmgr" name="Hardware Resources Manager" introduced="^2" purpose="optional" filter="s60">
+   <component id="hwresourcesmgr" name="Hardware Resources Manager" introduced="^2" purpose="optional">
     <unit bldFile="resourcemgmt/hwresourcesmgr/group" mrp="resourcemgmt/hwresourcesmgr/group/telephony_hwrm.mrp"/>
    </component>
-   <component id="hwresourcesmgrconfig" name="Hardware Resources Manager Config" introduced="^3" purpose="optional" class="config" filter="s60">
+   <component id="hwresourcesmgrconfig" name="Hardware Resources Manager Config" introduced="^3" purpose="optional" class="config">
     <unit bldFile="resourcemgmt/hwresourcesmgrconfig" mrp="resourcemgmt/hwresourcesmgrconfig/telephony_hwrm-config.mrp"/>
    </component>
    <component id="resourcemgmt_data" filter="s60" name="Resource Management Data" class="config">
-    <!-- Move exports to a self-contained component. Or leave as a component but move down a dir -->
-    <unit bldFile="resourcemgmt/group"/>
+    <unit bldFile="resourcemgmt/data"/>
    </component>
-   <component id="powerandmemorynotificationservice" name="Power and Memory Notification Service" introduced="6.0" purpose="mandatory" filter="s60">
+   <component id="powerandmemorynotificationservice" name="Power and Memory Notification Service" introduced="6.0" purpose="mandatory">
     <unit bldFile="resourcemgmt/powerandmemorynotificationservice/group" mrp="resourcemgmt/powerandmemorynotificationservice/group/syslibs_pwrcli.mrp"/>
    </component>
   </collection>
@@ -420,16 +419,16 @@
    <component id="sysuiprovider" filter="s60" name="System UI Provider" introduced="^3">
     <unit bldFile="sysstatemgmt/sysuiprovider/group"/>
    </component>
-   <component id="systemstarter" name="System Starter" introduced="9.1" deprecated="^3" purpose="mandatory" filter="s60">
+   <component id="systemstarter" name="System Starter" introduced="9.1" deprecated="^3" purpose="mandatory">
     <unit bldFile="sysstatemgmt/systemstarter/group" mrp="sysstatemgmt/systemstarter/group/app-framework_sysstart.mrp"/>
    </component>
-   <component id="systemstatemgr" name="System State Manager" introduced="^3" purpose="mandatory" filter="s60">
+   <component id="systemstatemgr" name="System State Manager" introduced="^3" purpose="mandatory">
     <meta rel="config"> 
       <defined condition="SYMBIAN_SYSTEM_STATE_MANAGEMENT"/>
     </meta>
     <unit bldFile="sysstatemgmt/systemstatemgr/group" mrp="sysstatemgmt/systemstatemgr/group/app-framework_ssma.mrp"/>
    </component>
-   <component id="systemstateplugins" name="System State Plugins" introduced="^3" purpose="optional" class="plugin" filter="s60">
+   <component id="systemstateplugins" name="System State Plugins" introduced="^3" purpose="optional" class="plugin">
     <meta rel="config">
       <defined condition="SYMBIAN_SYSTEM_STATE_MANAGEMENT"/>
     </meta>
@@ -438,7 +437,7 @@
     <meta rel="config">
       <defined condition="SYMBIAN_SYSTEM_STATE_MANAGEMENT"/>
     </meta>
-   <component id="systemstatereferenceplugins" name="System State Reference Plugins" introduced="^3" purpose="optional" class="plugin"  filter="s60">
+   <component id="systemstatereferenceplugins" name="System State Reference Plugins" introduced="^3" purpose="optional" class="plugin">
     <unit bldFile="sysstatemgmt/systemstatereferenceplugins/group" mrp="sysstatemgmt/systemstatereferenceplugins/group/app-framework_ssrefplugins.mrp"/>
    </component>
   </collection>
@@ -448,7 +447,7 @@
    </component>
   </collection>
   <collection id="systemhealthmanagement" name="System Health Management" level="server">
-   <component id="systemhealthmgr" name="System Health Manager" introduced="^3" purpose="optional" filter="s60">
+   <component id="systemhealthmgr" name="System Health Manager" introduced="^3" purpose="optional">
     <unit bldFile="systemhealthmanagement/systemhealthmgr/group" mrp="systemhealthmanagement/systemhealthmgr/group/app-framework_shma.mrp"/>
    </component>
   </collection>

@@ -45,11 +45,11 @@
    </component>
   </collection>
     <collection id="ncdengine" name="Nokia Content Discover" level="framework">
-      <component id="ncdengine_build" filter="s60" name="NCD API" introduced="^1">
-        <unit bldFile="ncdengine/group" />
+      <component id="ncdengine_build" filter="s60" name="NCD Engine" introduced="^1">
+        <unit bldFile="ncdengine/group"/>
       </component>
-      <component id="ncdengine_engine" filter="s60" name="NCD Engine" introduced="^1">
-        <unit bldFile="ncdengine/engine"  qt:proFile="engine.pro" qt:qmakeArgs="-r"/>
+      <component id="ncdengine_qt_build" filter="s60" name="NCD Qt Engine">
+        <unit bldFile="ncdengine/engine"  qt:proFile="engine.pro"/>
       </component>
     </collection>
     <collection id="appinstaller" name="Application Installer" level="generic">
@@ -57,7 +57,7 @@
         <unit bldFile="appinstaller/appinstui/group"/>
       </component>
       <component id="appinstui_qt" filter="s60" name="Application Installer Qt UI" introduced="^2">
-        <unit bldFile="appinstaller/appinstui" qt:proFile="appinstui.pro" qt:qmakeArgs="-r"/>
+        <unit bldFile="appinstaller/appinstui" qt:proFile="appinstui.pro"/>
       </component>
     </collection>
     <collection id="iaupdateapi_stub" name="IA Update API Stub" level="api">
@@ -69,9 +69,12 @@
     <collection id="iaupdate" name="Independent Apps Update" level="api">
     	<!-- Should reorganise into actual components -->
       <component id="iad" name="Independent App delivery" filter="s60" introduced="^4" purpose="development">
-        <unit bldFile="iaupdate" qt:proFile="iaupdate.pro" qt:qmakeArgs="-r"/>
+        <unit bldFile="iaupdate" qt:proFile="iaupdate.pro"/>
       </component>
       <component id="iaupdate_build" filter="s60" name="IA Update Build" introduced="^2">
+      	<meta rel="config">
+      		<defined condition="FF_IAUPDATE"/>
+      	</meta>  
         <unit bldFile="iaupdate/group"/>
       </component>
     </collection>

@@ -10,6 +10,10 @@
     <meta rel="Api" href="contentctrl_plat/ds_data_modification_api/ds_data_modification_api.metaxml"/>
     <unit bldFile="contentctrl_plat/ds_data_modification_api/group"/>
    </component>
+   <component id="ds_contact_adapter_customization_api" name="DS Contact Adapter Customization API" class="api" filter="s60" introduced="^4">
+    <meta rel="Api" href="contentctrl_plat/ds_contact_adapter_customization_api/ds_contact_adapter_customization_api.metaxml"/>
+    <unit bldFile="contentctrl_plat/ds_contact_adapter_customization_api/group"/>
+   </component>
   </collection>
   <collection id="connectivitymodules" name="Connectivity Modules" level="framework">
    <component id="secon" filter="s60" name="Service Controllers">

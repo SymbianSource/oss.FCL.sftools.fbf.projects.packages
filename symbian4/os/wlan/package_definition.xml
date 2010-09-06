@@ -42,9 +42,9 @@
     <meta rel="Api" href="wlan_plat/wlan_osa_api/wlan_osa_api.metaxml"/>
     <unit bldFile="wlan_plat/wlan_osa_api/group"/>
    </component>
-   <component id="wlan_spia_api" name="WLAN SPIA API" class="api" filter="s60">
-    <meta rel="Api" href="wlan_plat/wlan_spia_api/wlan_spia_api.metaxml"/>
-    <unit bldFile="wlan_plat/wlan_spia_api/group"/>
+   <component id="wlan_busaccess_api" name="WLAN Bus Access API" class="api" filter="s60">
+    <meta rel="Api" href="wlan_plat/wlan_busaccess_api/wlan_busaccess_api.metaxml"/>
+    <unit bldFile="wlan_plat/wlan_busaccess_api/group"/>
    </component>
    <component id="wlan_hpa_api" name="WLAN HPA API" class="api" filter="s60">
     <meta rel="Api" href="wlan_plat/wlan_hpa_api/wlan_hpa_api.metaxml"/>

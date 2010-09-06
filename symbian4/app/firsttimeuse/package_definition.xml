@@ -9,7 +9,7 @@
    <collection id="runtimeproviders" name="Runtime Providers" level="support"/>
 
    <collection id="firsttimeuse_info" name="First Time Use Info" level="ui">
-    <component id="firsttimeuse_build" name="First Time Use Build">
+    <component id="firsttimeuse_build" name="First Time Use Build" filter="s60">
       <unit bldFile="." qt:proFile="ftu.pro" qt:qmakeArgs="-r -config rom"/>
      </component>
     </collection>

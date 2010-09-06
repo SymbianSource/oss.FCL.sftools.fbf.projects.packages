@@ -25,7 +25,10 @@
    <!-- collection is really a component. Move down a directory  -->
    <component id="tacticonserver_build" filter="s60" name="Tacticon Server Build" introduced="^3">
     <unit bldFile="tacticonserver/group"/>
-    <!-- clients and servers are suauly the same component. Consider moving pluign to a separate component if needed -->
+    <!-- clients and servers are usualy the same component. Consider moving plugins to separate components if needed -->
+   </component>
+   <component id="tacticonhapticsplugin" name="Tacticon Haptics Plugin" introduced="^3" class="plugin" filter="s60,dfs_build">
+    <unit bldFile="tacticonserver/server/tacticonpluginfw/tacticonhapticsplugin/group"/>
    </component>
   </collection>
   <collection id="tactilefeedback" name="Tactile Feedback" level="fw">
@@ -34,6 +37,9 @@
    </component>
    <component id="tactilefeedbackresolver" filter="s60" name="Tactile Feedback Resolver" introduced="^1">
     <unit bldFile="tactilefeedback/tactilefeedbackresolver/group"/>
+   </component>
+   <component id="tactilefeedbackresolver_plugins" name="Tactile Feedback Resolver Plugins" introduced="^1" class="plugin" filter="s60,dfs_build">
+    <unit bldFile="tactilefeedback/tactilefeedbackresolver/plugins/group"/>
    </component>
    <component id="tactileclickplugin" filter="s60" name="Tactile Click Plugin" class="plugin" introduced="^1">
     <unit bldFile="tactilefeedback/tactileclickplugin/group"/>
@@ -44,9 +50,8 @@
    <component id="tactileactionplugin" filter="s60" name="Tactile Action Plugin" class="plugin" introduced="^1">
     <unit bldFile="tactilefeedback/tactileactionplugin/group"/>
    </component>
-   <component id="tactilefeedback_build" filter="s60" name="Tactile Feedback Build" introduced="^1">
-    <!-- consider moving IBY to one fo the above components -->
-    <unit bldFile="tactilefeedback/group"/>
+   <component id="tactilefeedback_rom" filter="s60" name="Tactile Feedback ROM" introduced="^1">
+    <unit bldFile="tactilefeedback/rom"/>
    </component>
   </collection>
  </package>

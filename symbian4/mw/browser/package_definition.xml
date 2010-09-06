@@ -2,7 +2,7 @@
 <SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
  <package id="browser" name="Browser" levels="plugin utils support main">
   <collection id="bookmarksengine" name="Bookmarks Engine" level="support">
-    <component id="bookmarksengine_build" name="Bookmarks Engine Build" introduced="^4">
+    <component id="bookmarksengine_build" name="Bookmarks Engine Build" introduced="^4" filter="s60">
       <unit bldFile="bookmarksengine" qt:proFile="bookmarksengine.pro"/>
     </component>
   </collection>

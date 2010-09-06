@@ -35,6 +35,9 @@
    <component id="phoneui2" filter="s60" name="Phone UI">
     <unit bldFile="phoneapp/phoneui2" qt:proFile="phoneui2.pro"/>
    </component>
+   <component id="phoneuivoipextension" filter="s60" name="Phone UI VOIP Extension" introduced="^4" >
+    <unit bldFile="phoneapp/phoneuivoipextension/group"/>
+   </component>   
   </collection>
   <collection id="phoneengine" name="Phone Engine" level="engine">
    <component id="phonecntfinder2" filter="s60" name="Phone Contact Finder">

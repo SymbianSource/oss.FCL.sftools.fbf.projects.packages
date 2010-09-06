@@ -36,11 +36,5 @@
     <unit bldFile="configmanagers/imagingconfigmanager/group"/>
    </component>
   </collection>
-  <collection id="camerasrv_info" name="Camera Services Info" level="api">
-   <component id="camerasrv_build" filter="s60" name="Camera Services Build">
-    <!-- should split into individual bld.infs -->
-    <unit bldFile="group"/>
-   </component>
-  </collection>
  </package>
 </SystemDefinition>

@@ -73,6 +73,9 @@
       <component id="filebasedcertificateandkeystores" name="File-based Certificate and Key Stores" introduced="8.0" purpose="optional">
         <unit bldFile="cryptoservices/filebasedcertificateandkeystores/group" mrp="cryptoservices/filebasedcertificateandkeystores/group/security_filetokens.mrp"/>
       </component>
+      <component id="rootcertificates" name="Root Certificates" introduced="7.0s" purpose="optional" filter="sf_build">
+        <unit bldFile="cryptoservices/rootcertificates/group" mrp="cryptoservices/rootcertificates/group/rootcerts.mrp"/>
+      </component>
       <component id="browserrootcertificates" name="Browser Root Certificates" introduced="^2" purpose="optional" filter="sf_build">
         <unit mrp="cryptoservices/browserrootcertificates/browserrootcerts.mrp"/>
       </component>

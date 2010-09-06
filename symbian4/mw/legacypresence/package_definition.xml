@@ -54,5 +54,17 @@
     <unit bldFile="pressrv_plat/simple_instant_msg_api/group"/>
    </component>
   </collection>
+  <collection id="xdmengine" name="XDM Engine" level="engine">
+   <!-- collection is really a component. Need to move down a directory (eg xdm/xdmengine)-->
+   <component id="xdmengine_build" filter="s60" name="XDM Engine Build">
+    <unit bldFile="xdmengine/group"/>
+   </component>
+  </collection>
+  <collection id="simpleengine" name="SIMPLE Engine" level="engine">
+   <!-- collection is really a component. Need to move down a directory-->
+   <component id="simpleengine_build" filter="s60" name="SIMPLE Engine Build">
+    <!-- <unit bldFile="simpleengine/group"/> not built -->
+   </component>
+  </collection>
  </package>
 </SystemDefinition>
