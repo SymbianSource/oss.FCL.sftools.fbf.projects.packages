@@ -50,12 +50,12 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="mw" long-name="Middleware" levels="generic specific">
-   <block name="browser" level="specific" levels="plugin utils support main" long-name="Browser">
+   <block name="browser" level="specific" long-name="Browser" levels="plugin utils support main">
 <collection name="bookmarksengine" long-name="Bookmarks Engine" level="support">
-<component name="bookmarksengine_build" long-name="Bookmarks Engine Build" introduced="^4" purpose="optional">
+<component name="bookmarksengine_build" long-name="Bookmarks Engine Build" introduced="^4" filter="s60">
 <unit bldFile="/sf/mw/browser/bookmarksengine" proFile="bookmarksengine.pro"/>
 </component>
 </collection>

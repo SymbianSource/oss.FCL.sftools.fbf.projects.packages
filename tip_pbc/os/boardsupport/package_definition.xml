@@ -50,10 +50,10 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="boardsupport" level="hw" levels="bsp test 2 3 config" long-name="Board Support">
+   <block name="boardsupport" level="hw" long-name="Board Support" levels="bsp test 2 3 config">
 <collection name="emulator" long-name="Emulator" level="bsp">
 <component name="emulatorbsp" long-name="Emulator BSP" purpose="optional">
 <unit bldFile="/sf/os/boardsupport/emulator/emulatorbsp" mrp="/sf/os/boardsupport/emulator/emulatorbsp/base_wins.mrp"/>

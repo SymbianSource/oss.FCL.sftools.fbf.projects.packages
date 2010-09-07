@@ -50,18 +50,18 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
    <block name="openmaxil" level="services" levels="adaptation hw-if device-fw devices middleware app-if">
 <collection name="openmaxil_plat" long-name="OpenMAX IL Platform Exports" level="hw-if">
-<component name="khronos_api" long-name="OpenMAX IL API" introduced="^3" purpose="mandatory" class="api">
+<component name="openmaxil_khronos_api" long-name="OpenMAX IL API" introduced="^3" purpose="mandatory" class="api">
 <unit bldFile="/sf/os/openmaxil/openmaxil_plat/khronos_api/group" version="1"/>
 </component>
-<component name="symbian_api" long-name="OpenMAX IL Symbian API" introduced="^3" purpose="mandatory" class="api">
+<component name="openmaxil_symbian_api" long-name="OpenMAX IL Symbian API" introduced="^3" purpose="mandatory" class="api">
 <unit bldFile="/sf/os/openmaxil/openmaxil_plat/symbian_api/group" version="1"/>
 </component>
-<component name="test_api" long-name="OpenMAX IL test headers" introduced="^3" purpose="development" class="api">
+<component name="openmaxil_test_api" long-name="OpenMAX IL test headers" introduced="^3" purpose="development" class="api">
 <unit bldFile="/sf/os/openmaxil/openmaxil_plat/test_api/group" version="1"/>
 </component>
 </collection>
@@ -76,7 +76,7 @@
 <unit bldFile="/sf/os/openmaxil/omxil_generic/omxilloader/group" version="1"/>
 </component>
 </collection>
-<collection name="tsrc" long-name="OpenMAX IL Test code" level="hw-if">
+<collection name="openmaxil_tsrc" long-name="OpenMAX IL Test code" level="hw-if">
 <component name="xmltestharness" long-name="OpenMAX IL XML Test Harness" introduced="^3" purpose="development">
 <unit bldFile="/sf/os/openmaxil/tsrc/xmltestharness/group" version="1"/>
 </component>

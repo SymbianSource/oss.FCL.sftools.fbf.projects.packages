@@ -53,30 +53,34 @@
 <SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="mw" long-name="Middleware" levels="generic specific">
-   <block name="imghandling" level="specific" long-name="Image Handling" levels="lib util if">
-<collection name="imagehandling_plat" long-name="Image Handling Platform Interfaces" level="if">
-<component name="image_handling_library_api" long-name="Image Handling Library API" filter="s60" class="api">
-<unit bldFile="/sf/mw/imghandling/imagehandling_plat/image_handling_library_api/group"/>
-</component>
-<component name="3gp_library_api" long-name="3GP Library API" filter="s60" class="api">
-<unit bldFile="/sf/mw/imghandling/imagehandling_plat/3gp_library_api/group"/>
-</component>
-<component name="thumbnailmanager_api" long-name="Thumbnail Manager API" filter="s60" class="api">
-<unit bldFile="/sf/mw/imghandling/imagehandling_plat/thumbnailmanager_api/group" filter="!test"/>
+   <block name="gstreamer" level="generic" long-name="GStreamer" levels="plugin core api">
+<!-- structure matches planned directory layout -->
+<collection name="gstreamerfw" long-name="GStreamer Framework" level="core">
+<component name="gstreamer_core" long-name="GStreamer Core" introduced="^3" filter="s60">
+<unit bldFile="/sf/mw/gstreamer/gstreamer_core/group"/>
 </component>
 </collection>
-<collection name="imagehandlinglib" long-name="Image Handling Library" level="lib">
-<!-- collection is really a component, need to move down a directory -->
-<component name="ihl" filter="s60" long-name="IHL">
-<unit bldFile="/sf/mw/imghandling/imagehandlinglib/group"/>
+<collection name="gst_plugins" long-name="GStreamer Plugins" level="plugin">
+<component name="gst_plugins_base" long-name="GStreamer Base Plugins" introduced="^3" filter="s60">
+<unit bldFile="/sf/mw/gstreamer/gst_plugins_base/group"/>
+</component>
+<component name="gst_plugins_good" long-name="GStreamer Good Plugins" introduced="^3" filter="s60">
+<unit bldFile="/sf/mw/gstreamer/gst_plugins_good/group"/>
+</component>
+<component name="gst_plugins_symbian" filter="s60" long-name="GStreamer Sybmian Plugins" introduced="^3">
+<unit bldFile="/sf/mw/gstreamer/gst_plugins_symbian/group" filter="!test"/>
 </component>
 </collection>
-<collection name="imagehandlingutilities" long-name="Image Handling Utilities" level="util">
-<component name="thumbnailmanager" filter="s60" long-name="Thumbnail Manager">
-<unit bldFile="/sf/mw/imghandling/imagehandlingutilities/thumbnailmanager/group"/>
+<collection name="gstregistrygenerator" long-name="GStreamer Registry Generator" level="core">
+<!-- collection is really a component. Move down an directory  -->
+<component name="gstregistrygenerator_build" filter="s60" long-name="GStreamer Registry Generator Build" introduced="^3">
+<unit bldFile="/sf/mw/gstreamer/gstregistrygenerator/group"/>
 </component>
-<component name="thumbnailmanagerqt" filter="s60" long-name="Thumbnail Manager Qt" introduced="^4">
-<unit bldFile="/sf/mw/imghandling/imagehandlingutilities/thumbnailmanager/thumbnailmanagerqt" filter="!test" proFile="thumbnailmanagerqt.pro" qmakeArgs="-r"/>
+</collection>
+<collection name="gst_test_apps" long-name="GStreamer Test Applications" level="api"/>
+<collection name="gstreamer_info" long-name="GStreamer Info" level="api">
+<component name="gstreamer_rom" filter="s60" long-name="GStreamer ROM" introduced="^3" class="config">
+<unit bldFile="/sf/mw/gstreamer/rom"/>
 </component>
 </collection>
 </block>

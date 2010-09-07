@@ -50,10 +50,10 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="cellularsrv" level="services" levels="adaptation hw-if plugin framework server app-if" long-name="Cellular Baseband Services">
+   <block name="cellularsrv" level="services" long-name="Cellular Baseband Services" levels="adaptation hw-if plugin framework server app-if">
 <collection name="basebandabstraction" long-name="Baseband Abstraction" level="hw-if">
 <component name="basebandchanneladaptor" long-name="Baseband Channel Adaptor" introduced="8.1" purpose="optional">
 <unit bldFile="/sf/os/cellularsrv/basebandabstraction/basebandchanneladaptor/group" mrp="/sf/os/cellularsrv/basebandabstraction/basebandchanneladaptor/group/networking_bca.mrp"/>
@@ -113,8 +113,8 @@
 <component name="common_tsy" long-name="Common TSY" introduced="^2" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/cellularsrv/telephonyserverplugins/common_tsy/group" mrp="/sf/os/cellularsrv/telephonyserverplugins/common_tsy/group/telephony_commontsy.mrp"/>
 </component>
-<component name="licenseetsystub" long-name="Licensee TSY Stub" introduced="^2" filter="sf_build" purpose="development" plugin="Y">
-<unit bldFile="/sf/os/cellularsrv/telephonyserverplugins/licenseetsystub/group" mrp="/sf/os/cellularsrv/telephonyserverplugins/licenseetsystub/group/licenseetsystub.mrp"/>
+<component name="licenseetsystub" long-name="Licensee TSY Stub" introduced="^2" purpose="development" filter="sf_build" plugin="Y">
+<unit mrp="/sf/os/cellularsrv/telephonyserverplugins/licenseetsystub/group/licenseetsystub.mrp" bldFile="/sf/os/cellularsrv/telephonyserverplugins/licenseetsystub/group"/>
 </component>
 <component name="multimodetsy" long-name="Multimode TSY" purpose="development" plugin="Y">
 <unit bldFile="/sf/os/cellularsrv/telephonyserverplugins/multimodetsy/group" mrp="/sf/os/cellularsrv/telephonyserverplugins/multimodetsy/group/telephony_mmtsy.mrp"/>

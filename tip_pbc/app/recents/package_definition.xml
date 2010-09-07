@@ -50,31 +50,31 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
-   <block name="recents" level="apps" levels="engine support ui api" long-name="Recent Events">
+   <block name="recents" level="apps" long-name="Recent Events" levels="engine support ui api">
 <collection name="recents_plat" long-name="Recent Events Platform Interfaces" level="api">
-<component name="logs_services_api" long-name="Logs Services API" introduced="^4" filter="s60" purpose="optional" class="api"/>
-<component name="logs_engine_api" long-name="Logs Engine API" introduced="^4" filter="s60" purpose="optional" class="api"/>
-<component name="logs_timers_api" long-name="Logs Timers API" filter="s60" purpose="optional" class="api"/>
-<component name="logs_engine_api_extensions" long-name="Logs Engine API Extensions" filter="s60" purpose="optional" class="api"/>
+<component name="logs_services_api" long-name="Logs Services API" filter="s60" introduced="^4" class="api"/>
+<component name="logs_engine_api" long-name="Logs Engine API" filter="s60" introduced="^4" class="api"/>
+<component name="logs_timers_api" long-name="Logs Timers API" filter="s60" class="api"/>
+<component name="logs_engine_api_extensions" long-name="Logs Engine API Extensions" filter="s60" class="api"/>
 </collection>
 <collection name="logsui" long-name="Logs UI" level="ui">
 <!-- split into actual components -->
-<component name="logsservices" long-name="Logs Services" introduced="^4" filter="s60" purpose="optional" class="placeholder">
+<component name="logsservices" filter="s60" long-name="Logs Services" introduced="^4" class="placeholder">
 <!-- <unit bldFile="logsui/logsservices" qt:proFile="logsui.pro"/> -->
 </component>
-<component name="logscntfinder" long-name="Logs Contact finder" filter="s60" purpose="optional" class="placeholder">
+<component name="logscntfinder" filter="s60" long-name="Logs Contact finder" class="placeholder">
 <!--<unit bldFile="logsui/logscntfinder" qt:proFile="logscntfinder.pro"/> -->
 </component>
-<component name="logsengine" long-name="Logs Engine" introduced="^4" filter="s60" purpose="optional" class="placeholder">
+<component name="logsengine" filter="s60" long-name="Logs Engine" introduced="^4" class="placeholder">
 <!--<unit bldFile="logsui/logsengine" qt:proFile="logsengine.pro"/> -->
 </component>
-<component name="logsapp" long-name="Logs Application" filter="s60" purpose="optional" class="placeholder">
+<component name="logsapp" filter="s60" long-name="Logs Application" class="placeholder">
 <!--<unit bldFile="logsui/logsengine" qt:proFile="logsengine.pro"/> -->
 </component>
-<component name="logsui_build" long-name="Logs UI Build" filter="s60" purpose="optional">
+<component name="logsui_build" filter="s60" long-name="Logs UI Build">
 <unit bldFile="/sf/app/recents/logsui" proFile="logsui.pro"/>
 </component>
 </collection>

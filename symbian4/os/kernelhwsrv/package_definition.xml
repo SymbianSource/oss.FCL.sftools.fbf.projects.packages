@@ -50,10 +50,10 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="kernelhwsrv" level="hw" levels="hw-if adaptation framework test" long-name="Kernel and Hardware Services">
+   <block name="kernelhwsrv" level="hw" long-name="Kernel and Hardware Services" levels="hw-if adaptation framework test">
 <collection name="brdbootldr" long-name="Board Boot Loader" level="hw-if">
 <component name="ubootldr" long-name="Boot Loader" introduced="9.2" purpose="optional">
 <unit bldFile="/sf/os/kernelhwsrv/brdbootldr/ubootldr" mrp="/sf/os/kernelhwsrv/brdbootldr/ubootldr/base_ubootldr.mrp"/>
@@ -79,6 +79,12 @@
 <component name="f32test" long-name="File Server Tests" purpose="development">
 <unit bldFile="/sf/os/kernelhwsrv/kerneltest/f32test/group" mrp="/sf/os/kernelhwsrv/kerneltest/f32test/group/base_f32test.mrp"/>
 </component>
+<component name="rofstests" long-name="Read Only File System Tests" purpose="development">
+<unit bldFile="/sf/os/kernelhwsrv/kerneltest/f32test/rofs" mrp="/sf/os/kernelhwsrv/kerneltest/f32test/rofs/rofs_tests.mrp"/>
+</component>
+<component name="loadertest" long-name="Loader Tests" purpose="development">
+<unit bldFile="/sf/os/kernelhwsrv/kerneltest/f32test/loader" mrp="/sf/os/kernelhwsrv/kerneltest/f32test/loader/base_loader.mrp"/>
+</component>
 </collection>
 <collection name="ldds" long-name="Logical Device Drivers" level="adaptation">
 <component name="ethernetldd" long-name="Ethernet Drivers" purpose="optional">
@@ -97,7 +103,7 @@
 <!-- these are LDDs for storage media-->
 <unit bldFile="/sf/os/kernelhwsrv/kernel/eka/drivers/locmedia" mrp="/sf/os/kernelhwsrv/kernel/eka/drivers/locmedia/base_e32_drivers_locmedia.mrp"/>
 </component>
-<component name="runmodedebugger" long-name="Run Mode Debugger" purpose="mandatory">
+<component name="stopmodedebugdriver" long-name="Stop Mode Debug Driver" purpose="mandatory">
 <unit bldFile="/sf/os/kernelhwsrv/kernel/eka/drivers/debug/group" mrp="/sf/os/kernelhwsrv/kernel/eka/drivers/debug/group/base_e32_drivers_debug.mrp"/>
 </component>
 <component name="btrace" long-name="Kernel Trace Tool" purpose="mandatory">
@@ -159,7 +165,7 @@
 <component name="usbmsfs" long-name="USB Mass Storage File System" filter="gt" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/smassstorage" mrp="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/smassstorage/base_f32_smassstorage.mrp"/>
 </component>
-<component name="usbhostmssrv" long-name="USB Host Mass Storage Server" introduced="^3" filter="gt" purpose="optional" plugin="Y">
+<component name="usbhostmssrv" long-name="USB Host Mass Storage Server" filter="gt" introduced="^3" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/shostmassstorage" mrp="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/shostmassstorage/base_f32_shostmassstorage.mrp"/>
 </component>
 <component name="fat32fs" long-name="FAT32 File System" filter="gt" purpose="optional" plugin="Y">

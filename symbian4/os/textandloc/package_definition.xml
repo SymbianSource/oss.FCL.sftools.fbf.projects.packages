@@ -50,29 +50,29 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="textandloc" level="services" levels="encoding util fonts tools text" long-name="Text and Localisation Services">
+   <block name="textandloc" level="services" long-name="Text and Localisation Services" levels="encoding util fonts tools text">
 <collection name="charconvfw" long-name="Character Conversion" level="encoding">
-<component name="charconv_fw" long-name="Character Encoding and Conversion Framework" filter="api_test" purpose="optional">
+<component name="charconv_fw" long-name="Character Encoding and Conversion Framework" purpose="optional" filter="api_test">
 <!-- both production and api_test-->
 <unit bldFile="/sf/os/textandloc/charconvfw/charconv_fw/group" mrp="/sf/os/textandloc/charconvfw/charconv_fw/group/syslibs_charconv.mrp"/>
 </component>
-<component name="charconvplugins" long-name="Character Encoding and Conversion Plugins" filter="apit_test" purpose="optional" plugin="Y">
+<component name="charconvplugins" long-name="Character Encoding and Conversion Plugins" purpose="optional" filter="apit_test" plugin="Y">
 <!-- both production and api_test-->
 <unit bldFile="/sf/os/textandloc/charconvfw/charconvplugins/group" mrp="/sf/os/textandloc/charconvfw/charconvplugins/group/syslibs_charconv_plugins.mrp"/>
 </component>
-<component name="fatfilenameconversionplugins" long-name="FAT Filename Conversion Plugins" introduced="9.1" filter="api_test" purpose="optional" plugin="Y">
+<component name="fatfilenameconversionplugins" long-name="FAT Filename Conversion Plugins" introduced="9.1" purpose="optional" filter="api_test" plugin="Y">
 <!-- both production and api_test-->
 <unit bldFile="/sf/os/textandloc/charconvfw/fatfilenameconversionplugins/group" mrp="/sf/os/textandloc/charconvfw/fatfilenameconversionplugins/group/syslibs_FATCharsetConv.mrp"/>
 </component>
 </collection>
 <collection name="fontandtxtsrv" long-name="Font and Text Services" level="fonts">
-<component name="iculayoutengine" long-name="ICU Layout Engine" introduced="9.2" deprecated="^4" purpose="optional" plugin="Y">
+<component name="iculayoutengine" long-name="ICU Layout Engine" introduced="9.2" purpose="optional" deprecated="^4" plugin="Y">
 <unit bldFile="/sf/os/textandloc/fontservices/textshaperplugin/group" mrp="/sf/os/textandloc/fontservices/textshaperplugin/group/graphics_iculayoutengine.mrp"/>
 </component>
-<component name="fontstore" long-name="Font Store" filter="api_test" purpose="mandatory">
+<component name="fontstore" long-name="Font Store" purpose="mandatory" filter="api_test">
 <!-- both production and api_test-->
 <unit bldFile="/sf/os/textandloc/fontservices/fontstore/group" mrp="/sf/os/textandloc/fontservices/fontstore/group/graphics_fntstore.mrp"/>
 </component>
@@ -95,16 +95,16 @@
 </component>
 </collection>
 <collection name="textandlocutils" long-name="Text and Localisation Utils" level="util">
-<component name="numbergrouping" long-name="Number Grouping" purpose="optional">
+<component name="numbergrouping" long-name="Number Grouping">
 <unit bldFile="/sf/os/textandloc/textandlocutils/numbergrouping/group" mrp="/sf/os/textandloc/textandlocutils/numbergrouping/group/tls_numbergrouping.mrp"/>
 </component>
-<component name="jplangutil" long-name="Japanese Language Utilities" purpose="optional">
+<component name="jplangutil" long-name="Japanese Language Utilities">
 <unit bldFile="/sf/os/textandloc/textandlocutils/jplangutil/group" mrp="/sf/os/textandloc/textandlocutils/jplangutil/group/tls_jplangutil.mrp"/>
 </component>
-<component name="sortutil" long-name="Sorting Utility" purpose="optional">
+<component name="sortutil" long-name="Sorting Utility">
 <unit bldFile="/sf/os/textandloc/textandlocutils/sortutil/group" mrp="/sf/os/textandloc/textandlocutils/sortutil/group/tls_sortutil.mrp"/>
 </component>
-<component name="inlinetext" long-name="Inline Text" purpose="optional">
+<component name="inlinetext" long-name="Inline Text">
 <unit bldFile="/sf/os/textandloc/textandlocutils/inlinetext/group" mrp="/sf/os/textandloc/textandlocutils/inlinetext/group/tls_inlinetext.mrp"/>
 </component>
 <component name="numberformatting" long-name="Number Formatting" introduced="7.0s" purpose="optional">
