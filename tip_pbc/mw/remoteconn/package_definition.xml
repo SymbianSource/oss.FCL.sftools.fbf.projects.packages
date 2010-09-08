@@ -130,9 +130,6 @@
 <component name="backupengine" long-name="Backup Engine" introduced="9.0" purpose="optional">
 <unit bldFile="/sf/mw/remoteconn/backupandrestore/backupengine/group" mrp="/sf/mw/remoteconn/backupandrestore/backupengine/group/connectivity_backupengine.mrp"/>
 </component>
-<component name="backuptest" long-name="Backup Test" introduced="^2" purpose="development">
-<unit bldFile="/sf/mw/remoteconn/backupandrestore/backuptest/group" mrp="/sf/mw/remoteconn/backupandrestore/backuptest/group/connectivity_backuptest.mrp"/>
-</component>
 </collection>
 <collection name="obex" long-name="OBEX" level="generic">
 <component name="obexprotocol" long-name="OBEX Protocol" introduced="9.1" purpose="optional">
