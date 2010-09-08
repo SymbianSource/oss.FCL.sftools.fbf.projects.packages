@@ -82,7 +82,7 @@
    <component id="backupengine" name="Backup Engine" introduced="9.0" purpose="optional">
     <unit bldFile="backupandrestore/backupengine/group" mrp="backupandrestore/backupengine/group/connectivity_backupengine.mrp"/>
    </component>
-   <component id="backuptest" name="Backup Test" introduced="^2" purpose="development">
+   <component id="backuptest" name="Backup Test" introduced="^2" purpose="development" filter="test">
     <unit bldFile="backupandrestore/backuptest/group" mrp="backupandrestore/backuptest/group/connectivity_backuptest.mrp"/>
    </component>
   </collection>
