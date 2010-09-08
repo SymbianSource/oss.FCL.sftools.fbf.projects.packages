@@ -108,6 +108,7 @@
       <package id="beagleboard" tech-domain="hb" level="low" href="../../../../adaptation/beagleboard/package_definition.xml"/>
       <package id="qemu" tech-domain="hb" level="low" href="../../../../adaptation/qemu/package_definition.xml"/>
       <package id="codecs.aricent" tech-domain="mm" level="low" href="../../../../adaptation/codecs.aricent/package_definition.xml" />
+      <package id="openmaxil.nokia" tech-domain="mm" level="mw" href="../../../../adapt/openmaxil.nokia/package_definition.xml" />
     </layer>
     <layer id="os" name="OS" levels="hw services">
       <package id="kernelhwsrv" level="hw" tech-domain="hb" href="../../../../os/kernelhwsrv/package_definition.xml"/>
@@ -191,6 +192,7 @@
       <package id="webruntime" level="specific" tech-domain="rt" href="../../../../mw/webruntime/package_definition.xml"/>
       <package id="platformtools" level="generic" tech-domain="to" href="../../../../mw/platformtools/package_definition.xml"/>
       <package id="uitools" level="specific" tech-domain="to" href="../../../../mw/uitools/package_definition.xml"/>
+      <package id="socialmobilefw" level="specific" tech-domain="pr" href="../../../../mw/socialmobilefw/package_definition.xml"/>
     </layer>
     <layer id="app" name="Applications" levels="services apps">
       <package id="location" level="apps" tech-domain="lo" href="../../../../app/location/package_definition.xml"/>  <!-- pending removal -->
@@ -205,7 +207,7 @@
       <package id="search" level="apps" tech-domain="pr" href="../../../../app/search/package_definition.xml"/>
       <package id="contacts" level="apps" span="2" tech-domain="pr" href="../../../../app/contacts/package_definition.xml"/>
       <package id="organizer" level="apps" span="2" tech-domain="pr" href="../../../../app/organizer/package_definition.xml"/>
-	  <package id="calendarwidget" level="apps" tech-domain="pr" href="../../../../app/calendarwidget/package_definition.xml"/>
+      <package id="calendarwidget" level="apps" tech-domain="pr" href="../../../../app/calendarwidget/package_definition.xml"/>
       <package id="messaging" level="apps" span="2" tech-domain="pr" href="../../../../app/messaging/package_definition.xml"/>
       <package id="commonemail" level="apps" span="2" tech-domain="pr" href="../../../../app/commonemail/package_definition.xml"/>
       <package id="camera" level="apps" tech-domain="ma" href="../../../../app/camera/package_definition.xml"/>
@@ -216,7 +218,7 @@
       <package id="musicplayer" level="apps" tech-domain="ma" href="../../../../app/musicplayer/package_definition.xml"/>
       <package id="radio" level="apps" tech-domain="ma" href="../../../../app/radio/package_definition.xml"/>
       <package id="internetradio" level="apps" tech-domain="ma" href="../../../../app/internetradio/package_definition.xml"/>
-	  <package id="podcatcher" level="apps" tech-domain="ma" href="../../../../app/podcatcher/package_definition.xml"/>
+      <package id="podcatcher" level="apps" tech-domain="ma" href="../../../../app/podcatcher/package_definition.xml"/>
       <package id="homescreen" level="apps" tech-domain="ui" href="../../../../app/homescreen/package_definition.xml"/>
       <package id="jrt" level="services" tech-domain="rt" href="../../../../app/jrt/package_definition.xml"/>
       <package id="browserui" level="services" tech-domain="rt" href="../../../../app/browserui/package_definition.xml"/>
