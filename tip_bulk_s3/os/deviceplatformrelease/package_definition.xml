@@ -140,7 +140,7 @@
 <unit bldFile="/sf/os/deviceplatformrelease/sf_config/rombuild/zoom2/group"/>
 </component>
 <component filter="sf_build" purpose="development" introduced="^3" class="config">
-<unit bldFile="/sf/os/deviceplatformrelease/os/deviceplatformrelease/sf_config/rombuild/sf_refhw/group"/>
+<unit bldFile="/sf/os/deviceplatformrelease/sf_config/rombuild/sf_refhw/group"/>
 </component>
 </collection>
 <!-- should be located locally in buildplatforms/group. NB. This is a different package! -->
