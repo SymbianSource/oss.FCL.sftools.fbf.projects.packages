@@ -50,12 +50,12 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="buildtools" level="hw" long-name="Build Tools" levels="bld mw fw ui">
+   <block name="buildtools" level="hw" levels="bld mw fw ui" long-name="Build Tools">
 <collection name="bldsystemtools" long-name="Build System Tools" level="bld">
-<component name="sysdeftools" long-name="System Definition Tools" purpose="development" introduced="^2">
+<component name="sysdeftools" long-name="System Definition Tools" introduced="^2" purpose="development">
 <unit mrp="/sf/os/buildtools/bldsystemtools/sysdeftools/group/sysdeftools.mrp"/>
 </component>
 <component name="commonbldutils" long-name="Common Utils" purpose="development">
@@ -74,8 +74,8 @@
 </component>
 </collection>
 <collection name="sbsv1_os" long-name="Symbian Build System v1" level="fw">
-<component name="e32toolp" long-name="E32 Perl Tools" purpose="development" filter="sf_build" class="PC">
-<unit mrp="/sf/os/buildtools/sbsv1_os/e32toolp/group/tools_e32toolp.mrp" bldFile="/sf/os/buildtools/sbsv1_os/e32toolp/group"/>
+<component name="e32toolp" long-name="E32 Perl Tools" filter="sf_build" purpose="development" class="PC">
+<unit bldFile="/sf/os/buildtools/sbsv1_os/e32toolp/group" mrp="/sf/os/buildtools/sbsv1_os/e32toolp/group/tools_e32toolp.mrp"/>
 </component>
 </collection>
 <collection name="imgtools_os" long-name="Image Tools" level="fw">

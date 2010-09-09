@@ -50,47 +50,47 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
-   <block name="radio" level="apps" long-name="Radio Apps" levels="engine plugin ui">
+   <block name="radio" level="apps" levels="engine plugin ui" long-name="Radio Apps">
 <collection name="radioengine" long-name="Radio Engine" level="engine">
-<component name="radioengineutils" filter="s60" long-name="Radio Engine Utils" introduced="^4">
+<component name="radioengineutils" long-name="Radio Engine Utils" introduced="^4" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/radio/radioengine/utils/group"/>
 </component>
-<component name="radioenginesettings" filter="s60" long-name="Radio Engine Settings" introduced="^4">
+<component name="radioenginesettings" long-name="Radio Engine Settings" introduced="^4" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/radio/radioengine/settings/group"/>
 </component>
-<component name="radioengine_engine" filter="s60" long-name="Radio Engine" introduced="^4">
+<component name="radioengine_engine" long-name="Radio Engine" introduced="^4" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/radio/radioengine/engine/group"/>
 </component>
 </collection>
 <collection name="radioapp" long-name="Radio App" level="ui">
-<component name="radioenginewrapper" filter="s60" long-name="Radio Engine Wrapper" introduced="^4">
+<component name="radioenginewrapper" long-name="Radio Engine Wrapper" introduced="^4" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/radio/radioapp/radioenginewrapper" proFile="radioenginewrapper.pro"/>
 </component>
-<component name="radiopresetstorage" filter="s60" long-name="Radio Preset Storage" introduced="^4">
+<component name="radiopresetstorage" long-name="Radio Preset Storage" introduced="^4" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/radio/radioapp/radiopresetstorage" proFile="radiopresetstorage.pro"/>
 </component>
-<component name="radiouiengine" filter="s60" long-name="Radio UI Engine" introduced="^4">
+<component name="radiouiengine" long-name="Radio UI Engine" introduced="^4" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/radio/radioapp/radiouiengine" proFile="radiouiengine.pro"/>
 </component>
-<component name="radiowidgets" filter="s60" long-name="Radio Widgets" introduced="^4">
+<component name="radiowidgets" long-name="Radio Widgets" introduced="^4" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/radio/radioapp/radiowidgets" proFile="radiowidgets.pro"/>
 </component>
-<component name="radioapplication" filter="s60" long-name="Radio Application" introduced="^4">
+<component name="radioapplication" long-name="Radio Application" introduced="^4" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/radio/radioapp/radioapplication" proFile="radioapplication.pro"/>
 </component>
-<component name="radiowidgetsplugin" filter="s60" long-name="Radio Widgets Plugin" introduced="^4" plugin="Y">
+<component name="radiowidgetsplugin" long-name="Radio Widgets Plugin" introduced="^4" filter="s60" purpose="optional" plugin="Y">
 <unit bldFile="/sf/app/radio/radioapp/radiowidgetsplugin" proFile="radiowidgetsplugin.pro"/>
 </component>
-<component name="radio_rom" filter="s60" long-name="Radio ROM" introduced="^4" class="config">
+<component name="radio_rom" long-name="Radio ROM" introduced="^4" filter="s60" purpose="optional" class="config">
 <unit bldFile="/sf/app/radio/rom"/>
 </component>
 </collection>
 <collection name="radiohswidget" long-name="Radio Homescreen Widget" level="plugin">
 <!-- collection is really a component. Move down a directory -->
-<component name="radiohswidget_build" filter="s60" long-name="Radio HS Widget Build" introduced="^4">
+<component name="radiohswidget_build" long-name="Radio HS Widget Build" introduced="^4" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/radio/radiohswidget" proFile="radiohswidget.pro"/>
 </component>
 </collection>

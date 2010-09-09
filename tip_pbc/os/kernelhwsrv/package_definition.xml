@@ -50,10 +50,10 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="kernelhwsrv" level="hw" long-name="Kernel and Hardware Services" levels="hw-if adaptation framework test">
+   <block name="kernelhwsrv" level="hw" levels="hw-if adaptation framework test" long-name="Kernel and Hardware Services">
 <collection name="brdbootldr" long-name="Board Boot Loader" level="hw-if">
 <component name="ubootldr" long-name="Boot Loader" introduced="9.2" purpose="optional">
 <unit bldFile="/sf/os/kernelhwsrv/brdbootldr/ubootldr" mrp="/sf/os/kernelhwsrv/brdbootldr/ubootldr/base_ubootldr.mrp"/>
@@ -165,7 +165,7 @@
 <component name="usbmsfs" long-name="USB Mass Storage File System" filter="gt" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/smassstorage" mrp="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/smassstorage/base_f32_smassstorage.mrp"/>
 </component>
-<component name="usbhostmssrv" long-name="USB Host Mass Storage Server" filter="gt" introduced="^3" purpose="optional" plugin="Y">
+<component name="usbhostmssrv" long-name="USB Host Mass Storage Server" introduced="^3" filter="gt" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/shostmassstorage" mrp="/sf/os/kernelhwsrv/userlibandfileserver/fileserver/shostmassstorage/base_f32_shostmassstorage.mrp"/>
 </component>
 <component name="fat32fs" long-name="FAT32 File System" filter="gt" purpose="optional" plugin="Y">

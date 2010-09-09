@@ -50,53 +50,53 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
-   <block name="jrt" level="services" long-name="Java Runtime" levels="util generic rt ui">
+   <block name="jrt" level="services" levels="util generic rt ui" long-name="Java Runtime">
 <collection name="jrt_plat" long-name="JRT Platform Interfaces" level="ui">
-<component name="java_registry_api" long-name="Java Registry API" filter="s60" class="api">
+<component name="java_registry_api" long-name="Java Registry API" filter="s60" purpose="optional" class="api">
 <unit bldFile="/sf/app/jrt/jrt_plat/java_registry_api/build"/>
 </component>
-<component name="java_env_info_api" long-name="Java Environment Info API" filter="s60" class="api">
+<component name="java_env_info_api" long-name="Java Environment Info API" filter="s60" purpose="optional" class="api">
 <unit bldFile="/sf/app/jrt/jrt_plat/java_env_info_api/build"/>
 </component>
-<component name="java_debug_api" long-name="Java Debug API" filter="s60" class="api">
+<component name="java_debug_api" long-name="Java Debug API" filter="s60" purpose="optional" class="api">
 <unit bldFile="/sf/app/jrt/jrt_plat/java_debug_api/build"/>
 </component>
 </collection>
 <collection name="build_nativejava" long-name="Build Native Java">
-<component name="nativejava" long-name="Build Native Java" filter="s60" introduced="^4">
+<component name="nativejava" long-name="Build Native Java" introduced="^4" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/jrt/build"/>
 </component>
 </collection>
 <collection name="javacommons" long-name="Java Commons" level="generic">
-<component name="javacommons_build" filter="s60" long-name="Java Commons Build">
+<component name="javacommons_build" long-name="Java Commons Build" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/jrt/javacommons" proFile="javacommons.pro"/>
 </component>
 </collection>
 <collection name="javaruntimes" long-name="Java Runtimes" level="rt">
-<component name="javaruntimes_build" filter="s60" long-name="Java Runtimes Build">
+<component name="javaruntimes_build" long-name="Java Runtimes Build" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/jrt/javaruntimes" proFile="javaruntimes.pro"/>
 </component>
 </collection>
 <collection name="javauis" long-name="Java UIs" level="ui">
-<component name="javauis_build" filter="s60" long-name="Java UIs Build">
+<component name="javauis_build" long-name="Java UIs Build" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/jrt/javauis" proFile="javauis.pro"/>
 </component>
 </collection>
 <collection name="javamanager" long-name="Java Manager" level="generic">
-<component name="javamanager_build" filter="s60" long-name="Java Manager Build">
+<component name="javamanager_build" long-name="Java Manager Build" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/jrt/javamanager" proFile="javamanager.pro"/>
 </component>
 </collection>
 <collection name="javatools" long-name="Java Tools" level="util">
-<component name="javatools_build" filter="s60" long-name="Java Tools Build">
+<component name="javatools_build" long-name="Java Tools Build" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/jrt/javatools" proFile="javatools.pro"/>
 </component>
 </collection>
 <collection name="javaextensions" long-name="Java Extensions" level="generic">
-<component name="javaextensions_build" filter="s60" long-name="Java Extensions Build">
+<component name="javaextensions_build" long-name="Java Extensions Build" filter="s60" purpose="optional">
 <unit bldFile="/sf/app/jrt/javaextensions" proFile="javaextensions.pro"/>
 </component>
 </collection>

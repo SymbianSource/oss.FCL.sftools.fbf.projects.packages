@@ -50,79 +50,79 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="ostesttools" level="services" long-name="OS Test tools" levels="fw trace analysis">
+   <block name="ostesttools" level="services" levels="fw trace analysis" long-name="OS Test tools">
 <collection name="stif" long-name="STIF" level="fw">
-<component name="stif_plat" filter="s60" long-name="STIF Platform Interfaces" purpose="development" class="api">
+<component name="stif_plat" long-name="STIF Platform Interfaces" filter="s60" purpose="development" class="api">
 <unit bldFile="/sf/os/ostesttools/stif/stif_plat/group"/>
 </component>
-<component name="TestInterface" filter="s60" long-name="Test Interface" purpose="development">
+<component name="TestInterface" long-name="Test Interface" filter="s60" purpose="development">
 <unit bldFile="/sf/os/ostesttools/stif/TestInterface/group"/>
 </component>
-<component name="TestServer" filter="s60" long-name="Test Server" purpose="development">
+<component name="TestServer" long-name="Test Server" filter="s60" purpose="development">
 <unit bldFile="/sf/os/ostesttools/stif/TestServer/group"/>
 </component>
-<component name="TestEngine" filter="s60" long-name="Test Engine" purpose="development">
+<component name="TestEngine" long-name="Test Engine" filter="s60" purpose="development">
 <unit bldFile="/sf/os/ostesttools/stif/TestEngine/group"/>
 </component>
-<component name="TestServerStarter" filter="s60" long-name="Test Server Starter" purpose="development">
+<component name="TestServerStarter" long-name="Test Server Starter" filter="s60" purpose="development">
 <unit bldFile="/sf/os/ostesttools/stif/TestServerStarter/group"/>
 </component>
-<component name="StifTFwIf" filter="s60" long-name="STIF Test Framework Interface" purpose="development">
+<component name="StifTFwIf" long-name="STIF Test Framework Interface" filter="s60" purpose="development">
 <unit bldFile="/sf/os/ostesttools/stif/StifTFwIf/group"/>
 </component>
-<component name="ConsoleUI" filter="s60" long-name="Console UI" purpose="development">
+<component name="ConsoleUI" long-name="Console UI" filter="s60" purpose="development">
 <unit bldFile="/sf/os/ostesttools/stif/ConsoleUI/group"/>
 </component>
-<component name="TestCombiner" filter="s60" long-name="Test Combiner" purpose="development">
+<component name="TestCombiner" long-name="Test Combiner" filter="s60" purpose="development">
 <unit bldFile="/sf/os/ostesttools/stif/TestCombiner/group"/>
 </component>
-<component name="DemoModule" filter="s60" long-name="Demo Module" purpose="development">
+<component name="DemoModule" long-name="Demo Module" filter="s60" purpose="development">
 <unit bldFile="/sf/os/ostesttools/stif/DemoModule/group"/>
 </component>
-<component name="ATSLogger" filter="s60" long-name="ATS Logger" purpose="development">
+<component name="ATSLogger" long-name="ATS Logger" filter="s60" purpose="development">
 <unit bldFile="/sf/os/ostesttools/stif/ATSLogger/group"/>
 </component>
-<component name="ATSInterface" filter="s60" long-name="ATS Interface" purpose="development">
+<component name="ATSInterface" long-name="ATS Interface" filter="s60" purpose="development">
 <unit bldFile="/sf/os/ostesttools/stif/ATSInterface/group"/>
 </component>
-<component name="TestScripter" filter="s60" long-name="Test Scripter" purpose="development">
+<component name="TestScripter" long-name="Test Scripter" filter="s60" purpose="development">
 <unit bldFile="/sf/os/ostesttools/stif/TestScripter/group"/>
 </component>
-<component name="SUEvent" filter="s60" long-name="SU Event" purpose="development">
+<component name="SUEvent" long-name="SU Event" filter="s60" purpose="development">
 <unit bldFile="/sf/os/ostesttools/stif/SUEvent/group"/>
 </component>
-<component name="StifKernelTestClassBase" filter="s60" long-name="STIF Kernel Test Class Base" purpose="development">
+<component name="StifKernelTestClassBase" long-name="STIF Kernel Test Class Base" filter="s60" purpose="development">
 <unit bldFile="/sf/os/ostesttools/stif/StifKernelTestClassBase/group"/>
 </component>
-<component name="stif_data" filter="s60" long-name="STIF Data" purpose="development" class="config">
+<component name="stif_data" long-name="STIF Data" filter="s60" purpose="development" class="config">
 <!--  This is a component. Should move down a directory. or move into other STIF components-->
 <unit bldFile="/sf/os/ostesttools/stif/group"/>
 </component>
 </collection>
 <collection name="hti" long-name="Harmonized Test Interface" level="trace">
-<component name="hti_plat" filter="s60" long-name="HTI Platform Interfaces" purpose="development" class="api">
+<component name="hti_plat" long-name="HTI Platform Interfaces" filter="s60" purpose="development" class="api">
 <unit bldFile="/sf/os/ostesttools/hti/hti_plat/group"/>
 </component>
-<component name="HtiCfg" filter="s60" long-name="HTI Config" purpose="development">
+<component name="HtiCfg" long-name="HTI Config" filter="s60" purpose="development">
 <unit bldFile="/sf/os/ostesttools/hti/HtiCfg/group"/>
 </component>
-<component name="HtiAutoStart" filter="s60" long-name="HTI Autostart" purpose="development">
+<component name="HtiAutoStart" long-name="HTI Autostart" filter="s60" purpose="development">
 <unit bldFile="/sf/os/ostesttools/hti/HtiAutoStart/group"/>
 </component>
-<component name="HtiFramework" filter="s60" long-name="HTI Framework" purpose="development">
+<component name="HtiFramework" long-name="HTI Framework" filter="s60" purpose="development">
 <unit bldFile="/sf/os/ostesttools/hti/HtiFramework/group"/>
 </component>
-<component name="hticommplugins" filter="s60" long-name="HTI Communication Plugins" purpose="development" plugin="Y">
+<component name="hticommplugins" long-name="HTI Communication Plugins" filter="s60" purpose="development" plugin="Y">
 <!-- need to #include these from a single unit or separate into component at the right directory level -->
 <unit bldFile="/sf/os/ostesttools/hti/HtiCommPlugins/HtiBtCommPlugin/group"/>
 <unit bldFile="/sf/os/ostesttools/hti/HtiCommPlugins/HtiIPCommPlugin/group"/>
 <unit bldFile="/sf/os/ostesttools/hti/HtiCommPlugins/HtiSerialCommPlugin/group"/>
 <unit bldFile="/sf/os/ostesttools/hti/HtiCommPlugins/HtiUsbSerialCommPlugin/group"/>
 </component>
-<component name="htiserviceplugins" filter="s60" long-name="HTI Service Plugins" purpose="development" plugin="Y">
+<component name="htiserviceplugins" long-name="HTI Service Plugins" filter="s60" purpose="development" plugin="Y">
 <!-- need to #include these from a single unit or separate into component at the right directory level -->
 <unit bldFile="/sf/os/ostesttools/hti/HtiServicePlugins/HtiAppServicePlugin/group"/>
 <unit bldFile="/sf/os/ostesttools/hti/HtiServicePlugins/HtiEchoServicePlugin/group"/>
@@ -130,24 +130,24 @@
 <unit bldFile="/sf/os/ostesttools/hti/HtiServicePlugins/HtiIpProxyServicePlugin/group"/>
 <unit bldFile="/sf/os/ostesttools/hti/HtiServicePlugins/HtiStifTfServicePlugin/group"/>
 </component>
-<component name="HtiFileHlp" filter="s60" long-name="HTI File Help" purpose="development">
+<component name="HtiFileHlp" long-name="HTI File Help" filter="s60" purpose="development">
 <unit bldFile="/sf/os/ostesttools/hti/HtiFileHlp/group"/>
 </component>
-<component name="HtiWatchdog" filter="s60" long-name="HTI Watchdog" purpose="development">
+<component name="HtiWatchdog" long-name="HTI Watchdog" filter="s60" purpose="development">
 <unit bldFile="/sf/os/ostesttools/hti/HtiWatchdog/group"/>
 </component>
-<component name="hti_build" filter="s60" long-name="HTI Build" purpose="development">
+<component name="hti_build" long-name="HTI Build" filter="s60" purpose="development">
 <!--  move exports into self-contained component.-->
 <unit bldFile="/sf/os/ostesttools/hti/group"/>
 </component>
 </collection>
 <collection name="symbianunittestfw" long-name="Symbian Unit Test Framework" level="analysis">
-<component name="symbianunittestfw_build" long-name="Symbian Unit Test Framework Build" introduced="^4">
+<component name="symbianunittestfw_build" long-name="Symbian Unit Test Framework Build" introduced="^4" purpose="optional">
 <unit bldFile="/sf/os/ostesttools/symbianunittestfw/group"/>
 </component>
 </collection>
 <collection name="testexecmdw" level="analysis">
-<component name="tef" long-name="Test Execute Framework" introduced="^4">
+<component name="tef" long-name="Test Execute Framework" introduced="^4" purpose="optional">
 <unit bldFile="/sf/os/ostesttools/testexecmdw/tef/group"/>
 </component>
 </collection>

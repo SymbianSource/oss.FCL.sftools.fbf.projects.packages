@@ -50,18 +50,18 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="mw" long-name="Middleware" levels="generic specific">
-   <block name="helix" level="generic" long-name="Helix" levels="plugin framework server generic specific">
+   <block name="helix" level="generic" levels="plugin framework server generic specific" long-name="Helix">
 <collection name="helix_ren" long-name="Helix Engine" level="framework">
-<component name="helix_ren_build" filter="s60" long-name="Helix Engine Build" introduced="^2">
+<component name="helix_ren_build" long-name="Helix Engine Build" introduced="^2" filter="s60" purpose="optional">
 <unit bldFile="/sf/mw/helix/helix_ren/group"/>
 </component>
-<component name="helix_stub" filter="sf_build" long-name="Helix Stub" introduced="^2" class="api">
+<component name="helix_stub" long-name="Helix Stub" introduced="^2" filter="sf_build" purpose="optional" class="api">
 <unit bldFile="/sf/mw/helix/helix_ren/helix_stub/group"/>
 </component>
-<component name="helixrfsplugin" filter="s60" long-name="Helix RFS Plugin" introduced="^2" plugin="Y">
+<component name="helixrfsplugin" long-name="Helix RFS Plugin" introduced="^2" filter="s60" purpose="optional" plugin="Y">
 <unit bldFile="/sf/mw/helix/helix_ren/helixrfsplugin/group"/>
 </component>
 </collection>

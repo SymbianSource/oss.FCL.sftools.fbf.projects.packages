@@ -50,10 +50,10 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="mmimaging" level="services" long-name="Multimedia Imaging" levels="adaptation hw-if device-fw devices middleware app-if">
+   <block name="mmimaging" level="services" levels="adaptation hw-if device-fw devices middleware app-if" long-name="Multimedia Imaging">
 <collection name="imaging" long-name="Imaging Frameworks and Plugins" level="app-if">
 <component name="imagingfws" long-name="Imaging Frameworks" introduced="7.0s" purpose="mandatory">
 <unit bldFile="/sf/os/mmimaging/imaging/imagingfws/group" mrp="/sf/os/mmimaging/imaging/imagingfws/group/multimedia_icl.mrp"/>

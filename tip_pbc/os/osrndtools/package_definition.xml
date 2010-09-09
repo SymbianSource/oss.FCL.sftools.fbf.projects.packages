@@ -50,41 +50,41 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="osrndtools" level="services" long-name="OS R&amp;D tools" levels="fw trace analysis">
+   <block name="osrndtools" level="services" levels="fw trace analysis" long-name="OS R&amp;D tools">
 <collection name="memspy" long-name="MemSpy" level="trace">
-<component name="memspy_plat" filter="s60" long-name="MemSpy Platform Interfaces" purpose="development" class="api">
+<component name="memspy_plat" long-name="MemSpy Platform Interfaces" filter="s60" purpose="development" class="api">
 <unit bldFile="/sf/os/osrndtools/memspy/memspy_plat/group"/>
 </component>
-<component name="driver" filter="s60" long-name="MemSpy Driver" purpose="development">
+<component name="driver" long-name="MemSpy Driver" filter="s60" purpose="development">
 <unit bldFile="/sf/os/osrndtools/memspy/driver/group"/>
 </component>
-<component name="memspy_engine" filter="s60" long-name="MemSpy Engine" purpose="development">
+<component name="memspy_engine" long-name="MemSpy Engine" filter="s60" purpose="development">
 <unit bldFile="/sf/os/osrndtools/memspy/engine/group"/>
 </component>
-<component name="commandline" filter="s60" long-name="MemSpy Command Line" purpose="development">
+<component name="commandline" long-name="MemSpy Command Line" filter="s60" purpose="development">
 <unit bldFile="/sf/os/osrndtools/memspy/commandline/group"/>
 </component>
-<component name="memspyserver" filter="s60" long-name="MemSpy Server" purpose="development" introduced="^4">
+<component name="memspyserver" long-name="MemSpy Server" introduced="^4" filter="s60" purpose="development">
 <unit bldFile="/sf/os/osrndtools/memspy/MemSpyServer/group"/>
 </component>
-<component name="memspyclient" filter="s60" long-name="MemSpy Client" purpose="development" introduced="^4">
+<component name="memspyclient" long-name="MemSpy Client" introduced="^4" filter="s60" purpose="development">
 <unit bldFile="/sf/os/osrndtools/memspy/MemSpyClient/group"/>
 </component>
-<component name="memspy_build" filter="s60" long-name="MemSpy Build" purpose="development">
+<component name="memspy_build" long-name="MemSpy Build" filter="s60" purpose="development">
 <!--  move exports into self-contained component.-->
 <unit bldFile="/sf/os/osrndtools/memspy/group"/>
 </component>
 </collection>
 <collection name="piprofiler" long-name="Performance Investigator Profiler" level="analysis">
-<component name="piprofiler_build" long-name="Performance Investigator Profiler Build" introduced="^4">
+<component name="piprofiler_build" long-name="Performance Investigator Profiler Build" introduced="^4" purpose="optional">
 <unit bldFile="/sf/os/osrndtools/piprofiler/group"/>
 </component>
 </collection>
 <collection name="analyzetool" long-name="Analyze Tool" level="analysis">
-<component name="analyzetool_build" long-name="Analyze Tool Build" introduced="^4">
+<component name="analyzetool_build" long-name="Analyze Tool Build" introduced="^4" purpose="optional">
 <unit bldFile="/sf/os/osrndtools/analyzetool/group"/>
 </component>
 </collection>

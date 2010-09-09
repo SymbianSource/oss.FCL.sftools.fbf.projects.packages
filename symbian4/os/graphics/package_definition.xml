@@ -50,17 +50,17 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="graphics" level="services" long-name="Graphics" levels="adaptation engines internal-adaptations device-interface internal-utils app-if">
+   <block name="graphics" level="services" levels="adaptation engines internal-adaptations device-interface internal-utils app-if" long-name="Graphics">
 <collection name="graphicsaccelaration" long-name="Graphics Acceleration" level="adaptation">
-<component name="vgi" filter="s60" long-name="VGI">
+<component name="vgi" long-name="VGI" filter="s60" purpose="optional">
 <unit bldFile="/sf/os/graphics/graphicsaccelaration/vgi/group"/>
 </component>
 </collection>
 <collection name="m3g" long-name="Mobile 3D Graphics" level="internal-adaptations">
-<component name="m3gcore11" filter="s60" long-name="M3G Core 1.1">
+<component name="m3gcore11" long-name="M3G Core 1.1" filter="s60" purpose="optional">
 <unit bldFile="/sf/os/graphics/m3g/m3gcore11/group"/>
 </component>
 </collection>
@@ -112,7 +112,7 @@
 </component>
 </collection>
 <collection name="graphics_plat" long-name="Graphics Platform Interfaces" level="app-if">
-<component name="m3g_core_api" filter="sf_build" long-name="M3G Core API" class="api">
+<component name="m3g_core_api" long-name="M3G Core API" filter="sf_build" purpose="optional" class="api">
 <unit bldFile="/sf/os/graphics/graphics_plat/m3g_core_api/group"/>
 </component>
 </collection>
@@ -149,7 +149,7 @@
 <component name="openglesinterface" long-name="OpenGL ES Interface" introduced="8.0" purpose="optional">
 <unit bldFile="/sf/os/graphics/opengles/openglesinterface/group" mrp="/sf/os/graphics/opengles/openglesinterface/group/graphics_openglesheaders.mrp"/>
 </component>
-<component name="opengles_stub" filter="sf_build" long-name="OpenGL ES Stub" purpose="optional" introduced="^2">
+<component name="opengles_stub" long-name="OpenGL ES Stub" introduced="^2" filter="sf_build" purpose="optional">
 <unit bldFile="/sf/os/graphics/opengles/openglesinterface/group/opengles_stub"/>
 </component>
 </collection>
@@ -157,11 +157,11 @@
 <component name="openvginterface" long-name="OpenVG Interface" introduced="^2" purpose="optional">
 <unit bldFile="/sf/os/graphics/openvg/openvginterface/group" mrp="/sf/os/graphics/openvg/openvginterface/group/graphics_openvgheaders.mrp"/>
 </component>
-<component name="openvg11" filter="s60" long-name="OpenVG 1.1">
+<component name="openvg11" long-name="OpenVG 1.1" filter="s60" purpose="optional">
 <!-- this needs to be moved to it's own component directory, ie openvg/openvg11 -->
 <unit bldFile="/sf/os/graphics/openvg/openvginterface/group/openvg11"/>
 </component>
-<component name="sfopenvg" filter="sf_build" long-name="Khronos OpenVG Reference Implementation" introduced="^2" purpose="optional">
+<component name="sfopenvg" long-name="Khronos OpenVG Reference Implementation" introduced="^2" filter="sf_build" purpose="optional">
 <unit bldFile="/sf/os/graphics/openvg/openvgrefimplementation/sfopenvg/group"/>
 </component>
 </collection>
@@ -183,7 +183,7 @@
 <component name="gdi" long-name="GDI" purpose="mandatory">
 <unit bldFile="/sf/os/graphics/graphicsdeviceinterface/gdi/group" mrp="/sf/os/graphics/graphicsdeviceinterface/gdi/group/graphics_gdi.mrp"/>
 </component>
-<component name="bitgdi" long-name="BitGDI" purpose="mandatory" filter="api_test">
+<component name="bitgdi" long-name="BitGDI" filter="api_test" purpose="mandatory">
 <!-- just api_test, not test -->
 <unit bldFile="/sf/os/graphics/graphicsdeviceinterface/bitgdi/group" mrp="/sf/os/graphics/graphicsdeviceinterface/bitgdi/group/graphics_bitgdi.mrp"/>
 </component>

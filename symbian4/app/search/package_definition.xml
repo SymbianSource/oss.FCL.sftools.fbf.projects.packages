@@ -50,32 +50,32 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition name="Symbian^4" schema="2.0.1">
+<SystemDefinition schema="2.0.1" name="Symbian^4">
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
-   <block name="search" level="apps" long-name="Search Apps" levels="eng base app api">
+   <block name="search" level="apps" levels="eng base app api" long-name="Search Apps">
 <collection name="search_info" long-name="Search Info" level="base">
-<component name="search_build" long-name="Search Build" introduced="^4">
+<component name="search_build" long-name="Search Build" introduced="^4" purpose="optional">
 <unit bldFile="/sf/app/search/group"/>
 </component>
 </collection>
 <collection name="search_plat" long-name="Search Platform Interfaces" level="api">
-<component name="search_plat_build" long-name="Search Platform Interfaces Build" introduced="^4" class="api">
+<component name="search_plat_build" long-name="Search Platform Interfaces Build" introduced="^4" purpose="optional" class="api">
 <unit bldFile="/sf/app/search/search_plat" proFile="search_plat.pro"/>
 </component>
 </collection>
 <collection name="onlinesearchproviders" long-name="Online Search Providers" level="eng">
-<component name="onlinesearchproviders_build" long-name="Online Search Providers Build" introduced="^4">
+<component name="onlinesearchproviders_build" long-name="Online Search Providers Build" introduced="^4" purpose="optional">
 <unit bldFile="/sf/app/search/onlinesearchproviders" proFile="onlinesearchproviders.pro"/>
 </component>
 </collection>
 <collection name="search_harvesterplugins" long-name="Search Harvester Plugins" level="base">
-<component name="search_qtemailfetcher" long-name="Search Qt Email Fetcher" introduced="^4" plugin="Y">
+<component name="search_qtemailfetcher" long-name="Search Qt Email Fetcher" introduced="^4" purpose="optional" plugin="Y">
 <unit bldFile="/sf/app/search/harvesterplugins/messaging/email/qtemailfetcher" proFile="qtemailfetcher.pro"/>
 </component>
 </collection>
 <collection name="searchui" long-name="Search UI" level="app">
-<component name="searchui_build" long-name="Search UI Build" introduced="^4">
+<component name="searchui_build" long-name="Search UI Build" introduced="^4" purpose="optional">
 <unit bldFile="/sf/app/search/searchui" proFile="searchui.pro"/>
 </component>
 </collection>
