@@ -1,48 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
 <SystemDefinition schema="3.0.0" xmlns:qt="http://www.nokia.com/qt">
- <package id="socialmobilefw" name="Social Mobile Framework">
-  <collection id="smf_example" name="SMF Examples">
-   <component id="AuthApp" name="Example AuthApp" filter="test">
-    <unit bldFile="example/AuthApp" qt:proFile="AuthApp.pro"/>
-   </component>
-   <component id="DemoGUI" name="Demo GUI" filter="test">
-    <unit bldFile="example/DemoGUI" qt:proFile="DemoGUI.pro"/>
-   </component>
-   <component id="smfclientapp" name="Example Client Application" filter="test">
-    <unit bldFile="example/smfclientapp" qt:proFile="smfclientapp.pro"/>
-   </component>
-  </collection>
-  <collection id="flickr_example" name="Flickr Examples">
-   <component id="FlickrAuthApp" name="Flickr AuthApp" filter="test">
-    <unit bldFile="example/FlickrAuthApp" qt:proFile="FlickrAuthApp.pro"/>
-   </component>
-   <component id="flickrcontactfetcherplugin" name="Flickr Contact Fetcher" filter="test" class="plugin">
-    <unit bldFile="example/flickrcontactfetcherplugin" qt:proFile="flickrcontactfetcherplugin.pro"/>
-   </component>
-   <component id="flickrgalleryplugin" name="Flickr Gallery" filter="test" class="plugin">
-    <unit bldFile="example/flickrgalleryplugin" qt:proFile="flickrgalleryplugin.pro"/>
-   </component>
-  </collection>
-  <collection id="fb_example" name="Facebook Examples">
-   <component id="fbactivityfetcherplugin" name="Facebook Activity Fetcher" filter="test" class="plugin">
-    <unit bldFile="example/fbactivityfetcherplugin" qt:proFile="fbactivityfetcherplugin.pro"/>
-   </component>
-   <component id="fbcontactfetcherplugin" name="Facebook Contact Fetcher" filter="test" class="plugin">
-    <unit bldFile="example/fbcontactfetcherplugin" qt:proFile="fbcontactfetcherplugin.pro"/>
-   </component>
-   <component id="fbpostproviderplugin" name="Facebook Post Provider" filter="test" class="plugin">
-    <unit bldFile="example/fbpostproviderplugin" qt:proFile="fbpostproviderplugin.pro"/>
-   </component>
-  </collection>
-  <collection id="smf" name="Social Mobile Framework">
-   <component  id="smfcredentialmgr" name="Credential Manager">
-    <unit bldFile="smf/smfcredentialmgr" qt:proFile="smfcredentialmgr.pro"/>
-   </component>
-   <component  id="smfservermodule" name="Server Module">
-    <unit bldFile="smf/smfservermodule" qt:proFile="smfservermodule.pro"/>
-   </component>
-   <component  id="smfsettingsui" name="Settings UI">
-    <unit bldFile="smf/smfsettingsui" qt:proFile="smfsettingsui.pro"/>
-   </component>
-  </collection>
- </package>
+  <package id="socialmobilefw" name="Social Mobile Framework">
+    <collection id="smf_example" name="SMF Examples">
+      <component id="DemoGUI" name="Demo GUI" filter="test">
+        <unit bldFile="example/DemoGUI" qt:proFile="DemoGUI.pro" />
+      </component>
+      <component id="smfclientapp" name="Example Client Application" filter="test">
+        <unit bldFile="example/smfclientapp" qt:proFile="smfclientapp.pro" />
+      </component>
+    </collection>
+    <collection id="flickr_example" name="Flickr Examples">
+      <component id="FlickrAuthApp" name="Flickr AuthApp" filter="test">
+        <unit bldFile="example/FlickrAuthApp" qt:proFile="FlickrAuthApp.pro" />
+      </component>
+      <component id="flickrcontactfetcherplugin" name="Flickr Contact Fetcher" filter="test" class="plugin">
+        <unit bldFile="example/flickrcontactfetcherplugin" qt:proFile="flickrcontactfetcherplugin.pro" />
+      </component>
+      <component id="flickrgalleryplugin" name="Flickr Gallery" filter="test" class="plugin">
+        <unit bldFile="example/flickrgalleryplugin" qt:proFile="flickrgalleryplugin.pro" />
+      </component>
+    </collection>
+    <collection id="fb_example" name="Facebook Examples">
+      <component id="AuthApp" name="Example AuthApp" filter="test">
+        <unit bldFile="example/AuthApp" qt:proFile="AuthApp.pro" />
+      </component>
+      <component id="fbactivityfetcherplugin" name="Facebook Activity Fetcher" filter="test" class="plugin">
+        <unit bldFile="example/fbactivityfetcherplugin" qt:proFile="fbactivityfetcherplugin.pro" />
+      </component>
+      <component id="fbcontactfetcherplugin" name="Facebook Contact Fetcher" filter="test" class="plugin">
+        <unit bldFile="example/fbcontactfetcherplugin" qt:proFile="fbcontactfetcherplugin.pro" />
+      </component>
+      <component id="fbpostproviderplugin" name="Facebook Post Provider" filter="test" class="plugin">
+        <unit bldFile="example/fbpostproviderplugin" qt:proFile="fbpostproviderplugin.pro" />
+      </component>
+    </collection>
+    <collection id="smf" name="Social Mobile Framework">
+      <component id="smfcredentialmgr" name="Credential Manager">
+        <unit bldFile="smf/smfcredentialmgr" qt:proFile="smfcredentialmgr.pro" />
+      </component>
+      <component id="smfservermodule" name="Server Module">
+        <unit bldFile="smf/smfservermodule" qt:proFile="smfservermodule.pro" />
+      </component>
+      <component id="smfsettingsui" name="Settings UI">
+        <unit bldFile="smf/smfsettingsui" qt:proFile="smfsettingsui.pro" />
+      </component>
+    </collection>
+  </package>
 </SystemDefinition>
