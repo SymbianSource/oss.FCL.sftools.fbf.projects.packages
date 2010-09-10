@@ -147,6 +147,12 @@
 <component name="ds_capability_mgmt_plugin_api" long-name="DS Capability Management Plugin API" filter="s60" purpose="optional" class="api">
 <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/ds_capability_mgmt_plugin_api/group"/>
 </component>
+<component name="syncml_ds_customization_api" long-name="SyncML DS Customisation API" filter="s60" purpose="optional" class="api">
+<unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/syncml_ds_customization_api/group"/>
+</component>
+<component name="syncml_ds_error_reporting_api" long-name="SyncML DS Error Reporting API" filter="s60" purpose="optional" class="api">
+<unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/syncml_ds_error_reporting_api/group"/>
+</component>
 <component name="devicemgmt_dialogs_api" long-name="Device Management Dialogs API" introduced="^4" filter="s60" purpose="optional" class="api">
 <unit bldFile="/sf/mw/remotemgmt/remotemgmt_plat/devicemgmt_dialogs_api/group"/>
 </component>
