@@ -324,6 +324,11 @@ used.
 */
 #undef FF_GENERIC_FONTS_ASSETS                            
 
+/** #FF_GSTREAMER 
+Device supports GStreamer APIs.
+*/
+#define FF_GSTREAMER                                
+
 /** #FF_HDMI 
 Feature flag to indicate HDMI availability.  IIf defined, device supports HDMI
 (High Definition Multimedia Interface)
@@ -1034,6 +1039,11 @@ Controls if Finger use idle theme goes to image or not.
 Controls if Navibar idle theme is going to image or not.
 */
 #define FF_XML_IDLE_THEME_NAVIBAR_IDLE                     
+
+/** #FF_OPENMAX_AL 
+Appears to enable the creation of openmaxal.dll
+*/
+#define FF_OPENMAX_AL                     
 
 /** #LANGPACK_DEFAULTLANG 
 The default language that is selected during bootup (this selection is
@@ -2146,4 +2156,4 @@ of XDM
 */
 #define __XDM_XCAP                                         
 
-#endif // __BLDPUBLIC_HRH 
+#endif // __BLDPUBLIC_HRH
