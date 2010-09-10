@@ -122,6 +122,14 @@
     <meta rel="Api" href="remotemgmt_plat/ds_capability_mgmt_plugin_api/ds_capability_mgmt_plugin_api.metaxml"/>
     <unit bldFile="remotemgmt_plat/ds_capability_mgmt_plugin_api/group"/>
    </component>
+   <component id="syncml_ds_customization_api" name="SyncML DS Customisation API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/syncml_ds_customization_api/syncml_ds_customization_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/syncml_ds_customization_api/group"/>
+   </component>
+   <component id="syncml_ds_error_reporting_api" name="SyncML DS Error Reporting API" class="api" filter="s60">
+    <meta rel="Api" href="remotemgmt_plat/syncml_ds_error_reporting_api/syncml_ds_error_reporting_api.metaxml"/>
+    <unit bldFile="remotemgmt_plat/syncml_ds_error_reporting_api/group"/>
+   </component>
    <component id="devicemgmt_dialogs_api" name="Device Management Dialogs API" class="api" filter="s60" introduced="^4">
     <unit bldFile="remotemgmt_plat/devicemgmt_dialogs_api/group"/>
    </component>
