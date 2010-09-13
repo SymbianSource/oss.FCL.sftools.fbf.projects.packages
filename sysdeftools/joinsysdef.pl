@@ -769,17 +769,18 @@ sub doconfig
 sub getDefines
 	{ # populate the list of #defines from a specified .hrh file.
 	my $file = shift;
-	my $inc;
+	my $inc = '';
 	foreach my $i (@includes)
 		{
 		$inc.=" -I$i";
 		}
-	open(CPP,"cpp -dD$inc \"$file\"|");
+	open(CPP,"cpp -dD$inc \"$file\" 2>&1 |");
 	while(<CPP>)
 		{
+		s/\s+$//;
 		if(!/\S/){next} # skip blank lines
 		if(/^# [0-9]+ /) {next} # don't care about these
-		s/\s+$//;
+		if(/#undef/) { next } # don't care about these
 		if(s/^#define\s+(\S+)\((.*?)\)\s+//)
 			{ #parametered define
 			push(@{$defineParams{$1}},@2,$_);
