@@ -88,6 +88,9 @@
 <component name="hswidgetuninstaller" long-name="HS Widget Uninstaller" introduced="^4" purpose="optional">
 <unit bldFile="/sf/app/homescreen/homescreenapp/hswidgetuninstaller" proFile="hswidgetuninstaller.pro" qmakeArgs="-r -config rom"/>
 </component>
+<component name="hsapplicationlauncher" long-name="HS Application Launcher" introduced="^4" purpose="optional">
+<unit bldFile="/sf/app/homescreen/homescreenapp/hsapplicationlauncher" proFile="hsapplicationlauncher.pro" qmakeArgs="-r -config rom"/>
+</component>
 </collection>
 <collection name="screensaver" long-name="Screen Saver" level="ss">
 <!-- break collection into components, or move down a dir and make it a component -->
