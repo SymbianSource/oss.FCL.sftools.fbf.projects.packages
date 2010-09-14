@@ -774,7 +774,11 @@ sub getDefines
 		{
 		$inc.=" -I$i";
 		}
-	open(CPP,"cpp -dD$inc \"$file\" 2>&1 |");
+	my $CPP = $ENV{"SBS_HOME"} . "/win32/mingw/bin/cpp.exe";
+
+	$CPP =~ s/\\/\//g;
+
+	open(CPP,"$CPP -dD$inc \"$file\" 2>&1 |");
 	while(<CPP>)
 		{
 		s/\s+$//;
@@ -791,7 +795,10 @@ sub getDefines
 			s/^\s+//;
 			$defines{$1}=$_;
 			}
-		else {die "cannot process $_";}
+		else
+			{
+			die "cannot process $_";
+			}
 		}
 	close CPP;
 	$? && die "Call to cpp produced an error";
