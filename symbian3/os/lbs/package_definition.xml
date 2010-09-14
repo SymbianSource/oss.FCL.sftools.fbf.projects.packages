@@ -63,6 +63,9 @@
       <component id="privacyprotocolmodule" name="Privacy Protocol Module" introduced="^2" purpose="optional" class="plugin">
         <unit bldFile="networkprotocolmodules/privacyprotocolmodule/group" mrp="networkprotocolmodules/privacyprotocolmodule/group/lbs_privacyprotocolmodule.mrp"/>
       </component>
+	  <component name="networkpmutils" long-name="Networkpm Utils" introduced="^2" purpose="optional" plugin="Y">
+		<unit bldFile="networkprotocolmodules/networkpmutils/group" mrp="networkprotocolmodules/networkpmutils/group/lbs_networkpmutils.mrp"/>
+	  </component>
       <component id="suplproxyprotocolmodule" name="SUPL Proxy Protocol Module" introduced="^3" purpose="optional" class="plugin">
         <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
         <unit bldFile="networkprotocolmodules/suplproxyprotocolmodule/group" mrp="networkprotocolmodules/suplproxyprotocolmodule/group/lbs_suplproxyprotocolmodule.mrp"/>
