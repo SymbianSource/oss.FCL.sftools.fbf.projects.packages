@@ -23,13 +23,5 @@
                 <unit bldFile="examples" qt:proFile="examples.pro" qt:qmakeArgs="-r"/>
             </component>
     </collection>
-    <collection id="qt_tests" name="Qt Tests" level="app">
-            <component id="qttestsauto" name="Qt Automated Tests" introduced="^2"  filter="qttestsauto">
-                <unit bldFile="tests/auto"  qt:proFile="qtpauto.pro" qt:makeArgs="-r"/>
-            </component>
-            <component id="qttestsbenchmarks" name="Qt Benchmarks Tests" introduced="^2" filter="qttestsbenchmarks">
-                <unit bldFile="tests/benchmarks" qt:proFile="benchmarks.pro" qt:qmakeArgs="-r"/>
-            </component>
-    </collection>
   </package>
 </SystemDefinition>
