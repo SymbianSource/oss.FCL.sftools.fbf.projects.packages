@@ -48,10 +48,10 @@
       <unit bldFile="activityfw" qt:qmakeArgs="-r" qt:proFile="activityfw.pro"/>
      </component>
   </collection>
-  <collection id="tstaskmonitor" name="Task Switcher Task Monitor" level="fw">	
+  <collection id="taskswitcher" name="Task Switcher" level="fw">	
 	<!-- move collection down to a component directory or split up into component .pro files -->
-     <component id="tstaskmonitor_build" name="Task Switcher Task Monitor Build"  introduced="^4">
-      <unit bldFile="tstaskmonitor" qt:qmakeArgs="-r" qt:proFile="tstaskmonitor.pro"/>
+     <component id="taskswitcher_build" name="Task Switcher Build"  introduced="^4">
+      <unit bldFile="taskswitcher" qt:proFile="taskswitcher.pro"/>
      </component>
   </collection>
   <collection id="hsappkeyhandler" name="HS Appplication Key Handler" level="server">
