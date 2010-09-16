@@ -139,9 +139,6 @@
    </component>
   </collection>
   <collection id="stdlibs" name="Standard Libraries" level="translation">
-   <component id="libz" filter="s60" name="Z Compression Library">
-    <unit bldFile="stdlibs/libz/group"/>
-   </component>
    <component id="libcrypt" filter="s60" name="Crypt Library">
     <unit bldFile="stdlibs/libcrypt/group"/>
    </component>
