@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="adaptation" long-name="Adaptation" levels="low mw high">
    <block name="stubs" level="high" span="2" levels="adaptation plugin mid engine" long-name="Stubs">

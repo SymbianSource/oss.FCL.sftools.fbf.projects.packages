@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="mw" long-name="Middleware" levels="generic specific">
    <block name="homescreensrv" level="specific" levels="plugin framework server generic specific" long-name="Home Screen Services">
@@ -93,10 +93,10 @@
 <unit bldFile="/sf/mw/homescreensrv/activityfw" proFile="activityfw.pro" qmakeArgs="-r"/>
 </component>
 </collection>
-<collection name="tstaskmonitor" long-name="Task Switcher Task Monitor" level="fw">
+<collection name="taskswitcher" long-name="Task Switcher" level="fw">
 <!-- move collection down to a component directory or split up into component .pro files -->
-<component name="tstaskmonitor_build" long-name="Task Switcher Task Monitor Build" introduced="^4" purpose="optional">
-<unit bldFile="/sf/mw/homescreensrv/tstaskmonitor" proFile="tstaskmonitor.pro" qmakeArgs="-r"/>
+<component name="taskswitcher_build" long-name="Task Switcher Build" introduced="^4" purpose="optional">
+<unit bldFile="/sf/mw/homescreensrv/taskswitcher" proFile="taskswitcher.pro"/>
 </component>
 </collection>
 <collection name="hsappkeyhandler" long-name="HS Appplication Key Handler" level="server">

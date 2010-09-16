@@ -50,7 +50,7 @@
   late (Y|N) #IMPLIED
   priority CDATA #IMPLIED>
 ]>
-<SystemDefinition schema="2.0.1" name="Symbian^4">
+<SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
    <block name="ossrv" level="services" levels="physical-abstraction app-libs encoding translation data-services utilities" long-name="Generic OS Services">
@@ -161,9 +161,6 @@
 </component>
 </collection>
 <collection name="stdlibs" long-name="Standard Libraries" level="translation">
-<component name="libz" long-name="Z Compression Library" filter="s60" purpose="optional">
-<unit bldFile="/sf/os/ossrv/stdlibs/libz/group"/>
-</component>
 <component name="libcrypt" long-name="Crypt Library" filter="s60" purpose="optional">
 <unit bldFile="/sf/os/ossrv/stdlibs/libcrypt/group"/>
 </component>
