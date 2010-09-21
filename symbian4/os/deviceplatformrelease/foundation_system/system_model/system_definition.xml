@@ -225,7 +225,6 @@
       <package id="conntools" level="services" tech-domain="dc" href="../../../../app/conntools/package_definition.xml"/>
       <package id="rndtools" level="services" tech-domain="to" href="../../../../app/rndtools/package_definition.xml"/>
       <package id="helps" level="apps" span="2" tech-domain="ui" href="../../../../app/helps/package_definition.xml"/>
-      <package id="techview" level="apps" span="2" tech-domain="ui" href="../../../../app/techview/package_definition.xml"/>
     </layer>
   </systemModel>
 </SystemDefinition>
