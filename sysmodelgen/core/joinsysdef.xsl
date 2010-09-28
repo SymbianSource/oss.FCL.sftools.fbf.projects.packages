@@ -14,9 +14,17 @@
 	Create a stand-alone sysdef from a linked set of fragments
 -->
  	<xsl:output method="xml" indent="yes"/>
-<!-- create a stand-alone sysdef from a linked set of fragments -->
+<!--Description:This creates a stand-alone sysdef from a linked set of fragments.
+All API metadata will be removed
+-->
+<!--Input:<sysdef> - (required) The 3.0 formatsystem definition XML file to
+		process. This can be a fragment or stand-alone. 
+		If there are no linked fragments, this will just convert all
+		relative unit paths into absolute paths and embed any linked
+		metadata-->
 
 <xsl:param name="path">/os/deviceplatformrelease/foundation_system/system_model/system_definition.xml</xsl:param>
+<!-- <path> - The full system model path for this file. Use forward slashes.-->
 
 <xsl:template match="/*">
 	<xsl:apply-templates select="." mode="join"/>

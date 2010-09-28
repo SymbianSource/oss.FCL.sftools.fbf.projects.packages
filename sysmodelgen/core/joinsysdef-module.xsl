@@ -20,7 +20,14 @@
 <!-- create a stand-alone sysdef from a linked set of fragments -->
 
 <xsl:template match="/*" mode="join">
-	<xsl:message terminate="yes">ERROR: Cannot process this document</xsl:message>
+	<xsl:param name="filename"/>
+	<xsl:message terminate="yes">ERROR: Cannot process this document<xsl:if test="$filename !=''"> (<xsl:value-of select="$filename"/>)</xsl:if>
+		<xsl:choose>
+			<xsl:when test="self::SystemDefinition/@schema">. Unrecognised syntax schema="<xsl:value-of select="@schema"/>"</xsl:when>
+			<xsl:when test="self::SystemDefinition">. Missing schema</xsl:when>
+			<xsl:otherwise>. Invalid file type: <xsl:value-of select="name()"/></xsl:otherwise>
+		</xsl:choose>
+	</xsl:message>
 </xsl:template>
 
 <!-- anything in schemas 3.0.x won't add new functional attributes that need processing here, just blindly copy them-->
@@ -47,7 +54,7 @@
 					<xsl:choose>
 						<xsl:when test="$n='id'"/> <!-- never copy this, always set -->
 						<xsl:when test="$origin/@*[name()=$n]"> <!-- don't copy if already set -->
-							<xsl:message>Cannot set "<xsl:value-of select="$n"/>", already set</xsl:message>
+							<xsl:message>Note: Cannot set "<xsl:value-of select="$n"/>", already set on <xsl:value-of select="$origin/@id"/>. Ignoring linked value</xsl:message>
 						</xsl:when>
 						<xsl:when test="$n='before' or $n='replace'">
 							<!-- ensure ns is correct (if any future attribtues will ever use an ID, process it here too)-->
@@ -126,19 +133,23 @@
 <xsl:template match="*[@href and not(self::meta)]" mode="scan-for-namespaces">
 	<!-- produce a list of namespace-prefix namespace pairs separated by newlines, in reverse order found in documents 
 		reverse order so we can try to use the first namespace prefix defined if it's available-->
-	<xsl:for-each select="document(@href,.)/*">
+	<xsl:variable name="linked" select="document(@href,.)/*"/>
+	<xsl:for-each select="$linked">
 		<xsl:apply-templates select="//*[(self::component or self::collection or self::package or self::layer) and @href]" mode="scan-for-namespaces"/>
 		<xsl:for-each select="//namespace::*[.!='http://www.w3.org/XML/1998/namespace'] | @id-namespace">
 			<!-- ignore XML namespace -->
 			<xsl:value-of select="concat(name(),' ',.,'&#xa;')"/>
 		</xsl:for-each>
-	</xsl:for-each>			
+	</xsl:for-each>
+	<xsl:if test="not($linked)">
+	<xsl:message>Note: The link to <xsl:value-of select="@href"/> from <xsl:value-of select="concat(name(),' ',@id)"/> could not be resolved. Perhaps there's an error in the XML?</xsl:message>
+	</xsl:if>
 </xsl:template>
 
 <xsl:template name="needed-namespaces">
 	<xsl:param name="foundns"/>
 	<xsl:param name="usedpre"/>
-	
+
 	<xsl:if test="$foundns!=''">
 		<xsl:variable name="line" select="substring-before($foundns,'&#xa;')"/> <!-- always has trailing newline -->
 		<xsl:variable name="name" select="substring-after($line,' ')"/> <!-- namespace prefix -->
@@ -205,7 +216,8 @@
 
 <xsl:template name="compare-versions"><xsl:param name="v1"/><xsl:param name="v2"/>
 			<xsl:choose>
-				<xsl:when test="$v1=$v2"><xsl:value-of select="$v1"/></xsl:when>
+				<xsl:when test="$v1=''"><xsl:value-of select="$v2"/></xsl:when>
+				<xsl:when test="$v1=$v2 or $v2=''"><xsl:value-of select="$v1"/></xsl:when>
 				<xsl:when test="substring-before($v1,'.') &gt; substring-before($v2,'.')"><xsl:value-of select="$v1"/></xsl:when>
 				<xsl:when test="substring-before($v1,'.') &lt; substring-before($v2,'.')"><xsl:value-of select="$v2"/></xsl:when>
 				<xsl:when test="substring-before(substring-after($v1,'.'),'.') &gt; substring-before(substring-after($v2,'.'),'.')"><xsl:value-of select="$v1"/></xsl:when>
@@ -320,6 +332,7 @@
 				<xsl:with-param name="data" select="$data"/>
 			</xsl:apply-templates>
 		 </xsl:variable>
+	 		 
 		<xsl:element name="{name()}"> <!-- use this instead of <copy> so xalan doesn't add extra wrong namespaces -->
 			<xsl:apply-templates select="@*" mode="join">
 				<xsl:with-param name="namespaces" select="$namespaces"/>
@@ -451,11 +464,9 @@
 		<xsl:text>&#xa;</xsl:text>
 		</xsl:message>
 	</xsl:if>
-
 	<xsl:variable name="prefix" select="name($namespaces[.=$ns])"/>
 	<xsl:attribute name="{name()}">
 	<xsl:choose>
-
 		<xsl:when test="$prefix = 'id-namespace' or  (not($namespaces[name()='id-namespace']) and $ns=$defaultns)"/> <!-- it's the default namespace, no prefix -->
 		<xsl:when test="$prefix='' and contains(.,':')">
 			<!-- complex: copy id and copy namespace (namespace should be copied already)-->
@@ -479,95 +490,7 @@
 <xsl:template match="@*|comment()" mode="join"><xsl:copy-of select="."/></xsl:template>
 
 
-<!-- path handling follows -->
-
- <xsl:template name="lastbefore"><xsl:param name="string"/><xsl:param name="substr" select="'/'"/>
-        <xsl:if test="contains($string,$substr)">
-                <xsl:value-of select="substring-before($string,$substr)"/>
-                <xsl:if test="contains(substring-after($string,$substr),$substr)">
-	                <xsl:value-of select="$substr"/>
-	              </xsl:if>
-        <xsl:call-template name="lastbefore">
-                <xsl:with-param name="string" select="substring-after($string,$substr)"/>
-                <xsl:with-param name="substr" select="$substr"/>
-        </xsl:call-template>
-        </xsl:if>
-</xsl:template>
-
- <xsl:template name="joinpath"><xsl:param name="file"/><xsl:param name="rel"/>
-	<xsl:choose>
-		<xsl:when test="(contains($rel,'://') and not(contains(substring-before($rel,'://'),'/'))) or starts-with($rel,'/')"> <!-- absolute URI or absolute path-->
-			<xsl:value-of select="$rel"/>
-		</xsl:when>
-		<xsl:otherwise> <!-- relative link -->
-			<xsl:call-template name="reducepath">
-				<xsl:with-param name="file">
-					<xsl:call-template name="lastbefore">
-						<xsl:with-param name="string" select="$file"/>
-					</xsl:call-template>
-					<xsl:text>/</xsl:text>
-					<xsl:value-of select="$rel"/>
-				</xsl:with-param>
-			</xsl:call-template>
-		</xsl:otherwise>
-	</xsl:choose>
- </xsl:template>
-
-<xsl:template name="reducepath"><xsl:param name="file"/>
-	<xsl:call-template name="reducedotdotpath">
-    	<xsl:with-param name="file">
-			<xsl:call-template name="reducedotpath">
-		    	<xsl:with-param name="file" select="$file"/>
-		    </xsl:call-template>
-		</xsl:with-param>
-	</xsl:call-template>
-</xsl:template>
-
-<xsl:template name="reducedotdotpath"><xsl:param name="file"/>
-	<xsl:choose>
-		<xsl:when test="starts-with($file,'../')">
-			<xsl:text>../</xsl:text>
-			<xsl:call-template name="reducedotdotpath">
-        		<xsl:with-param name="file" select="substring($file,4)"/>
-			</xsl:call-template>
-		</xsl:when>
-		<xsl:when test="contains($file,'/../')">							
-			<xsl:call-template name="reducepath">
-        		<xsl:with-param name="file">
-			        <xsl:call-template name="lastbefore">
-			                <xsl:with-param name="string" select="substring-before($file,'/../')"/>
-			        </xsl:call-template>
-			        <xsl:text>/</xsl:text>
-					<xsl:value-of select="substring-after($file,'/../')"/>
-				</xsl:with-param>
-			</xsl:call-template>
-		</xsl:when>
-		<xsl:otherwise><xsl:value-of select="$file"/></xsl:otherwise>
-	</xsl:choose>
- </xsl:template>
-
-<xsl:template name="reducedotpath"><xsl:param name="file"/>
-	<xsl:choose>	
-		<xsl:when test="starts-with($file,'./')">
-			<xsl:call-template name="reducedotpath">
-        		<xsl:with-param name="file" select="substring($file,3)"/>
-			</xsl:call-template>
-		</xsl:when>
-		<xsl:when test="contains($file,'/./')">
-			<xsl:call-template name="reducepath">
-        		<xsl:with-param name="file">
-	                <xsl:value-of select="substring-before($file,'/./')"/>
-			        <xsl:text>/</xsl:text>
-					<xsl:value-of select="substring-after($file,'/./')"/>
-				</xsl:with-param>
-			</xsl:call-template>
-		</xsl:when>
-		<xsl:when test="substring($file,string-length($file) - 1) = '/.'">
-           <xsl:value-of select="substring($file,1,string-length($file) - 2)"/>
-		</xsl:when>
-		<xsl:otherwise><xsl:value-of select="$file"/></xsl:otherwise>
-	</xsl:choose>
- </xsl:template>
+<xsl:include href="path-module.xsl"/>
 
 <!-- overridable templates follow -->
 

@@ -175,7 +175,7 @@
 				</xsl:for-each>
 				<xsl:call-template name="lower-rank">
 					<xsl:with-param name="e1" select="$e"/>
-					<xsl:with-param name="e2" select="name($used[../../@id=current()/@id])"/>
+					<xsl:with-param name="e2" select="name($used[../../@id=current()/@id]/../..)"/>
 				</xsl:call-template>
 			</xsl:with-param>
 			<xsl:with-param name="h0" select="$h"/>

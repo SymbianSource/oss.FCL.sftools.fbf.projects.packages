@@ -343,6 +343,7 @@
 	<xsl:for-each select="exslt:node-set($layers)/layer">
 		<xsl:copy><xsl:copy-of select="@id|@span"/>
 			<xsl:choose>
+				<xsl:when test="0"/> <!-- why? was something removed or should something be here?-->
 				<xsl:otherwise> <!-- layers smaller than spanned -->
 					<xsl:choose>
 						<xsl:when test="$spanning[@id=current()/@id] and $span/@height &gt; $h">
@@ -763,7 +764,6 @@
 	<xsl:variable name="content">
 		<xsl:apply-templates mode="sizing"/>
 	</xsl:variable>
-
 	<!-- if there's no content, only show if forced to by placeholder-detail -->
 	<xsl:if test="/SystemDefinition[@placeholder-detail='package' or @placeholder-detail='component' or @placeholder-detail='collection'] 
 		or exslt:node-set($content)/*[self::package or self::collection]">  	

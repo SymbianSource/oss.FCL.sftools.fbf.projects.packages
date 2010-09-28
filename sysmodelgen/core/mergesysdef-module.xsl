@@ -10,7 +10,10 @@
 	Nokia Corporation - initial contribution.
 	Contributors:
 	Description:
-	XSLT module for merging only two sysdef files according to the 3.0.0 rules. Old syntax not supported and must be converetd before calling.
+	XSLT module for merging only two sysdef files according to the 3.0.1 rules. 
+		2.x and older syntax not supported and must be converted before calling.
+
+		Requires the including XSLT to also include path-module.xsl
 -->
 	
 <xsl:variable name="defaultnamespace">http://www.symbian.org/system-definition</xsl:variable>
@@ -42,7 +45,7 @@
 </xsl:template>
 
 
-<xsl:template match="@id|@before" mode="translate-namespaces"><xsl:param name="nsdoc"/>
+<xsl:template match="@id|@before|@replace" mode="translate-namespaces"><xsl:param name="nsdoc"/>
 	<xsl:attribute name="{name()}">
 		<xsl:variable name="id">
 			<xsl:choose>
@@ -135,7 +138,13 @@
 	</xsl:if>
 	 
 	<xsl:copy>
-		<xsl:copy-of  select="@*"/> <!--  use attributes from origin model -->
+		<xsl:attribute name="schema">
+			<xsl:call-template name="compare-versions">
+				<xsl:with-param name="v1" select="@schema"/>
+				<xsl:with-param name="v2" select="$other/@schema"/>
+			</xsl:call-template>
+		</xsl:attribute>
+		<xsl:copy-of  select="@*[name()!='schema']"/> <!--  use attributes from origin model -->
 		<xsl:variable name="namespaces">
 			<xsl:copy> <!-- needs <copy> so the processor doesn't lose the namespaces -->
 				<!--copy namespaces as needed -->
@@ -183,6 +192,7 @@
 			<xsl:with-param name="other" select="exslt:node-set($otherdoc)/*"/>
 			<xsl:with-param name="up" select="$up"/>
 			<xsl:with-param name="down" select="$down"/>
+			<xsl:with-param name="replaces" select="exslt:node-set($otherdoc)//*[self::component or self::collection or self::package or self::layer]/@replace"/>
 		</xsl:apply-templates>
 	
 	</xsl:copy>
@@ -192,6 +202,7 @@
 	<xsl:param name="other"/>	<!-- the parent of the downstream systemModel this is merged with -->
 	<xsl:param name="up"/>
 	<xsl:param name="down"/>
+	<xsl:param name="replaces"/>
 	<xsl:copy><xsl:copy-of  select="@*"/>
 		<!--  copy metas and comments in between meta. Do not try to merge metadata between models -->
 			<xsl:copy-of select="meta | $other/systemModel/meta | comment()[following-sibling::meta]"/>	
@@ -199,7 +210,16 @@
 			<xsl:with-param name="other" select="$other/systemModel"/>
 			<xsl:with-param name="up" select="$up"/>
 			<xsl:with-param name="down" select="$down"/>
+			<xsl:with-param name="replaces" select="$replaces"/>
 		</xsl:apply-templates>
+
+		<!-- tack on any remaining layers -->
+		<xsl:apply-templates mode="merge-copy-of" select="$other/systemModel/layer[not(@before) and not(following-sibling::*[@id=current()/layer/@id]) and not(@id=current()/layer/@id)]">
+			<xsl:with-param name="origin" select="$down"/>
+			<xsl:with-param name="root" select="current()/.."/>
+			<xsl:with-param name="replaces" select="$replaces"/>
+		</xsl:apply-templates>		
+
 	</xsl:copy>
 </xsl:template>
 
@@ -235,7 +255,7 @@
 			<xsl:attribute name="levels"><xsl:value-of select="normalize-space($lev)"/></xsl:attribute>
 		</xsl:when>
 		<xsl:otherwise> <!--  if they differ, use the origin's levels -->
-			<xsl:message>Note: levels differ "<xsl:value-of select="."/>" vs "<xsl:value-of select="$other/@levels"/>"</xsl:message>
+			<xsl:message>Note: levels differ "<xsl:value-of select="."/>" vs "<xsl:value-of select="$other/@levels"/>" on <xsl:value-of select="../@id"/></xsl:message>
 			<xsl:copy-of select="."/>
 		</xsl:otherwise>
 	</xsl:choose>
@@ -252,67 +272,16 @@
 	<xsl:choose>
 		<xsl:when test="not($to-sort)"/>  <!-- nothing left to copy. stop -->
 		<xsl:when test="not($base)"/>  <!-- reached end. stop -->
-		<xsl:when test="$base[1]/@id=$end/following-sibling::*[1]/@id"/> <!-- passed $end. Stop -->
-		<xsl:when test="$base[1]/@id = $to-sort[1]/@id">  <!-- both lists start with same item -->
-			<xsl:if test="$base[1]/@id!=$end/@id"> <!-- not at end, so keep going -->
-				<xsl:call-template name="copy-sorted-content">
-					<xsl:with-param name="base" select="$base[position() != 1]"/>
-					<xsl:with-param name="to-sort" select="$to-sort[position() != 1]"/>
-					<xsl:with-param name="remainder" select="$remainder"/>
-					<xsl:with-param name="start" select="$start"/>
-					<xsl:with-param name="end" select="$end"/>
-					<xsl:with-param name="down" select="$down"/>
-				</xsl:call-template>		
-			</xsl:if>
-		</xsl:when>	
-		<xsl:when test="$remainder[@id = $base[1]/@id]"> <!-- left over item is in $base -->
-			<xsl:call-template name="copy-sorted-content">
-				<xsl:with-param name="base" select="$base[position() != 1]"/>
-				<xsl:with-param name="to-sort" select="$to-sort"/>
-				<xsl:with-param name="remainder" select="$remainder[@id != $base[1]/@id]"/>
-				<xsl:with-param name="start" select="$start"/>
-				<xsl:with-param name="end" select="$end"/>
-				<xsl:with-param name="down" select="$down"/>
-			</xsl:call-template>		
-		</xsl:when>
-		<xsl:when test="not($base[@id = $to-sort[1]/@id])"> <!-- in to-sort, but not base -->		
-			<xsl:if test="$base[1]/@id=$end/@id  and not($base[@id=$to-sort[1]/@before])">
-			 	<!-- if at end, then this needs to be copied
-					don't copy if the before ID is found in $base	-->
-				<xsl:apply-templates mode="merge-copy-of" select="$to-sort[1]">
-					<xsl:with-param name="origin" select="$down"/>
-					<xsl:with-param name="root" select="$end/ancestor::systemModel"/>
-				</xsl:apply-templates>
-			</xsl:if>			
-		<xsl:call-template name="copy-sorted-content">
-			<xsl:with-param name="base" select="$base"/>
-			<xsl:with-param name="to-sort" select="$to-sort[position() != 1]"/>
-			<xsl:with-param name="remainder" select="$remainder"/>
-			<xsl:with-param name="start" select="$start"/>
-			<xsl:with-param name="end" select="$end"/>
-			<xsl:with-param name="down" select="$down"/>
-		</xsl:call-template>		
-		</xsl:when>	
-		<xsl:when test="not($to-sort[@id = $base[1]/@id])"> <!-- in base, but not to-sort -->		
-		<xsl:call-template name="copy-sorted-content">
-			<xsl:with-param name="base" select="$base[position() != 1]"/>
-			<xsl:with-param name="to-sort" select="$to-sort"/>
-			<xsl:with-param name="remainder" select="$remainder"/>
-			<xsl:with-param name="start" select="$start"/>
-			<xsl:with-param name="end" select="$end"/>
-			<xsl:with-param name="down" select="$down"/>
-		</xsl:call-template>		
-		</xsl:when>	
-		<xsl:when test="$base[@id = $to-sort[1]/@id]"> <!-- is in base, but not 1st one-->
-			<xsl:call-template name="copy-sorted-content">
-				<xsl:with-param name="base" select="$base"/>
-				<xsl:with-param name="to-sort" select="$to-sort[position() != 1] "/>
-				<xsl:with-param name="remainder" select="$remainder | $to-sort[1]"/>
-				<xsl:with-param name="start" select="$start"/>
-				<xsl:with-param name="end" select="$end"/>
-				<xsl:with-param name="down" select="$down"/>
-			</xsl:call-template>
-		</xsl:when>	
+		<xsl:otherwise>
+			<xsl:for-each select="$to-sort">
+				<xsl:if test="((@before=$end/@id) or not(@before) or not($base/ancestor::SystemDefinition//*[@id=current()/@before])) and not($base[@id=current()/@id])">
+					<xsl:apply-templates mode="merge-copy-of" select=".">
+						<xsl:with-param name="origin" select="$down"/>
+						<xsl:with-param name="root" select="$end/ancestor::SystemDefinition"/>
+					</xsl:apply-templates>
+				</xsl:if>
+			</xsl:for-each>
+		</xsl:otherwise>	
 	</xsl:choose>
 </xsl:template>
 
@@ -353,47 +322,94 @@
 </xsl:template>
 
 
+<xsl:template name="best-prev"><xsl:param name="cur" select="."/><xsl:param name="alt"/>
+<xsl:if test="$alt">
+<xsl:variable name="prev" select="$cur/preceding-sibling::*[@id][1]"/> 
+<xsl:choose>
+	<xsl:when test="not($prev)"/>
+	<xsl:when test="$alt/preceding-sibling::*[@id=$prev/@id]"><xsl:value-of select="$prev/@id"/></xsl:when>
+	<xsl:otherwise>
+		<xsl:call-template name="best-prev">
+			<xsl:with-param name="cur" select="$prev"/>
+			<xsl:with-param name="alt" select="$alt"/>
+		</xsl:call-template>
+	</xsl:otherwise>
+</xsl:choose>
+</xsl:if>
+</xsl:template>
+
 <xsl:template match="layer | package | collection | component" mode="merge-models">
 	<xsl:param name="other"/>	<!-- the downstream item of the parent's rank that contains a potential items this is merged with -->
 	<xsl:param name="up"/>
 	<xsl:param name="down"/>
+	<xsl:param name="replaces"/>
 	<xsl:variable name="this" select="."/>	<!-- current item -->
-	
 	<!-- match = this item in the downstream model -->	
 	<xsl:variable name="match" select="$other/*[@id=current()/@id]"/>
-	
-	
-	<!-- prev = the previous item before the current one (no metas, only named items)-->
-	<xsl:variable name="prev" select="preceding-sibling::*[@id][1]"/> 
-
-	<!-- copy all items between this and prev  that are solely in the downstream model -->	 		
 
 	<xsl:choose>
-		<xsl:when test="$match and (not($prev) or $other/*[@id= $prev/@id] )">
+		<xsl:when test="$replaces[.=$this/@id] or (self::component and $match)">  <!-- replace the item instead of merge -->
+			<xsl:message>Note: <xsl:value-of select="name()"/> "<xsl:value-of select="@id"/>" in "<xsl:value-of select="../@id"/>" <xsl:choose>
+					<xsl:when test="self::component and $match">overridden in downstream sysdef</xsl:when>
+					<xsl:otherwise><xsl:for-each select="$replaces[.=$this/@id]/..">replaced by <xsl:value-of select="name()"/> "<xsl:value-of select="@id"/>" in "<xsl:value-of select="../@id"/>"</xsl:for-each></xsl:otherwise>
+				</xsl:choose>
+			</xsl:message>
+			<!-- if the removed item is in the downstream doc, just copy that and ignore the upstream contents -->
+			<xsl:apply-templates mode="merge-copy-of" select="$match">
+				<xsl:with-param name="origin" select="$down"/>
+				<xsl:with-param name="root" select="$this/ancestor::SystemDefinition"/>			
+				<xsl:with-param name="replaces" select="$replaces"/>
+			</xsl:apply-templates>		
+		</xsl:when>
+		<xsl:otherwise>
+			<!-- remove this if it's in the list of stuff to be replaced-->
+
+<xsl:variable name="prev-id">
+	<xsl:call-template name="best-prev">
+		<xsl:with-param name="alt" select="$match"/>
+	</xsl:call-template>
+</xsl:variable>
+
+	<!-- prev = the previous item before the current one (no metas, only named items)-->
+	<xsl:variable name="prev" select="preceding-sibling::*[@id=$prev-id]"/> 
+
+
+	<!-- copy all items between this and prev that are solely in the downstream model -->	 		
+
+	<!-- <xsl:variable name="upstream-ids" select="ancestor::SystemDefinition//@id[parent::component or parent::collection or parent::package or parent::layer]"/> -->
+	<xsl:variable name="upstream-ids" select="../*/@id"/> <!-- this is much faster than using all IDs. before only currently works in the same parent anyway -->
+
+	<!-- $upstream-ids is used to avoid inserting an item that's being moved -->
+
+	<xsl:choose>
+		<xsl:when test="$match and $prev">
 			<xsl:call-template name="copy-sorted-content">
 				<xsl:with-param name="base" select="../*[@id]"/>
-				<xsl:with-param name="to-sort" select="$other/*[@id]"/>
+				<xsl:with-param name="to-sort" select="$other/*[@id and not(@before=$upstream-ids)][following-sibling::*[@id=$match/@id]][preceding-sibling::*[@id=$prev/@id]]"/>
 				<xsl:with-param name="start" select="$prev"/>
 				<xsl:with-param name="end" select="."/>
 				<xsl:with-param name="down" select="$down"/>
 			</xsl:call-template>
 		</xsl:when>
-	<xsl:when test="not($match/preceding-sibling::*[@id=$this/../*/@id]) and $other/*[@id= current()/@id]/preceding-sibling::*[@id and not(@before)]">
-		<!-- if this is the first item in other that's also in this, then put all new items from other here -->
-		<xsl:apply-templates mode="merge-copy-of" select="$match/preceding-sibling::*[@id and not(@before)]">
-			<xsl:with-param name="origin" select="$down"/>
-			<xsl:with-param name="root" select="$this/ancestor::systemModel"/>	
-		</xsl:apply-templates>
-	</xsl:when>
+		<xsl:when test="$match and not($prev)">
+			<xsl:call-template name="copy-sorted-content">
+				<xsl:with-param name="base" select="../*[@id]"/>
+				<xsl:with-param name="to-sort" select="$other/*[@id and not(@before=$upstream-ids)][following-sibling::*[@id=$match/@id]]"/>
+				<xsl:with-param name="start" select="$prev"/>
+				<xsl:with-param name="end" select="."/>
+				<xsl:with-param name="down" select="$down"/>
+			</xsl:call-template>
+		</xsl:when>
 	</xsl:choose>
 
  	<!-- just copy anything identified as being before this, assume they're all ok -->
+
 	<xsl:apply-templates mode="merge-copy-of" select="$other/*[@before=current()/@id]">
 		<xsl:with-param name="remove-before" select="1"/>
 		<xsl:with-param name="origin" select="$down"/>
-		<xsl:with-param name="root" select="$this/ancestor::systemModel"/>	
+		<xsl:with-param name="root" select="$this/ancestor::SystemDefinition"/>	
+		<xsl:with-param name="replaces" select="$replaces"/>
 	</xsl:apply-templates>
-
 	
 	<xsl:copy>
 		<xsl:apply-templates select="@*" mode="merge-models"> <!-- copy upstream attributes -->
@@ -410,9 +426,16 @@
 			</xsl:if>
 		</xsl:if>
 		
-		<xsl:for-each select="$match/@*">  <!-- copy downstream attributes, only if not set on upstream -->
+		<xsl:for-each select="$match/@*[name()!='replace']">  <!-- copy downstream attributes, only if not set on upstream -->
 			<xsl:if test="not($this/@*[name()=name(current())])"><xsl:copy-of select="."/></xsl:if>
 		</xsl:for-each>
+
+		<xsl:if test="$match/@replace"> <!-- check replace separately -->
+			<xsl:if test="not($this/ancestor::SystemDefinition//*[(self::component or self::collection or self::package or self::layer) and $match/@replace=@id])">
+				<!-- only remove replace if it's been used -->
+				<xsl:copy-of select="$match/@replace"/>
+			</xsl:if>
+		</xsl:if>
 		
 		<xsl:choose>
 			<xsl:when test="self::component">
@@ -435,27 +458,24 @@
 					<xsl:with-param name="other" select="$match"/>
 					<xsl:with-param name="up" select="$up"/>
 					<xsl:with-param name="down" select="$down"/>
+					<xsl:with-param name="replaces" select="$replaces"/>
 				</xsl:apply-templates>
 				<!--  don't copy if explicitly or implicitly placed already-->
 				<xsl:for-each select="$match/*[not(@before) and not(following-sibling::*[@id=$this/*/@id])]">
 					<xsl:if test="not($this/*[@id=current()/@id])">
 						<xsl:apply-templates mode="merge-copy-of" select=".">
 							<xsl:with-param name="origin" select="$down"/>
-							<xsl:with-param name="root" select="$this/ancestor::systemModel"/>			
+							<xsl:with-param name="root" select="$this/ancestor::SystemDefinition"/>			
+							<xsl:with-param name="replaces" select="$replaces"/>
 						</xsl:apply-templates>
 					</xsl:if>
 				</xsl:for-each>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:copy>
-	
-	<xsl:if test="self::layer and not(following-sibling::layer)">	
-		<!-- for the last layer, tack on any remaining layers -->
-		<xsl:apply-templates mode="merge-copy-of" select="$other/layer[not(@before) and not(following-sibling::*[@id=$this/../layer/@id]) and not(@id=$this/../layer/@id)]">
-			<xsl:with-param name="origin" select="$down"/>
-			<xsl:with-param name="root" select="$this/ancestor::systemModel"/>			
-		</xsl:apply-templates>		
-	</xsl:if>
+
+		</xsl:otherwise>
+	</xsl:choose>
 </xsl:template>
 
 
@@ -464,10 +484,11 @@
 	<xsl:param name="remove-before" select="0"/> <!-- set to true if any before attribute is to be removed -->
 	<xsl:param name="origin"/>	<!--the element containing the @name to use the origin-model attribute  -->
 	<xsl:param name="root"/> 	<!--the systemModel element in the upstream doc  -->
-
+	<xsl:param name="replaces" select="ancestor::SystemDefinition/descendant::*[(self::component or self::collection or self::package or self::layer) and not(ancestor::meta)]/@replace"/> <!-- recalculate this is necessarfy, but should just pass down as a param -->
+	<xsl:variable name="moved" select="$root/descendant::*[name()=name(current()/..) and @id!=current()/../@id]/*[@id=current()/@id]"/>
 	<xsl:choose>
 		<!-- this might slow things down, consider making optional -->
-		<xsl:when test="not(self::layer) and count($root/descendant::*[name()=name(current()/..) and @id!=current()/../@id]/*[@id=current()/@id])">
+		<xsl:when test="not(self::layer) and (count($moved) and not($moved[ancestor-or-self::*/@id=$replaces]) )">
 			<xsl:message>Warning: <xsl:value-of select="name()"/> "<xsl:value-of select="@id"/>" moved in downstream model. Ignoring moved <xsl:value-of select="name()"/>
 				<xsl:text>&#xa;</xsl:text>
 			</xsl:message>
@@ -478,6 +499,7 @@
 				<xsl:apply-templates select="*|comment()" mode="merge-copy-of">
 					<xsl:with-param name="origin" select="$origin"/>
 					<xsl:with-param name="root" select="$root"/>
+					<xsl:with-param name="replaces" select="$replaces"/>
 				</xsl:apply-templates>
 			</xsl:variable>
 			<xsl:choose>
@@ -489,12 +511,10 @@
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:copy>
-						<xsl:choose>
-							<xsl:when test="$remove-before">
-								<xsl:copy-of select="@*[name()!='before']"/>
-							</xsl:when>
-							<xsl:otherwise><xsl:copy-of select="@*"/></xsl:otherwise>
-						</xsl:choose>
+						<xsl:call-template name="merge-copy-of-atts">
+							<xsl:with-param name="remove-before" select="$remove-before"/>
+							<xsl:with-param name="root" select="$root"/>
+						</xsl:call-template>
 						<xsl:copy-of select="exslt:node-set($content)"/>
 					</xsl:copy>
 				</xsl:otherwise>
@@ -502,17 +522,31 @@
 		</xsl:otherwise>
 	</xsl:choose>
 </xsl:template>
-
-
 <xsl:template match="comment()|@*" mode="merge-copy-of">
 	<xsl:copy-of select="."/>
+</xsl:template>
+
+
+<xsl:template name="merge-copy-of-atts">
+	<xsl:param name="remove-before" select="0"/> <!-- set to true if any before attribute is to be removed -->
+	<xsl:param name="root"/> 	<!--the systemModel element in the upstream doc  -->
+	
+	<xsl:choose>
+		<xsl:when test="$remove-before">
+			<xsl:copy-of select="@*[name()!='before' and name()!='replace']"/>
+		</xsl:when>
+		<xsl:otherwise><xsl:copy-of select="@*[name()!='replace']"/></xsl:otherwise>
+	</xsl:choose>
+	<xsl:if test="@replace and not($root/descendant::*[(self::component or self::collection or self::package or self::layer) and @id=current()/@replace])">
+		<!-- only include replace if it's not been used -->
+		<xsl:copy-of select="@replace"/>
+	</xsl:if>
 </xsl:template>
 
 <xsl:template match="component" mode="merge-copy-of">
 	<xsl:param name="remove-before" select="0"/> <!-- set to true if any before attribute is to be removed -->
 	<xsl:param name="origin"/>	<!--the element containing the @name to use the origin-model attribute  -->
 	<xsl:param name="root"/> 	<!--the systemModel element in the upstream doc  -->
-	
 	<xsl:choose>
 		<!-- this might slow things down, consider making optional -->
 		<xsl:when test="$root/descendant::collection[@id!=current()/../@id]/component[@id=current()/@id]">
@@ -522,12 +556,10 @@
 		</xsl:when>
 		<xsl:otherwise>
 			<xsl:copy>
-				<xsl:choose>
-					<xsl:when test="$remove-before">
-						<xsl:copy-of select="@*[name()!='before']"/>
-					</xsl:when>
-					<xsl:otherwise><xsl:copy-of select="@*"/></xsl:otherwise>
-				</xsl:choose>
+				<xsl:call-template name="merge-copy-of-atts">
+					<xsl:with-param name="remove-before" select="$remove-before"/>
+					<xsl:with-param name="root" select="$root"/>
+				</xsl:call-template>
 				<xsl:if test="not(@origin-model) and $origin/@name">
 					<xsl:attribute name="origin-model">
 						<xsl:value-of select="$origin/@name"/>
@@ -536,10 +568,63 @@
 						<xsl:copy-of select="$origin/@root"/>
 					</xsl:if>
 				</xsl:if>
-				<xsl:copy-of select="*|comment()"/>
+				<xsl:apply-templates select="*|comment()" mode="merge-copy-of">
+					<xsl:with-param name="origin" select="$origin"/>
+					<xsl:with-param name="root" select="$root"/>
+				</xsl:apply-templates>
 			</xsl:copy>
 		</xsl:otherwise>
 	</xsl:choose>
 </xsl:template>
 
+
+<xsl:template match="unit" mode="merge-copy-of">
+	<xsl:param name="origin"/>	<!--the element containing the @name to use the origin-model attribute  -->
+	<xsl:param name="root"/> 	<!--the systemModel element in the upstream doc  -->
+	<xsl:copy>
+				<xsl:apply-templates select="@*" mode="merge-copy-of">
+					<xsl:with-param name="origin" select="$origin"/>
+					<xsl:with-param name="root" select="$root"/>
+				</xsl:apply-templates>
+	</xsl:copy>
+</xsl:template>
+
+
+
+
+<xsl:template match="meta" mode="merge-copy-of">
+	<xsl:param name="origin"/>	<!--the element containing the @name to use the origin-model attribute  -->
+	<xsl:param name="root"/> 	<!--the systemModel element in the upstream doc  -->
+	<xsl:copy>
+		<xsl:apply-templates select="@*" mode="merge-copy-of">
+			<xsl:with-param name="origin" select="$origin"/>
+			<xsl:with-param name="root" select="$root"/>
+		</xsl:apply-templates>
+		<xsl:copy-of select="node()"/>
+	</xsl:copy>
+</xsl:template>
+
+
+<xsl:template match="unit/@bldFile | unit/@mrp | unit/@base | meta/@href" mode="merge-copy-of">
+	<xsl:param name="origin" select="/.."/>	<!--the element containing the @name to use the origin-model attribute  -->
+
+	<xsl:attribute name="{name()}">
+		<xsl:choose>
+			<xsl:when test="not($origin/@pathto)"><xsl:value-of select="."/></xsl:when>
+			<xsl:when test="(contains(.,'://') and not(contains(substring-before(.,'://'),'/'))) or starts-with(.,'/')"> <!-- absolute URI or absolute path-->
+				<xsl:value-of select="."/>
+			</xsl:when>
+			<xsl:when test="contains($origin/@pathto,'://') and not(contains(substring-before($origin/@pathto,'://'),'/'))"> <!-- absolute URI for downstream sysdef not valif for unit paths, just copy and raise warning-->
+				<xsl:message>ERROR: Could not resolve relative path in downstream file: <xsl:value-of select="."/> relative to absolute URI <xsl:value-of select="$origin/@pathto"/></xsl:message>
+				<xsl:value-of select="."/>
+			</xsl:when>
+		<xsl:otherwise> <!-- relative link -->
+			<xsl:call-template name="joinpath">
+				<xsl:with-param name="file" select="$origin/@pathto"/>
+				<xsl:with-param name="rel" select="."/>
+			</xsl:call-template>
+		</xsl:otherwise>
+		</xsl:choose>
+	</xsl:attribute>
+</xsl:template>
 </xsl:stylesheet>

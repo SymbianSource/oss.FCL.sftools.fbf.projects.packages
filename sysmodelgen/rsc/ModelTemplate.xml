@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<model name="Symbian OS" label="System Model" shapes="shapes.xml">
+<model name="Symbian" label="System Model" shapes="shapes.xml">
 	<layout>
 		<legend label="Key">
 			<legend use="@shapes#colors"/>

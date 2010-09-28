@@ -82,14 +82,14 @@ sub new
 	'iModel'				=> { 'param' => "model=s" ,'type'=>'file/uri', 'default' => "$dataroot/ModelTemplate.xml",
 		'class' => 'Files or URIs', 'desc' => 'The location of the Model XML file to use to build the file. Content of this file will be overridden by anything set on the command line on in an ini file'},
 	'iSysDefFile'				=> { 'param' => "sysdef=s",  'multi' => 1,'type'=>'file/uri', 'xpath' => '/model/sysdef',
-		 'class' => 'Model Control', 'desc' =>  'Comma-separated list of locations for the System Definition XML file(s) used to build the model. Layers in the files will be  stacked on top of each other in order, from bottom to top.'},
+		 'class' => 'Model Control', 'desc' =>  'The System Definition XML file(s) used to build the model.'},
 	"iSourceRoot"			=> {'param'=>'srcvar=s' ,'multi' => 1,
 		 'class' =>  'Model Control'},
-	'iPathPrefix'				=> {'param' => 'sysdef-prefix',   'multi' => 1, 'class' =>  'Model Control'},
+	'iPathPrefix'				=> {'param' => 'sysdef-prefix=s',   'multi' => 1, 'class' =>  'Model Control','type'=>'file/uri',},
 	"iSysDefPath"			=> {'param' => "sysdef-path=s",  'multi' => 1,'type'=>'path',
 		 'class' => 'Model Control', 'desc' =>  'The directory which the system definition file should be considered to be in when turning unit\'s relative links into absolute paths. This is only necessary to provide if the result requires the absolute paths to be meaningful. The order of this parameter must match the order of the -sysdef parameter'},
 	'iShapes'				=> { 'param' => "shapes=s", 'xpath' => '/model/@shapes','type'=>'file/uri',
-		 'class' => 'Files or URIs', 'desc' => 'The location of the Shapes XML file used to provide rules to control  the display of the components on the model. If not present, default behaviour  (in Shapes.xml) is used. This and the default bahaviours are overrriden by  using the -color, -border, -pattern, and -style options. '},
+		 'class' => 'Files or URIs', 'desc' => 'The location of the Shapes XML file used to provide rules to control  the display of the system model items. If not present, default behaviour  (in Shapes.xml) is used. This and the default bahaviours are overrriden by  using the -color, -border, -pattern, and -style options. '},
 	'iLink'				=> { 'param' => "link=s",  'xpath' => '/model/@link',
 		 'class' => 'Files or URIs', 'desc' => 'The base URL to use for all hyperlinks in the model. A base URL will be appended by the type and name (e.g. Blocks/Comms%20Services.html) of the items to create the full URL of the linked file. Window directories will be converted into file URIs.'},
 	'iLinkExpr'				=> { 'param' => "link-expr=s",   'multi' => 1, 'xpath' => 'model/link',
@@ -107,7 +107,7 @@ sub new
 	'iCopyright'			=> { 'param' => "copyright=s", 'default' => (1900+$yr[5])." Nokia Corporation",  'xpath' => '/model/@copyright',
 		 'class' =>"Labels", 'desc' =>'The copyright to appear in the lower left. Set to empty string to leave out.'},
 	'iDistribution'		=> { 'param' => "distribution=s",   'xpath' => '/model/@distribution',
-		 'class' => "Labels", 'desc' =>'Text to appear on the bottom centre to indicate to whom the  model can be show. Informational only. Suggested values are "internal", "secret" or "unrestrictred". Not shown if not set.'},
+		 'class' => "Labels", 'desc' =>'Text to appear on the bottom centre to indicate to whom the  model can be shown. Informational only. Suggested values are "internal", "secret" or "unrestrictred". Not shown if not set.'},
 	'iLgdTitle'		=> { 'param' => "legend_title=s",  'xpath' => '/model/layout/legend/@label',
 		'class' =>"Labels", 'desc' =>'The title to appear in the leftmost part of the legend.'},
 	'iLgdFloat'		=> { 'param' => "legend_float=s",  'xpath' => '/model/layout/legend/@float', 'type' => 'boolean',
@@ -127,6 +127,8 @@ sub new
 	'iLevels'				=> {  'multi' => 1, 'param' => "levels=s",'type'=>'file/uri' , info=>'levels', 'xpath' => '/model/sysdef',
 		'depr' => "Only works on 2.0 syntax and older models. Use info file instead",
 		'class' =>'Files or URIs', 'desc' => 'The location of the Levels XML file used to override the  stacking of collections. '},
+	'iDepsFile'				=> { 'multi' => 1, 'param' => "deps=s",  'xpath' => '/model/sysdef','type'=>'file/uri',  info=>'extra', 
+		'class' => 'Files or URIs', 'desc' =>  'The location of a sysinfo file containing Dependencies.  If not present, dependencies will not be drawn'},
 
 	'iColor'				=> {  'multi' => 1, 'param' => "color=s", 'xpath' => '/model/layout','type'=>'file/uri', 'info'=>'color',
 		 'class' =>'Files or URIs', 'desc' =>  'The location of a Values XML file used to specify per-component colours. If not present, the default colours are used.'},
@@ -166,8 +168,6 @@ sub new
 		 'class' =>'Model Control', 'desc' => 'The width of the drawn image (with units). If not specified it will fit the viewer window. Valid units: "in", "mm", "cm", "px", "pt"'},
 	'iStatic'				=> { 'param' => "static=s", 'type' => 'boolean', 'xpath' => '/model/layout/@static',
 		'class' =>'Model Control', 'desc' => 'If present, the model will not have any mouseover effects (this is  overriden by builing the depmodel).'},
-	'iDepsFile'				=> { 'param' => "deps=s",  'xpath' => '/model/@deps','type'=>'file/uri',
-		'class' => 'Files or URIs', 'desc' =>  'The location of the Dependencies XML file used to draw the depmodel.  If not present, dependencies will not be drawn'},
 	'iPrintResolution'				=>{ 'param' => "dpi=s", 'type' =>  'number', 'xpath' => '/model/layout/@resolution',
 		'class' =>'Model Control', 'desc' => 'The DPI to use when printing from the Adobe SVG Viewer. If not present, it will print well at A4 size. A value of 300 will look good on A3 size paper'},
 	'iModelFont'				=>{'param' => "model_font=s", 'type' =>'font', 'xpath' => '/model/layout/@font',
@@ -242,6 +242,14 @@ sub ParseCommandLineOptions()
 				}
 			}
 		}
+
+	foreach (@ARGV) {
+		# some MS products replace "-" with en-dash in an effort to be "intelligent". 
+		# This replaces all leading en-dashes in the command line with "-" 
+		# There is a small risk that the en-dash is intentional and this will clobber it. 
+		s/^\x96/-/; 
+	}
+
 	GetOptions(%opt);
 
 	if ($self->{'iHelp'})
@@ -598,7 +606,7 @@ sub getModel()
 print XSLT '<stylesheet version="1.0" xmlns="http://www.w3.org/1999/XSL/Transform">
 <variable name="fullpath">',$basedir,'/</variable>
 <template match="@*" priority="-2"><copy-of select="."/></template>
-<template match="@href|model/@shapes|model/@deps|logo/@src|legend/@use[not(starts-with(.,&apos;@&apos;) or starts-with(.,&apos;#&apos;))]" priority="-1">
+<template match="@href|model/@shapes|logo/@src|legend/@use[not(starts-with(.,&apos;@&apos;) or starts-with(.,&apos;#&apos;))]" priority="-1">
 	<choose>
 		<when test="$fullpath!=&apos;&apos; and not(contains(.,&apos;:&apos;) or starts-with(.,&apos;/&apos;))">
 			<attribute name="{name()}"><value-of select="concat($fullpath,.)"/></attribute>
@@ -673,7 +681,7 @@ my %info='';
 				} elsif($param eq 'iIgnore' or $param eq 'iIgnoreMeta' or $param eq 'iLinkExpr' or $param eq 'iSysDefFile') {
 					print XSLT "<template match='",$cur->{'xpath'},"'/>\n"	# ignore any already present if set
 				}		
-			} elsif($param eq 'iModel') {
+			} elsif($param eq 'iModel' || $param eq 'iSysDefPath' || $param eq 'iPathPrefix' || $param eq 'iSourceRoot') {
 			} else {
 				print STDERR "$param   ",$self->{$param},"\n";  # should not get here
 			}
@@ -699,7 +707,7 @@ my %info='';
 		$src=$count;
 		if(scalar(@{$self->{'iPathPrefix'}}) == 1) {$src=0}
 		if($self->{'iPathPrefix'}->[$src]) {
-			print XSLT "\t\t<attribute name='prefix'>",$self->{'iPathPrefix'}->[$src],"</attribute>\n";
+			print XSLT "\t\t<attribute name='path-prefix'>",$self->{'iPathPrefix'}->[$src],"</attribute>\n";
 		}
 		$src=$count;
 		if(scalar(@{$self->{'iSysDefPath'}}) == 1) {$src=0}
@@ -835,17 +843,19 @@ sub ShouldCreateDepmodel()
 		{
 		return 1;
 		}
+	my $should = 0;
 	my $model = $self->getModel();
 	my $t = $/;
 	$/='>';
 	open(M,$model);
 	while(<M>)
 		{
-		if(/<model\s/){last}
+		if(/<model\s.*deps=/){$should=1;last;}
+		if(/<info\s.*data-type="Dependencies"/){$should=1;last;}
 		}
 	close M;
 	$/ = $t;
-	return /\sdeps=/;
+	return $should
 	}
 
 
@@ -1347,7 +1357,7 @@ print STDERR "\nArguments:\n";
   my $head=2;
 while(@list) {
 	$param = shift(@list);
-	if($head<=0 and !($param=~/^-/)){print "\n$param\n";next;}
+	if($head<=0 and !($param=~/^-/)){print STDERR "\n$param\n";next;}
 	$text = shift(@list);
 	write STDERR ;
 	$head--;

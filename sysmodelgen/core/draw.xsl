@@ -28,7 +28,9 @@
 			 <v>7.0</v> <v>7.0s</v>
 			 <v>8.0</v> <v>8.0a 8.0b</v><v>8.1 8.1a 8.1b</v>
 			 <v>9.0</v> <v>9.1</v> <v>9.2</v> <v>9.3</v> 
-			 <v>9.4 ^1</v><v>tb91 ^2</v> <v>tb92 9.5 ^3</v> <v>tb101 9.6 ^4</v> <v>Future</v>
+			 <v>9.4 ^1</v><v>tb91 ^2</v> <v>tb92 9.5 ^3</v> <v>tb101 9.6 ^4</v> 
+			 <v>^5</v> <v>^6</v> <v>^7</v> <v>^8</v> <v>^9</v> <v>^10</v>
+			 <v>Future</v>
 		</xsl:otherwise>
 	</xsl:choose>
 </xsl:variable>
