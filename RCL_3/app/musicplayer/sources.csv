@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/MCL/sf/app/musicplayer/,/sf/app/musicplayer,branch,RCL_3,layers.sysdef.xml

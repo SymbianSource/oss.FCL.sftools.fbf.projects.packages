@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/MCL/sf/app/videoeditor/,/sf/app/videoeditor,branch,RCL_3,layers.sysdef.xml

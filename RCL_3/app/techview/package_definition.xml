@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+]>
+<SystemDefinition name="Symbian^3" schema="2.0.1">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="techview" level="apps" span="2" long-name="Techview" levels="services ui utils apps1 apps2 apps3">
+<collection name="buildverification" long-name="Build Verification" level="services">
+<component name="autosmoketest" long-name="Auto Smoke Test" filter="gt" purpose="development" introduced="9.1">
+<unit bldFile="/sf/app/techview/buildverification/autosmoketest/Group" mrp="/sf/app/techview/buildverification/autosmoketest/Group/testtools_autosmoketest.mrp"/>
+</component>
+<component name="smoketest" long-name="Smoke Test" filter="gt" purpose="development">
+<unit bldFile="/sf/app/techview/buildverification/smoketest/Group" mrp="/sf/app/techview/buildverification/smoketest/Group/testtools_smoketest.mrp"/>
+</component>
+</collection>
+<collection name="techviewplat" long-name="Techview Platform" level="services"/>
+<collection name="techviewui" long-name="Techview UI" level="ui"/>
+<collection name="controlpanel" long-name="Control Panel" level="ui"/>
+<collection name="pimapps" long-name="PIM Apps" level="apps3"/>
+<collection name="securityapps" long-name="Security Apps" level="apps3"/>
+<collection name="utilityapps" long-name="Utility Apps" level="apps2"/>
+<collection name="installationapps" long-name="Installation Apps" level="apps2"/>
+<collection name="messagingapps" long-name="Messaging Apps" level="apps2"/>
+<collection name="telephonyapps" long-name="Telephony Apps" level="apps1"/>
+<collection name="networkingapps" long-name="Networking Apps" level="apps1"/>
+<collection name="networkingutils" long-name="Networking Utils" level="utils"/>
+<collection name="shortlinkapps" long-name="Shortlink Apps" level="apps1"/>
+<collection name="testapps" long-name="Test Apps" level="utils"/>
+<collection name="avapps" long-name="A/V Apps" level="apps3"/>
+<collection name="toolkit" long-name="Toolkit" level="utils"/>
+<collection name="techview_info" long-name="Techview Info" level="apps3">
+<component name="techview_metadata" long-name="Techview Metadata" introduced="^2" purpose="development" class="config PC">
+<unit mrp="/sf/app/techview/techview_info/techview_metadata/techview_metadata.mrp"/>
+</component>
+</collection>
+</block>
+  </layer>
+ </systemModel>
+</SystemDefinition>

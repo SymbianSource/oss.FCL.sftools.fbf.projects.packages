@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/FCL/sf/mw/inputmethods/,/sf/mw/inputmethods,branch,RCL_3,layers.sysdef.xml

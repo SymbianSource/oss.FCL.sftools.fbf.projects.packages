@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/MCL/sf/mw/uitools/,/sf/mw/uitools,branch,RCL_3,layers.sysdef.xml

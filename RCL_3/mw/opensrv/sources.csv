@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/MCL/sf/mw/opensrv/,/sf/mw/opensrv,branch,RCL_3,layers.sysdef.xml

@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/MCL/sf/os/osrndtools/,/sf/os/osrndtools,changeset,3406c99bc375,layers.sysdef.xml

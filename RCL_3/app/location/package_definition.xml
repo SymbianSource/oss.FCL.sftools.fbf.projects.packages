@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE SystemDefinition [
+ <!ELEMENT SystemDefinition (systemModel)>
+ <!ATTLIST SystemDefinition
+  name CDATA #REQUIRED
+  schema CDATA #REQUIRED>
+ <!ELEMENT systemModel (layer+)>
+ <!ELEMENT layer (block*|collection*)*>
+ <!ATTLIST layer
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED>
+ <!ELEMENT block (subblock*|collection*)*>
+ <!ATTLIST block
+  levels NMTOKENS #IMPLIED
+  span CDATA #IMPLIED
+  level NMTOKEN #IMPLIED
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT subblock (collection)*>
+ <!ATTLIST subblock
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED>
+ <!ELEMENT collection (component)*>
+ <!ATTLIST collection
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  level NMTOKEN #IMPLIED>
+ <!ELEMENT component (unit)*>
+ <!ATTLIST component
+  name CDATA #REQUIRED
+  long-name CDATA #IMPLIED
+  deprecated CDATA #IMPLIED
+  introduced CDATA #IMPLIED
+  contract CDATA #IMPLIED
+  plugin (Y|N) 'N'
+  filter CDATA #IMPLIED
+  class NMTOKENS #IMPLIED
+  supports CDATA #IMPLIED
+  purpose (optional|mandatory|development) 'optional'>
+ <!ELEMENT unit EMPTY>
+ <!ATTLIST unit
+  mrp CDATA #IMPLIED
+  filter CDATA #IMPLIED
+  bldFile CDATA #IMPLIED
+  root CDATA #IMPLIED
+  version NMTOKEN #IMPLIED
+  prebuilt NMTOKEN #IMPLIED
+  late (Y|N) #IMPLIED
+  priority CDATA #IMPLIED>
+]>
+<SystemDefinition name="Symbian^3" schema="2.0.1">
+ <systemModel>
+  <layer name="app" long-name="Applications" levels="services apps">
+   <block name="location" level="apps" long-name="Location Apps" levels="ui events loc apps">
+<collection name="loc_plat" long-name="Location Apps Platform Interfaces" level="apps"/>
+<collection name="loc_pub" long-name="Location Apps Public Interfaces" level="apps">
+<component name="landmarks_ui_selector_api" long-name="Landmarks UI Selector API" filter="s60" class="api">
+<unit bldFile="/sf/app/location/loc_pub/landmarks_ui_selector_api/group"/>
+</component>
+<component name="landmarks_ui_addedit_api" long-name="Landmarks UI Add/Edit API" filter="s60" class="api">
+<unit bldFile="/sf/app/location/loc_pub/landmarks_ui_addedit_api/group"/>
+</component>
+</collection>
+<collection name="basiclocationinfodisplay" long-name="Basic Location Info Display" level="ui">
+<component name="blid" filter="s60" long-name="Basic Location Info Display Build">
+<unit bldFile="/sf/app/location/basiclocationinfodisplay/blid/group"/>
+</component>
+</collection>
+<collection name="landmarksui" long-name="Landmarks UI" level="loc">
+<component name="landmarksui_help" filter="s60" long-name="Landmarks UI Help">
+<unit bldFile="/sf/app/location/landmarksui/help/group"/>
+</component>
+<component name="landmarksui_engine" filter="s60" long-name="Landmarks UI Engine">
+<unit bldFile="/sf/app/location/landmarksui/engine/group"/>
+</component>
+<component name="uicontrols" filter="s60" long-name="Landmarks UI Controls">
+<unit bldFile="/sf/app/location/landmarksui/uicontrols/group"/>
+</component>
+<component name="landmarksui_commonui" filter="s60" long-name="Landmarks Common UI">
+<unit bldFile="/sf/app/location/landmarksui/commonui/group"/>
+</component>
+<component name="landmarksui_app" filter="s60" long-name="Landmarks Application">
+<unit bldFile="/sf/app/location/landmarksui/app/group"/>
+</component>
+<component name="msgviewer" filter="s60" long-name="Landmarks Message Viewer">
+<unit bldFile="/sf/app/location/landmarksui/msgviewer/group"/>
+</component>
+<component name="landmarksui_build" filter="s60" long-name="Landmarks UI Build">
+<!-- consider distributing this into the other components or collapsing into a single component -->
+<unit bldFile="/sf/app/location/landmarksui/group"/>
+</component>
+</collection>
+<collection name="eventsui" long-name="Location Events UI" level="events">
+<component name="eventsui_help" filter="s60" long-name="Events Help">
+<unit bldFile="/sf/app/location/eventsui/help/group"/>
+</component>
+<component name="eventsutils" filter="s60" long-name="Events Utils">
+<unit bldFile="/sf/app/location/eventsui/eventsutils/group"/>
+</component>
+<component name="eventsengine" filter="s60" long-name="Events Engine">
+<unit bldFile="/sf/app/location/eventsui/eventsengine/group"/>
+</component>
+<component name="eventshandlerui" filter="s60" long-name="Events Handler UI">
+<unit bldFile="/sf/app/location/eventsui/eventshandlerui/group"/>
+</component>
+<component name="eventseditor" filter="s60" long-name="Events Editor">
+<unit bldFile="/sf/app/location/eventsui/eventseditor/group"/>
+</component>
+<component name="eventsmgmtui" filter="s60" long-name="Events Management UI">
+<unit bldFile="/sf/app/location/eventsui/eventsmgmtui/group"/>
+</component>
+<component name="eventsui_build" filter="s60" long-name="Events UI Build">
+<!-- consider distributing this into the other components or collapsing into a single component -->
+<unit bldFile="/sf/app/location/eventsui/group"/>
+</component>
+</collection>
+<collection name="locationlandmarksrefappfors60" long-name="Location Landmarks Reference App for S60" level="apps">
+<!-- this is a component, needs to be moved down a directory -->
+<component name="lmrefapp" filter="s60" long-name="Landmarks Reference Application">
+<unit bldFile="/sf/app/location/locationlandmarksrefappfors60/group"/>
+</component>
+</collection>
+<collection name="locationlandmarksuirefapp" long-name="Location Landmarks UI Reference App" level="apps">
+<!-- this is a component, needs to be moved down a directory -->
+<component name="lmuirefapp" filter="s60" long-name="Landmarks UI Reference Application">
+<unit bldFile="/sf/app/location/locationlandmarksuirefapp/group"/>
+</component>
+</collection>
+<collection name="locationsatviewrefapp" long-name="Location Satellite View Reference App" level="apps">
+<!-- this is a component, needs to be moved down a directory -->
+<component name="satellitereference" filter="s60" long-name="Satellite Info UI Reference Application">
+<unit bldFile="/sf/app/location/locationsatviewrefapp/group"/>
+</component>
+</collection>
+<collection name="simpsyconfigurator" long-name="Simulation PSY Configurator" level="ui">
+<!-- this is a component, needs to be moved down a directory -->
+<component name="simpsyui" filter="s60" long-name="Simulation PSY UI">
+<unit bldFile="/sf/app/location/simpsyconfigurator/group"/>
+</component>
+</collection>
+<collection name="mapnavproviderrefapp" long-name="Map and Navigation Provider Reference App" level="apps">
+<!-- this is a component, needs to be moved down a directory -->
+<component name="mapnavproviderrefapp_build" filter="s60" long-name="Map and Navigation Provider Reference Application">
+<unit bldFile="/sf/app/location/mapnavproviderrefapp/group"/>
+</component>
+</collection>
+</block>
+  </layer>
+ </systemModel>
+</SystemDefinition>
