@@ -104,6 +104,7 @@
       <package id="stubs" tech-domain="hb" level="high" href="../../../../adaptation/stubs/package_definition.xml"/>
       <package id="beagleboard" tech-domain="hb" level="low" href="../../../../adaptation/beagleboard/package_definition.xml"/>
       <package id="qemu" tech-domain="hb" level="low" href="../../../../adaptation/qemu/package_definition.xml"/>
+      <package id="naviengine.nec" tech-domain="hb" level="low" href="../../../../adaptation/naviengine.nec/package_definition.xml"/>
       <package id="codecs.aricent" tech-domain="mm" level="low" href="../../../../adaptation/codecs.aricent/package_definition.xml" />
     </layer>
     <layer id="os" name="OS" levels="hw services">
