@@ -52,26 +52,20 @@
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
-  <layer name="app" long-name="Applications" levels="services apps">
-   <block name="techview" level="apps" span="2" levels="services ui utils apps1 apps2 apps3" long-name="Techview">
-<collection name="techviewplat" long-name="Techview Platform" level="services"/>
-<collection name="techviewui" long-name="Techview UI" level="ui"/>
-<collection name="tv_controlpanel" long-name="Control Panel" level="ui"/>
-<collection name="pimapps" long-name="PIM Apps" level="apps3"/>
-<collection name="securityapps" long-name="Security Apps" level="apps3"/>
-<collection name="utilityapps" long-name="Utility Apps" level="apps2"/>
-<collection name="installationapps" long-name="Installation Apps" level="apps2"/>
-<collection name="messagingapps" long-name="Messaging Apps" level="apps2"/>
-<collection name="telephonyapps" long-name="Telephony Apps" level="apps1"/>
-<collection name="networkingapps" long-name="Networking Apps" level="apps1"/>
-<collection name="networkingutils" long-name="Networking Utils" level="utils"/>
-<collection name="shortlinkapps" long-name="Shortlink Apps" level="apps1"/>
-<collection name="testapps" long-name="Test Apps" level="utils"/>
-<collection name="avapps" long-name="A/V Apps" level="apps3"/>
-<collection name="toolkit" long-name="Toolkit" level="utils"/>
-<collection name="techview_info" long-name="Techview Info" level="apps3">
-<component name="techview_metadata" long-name="Techview Metadata" introduced="^2" purpose="development" class="config PC">
-<unit mrp="/sf/app/techview/techview_info/techview_metadata/techview_metadata.mrp"/>
+  <layer name="adaptation" long-name="Adaptation" levels="low mw high">
+   <block name="naviengine.nec" level="low" levels="hw-if" long-name="NaviEngine">
+<collection name="navienginebsp" long-name="NaviEngine BSP" level="hw-if">
+<component name="ne1_tb" long-name="NaviEngine 1 (Multiple)" introduced="^4" filter="sf_build" purpose="optional">
+<unit bldFile="/sf/adaptation/naviengine.nec/navienginebsp/ne1_tb"/>
+</component>
+<component name="sne1_tb" long-name="NaviEngine 1 (Single)" introduced="^4" filter="sf_build" purpose="optional">
+<unit bldFile="/sf/adaptation/naviengine.nec/navienginebsp/ne1_tb/single"/>
+</component>
+<component name="fne1_tb" long-name="NaviEngine 1 (Flexible)" introduced="^4" filter="sf_build" purpose="optional">
+<unit bldFile="/sf/adaptation/naviengine.nec/navienginebspflexible"/>
+</component>
+<component name="navienginebootldr" long-name="NaviEngine Boot Loader" introduced="^4" filter="sf_build" purpose="optional">
+<unit bldFile="/sf/adaptation/naviengine.nec/navienginebootldr"/>
 </component>
 </collection>
 </block>
