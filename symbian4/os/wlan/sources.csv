@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/os/wlan/,/sf/os/wlan,branch,default,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/os/wlan/,/sf/os/wlan,tag,tip_bulk,layers.sysdef.xml

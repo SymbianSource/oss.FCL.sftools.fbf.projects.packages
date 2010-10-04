@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/os/persistentdata/,/sf/os/persistentdata,branch,default,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/os/persistentdata/,/sf/os/persistentdata,tag,tip_bulk,layers.sysdef.xml

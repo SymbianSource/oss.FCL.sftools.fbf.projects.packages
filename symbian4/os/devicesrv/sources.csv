@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/os/devicesrv/,/sf/os/devicesrv,branch,default,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/os/devicesrv/,/sf/os/devicesrv,tag,S4_PDK_FIX,layers.sysdef.xml

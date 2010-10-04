@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/app/commonemail/,/sf/app/commonemail,branch,default,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/app/commonemail/,/sf/app/commonemail,tag,tip_bulk,layers.sysdef.xml

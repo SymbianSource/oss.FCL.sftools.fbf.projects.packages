@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/FCL/sf/mw/socialmobilefw/,/sf/mw/socialmobilefw,branch,default,layers.sysdef.xml

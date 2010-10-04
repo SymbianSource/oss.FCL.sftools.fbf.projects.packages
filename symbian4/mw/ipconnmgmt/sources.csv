@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/mw/ipconnmgmt/,/sf/mw/ipconnmgmt,branch,default,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/mw/ipconnmgmt/,/sf/mw/ipconnmgmt,tag,tip_bulk,layers.sysdef.xml

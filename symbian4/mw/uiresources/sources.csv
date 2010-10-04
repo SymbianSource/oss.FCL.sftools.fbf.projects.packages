@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/mw/uiresources/,/sf/mw/uiresources,branch,default,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/mw/uiresources/,/sf/mw/uiresources,tag,S4_PDK_FIX,layers.sysdef.xml

@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/FCL/sf/app/calendarwidget/,/sf/app/calendarwidget,tag,tip_bulk,layers.sysdef.xml

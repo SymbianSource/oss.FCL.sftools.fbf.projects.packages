@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/app/jrt/,/sf/app/jrt,branch,default,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/app/jrt/,/sf/app/jrt,tag,tip_bulk,layers.sysdef.xml

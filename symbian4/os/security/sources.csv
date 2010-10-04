@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/os/security/,/sf/os/security,changeset,dd83586b62d6,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/os/security/,/sf/os/security,tag,tip_bulk,layers.sysdef.xml

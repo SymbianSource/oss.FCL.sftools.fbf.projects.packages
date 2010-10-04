@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/mw/securitysrv/,/sf/mw/securitysrv,branch,default,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/mw/securitysrv/,/sf/mw/securitysrv,tag,S4_PDK_FIX,layers.sysdef.xml

@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/mw/uiaccelerator/,/sf/mw/uiaccelerator,branch,default,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/mw/uiaccelerator/,/sf/mw/uiaccelerator,tag,tip_bulk,layers.sysdef.xml

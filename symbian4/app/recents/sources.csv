@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/app/recents/,/sf/app/recents,branch,default,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/app/recents/,/sf/app/recents,tag,tip_bulk,layers.sysdef.xml
