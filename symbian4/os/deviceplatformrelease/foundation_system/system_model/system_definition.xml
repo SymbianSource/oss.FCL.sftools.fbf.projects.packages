@@ -215,6 +215,7 @@
       <package id="imgeditor" level="apps" tech-domain="ma" name="Image Editor"/>
       <package id="videoeditor" level="apps" tech-domain="ma" name="Video Editor"/>
       <package id="videoplayer" level="apps" tech-domain="ma" href="../../../../app/videoplayer/package_definition.xml"/>
+      <package id="videotelephony" level="apps" tech-domain="ma" href="../../../../app/videotelephony/package_definition.xml"/>
       <package id="photos" level="apps" tech-domain="ma" href="../../../../app/photos/package_definition.xml"/>
       <package id="musicplayer" level="apps" tech-domain="ma" href="../../../../app/musicplayer/package_definition.xml"/>
       <package id="radio" level="apps" tech-domain="ma" href="../../../../app/radio/package_definition.xml"/>
