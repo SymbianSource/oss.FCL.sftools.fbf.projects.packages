@@ -163,7 +163,7 @@
     <unit bldFile="mmserv/voipaudioservices/group"/>
    </component>
    <component id="lib3gpextparser" filter="s60" name="3GP Extension Metadata Parser Library">
-    <unit bldFile="mmserv/metadatautility/3GPExtParserLib_stub/group"/>
+    <unit bldFile="mmserv/metadatautility/3GPExtParserLib/group"/>
    </component>
    <component id="sts" name="System Tone Service" filter="s60" introduced="^4">
       <unit bldFile="mmserv/sts/group"/>
