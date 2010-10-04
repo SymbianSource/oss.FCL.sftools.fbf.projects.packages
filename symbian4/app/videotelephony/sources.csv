@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/FCL/sf/app/videotelephony/,/sf/app/videotelephony,tag,tip_bulk,layers.sysdef.xml
