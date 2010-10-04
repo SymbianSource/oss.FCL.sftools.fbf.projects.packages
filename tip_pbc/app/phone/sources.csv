@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/app/phone/,/sf/app/phone,branch,tip_pbc,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/app/phone/,/sf/app/phone,tag,tip_pbc,layers.sysdef.xml

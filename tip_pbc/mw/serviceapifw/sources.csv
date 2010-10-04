@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/mw/serviceapifw/,/sf/mw/serviceapifw,branch,tip_pbc,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/mw/serviceapifw/,/sf/mw/serviceapifw,branch,default,layers.sysdef.xml

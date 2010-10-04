@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/mw/messagingmw/,/sf/mw/messagingmw,branch,tip_pbc,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/mw/messagingmw/,/sf/mw/messagingmw,tag,tip_pbc,layers.sysdef.xml

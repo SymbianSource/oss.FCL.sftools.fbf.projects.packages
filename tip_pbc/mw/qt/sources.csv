@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/mw/qt/,/sf/mw/qt,branch,tip_pbc,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/mw/qt/,/sf/mw/qt,branch,default,layers.sysdef.xml

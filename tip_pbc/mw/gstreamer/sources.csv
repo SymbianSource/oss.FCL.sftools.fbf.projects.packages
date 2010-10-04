@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/mw/gstreamer/,/sf/mw/gstreamer,branch,tip_pbc,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/mw/gstreamer/,/sf/mw/gstreamer,tag,tip_pbc,layers.sysdef.xml

@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/mw/dlnasrv/,/sf/mw/dlnasrv,branch,tip_pbc,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/mw/dlnasrv/,/sf/mw/dlnasrv,tag,tip_pbc,layers.sysdef.xml

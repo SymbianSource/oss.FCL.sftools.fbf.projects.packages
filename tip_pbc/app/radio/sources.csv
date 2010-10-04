@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/app/radio/,/sf/app/radio,branch,tip_pbc,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/app/radio/,/sf/app/radio,tag,tip_pbc,layers.sysdef.xml

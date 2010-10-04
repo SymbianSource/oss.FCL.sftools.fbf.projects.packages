@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/mw/browser/,/sf/mw/browser,branch,tip_pbc,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/mw/browser/,/sf/mw/browser,tag,tip_pbc,layers.sysdef.xml

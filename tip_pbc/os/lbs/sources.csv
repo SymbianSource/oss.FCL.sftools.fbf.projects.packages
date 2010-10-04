@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/os/lbs/,/sf/os/lbs,branch,tip_pbc,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/os/lbs/,/sf/os/lbs,tag,tip_pbc,layers.sysdef.xml

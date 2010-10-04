@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/mw/ipappsrv/,/sf/mw/ipappsrv,branch,tip_pbc,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/mw/ipappsrv/,/sf/mw/ipappsrv,tag,tip_pbc,layers.sysdef.xml
