@@ -174,7 +174,7 @@
 <unit bldFile="/sf/mw/mmmw/mmserv/voipaudioservices/group"/>
 </component>
 <component name="lib3gpextparser" long-name="3GP Extension Metadata Parser Library" filter="s60" purpose="optional">
-<unit bldFile="/sf/mw/mmmw/mmserv/metadatautility/3GPExtParserLib_stub/group"/>
+<unit bldFile="/sf/mw/mmmw/mmserv/metadatautility/3GPExtParserLib/group"/>
 </component>
 <component name="sts" long-name="System Tone Service" introduced="^4" filter="s60" purpose="optional">
 <unit bldFile="/sf/mw/mmmw/mmserv/sts/group"/>
