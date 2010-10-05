@@ -96,21 +96,9 @@
     <meta rel="Api" href="remotemgmt_plat/pnpms_utils_api/pnpms_utils_api.metaxml"/>
     <unit bldFile="remotemgmt_plat/pnpms_utils_api/group"/>
    </component>
-   <component id="adaptive_history_list_api" name="Adaptive History List API" class="api" filter="s60">
-    <meta rel="Api" href="remotemgmt_plat/adaptive_history_list_api/adaptive_history_list_api.metaxml"/>
-    <unit bldFile="remotemgmt_plat/adaptive_history_list_api/group"/>
-   </component>
-   <component id="adaptive_history_list_session_api" name="Adaptive History List Session API" class="api" filter="s60">
-    <meta rel="Api" href="remotemgmt_plat/adaptive_history_list_session_api/adaptive_history_list_session_api.metaxml"/>
-    <unit bldFile="remotemgmt_plat/adaptive_history_list_session_api/group"/>
-   </component>
    <component id="fota_engine_api" name="FOTA Engine API" class="api" filter="s60">
     <meta rel="Api" href="remotemgmt_plat/fota_engine_api/fota_engine_api.metaxml"/>
     <unit bldFile="remotemgmt_plat/fota_engine_api/group"/>
-   </component>
-   <component id="update_package_storage_plugin_api" name="Update Package Storage Plug-in API" class="api" filter="s60">
-    <meta rel="Api" href="remotemgmt_plat/update_package_storage_plugin_api/update_package_storage_plugin_api.metaxml"/>
-    <unit bldFile="remotemgmt_plat/update_package_storage_plugin_api/group"/>
    </component>
    <component id="dcmo_adapter_api" name="DCMO Adapter API" class="api" filter="s60">
     <unit bldFile="remotemgmt_plat/dcmo_adapter_api/group"/>
@@ -122,11 +110,11 @@
     <meta rel="Api" href="remotemgmt_plat/ds_capability_mgmt_plugin_api/ds_capability_mgmt_plugin_api.metaxml"/>
     <unit bldFile="remotemgmt_plat/ds_capability_mgmt_plugin_api/group"/>
    </component>
-   <component id="syncml_ds_customization_api" name="SyncML DS Customisation API" class="api" filter="s60">
+   <component id="syncml_ds_customization_api" name="SyncML DS Customization API" class="api" filter="s60" introduced="^4">
     <meta rel="Api" href="remotemgmt_plat/syncml_ds_customization_api/syncml_ds_customization_api.metaxml"/>
     <unit bldFile="remotemgmt_plat/syncml_ds_customization_api/group"/>
    </component>
-   <component id="syncml_ds_error_reporting_api" name="SyncML DS Error Reporting API" class="api" filter="s60">
+   <component id="syncml_ds_error_reporting_api" name="SyncML DS Error Reporting API" class="api" filter="s60" introduced="^4">
     <meta rel="Api" href="remotemgmt_plat/syncml_ds_error_reporting_api/syncml_ds_error_reporting_api.metaxml"/>
     <unit bldFile="remotemgmt_plat/syncml_ds_error_reporting_api/group"/>
    </component>
@@ -199,9 +187,8 @@
    <component id="dcmocustcmd" filter="s60" name="DCMO Custom Commands">
     <unit bldFile="dcmofw/dcmocustcmd/group"/>
    </component>
-   <component id="dcmofw_build" filter="s60" name="DCMO Build">
-    <!--  need to distribute exports, etc into the other components and remove this-->
-    <unit bldFile="dcmofw/group"/>
+   <component id="dcmofw_rom" filter="s60" name="DCMO ROM">
+   <unit bldFile="dcmofw/rom"/>
    </component>
   </collection>
   <collection id="fotaapplication" name="FOTA Application" level="generic">
@@ -215,7 +202,7 @@
   </collection>
   <collection id="devicemgmtnotifications" name="Device Management Notifications" level="server">
    <component id="devicemgmtnotifications_rom" filter="s60" name="DM Notifications ROM" introduced="^4">
-    <unit bldFile="devicemgmtnotifications/group"/>
+    <unit bldFile="devicemgmtnotifications/rom"/>
    </component>
    <component id="dmdevdialogclient" filter="s60" name="DM Device Dialog Client" introduced="^4">
     <unit bldFile="devicemgmtnotifications/dmdevdialogclient/bld"/>
@@ -226,3 +213,4 @@
   </collection>
  </package>
 </SystemDefinition>
+
