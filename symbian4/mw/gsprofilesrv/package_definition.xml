@@ -66,34 +66,30 @@
 <component name="ftuwizardmodel_api" long-name="FTU Wizard Model API" filter="bldfirst,s60" purpose="optional" class="api">
 <unit bldFile="/sf/mw/gsprofilesrv/gsprofilesrv_plat/ftuwizardmodel_api" proFile="ftuwizardmodel_api.pro" qmakeArgs="-r -config rom"/>
 </component>
-<component name="profiles_engine_api" long-name="Profiles Engine API" filter="s60" purpose="optional" class="api">
+<component name="profiles_engine_api" long-name="Profiles Engine API" filter="bldfirst,s60" purpose="optional" class="api">
 <unit bldFile="/sf/mw/gsprofilesrv/gsprofilesrv_plat/profiles_engine_api/group"/>
 </component>
-<component name="settings_uis_cenrep_collection_api" long-name="Settings UIs CenRep Collection API" filter="s60" purpose="optional" class="api">
+<component name="settings_uis_cenrep_collection_api" long-name="Settings UIs CenRep Collection API" filter="bldfirst,s60" purpose="optional" class="api">
 <unit bldFile="/sf/mw/gsprofilesrv/gsprofilesrv_plat/settings_uis_cenrep_collection_api/group"/>
+</component>
+<component name="controlpanel_api" long-name="Control panel api" filter="bldfirst,s60" purpose="optional" class="api">
+<unit bldFile="/sf/mw/gsprofilesrv/gsprofilesrv_plat/controlpanel_api" proFile="controlpanel_api.pro" qmakeArgs="-r -config rom"/>
 </component>
 </collection>
 <collection name="ftuwizardmodel" long-name="FTU Wizard Model" level="generic">
-<component name="ftuwizardmodel_build" long-name="FTU Wizardmodel Build" filter="bldfirst" purpose="optional">
+<component name="ftuwizardmodel_build" long-name="FTU Wizardmodel Build" filter="s60,bldfirst" purpose="optional">
 <unit bldFile="/sf/mw/gsprofilesrv/ftuwizardmodel" proFile="ftuwizardmodel.pro" qmakeArgs="-r -config rom"/>
 </component>
 </collection>
 <collection name="controlpanel" long-name="Control Panel" level="generic">
-<component name="controlpanel_rom" long-name="Control Panel ROM" filter="s60" purpose="optional" class="placeholder">
-<!-- Need to create a real .pro file for this 
-	  <unit bldFile="controlpanel/rom" qt:proFile="cp_rom.pri" qt:qmakeArgs="-r -config rom"/> -->
+<component name="controlpanel_rom" long-name="Control Panel ROM" filter="s60" purpose="optional" class="config">
+<unit bldFile="/sf/mw/gsprofilesrv/controlpanel/rom"/>
 </component>
-<component name="controlpanel_config" long-name="Control Panel Config" introduced="^4" filter="s60" purpose="optional" class="config placeholder">
-<!-- Need to create a real .pro file for this 
-	  <unit bldFile="controlpanel/conf" qt:proFile="conf.pri" qt:qmakeArgs="-r -config rom"/> -->
+<component name="controlpanel_config" long-name="Control Panel Config" introduced="^4" filter="s60" purpose="optional" class="config">
+<unit bldFile="/sf/mw/gsprofilesrv/controlpanel/conf"/>
 </component>
-<component name="controlpanel_source" long-name="Control Panel Source" filter="s60" purpose="optional" class="placeholder">
-<!-- Uncomment when controlpanel_build is removed
-	  <unit bldFile="controlpanel/src" qt:qmakeArgs="-r -config rom" qt:proFile="src.pro"/> -->
-</component>
-<component name="controlpanel_build" long-name="Control Panel Build" filter="s60" purpose="optional">
-<!-- need to make included .pri file into a real .pro file -->
-<unit bldFile="/sf/mw/gsprofilesrv/controlpanel" proFile="controlpanel.pro" qmakeArgs="-r -config rom"/>
+<component name="controlpanel_source" long-name="Control Panel Source" filter="s60" purpose="optional">
+<unit bldFile="/sf/mw/gsprofilesrv/controlpanel/src" proFile="src.pro" qmakeArgs="-r -config rom"/>
 </component>
 </collection>
 <collection name="profilesservices" long-name="Profiles Services" level="server">
