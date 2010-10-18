@@ -56,7 +56,7 @@
    <block name="qemu" level="low" long-name="QEMU and Baseport" levels="hw-if">
 <collection name="qemu_baseport" long-name="Baseport" level="hw-if">
 <component name="syborg" long-name="Syborg" introduced="^2" purpose="optional" filter="sf_build">
-<unit bldFile="/sf/adaptation/qemu/baseport/syborg" mrp="/sf/adaptation/qemu/baseport/syborg/syborg.mrp"/>
+<unit bldFile="/sf/adapt/qemu/baseport/syborg" mrp="/sf/adapt/qemu/baseport/syborg/syborg.mrp"/>
 </component>
 </collection>
 </block>

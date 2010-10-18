@@ -1,3 +1,3 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/adaptation/qemu/,/sf/adaptation/qemu,branch,default,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/adapt/qemu/,/sf/adapt/qemu,branch,default,layers.sysdef.xml
 http://developer.symbian.org/oss/FCL/sf/os/kernelhwsrv/,/sf/os/kernelhwsrv,branch,RCL_3,layers.sysdef.xml

@@ -56,16 +56,16 @@
    <block name="naviengine.nec" level="low" levels="hw-if" long-name="NaviEngine">
 <collection name="navienginebsp" long-name="NaviEngine BSP" level="hw-if">
 <component name="ne1_tb" long-name="NaviEngine 1 (Multiple)" introduced="^4" filter="sf_build" purpose="optional">
-<unit bldFile="/sf/adaptation/naviengine.nec/navienginebsp/ne1_tb"/>
+<unit bldFile="/sf/adapt/naviengine.nec/navienginebsp/ne1_tb"/>
 </component>
 <component name="sne1_tb" long-name="NaviEngine 1 (Single)" introduced="^4" filter="sf_build" purpose="optional">
-<unit bldFile="/sf/adaptation/naviengine.nec/navienginebsp/ne1_tb/single"/>
+<unit bldFile="/sf/adapt/naviengine.nec/navienginebsp/ne1_tb/single"/>
 </component>
 <component name="fne1_tb" long-name="NaviEngine 1 (Flexible)" introduced="^4" filter="sf_build" purpose="optional">
-<unit bldFile="/sf/adaptation/naviengine.nec/navienginebspflexible"/>
+<unit bldFile="/sf/adapt/naviengine.nec/navienginebspflexible"/>
 </component>
 <component name="navienginebootldr" long-name="NaviEngine Boot Loader" introduced="^4" filter="sf_build" purpose="optional">
-<unit bldFile="/sf/adaptation/naviengine.nec/navienginebootldr"/>
+<unit bldFile="/sf/adapt/naviengine.nec/navienginebootldr"/>
 </component>
 </collection>
 </block>

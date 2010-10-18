@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/adaptation/codecs.aricent/,/sf/adaptation/codecs.aricent,branch,default,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/adapt/codecs.aricent/,/sf/adapt/codecs.aricent,branch,default,layers.sysdef.xml
