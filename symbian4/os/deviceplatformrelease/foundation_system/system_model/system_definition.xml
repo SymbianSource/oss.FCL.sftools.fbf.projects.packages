@@ -103,13 +103,13 @@
 ]>
 <SystemDefinition schema="3.0.1">
   <systemModel name="Symbian^4">
-    <layer id="adaptation" name="Adaptation" levels="low mw high">
-      <package id="stubs" tech-domain="hb" level="high" span="2"  href="../../../../adaptation/stubs/package_definition.xml"/>
-      <package id="beagleboard" tech-domain="hb" level="low" href="../../../../adaptation/beagleboard/package_definition.xml"/>
-      <package id="qemu" tech-domain="hb" level="low" href="../../../../adaptation/qemu/package_definition.xml"/>
-      <package id="naviengine.nec" tech-domain="hb" level="low" href="../../../../adaptation/naviengine.nec/package_definition.xml"/>
-      <package id="codecs.aricent" tech-domain="mm" level="low" href="../../../../adaptation/codecs.aricent/package_definition.xml" />
-      <package id="openmaxil.nokia" tech-domain="mm" level="mw" href="../../../../adaptation/openmaxil.nokia/package_definition.xml" />
+    <layer id="adapt" name="Adaptation" levels="low mw high">
+      <package id="stubs" tech-domain="hb" level="high" span="2"  href="../../../../adapt/stubs/package_definition.xml"/>
+      <package id="beagleboard" tech-domain="hb" level="low" href="../../../../adapt/beagleboard/package_definition.xml"/>
+      <package id="qemu" tech-domain="hb" level="low" href="../../../../adapt/qemu/package_definition.xml"/>
+      <package id="naviengine.nec" tech-domain="hb" level="low" href="../../../../adapt/naviengine.nec/package_definition.xml"/>
+      <package id="codecs.aricent" tech-domain="mm" level="low" href="../../../../adapt/codecs.aricent/package_definition.xml" />
+      <package id="openmaxil.nokia" tech-domain="mm" level="mw" href="../../../../adapt/openmaxil.nokia/package_definition.xml" />
     </layer>
     <layer id="os" name="OS" levels="hw services">
       <package id="kernelhwsrv" level="hw" tech-domain="hb" href="../../../../os/kernelhwsrv/package_definition.xml"/>
