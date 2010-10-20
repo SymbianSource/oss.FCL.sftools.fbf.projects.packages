@@ -53,7 +53,7 @@
 <SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="devicesrv" level="services" levels="adaptation hw-if plugin framework server app-if" long-name="Device Services">
+   <block name="devicesrv" level="services" levels="adapt hw-if plugin framework server app-if" long-name="Device Services">
 <collection name="devicesrv_pub" long-name="Device Services Public Interfaces" level="app-if">
 <component name="platform_path_definitions_api" long-name="Platform Path Definitions API" filter="s60,bldmefirst" purpose="optional" class="api">
 <!-- this needs to be moved to deviceplatformrelease -->

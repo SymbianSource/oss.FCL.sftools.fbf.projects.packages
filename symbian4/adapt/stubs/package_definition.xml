@@ -52,9 +52,9 @@
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
-  <layer name="adaptation" long-name="Adaptation" levels="low mw high">
-   <block name="stubs" level="high" span="2" levels="adaptation plugin mid engine" long-name="Stubs">
-<collection name="audiostubs" long-name="Audio Stubs" level="adaptation">
+  <layer name="adapt" long-name="Adaptation" levels="low mw high">
+   <block name="stubs" level="high" span="2" levels="adapt plugin mid engine" long-name="Stubs">
+<collection name="audiostubs" long-name="Audio Stubs" level="adapt">
 <component name="devsoundextensions_stubs" long-name="Devsound Extensions Stubs" purpose="optional">
 <unit bldFile="/sf/adapt/stubs/audiostubs/devsoundextensions_stubs/group"/>
 </component>
@@ -92,7 +92,7 @@
 <unit bldFile="/sf/adapt/stubs/power_save_display_mode_stub/group"/>
 </component>
 </collection>
-<collection name="systemswstubs" long-name="System Software Stubs" level="adaptation">
+<collection name="systemswstubs" long-name="System Software Stubs" level="adapt">
 <component name="ddcaccessstub" long-name="DDC Access Stub" purpose="optional">
 <unit bldFile="/sf/adapt/stubs/systemswstubs/ddcaccessstub/group"/>
 </component>

@@ -53,7 +53,7 @@
 <SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="openmaxil" level="services" levels="adaptation hw-if device-fw devices middleware app-if">
+   <block name="openmaxil" level="services" levels="adapt hw-if device-fw devices middleware app-if">
 <collection name="openmaxil_plat" long-name="OpenMAX IL Platform Exports" level="hw-if">
 <component name="openmaxil_khronos_api" long-name="OpenMAX IL API" introduced="^3" purpose="mandatory" class="api">
 <unit bldFile="/sf/os/openmaxil/openmaxil_plat/khronos_api/group" version="1"/>

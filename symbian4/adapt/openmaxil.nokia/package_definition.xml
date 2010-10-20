@@ -52,9 +52,9 @@
 ]>
 <SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
-  <layer name="adaptation" long-name="Adaptation" levels="low mw high">
-   <block name="openmaxil.nokia" level="mw" levels="adaptation hw-if device-fw" long-name="Nokia OpenMAX IL Adaptation">
-<collection name="omxilcomp" long-name="OpenMAX IL Components" level="adaptation">
+  <layer name="adapt" long-name="Adaptation" levels="low mw high">
+   <block name="openmaxil.nokia" level="mw" levels="adapt hw-if device-fw" long-name="Nokia OpenMAX IL Adaptation">
+<collection name="omxilcomp" long-name="OpenMAX IL Components" level="adapt">
 <component name="omxilgeneric" long-name="Generic OpenMAX IL Components" introduced="^3" purpose="optional" plugin="Y">
 <unit bldFile="/sf/adapt/openmaxil.nokia/omxilcomp/omxilgeneric/group" version="1"/>
 </component>

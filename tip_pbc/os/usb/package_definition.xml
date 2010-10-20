@@ -53,7 +53,7 @@
 <SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="usb" level="services" levels="adaptation hw-if plugin framework server app-if" long-name="USB">
+   <block name="usb" level="services" levels="adapt hw-if plugin framework server app-if" long-name="USB">
 <collection name="usb_plat" long-name="USB Platform Interfaces" level="app-if">
 <!-- placeholder for platform APIs -->
 </collection>

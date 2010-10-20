@@ -53,7 +53,7 @@
 <SystemDefinition name="Symbian^4" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="mmimaging" level="services" levels="adaptation hw-if device-fw devices middleware app-if" long-name="Multimedia Imaging">
+   <block name="mmimaging" level="services" levels="adapt hw-if device-fw devices middleware app-if" long-name="Multimedia Imaging">
 <collection name="imaging" long-name="Imaging Frameworks and Plugins" level="app-if">
 <component name="imagingfws" long-name="Imaging Frameworks" introduced="7.0s" purpose="mandatory">
 <unit bldFile="/sf/os/mmimaging/imaging/imagingfws/group" mrp="/sf/os/mmimaging/imaging/imagingfws/group/multimedia_icl.mrp"/>
