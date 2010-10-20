@@ -53,7 +53,7 @@
 <SystemDefinition name="Symbian^3" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="mm" level="services" long-name="Multimedia" levels="adaptation hw-if device-fw devices middleware app-if">
+   <block name="mm" level="services" long-name="Multimedia" levels="adapt hw-if device-fw devices middleware app-if">
 <collection name="mm_pub" long-name="Multimedia Public Interfaces" level="app-if">
 <component name="audio_effects_api" long-name="Audio Effects API" filter="s60" class="api">
 <unit bldFile="/sf/os/mm/mm_pub/audio_effects_api/group"/>
@@ -400,7 +400,7 @@
 <unit bldFile="/sf/os/mm/mmdevicefw/speechrecogsupport/group" mrp="/sf/os/mm/mmdevicefw/speechrecogsupport/group/multimedia_mmf_ASR.mrp"/>
 </component>
 </collection>
-<collection name="mmswadaptation" long-name="Multimedia Software Adaptation" level="adaptation">
+<collection name="mmswadaptation" long-name="Multimedia Software Adaptation" level="adapt">
 <component name="videorenderer" long-name="Video Renderer" introduced="^3" purpose="optional">
 <unit bldFile="/sf/os/mm/mmswadaptation/videorenderer/group" mrp="/sf/os/mm/mmswadaptation/videorenderer/group/multimedia_videorenderer.mrp"/>
 </component>
@@ -449,7 +449,7 @@
 <unit bldFile="/sf/os/mm/devsound/a3fsrvstart/group" mrp="/sf/os/mm/devsound/a3fsrvstart/group/multimedia_a3f_serverstart.mrp"/>
 </component>
 </collection>
-<collection name="mmhais" long-name="Multimedia Hardware Adaptation Interfaces" level="adaptation">
+<collection name="mmhais" long-name="Multimedia Hardware Adaptation Interfaces" level="adapt">
 <component name="devsoundhwdeviceapi" long-name="DevSound Hardware Device API" introduced="7.0s" purpose="optional">
 <unit bldFile="/sf/os/mm/devsound/hwdevapi/group" mrp="/sf/os/mm/devsound/hwdevapi/group/multimedia_mdf_devsound_hwdev.mrp"/>
 </component>

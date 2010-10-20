@@ -53,13 +53,13 @@
 <SystemDefinition name="Symbian^3" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="cellularsrv" level="services" long-name="Cellular Baseband Services" levels="adaptation hw-if plugin framework server app-if">
+   <block name="cellularsrv" level="services" long-name="Cellular Baseband Services" levels="adapt hw-if plugin framework server app-if">
 <collection name="basebandabstraction" long-name="Baseband Abstraction" level="hw-if">
 <component name="basebandchanneladaptor" long-name="Baseband Channel Adaptor" introduced="8.1" purpose="optional">
 <unit bldFile="/sf/os/cellularsrv/basebandabstraction/basebandchanneladaptor/group" mrp="/sf/os/cellularsrv/basebandabstraction/basebandchanneladaptor/group/networking_bca.mrp"/>
 </component>
 </collection>
-<collection name="basebandadaptationplugins" long-name="Baseband Adaptation Plugins" level="adaptation">
+<collection name="basebandadaptationplugins" long-name="Baseband Adaptation Plugins" level="adapt">
 <component name="basebandchanneladaptorforc32" long-name="Baseband Channel Adaptor for C32" introduced="8.1" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/cellularsrv/basebandadaptationplugins/basebandchanneladaptorforc32/group" mrp="/sf/os/cellularsrv/basebandadaptationplugins/basebandchanneladaptorforc32/group/networking_c32bca.mrp"/>
 </component>
@@ -156,7 +156,7 @@
 <unit mrp="/sf/os/cellularsrv/cellularsrv_info/cellularsrv_metadata/cellularsrv_metadata.mrp"/>
 </component>
 </collection>
-<collection name="hwpluginsimulation" long-name="Hardware Plugin Simulation" level="adaptation">
+<collection name="hwpluginsimulation" long-name="Hardware Plugin Simulation" level="adapt">
 <component name="mocksy" long-name="MockSY" introduced="^2" purpose="development" plugin="Y">
 <unit bldFile="/sf/os/cellularsrv/hwpluginsimulation/mocksy/group" mrp="/sf/os/cellularsrv/hwpluginsimulation/mocksy/group/telephony_tools_mocksy.mrp"/>
 </component>

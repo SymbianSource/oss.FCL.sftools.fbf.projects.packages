@@ -53,7 +53,7 @@
 <SystemDefinition name="Symbian^3" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="usb" level="services" long-name="USB" levels="adaptation hw-if plugin framework server app-if">
+   <block name="usb" level="services" long-name="USB" levels="adapt hw-if plugin framework server app-if">
 <collection name="usbldd" long-name="USB Logical Device Drivers" level="hw-if">
 <!-- usbclientdrivers  to be moved here from kernelhwsrv-->
 </collection>

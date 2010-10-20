@@ -52,7 +52,7 @@
 ]>
 <SystemDefinition name="Symbian^3" schema="2.0.1">
  <systemModel>
-  <layer name="adaptation" long-name="Adaptation" levels="low mw high">
+  <layer name="adapt" long-name="Adaptation" levels="low mw high">
    <block name="codecs.aricent" level="low" long-name="Aricent Codecs">
 <collection name="utilities" long-name="Aricent Utilities">
 <component name="ariprocessengine" long-name="Aricent Process Engine">

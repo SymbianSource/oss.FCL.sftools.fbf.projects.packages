@@ -53,8 +53,8 @@
 <SystemDefinition name="Symbian^3" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="graphics" level="services" long-name="Graphics" levels="adaptation engines internal-adaptations device-interface internal-utils app-if">
-<collection name="graphicsaccelaration" long-name="Graphics Acceleration" level="adaptation">
+   <block name="graphics" level="services" long-name="Graphics" levels="adapt engines internal-adaptations device-interface internal-utils app-if">
+<collection name="graphicsaccelaration" long-name="Graphics Acceleration" level="adapt">
 <component name="vgi" filter="s60" long-name="VGI">
 <unit bldFile="/sf/os/graphics/graphicsaccelaration/vgi/group"/>
 </component>
@@ -77,7 +77,7 @@
 <unit bldFile="/sf/os/graphics/graphicsutils/commongraphicsheaders/group" mrp="/sf/os/graphics/graphicsutils/commongraphicsheaders/group/graphics_commonheader.mrp"/>
 </component>
 </collection>
-<collection name="graphicshwdrivers" long-name="Graphics Hardware Drivers" level="adaptation">
+<collection name="graphicshwdrivers" long-name="Graphics Hardware Drivers" level="adapt">
 <!-- displayldd to be moved here -->
 <component name="surfacemgr" long-name="Surface Manager" introduced="^3" purpose="optional">
 <unit bldFile="/sf/os/graphics/graphicshwdrivers/surfacemgr/group" mrp="/sf/os/graphics/graphicshwdrivers/surfacemgr/group/graphics_surfacemanager.mrp"/>

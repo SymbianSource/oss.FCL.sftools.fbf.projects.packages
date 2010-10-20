@@ -53,7 +53,7 @@
 <SystemDefinition name="Symbian^3" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="networkingsrv" level="services" long-name="Networking Services" levels="adaptation hw-if plugin framework server app-if">
+   <block name="networkingsrv" level="services" long-name="Networking Services" levels="adapt hw-if plugin framework server app-if">
 <collection name="commsdb" long-name="Comms DB" level="server">
 <component name="s60_commsdb" filter="s60" long-name="S60 Commsdb" class="config">
 <unit bldFile="/sf/os/networkingsrv/commsdb/s60_commsdb/group"/>
