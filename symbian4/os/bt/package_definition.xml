@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
- <package id="bt" name="Bluetooth" levels="adaptation hw-if plugin framework server app-if">
+ <package id="bt" name="Bluetooth" levels="adapt hw-if plugin framework server app-if">
   <collection id="bt_plat" name="Bluetooth Platform Interfaces" level="app-if">
    <component id="bluetooth_audio_adaptation_api" name="Bluetooth Audio Adaptation API" class="api" filter="s60">
     <meta rel="Api" href="bt_plat/bluetooth_audio_adaptation_api/bluetooth_audio_adaptation_api.metaxml"/>

@@ -96,11 +96,11 @@
 ]>
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
-<layer name="adaptation" long-name="Adaptation" levels="hw-if">
+<layer name="adapt" long-name="Adaptation" levels="hw-if">
 <block name="qemu" level="hw-if" long-name="Syborg Adaptation" levels="hw-if">
 <collection id="baseport" name="Baseport" level="hw-if"> 
 <component id="syborg" name="Syborg" introduced="symbian^2" purpose="optional">
-<unit bldFile="/sf/adaptation/qemu/baseport/syborg" mrp="/sf/adaptation/qemu/baseport/syborg/syborg.mrp"/>
+<unit bldFile="/sf/adapt/qemu/baseport/syborg" mrp="/sf/adapt/qemu/baseport/syborg/syborg.mrp"/>
 </component>
 </collection>
 </block>

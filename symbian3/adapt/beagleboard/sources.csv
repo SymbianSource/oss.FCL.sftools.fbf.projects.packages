@@ -1,2 +1,2 @@
 source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/adaptation/beagleboard/,/sf/adaptation/beagleboard,branch,RCL_3,layers.sysdef.xml
+http://developer.symbian.org/oss/FCL/sf/adapt/beagleboard/,/sf/adapt/beagleboard,branch,RCL_3,layers.sysdef.xml

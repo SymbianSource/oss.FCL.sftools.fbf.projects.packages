@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="stubs" name="Stubs" levels="adaptation plugin mid engine">
-    <collection id="audiostubs" name="Audio Stubs" level="adaptation">
+  <package id="stubs" name="Stubs" levels="adapt plugin mid engine">
+    <collection id="audiostubs" name="Audio Stubs" level="adapt">
      <component id="devsoundextensions_stubs" name="Devsound Extensions Stubs">
       <unit bldFile="audiostubs/devsoundextensions_stubs/group"/>
      </component>
@@ -39,7 +39,7 @@
       <unit bldFile="power_save_display_mode_stub/group"/>
      </component>
     </collection>
-    <collection id="systemswstubs" name="System Software Stubs" level="adaptation">
+    <collection id="systemswstubs" name="System Software Stubs" level="adapt">
      <component id="ddcaccessstub" name="DDC Access Stub">
       <unit bldFile="systemswstubs/ddcaccessstub/group"/>
      </component>

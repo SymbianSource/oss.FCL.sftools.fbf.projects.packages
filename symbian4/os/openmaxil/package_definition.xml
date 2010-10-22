@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.1">
-  <package id="openmaxil" name="openmaxil" levels="adaptation hw-if device-fw devices middleware app-if">
+  <package id="openmaxil" name="openmaxil" levels="adapt hw-if device-fw devices middleware app-if">
 
 
     <collection id="openmaxil_plat" name="OpenMAX IL Platform Exports" level="hw-if">

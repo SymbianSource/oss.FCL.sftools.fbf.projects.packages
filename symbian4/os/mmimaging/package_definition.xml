@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="mmimaging" name="Multimedia Imaging" levels="adaptation hw-if device-fw devices middleware app-if">
+  <package id="mmimaging" name="Multimedia Imaging" levels="adapt hw-if device-fw devices middleware app-if">
     <collection id="imaging" name="Imaging Frameworks and Plugins" level="app-if">
       <component id="imagingfws" name="Imaging Frameworks" introduced="7.0s" purpose="mandatory">
         <unit bldFile="imaging/imagingfws/group" mrp="imaging/imagingfws/group/multimedia_icl.mrp"/>

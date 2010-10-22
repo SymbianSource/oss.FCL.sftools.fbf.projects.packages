@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="lbs" name="Locating Services" levels="hw-if data-acquisition adaptation management application-interface">
+  <package id="lbs" name="Locating Services" levels="hw-if data-acquisition adapt management application-interface">
     <collection id="datasourcemodules" name="Generic Positioning Plugins" level="data-acquisition">
       <component id="defaultpositioningmodule" name="Default Positioning Module" introduced="^2" purpose="optional" class="plugin">
         <unit bldFile="datasourcemodules/defaultpositioningmodule/group" mrp="datasourcemodules/defaultpositioningmodule/group/lbs_default_positioning_module.mrp"/>
@@ -21,7 +21,7 @@
         <unit bldFile="datasourcemodules/locationapesuplpsy/group" mrp="datasourcemodules/locationapesuplpsy/group/lbs_ape_supl_positioning_module.mrp"/>
       </component>
     </collection>
-    <collection id="datasourceadaptation" name="Data Source Adaptation" level="adaptation">
+    <collection id="datasourceadaptation" name="Data Source Adaptation" level="adapt">
       <component id="gpsdatasourceadaptation" name="GPS Data Source Adaptation" introduced="^2" purpose="optional" class="plugin">
         <unit bldFile="datasourceadaptation/gpsdatasourceadaptation/group" mrp="datasourceadaptation/gpsdatasourceadaptation/group/lbs_gps_data_source_adaptation.mrp"/>
       </component>
@@ -59,7 +59,7 @@
         <unit bldFile="locationmgmt/networkgateway/group" mrp="locationmgmt/networkgateway/group/lbs_networkgateway.mrp"/>
       </component>
     </collection>
-    <collection id="networkprotocolmodules" name="Network Protocol Modules" level="adaptation">
+    <collection id="networkprotocolmodules" name="Network Protocol Modules" level="adapt">
       <component id="privacyprotocolmodule" name="Privacy Protocol Module" introduced="^2" purpose="optional" class="plugin">
         <unit bldFile="networkprotocolmodules/privacyprotocolmodule/group" mrp="networkprotocolmodules/privacyprotocolmodule/group/lbs_privacyprotocolmodule.mrp"/>
       </component>

@@ -97,7 +97,7 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
-<block name="usb" level="services" long-name="USB" levels="adaptation hw-if plugin framework server app-if">
+<block name="usb" level="services" long-name="USB" levels="adapt hw-if plugin framework server app-if">
 <collection name="usbldd" long-name="USB Logical Device Drivers" level="hw-if">
 <component name="usbclientdrivers" long-name="USB Client Drivers" introduced="8.1b" purpose="optional">
 <unit bldFile="/sf/os/kernelhwsrv/kernel/eka/drivers/usbc" mrp="/sf/os/kernelhwsrv/kernel/eka/drivers/usbc/base_e32_drivers_usbcli.mrp"/>

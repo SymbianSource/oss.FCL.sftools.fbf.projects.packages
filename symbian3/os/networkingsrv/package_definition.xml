@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="networkingsrv" name="Networking Services" levels="adaptation hw-if plugin framework server app-if">
+  <package id="networkingsrv" name="Networking Services" levels="adapt hw-if plugin framework server app-if">
     <collection id="commsdb" name="Comms DB" level="server">
       <component id="s60_commsdb" filter="s60" name="S60 Commsdb" class="config">
         <unit bldFile="commsdb/s60_commsdb/group"/>

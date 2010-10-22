@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
- <package id="mm" name="Multimedia" levels="adaptation hw-if device-fw devices middleware app-if">
+ <package id="mm" name="Multimedia" levels="adapt hw-if device-fw devices middleware app-if">
   <collection id="mm_pub" name="Multimedia Public Interfaces" level="app-if">
    <component id="audio_effects_api" name="Audio Effects API" class="api" filter="s60">
     <meta rel="Api" href="mm_pub/audio_effects_api/audio_effects_api.metaxml"/>
@@ -444,7 +444,7 @@
     <unit bldFile="mmdevicefw/speechrecogsupport/group" mrp="mmdevicefw/speechrecogsupport/group/multimedia_mmf_ASR.mrp"/>
    </component>
   </collection>
-  <collection id="mmswadaptation" name="Multimedia Software Adaptation" level="adaptation">
+  <collection id="mmswadaptation" name="Multimedia Software Adaptation" level="adapt">
    <component id="videorenderer" name="Video Renderer" introduced="^3" purpose="optional">
     <unit bldFile="mmswadaptation/videorenderer/group" mrp="mmswadaptation/videorenderer/group/multimedia_videorenderer.mrp"/>
    </component>
@@ -515,7 +515,7 @@
     <unit bldFile="devsound/a3fsrvstart/group" mrp="devsound/a3fsrvstart/group/multimedia_a3f_serverstart.mrp"/>
    </component>
   </collection>
-  <collection id="mmhais" name="Multimedia Hardware Adaptation Interfaces" level="adaptation">
+  <collection id="mmhais" name="Multimedia Hardware Adaptation Interfaces" level="adapt">
    <component id="devsoundhwdeviceapi" name="DevSound Hardware Device API" introduced="7.0s" purpose="optional">
     <unit bldFile="devsound/hwdevapi/group" mrp="devsound/hwdevapi/group/multimedia_mdf_devsound_hwdev.mrp"/>
    </component>

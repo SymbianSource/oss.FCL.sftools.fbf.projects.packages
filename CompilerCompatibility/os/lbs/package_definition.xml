@@ -97,7 +97,7 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
-<block name="lbs" level="services" long-name="Locating Services" levels="hw-if data-acquisition adaptation management application-interface">
+<block name="lbs" level="services" long-name="Locating Services" levels="hw-if data-acquisition adapt management application-interface">
 <collection name="datasourcemodules" long-name="Generic Positioning Plugins" level="data-acquisition">
 <component name="defaultpositioningmodule" long-name="Default Positioning Module" introduced="tb91" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/lbs/datasourcemodules/defaultpositioningmodule/group" mrp="/sf/os/lbs/datasourcemodules/defaultpositioningmodule/group/lbs_default_positioning_module.mrp"/>
@@ -115,7 +115,7 @@
 <unit bldFile="/sf/os/lbs/datasourcemodules/networkpositioningmodule/group" mrp="/sf/os/lbs/datasourcemodules/networkpositioningmodule/group/lbs_network_positioning_module.mrp"/>
 </component>
 </collection>
-<collection name="datasourceadaptation" long-name="Data Source Adaptation" level="adaptation">
+<collection name="datasourceadaptation" long-name="Data Source Adaptation" level="adapt">
 <component name="gpsdatasourceadaptation" long-name="GPS Data Source Adaptation" introduced="tb91" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/lbs/datasourceadaptation/gpsdatasourceadaptation/group" mrp="/sf/os/lbs/datasourceadaptation/gpsdatasourceadaptation/group/lbs_gps_data_source_adaptation.mrp"/>
 </component>
@@ -153,7 +153,7 @@
 <unit bldFile="/sf/os/lbs/locationmgmt/networkgateway/group" mrp="/sf/os/lbs/locationmgmt/networkgateway/group/lbs_networkgateway.mrp"/>
 </component>
 </collection>
-<collection name="networkprotocolmodules" long-name="Network Protocol Modules" level="adaptation">
+<collection name="networkprotocolmodules" long-name="Network Protocol Modules" level="adapt">
 <component name="privacyprotocolmodule" long-name="Privacy Protocol Module" introduced="tb91" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/lbs/networkprotocolmodules/privacyprotocolmodule/group" mrp="/sf/os/lbs/networkprotocolmodules/privacyprotocolmodule/group/lbs_privacyprotocolmodule.mrp"/>
 </component>

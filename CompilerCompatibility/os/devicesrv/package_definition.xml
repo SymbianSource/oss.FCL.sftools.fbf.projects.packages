@@ -97,7 +97,7 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
-<block name="devicesrv" level="services" long-name="Device Services" levels="adaptation hw-if plugin framework server app-if">
+<block name="devicesrv" level="services" long-name="Device Services" levels="adapt hw-if plugin framework server app-if">
 <collection name="accessoryservices" long-name="Accessory Services" level="framework">
 <component name="remotecontrolfw" long-name="Remote Control Framework" introduced="9.1" purpose="optional">
 <unit bldFile="/sf/os/devicesrv/accessoryservices/remotecontrolfw/group" mrp="/sf/os/devicesrv/accessoryservices/remotecontrolfw/group/bluetooth_remotecontrol.mrp"/>

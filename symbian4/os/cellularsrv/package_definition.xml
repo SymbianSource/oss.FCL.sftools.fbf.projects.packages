@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="cellularsrv" name="Cellular Baseband Services" levels="adaptation hw-if plugin framework server app-if">
+  <package id="cellularsrv" name="Cellular Baseband Services" levels="adapt hw-if plugin framework server app-if">
     <meta rel="License">
       <license type="EPL"><supplier>Nokia</supplier></license>	
     </meta>
@@ -9,7 +9,7 @@
         <unit bldFile="basebandabstraction/basebandchanneladaptor/group" mrp="basebandabstraction/basebandchanneladaptor/group/networking_bca.mrp"/>
       </component>
     </collection>
-    <collection id="basebandadaptationplugins" name="Baseband Adaptation Plugins" level="adaptation">
+    <collection id="basebandadaptationplugins" name="Baseband Adaptation Plugins" level="adapt">
       <component id="basebandchanneladaptorforc32" name="Baseband Channel Adaptor for C32" introduced="8.1" purpose="optional" class="plugin">
         <unit bldFile="basebandadaptationplugins/basebandchanneladaptorforc32/group" mrp="basebandadaptationplugins/basebandchanneladaptorforc32/group/networking_c32bca.mrp"/>
       </component>
@@ -104,7 +104,7 @@
         <unit mrp="cellularsrv_info/cellularsrv_metadata/cellularsrv_metadata.mrp"/>
       </component>
     </collection>
-    <collection id="hwpluginsimulation" name="Hardware Plugin Simulation" level="adaptation">
+    <collection id="hwpluginsimulation" name="Hardware Plugin Simulation" level="adapt">
       <component id="mocksy" name="MockSY" introduced="^2" purpose="development" class="plugin">
         <unit bldFile="hwpluginsimulation/mocksy/group" mrp="hwpluginsimulation/mocksy/group/telephony_tools_mocksy.mrp"/>
       </component>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="persistentdata" name="Persistent Data Services" levels="adaptation hw-if plugin framework server app-if">
+  <package id="persistentdata" name="Persistent Data Services" levels="adapt hw-if plugin framework server app-if">
     <collection id="featuremgmt" name="Feature Management" level="framework">
       <component id="featuremgr" name="Feature Manager" introduced="^3" purpose="mandatory">
         <unit bldFile="featuremgmt/featuremgr/group" mrp="featuremgmt/featuremgr/group/syslibs_featmgr.mrp"/>

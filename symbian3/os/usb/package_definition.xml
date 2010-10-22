@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
- <package id="usb" name="USB" levels="adaptation hw-if plugin framework server app-if">
+ <package id="usb" name="USB" levels="adapt hw-if plugin framework server app-if">
   <collection id="usbldd" name="USB Logical Device Drivers" level="hw-if">
    <!-- usbclientdrivers  to be moved here from kernelhwsrv-->
   </collection>

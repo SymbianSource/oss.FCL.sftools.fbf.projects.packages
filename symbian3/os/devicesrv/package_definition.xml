@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
- <package id="devicesrv" name="Device Services" levels="adaptation hw-if plugin framework server app-if">
+ <package id="devicesrv" name="Device Services" levels="adapt hw-if plugin framework server app-if">
   <collection id="devicesrv_pub" name="Device Services Public Interfaces" level="app-if">
    <component id="platform_path_definitions_api" name="Platform Path Definitions API" class="api" filter="s60,bldmefirst">
     <meta rel="Api" href="devicesrv_pub/platform_path_definitions_api/platform_path_definitions_api.metaxml"/>

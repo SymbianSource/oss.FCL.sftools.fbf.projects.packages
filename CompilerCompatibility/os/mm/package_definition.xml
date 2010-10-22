@@ -97,7 +97,7 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
-<block name="mm" level="services" long-name="Multimedia" levels="adaptation hw-if device-fw devices middleware app-if">
+<block name="mm" level="services" long-name="Multimedia" levels="adapt hw-if device-fw devices middleware app-if">
 <collection name="imagingandcamerafws" long-name="Imaging and Camera Frameworks" level="app-if">
 <component name="imagingfws" long-name="Imaging Frameworks" introduced="7.0s" purpose="mandatory">
 <unit bldFile="/sf/os/mm/imagingandcamerafws/imagingfws/group" mrp="/sf/os/mm/imagingandcamerafws/imagingfws/group/multimedia_icl.mrp"/>
@@ -178,7 +178,7 @@
 <unit bldFile="/sf/mw/mmmw/mmmiddlewarefws/mmfw/ASR/group" mrp="/sf/mw/mmmw/mmmiddlewarefws/mmfw/ASR/group/multimedia_mmf_ASR.mrp"/>
 </component>
 </collection>
-<collection name="mmswadaptation" long-name="Multimedia Software Adaptation" level="adaptation">
+<collection name="mmswadaptation" long-name="Multimedia Software Adaptation" level="adapt">
 <component name="videorenderer" long-name="Video Renderer" introduced="tb92" purpose="optional">
 <unit bldFile="/sf/os/mm/mmswadaptation/videorenderer/group" mrp="/sf/os/mm/mmswadaptation/videorenderer/group/multimedia_videorenderer.mrp"/>
 </component>
@@ -280,7 +280,7 @@
 <unit bldFile="/sf/os/mm/devsound/a3fsrvstart/group" mrp="/sf/os/mm/devsound/a3fsrvstart/group/multimedia_a3f_serverstart.mrp"/>
 </component>
 </collection>
-<collection name="mmhais" long-name="Multimedia Hardware Adaptation Interfaces" level="adaptation">
+<collection name="mmhais" long-name="Multimedia Hardware Adaptation Interfaces" level="adapt">
 <component name="devsoundhwdeviceapi" long-name="DevSound Hardware Device API" introduced="7.0s" purpose="optional">
 <!-- PLACEHOLDER="DEF137592" START REMOVE -->
 <unit bldFile="/sf/mw/mmmw/mmmiddlewarefws/mmfw/SoundDev/group_hwdev" mrp="/sf/mw/mmmw/mmmiddlewarefws/mmfw/SoundDev/group_hwdev/multimedia_mdf_devsound_hwdev.mrp"/>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.1">
-  <package id="openmaxil.nokia" name="Nokia OpenMAX IL Adaptation" levels="adaptation hw-if device-fw">
+  <package id="openmaxil.nokia" name="Nokia OpenMAX IL Adaptation" levels="adapt hw-if device-fw">
 
-    <collection id="omxilcomp" name="OpenMAX IL Components" level="adaptation">
+    <collection id="omxilcomp" name="OpenMAX IL Components" level="adapt">
          <component id="omxilgeneric" name="Generic OpenMAX IL Components" introduced="^3" purpose="optional" class="plugin">
         <unit version="1" bldFile="omxilcomp/omxilgeneric/group"/>
       </component>

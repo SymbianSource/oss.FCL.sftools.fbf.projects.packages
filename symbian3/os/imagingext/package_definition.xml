@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
- <package id="imagingext" name="Imaging Extensions" levels="adaptation hw-if plugin framework server app-if">
+ <package id="imagingext" name="Imaging Extensions" levels="adapt hw-if plugin framework server app-if">
   <collection id="imagingext_pub" name="Imaging Extensions Public Interfaces" level="app-if">
    <component id="exif_api" name="Exif API" class="api" filter="s60">
     <meta rel="Api" href="imagingext_pub/exif_api/exif_api.metaxml"/>

@@ -97,7 +97,7 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
-<block name="graphics" level="services" long-name="Graphics" levels="adaptation engines internal-adaptations device-interface internal-utils app-if">
+<block name="graphics" level="services" long-name="Graphics" levels="adapt engines internal-adaptations device-interface internal-utils app-if">
 <collection name="graphicsresourceservices" long-name="Graphics Resource Services" level="engines">
 <component name="graphicsresource" long-name="Graphics Resource" introduced="tb92" purpose="optional">
 <unit bldFile="/sf/os/graphics/graphicsresourceservices/graphicsresource/group" mrp="/sf/os/graphics/graphicsresourceservices/graphicsresource/group/graphics_graphicsresource.mrp"/>
@@ -111,7 +111,7 @@
 <unit bldFile="/sf/os/graphics/graphicsutils/commongraphicsheaders/group" mrp="/sf/os/graphics/graphicsutils/commongraphicsheaders/group/graphics_commonheader.mrp"/>
 </component>
 </collection>
-<collection name="graphicshwdrivers" long-name="Graphics Hardware Drivers" level="adaptation">
+<collection name="graphicshwdrivers" long-name="Graphics Hardware Drivers" level="adapt">
 <component name="displayldd" long-name="Display Drivers" introduced="tb92" purpose="optional">
 <unit bldFile="/sf/os/kernelhwsrv/kernel/eka/drivers/display" mrp="/sf/os/kernelhwsrv/kernel/eka/drivers/display/base_e32_drivers_display.mrp"/>
 </component>

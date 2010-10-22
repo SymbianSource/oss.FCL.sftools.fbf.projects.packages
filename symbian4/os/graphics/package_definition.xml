@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
-  <package id="graphics" name="Graphics" levels="adaptation engines internal-adaptations device-interface internal-utils app-if">
-    <collection id="graphicsaccelaration" name="Graphics Acceleration" level="adaptation">
+  <package id="graphics" name="Graphics" levels="adapt engines internal-adaptations device-interface internal-utils app-if">
+    <collection id="graphicsaccelaration" name="Graphics Acceleration" level="adapt">
       <component id="vgi" filter="s60" name="VGI">
         <unit bldFile="graphicsaccelaration/vgi/group"/>
       </component>
@@ -30,7 +30,7 @@
         <unit bldFile="graphicsutils/commongraphicsheaders/group" mrp="graphicsutils/commongraphicsheaders/group/graphics_commonheader.mrp"/>
       </component>
     </collection>
-    <collection id="graphicshwdrivers" name="Graphics Hardware Drivers" level="adaptation">
+    <collection id="graphicshwdrivers" name="Graphics Hardware Drivers" level="adapt">
       <!-- displayldd to be moved here -->
       <component id="surfacemgr" name="Surface Manager" introduced="^3" purpose="optional">
         <unit bldFile="graphicshwdrivers/surfacemgr/group" mrp="graphicshwdrivers/surfacemgr/group/graphics_surfacemanager.mrp"/>

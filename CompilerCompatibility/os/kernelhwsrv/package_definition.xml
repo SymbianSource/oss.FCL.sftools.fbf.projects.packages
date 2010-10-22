@@ -97,7 +97,7 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
-<block name="kernelhwsrv" level="hw" long-name="Kernel and Hardware Services" levels="hw-if adaptation framework test">
+<block name="kernelhwsrv" level="hw" long-name="Kernel and Hardware Services" levels="hw-if adapt framework test">
 <collection name="baseintegtests" long-name="Base Integration Testing" level="test">
 <component name="baseintegrationtest" long-name="Base Integration Test" introduced="9.3" purpose="development">
 <unit bldFile="/sf/os/kernelhwsrv/baseintegtests/baseintegrationtest/group" mrp="/sf/os/kernelhwsrv/baseintegtests/baseintegrationtest/group/base_integration_test.mrp"/>
@@ -113,7 +113,7 @@
 <unit bldFile="/sf/os/kernelhwsrv/bsptemplate/asspandvariant/template_variant" mrp="/sf/os/kernelhwsrv/bsptemplate/asspandvariant/base_template.mrp"/>
 </component>
 </collection>
-<collection name="kernel" long-name="Kernel Architecture" level="adaptation">
+<collection name="kernel" long-name="Kernel Architecture" level="adapt">
 <component name="eka" long-name="Kernel Architecture" introduced="8.0" purpose="mandatory">
 <unit bldFile="/sf/os/kernelhwsrv/kernel/eka" mrp="/sf/os/kernelhwsrv/kernel/eka/base_e32.mrp"/>
 </component>
@@ -129,7 +129,7 @@
 <unit bldFile="/sf/os/kernelhwsrv/kerneltest/f32test/group" mrp="/sf/os/kernelhwsrv/kerneltest/f32test/group/base_f32test.mrp"/>
 </component>
 </collection>
-<collection name="ldds" long-name="Logical Device Drivers" level="adaptation">
+<collection name="ldds" long-name="Logical Device Drivers" level="adapt">
 <component name="ethernetldd" long-name="Ethernet Drivers" purpose="optional">
 <unit bldFile="/sf/os/kernelhwsrv/kernel/eka/drivers/ethernet" mrp="/sf/os/kernelhwsrv/kernel/eka/drivers/ethernet/base_e32_drivers_ethernet.mrp"/>
 </component>

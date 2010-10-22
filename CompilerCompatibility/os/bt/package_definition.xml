@@ -97,7 +97,7 @@
 <SystemDefinition schema="2.0.1" name="Symbian^3">
 <systemModel>
 <layer name="os" long-name="OS" levels="hw services">
-<block name="bt" level="services" long-name="Bluetooth" levels="adaptation hw-if plugin framework server app-if">
+<block name="bt" level="services" long-name="Bluetooth" levels="adapt hw-if plugin framework server app-if">
 <collection name="bluetooth" long-name="Bluetooth Core" level="framework">
 <component name="btstack" long-name="Bluetooth Stack" introduced="6.0" purpose="optional">
 <unit bldFile="/sf/os/bt/bluetooth/btstack" mrp="/sf/os/bt/bluetooth/btstack/bluetooth_stack.mrp"/>
