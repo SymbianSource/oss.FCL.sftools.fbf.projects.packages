@@ -1,3 +1,0 @@
-source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/FCL/sf/adapt/beagleboard/,/sf/adapt/beagleboard,branch,default,layers.sysdef.xml
-http://developer.symbian.org/oss/FCL/sf/os/kernelhwsrv/,/sf/os/kernelhwsrv,branch,RCL_3,

@@ -1,3 +1,0 @@
-source,dst,type,pattern,sysdef
-http://developer.symbian.org/oss/MCL/sf/app/webuis/,/sf/app/webuis,branch,RCL_3,layers.sysdef.xml
-http://developer.symbian.org/oss/MCL/sf/mw/web/,/sf/mw/web,branch,RCL_3,
