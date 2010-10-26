@@ -52,13 +52,12 @@
 ]>
 <SystemDefinition name="Symbian^3" schema="2.0.1">
  <systemModel>
-  <layer name="os" long-name="OS" levels="hw services">
-   <block name="buildtools" level="hw" long-name="Build Tools" levels="bld mw fw ui">
-<collection name="imgtools_os" long-name="Image Tools" level="fw">
-<component name="romkiteka2" long-name="ROMKIT EKA2" deprecated="^2" purpose="development">
-<unit bldFile="/sf/os/buildtools/imgtools_os/romkiteka2/group" mrp="/sf/os/buildtools/imgtools_os/romkiteka2/group/tools_romkit.mrp"/>
+  <layer name="stem" long-name="stem">
+   <block name="stemkit_block" long-name="Stem Kit block ">
+<component name="stemkit" long-name="Stem Kit component">
+<unit bldFile="incubator/stemkit/group">
+</unit>
 </component>
-</collection>
 </block>
   </layer>
  </systemModel>
