@@ -63,12 +63,9 @@
       <component id="privacyprotocolmodule" name="Privacy Protocol Module" introduced="^2" purpose="optional" class="plugin">
         <unit bldFile="networkprotocolmodules/privacyprotocolmodule/group" mrp="networkprotocolmodules/privacyprotocolmodule/group/lbs_privacyprotocolmodule.mrp"/>
       </component>
-	  <component id="networkpmutils" name="Networkpm Utils" introduced="^2" purpose="optional" class="plugin">
-		<unit bldFile="networkprotocolmodules/networkpmutils/group" mrp="networkprotocolmodules/networkpmutils/group/lbs_networkpmutils.mrp"/>
-	  </component>
       <component id="suplproxyprotocolmodule" name="SUPL Proxy Protocol Module" introduced="^3" purpose="optional" class="plugin">
         <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
-        <unit bldFile="networkprotocolmodules/suplproxyprotocolmodule/group" mrp="networkprotocolmodules/suplproxyprotocolmodule/group/lbs_suplproxyprotocolmodule.mrp"/>
+        <unit bldFile="networkprotocolmodules/suplproxyprotocolmodule/sfgroup" mrp="networkprotocolmodules/suplproxyprotocolmodule/sfgroup/lbs_suplproxyprotocolmodule.mrp"/>
       </component>
       <component id="suplprotocolmodule" name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" class="plugin">
         <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
@@ -82,13 +79,9 @@
         <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
         <unit bldFile="networkprotocolmodules/suplprotocolmodule/SuplPushAPI/group" mrp="networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
       </component>
-      <component id="suplrrlpasn1" filter="sf_build" name="SUPL RRLP ASN1 Parser">
-        <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
-        <unit bldFile="networkprotocolmodules/suplpmcore/suplrrlpasn1/group"/>
-      </component>
       <component id="suplrrlpprotocol" name="SUPL RRLP Protocol Module">
         <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
-        <unit bldFile="networkprotocolmodules/suplcontrolplaneprotocols/suplrrlpprotocol/group"/>
+        <unit bldFile="networkprotocolmodules/suplcontrolplaneprotocols/common/suplrrlpprotocol/sfgroup"/>
       </component>
     </collection>
     <collection id="lbsapitest" name="Location API Tests" level="application-interface">

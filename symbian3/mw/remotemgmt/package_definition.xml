@@ -120,14 +120,6 @@
     <meta rel="Api" href="remotemgmt_plat/diagnostics_plugin_pool_api/diagnostics_plugin_pool_api.metaxml"/>
     <unit bldFile="remotemgmt_plat/diagnostics_plugin_pool_api/group"/>
    </component>
-   <component id="adaptive_history_list_api" name="Adaptive History List API" class="api" filter="s60">
-    <meta rel="Api" href="remotemgmt_plat/adaptive_history_list_api/adaptive_history_list_api.metaxml"/>
-    <unit bldFile="remotemgmt_plat/adaptive_history_list_api/group"/>
-   </component>
-   <component id="adaptive_history_list_session_api" name="Adaptive History List Session API" class="api" filter="s60">
-    <meta rel="Api" href="remotemgmt_plat/adaptive_history_list_session_api/adaptive_history_list_session_api.metaxml"/>
-    <unit bldFile="remotemgmt_plat/adaptive_history_list_session_api/group"/>
-   </component>
    <component id="fota_engine_api" name="FOTA Engine API" class="api" filter="s60">
     <meta rel="Api" href="remotemgmt_plat/fota_engine_api/fota_engine_api.metaxml"/>
     <unit bldFile="remotemgmt_plat/fota_engine_api/group"/>
@@ -162,9 +154,6 @@
    </component>
    <component id="syncml_ds_customization_api" name="SyncML DS Customization API" class="api" filter="s60" introduced="^3">
     <unit bldFile="remotemgmt_plat/syncml_ds_customization_api/group"/>
-   </component>
-   <component id="lawmo_plugin_api" name="Lawmo Plugin API" class="api" filter="s60" introduced="^3">
-    <unit bldFile="remotemgmt_plat/lawmo_plugin_api/group"/>
    </component>
   </collection>
   <collection id="policymanagement" name="Policy Management" level="generic">
