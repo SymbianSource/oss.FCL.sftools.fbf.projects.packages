@@ -113,6 +113,10 @@
 <component name="privacyprotocolmodule" long-name="Privacy Protocol Module" introduced="^2" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/lbs/networkprotocolmodules/privacyprotocolmodule/group" mrp="/sf/os/lbs/networkprotocolmodules/privacyprotocolmodule/group/lbs_privacyprotocolmodule.mrp"/>
 </component>
+<component name="suplproxyprotocolmodule" long-name="SUPL Proxy Protocol Module" introduced="^3" purpose="optional" plugin="Y">
+<!-- hack for Foundation builds needed while collection is reorganised into proper components -->
+<unit bldFile="/sf/os/lbs/networkprotocolmodules/suplproxyprotocolmodule/sfgroup" mrp="/sf/os/lbs/networkprotocolmodules/suplproxyprotocolmodule/sfgroup/lbs_suplproxyprotocolmodule.mrp"/>
+</component>
 <component name="suplprotocolmodule" long-name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" plugin="Y">
 <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
 <unit bldFile="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/SuplConnectionManager/group" mrp="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
@@ -124,6 +128,10 @@
 <component name="suplprotocolmodule" long-name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" plugin="Y">
 <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
 <unit bldFile="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/SuplPushAPI/group" mrp="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
+</component>
+<component name="suplrrlpprotocol" long-name="SUPL RRLP Protocol Module">
+<!-- hack for Foundation builds needed while collection is reorganised into proper components -->
+<unit bldFile="/sf/os/lbs/networkprotocolmodules/suplcontrolplaneprotocols/common/suplrrlpprotocol/sfgroup"/>
 </component>
 </collection>
 <collection name="lbsapitest" long-name="Location API Tests" level="application-interface"/>
