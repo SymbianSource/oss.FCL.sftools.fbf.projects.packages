@@ -111,6 +111,7 @@
       <package id="kernelhwsrv" level="hw" tech-domain="hb" href="../../../../os/kernelhwsrv/package_definition.xml"/>
       <package id="boardsupport" level="hw" tech-domain="hb" href="../../../../os/boardsupport/package_definition.xml"/>
       <package id="buildtools" level="hw" tech-domain="to" href="../../../../os/buildtools/package_definition.xml"/>
+      <package id="fshell" level="generic" tech-domain="to" href="../../../../os/fshell/package_definition.xml"/>
       <package id="ossrv" level="services" tech-domain="hb" href="../../../../os/ossrv/package_definition.xml"/>
       <package id="persistentdata" level="services" tech-domain="hb" href="../../../../os/persistentdata/package_definition.xml"/>
       <package id="devicesrv" level="services" tech-domain="hb" href="../../../../os/devicesrv/package_definition.xml"/>
