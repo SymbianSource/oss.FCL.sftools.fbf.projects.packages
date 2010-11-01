@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SystemDefinition schema="3.0.0">
+  <package id="fshell" name="Build Tools" levels="bld mw fw ui">
+	 <collection id="fshell_all" name="fshell" level="fw">
+      <component id="fshell_s3" name="fshell s3" introduced="^3" purpose="development">
+        <unit bldFile="fshell/build/sf/3"/>
+      </component>
+    </collection>
+  </package>
+</SystemDefinition>

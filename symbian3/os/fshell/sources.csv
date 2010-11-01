@@ -1,0 +1,2 @@
+source,dst,type,pattern,sysdef
+http://developer.symbian.org/oss/MCL/sf/os/fshell/,/sf/os/fshell,branch,default,layers.sysdef.xml
