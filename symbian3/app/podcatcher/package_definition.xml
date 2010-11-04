@@ -5,6 +5,10 @@
       <component id="podcatcher_build" filter="sf_build" name="Podcatcher Build" introduced="^3">
         <unit bldFile="group"/> 
       </component>
+      <component id="podcatcher_app" filter="sf_build" name="Podcatcher Application" introduced="^3">
+      </component>
+      <component id="podcatcher_engine" filter="sf_build" name="Podcatcher Engine" introduced="^3">
+      </component>
     </collection>
   </package>
 </SystemDefinition>

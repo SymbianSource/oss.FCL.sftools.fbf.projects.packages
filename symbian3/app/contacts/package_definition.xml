@@ -34,12 +34,12 @@
   <collection id="contacts_plat" name="Contacts Apps Platform Interfaces" level="ui">
    <component id="virtual_phonebook_store_api" name="Virtual Phonebook Store API" class="api" filter="s60">
     <meta rel="Api" href="contacts_plat/virtual_phonebook_store_api/virtual_phonebook_store_api.metaxml"/>
-    <unit bldFile="contacts_plat/virtual_phonebook_store_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_store_api/group" filter="!test"/>
     <unit bldFile="contacts_plat/virtual_phonebook_store_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="virtual_phonebook_sim_services_api" name="Virtual Phonebook SIM Services API" class="api" filter="s60">
     <meta rel="Api" href="contacts_plat/virtual_phonebook_sim_services_api/virtual_phonebook_sim_services_api.metaxml"/>
-    <unit bldFile="contacts_plat/virtual_phonebook_sim_services_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_sim_services_api/group" filter="!test"/>
     <unit bldFile="contacts_plat/virtual_phonebook_sim_services_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="virtual_phonebook_configuration_api" name="Virtual Phonebook Configuration API" class="api" filter="s60">
@@ -52,12 +52,12 @@
    </component>
    <component id="virtual_phonebook_policy_api" name="Virtual Phonebook Policy API" class="api" filter="s60">
     <meta rel="Api" href="contacts_plat/virtual_phonebook_policy_api/virtual_phonebook_policy_api.metaxml"/>
-    <unit bldFile="contacts_plat/virtual_phonebook_policy_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_policy_api/group" filter="!test"/>
     <unit bldFile="contacts_plat/virtual_phonebook_policy_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="virtual_phonebook_engine_api" name="Virtual Phonebook Engine API" class="api" filter="s60">
     <meta rel="Api" href="contacts_plat/virtual_phonebook_engine_api/virtual_phonebook_engine_api.metaxml"/>
-    <unit bldFile="contacts_plat/virtual_phonebook_engine_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_engine_api/group" filter="!test"/>
     <unit bldFile="contacts_plat/virtual_phonebook_engine_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="virtual_phonebook_migration_support_api" name="Virtual Phonebook Migration Support API" class="api" filter="s60">
@@ -66,12 +66,12 @@
    </component>
    <component id="virtual_phonebook_view_definition_api" name="Virtual Phonebook View Definition API" class="api" filter="s60">
     <meta rel="Api" href="contacts_plat/virtual_phonebook_view_definition_api/virtual_phonebook_view_definition_api.metaxml"/>
-    <unit bldFile="contacts_plat/virtual_phonebook_view_definition_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_view_definition_api/group" filter="!test"/>
     <unit bldFile="contacts_plat/virtual_phonebook_view_definition_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="virtual_phonebook_vcard_api" name="Virtual Phonebook vCard API" class="api" filter="s60">
     <meta rel="Api" href="contacts_plat/virtual_phonebook_vcard_api/virtual_phonebook_vcard_api.metaxml"/>
-    <unit bldFile="contacts_plat/virtual_phonebook_vcard_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/virtual_phonebook_vcard_api/group" filter="!test"/>
     <unit bldFile="contacts_plat/virtual_phonebook_vcard_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="cms_contactor_api" name="CMS Contactor API" class="api" filter="s60">
@@ -80,12 +80,12 @@
    </component>
    <component id="contactpresence_api" name="Contact Presence API" class="api" filter="s60">
     <meta rel="Api" href="contacts_plat/contactpresence_api/contactpresence_api.metaxml"/>
-    <unit bldFile="contacts_plat/contactpresence_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/contactpresence_api/group" filter="!test"/>
     <unit bldFile="contacts_plat/contactpresence_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="presence_cache_api" name="Presence Cache API" class="api" filter="s60">
     <meta rel="Api" href="contacts_plat/presence_cache_api/presence_cache_api.metaxml"/>
-    <unit bldFile="contacts_plat/presence_cache_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/presence_cache_api/group" filter="!test"/>
     <unit bldFile="contacts_plat/presence_cache_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="phonebook_internal_common_api" name="Phonebook Internal Common API" class="api" filter="s60">
@@ -202,22 +202,22 @@
    </component>
    <component id="cca_launch_api" name="CCA Launch API" class="api" filter="s60">
     <meta rel="Api" href="contacts_plat/cca_launch_api/cca_launch_api.metaxml"/>
-    <unit bldFile="contacts_plat/cca_launch_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/cca_launch_api/group" filter="!test"/>
     <unit bldFile="contacts_plat/cca_launch_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="cca_view_plugin_api" name="CCA View Plugin API" class="api" filter="s60">
     <meta rel="Api" href="contacts_plat/cca_view_plugin_api/cca_view_plugin_api.metaxml"/>
-    <unit bldFile="contacts_plat/cca_view_plugin_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/cca_view_plugin_api/group" filter="!test"/>
     <unit bldFile="contacts_plat/cca_view_plugin_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="predictivesearch_client_api" name="Predictive Search Client API" class="api" filter="s60">
     <meta rel="Api" href="contacts_plat/predictivesearch_client_api/predictivesearch_client_api.metaxml"/>
-    <unit bldFile="contacts_plat/predictivesearch_client_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/predictivesearch_client_api/group" filter="!test"/>
     <unit bldFile="contacts_plat/predictivesearch_client_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="predictivesearch_utils_api" name="Predictive Search Utils API" class="api" filter="s60">
     <meta rel="Api" href="contacts_plat/predictivesearch_utils_api/predictivesearch_utils_api.metaxml"/>
-    <unit bldFile="contacts_plat/predictivesearch_utils_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/predictivesearch_utils_api/group" filter="!test"/>
     <unit bldFile="contacts_plat/predictivesearch_utils_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="predictivesearch_adapters_api" name="Predictive Search Adapters API" class="api" filter="s60">
@@ -230,7 +230,7 @@
    </component>
    <component id="phonebook_2_rcl_api" name="Phonebook 2 RCL API" class="api" filter="s60">
     <meta rel="Api" href="contacts_plat/phonebook_2_rcl_api/phonebook_2_rcl_api.metaxml"/>
-    <unit bldFile="contacts_plat/phonebook_2_rcl_api/group" fitler="!test"/>
+    <unit bldFile="contacts_plat/phonebook_2_rcl_api/group" filter="!test"/>
     <unit bldFile="contacts_plat/phonebook_2_rcl_api/tsrc/group" filter="test,api_test"/>
    </component>
   </collection>

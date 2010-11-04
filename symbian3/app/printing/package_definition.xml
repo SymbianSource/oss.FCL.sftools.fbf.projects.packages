@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
   <package id="printing" name="Printing" levels="app">
-    <collection id="DirectPrint" name="DirectPrint" level="app">
+    <collection id="directprint" name="DirectPrint" level="app">
       <component id="DirectPrintApp" filter="sf_build" name="DirectPrint App" introduced="^3">
         <unit bldFile="DirectPrint/DirectPrintApp/group"/>
       </component>

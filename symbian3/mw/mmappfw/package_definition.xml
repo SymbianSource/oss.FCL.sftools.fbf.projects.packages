@@ -26,7 +26,7 @@
     <meta rel="Api" href="mmappfw_plat/playlist_engine_api/playlist_engine_api.metaxml"/>
     <unit bldFile="mmappfw_plat/playlist_engine_api/group"/>
    </component>
-   <component id="mtp_keys_api" name="MTP Keys API" introduced="^1" class="api" filter="s60">
+   <component id="mmappfw_mtp_keys_api" name="MTP Keys API" introduced="^1" class="api" filter="s60">
     <meta rel="Api" href="mmappfw_plat/mtp_keys_api/mtp_keys_api.metaxml"/>
     <unit bldFile="mmappfw_plat/mtp_keys_api/group"/>
    </component>

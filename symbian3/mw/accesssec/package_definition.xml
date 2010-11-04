@@ -10,7 +10,7 @@
     <meta rel="Api" href="accesssec_plat/wep_security_settings_ui_api/wep_security_settings_ui_api.metaxml"/>
     <unit bldFile="accesssec_plat/wep_security_settings_ui_api/group"/>
    </component>
-   <component id="wi-fi_protected_setup_ui_api" name="Wi-Fi Protected Setup UI API" class="api" filter="s60">
+   <component id="wifi_protected_setup_ui_api" name="Wi-Fi Protected Setup UI API" class="api" filter="s60">
     <meta rel="Api" href="accesssec_plat/wi-fi_protected_setup_ui_api/wi-fi_protected_setup_ui_api.metaxml"/>
     <unit bldFile="accesssec_plat/wi-fi_protected_setup_ui_api/group"/>
    </component>

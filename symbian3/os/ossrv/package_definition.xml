@@ -405,7 +405,7 @@
       <component id="dbus" filter="s60" name="D-Bus">
         <unit bldFile="ofdbus/dbus/group"/>
       </component>
-      <component id="dbus-glib" filter="s60" name="D-Bus GLib">
+      <component id="dbus_glib" filter="s60" name="D-Bus GLib">
         <unit bldFile="ofdbus/dbus-glib/group"/>
       </component>
       <component id="ofdbus_rom" filter="s60" name="D-Bus ROM">

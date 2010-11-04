@@ -71,15 +71,15 @@
         <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
         <unit bldFile="networkprotocolmodules/suplprotocolmodule/SuplConnectionManager/group" mrp="networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
       </component>
-	  <component id="suplprotocolmodule" name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" class="plugin">
+	  <component id="suplprotocolmodule1" name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" class="plugin">
         <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
         <unit bldFile="networkprotocolmodules/suplprotocolmodule/HostSettingsApi/group" mrp="networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
       </component>
-      <component id="suplprotocolmodule" name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" class="plugin">
+      <component id="suplprotocolmodule2" name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" class="plugin">
         <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
         <unit bldFile="networkprotocolmodules/suplprotocolmodule/SuplPushAPI/group" mrp="networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
       </component>
-      <component id="suplrrlpprotocol" name="SUPL RRLP Protocol Module">
+      <component id="suplrrlpprotocol3" name="SUPL RRLP Protocol Module">
         <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
         <unit bldFile="networkprotocolmodules/suplcontrolplaneprotocols/common/suplrrlpprotocol/sfgroup"/>
       </component>

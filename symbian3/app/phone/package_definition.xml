@@ -2,7 +2,7 @@
 <SystemDefinition schema="3.0.0">
  <package id="phone" name="Phone Apps" levels="engine plugin ui app">
   <collection id="phone_plat" name="Phone Apps Platform Interfaces" level="app">
-   <component id="3d_ringing_tone_enabler_api" name="3D Ringing Tone Enabler API" class="api" filter="s60">
+   <component id="ringing_tone_3d_enabler_api" name="3D Ringing Tone Enabler API" class="api" filter="s60">
     <meta rel="Api" href="phone_plat/3d_ringing_tone_enabler_api/3d_ringing_tone_enabler_api.metaxml"/>
     <unit bldFile="phone_plat/3d_ringing_tone_enabler_api/group"/>
    </component>
@@ -56,7 +56,7 @@
    <component id="phone_application_voip_commands_api" name="Phone Application VOIP Commands API" class="api" filter="s60">
     <unit bldFile="phone_plat/phone_application_voip_commands_api/group"/>
    </component>
-   <component id="telephony_mediator_api" name="Telephony Mediator API" class="api" filter="s60">
+   <component id="phone_telephony_mediator_api" name="Telephony Mediator API" class="api" filter="s60">
     <unit bldFile="phone_plat/telephony_mediator_api/group"/>
    </component>
    <component id="video_telephony_mediator_api" name="Video Telephony Mediator API" class="api" filter="s60">

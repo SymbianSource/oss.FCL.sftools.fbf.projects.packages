@@ -98,7 +98,7 @@
     <meta rel="Api" href="web_plat/xml_parser_api/xml_parser_api.metaxml"/>
     <unit bldFile="web_plat/xml_parser_api/group"/>
    </component>
-   <component id="stmgesturefw_api" name="State Machine Gesture Framework API " class="api" filter="s60">
+   <component id="stmgesturefw_api" name="State Machine Gesture Framework API" class="api" filter="s60">
     <meta rel="Api" href="web_plat/stmgesturefw_api/stmgesturefw_api.metaxml"/>
     <unit bldFile="web_plat/stmgesturefw_api/group"/>
    </component>

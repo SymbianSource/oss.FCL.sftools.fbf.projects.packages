@@ -29,7 +29,7 @@
     <unit bldFile="camerasrv_plat/media_recorder_api/group" filter="!test"/>
     <unit bldFile="camerasrv_plat/media_recorder_api/tsrc/group" filter="test,api_test"/>
    </component>
-   <component id="3gp_file_composer_api" name="3GP File Composer API" class="api" filter="s60">
+   <component id="lib3gp_file_composer_api" name="3GP File Composer API" class="api" filter="s60">
     <meta rel="Api" href="camerasrv_plat/3gp_file_composer_api/3gp_file_composer_api.metaxml"/>
     <unit bldFile="camerasrv_plat/3gp_file_composer_api/group"/>
    </component>

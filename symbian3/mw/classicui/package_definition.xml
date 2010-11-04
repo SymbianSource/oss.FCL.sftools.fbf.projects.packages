@@ -381,7 +381,7 @@
     <meta rel="Api" href="classicui_plat/avkon_testability_api/avkon_testability_api.metaxml"/>
     <unit bldFile="classicui_plat/avkon_testability_api/group"/>
    </component>
-   <component id="ganes_api" name="ganes_api" class="api" filter="s60">
+   <component id="ganes_api" name="Ganes API" class="api" filter="s60">
     <meta rel="Api" href="classicui_plat/ganes_api/ganes_api.metaxml"/>
     <unit bldFile="classicui_plat/ganes_api/group"/>
    </component>

@@ -6,7 +6,7 @@
     <meta rel="Api" href="imagehandling_plat/image_handling_library_api/image_handling_library_api.metaxml"/>
     <unit bldFile="imagehandling_plat/image_handling_library_api/group"/>
    </component>
-   <component id="3gp_library_api" name="3GP Library API" class="api" filter="s60">
+   <component id="lib3gp_library_api" name="3GP Library API" class="api" filter="s60">
     <meta rel="Api" href="imagehandling_plat/3gp_library_api/3gp_library_api.metaxml"/>
     <unit bldFile="imagehandling_plat/3gp_library_api/group"/>
    </component>
