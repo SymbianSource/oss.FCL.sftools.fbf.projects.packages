@@ -26,15 +26,18 @@
    </component>
    <component id="bluetooth_engine_connection_management_api" name="Bluetooth Engine Connection Management API" class="api" filter="s60">
     <meta rel="Api" href="btservices_plat/bluetooth_engine_connection_management_api/bluetooth_engine_connection_management_api.metaxml"/>
-    <unit bldFile="btservices_plat/bluetooth_engine_connection_management_api/group"/>
+    <unit bldFile="btservices_plat/bluetooth_engine_connection_management_api/group" filter="!test"/>
+    <unit bldFiile="btservices_plat/bluetooth_engine_connection_management_api/tsrc/group"  filter="test,api_test"/>
    </component>
    <component id="bluetooth_engine_device_management_api" name="Bluetooth Engine Device Management API" class="api" filter="s60">
     <meta rel="Api" href="btservices_plat/bluetooth_engine_device_management_api/bluetooth_engine_device_management_api.metaxml"/>
-    <unit bldFile="btservices_plat/bluetooth_engine_device_management_api/group"/>
+    <unit bldFile="btservices_plat/bluetooth_engine_device_management_api/group" filter="!test"/>
+    <unit bldFiile="btservices_plat/bluetooth_engine_device_management_api/tsrc/group"  filter="test,api_test"/>
    </component>
    <component id="bluetooth_engine_discovery_api" name="Bluetooth Engine Discovery API" class="api" filter="s60">
     <meta rel="Api" href="btservices_plat/bluetooth_engine_discovery_api/bluetooth_engine_discovery_api.metaxml"/>
-    <unit bldFile="btservices_plat/bluetooth_engine_discovery_api/group"/>
+    <unit bldFile="btservices_plat/bluetooth_engine_discovery_api/group" filter="!test"/>
+    <unit bldFiile="btservices_plat/bluetooth_engine_discovery_api/tsrc/group"  filter="test,api_test"/>
    </component>
    <component id="bluetooth_engine_features_api" name="Bluetooth Engine Features API" class="api" filter="s60">
     <meta rel="Api" href="btservices_plat/bluetooth_engine_features_api/bluetooth_engine_features_api.metaxml"/>
@@ -42,7 +45,8 @@
    </component>
    <component id="bluetooth_engine_settings_api" name="Bluetooth Engine Settings API" class="api" filter="s60">
     <meta rel="Api" href="btservices_plat/bluetooth_engine_settings_api/bluetooth_engine_settings_api.metaxml"/>
-    <unit bldFile="btservices_plat/bluetooth_engine_settings_api/group"/>
+    <unit bldFile="btservices_plat/bluetooth_engine_settings_api/group" filter="!test"/>
+    <unit bldFiile="btservices_plat/bluetooth_engine_settings_api/tsrc/group"  filter="test,api_test"/>
    </component>
    <component id="bluetooth_engine_plugin_api" name="Bluetooth Engine Plugin API" class="api" filter="s60">
     <meta rel="Api" href="btservices_plat/bluetooth_engine_plugin_api/bluetooth_engine_plugin_api.metaxml"/>
@@ -73,7 +77,8 @@
     <unit bldFile="bluetoothengine/btnotif/group"/>
    </component>
    <component id="btaudioman" filter="s60" name="Bluetooth Audio Manager">
-    <unit bldFile="bluetoothengine/btaudioman/group"/>
+    <unit bldFile="bluetoothengine/btaudioman/group" filter="!test"/>
+    <unit bldFiile="bluetoothengine/btaudioman/tsrc/btAudioManApiTest/group"  filter="test,api_test"/>
    </component>
    <component id="btmac" filter="s60" name="Bluetooth Mono Audio Controller" class="plugin">
     <unit bldFile="bluetoothengine/btmac/group"/>
@@ -82,7 +87,8 @@
     <unit bldFile="bluetoothengine/btsac/group"/>
    </component>
    <component id="btaudiostreamer" filter="s60" name="Bluetooth Audio Streamer">
-    <unit bldFile="bluetoothengine/btaudiostreamer/group"/>
+    <unit bldFile="bluetoothengine/btaudiostreamer/group" filter="!test"/>
+    <unit bldFiile="bluetoothengine/btaudiostreamer/tsrc/BtAudioStreamerApiTest/group" filter="test,api_test"/>
    </component>
    <component id="btsap" filter="s60" name="Bluetooth SIM Access Profile" class="plugin">
     <unit bldFile="bluetoothengine/btsap/group"/>
@@ -116,9 +122,6 @@
   <collection id="btservices_info" name="BT Services Info" level="plugin">
    <component id="btservices_metadata" name="BT Services Metadata" class="config" introduced="^3" purpose="development" target="desktop">
     <unit mrp="btservices_info/btservices_metadata/btservices_metadata.mrp"/>
-   </component>
-   <component id="btservices_api_test" name="BT Services API Tests" purpose="development" filter="s60,test,api_test">
-    <unit bldFiile="tsrc/group"/>
    </component>
   </collection>
  </package>

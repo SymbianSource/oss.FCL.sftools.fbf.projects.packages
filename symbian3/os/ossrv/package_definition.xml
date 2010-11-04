@@ -353,7 +353,7 @@
    <component id="dbus_api" name="Dbus API" class="api" filter="s60">
     <unit bldFile="ossrv_pub/dbus/group"/>
    </component>
-   <component id="dbus-glib" name="Dbus-glib API" class="api" filter="s60">
+   <component id="dbus_glib_api" name="D-Bus GLib API" class="api" filter="s60">
     <unit bldFile="ossrv_pub/dbus-glib/group"/>
    </component>
   </collection>

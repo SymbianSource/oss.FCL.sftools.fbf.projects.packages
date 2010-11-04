@@ -9,7 +9,7 @@
       </component>
   </collection>
   <collection id="vpnapiimpl" name="VPN API Implementation" level="api">
-   <component id="vpnapi" filter="s60" name="VPN API">
+   <component id="vpnapi_impl" filter="s60" name="VPN API">
     <unit bldFile="vpnapiimpl/group" filter="!oem_build"/>
    </component>
   </collection>
@@ -109,7 +109,7 @@
    <component id="vpndialogmanager" filter="s60" name="VPN Dialog Manager">
     <unit bldFile="vpnui/vpndialogmanager/group" filter="!oem_build"/>
    </component>
-   <component id="vpnmanagementui" filter="s60" name="VPN Management UI" class="plugin">
+   <component id="vpnmanagementui" filter="s60" name="VPN Management UI" class="plugin" deprecated="^3">
     <unit bldFile="vpnui/vpnmanagementui/group" filter="!oem_build"/>
    </component>
    <component id="vpnpolins" filter="s60" name="VPN Policy Installer">

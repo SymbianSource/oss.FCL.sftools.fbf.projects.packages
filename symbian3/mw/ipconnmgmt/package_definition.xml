@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
- <package id="ipconnmgmt" name="IP Connectivity Management" levels="plugin framework server generic utils">
-  <collection id="ipcm_plat" name="IP Connectivity Management Platform Interfaces" level="utils">
+ <package id="ipconnmgmt" name="IP Connectivity Management" levels="plugin framework server utils api">
+  <collection id="ipcm_plat" name="IP Connectivity Management Platform Interfaces" level="api">
    <component id="access_point_engine_misc_api" name="Access Point Engine Misc API" class="api" filter="s60">
     <meta rel="Api" href="ipcm_plat/access_point_engine_misc_api/access_point_engine_misc_api.metaxml"/>
     <unit bldFile="ipcm_plat/access_point_engine_misc_api/group"/>
@@ -50,7 +50,7 @@
     <unit bldFile="ipcm_plat/mpm_connect_screen_api/group"/>
    </component>
   </collection>
-  <collection id="ipcm_pub" name="IP Connectivity Management Public Interfaces" level="utils">
+  <collection id="ipcm_pub" name="IP Connectivity Management Public Interfaces" level="api">
    <component id="connection_settings_api" name="Connection Settings API" class="api" filter="s60">
     <meta rel="Api" href="ipcm_pub/connection_settings_api/connection_settings_api.metaxml"/>
     <unit bldFile="ipcm_pub/connection_settings_api/group"/>
@@ -167,7 +167,7 @@
     <unit bldFile="dbcreator/group"/>
    </component>
   </collection>
-  <collection id="ipconnmgmt_info" name="IP Connectivity Management Info" level="utils">
+  <collection id="ipconnmgmt_info" name="IP Connectivity Management Info" level="api">
    <component id="ipcm_build" filter="s60" name="IP Connectivity Management Build">
     <!-- need to move exports to another component, or maek this a config component and revmove the #includes -->
     <unit bldFile="group"/>

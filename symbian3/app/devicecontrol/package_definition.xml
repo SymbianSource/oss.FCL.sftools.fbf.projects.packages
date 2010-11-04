@@ -2,29 +2,29 @@
 <SystemDefinition schema="3.0.0">
   <package id="devicecontrol" name="Device Control Daemons" levels="oma mid app">
     <collection id="devicediagnostics" name="Device Diagnostics" level="app">
-      <component id="devdiagapp" filter="s60" name="Device Diagnostics App">
+      <component id="devdiagapp" filter="s60" name="Device Diagnostics App" deprecated="^3">
         <unit bldFile="devicediagnostics/devdiagapp/group"/>
       </component>
-      <component id="devdiaggsplugin" filter="s60" name="Device Diagnostics GS Plugin" class="plugin">
+      <component id="devdiaggsplugin" filter="s60" name="Device Diagnostics GS Plugin" class="plugin" deprecated="^3">
         <unit bldFile="devicediagnostics/devdiaggsplugin/group"/>
       </component>
-      <component id="diagplugins" filter="s60" name="Diagnostics Plugins" class="plugin">
+      <component id="diagplugins" filter="s60" name="Diagnostics Plugins" class="plugin" deprecated="^3">
         <unit bldFile="devicediagnostics/diagplugins/group"/>
       </component>
-      <component id="diagsuites" filter="s60" name="Diagnostics Suites" class="plugin">
+      <component id="diagsuites" filter="s60" name="Diagnostics Suites" class="plugin" deprecated="^3">
         <unit bldFile="devicediagnostics/diagsuites/group"/>
       </component>
-      <component id="devicediagnostics_build" filter="s60" name="Device Diagnostics Build">
+      <component id="devicediagnostics_build" filter="s60" name="Device Diagnostics Build" deprecated="^3">
       	<!-- can the exports be moved to one of the other components?
 			or all  #includes removed from here, and it renamed Device Diagnostics ROM -->
         <unit bldFile="devicediagnostics/group"/>
       </component>
     </collection>
     <collection id="omadm" name="OMA Device Management" level="oma">
-      <component id="omadmappui" filter="s60" name="OMA DM Application UI">
+      <component id="omadmappui" filter="s60" name="OMA DM Application UI" deprecated="^3">
         <unit bldFile="omadm/omadmappui/group"/>
       </component>
-      <component id="omadmextensions" filter="s60" name="OMA DM Extensions" class="plugin">
+      <component id="omadmextensions" filter="s60" name="OMA DM Extensions" class="plugin" deprecated="^3">
         <unit bldFile="omadm/omadmextensions/group"/>
       </component>
       <component id="dcmo" filter="s60" name="Device Capabilities Management Object" class="plugin" introduced="^3">
@@ -32,7 +32,7 @@
       </component>
     </collection>
     <collection id="pnpmobileservices" name="PnP Mobile Services" level="mid">
-      <component id="pnpms" filter="s60" name="PnP MS">
+      <component id="pnpms" filter="s60" name="PnP MS" deprecated="^3">
         <unit bldFile="pnpmobileservices/pnpms/group"/>
       </component>
     </collection>

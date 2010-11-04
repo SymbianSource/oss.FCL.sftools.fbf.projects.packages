@@ -4,11 +4,13 @@
   <collection id="camera_plat" name="Camera Apps Platform Interfaces">
    <component id="camcorder_ui_constants_api" name="Camcorder UI Constants API" class="api" filter="s60">
     <meta rel="Api" href="camera_plat/camcorder_ui_constants_api/camcorder_ui_constants_api.metaxml"/>
-    <unit bldFile="camera_plat/camcorder_ui_constants_api/group"/>
+    <unit bldFile="camera_plat/camcorder_ui_constants_api/group" filter="!test"/>
+    <unit bldFile="camera_plat/camcorder_ui_constants_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="active_palette_2_api" name="Active Palette 2 API" class="api" filter="s60">
     <meta rel="Api" href="camera_plat/active_palette_2_api/active_palette_2_api.metaxml"/>
-    <unit bldFile="camera_plat/active_palette_2_api/group"/>
+    <unit bldFile="camera_plat/active_palette_2_api/group" filter="!test"/>
+    <unit bldFile="camera_plat/active_palette_2_api/tsrc/group" filter="test,api_test"/>
    </component>
   </collection>
   <collection id="camerauis" name="Camera UIs">
@@ -18,13 +20,6 @@
    <component id="cameraapp" filter="s60" name="Camera Application">
     <unit bldFile="camerauis/cameraapp/group"/>
     <unit bldFile="camerauis/cameraapp/help/group"/>
-   </component>
-  </collection>
-  <collection id="camera_info" name="Camera Apps Info">
-   <component id="camera_plat_test" filter="s60,test,api_test" name="Camera Apps Platform API Tests" purpose="development">
-    <!-- can only have one unit. #include from a single bld.inf? -->
-    <unit bldFile="camera_plat/camcorder_ui_constants_api/tsrc/group"/>
-    <unit bldFile="camera_plat/active_palette_2_api/tsrc/group"/>
    </component>
   </collection>
  </package>

@@ -4,11 +4,19 @@
   <collection id="videoutils_plat" name="Video Utils Platform Interfaces" level="if">
    <component id="videoscheduler_api" name="Video Scheduler API" class="api" filter="s60">
     <meta rel="Api" href="videoutils_plat/videoscheduler_api/videoscheduler_api.metaxml"/>
-    <unit bldFile="videoutils_plat/videoscheduler_api/group"/>
+      <meta rel="testbuild">
+       <group name="videoscheduler_api_tsrc"/>
+      </meta>
+      <unit bldFile="videoutils_plat/videoscheduler_api/group" filter="!test"/>
+      <unit bldFile="videoutils_plat/videoscheduler_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="videoconnutility_api" name="Video Connection Utility API" class="api" filter="s60">
+      <meta rel="testbuild">
+       <group name="videoconnutility_apitsrc"/>
+      </meta>
     <meta rel="Api" href="videoutils_plat/videoconnutility_api/videoconnutility_api.metaxml"/>
-    <unit bldFile="videoutils_plat/videoconnutility_api/group"/>
+      <unit bldFile="videoutils_plat/videoconnutility_api/group" filter="!test"/>
+      <unit bldFile="videoutils_plat/videoconnutility_api/tsrc/group" filter="test,api_test"/>
    </component>
    <component id="videoplayer_constants_api" name="Videoplayer Constants API" class="api" filter="s60">
     <meta rel="Api" href="videoutils_plat/videoplayer_constants_api/videoplayer_constants_api.metaxml"/>

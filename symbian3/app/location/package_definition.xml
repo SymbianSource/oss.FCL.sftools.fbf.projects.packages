@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SystemDefinition schema="3.0.0">
  <package id="location" name="Location Apps" levels="ui events loc apps">
-  <collection id="loc_plat" name="Location Apps Platform Interfaces" level="apps">
-  </collection>
   <collection id="loc_pub" name="Location Apps Public Interfaces" level="apps">
    <component id="landmarks_ui_selector_api" name="Landmarks UI Selector API" class="api" filter="s60">
     <meta rel="Api" href="loc_pub/landmarks_ui_selector_api/landmarks_ui_selector_api.metaxml"/>

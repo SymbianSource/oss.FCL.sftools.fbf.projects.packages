@@ -101,7 +101,7 @@
 <SystemDefinition schema="3.0.0">
   <systemModel name="Symbian^3">
     <layer id="adapt" name="Adaptation" levels="low mw high">
-      <package id="stubs" tech-domain="hb" level="high" href="../../../../adapt/stubs/package_definition.xml"/>
+      <package id="stubs" tech-domain="hb" level="high" span="2" href="../../../../adapt/stubs/package_definition.xml"/>
       <package id="beagleboard" tech-domain="hb" level="low" href="../../../../adapt/beagleboard/package_definition.xml"/>
       <package id="qemu" tech-domain="hb" level="low" href="../../../../adapt/qemu/package_definition.xml"/>
       <package id="naviengine.nec" tech-domain="hb" level="low" href="../../../../adapt/naviengine.nec/package_definition.xml"/>
@@ -180,7 +180,6 @@
       <package id="websrv" level="generic" tech-domain="rt" href="../../../../mw/websrv/package_definition.xml"/>
       <package id="platformtools" level="generic" tech-domain="to" href="../../../../mw/platformtools/package_definition.xml"/>
       <package id="uitools" level="specific" tech-domain="to" href="../../../../mw/uitools/package_definition.xml"/>
-      <!-- <package id="opensrv" level="specific" tech-domain="pr" href="../../../../mw/opensrv/package_definition.xml"/> -->
     </layer>
     <layer id="app" name="Applications" levels="services apps">
       <package id="location" level="apps" tech-domain="lo" href="../../../../app/location/package_definition.xml"/>

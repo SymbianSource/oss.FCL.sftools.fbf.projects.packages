@@ -64,9 +64,6 @@
     <!-- remove the #includes from here and rename as xxx ROM or move iby/sis files into another component-->
     <unit mrp="group"/>
    </component>
-   <component id="ipappsrv_metadata" name="IP App Services Metadata" class="config" introduced="^2" purpose="development" target="desktop">
-    <unit mrp="ipappsrv_info/ipappsrv_metadata/ipappsrv_metadata.mrp"/>
-   </component>
   </collection>
  </package>
 </SystemDefinition>

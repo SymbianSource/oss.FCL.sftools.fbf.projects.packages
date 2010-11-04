@@ -72,7 +72,7 @@
    </component>
   </collection>
   <collection id="taskswitcher" name="Task Switcher" level="support">
-   <component id="contextengine" filter="s60" name="Context Engine" introduced="^3">
+   <component id="hs_contextengine" filter="s60" name="Context Engine" introduced="^3">
     <unit bldFile="taskswitcher/contextengine/group"/>
    </component>
    <component id="taskswitcherui" filter="s60" name="Task Switcher UI" introduced="^3">

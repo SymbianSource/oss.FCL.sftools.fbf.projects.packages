@@ -17,8 +17,8 @@
       <component id="networkpositioningmodule" name="Network Positioning Module" introduced="^3" purpose="optional" class="plugin">
         <unit bldFile="datasourcemodules/networkpositioningmodule/group" mrp="datasourcemodules/networkpositioningmodule/group/lbs_network_positioning_module.mrp"/>
       </component>
-      <component id="locationapesuplpsy" name="APE SUPL PSY" introduced="^3" purpose="optional" class="plugin" filter="s60">
-        <unit bldFile="datasourcemodules/locationapesuplpsy/group"/>
+      <component id="locationapesuplpsy" name="APE SUPL Positioning Module" introduced="^3" purpose="optional" class="plugin">
+        <unit bldFile="datasourcemodules/locationapesuplpsy/group" mrp="datasourcemodules/locationapesuplpsy/group/lbs_ape_supl_positioning_module.mrp"/>
       </component>
     </collection>
     <collection id="datasourceadaptation" name="Data Source Adaptation" level="adapt">

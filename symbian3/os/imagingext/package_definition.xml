@@ -34,7 +34,7 @@
     <meta rel="Api" href="imagingext_plat/ecam_face_tracking_custom_api/ecam_face_tracking_custom_api.metaxml"/>
     <unit bldFile="imagingext_plat/ecam_face_tracking_custom_api/group"/>
    </component>
-   <component id="ecam_use_case_hint_custom_api" name="ECam Use Case Hint Custom API" class="api" filter="s60">
+   <component id="ecam_use_case_hint_custom_api" class="api" name="ECam Use Case Hint Custom API" filter="s60" introduced="^3">
     <meta rel="Api" href="imagingext_plat/ecam_use_case_hint_custom_api/ecam_use_case_hint_custom_api.metaxml"/>
     <unit bldFile="imagingext_plat/ecam_use_case_hint_custom_api/group"/>
    </component>
