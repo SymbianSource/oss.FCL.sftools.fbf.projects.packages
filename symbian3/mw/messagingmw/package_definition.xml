@@ -55,9 +55,6 @@
    <component id="biomsgfw" name="BIO Messaging Framework" introduced="6.0" purpose="optional">
     <unit bldFile="messagingfw/biomsgfw/group" mrp="messagingfw/biomsgfw/group/messaging_biomsg.mrp"/>
    </component>
-   <component id="msgconf" name="Messaging Config" introduced="^2" purpose="optional" class="config">
-    <unit bldFile="messagingfw/msgconf/group" mrp="messagingfw/msgconf/group/messaging_config.mrp"/>
-   </component>
    <component id="watcherfw" name="Watcher Framework" purpose="optional">
     <unit bldFile="messagingfw/watcherfw/group" mrp="messagingfw/watcherfw/group/messaging_watcher.mrp"/>
    </component>
