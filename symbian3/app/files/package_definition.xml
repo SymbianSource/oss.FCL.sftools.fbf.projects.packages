@@ -24,8 +24,11 @@
    <component id="deviceencryption_help" filter="s60" name="Device Encryption Help" introduced="^3">
     <unit bldFile="deviceencryption/help/group"/>
    </component>
-   <component id="deviceencryption_build" filter="s60" name="Device Encryption Build" introduced="^3">
-    <unit bldFile="deviceencryption/group"/>
+   <component id="deviceencryption_headers" filter="s60" name="Device Encryption Headers" introduced="^3">
+     <unit bldFile="deviceencryption/common/group"/>
+   </component>
+   <component id="deviceencryption_rom" filter="s60" name="Device Encryption ROM" introduced="^3">
+     <unit bldFile="deviceencryption/rom/group"/>
    </component>
   </collection>
   <collection id="filemanager" name="File Manager" level="apps">
