@@ -25,9 +25,8 @@
    <component id="dasgsplugin" filter="s60" name="Default Application Settings GS Plugin" class="plugin" introduced="^1">
     <unit bldFile="defaultapplicationsettings/gsplugin/group"/>
    </component>
-   <component id="defaultapplicationsettings_build" filter="s60" name="Default Application Settings Build" introduced="^1">
-    <!-- split the IBYs up into the appropriate components? Make this a ROM component? -->
-    <unit bldFile="defaultapplicationsettings/group"/>
+   <component id="defaultapplicationsettings_rom" filter="s60" name="Default Application Settings ROM" introduced="^1">
+    <unit bldFile="defaultapplicationsettings/rom/group"/>
    </component>
   </collection>
   <collection id="systemswuis" name="System SW UIs" level="ui">
