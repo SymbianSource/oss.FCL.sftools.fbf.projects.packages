@@ -67,10 +67,9 @@
     <unit bldFile="mmuifw_plat/mul_widget_api/group"/>
    </component>
   </collection>
-  <collection id="mmuifw_info" name="Multimedia UI Framework Info" level="ui">
-   <component id="mmuifw_build" filter="s60" name="Multimedia UI Framework Build" deprecated="^3">
-    <!-- Move exports into other componetns or remove all #includes and make this a ROM component -->
-    <unit bldFile="group"/>
+  <collection id="mmuifw_info" name="Multimedia UI Framework Info" level="util">
+   <component id="mmuifw_rom" filter="s60" name="Multimedia UI Framework ROM" deprecated="^3">
+    <unit bldFile="rom/group"/>
    </component>
   </collection>
   <collection id="osncore" name="OS Neutral Library Core" level="util">
