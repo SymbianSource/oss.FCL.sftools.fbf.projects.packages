@@ -56,9 +56,11 @@
       <component id="omascomoadapter" filter="s60" name="OMA SCOMO Adapter" class="plugin" introduced="^3">
         <unit bldFile="applicationmanagement/omascomoadapter/group"/>
       </component>
-      <component id="applicationmanagement_build" filter="s60" name="AM Build">
-      	<!-- If thes aren't collapsed into one cmp, can all  #includes removed from here, and it renamed AM ROM? -->
-        <unit bldFile="applicationmanagement/group"/>
+      <component id="applicationmanagement_config" filter="s60" name="AM Configuration">
+	<unit bldFile="applicationmanagement/conf/group"/>
+      </component>
+      <component id="applicationmanagement_rom" filter="s60" name="AM ROM">
+	<unit bldFile="applicationmanagement/rom/group"/>
       </component>
     </collection>
     <collection id="customization" name="DM Customization Adapters" level="mid">
@@ -86,9 +88,8 @@
       <component id="embeddedlinkadapter" filter="s60" name="Embedded Link Adapter" class="plugin">
         <unit bldFile="customization/embeddedlinkadapter/bld"/>
       </component>
-      <component id="customization_build" filter="s60" name="DM Customization Build">
-      	<!-- If thes aren't collapsed into one cmp, can all  #includes removed from here, and it renamed DM Customization ROM? -->
-        <unit bldFile="customization/group"/>
+      <component id="customization_config" filter="s60" name="DM Customization Configuration">
+	<unit bldFile="customization/conf/group"/>
       </component>
     </collection>
     <collection id="omacp" name="OMA Content Provisioning" level="oma">
