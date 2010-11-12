@@ -123,9 +123,8 @@
    <component id="vpnclient_help" filter="s60" name="VPN Client Help">
     <unit bldFile="help/group" filter="!oem_build"/>
    </component>
-   <component id="vpnclient_build" filter="s60" name="VPN Client Build">
-    <!-- should split this up into the other components and remove this-->
-    <unit bldFile="group" filter="!oem_build"/>
+   <component id="vpnclient_exports" filter="s60" name="VPN Client Exports">
+    <unit bldFile="exports" filter="!oem_build"/>
    </component>
   </collection>
  </package>
