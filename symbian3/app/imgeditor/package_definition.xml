@@ -65,9 +65,8 @@
       <component id="editorprovider" filter="s60" name="Image Editor Provider">
         <unit bldFile="imageeditor/editorprovider/group"/>
       </component>
-      <component id="imageeditor_build" filter="s60" name="Image Editor Build">
-      	<!-- should distribute this to the other components -->
-        <unit bldFile="imageeditor/group"/>
+      <component id="imageeditor_exports" filter="s60" name="Image Editor Exports">
+        <unit bldFile="imageeditor/exports"/>
       </component>
     </collection>
     <collection id="imageeditorengine" name="Image Editor Engine" level="engine">
@@ -105,10 +104,6 @@
       </component>
       <component id="enginewrapper" filter="s60" name="Image Editor Engine Wrapper">
         <unit bldFile="imageeditorengine/enginewrapper/group"/>
-      </component>
-      <component id="imageeditorengine_build" filter="s60" name="Image Editor Engine Build">
-      	<!-- should distribute this to the other components -->
-        <unit bldFile="imageeditorengine/group"/>
       </component>
     </collection>
   </package>
