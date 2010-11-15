@@ -103,12 +103,6 @@
     <unit bldFile="web_plat/stmgesturefw_api/group"/>
    </component>
   </collection>
-  <collection id="web_info" name="Web Info" level="specific">
-   <component id="web_build" filter="s60" name="Web Build">
-    <!-- when configuration is in place, the #ifdef is no longer needed and this component can be removed -->
-    <unit bldFile="group"/>
-   </component>
-  </collection>
   <collection id="browserutilities" name="Browser Utilities" level="utils">
    <component id="browserdialogsprovider" filter="s60" name="Browser Dialogs Provider">
     <unit bldFile="browserutilities/browserdialogsprovider/group"/>
@@ -138,11 +132,7 @@
     <unit bldFile="browserutilities/feedsengine/group"/>
    </component>
    <component id="multipartparser" filter="s60" name="Multipart Parser">
-    <meta rel="config">
-     <defined condition="BRDO_MULTIPART_PARSER_FF"/>
-    </meta>
-    <!-- uncomment the unit when configuration is in place, it's currently #included from browserutilities_build -->
-    <!-- <unit bldFile="browserutilities/multipartparser/group"/> -->
+    <unit bldFile="browserutilities/multipartparser/group"/>
    </component>
    <component id="schemehandler" filter="s60" name="Scheme Handler">
     <unit bldFile="browserutilities/schemehandler/group"/>
@@ -152,10 +142,6 @@
    </component>
    <component id="aiwbrowserprovider" filter="s60" name="AIW Browser Provider" class="plugin">
     <unit bldFile="browserutilities/aiwbrowserprovider/group"/>
-   </component>
-   <component id="browserutilities_build" filter="s60" name="Browser Utilities Build">
-    <!-- when configuration is in place, the #ifdef is no longer needed and this component can be removed -->
-    <unit bldFile="browserutilities/group"/>
    </component>
   </collection>
   <collection id="webengine" name="Web Engine" level="server">
@@ -230,10 +216,11 @@
    <component id="roapapp" filter="s60" name="ROAP Application">
     <unit bldFile="codhandler/roapapp/group"/>
    </component>
-   <component id="codhandler_build" filter="s60" name="COD Handler Build">
-    <!-- Exports need to go into another component or make this self-contained.
-      		#included .hrh file needs to be #included in each of the other components -->
-    <unit bldFile="codhandler/group"/>
+   <component id="codhandler_loc" filter="s60" name="COD Handler Localisation">
+    <unit bldFile="codhandler/Loc"/>
+   </component>
+   <component id="codhandler_rom" filter="s60" name="COD Handler ROM">
+    <unit bldFile="codhandler/rom"/>
    </component>
   </collection>
   <collection id="widgets" name="Web Widget Framework" level="generic">
