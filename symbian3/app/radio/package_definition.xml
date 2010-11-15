@@ -20,9 +20,11 @@
       <component id="fmradio_help" filter="s60" name="FM Radio Help">
         <unit bldFile="fmradio/help/group"/>
       </component>
-      <component id="fmradio_rom" filter="s60" name="FM Radio ROM">
-      	<!--  remove above #included bld.infs -->
-        <unit bldFile="fmradio/group"/>
+      <component id="fmradio_conf" filter="s60" name="FM Radio Configuration">
+        <unit bldFile="fmradio/conf"/>
+      </component>
+      <component id="fmradio_loc" filter="s60" name="FM Radio Localisation">
+        <unit bldFile="fmradio/loc"/>
       </component>
     </collection>
   </package>
