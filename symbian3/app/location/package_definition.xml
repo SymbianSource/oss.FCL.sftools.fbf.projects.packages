@@ -34,9 +34,11 @@
    <component id="msgviewer" filter="s60" name="Landmarks Message Viewer">
     <unit bldFile="landmarksui/msgviewer/group"/>
    </component>
-   <component id="landmarksui_build" filter="s60" name="Landmarks UI Build">
-    <!-- consider distributing this into the other components or collapsing into a single component -->
-    <unit bldFile="landmarksui/group"/>
+   <component id="landmarksui_loc" filter="s60" name="Landmarks UI Localisation">
+    <unit bldFile="landmarksui/loc"/>
+   </component>
+   <component id="landmarksui_rom" filter="s60" name="Landmarks UI ROM">
+    <unit bldFile="landmarksui/rom"/>
    </component>
   </collection>
   <collection id="eventsui" name="Location Events UI" level="events">
@@ -58,9 +60,17 @@
    <component id="eventsmgmtui" filter="s60" name="Events Management UI">
     <unit bldFile="eventsui/eventsmgmtui/group"/>
    </component>
-   <component id="eventsui_build" filter="s60" name="Events UI Build">
-    <!-- consider distributing this into the other components or collapsing into a single component -->
-    <unit bldFile="eventsui/group"/>
+   <component id="eventsui_conf" filter="s60" name="Events UI Configuration">
+    <unit bldFile="eventsui/conf"/>
+   </component>
+   <component id="eventsui_data" filter="s60" name="Events UI Data">
+    <unit bldFile="eventsui/data"/>
+   </component>
+   <component id="eventsui_loc" filter="s60" name="Events UI Localisation">
+    <unit bldFile="eventsui/loc"/>
+   </component>
+   <component id="eventsui_rom" filter="s60" name="Events UI ROM">
+    <unit bldFile="eventsui/rom"/>
    </component>
   </collection>
   <collection id="locationlandmarksrefappfors60" name="Location Landmarks Reference App for S60" level="apps">
