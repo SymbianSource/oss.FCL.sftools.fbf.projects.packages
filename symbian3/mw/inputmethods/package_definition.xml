@@ -67,11 +67,7 @@
   </collection>
   <collection id="textinput" name="Text Input" level="framework">
    <component id="ptienginev2" filter="s60" name="Predictive Text Input Engine">
-    <meta rel="config">
-     <defined condition="RD_INTELLIGENT_TEXT_INPUT"/>
-    </meta>
-    <!--uncomment when configuration is turned on and textinput_build is removed-->
-    <!--  <unit bldFile="textinput/ptienginev2/group"/>-->
+    <unit bldFile="textinput/ptienginev2/group"/>
    </component>
    <component id="akninputlanguage" filter="s60" name="Avkon Input Language">
     <unit bldFile="textinput/akninputlanguage/group"/>
@@ -129,10 +125,6 @@
    </component>
    <component id="peninputsplitqwerty" filter="s60" name="Pen Input Split QWERTY" class="plugin" introduced="^3">
     <unit bldFile="textinput/peninputsplitqwerty/group"/>
-   </component>
-   <component id="textinput_build" filter="s60" name="Text Input Build">
-    <!--needed for #ifdef, can be removed when configuration is implemented -->
-    <unit bldFile="textinput/group"/>
    </component>
   </collection>
   <collection id="fep" name="FEP" level="engine">
