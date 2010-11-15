@@ -48,9 +48,8 @@
     </meta>
     <unit bldFile="idlehomescreen/data/group"/>
    </component>
-   <component id="idlehomescreen_build" filter="s60" name="Idle Home Screen Build">
-    <!-- can the loc file be moved to another comopnent and this one removed? -->
-    <unit bldFile="idlehomescreen/group"/>
+   <component id="idlehomescreen_loc" filter="s60" name="Idle Home Screen Localisation">
+    <unit bldFile="idlehomescreen/loc/group"/>
    </component>
    <component id="homescreen_test" filter="s60,test,unit_test" purpose="development" name="Home Screen Apps Test">
     <unit bldFile="idlehomescreen/widgetmanager/tsrc/wmunittest/group"/>
@@ -65,10 +64,6 @@
    </component>
    <component id="menusuites" filter="s60" name="Menu Suites">
     <unit bldFile="menufw/menusuites/group"/>
-   </component>
-   <component id="menufw_build" filter="s60" name="Menu Framework Build">
-    <!-- can the exports be exported by the other components? -->
-    <unit bldFile="menufw/group"/>
    </component>
   </collection>
   <collection id="taskswitcher" name="Task Switcher" level="support">
