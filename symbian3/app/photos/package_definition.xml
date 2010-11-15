@@ -60,9 +60,8 @@
    <component id="imgvwr" filter="s60" name="Photos Image Viewer" introduced="^3">
     <unit bldFile="photosgallery/imgvwr/group"/>
    </component>
-   <component id="photosgallery_build" filter="s60" name="Photos Gallery Build" introduced="^2">
-    <!--  need to remove the #included above bld.infs from this  -->
-    <unit bldFile="photosgallery/group"/>
+   <component id="photosgallery_exports" filter="s60" name="Photos Gallery Exports" introduced="^2">
+    <unit bldFile="photosgallery/exports"/>
    </component>
   </collection>
  </package>
