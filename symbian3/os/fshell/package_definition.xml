@@ -3,7 +3,7 @@
   <package id="fshell" name="FShell" levels="bld mw fw ui">
 	 <collection id="fshell_all" name="FShell Build" level="fw">
       <component id="fshell_s3" name="FShell Symbian^3" introduced="^3" purpose="development">
-        <unit bldFile="fshell/build/sf/3"/>
+        <unit bldFile="build/sf/3"/>
       </component>
     </collection>
   </package>
