@@ -54,6 +54,9 @@
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
    <block name="usb" level="services" long-name="USB" levels="adapt hw-if plugin framework server app-if">
+<collection name="usb_plat" long-name="USB Platform Interfaces" level="app-if">
+<!-- placeholder for platform APIs -->
+</collection>
 <collection name="usbldd" long-name="USB Logical Device Drivers" level="hw-if">
 <!-- usbclientdrivers  to be moved here from kernelhwsrv-->
 </collection>

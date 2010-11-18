@@ -96,9 +96,8 @@
 <component name="idlehomescreen_data" filter="s60" long-name="Idle Home Screen Data">
 <unit bldFile="/sf/app/homescreen/idlehomescreen/data/group"/>
 </component>
-<component name="idlehomescreen_build" filter="s60" long-name="Idle Home Screen Build">
-<!-- can the loc file be moved to another comopnent and this one removed? -->
-<unit bldFile="/sf/app/homescreen/idlehomescreen/group"/>
+<component name="idlehomescreen_loc" filter="s60" long-name="Idle Home Screen Localisation">
+<unit bldFile="/sf/app/homescreen/idlehomescreen/loc/group"/>
 </component>
 </collection>
 <collection name="menufw" long-name="Menu Framework" level="fw">
@@ -108,13 +107,12 @@
 <component name="menufwui" filter="s60" long-name="Menu Framework UI">
 <unit bldFile="/sf/app/homescreen/menufw/menufwui/group"/>
 </component>
-<component name="menufw_build" filter="s60" long-name="Menu Framework Build">
-<!-- can the exports be exported by the other components? -->
-<unit bldFile="/sf/app/homescreen/menufw/group"/>
+<component name="menusuites" filter="s60" long-name="Menu Suites">
+<unit bldFile="/sf/app/homescreen/menufw/menusuites/group"/>
 </component>
 </collection>
 <collection name="taskswitcher" long-name="Task Switcher" level="support">
-<component name="contextengine" filter="s60" long-name="Context Engine" introduced="^3">
+<component name="hs_contextengine" filter="s60" long-name="Context Engine" introduced="^3">
 <unit bldFile="/sf/app/homescreen/taskswitcher/contextengine/group"/>
 </component>
 <component name="taskswitcherui" filter="s60" long-name="Task Switcher UI" introduced="^3">

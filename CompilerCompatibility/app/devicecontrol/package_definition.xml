@@ -55,29 +55,29 @@
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="devicecontrol" level="services" long-name="Device Control Daemons" levels="oma mid app">
 <collection name="devicediagnostics" long-name="Device Diagnostics" level="app">
-<component name="devdiagapp" filter="s60" long-name="Device Diagnostics App">
+<component name="devdiagapp" filter="s60" long-name="Device Diagnostics App" deprecated="^3">
 <unit bldFile="/sf/app/devicecontrol/devicediagnostics/devdiagapp/group"/>
 </component>
-<component name="devdiaggsplugin" filter="s60" long-name="Device Diagnostics GS Plugin" plugin="Y">
+<component name="devdiaggsplugin" filter="s60" long-name="Device Diagnostics GS Plugin" deprecated="^3" plugin="Y">
 <unit bldFile="/sf/app/devicecontrol/devicediagnostics/devdiaggsplugin/group"/>
 </component>
-<component name="diagplugins" filter="s60" long-name="Diagnostics Plugins" plugin="Y">
+<component name="diagplugins" filter="s60" long-name="Diagnostics Plugins" deprecated="^3" plugin="Y">
 <unit bldFile="/sf/app/devicecontrol/devicediagnostics/diagplugins/group"/>
 </component>
-<component name="diagsuites" filter="s60" long-name="Diagnostics Suites" plugin="Y">
+<component name="diagsuites" filter="s60" long-name="Diagnostics Suites" deprecated="^3" plugin="Y">
 <unit bldFile="/sf/app/devicecontrol/devicediagnostics/diagsuites/group"/>
 </component>
-<component name="devicediagnostics_build" filter="s60" long-name="Device Diagnostics Build">
+<component name="devicediagnostics_build" filter="s60" long-name="Device Diagnostics Build" deprecated="^3">
 <!-- can the exports be moved to one of the other components?
 			or all  #includes removed from here, and it renamed Device Diagnostics ROM -->
 <unit bldFile="/sf/app/devicecontrol/devicediagnostics/group"/>
 </component>
 </collection>
 <collection name="omadm" long-name="OMA Device Management" level="oma">
-<component name="omadmappui" filter="s60" long-name="OMA DM Application UI">
+<component name="omadmappui" filter="s60" long-name="OMA DM Application UI" deprecated="^3">
 <unit bldFile="/sf/app/devicecontrol/omadm/omadmappui/group"/>
 </component>
-<component name="omadmextensions" filter="s60" long-name="OMA DM Extensions" plugin="Y">
+<component name="omadmextensions" filter="s60" long-name="OMA DM Extensions" deprecated="^3" plugin="Y">
 <unit bldFile="/sf/app/devicecontrol/omadm/omadmextensions/group"/>
 </component>
 <component name="dcmo" filter="s60" long-name="Device Capabilities Management Object" introduced="^3" plugin="Y">
@@ -85,7 +85,7 @@
 </component>
 </collection>
 <collection name="pnpmobileservices" long-name="PnP Mobile Services" level="mid">
-<component name="pnpms" filter="s60" long-name="PnP MS">
+<component name="pnpms" filter="s60" long-name="PnP MS" deprecated="^3">
 <unit bldFile="/sf/app/devicecontrol/pnpmobileservices/pnpms/group"/>
 </component>
 </collection>
@@ -109,9 +109,11 @@
 <component name="omascomoadapter" filter="s60" long-name="OMA SCOMO Adapter" introduced="^3" plugin="Y">
 <unit bldFile="/sf/app/devicecontrol/applicationmanagement/omascomoadapter/group"/>
 </component>
-<component name="applicationmanagement_build" filter="s60" long-name="AM Build">
-<!-- If thes aren't collapsed into one cmp, can all  #includes removed from here, and it renamed AM ROM? -->
-<unit bldFile="/sf/app/devicecontrol/applicationmanagement/group"/>
+<component name="applicationmanagement_config" filter="s60" long-name="AM Configuration">
+<unit bldFile="/sf/app/devicecontrol/applicationmanagement/conf/group"/>
+</component>
+<component name="applicationmanagement_rom" filter="s60" long-name="AM ROM">
+<unit bldFile="/sf/app/devicecontrol/applicationmanagement/rom/group"/>
 </component>
 </collection>
 <collection name="customization" long-name="DM Customization Adapters" level="mid">
@@ -139,9 +141,8 @@
 <component name="embeddedlinkadapter" filter="s60" long-name="Embedded Link Adapter" plugin="Y">
 <unit bldFile="/sf/app/devicecontrol/customization/embeddedlinkadapter/bld"/>
 </component>
-<component name="customization_build" filter="s60" long-name="DM Customization Build">
-<!-- If thes aren't collapsed into one cmp, can all  #includes removed from here, and it renamed DM Customization ROM? -->
-<unit bldFile="/sf/app/devicecontrol/customization/group"/>
+<component name="customization_config" filter="s60" long-name="DM Customization Configuration">
+<unit bldFile="/sf/app/devicecontrol/customization/conf/group"/>
 </component>
 </collection>
 <collection name="omacp" long-name="OMA Content Provisioning" level="oma">

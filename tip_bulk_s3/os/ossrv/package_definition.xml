@@ -319,7 +319,7 @@
 <component name="dbus_api" long-name="Dbus API" filter="s60" class="api">
 <unit bldFile="/sf/os/ossrv/ossrv_pub/dbus/group"/>
 </component>
-<component name="dbus-glib" long-name="Dbus-glib API" filter="s60" class="api">
+<component name="dbus_glib_api" long-name="D-Bus GLib API" filter="s60" class="api">
 <unit bldFile="/sf/os/ossrv/ossrv_pub/dbus-glib/group"/>
 </component>
 </collection>
@@ -371,7 +371,7 @@
 <component name="dbus" filter="s60" long-name="D-Bus">
 <unit bldFile="/sf/os/ossrv/ofdbus/dbus/group"/>
 </component>
-<component name="dbus-glib" filter="s60" long-name="D-Bus GLib">
+<component name="dbus_glib" filter="s60" long-name="D-Bus GLib">
 <unit bldFile="/sf/os/ossrv/ofdbus/dbus-glib/group"/>
 </component>
 <component name="ofdbus_rom" filter="s60" long-name="D-Bus ROM">

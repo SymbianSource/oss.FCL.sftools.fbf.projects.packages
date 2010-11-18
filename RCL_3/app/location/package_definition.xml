@@ -87,9 +87,11 @@
 <component name="msgviewer" filter="s60" long-name="Landmarks Message Viewer">
 <unit bldFile="/sf/app/location/landmarksui/msgviewer/group"/>
 </component>
-<component name="landmarksui_build" filter="s60" long-name="Landmarks UI Build">
-<!-- consider distributing this into the other components or collapsing into a single component -->
-<unit bldFile="/sf/app/location/landmarksui/group"/>
+<component name="landmarksui_loc" filter="s60" long-name="Landmarks UI Localisation">
+<unit bldFile="/sf/app/location/landmarksui/loc"/>
+</component>
+<component name="landmarksui_rom" filter="s60" long-name="Landmarks UI ROM">
+<unit bldFile="/sf/app/location/landmarksui/rom"/>
 </component>
 </collection>
 <collection name="eventsui" long-name="Location Events UI" level="events">
@@ -111,9 +113,17 @@
 <component name="eventsmgmtui" filter="s60" long-name="Events Management UI">
 <unit bldFile="/sf/app/location/eventsui/eventsmgmtui/group"/>
 </component>
-<component name="eventsui_build" filter="s60" long-name="Events UI Build">
-<!-- consider distributing this into the other components or collapsing into a single component -->
-<unit bldFile="/sf/app/location/eventsui/group"/>
+<component name="eventsui_conf" filter="s60" long-name="Events UI Configuration">
+<unit bldFile="/sf/app/location/eventsui/conf"/>
+</component>
+<component name="eventsui_data" filter="s60" long-name="Events UI Data">
+<unit bldFile="/sf/app/location/eventsui/data"/>
+</component>
+<component name="eventsui_loc" filter="s60" long-name="Events UI Localisation">
+<unit bldFile="/sf/app/location/eventsui/loc"/>
+</component>
+<component name="eventsui_rom" filter="s60" long-name="Events UI ROM">
+<unit bldFile="/sf/app/location/eventsui/rom"/>
 </component>
 </collection>
 <collection name="locationlandmarksrefappfors60" long-name="Location Landmarks Reference App for S60" level="apps">

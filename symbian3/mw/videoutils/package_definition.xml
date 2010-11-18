@@ -56,10 +56,10 @@
    <block name="videoutils" level="specific" long-name="Video Utils" levels="eng util if">
 <collection name="videoutils_plat" long-name="Video Utils Platform Interfaces" level="if">
 <component name="videoscheduler_api" long-name="Video Scheduler API" filter="s60" class="api">
-<unit bldFile="/sf/mw/videoutils/videoutils_plat/videoscheduler_api/group"/>
+<unit bldFile="/sf/mw/videoutils/videoutils_plat/videoscheduler_api/group" filter="!test"/>
 </component>
 <component name="videoconnutility_api" long-name="Video Connection Utility API" filter="s60" class="api">
-<unit bldFile="/sf/mw/videoutils/videoutils_plat/videoconnutility_api/group"/>
+<unit bldFile="/sf/mw/videoutils/videoutils_plat/videoconnutility_api/group" filter="!test"/>
 </component>
 <component name="videoplayer_constants_api" long-name="Videoplayer Constants API" filter="s60" class="api">
 <unit bldFile="/sf/mw/videoutils/videoutils_plat/videoplayer_constants_api/group"/>

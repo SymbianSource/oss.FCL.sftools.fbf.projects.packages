@@ -76,8 +76,11 @@
 <component name="deviceencryption_help" filter="s60" long-name="Device Encryption Help" introduced="^3">
 <unit bldFile="/sf/app/files/deviceencryption/help/group"/>
 </component>
-<component name="deviceencryption_build" filter="s60" long-name="Device Encryption Build" introduced="^3">
-<unit bldFile="/sf/app/files/deviceencryption/group"/>
+<component name="deviceencryption_headers" filter="s60" long-name="Device Encryption Headers" introduced="^3">
+<unit bldFile="/sf/app/files/deviceencryption/common/group"/>
+</component>
+<component name="deviceencryption_rom" filter="s60" long-name="Device Encryption ROM" introduced="^3">
+<unit bldFile="/sf/app/files/deviceencryption/rom/group"/>
 </component>
 </collection>
 <collection name="filemanager" long-name="File Manager" level="apps">

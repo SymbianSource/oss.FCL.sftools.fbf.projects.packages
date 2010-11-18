@@ -53,9 +53,9 @@
 <SystemDefinition name="Symbian^3" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="fshell" level="generic" long-name="Build Tools" levels="bld mw fw ui">
-<collection name="fshell_all" long-name="fshell" level="fw">
-<component name="fshell_s3" long-name="fshell s3" introduced="^3" purpose="development">
+   <block name="fshell" level="generic" long-name="FShell" levels="bld mw fw ui">
+<collection name="fshell_all" long-name="FShell Build" level="fw">
+<component name="fshell_s3" long-name="FShell Symbian^3" introduced="^3" purpose="development">
 <unit bldFile="/sf/os/fshell/build/sf/3"/>
 </component>
 </collection>
