@@ -55,9 +55,8 @@
    <component id="mpxmusicplayer_app" filter="s60" name="MPX Application">
     <unit bldFile="mpxmusicplayer/app/group"/>
    </component>
-   <component id="mpxmusicplayer_build" filter="s60" name="MPX Music Player Build">
-    <!--  can the exports be distributed to the above components?  -->
-    <unit bldFile="mpxmusicplayer/group"/>
+   <component id="mpxmusicplayer_exports" filter="s60" name="MPX Music Player Exports">
+    <unit bldFile="mpxmusicplayer/exports"/>
    </component>
   </collection>
   <collection id="musichomescreen_multiview" name="Music Home Screen Multiview" level="hs">
@@ -92,16 +91,11 @@
    <component id="viewplugins" filter="s60" name="MPX View Plugins" class="plugin">
     <unit bldFile="mpxplugins/viewplugins/group"/>
    </component>
-   <component id="mpxplugins_build" filter="s60" name="MPX Plugins Build">
-    <!--  can the exports be distributed to the above components?  -->
-    <unit bldFile="mpxplugins/group"/>
+   <component id="mpxplugins_exports" filter="s60" name="MPX Plugins Exports">
+    <unit bldFile="mpxplugins/exports"/>
    </component>
   </collection>
   <collection id="musicplayer_info" name="Music Player Apps Info" level="app">
-   <component id="musicplayer_build" filter="s60" name="Music Player Build">
-    <!-- should explicitly #inlcude musicplayerbldvariant.hrh in each component  -->
-    <unit bldFile="group"/>
-   </component>
    <component id="musicplayer_test" filter="s60,test,pref_test,api_test" purpose="development" name="Music Player Apps Test">
     <unit bldFile="tsrc/group"/>
    </component>
