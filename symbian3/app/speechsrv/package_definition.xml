@@ -128,8 +128,7 @@
     <unit bldFile="voiceui/vccontrolpanelplugin/group"/>
    </component>
    <component id="voiceui_build" filter="s60" name="Voice UI Build" introduced="^1">
-    <!--  can this be put into the other components? -->
-    <unit bldFile="voiceui/group"/>
+    <unit bldFile="voiceui/build"/>
    </component>
   </collection>
   <collection id="srsf" name="Speech Recognition and Synthesis Framework" level="framework">
