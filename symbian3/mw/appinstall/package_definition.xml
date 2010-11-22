@@ -53,8 +53,8 @@
    <component id="debuglogger" filter="s60" name="NCD Debug Logger" introduced="^1">
     <!-- <unit bldFile="ncdengine/debuglogger/group"/> -->
    </component>
-   <component id="ncdengine_build" filter="s60" name="NCD Build" introduced="^1">
-    <unit bldFile="ncdengine/group"/>
+   <component id="ncdengine_exports" filter="s60" name="NCD Exports" introduced="^1">
+    <unit bldFile="ncdengine/exports"/>
    </component>
   </collection>
   <collection id="appinstaller" name="Application Installer" level="generic">
@@ -79,8 +79,8 @@
    <component id="iaupdate_help" filter="s60" name="IA Update Help" introduced="^2">
     <unit bldFile="iaupdate/help/group"/>
    </component>
-   <component id="iaupdate_build" filter="s60" name="IA Update Build" introduced="^2">
-    <unit bldFile="iaupdate/group"/>
+   <component id="iaupdate_rom" filter="s60" name="IA Update ROM" introduced="^2">
+    <unit bldFile="iaupdate/rom"/>
    </component>
   </collection>
   <collection id="installationservices" name="Installation Services" level="generic">
