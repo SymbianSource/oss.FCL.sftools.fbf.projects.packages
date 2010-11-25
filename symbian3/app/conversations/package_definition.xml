@@ -39,9 +39,8 @@
    <component id="imconversationview" filter="s60" name="IM Conversation View">
     <unit bldFile="imstutils/imconversationview/group"/>
    </component>
-   <component id="imstutils_config" filter="s60" name="IM Service Tab Utils config" class="config">
-    <!-- remove the #includes and or moved ithe loc file into one the above components -->
-    <unit bldFile="imstutils/group"/>
+   <component id="imstutils_loc" filter="s60" name="IM Service Tab Utils Localisation" class="config">
+    <unit bldFile="imstutils/loc"/>
    </component>
   </collection>
   <collection id="uiservicetab" name="UI Service Tab" level="ui">
@@ -64,9 +63,8 @@
    <component id="vimpstdetailsviewplugin" filter="s60" name="VIMP ST Details View Plugin" class="plugin">
     <unit bldFile="uiservicetab/vimpstdetailsviewplugin/group"/>
    </component>
-   <component id="uiservicetab_build" filter="s60" name="UI Service Tab Build">
-    <!-- can this be distributed into the above bld.infs? -->
-    <unit bldFile="uiservicetab/group"/>
+   <component id="uiservicetab_exports" filter="s60" name="UI Service Tab Exports">
+    <unit bldFile="uiservicetab/exports"/>
    </component>
   </collection>
   <collection id="servicewidget" name="Service Widget" level="ui">
@@ -77,9 +75,8 @@
     <!-- does this really need to have that number in the directory name? -->
     <unit bldFile="servicewidget/themes/install-themes/install/servicewidget_20021383/group"/>
    </component>
-   <component id="servicewidget_build" filter="s60" name="Service Widget Build">
-    <!-- Either move the whole collection down one directory into a single component, or move the ROM and SIS parts into a Service Widget ROM component -->
-    <unit bldFile="servicewidget/group"/>
+   <component id="servicewidget_rom" filter="s60" name="Service Widget ROM">
+    <unit bldFile="servicewidget/rom"/>
    </component>
   </collection>
   <collection id="instantmsgindicatorplugin" name="Instant Message Indicator Plugin" level="plugin">
@@ -96,8 +93,7 @@
   </collection>
   <collection id="conversations_info" name="Conversation Apps Info" level="ui">
    <component id="conversations_build" filter="s60" name="Conversation Apps Build">
-    <!-- can the exports be moved to other components? or this remade into a configuration component?-->
-    <unit bldFile="group"/>
+    <unit bldFile="exports"/>
    </component>
   </collection>
  </package>
