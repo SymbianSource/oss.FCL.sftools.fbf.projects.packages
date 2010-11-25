@@ -70,7 +70,7 @@
 <component name="networkpositioningmodule" long-name="Network Positioning Module" introduced="^3" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/lbs/datasourcemodules/networkpositioningmodule/group" mrp="/sf/os/lbs/datasourcemodules/networkpositioningmodule/group/lbs_network_positioning_module.mrp"/>
 </component>
-<component name="locationapesuplpsy" long-name="APE SUPL Positioning Module" introduced="^3" purpose="optional" filter="s60" plugin="Y">
+<component name="locationapesuplpsy" long-name="APE SUPL Positioning Module" introduced="^3" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/lbs/datasourcemodules/locationapesuplpsy/group" mrp="/sf/os/lbs/datasourcemodules/locationapesuplpsy/group/lbs_ape_supl_positioning_module.mrp"/>
 </component>
 </collection>

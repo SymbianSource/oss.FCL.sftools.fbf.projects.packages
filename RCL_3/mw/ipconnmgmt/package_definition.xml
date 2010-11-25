@@ -184,8 +184,7 @@
 <unit bldFile="/sf/mw/ipconnmgmt/dbcreator/commsdatcreator/group"/>
 </component>
 <component name="commsdatcreatorrfsplugin" filter="s60" long-name="Comms Database Creator RFS Plugin" introduced="9.3" plugin="Y">
-<!-- uncomment when config is turned on -->
-<!-- <unit bldFile="dbcreator/commsdatcreatorrfsplugin/group"/>-->
+<unit bldFile="/sf/mw/ipconnmgmt/dbcreator/commsdatcreatorrfsplugin/group"/>
 </component>
 <component name="commsdatstartup" filter="s60" long-name="Comms Database Startup" introduced="9.3">
 <unit bldFile="/sf/mw/ipconnmgmt/dbcreator/commsdatstartup/group"/>
@@ -193,15 +192,16 @@
 <component name="dbcreatorexe" filter="s60" long-name="DB Creator" introduced="9.3">
 <unit bldFile="/sf/mw/ipconnmgmt/dbcreator/dbcreatorexe/group"/>
 </component>
-<component name="dbcreator_build" filter="s60" long-name="DB Creator Build" introduced="9.3">
-<!-- move exports to another component, this is needed for the #ifndef for commsdatcreatorrfsplugin until configuration is in place-->
-<unit bldFile="/sf/mw/ipconnmgmt/dbcreator/group"/>
+<component name="dbcreator_conf" filter="s60" long-name="DB Creator Configuration" introduced="9.3">
+<unit bldFile="/sf/mw/ipconnmgmt/dbcreator/conf"/>
+</component>
+<component name="dbcreator_rom" filter="s60" long-name="DB Creator ROM" introduced="9.3">
+<unit bldFile="/sf/mw/ipconnmgmt/dbcreator/rom"/>
 </component>
 </collection>
 <collection name="ipconnmgmt_info" long-name="IP Connectivity Management Info" level="api">
-<component name="ipcm_build" filter="s60" long-name="IP Connectivity Management Build">
-<!-- need to move exports to another component, or maek this a config component and revmove the #includes -->
-<unit bldFile="/sf/mw/ipconnmgmt/group"/>
+<component name="ipcm_config" filter="s60" long-name="IP Connectivity Management Configuration">
+<unit bldFile="/sf/mw/ipconnmgmt/data"/>
 </component>
 </collection>
 </block>
