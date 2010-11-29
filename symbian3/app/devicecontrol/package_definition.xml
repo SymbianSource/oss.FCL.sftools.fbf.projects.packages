@@ -14,10 +14,8 @@
       <component id="diagsuites" filter="s60" name="Diagnostics Suites" class="plugin" deprecated="^3">
         <unit bldFile="devicediagnostics/diagsuites/group"/>
       </component>
-      <component id="devicediagnostics_build" filter="s60" name="Device Diagnostics Build" deprecated="^3">
-      	<!-- can the exports be moved to one of the other components?
-			or all  #includes removed from here, and it renamed Device Diagnostics ROM -->
-        <unit bldFile="devicediagnostics/group"/>
+      <component id="devicediagnostics_sis" filter="s60" name="Device Diagnostics SIS" deprecated="^3">
+        <unit bldFile="devicediagnostics/sis"/>
       </component>
     </collection>
     <collection id="omadm" name="OMA Device Management" level="oma">
