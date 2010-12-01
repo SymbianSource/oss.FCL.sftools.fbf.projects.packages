@@ -90,8 +90,9 @@
 <component name="imconversationview" filter="s60" long-name="IM Conversation View">
 <unit bldFile="/sf/app/conversations/imstutils/imconversationview/group"/>
 </component>
-<component name="imstutils_loc" filter="s60" long-name="IM Service Tab Utils Localisation" class="config">
-<unit bldFile="/sf/app/conversations/imstutils/loc"/>
+<component name="imstutils_config" filter="s60" long-name="IM Service Tab Utils config" class="config">
+<!-- remove the #includes and or moved ithe loc file into one the above components -->
+<unit bldFile="/sf/app/conversations/imstutils/group"/>
 </component>
 </collection>
 <collection name="uiservicetab" long-name="UI Service Tab" level="ui">
@@ -114,8 +115,9 @@
 <component name="vimpstdetailsviewplugin" filter="s60" long-name="VIMP ST Details View Plugin" plugin="Y">
 <unit bldFile="/sf/app/conversations/uiservicetab/vimpstdetailsviewplugin/group"/>
 </component>
-<component name="uiservicetab_exports" filter="s60" long-name="UI Service Tab Exports">
-<unit bldFile="/sf/app/conversations/uiservicetab/exports"/>
+<component name="uiservicetab_build" filter="s60" long-name="UI Service Tab Build">
+<!-- can this be distributed into the above bld.infs? -->
+<unit bldFile="/sf/app/conversations/uiservicetab/group"/>
 </component>
 </collection>
 <collection name="servicewidget" long-name="Service Widget" level="ui">
@@ -126,8 +128,9 @@
 <!-- does this really need to have that number in the directory name? -->
 <unit bldFile="/sf/app/conversations/servicewidget/themes/install-themes/install/servicewidget_20021383/group"/>
 </component>
-<component name="servicewidget_rom" filter="s60" long-name="Service Widget ROM">
-<unit bldFile="/sf/app/conversations/servicewidget/rom"/>
+<component name="servicewidget_build" filter="s60" long-name="Service Widget Build">
+<!-- Either move the whole collection down one directory into a single component, or move the ROM and SIS parts into a Service Widget ROM component -->
+<unit bldFile="/sf/app/conversations/servicewidget/group"/>
 </component>
 </collection>
 <collection name="instantmsgindicatorplugin" long-name="Instant Message Indicator Plugin" level="plugin">
@@ -144,7 +147,8 @@
 </collection>
 <collection name="conversations_info" long-name="Conversation Apps Info" level="ui">
 <component name="conversations_build" filter="s60" long-name="Conversation Apps Build">
-<unit bldFile="/sf/app/conversations/exports"/>
+<!-- can the exports be moved to other components? or this remade into a configuration component?-->
+<unit bldFile="/sf/app/conversations/group"/>
 </component>
 </collection>
 </block>

@@ -61,7 +61,7 @@
 </component>
 </collection>
 <collection name="vpnapiimpl" long-name="VPN API Implementation" level="api">
-<component name="vpnapi_impl" filter="s60" long-name="VPN API">
+<component name="vpnapi" filter="s60" long-name="VPN API">
 <unit bldFile="/sf/mw/vpnclient/vpnapiimpl/group" filter="!oem_build"/>
 </component>
 </collection>
@@ -161,7 +161,7 @@
 <component name="vpndialogmanager" filter="s60" long-name="VPN Dialog Manager">
 <unit bldFile="/sf/mw/vpnclient/vpnui/vpndialogmanager/group" filter="!oem_build"/>
 </component>
-<component name="vpnmanagementui" filter="s60" long-name="VPN Management UI" deprecated="^3" plugin="Y">
+<component name="vpnmanagementui" filter="s60" long-name="VPN Management UI" plugin="Y">
 <unit bldFile="/sf/mw/vpnclient/vpnui/vpnmanagementui/group" filter="!oem_build"/>
 </component>
 <component name="vpnpolins" filter="s60" long-name="VPN Policy Installer">
@@ -175,8 +175,9 @@
 <component name="vpnclient_help" filter="s60" long-name="VPN Client Help">
 <unit bldFile="/sf/mw/vpnclient/help/group" filter="!oem_build"/>
 </component>
-<component name="vpnclient_exports" filter="s60" long-name="VPN Client Exports">
-<unit bldFile="/sf/mw/vpnclient/exports" filter="!oem_build"/>
+<component name="vpnclient_build" filter="s60" long-name="VPN Client Build">
+<!-- should split this up into the other components and remove this-->
+<unit bldFile="/sf/mw/vpnclient/group" filter="!oem_build"/>
 </component>
 </collection>
 </block>

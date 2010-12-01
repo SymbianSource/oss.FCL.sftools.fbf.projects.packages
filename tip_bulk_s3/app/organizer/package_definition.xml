@@ -232,11 +232,9 @@
 <component name="caldav" filter="sf_build" long-name="CalDAV" introduced="^3" plugin="Y">
 <unit bldFile="/sf/app/organizer/calendarui/caldav/group"/>
 </component>
-<component name="calendarui_exports" filter="s60" long-name="Calendar UI Exports">
-<unit bldFile="/sf/app/organizer/calendarui/exports"/>
-</component>
-<component name="calendarui_organizerplugin" filter="s60" long-name="Calendar UI Organizer Plugin">
-<unit bldFile="/sf/app/organizer/calendarui/organizerplugin/group"/>
+<component name="calendarui_build" filter="s60" long-name="Calendar UI Build">
+<!-- split contents into separate components -->
+<unit bldFile="/sf/app/organizer/calendarui/group"/>
 </component>
 </collection>
 <collection name="meetingui" long-name="Meeting UI" level="ui">
@@ -267,8 +265,9 @@
 <component name="clock2_help" filter="s60" long-name="Clock Help">
 <unit bldFile="/sf/app/organizer/clock2/help/group"/>
 </component>
-<component name="clock2_exports" filter="s60" long-name="Clock Exports">
-<unit bldFile="/sf/app/organizer/clock2/exports"/>
+<component name="clock2_build" filter="s60" long-name="Clock Build">
+<!-- split contents into separate components, or just make this one component -->
+<unit bldFile="/sf/app/organizer/clock2/group"/>
 </component>
 </collection>
 <collection name="notepad" long-name="Notepad" level="ui">

@@ -87,8 +87,8 @@
 <unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshui/group"/>
 <unit bldFile="/sf/app/mmsharinguis/mmsharing/mmshui/help/group"/>
 </component>
-<component name="mmsharing_exports" filter="s60" long-name="MM Sharing exports">
-<unit bldFile="/sf/app/mmsharinguis/mmsharing/exports"/>
+<component name="mmsharing_build" filter="s60" long-name="MM Sharing Build">
+<unit bldFile="/sf/app/mmsharinguis/mmsharing/group"/>
 </component>
 </collection>
 <collection name="mmshplugins" long-name="Multimedia Sharing Plugins" level="plugin">
@@ -109,8 +109,9 @@
 </component>
 </collection>
 <collection name="mmsharinguis_info" long-name="Multimedia Sharing UIs Info" level="if">
-<component name="mmsharinguis_rom" filter="s60" long-name="Multimedia Sharing UIs ROM">
-<unit bldFile="/sf/app/mmsharinguis/rom"/>
+<component name="mmsharinguis_build" filter="s60" long-name="Multimedia Sharing UIs Build">
+<!--  consider distributing to other components -->
+<unit bldFile="/sf/app/mmsharinguis/group"/>
 </component>
 </collection>
 </block>

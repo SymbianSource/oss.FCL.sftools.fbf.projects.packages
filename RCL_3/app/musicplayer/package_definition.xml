@@ -99,8 +99,9 @@
 <component name="mpxmusicplayer_app" filter="s60" long-name="MPX Application">
 <unit bldFile="/sf/app/musicplayer/mpxmusicplayer/app/group"/>
 </component>
-<component name="mpxmusicplayer_exports" filter="s60" long-name="MPX Music Player Exports">
-<unit bldFile="/sf/app/musicplayer/mpxmusicplayer/exports"/>
+<component name="mpxmusicplayer_build" filter="s60" long-name="MPX Music Player Build">
+<!--  can the exports be distributed to the above components?  -->
+<unit bldFile="/sf/app/musicplayer/mpxmusicplayer/group"/>
 </component>
 </collection>
 <collection name="musichomescreen_multiview" long-name="Music Home Screen Multiview" level="hs">
@@ -132,11 +133,17 @@
 <component name="viewplugins" filter="s60" long-name="MPX View Plugins" plugin="Y">
 <unit bldFile="/sf/app/musicplayer/mpxplugins/viewplugins/group"/>
 </component>
-<component name="mpxplugins_exports" filter="s60" long-name="MPX Plugins Exports">
-<unit bldFile="/sf/app/musicplayer/mpxplugins/exports"/>
+<component name="mpxplugins_build" filter="s60" long-name="MPX Plugins Build">
+<!--  can the exports be distributed to the above components?  -->
+<unit bldFile="/sf/app/musicplayer/mpxplugins/group"/>
 </component>
 </collection>
-<collection name="musicplayer_info" long-name="Music Player Apps Info" level="app"/>
+<collection name="musicplayer_info" long-name="Music Player Apps Info" level="app">
+<component name="musicplayer_build" filter="s60" long-name="Music Player Build">
+<!-- should explicitly #inlcude musicplayerbldvariant.hrh in each component  -->
+<unit bldFile="/sf/app/musicplayer/group"/>
+</component>
+</collection>
 </block>
   </layer>
  </systemModel>

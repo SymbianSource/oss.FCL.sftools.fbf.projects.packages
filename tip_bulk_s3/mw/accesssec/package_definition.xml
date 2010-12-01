@@ -61,7 +61,7 @@
 <component name="wep_security_settings_ui_api" long-name="WEP Security Settings UI API" filter="s60" class="api">
 <unit bldFile="/sf/mw/accesssec/accesssec_plat/wep_security_settings_ui_api/group"/>
 </component>
-<component name="wifi_protected_setup_ui_api" long-name="Wi-Fi Protected Setup UI API" filter="s60" class="api">
+<component name="wi-fi_protected_setup_ui_api" long-name="Wi-Fi Protected Setup UI API" filter="s60" class="api">
 <unit bldFile="/sf/mw/accesssec/accesssec_plat/wi-fi_protected_setup_ui_api/group"/>
 </component>
 <component name="wlan_eap_settings_ui_api" long-name="WLAN EAP Settings UI API" filter="s60" class="api">

@@ -54,7 +54,7 @@
  <systemModel>
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="printing" level="services" long-name="Printing" levels="app">
-<collection name="directprint" long-name="DirectPrint" level="app">
+<collection name="DirectPrint" level="app">
 <component name="DirectPrintApp" filter="sf_build" long-name="DirectPrint App" introduced="^3">
 <unit bldFile="/sf/app/printing/DirectPrint/DirectPrintApp/group"/>
 </component>

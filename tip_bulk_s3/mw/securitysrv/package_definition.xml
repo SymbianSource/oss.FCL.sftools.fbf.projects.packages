@@ -149,7 +149,7 @@
 <unit bldFile="/sf/mw/securitysrv/pkiutilities/ocsp/group" mrp="/sf/mw/securitysrv/pkiutilities/ocsp/group/securitysrv_ocsp.mrp"/>
 </component>
 </collection>
-<collection name="wim" long-name="Wireless Identity Module" level="framework">
+<collection name="wim" long-name="Wireless Identity Module " level="framework">
 <!-- collection is really a component. Need to move down a directory-->
 <component name="wim_build" filter="s60" long-name="WIM Build">
 <unit bldFile="/sf/mw/securitysrv/wim/group"/>
@@ -221,7 +221,7 @@
 <component name="devencstarter" filter="s60" long-name="Device Encryption Starter" introduced="^3" plugin="Y">
 <unit bldFile="/sf/mw/securitysrv/devencdiskutils/DevEncStarter/group"/>
 </component>
-<component name="devencdiskutils_build" filter="s60" long-name="Device Encryption Disk Utils Build" introduced="^3">
+<component name="devencdiskutils" filter="s60" long-name="Device Encryption Disk Utils Build" introduced="^3">
 <!-- need to split this into the above components, or remove #includes and make this a ROM  component-->
 <unit bldFile="/sf/mw/securitysrv/devencdiskutils/group"/>
 </component>

@@ -126,8 +126,14 @@
 <component name="xml_parser_api" long-name="XML Parser API" filter="s60" class="api">
 <unit bldFile="/sf/mw/web/web_plat/xml_parser_api/group"/>
 </component>
-<component name="stmgesturefw_api" long-name="State Machine Gesture Framework API" filter="s60" class="api">
+<component name="stmgesturefw_api" long-name="State Machine Gesture Framework API " filter="s60" class="api">
 <unit bldFile="/sf/mw/web/web_plat/stmgesturefw_api/group"/>
+</component>
+</collection>
+<collection name="web_info" long-name="Web Info" level="specific">
+<component name="web_build" filter="s60" long-name="Web Build">
+<!-- when configuration is in place, the #ifdef is no longer needed and this component can be removed -->
+<unit bldFile="/sf/mw/web/group"/>
 </component>
 </collection>
 <collection name="browserutilities" long-name="Browser Utilities" level="utils">
@@ -159,7 +165,8 @@
 <unit bldFile="/sf/mw/web/browserutilities/feedsengine/group"/>
 </component>
 <component name="multipartparser" filter="s60" long-name="Multipart Parser">
-<unit bldFile="/sf/mw/web/browserutilities/multipartparser/group"/>
+<!-- uncomment the unit when configuration is in place, it's currently #included from browserutilities_build -->
+<!-- <unit bldFile="browserutilities/multipartparser/group"/> -->
 </component>
 <component name="schemehandler" filter="s60" long-name="Scheme Handler">
 <unit bldFile="/sf/mw/web/browserutilities/schemehandler/group"/>
@@ -169,6 +176,10 @@
 </component>
 <component name="aiwbrowserprovider" filter="s60" long-name="AIW Browser Provider" plugin="Y">
 <unit bldFile="/sf/mw/web/browserutilities/aiwbrowserprovider/group"/>
+</component>
+<component name="browserutilities_build" filter="s60" long-name="Browser Utilities Build">
+<!-- when configuration is in place, the #ifdef is no longer needed and this component can be removed -->
+<unit bldFile="/sf/mw/web/browserutilities/group"/>
 </component>
 </collection>
 <collection name="webengine" long-name="Web Engine" level="server">
@@ -243,11 +254,10 @@
 <component name="roapapp" filter="s60" long-name="ROAP Application">
 <unit bldFile="/sf/mw/web/codhandler/roapapp/group"/>
 </component>
-<component name="codhandler_loc" filter="s60" long-name="COD Handler Localisation">
-<unit bldFile="/sf/mw/web/codhandler/Loc"/>
-</component>
-<component name="codhandler_rom" filter="s60" long-name="COD Handler ROM">
-<unit bldFile="/sf/mw/web/codhandler/rom"/>
+<component name="codhandler_build" filter="s60" long-name="COD Handler Build">
+<!-- Exports need to go into another component or make this self-contained.
+      		#included .hrh file needs to be #included in each of the other components -->
+<unit bldFile="/sf/mw/web/codhandler/group"/>
 </component>
 </collection>
 <collection name="widgets" long-name="Web Widget Framework" level="generic">

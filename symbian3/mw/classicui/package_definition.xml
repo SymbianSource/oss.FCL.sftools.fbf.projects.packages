@@ -298,7 +298,7 @@
 <component name="avkon_testability_api" long-name="AVKON Testability API" filter="s60" class="api">
 <unit bldFile="/sf/mw/classicui/classicui_plat/avkon_testability_api/group"/>
 </component>
-<component name="ganes_api" long-name="Ganes API" filter="s60" class="api">
+<component name="ganes_api" filter="s60" class="api">
 <unit bldFile="/sf/mw/classicui/classicui_plat/ganes_api/group"/>
 </component>
 <component name="ode_api" long-name="Ode API" filter="s60" class="api">

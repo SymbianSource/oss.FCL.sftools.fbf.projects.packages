@@ -64,7 +64,7 @@
 </collection>
 <collection name="techviewplat" long-name="Techview Platform" level="services"/>
 <collection name="techviewui" long-name="Techview UI" level="ui"/>
-<collection name="tv_controlpanel" long-name="Control Panel" level="ui"/>
+<collection name="controlpanel" long-name="Control Panel" level="ui"/>
 <collection name="pimapps" long-name="PIM Apps" level="apps3"/>
 <collection name="securityapps" long-name="Security Apps" level="apps3"/>
 <collection name="utilityapps" long-name="Utility Apps" level="apps2"/>

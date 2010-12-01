@@ -60,10 +60,10 @@
 </component>
 </collection>
 <collection name="uitools_plat" long-name="UI Tools Platform Interfaces" level="if">
-<component name="uitools_cdl_api" long-name="CDL API" filter="s60" class="api">
+<component name="cdl_api" long-name="CDL API" filter="s60" class="api">
 <unit bldFile="/sf/mw/uitools/uitools_plat/cdl_api/group"/>
 </component>
-<component name="uitools_layout_system_private_api" long-name="Layout System Private API" filter="s60" class="api">
+<component name="layout_system_private_api" long-name="Layout System Private API" filter="s60" class="api">
 <unit bldFile="/sf/mw/uitools/uitools_plat/layout_system_private_api/group"/>
 </component>
 </collection>

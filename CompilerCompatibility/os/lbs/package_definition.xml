@@ -70,8 +70,8 @@
 <component name="networkpositioningmodule" long-name="Network Positioning Module" introduced="^3" purpose="optional" plugin="Y">
 <unit bldFile="/sf/os/lbs/datasourcemodules/networkpositioningmodule/group" mrp="/sf/os/lbs/datasourcemodules/networkpositioningmodule/group/lbs_network_positioning_module.mrp"/>
 </component>
-<component name="locationapesuplpsy" long-name="APE SUPL Positioning Module" introduced="^3" purpose="optional" plugin="Y">
-<unit bldFile="/sf/os/lbs/datasourcemodules/locationapesuplpsy/group" mrp="/sf/os/lbs/datasourcemodules/locationapesuplpsy/group/lbs_ape_supl_positioning_module.mrp"/>
+<component name="locationapesuplpsy" long-name="APE SUPL PSY" introduced="^3" purpose="optional" filter="s60" plugin="Y">
+<unit bldFile="/sf/os/lbs/datasourcemodules/locationapesuplpsy/group"/>
 </component>
 </collection>
 <collection name="datasourceadaptation" long-name="Data Source Adaptation" level="adapt">
@@ -121,15 +121,15 @@
 <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
 <unit bldFile="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/SuplConnectionManager/group" mrp="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
 </component>
-<component name="suplprotocolmodule1" long-name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" plugin="Y">
+<component name="suplprotocolmodule" long-name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" plugin="Y">
 <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
 <unit bldFile="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/HostSettingsApi/group" mrp="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
 </component>
-<component name="suplprotocolmodule2" long-name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" plugin="Y">
+<component name="suplprotocolmodule" long-name="SUPL Protocol Module" introduced="^2" deprecated="^2" purpose="optional" plugin="Y">
 <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
 <unit bldFile="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/SuplPushAPI/group" mrp="/sf/os/lbs/networkprotocolmodules/suplprotocolmodule/group/lbs_suplprotocolmodule.mrp"/>
 </component>
-<component name="suplrrlpprotocol3" long-name="SUPL RRLP Protocol Module">
+<component name="suplrrlpprotocol" long-name="SUPL RRLP Protocol Module">
 <!-- hack for Foundation builds needed while collection is reorganised into proper components -->
 <unit bldFile="/sf/os/lbs/networkprotocolmodules/suplcontrolplaneprotocols/common/suplrrlpprotocol/sfgroup"/>
 </component>

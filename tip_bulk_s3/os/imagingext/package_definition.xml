@@ -78,7 +78,7 @@
 <component name="ecam_face_tracking_custom_api" long-name="ECam Face Tracking Custom API" filter="s60" class="api">
 <unit bldFile="/sf/os/imagingext/imagingext_plat/ecam_face_tracking_custom_api/group"/>
 </component>
-<component name="ecam_use_case_hint_custom_api" long-name="ECam Use Case Hint Custom API" filter="s60" introduced="^3" class="api">
+<component name="ecam_use_case_hint_custom_api" long-name="ECam Use Case Hint Custom API" filter="s60" class="api">
 <unit bldFile="/sf/os/imagingext/imagingext_plat/ecam_use_case_hint_custom_api/group"/>
 </component>
 </collection>

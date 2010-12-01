@@ -58,7 +58,7 @@
 <component name="image_handling_library_api" long-name="Image Handling Library API" filter="s60" class="api">
 <unit bldFile="/sf/mw/imghandling/imagehandling_plat/image_handling_library_api/group"/>
 </component>
-<component name="lib3gp_library_api" long-name="3GP Library API" filter="s60" class="api">
+<component name="3gp_library_api" long-name="3GP Library API" filter="s60" class="api">
 <unit bldFile="/sf/mw/imghandling/imagehandling_plat/3gp_library_api/group"/>
 </component>
 <component name="thumbnailmanager_api" long-name="Thumbnail Manager API" filter="s60" class="api">

@@ -73,7 +73,7 @@
 <component name="playlist_engine_api" long-name="Playlist Engine API" introduced="^1" filter="s60" class="api">
 <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/playlist_engine_api/group"/>
 </component>
-<component name="mmappfw_mtp_keys_api" long-name="MTP Keys API" introduced="^1" filter="s60" class="api">
+<component name="mtp_keys_api" long-name="MTP Keys API" introduced="^1" filter="s60" class="api">
 <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/mtp_keys_api/group"/>
 </component>
 <component name="mpx_collection_common_definition_api" long-name="MPX Collection Common Definition API" introduced="^1" filter="s60" class="api">
@@ -107,16 +107,22 @@
 <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/media_player_settings_engine_api/group"/>
 </component>
 <component name="mpx_backstepping_utility_api" long-name="MPX Backstepping Utility API" introduced="^1" filter="s60" class="api">
-<unit bldFile="/sf/mw/mmappfw/mmappfw_plat/mpx_backstepping_utility_api/group"/>
+<!-- uncomment when configuration is put in place
+	 <unit bldFile="mmappfw_plat/mpx_backstepping_utility_api/group"/> -->
 </component>
 <component name="asx_parser_api" long-name="ASX Parser API" introduced="^1" filter="s60" class="api">
-<unit bldFile="/sf/mw/mmappfw/mmappfw_plat/asx_parser_api/group"/>
+<!-- uncomment when configuration is put in place
+    <unit bldFile="mmappfw_plat/asx_parser_api/group"/> -->
 </component>
 <component name="playback_helper_api" long-name="Playback Helper API" introduced="^1" filter="s60" class="api">
 <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/playback_helper_api/group"/>
 </component>
 <component name="videoplaylist_utility_api" long-name="Video Playlist Utility API" introduced="^1" filter="s60" class="api">
 <unit bldFile="/sf/mw/mmappfw/mmappfw_plat/videoplaylist_utility_api/group"/>
+</component>
+<component name="mmappfw_plat_build" long-name="Multimedia App Framework Platform Interface Build" introduced="^1" filter="s60" class="api">
+<!-- needed only for #ifdefs. Remove anmd uncomment above units when configuration is in place -->
+<unit bldFile="/sf/mw/mmappfw/mmappfw_plat/group"/>
 </component>
 </collection>
 <collection name="mpx" long-name="Multimedia Player" level="fw">
@@ -132,17 +138,17 @@
 <component name="mpxviewfw" filter="s60" long-name="MPX View Framework" introduced="^1">
 <unit bldFile="/sf/mw/mmappfw/mpx/viewframework/group"/>
 </component>
-<component name="mpx_conf" filter="s60" long-name="MPX Configuration" introduced="^1">
-<unit bldFile="/sf/mw/mmappfw/mpx/Conf"/>
-</component>
-<component name="mpx_rom" filter="s60" long-name="MPX ROM" introduced="^1">
-<unit bldFile="/sf/mw/mmappfw/mpx/rom"/>
-</component>
-<component name="mpx_sis" filter="s60" long-name="MPX SIS" introduced="^1">
-<unit bldFile="/sf/mw/mmappfw/mpx/sis"/>
+<component name="mpx_build" filter="s60" long-name="MPX Build" introduced="^1">
+<!--  Move the export to another component or remove the #includes from this one -->
+<unit bldFile="/sf/mw/mmappfw/mpx/group"/>
 </component>
 </collection>
 <collection name="mmappcomponents" long-name="Multimedia App Components" level="utils">
+<component name="mmappcomponents_build" filter="s60" long-name="Multimedia App Components Build" introduced="^1">
+<!-- needed for  #ifdefs and hrh include. Need to #include the .hrh file in each bld.inf
+      		Can remove this once configuration is in place-->
+<unit bldFile="/sf/mw/mmappfw/mmappcomponents/group"/>
+</component>
 <component name="collectionhelper" filter="s60" long-name="Media Player Collection Helper" introduced="^1">
 <unit bldFile="/sf/mw/mmappfw/mmappcomponents/collectionhelper/group"/>
 </component>
@@ -159,10 +165,12 @@
 <unit bldFile="/sf/mw/mmappfw/mmappcomponents/mediaplayersettingsengine/group"/>
 </component>
 <component name="audiofetcher" filter="s60" long-name="Audio Fetcher" introduced="^1" plugin="Y">
-<unit bldFile="/sf/mw/mmappfw/mmappcomponents/audiofetcher/group"/>
+<!-- uncomment when config is in place, currently #included in mmappcomponents_build -->
+<!-- <unit bldFile="mmappcomponents/audiofetcher/group"/>-->
 </component>
 <component name="asxparser" filter="s60" long-name="ASX Parser" introduced="^1">
-<unit bldFile="/sf/mw/mmappfw/mmappcomponents/asxparser/group"/>
+<!-- uncomment when config is in place, currently #included in mmappcomponents_build -->
+<!-- <unit bldFile="mmappcomponents/asxparser/group"/>-->
 </component>
 <component name="playbackhelper" filter="s60" long-name="Playback Helper" introduced="^3">
 <unit bldFile="/sf/mw/mmappfw/mmappcomponents/playbackhelper/group"/>
@@ -175,6 +183,10 @@
 </component>
 </collection>
 <collection name="mmappfw_info" long-name="Multimedia App Framework Info" level="if">
+<component name="mmappfw_build" filter="s60" long-name="Multimedia App Framework Build" introduced="^1">
+<!--  Move the export to another component or remove the #includes from this one -->
+<unit bldFile="/sf/mw/mmappfw/group"/>
+</component>
 <component name="mmappfw_test" filter="s60,test,api_test,pref_test" long-name="Multimedia App Framework Test" purpose="development" introduced="^1"/>
 </collection>
 </block>

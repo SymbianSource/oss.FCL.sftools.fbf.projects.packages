@@ -73,7 +73,7 @@
 <component name="media_recorder_api" long-name="Media Recorder API" filter="s60" class="api">
 <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/media_recorder_api/group" filter="!test"/>
 </component>
-<component name="lib3gp_file_composer_api" long-name="3GP File Composer API" filter="s60" class="api">
+<component name="3gp_file_composer_api" long-name="3GP File Composer API" filter="s60" class="api">
 <unit bldFile="/sf/mw/camerasrv/camerasrv_plat/3gp_file_composer_api/group"/>
 </component>
 <component name="asynchronous_file_saving_queue_api" long-name="Asynchronous File Saving Queue API" filter="s60" class="api">

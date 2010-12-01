@@ -73,11 +73,9 @@
 <component name="fmradio_help" filter="s60" long-name="FM Radio Help">
 <unit bldFile="/sf/app/radio/fmradio/help/group"/>
 </component>
-<component name="fmradio_conf" filter="s60" long-name="FM Radio Configuration">
-<unit bldFile="/sf/app/radio/fmradio/conf"/>
-</component>
-<component name="fmradio_loc" filter="s60" long-name="FM Radio Localisation">
-<unit bldFile="/sf/app/radio/fmradio/loc"/>
+<component name="fmradio_build" filter="s60" long-name="FM Radio ROM">
+<!--  remove above #included bld.infs -->
+<unit bldFile="/sf/app/radio/fmradio/group"/>
 </component>
 </collection>
 </block>

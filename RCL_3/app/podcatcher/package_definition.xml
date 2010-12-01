@@ -58,8 +58,6 @@
 <component name="podcatcher_build" filter="sf_build" long-name="Podcatcher Build" introduced="^3">
 <unit bldFile="/sf/app/podcatcher/group"/>
 </component>
-<component name="podcatcher_app" filter="sf_build" long-name="Podcatcher Application" introduced="^3"/>
-<component name="podcatcher_engine" filter="sf_build" long-name="Podcatcher Engine" introduced="^3"/>
 </collection>
 </block>
   </layer>

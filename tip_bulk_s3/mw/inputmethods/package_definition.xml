@@ -96,7 +96,8 @@
 </collection>
 <collection name="textinput" long-name="Text Input" level="framework">
 <component name="ptienginev2" filter="s60" long-name="Predictive Text Input Engine">
-<unit bldFile="/sf/mw/inputmethods/textinput/ptienginev2/group"/>
+<!--uncomment when configuration is turned on and textinput_build is removed-->
+<!--  <unit bldFile="textinput/ptienginev2/group"/>-->
 </component>
 <component name="akninputlanguage" filter="s60" long-name="Avkon Input Language">
 <unit bldFile="/sf/mw/inputmethods/textinput/akninputlanguage/group"/>
@@ -154,6 +155,10 @@
 </component>
 <component name="peninputsplitqwerty" filter="s60" long-name="Pen Input Split QWERTY" introduced="^3" plugin="Y">
 <unit bldFile="/sf/mw/inputmethods/textinput/peninputsplitqwerty/group"/>
+</component>
+<component name="textinput_build" filter="s60" long-name="Text Input Build">
+<!--needed for #ifdef, can be removed when configuration is implemented -->
+<unit bldFile="/sf/mw/inputmethods/textinput/group"/>
 </component>
 </collection>
 <collection name="fep" long-name="FEP" level="engine">

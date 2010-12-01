@@ -113,8 +113,9 @@
 <component name="editorprovider" filter="s60" long-name="Image Editor Provider">
 <unit bldFile="/sf/app/imgeditor/imageeditor/editorprovider/group"/>
 </component>
-<component name="imageeditor_exports" filter="s60" long-name="Image Editor Exports">
-<unit bldFile="/sf/app/imgeditor/imageeditor/exports"/>
+<component name="imageeditor_build" filter="s60" long-name="Image Editor Build">
+<!-- should distribute this to the other components -->
+<unit bldFile="/sf/app/imgeditor/imageeditor/group"/>
 </component>
 </collection>
 <collection name="imageeditorengine" long-name="Image Editor Engine" level="engine">
@@ -152,6 +153,10 @@
 </component>
 <component name="enginewrapper" filter="s60" long-name="Image Editor Engine Wrapper">
 <unit bldFile="/sf/app/imgeditor/imageeditorengine/enginewrapper/group"/>
+</component>
+<component name="imageeditorengine_build" filter="s60" long-name="Image Editor Engine Build">
+<!-- should distribute this to the other components -->
+<unit bldFile="/sf/app/imgeditor/imageeditorengine/group"/>
 </component>
 </collection>
 </block>

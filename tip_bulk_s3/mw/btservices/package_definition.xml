@@ -73,19 +73,19 @@
 <unit bldFile="/sf/mw/btservices/btservices_plat/bluetooth_engine_api/group"/>
 </component>
 <component name="bluetooth_engine_connection_management_api" long-name="Bluetooth Engine Connection Management API" filter="s60" class="api">
-<unit bldFile="/sf/mw/btservices/btservices_plat/bluetooth_engine_connection_management_api/group" filter="!test"/>
+<unit bldFile="/sf/mw/btservices/btservices_plat/bluetooth_engine_connection_management_api/group"/>
 </component>
 <component name="bluetooth_engine_device_management_api" long-name="Bluetooth Engine Device Management API" filter="s60" class="api">
-<unit bldFile="/sf/mw/btservices/btservices_plat/bluetooth_engine_device_management_api/group" filter="!test"/>
+<unit bldFile="/sf/mw/btservices/btservices_plat/bluetooth_engine_device_management_api/group"/>
 </component>
 <component name="bluetooth_engine_discovery_api" long-name="Bluetooth Engine Discovery API" filter="s60" class="api">
-<unit bldFile="/sf/mw/btservices/btservices_plat/bluetooth_engine_discovery_api/group" filter="!test"/>
+<unit bldFile="/sf/mw/btservices/btservices_plat/bluetooth_engine_discovery_api/group"/>
 </component>
 <component name="bluetooth_engine_features_api" long-name="Bluetooth Engine Features API" filter="s60" class="api">
 <unit bldFile="/sf/mw/btservices/btservices_plat/bluetooth_engine_features_api/group"/>
 </component>
 <component name="bluetooth_engine_settings_api" long-name="Bluetooth Engine Settings API" filter="s60" class="api">
-<unit bldFile="/sf/mw/btservices/btservices_plat/bluetooth_engine_settings_api/group" filter="!test"/>
+<unit bldFile="/sf/mw/btservices/btservices_plat/bluetooth_engine_settings_api/group"/>
 </component>
 <component name="bluetooth_engine_plugin_api" long-name="Bluetooth Engine Plugin API" filter="s60" class="api">
 <unit bldFile="/sf/mw/btservices/btservices_plat/bluetooth_engine_plugin_api/group"/>
@@ -111,7 +111,7 @@
 <unit bldFile="/sf/mw/btservices/bluetoothengine/btnotif/group"/>
 </component>
 <component name="btaudioman" filter="s60" long-name="Bluetooth Audio Manager">
-<unit bldFile="/sf/mw/btservices/bluetoothengine/btaudioman/group" filter="!test"/>
+<unit bldFile="/sf/mw/btservices/bluetoothengine/btaudioman/group"/>
 </component>
 <component name="btmac" filter="s60" long-name="Bluetooth Mono Audio Controller" plugin="Y">
 <unit bldFile="/sf/mw/btservices/bluetoothengine/btmac/group"/>
@@ -120,7 +120,7 @@
 <unit bldFile="/sf/mw/btservices/bluetoothengine/btsac/group"/>
 </component>
 <component name="btaudiostreamer" filter="s60" long-name="Bluetooth Audio Streamer">
-<unit bldFile="/sf/mw/btservices/bluetoothengine/btaudiostreamer/group" filter="!test"/>
+<unit bldFile="/sf/mw/btservices/bluetoothengine/btaudiostreamer/group"/>
 </component>
 <component name="btsap" filter="s60" long-name="Bluetooth SIM Access Profile" plugin="Y">
 <unit bldFile="/sf/mw/btservices/bluetoothengine/btsap/group"/>
