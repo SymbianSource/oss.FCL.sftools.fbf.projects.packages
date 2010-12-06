@@ -130,7 +130,7 @@
 <component name="im_cache_server_api" long-name="IM Cache Server API" filter="s60" class="api">
 <unit bldFile="/sf/mw/imsrv/imsrv_plat/im_cache_server_api/group"/>
 </component>
-<component name="presence_avabilitytext" long-name="Presence Availbility Text" filter="s60" class="api">
+<component name="presence_avabilitytext" long-name="Presence Availability Text" filter="s60" class="api">
 <unit bldFile="/sf/mw/imsrv/imsrv_plat/presence_avabilitytext/group"/>
 </component>
 </collection>

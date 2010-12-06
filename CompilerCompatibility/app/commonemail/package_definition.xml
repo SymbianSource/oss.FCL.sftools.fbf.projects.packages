@@ -104,9 +104,11 @@
 <component name="ipssosaoplugin" filter="s60" long-name="IPS SOS Always Online Plugin" introduced="^2" plugin="Y">
 <unit bldFile="/sf/app/commonemail/ipsservices/ipssosaoplugin/group"/>
 </component>
-<component name="ipsservices_build" filter="s60" long-name="IPS Services Build" introduced="^2">
-<unit bldFile="/sf/app/commonemail/ipsservices/group"/>
-<!-- can the exports be broken up into the other components or made a config component?-->
+<component name="ipsservices_conf" filter="s60" long-name="IPS Services Configuration" introduced="^2">
+<unit bldFile="/sf/app/commonemail/ipsservices/conf"/>
+</component>
+<component name="ipsservices_rom" filter="s60" long-name="IPS Services ROM" introduced="^2">
+<unit bldFile="/sf/app/commonemail/ipsservices/rom"/>
 </component>
 </collection>
 <collection name="emailcontacts" long-name="Email Contacts" level="support">
@@ -166,10 +168,29 @@
 <component name="mrurlparserplugin" filter="s60" long-name="MR URL Parser Plugin" introduced="^2" plugin="Y">
 <unit bldFile="/sf/app/commonemail/meetingrequest/mrurlparserplugin/group"/>
 </component>
-<component name="meetingrequest_build" filter="s60" long-name="MR Build" introduced="^2">
-<!-- can the exports be broken up into the other components ?
-			alternatively, move the exports into a RM Config component-->
-<unit bldFile="/sf/app/commonemail/meetingrequest/group"/>
+<component name="meetingrequest_config" filter="s60" long-name="MR Configuration" introduced="^2">
+<unit bldFile="/sf/app/commonemail/meetingrequest/conf"/>
+</component>
+<component name="meetingrequest_rom" filter="s60" long-name="MR ROM" introduced="^2">
+<unit bldFile="/sf/app/commonemail/meetingrequest/rom"/>
+</component>
+<component name="mrbcplugin" filter="s60" long-name="MR BC Plugin" introduced="^2">
+<unit bldFile="/sf/app/commonemail/meetingrequest/mrbcplugin/group"/>
+</component>
+<component name="mrcalremoteattachment" filter="s60" long-name="MR Calendar Remote Attachment" introduced="^2">
+<unit bldFile="/sf/app/commonemail/meetingrequest/mrcalremoteattachment/group"/>
+</component>
+<component name="mrcmailremoteattachmentplugin" filter="s60" long-name="MR Cmail Remote Attachment Plugin" introduced="^2">
+<unit bldFile="/sf/app/commonemail/meetingrequest/mrcmailremoteattachmentplugin/group"/>
+</component>
+<component name="mrguicommon" filter="s60" long-name="MR GUI COmmon" introduced="^2">
+<unit bldFile="/sf/app/commonemail/meetingrequest/mrguicommon/group"/>
+</component>
+<component name="mrmbutilsextension" filter="s60" long-name="MR MB Utilities Extension" introduced="^2">
+<unit bldFile="/sf/app/commonemail/meetingrequest/mrmbutilsextension/group"/>
+</component>
+<component name="mrprocessor" filter="s60" long-name="MR Processor" introduced="^2">
+<unit bldFile="/sf/app/commonemail/meetingrequest/mrprocessor/group"/>
 </component>
 </collection>
 <collection name="emailuis" long-name="Email UIs" level="app">
@@ -183,11 +204,7 @@
 <unit bldFile="/sf/app/commonemail/emailuis/uicomponents/group"/>
 </component>
 <component name="widget" filter="s60" long-name="Email Widget" introduced="^2">
-<!-- Uncomment unit when configuration is in place. Currently #included from emailuis_build, which should be removed at the same time. -->
-<!--<unit bldFile="emailuis/widget/group"/>-->
-</component>
-<component name="emailuis_build" filter="s60" long-name="Email UIs Build" introduced="^2">
-<unit bldFile="/sf/app/commonemail/emailuis/group"/>
+<unit bldFile="/sf/app/commonemail/emailuis/widget/group"/>
 </component>
 </collection>
 <collection name="commonemail_info" long-name="Email Apps Info" level="app">

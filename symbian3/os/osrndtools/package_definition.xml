@@ -53,7 +53,7 @@
 <SystemDefinition name="Symbian^3" schema="2.0.1">
  <systemModel>
   <layer name="os" long-name="OS" levels="hw services">
-   <block name="osrndtools" level="services" long-name="OS R&amp;D tools" levels="fw trace">
+   <block name="osrndtools" level="services" long-name="OS R&amp;D tools" levels="fw trace analysis">
 <collection name="stif" long-name="STIF" level="fw">
 <component name="stif_plat" filter="s60" long-name="STIF Platform Interfaces" purpose="development" class="api">
 <unit bldFile="/sf/os/osrndtools/stif/stif_plat/group"/>
@@ -103,23 +103,23 @@
 <unit bldFile="/sf/os/osrndtools/stif/group"/>
 </component>
 </collection>
-<collection name="memspy" long-name="Memspy" level="trace">
-<component name="memspy_plat" filter="s60" long-name="Memspy Platform Interfaces" purpose="development" class="api">
+<collection name="memspy" long-name="MemSpy" level="trace">
+<component name="memspy_plat" filter="s60" long-name="MemSpy Platform Interfaces" purpose="development" class="api">
 <unit bldFile="/sf/os/osrndtools/memspy/memspy_plat/group"/>
 </component>
-<component name="driver" filter="s60" long-name="Memspy Driver" purpose="development">
+<component name="driver" filter="s60" long-name="MemSpy Driver" purpose="development">
 <unit bldFile="/sf/os/osrndtools/memspy/driver/group"/>
 </component>
-<component name="memspy_engine" filter="s60" long-name="Memspy Engine" purpose="development">
+<component name="memspy_engine" filter="s60" long-name="MemSpy Engine" purpose="development">
 <unit bldFile="/sf/os/osrndtools/memspy/engine/group"/>
 </component>
-<component name="commandline" filter="s60" long-name="Memspy Command Line" purpose="development">
+<component name="commandline" filter="s60" long-name="MemSpy Command Line" purpose="development">
 <unit bldFile="/sf/os/osrndtools/memspy/commandline/group"/>
 </component>
-<component name="console" filter="s60" long-name="Memspy Console" purpose="development">
+<component name="console" filter="s60" long-name="MemSpy Console" purpose="development">
 <unit bldFile="/sf/os/osrndtools/memspy/console/group"/>
 </component>
-<component name="memspy_build" filter="s60" long-name="Memspy Build" purpose="development">
+<component name="memspy_build" filter="s60" long-name="MemSpy Build" purpose="development">
 <!--  move exports into self-contained component.-->
 <unit bldFile="/sf/os/osrndtools/memspy/group"/>
 </component>

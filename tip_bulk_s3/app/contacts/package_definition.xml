@@ -79,10 +79,10 @@
 </collection>
 <collection name="contacts_plat" long-name="Contacts Apps Platform Interfaces" level="ui">
 <component name="virtual_phonebook_store_api" long-name="Virtual Phonebook Store API" filter="s60" class="api">
-<unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_store_api/group"/>
+<unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_store_api/group" filter="!test"/>
 </component>
 <component name="virtual_phonebook_sim_services_api" long-name="Virtual Phonebook SIM Services API" filter="s60" class="api">
-<unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_sim_services_api/group"/>
+<unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_sim_services_api/group" filter="!test"/>
 </component>
 <component name="virtual_phonebook_configuration_api" long-name="Virtual Phonebook Configuration API" filter="s60" class="api">
 <unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_configuration_api/group"/>
@@ -91,28 +91,28 @@
 <unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_copy_policy_api/group"/>
 </component>
 <component name="virtual_phonebook_policy_api" long-name="Virtual Phonebook Policy API" filter="s60" class="api">
-<unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_policy_api/group"/>
+<unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_policy_api/group" filter="!test"/>
 </component>
 <component name="virtual_phonebook_engine_api" long-name="Virtual Phonebook Engine API" filter="s60" class="api">
-<unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_engine_api/group"/>
+<unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_engine_api/group" filter="!test"/>
 </component>
 <component name="virtual_phonebook_migration_support_api" long-name="Virtual Phonebook Migration Support API" filter="s60" class="api">
 <unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_migration_support_api/group"/>
 </component>
 <component name="virtual_phonebook_view_definition_api" long-name="Virtual Phonebook View Definition API" filter="s60" class="api">
-<unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_view_definition_api/group"/>
+<unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_view_definition_api/group" filter="!test"/>
 </component>
 <component name="virtual_phonebook_vcard_api" long-name="Virtual Phonebook vCard API" filter="s60" class="api">
-<unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_vcard_api/group"/>
+<unit bldFile="/sf/app/contacts/contacts_plat/virtual_phonebook_vcard_api/group" filter="!test"/>
 </component>
 <component name="cms_contactor_api" long-name="CMS Contactor API" filter="s60" class="api">
 <unit bldFile="/sf/app/contacts/contacts_plat/cms_contactor_api/group"/>
 </component>
 <component name="contactpresence_api" long-name="Contact Presence API" filter="s60" class="api">
-<unit bldFile="/sf/app/contacts/contacts_plat/contactpresence_api/group"/>
+<unit bldFile="/sf/app/contacts/contacts_plat/contactpresence_api/group" filter="!test"/>
 </component>
 <component name="presence_cache_api" long-name="Presence Cache API" filter="s60" class="api">
-<unit bldFile="/sf/app/contacts/contacts_plat/presence_cache_api/group"/>
+<unit bldFile="/sf/app/contacts/contacts_plat/presence_cache_api/group" filter="!test"/>
 </component>
 <component name="phonebook_internal_common_api" long-name="Phonebook Internal Common API" filter="s60" class="api">
 <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_internal_common_api/group"/>
@@ -199,16 +199,16 @@
 <unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_ui_utilities_api/group"/>
 </component>
 <component name="cca_launch_api" long-name="CCA Launch API" filter="s60" class="api">
-<unit bldFile="/sf/app/contacts/contacts_plat/cca_launch_api/group"/>
+<unit bldFile="/sf/app/contacts/contacts_plat/cca_launch_api/group" filter="!test"/>
 </component>
 <component name="cca_view_plugin_api" long-name="CCA View Plugin API" filter="s60" class="api">
-<unit bldFile="/sf/app/contacts/contacts_plat/cca_view_plugin_api/group"/>
+<unit bldFile="/sf/app/contacts/contacts_plat/cca_view_plugin_api/group" filter="!test"/>
 </component>
 <component name="predictivesearch_client_api" long-name="Predictive Search Client API" filter="s60" class="api">
-<unit bldFile="/sf/app/contacts/contacts_plat/predictivesearch_client_api/group"/>
+<unit bldFile="/sf/app/contacts/contacts_plat/predictivesearch_client_api/group" filter="!test"/>
 </component>
 <component name="predictivesearch_utils_api" long-name="Predictive Search Utils API" filter="s60" class="api">
-<unit bldFile="/sf/app/contacts/contacts_plat/predictivesearch_utils_api/group"/>
+<unit bldFile="/sf/app/contacts/contacts_plat/predictivesearch_utils_api/group" filter="!test"/>
 </component>
 <component name="predictivesearch_adapters_api" long-name="Predictive Search Adapters API" filter="s60" class="api">
 <unit bldFile="/sf/app/contacts/contacts_plat/predictivesearch_adapters_api/group"/>
@@ -217,7 +217,7 @@
 <unit bldFile="/sf/app/contacts/contacts_plat/predictivesearch_algorithm_api/group"/>
 </component>
 <component name="phonebook_2_rcl_api" long-name="Phonebook 2 RCL API" filter="s60" class="api">
-<unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_rcl_api/group"/>
+<unit bldFile="/sf/app/contacts/contacts_plat/phonebook_2_rcl_api/group" filter="!test"/>
 </component>
 </collection>
 <collection name="contactextensions" long-name="Contacts Extensions" level="services">

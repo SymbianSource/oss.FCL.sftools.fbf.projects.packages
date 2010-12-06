@@ -53,7 +53,7 @@
 <SystemDefinition name="Symbian^3" schema="2.0.1">
  <systemModel>
   <layer name="adapt" long-name="Adaptation" levels="low mw high">
-   <block name="stubs" level="high" long-name="Stubs" levels="stub">
+   <block name="stubs" level="high" span="2" long-name="Stubs" levels="stub">
 <collection name="s60_stubs" level="stub">
 <component name="audiostubs" long-name="Audio Stubs">
 <unit bldFile="/sf/adapt/stubs/audiostubs/group"/>

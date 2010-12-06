@@ -56,10 +56,10 @@
    <block name="camera" level="apps" long-name="Camera Apps">
 <collection name="camera_plat" long-name="Camera Apps Platform Interfaces">
 <component name="camcorder_ui_constants_api" long-name="Camcorder UI Constants API" filter="s60" class="api">
-<unit bldFile="/sf/app/camera/camera_plat/camcorder_ui_constants_api/group"/>
+<unit bldFile="/sf/app/camera/camera_plat/camcorder_ui_constants_api/group" filter="!test"/>
 </component>
 <component name="active_palette_2_api" long-name="Active Palette 2 API" filter="s60" class="api">
-<unit bldFile="/sf/app/camera/camera_plat/active_palette_2_api/group"/>
+<unit bldFile="/sf/app/camera/camera_plat/active_palette_2_api/group" filter="!test"/>
 </component>
 </collection>
 <collection name="camerauis" long-name="Camera UIs">

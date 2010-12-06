@@ -55,7 +55,7 @@
   <layer name="app" long-name="Applications" levels="services apps">
    <block name="phone" level="apps" span="2" long-name="Phone Apps" levels="engine plugin ui app">
 <collection name="phone_plat" long-name="Phone Apps Platform Interfaces" level="app">
-<component name="3d_ringing_tone_enabler_api" long-name="3D Ringing Tone Enabler API" filter="s60" class="api">
+<component name="ringing_tone_3d_enabler_api" long-name="3D Ringing Tone Enabler API" filter="s60" class="api">
 <unit bldFile="/sf/app/phone/phone_plat/3d_ringing_tone_enabler_api/group"/>
 </component>
 <component name="telephony_comms_information_api" long-name="Telephony Comms Information API" filter="s60" class="api">
@@ -100,7 +100,7 @@
 <component name="phone_application_voip_commands_api" long-name="Phone Application VOIP Commands API" filter="s60" class="api">
 <unit bldFile="/sf/app/phone/phone_plat/phone_application_voip_commands_api/group"/>
 </component>
-<component name="telephony_mediator_api" long-name="Telephony Mediator API" filter="s60" class="api">
+<component name="phone_telephony_mediator_api" long-name="Telephony Mediator API" filter="s60" class="api">
 <unit bldFile="/sf/app/phone/phone_plat/telephony_mediator_api/group"/>
 </component>
 <component name="video_telephony_mediator_api" long-name="Video Telephony Mediator API" filter="s60" class="api">

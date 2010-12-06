@@ -75,9 +75,8 @@
 <component name="dasgsplugin" filter="s60" long-name="Default Application Settings GS Plugin" introduced="^1" plugin="Y">
 <unit bldFile="/sf/app/settingsuis/defaultapplicationsettings/gsplugin/group"/>
 </component>
-<component name="defaultapplicationsettings_build" filter="s60" long-name="Default Application Settings Build" introduced="^1">
-<!-- split the IBYs up into the appropriate components? Make this a ROM component? -->
-<unit bldFile="/sf/app/settingsuis/defaultapplicationsettings/group"/>
+<component name="defaultapplicationsettings_rom" filter="s60" long-name="Default Application Settings ROM" introduced="^1">
+<unit bldFile="/sf/app/settingsuis/defaultapplicationsettings/rom/group"/>
 </component>
 </collection>
 <collection name="systemswuis" long-name="System SW UIs" level="ui">
